@@ -1,0 +1,107 @@
+import { PolicyStatement, Actions } from "./shared";
+
+/**
+ * Action provider for service tag
+ *
+ * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonresourcegrouptaggingapi.html
+ */
+export class Tag extends PolicyStatement {
+    public servicePrefix = 'tag';
+    public actions : Actions = { "DescribeReportCreation": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_DescribeReportCreation.html", "description": "Describe the status of the StartReportCreation operation.", "accessLevel": "Read" }, "GetComplianceSummary": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetComplianceSummary.html", "description": "Get a table that shows counts of resources that are noncompliant with their effective tag policies.", "accessLevel": "Read" }, "GetResources": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html", "description": "Get tagged AWS resources that match the given tag filters", "accessLevel": "Read" }, "GetTagKeys": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html", "description": "Get all tagKeys for the account in the specific region", "accessLevel": "Read" }, "GetTagValues": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html", "description": "Get all tagValues for the account in the specific region", "accessLevel": "Read" }, "StartReportCreation": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_StartReportCreation.html", "description": "Generate a report that lists all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy.", "accessLevel": "Write" }, "TagResources": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html", "description": "Add tags to AWS resources", "accessLevel": "Tagging" }, "UntagResources": { "url": "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html", "description": "Remove tags from AWS resources", "accessLevel": "Tagging" } };
+
+    /**
+     * Describe the status of the StartReportCreation operation.
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_DescribeReportCreation.html
+     */
+    public describeReportCreation () {
+        this.add('tag:DescribeReportCreation');
+        return this;
+    }
+
+    /**
+     * Get a table that shows counts of resources that are noncompliant with their effective tag policies.
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetComplianceSummary.html
+     */
+    public getComplianceSummary () {
+        this.add('tag:GetComplianceSummary');
+        return this;
+    }
+
+    /**
+     * Get tagged AWS resources that match the given tag filters
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html
+     */
+    public getResources () {
+        this.add('tag:GetResources');
+        return this;
+    }
+
+    /**
+     * Get all tagKeys for the account in the specific region
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html
+     */
+    public getTagKeys () {
+        this.add('tag:GetTagKeys');
+        return this;
+    }
+
+    /**
+     * Get all tagValues for the account in the specific region
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html
+     */
+    public getTagValues () {
+        this.add('tag:GetTagValues');
+        return this;
+    }
+
+    /**
+     * Generate a report that lists all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy.
+     *
+     * Access Level: Write
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_StartReportCreation.html
+     */
+    public startReportCreation () {
+        this.add('tag:StartReportCreation');
+        return this;
+    }
+
+    /**
+     * Add tags to AWS resources
+     *
+     * Access Level: Tagging
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html
+     */
+    public tagResources () {
+        this.add('tag:TagResources');
+        return this;
+    }
+
+    /**
+     * Remove tags from AWS resources
+     *
+     * Access Level: Tagging
+     *
+     * https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html
+     */
+    public untagResources () {
+        this.add('tag:UntagResources');
+        return this;
+    }
+}

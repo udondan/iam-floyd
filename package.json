@@ -1,0 +1,82 @@
+{
+    "name": "iam-floyd",
+    "description": "Helper library for CDK to easily generate AWS IAM policy statements",
+    "version": "0.0.0",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Daniel Schroeder",
+        "url": "https://www.udondan.com/",
+        "twitter": "udondan"
+    },
+    "awscdkio": {
+        "twitter": "udondan"
+    },
+    "homepage": "https://github.com/udondan/iam-floyd",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/udondan/iam-floyd.git"
+    },
+    "bugs": {
+        "url": "https://github.com/udondan/iam-floyd/issues"
+    },
+    "keywords": [
+        "aws",
+        "cdk",
+        "aws-cdk",
+        "iam",
+        "policy"
+    ],
+    "stability": "experimental",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "pregenerate": "rm -f lib/*.js lib/*.ts",
+        "generate": "tsc && node bin/generate.js",
+        "build": "jsii",
+        "build:watch": "jsii -w",
+        "package": "jsii-pacmak",
+        "test": "npx ts-node test/main.ts"
+    },
+    "jsii": {
+        "outdir": "dist",
+        "excludeTypescript": [
+            "bin/*",
+            "lib/generator/*",
+            "test/*"
+        ],
+        "targets": {
+            "python": {
+                "distName": "iam-floyd",
+                "module": "iam_floyd"
+            },
+            "dotnet": {
+                "namespace": "IAM.Floyd",
+                "packageId": "IAM.Floyd"
+            }
+        }
+    },
+    "devDependencies": {
+        "@aws-cdk/assert": "^1.42.1",
+        "@types/cheerio": "^0.22.18",
+        "@types/node": "^10.17.5",
+        "@types/request": "^2.48.5",
+        "@types/request-promise-native": "^1.0.17",
+        "cheerio": "^1.0.0-rc.3",
+        "colors": "^1.4.0",
+        "jsii": "^1.5.0",
+        "jsii-pacmak": "^1.5.0",
+        "request": "^2.88.2",
+        "request-promise-native": "^1.0.8",
+        "ts-morph": "^7.1.0",
+        "ts-node": "^8.1.0",
+        "typescript": "~3.7.2"
+    },
+    "dependencies": {
+        "@aws-cdk/aws-iam": "^1.42.1",
+        "@aws-cdk/core": "^1.42.1"
+    },
+    "peerDependencies": {
+        "@aws-cdk/aws-iam": "^1.42.1",
+        "@aws-cdk/core": "^1.42.1"
+    }
+}

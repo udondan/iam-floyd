@@ -1,0 +1,6 @@
+.jsii
+node_modules
+dist
+tsconfig.json
+**/*.js
+**/*.d.ts
