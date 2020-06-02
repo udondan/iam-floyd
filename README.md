@@ -1,5 +1,12 @@
 # IAM Floyd
 
+[![Source](https://img.shields.io/badge/Source-GitHub-blue)][source]
+[![Docs](https://img.shields.io/badge/Docs-awscdk.io-orange)][docs]
+[![npm version](https://badge.fury.io/js/iam-floyd.svg)][npm]
+[![PyPI version](https://badge.fury.io/py/iam-floyd.svg)][PyPI]
+[![NuGet version](https://badge.fury.io/nu/IAM.Floyd.svg)][NuGet]
+[![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
+
 Helper library for [CDK] to easily generate AWS [IAM policy statements][statement].
 
 > This is an early version of the package. The signature of methods will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.
@@ -375,6 +382,12 @@ AWS and their services are trademarks, registered trademarks or trade dress of A
 
 This project is not affiliated, funded, or in any way associated with AWS.
 
+   [source]: https://github.com/udondan/iam-floyd
+   [docs]: https://awscdk.io/packages/iam-floyd@0.1.0
+   [npm]: https://www.npmjs.com/package/iam-floyd
+   [PyPI]: https://pypi.org/project/iam-floyd/
+   [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
+   [license]: https://github.com/udondan/iam-floyd/blob/master/LICENSE
    [CDK]: https://aws.amazon.com/cdk/
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [method chaining]: https://en.wikipedia.org/wiki/Method_chaining
