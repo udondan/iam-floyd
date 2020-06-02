@@ -15,3 +15,7 @@ dist
 
 bin/*
 lib/generator/*
+
+.github/*
+test
+VERSION
