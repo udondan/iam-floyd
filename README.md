@@ -75,28 +75,7 @@ new statement.Ec2()
     .stopInstances();
 ```
 
-All statements require `Resources`. Add them via `onResources()`
-
-```typescript
-new statement.S3()
-    .allow()
-    .allActions()
-    .onResources(
-        'arn:aws:s3:::some-bucket',
-        'arn:aws:s3:::another-bucket'
-    );
-```
-
-To allow all resources, pass a wildcard:
-
-```typescript
-new statement.S3()
-    .allow()
-    .allActions()
-    .onResources('*');
-```
-
-If you don't want to be verbose and add every single action manually to the statement, you discovered the reason why I created this package. You can work with [access levels]!
+If you don't want to be verbose and add every single action manually to the statement, you discovered the reason why this package was created. You can work with [access levels]!
 
 There are 5 access levels you can use: `LIST`, `READ`, `WRITE`, `PERMISSION_MANAGEMENT` and `TAGGING`:
 
@@ -106,8 +85,7 @@ new statement.Ec2()
     .allActions(
         statement.AccessLevel.LIST,
         statement.AccessLevel.READ
-    )
-    .onResources('*');
+    );
 ```
 
 The `allActions()` method also accepts regular expressions which test against the action name:
@@ -115,8 +93,7 @@ The `allActions()` method also accepts regular expressions which test against th
 ```typescript
 new statement.Ec2()
     .deny()
-    .allActions(/vpn/i)
-    .onResources('*');
+    .allActions(/vpn/i);
 ```
 
 If no value is passed, all actions (`ec2:*`) will be added:
@@ -124,8 +101,7 @@ If no value is passed, all actions (`ec2:*`) will be added:
 ```typescript
 new statement.Ec2()
     .allow()
-    .allActions()
-    .onResources('*');
+    .allActions();
 ```
 
 To add conditions to the statement you can use `withCondition()`:
@@ -134,10 +110,21 @@ To add conditions to the statement you can use `withCondition()`:
 new statement.Ec2()
     .allow()
     .startInstances()
-    .onResources('*')
     .withCondition('StringEquals', {
         'aws:RequestTag/Owner': '${aws:username}',
     });
+```
+
+By default the statement applies to all resources. To limit to specific resources, add them via `onResources()`
+
+```typescript
+new statement.S3()
+    .allow()
+    .allActions()
+    .onResources(
+        'arn:aws:s3:::some-bucket',
+        'arn:aws:s3:::another-bucket'
+    );
 ```
 
 What about [notAction]? Yes, simply add a `not()` to the chain. Though it is important that you add it **before** you add actions.
@@ -158,14 +145,12 @@ new iam.PolicyDocument({
         new statement.Ec2()
             .allow()
             .startInstances()
-            .onResources('*')
             .withCondition('StringEquals', {
                 'aws:RequestTag/Owner': '${aws:username}',
             }),
         new statement.Ec2()
             .allow()
             .stopInstances()
-            .onResources('*')
             .withCondition('StringEquals', {
                 'ec2:ResourceTag/Owner': '${aws:username}',
             }),
@@ -174,8 +159,7 @@ new iam.PolicyDocument({
             .allActions(
                 statement.AccessLevel.LIST,
                 statement.AccessLevel.READ
-            )
-            .onResources('*'),
+            ),
     ],
 });
 ```
@@ -185,12 +169,10 @@ new iam.PolicyDocument({
     statements: [
         new statement.Cloudformation() // allow all CFN actions
             .allow()
-            .allActions()
-            .onResources('*'),
+            .allActions(),
         new statement.All() // allow absolutely everything that is triggered via CFN
             .allow()
             .allActions()
-            .onResources('*')
             .withCondition('ForAnyValue:StringEquals', {
                 'aws:CalledVia': 'cloudformation.amazonaws.com',
             }),
@@ -203,15 +185,13 @@ new iam.PolicyDocument({
             .allActions(
                 statement.AccessLevel.PERMISSION_MANAGEMENT,
                 statement.AccessLevel.WRITE
-            )
-            .onResources('*'),
+            ),
         new statement.Organizations() // even when triggered via CFN, do not allow modifications of the organization
             .deny()
             .allActions(
                 statement.AccessLevel.PERMISSION_MANAGEMENT,
                 statement.AccessLevel.WRITE
-            )
-            .onResources('*'),
+            ),
     ],
 });
 ```
@@ -283,7 +263,6 @@ This is basically the same as `addCondition()` of the original `iam.PolicyStatem
 new statement.Ec2()
     .allow()
     .startInstances()
-    .onResources('*')
     .withCondition('StringEquals', {
         'aws:RequestTag/Owner': '${aws:username}',
     });
@@ -291,7 +270,7 @@ new statement.Ec2()
 
 ### <a name='onResources'></a>onResources
 
-Limit statement to specified resources. Every statement requires a resource, so calling this method is mandatory.
+Limit statement to specified resources.
 
 This is basically the same as `addResources()` of the original `iam.PolicyStatement`. Only difference is, it returns the statement so you can use it with method chaining.
 
@@ -301,6 +280,8 @@ new statement.S3()
     .allActions()
     .onResources('arn:aws:s3:::some-bucket');
 ```
+
+If no resources are applied to the statement, it defaults to all resources (`*`). You can also be verbose and set this yourself:
 
 ```typescript
 new statement.S3()

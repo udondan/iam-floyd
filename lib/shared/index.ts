@@ -136,6 +136,20 @@ export class PolicyStatement extends iam.PolicyStatement {
         this.addResources(...arns);
         return this;
     }
+
+    /**
+     * JSON-ify the policy statement
+     *
+     * Also adds `*` to the list of resources, if not was manually added
+     *
+     * Used when JSON.stringify() is called
+     */
+    public toStatementJson(): any {
+        if (!this.hasResource) {
+            this.addResources('*');
+        }
+        return super.toStatementJson();
+    }
 }
 
 /**
