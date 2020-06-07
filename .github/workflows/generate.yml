@@ -1,15 +1,9 @@
 ---
 name: Generate Code from AWS documentation
 
-#on:
-#  schedule:
-#    - cron: "*/5 * * * *"
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - .github/workflows/generate.yml
+  schedule:
+    - cron: "*/5 * * * *"
 
 jobs:
   generate:
