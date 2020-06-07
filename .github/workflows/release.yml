@@ -46,7 +46,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-
       - name: Create tag
         run: |
           git config --local user.email "deemes79@googlemail.com"

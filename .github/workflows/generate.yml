@@ -13,7 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
         with:
-          fetch-depth: 1
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Generate code
         uses: udondan/cdk-nodejs@v0.2.0
