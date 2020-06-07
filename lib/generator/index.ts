@@ -63,7 +63,9 @@ export function getAwsServices(): Promise<string[]> {
 }
 
 export function getContent(service: string): Promise<Module> {
-    console.info(`Fetching ${service}`.grey);
+    process.stdout.write(`${service}: `.white);
+    process.stdout.write('Fetching '.grey);
+
     const urlPattern =
         'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
     return new Promise((resolve, reject) => {
@@ -76,7 +78,7 @@ export function getContent(service: string): Promise<Module> {
                 return reject(err);
             }
 
-            console.info(`Parsing ${service}`.blue);
+            process.stdout.write('Parsing '.blue);
 
             const $ = cheerio.load(body);
 
@@ -175,13 +177,12 @@ export function createModules(services: string[]) {
         for (const service of services) {
             await getContent(service).then(createModule).catch(reject);
         }
-        console.log('ALL DONE');
         resolve();
     });
 }
 
 export function createModule(module: Module): Promise<void> {
-    console.info(`Generating ${module.name}`.cyan);
+    process.stdout.write(`Generating `.cyan);
 
     var moduleName = module.name;
     if (module.fixes && 'id' in module.fixes) {
@@ -235,7 +236,7 @@ export function createModule(module: Module): Promise<void> {
     }
 
     formatCode(sourceFile);
-    console.log(`Done ${module.name.bold}`.green);
+    console.log('Done'.green);
     return sourceFile.save();
 }
 /*
@@ -437,7 +438,8 @@ export function createShared() {
 */
 
 export function createIndex() {
-    console.info('Generating index'.cyan);
+    process.stdout.write('index: '.white);
+    process.stdout.write('Generating '.cyan);
 
     const sourceFile = project.createSourceFile('./lib/index.ts');
 
@@ -454,7 +456,7 @@ export function createIndex() {
     });
 
     formatCode(sourceFile);
-    console.log('Done index'.green);
+    console.log('Done'.green);
     return sourceFile.save();
 }
 
