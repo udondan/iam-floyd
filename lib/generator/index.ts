@@ -217,7 +217,7 @@ export function createModule(module: Module): Promise<void> {
         name: 'actions',
         scope: Scope.Public,
         type: 'Actions',
-        initializer: JSON.stringify(module.actions),
+        initializer: JSON.stringify(module.actions, null, 4),
     });
 
     for (const [name, action] of Object.entries(module.actions!)) {
