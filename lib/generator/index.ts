@@ -171,25 +171,13 @@ export function getContent(service: string): Promise<Module> {
 }
 
 export function createModules(services: string[]) {
-    return new Promise((resolve, reject) => {
-        const promises: Promise<any>[] = [];
-        services.forEach((service, i) => {
-            const p = delay(i, service) // be gentle, or AWS will CAPTCHA us
-                .then(getContent)
-                .then(createModule);
-            promises.push(p);
-        });
-        Promise.all(promises).then(resolve).catch(reject);
+    return new Promise(async (resolve, reject) => {
+        for (const service of services) {
+            await getContent(service).then(createModule).catch(reject);
+        }
+        console.log('ALL DONE');
+        resolve();
     });
-}
-
-function delay(i: number, service: string): Promise<string> {
-    const factor = 1000; //1 module per second
-    return new Promise((resolve) =>
-        setTimeout(() => {
-            resolve(service);
-        }, i * factor)
-    );
 }
 
 export function createModule(module: Module): Promise<void> {
