@@ -10,13 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
-
-      - name: Test
-        run: echo ${{ steps.get_version.outputs.VERSION }}
-
       - name: Checkout code
         uses: actions/checkout@v1
         with:
@@ -26,3 +19,14 @@ jobs:
         uses: udondan/cdk-nodejs@v0.2.0
         with:
           args: make generate
+
+      - name: Commit and push changes
+        run: |
+          git diff --exit-code || (
+            perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
+            git config --local user.email "action@github.com" &&
+            git config --local user.name "GitHub Action" &&
+            git add * &&
+            git commit -m "Adds latest IAM updates from AWS" &&
+            git push
+          )
