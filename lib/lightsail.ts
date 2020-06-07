@@ -7,7 +7,1056 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Lightsail extends PolicyStatement {
     public servicePrefix = 'lightsail';
-    public actions : Actions = { "AllocateStaticIp": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html", "description": "Creates a static IP address that can be attached to an instance.", "accessLevel": "Write", "resourceTypes": { "StaticIp": { "required": true } } }, "AttachDisk": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachDisk.html", "description": "Attaches a disk to an instance.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true }, "Instance": { "required": true } } }, "AttachInstancesToLoadBalancer": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachInstancesToLoadBalancer.html", "description": "Attaches one or more instances to a load balancer.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true }, "LoadBalancer": { "required": true } } }, "AttachLoadBalancerTlsCertificate": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachLoadBalancerTlsCertificate.html", "description": "Attaches a TLS certificate to a load balancer.", "accessLevel": "Write", "resourceTypes": { "LoadBalancer": { "required": true } } }, "AttachStaticIp": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachStaticIp.html", "description": "Attaches a static IP address to an instance.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true }, "StaticIp": { "required": true } } }, "CloseInstancePublicPorts": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloseInstancePublicPorts.html", "description": "Closes a public port of an instance.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "CopySnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CopySnapshot.html", "description": "Copies a snapshot from one AWS Region to another in Amazon Lightsail.", "accessLevel": "Write" }, "CreateCloudFormationStack": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html", "description": "Creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot.", "accessLevel": "Write", "resourceTypes": { "ExportSnapshotRecord": { "required": true } } }, "CreateDisk": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDisk.html", "description": "Creates a disk.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateDiskFromSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html", "description": "Creates a disk from snapshot.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateDiskSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html", "description": "Creates a disk snapshot.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateDomain": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html", "description": "Creates a domain resource for the specified domain name.", "accessLevel": "Write", "resourceTypes": { "Domain": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateDomainEntry": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomainEntry.html", "description": "Creates one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).", "accessLevel": "Write", "resourceTypes": { "Domain": { "required": true } } }, "CreateInstanceSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html", "description": "Creates an instance snapshot.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true }, "InstanceSnapshot": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateInstances": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html", "description": "Creates one or more instances.", "accessLevel": "Write", "resourceTypes": { "KeyPair": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateInstancesFromSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html", "description": "Creates one or more instances based on an instance snapshot.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true }, "InstanceSnapshot": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateKeyPair": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html", "description": "Creates a key pair used to authenticate and connect to an instance.", "accessLevel": "Write", "resourceTypes": { "KeyPair": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateLoadBalancer": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html", "description": "Creates a load balancer.", "accessLevel": "Write", "resourceTypes": { "LoadBalancer": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateLoadBalancerTlsCertificate": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html", "description": "Creates a load balancer TLS certificate.", "accessLevel": "Write", "resourceTypes": { "LoadBalancer": { "required": true } } }, "CreateRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabase.html", "description": "Creates a new relational database.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateRelationalDatabaseFromSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html", "description": "Creates a new relational database from a snapshot.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateRelationalDatabaseSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseSnapshot.html", "description": "Creates a relational database snapshot.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabaseSnapshot": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "DeleteDisk": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDisk.html", "description": "Deletes a disk.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true } } }, "DeleteDiskSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDiskSnapshot.html", "description": "Deletes a disk snapshot.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true } } }, "DeleteDomain": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomain.html", "description": "Deletes a domain resource and all of its DNS records.", "accessLevel": "Write", "resourceTypes": { "Domain": { "required": true } } }, "DeleteDomainEntry": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html", "description": "Deletes a DNS record entry for a domain resource.", "accessLevel": "Write", "resourceTypes": { "Domain": { "required": true } } }, "DeleteInstance": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstance.html", "description": "Deletes an instance.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "DeleteInstanceSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstanceSnapshot.html", "description": "Deletes an instance snapshot.", "accessLevel": "Write", "resourceTypes": { "InstanceSnapshot": { "required": true } } }, "DeleteKeyPair": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKeyPair.html", "description": "Deletes a key pair used to authenticate and connect to an instance.", "accessLevel": "Write", "resourceTypes": { "KeyPair": { "required": true } } }, "DeleteKnownHostKeys": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKnownHostKeys.html", "description": "Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "DeleteLoadBalancer": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancer.html", "description": "Deletes a load balancer.", "accessLevel": "Write", "resourceTypes": { "LoadBalancer": { "required": true } } }, "DeleteLoadBalancerTlsCertificate": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html", "description": "Deletes a load balancer TLS certificate.", "accessLevel": "Write", "resourceTypes": { "LoadBalancer": { "required": true } } }, "DeleteRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabase.html", "description": "Deletes a relational database.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "DeleteRelationalDatabaseSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabaseSnapshot.html", "description": "Deletes relational database snapshot.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabaseSnapshot": { "required": true } } }, "DetachDisk": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachDisk.html", "description": "Detaches a disk from an instance.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": true } } }, "DetachInstancesFromLoadBalancer": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html", "description": "Detaches one or more instances from a load balancer.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true }, "LoadBalancer": { "required": true } } }, "DetachStaticIp": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachStaticIp.html", "description": "Detaches a static IP from an instance to which it is attached.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true }, "StaticIp": { "required": true } } }, "DownloadDefaultKeyPair": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html", "description": "Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region.", "accessLevel": "Write", "resourceTypes": { "KeyPair": { "required": true } } }, "ExportSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html", "description": "Exports an Amazon Lightsail snapshot to Amazon EC2.", "accessLevel": "Write" }, "GetActiveNames": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetActiveNames.html", "description": "Returns the names of all active (not deleted) resources.", "accessLevel": "Read" }, "GetBlueprints": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html", "description": "Returns a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance.", "accessLevel": "List" }, "GetBundles": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBundles.html", "description": "Returns a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance.", "accessLevel": "List" }, "GetCloudFormationStackRecords": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCloudFormationStackRecords.html", "description": "Returns information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots.", "accessLevel": "List", "resourceTypes": { "CloudFormationStackRecord": { "required": true } } }, "GetDisk": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisk.html", "description": "Returns information about a disk.", "accessLevel": "Read", "resourceTypes": { "Disk": { "required": true } } }, "GetDiskSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshot.html", "description": "Returns information about a disk snapshot.", "accessLevel": "Read", "resourceTypes": { "Disk": { "required": true } } }, "GetDiskSnapshots": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshots.html", "description": "Returns information about all disk snapshots.", "accessLevel": "List", "resourceTypes": { "Disk": { "required": true } } }, "GetDisks": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisks.html", "description": "Returns information about all disks.", "accessLevel": "List" }, "GetDomain": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomain.html", "description": "Returns DNS records for a domain resource.", "accessLevel": "Read", "resourceTypes": { "Domain": { "required": true } } }, "GetDomains": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomains.html", "description": "Returns DNS records for all domain resources.", "accessLevel": "Read", "resourceTypes": { "Domain": { "required": true } } }, "GetExportSnapshotRecords": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetExportSnapshotRecords.html", "description": "Returns information about all records to export Amazon Lightsail snapshots to Amazon EC2.", "accessLevel": "List", "resourceTypes": { "ExportSnapshotRecord": { "required": true } } }, "GetInstance": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstance.html", "description": "Returns information about an instance.", "accessLevel": "Read", "resourceTypes": { "Instance": { "required": true } } }, "GetInstanceAccessDetails": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceAccessDetails.html", "description": "Returns temporary keys you can use to authenticate and connect to an instance.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "GetInstanceMetricData": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceMetricData.html", "description": "Returns the data points for the specified metric of an instance.", "accessLevel": "Read", "resourceTypes": { "Instance": { "required": true } } }, "GetInstancePortStates": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstancePortStates.html", "description": "Returns the port states of an instance.", "accessLevel": "Read", "resourceTypes": { "Instance": { "required": true } } }, "GetInstanceSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html", "description": "Returns information about an instance snapshot.", "accessLevel": "Read", "resourceTypes": { "InstanceSnapshot": { "required": true } } }, "GetInstanceSnapshots": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshots.html", "description": "Returns information about all instance snapshots.", "accessLevel": "List", "resourceTypes": { "InstanceSnapshot": { "required": true } } }, "GetInstanceState": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceState.html", "description": "Returns the state of an instance.", "accessLevel": "Read", "resourceTypes": { "Instance": { "required": true } } }, "GetInstances": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html", "description": "Returns information about all instances.", "accessLevel": "Read", "resourceTypes": { "Instance": { "required": true } } }, "GetKeyPair": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPair.html", "description": "Returns information about a key pair.", "accessLevel": "List", "resourceTypes": { "KeyPair": { "required": true } } }, "GetKeyPairs": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPairs.html", "description": "Returns information about all key pairs.", "accessLevel": "Read", "resourceTypes": { "KeyPair": { "required": true } } }, "GetLoadBalancer": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancer.html", "description": "Returns information about a load balancer.", "accessLevel": "Read", "resourceTypes": { "LoadBalancer": { "required": true } } }, "GetLoadBalancerMetricData": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerMetricData.html", "description": "Returns the data points for the specified metric of a load balancer.", "accessLevel": "Read", "resourceTypes": { "LoadBalancer": { "required": true } } }, "GetLoadBalancerTlsCertificates": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html", "description": "Returns information about a load balancer TLS certificate.", "accessLevel": "Read", "resourceTypes": { "LoadBalancer": { "required": true } } }, "GetLoadBalancers": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancers.html", "description": "Returns information about load balancers.", "accessLevel": "Read", "resourceTypes": { "LoadBalancer": { "required": true } } }, "GetOperation": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperation.html", "description": "Returns information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.", "accessLevel": "Read" }, "GetOperations": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperations.html", "description": "Returns information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.", "accessLevel": "Read" }, "GetOperationsForResource": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperationsForResource.html", "description": "Returns operations for a resource.", "accessLevel": "Read", "resourceTypes": { "Domain": { "required": false }, "Instance": { "required": false }, "InstanceSnapshot": { "required": false }, "KeyPair": { "required": false }, "StaticIp": { "required": false } } }, "GetRegions": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html", "description": "Returns a list of all valid AWS Regions for Amazon Lightsail.", "accessLevel": "List" }, "GetRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabase.html", "description": "Returns information about a relational database.", "accessLevel": "List", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "GetRelationalDatabaseBlueprints": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html", "description": "Returns a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database.", "accessLevel": "List" }, "GetRelationalDatabaseBundles": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBundles.html", "description": "Returns a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database.", "accessLevel": "List" }, "GetRelationalDatabaseEvents": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseEvents.html", "description": "Returns events for a relational database.", "accessLevel": "Read" }, "GetRelationalDatabaseLogEvents": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogEvents.html", "description": "Returns events for the specified log stream of a relational database.", "accessLevel": "Read" }, "GetRelationalDatabaseLogStreams": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogStreams.html", "description": "Returns the log streams available for a relational database.", "accessLevel": "Read" }, "GetRelationalDatabaseMasterUserPassword": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMasterUserPassword.html", "description": "Returns the master user password of a relational database.", "accessLevel": "Write" }, "GetRelationalDatabaseMetricData": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMetricData.html", "description": "Returns the data points for the specified metric of a relational database.", "accessLevel": "Read" }, "GetRelationalDatabaseParameters": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseParameters.html", "description": "Returns the parameters of a relational database.", "accessLevel": "List" }, "GetRelationalDatabaseSnapshot": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html", "description": "Returns information about a relational database snapshot.", "accessLevel": "List", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "GetRelationalDatabaseSnapshots": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html", "description": "Returns information about all relational database snapshots.", "accessLevel": "List", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "GetRelationalDatabases": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabases.html", "description": "Return information about all relational databases.", "accessLevel": "Read", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "GetStaticIp": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html", "description": "Returns information about a static IP.", "accessLevel": "Read", "resourceTypes": { "StaticIp": { "required": true } } }, "GetStaticIps": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIps.html", "description": "Returns information about all static IPs.", "accessLevel": "Read", "resourceTypes": { "StaticIp": { "required": true } } }, "ImportKeyPair": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html", "description": "Imports a public key from a key pair.", "accessLevel": "Write", "resourceTypes": { "KeyPair": { "required": true } } }, "IsVpcPeered": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_IsVpcPeered.html", "description": "Returns a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered.", "accessLevel": "Read" }, "OpenInstancePublicPorts": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_OpenInstancePublicPorts.html", "description": "Adds, or opens a public port of an instance.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "PeerVpc": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PeerVpc.html", "description": "Tries to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC.", "accessLevel": "Write" }, "PutInstancePublicPorts": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutInstancePublicPorts.html", "description": "Sets the specified open ports for an instance, and closes all ports for every protocol not included in the request.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "RebootInstance": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootInstance.html", "description": "Reboots an instance that is in a running state.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "RebootRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootRelationalDatabase.html", "description": "Reboots a relational database that is in a running state.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "ReleaseStaticIp": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ReleaseStaticIp.html", "description": "Deletes a static IP.", "accessLevel": "Write", "resourceTypes": { "StaticIp": { "required": true } } }, "StartInstance": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartInstance.html", "description": "Starts an instance that is in a stopped state.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "StartRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartRelationalDatabase.html", "description": "Starts a relational database that is in a stopped state.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "StopInstance": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopInstance.html", "description": "Stops an instance that is in a running state.", "accessLevel": "Write", "resourceTypes": { "Instance": { "required": true } } }, "StopRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopRelationalDatabase.html", "description": "Stops a relational database that is in a running state.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html", "description": "Tags a resource.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": false }, "DiskSnapshot": { "required": false }, "Domain": { "required": false }, "Instance": { "required": false }, "InstanceSnapshot": { "required": false }, "KeyPair": { "required": false }, "LoadBalancer": { "required": false }, "RelationalDatabase": { "required": false }, "RelationalDatabaseSnapshot": { "required": false }, "StaticIp": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UnpeerVpc": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UnpeerVpc.html", "description": "Attempts to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC.", "accessLevel": "Write" }, "UntagResource": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html", "description": "Untags a resource.", "accessLevel": "Write", "resourceTypes": { "Disk": { "required": false }, "DiskSnapshot": { "required": false }, "Domain": { "required": false }, "Instance": { "required": false }, "InstanceSnapshot": { "required": false }, "KeyPair": { "required": false }, "LoadBalancer": { "required": false }, "RelationalDatabase": { "required": false }, "RelationalDatabaseSnapshot": { "required": false }, "StaticIp": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UpdateDomainEntry": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDomainEntry.html", "description": "Updates a domain recordset after it is created.", "accessLevel": "Write", "resourceTypes": { "Domain": { "required": true } } }, "UpdateLoadBalancerAttribute": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html", "description": "Updates a load balancer attribute, such as the health check path and session stickiness.", "accessLevel": "Write", "resourceTypes": { "LoadBalancer": { "required": true } } }, "UpdateRelationalDatabase": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabase.html", "description": "Updates a relational database.", "accessLevel": "Write", "resourceTypes": { "RelationalDatabase": { "required": true } } }, "UpdateRelationalDatabaseParameters": { "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabaseParameters.html", "description": "Updates the parameters of a relational database.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "AllocateStaticIp": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html",
+            "description": "Creates a static IP address that can be attached to an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "StaticIp": {
+                    "required": true
+                }
+            }
+        },
+        "AttachDisk": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachDisk.html",
+            "description": "Attaches a disk to an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                },
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "AttachInstancesToLoadBalancer": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachInstancesToLoadBalancer.html",
+            "description": "Attaches one or more instances to a load balancer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                },
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "AttachLoadBalancerTlsCertificate": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachLoadBalancerTlsCertificate.html",
+            "description": "Attaches a TLS certificate to a load balancer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "AttachStaticIp": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachStaticIp.html",
+            "description": "Attaches a static IP address to an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                },
+                "StaticIp": {
+                    "required": true
+                }
+            }
+        },
+        "CloseInstancePublicPorts": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloseInstancePublicPorts.html",
+            "description": "Closes a public port of an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "CopySnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CopySnapshot.html",
+            "description": "Copies a snapshot from one AWS Region to another in Amazon Lightsail.",
+            "accessLevel": "Write"
+        },
+        "CreateCloudFormationStack": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html",
+            "description": "Creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "ExportSnapshotRecord": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDisk": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDisk.html",
+            "description": "Creates a disk.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateDiskFromSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html",
+            "description": "Creates a disk from snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateDiskSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html",
+            "description": "Creates a disk snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateDomain": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html",
+            "description": "Creates a domain resource for the specified domain name.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateDomainEntry": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomainEntry.html",
+            "description": "Creates one or more DNS record entries for a domain resource: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            }
+        },
+        "CreateInstanceSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html",
+            "description": "Creates an instance snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                },
+                "InstanceSnapshot": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateInstances": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html",
+            "description": "Creates one or more instances.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateInstancesFromSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html",
+            "description": "Creates one or more instances based on an instance snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                },
+                "InstanceSnapshot": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateKeyPair": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html",
+            "description": "Creates a key pair used to authenticate and connect to an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateLoadBalancer": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html",
+            "description": "Creates a load balancer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateLoadBalancerTlsCertificate": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html",
+            "description": "Creates a load balancer TLS certificate.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "CreateRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabase.html",
+            "description": "Creates a new relational database.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateRelationalDatabaseFromSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html",
+            "description": "Creates a new relational database from a snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateRelationalDatabaseSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseSnapshot.html",
+            "description": "Creates a relational database snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabaseSnapshot": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "DeleteDisk": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDisk.html",
+            "description": "Deletes a disk.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDiskSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDiskSnapshot.html",
+            "description": "Deletes a disk snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDomain": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomain.html",
+            "description": "Deletes a domain resource and all of its DNS records.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDomainEntry": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html",
+            "description": "Deletes a DNS record entry for a domain resource.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteInstance": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstance.html",
+            "description": "Deletes an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteInstanceSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstanceSnapshot.html",
+            "description": "Deletes an instance snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "InstanceSnapshot": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteKeyPair": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKeyPair.html",
+            "description": "Deletes a key pair used to authenticate and connect to an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteKnownHostKeys": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKnownHostKeys.html",
+            "description": "Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteLoadBalancer": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancer.html",
+            "description": "Deletes a load balancer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteLoadBalancerTlsCertificate": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html",
+            "description": "Deletes a load balancer TLS certificate.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabase.html",
+            "description": "Deletes a relational database.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteRelationalDatabaseSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabaseSnapshot.html",
+            "description": "Deletes relational database snapshot.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabaseSnapshot": {
+                    "required": true
+                }
+            }
+        },
+        "DetachDisk": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachDisk.html",
+            "description": "Detaches a disk from an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            }
+        },
+        "DetachInstancesFromLoadBalancer": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html",
+            "description": "Detaches one or more instances from a load balancer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                },
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "DetachStaticIp": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachStaticIp.html",
+            "description": "Detaches a static IP from an instance to which it is attached.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                },
+                "StaticIp": {
+                    "required": true
+                }
+            }
+        },
+        "DownloadDefaultKeyPair": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html",
+            "description": "Downloads the default key pair used to authenticate and connect to instances in a specific AWS Region.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            }
+        },
+        "ExportSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html",
+            "description": "Exports an Amazon Lightsail snapshot to Amazon EC2.",
+            "accessLevel": "Write"
+        },
+        "GetActiveNames": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetActiveNames.html",
+            "description": "Returns the names of all active (not deleted) resources.",
+            "accessLevel": "Read"
+        },
+        "GetBlueprints": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html",
+            "description": "Returns a list of instance images, or blueprints. You can use a blueprint to create a new instance already running a specific operating system, as well as a pre-installed application or development stack. The software that runs on your instance depends on the blueprint you define when creating the instance.",
+            "accessLevel": "List"
+        },
+        "GetBundles": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBundles.html",
+            "description": "Returns a list of instance bundles. You can use a bundle to create a new instance with a set of performance specifications, such as CPU count, disk size, RAM size, and network transfer allowance. The cost of your instance depends on the bundle you define when creating the instance.",
+            "accessLevel": "List"
+        },
+        "GetCloudFormationStackRecords": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCloudFormationStackRecords.html",
+            "description": "Returns information about all CloudFormation stacks used to create Amazon EC2 resources from exported Amazon Lightsail snapshots.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "CloudFormationStackRecord": {
+                    "required": true
+                }
+            }
+        },
+        "GetDisk": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisk.html",
+            "description": "Returns information about a disk.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            }
+        },
+        "GetDiskSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshot.html",
+            "description": "Returns information about a disk snapshot.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            }
+        },
+        "GetDiskSnapshots": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshots.html",
+            "description": "Returns information about all disk snapshots.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Disk": {
+                    "required": true
+                }
+            }
+        },
+        "GetDisks": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisks.html",
+            "description": "Returns information about all disks.",
+            "accessLevel": "List"
+        },
+        "GetDomain": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomain.html",
+            "description": "Returns DNS records for a domain resource.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            }
+        },
+        "GetDomains": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomains.html",
+            "description": "Returns DNS records for all domain resources.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            }
+        },
+        "GetExportSnapshotRecords": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetExportSnapshotRecords.html",
+            "description": "Returns information about all records to export Amazon Lightsail snapshots to Amazon EC2.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "ExportSnapshotRecord": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstance": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstance.html",
+            "description": "Returns information about an instance.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstanceAccessDetails": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceAccessDetails.html",
+            "description": "Returns temporary keys you can use to authenticate and connect to an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstanceMetricData": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceMetricData.html",
+            "description": "Returns the data points for the specified metric of an instance.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstancePortStates": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstancePortStates.html",
+            "description": "Returns the port states of an instance.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstanceSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html",
+            "description": "Returns information about an instance snapshot.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "InstanceSnapshot": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstanceSnapshots": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshots.html",
+            "description": "Returns information about all instance snapshots.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "InstanceSnapshot": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstanceState": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceState.html",
+            "description": "Returns the state of an instance.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "GetInstances": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html",
+            "description": "Returns information about all instances.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "GetKeyPair": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPair.html",
+            "description": "Returns information about a key pair.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            }
+        },
+        "GetKeyPairs": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPairs.html",
+            "description": "Returns information about all key pairs.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            }
+        },
+        "GetLoadBalancer": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancer.html",
+            "description": "Returns information about a load balancer.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "GetLoadBalancerMetricData": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerMetricData.html",
+            "description": "Returns the data points for the specified metric of a load balancer.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "GetLoadBalancerTlsCertificates": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html",
+            "description": "Returns information about a load balancer TLS certificate.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "GetLoadBalancers": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancers.html",
+            "description": "Returns information about load balancers.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "GetOperation": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperation.html",
+            "description": "Returns information about an operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.",
+            "accessLevel": "Read"
+        },
+        "GetOperations": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperations.html",
+            "description": "Returns information about all operations. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.",
+            "accessLevel": "Read"
+        },
+        "GetOperationsForResource": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperationsForResource.html",
+            "description": "Returns operations for a resource.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Domain": {
+                    "required": false
+                },
+                "Instance": {
+                    "required": false
+                },
+                "InstanceSnapshot": {
+                    "required": false
+                },
+                "KeyPair": {
+                    "required": false
+                },
+                "StaticIp": {
+                    "required": false
+                }
+            }
+        },
+        "GetRegions": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html",
+            "description": "Returns a list of all valid AWS Regions for Amazon Lightsail.",
+            "accessLevel": "List"
+        },
+        "GetRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabase.html",
+            "description": "Returns information about a relational database.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "GetRelationalDatabaseBlueprints": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html",
+            "description": "Returns a list of relational database images, or blueprints. You can use a blueprint to create a new database running a specific database engine. The database engine that runs on your database depends on the blueprint you define when creating the relational database.",
+            "accessLevel": "List"
+        },
+        "GetRelationalDatabaseBundles": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBundles.html",
+            "description": "Returns a list of relational database bundles. You can use a bundle to create a new database with a set of performance specifications, such as CPU count, disk size, RAM size, network transfer allowance, and standard of high availability. The cost of your database depends on the bundle you define when creating the relational database.",
+            "accessLevel": "List"
+        },
+        "GetRelationalDatabaseEvents": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseEvents.html",
+            "description": "Returns events for a relational database.",
+            "accessLevel": "Read"
+        },
+        "GetRelationalDatabaseLogEvents": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogEvents.html",
+            "description": "Returns events for the specified log stream of a relational database.",
+            "accessLevel": "Read"
+        },
+        "GetRelationalDatabaseLogStreams": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogStreams.html",
+            "description": "Returns the log streams available for a relational database.",
+            "accessLevel": "Read"
+        },
+        "GetRelationalDatabaseMasterUserPassword": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMasterUserPassword.html",
+            "description": "Returns the master user password of a relational database.",
+            "accessLevel": "Write"
+        },
+        "GetRelationalDatabaseMetricData": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMetricData.html",
+            "description": "Returns the data points for the specified metric of a relational database.",
+            "accessLevel": "Read"
+        },
+        "GetRelationalDatabaseParameters": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseParameters.html",
+            "description": "Returns the parameters of a relational database.",
+            "accessLevel": "List"
+        },
+        "GetRelationalDatabaseSnapshot": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html",
+            "description": "Returns information about a relational database snapshot.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "GetRelationalDatabaseSnapshots": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html",
+            "description": "Returns information about all relational database snapshots.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "GetRelationalDatabases": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabases.html",
+            "description": "Return information about all relational databases.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "GetStaticIp": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html",
+            "description": "Returns information about a static IP.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "StaticIp": {
+                    "required": true
+                }
+            }
+        },
+        "GetStaticIps": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIps.html",
+            "description": "Returns information about all static IPs.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "StaticIp": {
+                    "required": true
+                }
+            }
+        },
+        "ImportKeyPair": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html",
+            "description": "Imports a public key from a key pair.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "KeyPair": {
+                    "required": true
+                }
+            }
+        },
+        "IsVpcPeered": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_IsVpcPeered.html",
+            "description": "Returns a boolean value indicating whether the Amazon Lightsail virtual private cloud (VPC) is peered.",
+            "accessLevel": "Read"
+        },
+        "OpenInstancePublicPorts": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_OpenInstancePublicPorts.html",
+            "description": "Adds, or opens a public port of an instance.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "PeerVpc": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PeerVpc.html",
+            "description": "Tries to peer the Amazon Lightsail virtual private cloud (VPC) with the default VPC.",
+            "accessLevel": "Write"
+        },
+        "PutInstancePublicPorts": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutInstancePublicPorts.html",
+            "description": "Sets the specified open ports for an instance, and closes all ports for every protocol not included in the request.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "RebootInstance": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootInstance.html",
+            "description": "Reboots an instance that is in a running state.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "RebootRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootRelationalDatabase.html",
+            "description": "Reboots a relational database that is in a running state.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "ReleaseStaticIp": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ReleaseStaticIp.html",
+            "description": "Deletes a static IP.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "StaticIp": {
+                    "required": true
+                }
+            }
+        },
+        "StartInstance": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartInstance.html",
+            "description": "Starts an instance that is in a stopped state.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "StartRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartRelationalDatabase.html",
+            "description": "Starts a relational database that is in a stopped state.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "StopInstance": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopInstance.html",
+            "description": "Stops an instance that is in a running state.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Instance": {
+                    "required": true
+                }
+            }
+        },
+        "StopRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopRelationalDatabase.html",
+            "description": "Stops a relational database that is in a running state.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html",
+            "description": "Tags a resource.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": false
+                },
+                "DiskSnapshot": {
+                    "required": false
+                },
+                "Domain": {
+                    "required": false
+                },
+                "Instance": {
+                    "required": false
+                },
+                "InstanceSnapshot": {
+                    "required": false
+                },
+                "KeyPair": {
+                    "required": false
+                },
+                "LoadBalancer": {
+                    "required": false
+                },
+                "RelationalDatabase": {
+                    "required": false
+                },
+                "RelationalDatabaseSnapshot": {
+                    "required": false
+                },
+                "StaticIp": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UnpeerVpc": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UnpeerVpc.html",
+            "description": "Attempts to unpeer the Amazon Lightsail virtual private cloud (VPC) from the default VPC.",
+            "accessLevel": "Write"
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html",
+            "description": "Untags a resource.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Disk": {
+                    "required": false
+                },
+                "DiskSnapshot": {
+                    "required": false
+                },
+                "Domain": {
+                    "required": false
+                },
+                "Instance": {
+                    "required": false
+                },
+                "InstanceSnapshot": {
+                    "required": false
+                },
+                "KeyPair": {
+                    "required": false
+                },
+                "LoadBalancer": {
+                    "required": false
+                },
+                "RelationalDatabase": {
+                    "required": false
+                },
+                "RelationalDatabaseSnapshot": {
+                    "required": false
+                },
+                "StaticIp": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateDomainEntry": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDomainEntry.html",
+            "description": "Updates a domain recordset after it is created.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Domain": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateLoadBalancerAttribute": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html",
+            "description": "Updates a load balancer attribute, such as the health check path and session stickiness.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "LoadBalancer": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateRelationalDatabase": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabase.html",
+            "description": "Updates a relational database.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "RelationalDatabase": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateRelationalDatabaseParameters": {
+            "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabaseParameters.html",
+            "description": "Updates the parameters of a relational database.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Creates a static IP address that can be attached to an instance.

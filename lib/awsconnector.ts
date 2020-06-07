@@ -7,7 +7,23 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Awsconnector extends PolicyStatement {
     public servicePrefix = 'awsconnector';
-    public actions : Actions = { "GetConnectorHealth": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions", "description": "Retrieves all health metrics that were published from the Server Migration Connector.", "accessLevel": "Read" }, "RegisterConnector": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions", "description": "Registers AWS Connector with AWS Connector Service.", "accessLevel": "Write" }, "ValidateConnectorId": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions", "description": "Validates Server Migration Connector Id that was registered with AWS Connector Service.", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "GetConnectorHealth": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
+            "description": "Retrieves all health metrics that were published from the Server Migration Connector.",
+            "accessLevel": "Read"
+        },
+        "RegisterConnector": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
+            "description": "Registers AWS Connector with AWS Connector Service.",
+            "accessLevel": "Write"
+        },
+        "ValidateConnectorId": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
+            "description": "Validates Server Migration Connector Id that was registered with AWS Connector Service.",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Retrieves all health metrics that were published from the Server Migration Connector.

@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class RdsDb extends PolicyStatement {
     public servicePrefix = 'rds-db';
-    public actions : Actions = { "connect": { "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html", "description": "Allows IAM role or user to connect to RDS database", "accessLevel": "Permissions management", "resourceTypes": { "db-user": { "required": true } } } };
+    public actions : Actions = {
+        "connect": {
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html",
+            "description": "Allows IAM role or user to connect to RDS database",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "db-user": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Allows IAM role or user to connect to RDS database

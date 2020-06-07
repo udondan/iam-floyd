@@ -7,7 +7,232 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Deepracer extends PolicyStatement {
     public servicePrefix = 'deepracer';
-    public actions : Actions = { "CloneReinforcementLearningModel": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model", "description": "Grants permission to clone existing DeepRacer models", "accessLevel": "Write", "resourceTypes": { "reinforcement_learning_model": { "required": true }, "track": { "required": true } } }, "CreateAccountResources": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to create resources needed by DeepRacer on behalf of the user", "accessLevel": "Write" }, "CreateLeaderboardSubmission": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to submit DeepRacer models to be evaluated for leaderboards", "accessLevel": "Write", "resourceTypes": { "leaderboard": { "required": true }, "reinforcement_learning_model": { "required": true } } }, "CreateReinforcementLearningModel": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to create reinforcement learning models for DeepRacer", "accessLevel": "Write", "resourceTypes": { "track": { "required": true } } }, "DeleteAccountResources": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to delete resources created by DeepRacer on behalf of the user", "accessLevel": "Write" }, "DeleteModel": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to delete DeepRacer models", "accessLevel": "Write", "resourceTypes": { "reinforcement_learning_model": { "required": true } } }, "GetAccountResources": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to retrieve the resources created by DeepRacer on behalf of the user", "accessLevel": "Read" }, "GetAlias": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to retrieve the user's alias for submitting DeepRacer models to leaderboards", "accessLevel": "Read" }, "GetEvaluation": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html", "description": "Grants permission to retrieve information about existing DeepRacer models' evaluation jobs", "accessLevel": "Read", "resourceTypes": { "evaluation_job": { "required": true } } }, "GetLatestUserSubmission": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to retrieve information about how the latest submitted DeepRacer model for a user performed on a leaderboard", "accessLevel": "Read", "resourceTypes": { "leaderboard": { "required": true } } }, "GetLeaderboard": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to retrieve information about leaderboards", "accessLevel": "Read", "resourceTypes": { "leaderboard": { "required": true } } }, "GetModel": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to retrieve information about existing DeepRacer models", "accessLevel": "Read", "resourceTypes": { "reinforcement_learning_model": { "required": true } } }, "GetRankedUserSubmission": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to retrieve information about the performance of a user's DeepRacer model that got placed on a leaderboard", "accessLevel": "Read", "resourceTypes": { "leaderboard": { "required": true } } }, "GetTrack": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html", "description": "Grants permission to retrieve information about DeepRacer tracks", "accessLevel": "Read", "resourceTypes": { "track": { "required": true } } }, "GetTrainingJob": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to retrieve information about existing DeepRacer models' training job", "accessLevel": "Read", "resourceTypes": { "training_job": { "required": true } } }, "ListEvaluations": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html", "description": "Grants permission to list DeepRacer models' evaluation jobs", "accessLevel": "List", "resourceTypes": { "reinforcement_learning_model": { "required": true } } }, "ListLeaderboardSubmissions": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to list all the submissions of DeepRacer models of a user on a leaderboard", "accessLevel": "List", "resourceTypes": { "leaderboard": { "required": true } } }, "ListLeaderboards": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to list all the available leaderboards", "accessLevel": "List" }, "ListModels": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to list all existing DeepRacer models", "accessLevel": "List" }, "ListTracks": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html", "description": "Grants permission to list all DeepRacer tracks", "accessLevel": "List" }, "ListTrainingJobs": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to list DeepRacer models' training jobs", "accessLevel": "List", "resourceTypes": { "reinforcement_learning_model": { "required": true } } }, "SetAlias": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html", "description": "Grants permission to set the user's alias for submitting DeepRacer models to leaderboards", "accessLevel": "Write" }, "StartEvaluation": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html", "description": "Grants permission to evaluate DeepRacer models in a simulated environment", "accessLevel": "Write", "resourceTypes": { "reinforcement_learning_model": { "required": true }, "track": { "required": true } } }, "StopEvaluation": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html", "description": "Grants permission to stop DeepRacer model evaluations", "accessLevel": "Write", "resourceTypes": { "evaluation_job": { "required": true } } }, "StopTrainingReinforcementLearningModel": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html", "description": "Grants permission to stop training DeepRacer models", "accessLevel": "Write", "resourceTypes": { "reinforcement_learning_model": { "required": true } } }, "TestRewardFunction": { "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-train-models-define-reward-function", "description": "Grants permission to test reward functions for correctness", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CloneReinforcementLearningModel": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model",
+            "description": "Grants permission to clone existing DeepRacer models",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                },
+                "track": {
+                    "required": true
+                }
+            }
+        },
+        "CreateAccountResources": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to create resources needed by DeepRacer on behalf of the user",
+            "accessLevel": "Write"
+        },
+        "CreateLeaderboardSubmission": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to submit DeepRacer models to be evaluated for leaderboards",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "leaderboard": {
+                    "required": true
+                },
+                "reinforcement_learning_model": {
+                    "required": true
+                }
+            }
+        },
+        "CreateReinforcementLearningModel": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to create reinforcement learning models for DeepRacer",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "track": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteAccountResources": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to delete resources created by DeepRacer on behalf of the user",
+            "accessLevel": "Write"
+        },
+        "DeleteModel": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to delete DeepRacer models",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                }
+            }
+        },
+        "GetAccountResources": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to retrieve the resources created by DeepRacer on behalf of the user",
+            "accessLevel": "Read"
+        },
+        "GetAlias": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to retrieve the user's alias for submitting DeepRacer models to leaderboards",
+            "accessLevel": "Read"
+        },
+        "GetEvaluation": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html",
+            "description": "Grants permission to retrieve information about existing DeepRacer models' evaluation jobs",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "evaluation_job": {
+                    "required": true
+                }
+            }
+        },
+        "GetLatestUserSubmission": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to retrieve information about how the latest submitted DeepRacer model for a user performed on a leaderboard",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "leaderboard": {
+                    "required": true
+                }
+            }
+        },
+        "GetLeaderboard": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to retrieve information about leaderboards",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "leaderboard": {
+                    "required": true
+                }
+            }
+        },
+        "GetModel": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to retrieve information about existing DeepRacer models",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                }
+            }
+        },
+        "GetRankedUserSubmission": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to retrieve information about the performance of a user's DeepRacer model that got placed on a leaderboard",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "leaderboard": {
+                    "required": true
+                }
+            }
+        },
+        "GetTrack": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html",
+            "description": "Grants permission to retrieve information about DeepRacer tracks",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "track": {
+                    "required": true
+                }
+            }
+        },
+        "GetTrainingJob": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to retrieve information about existing DeepRacer models' training job",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "training_job": {
+                    "required": true
+                }
+            }
+        },
+        "ListEvaluations": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html",
+            "description": "Grants permission to list DeepRacer models' evaluation jobs",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                }
+            }
+        },
+        "ListLeaderboardSubmissions": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to list all the submissions of DeepRacer models of a user on a leaderboard",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "leaderboard": {
+                    "required": true
+                }
+            }
+        },
+        "ListLeaderboards": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to list all the available leaderboards",
+            "accessLevel": "List"
+        },
+        "ListModels": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to list all existing DeepRacer models",
+            "accessLevel": "List"
+        },
+        "ListTracks": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html",
+            "description": "Grants permission to list all DeepRacer tracks",
+            "accessLevel": "List"
+        },
+        "ListTrainingJobs": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to list DeepRacer models' training jobs",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                }
+            }
+        },
+        "SetAlias": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
+            "description": "Grants permission to set the user's alias for submitting DeepRacer models to leaderboards",
+            "accessLevel": "Write"
+        },
+        "StartEvaluation": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html",
+            "description": "Grants permission to evaluate DeepRacer models in a simulated environment",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                },
+                "track": {
+                    "required": true
+                }
+            }
+        },
+        "StopEvaluation": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html",
+            "description": "Grants permission to stop DeepRacer model evaluations",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "evaluation_job": {
+                    "required": true
+                }
+            }
+        },
+        "StopTrainingReinforcementLearningModel": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
+            "description": "Grants permission to stop training DeepRacer models",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "reinforcement_learning_model": {
+                    "required": true
+                }
+            }
+        },
+        "TestRewardFunction": {
+            "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-train-models-define-reward-function",
+            "description": "Grants permission to test reward functions for correctness",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to clone existing DeepRacer models

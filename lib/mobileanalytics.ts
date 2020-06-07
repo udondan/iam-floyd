@@ -7,7 +7,23 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Mobileanalytics extends PolicyStatement {
     public servicePrefix = 'mobileanalytics';
-    public actions : Actions = { "GetFinancialReports": { "url": "", "description": "Grant access to financial metrics for an app", "accessLevel": "Read" }, "GetReports": { "url": "", "description": "Grant access to standard metrics for an app", "accessLevel": "Read" }, "PutEvents": { "url": "https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html", "description": "The PutEvents operation records one or more events", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "GetFinancialReports": {
+            "url": "",
+            "description": "Grant access to financial metrics for an app",
+            "accessLevel": "Read"
+        },
+        "GetReports": {
+            "url": "",
+            "description": "Grant access to standard metrics for an app",
+            "accessLevel": "Read"
+        },
+        "PutEvents": {
+            "url": "https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html",
+            "description": "The PutEvents operation records one or more events",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grant access to financial metrics for an app

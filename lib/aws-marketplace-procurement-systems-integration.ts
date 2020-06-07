@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement {
     public servicePrefix = 'aws-marketplace';
-    public actions : Actions = { "DescribeProcurementSystemConfiguration": { "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html", "description": "Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.", "accessLevel": "Read" }, "PutProcurementSystemConfiguration": { "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html", "description": "Creates or updates the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "DescribeProcurementSystemConfiguration": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html",
+            "description": "Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.",
+            "accessLevel": "Read"
+        },
+        "PutProcurementSystemConfiguration": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html",
+            "description": "Creates or updates the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.

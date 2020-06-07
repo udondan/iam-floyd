@@ -7,7 +7,416 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Ses extends PolicyStatement {
     public servicePrefix = 'ses';
-    public actions : Actions = { "CloneReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html", "description": "Creates a receipt rule set by cloning an existing one", "accessLevel": "Write" }, "CreateConfigurationSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html", "description": "Creates a new configuration set", "accessLevel": "Write" }, "CreateConfigurationSetEventDestination": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetEventDestination.html", "description": "Creates a configuration set event destination", "accessLevel": "Write" }, "CreateConfigurationSetTrackingOptions": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html", "description": "Creates an association between a configuration set and a custom domain for open and click event tracking", "accessLevel": "Write" }, "CreateCustomVerificationEmailTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateCustomVerificationEmailTemplate.html", "description": "Creates a new custom verification email template", "accessLevel": "Write" }, "CreateReceiptFilter": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html", "description": "Creates a new IP address filter", "accessLevel": "Write" }, "CreateReceiptRule": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html", "description": "Creates a receipt rule", "accessLevel": "Write" }, "CreateReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRuleSet.html", "description": "Creates an empty receipt rule set", "accessLevel": "Write" }, "CreateTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateTemplate.html", "description": "Creates an email template", "accessLevel": "Write" }, "DeleteConfigurationSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html", "description": "Deletes the configuration set", "accessLevel": "Write" }, "DeleteConfigurationSetEventDestination": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html", "description": "Deletes a configuration set event destination", "accessLevel": "Write" }, "DeleteConfigurationSetTrackingOptions": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetTrackingOptions.html", "description": "Deletes an association between a configuration set and a custom domain for open and click event tracking", "accessLevel": "Write" }, "DeleteCustomVerificationEmailTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteCustomVerificationEmailTemplate.html", "description": "Deletes an existing custom verification email template", "accessLevel": "Write" }, "DeleteIdentity": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html", "description": "Deletes the specified identity (an email address or a domain) from the list of verified identities", "accessLevel": "Write" }, "DeleteIdentityPolicy": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html", "description": "Deletes the specified identity (an email address or a domain) from the list of verified identities", "accessLevel": "Write" }, "DeleteReceiptFilter": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptFilter.html", "description": "Deletes the specified IP address filter", "accessLevel": "Write" }, "DeleteReceiptRule": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRule.html", "description": "Deletes the specified receipt rule", "accessLevel": "Write" }, "DeleteReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html", "description": "Deletes the specified receipt rule set and all of the receipt rules it contains", "accessLevel": "Write" }, "DeleteTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteTemplate.html", "description": "Deletes an email template", "accessLevel": "Write" }, "DeleteVerifiedEmailAddress": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteVerifiedEmailAddress.html", "description": "Deletes the specified email address from the list of verified addresses", "accessLevel": "Write" }, "DescribeActiveReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeActiveReceiptRuleSet.html", "description": "Returns the metadata and receipt rules for the receipt rule set that is currently active", "accessLevel": "Read" }, "DescribeConfigurationSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html", "description": "Returns the details of the specified configuration set", "accessLevel": "Read" }, "DescribeReceiptRule": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRule.html", "description": "Returns the details of the specified receipt rule", "accessLevel": "Read" }, "DescribeReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRuleSet.html", "description": "Returns the details of the specified receipt rule set", "accessLevel": "Read" }, "GetAccountSendingEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetAccountSendingEnabled.html", "description": "Returns the email sending status of the Amazon SES account for the current region", "accessLevel": "Read" }, "GetCustomVerificationEmailTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetCustomVerificationEmailTemplate.html", "description": "Returns the custom email verification template for the template name you specify", "accessLevel": "Read" }, "GetIdentityDkimAttributes": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityDkimAttributes.html", "description": "Returns the current status of Easy DKIM signing for an entity", "accessLevel": "Read" }, "GetIdentityMailFromDomainAttributes": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityMailFromDomainAttributes.html", "description": "Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains)", "accessLevel": "Read" }, "GetIdentityNotificationAttributes": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html", "description": "Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes", "accessLevel": "Read" }, "GetIdentityPolicies": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html", "description": "Returns the requested sending authorization policies for the given identity (an email address or a domain)", "accessLevel": "Read" }, "GetIdentityVerificationAttributes": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html", "description": "Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity", "accessLevel": "Read" }, "GetSendQuota": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendQuota.html", "description": "Returns the user's current sending limits", "accessLevel": "Read" }, "GetSendStatistics": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendStatistics.html", "description": "Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity", "accessLevel": "Read" }, "GetTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetTemplate.html", "description": "Returns the template object (which includes the Subject line, HTML part and text part) for the template you specify", "accessLevel": "Read" }, "ListConfigurationSets": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html", "description": "Returns a list of the configuration sets associated with your Amazon SES account in the current AWS Region", "accessLevel": "List" }, "ListCustomVerificationEmailTemplates": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListCustomVerificationEmailTemplates.html", "description": "Lists the existing custom verification email templates for your account in the current AWS Region", "accessLevel": "List" }, "ListIdentities": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html", "description": "Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of verification status", "accessLevel": "List" }, "ListIdentityPolicies": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentityPolicies.html", "description": "Returns a list of sending authorization policies that are attached to the given identity (an email address or a domain)", "accessLevel": "List" }, "ListReceiptFilters": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html", "description": "Lists the IP address filters associated with your AWS account", "accessLevel": "List" }, "ListReceiptRuleSets": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptRuleSets.html", "description": "Lists the receipt rule sets that exist under your AWS account", "accessLevel": "List" }, "ListTemplates": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListTemplates.html", "description": "Lists the email templates present in your Amazon SES account in the current AWS Region", "accessLevel": "List" }, "ListVerifiedEmailAddresses": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListVerifiedEmailAddresses.html", "description": "Returns a list containing all of the email addresses that have been verified", "accessLevel": "List" }, "PutIdentityPolicy": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html", "description": "Adds or updates a sending authorization policy for the specified identity (an email address or a domain)", "accessLevel": "Write" }, "ReorderReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html", "description": "Reorders the receipt rules within a receipt rule set", "accessLevel": "Write" }, "SendBounce": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html", "description": "Generates and sends a bounce message to the sender of an email you received through Amazon SES", "accessLevel": "Write", "conditions": ["ses:FromAddress"] }, "SendBulkTemplatedEmail": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html", "description": "Composes an email message to multiple destinations", "accessLevel": "Write", "resourceTypes": { "identity": { "required": true } }, "conditions": ["ses:FeedbackAddress", "ses:FromAddress", "ses:FromDisplayName", "ses:Recipients"] }, "SendCustomVerificationEmail": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendCustomVerificationEmail.html", "description": "Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it", "accessLevel": "Write", "resourceTypes": { "identity": { "required": true } }, "conditions": ["ses:FeedbackAddress", "ses:FromAddress", "ses:FromDisplayName", "ses:Recipients"] }, "SendEmail": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html", "description": "Composes an email message based on input data, and then immediately queues the message for sending", "accessLevel": "Write", "resourceTypes": { "identity": { "required": true } }, "conditions": ["ses:FeedbackAddress", "ses:FromAddress", "ses:FromDisplayName", "ses:Recipients"] }, "SendRawEmail": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html", "description": "Sends an email message, with header and content specified by the client", "accessLevel": "Write", "resourceTypes": { "identity": { "required": true } }, "conditions": ["ses:FeedbackAddress", "ses:FromAddress", "ses:FromDisplayName", "ses:Recipients"] }, "SendTemplatedEmail": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html", "description": "Composes an email message using an email template and immediately queues it for sending", "accessLevel": "Write", "resourceTypes": { "identity": { "required": true } }, "conditions": ["ses:FeedbackAddress", "ses:FromAddress", "ses:FromDisplayName", "ses:Recipients"] }, "SetActiveReceiptRuleSet": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html", "description": "Sets the specified receipt rule set as the active receipt rule set", "accessLevel": "Write" }, "SetIdentityDkimEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityDkimEnabled.html", "description": "Enables or disables Easy DKIM signing of email sent from an identity", "accessLevel": "Write" }, "SetIdentityFeedbackForwardingEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html", "description": "Given an identity (an email address or a domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email", "accessLevel": "Write" }, "SetIdentityHeadersInNotificationsEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html", "description": "Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type", "accessLevel": "Write" }, "SetIdentityMailFromDomain": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html", "description": "Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain)", "accessLevel": "Write" }, "SetIdentityNotificationTopic": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html", "description": "Given an identity (an email address or a domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the Source", "accessLevel": "Write" }, "SetReceiptRulePosition": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetReceiptRulePosition.html", "description": "Sets the position of the specified receipt rule in the receipt rule set", "accessLevel": "Write" }, "TestRenderTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_TestRenderTemplate.html", "description": "Creates a preview of the MIME content of an email when provided with a template and a set of replacement data", "accessLevel": "Write" }, "UpdateAccountSendingEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html", "description": "Enables or disables email sending across your entire Amazon SES account in the current AWS Region", "accessLevel": "Write" }, "UpdateConfigurationSetEventDestination": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html", "description": "Updates the event destination of a configuration set", "accessLevel": "Write" }, "UpdateConfigurationSetReputationMetricsEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetReputationMetricsEnabled.html", "description": "Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a given AWS Region", "accessLevel": "Write" }, "UpdateConfigurationSetSendingEnabled": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html", "description": "Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region", "accessLevel": "Write" }, "UpdateConfigurationSetTrackingOptions": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetTrackingOptions.html", "description": "Modifies an association between a configuration set and a custom domain for open and click event tracking", "accessLevel": "Write" }, "UpdateCustomVerificationEmailTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateCustomVerificationEmailTemplate.html", "description": "Updates an existing custom verification email template", "accessLevel": "Write" }, "UpdateReceiptRule": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateReceiptRule.html", "description": "Updates a receipt rule", "accessLevel": "Write" }, "UpdateTemplate": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateTemplate.html", "description": "Updates an email template", "accessLevel": "Write" }, "VerifyDomainDkim": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainDkim.html", "description": "Returns a set of DKIM tokens for a domain", "accessLevel": "Read" }, "VerifyDomainIdentity": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html", "description": "Verifies a domain", "accessLevel": "Read" }, "VerifyEmailAddress": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailAddress.html", "description": "Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second", "accessLevel": "Read" }, "VerifyEmailIdentity": { "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html", "description": "Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "CloneReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html",
+            "description": "Creates a receipt rule set by cloning an existing one",
+            "accessLevel": "Write"
+        },
+        "CreateConfigurationSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html",
+            "description": "Creates a new configuration set",
+            "accessLevel": "Write"
+        },
+        "CreateConfigurationSetEventDestination": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetEventDestination.html",
+            "description": "Creates a configuration set event destination",
+            "accessLevel": "Write"
+        },
+        "CreateConfigurationSetTrackingOptions": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html",
+            "description": "Creates an association between a configuration set and a custom domain for open and click event tracking",
+            "accessLevel": "Write"
+        },
+        "CreateCustomVerificationEmailTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateCustomVerificationEmailTemplate.html",
+            "description": "Creates a new custom verification email template",
+            "accessLevel": "Write"
+        },
+        "CreateReceiptFilter": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html",
+            "description": "Creates a new IP address filter",
+            "accessLevel": "Write"
+        },
+        "CreateReceiptRule": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html",
+            "description": "Creates a receipt rule",
+            "accessLevel": "Write"
+        },
+        "CreateReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRuleSet.html",
+            "description": "Creates an empty receipt rule set",
+            "accessLevel": "Write"
+        },
+        "CreateTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateTemplate.html",
+            "description": "Creates an email template",
+            "accessLevel": "Write"
+        },
+        "DeleteConfigurationSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html",
+            "description": "Deletes the configuration set",
+            "accessLevel": "Write"
+        },
+        "DeleteConfigurationSetEventDestination": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html",
+            "description": "Deletes a configuration set event destination",
+            "accessLevel": "Write"
+        },
+        "DeleteConfigurationSetTrackingOptions": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetTrackingOptions.html",
+            "description": "Deletes an association between a configuration set and a custom domain for open and click event tracking",
+            "accessLevel": "Write"
+        },
+        "DeleteCustomVerificationEmailTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteCustomVerificationEmailTemplate.html",
+            "description": "Deletes an existing custom verification email template",
+            "accessLevel": "Write"
+        },
+        "DeleteIdentity": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html",
+            "description": "Deletes the specified identity (an email address or a domain) from the list of verified identities",
+            "accessLevel": "Write"
+        },
+        "DeleteIdentityPolicy": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html",
+            "description": "Deletes the specified identity (an email address or a domain) from the list of verified identities",
+            "accessLevel": "Write"
+        },
+        "DeleteReceiptFilter": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptFilter.html",
+            "description": "Deletes the specified IP address filter",
+            "accessLevel": "Write"
+        },
+        "DeleteReceiptRule": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRule.html",
+            "description": "Deletes the specified receipt rule",
+            "accessLevel": "Write"
+        },
+        "DeleteReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html",
+            "description": "Deletes the specified receipt rule set and all of the receipt rules it contains",
+            "accessLevel": "Write"
+        },
+        "DeleteTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteTemplate.html",
+            "description": "Deletes an email template",
+            "accessLevel": "Write"
+        },
+        "DeleteVerifiedEmailAddress": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteVerifiedEmailAddress.html",
+            "description": "Deletes the specified email address from the list of verified addresses",
+            "accessLevel": "Write"
+        },
+        "DescribeActiveReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeActiveReceiptRuleSet.html",
+            "description": "Returns the metadata and receipt rules for the receipt rule set that is currently active",
+            "accessLevel": "Read"
+        },
+        "DescribeConfigurationSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html",
+            "description": "Returns the details of the specified configuration set",
+            "accessLevel": "Read"
+        },
+        "DescribeReceiptRule": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRule.html",
+            "description": "Returns the details of the specified receipt rule",
+            "accessLevel": "Read"
+        },
+        "DescribeReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRuleSet.html",
+            "description": "Returns the details of the specified receipt rule set",
+            "accessLevel": "Read"
+        },
+        "GetAccountSendingEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetAccountSendingEnabled.html",
+            "description": "Returns the email sending status of the Amazon SES account for the current region",
+            "accessLevel": "Read"
+        },
+        "GetCustomVerificationEmailTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetCustomVerificationEmailTemplate.html",
+            "description": "Returns the custom email verification template for the template name you specify",
+            "accessLevel": "Read"
+        },
+        "GetIdentityDkimAttributes": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityDkimAttributes.html",
+            "description": "Returns the current status of Easy DKIM signing for an entity",
+            "accessLevel": "Read"
+        },
+        "GetIdentityMailFromDomainAttributes": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityMailFromDomainAttributes.html",
+            "description": "Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains)",
+            "accessLevel": "Read"
+        },
+        "GetIdentityNotificationAttributes": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html",
+            "description": "Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes",
+            "accessLevel": "Read"
+        },
+        "GetIdentityPolicies": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html",
+            "description": "Returns the requested sending authorization policies for the given identity (an email address or a domain)",
+            "accessLevel": "Read"
+        },
+        "GetIdentityVerificationAttributes": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html",
+            "description": "Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity",
+            "accessLevel": "Read"
+        },
+        "GetSendQuota": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendQuota.html",
+            "description": "Returns the user's current sending limits",
+            "accessLevel": "Read"
+        },
+        "GetSendStatistics": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendStatistics.html",
+            "description": "Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity",
+            "accessLevel": "Read"
+        },
+        "GetTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_GetTemplate.html",
+            "description": "Returns the template object (which includes the Subject line, HTML part and text part) for the template you specify",
+            "accessLevel": "Read"
+        },
+        "ListConfigurationSets": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html",
+            "description": "Returns a list of the configuration sets associated with your Amazon SES account in the current AWS Region",
+            "accessLevel": "List"
+        },
+        "ListCustomVerificationEmailTemplates": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListCustomVerificationEmailTemplates.html",
+            "description": "Lists the existing custom verification email templates for your account in the current AWS Region",
+            "accessLevel": "List"
+        },
+        "ListIdentities": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html",
+            "description": "Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of verification status",
+            "accessLevel": "List"
+        },
+        "ListIdentityPolicies": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentityPolicies.html",
+            "description": "Returns a list of sending authorization policies that are attached to the given identity (an email address or a domain)",
+            "accessLevel": "List"
+        },
+        "ListReceiptFilters": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html",
+            "description": "Lists the IP address filters associated with your AWS account",
+            "accessLevel": "List"
+        },
+        "ListReceiptRuleSets": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptRuleSets.html",
+            "description": "Lists the receipt rule sets that exist under your AWS account",
+            "accessLevel": "List"
+        },
+        "ListTemplates": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListTemplates.html",
+            "description": "Lists the email templates present in your Amazon SES account in the current AWS Region",
+            "accessLevel": "List"
+        },
+        "ListVerifiedEmailAddresses": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ListVerifiedEmailAddresses.html",
+            "description": "Returns a list containing all of the email addresses that have been verified",
+            "accessLevel": "List"
+        },
+        "PutIdentityPolicy": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html",
+            "description": "Adds or updates a sending authorization policy for the specified identity (an email address or a domain)",
+            "accessLevel": "Write"
+        },
+        "ReorderReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html",
+            "description": "Reorders the receipt rules within a receipt rule set",
+            "accessLevel": "Write"
+        },
+        "SendBounce": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html",
+            "description": "Generates and sends a bounce message to the sender of an email you received through Amazon SES",
+            "accessLevel": "Write",
+            "conditions": [
+                "ses:FromAddress"
+            ]
+        },
+        "SendBulkTemplatedEmail": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html",
+            "description": "Composes an email message to multiple destinations",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "identity": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "ses:FeedbackAddress",
+                "ses:FromAddress",
+                "ses:FromDisplayName",
+                "ses:Recipients"
+            ]
+        },
+        "SendCustomVerificationEmail": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendCustomVerificationEmail.html",
+            "description": "Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "identity": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "ses:FeedbackAddress",
+                "ses:FromAddress",
+                "ses:FromDisplayName",
+                "ses:Recipients"
+            ]
+        },
+        "SendEmail": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html",
+            "description": "Composes an email message based on input data, and then immediately queues the message for sending",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "identity": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "ses:FeedbackAddress",
+                "ses:FromAddress",
+                "ses:FromDisplayName",
+                "ses:Recipients"
+            ]
+        },
+        "SendRawEmail": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html",
+            "description": "Sends an email message, with header and content specified by the client",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "identity": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "ses:FeedbackAddress",
+                "ses:FromAddress",
+                "ses:FromDisplayName",
+                "ses:Recipients"
+            ]
+        },
+        "SendTemplatedEmail": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html",
+            "description": "Composes an email message using an email template and immediately queues it for sending",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "identity": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "ses:FeedbackAddress",
+                "ses:FromAddress",
+                "ses:FromDisplayName",
+                "ses:Recipients"
+            ]
+        },
+        "SetActiveReceiptRuleSet": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html",
+            "description": "Sets the specified receipt rule set as the active receipt rule set",
+            "accessLevel": "Write"
+        },
+        "SetIdentityDkimEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityDkimEnabled.html",
+            "description": "Enables or disables Easy DKIM signing of email sent from an identity",
+            "accessLevel": "Write"
+        },
+        "SetIdentityFeedbackForwardingEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html",
+            "description": "Given an identity (an email address or a domain), enables or disables whether Amazon SES forwards bounce and complaint notifications as email",
+            "accessLevel": "Write"
+        },
+        "SetIdentityHeadersInNotificationsEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html",
+            "description": "Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type",
+            "accessLevel": "Write"
+        },
+        "SetIdentityMailFromDomain": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html",
+            "description": "Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain)",
+            "accessLevel": "Write"
+        },
+        "SetIdentityNotificationTopic": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html",
+            "description": "Given an identity (an email address or a domain), sets the Amazon Simple Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that identity as the Source",
+            "accessLevel": "Write"
+        },
+        "SetReceiptRulePosition": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_SetReceiptRulePosition.html",
+            "description": "Sets the position of the specified receipt rule in the receipt rule set",
+            "accessLevel": "Write"
+        },
+        "TestRenderTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_TestRenderTemplate.html",
+            "description": "Creates a preview of the MIME content of an email when provided with a template and a set of replacement data",
+            "accessLevel": "Write"
+        },
+        "UpdateAccountSendingEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html",
+            "description": "Enables or disables email sending across your entire Amazon SES account in the current AWS Region",
+            "accessLevel": "Write"
+        },
+        "UpdateConfigurationSetEventDestination": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html",
+            "description": "Updates the event destination of a configuration set",
+            "accessLevel": "Write"
+        },
+        "UpdateConfigurationSetReputationMetricsEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetReputationMetricsEnabled.html",
+            "description": "Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a given AWS Region",
+            "accessLevel": "Write"
+        },
+        "UpdateConfigurationSetSendingEnabled": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html",
+            "description": "Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region",
+            "accessLevel": "Write"
+        },
+        "UpdateConfigurationSetTrackingOptions": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetTrackingOptions.html",
+            "description": "Modifies an association between a configuration set and a custom domain for open and click event tracking",
+            "accessLevel": "Write"
+        },
+        "UpdateCustomVerificationEmailTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateCustomVerificationEmailTemplate.html",
+            "description": "Updates an existing custom verification email template",
+            "accessLevel": "Write"
+        },
+        "UpdateReceiptRule": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateReceiptRule.html",
+            "description": "Updates a receipt rule",
+            "accessLevel": "Write"
+        },
+        "UpdateTemplate": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateTemplate.html",
+            "description": "Updates an email template",
+            "accessLevel": "Write"
+        },
+        "VerifyDomainDkim": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainDkim.html",
+            "description": "Returns a set of DKIM tokens for a domain",
+            "accessLevel": "Read"
+        },
+        "VerifyDomainIdentity": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html",
+            "description": "Verifies a domain",
+            "accessLevel": "Read"
+        },
+        "VerifyEmailAddress": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailAddress.html",
+            "description": "Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second",
+            "accessLevel": "Read"
+        },
+        "VerifyEmailIdentity": {
+            "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html",
+            "description": "Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Creates a receipt rule set by cloning an existing one

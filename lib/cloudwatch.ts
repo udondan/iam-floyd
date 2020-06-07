@@ -7,7 +7,270 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Cloudwatch extends PolicyStatement {
     public servicePrefix = 'cloudwatch';
-    public actions : Actions = { "DeleteAlarms": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html", "description": "Deletes all specified alarms. In the event of an error, no alarms are deleted", "accessLevel": "Write", "resourceTypes": { "alarm": { "required": true } } }, "DeleteAnomalyDetector": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAnomalyDetector.html", "description": "Deletes the specified anomaly detection model from your account.", "accessLevel": "Write" }, "DeleteDashboards": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html", "description": "Deletes all CloudWatch dashboards that you specify", "accessLevel": "Write", "resourceTypes": { "dashboard": { "required": true } } }, "DeleteInsightRules": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteInsightRules.html", "description": "Grants permission to delete a collection of insight rules.", "accessLevel": "Write", "resourceTypes": { "insight-rule": { "required": true } } }, "DescribeAlarmHistory": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html", "description": "Retrieves history for the specified alarm", "accessLevel": "Read", "resourceTypes": { "alarm": { "required": true } } }, "DescribeAlarms": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html", "description": "Retrieves alarms with the specified names", "accessLevel": "Read", "resourceTypes": { "alarm": { "required": true } } }, "DescribeAlarmsForMetric": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html", "description": "Retrieves all alarms for a single metric", "accessLevel": "Read" }, "DescribeAnomalyDetectors": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAnomalyDetectors.html", "description": "Lists the anomaly detection models that you have created in your account.", "accessLevel": "Read" }, "DescribeInsightRules": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html", "description": "Grants permission to describe all insight rules, currently owned by the user's account.", "accessLevel": "Read" }, "DisableAlarmActions": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html", "description": "Disables actions for the specified alarms", "accessLevel": "Write", "resourceTypes": { "alarm": { "required": true } } }, "DisableInsightRules": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableInsightRules.html", "description": "Grants permission to disable a collection of insight rules.", "accessLevel": "Write", "resourceTypes": { "insight-rule": { "required": true } } }, "EnableAlarmActions": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html", "description": "Enables actions for the specified alarms", "accessLevel": "Write", "resourceTypes": { "alarm": { "required": true } } }, "EnableInsightRules": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableInsightRules.html", "description": "Grants permission to enable a collection of insight rules.", "accessLevel": "Write", "resourceTypes": { "insight-rule": { "required": true } } }, "GetDashboard": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html", "description": "Displays the details of the CloudWatch dashboard you specify", "accessLevel": "Read", "resourceTypes": { "dashboard": { "required": true } } }, "GetInsightRuleReport": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html", "description": "Grants permission to return the top-N report of unique contributors over a time range for a given insight rule.", "accessLevel": "Read", "resourceTypes": { "insight-rule": { "required": true } } }, "GetMetricData": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html", "description": "Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data", "accessLevel": "Read" }, "GetMetricStatistics": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html", "description": "Gets statistics for the specified metric", "accessLevel": "Read" }, "GetMetricWidgetImage": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html", "description": "Required to retrieve snapshots of metric widgets", "accessLevel": "Read" }, "ListDashboards": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html", "description": "Returns a list of all CloudWatch dashboards in your account", "accessLevel": "List" }, "ListMetrics": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html", "description": "Returns a list of valid metrics stored for the AWS account owner", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListTagsForResource.html", "description": "This action lists tags for an Amazon CloudWatch resource.", "accessLevel": "List", "resourceTypes": { "alarm": { "required": false }, "insight-rule": { "required": false } } }, "PutAnomalyDetector": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAnomalyDetector.html", "description": "Creates or updates an anomaly detection model for a CloudWatch metric.", "accessLevel": "Write" }, "PutDashboard": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html", "description": "Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists", "accessLevel": "Write", "resourceTypes": { "dashboard": { "required": true } } }, "PutInsightRule": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html", "description": "Grants permission to create a new insight rule or replace an existing insight rule.", "accessLevel": "Write", "resourceTypes": { "insight-rule": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "PutMetricAlarm": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html", "description": "Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric", "accessLevel": "Write", "resourceTypes": { "alarm": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "PutMetricData": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html", "description": "Publishes metric data points to Amazon CloudWatch", "accessLevel": "Write", "conditions": ["cloudwatch:namespace"] }, "SetAlarmState": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html", "description": "Temporarily sets the state of an alarm for testing purposes", "accessLevel": "Write", "resourceTypes": { "alarm": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html", "description": "This action tags an Amazon CloudWatch resource.", "accessLevel": "Tagging", "resourceTypes": { "alarm": { "required": false }, "insight-rule": { "required": false } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html", "description": "This action removes a tag from an Amazon CloudWatch resource.", "accessLevel": "Tagging", "resourceTypes": { "alarm": { "required": false }, "insight-rule": { "required": false } }, "conditions": ["aws:TagKeys"] } };
+    public actions : Actions = {
+        "DeleteAlarms": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html",
+            "description": "Deletes all specified alarms. In the event of an error, no alarms are deleted",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteAnomalyDetector": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAnomalyDetector.html",
+            "description": "Deletes the specified anomaly detection model from your account.",
+            "accessLevel": "Write"
+        },
+        "DeleteDashboards": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html",
+            "description": "Deletes all CloudWatch dashboards that you specify",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dashboard": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteInsightRules": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteInsightRules.html",
+            "description": "Grants permission to delete a collection of insight rules.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "insight-rule": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeAlarmHistory": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html",
+            "description": "Retrieves history for the specified alarm",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeAlarms": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html",
+            "description": "Retrieves alarms with the specified names",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeAlarmsForMetric": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html",
+            "description": "Retrieves all alarms for a single metric",
+            "accessLevel": "Read"
+        },
+        "DescribeAnomalyDetectors": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAnomalyDetectors.html",
+            "description": "Lists the anomaly detection models that you have created in your account.",
+            "accessLevel": "Read"
+        },
+        "DescribeInsightRules": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html",
+            "description": "Grants permission to describe all insight rules, currently owned by the user's account.",
+            "accessLevel": "Read"
+        },
+        "DisableAlarmActions": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html",
+            "description": "Disables actions for the specified alarms",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            }
+        },
+        "DisableInsightRules": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableInsightRules.html",
+            "description": "Grants permission to disable a collection of insight rules.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "insight-rule": {
+                    "required": true
+                }
+            }
+        },
+        "EnableAlarmActions": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html",
+            "description": "Enables actions for the specified alarms",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            }
+        },
+        "EnableInsightRules": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableInsightRules.html",
+            "description": "Grants permission to enable a collection of insight rules.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "insight-rule": {
+                    "required": true
+                }
+            }
+        },
+        "GetDashboard": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html",
+            "description": "Displays the details of the CloudWatch dashboard you specify",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "dashboard": {
+                    "required": true
+                }
+            }
+        },
+        "GetInsightRuleReport": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html",
+            "description": "Grants permission to return the top-N report of unique contributors over a time range for a given insight rule.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "insight-rule": {
+                    "required": true
+                }
+            }
+        },
+        "GetMetricData": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html",
+            "description": "Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data",
+            "accessLevel": "Read"
+        },
+        "GetMetricStatistics": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html",
+            "description": "Gets statistics for the specified metric",
+            "accessLevel": "Read"
+        },
+        "GetMetricWidgetImage": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html",
+            "description": "Required to retrieve snapshots of metric widgets",
+            "accessLevel": "Read"
+        },
+        "ListDashboards": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html",
+            "description": "Returns a list of all CloudWatch dashboards in your account",
+            "accessLevel": "List"
+        },
+        "ListMetrics": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html",
+            "description": "Returns a list of valid metrics stored for the AWS account owner",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListTagsForResource.html",
+            "description": "This action lists tags for an Amazon CloudWatch resource.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "alarm": {
+                    "required": false
+                },
+                "insight-rule": {
+                    "required": false
+                }
+            }
+        },
+        "PutAnomalyDetector": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAnomalyDetector.html",
+            "description": "Creates or updates an anomaly detection model for a CloudWatch metric.",
+            "accessLevel": "Write"
+        },
+        "PutDashboard": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html",
+            "description": "Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dashboard": {
+                    "required": true
+                }
+            }
+        },
+        "PutInsightRule": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html",
+            "description": "Grants permission to create a new insight rule or replace an existing insight rule.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "insight-rule": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "PutMetricAlarm": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html",
+            "description": "Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "PutMetricData": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html",
+            "description": "Publishes metric data points to Amazon CloudWatch",
+            "accessLevel": "Write",
+            "conditions": [
+                "cloudwatch:namespace"
+            ]
+        },
+        "SetAlarmState": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html",
+            "description": "Temporarily sets the state of an alarm for testing purposes",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "alarm": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html",
+            "description": "This action tags an Amazon CloudWatch resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "alarm": {
+                    "required": false
+                },
+                "insight-rule": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html",
+            "description": "This action removes a tag from an Amazon CloudWatch resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "alarm": {
+                    "required": false
+                },
+                "insight-rule": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        }
+    };
 
     /**
      * Deletes all specified alarms. In the event of an error, no alarms are deleted

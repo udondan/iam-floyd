@@ -7,7 +7,251 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Forecast extends PolicyStatement {
     public servicePrefix = 'forecast';
-    public actions : Actions = { "CreateDataset": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html", "description": "Creates a dataset", "accessLevel": "Write", "resourceTypes": { "dataset": { "required": true } } }, "CreateDatasetGroup": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html", "description": "Creates a dataset group", "accessLevel": "Write", "resourceTypes": { "datasetGroup": { "required": true } } }, "CreateDatasetImportJob": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html", "description": "Creates a dataset import job", "accessLevel": "Write", "resourceTypes": { "datasetImportJob": { "required": true } } }, "CreateForecast": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html", "description": "Creates a forecast", "accessLevel": "Write", "resourceTypes": { "predictor": { "required": true } } }, "CreateForecastExportJob": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html", "description": "Creates a forecast export job", "accessLevel": "Write", "resourceTypes": { "forecast": { "required": true } } }, "CreatePredictor": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html", "description": "Creates a predictor", "accessLevel": "Write", "resourceTypes": { "datasetGroup": { "required": true } } }, "DeleteDataset": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html", "description": "Deletes a dataset", "accessLevel": "Write", "resourceTypes": { "dataset": { "required": true } } }, "DeleteDatasetGroup": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html", "description": "Deletes a dataset group", "accessLevel": "Write", "resourceTypes": { "datasetGroup": { "required": true } } }, "DeleteDatasetImportJob": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetImportJob.html", "description": "Deletes a dataset import job", "accessLevel": "Write", "resourceTypes": { "datasetImportJob": { "required": true } } }, "DeleteForecast": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecast.html", "description": "Deletes a forecast", "accessLevel": "Write", "resourceTypes": { "forecast": { "required": true } } }, "DeleteForecastExportJob": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecastExportJob.html", "description": "Deletes a forecast export job", "accessLevel": "Write", "resourceTypes": { "forecastExport": { "required": true } } }, "DeletePredictor": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictor.html", "description": "Deletes a predictor", "accessLevel": "Write", "resourceTypes": { "predictor": { "required": true } } }, "DescribeDataset": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDataset.html", "description": "Describes a dataset", "accessLevel": "Read", "resourceTypes": { "dataset": { "required": true } } }, "DescribeDatasetGroup": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html", "description": "Describes a dataset group", "accessLevel": "Read", "resourceTypes": { "datasetGroup": { "required": true } } }, "DescribeDatasetImportJob": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html", "description": "Describes a dataset import job", "accessLevel": "Read", "resourceTypes": { "datasetImportJob": { "required": true } } }, "DescribeForecast": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecast.html", "description": "Describes a forecast", "accessLevel": "Read", "resourceTypes": { "forecast": { "required": true } } }, "DescribeForecastExportJob": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecastExportJob.html", "description": "Describes a forecast export job", "accessLevel": "Read", "resourceTypes": { "forecastExport": { "required": true } } }, "DescribePredictor": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictor.html", "description": "Describes a predictor", "accessLevel": "Read", "resourceTypes": { "predictor": { "required": true } } }, "GetAccuracyMetrics": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_GetAccuracyMetrics.html", "description": "Gets Accuracy Metrics for a predictor", "accessLevel": "Read", "resourceTypes": { "predictor": { "required": true } } }, "ListDatasetGroups": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html", "description": "Lists dataset groups", "accessLevel": "List" }, "ListDatasetImportJobs": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html", "description": "Lists dataset import jobs", "accessLevel": "List" }, "ListDatasets": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasets.html", "description": "Lists datasets", "accessLevel": "List" }, "ListForecastExportJobs": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecastExportJobs.html", "description": "Lists forecast export jobs", "accessLevel": "List" }, "ListForecasts": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecasts.html", "description": "Lists forecasts", "accessLevel": "List" }, "ListPredictors": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictors.html", "description": "Lists predictors", "accessLevel": "List" }, "QueryForecast": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html", "description": "Retrieves a forecast for a single item", "accessLevel": "Read", "resourceTypes": { "forecast": { "required": true } } }, "UpdateDatasetGroup": { "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html", "description": "Updates a dataset group", "accessLevel": "Write", "resourceTypes": { "dataset": { "required": true }, "datasetGroup": { "required": true } } } };
+    public actions : Actions = {
+        "CreateDataset": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html",
+            "description": "Creates a dataset",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dataset": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDatasetGroup": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html",
+            "description": "Creates a dataset group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "datasetGroup": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDatasetImportJob": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html",
+            "description": "Creates a dataset import job",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "datasetImportJob": {
+                    "required": true
+                }
+            }
+        },
+        "CreateForecast": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html",
+            "description": "Creates a forecast",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "predictor": {
+                    "required": true
+                }
+            }
+        },
+        "CreateForecastExportJob": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html",
+            "description": "Creates a forecast export job",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "forecast": {
+                    "required": true
+                }
+            }
+        },
+        "CreatePredictor": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html",
+            "description": "Creates a predictor",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "datasetGroup": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDataset": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html",
+            "description": "Deletes a dataset",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dataset": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDatasetGroup": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html",
+            "description": "Deletes a dataset group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "datasetGroup": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDatasetImportJob": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetImportJob.html",
+            "description": "Deletes a dataset import job",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "datasetImportJob": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteForecast": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecast.html",
+            "description": "Deletes a forecast",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "forecast": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteForecastExportJob": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecastExportJob.html",
+            "description": "Deletes a forecast export job",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "forecastExport": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePredictor": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictor.html",
+            "description": "Deletes a predictor",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "predictor": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeDataset": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDataset.html",
+            "description": "Describes a dataset",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "dataset": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeDatasetGroup": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html",
+            "description": "Describes a dataset group",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "datasetGroup": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeDatasetImportJob": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html",
+            "description": "Describes a dataset import job",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "datasetImportJob": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeForecast": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecast.html",
+            "description": "Describes a forecast",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "forecast": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeForecastExportJob": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecastExportJob.html",
+            "description": "Describes a forecast export job",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "forecastExport": {
+                    "required": true
+                }
+            }
+        },
+        "DescribePredictor": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictor.html",
+            "description": "Describes a predictor",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "predictor": {
+                    "required": true
+                }
+            }
+        },
+        "GetAccuracyMetrics": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_GetAccuracyMetrics.html",
+            "description": "Gets Accuracy Metrics for a predictor",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "predictor": {
+                    "required": true
+                }
+            }
+        },
+        "ListDatasetGroups": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html",
+            "description": "Lists dataset groups",
+            "accessLevel": "List"
+        },
+        "ListDatasetImportJobs": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html",
+            "description": "Lists dataset import jobs",
+            "accessLevel": "List"
+        },
+        "ListDatasets": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasets.html",
+            "description": "Lists datasets",
+            "accessLevel": "List"
+        },
+        "ListForecastExportJobs": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecastExportJobs.html",
+            "description": "Lists forecast export jobs",
+            "accessLevel": "List"
+        },
+        "ListForecasts": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecasts.html",
+            "description": "Lists forecasts",
+            "accessLevel": "List"
+        },
+        "ListPredictors": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictors.html",
+            "description": "Lists predictors",
+            "accessLevel": "List"
+        },
+        "QueryForecast": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html",
+            "description": "Retrieves a forecast for a single item",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "forecast": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateDatasetGroup": {
+            "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html",
+            "description": "Updates a dataset group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dataset": {
+                    "required": true
+                },
+                "datasetGroup": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Creates a dataset

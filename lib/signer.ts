@@ -7,7 +7,115 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Signer extends PolicyStatement {
     public servicePrefix = 'signer';
-    public actions : Actions = { "CancelSigningProfile": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html", "description": "Cancels a signing profile.", "accessLevel": "Write", "resourceTypes": { "signing-profile": { "required": true } } }, "DescribeSigningJob": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html", "description": "Describe a signing job.", "accessLevel": "Read", "resourceTypes": { "signing-job": { "required": true } } }, "GetSigningPlatform": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html", "description": "Retrieves a signing platform.", "accessLevel": "Read" }, "GetSigningProfile": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html", "description": "Retrieves a signing profile.", "accessLevel": "Read", "resourceTypes": { "signing-profile": { "required": true } } }, "ListSigningJobs": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html", "description": "List signing jobs.", "accessLevel": "List" }, "ListSigningPlatforms": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html", "description": "List all signing platforms.", "accessLevel": "List" }, "ListSigningProfiles": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html", "description": "List all signing profile associated with the account.", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListTagsForResource.html", "description": "Lists the tags associated with the Signing Profile resource.", "accessLevel": "List", "resourceTypes": { "signing-profile": { "required": true } } }, "PutSigningProfile": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html", "description": "Creates a new signing profile if not exists.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "StartSigningJob": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html", "description": "Starts a code signing request.", "accessLevel": "Write", "resourceTypes": { "signing-profile": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html", "description": "Adds one or more tags to an Signing Profile resource", "accessLevel": "Tagging", "resourceTypes": { "signing-profile": { "required": true } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html", "description": "Removes one or more tags from an Signing Profile resource", "accessLevel": "Tagging", "resourceTypes": { "signing-profile": { "required": true } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] } };
+    public actions : Actions = {
+        "CancelSigningProfile": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html",
+            "description": "Cancels a signing profile.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "signing-profile": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeSigningJob": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html",
+            "description": "Describe a signing job.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "signing-job": {
+                    "required": true
+                }
+            }
+        },
+        "GetSigningPlatform": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html",
+            "description": "Retrieves a signing platform.",
+            "accessLevel": "Read"
+        },
+        "GetSigningProfile": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html",
+            "description": "Retrieves a signing profile.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "signing-profile": {
+                    "required": true
+                }
+            }
+        },
+        "ListSigningJobs": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html",
+            "description": "List signing jobs.",
+            "accessLevel": "List"
+        },
+        "ListSigningPlatforms": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html",
+            "description": "List all signing platforms.",
+            "accessLevel": "List"
+        },
+        "ListSigningProfiles": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html",
+            "description": "List all signing profile associated with the account.",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_ListTagsForResource.html",
+            "description": "Lists the tags associated with the Signing Profile resource.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "signing-profile": {
+                    "required": true
+                }
+            }
+        },
+        "PutSigningProfile": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html",
+            "description": "Creates a new signing profile if not exists.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "StartSigningJob": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html",
+            "description": "Starts a code signing request.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "signing-profile": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html",
+            "description": "Adds one or more tags to an Signing Profile resource",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "signing-profile": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html",
+            "description": "Removes one or more tags from an Signing Profile resource",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "signing-profile": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        }
+    };
 
     /**
      * Cancels a signing profile.

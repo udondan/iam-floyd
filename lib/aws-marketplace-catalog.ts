@@ -7,7 +7,61 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AwsMarketplaceCatalog extends PolicyStatement {
     public servicePrefix = 'aws-marketplace';
-    public actions : Actions = { "CancelChangeSet": { "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html", "description": "Cancels a running change set.", "accessLevel": "Write" }, "CompleteTask": { "url": "", "description": "Complete an existing task and submit the content to the associated change.", "accessLevel": "Write" }, "DescribeChangeSet": { "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html", "description": "Returns the details of an existing change set.", "accessLevel": "Read" }, "DescribeEntity": { "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html", "description": "Returns the details of an existing entity.", "accessLevel": "Read" }, "DescribeTask": { "url": "", "description": "Returns the details of an existing task.", "accessLevel": "Read" }, "ListChangeSets": { "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html", "description": "Lists existing change sets.", "accessLevel": "Read" }, "ListEntities": { "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html", "description": "Lists existing entities.", "accessLevel": "Read" }, "ListTasks": { "url": "", "description": "Lists existing tasks.", "accessLevel": "List" }, "StartChangeSet": { "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html", "description": "Requests a new change set.", "accessLevel": "Write", "conditions": ["catalog:ChangeType"] }, "UpdateTask": { "url": "", "description": "Update the content of an existing task.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CancelChangeSet": {
+            "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html",
+            "description": "Cancels a running change set.",
+            "accessLevel": "Write"
+        },
+        "CompleteTask": {
+            "url": "",
+            "description": "Complete an existing task and submit the content to the associated change.",
+            "accessLevel": "Write"
+        },
+        "DescribeChangeSet": {
+            "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html",
+            "description": "Returns the details of an existing change set.",
+            "accessLevel": "Read"
+        },
+        "DescribeEntity": {
+            "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html",
+            "description": "Returns the details of an existing entity.",
+            "accessLevel": "Read"
+        },
+        "DescribeTask": {
+            "url": "",
+            "description": "Returns the details of an existing task.",
+            "accessLevel": "Read"
+        },
+        "ListChangeSets": {
+            "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html",
+            "description": "Lists existing change sets.",
+            "accessLevel": "Read"
+        },
+        "ListEntities": {
+            "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html",
+            "description": "Lists existing entities.",
+            "accessLevel": "Read"
+        },
+        "ListTasks": {
+            "url": "",
+            "description": "Lists existing tasks.",
+            "accessLevel": "List"
+        },
+        "StartChangeSet": {
+            "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html",
+            "description": "Requests a new change set.",
+            "accessLevel": "Write",
+            "conditions": [
+                "catalog:ChangeType"
+            ]
+        },
+        "UpdateTask": {
+            "url": "",
+            "description": "Update the content of an existing task.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Cancels a running change set.

@@ -7,7 +7,123 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Route53domains extends PolicyStatement {
     public servicePrefix = 'route53domains';
-    public actions : Actions = { "CheckDomainAvailability": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainAvailability.html", "description": "Grants permission to check the availability of one domain name", "accessLevel": "Read" }, "DeleteTagsForDomain": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DeleteTagsForDomain.html", "description": "Grants permission to delete the specified tags for a domain", "accessLevel": "Tagging" }, "DisableDomainAutoRenew": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html", "description": "Grants permission to configure Amazon Route 53 to automatically renew the specified domain before the domain registration expires", "accessLevel": "Write" }, "DisableDomainTransferLock": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainTransferLock.html", "description": "Grants permission to remove the transfer lock on the domain (specifically the clientTransferProhibited status) to allow domain transfers", "accessLevel": "Write" }, "EnableDomainAutoRenew": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html", "description": "Grants permission to configure Amazon Route 53 to automatically renew the specified domain before the domain registration expires", "accessLevel": "Write" }, "EnableDomainTransferLock": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_EnableDomainTransferLock.html", "description": "Grants permission to set the transfer lock on the domain (specifically the clientTransferProhibited status) to prevent domain transfers", "accessLevel": "Write" }, "GetContactReachabilityStatus": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetContactReachabilityStatus.html", "description": "For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, grants permission to get information about whether the registrant contact has responded", "accessLevel": "Read" }, "GetDomainDetail": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html", "description": "Grants permission to get detailed information about a domain", "accessLevel": "Read" }, "GetDomainSuggestions": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainSuggestions.html", "description": "Grants permission to get a list of suggested domain names given a string, which can either be a domain name or simply a word or phrase (without spaces)", "accessLevel": "Read" }, "GetOperationDetail": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html", "description": "Grants permission to get the current status of an operation that is not completed", "accessLevel": "Read" }, "ListDomains": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html", "description": "Grants permission to list all the domain names registered with Amazon Route 53 for the current AWS account", "accessLevel": "List" }, "ListOperations": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html", "description": "Grants permission to list the operation IDs of operations that are not yet complete", "accessLevel": "List" }, "ListTagsForDomain": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListTagsForDomain.html", "description": "Grants permission to list all the tags that are associated with the specified domain", "accessLevel": "List" }, "RegisterDomain": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RegisterDomain.html", "description": "Grants permission to register domains", "accessLevel": "Write" }, "RenewDomain": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RenewDomain.html", "description": "Grants permission to renew domains for the specified number of years", "accessLevel": "Write" }, "ResendContactReachabilityEmail": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendContactReachabilityEmail.html", "description": "For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, grants permission to resend the confirmation email to the current email address for the registrant contact", "accessLevel": "Write" }, "RetrieveDomainAuthCode": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RetrieveDomainAuthCode.html", "description": "Grants permission to get the AuthCode for the domain", "accessLevel": "Write" }, "TransferDomain": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomain.html", "description": "Grants permission to transfer a domain from another registrar to Amazon Route 53", "accessLevel": "Write" }, "UpdateDomainContact": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html", "description": "Grants permission to update the contact information for domain", "accessLevel": "Write" }, "UpdateDomainContactPrivacy": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContactPrivacy.html", "description": "Grants permission to update the domain contact privacy setting", "accessLevel": "Write" }, "UpdateDomainNameservers": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html", "description": "Grants permission to replace the current set of name servers for a domain with the specified set of name servers", "accessLevel": "Write" }, "UpdateTagsForDomain": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateTagsForDomain.html", "description": "Grants permission to add or update tags for a specified domain", "accessLevel": "Tagging" }, "ViewBilling": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ViewBilling.html", "description": "Grants permission to get all the domain-related billing records for the current AWS account for a specified period", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "CheckDomainAvailability": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainAvailability.html",
+            "description": "Grants permission to check the availability of one domain name",
+            "accessLevel": "Read"
+        },
+        "DeleteTagsForDomain": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DeleteTagsForDomain.html",
+            "description": "Grants permission to delete the specified tags for a domain",
+            "accessLevel": "Tagging"
+        },
+        "DisableDomainAutoRenew": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html",
+            "description": "Grants permission to configure Amazon Route 53 to automatically renew the specified domain before the domain registration expires",
+            "accessLevel": "Write"
+        },
+        "DisableDomainTransferLock": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainTransferLock.html",
+            "description": "Grants permission to remove the transfer lock on the domain (specifically the clientTransferProhibited status) to allow domain transfers",
+            "accessLevel": "Write"
+        },
+        "EnableDomainAutoRenew": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html",
+            "description": "Grants permission to configure Amazon Route 53 to automatically renew the specified domain before the domain registration expires",
+            "accessLevel": "Write"
+        },
+        "EnableDomainTransferLock": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_EnableDomainTransferLock.html",
+            "description": "Grants permission to set the transfer lock on the domain (specifically the clientTransferProhibited status) to prevent domain transfers",
+            "accessLevel": "Write"
+        },
+        "GetContactReachabilityStatus": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetContactReachabilityStatus.html",
+            "description": "For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, grants permission to get information about whether the registrant contact has responded",
+            "accessLevel": "Read"
+        },
+        "GetDomainDetail": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html",
+            "description": "Grants permission to get detailed information about a domain",
+            "accessLevel": "Read"
+        },
+        "GetDomainSuggestions": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainSuggestions.html",
+            "description": "Grants permission to get a list of suggested domain names given a string, which can either be a domain name or simply a word or phrase (without spaces)",
+            "accessLevel": "Read"
+        },
+        "GetOperationDetail": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html",
+            "description": "Grants permission to get the current status of an operation that is not completed",
+            "accessLevel": "Read"
+        },
+        "ListDomains": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html",
+            "description": "Grants permission to list all the domain names registered with Amazon Route 53 for the current AWS account",
+            "accessLevel": "List"
+        },
+        "ListOperations": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html",
+            "description": "Grants permission to list the operation IDs of operations that are not yet complete",
+            "accessLevel": "List"
+        },
+        "ListTagsForDomain": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListTagsForDomain.html",
+            "description": "Grants permission to list all the tags that are associated with the specified domain",
+            "accessLevel": "List"
+        },
+        "RegisterDomain": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RegisterDomain.html",
+            "description": "Grants permission to register domains",
+            "accessLevel": "Write"
+        },
+        "RenewDomain": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RenewDomain.html",
+            "description": "Grants permission to renew domains for the specified number of years",
+            "accessLevel": "Write"
+        },
+        "ResendContactReachabilityEmail": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendContactReachabilityEmail.html",
+            "description": "For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, grants permission to resend the confirmation email to the current email address for the registrant contact",
+            "accessLevel": "Write"
+        },
+        "RetrieveDomainAuthCode": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RetrieveDomainAuthCode.html",
+            "description": "Grants permission to get the AuthCode for the domain",
+            "accessLevel": "Write"
+        },
+        "TransferDomain": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomain.html",
+            "description": "Grants permission to transfer a domain from another registrar to Amazon Route 53",
+            "accessLevel": "Write"
+        },
+        "UpdateDomainContact": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html",
+            "description": "Grants permission to update the contact information for domain",
+            "accessLevel": "Write"
+        },
+        "UpdateDomainContactPrivacy": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContactPrivacy.html",
+            "description": "Grants permission to update the domain contact privacy setting",
+            "accessLevel": "Write"
+        },
+        "UpdateDomainNameservers": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html",
+            "description": "Grants permission to replace the current set of name servers for a domain with the specified set of name servers",
+            "accessLevel": "Write"
+        },
+        "UpdateTagsForDomain": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateTagsForDomain.html",
+            "description": "Grants permission to add or update tags for a specified domain",
+            "accessLevel": "Tagging"
+        },
+        "ViewBilling": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ViewBilling.html",
+            "description": "Grants permission to get all the domain-related billing records for the current AWS account for a specified period",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Grants permission to check the availability of one domain name

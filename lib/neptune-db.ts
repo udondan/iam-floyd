@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class NeptuneDb extends PolicyStatement {
     public servicePrefix = 'neptune-db';
-    public actions : Actions = { "connect": { "url": "https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html", "description": "Connect to database", "accessLevel": "Write", "resourceTypes": { "database": { "required": true } } } };
+    public actions : Actions = {
+        "connect": {
+            "url": "https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html",
+            "description": "Connect to database",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "database": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Connect to database

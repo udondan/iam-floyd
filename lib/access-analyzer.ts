@@ -7,7 +7,185 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AccessAnalyzer extends PolicyStatement {
     public servicePrefix = 'access-analyzer';
-    public actions : Actions = { "CreateAnalyzer": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html", "description": "Grants permission to create an analyzer.", "accessLevel": "Write", "resourceTypes": { "Analyzer": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateArchiveRule": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateArchiveRule.html", "description": "Grants permission to create an archive rule for the specified analyzer.", "accessLevel": "Write", "resourceTypes": { "Analyzer": { "required": true }, "ArchiveRule": { "required": true } } }, "DeleteAnalyzer": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html", "description": "Grants permission to delete the specified analyzer.", "accessLevel": "Write", "resourceTypes": { "Analyzer": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "DeleteArchiveRule": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteArchiveRule.html", "description": "Grants permission to delete archive rules for the specified analyzer.", "accessLevel": "Write", "resourceTypes": { "Analyzer": { "required": true }, "ArchiveRule": { "required": true } } }, "GetAnalyzedResource": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzedResource.html", "description": "Grants permission to retrieve information about an analyzed resource.", "accessLevel": "Read" }, "GetAnalyzer": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html", "description": "Grants permission to retrieve information about analyzers.", "accessLevel": "Read", "resourceTypes": { "Analyzer": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "GetArchiveRule": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetArchiveRule.html", "description": "Grants permission to retrieve information about archive rules for the specified analyzer.", "accessLevel": "Read", "resourceTypes": { "Analyzer": { "required": true }, "ArchiveRule": { "required": true } } }, "GetFinding": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFinding.html", "description": "Grants permission to retrieve findings.", "accessLevel": "Read" }, "ListAnalyzedResources": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzedResources.html", "description": "Grants permission to retrieve a list of resources that have been analyzed.", "accessLevel": "Read" }, "ListAnalyzers": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html", "description": "Grants permission to retrieves a list of analyzers.", "accessLevel": "List" }, "ListArchiveRules": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListArchiveRules.html", "description": "Grants permission to retrieve a list of archive rules from an analyzer.", "accessLevel": "List", "resourceTypes": { "Analyzer": { "required": true } } }, "ListFindings": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindings.html", "description": "Grants permission to retrieve a list of findings from an analyzer.", "accessLevel": "Read" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListTagsForResource.html", "description": "Grants permission to retrieve a list of tags applied to a resource.", "accessLevel": "Read", "resourceTypes": { "Analyzer": { "required": false } } }, "StartResourceScan": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartResourceScan.html", "description": "Grants permission to start a scan of the policies applied to a resource.", "accessLevel": "Write" }, "TagResource": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html", "description": "Grants permission to add a tag to a resource.", "accessLevel": "Tagging", "resourceTypes": { "Analyzer": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html", "description": "Grants permission to remove a tag from a resource.", "accessLevel": "Tagging", "resourceTypes": { "Analyzer": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UpdateArchiveRule": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateArchiveRule.html", "description": "Grants permission to modify an archive rule.", "accessLevel": "Write", "resourceTypes": { "Analyzer": { "required": true }, "ArchiveRule": { "required": true } } }, "UpdateFindings": { "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html", "description": "Grants permission to modify findings.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateAnalyzer": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html",
+            "description": "Grants permission to create an analyzer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateArchiveRule": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateArchiveRule.html",
+            "description": "Grants permission to create an archive rule for the specified analyzer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                },
+                "ArchiveRule": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteAnalyzer": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html",
+            "description": "Grants permission to delete the specified analyzer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "DeleteArchiveRule": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteArchiveRule.html",
+            "description": "Grants permission to delete archive rules for the specified analyzer.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                },
+                "ArchiveRule": {
+                    "required": true
+                }
+            }
+        },
+        "GetAnalyzedResource": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzedResource.html",
+            "description": "Grants permission to retrieve information about an analyzed resource.",
+            "accessLevel": "Read"
+        },
+        "GetAnalyzer": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html",
+            "description": "Grants permission to retrieve information about analyzers.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "GetArchiveRule": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetArchiveRule.html",
+            "description": "Grants permission to retrieve information about archive rules for the specified analyzer.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                },
+                "ArchiveRule": {
+                    "required": true
+                }
+            }
+        },
+        "GetFinding": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFinding.html",
+            "description": "Grants permission to retrieve findings.",
+            "accessLevel": "Read"
+        },
+        "ListAnalyzedResources": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzedResources.html",
+            "description": "Grants permission to retrieve a list of resources that have been analyzed.",
+            "accessLevel": "Read"
+        },
+        "ListAnalyzers": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html",
+            "description": "Grants permission to retrieves a list of analyzers.",
+            "accessLevel": "List"
+        },
+        "ListArchiveRules": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListArchiveRules.html",
+            "description": "Grants permission to retrieve a list of archive rules from an analyzer.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                }
+            }
+        },
+        "ListFindings": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindings.html",
+            "description": "Grants permission to retrieve a list of findings from an analyzer.",
+            "accessLevel": "Read"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListTagsForResource.html",
+            "description": "Grants permission to retrieve a list of tags applied to a resource.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": false
+                }
+            }
+        },
+        "StartResourceScan": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartResourceScan.html",
+            "description": "Grants permission to start a scan of the policies applied to a resource.",
+            "accessLevel": "Write"
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html",
+            "description": "Grants permission to add a tag to a resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html",
+            "description": "Grants permission to remove a tag from a resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateArchiveRule": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateArchiveRule.html",
+            "description": "Grants permission to modify an archive rule.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Analyzer": {
+                    "required": true
+                },
+                "ArchiveRule": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateFindings": {
+            "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html",
+            "description": "Grants permission to modify findings.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to create an analyzer.

@@ -7,7 +7,13 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class IqPermission extends PolicyStatement {
     public servicePrefix = 'iq-permission';
-    public actions : Actions = { "ApproveAccessGrant": { "url": "https://aws.amazon.com/iq/", "description": "Grants permission to approve an access grant", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "ApproveAccessGrant": {
+            "url": "https://aws.amazon.com/iq/",
+            "description": "Grants permission to approve an access grant",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to approve an access grant

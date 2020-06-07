@@ -7,7 +7,13 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class BackupStorage extends PolicyStatement {
     public servicePrefix = 'backup-storage';
-    public actions : Actions = { "MountCapsule": { "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html", "description": "Associates a KMS key to a backup vault", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "MountCapsule": {
+            "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html",
+            "description": "Associates a KMS key to a backup vault",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Associates a KMS key to a backup vault

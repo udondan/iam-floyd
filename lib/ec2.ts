@@ -7,7 +7,4443 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Ec2 extends PolicyStatement {
     public servicePrefix = 'ec2';
-    public actions : Actions = { "AcceptReservedInstancesExchangeQuote": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptReservedInstancesExchangeQuote.html", "description": "Grants permission to accept a Convertible Reserved Instance exchange quote", "accessLevel": "Write" }, "AcceptTransitGatewayPeeringAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayPeeringAttachment.html", "description": "Grants permission to accept a transit gateway peering attachment request", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AcceptTransitGatewayVpcAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayVpcAttachment.html", "description": "Grants permission to accept a request to attach a VPC to a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AcceptVpcEndpointConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcEndpointConnections.html", "description": "Grants permission to accept one or more interface VPC endpoint connections to your VPC endpoint service", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AcceptVpcPeeringConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcPeeringConnection.html", "description": "Grants permission to accept a VPC peering connection request", "accessLevel": "Write", "resourceTypes": { "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] }, "vpc-peering-connection": { "required": true, "conditions": ["ec2:AccepterVpc", "ec2:Region", "ec2:RequesterVpc", "ec2:ResourceTag/${TagKey}"] } } }, "AdvertiseByoipCidr": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html", "description": "Grants permission to advertise an IP address range that is provisioned for use in AWS through bring your own IP addresses (BYOIP)", "accessLevel": "Write" }, "AllocateAddress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateAddress.html", "description": "Grants permission to allocate an Elastic IP address (EIP) to your account", "accessLevel": "Write" }, "AllocateHosts": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateHosts.html", "description": "Grants permission to allocate a Dedicated Host to your account", "accessLevel": "Write", "resourceTypes": { "dedicated-host": { "required": true } } }, "ApplySecurityGroupsToClientVpnTargetNetwork": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ApplySecurityGroupsToClientVpnTargetNetwork.html", "description": "Grants permission to apply a security group to the association between a Client VPN endpoint and a target network", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AssignIpv6Addresses": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignIpv6Addresses.html", "description": "Grants permission to assign one or more IPv6 addresses to a network interface", "accessLevel": "Write" }, "AssignPrivateIpAddresses": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignPrivateIpAddresses.html", "description": "Grants permission to assign one or more secondary private IP addresses to a network interface", "accessLevel": "Write" }, "AssociateAddress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateAddress.html", "description": "Grants permission to associate an Elastic IP address (EIP) with an instance or a network interface", "accessLevel": "Write" }, "AssociateClientVpnTargetNetwork": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateClientVpnTargetNetwork.html", "description": "Grants permission to associate a target network with a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AssociateDhcpOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateDhcpOptions.html", "description": "Grants permission to associate or disassociate a set of DHCP options with a VPC", "accessLevel": "Write" }, "AssociateIamInstanceProfile": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html", "description": "Grants permission to associate an IAM instance profile with a running or stopped instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "AssociateRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html", "description": "Grants permission to associate a subnet or gateway with a route table", "accessLevel": "Write" }, "AssociateSubnetCidrBlock": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSubnetCidrBlock.html", "description": "Grants permission to associate a CIDR block with a subnet", "accessLevel": "Write" }, "AssociateTransitGatewayMulticastDomain": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayMulticastDomain.html", "description": "Grants permission to associate an attachment and list of subnets with a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "subnet": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AssociateTransitGatewayRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayRouteTable.html", "description": "Grants permission to associate an attachment with a transit gateway route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AssociateVpcCidrBlock": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateVpcCidrBlock.html", "description": "Grants permission to associate a CIDR block with a VPC", "accessLevel": "Write" }, "AttachClassicLinkVpc": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachClassicLinkVpc.html", "description": "Grants permission to link an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] }, "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] } } }, "AttachInternetGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachInternetGateway.html", "description": "Grants permission to attach an internet gateway to a VPC", "accessLevel": "Write" }, "AttachNetworkInterface": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachNetworkInterface.html", "description": "Grants permission to attach a network interface to an instance", "accessLevel": "Write" }, "AttachVolume": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVolume.html", "description": "Grants permission to attach an EBS volume to a running or stopped instance and expose it to the instance with the specified device name", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] }, "volume": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:Encrypted", "ec2:ParentSnapshot", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] } } }, "AttachVpnGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVpnGateway.html", "description": "Grants permission to attach a virtual private gateway to a VPC", "accessLevel": "Write" }, "AuthorizeClientVpnIngress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeClientVpnIngress.html", "description": "Grants permission to add an inbound authorization rule to a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "AuthorizeSecurityGroupEgress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupEgress.html", "description": "Grants permission to add one or more outbound rules to a VPC security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "AuthorizeSecurityGroupIngress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html", "description": "Grants permission to add one or more inbound rules to a security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "BundleInstance": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html", "description": "Grants permission to bundle an instance store-backed Windows instance", "accessLevel": "Write" }, "CancelBundleTask": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelBundleTask.html", "description": "Grants permission to cancel a bundling operation", "accessLevel": "Write" }, "CancelCapacityReservation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservation.html", "description": "Grants permission to cancel a Capacity Reservation and release the reserved capacity", "accessLevel": "Write", "resourceTypes": { "capacity-reservation": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CancelConversionTask": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelConversionTask.html", "description": "Grants permission to cancel an active conversion task", "accessLevel": "Write" }, "CancelExportTask": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelExportTask.html", "description": "Grants permission to cancel an active export task", "accessLevel": "Write" }, "CancelImportTask": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelImportTask.html", "description": "Grants permission to cancel an in-process import virtual machine or import snapshot task", "accessLevel": "Write" }, "CancelReservedInstancesListing": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelReservedInstancesListing.html", "description": "Grants permission to cancel a Reserved Instance listing on the Reserved Instance Marketplace", "accessLevel": "Write" }, "CancelSpotFleetRequests": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests.html", "description": "Grants permission to cancel one or more Spot Fleet requests", "accessLevel": "Write" }, "CancelSpotInstanceRequests": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotInstanceRequests.html", "description": "Grants permission to cancel one or more Spot Instance requests", "accessLevel": "Write" }, "ConfirmProductInstance": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ConfirmProductInstance.html", "description": "Grants permission to determine whether an owned product code is associated with an instance", "accessLevel": "Write" }, "CopyFpgaImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyFpgaImage.html", "description": "Grants permission to copy a source Amazon FPGA image (AFI) to the current Region", "accessLevel": "Write" }, "CopyImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html", "description": "Grants permission to copy an Amazon Machine Image (AMI) from a source Region to the current Region", "accessLevel": "Write" }, "CopySnapshot": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html", "description": "Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3", "accessLevel": "Write", "resourceTypes": { "snapshot": { "required": true, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}", "ec2:Region"] } } }, "CreateCapacityReservation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservation.html", "description": "Grants permission to create a Capacity Reservation", "accessLevel": "Write" }, "CreateClientVpnEndpoint": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnEndpoint.html", "description": "Grants permission to create a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] } } }, "CreateClientVpnRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnRoute.html", "description": "Grants permission to add a network route to a Client VPN endpoint's route table", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateCustomerGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCustomerGateway.html", "description": "Grants permission to create a customer gateway, which provides information to AWS about your customer gateway device", "accessLevel": "Write" }, "CreateDefaultSubnet": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultSubnet.html", "description": "Grants permission to create a default subnet in a specified Availability Zone in a default VPC", "accessLevel": "Write" }, "CreateDefaultVpc": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultVpc.html", "description": "Grants permission to create a default VPC with a default subnet in each Availability Zone", "accessLevel": "Write" }, "CreateDhcpOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDhcpOptions.html", "description": "Grants permission to create a set of DHCP options for a VPC", "accessLevel": "Write" }, "CreateEgressOnlyInternetGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateEgressOnlyInternetGateway.html", "description": "Grants permission to create an egress-only internet gateway for a VPC", "accessLevel": "Write" }, "CreateFleet": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html", "description": "Grants permission to launch an EC2 Fleet", "accessLevel": "Write" }, "CreateFlowLogs": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html", "description": "Grants permission to create one or more flow logs to capture IP traffic for a network interface", "accessLevel": "Write", "resourceTypes": { "vpc-flow-log": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] }, "network-interface": { "required": false, "conditions": ["ec2:Region", "ec2:Subnet", "ec2:Vpc"] }, "subnet": { "required": false, "conditions": ["ec2:Region", "ec2:Vpc"] }, "vpc": { "required": false, "conditions": ["ec2:Region"] } } }, "CreateFpgaImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html", "description": "Grants permission to create an Amazon FPGA Image (AFI) from a design checkpoint (DCP)", "accessLevel": "Write" }, "CreateImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html", "description": "Grants permission to create an Amazon EBS-backed AMI from a stopped or running Amazon EBS-backed instance", "accessLevel": "Write" }, "CreateInstanceExportTask": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInstanceExportTask.html", "description": "Grants permission to export a running or stopped instance to an Amazon S3 bucket", "accessLevel": "Write" }, "CreateInternetGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInternetGateway.html", "description": "Grants permission to create an internet gateway for a VPC", "accessLevel": "Write" }, "CreateKeyPair": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html", "description": "Grants permission to create a 2048-bit RSA key pair", "accessLevel": "Write" }, "CreateLaunchTemplate": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html", "description": "Grants permission to create a launch template", "accessLevel": "Write" }, "CreateLaunchTemplateVersion": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html", "description": "Grants permission to create a new version of a launch template", "accessLevel": "Write", "resourceTypes": { "launch-template": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateLocalGatewayRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRoute.html", "description": "Grants permission to create a static route for a local gateway route table", "accessLevel": "Write", "resourceTypes": { "local-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "local-gateway-virtual-interface-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateLocalGatewayRouteTableVpcAssociation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRouteTableVpcAssociation.html", "description": "Grants permission to associate a VPC with a local gateway route table", "accessLevel": "Write", "resourceTypes": { "local-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] } } }, "CreateNatGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNatGateway.html", "description": "Grants permission to create a NAT gateway in a subnet", "accessLevel": "Write" }, "CreateNetworkAcl": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAcl.html", "description": "Grants permission to create a network ACL in a VPC", "accessLevel": "Write" }, "CreateNetworkAclEntry": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAclEntry.html", "description": "Grants permission to create a numbered entry (a rule) in a network ACL", "accessLevel": "Write" }, "CreateNetworkInterface": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html", "description": "Grants permission to create a network interface in a subnet", "accessLevel": "Write" }, "CreateNetworkInterfacePermission": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html", "description": "Grants permission to create a permission for an AWS-authorized user to perform certain operations on a network interface", "accessLevel": "Permissions management", "resourceTypes": { "network-interface": { "required": true, "conditions": ["ec2:AuthorizedUser", "ec2:AvailabilityZone", "ec2:Permission", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Subnet", "ec2:Vpc", "ec2:AuthorizedService"] } } }, "CreatePlacementGroup": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreatePlacementGroup.html", "description": "Grants permission to create a placement group", "accessLevel": "Write" }, "CreateReservedInstancesListing": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateReservedInstancesListing.html", "description": "Grants permission to create a listing for Standard Reserved Instances to be sold in the Reserved Instance Marketplace", "accessLevel": "Write" }, "CreateRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRoute.html", "description": "Grants permission to create a route in a VPC route table", "accessLevel": "Write", "resourceTypes": { "route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "CreateRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteTable.html", "description": "Grants permission to create a route table for a VPC", "accessLevel": "Write" }, "CreateSecurityGroup": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html", "description": "Grants permission to create a security group", "accessLevel": "Write" }, "CreateSnapshot": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshot.html", "description": "Grants permission to create a snapshot of an EBS volume and store it in Amazon S3", "accessLevel": "Write", "resourceTypes": { "snapshot": { "required": true, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}", "ec2:ParentVolume", "ec2:Region"] }, "volume": { "required": true, "conditions": ["ec2:Encrypted", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] } } }, "CreateSnapshots": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html", "description": "Grants permission to create crash-consistent snapshots of multiple EBS volumes and store them in Amazon S3", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] }, "snapshot": { "required": true, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}", "ec2:ParentVolume", "ec2:Region"] }, "volume": { "required": true, "conditions": ["ec2:Encrypted", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] } } }, "CreateSpotDatafeedSubscription": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSpotDatafeedSubscription.html", "description": "Grants permission to create a data feed for Spot Instances to view Spot Instance usage logs", "accessLevel": "Write" }, "CreateSubnet": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnet.html", "description": "Grants permission to create a subnet in a VPC", "accessLevel": "Write" }, "CreateTags": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html", "description": "Grants permission to add or overwrite one or more tags for Amazon EC2 resources", "accessLevel": "Tagging", "resourceTypes": { "capacity-reservation": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "client-vpn-endpoint": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "dedicated-host": { "required": false }, "dhcp-options": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "fpga-image": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Owner", "ec2:Public", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "image": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:ImageType", "ec2:Owner", "ec2:Public", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType"] }, "instance": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] }, "internet-gateway": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "local-gateway": { "required": false }, "local-gateway-route-table": { "required": false }, "local-gateway-route-table-virtual-interface-group-association": { "required": false }, "local-gateway-route-table-vpc-association": { "required": false }, "local-gateway-virtual-interface": { "required": false }, "local-gateway-virtual-interface-group": { "required": false }, "network-acl": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "network-interface": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Subnet", "ec2:Vpc", "ec2:AssociatePublicIpAddress"] }, "reserved-instances": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:InstanceType", "ec2:Region", "ec2:ReservedInstancesOfferingType", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] }, "route-table": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "security-group": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "snapshot": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Owner", "ec2:ParentVolume", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:SnapshotTime", "ec2:VolumeSize"] }, "spot-instance-request": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "traffic-mirror-filter": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-session": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-target": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "volume": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:Encrypted", "ec2:ParentSnapshot", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] }, "vpc": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] }, "vpc-endpoint": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc-endpoint-service": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc-flow-log": { "required": false }, "vpn-connection": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpn-gateway": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] } }, "conditions": ["ec2:CreateAction"] }, "CreateTrafficMirrorFilter": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.html", "description": "Grants permission to create a traffic mirror filter", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-filter": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] } } }, "CreateTrafficMirrorFilterRule": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.html", "description": "Grants permission to create a traffic mirror filter rule", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-filter": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-filter-rule": { "required": true, "conditions": ["ec2:Region"] } } }, "CreateTrafficMirrorSession": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.html", "description": "Grants permission to create a traffic mirror session", "accessLevel": "Write", "resourceTypes": { "network-interface": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-filter": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-session": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] }, "traffic-mirror-target": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateTrafficMirrorTarget": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorTarget.html", "description": "Grants permission to create a traffic mirror target", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-target": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] }, "network-interface": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateTransitGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGateway.html", "description": "Grants permission to create a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] } } }, "CreateTransitGatewayMulticastDomain": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMulticastDomain.html", "description": "Grants permission to create a multicast domain for a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] } } }, "CreateTransitGatewayPeeringAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPeeringAttachment.html", "description": "Grants permission to request a transit gateway peering attachment between a requester and accepter transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] } } }, "CreateTransitGatewayRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRoute.html", "description": "Grants permission to create a static route for a transit gateway route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateTransitGatewayRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRouteTable.html", "description": "Grants permission to create a route table for a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] } } }, "CreateTransitGatewayVpcAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayVpcAttachment.html", "description": "Grants permission to attach a VPC to a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region"] }, "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateVolume": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html", "description": "Grants permission to create an EBS volume", "accessLevel": "Write", "resourceTypes": { "volume": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:Encrypted", "ec2:ParentSnapshot", "ec2:Region", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] } } }, "CreateVpc": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpc.html", "description": "Grants permission to create a VPC with a specified CIDR block", "accessLevel": "Write" }, "CreateVpcEndpoint": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html", "description": "Grants permission to create a VPC endpoint for an AWS service", "accessLevel": "Write", "resourceTypes": { "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc-endpoint": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:VpceServiceName", "ec2:VpceServiceOwner"] }, "route-table": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "security-group": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "CreateVpcEndpointConnectionNotification": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html", "description": "Grants permission to create a connection notification for a VPC endpoint or VPC endpoint service", "accessLevel": "Write" }, "CreateVpcEndpointServiceConfiguration": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointServiceConfiguration.html", "description": "Grants permission to create a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles) can connect", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:VpceServicePrivateDnsName"] } } }, "CreateVpcPeeringConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcPeeringConnection.html", "description": "Grants permission to request a VPC peering connection between two VPCs", "accessLevel": "Write", "resourceTypes": { "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] }, "vpc-peering-connection": { "required": true, "conditions": ["ec2:AccepterVpc", "ec2:Region", "ec2:RequesterVpc"] } } }, "CreateVpnConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html", "description": "Grants permission to create a VPN connection between a virtual private gateway or transit gateway and a customer gateway", "accessLevel": "Write", "resourceTypes": { "vpn-connection": { "required": true, "conditions": ["ec2:Region", "ec2:AuthenticationType", "ec2:DPDTimeoutSeconds", "ec2:GatewayType", "ec2:IKEVersions", "ec2:InsideTunnelCidr", "ec2:Phase1DHGroupNumbers", "ec2:Phase2DHGroupNumbers", "ec2:Phase1EncryptionAlgorithms", "ec2:Phase2EncryptionAlgorithms", "ec2:Phase1IntegrityAlgorithms", "ec2:Phase2IntegrityAlgorithms", "ec2:Phase1LifetimeSeconds", "ec2:Phase2LifetimeSeconds", "ec2:PresharedKeys", "ec2:RekeyFuzzPercentage", "ec2:RekeyMarginTimeSeconds", "ec2:RoutingType"] } } }, "CreateVpnConnectionRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnectionRoute.html", "description": "Grants permission to create a static route for a VPN connection between a virtual private gateway and a customer gateway", "accessLevel": "Write" }, "CreateVpnGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnGateway.html", "description": "Grants permission to create a virtual private gateway", "accessLevel": "Write" }, "DeleteClientVpnEndpoint": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnEndpoint.html", "description": "Grants permission to delete a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteClientVpnRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnRoute.html", "description": "Grants permission to delete a route from a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteCustomerGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCustomerGateway.html", "description": "Grants permission to delete a customer gateway", "accessLevel": "Write", "resourceTypes": { "customer-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteDhcpOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteDhcpOptions.html", "description": "Grants permission to delete a set of DHCP options", "accessLevel": "Write", "resourceTypes": { "dhcp-options": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteEgressOnlyInternetGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteEgressOnlyInternetGateway.html", "description": "Grants permission to delete an egress-only internet gateway", "accessLevel": "Write" }, "DeleteFleets": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFleets.html", "description": "Grants permission to delete one or more EC2 Fleets", "accessLevel": "Write" }, "DeleteFlowLogs": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html", "description": "Grants permission to delete one or more flow logs", "accessLevel": "Write" }, "DeleteFpgaImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFpgaImage.html", "description": "Grants permission to delete an Amazon FPGA Image (AFI)", "accessLevel": "Write" }, "DeleteInternetGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteInternetGateway.html", "description": "Grants permission to delete an internet gateway", "accessLevel": "Write", "resourceTypes": { "internet-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteKeyPair": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteKeyPair.html", "description": "Grants permission to delete a key pair by removing the public key from Amazon EC2", "accessLevel": "Write" }, "DeleteLaunchTemplate": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplate.html", "description": "Grants permission to delete a launch template and its associated versions", "accessLevel": "Write", "resourceTypes": { "launch-template": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteLaunchTemplateVersions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplateVersions.html", "description": "Grants permission to delete one or more versions of a launch template", "accessLevel": "Write", "resourceTypes": { "launch-template": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteLocalGatewayRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRoute.html", "description": "Grants permission to delete a route from a local gateway route table", "accessLevel": "Write", "resourceTypes": { "local-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteLocalGatewayRouteTableVpcAssociation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRouteTableVpcAssociation.html", "description": "Grants permission to delete an association between a VPC and local gateway route table", "accessLevel": "Write", "resourceTypes": { "local-gateway-route-table-vpc-association": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteNatGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNatGateway.html", "description": "Grants permission to delete a NAT gateway", "accessLevel": "Write" }, "DeleteNetworkAcl": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAcl.html", "description": "Grants permission to delete a network ACL", "accessLevel": "Write", "resourceTypes": { "network-acl": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "DeleteNetworkAclEntry": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAclEntry.html", "description": "Grants permission to delete an inbound or outbound entry (rule) from a network ACL", "accessLevel": "Write", "resourceTypes": { "network-acl": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "DeleteNetworkInterface": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterface.html", "description": "Grants permission to delete a detached network interface", "accessLevel": "Write" }, "DeleteNetworkInterfacePermission": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterfacePermission.html", "description": "Grants permission to delete a permission that is associated with a network interface", "accessLevel": "Permissions management" }, "DeletePlacementGroup": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeletePlacementGroup.html", "description": "Grants permission to delete a placement group", "accessLevel": "Write" }, "DeleteRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html", "description": "Grants permission to delete a route from a route table", "accessLevel": "Write", "resourceTypes": { "route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "DeleteRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteTable.html", "description": "Grants permission to delete a route table", "accessLevel": "Write", "resourceTypes": { "route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "DeleteSecurityGroup": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecurityGroup.html", "description": "Grants permission to delete a security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "DeleteSnapshot": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html", "description": "Grants permission to delete a snapshot of an EBS volume", "accessLevel": "Write", "resourceTypes": { "snapshot": { "required": true, "conditions": ["ec2:Owner", "ec2:ParentVolume", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:SnapshotTime", "ec2:VolumeSize"] } } }, "DeleteSpotDatafeedSubscription": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSpotDatafeedSubscription.html", "description": "Grants permission to delete a data feed for Spot Instances", "accessLevel": "Write" }, "DeleteSubnet": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSubnet.html", "description": "Grants permission to delete a subnet", "accessLevel": "Write" }, "DeleteTags": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTags.html", "description": "Grants permission to delete one or more tags from Amazon EC2 resources", "accessLevel": "Tagging", "resourceTypes": { "capacity-reservation": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "client-vpn-endpoint": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "dedicated-host": { "required": false }, "dhcp-options": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "fpga-image": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "image": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "instance": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "internet-gateway": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "local-gateway": { "required": false }, "local-gateway-route-table": { "required": false }, "local-gateway-route-table-virtual-interface-group-association": { "required": false }, "local-gateway-route-table-vpc-association": { "required": false }, "local-gateway-virtual-interface": { "required": false }, "local-gateway-virtual-interface-group": { "required": false }, "network-acl": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "network-interface": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "reserved-instances": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "route-table": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "security-group": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "snapshot": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "spot-instance-request": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "volume": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc-endpoint": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc-endpoint-service": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpc-flow-log": { "required": false }, "vpn-connection": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "vpn-gateway": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTrafficMirrorFilter": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorFilter.html", "description": "Grants permission to delete a traffic mirror filter", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-filter": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTrafficMirrorFilterRule": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorFilterRule.html", "description": "Grants permission to delete a traffic mirror filter rule", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-filter": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-filter-rule": { "required": true, "conditions": ["ec2:Region"] } } }, "DeleteTrafficMirrorSession": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorSession.html", "description": "Grants permission to delete a traffic mirror session", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-session": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTrafficMirrorTarget": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorTarget.html", "description": "Grants permission to delete a traffic mirror target", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-target": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTransitGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGateway.html", "description": "Grants permission to delete a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTransitGatewayMulticastDomain": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMulticastDomain.html", "description": "Grants permissions to delete a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTransitGatewayPeeringAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPeeringAttachment.html", "description": "Grants permission to delete a peering attachment from a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTransitGatewayRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRoute.html", "description": "Grants permission to delete a route from a transit gateway route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTransitGatewayRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRouteTable.html", "description": "Grants permission to delete a transit gateway route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteTransitGatewayVpcAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayVpcAttachment.html", "description": "Grants permission to delete a VPC attachment from a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteVolume": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVolume.html", "description": "Grants permission to delete an EBS volume", "accessLevel": "Write", "resourceTypes": { "volume": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:Encrypted", "ec2:ParentSnapshot", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] } } }, "DeleteVpc": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpc.html", "description": "Grants permission to delete a VPC", "accessLevel": "Write" }, "DeleteVpcEndpointConnectionNotifications": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointConnectionNotifications.html", "description": "Grants permission to delete one or more VPC endpoint connection notifications", "accessLevel": "Write" }, "DeleteVpcEndpointServiceConfigurations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointServiceConfigurations.html", "description": "Grants permission to delete one or more VPC endpoint service configurations", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteVpcEndpoints": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpoints.html", "description": "Grants permission to delete one or more VPC endpoints", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteVpcPeeringConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcPeeringConnection.html", "description": "Grants permission to delete a VPC peering connection", "accessLevel": "Write", "resourceTypes": { "vpc-peering-connection": { "required": true, "conditions": ["ec2:AccepterVpc", "ec2:Region", "ec2:RequesterVpc", "ec2:ResourceTag/${TagKey}"] } } }, "DeleteVpnConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnection.html", "description": "Grants permission to delete a VPN connection", "accessLevel": "Write" }, "DeleteVpnConnectionRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnectionRoute.html", "description": "Grants permission to delete a static route for a VPN connection between a virtual private gateway and a customer gateway", "accessLevel": "Write" }, "DeleteVpnGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnGateway.html", "description": "Grants permission to delete a virtual private gateway", "accessLevel": "Write" }, "DeprovisionByoipCidr": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionByoipCidr.html", "description": "Grants permission to release an IP address range that was provisioned through bring your own IP addresses (BYOIP), and to delete the corresponding address pool", "accessLevel": "Write" }, "DeregisterImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterImage.html", "description": "Grants permission to deregister an Amazon Machine Image (AMI)", "accessLevel": "Write" }, "DeregisterInstanceEventNotificationAttributes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html", "description": "Grants permission to remove tags from the set of tags to include in notifications about scheduled events for your instances", "accessLevel": "Write" }, "DeregisterTransitGatewayMulticastGroupMembers": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterTransitGatewayMulticastGroupMembers.html", "description": "Grants permission to deregister one or more network interface members from a group IP address in a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "network-interface": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DeregisterTransitGatewayMulticastGroupSources": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterTransitGatewayMulticastGroupSources.html", "description": "Grants permission to deregister one or more network interface sources from a group IP address in a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "network-interface": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DescribeAccountAttributes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAccountAttributes.html", "description": "Grants permission to describe the attributes of the AWS account", "accessLevel": "List" }, "DescribeAddresses": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html", "description": "Grants permission to describe one or more Elastic IP addresses", "accessLevel": "List" }, "DescribeAggregateIdFormat": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAggregateIdFormat.html", "description": "Grants permission to describe the longer ID format settings for all resource types", "accessLevel": "List" }, "DescribeAvailabilityZones": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html", "description": "Grants permission to describe one or more of the Availability Zones that are available to you", "accessLevel": "List" }, "DescribeBundleTasks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeBundleTasks.html", "description": "Grants permission to describe one or more bundling tasks", "accessLevel": "List" }, "DescribeByoipCidrs": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html", "description": "Grants permission to describe the IP address ranges that were provisioned through bring your own IP addresses (BYOIP)", "accessLevel": "List" }, "DescribeCapacityReservations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservations.html", "description": "Grants permission to describe one or more Capacity Reservations", "accessLevel": "List" }, "DescribeClassicLinkInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClassicLinkInstances.html", "description": "Grants permission to describe one or more linked EC2-Classic instances", "accessLevel": "List" }, "DescribeClientVpnAuthorizationRules": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnAuthorizationRules.html", "description": "Grants permission to describe the authorization rules for a Client VPN endpoint", "accessLevel": "List" }, "DescribeClientVpnConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnConnections.html", "description": "Grants permission to describe active client connections and connections that have been terminated within the last 60 minutes for a Client VPN endpoint", "accessLevel": "List" }, "DescribeClientVpnEndpoints": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnEndpoints.html", "description": "Grants permission to describe one or more Client VPN endpoints", "accessLevel": "List" }, "DescribeClientVpnRoutes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnRoutes.html", "description": "Grants permission to describe the routes for a Client VPN endpoint", "accessLevel": "List" }, "DescribeClientVpnTargetNetworks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnTargetNetworks.html", "description": "Grants permission to describe the target networks that are associated with a Client VPN endpoint", "accessLevel": "List" }, "DescribeCoipPools": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCoipPools.html", "description": "Grants permission to describe the specified customer-owned address pools or all of your customer-owned address pools", "accessLevel": "List" }, "DescribeConversionTasks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeConversionTasks.html", "description": "Grants permission to describe one or more conversion tasks", "accessLevel": "List" }, "DescribeCustomerGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html", "description": "Grants permission to describe one or more customer gateways", "accessLevel": "List" }, "DescribeDhcpOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeDhcpOptions.html", "description": "Grants permission to describe one or more DHCP options sets", "accessLevel": "List" }, "DescribeEgressOnlyInternetGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeEgressOnlyInternetGateways.html", "description": "Grants permission to describe one or more egress-only internet gateways", "accessLevel": "List" }, "DescribeElasticGpus": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeElasticGpus.html", "description": "Grants permission to describe an Elastic Graphics accelerator that is associated with an instance", "accessLevel": "Read" }, "DescribeExportImageTasks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportImageTasks.html", "description": "Grants permission to describe one or more export image tasks", "accessLevel": "List" }, "DescribeExportTasks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportTasks.html", "description": "Grants permission to describe one or more export instance tasks", "accessLevel": "List" }, "DescribeFastSnapshotRestores": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFastSnapshotRestores.html", "description": "Grants permission to describe the state of fast snapshot restores for snapshots", "accessLevel": "Read" }, "DescribeFleetHistory": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleetHistory.html", "description": "Grants permission to describe the events for an EC2 Fleet during a specified time", "accessLevel": "List" }, "DescribeFleetInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleetInstances.html", "description": "Grants permission to describe the running instances for an EC2 Fleet", "accessLevel": "List" }, "DescribeFleets": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleets.html", "description": "Grants permission to describe one or more EC2 Fleets", "accessLevel": "List" }, "DescribeFlowLogs": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFlowLogs.html", "description": "Grants permission to describe one or more flow logs", "accessLevel": "List" }, "DescribeFpgaImageAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImageAttribute.html", "description": "Grants permission to describe the attributes of an Amazon FPGA Image (AFI)", "accessLevel": "List" }, "DescribeFpgaImages": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImages.html", "description": "Grants permission to describe one or more Amazon FPGA Images (AFIs)", "accessLevel": "List" }, "DescribeHostReservationOfferings": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservationOfferings.html", "description": "Grants permission to describe the Dedicated Host Reservations that are available to purchase", "accessLevel": "List" }, "DescribeHostReservations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservations.html", "description": "Grants permission to describe the Dedicated Host Reservations that are associated with Dedicated Hosts in the AWS account", "accessLevel": "List" }, "DescribeHosts": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html", "description": "Grants permission to describe one or more Dedicated Hosts", "accessLevel": "List" }, "DescribeIamInstanceProfileAssociations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIamInstanceProfileAssociations.html", "description": "Grants permission to describe the IAM instance profile associations", "accessLevel": "List" }, "DescribeIdFormat": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdFormat.html", "description": "Grants permission to describe the ID format settings for resources", "accessLevel": "List" }, "DescribeIdentityIdFormat": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdentityIdFormat.html", "description": "Grants permission to describe the ID format settings for resources for an IAM user, IAM role, or root user", "accessLevel": "List" }, "DescribeImageAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html", "description": "Grants permission to describe an attribute of an Amazon Machine Image (AMI)", "accessLevel": "List" }, "DescribeImages": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html", "description": "Grants permission to describe one or more images (AMIs, AKIs, and ARIs)", "accessLevel": "List" }, "DescribeImportImageTasks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportImageTasks.html", "description": "Grants permission to describe import virtual machine or import snapshot tasks", "accessLevel": "List" }, "DescribeImportSnapshotTasks": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportSnapshotTasks.html", "description": "Grants permission to describe import snapshot tasks", "accessLevel": "List" }, "DescribeInstanceAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceAttribute.html", "description": "Grants permission to describe the attributes of an instance", "accessLevel": "List" }, "DescribeInstanceCreditSpecifications": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceCreditSpecifications.html", "description": "Grants permission to describe the credit option for CPU usage of one or more burstable performance instances", "accessLevel": "List" }, "DescribeInstanceEventNotificationAttributes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceEventNotificationAttributes.html", "description": "Grants permission to describe the set of tags to include in notifications about scheduled events for your instances", "accessLevel": "List" }, "DescribeInstanceStatus": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceStatus.html", "description": "Grants permission to describe the status of one or more instances", "accessLevel": "List" }, "DescribeInstanceTypeOfferings": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html", "description": "Grants permission to describe the set of instance types that are offered in a location", "accessLevel": "List" }, "DescribeInstanceTypes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypes.html", "description": "Grants permission to describe the details of instance types that are offered in a location", "accessLevel": "List" }, "DescribeInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html", "description": "Grants permission to describe one or more instances", "accessLevel": "List" }, "DescribeInternetGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInternetGateways.html", "description": "Grants permission to describe one or more internet gateways", "accessLevel": "List" }, "DescribeKeyPairs": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeKeyPairs.html", "description": "Grants permission to describe one or more key pairs", "accessLevel": "List" }, "DescribeLaunchTemplateVersions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html", "description": "Grants permission to describe one or more launch template versions", "accessLevel": "List" }, "DescribeLaunchTemplates": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html", "description": "Grants permission to describe one or more launch templates", "accessLevel": "List" }, "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations.html", "description": "Grants permission to describe the associations between virtual interface groups and local gateway route tables", "accessLevel": "List" }, "DescribeLocalGatewayRouteTableVpcAssociations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVpcAssociations.html", "description": "Grants permission to describe an association between VPCs and local gateway route tables", "accessLevel": "List" }, "DescribeLocalGatewayRouteTables": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTables.html", "description": "Grants permission to describe one or more local gateway route tables", "accessLevel": "List" }, "DescribeLocalGatewayVirtualInterfaceGroups": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html", "description": "Grants permission to describe local gateway virtual interface groups", "accessLevel": "List" }, "DescribeLocalGatewayVirtualInterfaces": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaces.html", "description": "Grants permission to describe local gateway virtual interfaces", "accessLevel": "List" }, "DescribeLocalGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGateways.html", "description": "Grants permission to describe one or more local gateways", "accessLevel": "List" }, "DescribeMovingAddresses": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMovingAddresses.html", "description": "Grants permission to describe Elastic IP addresses that are being moved to the EC2-VPC platform", "accessLevel": "List" }, "DescribeNatGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNatGateways.html", "description": "Grants permission to describe one or more NAT gateways", "accessLevel": "List" }, "DescribeNetworkAcls": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkAcls.html", "description": "Grants permission to describe one or more network ACLs", "accessLevel": "List" }, "DescribeNetworkInterfaceAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaceAttribute.html", "description": "Grants permission to describe a network interface attribute", "accessLevel": "List" }, "DescribeNetworkInterfacePermissions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfacePermissions.html", "description": "Grants permission to describe the permissions that are associated with a network interface", "accessLevel": "List" }, "DescribeNetworkInterfaces": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaces.html", "description": "Grants permission to describe one or more network interfaces", "accessLevel": "List" }, "DescribePlacementGroups": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePlacementGroups.html", "description": "Grants permission to describe one or more placement groups", "accessLevel": "List" }, "DescribePrefixLists": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrefixLists.html", "description": "Grants permission to describe available AWS services in a prefix list format", "accessLevel": "List" }, "DescribePrincipalIdFormat": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrincipalIdFormat.html", "description": "Grants permission to describe the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified a longer ID (17-character ID) preference", "accessLevel": "List" }, "DescribePublicIpv4Pools": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html", "description": "Grants permission to describe one or more IPv4 address pools", "accessLevel": "List" }, "DescribeRegions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html", "description": "Grants permission to describe one or more AWS Regions that are currently available in your account", "accessLevel": "List" }, "DescribeReservedInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstances.html", "description": "Grants permission to describe one or more purchased Reserved Instances in your account", "accessLevel": "List" }, "DescribeReservedInstancesListings": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesListings.html", "description": "Grants permission to describe your account's Reserved Instance listings in the Reserved Instance Marketplace", "accessLevel": "List" }, "DescribeReservedInstancesModifications": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesModifications.html", "description": "Grants permission to describe the modifications made to one or more Reserved Instances", "accessLevel": "List" }, "DescribeReservedInstancesOfferings": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesOfferings.html", "description": "Grants permission to describe the Reserved Instance offerings that are available for purchase", "accessLevel": "List" }, "DescribeRouteTables": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html", "description": "Grants permission to describe one or more route tables", "accessLevel": "List" }, "DescribeScheduledInstanceAvailability": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstanceAvailability.html", "description": "Grants permission to find available schedules for Scheduled Instances", "accessLevel": "Read" }, "DescribeScheduledInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstances.html", "description": "Grants permission to describe one or more Scheduled Instances in your account", "accessLevel": "Read" }, "DescribeSecurityGroupReferences": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroupReferences.html", "description": "Grants permission to describe the VPCs on the other side of a VPC peering connection that are referencing specified VPC security groups", "accessLevel": "List" }, "DescribeSecurityGroups": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html", "description": "Grants permission to describe one or more security groups", "accessLevel": "List" }, "DescribeSnapshotAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotAttribute.html", "description": "Grants permission to describe an attribute of a snapshot", "accessLevel": "List" }, "DescribeSnapshots": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html", "description": "Grants permission to describe one or more EBS snapshots", "accessLevel": "List" }, "DescribeSpotDatafeedSubscription": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotDatafeedSubscription.html", "description": "Grants permission to describe the data feed for Spot Instances", "accessLevel": "List" }, "DescribeSpotFleetInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetInstances.html", "description": "Grants permission to describe the running instances for a Spot Fleet", "accessLevel": "List" }, "DescribeSpotFleetRequestHistory": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequestHistory.html", "description": "Grants permission to describe the events for a Spot Fleet request during a specified time", "accessLevel": "List" }, "DescribeSpotFleetRequests": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequests.html", "description": "Grants permission to describe one or more Spot Fleet requests", "accessLevel": "List" }, "DescribeSpotInstanceRequests": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotInstanceRequests.html", "description": "Grants permission to describe one or more Spot Instance requests", "accessLevel": "List" }, "DescribeSpotPriceHistory": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html", "description": "Grants permission to describe the Spot Instance price history", "accessLevel": "List" }, "DescribeStaleSecurityGroups": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeStaleSecurityGroups.html", "description": "Grants permission to describe the stale security group rules for security groups in a specified VPC", "accessLevel": "List" }, "DescribeSubnets": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSubnets.html", "description": "Grants permission to describe one or more subnets", "accessLevel": "List" }, "DescribeTags": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTags.html", "description": "Grants permission to describe one or more tags for an Amazon EC2 resource", "accessLevel": "Read" }, "DescribeTrafficMirrorFilters": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorFilters.html", "description": "Grants permission to describe one or more traffic mirror filters", "accessLevel": "List" }, "DescribeTrafficMirrorSessions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorSessions.html", "description": "Grants permission to describe one or more traffic mirror sessions", "accessLevel": "List" }, "DescribeTrafficMirrorTargets": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorTargets.html", "description": "Grants permission to describe one or more traffic mirror targets", "accessLevel": "List" }, "DescribeTransitGatewayAttachments": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html", "description": "Grants permission to describe one or more attachments between resources and transit gateways", "accessLevel": "List" }, "DescribeTransitGatewayMulticastDomains": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMulticastDomains.html", "description": "Grants permission to describe one or more transit gateway multicast domains", "accessLevel": "List" }, "DescribeTransitGatewayPeeringAttachments": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayPeeringAttachments.html", "description": "Grants permission to describe one or more transit gateway peering attachments", "accessLevel": "List" }, "DescribeTransitGatewayRouteTables": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayRouteTables.html", "description": "Grants permission to describe one or more transit gateway route tables", "accessLevel": "List" }, "DescribeTransitGatewayVpcAttachments": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayVpcAttachments.html", "description": "Grants permission to describe one or more VPC attachments on a transit gateway", "accessLevel": "List" }, "DescribeTransitGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html", "description": "Grants permission to describe one or more transit gateways", "accessLevel": "List" }, "DescribeVolumeAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeAttribute.html", "description": "Grants permission to describe an attribute of an EBS volume", "accessLevel": "List" }, "DescribeVolumeStatus": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeStatus.html", "description": "Grants permission to describe the status of one or more EBS volumes", "accessLevel": "List" }, "DescribeVolumes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumes.html", "description": "Grants permission to describe one or more EBS volumes", "accessLevel": "List" }, "DescribeVolumesModifications": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html", "description": "Grants permission to describe the current modification status of one or more EBS volumes", "accessLevel": "Read" }, "DescribeVpcAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcAttribute.html", "description": "Grants permission to describe an attribute of a VPC", "accessLevel": "List" }, "DescribeVpcClassicLink": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLink.html", "description": "Grants permission to describe the ClassicLink status of one or more VPCs", "accessLevel": "List" }, "DescribeVpcClassicLinkDnsSupport": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLinkDnsSupport.html", "description": "Grants permission to describe the ClassicLink DNS support status of one or more VPCs", "accessLevel": "List" }, "DescribeVpcEndpointConnectionNotifications": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnectionNotifications.html", "description": "Grants permission to describe the connection notifications for VPC endpoints and VPC endpoint services", "accessLevel": "List" }, "DescribeVpcEndpointConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnections.html", "description": "Grants permission to describe the VPC endpoint connections to your VPC endpoint services", "accessLevel": "List" }, "DescribeVpcEndpointServiceConfigurations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServiceConfigurations.html", "description": "Grants permission to describe VPC endpoint service configurations (your services)", "accessLevel": "List" }, "DescribeVpcEndpointServicePermissions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServicePermissions.html", "description": "Grants permission to describe the principals (service consumers) that are permitted to discover your VPC endpoint service", "accessLevel": "List" }, "DescribeVpcEndpointServices": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServices.html", "description": "Grants permission to describe all supported AWS services that can be specified when creating a VPC endpoint", "accessLevel": "List" }, "DescribeVpcEndpoints": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpoints.html", "description": "Grants permission to describe one or more VPC endpoints", "accessLevel": "List" }, "DescribeVpcPeeringConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcPeeringConnections.html", "description": "Grants permission to describe one or more VPC peering connections", "accessLevel": "List" }, "DescribeVpcs": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html", "description": "Grants permission to describe one or more VPCs", "accessLevel": "List" }, "DescribeVpnConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html", "description": "Grants permission to describe one or more VPN connections", "accessLevel": "Read" }, "DescribeVpnGateways": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html", "description": "Grants permission to describe one or more virtual private gateways", "accessLevel": "List" }, "DetachClassicLinkVpc": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachClassicLinkVpc.html", "description": "Grants permission to unlink (detach) a linked EC2-Classic instance from a VPC", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] }, "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] } } }, "DetachInternetGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachInternetGateway.html", "description": "Grants permission to detach an internet gateway from a VPC", "accessLevel": "Write" }, "DetachNetworkInterface": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachNetworkInterface.html", "description": "Grants permission to detach a network interface from an instance", "accessLevel": "Write" }, "DetachVolume": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVolume.html", "description": "Grants permission to detach an EBS volume from an instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] }, "volume": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:Encrypted", "ec2:ParentSnapshot", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] } } }, "DetachVpnGateway": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVpnGateway.html", "description": "Grants permission to detach a virtual private gateway from a VPC", "accessLevel": "Write" }, "DisableEbsEncryptionByDefault": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableEbsEncryptionByDefault.html", "description": "Grants permission to disable EBS encryption by default for your account", "accessLevel": "Write" }, "DisableFastSnapshotRestores": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableFastSnapshotRestores.html", "description": "Grants permission to disable fast snapshot restores for one or more snapshots in specified Availability Zones", "accessLevel": "Write", "resourceTypes": { "snapshot": { "required": true, "conditions": ["ec2:Owner", "ec2:ParentVolume", "ec2:Region", "ec2:AvailabilityZone", "ec2:SnapshotTime", "ec2:Encrypted", "ec2:VolumeSize", "ec2:ResourceTag/${TagKey}"] } } }, "DisableTransitGatewayRouteTablePropagation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableTransitGatewayRouteTablePropagation.html", "description": "Grants permission to disable a resource attachment from propagating routes to the specified propagation route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DisableVgwRoutePropagation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVgwRoutePropagation.html", "description": "Grants permission to disable a virtual private gateway from propagating routes to a specified route table of a VPC", "accessLevel": "Write" }, "DisableVpcClassicLink": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLink.html", "description": "Grants permission to disable ClassicLink for a VPC", "accessLevel": "Write", "resourceTypes": { "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] } } }, "DisableVpcClassicLinkDnsSupport": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLinkDnsSupport.html", "description": "Grants permission to disable ClassicLink DNS support for a VPC", "accessLevel": "Write" }, "DisassociateAddress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateAddress.html", "description": "Grants permission to disassociate an Elastic IP address from an instance or network interface", "accessLevel": "Write" }, "DisassociateClientVpnTargetNetwork": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateClientVpnTargetNetwork.html", "description": "Grants permission to disassociate a target network from a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DisassociateIamInstanceProfile": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html", "description": "Grants permission to disassociate an IAM instance profile from a running or stopped instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "DisassociateRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateRouteTable.html", "description": "Grants permission to disassociate a subnet from a route table", "accessLevel": "Write" }, "DisassociateSubnetCidrBlock": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateSubnetCidrBlock.html", "description": "Grants permission to disassociate a CIDR block from a subnet", "accessLevel": "Write" }, "DisassociateTransitGatewayMulticastDomain": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayMulticastDomain.html", "description": "Grants permission to disassociate one or more subnets from a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "subnet": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DisassociateTransitGatewayRouteTable": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayRouteTable.html", "description": "Grants permission to disassociate a resource attachment from a transit gateway route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "DisassociateVpcCidrBlock": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateVpcCidrBlock.html", "description": "Grants permission to disassociate a CIDR block from a VPC", "accessLevel": "Write" }, "EnableEbsEncryptionByDefault": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableEbsEncryptionByDefault.html", "description": "Grants permission to enable EBS encryption by default for your account", "accessLevel": "Write" }, "EnableFastSnapshotRestores": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableFastSnapshotRestores.html", "description": "Grants permission to enable fast snapshot restores for one or more snapshots in specified Availability Zones", "accessLevel": "Write", "resourceTypes": { "snapshot": { "required": true, "conditions": ["ec2:Owner", "ec2:ParentVolume", "ec2:Region", "ec2:AvailabilityZone", "ec2:SnapshotTime", "ec2:Encrypted", "ec2:VolumeSize", "ec2:ResourceTag/${TagKey}"] } } }, "EnableTransitGatewayRouteTablePropagation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableTransitGatewayRouteTablePropagation.html", "description": "Grants permission to enable an attachment to propagate routes to a propagation route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "EnableVgwRoutePropagation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVgwRoutePropagation.html", "description": "Grants permission to enable a virtual private gateway to propagate routes to a VPC route table", "accessLevel": "Write" }, "EnableVolumeIO": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVolumeIO.html", "description": "Grants permission to enable I/O operations for a volume that had I/O operations disabled", "accessLevel": "Write" }, "EnableVpcClassicLink": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLink.html", "description": "Grants permission to enable a VPC for ClassicLink", "accessLevel": "Write", "resourceTypes": { "vpc": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Tenancy"] } } }, "EnableVpcClassicLinkDnsSupport": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLinkDnsSupport.html", "description": "Grants permission to enable a VPC to support DNS hostname resolution for ClassicLink", "accessLevel": "Write" }, "ExportClientVpnClientCertificateRevocationList": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientCertificateRevocationList.html", "description": "Grants permission to download the client certificate revocation list for a Client VPN endpoint", "accessLevel": "List" }, "ExportClientVpnClientConfiguration": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientConfiguration.html", "description": "Grants permission to download the contents of the Client VPN endpoint configuration file for a Client VPN endpoint", "accessLevel": "List" }, "ExportImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportImage.html", "description": "Grants permission to export an Amazon Machine Image (AMI) to a VM file", "accessLevel": "Write" }, "ExportTransitGatewayRoutes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportTransitGatewayRoutes.html", "description": "Grants permission to export routes from a transit gateway route table to an Amazon S3 bucket", "accessLevel": "Write" }, "GetCapacityReservationUsage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityReservationUsage.html", "description": "Grants permission to get usage information about a Capacity Reservation", "accessLevel": "Read" }, "GetCoipPoolUsage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCoipPoolUsage.html", "description": "Grants permission to describe the allocations from the specified customer-owned address pool", "accessLevel": "Read" }, "GetConsoleOutput": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleOutput.html", "description": "Grants permission to get the console output for an instance", "accessLevel": "Read" }, "GetConsoleScreenshot": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleScreenshot.html", "description": "Grants permission to retrieve a JPG-format screenshot of a running instance", "accessLevel": "Read", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "GetDefaultCreditSpecification": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetDefaultCreditSpecification.html", "description": "Grants permission to get the default credit option for CPU usage of a burstable performance instance family", "accessLevel": "Read" }, "GetEbsDefaultKmsKeyId": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsDefaultKmsKeyId.html", "description": "Grants permission to get the ID of the default customer master key (CMK) for EBS encryption by default", "accessLevel": "Read" }, "GetEbsEncryptionByDefault": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsEncryptionByDefault.html", "description": "Grants permission to describe whether EBS encryption by default is enabled for your account", "accessLevel": "Read" }, "GetHostReservationPurchasePreview": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetHostReservationPurchasePreview.html", "description": "Grants permission to preview a reservation purchase with configurations that match those of a Dedicated Host", "accessLevel": "Read" }, "GetLaunchTemplateData": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetLaunchTemplateData.html", "description": "Grants permission to get the configuration data of the specified instance for use with a new launch template or launch template version", "accessLevel": "Read" }, "GetPasswordData": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetPasswordData.html", "description": "Grants permission to retrieve the encrypted administrator password for a running Windows instance", "accessLevel": "Read" }, "GetReservedInstancesExchangeQuote": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetReservedInstancesExchangeQuote.html", "description": "Grants permission to return a quote and exchange information for exchanging one or more Convertible Reserved Instances for a new Convertible Reserved Instance", "accessLevel": "Read" }, "GetTransitGatewayAttachmentPropagations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayAttachmentPropagations.html", "description": "Grants permission to list the route tables to which a resource attachment propagates routes", "accessLevel": "List" }, "GetTransitGatewayMulticastDomainAssociations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayMulticastDomainAssociations.html", "description": "Grants permission to get information about the associations for a transit gateway multicast domain", "accessLevel": "List" }, "GetTransitGatewayRouteTableAssociations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTableAssociations.html", "description": "Grants permission to get information about associations for a transit gateway route table", "accessLevel": "List" }, "GetTransitGatewayRouteTablePropagations": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTablePropagations.html", "description": "Grants permission to get information about the route table propagations for a transit gateway route table", "accessLevel": "List" }, "ImportClientVpnClientCertificateRevocationList": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportClientVpnClientCertificateRevocationList.html", "description": "Grants permission to upload a client certificate revocation list to a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ImportImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html", "description": "Grants permission to import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI)", "accessLevel": "Write" }, "ImportInstance": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html", "description": "Grants permission to create an import instance task using metadata from a disk image", "accessLevel": "Write" }, "ImportKeyPair": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html", "description": "Grants permission to import a public key from an RSA key pair that was created with a third-party tool", "accessLevel": "Write" }, "ImportSnapshot": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportSnapshot.html", "description": "Grants permission to import a disk into an EBS snapshot", "accessLevel": "Write" }, "ImportVolume": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportVolume.html", "description": "Grants permission to create an import volume task using metadata from a disk image", "accessLevel": "Write" }, "ModifyCapacityReservation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservation.html", "description": "Grants permission to modify a Capacity Reservation's capacity and the conditions under which it is to be released", "accessLevel": "Write", "resourceTypes": { "capacity-reservation": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyClientVpnEndpoint": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyClientVpnEndpoint.html", "description": "Grants permission to modify a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyDefaultCreditSpecification": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyDefaultCreditSpecification.html", "description": "Grants permission to change the account level default credit option for CPU usage of burstable performance instances", "accessLevel": "Write" }, "ModifyEbsDefaultKmsKeyId": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html", "description": "Grants permission to change the default customer master key (CMK) for EBS encryption by default for your account", "accessLevel": "Write" }, "ModifyFleet": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet.html", "description": "Grants permission to modify an EC2 Fleet", "accessLevel": "Write" }, "ModifyFpgaImageAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFpgaImageAttribute.html", "description": "Grants permission to modify an attribute of an Amazon FPGA Image (AFI)", "accessLevel": "Write" }, "ModifyHosts": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyHosts.html", "description": "Grants permission to modify a Dedicated Host", "accessLevel": "Write" }, "ModifyIdFormat": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdFormat.html", "description": "Grants permission to modify the ID format for a resource", "accessLevel": "Write" }, "ModifyIdentityIdFormat": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdentityIdFormat.html", "description": "Grants permission to modify the ID format of a resource for a specific principal in your account", "accessLevel": "Write" }, "ModifyImageAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html", "description": "Grants permission to modify an attribute of an Amazon Machine Image (AMI)", "accessLevel": "Write" }, "ModifyInstanceAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html", "description": "Grants permission to modify an attribute of an instance", "accessLevel": "Write" }, "ModifyInstanceCapacityReservationAttributes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCapacityReservationAttributes.html", "description": "Grants permission to modify the Capacity Reservation settings for a stopped instance", "accessLevel": "Write" }, "ModifyInstanceCreditSpecification": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html", "description": "Grants permission to modify the credit option for CPU usage on an instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true } } }, "ModifyInstanceEventStartTime": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceEventStartTime.html", "description": "Grants permission to modify the start time for a scheduled EC2 instance event", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:Region"] } } }, "ModifyInstanceMetadataOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceMetadataOptions.html", "description": "Grants permission to modify the metadata options for an instance", "accessLevel": "Write" }, "ModifyInstancePlacement": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstancePlacement.html", "description": "Grants permission to modify the placement attributes for an instance", "accessLevel": "Write" }, "ModifyLaunchTemplate": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyLaunchTemplate.html", "description": "Grants permission to modify a launch template", "accessLevel": "Write", "resourceTypes": { "launch-template": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyNetworkInterfaceAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html", "description": "Grants permission to modify an attribute of a network interface", "accessLevel": "Write" }, "ModifyReservedInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyReservedInstances.html", "description": "Grants permission to modify attributes of one or more Reserved Instances", "accessLevel": "Write" }, "ModifySnapshotAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html", "description": "Grants permission to add or remove permission settings for a snapshot", "accessLevel": "Permissions management", "resourceTypes": { "snapshot": { "required": true, "conditions": ["ec2:Owner", "ec2:ParentVolume", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:SnapshotTime", "ec2:VolumeSize"] } } }, "ModifySpotFleetRequest": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest.html", "description": "Grants permission to modify a Spot Fleet request", "accessLevel": "Write" }, "ModifySubnetAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySubnetAttribute.html", "description": "Grants permission to modify an attribute of a subnet", "accessLevel": "Write" }, "ModifyTrafficMirrorFilterNetworkServices": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html", "description": "Grants permission to allow or restrict mirroring network services", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-filter": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyTrafficMirrorFilterRule": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterRule.html", "description": "Grants permission to modify a traffic mirror rule", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-filter": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-filter-rule": { "required": true, "conditions": ["ec2:Region"] } } }, "ModifyTrafficMirrorSession": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorSession.html", "description": "Grants permission to modify a traffic mirror session", "accessLevel": "Write", "resourceTypes": { "traffic-mirror-session": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-filter": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "traffic-mirror-target": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyTransitGatewayVpcAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayVpcAttachment.html", "description": "Grants permission to modify a VPC attachment on a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyVolume": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolume.html", "description": "Grants permission to modify the parameters of an EBS volume", "accessLevel": "Write" }, "ModifyVolumeAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolumeAttribute.html", "description": "Grants permission to modify an attribute of a volume", "accessLevel": "Write" }, "ModifyVpcAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcAttribute.html", "description": "Grants permission to modify an attribute of a VPC", "accessLevel": "Write" }, "ModifyVpcEndpoint": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html", "description": "Grants permission to modify an attribute of a VPC endpoint", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "route-table": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "security-group": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "subnet": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyVpcEndpointConnectionNotification": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointConnectionNotification.html", "description": "Grants permission to modify a connection notification for a VPC endpoint or VPC endpoint service", "accessLevel": "Write" }, "ModifyVpcEndpointServiceConfiguration": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServiceConfiguration.html", "description": "Grants permission to modify the attributes of a VPC endpoint service configuration", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["ec2:Region", "ec2:VpceServicePrivateDnsName", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyVpcEndpointServicePermissions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServicePermissions.html", "description": "Grants permission to modify the permissions for a VPC endpoint service", "accessLevel": "Permissions management", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ModifyVpcPeeringConnectionOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcPeeringConnectionOptions.html", "description": "Grants permission to modify the VPC peering connection options on one side of a VPC peering connection", "accessLevel": "Write" }, "ModifyVpcTenancy": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcTenancy.html", "description": "Grants permission to modify the instance tenancy attribute of a VPC", "accessLevel": "Write" }, "ModifyVpnConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnConnection.html", "description": "Grants permission to modify the target gateway of a Site-to-Site VPN connection", "accessLevel": "Write", "resourceTypes": { "vpn-connection": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:GatewayType"] } } }, "ModifyVpnTunnelCertificate": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelCertificate", "description": "Grants permission to modify the certificate for a Site-to-Site VPN connection", "accessLevel": "Write" }, "ModifyVpnTunnelOptions": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelOptions.html", "description": "Grants permission to modify the options for a Site-to-Site VPN connection", "accessLevel": "Write", "resourceTypes": { "vpn-connection": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:AuthenticationType", "ec2:DPDTimeoutSeconds", "ec2:IKEVersions", "ec2:InsideTunnelCidr", "ec2:Phase1DHGroupNumbers", "ec2:Phase2DHGroupNumbers", "ec2:Phase1EncryptionAlgorithms", "ec2:Phase2EncryptionAlgorithms", "ec2:Phase1IntegrityAlgorithms", "ec2:Phase2IntegrityAlgorithms", "ec2:Phase1LifetimeSeconds", "ec2:Phase2LifetimeSeconds", "ec2:PresharedKeys", "ec2:RekeyFuzzPercentage", "ec2:RekeyMarginTimeSeconds", "ec2:RoutingType"] } } }, "MonitorInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MonitorInstances.html", "description": "Grants permission to enable detailed monitoring for a running instance", "accessLevel": "Write" }, "MoveAddressToVpc": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MoveAddressToVpc.html", "description": "Grants permission to move an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform", "accessLevel": "Write" }, "ProvisionByoipCidr": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ProvisionByoipCidr.html", "description": "Grants permission to provision an address range for use in AWS through bring your own IP addresses (BYOIP), and to create a corresponding address pool", "accessLevel": "Write" }, "PurchaseHostReservation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseHostReservation.html", "description": "Grants permission to purchase a reservation with configurations that match those of a Dedicated Host", "accessLevel": "Write" }, "PurchaseReservedInstancesOffering": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseReservedInstancesOffering.html", "description": "Grants permission to purchase a Reserved Instance offering", "accessLevel": "Write" }, "PurchaseScheduledInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseScheduledInstances.html", "description": "Grants permission to purchase one or more Scheduled Instances with a specified schedule", "accessLevel": "Write" }, "RebootInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RebootInstances.html", "description": "Grants permission to request a reboot of one or more instances", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "RegisterImage": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html", "description": "Grants permission to register an Amazon Machine Image (AMI)", "accessLevel": "Write" }, "RegisterInstanceEventNotificationAttributes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterInstanceEventNotificationAttributes.html", "description": "Grants permission to add tags to the set of tags to include in notifications about scheduled events for your instances", "accessLevel": "Write" }, "RegisterTransitGatewayMulticastGroupMembers": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterTransitGatewayMulticastGroupMembers.html", "description": "Grants permission to register one or more network interfaces as a member of a group IP address in a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "network-interface": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "RegisterTransitGatewayMulticastGroupSources": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterTransitGatewayMulticastGroupSources.html", "description": "Grants permission to register one or more network interfaces as a source of a group IP address in a transit gateway multicast domain", "accessLevel": "Write", "resourceTypes": { "network-interface": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-multicast-domain": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "RejectTransitGatewayPeeringAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectTransitGatewayPeeringAttachment.html", "description": "Grants permission to reject a transit gateway peering attachment request", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "RejectTransitGatewayVpcAttachment": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectTransitGatewayVpcAttachment.html", "description": "Grants permission to reject a request to attach a VPC to a transit gateway", "accessLevel": "Write", "resourceTypes": { "transit-gateway-attachment": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "RejectVpcEndpointConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcEndpointConnections.html", "description": "Grants permission to reject one or more VPC endpoint connection requests to a VPC endpoint service", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "RejectVpcPeeringConnection": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcPeeringConnection.html", "description": "Grants permission to reject a VPC peering connection request", "accessLevel": "Write", "resourceTypes": { "vpc-peering-connection": { "required": true, "conditions": ["ec2:AccepterVpc", "ec2:Region", "ec2:RequesterVpc", "ec2:ResourceTag/${TagKey}"] } } }, "ReleaseAddress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseAddress.html", "description": "Grants permission to release an Elastic IP address", "accessLevel": "Write" }, "ReleaseHosts": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseHosts.html", "description": "Grants permission to release one or more On-Demand Dedicated Hosts", "accessLevel": "Write" }, "ReplaceIamInstanceProfileAssociation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html", "description": "Grants permission to replace an IAM instance profile for an instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "ReplaceNetworkAclAssociation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceNetworkAclAssociation.html", "description": "Grants permission to change which network ACL a subnet is associated with", "accessLevel": "Write" }, "ReplaceNetworkAclEntry": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceNetworkAclEntry.html", "description": "Grants permission to replace an entry (rule) in a network ACL", "accessLevel": "Write" }, "ReplaceRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRoute.html", "description": "Grants permission to replace a route within a route table in a VPC", "accessLevel": "Write", "resourceTypes": { "route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "ReplaceRouteTableAssociation": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRouteTableAssociation.html", "description": "Grants permission to change the route table that is associated with a subnet", "accessLevel": "Write" }, "ReplaceTransitGatewayRoute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceTransitGatewayRoute.html", "description": "Grants permission to replace a route in a transit gateway route table", "accessLevel": "Write", "resourceTypes": { "transit-gateway-route-table": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "transit-gateway-attachment": { "required": false, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "ReportInstanceStatus": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReportInstanceStatus.html", "description": "Grants permission to submit feedback about the status of an instance", "accessLevel": "Write" }, "RequestSpotFleet": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html", "description": "Grants permission to create a Spot Fleet request", "accessLevel": "Write" }, "RequestSpotInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html", "description": "Grants permission to create a Spot Instance request", "accessLevel": "Write" }, "ResetEbsDefaultKmsKeyId": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetEbsDefaultKmsKeyId.html", "description": "Grants permission to reset the default customer master key (CMK) for EBS encryption for your account to use the AWS-managed CMK for EBS", "accessLevel": "Write" }, "ResetFpgaImageAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetFpgaImageAttribute.html", "description": "Grants permission to reset an attribute of an Amazon FPGA Image (AFI) to its default value", "accessLevel": "Write" }, "ResetImageAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetImageAttribute.html", "description": "Grants permission to reset an attribute of an Amazon Machine Image (AMI) to its default value", "accessLevel": "Write" }, "ResetInstanceAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetInstanceAttribute.html", "description": "Grants permission to reset an attribute of an instance to its default value", "accessLevel": "Write" }, "ResetNetworkInterfaceAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetNetworkInterfaceAttribute.html", "description": "Grants permission to reset an attribute of a network interface", "accessLevel": "Write" }, "ResetSnapshotAttribute": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetSnapshotAttribute.html", "description": "Grants permission to reset permission settings for a snapshot", "accessLevel": "Permissions management" }, "RestoreAddressToClassic": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreAddressToClassic.html", "description": "Grants permission to restore an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform", "accessLevel": "Write" }, "RevokeClientVpnIngress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeClientVpnIngress.html", "description": "Grants permission to remove an inbound authorization rule from a Client VPN endpoint", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "RevokeSecurityGroupEgress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupEgress.html", "description": "Grants permission to remove one or more outbound rules from a VPC security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "RevokeSecurityGroupIngress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupIngress.html", "description": "Grants permission to remove one or more inbound rules from a security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "RunInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html", "description": "Grants permission to launch one or more instances", "accessLevel": "Write", "resourceTypes": { "image": { "required": true, "conditions": ["ec2:ImageType", "ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Owner", "ec2:Public", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType"] }, "instance": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:PlacementGroup", "ec2:Region", "ec2:RootDeviceType", "ec2:Tenancy", "ec2:MetadataHttpEndpoint", "ec2:MetadataHttpTokens", "ec2:MetadataHttpPutResponseHopLimit"] }, "network-interface": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Region", "ec2:ResourceTag/", "ec2:Subnet", "ec2:Vpc", "ec2:AssociatePublicIpAddress"] }, "security-group": { "required": true, "conditions": ["ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "subnet": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] }, "volume": { "required": true, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:AvailabilityZone", "ec2:Encrypted", "ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:ParentSnapshot", "ec2:Region", "ec2:VolumeIops", "ec2:VolumeSize", "ec2:VolumeType"] }, "capacity-reservation": { "required": false, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "ec2:Region", "ec2:ResourceTag/${TagKey}"] }, "elastic-gpu": { "required": false, "conditions": ["ec2:ElasticGpuType"] }, "key-pair": { "required": false, "conditions": ["ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Region"] }, "launch-template": { "required": false, "conditions": ["ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Region"] }, "placement-group": { "required": false, "conditions": ["ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:PlacementGroupStrategy", "ec2:Region"] }, "snapshot": { "required": false, "conditions": ["ec2:IsLaunchTemplateResource", "ec2:LaunchTemplate", "ec2:Owner", "ec2:ParentVolume", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:SnapshotTime", "ec2:VolumeSize"] } } }, "RunScheduledInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunScheduledInstances.html", "description": "Grants permission to launch one or more Scheduled Instances", "accessLevel": "Write" }, "SearchLocalGatewayRoutes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchLocalGatewayRoutes.html", "description": "Grants permission to search for routes in a local gateway route table", "accessLevel": "List" }, "SearchTransitGatewayMulticastGroups": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html", "description": "Grants permission to search for groups, sources, and members in a transit gateway multicast domain", "accessLevel": "List" }, "SearchTransitGatewayRoutes": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayRoutes.html", "description": "Grants permission to search for routes in a transit gateway route table", "accessLevel": "List" }, "SendDiagnosticInterrupt": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SendDiagnosticInterrupt.html", "description": "Grants permission to send a diagnostic interrupt to an Amazon EC2 instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "StartInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html", "description": "Grants permission to start a stopped instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "StartVpcEndpointServicePrivateDnsVerification": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartVpcEndpointServicePrivateDnsVerification.html", "description": "Grants permission to start the private DNS verification process for a VPC endpoint service", "accessLevel": "Write", "resourceTypes": { "vpc-endpoint-service": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "StopInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StopInstances.html", "description": "Grants permission to stop an Amazon EBS-backed instance", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "TerminateClientVpnConnections": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateClientVpnConnections.html", "description": "Grants permission to terminate active Client VPN endpoint connections", "accessLevel": "Write", "resourceTypes": { "client-vpn-endpoint": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}"] } } }, "TerminateInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html", "description": "Grants permission to shut down one or more instances", "accessLevel": "Write", "resourceTypes": { "instance": { "required": true, "conditions": ["ec2:AvailabilityZone", "ec2:EbsOptimized", "ec2:InstanceProfile", "ec2:InstanceType", "ec2:PlacementGroup", "ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:RootDeviceType", "ec2:Tenancy"] } } }, "UnassignIpv6Addresses": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignIpv6Addresses.html", "description": "Grants permission to unassign one or more IPv6 addresses from a network interface", "accessLevel": "Write" }, "UnassignPrivateIpAddresses": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignPrivateIpAddresses.html", "description": "Grants permission to unassign one or more secondary private IP addresses from a network interface", "accessLevel": "Write" }, "UnmonitorInstances": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html", "description": "Grants permission to disable detailed monitoring for a running instance", "accessLevel": "Write" }, "UpdateSecurityGroupRuleDescriptionsEgress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsEgress.html", "description": "Grants permission to update descriptions for one or more outbound rules in a VPC security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "UpdateSecurityGroupRuleDescriptionsIngress": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsIngress.html", "description": "Grants permission to update descriptions for one or more inbound rules in a security group", "accessLevel": "Write", "resourceTypes": { "security-group": { "required": true, "conditions": ["ec2:Region", "ec2:ResourceTag/${TagKey}", "ec2:Vpc"] } } }, "WithdrawByoipCidr": { "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_WithdrawByoipCidr.html", "description": "Grants permission to stop advertising an address range that was provisioned for use in AWS through bring your own IP addresses (BYOIP)", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "AcceptReservedInstancesExchangeQuote": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptReservedInstancesExchangeQuote.html",
+            "description": "Grants permission to accept a Convertible Reserved Instance exchange quote",
+            "accessLevel": "Write"
+        },
+        "AcceptTransitGatewayPeeringAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayPeeringAttachment.html",
+            "description": "Grants permission to accept a transit gateway peering attachment request",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AcceptTransitGatewayVpcAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptTransitGatewayVpcAttachment.html",
+            "description": "Grants permission to accept a request to attach a VPC to a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AcceptVpcEndpointConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcEndpointConnections.html",
+            "description": "Grants permission to accept one or more interface VPC endpoint connections to your VPC endpoint service",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AcceptVpcPeeringConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcPeeringConnection.html",
+            "description": "Grants permission to accept a VPC peering connection request",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "vpc-peering-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AccepterVpc",
+                        "ec2:Region",
+                        "ec2:RequesterVpc",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AdvertiseByoipCidr": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html",
+            "description": "Grants permission to advertise an IP address range that is provisioned for use in AWS through bring your own IP addresses (BYOIP)",
+            "accessLevel": "Write"
+        },
+        "AllocateAddress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateAddress.html",
+            "description": "Grants permission to allocate an Elastic IP address (EIP) to your account",
+            "accessLevel": "Write"
+        },
+        "AllocateHosts": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateHosts.html",
+            "description": "Grants permission to allocate a Dedicated Host to your account",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dedicated-host": {
+                    "required": true
+                }
+            }
+        },
+        "ApplySecurityGroupsToClientVpnTargetNetwork": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ApplySecurityGroupsToClientVpnTargetNetwork.html",
+            "description": "Grants permission to apply a security group to the association between a Client VPN endpoint and a target network",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AssignIpv6Addresses": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignIpv6Addresses.html",
+            "description": "Grants permission to assign one or more IPv6 addresses to a network interface",
+            "accessLevel": "Write"
+        },
+        "AssignPrivateIpAddresses": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignPrivateIpAddresses.html",
+            "description": "Grants permission to assign one or more secondary private IP addresses to a network interface",
+            "accessLevel": "Write"
+        },
+        "AssociateAddress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateAddress.html",
+            "description": "Grants permission to associate an Elastic IP address (EIP) with an instance or a network interface",
+            "accessLevel": "Write"
+        },
+        "AssociateClientVpnTargetNetwork": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateClientVpnTargetNetwork.html",
+            "description": "Grants permission to associate a target network with a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AssociateDhcpOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateDhcpOptions.html",
+            "description": "Grants permission to associate or disassociate a set of DHCP options with a VPC",
+            "accessLevel": "Write"
+        },
+        "AssociateIamInstanceProfile": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html",
+            "description": "Grants permission to associate an IAM instance profile with a running or stopped instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "AssociateRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html",
+            "description": "Grants permission to associate a subnet or gateway with a route table",
+            "accessLevel": "Write"
+        },
+        "AssociateSubnetCidrBlock": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSubnetCidrBlock.html",
+            "description": "Grants permission to associate a CIDR block with a subnet",
+            "accessLevel": "Write"
+        },
+        "AssociateTransitGatewayMulticastDomain": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayMulticastDomain.html",
+            "description": "Grants permission to associate an attachment and list of subnets with a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "subnet": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AssociateTransitGatewayRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateTransitGatewayRouteTable.html",
+            "description": "Grants permission to associate an attachment with a transit gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AssociateVpcCidrBlock": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateVpcCidrBlock.html",
+            "description": "Grants permission to associate a CIDR block with a VPC",
+            "accessLevel": "Write"
+        },
+        "AttachClassicLinkVpc": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachClassicLinkVpc.html",
+            "description": "Grants permission to link an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "AttachInternetGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachInternetGateway.html",
+            "description": "Grants permission to attach an internet gateway to a VPC",
+            "accessLevel": "Write"
+        },
+        "AttachNetworkInterface": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachNetworkInterface.html",
+            "description": "Grants permission to attach a network interface to an instance",
+            "accessLevel": "Write"
+        },
+        "AttachVolume": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVolume.html",
+            "description": "Grants permission to attach an EBS volume to a running or stopped instance and expose it to the instance with the specified device name",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:Encrypted",
+                        "ec2:ParentSnapshot",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                }
+            }
+        },
+        "AttachVpnGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVpnGateway.html",
+            "description": "Grants permission to attach a virtual private gateway to a VPC",
+            "accessLevel": "Write"
+        },
+        "AuthorizeClientVpnIngress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeClientVpnIngress.html",
+            "description": "Grants permission to add an inbound authorization rule to a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "AuthorizeSecurityGroupEgress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupEgress.html",
+            "description": "Grants permission to add one or more outbound rules to a VPC security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "AuthorizeSecurityGroupIngress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html",
+            "description": "Grants permission to add one or more inbound rules to a security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "BundleInstance": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html",
+            "description": "Grants permission to bundle an instance store-backed Windows instance",
+            "accessLevel": "Write"
+        },
+        "CancelBundleTask": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelBundleTask.html",
+            "description": "Grants permission to cancel a bundling operation",
+            "accessLevel": "Write"
+        },
+        "CancelCapacityReservation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelCapacityReservation.html",
+            "description": "Grants permission to cancel a Capacity Reservation and release the reserved capacity",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "capacity-reservation": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CancelConversionTask": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelConversionTask.html",
+            "description": "Grants permission to cancel an active conversion task",
+            "accessLevel": "Write"
+        },
+        "CancelExportTask": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelExportTask.html",
+            "description": "Grants permission to cancel an active export task",
+            "accessLevel": "Write"
+        },
+        "CancelImportTask": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelImportTask.html",
+            "description": "Grants permission to cancel an in-process import virtual machine or import snapshot task",
+            "accessLevel": "Write"
+        },
+        "CancelReservedInstancesListing": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelReservedInstancesListing.html",
+            "description": "Grants permission to cancel a Reserved Instance listing on the Reserved Instance Marketplace",
+            "accessLevel": "Write"
+        },
+        "CancelSpotFleetRequests": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests.html",
+            "description": "Grants permission to cancel one or more Spot Fleet requests",
+            "accessLevel": "Write"
+        },
+        "CancelSpotInstanceRequests": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotInstanceRequests.html",
+            "description": "Grants permission to cancel one or more Spot Instance requests",
+            "accessLevel": "Write"
+        },
+        "ConfirmProductInstance": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ConfirmProductInstance.html",
+            "description": "Grants permission to determine whether an owned product code is associated with an instance",
+            "accessLevel": "Write"
+        },
+        "CopyFpgaImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyFpgaImage.html",
+            "description": "Grants permission to copy a source Amazon FPGA image (AFI) to the current Region",
+            "accessLevel": "Write"
+        },
+        "CopyImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html",
+            "description": "Grants permission to copy an Amazon Machine Image (AMI) from a source Region to the current Region",
+            "accessLevel": "Write"
+        },
+        "CopySnapshot": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html",
+            "description": "Grants permission to copy a point-in-time snapshot of an EBS volume and store it in Amazon S3",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "aws:TagKeys",
+                        "aws:RequestTag/${TagKey}",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateCapacityReservation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservation.html",
+            "description": "Grants permission to create a Capacity Reservation",
+            "accessLevel": "Write"
+        },
+        "CreateClientVpnEndpoint": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnEndpoint.html",
+            "description": "Grants permission to create a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateClientVpnRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnRoute.html",
+            "description": "Grants permission to add a network route to a Client VPN endpoint's route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateCustomerGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCustomerGateway.html",
+            "description": "Grants permission to create a customer gateway, which provides information to AWS about your customer gateway device",
+            "accessLevel": "Write"
+        },
+        "CreateDefaultSubnet": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultSubnet.html",
+            "description": "Grants permission to create a default subnet in a specified Availability Zone in a default VPC",
+            "accessLevel": "Write"
+        },
+        "CreateDefaultVpc": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultVpc.html",
+            "description": "Grants permission to create a default VPC with a default subnet in each Availability Zone",
+            "accessLevel": "Write"
+        },
+        "CreateDhcpOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDhcpOptions.html",
+            "description": "Grants permission to create a set of DHCP options for a VPC",
+            "accessLevel": "Write"
+        },
+        "CreateEgressOnlyInternetGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateEgressOnlyInternetGateway.html",
+            "description": "Grants permission to create an egress-only internet gateway for a VPC",
+            "accessLevel": "Write"
+        },
+        "CreateFleet": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html",
+            "description": "Grants permission to launch an EC2 Fleet",
+            "accessLevel": "Write"
+        },
+        "CreateFlowLogs": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html",
+            "description": "Grants permission to create one or more flow logs to capture IP traffic for a network interface",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-flow-log": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                },
+                "network-interface": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:Subnet",
+                        "ec2:Vpc"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:Vpc"
+                    ]
+                },
+                "vpc": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateFpgaImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html",
+            "description": "Grants permission to create an Amazon FPGA Image (AFI) from a design checkpoint (DCP)",
+            "accessLevel": "Write"
+        },
+        "CreateImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html",
+            "description": "Grants permission to create an Amazon EBS-backed AMI from a stopped or running Amazon EBS-backed instance",
+            "accessLevel": "Write"
+        },
+        "CreateInstanceExportTask": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInstanceExportTask.html",
+            "description": "Grants permission to export a running or stopped instance to an Amazon S3 bucket",
+            "accessLevel": "Write"
+        },
+        "CreateInternetGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInternetGateway.html",
+            "description": "Grants permission to create an internet gateway for a VPC",
+            "accessLevel": "Write"
+        },
+        "CreateKeyPair": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html",
+            "description": "Grants permission to create a 2048-bit RSA key pair",
+            "accessLevel": "Write"
+        },
+        "CreateLaunchTemplate": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html",
+            "description": "Grants permission to create a launch template",
+            "accessLevel": "Write"
+        },
+        "CreateLaunchTemplateVersion": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html",
+            "description": "Grants permission to create a new version of a launch template",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "launch-template": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateLocalGatewayRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRoute.html",
+            "description": "Grants permission to create a static route for a local gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "local-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "local-gateway-virtual-interface-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateLocalGatewayRouteTableVpcAssociation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLocalGatewayRouteTableVpcAssociation.html",
+            "description": "Grants permission to associate a VPC with a local gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "local-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "CreateNatGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNatGateway.html",
+            "description": "Grants permission to create a NAT gateway in a subnet",
+            "accessLevel": "Write"
+        },
+        "CreateNetworkAcl": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAcl.html",
+            "description": "Grants permission to create a network ACL in a VPC",
+            "accessLevel": "Write"
+        },
+        "CreateNetworkAclEntry": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAclEntry.html",
+            "description": "Grants permission to create a numbered entry (a rule) in a network ACL",
+            "accessLevel": "Write"
+        },
+        "CreateNetworkInterface": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html",
+            "description": "Grants permission to create a network interface in a subnet",
+            "accessLevel": "Write"
+        },
+        "CreateNetworkInterfacePermission": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html",
+            "description": "Grants permission to create a permission for an AWS-authorized user to perform certain operations on a network interface",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AuthorizedUser",
+                        "ec2:AvailabilityZone",
+                        "ec2:Permission",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Subnet",
+                        "ec2:Vpc",
+                        "ec2:AuthorizedService"
+                    ]
+                }
+            }
+        },
+        "CreatePlacementGroup": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreatePlacementGroup.html",
+            "description": "Grants permission to create a placement group",
+            "accessLevel": "Write"
+        },
+        "CreateReservedInstancesListing": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateReservedInstancesListing.html",
+            "description": "Grants permission to create a listing for Standard Reserved Instances to be sold in the Reserved Instance Marketplace",
+            "accessLevel": "Write"
+        },
+        "CreateRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRoute.html",
+            "description": "Grants permission to create a route in a VPC route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "CreateRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRouteTable.html",
+            "description": "Grants permission to create a route table for a VPC",
+            "accessLevel": "Write"
+        },
+        "CreateSecurityGroup": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html",
+            "description": "Grants permission to create a security group",
+            "accessLevel": "Write"
+        },
+        "CreateSnapshot": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshot.html",
+            "description": "Grants permission to create a snapshot of an EBS volume and store it in Amazon S3",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "aws:TagKeys",
+                        "aws:RequestTag/${TagKey}",
+                        "ec2:ParentVolume",
+                        "ec2:Region"
+                    ]
+                },
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Encrypted",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                }
+            }
+        },
+        "CreateSnapshots": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html",
+            "description": "Grants permission to create crash-consistent snapshots of multiple EBS volumes and store them in Amazon S3",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "aws:TagKeys",
+                        "aws:RequestTag/${TagKey}",
+                        "ec2:ParentVolume",
+                        "ec2:Region"
+                    ]
+                },
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Encrypted",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                }
+            }
+        },
+        "CreateSpotDatafeedSubscription": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSpotDatafeedSubscription.html",
+            "description": "Grants permission to create a data feed for Spot Instances to view Spot Instance usage logs",
+            "accessLevel": "Write"
+        },
+        "CreateSubnet": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnet.html",
+            "description": "Grants permission to create a subnet in a VPC",
+            "accessLevel": "Write"
+        },
+        "CreateTags": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html",
+            "description": "Grants permission to add or overwrite one or more tags for Amazon EC2 resources",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "capacity-reservation": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "client-vpn-endpoint": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "dedicated-host": {
+                    "required": false
+                },
+                "dhcp-options": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "fpga-image": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Owner",
+                        "ec2:Public",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "image": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:ImageType",
+                        "ec2:Owner",
+                        "ec2:Public",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType"
+                    ]
+                },
+                "instance": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "internet-gateway": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "local-gateway": {
+                    "required": false
+                },
+                "local-gateway-route-table": {
+                    "required": false
+                },
+                "local-gateway-route-table-virtual-interface-group-association": {
+                    "required": false
+                },
+                "local-gateway-route-table-vpc-association": {
+                    "required": false
+                },
+                "local-gateway-virtual-interface": {
+                    "required": false
+                },
+                "local-gateway-virtual-interface-group": {
+                    "required": false
+                },
+                "network-acl": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "network-interface": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Subnet",
+                        "ec2:Vpc",
+                        "ec2:AssociatePublicIpAddress"
+                    ]
+                },
+                "reserved-instances": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:InstanceType",
+                        "ec2:Region",
+                        "ec2:ReservedInstancesOfferingType",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "route-table": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "security-group": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "snapshot": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Owner",
+                        "ec2:ParentVolume",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:SnapshotTime",
+                        "ec2:VolumeSize"
+                    ]
+                },
+                "spot-instance-request": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "traffic-mirror-filter": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-session": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-target": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "volume": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:Encrypted",
+                        "ec2:ParentSnapshot",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                },
+                "vpc": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "vpc-endpoint": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc-endpoint-service": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc-flow-log": {
+                    "required": false
+                },
+                "vpn-connection": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpn-gateway": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            },
+            "conditions": [
+                "ec2:CreateAction"
+            ]
+        },
+        "CreateTrafficMirrorFilter": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.html",
+            "description": "Grants permission to create a traffic mirror filter",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateTrafficMirrorFilterRule": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.html",
+            "description": "Grants permission to create a traffic mirror filter rule",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-filter-rule": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateTrafficMirrorSession": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.html",
+            "description": "Grants permission to create a traffic mirror session",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-session": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                },
+                "traffic-mirror-target": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateTrafficMirrorTarget": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorTarget.html",
+            "description": "Grants permission to create a traffic mirror target",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-target": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                },
+                "network-interface": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateTransitGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGateway.html",
+            "description": "Grants permission to create a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateTransitGatewayMulticastDomain": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayMulticastDomain.html",
+            "description": "Grants permission to create a multicast domain for a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateTransitGatewayPeeringAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPeeringAttachment.html",
+            "description": "Grants permission to request a transit gateway peering attachment between a requester and accepter transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateTransitGatewayRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRoute.html",
+            "description": "Grants permission to create a static route for a transit gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateTransitGatewayRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRouteTable.html",
+            "description": "Grants permission to create a route table for a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "CreateTransitGatewayVpcAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayVpcAttachment.html",
+            "description": "Grants permission to attach a VPC to a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region"
+                    ]
+                },
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateVolume": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html",
+            "description": "Grants permission to create an EBS volume",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:Encrypted",
+                        "ec2:ParentSnapshot",
+                        "ec2:Region",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                }
+            }
+        },
+        "CreateVpc": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpc.html",
+            "description": "Grants permission to create a VPC with a specified CIDR block",
+            "accessLevel": "Write"
+        },
+        "CreateVpcEndpoint": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html",
+            "description": "Grants permission to create a VPC endpoint for an AWS service",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:VpceServiceName",
+                        "ec2:VpceServiceOwner"
+                    ]
+                },
+                "route-table": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "security-group": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "CreateVpcEndpointConnectionNotification": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html",
+            "description": "Grants permission to create a connection notification for a VPC endpoint or VPC endpoint service",
+            "accessLevel": "Write"
+        },
+        "CreateVpcEndpointServiceConfiguration": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointServiceConfiguration.html",
+            "description": "Grants permission to create a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles) can connect",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:VpceServicePrivateDnsName"
+                    ]
+                }
+            }
+        },
+        "CreateVpcPeeringConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcPeeringConnection.html",
+            "description": "Grants permission to request a VPC peering connection between two VPCs",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "vpc-peering-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AccepterVpc",
+                        "ec2:Region",
+                        "ec2:RequesterVpc"
+                    ]
+                }
+            }
+        },
+        "CreateVpnConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnection.html",
+            "description": "Grants permission to create a VPN connection between a virtual private gateway or transit gateway and a customer gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpn-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:AuthenticationType",
+                        "ec2:DPDTimeoutSeconds",
+                        "ec2:GatewayType",
+                        "ec2:IKEVersions",
+                        "ec2:InsideTunnelCidr",
+                        "ec2:Phase1DHGroupNumbers",
+                        "ec2:Phase2DHGroupNumbers",
+                        "ec2:Phase1EncryptionAlgorithms",
+                        "ec2:Phase2EncryptionAlgorithms",
+                        "ec2:Phase1IntegrityAlgorithms",
+                        "ec2:Phase2IntegrityAlgorithms",
+                        "ec2:Phase1LifetimeSeconds",
+                        "ec2:Phase2LifetimeSeconds",
+                        "ec2:PresharedKeys",
+                        "ec2:RekeyFuzzPercentage",
+                        "ec2:RekeyMarginTimeSeconds",
+                        "ec2:RoutingType"
+                    ]
+                }
+            }
+        },
+        "CreateVpnConnectionRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnConnectionRoute.html",
+            "description": "Grants permission to create a static route for a VPN connection between a virtual private gateway and a customer gateway",
+            "accessLevel": "Write"
+        },
+        "CreateVpnGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpnGateway.html",
+            "description": "Grants permission to create a virtual private gateway",
+            "accessLevel": "Write"
+        },
+        "DeleteClientVpnEndpoint": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnEndpoint.html",
+            "description": "Grants permission to delete a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteClientVpnRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnRoute.html",
+            "description": "Grants permission to delete a route from a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteCustomerGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCustomerGateway.html",
+            "description": "Grants permission to delete a customer gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "customer-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteDhcpOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteDhcpOptions.html",
+            "description": "Grants permission to delete a set of DHCP options",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "dhcp-options": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteEgressOnlyInternetGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteEgressOnlyInternetGateway.html",
+            "description": "Grants permission to delete an egress-only internet gateway",
+            "accessLevel": "Write"
+        },
+        "DeleteFleets": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFleets.html",
+            "description": "Grants permission to delete one or more EC2 Fleets",
+            "accessLevel": "Write"
+        },
+        "DeleteFlowLogs": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html",
+            "description": "Grants permission to delete one or more flow logs",
+            "accessLevel": "Write"
+        },
+        "DeleteFpgaImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFpgaImage.html",
+            "description": "Grants permission to delete an Amazon FPGA Image (AFI)",
+            "accessLevel": "Write"
+        },
+        "DeleteInternetGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteInternetGateway.html",
+            "description": "Grants permission to delete an internet gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "internet-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteKeyPair": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteKeyPair.html",
+            "description": "Grants permission to delete a key pair by removing the public key from Amazon EC2",
+            "accessLevel": "Write"
+        },
+        "DeleteLaunchTemplate": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplate.html",
+            "description": "Grants permission to delete a launch template and its associated versions",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "launch-template": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteLaunchTemplateVersions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplateVersions.html",
+            "description": "Grants permission to delete one or more versions of a launch template",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "launch-template": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteLocalGatewayRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRoute.html",
+            "description": "Grants permission to delete a route from a local gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "local-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteLocalGatewayRouteTableVpcAssociation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLocalGatewayRouteTableVpcAssociation.html",
+            "description": "Grants permission to delete an association between a VPC and local gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "local-gateway-route-table-vpc-association": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteNatGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNatGateway.html",
+            "description": "Grants permission to delete a NAT gateway",
+            "accessLevel": "Write"
+        },
+        "DeleteNetworkAcl": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAcl.html",
+            "description": "Grants permission to delete a network ACL",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-acl": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "DeleteNetworkAclEntry": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAclEntry.html",
+            "description": "Grants permission to delete an inbound or outbound entry (rule) from a network ACL",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-acl": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "DeleteNetworkInterface": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterface.html",
+            "description": "Grants permission to delete a detached network interface",
+            "accessLevel": "Write"
+        },
+        "DeleteNetworkInterfacePermission": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterfacePermission.html",
+            "description": "Grants permission to delete a permission that is associated with a network interface",
+            "accessLevel": "Permissions management"
+        },
+        "DeletePlacementGroup": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeletePlacementGroup.html",
+            "description": "Grants permission to delete a placement group",
+            "accessLevel": "Write"
+        },
+        "DeleteRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html",
+            "description": "Grants permission to delete a route from a route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "DeleteRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteTable.html",
+            "description": "Grants permission to delete a route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "DeleteSecurityGroup": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecurityGroup.html",
+            "description": "Grants permission to delete a security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "DeleteSnapshot": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html",
+            "description": "Grants permission to delete a snapshot of an EBS volume",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Owner",
+                        "ec2:ParentVolume",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:SnapshotTime",
+                        "ec2:VolumeSize"
+                    ]
+                }
+            }
+        },
+        "DeleteSpotDatafeedSubscription": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSpotDatafeedSubscription.html",
+            "description": "Grants permission to delete a data feed for Spot Instances",
+            "accessLevel": "Write"
+        },
+        "DeleteSubnet": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSubnet.html",
+            "description": "Grants permission to delete a subnet",
+            "accessLevel": "Write"
+        },
+        "DeleteTags": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTags.html",
+            "description": "Grants permission to delete one or more tags from Amazon EC2 resources",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "capacity-reservation": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "client-vpn-endpoint": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "dedicated-host": {
+                    "required": false
+                },
+                "dhcp-options": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "fpga-image": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "image": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "instance": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "internet-gateway": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "local-gateway": {
+                    "required": false
+                },
+                "local-gateway-route-table": {
+                    "required": false
+                },
+                "local-gateway-route-table-virtual-interface-group-association": {
+                    "required": false
+                },
+                "local-gateway-route-table-vpc-association": {
+                    "required": false
+                },
+                "local-gateway-virtual-interface": {
+                    "required": false
+                },
+                "local-gateway-virtual-interface-group": {
+                    "required": false
+                },
+                "network-acl": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "network-interface": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "reserved-instances": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "route-table": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "security-group": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "snapshot": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "spot-instance-request": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "volume": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc-endpoint": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc-endpoint-service": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpc-flow-log": {
+                    "required": false
+                },
+                "vpn-connection": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "vpn-gateway": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTrafficMirrorFilter": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorFilter.html",
+            "description": "Grants permission to delete a traffic mirror filter",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTrafficMirrorFilterRule": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorFilterRule.html",
+            "description": "Grants permission to delete a traffic mirror filter rule",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-filter-rule": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "DeleteTrafficMirrorSession": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorSession.html",
+            "description": "Grants permission to delete a traffic mirror session",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-session": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTrafficMirrorTarget": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTrafficMirrorTarget.html",
+            "description": "Grants permission to delete a traffic mirror target",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-target": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTransitGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGateway.html",
+            "description": "Grants permission to delete a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTransitGatewayMulticastDomain": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayMulticastDomain.html",
+            "description": "Grants permissions to delete a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTransitGatewayPeeringAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPeeringAttachment.html",
+            "description": "Grants permission to delete a peering attachment from a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTransitGatewayRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRoute.html",
+            "description": "Grants permission to delete a route from a transit gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTransitGatewayRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayRouteTable.html",
+            "description": "Grants permission to delete a transit gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteTransitGatewayVpcAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayVpcAttachment.html",
+            "description": "Grants permission to delete a VPC attachment from a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteVolume": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVolume.html",
+            "description": "Grants permission to delete an EBS volume",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:Encrypted",
+                        "ec2:ParentSnapshot",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                }
+            }
+        },
+        "DeleteVpc": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpc.html",
+            "description": "Grants permission to delete a VPC",
+            "accessLevel": "Write"
+        },
+        "DeleteVpcEndpointConnectionNotifications": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointConnectionNotifications.html",
+            "description": "Grants permission to delete one or more VPC endpoint connection notifications",
+            "accessLevel": "Write"
+        },
+        "DeleteVpcEndpointServiceConfigurations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointServiceConfigurations.html",
+            "description": "Grants permission to delete one or more VPC endpoint service configurations",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteVpcEndpoints": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpoints.html",
+            "description": "Grants permission to delete one or more VPC endpoints",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteVpcPeeringConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcPeeringConnection.html",
+            "description": "Grants permission to delete a VPC peering connection",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-peering-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AccepterVpc",
+                        "ec2:Region",
+                        "ec2:RequesterVpc",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeleteVpnConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnection.html",
+            "description": "Grants permission to delete a VPN connection",
+            "accessLevel": "Write"
+        },
+        "DeleteVpnConnectionRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnectionRoute.html",
+            "description": "Grants permission to delete a static route for a VPN connection between a virtual private gateway and a customer gateway",
+            "accessLevel": "Write"
+        },
+        "DeleteVpnGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnGateway.html",
+            "description": "Grants permission to delete a virtual private gateway",
+            "accessLevel": "Write"
+        },
+        "DeprovisionByoipCidr": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeprovisionByoipCidr.html",
+            "description": "Grants permission to release an IP address range that was provisioned through bring your own IP addresses (BYOIP), and to delete the corresponding address pool",
+            "accessLevel": "Write"
+        },
+        "DeregisterImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterImage.html",
+            "description": "Grants permission to deregister an Amazon Machine Image (AMI)",
+            "accessLevel": "Write"
+        },
+        "DeregisterInstanceEventNotificationAttributes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html",
+            "description": "Grants permission to remove tags from the set of tags to include in notifications about scheduled events for your instances",
+            "accessLevel": "Write"
+        },
+        "DeregisterTransitGatewayMulticastGroupMembers": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterTransitGatewayMulticastGroupMembers.html",
+            "description": "Grants permission to deregister one or more network interface members from a group IP address in a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DeregisterTransitGatewayMulticastGroupSources": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterTransitGatewayMulticastGroupSources.html",
+            "description": "Grants permission to deregister one or more network interface sources from a group IP address in a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DescribeAccountAttributes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAccountAttributes.html",
+            "description": "Grants permission to describe the attributes of the AWS account",
+            "accessLevel": "List"
+        },
+        "DescribeAddresses": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html",
+            "description": "Grants permission to describe one or more Elastic IP addresses",
+            "accessLevel": "List"
+        },
+        "DescribeAggregateIdFormat": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAggregateIdFormat.html",
+            "description": "Grants permission to describe the longer ID format settings for all resource types",
+            "accessLevel": "List"
+        },
+        "DescribeAvailabilityZones": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html",
+            "description": "Grants permission to describe one or more of the Availability Zones that are available to you",
+            "accessLevel": "List"
+        },
+        "DescribeBundleTasks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeBundleTasks.html",
+            "description": "Grants permission to describe one or more bundling tasks",
+            "accessLevel": "List"
+        },
+        "DescribeByoipCidrs": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html",
+            "description": "Grants permission to describe the IP address ranges that were provisioned through bring your own IP addresses (BYOIP)",
+            "accessLevel": "List"
+        },
+        "DescribeCapacityReservations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservations.html",
+            "description": "Grants permission to describe one or more Capacity Reservations",
+            "accessLevel": "List"
+        },
+        "DescribeClassicLinkInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClassicLinkInstances.html",
+            "description": "Grants permission to describe one or more linked EC2-Classic instances",
+            "accessLevel": "List"
+        },
+        "DescribeClientVpnAuthorizationRules": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnAuthorizationRules.html",
+            "description": "Grants permission to describe the authorization rules for a Client VPN endpoint",
+            "accessLevel": "List"
+        },
+        "DescribeClientVpnConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnConnections.html",
+            "description": "Grants permission to describe active client connections and connections that have been terminated within the last 60 minutes for a Client VPN endpoint",
+            "accessLevel": "List"
+        },
+        "DescribeClientVpnEndpoints": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnEndpoints.html",
+            "description": "Grants permission to describe one or more Client VPN endpoints",
+            "accessLevel": "List"
+        },
+        "DescribeClientVpnRoutes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnRoutes.html",
+            "description": "Grants permission to describe the routes for a Client VPN endpoint",
+            "accessLevel": "List"
+        },
+        "DescribeClientVpnTargetNetworks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClientVpnTargetNetworks.html",
+            "description": "Grants permission to describe the target networks that are associated with a Client VPN endpoint",
+            "accessLevel": "List"
+        },
+        "DescribeCoipPools": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCoipPools.html",
+            "description": "Grants permission to describe the specified customer-owned address pools or all of your customer-owned address pools",
+            "accessLevel": "List"
+        },
+        "DescribeConversionTasks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeConversionTasks.html",
+            "description": "Grants permission to describe one or more conversion tasks",
+            "accessLevel": "List"
+        },
+        "DescribeCustomerGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html",
+            "description": "Grants permission to describe one or more customer gateways",
+            "accessLevel": "List"
+        },
+        "DescribeDhcpOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeDhcpOptions.html",
+            "description": "Grants permission to describe one or more DHCP options sets",
+            "accessLevel": "List"
+        },
+        "DescribeEgressOnlyInternetGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeEgressOnlyInternetGateways.html",
+            "description": "Grants permission to describe one or more egress-only internet gateways",
+            "accessLevel": "List"
+        },
+        "DescribeElasticGpus": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeElasticGpus.html",
+            "description": "Grants permission to describe an Elastic Graphics accelerator that is associated with an instance",
+            "accessLevel": "Read"
+        },
+        "DescribeExportImageTasks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportImageTasks.html",
+            "description": "Grants permission to describe one or more export image tasks",
+            "accessLevel": "List"
+        },
+        "DescribeExportTasks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportTasks.html",
+            "description": "Grants permission to describe one or more export instance tasks",
+            "accessLevel": "List"
+        },
+        "DescribeFastSnapshotRestores": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFastSnapshotRestores.html",
+            "description": "Grants permission to describe the state of fast snapshot restores for snapshots",
+            "accessLevel": "Read"
+        },
+        "DescribeFleetHistory": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleetHistory.html",
+            "description": "Grants permission to describe the events for an EC2 Fleet during a specified time",
+            "accessLevel": "List"
+        },
+        "DescribeFleetInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleetInstances.html",
+            "description": "Grants permission to describe the running instances for an EC2 Fleet",
+            "accessLevel": "List"
+        },
+        "DescribeFleets": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFleets.html",
+            "description": "Grants permission to describe one or more EC2 Fleets",
+            "accessLevel": "List"
+        },
+        "DescribeFlowLogs": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFlowLogs.html",
+            "description": "Grants permission to describe one or more flow logs",
+            "accessLevel": "List"
+        },
+        "DescribeFpgaImageAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImageAttribute.html",
+            "description": "Grants permission to describe the attributes of an Amazon FPGA Image (AFI)",
+            "accessLevel": "List"
+        },
+        "DescribeFpgaImages": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImages.html",
+            "description": "Grants permission to describe one or more Amazon FPGA Images (AFIs)",
+            "accessLevel": "List"
+        },
+        "DescribeHostReservationOfferings": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservationOfferings.html",
+            "description": "Grants permission to describe the Dedicated Host Reservations that are available to purchase",
+            "accessLevel": "List"
+        },
+        "DescribeHostReservations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservations.html",
+            "description": "Grants permission to describe the Dedicated Host Reservations that are associated with Dedicated Hosts in the AWS account",
+            "accessLevel": "List"
+        },
+        "DescribeHosts": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html",
+            "description": "Grants permission to describe one or more Dedicated Hosts",
+            "accessLevel": "List"
+        },
+        "DescribeIamInstanceProfileAssociations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIamInstanceProfileAssociations.html",
+            "description": "Grants permission to describe the IAM instance profile associations",
+            "accessLevel": "List"
+        },
+        "DescribeIdFormat": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdFormat.html",
+            "description": "Grants permission to describe the ID format settings for resources",
+            "accessLevel": "List"
+        },
+        "DescribeIdentityIdFormat": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdentityIdFormat.html",
+            "description": "Grants permission to describe the ID format settings for resources for an IAM user, IAM role, or root user",
+            "accessLevel": "List"
+        },
+        "DescribeImageAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html",
+            "description": "Grants permission to describe an attribute of an Amazon Machine Image (AMI)",
+            "accessLevel": "List"
+        },
+        "DescribeImages": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html",
+            "description": "Grants permission to describe one or more images (AMIs, AKIs, and ARIs)",
+            "accessLevel": "List"
+        },
+        "DescribeImportImageTasks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportImageTasks.html",
+            "description": "Grants permission to describe import virtual machine or import snapshot tasks",
+            "accessLevel": "List"
+        },
+        "DescribeImportSnapshotTasks": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportSnapshotTasks.html",
+            "description": "Grants permission to describe import snapshot tasks",
+            "accessLevel": "List"
+        },
+        "DescribeInstanceAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceAttribute.html",
+            "description": "Grants permission to describe the attributes of an instance",
+            "accessLevel": "List"
+        },
+        "DescribeInstanceCreditSpecifications": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceCreditSpecifications.html",
+            "description": "Grants permission to describe the credit option for CPU usage of one or more burstable performance instances",
+            "accessLevel": "List"
+        },
+        "DescribeInstanceEventNotificationAttributes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceEventNotificationAttributes.html",
+            "description": "Grants permission to describe the set of tags to include in notifications about scheduled events for your instances",
+            "accessLevel": "List"
+        },
+        "DescribeInstanceStatus": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceStatus.html",
+            "description": "Grants permission to describe the status of one or more instances",
+            "accessLevel": "List"
+        },
+        "DescribeInstanceTypeOfferings": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html",
+            "description": "Grants permission to describe the set of instance types that are offered in a location",
+            "accessLevel": "List"
+        },
+        "DescribeInstanceTypes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypes.html",
+            "description": "Grants permission to describe the details of instance types that are offered in a location",
+            "accessLevel": "List"
+        },
+        "DescribeInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html",
+            "description": "Grants permission to describe one or more instances",
+            "accessLevel": "List"
+        },
+        "DescribeInternetGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInternetGateways.html",
+            "description": "Grants permission to describe one or more internet gateways",
+            "accessLevel": "List"
+        },
+        "DescribeKeyPairs": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeKeyPairs.html",
+            "description": "Grants permission to describe one or more key pairs",
+            "accessLevel": "List"
+        },
+        "DescribeLaunchTemplateVersions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplateVersions.html",
+            "description": "Grants permission to describe one or more launch template versions",
+            "accessLevel": "List"
+        },
+        "DescribeLaunchTemplates": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLaunchTemplates.html",
+            "description": "Grants permission to describe one or more launch templates",
+            "accessLevel": "List"
+        },
+        "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations.html",
+            "description": "Grants permission to describe the associations between virtual interface groups and local gateway route tables",
+            "accessLevel": "List"
+        },
+        "DescribeLocalGatewayRouteTableVpcAssociations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTableVpcAssociations.html",
+            "description": "Grants permission to describe an association between VPCs and local gateway route tables",
+            "accessLevel": "List"
+        },
+        "DescribeLocalGatewayRouteTables": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayRouteTables.html",
+            "description": "Grants permission to describe one or more local gateway route tables",
+            "accessLevel": "List"
+        },
+        "DescribeLocalGatewayVirtualInterfaceGroups": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html",
+            "description": "Grants permission to describe local gateway virtual interface groups",
+            "accessLevel": "List"
+        },
+        "DescribeLocalGatewayVirtualInterfaces": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaces.html",
+            "description": "Grants permission to describe local gateway virtual interfaces",
+            "accessLevel": "List"
+        },
+        "DescribeLocalGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGateways.html",
+            "description": "Grants permission to describe one or more local gateways",
+            "accessLevel": "List"
+        },
+        "DescribeMovingAddresses": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMovingAddresses.html",
+            "description": "Grants permission to describe Elastic IP addresses that are being moved to the EC2-VPC platform",
+            "accessLevel": "List"
+        },
+        "DescribeNatGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNatGateways.html",
+            "description": "Grants permission to describe one or more NAT gateways",
+            "accessLevel": "List"
+        },
+        "DescribeNetworkAcls": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkAcls.html",
+            "description": "Grants permission to describe one or more network ACLs",
+            "accessLevel": "List"
+        },
+        "DescribeNetworkInterfaceAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaceAttribute.html",
+            "description": "Grants permission to describe a network interface attribute",
+            "accessLevel": "List"
+        },
+        "DescribeNetworkInterfacePermissions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfacePermissions.html",
+            "description": "Grants permission to describe the permissions that are associated with a network interface",
+            "accessLevel": "List"
+        },
+        "DescribeNetworkInterfaces": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaces.html",
+            "description": "Grants permission to describe one or more network interfaces",
+            "accessLevel": "List"
+        },
+        "DescribePlacementGroups": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePlacementGroups.html",
+            "description": "Grants permission to describe one or more placement groups",
+            "accessLevel": "List"
+        },
+        "DescribePrefixLists": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrefixLists.html",
+            "description": "Grants permission to describe available AWS services in a prefix list format",
+            "accessLevel": "List"
+        },
+        "DescribePrincipalIdFormat": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrincipalIdFormat.html",
+            "description": "Grants permission to describe the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified a longer ID (17-character ID) preference",
+            "accessLevel": "List"
+        },
+        "DescribePublicIpv4Pools": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html",
+            "description": "Grants permission to describe one or more IPv4 address pools",
+            "accessLevel": "List"
+        },
+        "DescribeRegions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html",
+            "description": "Grants permission to describe one or more AWS Regions that are currently available in your account",
+            "accessLevel": "List"
+        },
+        "DescribeReservedInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstances.html",
+            "description": "Grants permission to describe one or more purchased Reserved Instances in your account",
+            "accessLevel": "List"
+        },
+        "DescribeReservedInstancesListings": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesListings.html",
+            "description": "Grants permission to describe your account's Reserved Instance listings in the Reserved Instance Marketplace",
+            "accessLevel": "List"
+        },
+        "DescribeReservedInstancesModifications": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesModifications.html",
+            "description": "Grants permission to describe the modifications made to one or more Reserved Instances",
+            "accessLevel": "List"
+        },
+        "DescribeReservedInstancesOfferings": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesOfferings.html",
+            "description": "Grants permission to describe the Reserved Instance offerings that are available for purchase",
+            "accessLevel": "List"
+        },
+        "DescribeRouteTables": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html",
+            "description": "Grants permission to describe one or more route tables",
+            "accessLevel": "List"
+        },
+        "DescribeScheduledInstanceAvailability": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstanceAvailability.html",
+            "description": "Grants permission to find available schedules for Scheduled Instances",
+            "accessLevel": "Read"
+        },
+        "DescribeScheduledInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstances.html",
+            "description": "Grants permission to describe one or more Scheduled Instances in your account",
+            "accessLevel": "Read"
+        },
+        "DescribeSecurityGroupReferences": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroupReferences.html",
+            "description": "Grants permission to describe the VPCs on the other side of a VPC peering connection that are referencing specified VPC security groups",
+            "accessLevel": "List"
+        },
+        "DescribeSecurityGroups": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html",
+            "description": "Grants permission to describe one or more security groups",
+            "accessLevel": "List"
+        },
+        "DescribeSnapshotAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotAttribute.html",
+            "description": "Grants permission to describe an attribute of a snapshot",
+            "accessLevel": "List"
+        },
+        "DescribeSnapshots": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html",
+            "description": "Grants permission to describe one or more EBS snapshots",
+            "accessLevel": "List"
+        },
+        "DescribeSpotDatafeedSubscription": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotDatafeedSubscription.html",
+            "description": "Grants permission to describe the data feed for Spot Instances",
+            "accessLevel": "List"
+        },
+        "DescribeSpotFleetInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetInstances.html",
+            "description": "Grants permission to describe the running instances for a Spot Fleet",
+            "accessLevel": "List"
+        },
+        "DescribeSpotFleetRequestHistory": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequestHistory.html",
+            "description": "Grants permission to describe the events for a Spot Fleet request during a specified time",
+            "accessLevel": "List"
+        },
+        "DescribeSpotFleetRequests": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequests.html",
+            "description": "Grants permission to describe one or more Spot Fleet requests",
+            "accessLevel": "List"
+        },
+        "DescribeSpotInstanceRequests": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotInstanceRequests.html",
+            "description": "Grants permission to describe one or more Spot Instance requests",
+            "accessLevel": "List"
+        },
+        "DescribeSpotPriceHistory": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html",
+            "description": "Grants permission to describe the Spot Instance price history",
+            "accessLevel": "List"
+        },
+        "DescribeStaleSecurityGroups": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeStaleSecurityGroups.html",
+            "description": "Grants permission to describe the stale security group rules for security groups in a specified VPC",
+            "accessLevel": "List"
+        },
+        "DescribeSubnets": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSubnets.html",
+            "description": "Grants permission to describe one or more subnets",
+            "accessLevel": "List"
+        },
+        "DescribeTags": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTags.html",
+            "description": "Grants permission to describe one or more tags for an Amazon EC2 resource",
+            "accessLevel": "Read"
+        },
+        "DescribeTrafficMirrorFilters": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorFilters.html",
+            "description": "Grants permission to describe one or more traffic mirror filters",
+            "accessLevel": "List"
+        },
+        "DescribeTrafficMirrorSessions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorSessions.html",
+            "description": "Grants permission to describe one or more traffic mirror sessions",
+            "accessLevel": "List"
+        },
+        "DescribeTrafficMirrorTargets": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTrafficMirrorTargets.html",
+            "description": "Grants permission to describe one or more traffic mirror targets",
+            "accessLevel": "List"
+        },
+        "DescribeTransitGatewayAttachments": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html",
+            "description": "Grants permission to describe one or more attachments between resources and transit gateways",
+            "accessLevel": "List"
+        },
+        "DescribeTransitGatewayMulticastDomains": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayMulticastDomains.html",
+            "description": "Grants permission to describe one or more transit gateway multicast domains",
+            "accessLevel": "List"
+        },
+        "DescribeTransitGatewayPeeringAttachments": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayPeeringAttachments.html",
+            "description": "Grants permission to describe one or more transit gateway peering attachments",
+            "accessLevel": "List"
+        },
+        "DescribeTransitGatewayRouteTables": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayRouteTables.html",
+            "description": "Grants permission to describe one or more transit gateway route tables",
+            "accessLevel": "List"
+        },
+        "DescribeTransitGatewayVpcAttachments": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayVpcAttachments.html",
+            "description": "Grants permission to describe one or more VPC attachments on a transit gateway",
+            "accessLevel": "List"
+        },
+        "DescribeTransitGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html",
+            "description": "Grants permission to describe one or more transit gateways",
+            "accessLevel": "List"
+        },
+        "DescribeVolumeAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeAttribute.html",
+            "description": "Grants permission to describe an attribute of an EBS volume",
+            "accessLevel": "List"
+        },
+        "DescribeVolumeStatus": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeStatus.html",
+            "description": "Grants permission to describe the status of one or more EBS volumes",
+            "accessLevel": "List"
+        },
+        "DescribeVolumes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumes.html",
+            "description": "Grants permission to describe one or more EBS volumes",
+            "accessLevel": "List"
+        },
+        "DescribeVolumesModifications": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html",
+            "description": "Grants permission to describe the current modification status of one or more EBS volumes",
+            "accessLevel": "Read"
+        },
+        "DescribeVpcAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcAttribute.html",
+            "description": "Grants permission to describe an attribute of a VPC",
+            "accessLevel": "List"
+        },
+        "DescribeVpcClassicLink": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLink.html",
+            "description": "Grants permission to describe the ClassicLink status of one or more VPCs",
+            "accessLevel": "List"
+        },
+        "DescribeVpcClassicLinkDnsSupport": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLinkDnsSupport.html",
+            "description": "Grants permission to describe the ClassicLink DNS support status of one or more VPCs",
+            "accessLevel": "List"
+        },
+        "DescribeVpcEndpointConnectionNotifications": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnectionNotifications.html",
+            "description": "Grants permission to describe the connection notifications for VPC endpoints and VPC endpoint services",
+            "accessLevel": "List"
+        },
+        "DescribeVpcEndpointConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnections.html",
+            "description": "Grants permission to describe the VPC endpoint connections to your VPC endpoint services",
+            "accessLevel": "List"
+        },
+        "DescribeVpcEndpointServiceConfigurations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServiceConfigurations.html",
+            "description": "Grants permission to describe VPC endpoint service configurations (your services)",
+            "accessLevel": "List"
+        },
+        "DescribeVpcEndpointServicePermissions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServicePermissions.html",
+            "description": "Grants permission to describe the principals (service consumers) that are permitted to discover your VPC endpoint service",
+            "accessLevel": "List"
+        },
+        "DescribeVpcEndpointServices": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServices.html",
+            "description": "Grants permission to describe all supported AWS services that can be specified when creating a VPC endpoint",
+            "accessLevel": "List"
+        },
+        "DescribeVpcEndpoints": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpoints.html",
+            "description": "Grants permission to describe one or more VPC endpoints",
+            "accessLevel": "List"
+        },
+        "DescribeVpcPeeringConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcPeeringConnections.html",
+            "description": "Grants permission to describe one or more VPC peering connections",
+            "accessLevel": "List"
+        },
+        "DescribeVpcs": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html",
+            "description": "Grants permission to describe one or more VPCs",
+            "accessLevel": "List"
+        },
+        "DescribeVpnConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html",
+            "description": "Grants permission to describe one or more VPN connections",
+            "accessLevel": "Read"
+        },
+        "DescribeVpnGateways": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html",
+            "description": "Grants permission to describe one or more virtual private gateways",
+            "accessLevel": "List"
+        },
+        "DetachClassicLinkVpc": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachClassicLinkVpc.html",
+            "description": "Grants permission to unlink (detach) a linked EC2-Classic instance from a VPC",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "DetachInternetGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachInternetGateway.html",
+            "description": "Grants permission to detach an internet gateway from a VPC",
+            "accessLevel": "Write"
+        },
+        "DetachNetworkInterface": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachNetworkInterface.html",
+            "description": "Grants permission to detach a network interface from an instance",
+            "accessLevel": "Write"
+        },
+        "DetachVolume": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVolume.html",
+            "description": "Grants permission to detach an EBS volume from an instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                },
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:Encrypted",
+                        "ec2:ParentSnapshot",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                }
+            }
+        },
+        "DetachVpnGateway": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVpnGateway.html",
+            "description": "Grants permission to detach a virtual private gateway from a VPC",
+            "accessLevel": "Write"
+        },
+        "DisableEbsEncryptionByDefault": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableEbsEncryptionByDefault.html",
+            "description": "Grants permission to disable EBS encryption by default for your account",
+            "accessLevel": "Write"
+        },
+        "DisableFastSnapshotRestores": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableFastSnapshotRestores.html",
+            "description": "Grants permission to disable fast snapshot restores for one or more snapshots in specified Availability Zones",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Owner",
+                        "ec2:ParentVolume",
+                        "ec2:Region",
+                        "ec2:AvailabilityZone",
+                        "ec2:SnapshotTime",
+                        "ec2:Encrypted",
+                        "ec2:VolumeSize",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DisableTransitGatewayRouteTablePropagation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableTransitGatewayRouteTablePropagation.html",
+            "description": "Grants permission to disable a resource attachment from propagating routes to the specified propagation route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DisableVgwRoutePropagation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVgwRoutePropagation.html",
+            "description": "Grants permission to disable a virtual private gateway from propagating routes to a specified route table of a VPC",
+            "accessLevel": "Write"
+        },
+        "DisableVpcClassicLink": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLink.html",
+            "description": "Grants permission to disable ClassicLink for a VPC",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "DisableVpcClassicLinkDnsSupport": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLinkDnsSupport.html",
+            "description": "Grants permission to disable ClassicLink DNS support for a VPC",
+            "accessLevel": "Write"
+        },
+        "DisassociateAddress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateAddress.html",
+            "description": "Grants permission to disassociate an Elastic IP address from an instance or network interface",
+            "accessLevel": "Write"
+        },
+        "DisassociateClientVpnTargetNetwork": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateClientVpnTargetNetwork.html",
+            "description": "Grants permission to disassociate a target network from a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DisassociateIamInstanceProfile": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html",
+            "description": "Grants permission to disassociate an IAM instance profile from a running or stopped instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "DisassociateRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateRouteTable.html",
+            "description": "Grants permission to disassociate a subnet from a route table",
+            "accessLevel": "Write"
+        },
+        "DisassociateSubnetCidrBlock": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateSubnetCidrBlock.html",
+            "description": "Grants permission to disassociate a CIDR block from a subnet",
+            "accessLevel": "Write"
+        },
+        "DisassociateTransitGatewayMulticastDomain": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayMulticastDomain.html",
+            "description": "Grants permission to disassociate one or more subnets from a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "subnet": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DisassociateTransitGatewayRouteTable": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateTransitGatewayRouteTable.html",
+            "description": "Grants permission to disassociate a resource attachment from a transit gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "DisassociateVpcCidrBlock": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateVpcCidrBlock.html",
+            "description": "Grants permission to disassociate a CIDR block from a VPC",
+            "accessLevel": "Write"
+        },
+        "EnableEbsEncryptionByDefault": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableEbsEncryptionByDefault.html",
+            "description": "Grants permission to enable EBS encryption by default for your account",
+            "accessLevel": "Write"
+        },
+        "EnableFastSnapshotRestores": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableFastSnapshotRestores.html",
+            "description": "Grants permission to enable fast snapshot restores for one or more snapshots in specified Availability Zones",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Owner",
+                        "ec2:ParentVolume",
+                        "ec2:Region",
+                        "ec2:AvailabilityZone",
+                        "ec2:SnapshotTime",
+                        "ec2:Encrypted",
+                        "ec2:VolumeSize",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "EnableTransitGatewayRouteTablePropagation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableTransitGatewayRouteTablePropagation.html",
+            "description": "Grants permission to enable an attachment to propagate routes to a propagation route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "EnableVgwRoutePropagation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVgwRoutePropagation.html",
+            "description": "Grants permission to enable a virtual private gateway to propagate routes to a VPC route table",
+            "accessLevel": "Write"
+        },
+        "EnableVolumeIO": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVolumeIO.html",
+            "description": "Grants permission to enable I/O operations for a volume that had I/O operations disabled",
+            "accessLevel": "Write"
+        },
+        "EnableVpcClassicLink": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLink.html",
+            "description": "Grants permission to enable a VPC for ClassicLink",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "EnableVpcClassicLinkDnsSupport": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLinkDnsSupport.html",
+            "description": "Grants permission to enable a VPC to support DNS hostname resolution for ClassicLink",
+            "accessLevel": "Write"
+        },
+        "ExportClientVpnClientCertificateRevocationList": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientCertificateRevocationList.html",
+            "description": "Grants permission to download the client certificate revocation list for a Client VPN endpoint",
+            "accessLevel": "List"
+        },
+        "ExportClientVpnClientConfiguration": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportClientVpnClientConfiguration.html",
+            "description": "Grants permission to download the contents of the Client VPN endpoint configuration file for a Client VPN endpoint",
+            "accessLevel": "List"
+        },
+        "ExportImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportImage.html",
+            "description": "Grants permission to export an Amazon Machine Image (AMI) to a VM file",
+            "accessLevel": "Write"
+        },
+        "ExportTransitGatewayRoutes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ExportTransitGatewayRoutes.html",
+            "description": "Grants permission to export routes from a transit gateway route table to an Amazon S3 bucket",
+            "accessLevel": "Write"
+        },
+        "GetCapacityReservationUsage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCapacityReservationUsage.html",
+            "description": "Grants permission to get usage information about a Capacity Reservation",
+            "accessLevel": "Read"
+        },
+        "GetCoipPoolUsage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetCoipPoolUsage.html",
+            "description": "Grants permission to describe the allocations from the specified customer-owned address pool",
+            "accessLevel": "Read"
+        },
+        "GetConsoleOutput": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleOutput.html",
+            "description": "Grants permission to get the console output for an instance",
+            "accessLevel": "Read"
+        },
+        "GetConsoleScreenshot": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleScreenshot.html",
+            "description": "Grants permission to retrieve a JPG-format screenshot of a running instance",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "GetDefaultCreditSpecification": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetDefaultCreditSpecification.html",
+            "description": "Grants permission to get the default credit option for CPU usage of a burstable performance instance family",
+            "accessLevel": "Read"
+        },
+        "GetEbsDefaultKmsKeyId": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsDefaultKmsKeyId.html",
+            "description": "Grants permission to get the ID of the default customer master key (CMK) for EBS encryption by default",
+            "accessLevel": "Read"
+        },
+        "GetEbsEncryptionByDefault": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetEbsEncryptionByDefault.html",
+            "description": "Grants permission to describe whether EBS encryption by default is enabled for your account",
+            "accessLevel": "Read"
+        },
+        "GetHostReservationPurchasePreview": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetHostReservationPurchasePreview.html",
+            "description": "Grants permission to preview a reservation purchase with configurations that match those of a Dedicated Host",
+            "accessLevel": "Read"
+        },
+        "GetLaunchTemplateData": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetLaunchTemplateData.html",
+            "description": "Grants permission to get the configuration data of the specified instance for use with a new launch template or launch template version",
+            "accessLevel": "Read"
+        },
+        "GetPasswordData": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetPasswordData.html",
+            "description": "Grants permission to retrieve the encrypted administrator password for a running Windows instance",
+            "accessLevel": "Read"
+        },
+        "GetReservedInstancesExchangeQuote": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetReservedInstancesExchangeQuote.html",
+            "description": "Grants permission to return a quote and exchange information for exchanging one or more Convertible Reserved Instances for a new Convertible Reserved Instance",
+            "accessLevel": "Read"
+        },
+        "GetTransitGatewayAttachmentPropagations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayAttachmentPropagations.html",
+            "description": "Grants permission to list the route tables to which a resource attachment propagates routes",
+            "accessLevel": "List"
+        },
+        "GetTransitGatewayMulticastDomainAssociations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayMulticastDomainAssociations.html",
+            "description": "Grants permission to get information about the associations for a transit gateway multicast domain",
+            "accessLevel": "List"
+        },
+        "GetTransitGatewayRouteTableAssociations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTableAssociations.html",
+            "description": "Grants permission to get information about associations for a transit gateway route table",
+            "accessLevel": "List"
+        },
+        "GetTransitGatewayRouteTablePropagations": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTablePropagations.html",
+            "description": "Grants permission to get information about the route table propagations for a transit gateway route table",
+            "accessLevel": "List"
+        },
+        "ImportClientVpnClientCertificateRevocationList": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportClientVpnClientCertificateRevocationList.html",
+            "description": "Grants permission to upload a client certificate revocation list to a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ImportImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html",
+            "description": "Grants permission to import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI)",
+            "accessLevel": "Write"
+        },
+        "ImportInstance": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html",
+            "description": "Grants permission to create an import instance task using metadata from a disk image",
+            "accessLevel": "Write"
+        },
+        "ImportKeyPair": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportKeyPair.html",
+            "description": "Grants permission to import a public key from an RSA key pair that was created with a third-party tool",
+            "accessLevel": "Write"
+        },
+        "ImportSnapshot": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportSnapshot.html",
+            "description": "Grants permission to import a disk into an EBS snapshot",
+            "accessLevel": "Write"
+        },
+        "ImportVolume": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportVolume.html",
+            "description": "Grants permission to create an import volume task using metadata from a disk image",
+            "accessLevel": "Write"
+        },
+        "ModifyCapacityReservation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyCapacityReservation.html",
+            "description": "Grants permission to modify a Capacity Reservation's capacity and the conditions under which it is to be released",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "capacity-reservation": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyClientVpnEndpoint": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyClientVpnEndpoint.html",
+            "description": "Grants permission to modify a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyDefaultCreditSpecification": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyDefaultCreditSpecification.html",
+            "description": "Grants permission to change the account level default credit option for CPU usage of burstable performance instances",
+            "accessLevel": "Write"
+        },
+        "ModifyEbsDefaultKmsKeyId": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html",
+            "description": "Grants permission to change the default customer master key (CMK) for EBS encryption by default for your account",
+            "accessLevel": "Write"
+        },
+        "ModifyFleet": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFleet.html",
+            "description": "Grants permission to modify an EC2 Fleet",
+            "accessLevel": "Write"
+        },
+        "ModifyFpgaImageAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFpgaImageAttribute.html",
+            "description": "Grants permission to modify an attribute of an Amazon FPGA Image (AFI)",
+            "accessLevel": "Write"
+        },
+        "ModifyHosts": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyHosts.html",
+            "description": "Grants permission to modify a Dedicated Host",
+            "accessLevel": "Write"
+        },
+        "ModifyIdFormat": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdFormat.html",
+            "description": "Grants permission to modify the ID format for a resource",
+            "accessLevel": "Write"
+        },
+        "ModifyIdentityIdFormat": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIdentityIdFormat.html",
+            "description": "Grants permission to modify the ID format of a resource for a specific principal in your account",
+            "accessLevel": "Write"
+        },
+        "ModifyImageAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html",
+            "description": "Grants permission to modify an attribute of an Amazon Machine Image (AMI)",
+            "accessLevel": "Write"
+        },
+        "ModifyInstanceAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html",
+            "description": "Grants permission to modify an attribute of an instance",
+            "accessLevel": "Write"
+        },
+        "ModifyInstanceCapacityReservationAttributes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCapacityReservationAttributes.html",
+            "description": "Grants permission to modify the Capacity Reservation settings for a stopped instance",
+            "accessLevel": "Write"
+        },
+        "ModifyInstanceCreditSpecification": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html",
+            "description": "Grants permission to modify the credit option for CPU usage on an instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true
+                }
+            }
+        },
+        "ModifyInstanceEventStartTime": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceEventStartTime.html",
+            "description": "Grants permission to modify the start time for a scheduled EC2 instance event",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "ModifyInstanceMetadataOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceMetadataOptions.html",
+            "description": "Grants permission to modify the metadata options for an instance",
+            "accessLevel": "Write"
+        },
+        "ModifyInstancePlacement": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstancePlacement.html",
+            "description": "Grants permission to modify the placement attributes for an instance",
+            "accessLevel": "Write"
+        },
+        "ModifyLaunchTemplate": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyLaunchTemplate.html",
+            "description": "Grants permission to modify a launch template",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "launch-template": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyNetworkInterfaceAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html",
+            "description": "Grants permission to modify an attribute of a network interface",
+            "accessLevel": "Write"
+        },
+        "ModifyReservedInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyReservedInstances.html",
+            "description": "Grants permission to modify attributes of one or more Reserved Instances",
+            "accessLevel": "Write"
+        },
+        "ModifySnapshotAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html",
+            "description": "Grants permission to add or remove permission settings for a snapshot",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "snapshot": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Owner",
+                        "ec2:ParentVolume",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:SnapshotTime",
+                        "ec2:VolumeSize"
+                    ]
+                }
+            }
+        },
+        "ModifySpotFleetRequest": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySpotFleetRequest.html",
+            "description": "Grants permission to modify a Spot Fleet request",
+            "accessLevel": "Write"
+        },
+        "ModifySubnetAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySubnetAttribute.html",
+            "description": "Grants permission to modify an attribute of a subnet",
+            "accessLevel": "Write"
+        },
+        "ModifyTrafficMirrorFilterNetworkServices": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html",
+            "description": "Grants permission to allow or restrict mirroring network services",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyTrafficMirrorFilterRule": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterRule.html",
+            "description": "Grants permission to modify a traffic mirror rule",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-filter": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-filter-rule": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region"
+                    ]
+                }
+            }
+        },
+        "ModifyTrafficMirrorSession": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorSession.html",
+            "description": "Grants permission to modify a traffic mirror session",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "traffic-mirror-session": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-filter": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "traffic-mirror-target": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyTransitGatewayVpcAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayVpcAttachment.html",
+            "description": "Grants permission to modify a VPC attachment on a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyVolume": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolume.html",
+            "description": "Grants permission to modify the parameters of an EBS volume",
+            "accessLevel": "Write"
+        },
+        "ModifyVolumeAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolumeAttribute.html",
+            "description": "Grants permission to modify an attribute of a volume",
+            "accessLevel": "Write"
+        },
+        "ModifyVpcAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcAttribute.html",
+            "description": "Grants permission to modify an attribute of a VPC",
+            "accessLevel": "Write"
+        },
+        "ModifyVpcEndpoint": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html",
+            "description": "Grants permission to modify an attribute of a VPC endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "route-table": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "security-group": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "subnet": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyVpcEndpointConnectionNotification": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointConnectionNotification.html",
+            "description": "Grants permission to modify a connection notification for a VPC endpoint or VPC endpoint service",
+            "accessLevel": "Write"
+        },
+        "ModifyVpcEndpointServiceConfiguration": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServiceConfiguration.html",
+            "description": "Grants permission to modify the attributes of a VPC endpoint service configuration",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:VpceServicePrivateDnsName",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyVpcEndpointServicePermissions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServicePermissions.html",
+            "description": "Grants permission to modify the permissions for a VPC endpoint service",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ModifyVpcPeeringConnectionOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcPeeringConnectionOptions.html",
+            "description": "Grants permission to modify the VPC peering connection options on one side of a VPC peering connection",
+            "accessLevel": "Write"
+        },
+        "ModifyVpcTenancy": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcTenancy.html",
+            "description": "Grants permission to modify the instance tenancy attribute of a VPC",
+            "accessLevel": "Write"
+        },
+        "ModifyVpnConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnConnection.html",
+            "description": "Grants permission to modify the target gateway of a Site-to-Site VPN connection",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpn-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:GatewayType"
+                    ]
+                }
+            }
+        },
+        "ModifyVpnTunnelCertificate": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelCertificate",
+            "description": "Grants permission to modify the certificate for a Site-to-Site VPN connection",
+            "accessLevel": "Write"
+        },
+        "ModifyVpnTunnelOptions": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpnTunnelOptions.html",
+            "description": "Grants permission to modify the options for a Site-to-Site VPN connection",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpn-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:AuthenticationType",
+                        "ec2:DPDTimeoutSeconds",
+                        "ec2:IKEVersions",
+                        "ec2:InsideTunnelCidr",
+                        "ec2:Phase1DHGroupNumbers",
+                        "ec2:Phase2DHGroupNumbers",
+                        "ec2:Phase1EncryptionAlgorithms",
+                        "ec2:Phase2EncryptionAlgorithms",
+                        "ec2:Phase1IntegrityAlgorithms",
+                        "ec2:Phase2IntegrityAlgorithms",
+                        "ec2:Phase1LifetimeSeconds",
+                        "ec2:Phase2LifetimeSeconds",
+                        "ec2:PresharedKeys",
+                        "ec2:RekeyFuzzPercentage",
+                        "ec2:RekeyMarginTimeSeconds",
+                        "ec2:RoutingType"
+                    ]
+                }
+            }
+        },
+        "MonitorInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MonitorInstances.html",
+            "description": "Grants permission to enable detailed monitoring for a running instance",
+            "accessLevel": "Write"
+        },
+        "MoveAddressToVpc": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MoveAddressToVpc.html",
+            "description": "Grants permission to move an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform",
+            "accessLevel": "Write"
+        },
+        "ProvisionByoipCidr": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ProvisionByoipCidr.html",
+            "description": "Grants permission to provision an address range for use in AWS through bring your own IP addresses (BYOIP), and to create a corresponding address pool",
+            "accessLevel": "Write"
+        },
+        "PurchaseHostReservation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseHostReservation.html",
+            "description": "Grants permission to purchase a reservation with configurations that match those of a Dedicated Host",
+            "accessLevel": "Write"
+        },
+        "PurchaseReservedInstancesOffering": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseReservedInstancesOffering.html",
+            "description": "Grants permission to purchase a Reserved Instance offering",
+            "accessLevel": "Write"
+        },
+        "PurchaseScheduledInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseScheduledInstances.html",
+            "description": "Grants permission to purchase one or more Scheduled Instances with a specified schedule",
+            "accessLevel": "Write"
+        },
+        "RebootInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RebootInstances.html",
+            "description": "Grants permission to request a reboot of one or more instances",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "RegisterImage": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html",
+            "description": "Grants permission to register an Amazon Machine Image (AMI)",
+            "accessLevel": "Write"
+        },
+        "RegisterInstanceEventNotificationAttributes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterInstanceEventNotificationAttributes.html",
+            "description": "Grants permission to add tags to the set of tags to include in notifications about scheduled events for your instances",
+            "accessLevel": "Write"
+        },
+        "RegisterTransitGatewayMulticastGroupMembers": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterTransitGatewayMulticastGroupMembers.html",
+            "description": "Grants permission to register one or more network interfaces as a member of a group IP address in a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "RegisterTransitGatewayMulticastGroupSources": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterTransitGatewayMulticastGroupSources.html",
+            "description": "Grants permission to register one or more network interfaces as a source of a group IP address in a transit gateway multicast domain",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-multicast-domain": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "RejectTransitGatewayPeeringAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectTransitGatewayPeeringAttachment.html",
+            "description": "Grants permission to reject a transit gateway peering attachment request",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "RejectTransitGatewayVpcAttachment": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectTransitGatewayVpcAttachment.html",
+            "description": "Grants permission to reject a request to attach a VPC to a transit gateway",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-attachment": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "RejectVpcEndpointConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcEndpointConnections.html",
+            "description": "Grants permission to reject one or more VPC endpoint connection requests to a VPC endpoint service",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "RejectVpcPeeringConnection": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcPeeringConnection.html",
+            "description": "Grants permission to reject a VPC peering connection request",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-peering-connection": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AccepterVpc",
+                        "ec2:Region",
+                        "ec2:RequesterVpc",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ReleaseAddress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseAddress.html",
+            "description": "Grants permission to release an Elastic IP address",
+            "accessLevel": "Write"
+        },
+        "ReleaseHosts": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseHosts.html",
+            "description": "Grants permission to release one or more On-Demand Dedicated Hosts",
+            "accessLevel": "Write"
+        },
+        "ReplaceIamInstanceProfileAssociation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html",
+            "description": "Grants permission to replace an IAM instance profile for an instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "ReplaceNetworkAclAssociation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceNetworkAclAssociation.html",
+            "description": "Grants permission to change which network ACL a subnet is associated with",
+            "accessLevel": "Write"
+        },
+        "ReplaceNetworkAclEntry": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceNetworkAclEntry.html",
+            "description": "Grants permission to replace an entry (rule) in a network ACL",
+            "accessLevel": "Write"
+        },
+        "ReplaceRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRoute.html",
+            "description": "Grants permission to replace a route within a route table in a VPC",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "ReplaceRouteTableAssociation": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRouteTableAssociation.html",
+            "description": "Grants permission to change the route table that is associated with a subnet",
+            "accessLevel": "Write"
+        },
+        "ReplaceTransitGatewayRoute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceTransitGatewayRoute.html",
+            "description": "Grants permission to replace a route in a transit gateway route table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "transit-gateway-route-table": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "transit-gateway-attachment": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "ReportInstanceStatus": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReportInstanceStatus.html",
+            "description": "Grants permission to submit feedback about the status of an instance",
+            "accessLevel": "Write"
+        },
+        "RequestSpotFleet": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html",
+            "description": "Grants permission to create a Spot Fleet request",
+            "accessLevel": "Write"
+        },
+        "RequestSpotInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html",
+            "description": "Grants permission to create a Spot Instance request",
+            "accessLevel": "Write"
+        },
+        "ResetEbsDefaultKmsKeyId": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetEbsDefaultKmsKeyId.html",
+            "description": "Grants permission to reset the default customer master key (CMK) for EBS encryption for your account to use the AWS-managed CMK for EBS",
+            "accessLevel": "Write"
+        },
+        "ResetFpgaImageAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetFpgaImageAttribute.html",
+            "description": "Grants permission to reset an attribute of an Amazon FPGA Image (AFI) to its default value",
+            "accessLevel": "Write"
+        },
+        "ResetImageAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetImageAttribute.html",
+            "description": "Grants permission to reset an attribute of an Amazon Machine Image (AMI) to its default value",
+            "accessLevel": "Write"
+        },
+        "ResetInstanceAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetInstanceAttribute.html",
+            "description": "Grants permission to reset an attribute of an instance to its default value",
+            "accessLevel": "Write"
+        },
+        "ResetNetworkInterfaceAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetNetworkInterfaceAttribute.html",
+            "description": "Grants permission to reset an attribute of a network interface",
+            "accessLevel": "Write"
+        },
+        "ResetSnapshotAttribute": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetSnapshotAttribute.html",
+            "description": "Grants permission to reset permission settings for a snapshot",
+            "accessLevel": "Permissions management"
+        },
+        "RestoreAddressToClassic": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreAddressToClassic.html",
+            "description": "Grants permission to restore an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform",
+            "accessLevel": "Write"
+        },
+        "RevokeClientVpnIngress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeClientVpnIngress.html",
+            "description": "Grants permission to remove an inbound authorization rule from a Client VPN endpoint",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "RevokeSecurityGroupEgress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupEgress.html",
+            "description": "Grants permission to remove one or more outbound rules from a VPC security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "RevokeSecurityGroupIngress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupIngress.html",
+            "description": "Grants permission to remove one or more inbound rules from a security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "RunInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html",
+            "description": "Grants permission to launch one or more instances",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "image": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:ImageType",
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Owner",
+                        "ec2:Public",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType"
+                    ]
+                },
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy",
+                        "ec2:MetadataHttpEndpoint",
+                        "ec2:MetadataHttpTokens",
+                        "ec2:MetadataHttpPutResponseHopLimit"
+                    ]
+                },
+                "network-interface": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Region",
+                        "ec2:ResourceTag/",
+                        "ec2:Subnet",
+                        "ec2:Vpc",
+                        "ec2:AssociatePublicIpAddress"
+                    ]
+                },
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "subnet": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                },
+                "volume": {
+                    "required": true,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:AvailabilityZone",
+                        "ec2:Encrypted",
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:ParentSnapshot",
+                        "ec2:Region",
+                        "ec2:VolumeIops",
+                        "ec2:VolumeSize",
+                        "ec2:VolumeType"
+                    ]
+                },
+                "capacity-reservation": {
+                    "required": false,
+                    "conditions": [
+                        "aws:RequestTag/${TagKey}",
+                        "aws:TagKeys",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                },
+                "elastic-gpu": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:ElasticGpuType"
+                    ]
+                },
+                "key-pair": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Region"
+                    ]
+                },
+                "launch-template": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Region"
+                    ]
+                },
+                "placement-group": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:PlacementGroupStrategy",
+                        "ec2:Region"
+                    ]
+                },
+                "snapshot": {
+                    "required": false,
+                    "conditions": [
+                        "ec2:IsLaunchTemplateResource",
+                        "ec2:LaunchTemplate",
+                        "ec2:Owner",
+                        "ec2:ParentVolume",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:SnapshotTime",
+                        "ec2:VolumeSize"
+                    ]
+                }
+            }
+        },
+        "RunScheduledInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunScheduledInstances.html",
+            "description": "Grants permission to launch one or more Scheduled Instances",
+            "accessLevel": "Write"
+        },
+        "SearchLocalGatewayRoutes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchLocalGatewayRoutes.html",
+            "description": "Grants permission to search for routes in a local gateway route table",
+            "accessLevel": "List"
+        },
+        "SearchTransitGatewayMulticastGroups": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html",
+            "description": "Grants permission to search for groups, sources, and members in a transit gateway multicast domain",
+            "accessLevel": "List"
+        },
+        "SearchTransitGatewayRoutes": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayRoutes.html",
+            "description": "Grants permission to search for routes in a transit gateway route table",
+            "accessLevel": "List"
+        },
+        "SendDiagnosticInterrupt": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SendDiagnosticInterrupt.html",
+            "description": "Grants permission to send a diagnostic interrupt to an Amazon EC2 instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "StartInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartInstances.html",
+            "description": "Grants permission to start a stopped instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "StartVpcEndpointServicePrivateDnsVerification": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StartVpcEndpointServicePrivateDnsVerification.html",
+            "description": "Grants permission to start the private DNS verification process for a VPC endpoint service",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vpc-endpoint-service": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "StopInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StopInstances.html",
+            "description": "Grants permission to stop an Amazon EBS-backed instance",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "TerminateClientVpnConnections": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateClientVpnConnections.html",
+            "description": "Grants permission to terminate active Client VPN endpoint connections",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "client-vpn-endpoint": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}"
+                    ]
+                }
+            }
+        },
+        "TerminateInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html",
+            "description": "Grants permission to shut down one or more instances",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "instance": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:AvailabilityZone",
+                        "ec2:EbsOptimized",
+                        "ec2:InstanceProfile",
+                        "ec2:InstanceType",
+                        "ec2:PlacementGroup",
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:RootDeviceType",
+                        "ec2:Tenancy"
+                    ]
+                }
+            }
+        },
+        "UnassignIpv6Addresses": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignIpv6Addresses.html",
+            "description": "Grants permission to unassign one or more IPv6 addresses from a network interface",
+            "accessLevel": "Write"
+        },
+        "UnassignPrivateIpAddresses": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignPrivateIpAddresses.html",
+            "description": "Grants permission to unassign one or more secondary private IP addresses from a network interface",
+            "accessLevel": "Write"
+        },
+        "UnmonitorInstances": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html",
+            "description": "Grants permission to disable detailed monitoring for a running instance",
+            "accessLevel": "Write"
+        },
+        "UpdateSecurityGroupRuleDescriptionsEgress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsEgress.html",
+            "description": "Grants permission to update descriptions for one or more outbound rules in a VPC security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "UpdateSecurityGroupRuleDescriptionsIngress": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsIngress.html",
+            "description": "Grants permission to update descriptions for one or more inbound rules in a security group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "security-group": {
+                    "required": true,
+                    "conditions": [
+                        "ec2:Region",
+                        "ec2:ResourceTag/${TagKey}",
+                        "ec2:Vpc"
+                    ]
+                }
+            }
+        },
+        "WithdrawByoipCidr": {
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_WithdrawByoipCidr.html",
+            "description": "Grants permission to stop advertising an address range that was provisioned for use in AWS through bring your own IP addresses (BYOIP)",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to accept a Convertible Reserved Instance exchange quote

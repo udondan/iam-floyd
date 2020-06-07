@@ -7,7 +7,48 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class SmsVoice extends PolicyStatement {
     public servicePrefix = 'sms-voice';
-    public actions : Actions = { "CreateConfigurationSet": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html", "description": "Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.", "accessLevel": "Write" }, "CreateConfigurationSetEventDestination": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html", "description": "Create a new event destination in a configuration set.", "accessLevel": "Write" }, "DeleteConfigurationSet": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname.html", "description": "Deletes an existing configuration set.", "accessLevel": "Write" }, "DeleteConfigurationSetEventDestination": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html", "description": "Deletes an event destination in a configuration set.", "accessLevel": "Write" }, "GetConfigurationSetEventDestinations": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html", "description": "Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.", "accessLevel": "Read" }, "ListConfigurationSets": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html", "description": "Return a list of configuration sets. This operation only returns the configuration sets that are associated with your account in the current AWS Region.", "accessLevel": "Read" }, "SendVoiceMessage": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-voice-message.html", "description": "Create a new voice message and send it to a recipient's phone number.", "accessLevel": "Write" }, "UpdateConfigurationSetEventDestination": { "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html", "description": "Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateConfigurationSet": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html",
+            "description": "Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.",
+            "accessLevel": "Write"
+        },
+        "CreateConfigurationSetEventDestination": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html",
+            "description": "Create a new event destination in a configuration set.",
+            "accessLevel": "Write"
+        },
+        "DeleteConfigurationSet": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname.html",
+            "description": "Deletes an existing configuration set.",
+            "accessLevel": "Write"
+        },
+        "DeleteConfigurationSetEventDestination": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html",
+            "description": "Deletes an event destination in a configuration set.",
+            "accessLevel": "Write"
+        },
+        "GetConfigurationSetEventDestinations": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html",
+            "description": "Obtain information about an event destination, including the types of events it reports, the Amazon Resource Name (ARN) of the destination, and the name of the event destination.",
+            "accessLevel": "Read"
+        },
+        "ListConfigurationSets": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets.html",
+            "description": "Return a list of configuration sets. This operation only returns the configuration sets that are associated with your account in the current AWS Region.",
+            "accessLevel": "Read"
+        },
+        "SendVoiceMessage": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-voice-message.html",
+            "description": "Create a new voice message and send it to a recipient's phone number.",
+            "accessLevel": "Write"
+        },
+        "UpdateConfigurationSetEventDestination": {
+            "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html",
+            "description": "Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.

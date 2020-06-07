@@ -7,7 +7,38 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class ComputeOptimizer extends PolicyStatement {
     public servicePrefix = 'compute-optimizer';
-    public actions : Actions = { "GetAutoScalingGroupRecommendations": { "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html", "description": "Grants permission to get recommendations for the provided autoscaling groups.", "accessLevel": "List" }, "GetEC2InstanceRecommendations": { "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2InstanceRecommendations.html", "description": "Grants permission to get recommendations for the provided EC2 instances.", "accessLevel": "List" }, "GetEC2RecommendationProjectedMetrics": { "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2RecommendationProjectedMetrics.html", "description": "Grants permission to get the recommendation projected metrics of the specified instance.", "accessLevel": "List" }, "GetEnrollmentStatus": { "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEnrollmentStatus.html", "description": "Grants permission to get the enrollment status for the specified account.", "accessLevel": "List" }, "GetRecommendationSummaries": { "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRecommendationSummaries.html", "description": "Grants permission to get the recommendation summaries for the specified account(s).", "accessLevel": "List" }, "UpdateEnrollmentStatus": { "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_UpdateEnrollmentStatus.html", "description": "Grants permission to update the enrollment status.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "GetAutoScalingGroupRecommendations": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html",
+            "description": "Grants permission to get recommendations for the provided autoscaling groups.",
+            "accessLevel": "List"
+        },
+        "GetEC2InstanceRecommendations": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2InstanceRecommendations.html",
+            "description": "Grants permission to get recommendations for the provided EC2 instances.",
+            "accessLevel": "List"
+        },
+        "GetEC2RecommendationProjectedMetrics": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2RecommendationProjectedMetrics.html",
+            "description": "Grants permission to get the recommendation projected metrics of the specified instance.",
+            "accessLevel": "List"
+        },
+        "GetEnrollmentStatus": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEnrollmentStatus.html",
+            "description": "Grants permission to get the enrollment status for the specified account.",
+            "accessLevel": "List"
+        },
+        "GetRecommendationSummaries": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRecommendationSummaries.html",
+            "description": "Grants permission to get the recommendation summaries for the specified account(s).",
+            "accessLevel": "List"
+        },
+        "UpdateEnrollmentStatus": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_UpdateEnrollmentStatus.html",
+            "description": "Grants permission to update the enrollment status.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to get recommendations for the provided autoscaling groups.

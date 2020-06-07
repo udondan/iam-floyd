@@ -7,7 +7,58 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class ApplicationAutoscaling extends PolicyStatement {
     public servicePrefix = 'application-autoscaling';
-    public actions : Actions = { "DeleteScalingPolicy": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html", "description": "Deletes an Application Auto Scaling scaling policy that was previously created.", "accessLevel": "Write" }, "DeleteScheduledAction": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScheduledAction.html", "description": "Deletes an Application Auto Scaling scheduled action that was previously created.", "accessLevel": "Write" }, "DeregisterScalableTarget": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeregisterScalableTarget.html", "description": "Deregisters a scalable target that was previously registered.", "accessLevel": "Write" }, "DescribeScalableTargets": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html", "description": "Provides descriptive information for scalable targets with a specified service namespace.", "accessLevel": "Read" }, "DescribeScalingActivities": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html", "description": "Provides descriptive information for scaling activities with a specified service namespace for the previous six weeks.", "accessLevel": "Read" }, "DescribeScalingPolicies": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingPolicies.html", "description": "Provides descriptive information for scaling policies with a specified service namespace.", "accessLevel": "Read" }, "DescribeScheduledActions": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScheduledActions.html", "description": "Provides descriptive information for scheduled actions with a specified service namespace.", "accessLevel": "Read" }, "PutScalingPolicy": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html", "description": "Creates or updates a policy for an existing Application Auto Scaling scalable target.", "accessLevel": "Write" }, "PutScheduledAction": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html", "description": "Creates or updates a scheduled action for an existing Application Auto Scaling scalable target.", "accessLevel": "Write" }, "RegisterScalableTarget": { "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html", "description": "Registers or updates a scalable target. A scalable target is a resource that can be scaled out or in with Application Auto Scaling.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "DeleteScalingPolicy": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html",
+            "description": "Deletes an Application Auto Scaling scaling policy that was previously created.",
+            "accessLevel": "Write"
+        },
+        "DeleteScheduledAction": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScheduledAction.html",
+            "description": "Deletes an Application Auto Scaling scheduled action that was previously created.",
+            "accessLevel": "Write"
+        },
+        "DeregisterScalableTarget": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeregisterScalableTarget.html",
+            "description": "Deregisters a scalable target that was previously registered.",
+            "accessLevel": "Write"
+        },
+        "DescribeScalableTargets": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html",
+            "description": "Provides descriptive information for scalable targets with a specified service namespace.",
+            "accessLevel": "Read"
+        },
+        "DescribeScalingActivities": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html",
+            "description": "Provides descriptive information for scaling activities with a specified service namespace for the previous six weeks.",
+            "accessLevel": "Read"
+        },
+        "DescribeScalingPolicies": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingPolicies.html",
+            "description": "Provides descriptive information for scaling policies with a specified service namespace.",
+            "accessLevel": "Read"
+        },
+        "DescribeScheduledActions": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScheduledActions.html",
+            "description": "Provides descriptive information for scheduled actions with a specified service namespace.",
+            "accessLevel": "Read"
+        },
+        "PutScalingPolicy": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html",
+            "description": "Creates or updates a policy for an existing Application Auto Scaling scalable target.",
+            "accessLevel": "Write"
+        },
+        "PutScheduledAction": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html",
+            "description": "Creates or updates a scheduled action for an existing Application Auto Scaling scalable target.",
+            "accessLevel": "Write"
+        },
+        "RegisterScalableTarget": {
+            "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html",
+            "description": "Registers or updates a scalable target. A scalable target is a resource that can be scaled out or in with Application Auto Scaling.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Deletes an Application Auto Scaling scaling policy that was previously created.

@@ -7,7 +7,1155 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Glue extends PolicyStatement {
     public servicePrefix = 'glue';
-    public actions : Actions = { "BatchCreatePartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchCreatePartition", "description": "Grants permission to create one or more partitions", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "BatchDeleteConnection": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-BatchDeleteConnection", "description": "Grants permission to delete one or more connections", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "connection": { "required": true } } }, "BatchDeletePartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchDeletePartition", "description": "Grants permission to delete one or more partitions", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "BatchDeleteTable": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-BatchDeleteTable", "description": "Grants permission to delete one or more tables", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "BatchDeleteTableVersion": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion", "description": "Grants permission to delete one or more versions of a table", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true }, "tableversion": { "required": true } } }, "BatchGetCrawlers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-BatchGetCrawlers", "description": "Grants permission to retrieve one or more crawlers", "accessLevel": "Read" }, "BatchGetDevEndpoints": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-BatchGetDevEndpoints", "description": "Grants permission to retrieve one or more development endpoints", "accessLevel": "Read" }, "BatchGetJobs": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-BatchGetJobs", "description": "Grants permission to retrieve one or more jobs", "accessLevel": "Read" }, "BatchGetPartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchGetPartition", "description": "Grants permission to retrieve one or more partitions", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "BatchGetTriggers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-BatchGetTriggers", "description": "Grants permission to retrieve one or more triggers", "accessLevel": "Read" }, "BatchGetWorkflows": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-BatchGetWorkflows", "description": "Grants permission to retrieve one or more workflows", "accessLevel": "Read" }, "BatchStopJobRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-BatchStopStartJobRun", "description": "Grants permission to stop one or more job runs for a job", "accessLevel": "Write" }, "CancelMLTaskRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CancelMLTaskRun", "description": "Grants permission to stop a running ML Task Run", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "CreateClassifier": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-CreateClassifier", "description": "Grants permission to create a classifier", "accessLevel": "Write" }, "CreateConnection": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection", "description": "Grants permission to create a connection", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "connection": { "required": true } } }, "CreateCrawler": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-CreateCrawler", "description": "Grants permission to create a crawler", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateDatabase": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase", "description": "Grants permission to create a database", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true } } }, "CreateDevEndpoint": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-CreateDevEndpoint", "description": "Grants permission to create a development endpoint", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateJob": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob", "description": "Grants permission to create a job", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateMLTransform": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CreateMLTransform", "description": "Grants permission to create an ML Transform", "accessLevel": "Write" }, "CreatePartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition", "description": "Grants permission to create a partition", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "CreateScript": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-CreateScript", "description": "Grants permission to create a script", "accessLevel": "Write" }, "CreateSecurityConfiguration": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-CreateSecurityConfiguration", "description": "Grants permission to create a security configuration", "accessLevel": "Write" }, "CreateTable": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreateTable", "description": "Grants permission to create a table", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "CreateTrigger": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-CreateTrigger", "description": "Grants permission to create a trigger", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateUserDefinedFunction": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-CreateUserDefinedFunction", "description": "Grants permission to create a function definition", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "userdefinedfunction": { "required": true } } }, "CreateWorkflow": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateWorkflow", "description": "Grants permission to create a workflow", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "DeleteClassifier": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-DeleteClassifier", "description": "Grants permission to delete a classifier", "accessLevel": "Write" }, "DeleteConnection": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-DeleteConnection", "description": "Grants permission to delete a connection", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "connection": { "required": true } } }, "DeleteCrawler": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-DeleteCrawler", "description": "Grants permission to delete a crawler", "accessLevel": "Write" }, "DeleteDatabase": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase", "description": "Grants permission to delete a database", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true } } }, "DeleteDevEndpoint": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-DeleteDevEndpoint", "description": "Grants permission to delete a development endpoint", "accessLevel": "Write" }, "DeleteJob": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-DeleteJob", "description": "Grants permission to delete a job", "accessLevel": "Write" }, "DeleteMLTransform": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-DeleteMLTransform", "description": "Grants permission to delete an ML Transform", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "DeletePartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeletePartition", "description": "Grants permission to delete a partition", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "DeleteResourcePolicy": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteResourcePolicy", "description": "Grants permission to delete a resource policy", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true } } }, "DeleteSecurityConfiguration": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteSecurityConfiguration", "description": "Grants permission to delete a security configuration", "accessLevel": "Write" }, "DeleteTable": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTable", "description": "Grants permission to delete a table", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "DeleteTableVersion": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion", "description": "Grants permission to delete a version of a table", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true }, "tableversion": { "required": true } } }, "DeleteTrigger": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-DeleteTrigger", "description": "Grants permission to delete a trigger", "accessLevel": "Write" }, "DeleteUserDefinedFunction": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-DeleteUserDefinedFunction", "description": "Grants permission to delete a function definition", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "userdefinedfunction": { "required": true } } }, "DeleteWorkflow": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-DeleteWorkflow", "description": "Grants permission to delete a workflow", "accessLevel": "Write" }, "GetCatalogImportStatus": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-GetCatalogImportStatus", "description": "Grants permission to retrieve the catalog import status", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true } } }, "GetClassifier": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-GetClassifier", "description": "Grants permission to retrieve a classifier", "accessLevel": "Read" }, "GetClassifiers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-GetClassifiers", "description": "Grants permission to list all classifiers", "accessLevel": "Read" }, "GetConnection": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnection", "description": "Grants permission to retrieve a connection", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "connection": { "required": true } } }, "GetConnections": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnections", "description": "Grants permission to retrieve a list of connections", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "connection": { "required": true } } }, "GetCrawler": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawler", "description": "Grants permission to retrieve a crawler", "accessLevel": "Read" }, "GetCrawlerMetrics": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawlerMetrics", "description": "Grants permission to retrieve metrics about crawlers", "accessLevel": "Read" }, "GetCrawlers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawlers", "description": "Grants permission to retrieve all crawlers", "accessLevel": "Read" }, "GetDataCatalogEncryptionSettings": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetDataCatalogEncryptionSettings", "description": "Grants permission to retrieve catalog encryption settings", "accessLevel": "Read" }, "GetDatabase": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabase", "description": "Grants permission to retrieve a database", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true } } }, "GetDatabases": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabases", "description": "Grants permission to retrieve all databases", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true } } }, "GetDataflowGraph": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetDataflowGraph", "description": "Grants permission to transform a script into a directed acyclic graph (DAG)", "accessLevel": "Read" }, "GetDevEndpoint": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-GetDevEndpoint", "description": "Grants permission to retrieve a development endpoint", "accessLevel": "Read" }, "GetDevEndpoints": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-GetDevEndpoints", "description": "Grants permission to retrieve all development endpoints", "accessLevel": "Read" }, "GetJob": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJob", "description": "Grants permission to retrieve a job", "accessLevel": "Read" }, "GetJobBookmark": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-job-GetJobBookmark", "description": "Grants permission to retrieve a job bookmark", "accessLevel": "Read" }, "GetJobRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRun", "description": "Grants permission to retrieve a job run", "accessLevel": "Read" }, "GetJobRuns": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRuns", "description": "Grants permission to retrieve all job runs of a job", "accessLevel": "Read" }, "GetJobs": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJobs", "description": "Grants permission to retrieve all current jobs", "accessLevel": "Read" }, "GetMLTaskRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRun", "description": "Grants permission to retrieve an ML Task Run", "accessLevel": "Read", "resourceTypes": { "mlTransform": { "required": true } } }, "GetMLTaskRuns": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRuns", "description": "Grants permission to retrieve all ML Task Runs", "accessLevel": "List", "resourceTypes": { "mlTransform": { "required": true } } }, "GetMLTransform": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransform", "description": "Grants permission to retrieve an ML Transform", "accessLevel": "Read", "resourceTypes": { "mlTransform": { "required": true } } }, "GetMLTransforms": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransforms", "description": "Grants permission to retrieve all ML Transforms", "accessLevel": "List" }, "GetMapping": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetMapping", "description": "Grants permission to create a mapping", "accessLevel": "Write" }, "GetPartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition", "description": "Grants permission to retrieve a partition", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "GetPartitions": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions", "description": "Grants permission to retrieve the partitions of a table", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "GetPlan": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetPlan", "description": "Grants permission to retrieve a mapping for a script", "accessLevel": "Read" }, "GetResourcePolicy": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetResourcePolicy", "description": "Grants permission to retrieve a resource policy", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true } } }, "GetSecurityConfiguration": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetSecurityConfiguration", "description": "Grants permission to retrieve a security configuration", "accessLevel": "Read" }, "GetSecurityConfigurations": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetSecurityConfigurations", "description": "Grants permission to retrieve one or more security configurations", "accessLevel": "Read" }, "GetTable": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTable", "description": "Grants permission to retrieve a table", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "GetTableVersion": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersion", "description": "Grants permission to retrieve a version of a table", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true }, "tableversion": { "required": true } } }, "GetTableVersions": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersions", "description": "Grants permission to retrieve a list of versions of a table", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true }, "tableversion": { "required": true } } }, "GetTables": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTables", "description": "Grants permission to retrieve the tables in a database", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "GetTags": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource", "description": "Grants permission to retrieve all tags associated with a resource", "accessLevel": "Read", "resourceTypes": { "crawler": { "required": false }, "devendpoint": { "required": false }, "job": { "required": false }, "trigger": { "required": false }, "workflow": { "required": false } } }, "GetTrigger": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-GetTrigger", "description": "Grants permission to retrieve a trigger", "accessLevel": "Read" }, "GetTriggers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-GetTriggers", "description": "Grants permission to retrieve the triggers associated with a job", "accessLevel": "Read" }, "GetUserDefinedFunction": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunction", "description": "Grants permission to retrieve a function definition.", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "userdefinedfunction": { "required": true } } }, "GetUserDefinedFunctions": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunctions", "description": "Grants permission to retrieve multiple function definitions", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "userdefinedfunction": { "required": true } } }, "GetWorkflow": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflow", "description": "Grants permission to retrieve a workflow", "accessLevel": "Read" }, "GetWorkflowRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRun", "description": "Grants permission to retrieve a workflow run", "accessLevel": "Read" }, "GetWorkflowRunProperties": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRunProperties", "description": "Grants permission to retrieve workflow run properties", "accessLevel": "Read" }, "GetWorkflowRuns": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRuns", "description": "Grants permission to retrieve all runs of a workflow", "accessLevel": "Read" }, "ImportCatalogToGlue": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-ImportCatalogToGlue", "description": "Grants permission to import an Athena data catalog into AWS Glue", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true } } }, "ListCrawlers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-ListCrawlers", "description": "Grants permission to retrieve all crawlers", "accessLevel": "List" }, "ListDevEndpoints": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-ListDevEndpoints", "description": "Grants permission to retrieve all development endpoints", "accessLevel": "List" }, "ListJobs": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-ListJobs", "description": "Grants permission to retrieve all current jobs", "accessLevel": "List" }, "ListMLTransforms": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-ListMLTransforms", "description": "Grants permission to retrieve all ML Transforms", "accessLevel": "List" }, "ListTriggers": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-ListTriggers", "description": "Grants permission to retrieve all triggers", "accessLevel": "List" }, "ListWorkflows": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListWorkflows", "description": "Grants permission to retrieve all workflows", "accessLevel": "List" }, "PutDataCatalogEncryptionSettings": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutDataCatalogEncryptionSettings", "description": "Grants permission to update catalog encryption settings", "accessLevel": "Write" }, "PutResourcePolicy": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutResourcePolicy", "description": "Grants permission to update a resource policy", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true } } }, "PutWorkflowRunProperties": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-PutWorkflowRunProperties", "description": "Grants permission to update workflow run properties", "accessLevel": "Write" }, "ResetJobBookmark": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-ResetJobBookmark", "description": "Grants permission to reset a job bookmark", "accessLevel": "Write" }, "SearchTables": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-SearchTables", "description": "Grants permission to retrieve the tables in the catalog", "accessLevel": "Read", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "StartCrawler": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StartCrawler", "description": "Grants permission to start a crawler", "accessLevel": "Write" }, "StartCrawlerSchedule": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StartCrawlerSchedule", "description": "Grants permission to change the schedule state of a crawler to SCHEDULED", "accessLevel": "Write" }, "StartExportLabelsTaskRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartExportLabelsTaskRun", "description": "Grants permission to start an Export Labels ML Task Run", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "StartImportLabelsTaskRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartImportLabelsTaskRun", "description": "Grants permission to start an Import Labels ML Task Run", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "StartJobRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-StartJobRun", "description": "Grants permission to start running a job", "accessLevel": "Write" }, "StartMLEvaluationTaskRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLEvaluationTaskRun", "description": "Grants permission to start an Evaluation ML Task Run", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "StartMLLabelingSetGenerationTaskRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLLabelingSetGenerationTaskRun", "description": "Grants permission to start a Labeling Set Generation ML Task Run", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "StartTrigger": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StartTrigger", "description": "Grants permission to start a trigger", "accessLevel": "Write" }, "StartWorkflowRun": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-StartWorkflowRun", "description": "Grants permission to start running a workflow", "accessLevel": "Write" }, "StopCrawler": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StopCrawler", "description": "Grants permission to stop a running crawler", "accessLevel": "Write" }, "StopCrawlerSchedule": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StopCrawlerSchedule", "description": "Grants permission to set the schedule state of a crawler to NOT_SCHEDULED", "accessLevel": "Write" }, "StopTrigger": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StopTrigger", "description": "Grants permission to stop a trigger", "accessLevel": "Write" }, "TagResource": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-TagResource", "description": "Grants permission to add tags to a resource", "accessLevel": "Tagging", "resourceTypes": { "crawler": { "required": false }, "devendpoint": { "required": false }, "job": { "required": false }, "trigger": { "required": false }, "workflow": { "required": false } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource", "description": "Grants permission to remove tags associated with a resource", "accessLevel": "Tagging", "resourceTypes": { "crawler": { "required": false }, "devendpoint": { "required": false }, "job": { "required": false }, "trigger": { "required": false }, "workflow": { "required": false } }, "conditions": ["aws:TagKeys"] }, "UpdateClassifier": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-UpdateClassifier", "description": "Grants permission to update a classifier", "accessLevel": "Write" }, "UpdateConnection": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-UpdateConnection", "description": "Grants permission to update a connection", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "connection": { "required": true } } }, "UpdateCrawler": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-UpdateCrawler", "description": "Grants permission to update a crawler", "accessLevel": "Write" }, "UpdateCrawlerSchedule": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-UpdateCrawlerSchedule", "description": "Grants permission to update the schedule of a crawler", "accessLevel": "Write" }, "UpdateDatabase": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase", "description": "Grants permission to update a database", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true } } }, "UpdateDevEndpoint": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-UpdateDevEndpoint", "description": "Grants permission to update a development endpoint", "accessLevel": "Write" }, "UpdateJob": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJob", "description": "Grants permission to update a job", "accessLevel": "Write" }, "UpdateMLTransform": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-UpdateMLTransform", "description": "Grants permission to update an ML Transform", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } }, "UpdatePartition": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdatePartition", "description": "Grants permission to update a partition", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "UpdateTable": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable", "description": "Grants permission to update a table", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "table": { "required": true } } }, "UpdateTrigger": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-UpdateTrigger", "description": "Grants permission to update a trigger", "accessLevel": "Write" }, "UpdateUserDefinedFunction": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-UpdateUserDefinedFunction", "description": "Grants permission to update a function definition", "accessLevel": "Write", "resourceTypes": { "catalog": { "required": true }, "database": { "required": true }, "userdefinedfunction": { "required": true } } }, "UpdateWorkflow": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-UpdateWorkflow", "description": "Grants permission to update a workflow", "accessLevel": "Write" }, "UseMLTransforms": { "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html", "description": "Grants permission to use an ML Transform from within a Glue ETL Script", "accessLevel": "Write", "resourceTypes": { "mlTransform": { "required": true } } } };
+    public actions : Actions = {
+        "BatchCreatePartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchCreatePartition",
+            "description": "Grants permission to create one or more partitions",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "BatchDeleteConnection": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-BatchDeleteConnection",
+            "description": "Grants permission to delete one or more connections",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "connection": {
+                    "required": true
+                }
+            }
+        },
+        "BatchDeletePartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchDeletePartition",
+            "description": "Grants permission to delete one or more partitions",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "BatchDeleteTable": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-BatchDeleteTable",
+            "description": "Grants permission to delete one or more tables",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "BatchDeleteTableVersion": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion",
+            "description": "Grants permission to delete one or more versions of a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                },
+                "tableversion": {
+                    "required": true
+                }
+            }
+        },
+        "BatchGetCrawlers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-BatchGetCrawlers",
+            "description": "Grants permission to retrieve one or more crawlers",
+            "accessLevel": "Read"
+        },
+        "BatchGetDevEndpoints": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-BatchGetDevEndpoints",
+            "description": "Grants permission to retrieve one or more development endpoints",
+            "accessLevel": "Read"
+        },
+        "BatchGetJobs": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-BatchGetJobs",
+            "description": "Grants permission to retrieve one or more jobs",
+            "accessLevel": "Read"
+        },
+        "BatchGetPartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchGetPartition",
+            "description": "Grants permission to retrieve one or more partitions",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "BatchGetTriggers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-BatchGetTriggers",
+            "description": "Grants permission to retrieve one or more triggers",
+            "accessLevel": "Read"
+        },
+        "BatchGetWorkflows": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-BatchGetWorkflows",
+            "description": "Grants permission to retrieve one or more workflows",
+            "accessLevel": "Read"
+        },
+        "BatchStopJobRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-BatchStopStartJobRun",
+            "description": "Grants permission to stop one or more job runs for a job",
+            "accessLevel": "Write"
+        },
+        "CancelMLTaskRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CancelMLTaskRun",
+            "description": "Grants permission to stop a running ML Task Run",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "CreateClassifier": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-CreateClassifier",
+            "description": "Grants permission to create a classifier",
+            "accessLevel": "Write"
+        },
+        "CreateConnection": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection",
+            "description": "Grants permission to create a connection",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "connection": {
+                    "required": true
+                }
+            }
+        },
+        "CreateCrawler": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-CreateCrawler",
+            "description": "Grants permission to create a crawler",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateDatabase": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase",
+            "description": "Grants permission to create a database",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDevEndpoint": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-CreateDevEndpoint",
+            "description": "Grants permission to create a development endpoint",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateJob": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob",
+            "description": "Grants permission to create a job",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateMLTransform": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CreateMLTransform",
+            "description": "Grants permission to create an ML Transform",
+            "accessLevel": "Write"
+        },
+        "CreatePartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition",
+            "description": "Grants permission to create a partition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "CreateScript": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-CreateScript",
+            "description": "Grants permission to create a script",
+            "accessLevel": "Write"
+        },
+        "CreateSecurityConfiguration": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-CreateSecurityConfiguration",
+            "description": "Grants permission to create a security configuration",
+            "accessLevel": "Write"
+        },
+        "CreateTable": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-CreateTable",
+            "description": "Grants permission to create a table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "CreateTrigger": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-CreateTrigger",
+            "description": "Grants permission to create a trigger",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateUserDefinedFunction": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-CreateUserDefinedFunction",
+            "description": "Grants permission to create a function definition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "userdefinedfunction": {
+                    "required": true
+                }
+            }
+        },
+        "CreateWorkflow": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateWorkflow",
+            "description": "Grants permission to create a workflow",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "DeleteClassifier": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-DeleteClassifier",
+            "description": "Grants permission to delete a classifier",
+            "accessLevel": "Write"
+        },
+        "DeleteConnection": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-DeleteConnection",
+            "description": "Grants permission to delete a connection",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "connection": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteCrawler": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-DeleteCrawler",
+            "description": "Grants permission to delete a crawler",
+            "accessLevel": "Write"
+        },
+        "DeleteDatabase": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase",
+            "description": "Grants permission to delete a database",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDevEndpoint": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-DeleteDevEndpoint",
+            "description": "Grants permission to delete a development endpoint",
+            "accessLevel": "Write"
+        },
+        "DeleteJob": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-DeleteJob",
+            "description": "Grants permission to delete a job",
+            "accessLevel": "Write"
+        },
+        "DeleteMLTransform": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-DeleteMLTransform",
+            "description": "Grants permission to delete an ML Transform",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeletePartition",
+            "description": "Grants permission to delete a partition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteResourcePolicy": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteResourcePolicy",
+            "description": "Grants permission to delete a resource policy",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteSecurityConfiguration": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteSecurityConfiguration",
+            "description": "Grants permission to delete a security configuration",
+            "accessLevel": "Write"
+        },
+        "DeleteTable": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTable",
+            "description": "Grants permission to delete a table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteTableVersion": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-DeleteTableVersion",
+            "description": "Grants permission to delete a version of a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                },
+                "tableversion": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteTrigger": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-DeleteTrigger",
+            "description": "Grants permission to delete a trigger",
+            "accessLevel": "Write"
+        },
+        "DeleteUserDefinedFunction": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-DeleteUserDefinedFunction",
+            "description": "Grants permission to delete a function definition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "userdefinedfunction": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteWorkflow": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-DeleteWorkflow",
+            "description": "Grants permission to delete a workflow",
+            "accessLevel": "Write"
+        },
+        "GetCatalogImportStatus": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-GetCatalogImportStatus",
+            "description": "Grants permission to retrieve the catalog import status",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                }
+            }
+        },
+        "GetClassifier": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-GetClassifier",
+            "description": "Grants permission to retrieve a classifier",
+            "accessLevel": "Read"
+        },
+        "GetClassifiers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-GetClassifiers",
+            "description": "Grants permission to list all classifiers",
+            "accessLevel": "Read"
+        },
+        "GetConnection": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnection",
+            "description": "Grants permission to retrieve a connection",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "connection": {
+                    "required": true
+                }
+            }
+        },
+        "GetConnections": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-GetConnections",
+            "description": "Grants permission to retrieve a list of connections",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "connection": {
+                    "required": true
+                }
+            }
+        },
+        "GetCrawler": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawler",
+            "description": "Grants permission to retrieve a crawler",
+            "accessLevel": "Read"
+        },
+        "GetCrawlerMetrics": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawlerMetrics",
+            "description": "Grants permission to retrieve metrics about crawlers",
+            "accessLevel": "Read"
+        },
+        "GetCrawlers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-GetCrawlers",
+            "description": "Grants permission to retrieve all crawlers",
+            "accessLevel": "Read"
+        },
+        "GetDataCatalogEncryptionSettings": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetDataCatalogEncryptionSettings",
+            "description": "Grants permission to retrieve catalog encryption settings",
+            "accessLevel": "Read"
+        },
+        "GetDatabase": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabase",
+            "description": "Grants permission to retrieve a database",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                }
+            }
+        },
+        "GetDatabases": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-GetDatabases",
+            "description": "Grants permission to retrieve all databases",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                }
+            }
+        },
+        "GetDataflowGraph": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetDataflowGraph",
+            "description": "Grants permission to transform a script into a directed acyclic graph (DAG)",
+            "accessLevel": "Read"
+        },
+        "GetDevEndpoint": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-GetDevEndpoint",
+            "description": "Grants permission to retrieve a development endpoint",
+            "accessLevel": "Read"
+        },
+        "GetDevEndpoints": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-GetDevEndpoints",
+            "description": "Grants permission to retrieve all development endpoints",
+            "accessLevel": "Read"
+        },
+        "GetJob": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJob",
+            "description": "Grants permission to retrieve a job",
+            "accessLevel": "Read"
+        },
+        "GetJobBookmark": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-job-GetJobBookmark",
+            "description": "Grants permission to retrieve a job bookmark",
+            "accessLevel": "Read"
+        },
+        "GetJobRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRun",
+            "description": "Grants permission to retrieve a job run",
+            "accessLevel": "Read"
+        },
+        "GetJobRuns": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRuns",
+            "description": "Grants permission to retrieve all job runs of a job",
+            "accessLevel": "Read"
+        },
+        "GetJobs": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJobs",
+            "description": "Grants permission to retrieve all current jobs",
+            "accessLevel": "Read"
+        },
+        "GetMLTaskRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRun",
+            "description": "Grants permission to retrieve an ML Task Run",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "GetMLTaskRuns": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRuns",
+            "description": "Grants permission to retrieve all ML Task Runs",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "GetMLTransform": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransform",
+            "description": "Grants permission to retrieve an ML Transform",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "GetMLTransforms": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransforms",
+            "description": "Grants permission to retrieve all ML Transforms",
+            "accessLevel": "List"
+        },
+        "GetMapping": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetMapping",
+            "description": "Grants permission to create a mapping",
+            "accessLevel": "Write"
+        },
+        "GetPartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition",
+            "description": "Grants permission to retrieve a partition",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "GetPartitions": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions",
+            "description": "Grants permission to retrieve the partitions of a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "GetPlan": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetPlan",
+            "description": "Grants permission to retrieve a mapping for a script",
+            "accessLevel": "Read"
+        },
+        "GetResourcePolicy": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetResourcePolicy",
+            "description": "Grants permission to retrieve a resource policy",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                }
+            }
+        },
+        "GetSecurityConfiguration": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetSecurityConfiguration",
+            "description": "Grants permission to retrieve a security configuration",
+            "accessLevel": "Read"
+        },
+        "GetSecurityConfigurations": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-GetSecurityConfigurations",
+            "description": "Grants permission to retrieve one or more security configurations",
+            "accessLevel": "Read"
+        },
+        "GetTable": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTable",
+            "description": "Grants permission to retrieve a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "GetTableVersion": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersion",
+            "description": "Grants permission to retrieve a version of a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                },
+                "tableversion": {
+                    "required": true
+                }
+            }
+        },
+        "GetTableVersions": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTableVersions",
+            "description": "Grants permission to retrieve a list of versions of a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                },
+                "tableversion": {
+                    "required": true
+                }
+            }
+        },
+        "GetTables": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-GetTables",
+            "description": "Grants permission to retrieve the tables in a database",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "GetTags": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource",
+            "description": "Grants permission to retrieve all tags associated with a resource",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "crawler": {
+                    "required": false
+                },
+                "devendpoint": {
+                    "required": false
+                },
+                "job": {
+                    "required": false
+                },
+                "trigger": {
+                    "required": false
+                },
+                "workflow": {
+                    "required": false
+                }
+            }
+        },
+        "GetTrigger": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-GetTrigger",
+            "description": "Grants permission to retrieve a trigger",
+            "accessLevel": "Read"
+        },
+        "GetTriggers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-GetTriggers",
+            "description": "Grants permission to retrieve the triggers associated with a job",
+            "accessLevel": "Read"
+        },
+        "GetUserDefinedFunction": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunction",
+            "description": "Grants permission to retrieve a function definition.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "userdefinedfunction": {
+                    "required": true
+                }
+            }
+        },
+        "GetUserDefinedFunctions": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-GetUserDefinedFunctions",
+            "description": "Grants permission to retrieve multiple function definitions",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "userdefinedfunction": {
+                    "required": true
+                }
+            }
+        },
+        "GetWorkflow": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflow",
+            "description": "Grants permission to retrieve a workflow",
+            "accessLevel": "Read"
+        },
+        "GetWorkflowRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRun",
+            "description": "Grants permission to retrieve a workflow run",
+            "accessLevel": "Read"
+        },
+        "GetWorkflowRunProperties": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRunProperties",
+            "description": "Grants permission to retrieve workflow run properties",
+            "accessLevel": "Read"
+        },
+        "GetWorkflowRuns": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-GetWorkflowRuns",
+            "description": "Grants permission to retrieve all runs of a workflow",
+            "accessLevel": "Read"
+        },
+        "ImportCatalogToGlue": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-migration.html#aws-glue-api-catalog-migration-ImportCatalogToGlue",
+            "description": "Grants permission to import an Athena data catalog into AWS Glue",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                }
+            }
+        },
+        "ListCrawlers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-ListCrawlers",
+            "description": "Grants permission to retrieve all crawlers",
+            "accessLevel": "List"
+        },
+        "ListDevEndpoints": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-ListDevEndpoints",
+            "description": "Grants permission to retrieve all development endpoints",
+            "accessLevel": "List"
+        },
+        "ListJobs": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-ListJobs",
+            "description": "Grants permission to retrieve all current jobs",
+            "accessLevel": "List"
+        },
+        "ListMLTransforms": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-ListMLTransforms",
+            "description": "Grants permission to retrieve all ML Transforms",
+            "accessLevel": "List"
+        },
+        "ListTriggers": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-ListTriggers",
+            "description": "Grants permission to retrieve all triggers",
+            "accessLevel": "List"
+        },
+        "ListWorkflows": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-ListWorkflows",
+            "description": "Grants permission to retrieve all workflows",
+            "accessLevel": "List"
+        },
+        "PutDataCatalogEncryptionSettings": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutDataCatalogEncryptionSettings",
+            "description": "Grants permission to update catalog encryption settings",
+            "accessLevel": "Write"
+        },
+        "PutResourcePolicy": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-PutResourcePolicy",
+            "description": "Grants permission to update a resource policy",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                }
+            }
+        },
+        "PutWorkflowRunProperties": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-PutWorkflowRunProperties",
+            "description": "Grants permission to update workflow run properties",
+            "accessLevel": "Write"
+        },
+        "ResetJobBookmark": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-ResetJobBookmark",
+            "description": "Grants permission to reset a job bookmark",
+            "accessLevel": "Write"
+        },
+        "SearchTables": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-SearchTables",
+            "description": "Grants permission to retrieve the tables in the catalog",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "StartCrawler": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StartCrawler",
+            "description": "Grants permission to start a crawler",
+            "accessLevel": "Write"
+        },
+        "StartCrawlerSchedule": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StartCrawlerSchedule",
+            "description": "Grants permission to change the schedule state of a crawler to SCHEDULED",
+            "accessLevel": "Write"
+        },
+        "StartExportLabelsTaskRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartExportLabelsTaskRun",
+            "description": "Grants permission to start an Export Labels ML Task Run",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "StartImportLabelsTaskRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartImportLabelsTaskRun",
+            "description": "Grants permission to start an Import Labels ML Task Run",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "StartJobRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-StartJobRun",
+            "description": "Grants permission to start running a job",
+            "accessLevel": "Write"
+        },
+        "StartMLEvaluationTaskRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLEvaluationTaskRun",
+            "description": "Grants permission to start an Evaluation ML Task Run",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "StartMLLabelingSetGenerationTaskRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLLabelingSetGenerationTaskRun",
+            "description": "Grants permission to start a Labeling Set Generation ML Task Run",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "StartTrigger": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StartTrigger",
+            "description": "Grants permission to start a trigger",
+            "accessLevel": "Write"
+        },
+        "StartWorkflowRun": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-StartWorkflowRun",
+            "description": "Grants permission to start running a workflow",
+            "accessLevel": "Write"
+        },
+        "StopCrawler": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StopCrawler",
+            "description": "Grants permission to stop a running crawler",
+            "accessLevel": "Write"
+        },
+        "StopCrawlerSchedule": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StopCrawlerSchedule",
+            "description": "Grants permission to set the schedule state of a crawler to NOT_SCHEDULED",
+            "accessLevel": "Write"
+        },
+        "StopTrigger": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StopTrigger",
+            "description": "Grants permission to stop a trigger",
+            "accessLevel": "Write"
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-TagResource",
+            "description": "Grants permission to add tags to a resource",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "crawler": {
+                    "required": false
+                },
+                "devendpoint": {
+                    "required": false
+                },
+                "job": {
+                    "required": false
+                },
+                "trigger": {
+                    "required": false
+                },
+                "workflow": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource",
+            "description": "Grants permission to remove tags associated with a resource",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "crawler": {
+                    "required": false
+                },
+                "devendpoint": {
+                    "required": false
+                },
+                "job": {
+                    "required": false
+                },
+                "trigger": {
+                    "required": false
+                },
+                "workflow": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateClassifier": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-UpdateClassifier",
+            "description": "Grants permission to update a classifier",
+            "accessLevel": "Write"
+        },
+        "UpdateConnection": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-UpdateConnection",
+            "description": "Grants permission to update a connection",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "connection": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateCrawler": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-UpdateCrawler",
+            "description": "Grants permission to update a crawler",
+            "accessLevel": "Write"
+        },
+        "UpdateCrawlerSchedule": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-UpdateCrawlerSchedule",
+            "description": "Grants permission to update the schedule of a crawler",
+            "accessLevel": "Write"
+        },
+        "UpdateDatabase": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase",
+            "description": "Grants permission to update a database",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateDevEndpoint": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-UpdateDevEndpoint",
+            "description": "Grants permission to update a development endpoint",
+            "accessLevel": "Write"
+        },
+        "UpdateJob": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJob",
+            "description": "Grants permission to update a job",
+            "accessLevel": "Write"
+        },
+        "UpdateMLTransform": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-UpdateMLTransform",
+            "description": "Grants permission to update an ML Transform",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        },
+        "UpdatePartition": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdatePartition",
+            "description": "Grants permission to update a partition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateTable": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable",
+            "description": "Grants permission to update a table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateTrigger": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-UpdateTrigger",
+            "description": "Grants permission to update a trigger",
+            "accessLevel": "Write"
+        },
+        "UpdateUserDefinedFunction": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-UpdateUserDefinedFunction",
+            "description": "Grants permission to update a function definition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "catalog": {
+                    "required": true
+                },
+                "database": {
+                    "required": true
+                },
+                "userdefinedfunction": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateWorkflow": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-UpdateWorkflow",
+            "description": "Grants permission to update a workflow",
+            "accessLevel": "Write"
+        },
+        "UseMLTransforms": {
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html",
+            "description": "Grants permission to use an ML Transform from within a Glue ETL Script",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mlTransform": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to create one or more partitions

@@ -7,7 +7,237 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Route53resolver extends PolicyStatement {
     public servicePrefix = 'route53resolver';
-    public actions : Actions = { "AssociateResolverEndpointIpAddress": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html", "description": "Grants permission to associate a specified IP address with a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).", "accessLevel": "Write", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "AssociateResolverRule": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html", "description": "Grants permission to associate a specified resolver rule with a specified VPC.", "accessLevel": "Write", "resourceTypes": { "resolver-rule": { "required": true } } }, "CreateResolverEndpoint": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html", "description": "Grants permission to create a resolver endpoint. There are two types of resolver endpoints, inbound and outbound.", "accessLevel": "Write", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "CreateResolverRule": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html", "description": "For DNS queries that originate in your VPC, grants permission to define how to route the queries out of the VPC.", "accessLevel": "Write", "resourceTypes": { "resolver-rule": { "required": true } } }, "DeleteResolverEndpoint": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html", "description": "Grants permission to delete a resolver endpoint. The effect of deleting a resolver endpoint depends on whether it's an inbound or an outbound resolver endpoint.", "accessLevel": "Write", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "DeleteResolverRule": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html", "description": "Grants permission to delete a resolver rule.", "accessLevel": "Write", "resourceTypes": { "resolver-rule": { "required": true } } }, "DisassociateResolverEndpointIpAddress": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html", "description": "Grants permission to remove a specified IP address from a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).", "accessLevel": "Write", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "DisassociateResolverRule": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html", "description": "Grants permission to remove the association between a specified resolver rule and a specified VPC.", "accessLevel": "Write", "resourceTypes": { "resolver-rule": { "required": true } } }, "GetResolverEndpoint": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html", "description": "Grants permission to get information about a specified resolver endpoint, such as whether it's an inbound or an outbound resolver endpoint, and the IP addresses in your VPC that DNS queries are forwarded to on the way into or out of your VPC.", "accessLevel": "Read", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "GetResolverRule": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html", "description": "Grants permission to get information about a specified resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to.", "accessLevel": "Read", "resourceTypes": { "resolver-rule": { "required": true } } }, "GetResolverRuleAssociation": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html", "description": "Grants permission to get information about an association between a specified resolver rule and a VPC.", "accessLevel": "Read", "resourceTypes": { "resolver-rule": { "required": true } } }, "GetResolverRulePolicy": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRulePolicy.html", "description": "Grants permission to get information about a resolver rule policy.", "accessLevel": "Read", "resourceTypes": { "resolver-rule": { "required": true } } }, "ListResolverEndpointIpAddresses": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpointIpAddresses.html", "description": "For a specified resolver endpoint, grants permission to list the IP addresses that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).", "accessLevel": "List", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "ListResolverEndpoints": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html", "description": "Grants permission to list all the resolver endpoints that were created using the current AWS account.", "accessLevel": "List", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "ListResolverRuleAssociations": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html", "description": "Grants permission to list the associations that were created between resolver rules and VPCs using the current AWS account.", "accessLevel": "List", "resourceTypes": { "resolver-rule": { "required": true } } }, "ListResolverRules": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html", "description": "Grants permission to list the resolver rules that were created using the current AWS account.", "accessLevel": "List", "resourceTypes": { "resolver-rule": { "required": true } } }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListTagsForResource.html", "description": "Grants permission to list the tags that you associated with the specified resource.", "accessLevel": "Read", "resourceTypes": { "resolver-endpoint": { "required": false }, "resolver-rule": { "required": false } } }, "PutResolverRulePolicy": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html", "description": "Grants permission to specify the Resolver operations and resources that you want to allow another AWS account to use.", "accessLevel": "Write", "resourceTypes": { "resolver-rule": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html", "description": "Grants permission to add one or more tags to a specified resource.", "accessLevel": "Tagging", "resourceTypes": { "resolver-endpoint": { "required": false }, "resolver-rule": { "required": false } } }, "UntagResource": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html", "description": "Grants permission to remove one or more tags from a specified resource.", "accessLevel": "Tagging", "resourceTypes": { "resolver-endpoint": { "required": false }, "resolver-rule": { "required": false } } }, "UpdateResolverEndpoint": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html", "description": "Grants permission to update selected settings for an inbound or an outbound resolver endpoint.", "accessLevel": "Write", "resourceTypes": { "resolver-endpoint": { "required": true } } }, "UpdateResolverRule": { "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html", "description": "Grants permission to update settings for a specified resolver rule.", "accessLevel": "Write", "resourceTypes": { "resolver-rule": { "required": true } } } };
+    public actions : Actions = {
+        "AssociateResolverEndpointIpAddress": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html",
+            "description": "Grants permission to associate a specified IP address with a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "AssociateResolverRule": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html",
+            "description": "Grants permission to associate a specified resolver rule with a specified VPC.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "CreateResolverEndpoint": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html",
+            "description": "Grants permission to create a resolver endpoint. There are two types of resolver endpoints, inbound and outbound.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "CreateResolverRule": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html",
+            "description": "For DNS queries that originate in your VPC, grants permission to define how to route the queries out of the VPC.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteResolverEndpoint": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html",
+            "description": "Grants permission to delete a resolver endpoint. The effect of deleting a resolver endpoint depends on whether it's an inbound or an outbound resolver endpoint.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteResolverRule": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html",
+            "description": "Grants permission to delete a resolver rule.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateResolverEndpointIpAddress": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html",
+            "description": "Grants permission to remove a specified IP address from a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateResolverRule": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html",
+            "description": "Grants permission to remove the association between a specified resolver rule and a specified VPC.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "GetResolverEndpoint": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html",
+            "description": "Grants permission to get information about a specified resolver endpoint, such as whether it's an inbound or an outbound resolver endpoint, and the IP addresses in your VPC that DNS queries are forwarded to on the way into or out of your VPC.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "GetResolverRule": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html",
+            "description": "Grants permission to get information about a specified resolver rule, such as the domain name that the rule forwards DNS queries for and the IP address that queries are forwarded to.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "GetResolverRuleAssociation": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html",
+            "description": "Grants permission to get information about an association between a specified resolver rule and a VPC.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "GetResolverRulePolicy": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRulePolicy.html",
+            "description": "Grants permission to get information about a resolver rule policy.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "ListResolverEndpointIpAddresses": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpointIpAddresses.html",
+            "description": "For a specified resolver endpoint, grants permission to list the IP addresses that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "ListResolverEndpoints": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html",
+            "description": "Grants permission to list all the resolver endpoints that were created using the current AWS account.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "ListResolverRuleAssociations": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html",
+            "description": "Grants permission to list the associations that were created between resolver rules and VPCs using the current AWS account.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "ListResolverRules": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html",
+            "description": "Grants permission to list the resolver rules that were created using the current AWS account.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListTagsForResource.html",
+            "description": "Grants permission to list the tags that you associated with the specified resource.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": false
+                },
+                "resolver-rule": {
+                    "required": false
+                }
+            }
+        },
+        "PutResolverRulePolicy": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html",
+            "description": "Grants permission to specify the Resolver operations and resources that you want to allow another AWS account to use.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html",
+            "description": "Grants permission to add one or more tags to a specified resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": false
+                },
+                "resolver-rule": {
+                    "required": false
+                }
+            }
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html",
+            "description": "Grants permission to remove one or more tags from a specified resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": false
+                },
+                "resolver-rule": {
+                    "required": false
+                }
+            }
+        },
+        "UpdateResolverEndpoint": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html",
+            "description": "Grants permission to update selected settings for an inbound or an outbound resolver endpoint.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-endpoint": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateResolverRule": {
+            "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html",
+            "description": "Grants permission to update settings for a specified resolver rule.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resolver-rule": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to associate a specified IP address with a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).

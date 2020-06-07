@@ -7,7 +7,87 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Freertos extends PolicyStatement {
     public servicePrefix = 'freertos';
-    public actions : Actions = { "CreateSoftwareConfiguration": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Creates a software configuration.", "accessLevel": "Write", "resourceTypes": { "configuration": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "DeleteSoftwareConfiguration": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Deletes the software configuration.", "accessLevel": "Write", "resourceTypes": { "configuration": { "required": true } } }, "DescribeHardwarePlatform": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Describes the hardware platform.", "accessLevel": "Read" }, "DescribeSoftwareConfiguration": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Describes the software configuration.", "accessLevel": "Read", "resourceTypes": { "configuration": { "required": true } } }, "GetSoftwareURL": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Get the URL for Amazon FreeRTOS software download.", "accessLevel": "Read" }, "GetSoftwareURLForConfiguration": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Get the URL for Amazon FreeRTOS software download based on the configuration.", "accessLevel": "Read" }, "ListFreeRTOSVersions": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Lists versions of AmazonFreeRTOS.", "accessLevel": "List" }, "ListHardwarePlatforms": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Lists the hardware platforms.", "accessLevel": "List" }, "ListHardwareVendors": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Lists the hardware vendors.", "accessLevel": "List" }, "ListSoftwareConfigurations": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Lists the software configurations.", "accessLevel": "List" }, "UpdateSoftwareConfiguration": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html", "description": "Updates the software configuration.", "accessLevel": "Write", "resourceTypes": { "configuration": { "required": true } } } };
+    public actions : Actions = {
+        "CreateSoftwareConfiguration": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Creates a software configuration.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "configuration": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "DeleteSoftwareConfiguration": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Deletes the software configuration.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "configuration": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeHardwarePlatform": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Describes the hardware platform.",
+            "accessLevel": "Read"
+        },
+        "DescribeSoftwareConfiguration": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Describes the software configuration.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "configuration": {
+                    "required": true
+                }
+            }
+        },
+        "GetSoftwareURL": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Get the URL for Amazon FreeRTOS software download.",
+            "accessLevel": "Read"
+        },
+        "GetSoftwareURLForConfiguration": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Get the URL for Amazon FreeRTOS software download based on the configuration.",
+            "accessLevel": "Read"
+        },
+        "ListFreeRTOSVersions": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Lists versions of AmazonFreeRTOS.",
+            "accessLevel": "List"
+        },
+        "ListHardwarePlatforms": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Lists the hardware platforms.",
+            "accessLevel": "List"
+        },
+        "ListHardwareVendors": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Lists the hardware vendors.",
+            "accessLevel": "List"
+        },
+        "ListSoftwareConfigurations": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Lists the software configurations.",
+            "accessLevel": "List"
+        },
+        "UpdateSoftwareConfiguration": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
+            "description": "Updates the software configuration.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "configuration": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Creates a software configuration.

@@ -7,7 +7,205 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Transfer extends PolicyStatement {
     public servicePrefix = 'transfer';
-    public actions : Actions = { "CreateServer": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html", "description": "Enables the caller to create a server.", "accessLevel": "Write", "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "CreateUser": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html", "description": "Enables the caller to add a user associated with a server.", "accessLevel": "Write", "resourceTypes": { "server": { "required": true } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "DeleteServer": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html", "description": "Enables the caller to delete a server.", "accessLevel": "Write", "resourceTypes": { "server": { "required": true } } }, "DeleteSshPublicKey": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html", "description": "Enables the caller to delete an SSH public key from a user.", "accessLevel": "Write", "resourceTypes": { "user": { "required": true } } }, "DeleteUser": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html", "description": "Enables the caller to delete a user associated with a server.", "accessLevel": "Write", "resourceTypes": { "user": { "required": true } } }, "DescribeServer": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html", "description": "Enables the caller to describe a server.", "accessLevel": "Read", "resourceTypes": { "server": { "required": true } } }, "DescribeUser": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html", "description": "Enables the caller to describe a user associated with a server.", "accessLevel": "Read", "resourceTypes": { "user": { "required": true } } }, "ImportSshPublicKey": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html", "description": "Enables the caller to add an SSH public key to a user.", "accessLevel": "Write", "resourceTypes": { "user": { "required": true } } }, "ListServers": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html", "description": "Enables the caller to list servers", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html", "description": "Enables the caller to list tags for a server or a user.", "accessLevel": "Read", "resourceTypes": { "server": { "required": false }, "user": { "required": false } } }, "ListUsers": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html", "description": "Enables the caller to list users associated with a server.", "accessLevel": "List", "resourceTypes": { "user": { "required": true } } }, "StartServer": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html", "description": "Enables the caller to start a server.", "accessLevel": "Write", "resourceTypes": { "server": { "required": true } } }, "StopServer": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html", "description": "Enables the caller to stop a server.", "accessLevel": "Write", "resourceTypes": { "server": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html", "description": "Enables the caller to tag a server or a user.", "accessLevel": "Tagging", "resourceTypes": { "server": { "required": false }, "user": { "required": false } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "TestIdentityProvider": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html", "description": "Enables the caller to test a server's custom identity provider.", "accessLevel": "Read", "resourceTypes": { "server": { "required": true } } }, "UntagResource": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html", "description": "Enables the caller to untag a server or a user.", "accessLevel": "Tagging", "resourceTypes": { "server": { "required": false }, "user": { "required": false } }, "conditions": ["aws:TagKeys"] }, "UpdateServer": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html", "description": "Enables the caller to update the configuration of a server", "accessLevel": "Write", "resourceTypes": { "server": { "required": true } } }, "UpdateUser": { "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html", "description": "Enables the caller to update the configuration of a user", "accessLevel": "Write", "resourceTypes": { "server": { "required": true }, "user": { "required": true } } } };
+    public actions : Actions = {
+        "CreateServer": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html",
+            "description": "Enables the caller to create a server.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "CreateUser": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html",
+            "description": "Enables the caller to add a user associated with a server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "DeleteServer": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html",
+            "description": "Enables the caller to delete a server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteSshPublicKey": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html",
+            "description": "Enables the caller to delete an SSH public key from a user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "user": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteUser": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html",
+            "description": "Enables the caller to delete a user associated with a server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "user": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeServer": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html",
+            "description": "Enables the caller to describe a server.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeUser": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html",
+            "description": "Enables the caller to describe a user associated with a server.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "user": {
+                    "required": true
+                }
+            }
+        },
+        "ImportSshPublicKey": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html",
+            "description": "Enables the caller to add an SSH public key to a user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "user": {
+                    "required": true
+                }
+            }
+        },
+        "ListServers": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html",
+            "description": "Enables the caller to list servers",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html",
+            "description": "Enables the caller to list tags for a server or a user.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "server": {
+                    "required": false
+                },
+                "user": {
+                    "required": false
+                }
+            }
+        },
+        "ListUsers": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html",
+            "description": "Enables the caller to list users associated with a server.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "user": {
+                    "required": true
+                }
+            }
+        },
+        "StartServer": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html",
+            "description": "Enables the caller to start a server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            }
+        },
+        "StopServer": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html",
+            "description": "Enables the caller to stop a server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html",
+            "description": "Enables the caller to tag a server or a user.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "server": {
+                    "required": false
+                },
+                "user": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "TestIdentityProvider": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html",
+            "description": "Enables the caller to test a server's custom identity provider.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            }
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html",
+            "description": "Enables the caller to untag a server or a user.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "server": {
+                    "required": false
+                },
+                "user": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateServer": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html",
+            "description": "Enables the caller to update the configuration of a server",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateUser": {
+            "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html",
+            "description": "Enables the caller to update the configuration of a user",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "server": {
+                    "required": true
+                },
+                "user": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Enables the caller to create a server.

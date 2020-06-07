@@ -7,7 +7,358 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Elasticmapreduce extends PolicyStatement {
     public servicePrefix = 'elasticmapreduce';
-    public actions : Actions = { "AddInstanceFleet": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceFleet.html", "description": "Grants permission to add an instance fleet to a running cluster.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "AddInstanceGroups": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceGroups.html", "description": "Grants permission to add instance groups to a running cluster.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "AddJobFlowSteps": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddJobFlowSteps.html", "description": "Grants permission to add new steps to a running cluster.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "AddTags": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddTags.html", "description": "Grants permission to add tags to an Amazon EMR resource.", "accessLevel": "Tagging", "resourceTypes": { "cluster": { "required": false }, "editor": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "elasticmapreduce:RequestTag/${TagKey}"] }, "CancelSteps": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_CancelSteps.html", "description": "Grants permission to cancel a pending step or steps in a running cluster.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "CreateEditor": { "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-create.html", "description": "Grants permission to create an EMR notebook.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "elasticmapreduce:RequestTag/${TagKey}"] }, "CreateSecurityConfiguration": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_CreateSecurityConfiguration.html", "description": "Grants permission to create a security configuration.", "accessLevel": "Write" }, "DeleteEditor": { "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-deleting", "description": "Grants permission to delete an EMR notebook.", "accessLevel": "Write", "resourceTypes": { "editor": { "required": true } } }, "DeleteSecurityConfiguration": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DeleteSecurityConfiguration.html", "description": "Grants permission to delete a security configuration.", "accessLevel": "Write" }, "DescribeCluster": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeCluster.html", "description": "Grants permission to get details about a cluster, including status, hardware and software configuration, VPC settings, and so on.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "DescribeEditor": { "url": "", "description": "Grants permission to view information about a notebook, including status, user, role, tags, location, and more.", "accessLevel": "Read", "resourceTypes": { "editor": { "required": true } } }, "DescribeJobFlows": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html", "description": "This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "DescribeSecurityConfiguration": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeSecurityConfiguration.html", "description": "Grants permission to get details of a security configuration.", "accessLevel": "Read" }, "DescribeStep": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeStep.html", "description": "Grants permission to get details about a cluster step.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "GetBlockPublicAccessConfiguration": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetBlockPublicAccessConfiguration.html", "description": "Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region.", "accessLevel": "Read" }, "ListBootstrapActions": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListBootstrapActions.html", "description": "Grants permission to get details about the bootstrap actions associated with a cluster.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "ListClusters": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListClusters.html", "description": "Grants permission to get the status of accessible clusters.", "accessLevel": "List" }, "ListEditors": { "url": "", "description": "Grants permission to list summary information for accessible EMR notebooks.", "accessLevel": "List" }, "ListInstanceFleets": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceFleets.html", "description": "Grants permission to get details of instance fleets in a cluster.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "ListInstanceGroups": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceGroups.html", "description": "Grants permission to get details of instance groups in a cluster.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "ListInstances": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstances.html", "description": "Grants permission to get details about the Amazon EC2 instances in a cluster.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "ListSecurityConfigurations": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSecurityConfigurations.html", "description": "Grants permission to list available security configurations in this account by name, along with creation dates and times.", "accessLevel": "List" }, "ListSteps": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSteps.html", "description": "Grants permission to list steps associated with a cluster.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": true } } }, "ModifyCluster": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyCluster.html", "description": "Grants permission to change cluster settings such as number of steps that can be executed concurrently for a cluster.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "ModifyInstanceFleet": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceFleet.html", "description": "Grants permission to change the target On-Demand and target Spot capacities for a instance fleet.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "ModifyInstanceGroups": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceGroups.html", "description": "Grants permission to change the number and configuration of EC2 instances for an instance group.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "OpenEditorInConsole": { "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor", "description": "Grants permission to launch the Jupyter notebook editor for an EMR notebook from within the console.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true }, "editor": { "required": true } } }, "PutAutoScalingPolicy": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutAutoScalingPolicy.html", "description": "Grants permission to create or update an automatic scaling policy for a core instance group or task instance group.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "PutBlockPublicAccessConfiguration": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutBlockPublicAccessConfiguration.html", "description": "Grants permission to create or update the EMR block public access configuration for the AWS account in the Region.", "accessLevel": "Permissions management" }, "RemoveAutoScalingPolicy": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoScalingPolicy.html", "description": "Grants permission to remove an automatic scaling policy from an instance group.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "RemoveTags": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveTags.html", "description": "Grants permission to remove tags from an Amazon EMR resource.", "accessLevel": "Tagging", "resourceTypes": { "cluster": { "required": false }, "editor": { "required": false } }, "conditions": ["aws:TagKeys"] }, "RunJobFlow": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html", "description": "Grants permission to create and launch a cluster (job flow).", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "elasticmapreduce:RequestTag/${TagKey}"] }, "SetTerminationProtection": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_SetTerminationProtection.html", "description": "Grants permission to add and remove termination protection for a cluster.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "StartEditor": { "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html", "description": "Grants permission to start an EMR notebook.", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true }, "editor": { "required": true } } }, "StopEditor": { "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html", "description": "Grants permission to shut down an EMR notebook.", "accessLevel": "Write", "resourceTypes": { "editor": { "required": true } } }, "TerminateJobFlows": { "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_TerminateJobFlows.html", "description": "Grants permission to terminate a cluster (job flow).", "accessLevel": "Write", "resourceTypes": { "cluster": { "required": true } } }, "ViewEventsFromAllClustersInConsole": { "url": "", "description": "Grants permission to use the EMR management console to view events from all clusters.", "accessLevel": "List" } };
+    public actions : Actions = {
+        "AddInstanceFleet": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceFleet.html",
+            "description": "Grants permission to add an instance fleet to a running cluster.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "AddInstanceGroups": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddInstanceGroups.html",
+            "description": "Grants permission to add instance groups to a running cluster.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "AddJobFlowSteps": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddJobFlowSteps.html",
+            "description": "Grants permission to add new steps to a running cluster.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "AddTags": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_AddTags.html",
+            "description": "Grants permission to add tags to an Amazon EMR resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "cluster": {
+                    "required": false
+                },
+                "editor": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys",
+                "elasticmapreduce:RequestTag/${TagKey}"
+            ]
+        },
+        "CancelSteps": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_CancelSteps.html",
+            "description": "Grants permission to cancel a pending step or steps in a running cluster.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "CreateEditor": {
+            "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-create.html",
+            "description": "Grants permission to create an EMR notebook.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys",
+                "elasticmapreduce:RequestTag/${TagKey}"
+            ]
+        },
+        "CreateSecurityConfiguration": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_CreateSecurityConfiguration.html",
+            "description": "Grants permission to create a security configuration.",
+            "accessLevel": "Write"
+        },
+        "DeleteEditor": {
+            "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-deleting",
+            "description": "Grants permission to delete an EMR notebook.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "editor": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteSecurityConfiguration": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DeleteSecurityConfiguration.html",
+            "description": "Grants permission to delete a security configuration.",
+            "accessLevel": "Write"
+        },
+        "DescribeCluster": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeCluster.html",
+            "description": "Grants permission to get details about a cluster, including status, hardware and software configuration, VPC settings, and so on.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeEditor": {
+            "url": "",
+            "description": "Grants permission to view information about a notebook, including status, user, role, tags, location, and more.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "editor": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeJobFlows": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html",
+            "description": "This API is deprecated and will eventually be removed. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeSecurityConfiguration": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeSecurityConfiguration.html",
+            "description": "Grants permission to get details of a security configuration.",
+            "accessLevel": "Read"
+        },
+        "DescribeStep": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeStep.html",
+            "description": "Grants permission to get details about a cluster step.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "GetBlockPublicAccessConfiguration": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetBlockPublicAccessConfiguration.html",
+            "description": "Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region.",
+            "accessLevel": "Read"
+        },
+        "ListBootstrapActions": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListBootstrapActions.html",
+            "description": "Grants permission to get details about the bootstrap actions associated with a cluster.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ListClusters": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListClusters.html",
+            "description": "Grants permission to get the status of accessible clusters.",
+            "accessLevel": "List"
+        },
+        "ListEditors": {
+            "url": "",
+            "description": "Grants permission to list summary information for accessible EMR notebooks.",
+            "accessLevel": "List"
+        },
+        "ListInstanceFleets": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceFleets.html",
+            "description": "Grants permission to get details of instance fleets in a cluster.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ListInstanceGroups": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstanceGroups.html",
+            "description": "Grants permission to get details of instance groups in a cluster.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ListInstances": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListInstances.html",
+            "description": "Grants permission to get details about the Amazon EC2 instances in a cluster.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ListSecurityConfigurations": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSecurityConfigurations.html",
+            "description": "Grants permission to list available security configurations in this account by name, along with creation dates and times.",
+            "accessLevel": "List"
+        },
+        "ListSteps": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListSteps.html",
+            "description": "Grants permission to list steps associated with a cluster.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ModifyCluster": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyCluster.html",
+            "description": "Grants permission to change cluster settings such as number of steps that can be executed concurrently for a cluster.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ModifyInstanceFleet": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceFleet.html",
+            "description": "Grants permission to change the target On-Demand and target Spot capacities for a instance fleet.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ModifyInstanceGroups": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ModifyInstanceGroups.html",
+            "description": "Grants permission to change the number and configuration of EC2 instances for an instance group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "OpenEditorInConsole": {
+            "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html#emr-managed-notebooks-editor",
+            "description": "Grants permission to launch the Jupyter notebook editor for an EMR notebook from within the console.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                },
+                "editor": {
+                    "required": true
+                }
+            }
+        },
+        "PutAutoScalingPolicy": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutAutoScalingPolicy.html",
+            "description": "Grants permission to create or update an automatic scaling policy for a core instance group or task instance group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "PutBlockPublicAccessConfiguration": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutBlockPublicAccessConfiguration.html",
+            "description": "Grants permission to create or update the EMR block public access configuration for the AWS account in the Region.",
+            "accessLevel": "Permissions management"
+        },
+        "RemoveAutoScalingPolicy": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoScalingPolicy.html",
+            "description": "Grants permission to remove an automatic scaling policy from an instance group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "RemoveTags": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveTags.html",
+            "description": "Grants permission to remove tags from an Amazon EMR resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "cluster": {
+                    "required": false
+                },
+                "editor": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "RunJobFlow": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html",
+            "description": "Grants permission to create and launch a cluster (job flow).",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys",
+                "elasticmapreduce:RequestTag/${TagKey}"
+            ]
+        },
+        "SetTerminationProtection": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_SetTerminationProtection.html",
+            "description": "Grants permission to add and remove termination protection for a cluster.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "StartEditor": {
+            "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-working-with.html",
+            "description": "Grants permission to start an EMR notebook.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                },
+                "editor": {
+                    "required": true
+                }
+            }
+        },
+        "StopEditor": {
+            "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html",
+            "description": "Grants permission to shut down an EMR notebook.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "editor": {
+                    "required": true
+                }
+            }
+        },
+        "TerminateJobFlows": {
+            "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_TerminateJobFlows.html",
+            "description": "Grants permission to terminate a cluster (job flow).",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cluster": {
+                    "required": true
+                }
+            }
+        },
+        "ViewEventsFromAllClustersInConsole": {
+            "url": "",
+            "description": "Grants permission to use the EMR management console to view events from all clusters.",
+            "accessLevel": "List"
+        }
+    };
 
     /**
      * Grants permission to add an instance fleet to a running cluster.

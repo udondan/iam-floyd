@@ -176,6 +176,7 @@ export { RdsData } from "./rds-data";
 export { RdsDb } from "./rds-db";
 export { Redshift } from "./redshift";
 export { Rekognition } from "./rekognition";
+export { ResourceExplorer } from "./resource-explorer";
 export { ResourceGroups } from "./resource-groups";
 export { Robomaker } from "./robomaker";
 export { Route53 } from "./route53";

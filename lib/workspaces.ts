@@ -7,7 +7,251 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Workspaces extends PolicyStatement {
     public servicePrefix = 'workspaces';
-    public actions : Actions = { "AssociateIpGroups": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html", "description": "Associates the specified IP access control group with the specified directory.", "accessLevel": "Write" }, "AuthorizeIpRules": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html", "description": "Adds one or more rules to the specified IP access control group.", "accessLevel": "Write", "resourceTypes": { "workspaceipgroup": { "required": true } } }, "CreateIpGroup": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateIpGroup.html", "description": "Creates an IP access control group.", "accessLevel": "Write" }, "CreateTags": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateTags.html", "description": "Creates tags for a WorkSpace.", "accessLevel": "Tagging" }, "CreateWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaces.html", "description": "Creates one or more WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "directoryid": { "required": true }, "workspacebundle": { "required": true } } }, "DeleteIpGroup": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteIpGroup.html", "description": "Deletes the specified IP access control group.", "accessLevel": "Write", "resourceTypes": { "workspaceipgroup": { "required": true } } }, "DeleteTags": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteTags.html", "description": "Deletes tags from a Workspace.", "accessLevel": "Write" }, "DeleteWorkspaceImage": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceImage.html", "description": "Deletes the specified workspace image.", "accessLevel": "Write" }, "DescribeAccount": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccount.html", "description": "Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.", "accessLevel": "List" }, "DescribeAccountModifications": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccountModifications.html", "description": "Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.", "accessLevel": "List" }, "DescribeClientProperties": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientProperties.html", "description": "Describe client properties about the specified resources.", "accessLevel": "List", "resourceTypes": { "directoryid": { "required": true } } }, "DescribeIpGroups": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html", "description": "Retrieves information about the IP access control groups of your account in the region.", "accessLevel": "List", "resourceTypes": { "workspaceipgroup": { "required": true } } }, "DescribeTags": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeTags.html", "description": "Describes tags for a WorkSpace.", "accessLevel": "List" }, "DescribeWorkspaceBundles": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceBundles.html", "description": "Obtains information about the WorkSpace bundles that are available to your account in the specified region.", "accessLevel": "List", "resourceTypes": { "workspacebundle": { "required": true } } }, "DescribeWorkspaceDirectories": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html", "description": "Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.", "accessLevel": "List" }, "DescribeWorkspaceImages": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html", "description": "Retrieves a list that describes one or more specified images.", "accessLevel": "List" }, "DescribeWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html", "description": "Obtains information about the specified WorkSpaces.", "accessLevel": "List" }, "DescribeWorkspacesConnectionStatus": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesConnectionStatus.html", "description": "Describes the connection status of a specified WorkSpace.", "accessLevel": "Read" }, "DisassociateIpGroups": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateIpGroups.html", "description": "Disassociates the specified IP access control group from the specified directory.", "accessLevel": "Write" }, "ImportWorkspaceImage": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html", "description": "Import a licensed EC2 image to into Amazon WorkSpaces.", "accessLevel": "Write" }, "ListAvailableManagementCidrRanges": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListAvailableManagementCidrRanges.html", "description": "List available CIDR ranges for a CIDR range constraint.", "accessLevel": "List" }, "ModifyAccount": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyAccount.html", "description": "Modify the configuration of bring your own license (BYOL) for the specified account.", "accessLevel": "Write" }, "ModifyClientProperties": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyClientProperties.html", "description": "Modify the client properties of a specified resource.", "accessLevel": "Write", "resourceTypes": { "directoryid": { "required": true } } }, "ModifyWorkspaceProperties": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceProperties.html", "description": "Modifies the WorkSpace properties, including the running mode and AutoStop time.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "ModifyWorkspaceState": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceState.html", "description": "Modify the state of specified WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "RebootWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RebootWorkspaces.html", "description": "Reboots the specified WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "RebuildWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RebuildWorkspaces.html", "description": "Rebuilds the specified WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "RevokeIpRules": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html", "description": "Removes one or more rules from the specified IP access control group.", "accessLevel": "Write", "resourceTypes": { "workspaceipgroup": { "required": true } } }, "StartWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspaces.html", "description": "Starts the specified WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "StopWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspaces.html", "description": "Stops the specified WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "TerminateWorkspaces": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspaces.html", "description": "Terminates the specified WorkSpaces.", "accessLevel": "Write", "resourceTypes": { "workspaceid": { "required": true } } }, "UpdateRulesOfIpGroup": { "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html", "description": "Replaces the current rules of the specified IP access control group with the specified rules.", "accessLevel": "Write", "resourceTypes": { "workspaceipgroup": { "required": true } } } };
+    public actions : Actions = {
+        "AssociateIpGroups": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html",
+            "description": "Associates the specified IP access control group with the specified directory.",
+            "accessLevel": "Write"
+        },
+        "AuthorizeIpRules": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html",
+            "description": "Adds one or more rules to the specified IP access control group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceipgroup": {
+                    "required": true
+                }
+            }
+        },
+        "CreateIpGroup": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateIpGroup.html",
+            "description": "Creates an IP access control group.",
+            "accessLevel": "Write"
+        },
+        "CreateTags": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateTags.html",
+            "description": "Creates tags for a WorkSpace.",
+            "accessLevel": "Tagging"
+        },
+        "CreateWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaces.html",
+            "description": "Creates one or more WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "directoryid": {
+                    "required": true
+                },
+                "workspacebundle": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteIpGroup": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteIpGroup.html",
+            "description": "Deletes the specified IP access control group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceipgroup": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteTags": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteTags.html",
+            "description": "Deletes tags from a Workspace.",
+            "accessLevel": "Write"
+        },
+        "DeleteWorkspaceImage": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceImage.html",
+            "description": "Deletes the specified workspace image.",
+            "accessLevel": "Write"
+        },
+        "DescribeAccount": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccount.html",
+            "description": "Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.",
+            "accessLevel": "List"
+        },
+        "DescribeAccountModifications": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccountModifications.html",
+            "description": "Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.",
+            "accessLevel": "List"
+        },
+        "DescribeClientProperties": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientProperties.html",
+            "description": "Describe client properties about the specified resources.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "directoryid": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeIpGroups": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html",
+            "description": "Retrieves information about the IP access control groups of your account in the region.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "workspaceipgroup": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeTags": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeTags.html",
+            "description": "Describes tags for a WorkSpace.",
+            "accessLevel": "List"
+        },
+        "DescribeWorkspaceBundles": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceBundles.html",
+            "description": "Obtains information about the WorkSpace bundles that are available to your account in the specified region.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "workspacebundle": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeWorkspaceDirectories": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html",
+            "description": "Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon WorkSpaces and are available to your account.",
+            "accessLevel": "List"
+        },
+        "DescribeWorkspaceImages": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html",
+            "description": "Retrieves a list that describes one or more specified images.",
+            "accessLevel": "List"
+        },
+        "DescribeWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html",
+            "description": "Obtains information about the specified WorkSpaces.",
+            "accessLevel": "List"
+        },
+        "DescribeWorkspacesConnectionStatus": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesConnectionStatus.html",
+            "description": "Describes the connection status of a specified WorkSpace.",
+            "accessLevel": "Read"
+        },
+        "DisassociateIpGroups": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateIpGroups.html",
+            "description": "Disassociates the specified IP access control group from the specified directory.",
+            "accessLevel": "Write"
+        },
+        "ImportWorkspaceImage": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html",
+            "description": "Import a licensed EC2 image to into Amazon WorkSpaces.",
+            "accessLevel": "Write"
+        },
+        "ListAvailableManagementCidrRanges": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ListAvailableManagementCidrRanges.html",
+            "description": "List available CIDR ranges for a CIDR range constraint.",
+            "accessLevel": "List"
+        },
+        "ModifyAccount": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyAccount.html",
+            "description": "Modify the configuration of bring your own license (BYOL) for the specified account.",
+            "accessLevel": "Write"
+        },
+        "ModifyClientProperties": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyClientProperties.html",
+            "description": "Modify the client properties of a specified resource.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "directoryid": {
+                    "required": true
+                }
+            }
+        },
+        "ModifyWorkspaceProperties": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceProperties.html",
+            "description": "Modifies the WorkSpace properties, including the running mode and AutoStop time.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "ModifyWorkspaceState": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceState.html",
+            "description": "Modify the state of specified WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "RebootWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RebootWorkspaces.html",
+            "description": "Reboots the specified WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "RebuildWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RebuildWorkspaces.html",
+            "description": "Rebuilds the specified WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "RevokeIpRules": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html",
+            "description": "Removes one or more rules from the specified IP access control group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceipgroup": {
+                    "required": true
+                }
+            }
+        },
+        "StartWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspaces.html",
+            "description": "Starts the specified WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "StopWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspaces.html",
+            "description": "Stops the specified WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "TerminateWorkspaces": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspaces.html",
+            "description": "Terminates the specified WorkSpaces.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceid": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateRulesOfIpGroup": {
+            "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html",
+            "description": "Replaces the current rules of the specified IP access control group with the specified rules.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "workspaceipgroup": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Associates the specified IP access control group with the specified directory.

@@ -7,7 +7,28 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Pi extends PolicyStatement {
     public servicePrefix = 'pi';
-    public actions : Actions = { "DescribeDimensionKeys": { "url": "", "description": "For a specific time period, retrieve the top N dimension keys for a metric.", "accessLevel": "Read", "resourceTypes": { "metric-resource": { "required": true } } }, "GetResourceMetrics": { "url": "", "description": "Retrieve PI metrics for a set of data sources, over a time period.", "accessLevel": "Read", "resourceTypes": { "metric-resource": { "required": true } } } };
+    public actions : Actions = {
+        "DescribeDimensionKeys": {
+            "url": "",
+            "description": "For a specific time period, retrieve the top N dimension keys for a metric.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "metric-resource": {
+                    "required": true
+                }
+            }
+        },
+        "GetResourceMetrics": {
+            "url": "",
+            "description": "Retrieve PI metrics for a set of data sources, over a time period.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "metric-resource": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * For a specific time period, retrieve the top N dimension keys for a metric.

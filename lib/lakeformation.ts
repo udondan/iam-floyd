@@ -7,7 +7,78 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Lakeformation extends PolicyStatement {
     public servicePrefix = 'lakeformation';
-    public actions : Actions = { "BatchGrantPermissions": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Grants data lake permissions to one or more principals in a batch.", "accessLevel": "Permissions management" }, "BatchRevokePermissions": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Revokes data lake permissions from one or more principals in a batch.", "accessLevel": "Permissions management" }, "DeregisterResource": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Deregisters a registered location.", "accessLevel": "Write" }, "DescribeResource": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Describes a registered location.", "accessLevel": "Read" }, "GetDataAccess": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Grants virtual data lake access permissions.", "accessLevel": "Write" }, "GetDataLakeSettings": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Retrieves data lake settings such as the list of data lake administrators and database and table default permissions.", "accessLevel": "Read" }, "GetEffectivePermissionsForPath": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Retrieves permissions attached to resources in the given path.", "accessLevel": "Read" }, "GrantPermissions": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Grants data lake permissions to a principal.", "accessLevel": "Permissions management" }, "ListPermissions": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Lists permissions filtered by principal or resource.", "accessLevel": "List" }, "ListResources": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Lists registered locations.", "accessLevel": "List" }, "PutDataLakeSettings": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Overwrites data lake settings such as the list of data lake administrators and database and table default permissions.", "accessLevel": "Permissions management" }, "RegisterResource": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Registers a new location to be managed by Lake Formation.", "accessLevel": "Write" }, "RevokePermissions": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Revokes data lake permissions from a principal.", "accessLevel": "Permissions management" }, "UpdateResource": { "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html", "description": "Updates a registered location.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "BatchGrantPermissions": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Grants data lake permissions to one or more principals in a batch.",
+            "accessLevel": "Permissions management"
+        },
+        "BatchRevokePermissions": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Revokes data lake permissions from one or more principals in a batch.",
+            "accessLevel": "Permissions management"
+        },
+        "DeregisterResource": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Deregisters a registered location.",
+            "accessLevel": "Write"
+        },
+        "DescribeResource": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Describes a registered location.",
+            "accessLevel": "Read"
+        },
+        "GetDataAccess": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Grants virtual data lake access permissions.",
+            "accessLevel": "Write"
+        },
+        "GetDataLakeSettings": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Retrieves data lake settings such as the list of data lake administrators and database and table default permissions.",
+            "accessLevel": "Read"
+        },
+        "GetEffectivePermissionsForPath": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Retrieves permissions attached to resources in the given path.",
+            "accessLevel": "Read"
+        },
+        "GrantPermissions": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Grants data lake permissions to a principal.",
+            "accessLevel": "Permissions management"
+        },
+        "ListPermissions": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Lists permissions filtered by principal or resource.",
+            "accessLevel": "List"
+        },
+        "ListResources": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Lists registered locations.",
+            "accessLevel": "List"
+        },
+        "PutDataLakeSettings": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Overwrites data lake settings such as the list of data lake administrators and database and table default permissions.",
+            "accessLevel": "Permissions management"
+        },
+        "RegisterResource": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Registers a new location to be managed by Lake Formation.",
+            "accessLevel": "Write"
+        },
+        "RevokePermissions": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Revokes data lake permissions from a principal.",
+            "accessLevel": "Permissions management"
+        },
+        "UpdateResource": {
+            "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
+            "description": "Updates a registered location.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants data lake permissions to one or more principals in a batch.

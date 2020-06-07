@@ -7,7 +7,212 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AcmPca extends PolicyStatement {
     public servicePrefix = 'acm-pca';
-    public actions : Actions = { "CreateCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html", "description": "Creates an ACM Private CA and its associated private key and configuration.", "accessLevel": "Tagging", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateCertificateAuthorityAuditReport": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html", "description": "Creates an audit report for an ACM Private CA.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } } }, "CreatePermission": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html", "description": "Creates a permission for an ACM Private CA.", "accessLevel": "Permissions management", "resourceTypes": { "certificate-authority": { "required": true } } }, "DeleteCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html", "description": "Deletes an ACM Private CA and its associated private key and configuration.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } } }, "DeletePermission": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html", "description": "Deletes a permission for an ACM Private CA.", "accessLevel": "Permissions management", "resourceTypes": { "certificate-authority": { "required": true } } }, "DescribeCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html", "description": "Returns a list of the configuration and status fields contained in the specified ACM Private CA.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "DescribeCertificateAuthorityAuditReport": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthorityAuditReport.html", "description": "Returns the status and information about an ACM Private CA audit report.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "GetCertificate": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html", "description": "Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "GetCertificateAuthorityCertificate": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html", "description": "Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "GetCertificateAuthorityCsr": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html", "description": "Retrieves an ACM Private CA certificate signing request (CSR) for the certificate-authority specified by an ARN.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "ImportCertificateAuthorityCertificate": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html", "description": "Imports an SSL/TLS certificate into ACM Private CA for use as the CA certificate of an ACM Private CA.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } } }, "IssueCertificate": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html", "description": "Issues an ACM Private CA certificate.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } }, "conditions": ["acm-pca:TemplateArn"] }, "ListCertificateAuthorities": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html", "description": "Retrieves a list of the ACM Private CA certificate authority ARNs, and a summary of the status of each CA in the calling account.", "accessLevel": "List" }, "ListPermissions": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html", "description": "Lists the permissions that have been applied to the ACM Private CA certificate authority.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "ListTags": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html", "description": "Lists the tags that have been applied to the ACM Private CA certificate authority.", "accessLevel": "Read", "resourceTypes": { "certificate-authority": { "required": true } } }, "RestoreCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html", "description": "Restores an ACM Private CA from the deleted state to the state it was in when deleted.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } } }, "RevokeCertificate": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html", "description": "Revokes a certificate issued by an ACM Private CA.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } } }, "TagCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html", "description": "Adds one or more tags to an ACM Private CA.", "accessLevel": "Tagging", "resourceTypes": { "certificate-authority": { "required": true } }, "conditions": ["aws:TagKeys", "aws:RequestTag/${TagKey}"] }, "UntagCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html", "description": "Remove one or more tags from an ACM Private CA.", "accessLevel": "Tagging", "resourceTypes": { "certificate-authority": { "required": true } }, "conditions": ["aws:TagKeys"] }, "UpdateCertificateAuthority": { "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html", "description": "Updates the configuration of an ACM Private CA.", "accessLevel": "Write", "resourceTypes": { "certificate-authority": { "required": true } } } };
+    public actions : Actions = {
+        "CreateCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html",
+            "description": "Creates an ACM Private CA and its associated private key and configuration.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateCertificateAuthorityAuditReport": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html",
+            "description": "Creates an audit report for an ACM Private CA.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "CreatePermission": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html",
+            "description": "Creates a permission for an ACM Private CA.",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html",
+            "description": "Deletes an ACM Private CA and its associated private key and configuration.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePermission": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html",
+            "description": "Deletes a permission for an ACM Private CA.",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html",
+            "description": "Returns a list of the configuration and status fields contained in the specified ACM Private CA.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeCertificateAuthorityAuditReport": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthorityAuditReport.html",
+            "description": "Returns the status and information about an ACM Private CA audit report.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "GetCertificate": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html",
+            "description": "Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "GetCertificateAuthorityCertificate": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html",
+            "description": "Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "GetCertificateAuthorityCsr": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html",
+            "description": "Retrieves an ACM Private CA certificate signing request (CSR) for the certificate-authority specified by an ARN.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "ImportCertificateAuthorityCertificate": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html",
+            "description": "Imports an SSL/TLS certificate into ACM Private CA for use as the CA certificate of an ACM Private CA.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "IssueCertificate": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html",
+            "description": "Issues an ACM Private CA certificate.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "acm-pca:TemplateArn"
+            ]
+        },
+        "ListCertificateAuthorities": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html",
+            "description": "Retrieves a list of the ACM Private CA certificate authority ARNs, and a summary of the status of each CA in the calling account.",
+            "accessLevel": "List"
+        },
+        "ListPermissions": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html",
+            "description": "Lists the permissions that have been applied to the ACM Private CA certificate authority.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "ListTags": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html",
+            "description": "Lists the tags that have been applied to the ACM Private CA certificate authority.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "RestoreCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html",
+            "description": "Restores an ACM Private CA from the deleted state to the state it was in when deleted.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "RevokeCertificate": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html",
+            "description": "Revokes a certificate issued by an ACM Private CA.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        },
+        "TagCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html",
+            "description": "Adds one or more tags to an ACM Private CA.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "UntagCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html",
+            "description": "Remove one or more tags from an ACM Private CA.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html",
+            "description": "Updates the configuration of an ACM Private CA.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "certificate-authority": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Creates an ACM Private CA and its associated private key and configuration.

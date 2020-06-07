@@ -7,7 +7,23 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Pricing extends PolicyStatement {
     public servicePrefix = 'pricing';
-    public actions : Actions = { "DescribeServices": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html", "description": "Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).", "accessLevel": "Read" }, "GetAttributeValues": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html", "description": "Returns all (paginated) possible values for a given attribute.", "accessLevel": "Read" }, "GetProducts": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html", "description": "Returns all matching products with given search criteria.", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "DescribeServices": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html",
+            "description": "Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).",
+            "accessLevel": "Read"
+        },
+        "GetAttributeValues": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html",
+            "description": "Returns all (paginated) possible values for a given attribute.",
+            "accessLevel": "Read"
+        },
+        "GetProducts": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html",
+            "description": "Returns all matching products with given search criteria.",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).

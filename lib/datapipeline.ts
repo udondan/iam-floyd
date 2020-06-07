@@ -7,7 +7,176 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Datapipeline extends PolicyStatement {
     public servicePrefix = 'datapipeline';
-    public actions : Actions = { "ActivatePipeline": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html", "description": "Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.", "accessLevel": "Write", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag", "datapipeline:workerGroup"] }, "AddTags": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html", "description": "Adds or modifies tags for the specified pipeline.", "accessLevel": "Tagging", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "CreatePipeline": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html", "description": "Creates a new, empty pipeline.", "accessLevel": "Write", "conditions": ["datapipeline:Tag"] }, "DeactivatePipeline": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html", "description": "Deactivates the specified running pipeline.", "accessLevel": "Write", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag", "datapipeline:workerGroup"] }, "DeletePipeline": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html", "description": "Deletes a pipeline, its pipeline definition, and its run history.", "accessLevel": "Write", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "DescribeObjects": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html", "description": "Gets the object definitions for a set of objects associated with the pipeline.", "accessLevel": "Read", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "DescribePipelines": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html", "description": "Retrieves metadata about one or more pipelines.", "accessLevel": "List", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "EvaluateExpression": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html", "description": "Task runners call EvaluateExpression to evaluate a string in the context of the specified object.", "accessLevel": "Read", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "GetAccountLimits": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html", "description": "Description for GetAccountLimits", "accessLevel": "List" }, "GetPipelineDefinition": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html", "description": "Gets the definition of the specified pipeline.", "accessLevel": "Read", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag", "datapipeline:workerGroup"] }, "ListPipelines": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html", "description": "Lists the pipeline identifiers for all active pipelines that you have permission to access.", "accessLevel": "List" }, "PollForTask": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html", "description": "Task runners call PollForTask to receive a task to perform from AWS Data Pipeline.", "accessLevel": "Write", "conditions": ["datapipeline:workerGroup"] }, "PutAccountLimits": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html", "description": "Description for PutAccountLimits", "accessLevel": "Write" }, "PutPipelineDefinition": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html", "description": "Adds tasks, schedules, and preconditions to the specified pipeline.", "accessLevel": "Write", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag", "datapipeline:workerGroup"] }, "QueryObjects": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html", "description": "Queries the specified pipeline for the names of objects that match the specified set of conditions.", "accessLevel": "Read", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "RemoveTags": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html", "description": "Removes existing tags from the specified pipeline.", "accessLevel": "Tagging", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "ReportTaskProgress": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html", "description": "Task runners call ReportTaskProgress when assigned a task to acknowledge that it has the task.", "accessLevel": "Write" }, "ReportTaskRunnerHeartbeat": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html", "description": "Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational.", "accessLevel": "Write" }, "SetStatus": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html", "description": "Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline.", "accessLevel": "Write", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag"] }, "SetTaskStatus": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html", "description": "Task runners call SetTaskStatus to notify AWS Data Pipeline that a task is completed and provide information about the final status.", "accessLevel": "Write" }, "ValidatePipelineDefinition": { "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html", "description": "Validates the specified pipeline definition to ensure that it is well formed and can be run without error.", "accessLevel": "Read", "conditions": ["datapipeline:PipelineCreator", "datapipeline:Tag", "datapipeline:workerGroup"] } };
+    public actions : Actions = {
+        "ActivatePipeline": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html",
+            "description": "Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag",
+                "datapipeline:workerGroup"
+            ]
+        },
+        "AddTags": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html",
+            "description": "Adds or modifies tags for the specified pipeline.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "CreatePipeline": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html",
+            "description": "Creates a new, empty pipeline.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:Tag"
+            ]
+        },
+        "DeactivatePipeline": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html",
+            "description": "Deactivates the specified running pipeline.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag",
+                "datapipeline:workerGroup"
+            ]
+        },
+        "DeletePipeline": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html",
+            "description": "Deletes a pipeline, its pipeline definition, and its run history.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "DescribeObjects": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html",
+            "description": "Gets the object definitions for a set of objects associated with the pipeline.",
+            "accessLevel": "Read",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "DescribePipelines": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html",
+            "description": "Retrieves metadata about one or more pipelines.",
+            "accessLevel": "List",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "EvaluateExpression": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html",
+            "description": "Task runners call EvaluateExpression to evaluate a string in the context of the specified object.",
+            "accessLevel": "Read",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "GetAccountLimits": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html",
+            "description": "Description for GetAccountLimits",
+            "accessLevel": "List"
+        },
+        "GetPipelineDefinition": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html",
+            "description": "Gets the definition of the specified pipeline.",
+            "accessLevel": "Read",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag",
+                "datapipeline:workerGroup"
+            ]
+        },
+        "ListPipelines": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html",
+            "description": "Lists the pipeline identifiers for all active pipelines that you have permission to access.",
+            "accessLevel": "List"
+        },
+        "PollForTask": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html",
+            "description": "Task runners call PollForTask to receive a task to perform from AWS Data Pipeline.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:workerGroup"
+            ]
+        },
+        "PutAccountLimits": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html",
+            "description": "Description for PutAccountLimits",
+            "accessLevel": "Write"
+        },
+        "PutPipelineDefinition": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html",
+            "description": "Adds tasks, schedules, and preconditions to the specified pipeline.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag",
+                "datapipeline:workerGroup"
+            ]
+        },
+        "QueryObjects": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html",
+            "description": "Queries the specified pipeline for the names of objects that match the specified set of conditions.",
+            "accessLevel": "Read",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "RemoveTags": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html",
+            "description": "Removes existing tags from the specified pipeline.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "ReportTaskProgress": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html",
+            "description": "Task runners call ReportTaskProgress when assigned a task to acknowledge that it has the task.",
+            "accessLevel": "Write"
+        },
+        "ReportTaskRunnerHeartbeat": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html",
+            "description": "Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational.",
+            "accessLevel": "Write"
+        },
+        "SetStatus": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html",
+            "description": "Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline.",
+            "accessLevel": "Write",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag"
+            ]
+        },
+        "SetTaskStatus": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html",
+            "description": "Task runners call SetTaskStatus to notify AWS Data Pipeline that a task is completed and provide information about the final status.",
+            "accessLevel": "Write"
+        },
+        "ValidatePipelineDefinition": {
+            "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html",
+            "description": "Validates the specified pipeline definition to ensure that it is well formed and can be run without error.",
+            "accessLevel": "Read",
+            "conditions": [
+                "datapipeline:PipelineCreator",
+                "datapipeline:Tag",
+                "datapipeline:workerGroup"
+            ]
+        }
+    };
 
     /**
      * Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.

@@ -7,7 +7,134 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class ResourceGroups extends PolicyStatement {
     public servicePrefix = 'resource-groups';
-    public actions : Actions = { "CreateGroup": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html", "description": "Creates a group with a specified name, description, and resource query.", "accessLevel": "Tagging", "resourceTypes": { "group": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "DeleteGroup": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html", "description": "Deletes a specified resource group", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "GetGroup": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html", "description": "Gets information of a specified resource group", "accessLevel": "Read", "resourceTypes": { "group": { "required": true } } }, "GetGroupQuery": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html", "description": "Gets the query associated with a specified resource group", "accessLevel": "Read", "resourceTypes": { "group": { "required": true } } }, "GetTags": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html", "description": "Gets the tags associated with a specified resource group", "accessLevel": "Read", "resourceTypes": { "group": { "required": true } } }, "ListGroupResources": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html", "description": "Lists the resources that are member of a specified resource group", "accessLevel": "List", "resourceTypes": { "group": { "required": true } } }, "ListGroups": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html", "description": "Lists all resource groups", "accessLevel": "List", "resourceTypes": { "group": { "required": true } } }, "SearchResources": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html", "description": "Returns a list of AWS resource identifiers matching the given query", "accessLevel": "List" }, "Tag": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html", "description": "Tags a specified resource group", "accessLevel": "Tagging", "resourceTypes": { "group": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "Untag": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html", "description": "Removes tags associated with a specified resource group", "accessLevel": "Tagging", "resourceTypes": { "group": { "required": true } }, "conditions": ["aws:TagKeys"] }, "UpdateGroup": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html", "description": "Updates a specified resource group", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "UpdateGroupQuery": { "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html", "description": "Updates the query associated with a specified resource group", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } } };
+    public actions : Actions = {
+        "CreateGroup": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html",
+            "description": "Creates a group with a specified name, description, and resource query.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "DeleteGroup": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html",
+            "description": "Deletes a specified resource group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetGroup": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html",
+            "description": "Gets information of a specified resource group",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetGroupQuery": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html",
+            "description": "Gets the query associated with a specified resource group",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetTags": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html",
+            "description": "Gets the tags associated with a specified resource group",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "ListGroupResources": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html",
+            "description": "Lists the resources that are member of a specified resource group",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "ListGroups": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html",
+            "description": "Lists all resource groups",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "SearchResources": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html",
+            "description": "Returns a list of AWS resource identifiers matching the given query",
+            "accessLevel": "List"
+        },
+        "Tag": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html",
+            "description": "Tags a specified resource group",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "Untag": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html",
+            "description": "Removes tags associated with a specified resource group",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateGroup": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html",
+            "description": "Updates a specified resource group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateGroupQuery": {
+            "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html",
+            "description": "Updates the query associated with a specified resource group",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Creates a group with a specified name, description, and resource query.

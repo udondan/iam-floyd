@@ -7,7 +7,103 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Ce extends PolicyStatement {
     public servicePrefix = 'ce';
-    public actions : Actions = { "CreateCostCategoryDefinition": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html", "description": "Grants permission to create a new Cost Category with the requested name and rules.", "accessLevel": "Write" }, "DeleteCostCategoryDefinition": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html", "description": "Grants permission to delete a Cost Category.", "accessLevel": "Write" }, "DescribeCostCategoryDefinition": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html", "description": "Grants permission to retrieve descriptions such as the name, ARN, rules, definition, and effective dates of a Cost Category.", "accessLevel": "Read" }, "GetCostAndUsage": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html", "description": "Grants permission to retrieve the cost and usage metrics for your account.", "accessLevel": "Read" }, "GetCostAndUsageWithResources": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html", "description": "Grants permission to retrieve the cost and usage metrics with resources for your account.", "accessLevel": "Read" }, "GetCostForecast": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html", "description": "Grants permission to retrieve a cost forecast for a forecast time period.", "accessLevel": "Read" }, "GetDimensionValues": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html", "description": "Grants permission to retrieve all available filter values for a filter for a period of time.", "accessLevel": "Read" }, "GetReservationCoverage": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html", "description": "Grants permission to retrieve the reservation coverage for your account.", "accessLevel": "Read" }, "GetReservationPurchaseRecommendation": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html", "description": "Grants permission to retrieve the reservation recommendations for your account.", "accessLevel": "Read" }, "GetReservationUtilization": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html", "description": "Grants permission to retrieve the reservation utilization for your account.", "accessLevel": "Read" }, "GetRightsizingRecommendation": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetRightsizingRecommendation.html", "description": "Grants permission to retrieve the rightsizing recommendations for your account.", "accessLevel": "Read" }, "GetSavingsPlansCoverage": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html", "description": "Grants permission to retrieve the Savings Plans coverage for your account.", "accessLevel": "Read" }, "GetSavingsPlansPurchaseRecommendation": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansPurchaseRecommendation.html", "description": "Grants permission to retrieve the Savings Plans recommendations for your account.", "accessLevel": "Read" }, "GetSavingsPlansUtilization": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html", "description": "Grants permission to retrieve the Savings Plans utilization for your account.", "accessLevel": "Read" }, "GetSavingsPlansUtilizationDetails": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html", "description": "Grants permission to retrieve the Savings Plans utilization details for your account.", "accessLevel": "Read" }, "GetTags": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html", "description": "Grants permission to query tags for a specified time period.", "accessLevel": "Read" }, "GetUsageForecast": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html", "description": "Grants permission to retrieve a usage forecast for a forecast time period.", "accessLevel": "Read" }, "ListCostCategoryDefinitions": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html", "description": "Grants permission to retrieve names, ARN, and effective dates for all Cost Categories.", "accessLevel": "List" }, "UpdateCostCategoryDefinition": { "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html", "description": "Grants permission to update an existing Cost Category.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateCostCategoryDefinition": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html",
+            "description": "Grants permission to create a new Cost Category with the requested name and rules.",
+            "accessLevel": "Write"
+        },
+        "DeleteCostCategoryDefinition": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html",
+            "description": "Grants permission to delete a Cost Category.",
+            "accessLevel": "Write"
+        },
+        "DescribeCostCategoryDefinition": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html",
+            "description": "Grants permission to retrieve descriptions such as the name, ARN, rules, definition, and effective dates of a Cost Category.",
+            "accessLevel": "Read"
+        },
+        "GetCostAndUsage": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html",
+            "description": "Grants permission to retrieve the cost and usage metrics for your account.",
+            "accessLevel": "Read"
+        },
+        "GetCostAndUsageWithResources": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html",
+            "description": "Grants permission to retrieve the cost and usage metrics with resources for your account.",
+            "accessLevel": "Read"
+        },
+        "GetCostForecast": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html",
+            "description": "Grants permission to retrieve a cost forecast for a forecast time period.",
+            "accessLevel": "Read"
+        },
+        "GetDimensionValues": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html",
+            "description": "Grants permission to retrieve all available filter values for a filter for a period of time.",
+            "accessLevel": "Read"
+        },
+        "GetReservationCoverage": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html",
+            "description": "Grants permission to retrieve the reservation coverage for your account.",
+            "accessLevel": "Read"
+        },
+        "GetReservationPurchaseRecommendation": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html",
+            "description": "Grants permission to retrieve the reservation recommendations for your account.",
+            "accessLevel": "Read"
+        },
+        "GetReservationUtilization": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html",
+            "description": "Grants permission to retrieve the reservation utilization for your account.",
+            "accessLevel": "Read"
+        },
+        "GetRightsizingRecommendation": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetRightsizingRecommendation.html",
+            "description": "Grants permission to retrieve the rightsizing recommendations for your account.",
+            "accessLevel": "Read"
+        },
+        "GetSavingsPlansCoverage": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html",
+            "description": "Grants permission to retrieve the Savings Plans coverage for your account.",
+            "accessLevel": "Read"
+        },
+        "GetSavingsPlansPurchaseRecommendation": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansPurchaseRecommendation.html",
+            "description": "Grants permission to retrieve the Savings Plans recommendations for your account.",
+            "accessLevel": "Read"
+        },
+        "GetSavingsPlansUtilization": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html",
+            "description": "Grants permission to retrieve the Savings Plans utilization for your account.",
+            "accessLevel": "Read"
+        },
+        "GetSavingsPlansUtilizationDetails": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html",
+            "description": "Grants permission to retrieve the Savings Plans utilization details for your account.",
+            "accessLevel": "Read"
+        },
+        "GetTags": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html",
+            "description": "Grants permission to query tags for a specified time period.",
+            "accessLevel": "Read"
+        },
+        "GetUsageForecast": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html",
+            "description": "Grants permission to retrieve a usage forecast for a forecast time period.",
+            "accessLevel": "Read"
+        },
+        "ListCostCategoryDefinitions": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html",
+            "description": "Grants permission to retrieve names, ARN, and effective dates for all Cost Categories.",
+            "accessLevel": "List"
+        },
+        "UpdateCostCategoryDefinition": {
+            "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html",
+            "description": "Grants permission to update an existing Cost Category.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to create a new Cost Category with the requested name and rules.

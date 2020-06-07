@@ -7,7 +7,174 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Kinesisanalytics extends PolicyStatement {
     public servicePrefix = 'kinesisanalytics';
-    public actions : Actions = { "AddApplicationInput": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html", "description": "Adds input to the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "AddApplicationOutput": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html", "description": "Adds output to the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "AddApplicationReferenceDataSource": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html", "description": "Adds reference data source to the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "CreateApplication": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html", "description": "Creates an application.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "DeleteApplication": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html", "description": "Deletes the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "DeleteApplicationOutput": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html", "description": "Deletes the specified output of the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "DeleteApplicationReferenceDataSource": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html", "description": "Deletes the specified reference data source of the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "DescribeApplication": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html", "description": "Describes the specified application.", "accessLevel": "Read", "resourceTypes": { "application": { "required": true } } }, "DiscoverInputSchema": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html", "description": "Discovers the input schema for the application.", "accessLevel": "Read" }, "GetApplicationState": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas", "description": "Grant permission to Kinesis Data Analytics console to display stream results for Kinesis Data Analytics SQL runtime applications.", "accessLevel": "Read", "resourceTypes": { "application": { "required": true } } }, "ListApplications": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html", "description": "List applications for the account", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListTagsForResource.html", "description": "Fetch the tags associated with the application.", "accessLevel": "Read", "resourceTypes": { "application": { "required": true } } }, "StartApplication": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html", "description": "Starts the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "StopApplication": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html", "description": "Stops the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html", "description": "Add tags to the application.", "accessLevel": "Tagging", "resourceTypes": { "application": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html", "description": "Remove the specified tags from the application.", "accessLevel": "Tagging", "resourceTypes": { "application": { "required": true } }, "conditions": ["aws:TagKeys"] }, "UpdateApplication": { "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html", "description": "Updates the application.", "accessLevel": "Write", "resourceTypes": { "application": { "required": true } } } };
+    public actions : Actions = {
+        "AddApplicationInput": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html",
+            "description": "Adds input to the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "AddApplicationOutput": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html",
+            "description": "Adds output to the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "AddApplicationReferenceDataSource": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html",
+            "description": "Adds reference data source to the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "CreateApplication": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html",
+            "description": "Creates an application.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "DeleteApplication": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html",
+            "description": "Deletes the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteApplicationOutput": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html",
+            "description": "Deletes the specified output of the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteApplicationReferenceDataSource": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html",
+            "description": "Deletes the specified reference data source of the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeApplication": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html",
+            "description": "Describes the specified application.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "DiscoverInputSchema": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html",
+            "description": "Discovers the input schema for the application.",
+            "accessLevel": "Read"
+        },
+        "GetApplicationState": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas",
+            "description": "Grant permission to Kinesis Data Analytics console to display stream results for Kinesis Data Analytics SQL runtime applications.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "ListApplications": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html",
+            "description": "List applications for the account",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListTagsForResource.html",
+            "description": "Fetch the tags associated with the application.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "StartApplication": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html",
+            "description": "Starts the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "StopApplication": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html",
+            "description": "Stops the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html",
+            "description": "Add tags to the application.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html",
+            "description": "Remove the specified tags from the application.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateApplication": {
+            "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html",
+            "description": "Updates the application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "application": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Adds input to the application.
