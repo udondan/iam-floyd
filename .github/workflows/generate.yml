@@ -25,8 +25,8 @@ jobs:
           set -x
           git diff --quiet || (
             perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
-            git config --local user.email "action@github.com" &&
-            git config --local user.name "GitHub Action" &&
+            git config --local user.email "deemes79@googlemail.com" &&
+            git config --local user.name "udondan" &&
             rm -rf node_modules tsconfig.json &&
             git add * &&
             git commit -m "Adds latest IAM updates from AWS" &&

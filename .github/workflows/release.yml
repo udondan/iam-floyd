@@ -34,7 +34,7 @@ jobs:
       - name: Push changes
         run: >
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
-          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
+          git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
 
   release:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
 
       - name: Create tag
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "deemes79@googlemail.com"
+          git config --local user.name "udondan"
           git tag -a "v$(VERSION)" -m 'Creates tag "v$(VERSION)"'
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
