@@ -1,9 +1,15 @@
 ---
 name: Generate Code from AWS documentation
 
+#on:
+#  schedule:
+#    - cron: "*/5 * * * *"
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/generate.yml
 
 jobs:
   generate:
@@ -30,5 +36,5 @@ jobs:
             rm -rf node_modules tsconfig.json &&
             git add * &&
             git commit -m "Adds latest IAM updates from AWS" &&
-            git push
+            git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:master
           )
