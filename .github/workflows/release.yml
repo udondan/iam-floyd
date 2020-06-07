@@ -47,6 +47,8 @@ jobs:
           fetch-depth: 1
 
       - name: Create tag
+        with:
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

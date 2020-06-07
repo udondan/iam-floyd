@@ -21,6 +21,8 @@ jobs:
           args: make generate
 
       - name: Commit and push changes
+        with:
+          GITHUB_TOKEN: ${{ secrets.OVERRIDE_TOKEN }}
         run: |
           set -x
           git diff --quiet || (
