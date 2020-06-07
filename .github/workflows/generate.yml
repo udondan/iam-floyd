@@ -3,7 +3,7 @@ name: Generate Code from AWS documentation
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "42 * * * *"
 
 jobs:
   generate:
