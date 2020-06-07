@@ -1,6 +1,8 @@
 ---
 on:
   push:
+    branches:
+      - master
     paths:
       - VERSION
 
@@ -31,3 +33,19 @@ jobs:
         run: >
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
           git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
+
+  release:
+    runs-on: ubuntu-latest
+    needs: set-version
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Create tag
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          make release
