@@ -53,6 +53,13 @@
             "dotnet": {
                 "namespace": "IAM.Floyd",
                 "packageId": "IAM.Floyd"
+            },
+            "java": {
+                "package": "com.udondan.iamFloyd",
+                "maven": {
+                    "groupId": "com.udondan",
+                    "artifactId": "iam-floyd"
+                }
             }
         }
     },
