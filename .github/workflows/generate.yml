@@ -22,6 +22,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          set -x
           git diff --quiet || (
             perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
             git config --local user.email "action@github.com" &&
