@@ -7,7 +7,98 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Trustedadvisor extends PolicyStatement {
     public servicePrefix = 'trustedadvisor';
-    public actions : Actions = { "DescribeAccount": { "url": "", "description": "View support plan and various TA preferences.", "accessLevel": "Read" }, "DescribeAccountAccess": { "url": "", "description": "Resolve whether Account has disabled Trusted Advisor", "accessLevel": "Read" }, "DescribeCheckItems": { "url": "", "description": "View details for the check items", "accessLevel": "Read", "resourceTypes": { "checks": { "required": true } } }, "DescribeCheckRefreshStatuses": { "url": "", "description": "Describe check refresh statuses", "accessLevel": "Read", "resourceTypes": { "checks": { "required": true } } }, "DescribeCheckSummaries": { "url": "", "description": "Describes the check's summaries", "accessLevel": "Read", "resourceTypes": { "checks": { "required": true } } }, "DescribeChecks": { "url": "", "description": "List valid Trusted Advisor checks and details.", "accessLevel": "Read" }, "DescribeNotificationPreferences": { "url": "", "description": "Describes the notification preferences for the account", "accessLevel": "Read" }, "ExcludeCheckItems": { "url": "", "description": "Exclude recommendations for checks for a given customer", "accessLevel": "Write", "resourceTypes": { "checks": { "required": true } } }, "IncludeCheckItems": { "url": "", "description": "Include recommendations for checks for a given customer", "accessLevel": "Write", "resourceTypes": { "checks": { "required": true } } }, "RefreshCheck": { "url": "", "description": "Enqueue a refresh for the specified check", "accessLevel": "Write", "resourceTypes": { "checks": { "required": true } } }, "SetAccountAccess": { "url": "", "description": "Toggle whether TrustedAdvisor is enabled/disabled for the account", "accessLevel": "Write" }, "UpdateNotificationPreferences": { "url": "", "description": "Update notification preferences", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "DescribeAccount": {
+            "url": "",
+            "description": "View support plan and various TA preferences.",
+            "accessLevel": "Read"
+        },
+        "DescribeAccountAccess": {
+            "url": "",
+            "description": "Resolve whether Account has disabled Trusted Advisor",
+            "accessLevel": "Read"
+        },
+        "DescribeCheckItems": {
+            "url": "",
+            "description": "View details for the check items",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "checks": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeCheckRefreshStatuses": {
+            "url": "",
+            "description": "Describe check refresh statuses",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "checks": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeCheckSummaries": {
+            "url": "",
+            "description": "Describes the check's summaries",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "checks": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeChecks": {
+            "url": "",
+            "description": "List valid Trusted Advisor checks and details.",
+            "accessLevel": "Read"
+        },
+        "DescribeNotificationPreferences": {
+            "url": "",
+            "description": "Describes the notification preferences for the account",
+            "accessLevel": "Read"
+        },
+        "ExcludeCheckItems": {
+            "url": "",
+            "description": "Exclude recommendations for checks for a given customer",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "checks": {
+                    "required": true
+                }
+            }
+        },
+        "IncludeCheckItems": {
+            "url": "",
+            "description": "Include recommendations for checks for a given customer",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "checks": {
+                    "required": true
+                }
+            }
+        },
+        "RefreshCheck": {
+            "url": "",
+            "description": "Enqueue a refresh for the specified check",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "checks": {
+                    "required": true
+                }
+            }
+        },
+        "SetAccountAccess": {
+            "url": "",
+            "description": "Toggle whether TrustedAdvisor is enabled/disabled for the account",
+            "accessLevel": "Write"
+        },
+        "UpdateNotificationPreferences": {
+            "url": "",
+            "description": "Update notification preferences",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * View support plan and various TA preferences.

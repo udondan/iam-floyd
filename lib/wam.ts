@@ -7,7 +7,13 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Wam extends PolicyStatement {
     public servicePrefix = 'wam';
-    public actions : Actions = { "AuthenticatePackager": { "url": "https://docs.aws.amazon.com/wam/latest/adminguide/iam.html", "description": "Allows the Amazon WAM packaging instance to access your application package catalog.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "AuthenticatePackager": {
+            "url": "https://docs.aws.amazon.com/wam/latest/adminguide/iam.html",
+            "description": "Allows the Amazon WAM packaging instance to access your application package catalog.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Allows the Amazon WAM packaging instance to access your application package catalog.

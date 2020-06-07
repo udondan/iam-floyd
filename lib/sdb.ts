@@ -7,7 +7,103 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Sdb extends PolicyStatement {
     public servicePrefix = 'sdb';
-    public actions : Actions = { "BatchDeleteAttributes": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html", "description": "Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.", "accessLevel": "Write", "resourceTypes": { "domain": { "required": true } } }, "BatchPutAttributes": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html", "description": "With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call. With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call.", "accessLevel": "Write", "resourceTypes": { "domain": { "required": true } } }, "CreateDomain": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html", "description": "The CreateDomain operation creates a new domain.", "accessLevel": "Write", "resourceTypes": { "domain": { "required": true } } }, "DeleteAttributes": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html", "description": "Deletes one or more attributes associated with the item.", "accessLevel": "Write", "resourceTypes": { "domain": { "required": true } } }, "DeleteDomain": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html", "description": "The DeleteDomain operation deletes a domain.", "accessLevel": "Write", "resourceTypes": { "domain": { "required": true } } }, "DomainMetadata": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html", "description": "Returns information about the domain, including when the domain was created, the number of items and attributes, and the size of attribute names and values.", "accessLevel": "Read", "resourceTypes": { "domain": { "required": true } } }, "GetAttributes": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html", "description": "Returns all of the attributes associated with the item.", "accessLevel": "Read", "resourceTypes": { "domain": { "required": true } } }, "ListDomains": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html", "description": "Description for ListDomains", "accessLevel": "List" }, "PutAttributes": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html", "description": "The PutAttributes operation creates or replaces attributes in an item.", "accessLevel": "Write", "resourceTypes": { "domain": { "required": true } } }, "Select": { "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html", "description": "Description for Select", "accessLevel": "Read", "resourceTypes": { "domain": { "required": true } } } };
+    public actions : Actions = {
+        "BatchDeleteAttributes": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html",
+            "description": "Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "BatchPutAttributes": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html",
+            "description": "With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call. With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDomain": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html",
+            "description": "The CreateDomain operation creates a new domain.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteAttributes": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html",
+            "description": "Deletes one or more attributes associated with the item.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDomain": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html",
+            "description": "The DeleteDomain operation deletes a domain.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "DomainMetadata": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html",
+            "description": "Returns information about the domain, including when the domain was created, the number of items and attributes, and the size of attribute names and values.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "GetAttributes": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html",
+            "description": "Returns all of the attributes associated with the item.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "ListDomains": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html",
+            "description": "Description for ListDomains",
+            "accessLevel": "List"
+        },
+        "PutAttributes": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html",
+            "description": "The PutAttributes operation creates or replaces attributes in an item.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        },
+        "Select": {
+            "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html",
+            "description": "Description for Select",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "domain": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.

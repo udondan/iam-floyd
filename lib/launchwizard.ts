@@ -7,7 +7,48 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Launchwizard extends PolicyStatement {
     public servicePrefix = 'launchwizard';
-    public actions : Actions = { "DeleteApp": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Delete an application", "accessLevel": "Write" }, "DescribeProvisionedApp": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Describe provisioning applications", "accessLevel": "Read" }, "DescribeProvisioningEvents": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Describe provisioning events", "accessLevel": "Read" }, "GetInfrastructureSuggestion": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Get infrastructure suggestion", "accessLevel": "Read" }, "GetIpAddress": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Get customer's ip address", "accessLevel": "Read" }, "GetResourceCostEstimate": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Get resource cost estimate", "accessLevel": "Read" }, "ListProvisionedApps": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "List provisioning applications", "accessLevel": "List" }, "StartProvisioning": { "url": "https://docs.aws.amazon.com/launchwizard/", "description": "Start a provisioning", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "DeleteApp": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Delete an application",
+            "accessLevel": "Write"
+        },
+        "DescribeProvisionedApp": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Describe provisioning applications",
+            "accessLevel": "Read"
+        },
+        "DescribeProvisioningEvents": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Describe provisioning events",
+            "accessLevel": "Read"
+        },
+        "GetInfrastructureSuggestion": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Get infrastructure suggestion",
+            "accessLevel": "Read"
+        },
+        "GetIpAddress": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Get customer's ip address",
+            "accessLevel": "Read"
+        },
+        "GetResourceCostEstimate": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Get resource cost estimate",
+            "accessLevel": "Read"
+        },
+        "ListProvisionedApps": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "List provisioning applications",
+            "accessLevel": "List"
+        },
+        "StartProvisioning": {
+            "url": "https://docs.aws.amazon.com/launchwizard/",
+            "description": "Start a provisioning",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Delete an application

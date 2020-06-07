@@ -7,7 +7,38 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AutoscalingPlans extends PolicyStatement {
     public servicePrefix = 'autoscaling-plans';
-    public actions : Actions = { "CreateScalingPlan": { "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html", "description": "Creates a scaling plan.", "accessLevel": "Write" }, "DeleteScalingPlan": { "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html", "description": "Deletes the specified scaling plan.", "accessLevel": "Write" }, "DescribeScalingPlanResources": { "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html", "description": "Describes the scalable resources in the specified scaling plan.", "accessLevel": "Read" }, "DescribeScalingPlans": { "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html", "description": "Describes the specified scaling plans or all of your scaling plans.", "accessLevel": "Read" }, "GetScalingPlanResourceForecastData": { "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html", "description": "Retrieves the forecast data for a scalable resource.", "accessLevel": "Read" }, "UpdateScalingPlan": { "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html", "description": "Updates a scaling plan.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateScalingPlan": {
+            "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html",
+            "description": "Creates a scaling plan.",
+            "accessLevel": "Write"
+        },
+        "DeleteScalingPlan": {
+            "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html",
+            "description": "Deletes the specified scaling plan.",
+            "accessLevel": "Write"
+        },
+        "DescribeScalingPlanResources": {
+            "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html",
+            "description": "Describes the scalable resources in the specified scaling plan.",
+            "accessLevel": "Read"
+        },
+        "DescribeScalingPlans": {
+            "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html",
+            "description": "Describes the specified scaling plans or all of your scaling plans.",
+            "accessLevel": "Read"
+        },
+        "GetScalingPlanResourceForecastData": {
+            "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html",
+            "description": "Retrieves the forecast data for a scalable resource.",
+            "accessLevel": "Read"
+        },
+        "UpdateScalingPlan": {
+            "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html",
+            "description": "Updates a scaling plan.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Creates a scaling plan.

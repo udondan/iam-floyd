@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class ElasticInference extends PolicyStatement {
     public servicePrefix = 'elastic-inference';
-    public actions : Actions = { "Connect": { "url": "", "description": "Connects customer to Elastic Inference accelerator", "accessLevel": "Write", "resourceTypes": { "accelerator": { "required": true } } } };
+    public actions : Actions = {
+        "Connect": {
+            "url": "",
+            "description": "Connects customer to Elastic Inference accelerator",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "accelerator": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Connects customer to Elastic Inference accelerator

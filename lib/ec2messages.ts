@@ -7,7 +7,38 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Ec2messages extends PolicyStatement {
     public servicePrefix = 'ec2messages';
-    public actions : Actions = { "AcknowledgeMessage": { "url": "", "description": "Acknowledges a message, ensuring it will not be delivered again", "accessLevel": "Write" }, "DeleteMessage": { "url": "", "description": "Deletes a message", "accessLevel": "Write" }, "FailMessage": { "url": "", "description": "Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again", "accessLevel": "Write" }, "GetEndpoint": { "url": "", "description": "Routes traffic to the correct endpoint based on the given destination for the messages", "accessLevel": "Read" }, "GetMessages": { "url": "", "description": "Delivers messages to clients/instances using long polling", "accessLevel": "Read" }, "SendReply": { "url": "", "description": "Sends replies from clients/instances to upstream service", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "AcknowledgeMessage": {
+            "url": "",
+            "description": "Acknowledges a message, ensuring it will not be delivered again",
+            "accessLevel": "Write"
+        },
+        "DeleteMessage": {
+            "url": "",
+            "description": "Deletes a message",
+            "accessLevel": "Write"
+        },
+        "FailMessage": {
+            "url": "",
+            "description": "Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again",
+            "accessLevel": "Write"
+        },
+        "GetEndpoint": {
+            "url": "",
+            "description": "Routes traffic to the correct endpoint based on the given destination for the messages",
+            "accessLevel": "Read"
+        },
+        "GetMessages": {
+            "url": "",
+            "description": "Delivers messages to clients/instances using long polling",
+            "accessLevel": "Read"
+        },
+        "SendReply": {
+            "url": "",
+            "description": "Sends replies from clients/instances to upstream service",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Acknowledges a message, ensuring it will not be delivered again

@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Comprehendmedical extends PolicyStatement {
     public servicePrefix = 'comprehendmedical';
-    public actions : Actions = { "DetectEntities": { "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html", "description": "Inspects the specified text for the specified type of entities and returns information about them.", "accessLevel": "Read" }, "DetectPHI": { "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectPHI.html", "description": "Inspects the specified text for PHI entities and returns information about them.", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "DetectEntities": {
+            "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html",
+            "description": "Inspects the specified text for the specified type of entities and returns information about them.",
+            "accessLevel": "Read"
+        },
+        "DetectPHI": {
+            "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectPHI.html",
+            "description": "Inspects the specified text for PHI entities and returns information about them.",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Inspects the specified text for the specified type of entities and returns information about them.

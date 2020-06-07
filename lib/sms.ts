@@ -7,7 +7,158 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Sms extends PolicyStatement {
     public servicePrefix = 'sms';
-    public actions : Actions = { "CreateApp": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateApp.html", "description": "Create an application configuration to migrate on-premise application onto AWS..", "accessLevel": "Write" }, "CreateReplicationJob": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateReplicationJob.html", "description": "Create a job to migrate on-premise server onto AWS.", "accessLevel": "Write" }, "DeleteApp": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteApp.html", "description": "Delete an existing application configuration.", "accessLevel": "Write" }, "DeleteAppLaunchConfiguration": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppLaunchConfiguration.html", "description": "Delete launch configuration for an existing application.", "accessLevel": "Write" }, "DeleteAppReplicationConfiguration": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppReplicationConfiguration.html", "description": "Delete replication configuration for an existing application..", "accessLevel": "Write" }, "DeleteReplicationJob": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteReplicationJob.html", "description": "Delete an existing job to migrate on-premise server onto AWS.", "accessLevel": "Write" }, "DeleteServerCatalog": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteServerCatalog.html", "description": "Delete the complete list of on-premise servers gathered into AWS.", "accessLevel": "Write" }, "DisassociateConnector": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DisassociateConnector.html", "description": "Disassociate a connector that has been associated.", "accessLevel": "Write" }, "GenerateChangeSet": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateChangeSet.html", "description": "Generate a changeSet for the CloudFormation stack of an application.", "accessLevel": "Write" }, "GenerateTemplate": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateTemplate.html", "description": "Generate a CloudFormation template for an existing application.", "accessLevel": "Write" }, "GetApp": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetApp.html", "description": "Get the configuration and statuses for an existing application.", "accessLevel": "Read" }, "GetAppLaunchConfiguration": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppLaunchConfiguration.html", "description": "Get launch configuration for an existing application.", "accessLevel": "Read" }, "GetAppReplicationConfiguration": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppReplicationConfiguration.html", "description": "Get replication configuration for an existing application.", "accessLevel": "Read" }, "GetConnectors": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetConnectors.html", "description": "Get all connectors that have been associated.", "accessLevel": "Read" }, "GetMessages": { "url": "", "description": "Gets messages from AWS Server Migration Service to Server Migration Connector.", "accessLevel": "Read" }, "GetReplicationJobs": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationJobs.html", "description": "Get all existing jobs to migrate on-premise servers onto AWS.", "accessLevel": "Read" }, "GetReplicationRuns": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationRuns.html", "description": "Get all runs for an existing job.", "accessLevel": "Read" }, "GetServers": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetServers.html", "description": "Get all servers that have been imported.", "accessLevel": "Read" }, "ImportServerCatalog": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportServerCatalog.html", "description": "Gathers a complete list of on-premise servers.", "accessLevel": "Write" }, "LaunchApp": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_LaunchApp.html", "description": "Create and launch a CloudFormation stack for an existing application.", "accessLevel": "Write" }, "ListApps": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ListAppss.html", "description": "Get a list of summaries for existing applications.", "accessLevel": "List" }, "PutAppLaunchConfiguration": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppLaunchConfiguration.html", "description": "Create or update launch configuration for an existing application.", "accessLevel": "Write" }, "PutAppReplicationConfiguration": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppReplicationConfiguration.html", "description": "Create or update replication configuration for an existing application.", "accessLevel": "Write" }, "SendMessage": { "url": "", "description": "Send message from Server Migration Connector to AWS Server Migration Service.", "accessLevel": "Write" }, "StartAppReplication": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartAppReplication.html", "description": "Create and start replication jobs for an existing application.", "accessLevel": "Write" }, "StartOnDemandReplicationRun": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandReplicationRun.html", "description": "Start a replication run for an existing replication job.", "accessLevel": "Write" }, "StopAppReplication": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StopAppReplication.html", "description": "Stop and delete replication jobs for an existing application.", "accessLevel": "Write" }, "TerminateApp": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_TerminateApp.html", "description": "Terminate the CloudFormation stack for an existing application.", "accessLevel": "Write" }, "UpdateApp": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateApp.html", "description": "Update an existing application configuration", "accessLevel": "Write" }, "UpdateReplicationJob": { "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateReplicationJob.html", "description": "Update an existing job to migrate on-premise server onto AWS.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateApp": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateApp.html",
+            "description": "Create an application configuration to migrate on-premise application onto AWS..",
+            "accessLevel": "Write"
+        },
+        "CreateReplicationJob": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateReplicationJob.html",
+            "description": "Create a job to migrate on-premise server onto AWS.",
+            "accessLevel": "Write"
+        },
+        "DeleteApp": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteApp.html",
+            "description": "Delete an existing application configuration.",
+            "accessLevel": "Write"
+        },
+        "DeleteAppLaunchConfiguration": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppLaunchConfiguration.html",
+            "description": "Delete launch configuration for an existing application.",
+            "accessLevel": "Write"
+        },
+        "DeleteAppReplicationConfiguration": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppReplicationConfiguration.html",
+            "description": "Delete replication configuration for an existing application..",
+            "accessLevel": "Write"
+        },
+        "DeleteReplicationJob": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteReplicationJob.html",
+            "description": "Delete an existing job to migrate on-premise server onto AWS.",
+            "accessLevel": "Write"
+        },
+        "DeleteServerCatalog": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteServerCatalog.html",
+            "description": "Delete the complete list of on-premise servers gathered into AWS.",
+            "accessLevel": "Write"
+        },
+        "DisassociateConnector": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DisassociateConnector.html",
+            "description": "Disassociate a connector that has been associated.",
+            "accessLevel": "Write"
+        },
+        "GenerateChangeSet": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateChangeSet.html",
+            "description": "Generate a changeSet for the CloudFormation stack of an application.",
+            "accessLevel": "Write"
+        },
+        "GenerateTemplate": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateTemplate.html",
+            "description": "Generate a CloudFormation template for an existing application.",
+            "accessLevel": "Write"
+        },
+        "GetApp": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetApp.html",
+            "description": "Get the configuration and statuses for an existing application.",
+            "accessLevel": "Read"
+        },
+        "GetAppLaunchConfiguration": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppLaunchConfiguration.html",
+            "description": "Get launch configuration for an existing application.",
+            "accessLevel": "Read"
+        },
+        "GetAppReplicationConfiguration": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppReplicationConfiguration.html",
+            "description": "Get replication configuration for an existing application.",
+            "accessLevel": "Read"
+        },
+        "GetConnectors": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetConnectors.html",
+            "description": "Get all connectors that have been associated.",
+            "accessLevel": "Read"
+        },
+        "GetMessages": {
+            "url": "",
+            "description": "Gets messages from AWS Server Migration Service to Server Migration Connector.",
+            "accessLevel": "Read"
+        },
+        "GetReplicationJobs": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationJobs.html",
+            "description": "Get all existing jobs to migrate on-premise servers onto AWS.",
+            "accessLevel": "Read"
+        },
+        "GetReplicationRuns": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationRuns.html",
+            "description": "Get all runs for an existing job.",
+            "accessLevel": "Read"
+        },
+        "GetServers": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetServers.html",
+            "description": "Get all servers that have been imported.",
+            "accessLevel": "Read"
+        },
+        "ImportServerCatalog": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportServerCatalog.html",
+            "description": "Gathers a complete list of on-premise servers.",
+            "accessLevel": "Write"
+        },
+        "LaunchApp": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_LaunchApp.html",
+            "description": "Create and launch a CloudFormation stack for an existing application.",
+            "accessLevel": "Write"
+        },
+        "ListApps": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ListAppss.html",
+            "description": "Get a list of summaries for existing applications.",
+            "accessLevel": "List"
+        },
+        "PutAppLaunchConfiguration": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppLaunchConfiguration.html",
+            "description": "Create or update launch configuration for an existing application.",
+            "accessLevel": "Write"
+        },
+        "PutAppReplicationConfiguration": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppReplicationConfiguration.html",
+            "description": "Create or update replication configuration for an existing application.",
+            "accessLevel": "Write"
+        },
+        "SendMessage": {
+            "url": "",
+            "description": "Send message from Server Migration Connector to AWS Server Migration Service.",
+            "accessLevel": "Write"
+        },
+        "StartAppReplication": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartAppReplication.html",
+            "description": "Create and start replication jobs for an existing application.",
+            "accessLevel": "Write"
+        },
+        "StartOnDemandReplicationRun": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandReplicationRun.html",
+            "description": "Start a replication run for an existing replication job.",
+            "accessLevel": "Write"
+        },
+        "StopAppReplication": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StopAppReplication.html",
+            "description": "Stop and delete replication jobs for an existing application.",
+            "accessLevel": "Write"
+        },
+        "TerminateApp": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_TerminateApp.html",
+            "description": "Terminate the CloudFormation stack for an existing application.",
+            "accessLevel": "Write"
+        },
+        "UpdateApp": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateApp.html",
+            "description": "Update an existing application configuration",
+            "accessLevel": "Write"
+        },
+        "UpdateReplicationJob": {
+            "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateReplicationJob.html",
+            "description": "Update an existing job to migrate on-premise server onto AWS.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Create an application configuration to migrate on-premise application onto AWS..

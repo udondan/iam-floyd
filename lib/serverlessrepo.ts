@@ -7,7 +7,161 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Serverlessrepo extends PolicyStatement {
     public servicePrefix = 'serverlessrepo';
-    public actions : Actions = { "CreateApplication": { "url": "", "description": "Creates an application, optionally including an AWS SAM file to create the first application version in the same call.", "accessLevel": "Write" }, "CreateApplicationVersion": { "url": "", "description": "Creates an application version.", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } } }, "CreateCloudFormationChangeSet": { "url": "", "description": "Creates an AWS CloudFormation ChangeSet for the given application.", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } }, "conditions": ["serverlessrepo:applicationType"] }, "CreateCloudFormationTemplate": { "url": "", "description": "Creates an AWS CloudFormation template", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } }, "conditions": ["serverlessrepo:applicationType"] }, "DeleteApplication": { "url": "", "description": "Deletes the specified application", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } } }, "GetApplication": { "url": "", "description": "Gets the specified application.", "accessLevel": "Read", "resourceTypes": { "applications": { "required": true } }, "conditions": ["serverlessrepo:applicationType"] }, "GetApplicationPolicy": { "url": "", "description": "Gets the policy for the specified application.", "accessLevel": "Read", "resourceTypes": { "applications": { "required": true } } }, "GetCloudFormationTemplate": { "url": "", "description": "Gets the specified AWS CloudFormation template", "accessLevel": "Read", "resourceTypes": { "applications": { "required": true } } }, "ListApplicationDependencies": { "url": "", "description": "Retrieves the list of applications nested in the containing application", "accessLevel": "List", "resourceTypes": { "applications": { "required": true } }, "conditions": ["serverlessrepo:applicationType"] }, "ListApplicationVersions": { "url": "", "description": "Lists versions for the specified application owned by the requester.", "accessLevel": "List", "resourceTypes": { "applications": { "required": true } }, "conditions": ["serverlessrepo:applicationType"] }, "ListApplications": { "url": "", "description": "Lists applications owned by the requester.", "accessLevel": "List" }, "PutApplicationPolicy": { "url": "", "description": "Puts the policy for the specified application.", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } } }, "SearchApplications": { "url": "", "description": "Gets all applications authorized for this user", "accessLevel": "Read", "conditions": ["serverlessrepo:applicationType"] }, "UnshareApplication": { "url": "", "description": "Unshares the specified application", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } } }, "UpdateApplication": { "url": "", "description": "Updates meta-data of the application", "accessLevel": "Write", "resourceTypes": { "applications": { "required": true } } } };
+    public actions : Actions = {
+        "CreateApplication": {
+            "url": "",
+            "description": "Creates an application, optionally including an AWS SAM file to create the first application version in the same call.",
+            "accessLevel": "Write"
+        },
+        "CreateApplicationVersion": {
+            "url": "",
+            "description": "Creates an application version.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        },
+        "CreateCloudFormationChangeSet": {
+            "url": "",
+            "description": "Creates an AWS CloudFormation ChangeSet for the given application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "serverlessrepo:applicationType"
+            ]
+        },
+        "CreateCloudFormationTemplate": {
+            "url": "",
+            "description": "Creates an AWS CloudFormation template",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "serverlessrepo:applicationType"
+            ]
+        },
+        "DeleteApplication": {
+            "url": "",
+            "description": "Deletes the specified application",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        },
+        "GetApplication": {
+            "url": "",
+            "description": "Gets the specified application.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "serverlessrepo:applicationType"
+            ]
+        },
+        "GetApplicationPolicy": {
+            "url": "",
+            "description": "Gets the policy for the specified application.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        },
+        "GetCloudFormationTemplate": {
+            "url": "",
+            "description": "Gets the specified AWS CloudFormation template",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        },
+        "ListApplicationDependencies": {
+            "url": "",
+            "description": "Retrieves the list of applications nested in the containing application",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "serverlessrepo:applicationType"
+            ]
+        },
+        "ListApplicationVersions": {
+            "url": "",
+            "description": "Lists versions for the specified application owned by the requester.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "serverlessrepo:applicationType"
+            ]
+        },
+        "ListApplications": {
+            "url": "",
+            "description": "Lists applications owned by the requester.",
+            "accessLevel": "List"
+        },
+        "PutApplicationPolicy": {
+            "url": "",
+            "description": "Puts the policy for the specified application.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        },
+        "SearchApplications": {
+            "url": "",
+            "description": "Gets all applications authorized for this user",
+            "accessLevel": "Read",
+            "conditions": [
+                "serverlessrepo:applicationType"
+            ]
+        },
+        "UnshareApplication": {
+            "url": "",
+            "description": "Unshares the specified application",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateApplication": {
+            "url": "",
+            "description": "Updates meta-data of the application",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "applications": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Creates an application, optionally including an AWS SAM file to create the first application version in the same call.

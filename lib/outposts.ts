@@ -7,7 +7,33 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Outposts extends PolicyStatement {
     public servicePrefix = 'outposts';
-    public actions : Actions = { "CreateOutpost": { "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html", "description": "Creates an Outpost", "accessLevel": "Write" }, "GetOutpost": { "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html", "description": "Gets information about the specified Outpost", "accessLevel": "Read" }, "GetOutpostInstanceTypes": { "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostInstanceTypes.html", "description": "Lists the instance types for the specified Outpost", "accessLevel": "Read" }, "ListOutposts": { "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOutposts.html", "description": "List the Outposts for your AWS account", "accessLevel": "List" }, "ListSites": { "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html", "description": "Lists the sites for the specified AWS account", "accessLevel": "List" } };
+    public actions : Actions = {
+        "CreateOutpost": {
+            "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html",
+            "description": "Creates an Outpost",
+            "accessLevel": "Write"
+        },
+        "GetOutpost": {
+            "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html",
+            "description": "Gets information about the specified Outpost",
+            "accessLevel": "Read"
+        },
+        "GetOutpostInstanceTypes": {
+            "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostInstanceTypes.html",
+            "description": "Lists the instance types for the specified Outpost",
+            "accessLevel": "Read"
+        },
+        "ListOutposts": {
+            "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOutposts.html",
+            "description": "List the Outposts for your AWS account",
+            "accessLevel": "List"
+        },
+        "ListSites": {
+            "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html",
+            "description": "Lists the sites for the specified AWS account",
+            "accessLevel": "List"
+        }
+    };
 
     /**
      * Creates an Outpost

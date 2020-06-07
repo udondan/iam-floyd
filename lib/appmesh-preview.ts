@@ -7,7 +7,284 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AppmeshPreview extends PolicyStatement {
     public servicePrefix = 'appmesh-preview';
-    public actions : Actions = { "CreateMesh": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html", "description": "Creates a service mesh.", "accessLevel": "Write", "resourceTypes": { "mesh": { "required": true } } }, "CreateRoute": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html", "description": "Creates a route that is associated with a virtual router.", "accessLevel": "Write", "resourceTypes": { "route": { "required": true }, "virtualNode": { "required": false } } }, "CreateVirtualNode": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html", "description": "Creates a virtual node within a service mesh.", "accessLevel": "Write", "resourceTypes": { "virtualNode": { "required": true }, "virtualService": { "required": false } } }, "CreateVirtualRouter": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html", "description": "Creates a virtual router within a service mesh.", "accessLevel": "Write", "resourceTypes": { "virtualRouter": { "required": true } } }, "CreateVirtualService": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualService.html", "description": "Creates a virtual service within a service mesh.", "accessLevel": "Write", "resourceTypes": { "virtualService": { "required": true }, "virtualNode": { "required": false }, "virtualRouter": { "required": false } } }, "DeleteMesh": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteMesh.html", "description": "Deletes an existing service mesh.", "accessLevel": "Write", "resourceTypes": { "mesh": { "required": true } } }, "DeleteRoute": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteRoute.html", "description": "Deletes an existing route.", "accessLevel": "Write", "resourceTypes": { "route": { "required": true } } }, "DeleteVirtualNode": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualNode.html", "description": "Deletes an existing virtual node.", "accessLevel": "Write", "resourceTypes": { "virtualNode": { "required": true } } }, "DeleteVirtualRouter": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualRouter.html", "description": "Deletes an existing virtual router.", "accessLevel": "Write", "resourceTypes": { "virtualRouter": { "required": true } } }, "DeleteVirtualService": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualService.html", "description": "Deletes an existing virtual service.", "accessLevel": "Write", "resourceTypes": { "virtualService": { "required": true } } }, "DescribeMesh": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeMesh.html", "description": "Describes an existing service mesh.", "accessLevel": "Read", "resourceTypes": { "mesh": { "required": true } } }, "DescribeRoute": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeRoute.html", "description": "Describes an existing route.", "accessLevel": "Read", "resourceTypes": { "route": { "required": true } } }, "DescribeVirtualNode": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualNode.html", "description": "Describes an existing virtual node.", "accessLevel": "Read", "resourceTypes": { "virtualNode": { "required": true } } }, "DescribeVirtualRouter": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualRouter.html", "description": "Describes an existing virtual router.", "accessLevel": "Read", "resourceTypes": { "virtualRouter": { "required": true } } }, "DescribeVirtualService": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualService.html", "description": "Describes an existing virtual service.", "accessLevel": "Read", "resourceTypes": { "virtualService": { "required": true } } }, "ListMeshes": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListMeshes.html", "description": "Returns a list of existing service meshes.", "accessLevel": "List" }, "ListRoutes": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListRoutes.html", "description": "Returns a list of existing routes in a service mesh.", "accessLevel": "List", "resourceTypes": { "virtualRouter": { "required": true } } }, "ListVirtualNodes": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualNodes.html", "description": "Returns a list of existing virtual nodes.", "accessLevel": "List", "resourceTypes": { "mesh": { "required": true } } }, "ListVirtualRouters": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualRouters.html", "description": "Returns a list of existing virtual routers in a service mesh.", "accessLevel": "List", "resourceTypes": { "virtualRouter": { "required": true } } }, "ListVirtualServices": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualServices.html", "description": "Returns a list of existing virtual services in a service mesh.", "accessLevel": "List", "resourceTypes": { "virtualService": { "required": true } } }, "StreamAggregatedResources": { "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html", "description": "Allows an Envoy Proxy to receive streamed resources for a VirtualNode.", "accessLevel": "Read", "resourceTypes": { "virtualNode": { "required": true } } }, "UpdateMesh": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateMesh.html", "description": "Updates an existing service mesh.", "accessLevel": "Write", "resourceTypes": { "mesh": { "required": true } } }, "UpdateRoute": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateRoute.html", "description": "Updates an existing route for a specified service mesh and virtual router.", "accessLevel": "Write", "resourceTypes": { "route": { "required": true }, "virtualNode": { "required": false } } }, "UpdateVirtualNode": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualNode.html", "description": "Updates an existing virtual node in a specified service mesh.", "accessLevel": "Write", "resourceTypes": { "virtualNode": { "required": true } } }, "UpdateVirtualRouter": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualRouter.html", "description": "Updates an existing virtual router in a specified service mesh.", "accessLevel": "Write", "resourceTypes": { "virtualRouter": { "required": true } } }, "UpdateVirtualService": { "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualService.html", "description": "Updates an existing virtual service in a specified service mesh.", "accessLevel": "Write", "resourceTypes": { "mesh": { "required": true }, "virtualNode": { "required": false }, "virtualRouter": { "required": false } } } };
+    public actions : Actions = {
+        "CreateMesh": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html",
+            "description": "Creates a service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mesh": {
+                    "required": true
+                }
+            }
+        },
+        "CreateRoute": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html",
+            "description": "Creates a route that is associated with a virtual router.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route": {
+                    "required": true
+                },
+                "virtualNode": {
+                    "required": false
+                }
+            }
+        },
+        "CreateVirtualNode": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html",
+            "description": "Creates a virtual node within a service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualNode": {
+                    "required": true
+                },
+                "virtualService": {
+                    "required": false
+                }
+            }
+        },
+        "CreateVirtualRouter": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html",
+            "description": "Creates a virtual router within a service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualRouter": {
+                    "required": true
+                }
+            }
+        },
+        "CreateVirtualService": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualService.html",
+            "description": "Creates a virtual service within a service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualService": {
+                    "required": true
+                },
+                "virtualNode": {
+                    "required": false
+                },
+                "virtualRouter": {
+                    "required": false
+                }
+            }
+        },
+        "DeleteMesh": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteMesh.html",
+            "description": "Deletes an existing service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mesh": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteRoute": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteRoute.html",
+            "description": "Deletes an existing route.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteVirtualNode": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualNode.html",
+            "description": "Deletes an existing virtual node.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualNode": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteVirtualRouter": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualRouter.html",
+            "description": "Deletes an existing virtual router.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualRouter": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteVirtualService": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualService.html",
+            "description": "Deletes an existing virtual service.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualService": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeMesh": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeMesh.html",
+            "description": "Describes an existing service mesh.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "mesh": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeRoute": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeRoute.html",
+            "description": "Describes an existing route.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "route": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeVirtualNode": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualNode.html",
+            "description": "Describes an existing virtual node.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "virtualNode": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeVirtualRouter": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualRouter.html",
+            "description": "Describes an existing virtual router.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "virtualRouter": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeVirtualService": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualService.html",
+            "description": "Describes an existing virtual service.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "virtualService": {
+                    "required": true
+                }
+            }
+        },
+        "ListMeshes": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListMeshes.html",
+            "description": "Returns a list of existing service meshes.",
+            "accessLevel": "List"
+        },
+        "ListRoutes": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListRoutes.html",
+            "description": "Returns a list of existing routes in a service mesh.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "virtualRouter": {
+                    "required": true
+                }
+            }
+        },
+        "ListVirtualNodes": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualNodes.html",
+            "description": "Returns a list of existing virtual nodes.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "mesh": {
+                    "required": true
+                }
+            }
+        },
+        "ListVirtualRouters": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualRouters.html",
+            "description": "Returns a list of existing virtual routers in a service mesh.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "virtualRouter": {
+                    "required": true
+                }
+            }
+        },
+        "ListVirtualServices": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualServices.html",
+            "description": "Returns a list of existing virtual services in a service mesh.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "virtualService": {
+                    "required": true
+                }
+            }
+        },
+        "StreamAggregatedResources": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html",
+            "description": "Allows an Envoy Proxy to receive streamed resources for a VirtualNode.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "virtualNode": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateMesh": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateMesh.html",
+            "description": "Updates an existing service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mesh": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateRoute": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateRoute.html",
+            "description": "Updates an existing route for a specified service mesh and virtual router.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "route": {
+                    "required": true
+                },
+                "virtualNode": {
+                    "required": false
+                }
+            }
+        },
+        "UpdateVirtualNode": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualNode.html",
+            "description": "Updates an existing virtual node in a specified service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualNode": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateVirtualRouter": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualRouter.html",
+            "description": "Updates an existing virtual router in a specified service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "virtualRouter": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateVirtualService": {
+            "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualService.html",
+            "description": "Updates an existing virtual service in a specified service mesh.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "mesh": {
+                    "required": true
+                },
+                "virtualNode": {
+                    "required": false
+                },
+                "virtualRouter": {
+                    "required": false
+                }
+            }
+        }
+    };
 
     /**
      * Creates a service mesh.

@@ -7,7 +7,23 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AwsMarketplaceImageBuildingService extends PolicyStatement {
     public servicePrefix = 'aws-marketplace';
-    public actions : Actions = { "DescribeBuilds": { "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html", "description": "Describes Image Builds identified by a build Id", "accessLevel": "Read" }, "ListBuilds": { "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html", "description": "Lists Image Builds.", "accessLevel": "Read" }, "StartBuild": { "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html", "description": "Starts an Image Build", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "DescribeBuilds": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
+            "description": "Describes Image Builds identified by a build Id",
+            "accessLevel": "Read"
+        },
+        "ListBuilds": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
+            "description": "Lists Image Builds.",
+            "accessLevel": "Read"
+        },
+        "StartBuild": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
+            "description": "Starts an Image Build",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Describes Image Builds identified by a build Id

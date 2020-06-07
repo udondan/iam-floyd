@@ -7,7 +7,947 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Greengrass extends PolicyStatement {
     public servicePrefix = 'greengrass';
-    public actions : Actions = { "AssociateRoleToGroup": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html", "description": "Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "AssociateServiceRoleToAccount": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/associateserviceroletoaccount-put.html", "description": "Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources.", "accessLevel": "Permissions management" }, "CreateConnectorDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinition-post.html", "description": "Grants permission to create a connector definition.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateConnectorDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinitionversion-post.html", "description": "Grants permission to create a version of an existing connector definition.", "accessLevel": "Write", "resourceTypes": { "connectorDefinition": { "required": true } } }, "CreateCoreDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinition-post.html", "description": "Grants permission to create a core definition.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateCoreDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinitionversion-post.html", "description": "Grants permission to create a version of an existing core definition. Greengrass groups must each contain exactly one Greengrass core.", "accessLevel": "Write", "resourceTypes": { "coreDefinition": { "required": true } } }, "CreateDeployment": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html", "description": "Grants permission to create a deployment.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "CreateDeviceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html", "description": "Grants permission to create a device definition.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateDeviceDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinitionversion-post.html", "description": "Grants permission to create a version of an existing device definition.", "accessLevel": "Write", "resourceTypes": { "deviceDefinition": { "required": true } } }, "CreateFunctionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html", "description": "Grants permission to create a Lambda function definition to be used in a group that contains a list of Lambda functions and their configurations.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateFunctionDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinitionversion-post.html", "description": "Grants permission to create a version of an existing Lambda function definition.", "accessLevel": "Write", "resourceTypes": { "functionDefinition": { "required": true } } }, "CreateGroup": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/creategroup-post.html", "description": "Grants permission to create a group.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateGroupCertificateAuthority": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupcertificateauthority-post.html", "description": "Grants permission to create a CA for the group, or rotate the existing CA.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "CreateGroupVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupversion-post.html", "description": "Grants permission to create a version of a group that has already been defined.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "CreateLoggerDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinition-post.html", "description": "Grants permission to create a logger definition.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateLoggerDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinitionversion-post.html", "description": "Grants permission to create a version of an existing logger definition.", "accessLevel": "Write", "resourceTypes": { "loggerDefinition": { "required": true } } }, "CreateResourceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinition-post.html", "description": "Grants permission to create a resource definition that contains a list of resources to be used in a group.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateResourceDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinitionversion-post.html", "description": "Grants permission to create a version of an existing resource definition.", "accessLevel": "Write", "resourceTypes": { "resourceDefinition": { "required": true } } }, "CreateSoftwareUpdateJob": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createsoftwareupdatejob-post.html", "description": "Grants permission to create an AWS IoT job that will trigger your Greengrass cores to update the software they are running.", "accessLevel": "Write" }, "CreateSubscriptionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html", "description": "Grants permission to create a subscription definition.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateSubscriptionDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinitionversion-post.html", "description": "Grants permission to create a version of an existing subscription definition.", "accessLevel": "Write", "resourceTypes": { "subscriptionDefinition": { "required": true } } }, "DeleteConnectorDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deleteconnectordefinition-delete.html", "description": "Grants permission to delete a connector definition.", "accessLevel": "Write", "resourceTypes": { "connectorDefinition": { "required": true } } }, "DeleteCoreDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html", "description": "Grants permission to delete a core definition. Deleting a definition that is currently in use in a deployment affects future deployments.", "accessLevel": "Write", "resourceTypes": { "coreDefinition": { "required": true } } }, "DeleteDeviceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletedevicedefinition-delete.html", "description": "Grants permission to delete a device definition. Deleting a definition that is currently in use in a deployment affects future deployments.", "accessLevel": "Write", "resourceTypes": { "deviceDefinition": { "required": true } } }, "DeleteFunctionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletefunctiondefinition-delete.html", "description": "Grants permission to delete a Lambda function definition. Deleting a definition that is currently in use in a deployment affects future deployments.", "accessLevel": "Write", "resourceTypes": { "functionDefinition": { "required": true } } }, "DeleteGroup": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletegroup-delete.html", "description": "Grants permission to delete a group that is not currently in use in a deployment.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "DeleteLoggerDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html", "description": "Grants permission to delete a logger definition. Deleting a definition that is currently in use in a deployment affects future deployments.", "accessLevel": "Write", "resourceTypes": { "loggerDefinition": { "required": true } } }, "DeleteResourceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deleteresourcedefinition-delete.html", "description": "Grants permission to delete a resource definition.", "accessLevel": "Write", "resourceTypes": { "resourceDefinition": { "required": true } } }, "DeleteSubscriptionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletesubscriptiondefinition-delete.html", "description": "Grants permission to delete a subscription definition. Deleting a definition that is currently in use in a deployment affects future deployments.", "accessLevel": "Write", "resourceTypes": { "subscriptionDefinition": { "required": true } } }, "DisassociateRoleFromGroup": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/disassociaterolefromgroup-delete.html", "description": "Grants permission to disassociate the role from a group.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "DisassociateServiceRoleFromAccount": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html", "description": "Grants permission to disassociate the service role from an account. Without a service role, deployments will not work.", "accessLevel": "Write" }, "GetAssociatedRole": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html", "description": "Grants permission to retrieve the role associated with a group.", "accessLevel": "Read", "resourceTypes": { "group": { "required": true } } }, "GetBulkDeploymentStatus": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getbulkdeploymentstatus-get.html", "description": "Grants permission to return the status of a bulk deployment.", "accessLevel": "Read", "resourceTypes": { "bulkDeployment": { "required": true } } }, "GetConnectivityInfo": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectivityinfo-get.html", "description": "Grants permission to retrieve the connectivity information for a core.", "accessLevel": "Read", "resourceTypes": { "connectivityInfo": { "required": true } } }, "GetConnectorDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinition-get.html", "description": "Grants permission to retrieve information about a connector definition.", "accessLevel": "Read", "resourceTypes": { "connectorDefinition": { "required": true } } }, "GetConnectorDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinitionversion-get.html", "description": "Grants permission to retrieve information about a connector definition version.", "accessLevel": "Read", "resourceTypes": { "connectorDefinition": { "required": true }, "connectorDefinitionVersion": { "required": true } } }, "GetCoreDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html", "description": "Grants permission to retrieve information about a core definition.", "accessLevel": "Read", "resourceTypes": { "coreDefinition": { "required": true } } }, "GetCoreDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinitionversion-get.html", "description": "Grants permission to retrieve information about a core definition version.", "accessLevel": "Read", "resourceTypes": { "coreDefinition": { "required": true }, "coreDefinitionVersion": { "required": true } } }, "GetDeploymentStatus": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html", "description": "Grants permission to return the status of a deployment.", "accessLevel": "Read", "resourceTypes": { "deployment": { "required": true }, "group": { "required": true } } }, "GetDeviceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinition-get.html", "description": "Grants permission to retrieve information about a device definition.", "accessLevel": "Read", "resourceTypes": { "deviceDefinition": { "required": true } } }, "GetDeviceDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinitionversion-get.html", "description": "Grants permission to retrieve information about a device definition version.", "accessLevel": "Read", "resourceTypes": { "deviceDefinition": { "required": true }, "deviceDefinitionVersion": { "required": true } } }, "GetFunctionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinition-get.html", "description": "Grants permission to retrieve information about a Lambda function definition, such as its creation time and latest version.", "accessLevel": "Read", "resourceTypes": { "functionDefinition": { "required": true } } }, "GetFunctionDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinitionversion-get.html", "description": "Grants permission to retrieve information about a Lambda function definition version, such as which Lambda functions are included in the version and their configurations.", "accessLevel": "Read", "resourceTypes": { "functionDefinition": { "required": true }, "functionDefinitionVersion": { "required": true } } }, "GetGroup": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html", "description": "Grants permission to retrieve information about a group.", "accessLevel": "Read", "resourceTypes": { "group": { "required": true } } }, "GetGroupCertificateAuthority": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateauthority-get.html", "description": "Grants permission to return the public key of the CA associated with a group.", "accessLevel": "Read", "resourceTypes": { "certificateAuthority": { "required": true }, "group": { "required": true } } }, "GetGroupCertificateConfiguration": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateconfiguration-get.html", "description": "Grants permission to retrieve the current configuration for the CA used by a group.", "accessLevel": "Read", "resourceTypes": { "group": { "required": true } } }, "GetGroupVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupversion-get.html", "description": "Grants permission to retrieve information about a group version.", "accessLevel": "Read", "resourceTypes": { "group": { "required": true }, "groupVersion": { "required": true } } }, "GetLoggerDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinition-get.html", "description": "Grants permission to retrieve information about a logger definition.", "accessLevel": "Read", "resourceTypes": { "loggerDefinition": { "required": true } } }, "GetLoggerDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinitionversion-get.html", "description": "Grants permission to retrieve information about a logger definition version.", "accessLevel": "Read", "resourceTypes": { "loggerDefinition": { "required": true }, "loggerDefinitionVersion": { "required": true } } }, "GetResourceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinition-get.html", "description": "Grants permission to retrieve information about a resource definition, such as its creation time and latest version.", "accessLevel": "Read", "resourceTypes": { "resourceDefinition": { "required": true } } }, "GetResourceDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinitionversion-get.html", "description": "Grants permission to retrieve information about a resource definition version, such as which resources are included in the version.", "accessLevel": "Read", "resourceTypes": { "resourceDefinition": { "required": true }, "resourceDefinitionVersion": { "required": true } } }, "GetServiceRoleForAccount": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getserviceroleforaccount-get.html", "description": "Grants permission to retrieve the service role that is attached to an account.", "accessLevel": "Read" }, "GetSubscriptionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html", "description": "Grants permission to retrieve information about a subscription definition.", "accessLevel": "Read", "resourceTypes": { "subscriptionDefinition": { "required": true } } }, "GetSubscriptionDefinitionVersion": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinitionversion-get.html", "description": "Grants permission to retrieve information about a subscription definition version.", "accessLevel": "Read", "resourceTypes": { "subscriptionDefinition": { "required": true }, "subscriptionDefinitionVersion": { "required": true } } }, "ListBulkDeploymentDetailedReports": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeploymentdetailedreports-get.html", "description": "Grants permission to retrieve a paginated list of the deployments that have been started in a bulk deployment operation and their current deployment status.", "accessLevel": "List", "resourceTypes": { "bulkDeployment": { "required": true } } }, "ListBulkDeployments": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeployments-get.html", "description": "Grants permission to retrieve a list of bulk deployments.", "accessLevel": "List" }, "ListConnectorDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitionversions-get.html", "description": "Grants permission to list the versions of a connector definition.", "accessLevel": "List", "resourceTypes": { "connectorDefinition": { "required": true } } }, "ListConnectorDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitions-get.html", "description": "Grants permission to retrieve a list of connector definitions.", "accessLevel": "List" }, "ListCoreDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitionversions-get.html", "description": "Grants permission to list the versions of a core definition.", "accessLevel": "List", "resourceTypes": { "coreDefinition": { "required": true } } }, "ListCoreDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitions-get.html", "description": "Grants permission to retrieve a list of core definitions.", "accessLevel": "List" }, "ListDeployments": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html", "description": "Grants permission to retrieve a list of all deployments for a group.", "accessLevel": "List", "resourceTypes": { "group": { "required": true } } }, "ListDeviceDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitionversions-get.html", "description": "Grants permission to list the versions of a device definition.", "accessLevel": "List", "resourceTypes": { "deviceDefinition": { "required": true } } }, "ListDeviceDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitions-get.html", "description": "Grants permission to retrieve a list of device definitions.", "accessLevel": "List" }, "ListFunctionDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html", "description": "Grants permission to list the versions of a Lambda function definition.", "accessLevel": "List", "resourceTypes": { "functionDefinition": { "required": true } } }, "ListFunctionDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitions-get.html", "description": "Grants permission to retrieve a list of Lambda function definitions.", "accessLevel": "List" }, "ListGroupCertificateAuthorities": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupcertificateauthorities-get.html", "description": "Grants permission to retrieve a list of current CAs for a group.", "accessLevel": "List", "resourceTypes": { "group": { "required": true } } }, "ListGroupVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupversions-get.html", "description": "Grants permission to list the versions of a group.", "accessLevel": "List", "resourceTypes": { "group": { "required": true } } }, "ListGroups": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html", "description": "Grants permission to retrieve a list of groups.", "accessLevel": "List" }, "ListLoggerDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitionversions-get.html", "description": "Grants permission to list the versions of a logger definition.", "accessLevel": "List", "resourceTypes": { "loggerDefinition": { "required": true } } }, "ListLoggerDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitions-get.html", "description": "Grants permission to retrieve a list of logger definitions.", "accessLevel": "List" }, "ListResourceDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitionversions-get.html", "description": "Grants permission to list the versions of a resource definition.", "accessLevel": "List", "resourceTypes": { "resourceDefinition": { "required": true } } }, "ListResourceDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitions-get.html", "description": "Grants permission to retrieve a list of resource definitions.", "accessLevel": "List" }, "ListSubscriptionDefinitionVersions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitionversions-get.html", "description": "Grants permission to list the versions of a subscription definition.", "accessLevel": "List", "resourceTypes": { "subscriptionDefinition": { "required": true } } }, "ListSubscriptionDefinitions": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitions-get.html", "description": "Grants permission to retrieve a list of subscription definitions.", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listtagsforresource-get.html", "description": "Grants permission to list the tags for a resource.", "accessLevel": "List", "resourceTypes": { "bulkDeployment": { "required": false }, "connectorDefinition": { "required": false }, "coreDefinition": { "required": false }, "deviceDefinition": { "required": false }, "functionDefinition": { "required": false }, "group": { "required": false }, "loggerDefinition": { "required": false }, "resourceDefinition": { "required": false }, "subscriptionDefinition": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "ResetDeployments": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/resetdeployments-post.html", "description": "Grants permission to reset a group's deployments.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "StartBulkDeployment": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html", "description": "Grants permission to deploy multiple groups in one operation.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "StopBulkDeployment": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/stopbulkdeployment-put.html", "description": "Grants permission to stop the execution of a bulk deployment.", "accessLevel": "Write", "resourceTypes": { "bulkDeployment": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/tagresource-post.html", "description": "Grants permission to add tags to a resource.", "accessLevel": "Tagging", "resourceTypes": { "bulkDeployment": { "required": false }, "connectorDefinition": { "required": false }, "coreDefinition": { "required": false }, "deviceDefinition": { "required": false }, "functionDefinition": { "required": false }, "group": { "required": false }, "loggerDefinition": { "required": false }, "resourceDefinition": { "required": false }, "subscriptionDefinition": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/untagresource-delete.html", "description": "Grants permission to remove tags from a resource.", "accessLevel": "Tagging", "resourceTypes": { "bulkDeployment": { "required": false }, "connectorDefinition": { "required": false }, "coreDefinition": { "required": false }, "deviceDefinition": { "required": false }, "functionDefinition": { "required": false }, "group": { "required": false }, "loggerDefinition": { "required": false }, "resourceDefinition": { "required": false }, "subscriptionDefinition": { "required": false } }, "conditions": ["aws:TagKeys"] }, "UpdateConnectivityInfo": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectivityinfo-put.html", "description": "Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it.", "accessLevel": "Write", "resourceTypes": { "connectivityInfo": { "required": true } } }, "UpdateConnectorDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectordefinition-put.html", "description": "Grants permission to update a connector definition.", "accessLevel": "Write", "resourceTypes": { "connectorDefinition": { "required": true } } }, "UpdateCoreDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatecoredefinition-put.html", "description": "Grants permission to update a core definition.", "accessLevel": "Write", "resourceTypes": { "coreDefinition": { "required": true } } }, "UpdateDeviceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatedevicedefinition-put.html", "description": "Grants permission to update a device definition.", "accessLevel": "Write", "resourceTypes": { "deviceDefinition": { "required": true } } }, "UpdateFunctionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html", "description": "Grants permission to update a Lambda function definition.", "accessLevel": "Write", "resourceTypes": { "functionDefinition": { "required": true } } }, "UpdateGroup": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updategroup-put.html", "description": "Grants permission to update a group.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "UpdateGroupCertificateConfiguration": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updategroupcertificateconfiguration-put.html", "description": "Grants permission to update the certificate expiry time for a group.", "accessLevel": "Write", "resourceTypes": { "group": { "required": true } } }, "UpdateLoggerDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateloggerdefinition-put.html", "description": "Grants permission to update a logger definition.", "accessLevel": "Write", "resourceTypes": { "loggerDefinition": { "required": true } } }, "UpdateResourceDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateresourcedefinition-put.html", "description": "Grants permission to update a resource definition.", "accessLevel": "Write", "resourceTypes": { "resourceDefinition": { "required": true } } }, "UpdateSubscriptionDefinition": { "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatesubscriptiondefinition-put.html", "description": "Grants permission to update a subscription definition.", "accessLevel": "Write", "resourceTypes": { "subscriptionDefinition": { "required": true } } } };
+    public actions : Actions = {
+        "AssociateRoleToGroup": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html",
+            "description": "Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "AssociateServiceRoleToAccount": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/associateserviceroletoaccount-put.html",
+            "description": "Grants permission to associate a role with your account. AWS IoT Greengrass uses this role to access your Lambda functions and AWS IoT resources.",
+            "accessLevel": "Permissions management"
+        },
+        "CreateConnectorDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinition-post.html",
+            "description": "Grants permission to create a connector definition.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateConnectorDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing connector definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "connectorDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "CreateCoreDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinition-post.html",
+            "description": "Grants permission to create a core definition.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateCoreDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing core definition. Greengrass groups must each contain exactly one Greengrass core.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "coreDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDeployment": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html",
+            "description": "Grants permission to create a deployment.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDeviceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html",
+            "description": "Grants permission to create a device definition.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateDeviceDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing device definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "deviceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "CreateFunctionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html",
+            "description": "Grants permission to create a Lambda function definition to be used in a group that contains a list of Lambda functions and their configurations.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateFunctionDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing Lambda function definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "functionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "CreateGroup": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/creategroup-post.html",
+            "description": "Grants permission to create a group.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateGroupCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupcertificateauthority-post.html",
+            "description": "Grants permission to create a CA for the group, or rotate the existing CA.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "CreateGroupVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupversion-post.html",
+            "description": "Grants permission to create a version of a group that has already been defined.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "CreateLoggerDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinition-post.html",
+            "description": "Grants permission to create a logger definition.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateLoggerDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing logger definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "loggerDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "CreateResourceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinition-post.html",
+            "description": "Grants permission to create a resource definition that contains a list of resources to be used in a group.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateResourceDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing resource definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resourceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "CreateSoftwareUpdateJob": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createsoftwareupdatejob-post.html",
+            "description": "Grants permission to create an AWS IoT job that will trigger your Greengrass cores to update the software they are running.",
+            "accessLevel": "Write"
+        },
+        "CreateSubscriptionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html",
+            "description": "Grants permission to create a subscription definition.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateSubscriptionDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinitionversion-post.html",
+            "description": "Grants permission to create a version of an existing subscription definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "subscriptionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteConnectorDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deleteconnectordefinition-delete.html",
+            "description": "Grants permission to delete a connector definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "connectorDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteCoreDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html",
+            "description": "Grants permission to delete a core definition. Deleting a definition that is currently in use in a deployment affects future deployments.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "coreDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteDeviceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletedevicedefinition-delete.html",
+            "description": "Grants permission to delete a device definition. Deleting a definition that is currently in use in a deployment affects future deployments.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "deviceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteFunctionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletefunctiondefinition-delete.html",
+            "description": "Grants permission to delete a Lambda function definition. Deleting a definition that is currently in use in a deployment affects future deployments.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "functionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteGroup": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletegroup-delete.html",
+            "description": "Grants permission to delete a group that is not currently in use in a deployment.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteLoggerDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html",
+            "description": "Grants permission to delete a logger definition. Deleting a definition that is currently in use in a deployment affects future deployments.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "loggerDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteResourceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deleteresourcedefinition-delete.html",
+            "description": "Grants permission to delete a resource definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resourceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteSubscriptionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/deletesubscriptiondefinition-delete.html",
+            "description": "Grants permission to delete a subscription definition. Deleting a definition that is currently in use in a deployment affects future deployments.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "subscriptionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateRoleFromGroup": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/disassociaterolefromgroup-delete.html",
+            "description": "Grants permission to disassociate the role from a group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateServiceRoleFromAccount": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html",
+            "description": "Grants permission to disassociate the service role from an account. Without a service role, deployments will not work.",
+            "accessLevel": "Write"
+        },
+        "GetAssociatedRole": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html",
+            "description": "Grants permission to retrieve the role associated with a group.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetBulkDeploymentStatus": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getbulkdeploymentstatus-get.html",
+            "description": "Grants permission to return the status of a bulk deployment.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "bulkDeployment": {
+                    "required": true
+                }
+            }
+        },
+        "GetConnectivityInfo": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectivityinfo-get.html",
+            "description": "Grants permission to retrieve the connectivity information for a core.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "connectivityInfo": {
+                    "required": true
+                }
+            }
+        },
+        "GetConnectorDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinition-get.html",
+            "description": "Grants permission to retrieve information about a connector definition.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "connectorDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetConnectorDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a connector definition version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "connectorDefinition": {
+                    "required": true
+                },
+                "connectorDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetCoreDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html",
+            "description": "Grants permission to retrieve information about a core definition.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "coreDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetCoreDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a core definition version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "coreDefinition": {
+                    "required": true
+                },
+                "coreDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetDeploymentStatus": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html",
+            "description": "Grants permission to return the status of a deployment.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "deployment": {
+                    "required": true
+                },
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetDeviceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinition-get.html",
+            "description": "Grants permission to retrieve information about a device definition.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "deviceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetDeviceDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a device definition version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "deviceDefinition": {
+                    "required": true
+                },
+                "deviceDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetFunctionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinition-get.html",
+            "description": "Grants permission to retrieve information about a Lambda function definition, such as its creation time and latest version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "functionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetFunctionDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a Lambda function definition version, such as which Lambda functions are included in the version and their configurations.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "functionDefinition": {
+                    "required": true
+                },
+                "functionDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetGroup": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html",
+            "description": "Grants permission to retrieve information about a group.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetGroupCertificateAuthority": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateauthority-get.html",
+            "description": "Grants permission to return the public key of the CA associated with a group.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "certificateAuthority": {
+                    "required": true
+                },
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetGroupCertificateConfiguration": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateconfiguration-get.html",
+            "description": "Grants permission to retrieve the current configuration for the CA used by a group.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "GetGroupVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupversion-get.html",
+            "description": "Grants permission to retrieve information about a group version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                },
+                "groupVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetLoggerDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinition-get.html",
+            "description": "Grants permission to retrieve information about a logger definition.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "loggerDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetLoggerDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a logger definition version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "loggerDefinition": {
+                    "required": true
+                },
+                "loggerDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetResourceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinition-get.html",
+            "description": "Grants permission to retrieve information about a resource definition, such as its creation time and latest version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resourceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetResourceDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a resource definition version, such as which resources are included in the version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "resourceDefinition": {
+                    "required": true
+                },
+                "resourceDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "GetServiceRoleForAccount": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getserviceroleforaccount-get.html",
+            "description": "Grants permission to retrieve the service role that is attached to an account.",
+            "accessLevel": "Read"
+        },
+        "GetSubscriptionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html",
+            "description": "Grants permission to retrieve information about a subscription definition.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "subscriptionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "GetSubscriptionDefinitionVersion": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinitionversion-get.html",
+            "description": "Grants permission to retrieve information about a subscription definition version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "subscriptionDefinition": {
+                    "required": true
+                },
+                "subscriptionDefinitionVersion": {
+                    "required": true
+                }
+            }
+        },
+        "ListBulkDeploymentDetailedReports": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeploymentdetailedreports-get.html",
+            "description": "Grants permission to retrieve a paginated list of the deployments that have been started in a bulk deployment operation and their current deployment status.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "bulkDeployment": {
+                    "required": true
+                }
+            }
+        },
+        "ListBulkDeployments": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeployments-get.html",
+            "description": "Grants permission to retrieve a list of bulk deployments.",
+            "accessLevel": "List"
+        },
+        "ListConnectorDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a connector definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "connectorDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListConnectorDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitions-get.html",
+            "description": "Grants permission to retrieve a list of connector definitions.",
+            "accessLevel": "List"
+        },
+        "ListCoreDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a core definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "coreDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListCoreDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitions-get.html",
+            "description": "Grants permission to retrieve a list of core definitions.",
+            "accessLevel": "List"
+        },
+        "ListDeployments": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html",
+            "description": "Grants permission to retrieve a list of all deployments for a group.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "ListDeviceDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a device definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "deviceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListDeviceDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitions-get.html",
+            "description": "Grants permission to retrieve a list of device definitions.",
+            "accessLevel": "List"
+        },
+        "ListFunctionDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a Lambda function definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "functionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListFunctionDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitions-get.html",
+            "description": "Grants permission to retrieve a list of Lambda function definitions.",
+            "accessLevel": "List"
+        },
+        "ListGroupCertificateAuthorities": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupcertificateauthorities-get.html",
+            "description": "Grants permission to retrieve a list of current CAs for a group.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "ListGroupVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupversions-get.html",
+            "description": "Grants permission to list the versions of a group.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "ListGroups": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html",
+            "description": "Grants permission to retrieve a list of groups.",
+            "accessLevel": "List"
+        },
+        "ListLoggerDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a logger definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "loggerDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListLoggerDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitions-get.html",
+            "description": "Grants permission to retrieve a list of logger definitions.",
+            "accessLevel": "List"
+        },
+        "ListResourceDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a resource definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "resourceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListResourceDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitions-get.html",
+            "description": "Grants permission to retrieve a list of resource definitions.",
+            "accessLevel": "List"
+        },
+        "ListSubscriptionDefinitionVersions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitionversions-get.html",
+            "description": "Grants permission to list the versions of a subscription definition.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "subscriptionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "ListSubscriptionDefinitions": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitions-get.html",
+            "description": "Grants permission to retrieve a list of subscription definitions.",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/listtagsforresource-get.html",
+            "description": "Grants permission to list the tags for a resource.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "bulkDeployment": {
+                    "required": false
+                },
+                "connectorDefinition": {
+                    "required": false
+                },
+                "coreDefinition": {
+                    "required": false
+                },
+                "deviceDefinition": {
+                    "required": false
+                },
+                "functionDefinition": {
+                    "required": false
+                },
+                "group": {
+                    "required": false
+                },
+                "loggerDefinition": {
+                    "required": false
+                },
+                "resourceDefinition": {
+                    "required": false
+                },
+                "subscriptionDefinition": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "ResetDeployments": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/resetdeployments-post.html",
+            "description": "Grants permission to reset a group's deployments.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "StartBulkDeployment": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html",
+            "description": "Grants permission to deploy multiple groups in one operation.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "StopBulkDeployment": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/stopbulkdeployment-put.html",
+            "description": "Grants permission to stop the execution of a bulk deployment.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "bulkDeployment": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/tagresource-post.html",
+            "description": "Grants permission to add tags to a resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "bulkDeployment": {
+                    "required": false
+                },
+                "connectorDefinition": {
+                    "required": false
+                },
+                "coreDefinition": {
+                    "required": false
+                },
+                "deviceDefinition": {
+                    "required": false
+                },
+                "functionDefinition": {
+                    "required": false
+                },
+                "group": {
+                    "required": false
+                },
+                "loggerDefinition": {
+                    "required": false
+                },
+                "resourceDefinition": {
+                    "required": false
+                },
+                "subscriptionDefinition": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/untagresource-delete.html",
+            "description": "Grants permission to remove tags from a resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "bulkDeployment": {
+                    "required": false
+                },
+                "connectorDefinition": {
+                    "required": false
+                },
+                "coreDefinition": {
+                    "required": false
+                },
+                "deviceDefinition": {
+                    "required": false
+                },
+                "functionDefinition": {
+                    "required": false
+                },
+                "group": {
+                    "required": false
+                },
+                "loggerDefinition": {
+                    "required": false
+                },
+                "resourceDefinition": {
+                    "required": false
+                },
+                "subscriptionDefinition": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateConnectivityInfo": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectivityinfo-put.html",
+            "description": "Grants permission to update the connectivity information for a Greengrass core. Any devices that belong to the group that has this core will receive this information in order to find the location of the core and connect to it.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "connectivityInfo": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateConnectorDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectordefinition-put.html",
+            "description": "Grants permission to update a connector definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "connectorDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateCoreDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatecoredefinition-put.html",
+            "description": "Grants permission to update a core definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "coreDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateDeviceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatedevicedefinition-put.html",
+            "description": "Grants permission to update a device definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "deviceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateFunctionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html",
+            "description": "Grants permission to update a Lambda function definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "functionDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateGroup": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updategroup-put.html",
+            "description": "Grants permission to update a group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateGroupCertificateConfiguration": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updategroupcertificateconfiguration-put.html",
+            "description": "Grants permission to update the certificate expiry time for a group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "group": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateLoggerDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateloggerdefinition-put.html",
+            "description": "Grants permission to update a logger definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "loggerDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateResourceDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updateresourcedefinition-put.html",
+            "description": "Grants permission to update a resource definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "resourceDefinition": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateSubscriptionDefinition": {
+            "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/updatesubscriptiondefinition-put.html",
+            "description": "Grants permission to update a subscription definition.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "subscriptionDefinition": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.

@@ -7,7 +7,191 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Deeplens extends PolicyStatement {
     public servicePrefix = 'deeplens';
-    public actions : Actions = { "AssociateServiceRoleToAccount": { "url": "", "description": "Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.", "accessLevel": "Permissions management" }, "BatchGetDevice": { "url": "", "description": "Retrieves a list of AWS DeepLens devices.", "accessLevel": "Read", "resourceTypes": { "device": { "required": true } } }, "BatchGetModel": { "url": "", "description": "Retrieves a list of AWS DeepLens Models.", "accessLevel": "Read", "resourceTypes": { "model": { "required": true } } }, "BatchGetProject": { "url": "", "description": "Retrieves a list of AWS DeepLens Projects.", "accessLevel": "Read", "resourceTypes": { "project": { "required": true } } }, "CreateDeviceCertificates": { "url": "", "description": "Creates a certificate package that is used to successfully authenticate and Register an AWS DeepLens device.", "accessLevel": "Write" }, "CreateModel": { "url": "", "description": "Creates a new AWS DeepLens Model.", "accessLevel": "Write" }, "CreateProject": { "url": "", "description": "Creates a new AWS DeepLens Project.", "accessLevel": "Write" }, "DeleteModel": { "url": "", "description": "Deletes an AWS DeepLens Model.", "accessLevel": "Write", "resourceTypes": { "model": { "required": true } } }, "DeleteProject": { "url": "", "description": "Deletes an AWS DeepLens Project.", "accessLevel": "Write", "resourceTypes": { "project": { "required": true } } }, "DeployProject": { "url": "", "description": "Deploys an AWS DeepLens project to a registered AWS DeepLens device.", "accessLevel": "Write", "resourceTypes": { "device": { "required": true }, "project": { "required": true } } }, "DeregisterDevice": { "url": "", "description": "Begins a device de-registration workflow for a registered AWS DeepLens device.", "accessLevel": "Write", "resourceTypes": { "device": { "required": true } } }, "GetAssociatedResources": { "url": "", "description": "Retrieves the account level resources associated with the user's account.", "accessLevel": "Read" }, "GetDeploymentStatus": { "url": "", "description": "Retrieves the the deployment status of a particular AWS DeepLens device, along with any associated metadata.", "accessLevel": "Read" }, "GetDevice": { "url": "", "description": "Retrieves information about an AWS DeepLens device.", "accessLevel": "Read", "resourceTypes": { "device": { "required": true } } }, "GetModel": { "url": "", "description": "Retrieves an AWS DeepLens Model.", "accessLevel": "Read", "resourceTypes": { "model": { "required": true } } }, "GetProject": { "url": "", "description": "Retrieves an AWS DeepLens Project.", "accessLevel": "Read", "resourceTypes": { "project": { "required": true } } }, "ImportProjectFromTemplate": { "url": "", "description": "Creates a new AWS DeepLens project from a sample project template.", "accessLevel": "Write" }, "ListDeployments": { "url": "", "description": "Retrieves a list of AWS DeepLens Deployment identifiers.", "accessLevel": "List" }, "ListDevices": { "url": "", "description": "Retrieves a list of AWS DeepLens device identifiers.", "accessLevel": "List" }, "ListModels": { "url": "", "description": "Retrieves a list of AWS DeepLens Model identifiers.", "accessLevel": "List" }, "ListProjects": { "url": "", "description": "Retrieves a list of AWS DeepLens Project identifiers.", "accessLevel": "List" }, "RegisterDevice": { "url": "", "description": "Begins a device registration workflow for an AWS DeepLens device.", "accessLevel": "Write" }, "RemoveProject": { "url": "", "description": "Removes a deployed AWS DeepLens project from an AWS DeepLens device.", "accessLevel": "Write", "resourceTypes": { "device": { "required": true } } }, "UpdateProject": { "url": "", "description": "Updates an existing AWS DeepLens Project.", "accessLevel": "Write", "resourceTypes": { "project": { "required": true } } } };
+    public actions : Actions = {
+        "AssociateServiceRoleToAccount": {
+            "url": "",
+            "description": "Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.",
+            "accessLevel": "Permissions management"
+        },
+        "BatchGetDevice": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens devices.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "device": {
+                    "required": true
+                }
+            }
+        },
+        "BatchGetModel": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens Models.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "model": {
+                    "required": true
+                }
+            }
+        },
+        "BatchGetProject": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens Projects.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "CreateDeviceCertificates": {
+            "url": "",
+            "description": "Creates a certificate package that is used to successfully authenticate and Register an AWS DeepLens device.",
+            "accessLevel": "Write"
+        },
+        "CreateModel": {
+            "url": "",
+            "description": "Creates a new AWS DeepLens Model.",
+            "accessLevel": "Write"
+        },
+        "CreateProject": {
+            "url": "",
+            "description": "Creates a new AWS DeepLens Project.",
+            "accessLevel": "Write"
+        },
+        "DeleteModel": {
+            "url": "",
+            "description": "Deletes an AWS DeepLens Model.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "model": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteProject": {
+            "url": "",
+            "description": "Deletes an AWS DeepLens Project.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "DeployProject": {
+            "url": "",
+            "description": "Deploys an AWS DeepLens project to a registered AWS DeepLens device.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "device": {
+                    "required": true
+                },
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "DeregisterDevice": {
+            "url": "",
+            "description": "Begins a device de-registration workflow for a registered AWS DeepLens device.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "device": {
+                    "required": true
+                }
+            }
+        },
+        "GetAssociatedResources": {
+            "url": "",
+            "description": "Retrieves the account level resources associated with the user's account.",
+            "accessLevel": "Read"
+        },
+        "GetDeploymentStatus": {
+            "url": "",
+            "description": "Retrieves the the deployment status of a particular AWS DeepLens device, along with any associated metadata.",
+            "accessLevel": "Read"
+        },
+        "GetDevice": {
+            "url": "",
+            "description": "Retrieves information about an AWS DeepLens device.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "device": {
+                    "required": true
+                }
+            }
+        },
+        "GetModel": {
+            "url": "",
+            "description": "Retrieves an AWS DeepLens Model.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "model": {
+                    "required": true
+                }
+            }
+        },
+        "GetProject": {
+            "url": "",
+            "description": "Retrieves an AWS DeepLens Project.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "ImportProjectFromTemplate": {
+            "url": "",
+            "description": "Creates a new AWS DeepLens project from a sample project template.",
+            "accessLevel": "Write"
+        },
+        "ListDeployments": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens Deployment identifiers.",
+            "accessLevel": "List"
+        },
+        "ListDevices": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens device identifiers.",
+            "accessLevel": "List"
+        },
+        "ListModels": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens Model identifiers.",
+            "accessLevel": "List"
+        },
+        "ListProjects": {
+            "url": "",
+            "description": "Retrieves a list of AWS DeepLens Project identifiers.",
+            "accessLevel": "List"
+        },
+        "RegisterDevice": {
+            "url": "",
+            "description": "Begins a device registration workflow for an AWS DeepLens device.",
+            "accessLevel": "Write"
+        },
+        "RemoveProject": {
+            "url": "",
+            "description": "Removes a deployed AWS DeepLens project from an AWS DeepLens device.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "device": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateProject": {
+            "url": "",
+            "description": "Updates an existing AWS DeepLens Project.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.

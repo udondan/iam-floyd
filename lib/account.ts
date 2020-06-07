@@ -7,7 +7,29 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Account extends PolicyStatement {
     public servicePrefix = 'account';
-    public actions : Actions = { "DisableRegion": { "url": "", "description": "Grants permission to disable a region", "accessLevel": "Write", "conditions": ["account:TargetRegion"] }, "EnableRegion": { "url": "", "description": "Grants permission to enable a region", "accessLevel": "Write", "conditions": ["account:TargetRegion"] }, "ListRegions": { "url": "", "description": "Grants permission to list regions", "accessLevel": "List" } };
+    public actions : Actions = {
+        "DisableRegion": {
+            "url": "",
+            "description": "Grants permission to disable a region",
+            "accessLevel": "Write",
+            "conditions": [
+                "account:TargetRegion"
+            ]
+        },
+        "EnableRegion": {
+            "url": "",
+            "description": "Grants permission to enable a region",
+            "accessLevel": "Write",
+            "conditions": [
+                "account:TargetRegion"
+            ]
+        },
+        "ListRegions": {
+            "url": "",
+            "description": "Grants permission to list regions",
+            "accessLevel": "List"
+        }
+    };
 
     /**
      * Grants permission to disable a region

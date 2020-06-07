@@ -7,7 +7,43 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Cur extends PolicyStatement {
     public servicePrefix = 'cur';
-    public actions : Actions = { "DeleteReportDefinition": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html", "description": "Delete Cost and Usage Report Definition", "accessLevel": "Write", "resourceTypes": { "cur": { "required": true } } }, "DescribeReportDefinitions": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html", "description": "Get Cost and Usage Report Definitions", "accessLevel": "Read" }, "ModifyReportDefinition": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/modify-report-definition.html", "description": "Modify Cost and Usage Report Definition", "accessLevel": "Write", "resourceTypes": { "cur": { "required": true } } }, "PutReportDefinition": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html", "description": "Write Cost and Usage Report Definition", "accessLevel": "Write", "resourceTypes": { "cur": { "required": true } } } };
+    public actions : Actions = {
+        "DeleteReportDefinition": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html",
+            "description": "Delete Cost and Usage Report Definition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cur": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeReportDefinitions": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html",
+            "description": "Get Cost and Usage Report Definitions",
+            "accessLevel": "Read"
+        },
+        "ModifyReportDefinition": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/modify-report-definition.html",
+            "description": "Modify Cost and Usage Report Definition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cur": {
+                    "required": true
+                }
+            }
+        },
+        "PutReportDefinition": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html",
+            "description": "Write Cost and Usage Report Definition",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "cur": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Delete Cost and Usage Report Definition

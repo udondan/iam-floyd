@@ -7,7 +7,139 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Kafka extends PolicyStatement {
     public servicePrefix = 'kafka';
-    public actions : Actions = { "CreateCluster": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster", "description": "Grants permission to create a cluster.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateConfiguration": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration", "description": "Grants permission to create a configuration.", "accessLevel": "Write" }, "DeleteCluster": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster", "description": "Grants permission to delete a cluster.", "accessLevel": "Write" }, "DescribeCluster": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster", "description": "Grants permission to describe a cluster.", "accessLevel": "Read" }, "DescribeClusterOperation": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation", "description": "Returns a description of the cluster operation specified by the ARN.", "accessLevel": "Read" }, "DescribeConfiguration": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration", "description": "Grants permission to describe a configuration.", "accessLevel": "Read" }, "DescribeConfigurationRevision": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision", "description": "Grants permission to describe a configuration revision.", "accessLevel": "Read" }, "GetBootstrapBrokers": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers", "description": "Grants permission to get connection details for the broker nodes in a cluster.", "accessLevel": "Read" }, "GetCompatibleKafkaVersions": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions", "description": "Returns a list of the Apache Kafka versions to which you can update this cluster.", "accessLevel": "List" }, "ListClusterOperations": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations", "description": "Returns a list of all the operations that have been performed on the specified MSK cluster.", "accessLevel": "Read" }, "ListClusters": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters", "description": "Grants permission to return a list of all clusters in the current account.", "accessLevel": "List" }, "ListConfigurations": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration", "description": "Grants permission to return a list of all configurations in the current account.", "accessLevel": "List" }, "ListNodes": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes", "description": "Grants permission to return a list of nodes in a cluster.", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource", "description": "Grants permission to list tags of a MSK resource.", "accessLevel": "Read", "resourceTypes": { "cluster": { "required": false } } }, "TagResource": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource", "description": "Grants permission to tag a MSK resource.", "accessLevel": "Tagging", "resourceTypes": { "cluster": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource", "description": "Grants permission to remove tags from a MSK resource.", "accessLevel": "Tagging", "resourceTypes": { "cluster": { "required": false } }, "conditions": ["aws:TagKeys"] }, "UpdateBrokerCount": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount", "description": "Updates the number of broker nodes of the cluster.", "accessLevel": "Write" }, "UpdateBrokerStorage": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage", "description": "Updates the storage size of the broker nodes of the cluster", "accessLevel": "Write" }, "UpdateClusterConfiguration": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration", "description": "Update Kafka configuration running on a cluster.", "accessLevel": "Write" }, "UpdateClusterKafkaVersion": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion", "description": "Updates the cluster to the specified Apache Kafka version.", "accessLevel": "Write" }, "UpdateMonitoring": { "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring", "description": "Updates the monitoring settings for the cluster.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateCluster": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster",
+            "description": "Grants permission to create a cluster.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateConfiguration": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration",
+            "description": "Grants permission to create a configuration.",
+            "accessLevel": "Write"
+        },
+        "DeleteCluster": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster",
+            "description": "Grants permission to delete a cluster.",
+            "accessLevel": "Write"
+        },
+        "DescribeCluster": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster",
+            "description": "Grants permission to describe a cluster.",
+            "accessLevel": "Read"
+        },
+        "DescribeClusterOperation": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation",
+            "description": "Returns a description of the cluster operation specified by the ARN.",
+            "accessLevel": "Read"
+        },
+        "DescribeConfiguration": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration",
+            "description": "Grants permission to describe a configuration.",
+            "accessLevel": "Read"
+        },
+        "DescribeConfigurationRevision": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision",
+            "description": "Grants permission to describe a configuration revision.",
+            "accessLevel": "Read"
+        },
+        "GetBootstrapBrokers": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers",
+            "description": "Grants permission to get connection details for the broker nodes in a cluster.",
+            "accessLevel": "Read"
+        },
+        "GetCompatibleKafkaVersions": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions",
+            "description": "Returns a list of the Apache Kafka versions to which you can update this cluster.",
+            "accessLevel": "List"
+        },
+        "ListClusterOperations": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations",
+            "description": "Returns a list of all the operations that have been performed on the specified MSK cluster.",
+            "accessLevel": "Read"
+        },
+        "ListClusters": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters",
+            "description": "Grants permission to return a list of all clusters in the current account.",
+            "accessLevel": "List"
+        },
+        "ListConfigurations": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration",
+            "description": "Grants permission to return a list of all configurations in the current account.",
+            "accessLevel": "List"
+        },
+        "ListNodes": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes",
+            "description": "Grants permission to return a list of nodes in a cluster.",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource",
+            "description": "Grants permission to list tags of a MSK resource.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "cluster": {
+                    "required": false
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource",
+            "description": "Grants permission to tag a MSK resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "cluster": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource",
+            "description": "Grants permission to remove tags from a MSK resource.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "cluster": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateBrokerCount": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount",
+            "description": "Updates the number of broker nodes of the cluster.",
+            "accessLevel": "Write"
+        },
+        "UpdateBrokerStorage": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage",
+            "description": "Updates the storage size of the broker nodes of the cluster",
+            "accessLevel": "Write"
+        },
+        "UpdateClusterConfiguration": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration",
+            "description": "Update Kafka configuration running on a cluster.",
+            "accessLevel": "Write"
+        },
+        "UpdateClusterKafkaVersion": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion",
+            "description": "Updates the cluster to the specified Apache Kafka version.",
+            "accessLevel": "Write"
+        },
+        "UpdateMonitoring": {
+            "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring",
+            "description": "Updates the monitoring settings for the cluster.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to create a cluster.

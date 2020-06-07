@@ -7,7 +7,158 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Detective extends PolicyStatement {
     public servicePrefix = 'detective';
-    public actions : Actions = { "AcceptInvitation": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html", "description": "Grants permission to accept an invitation to become a member of a behavior graph", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } }, "CreateGraph": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html", "description": "Grants permission to create a behavior graph and begin to aggregate security information", "accessLevel": "Write" }, "CreateMembers": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateMembers.html", "description": "Grants permission to request the membership of one or more accounts in a behavior graph managed by this account", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } }, "DeleteGraph": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteGraph.html", "description": "Grants permission to delete a behavior graph and stop aggregating security information", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } }, "DeleteMembers": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteMembers.html", "description": "Grants permission to remove member accounts from a behavior graph managed by this account", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } }, "DisassociateMembership": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DisassociateMembership.html", "description": "Grants permission to remove the association of this account with a behavior graph", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } }, "GetFreeTrialEligibility": { "url": "", "description": "Grants permission to retrieve a behavior graph's eligibility for a free trial period", "accessLevel": "Read", "resourceTypes": { "Graph": { "required": true } } }, "GetGraphIngestState": { "url": "", "description": "Grants permission to retrieve the data ingestion state of a behavior graph", "accessLevel": "Read", "resourceTypes": { "Graph": { "required": true } } }, "GetMembers": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_GetMembers.html", "description": "Grants permission to retrieve details on specified members of a behavior graph", "accessLevel": "Read", "resourceTypes": { "Graph": { "required": true } } }, "GetPricingInformation": { "url": "", "description": "Grants permission to retrieve information about Amazon Detective's pricing", "accessLevel": "Read" }, "GetUsageInformation": { "url": "", "description": "Grants permission to list usage information of a behavior graph", "accessLevel": "Read", "resourceTypes": { "Graph": { "required": true } } }, "ListGraphs": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListGraphs.html", "description": "Grants permission to list behavior graphs managed by this account", "accessLevel": "List" }, "ListInvitations": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvitations.html", "description": "Grants permission to retrieve details on the behavior graphs to which this account has been invited to join", "accessLevel": "List" }, "ListMembers": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListMembers.html", "description": "Grants permission to retrieve details on all members of a behavior graph", "accessLevel": "List", "resourceTypes": { "Graph": { "required": true } } }, "RejectInvitation": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_RejectInvitation.html", "description": "Grants permission to reject an invitation to become a member of a behavior graph", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } }, "SearchGraph": { "url": "", "description": "Grants permission to search the data stored in a behavior graph", "accessLevel": "Read", "resourceTypes": { "Graph": { "required": true } } }, "StartMonitoringMember": { "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_StartMonitoringMember.html", "description": "Grants permission to start data ingest for a member account that has a status of ACCEPTED_BUT_DISABLED.", "accessLevel": "Write", "resourceTypes": { "Graph": { "required": true } } } };
+    public actions : Actions = {
+        "AcceptInvitation": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html",
+            "description": "Grants permission to accept an invitation to become a member of a behavior graph",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "CreateGraph": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html",
+            "description": "Grants permission to create a behavior graph and begin to aggregate security information",
+            "accessLevel": "Write"
+        },
+        "CreateMembers": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateMembers.html",
+            "description": "Grants permission to request the membership of one or more accounts in a behavior graph managed by this account",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteGraph": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteGraph.html",
+            "description": "Grants permission to delete a behavior graph and stop aggregating security information",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteMembers": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteMembers.html",
+            "description": "Grants permission to remove member accounts from a behavior graph managed by this account",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateMembership": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_DisassociateMembership.html",
+            "description": "Grants permission to remove the association of this account with a behavior graph",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "GetFreeTrialEligibility": {
+            "url": "",
+            "description": "Grants permission to retrieve a behavior graph's eligibility for a free trial period",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "GetGraphIngestState": {
+            "url": "",
+            "description": "Grants permission to retrieve the data ingestion state of a behavior graph",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "GetMembers": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_GetMembers.html",
+            "description": "Grants permission to retrieve details on specified members of a behavior graph",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "GetPricingInformation": {
+            "url": "",
+            "description": "Grants permission to retrieve information about Amazon Detective's pricing",
+            "accessLevel": "Read"
+        },
+        "GetUsageInformation": {
+            "url": "",
+            "description": "Grants permission to list usage information of a behavior graph",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "ListGraphs": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListGraphs.html",
+            "description": "Grants permission to list behavior graphs managed by this account",
+            "accessLevel": "List"
+        },
+        "ListInvitations": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvitations.html",
+            "description": "Grants permission to retrieve details on the behavior graphs to which this account has been invited to join",
+            "accessLevel": "List"
+        },
+        "ListMembers": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_ListMembers.html",
+            "description": "Grants permission to retrieve details on all members of a behavior graph",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "RejectInvitation": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_RejectInvitation.html",
+            "description": "Grants permission to reject an invitation to become a member of a behavior graph",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "SearchGraph": {
+            "url": "",
+            "description": "Grants permission to search the data stored in a behavior graph",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        },
+        "StartMonitoringMember": {
+            "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_StartMonitoringMember.html",
+            "description": "Grants permission to start data ingest for a member account that has a status of ACCEPTED_BUT_DISABLED.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Graph": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to accept an invitation to become a member of a behavior graph

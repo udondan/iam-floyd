@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class PurchaseOrders extends PolicyStatement {
     public servicePrefix = 'purchase-orders';
-    public actions : Actions = { "ModifyPurchaseOrders": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Modify purchase orders and details", "accessLevel": "Write" }, "ViewPurchaseOrders": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "View purchase orders and details", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "ModifyPurchaseOrders": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Modify purchase orders and details",
+            "accessLevel": "Write"
+        },
+        "ViewPurchaseOrders": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "View purchase orders and details",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Modify purchase orders and details

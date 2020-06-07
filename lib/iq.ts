@@ -7,7 +7,13 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Iq extends PolicyStatement {
     public servicePrefix = 'iq';
-    public actions : Actions = { "CreateProject": { "url": "https://aws.amazon.com/iq/", "description": "Grants permission to submit new project requests", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "CreateProject": {
+            "url": "https://aws.amazon.com/iq/",
+            "description": "Grants permission to submit new project requests",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Grants permission to submit new project requests

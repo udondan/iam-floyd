@@ -7,7 +7,78 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AwsMarketplace extends PolicyStatement {
     public servicePrefix = 'aws-marketplace';
-    public actions : Actions = { "AcceptAgreementApprovalRequest": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).", "accessLevel": "Write" }, "CancelAgreementRequest": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to cancel pending subscription requests for products that require subscription verification.", "accessLevel": "Write" }, "DescribeAgreement": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Returns metadata about the agreement.", "accessLevel": "Read" }, "GetAgreementApprovalRequest": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to view the details of their incoming subscription requests (for providers who provide products that require subscription verification).", "accessLevel": "Read" }, "GetAgreementRequest": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to view the details of their subscription requests for data products that require subscription verification.", "accessLevel": "Read" }, "GetAgreementTerms": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Returns a list of terms for an agreement.", "accessLevel": "List" }, "ListAgreementApprovalRequests": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to list their incoming subscription requests (for providers who provide products that require subscription verification).", "accessLevel": "List" }, "ListAgreementRequests": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to list their subscription requests for products that require subscription verification.", "accessLevel": "List" }, "RejectAgreementApprovalRequest": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to decline an incoming subscription requests (for providers who provide products that require subscription verification).", "accessLevel": "Write" }, "SearchAgreements": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to search their agreements.", "accessLevel": "List" }, "Subscribe": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription.", "accessLevel": "Write" }, "Unsubscribe": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to remove subscriptions to AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription.", "accessLevel": "Write" }, "UpdateAgreementApprovalRequest": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information (for providers who provide products that require subscription verification).", "accessLevel": "Write" }, "ViewSubscriptions": { "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions", "description": "Allows users to see their account's subscriptions.", "accessLevel": "List" } };
+    public actions : Actions = {
+        "AcceptAgreementApprovalRequest": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).",
+            "accessLevel": "Write"
+        },
+        "CancelAgreementRequest": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to cancel pending subscription requests for products that require subscription verification.",
+            "accessLevel": "Write"
+        },
+        "DescribeAgreement": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Returns metadata about the agreement.",
+            "accessLevel": "Read"
+        },
+        "GetAgreementApprovalRequest": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to view the details of their incoming subscription requests (for providers who provide products that require subscription verification).",
+            "accessLevel": "Read"
+        },
+        "GetAgreementRequest": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to view the details of their subscription requests for data products that require subscription verification.",
+            "accessLevel": "Read"
+        },
+        "GetAgreementTerms": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Returns a list of terms for an agreement.",
+            "accessLevel": "List"
+        },
+        "ListAgreementApprovalRequests": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to list their incoming subscription requests (for providers who provide products that require subscription verification).",
+            "accessLevel": "List"
+        },
+        "ListAgreementRequests": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to list their subscription requests for products that require subscription verification.",
+            "accessLevel": "List"
+        },
+        "RejectAgreementApprovalRequest": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to decline an incoming subscription requests (for providers who provide products that require subscription verification).",
+            "accessLevel": "Write"
+        },
+        "SearchAgreements": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to search their agreements.",
+            "accessLevel": "List"
+        },
+        "Subscribe": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to subscribe to AWS Marketplace products. Includes the ability to send a subscription request for products that require subscription verification. Includes the ability to enable auto-renewal for an existing subscription.",
+            "accessLevel": "Write"
+        },
+        "Unsubscribe": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to remove subscriptions to AWS Marketplace products. Includes the ability to disable auto-renewal for an existing subscription.",
+            "accessLevel": "Write"
+        },
+        "UpdateAgreementApprovalRequest": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information (for providers who provide products that require subscription verification).",
+            "accessLevel": "Write"
+        },
+        "ViewSubscriptions": {
+            "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
+            "description": "Allows users to see their account's subscriptions.",
+            "accessLevel": "List"
+        }
+    };
 
     /**
      * Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).

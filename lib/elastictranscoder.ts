@@ -7,7 +7,161 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Elastictranscoder extends PolicyStatement {
     public servicePrefix = 'elastictranscoder';
-    public actions : Actions = { "CancelJob": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html", "description": "Cancel a job that Elastic Transcoder has not begun to process", "accessLevel": "Write", "resourceTypes": { "job": { "required": true } } }, "CreateJob": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html", "description": "Create a job.", "accessLevel": "Write", "resourceTypes": { "pipeline": { "required": true }, "preset": { "required": true } } }, "CreatePipeline": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html", "description": "Create a pipeline", "accessLevel": "Write", "resourceTypes": { "pipeline": { "required": true } } }, "CreatePreset": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html", "description": "Create a preset.", "accessLevel": "Write", "resourceTypes": { "preset": { "required": true } } }, "DeletePipeline": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html", "description": "Delete a pipeline", "accessLevel": "Write", "resourceTypes": { "pipeline": { "required": true } } }, "DeletePreset": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html", "description": "Delete a preset", "accessLevel": "Write", "resourceTypes": { "preset": { "required": true } } }, "ListJobsByPipeline": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html", "description": "Get a list of the jobs that you assigned to a pipeline", "accessLevel": "List", "resourceTypes": { "pipeline": { "required": true } } }, "ListJobsByStatus": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html", "description": "Get information about all of the jobs associated with the current AWS account that have a specified status", "accessLevel": "List" }, "ListPipelines": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html", "description": "Get a list of the pipelines associated with the current AWS account", "accessLevel": "List" }, "ListPresets": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html", "description": "Get a list of all presets associated with the current AWS account.", "accessLevel": "List" }, "ReadJob": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html", "description": "Get detailed information about a job", "accessLevel": "Read", "resourceTypes": { "job": { "required": true } } }, "ReadPipeline": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html", "description": "Get detailed information about a pipeline", "accessLevel": "Read", "resourceTypes": { "pipeline": { "required": true } } }, "ReadPreset": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html", "description": "Get detailed information about a preset.", "accessLevel": "Read", "resourceTypes": { "preset": { "required": true } } }, "TestRole": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html", "description": "Test the settings for a pipeline to ensure that Elastic Transcoder can create and process jobs", "accessLevel": "Write" }, "UpdatePipeline": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html", "description": "Update settings for a pipeline", "accessLevel": "Write", "resourceTypes": { "pipeline": { "required": true } } }, "UpdatePipelineNotifications": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html", "description": "Update only Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline", "accessLevel": "Write", "resourceTypes": { "pipeline": { "required": true } } }, "UpdatePipelineStatus": { "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html", "description": "Pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline.", "accessLevel": "Write", "resourceTypes": { "pipeline": { "required": true } } } };
+    public actions : Actions = {
+        "CancelJob": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html",
+            "description": "Cancel a job that Elastic Transcoder has not begun to process",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "job": {
+                    "required": true
+                }
+            }
+        },
+        "CreateJob": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html",
+            "description": "Create a job.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                },
+                "preset": {
+                    "required": true
+                }
+            }
+        },
+        "CreatePipeline": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html",
+            "description": "Create a pipeline",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        },
+        "CreatePreset": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html",
+            "description": "Create a preset.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "preset": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePipeline": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html",
+            "description": "Delete a pipeline",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePreset": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html",
+            "description": "Delete a preset",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "preset": {
+                    "required": true
+                }
+            }
+        },
+        "ListJobsByPipeline": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html",
+            "description": "Get a list of the jobs that you assigned to a pipeline",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        },
+        "ListJobsByStatus": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html",
+            "description": "Get information about all of the jobs associated with the current AWS account that have a specified status",
+            "accessLevel": "List"
+        },
+        "ListPipelines": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html",
+            "description": "Get a list of the pipelines associated with the current AWS account",
+            "accessLevel": "List"
+        },
+        "ListPresets": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html",
+            "description": "Get a list of all presets associated with the current AWS account.",
+            "accessLevel": "List"
+        },
+        "ReadJob": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html",
+            "description": "Get detailed information about a job",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "job": {
+                    "required": true
+                }
+            }
+        },
+        "ReadPipeline": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html",
+            "description": "Get detailed information about a pipeline",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        },
+        "ReadPreset": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html",
+            "description": "Get detailed information about a preset.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "preset": {
+                    "required": true
+                }
+            }
+        },
+        "TestRole": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html",
+            "description": "Test the settings for a pipeline to ensure that Elastic Transcoder can create and process jobs",
+            "accessLevel": "Write"
+        },
+        "UpdatePipeline": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html",
+            "description": "Update settings for a pipeline",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        },
+        "UpdatePipelineNotifications": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html",
+            "description": "Update only Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        },
+        "UpdatePipelineStatus": {
+            "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html",
+            "description": "Pause or reactivate a pipeline, so the pipeline stops or restarts processing jobs, update the status for the pipeline.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "pipeline": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Cancel a job that Elastic Transcoder has not begun to process

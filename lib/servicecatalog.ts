@@ -7,7 +7,635 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Servicecatalog extends PolicyStatement {
     public servicePrefix = 'servicecatalog';
-    public actions : Actions = { "AcceptPortfolioShare": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AcceptPortfolioShare.html", "description": "Accepts a portfolio that has been shared with you", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } } }, "AssociateBudgetWithResource": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateBudgetWithResource.html", "description": "Associates a budget with a resource.", "accessLevel": "Write" }, "AssociatePrincipalWithPortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociatePrincipalWithPortfolio.html", "description": "Associates an IAM principal with a portfolio, giving the specified principal access to any products associated with the specified portfolio", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } } }, "AssociateProductWithPortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateProductWithPortfolio.html", "description": "Associates a product with a portfolio", "accessLevel": "Write" }, "AssociateServiceActionWithProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateServiceActionWithProvisioningArtifact.html", "description": "Associates an action with a provisioning artifact", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "AssociateTagOptionWithResource": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateTagOptionWithResource.html", "description": "Associate the specified TagOption with the specified portfolio or product", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": false }, "Product": { "required": false } } }, "BatchAssociateServiceActionWithProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchAssociateServiceActionWithProvisioningArtifact.html", "description": "Associates multiple self-service actions with provisioning artifacts.", "accessLevel": "Write" }, "BatchDisassociateServiceActionFromProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchDisassociateServiceActionFromProvisioningArtifact.html", "description": "Disassociates a batch of self-service actions from the specified provisioning artifact.", "accessLevel": "Write" }, "CopyProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CopyProduct.html", "description": "Copies the specified source product to the specified target product or a new product.", "accessLevel": "Write" }, "CreateConstraint": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateConstraint.html", "description": "Creates a constraint on an associated product and portfolio", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "CreatePortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolio.html", "description": "Creates a portfolio", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreatePortfolioShare": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolioShare.html", "description": "Shares a portfolio you own with another AWS account", "accessLevel": "Permissions management", "resourceTypes": { "Portfolio": { "required": true } } }, "CreateProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html", "description": "Creates a product and that product's first provisioning artifact", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "CreateProvisionedProductPlan": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisionedProductPlan.html", "description": "Adds a new provisioned product plan", "accessLevel": "Write" }, "CreateProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisioningArtifact.html", "description": "Adds a new provisioning artifact to an existing product", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "CreateServiceAction": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateServiceAction.html", "description": "Creates a self-service action.", "accessLevel": "Write" }, "CreateTagOption": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateTagOption.html", "description": "Creates a TagOption.", "accessLevel": "Write" }, "DeleteConstraint": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteConstraint.html", "description": "Removes and deletes an existing constraint from an associated product and portfolio", "accessLevel": "Write" }, "DeletePortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolio.html", "description": "Deletes a portfolio if all associations and shares have been removed from the portfolio", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } } }, "DeletePortfolioShare": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolioShare.html", "description": "Unshares a portfolio you own from an AWS account you previously shared the portfolio with", "accessLevel": "Permissions management", "resourceTypes": { "Portfolio": { "required": true } } }, "DeleteProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProduct.html", "description": "Deletes a product if all associations have been removed from the product", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "DeleteProvisionedProductPlan": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisionedProductPlan.html", "description": "Deletes a provisioned product plan", "accessLevel": "Write" }, "DeleteProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisioningArtifact.html", "description": "Deletes a provisioning artifact from a product", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "DeleteServiceAction": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteServiceAction.html", "description": "Deletes a self-service action.", "accessLevel": "Write" }, "DeleteTagOption": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteTagOption.html", "description": "Deletes the specified TagOption.", "accessLevel": "Write" }, "DescribeConstraint": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeConstraint.html", "description": "Describes a constraint", "accessLevel": "Read" }, "DescribeCopyProductStatus": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeCopyProductStatus.html", "description": "Gets the status of the specified copy product operation.", "accessLevel": "Read" }, "DescribePortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolio.html", "description": "Describes a portfolio", "accessLevel": "Read", "resourceTypes": { "Portfolio": { "required": true } } }, "DescribePortfolioShareStatus": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolioShareStatus.html", "description": "Gets the status of the specified portfolio share operation.", "accessLevel": "Read" }, "DescribeProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProduct.html", "description": "Describes a product as an end-user", "accessLevel": "Read", "resourceTypes": { "Product": { "required": true } } }, "DescribeProductAsAdmin": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductAsAdmin.html", "description": "Describes a product as an admin", "accessLevel": "Read", "resourceTypes": { "Product": { "required": true } } }, "DescribeProductView": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductView.html", "description": "Describes a product as an end-user", "accessLevel": "Read" }, "DescribeProvisionedProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProduct.html", "description": "Describes a provisioned product", "accessLevel": "Read" }, "DescribeProvisionedProductPlan": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProductPlan.html", "description": "Describes a provisioned product plan", "accessLevel": "Read" }, "DescribeProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningArtifact.html", "description": "Describes a provisioning artifact", "accessLevel": "Read", "resourceTypes": { "Product": { "required": true } } }, "DescribeProvisioningParameters": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningParameters.html", "description": "Describes the parameters that you need to specify to successfully provision a specified provisioning artifact", "accessLevel": "Read", "resourceTypes": { "Product": { "required": true } } }, "DescribeRecord": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html", "description": "Describes a record and lists any outputs", "accessLevel": "Read", "conditions": ["servicecatalog:accountLevel", "servicecatalog:roleLevel", "servicecatalog:userLevel"] }, "DescribeServiceAction": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceAction.html", "description": "Describes a self-service action.", "accessLevel": "Read" }, "DescribeServiceActionExecutionParameters": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceActionExecutionParameters.html", "description": "Gets the default parameters if you executed the specified Service Action on the specified Provisioned Product.", "accessLevel": "Read" }, "DescribeTagOption": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeTagOption.html", "description": "Gets information about the specified TagOption.", "accessLevel": "Read" }, "DisableAWSOrganizationsAccess": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisableAWSOrganizationsAccess.html", "description": "Disable portfolio sharing through AWS Organizations feature.", "accessLevel": "Write" }, "DisassociateBudgetFromResource": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateBudgetFromResource.html", "description": "Disassociates a budget from a resource.", "accessLevel": "Write" }, "DisassociatePrincipalFromPortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociatePrincipalFromPortfolio.html", "description": "Disassociates an IAM principal from a portfolio.", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } } }, "DisassociateProductFromPortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateProductFromPortfolio.html", "description": "Disassociates a product from a portfolio", "accessLevel": "Write" }, "DisassociateServiceActionFromProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateServiceActionFromProvisioningArtifact.html", "description": "Disassociates the specified self-service action association from the specified provisioning artifact.", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "DisassociateTagOptionFromResource": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateTagOptionFromResource.html", "description": "Disassociates the specified TagOption from the specified resource.", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": false }, "Product": { "required": false } } }, "EnableAWSOrganizationsAccess": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_EnableAWSOrganizationsAccess.html", "description": "Enable portfolio sharing feature through AWS Organizations.", "accessLevel": "Write" }, "ExecuteProvisionedProductPlan": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductPlan.html", "description": "Executes a provisioned product plan", "accessLevel": "Write" }, "ExecuteProvisionedProductServiceAction": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductServiceAction.html", "description": "Executes a provisioned product plan", "accessLevel": "Write" }, "GetAWSOrganizationsAccessStatus": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetAWSOrganizationsAccessStatus.html", "description": "Get the Access Status for AWS Organization portfolio share feature.", "accessLevel": "Read" }, "ListAcceptedPortfolioShares": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAcceptedPortfolioShares.html", "description": "Lists the portfolios that have been shared with you and you have accepted", "accessLevel": "List" }, "ListBudgetsForResource": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListBudgetsForResource.html", "description": "Lists all the budgets associated to a resource.", "accessLevel": "List" }, "ListConstraintsForPortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListConstraintsForPortfolio.html", "description": "Lists constraints associated with a given portfolio", "accessLevel": "List" }, "ListLaunchPaths": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html", "description": "Lists the different ways to launch a given product as an end-user", "accessLevel": "List", "resourceTypes": { "Product": { "required": true } } }, "ListOrganizationPortfolioAccess": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListOrganizationPortfolioAccess.html", "description": "Lists the organization nodes that have access to the specified portfolio.", "accessLevel": "List" }, "ListPortfolioAccess": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolioAccess.html", "description": "Lists the AWS accounts you have shared a given portfolio with", "accessLevel": "List", "resourceTypes": { "Portfolio": { "required": true } } }, "ListPortfolios": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolios.html", "description": "Lists the portfolios in your account", "accessLevel": "List" }, "ListPortfoliosForProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfoliosForProduct.html", "description": "Lists the portfolios associated with a given product", "accessLevel": "List", "resourceTypes": { "Product": { "required": true } } }, "ListPrincipalsForPortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPrincipalsForPortfolio.html", "description": "Lists the IAM principals associated with a given portfolio", "accessLevel": "List", "resourceTypes": { "Portfolio": { "required": true } } }, "ListProvisionedProductPlans": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisionedProductPlans.html", "description": "Lists the provisioned product plans", "accessLevel": "List" }, "ListProvisioningArtifacts": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifacts.html", "description": "Lists the provisioning artifacts associated with a given product", "accessLevel": "List", "resourceTypes": { "Product": { "required": true } } }, "ListProvisioningArtifactsForServiceAction": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifactsForServiceAction.html", "description": "Lists all provisioning artifacts for the specified self-service action.", "accessLevel": "List" }, "ListRecordHistory": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListRecordHistory.html", "description": "Lists all the records in your account or all the records related to a given provisioned product", "accessLevel": "List", "conditions": ["servicecatalog:accountLevel", "servicecatalog:roleLevel", "servicecatalog:userLevel"] }, "ListResourcesForTagOption": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListResourcesForTagOption.html", "description": "Lists the resources associated with the specified TagOption.", "accessLevel": "List" }, "ListServiceActions": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActions.html", "description": "Lists all self-service actions.", "accessLevel": "List" }, "ListServiceActionsForProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActionsForProvisioningArtifact.html", "description": "Lists all the service actions associated with the specified provisioning artifact in your account", "accessLevel": "List", "resourceTypes": { "Product": { "required": true } } }, "ListStackInstancesForProvisionedProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListStackInstancesForProvisionedProduct.html", "description": "Lists account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product", "accessLevel": "List" }, "ListTagOptions": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListTagOptions.html", "description": "Lists the specified TagOptions or all TagOptions.", "accessLevel": "List" }, "ProvisionProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html", "description": "Provisions a product with a specified provisioning artifact and launch parameters", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "RejectPortfolioShare": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_RejectPortfolioShare.html", "description": "Rejects a portfolio that has been shared with you that you previously accepted", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } } }, "ScanProvisionedProducts": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ScanProvisionedProducts.html", "description": "Lists all the provisioned products in your account", "accessLevel": "List", "conditions": ["servicecatalog:accountLevel", "servicecatalog:roleLevel", "servicecatalog:userLevel"] }, "SearchProducts": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProducts.html", "description": "Lists the products available to you as an end-user", "accessLevel": "List" }, "SearchProductsAsAdmin": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProductsAsAdmin.html", "description": "Lists all the products in your account or all the products associated with a given portfolio", "accessLevel": "List" }, "SearchProvisionedProducts": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProvisionedProducts.html", "description": "Lists all the provisioned products in your account", "accessLevel": "List", "conditions": ["servicecatalog:accountLevel", "servicecatalog:roleLevel", "servicecatalog:userLevel"] }, "TerminateProvisionedProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html", "description": "Terminates an existing provisioned product", "accessLevel": "Write", "conditions": ["servicecatalog:accountLevel", "servicecatalog:roleLevel", "servicecatalog:userLevel"] }, "UpdateConstraint": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateConstraint.html", "description": "Updates the metadata fields of an existing constraint", "accessLevel": "Write" }, "UpdatePortfolio": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdatePortfolio.html", "description": "Updates the metadata fields and/or tags of an existing portfolio", "accessLevel": "Write", "resourceTypes": { "Portfolio": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UpdateProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProduct.html", "description": "Updates the metadata fields and/or tags of an existing product", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UpdateProvisionedProduct": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProduct.html", "description": "Updates an existing provisioned product", "accessLevel": "Write", "conditions": ["servicecatalog:accountLevel", "servicecatalog:roleLevel", "servicecatalog:userLevel"] }, "UpdateProvisionedProductProperties": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProductProperties.html", "description": "Updates the properties of an existing provisioned product", "accessLevel": "Write" }, "UpdateProvisioningArtifact": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisioningArtifact.html", "description": "Updates the metadata fields of an existing provisioning artifact", "accessLevel": "Write", "resourceTypes": { "Product": { "required": true } } }, "UpdateServiceAction": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateServiceAction.html", "description": "Updates a self-service action.", "accessLevel": "Write" }, "UpdateTagOption": { "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateTagOption.html", "description": "Updates the specified TagOption.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "AcceptPortfolioShare": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AcceptPortfolioShare.html",
+            "description": "Accepts a portfolio that has been shared with you",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "AssociateBudgetWithResource": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateBudgetWithResource.html",
+            "description": "Associates a budget with a resource.",
+            "accessLevel": "Write"
+        },
+        "AssociatePrincipalWithPortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociatePrincipalWithPortfolio.html",
+            "description": "Associates an IAM principal with a portfolio, giving the specified principal access to any products associated with the specified portfolio",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "AssociateProductWithPortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateProductWithPortfolio.html",
+            "description": "Associates a product with a portfolio",
+            "accessLevel": "Write"
+        },
+        "AssociateServiceActionWithProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateServiceActionWithProvisioningArtifact.html",
+            "description": "Associates an action with a provisioning artifact",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "AssociateTagOptionWithResource": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateTagOptionWithResource.html",
+            "description": "Associate the specified TagOption with the specified portfolio or product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": false
+                },
+                "Product": {
+                    "required": false
+                }
+            }
+        },
+        "BatchAssociateServiceActionWithProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchAssociateServiceActionWithProvisioningArtifact.html",
+            "description": "Associates multiple self-service actions with provisioning artifacts.",
+            "accessLevel": "Write"
+        },
+        "BatchDisassociateServiceActionFromProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchDisassociateServiceActionFromProvisioningArtifact.html",
+            "description": "Disassociates a batch of self-service actions from the specified provisioning artifact.",
+            "accessLevel": "Write"
+        },
+        "CopyProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CopyProduct.html",
+            "description": "Copies the specified source product to the specified target product or a new product.",
+            "accessLevel": "Write"
+        },
+        "CreateConstraint": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateConstraint.html",
+            "description": "Creates a constraint on an associated product and portfolio",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "CreatePortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolio.html",
+            "description": "Creates a portfolio",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreatePortfolioShare": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolioShare.html",
+            "description": "Shares a portfolio you own with another AWS account",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "CreateProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html",
+            "description": "Creates a product and that product's first provisioning artifact",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "CreateProvisionedProductPlan": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisionedProductPlan.html",
+            "description": "Adds a new provisioned product plan",
+            "accessLevel": "Write"
+        },
+        "CreateProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisioningArtifact.html",
+            "description": "Adds a new provisioning artifact to an existing product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "CreateServiceAction": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateServiceAction.html",
+            "description": "Creates a self-service action.",
+            "accessLevel": "Write"
+        },
+        "CreateTagOption": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateTagOption.html",
+            "description": "Creates a TagOption.",
+            "accessLevel": "Write"
+        },
+        "DeleteConstraint": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteConstraint.html",
+            "description": "Removes and deletes an existing constraint from an associated product and portfolio",
+            "accessLevel": "Write"
+        },
+        "DeletePortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolio.html",
+            "description": "Deletes a portfolio if all associations and shares have been removed from the portfolio",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePortfolioShare": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolioShare.html",
+            "description": "Unshares a portfolio you own from an AWS account you previously shared the portfolio with",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProduct.html",
+            "description": "Deletes a product if all associations have been removed from the product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteProvisionedProductPlan": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisionedProductPlan.html",
+            "description": "Deletes a provisioned product plan",
+            "accessLevel": "Write"
+        },
+        "DeleteProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisioningArtifact.html",
+            "description": "Deletes a provisioning artifact from a product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteServiceAction": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteServiceAction.html",
+            "description": "Deletes a self-service action.",
+            "accessLevel": "Write"
+        },
+        "DeleteTagOption": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteTagOption.html",
+            "description": "Deletes the specified TagOption.",
+            "accessLevel": "Write"
+        },
+        "DescribeConstraint": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeConstraint.html",
+            "description": "Describes a constraint",
+            "accessLevel": "Read"
+        },
+        "DescribeCopyProductStatus": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeCopyProductStatus.html",
+            "description": "Gets the status of the specified copy product operation.",
+            "accessLevel": "Read"
+        },
+        "DescribePortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolio.html",
+            "description": "Describes a portfolio",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "DescribePortfolioShareStatus": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolioShareStatus.html",
+            "description": "Gets the status of the specified portfolio share operation.",
+            "accessLevel": "Read"
+        },
+        "DescribeProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProduct.html",
+            "description": "Describes a product as an end-user",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeProductAsAdmin": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductAsAdmin.html",
+            "description": "Describes a product as an admin",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeProductView": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductView.html",
+            "description": "Describes a product as an end-user",
+            "accessLevel": "Read"
+        },
+        "DescribeProvisionedProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProduct.html",
+            "description": "Describes a provisioned product",
+            "accessLevel": "Read"
+        },
+        "DescribeProvisionedProductPlan": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProductPlan.html",
+            "description": "Describes a provisioned product plan",
+            "accessLevel": "Read"
+        },
+        "DescribeProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningArtifact.html",
+            "description": "Describes a provisioning artifact",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeProvisioningParameters": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningParameters.html",
+            "description": "Describes the parameters that you need to specify to successfully provision a specified provisioning artifact",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeRecord": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html",
+            "description": "Describes a record and lists any outputs",
+            "accessLevel": "Read",
+            "conditions": [
+                "servicecatalog:accountLevel",
+                "servicecatalog:roleLevel",
+                "servicecatalog:userLevel"
+            ]
+        },
+        "DescribeServiceAction": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceAction.html",
+            "description": "Describes a self-service action.",
+            "accessLevel": "Read"
+        },
+        "DescribeServiceActionExecutionParameters": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceActionExecutionParameters.html",
+            "description": "Gets the default parameters if you executed the specified Service Action on the specified Provisioned Product.",
+            "accessLevel": "Read"
+        },
+        "DescribeTagOption": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeTagOption.html",
+            "description": "Gets information about the specified TagOption.",
+            "accessLevel": "Read"
+        },
+        "DisableAWSOrganizationsAccess": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisableAWSOrganizationsAccess.html",
+            "description": "Disable portfolio sharing through AWS Organizations feature.",
+            "accessLevel": "Write"
+        },
+        "DisassociateBudgetFromResource": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateBudgetFromResource.html",
+            "description": "Disassociates a budget from a resource.",
+            "accessLevel": "Write"
+        },
+        "DisassociatePrincipalFromPortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociatePrincipalFromPortfolio.html",
+            "description": "Disassociates an IAM principal from a portfolio.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateProductFromPortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateProductFromPortfolio.html",
+            "description": "Disassociates a product from a portfolio",
+            "accessLevel": "Write"
+        },
+        "DisassociateServiceActionFromProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateServiceActionFromProvisioningArtifact.html",
+            "description": "Disassociates the specified self-service action association from the specified provisioning artifact.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "DisassociateTagOptionFromResource": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateTagOptionFromResource.html",
+            "description": "Disassociates the specified TagOption from the specified resource.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": false
+                },
+                "Product": {
+                    "required": false
+                }
+            }
+        },
+        "EnableAWSOrganizationsAccess": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_EnableAWSOrganizationsAccess.html",
+            "description": "Enable portfolio sharing feature through AWS Organizations.",
+            "accessLevel": "Write"
+        },
+        "ExecuteProvisionedProductPlan": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductPlan.html",
+            "description": "Executes a provisioned product plan",
+            "accessLevel": "Write"
+        },
+        "ExecuteProvisionedProductServiceAction": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductServiceAction.html",
+            "description": "Executes a provisioned product plan",
+            "accessLevel": "Write"
+        },
+        "GetAWSOrganizationsAccessStatus": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetAWSOrganizationsAccessStatus.html",
+            "description": "Get the Access Status for AWS Organization portfolio share feature.",
+            "accessLevel": "Read"
+        },
+        "ListAcceptedPortfolioShares": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAcceptedPortfolioShares.html",
+            "description": "Lists the portfolios that have been shared with you and you have accepted",
+            "accessLevel": "List"
+        },
+        "ListBudgetsForResource": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListBudgetsForResource.html",
+            "description": "Lists all the budgets associated to a resource.",
+            "accessLevel": "List"
+        },
+        "ListConstraintsForPortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListConstraintsForPortfolio.html",
+            "description": "Lists constraints associated with a given portfolio",
+            "accessLevel": "List"
+        },
+        "ListLaunchPaths": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html",
+            "description": "Lists the different ways to launch a given product as an end-user",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "ListOrganizationPortfolioAccess": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListOrganizationPortfolioAccess.html",
+            "description": "Lists the organization nodes that have access to the specified portfolio.",
+            "accessLevel": "List"
+        },
+        "ListPortfolioAccess": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolioAccess.html",
+            "description": "Lists the AWS accounts you have shared a given portfolio with",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "ListPortfolios": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolios.html",
+            "description": "Lists the portfolios in your account",
+            "accessLevel": "List"
+        },
+        "ListPortfoliosForProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfoliosForProduct.html",
+            "description": "Lists the portfolios associated with a given product",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "ListPrincipalsForPortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPrincipalsForPortfolio.html",
+            "description": "Lists the IAM principals associated with a given portfolio",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "ListProvisionedProductPlans": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisionedProductPlans.html",
+            "description": "Lists the provisioned product plans",
+            "accessLevel": "List"
+        },
+        "ListProvisioningArtifacts": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifacts.html",
+            "description": "Lists the provisioning artifacts associated with a given product",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "ListProvisioningArtifactsForServiceAction": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifactsForServiceAction.html",
+            "description": "Lists all provisioning artifacts for the specified self-service action.",
+            "accessLevel": "List"
+        },
+        "ListRecordHistory": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListRecordHistory.html",
+            "description": "Lists all the records in your account or all the records related to a given provisioned product",
+            "accessLevel": "List",
+            "conditions": [
+                "servicecatalog:accountLevel",
+                "servicecatalog:roleLevel",
+                "servicecatalog:userLevel"
+            ]
+        },
+        "ListResourcesForTagOption": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListResourcesForTagOption.html",
+            "description": "Lists the resources associated with the specified TagOption.",
+            "accessLevel": "List"
+        },
+        "ListServiceActions": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActions.html",
+            "description": "Lists all self-service actions.",
+            "accessLevel": "List"
+        },
+        "ListServiceActionsForProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActionsForProvisioningArtifact.html",
+            "description": "Lists all the service actions associated with the specified provisioning artifact in your account",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "ListStackInstancesForProvisionedProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListStackInstancesForProvisionedProduct.html",
+            "description": "Lists account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product",
+            "accessLevel": "List"
+        },
+        "ListTagOptions": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListTagOptions.html",
+            "description": "Lists the specified TagOptions or all TagOptions.",
+            "accessLevel": "List"
+        },
+        "ProvisionProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html",
+            "description": "Provisions a product with a specified provisioning artifact and launch parameters",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "RejectPortfolioShare": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_RejectPortfolioShare.html",
+            "description": "Rejects a portfolio that has been shared with you that you previously accepted",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            }
+        },
+        "ScanProvisionedProducts": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ScanProvisionedProducts.html",
+            "description": "Lists all the provisioned products in your account",
+            "accessLevel": "List",
+            "conditions": [
+                "servicecatalog:accountLevel",
+                "servicecatalog:roleLevel",
+                "servicecatalog:userLevel"
+            ]
+        },
+        "SearchProducts": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProducts.html",
+            "description": "Lists the products available to you as an end-user",
+            "accessLevel": "List"
+        },
+        "SearchProductsAsAdmin": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProductsAsAdmin.html",
+            "description": "Lists all the products in your account or all the products associated with a given portfolio",
+            "accessLevel": "List"
+        },
+        "SearchProvisionedProducts": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProvisionedProducts.html",
+            "description": "Lists all the provisioned products in your account",
+            "accessLevel": "List",
+            "conditions": [
+                "servicecatalog:accountLevel",
+                "servicecatalog:roleLevel",
+                "servicecatalog:userLevel"
+            ]
+        },
+        "TerminateProvisionedProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html",
+            "description": "Terminates an existing provisioned product",
+            "accessLevel": "Write",
+            "conditions": [
+                "servicecatalog:accountLevel",
+                "servicecatalog:roleLevel",
+                "servicecatalog:userLevel"
+            ]
+        },
+        "UpdateConstraint": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateConstraint.html",
+            "description": "Updates the metadata fields of an existing constraint",
+            "accessLevel": "Write"
+        },
+        "UpdatePortfolio": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdatePortfolio.html",
+            "description": "Updates the metadata fields and/or tags of an existing portfolio",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Portfolio": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProduct.html",
+            "description": "Updates the metadata fields and/or tags of an existing product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateProvisionedProduct": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProduct.html",
+            "description": "Updates an existing provisioned product",
+            "accessLevel": "Write",
+            "conditions": [
+                "servicecatalog:accountLevel",
+                "servicecatalog:roleLevel",
+                "servicecatalog:userLevel"
+            ]
+        },
+        "UpdateProvisionedProductProperties": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProductProperties.html",
+            "description": "Updates the properties of an existing provisioned product",
+            "accessLevel": "Write"
+        },
+        "UpdateProvisioningArtifact": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisioningArtifact.html",
+            "description": "Updates the metadata fields of an existing provisioning artifact",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "Product": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateServiceAction": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateServiceAction.html",
+            "description": "Updates a self-service action.",
+            "accessLevel": "Write"
+        },
+        "UpdateTagOption": {
+            "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateTagOption.html",
+            "description": "Updates the specified TagOption.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Accepts a portfolio that has been shared with you

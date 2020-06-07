@@ -7,7 +7,359 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Rekognition extends PolicyStatement {
     public servicePrefix = 'rekognition';
-    public actions : Actions = { "CompareFaces": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html", "description": "Compares a face in source input image with each face detected in the target input image.", "accessLevel": "Read" }, "CreateCollection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html", "description": "Creates a collection in an AWS region. You can then add faces to the collection using the IndexFaces API.", "accessLevel": "Write", "resourceTypes": { "collection": { "required": true } } }, "CreateProject": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject.html", "description": "Creates a new Amazon Rekognition Custom Labels project.", "accessLevel": "Write", "resourceTypes": { "project": { "required": true } } }, "CreateProjectVersion": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html", "description": "Creates a new version of a model and begins training.", "accessLevel": "Write", "resourceTypes": { "project": { "required": true }, "projectversion": { "required": true } } }, "CreateStreamProcessor": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html", "description": "Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming video.", "accessLevel": "Write", "resourceTypes": { "collection": { "required": true }, "streamprocessor": { "required": true } } }, "DeleteCollection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html", "description": "Deletes the specified collection. Note that this operation removes all faces in the collection.", "accessLevel": "Write", "resourceTypes": { "collection": { "required": true } } }, "DeleteFaces": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html", "description": "Deletes faces from a collection.", "accessLevel": "Write", "resourceTypes": { "collection": { "required": true } } }, "DeleteProject": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject.html", "description": "Deletes a project.", "accessLevel": "Write", "resourceTypes": { "project": { "required": true } } }, "DeleteProjectVersion": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProjectVersion.html", "description": "Deletes a model.", "accessLevel": "Write", "resourceTypes": { "projectversion": { "required": true } } }, "DeleteStreamProcessor": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteStreamProcessor.html", "description": "Deletes the stream processor identified by Name.", "accessLevel": "Write", "resourceTypes": { "streamprocessor": { "required": true } } }, "DescribeCollection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeCollection.html", "description": "Describes the specified collection.", "accessLevel": "Read", "resourceTypes": { "collection": { "required": true } } }, "DescribeProjectVersions": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions.html", "description": "Lists and describes the model versions in an Amazon Rekognition Custom Labels project.", "accessLevel": "Read", "resourceTypes": { "project": { "required": true } } }, "DescribeProjects": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects.html", "description": "Lists and gets information about your Amazon Rekognition Custom Labels projects.", "accessLevel": "Read" }, "DescribeStreamProcessor": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessorh.html", "description": "Provides information about a stream processor created by CreateStreamProcessor.", "accessLevel": "Read", "resourceTypes": { "streamprocessor": { "required": true } } }, "DetectCustomLabels": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels.html", "description": "Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model version.", "accessLevel": "Read", "resourceTypes": { "projectversion": { "required": true } } }, "DetectFaces": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html", "description": "Detects human faces within an image (JPEG or PNG) provided as input.", "accessLevel": "Read" }, "DetectLabels": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html", "description": "Detects instances of real-world labels within an image (JPEG or PNG) provided as input.", "accessLevel": "Read" }, "DetectModerationLabels": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html", "description": "Detects moderation labels within input image.", "accessLevel": "Read" }, "DetectText": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectText.html", "description": "Detects text in the input image and converts it into machine-readable text.", "accessLevel": "Read" }, "GetCelebrityInfo": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityInfo.html", "description": "Gets the name and additional information about a celebrity based on his or her Rekognition ID.", "accessLevel": "Read" }, "GetCelebrityRecognition": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityRecognition.html", "description": "Gets the celebrity recognition results for a Rekognition Video analysis started by StartCelebrityRecognition.", "accessLevel": "Read" }, "GetContentModeration": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetContentModeration.html", "description": "Gets the content moderation analysis results for a Rekognition Video analysis started by StartContentModeration.", "accessLevel": "Read" }, "GetFaceDetection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceDetection.html", "description": "Gets face detection results for a Rekognition Video analysis started by StartFaceDetection.", "accessLevel": "Read" }, "GetFaceSearch": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceSearch.html", "description": "Gets the face search results for Rekognition Video face search started by StartFaceSearch.", "accessLevel": "Read" }, "GetLabelDetection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetLabelDetection.html", "description": "Gets the label detection results of a Rekognition Video analysis started by StartLabelDetection.", "accessLevel": "Read" }, "GetPersonTracking": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetPersonTracking.html", "description": "Gets information about people detected within a video.", "accessLevel": "Read" }, "GetTextDetection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetTextDetection.html", "description": "Gets text detection results for a Rekognition Video analysis started by StartTextDetection.", "accessLevel": "Read" }, "IndexFaces": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html", "description": "Detects faces in the input image and adds them to the specified collection.", "accessLevel": "Write", "resourceTypes": { "collection": { "required": true } } }, "ListCollections": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_ListCollections.html", "description": "Returns a list of collection IDs in your account.", "accessLevel": "Read", "resourceTypes": { "collection": { "required": true } } }, "ListFaces": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html", "description": "Returns metadata for faces in the specified collection.", "accessLevel": "Read", "resourceTypes": { "collection": { "required": true } } }, "ListStreamProcessors": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_ListStreamProcessors.html", "description": "Gets a list of stream processors that you have created with CreateStreamProcessor.", "accessLevel": "List", "resourceTypes": { "streamprocessor": { "required": true } } }, "RecognizeCelebrities": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html", "description": "Returns an array of celebrities recognized in the input image.", "accessLevel": "Read" }, "SearchFaces": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html", "description": "For a given input face ID, searches the specified collection for matching faces.", "accessLevel": "Read", "resourceTypes": { "collection": { "required": true } } }, "SearchFacesByImage": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html", "description": "For a given input image, first detects the largest face in the image, and then searches the specified collection for matching faces.", "accessLevel": "Read", "resourceTypes": { "collection": { "required": true } } }, "StartCelebrityRecognition": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartCelebrityRecognition.html", "description": "Starts asynchronous recognition of celebrities in a video.", "accessLevel": "Write" }, "StartContentModeration": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html", "description": "Starts asynchronous detection of explicit or suggestive adult content in a video.", "accessLevel": "Write" }, "StartFaceDetection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceDetection.html", "description": "Starts asynchronous detection of faces in a video.", "accessLevel": "Write" }, "StartFaceSearch": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceSearch.html", "description": "Starts the asynchronous search for faces in a collection that match the faces of persons detected in a video.", "accessLevel": "Write", "resourceTypes": { "collection": { "required": true } } }, "StartLabelDetection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartLabelDetection.html", "description": "Starts asynchronous detection of labels in a video.", "accessLevel": "Write" }, "StartPersonTracking": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartPersonTracking.html", "description": "Starts the asynchronous tracking of persons in a video.", "accessLevel": "Write" }, "StartProjectVersion": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion.html", "description": "Starts the deployment of a model version.", "accessLevel": "Write", "resourceTypes": { "projectversion": { "required": true } } }, "StartStreamProcessor": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartStreamProcessor.html", "description": "Starts processing a stream processor.", "accessLevel": "Write", "resourceTypes": { "streamprocessor": { "required": true } } }, "StartTextDetection": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartTextDetection.html", "description": "Starts asynchronous detection of text in a video.", "accessLevel": "Write" }, "StopProjectVersion": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion.html", "description": "Stops a deployed model version.", "accessLevel": "Write", "resourceTypes": { "projectversion": { "required": true } } }, "StopStreamProcessor": { "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StopStreamProcessor.html", "description": "Stops a running stream processor that was created by CreateStreamProcessor.", "accessLevel": "Write", "resourceTypes": { "streamprocessor": { "required": true } } } };
+    public actions : Actions = {
+        "CompareFaces": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html",
+            "description": "Compares a face in source input image with each face detected in the target input image.",
+            "accessLevel": "Read"
+        },
+        "CreateCollection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html",
+            "description": "Creates a collection in an AWS region. You can then add faces to the collection using the IndexFaces API.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "CreateProject": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject.html",
+            "description": "Creates a new Amazon Rekognition Custom Labels project.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "CreateProjectVersion": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html",
+            "description": "Creates a new version of a model and begins training.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                },
+                "projectversion": {
+                    "required": true
+                }
+            }
+        },
+        "CreateStreamProcessor": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html",
+            "description": "Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming video.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                },
+                "streamprocessor": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteCollection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html",
+            "description": "Deletes the specified collection. Note that this operation removes all faces in the collection.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteFaces": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html",
+            "description": "Deletes faces from a collection.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteProject": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject.html",
+            "description": "Deletes a project.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteProjectVersion": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProjectVersion.html",
+            "description": "Deletes a model.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "projectversion": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteStreamProcessor": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteStreamProcessor.html",
+            "description": "Deletes the stream processor identified by Name.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "streamprocessor": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeCollection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeCollection.html",
+            "description": "Describes the specified collection.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeProjectVersions": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions.html",
+            "description": "Lists and describes the model versions in an Amazon Rekognition Custom Labels project.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "project": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeProjects": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects.html",
+            "description": "Lists and gets information about your Amazon Rekognition Custom Labels projects.",
+            "accessLevel": "Read"
+        },
+        "DescribeStreamProcessor": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessorh.html",
+            "description": "Provides information about a stream processor created by CreateStreamProcessor.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "streamprocessor": {
+                    "required": true
+                }
+            }
+        },
+        "DetectCustomLabels": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels.html",
+            "description": "Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model version.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "projectversion": {
+                    "required": true
+                }
+            }
+        },
+        "DetectFaces": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html",
+            "description": "Detects human faces within an image (JPEG or PNG) provided as input.",
+            "accessLevel": "Read"
+        },
+        "DetectLabels": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html",
+            "description": "Detects instances of real-world labels within an image (JPEG or PNG) provided as input.",
+            "accessLevel": "Read"
+        },
+        "DetectModerationLabels": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html",
+            "description": "Detects moderation labels within input image.",
+            "accessLevel": "Read"
+        },
+        "DetectText": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectText.html",
+            "description": "Detects text in the input image and converts it into machine-readable text.",
+            "accessLevel": "Read"
+        },
+        "GetCelebrityInfo": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityInfo.html",
+            "description": "Gets the name and additional information about a celebrity based on his or her Rekognition ID.",
+            "accessLevel": "Read"
+        },
+        "GetCelebrityRecognition": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityRecognition.html",
+            "description": "Gets the celebrity recognition results for a Rekognition Video analysis started by StartCelebrityRecognition.",
+            "accessLevel": "Read"
+        },
+        "GetContentModeration": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetContentModeration.html",
+            "description": "Gets the content moderation analysis results for a Rekognition Video analysis started by StartContentModeration.",
+            "accessLevel": "Read"
+        },
+        "GetFaceDetection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceDetection.html",
+            "description": "Gets face detection results for a Rekognition Video analysis started by StartFaceDetection.",
+            "accessLevel": "Read"
+        },
+        "GetFaceSearch": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceSearch.html",
+            "description": "Gets the face search results for Rekognition Video face search started by StartFaceSearch.",
+            "accessLevel": "Read"
+        },
+        "GetLabelDetection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetLabelDetection.html",
+            "description": "Gets the label detection results of a Rekognition Video analysis started by StartLabelDetection.",
+            "accessLevel": "Read"
+        },
+        "GetPersonTracking": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetPersonTracking.html",
+            "description": "Gets information about people detected within a video.",
+            "accessLevel": "Read"
+        },
+        "GetTextDetection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetTextDetection.html",
+            "description": "Gets text detection results for a Rekognition Video analysis started by StartTextDetection.",
+            "accessLevel": "Read"
+        },
+        "IndexFaces": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html",
+            "description": "Detects faces in the input image and adds them to the specified collection.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "ListCollections": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_ListCollections.html",
+            "description": "Returns a list of collection IDs in your account.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "ListFaces": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html",
+            "description": "Returns metadata for faces in the specified collection.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "ListStreamProcessors": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_ListStreamProcessors.html",
+            "description": "Gets a list of stream processors that you have created with CreateStreamProcessor.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "streamprocessor": {
+                    "required": true
+                }
+            }
+        },
+        "RecognizeCelebrities": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html",
+            "description": "Returns an array of celebrities recognized in the input image.",
+            "accessLevel": "Read"
+        },
+        "SearchFaces": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html",
+            "description": "For a given input face ID, searches the specified collection for matching faces.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "SearchFacesByImage": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html",
+            "description": "For a given input image, first detects the largest face in the image, and then searches the specified collection for matching faces.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "StartCelebrityRecognition": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartCelebrityRecognition.html",
+            "description": "Starts asynchronous recognition of celebrities in a video.",
+            "accessLevel": "Write"
+        },
+        "StartContentModeration": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html",
+            "description": "Starts asynchronous detection of explicit or suggestive adult content in a video.",
+            "accessLevel": "Write"
+        },
+        "StartFaceDetection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceDetection.html",
+            "description": "Starts asynchronous detection of faces in a video.",
+            "accessLevel": "Write"
+        },
+        "StartFaceSearch": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceSearch.html",
+            "description": "Starts the asynchronous search for faces in a collection that match the faces of persons detected in a video.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "collection": {
+                    "required": true
+                }
+            }
+        },
+        "StartLabelDetection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartLabelDetection.html",
+            "description": "Starts asynchronous detection of labels in a video.",
+            "accessLevel": "Write"
+        },
+        "StartPersonTracking": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartPersonTracking.html",
+            "description": "Starts the asynchronous tracking of persons in a video.",
+            "accessLevel": "Write"
+        },
+        "StartProjectVersion": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion.html",
+            "description": "Starts the deployment of a model version.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "projectversion": {
+                    "required": true
+                }
+            }
+        },
+        "StartStreamProcessor": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartStreamProcessor.html",
+            "description": "Starts processing a stream processor.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "streamprocessor": {
+                    "required": true
+                }
+            }
+        },
+        "StartTextDetection": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartTextDetection.html",
+            "description": "Starts asynchronous detection of text in a video.",
+            "accessLevel": "Write"
+        },
+        "StopProjectVersion": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion.html",
+            "description": "Stops a deployed model version.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "projectversion": {
+                    "required": true
+                }
+            }
+        },
+        "StopStreamProcessor": {
+            "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StopStreamProcessor.html",
+            "description": "Stops a running stream processor that was created by CreateStreamProcessor.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "streamprocessor": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Compares a face in source input image with each face detected in the target input image.

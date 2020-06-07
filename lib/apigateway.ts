@@ -7,7 +7,94 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Apigateway extends PolicyStatement {
     public servicePrefix = 'apigateway';
-    public actions : Actions = { "DELETE": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html", "description": "Used to delete resources", "accessLevel": "Write", "resourceTypes": { "apigateway-general": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "GET": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html", "description": "Used to get information about resources", "accessLevel": "Read", "resourceTypes": { "apigateway-general": { "required": true } } }, "PATCH": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html", "description": "Used to update resources", "accessLevel": "Write", "resourceTypes": { "apigateway-general": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "POST": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html", "description": "Used to create child resources", "accessLevel": "Write", "resourceTypes": { "apigateway-general": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "PUT": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html", "description": "Used to update resources (and, although not recommended, can be used to create child resources)", "accessLevel": "Write", "resourceTypes": { "apigateway-general": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "SetWebACL": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html", "description": "Gives WebAcl permissions to WAF", "accessLevel": "Write", "resourceTypes": { "apigateway-general": { "required": true } } }, "UpdateRestApiPolicy": { "url": "", "description": "Used to update the Resource Policy for a given API", "accessLevel": "Write", "resourceTypes": { "apigateway-general": { "required": true } } } };
+    public actions : Actions = {
+        "DELETE": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html",
+            "description": "Used to delete resources",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "GET": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html",
+            "description": "Used to get information about resources",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            }
+        },
+        "PATCH": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html",
+            "description": "Used to update resources",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "POST": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html",
+            "description": "Used to create child resources",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "PUT": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html",
+            "description": "Used to update resources (and, although not recommended, can be used to create child resources)",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "SetWebACL": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html",
+            "description": "Gives WebAcl permissions to WAF",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateRestApiPolicy": {
+            "url": "",
+            "description": "Used to update the Resource Policy for a given API",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "apigateway-general": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Used to delete resources

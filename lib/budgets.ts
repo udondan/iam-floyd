@@ -7,7 +7,28 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Budgets extends PolicyStatement {
     public servicePrefix = 'budgets';
-    public actions : Actions = { "ModifyBudget": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Modify budgets and budget details", "accessLevel": "Write", "resourceTypes": { "budget": { "required": true } } }, "ViewBudget": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "View budgets and budget details", "accessLevel": "Read", "resourceTypes": { "budget": { "required": true } } } };
+    public actions : Actions = {
+        "ModifyBudget": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Modify budgets and budget details",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "budget": {
+                    "required": true
+                }
+            }
+        },
+        "ViewBudget": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "View budgets and budget details",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "budget": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Modify budgets and budget details

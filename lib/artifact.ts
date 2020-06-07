@@ -7,7 +7,51 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Artifact extends PolicyStatement {
     public servicePrefix = 'artifact';
-    public actions : Actions = { "AcceptAgreement": { "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html", "description": "Grants permission to accept an AWS agreement that has not yet been accepted by the customer account.", "accessLevel": "Write", "resourceTypes": { "agreement": { "required": true } } }, "DownloadAgreement": { "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html", "description": "Grants permission to download an AWS agreement that has not yet been accepted or a customer agreement that has been accepted by the customer account.", "accessLevel": "Read", "resourceTypes": { "agreement": { "required": false }, "customer-agreement": { "required": false } } }, "Get": { "url": "https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html", "description": "Grants permission to download an AWS compliance report package.", "accessLevel": "Read", "resourceTypes": { "report-package": { "required": true } } }, "TerminateAgreement": { "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html", "description": "Grants permission to terminate a customer agreement that was previously accepted by the customer account.", "accessLevel": "Write", "resourceTypes": { "customer-agreement": { "required": true } } } };
+    public actions : Actions = {
+        "AcceptAgreement": {
+            "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
+            "description": "Grants permission to accept an AWS agreement that has not yet been accepted by the customer account.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "agreement": {
+                    "required": true
+                }
+            }
+        },
+        "DownloadAgreement": {
+            "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
+            "description": "Grants permission to download an AWS agreement that has not yet been accepted or a customer agreement that has been accepted by the customer account.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "agreement": {
+                    "required": false
+                },
+                "customer-agreement": {
+                    "required": false
+                }
+            }
+        },
+        "Get": {
+            "url": "https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html",
+            "description": "Grants permission to download an AWS compliance report package.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "report-package": {
+                    "required": true
+                }
+            }
+        },
+        "TerminateAgreement": {
+            "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
+            "description": "Grants permission to terminate a customer agreement that was previously accepted by the customer account.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "customer-agreement": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to accept an AWS agreement that has not yet been accepted by the customer account.

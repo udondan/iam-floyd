@@ -7,7 +7,70 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Mediatailor extends PolicyStatement {
     public servicePrefix = 'mediatailor';
-    public actions : Actions = { "DeletePlaybackConfiguration": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html", "description": "Deletes the playback configuration for the specified name", "accessLevel": "Write", "resourceTypes": { "playbackConfiguration": { "required": true } } }, "GetPlaybackConfiguration": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html", "description": "Grants permission to retrieve the configuration for the specified name", "accessLevel": "Read", "resourceTypes": { "playbackConfiguration": { "required": true } } }, "ListPlaybackConfigurations": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html", "description": "Grants permission to retrieve the list of available configurations", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html", "description": "Returns a list of the tags assigned to the specified playback configuration resource.", "accessLevel": "Read" }, "PutPlaybackConfiguration": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html", "description": "Grants permission to add a new configuration", "accessLevel": "Write", "resourceTypes": { "playbackConfiguration": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "TagResource": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html", "description": "Adds tags to the specified playback configuration resource.", "accessLevel": "Tagging", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html", "description": "Removes tags from the specified playback configuration resource.", "accessLevel": "Tagging", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] } };
+    public actions : Actions = {
+        "DeletePlaybackConfiguration": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html",
+            "description": "Deletes the playback configuration for the specified name",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "playbackConfiguration": {
+                    "required": true
+                }
+            }
+        },
+        "GetPlaybackConfiguration": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html",
+            "description": "Grants permission to retrieve the configuration for the specified name",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "playbackConfiguration": {
+                    "required": true
+                }
+            }
+        },
+        "ListPlaybackConfigurations": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html",
+            "description": "Grants permission to retrieve the list of available configurations",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html",
+            "description": "Returns a list of the tags assigned to the specified playback configuration resource.",
+            "accessLevel": "Read"
+        },
+        "PutPlaybackConfiguration": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",
+            "description": "Grants permission to add a new configuration",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "playbackConfiguration": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html",
+            "description": "Adds tags to the specified playback configuration resource.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html",
+            "description": "Removes tags from the specified playback configuration resource.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        }
+    };
 
     /**
      * Deletes the playback configuration for the specified name

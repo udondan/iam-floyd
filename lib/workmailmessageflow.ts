@@ -7,7 +7,18 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Workmailmessageflow extends PolicyStatement {
     public servicePrefix = 'workmailmessageflow';
-    public actions : Actions = { "GetRawMessageContent": { "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html", "description": "Grants permission to read the content of email messages with the specified message ID", "accessLevel": "Read", "resourceTypes": { "RawMessage": { "required": true } } } };
+    public actions : Actions = {
+        "GetRawMessageContent": {
+            "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html",
+            "description": "Grants permission to read the content of email messages with the specified message ID",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "RawMessage": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to read the content of email messages with the specified message ID

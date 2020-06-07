@@ -7,7 +7,33 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class IotDeviceTester extends PolicyStatement {
     public servicePrefix = 'iot-device-tester';
-    public actions : Actions = { "CheckVersion": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html", "description": "Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible", "accessLevel": "Read" }, "DownloadTestSuite": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html", "description": "Grants permission for IoT Device Tester to download compatible test suite versions", "accessLevel": "Read" }, "LatestIdt": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html", "description": "Grants permission for IoT Device Tester to get information on latest version of device tester available", "accessLevel": "Read" }, "SendMetrics": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html", "description": "Grants permissions for IoT Device Tester to send usage metrics on your behalf", "accessLevel": "Write" }, "SupportedVersion": { "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html", "description": "Grants permission for IoT Device Tester to get list of supported products and test suite versions", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "CheckVersion": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
+            "description": "Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible",
+            "accessLevel": "Read"
+        },
+        "DownloadTestSuite": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
+            "description": "Grants permission for IoT Device Tester to download compatible test suite versions",
+            "accessLevel": "Read"
+        },
+        "LatestIdt": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
+            "description": "Grants permission for IoT Device Tester to get information on latest version of device tester available",
+            "accessLevel": "Read"
+        },
+        "SendMetrics": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
+            "description": "Grants permissions for IoT Device Tester to send usage metrics on your behalf",
+            "accessLevel": "Write"
+        },
+        "SupportedVersion": {
+            "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
+            "description": "Grants permission for IoT Device Tester to get list of supported products and test suite versions",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible

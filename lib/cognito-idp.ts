@@ -7,7 +7,889 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class CognitoIdp extends PolicyStatement {
     public servicePrefix = 'cognito-idp';
-    public actions : Actions = { "AddCustomAttributes": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html", "description": "Adds additional user attributes to the user pool schema.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminAddUserToGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminAddUserToGroup.html", "description": "Adds the specified user to the specified group.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminConfirmSignUp": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html", "description": "Confirms user registration as an admin without using a confirmation code. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminCreateUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html", "description": "Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS).", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminDeleteUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html", "description": "Deletes a user as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminDeleteUserAttributes": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html", "description": "Deletes the user attributes in a user pool as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminDisableProviderForUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableProviderForUser.html", "description": "Disables the user from signing in with the specified external (SAML or social) identity provider.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminDisableUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html", "description": "Disables the specified user as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminEnableUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html", "description": "Enables the specified user as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminForgetDevice": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html", "description": "Forgets the device, as an administrator.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminGetDevice": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html", "description": "Gets the device, as an administrator.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "AdminGetUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetUser.html", "description": "Gets the specified user by user name in a user pool as an administrator. Works on any user.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "AdminInitiateAuth": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html", "description": "Authenticates a user in a user pool as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminLinkProviderForUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html", "description": "Links an existing user account in a user pool (DestinationUser) to an identity from an external identity provider (SourceUser) based on a specified attribute name and value from the external identity provider.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminListDevices": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html", "description": "Lists devices, as an administrator.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "AdminListGroupsForUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html", "description": "Lists the groups that the user belongs to.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "AdminListUserAuthEvents": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html", "description": "Lists the authentication events for the user.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "AdminRemoveUserFromGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRemoveUserFromGroup.html", "description": "Removes the specified user from the specified group.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminResetUserPassword": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminResetUserPassword.html", "description": "Resets the specified user's password in a user pool as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminRespondToAuthChallenge": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html", "description": "Responds to an authentication challenge, as an administrator.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminSetUserMFAPreference": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html", "description": "Sets MFA preference for the user in the userpool", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminSetUserPassword": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html", "description": "Sets the specified user's password in a user pool as an administrator. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminSetUserSettings": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserSettings.html", "description": "Sets all the user settings for a specified user name. Works on any user.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminUpdateAuthEventFeedback": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html", "description": "Updates the feedback for the user authentication event", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminUpdateDeviceStatus": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateDeviceStatus.html", "description": "Updates the device status as an administrator.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminUpdateUserAttributes": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html", "description": "Updates the specified user's attributes, including developer attributes, as an administrator.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AdminUserGlobalSignOut": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUserGlobalSignOut.html", "description": "Signs out users from all devices, as an administrator.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "AssociateSoftwareToken": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html", "description": "Returns a unique generated shared secret key code for the user account.", "accessLevel": "Write" }, "ChangePassword": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ChangePassword.html", "description": "Changes the password for a specified user in a user pool.", "accessLevel": "Write" }, "ConfirmDevice": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html", "description": "Confirms tracking of the device. This API call is the call that begins device tracking.", "accessLevel": "Write" }, "ConfirmForgotPassword": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html", "description": "Allows a user to enter a confirmation code to reset a forgotten password.", "accessLevel": "Write" }, "ConfirmSignUp": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html", "description": "Confirms registration of a user and handles the existing alias from a previous user.", "accessLevel": "Write" }, "CreateGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html", "description": "Creates a new group in the specified user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "CreateIdentityProvider": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html", "description": "Creates an identity provider for a user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "CreateResourceServer": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html", "description": "Creates a new OAuth2.0 resource server and defines custom scopes in it.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "CreateUserImportJob": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html", "description": "Creates the user import job.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "CreateUserPool": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html", "description": "Creates a new Amazon Cognito user pool and sets the password policy for the pool.", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys", "aws:ResourceTag/${TagKey}"] }, "CreateUserPoolClient": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html", "description": "Creates the user pool client.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "CreateUserPoolDomain": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolDomain.html", "description": "Creates a new domain for a user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DeleteGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteGroup.html", "description": "Deletes a group. Currently only groups with no members can be deleted.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DeleteIdentityProvider": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteIdentityProvider.html", "description": "Deletes an identity provider for a user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DeleteResourceServer": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteResourceServer.html", "description": "Deletes a resource server.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DeleteUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html", "description": "Allows a user to delete one's self.", "accessLevel": "Write" }, "DeleteUserAttributes": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html", "description": "Deletes the attributes for a user.", "accessLevel": "Write" }, "DeleteUserPool": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPool.html", "description": "Deletes the specified Amazon Cognito user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DeleteUserPoolClient": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html", "description": "Allows the developer to delete the user pool client.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DeleteUserPoolDomain": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolDomain.html", "description": "Deletes a domain for a user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "DescribeIdentityProvider": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html", "description": "Gets information about a specific identity provider.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "DescribeResourceServer": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html", "description": "Describes a resource server.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "DescribeRiskConfiguration": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html", "description": "Describes the risk configuration setting for the userpool / userpool client", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "DescribeUserImportJob": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserImportJob.html", "description": "Describes the user import job.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "DescribeUserPool": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html", "description": "Returns the configuration information and metadata of the specified user pool.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "DescribeUserPoolClient": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html", "description": "Client method for returning the configuration information and metadata of the specified user pool client.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "DescribeUserPoolDomain": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html", "description": "Gets information about a domain.", "accessLevel": "Read" }, "ForgetDevice": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html", "description": "Forgets the specified device.", "accessLevel": "Write" }, "ForgotPassword": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html", "description": "Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password.", "accessLevel": "Write" }, "GetCSVHeader": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html", "description": "Gets the header information for the .csv file to be used as input for the user import job.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "GetDevice": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html", "description": "Gets the device.", "accessLevel": "Read" }, "GetGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html", "description": "Gets a group.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "GetIdentityProviderByIdentifier": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html", "description": "Gets the specified identity provider.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "GetSigningCertificate": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetSigningCertificate.html", "description": "Returns the signing certificate.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "GetUICustomization": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUICustomization.html", "description": "Gets the UI Customization information for a particular app client's app UI, if there is something set.", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "GetUser": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html", "description": "Gets the user attributes and metadata for a user.", "accessLevel": "Read" }, "GetUserAttributeVerificationCode": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserAttributeVerificationCode.html", "description": "Gets the user attribute verification code for the specified attribute name.", "accessLevel": "Read" }, "GetUserPoolMfaConfig": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html", "description": "Gets the MFA configuration for the userpool", "accessLevel": "Read", "resourceTypes": { "userpool": { "required": true } } }, "GlobalSignOut": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GlobalSignOut.html", "description": "Signs out users from all devices.", "accessLevel": "Write" }, "InitiateAuth": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html", "description": "Initiates the authentication flow.", "accessLevel": "Write" }, "ListDevices": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListDevices.html", "description": "Lists the devices.", "accessLevel": "List" }, "ListGroups": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html", "description": "Lists the groups associated with a user pool.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ListIdentityProviders": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html", "description": "Lists information about all identity providers for a user pool.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ListResourceServers": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListResourceServers.html", "description": "Lists the resource servers for a user pool.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTagsForResource.html", "description": "Lists the tags that are assigned to an Amazon Cognito user pool.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": false } } }, "ListUserImportJobs": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html", "description": "Lists the user import jobs..", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ListUserPoolClients": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html", "description": "Lists the clients that have been created for the specified user pool.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ListUserPools": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html", "description": "Lists the user pools associated with an AWS account.", "accessLevel": "List" }, "ListUsers": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html", "description": "Lists the users in the Amazon Cognito user pool.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ListUsersInGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html", "description": "Lists the users in the specified group.", "accessLevel": "List", "resourceTypes": { "userpool": { "required": true } } }, "ResendConfirmationCode": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html", "description": "Resends the confirmation (for confirmation of registration) to a specific user in the user pool.", "accessLevel": "Write" }, "RespondToAuthChallenge": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html", "description": "Responds to the authentication challenge.", "accessLevel": "Write" }, "SetRiskConfiguration": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html", "description": "sets the risk configuration setting for the userpool / userpool client", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "SetUICustomization": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUICustomization.html", "description": "Sets the UI customization information for a user pool's built-in app UI.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "SetUserMFAPreference": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html", "description": "Sets MFA preference for the user in the userpool", "accessLevel": "Write" }, "SetUserPoolMfaConfig": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html", "description": "Sets the MFA configuration for the userpool", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "SetUserSettings": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserSettings.html", "description": "Sets the user settings like multi-factor authentication (MFA).", "accessLevel": "Write" }, "SignUp": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html", "description": "Registers the user in the specified user pool and creates a user name, password, and user attributes.", "accessLevel": "Write" }, "StartUserImportJob": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartUserImportJob.html", "description": "Starts the user import.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "StopUserImportJob": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StopUserImportJob.html", "description": "Stops the user import job.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_TagResource.html", "description": "Assigns a set of tags to an Amazon Cognito user pool.", "accessLevel": "Tagging", "resourceTypes": { "userpool": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UntagResource.html", "description": "Removes the specified tags from an Amazon Cognito user pool.", "accessLevel": "Tagging", "resourceTypes": { "userpool": { "required": false } }, "conditions": ["aws:TagKeys"] }, "UpdateAuthEventFeedback": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html", "description": "Updates the feedback for the user authentication event", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "UpdateDeviceStatus": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html", "description": "Updates the device status.", "accessLevel": "Write" }, "UpdateGroup": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html", "description": "Updates the specified group with the specified attributes.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "UpdateIdentityProvider": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html", "description": "Updates identity provider information for a user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "UpdateResourceServer": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateResourceServer.html", "description": "Updates the name and scopes of resource server.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "UpdateUserAttributes": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html", "description": "Allows a user to update a specific attribute (one at a time).", "accessLevel": "Write" }, "UpdateUserPool": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html", "description": "Updates the specified user pool with the specified attributes.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UpdateUserPoolClient": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html", "description": "Allows the developer to update the specified user pool client and password policy.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "UpdateUserPoolDomain": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolDomain.html", "description": "Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.", "accessLevel": "Write", "resourceTypes": { "userpool": { "required": true } } }, "VerifySoftwareToken": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html", "description": "Registers a user's entered TOTP code and mark the user's software token MFA status as verified if successful.", "accessLevel": "Write" }, "VerifyUserAttribute": { "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html", "description": "Verifies a user attribute using a one time verification code.", "accessLevel": "Write" } };
+    public actions : Actions = {
+        "AddCustomAttributes": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html",
+            "description": "Adds additional user attributes to the user pool schema.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminAddUserToGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminAddUserToGroup.html",
+            "description": "Adds the specified user to the specified group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminConfirmSignUp": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html",
+            "description": "Confirms user registration as an admin without using a confirmation code. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminCreateUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html",
+            "description": "Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS).",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminDeleteUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html",
+            "description": "Deletes a user as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminDeleteUserAttributes": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html",
+            "description": "Deletes the user attributes in a user pool as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminDisableProviderForUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableProviderForUser.html",
+            "description": "Disables the user from signing in with the specified external (SAML or social) identity provider.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminDisableUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html",
+            "description": "Disables the specified user as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminEnableUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html",
+            "description": "Enables the specified user as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminForgetDevice": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html",
+            "description": "Forgets the device, as an administrator.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminGetDevice": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html",
+            "description": "Gets the device, as an administrator.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminGetUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetUser.html",
+            "description": "Gets the specified user by user name in a user pool as an administrator. Works on any user.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminInitiateAuth": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html",
+            "description": "Authenticates a user in a user pool as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminLinkProviderForUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html",
+            "description": "Links an existing user account in a user pool (DestinationUser) to an identity from an external identity provider (SourceUser) based on a specified attribute name and value from the external identity provider.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminListDevices": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html",
+            "description": "Lists devices, as an administrator.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminListGroupsForUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html",
+            "description": "Lists the groups that the user belongs to.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminListUserAuthEvents": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html",
+            "description": "Lists the authentication events for the user.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminRemoveUserFromGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRemoveUserFromGroup.html",
+            "description": "Removes the specified user from the specified group.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminResetUserPassword": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminResetUserPassword.html",
+            "description": "Resets the specified user's password in a user pool as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminRespondToAuthChallenge": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html",
+            "description": "Responds to an authentication challenge, as an administrator.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminSetUserMFAPreference": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html",
+            "description": "Sets MFA preference for the user in the userpool",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminSetUserPassword": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html",
+            "description": "Sets the specified user's password in a user pool as an administrator. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminSetUserSettings": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserSettings.html",
+            "description": "Sets all the user settings for a specified user name. Works on any user.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminUpdateAuthEventFeedback": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html",
+            "description": "Updates the feedback for the user authentication event",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminUpdateDeviceStatus": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateDeviceStatus.html",
+            "description": "Updates the device status as an administrator.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminUpdateUserAttributes": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html",
+            "description": "Updates the specified user's attributes, including developer attributes, as an administrator.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AdminUserGlobalSignOut": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUserGlobalSignOut.html",
+            "description": "Signs out users from all devices, as an administrator.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "AssociateSoftwareToken": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html",
+            "description": "Returns a unique generated shared secret key code for the user account.",
+            "accessLevel": "Write"
+        },
+        "ChangePassword": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ChangePassword.html",
+            "description": "Changes the password for a specified user in a user pool.",
+            "accessLevel": "Write"
+        },
+        "ConfirmDevice": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html",
+            "description": "Confirms tracking of the device. This API call is the call that begins device tracking.",
+            "accessLevel": "Write"
+        },
+        "ConfirmForgotPassword": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html",
+            "description": "Allows a user to enter a confirmation code to reset a forgotten password.",
+            "accessLevel": "Write"
+        },
+        "ConfirmSignUp": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html",
+            "description": "Confirms registration of a user and handles the existing alias from a previous user.",
+            "accessLevel": "Write"
+        },
+        "CreateGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html",
+            "description": "Creates a new group in the specified user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "CreateIdentityProvider": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html",
+            "description": "Creates an identity provider for a user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "CreateResourceServer": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html",
+            "description": "Creates a new OAuth2.0 resource server and defines custom scopes in it.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "CreateUserImportJob": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html",
+            "description": "Creates the user import job.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "CreateUserPool": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html",
+            "description": "Creates a new Amazon Cognito user pool and sets the password policy for the pool.",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys",
+                "aws:ResourceTag/${TagKey}"
+            ]
+        },
+        "CreateUserPoolClient": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html",
+            "description": "Creates the user pool client.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "CreateUserPoolDomain": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolDomain.html",
+            "description": "Creates a new domain for a user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteGroup.html",
+            "description": "Deletes a group. Currently only groups with no members can be deleted.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteIdentityProvider": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteIdentityProvider.html",
+            "description": "Deletes an identity provider for a user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteResourceServer": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteResourceServer.html",
+            "description": "Deletes a resource server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html",
+            "description": "Allows a user to delete one's self.",
+            "accessLevel": "Write"
+        },
+        "DeleteUserAttributes": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html",
+            "description": "Deletes the attributes for a user.",
+            "accessLevel": "Write"
+        },
+        "DeleteUserPool": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPool.html",
+            "description": "Deletes the specified Amazon Cognito user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteUserPoolClient": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html",
+            "description": "Allows the developer to delete the user pool client.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteUserPoolDomain": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolDomain.html",
+            "description": "Deletes a domain for a user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeIdentityProvider": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html",
+            "description": "Gets information about a specific identity provider.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeResourceServer": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html",
+            "description": "Describes a resource server.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeRiskConfiguration": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html",
+            "description": "Describes the risk configuration setting for the userpool / userpool client",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeUserImportJob": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserImportJob.html",
+            "description": "Describes the user import job.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeUserPool": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html",
+            "description": "Returns the configuration information and metadata of the specified user pool.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeUserPoolClient": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html",
+            "description": "Client method for returning the configuration information and metadata of the specified user pool client.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeUserPoolDomain": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html",
+            "description": "Gets information about a domain.",
+            "accessLevel": "Read"
+        },
+        "ForgetDevice": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html",
+            "description": "Forgets the specified device.",
+            "accessLevel": "Write"
+        },
+        "ForgotPassword": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html",
+            "description": "Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password.",
+            "accessLevel": "Write"
+        },
+        "GetCSVHeader": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html",
+            "description": "Gets the header information for the .csv file to be used as input for the user import job.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "GetDevice": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html",
+            "description": "Gets the device.",
+            "accessLevel": "Read"
+        },
+        "GetGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html",
+            "description": "Gets a group.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "GetIdentityProviderByIdentifier": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html",
+            "description": "Gets the specified identity provider.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "GetSigningCertificate": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetSigningCertificate.html",
+            "description": "Returns the signing certificate.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "GetUICustomization": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUICustomization.html",
+            "description": "Gets the UI Customization information for a particular app client's app UI, if there is something set.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "GetUser": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html",
+            "description": "Gets the user attributes and metadata for a user.",
+            "accessLevel": "Read"
+        },
+        "GetUserAttributeVerificationCode": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserAttributeVerificationCode.html",
+            "description": "Gets the user attribute verification code for the specified attribute name.",
+            "accessLevel": "Read"
+        },
+        "GetUserPoolMfaConfig": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html",
+            "description": "Gets the MFA configuration for the userpool",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "GlobalSignOut": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GlobalSignOut.html",
+            "description": "Signs out users from all devices.",
+            "accessLevel": "Write"
+        },
+        "InitiateAuth": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html",
+            "description": "Initiates the authentication flow.",
+            "accessLevel": "Write"
+        },
+        "ListDevices": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListDevices.html",
+            "description": "Lists the devices.",
+            "accessLevel": "List"
+        },
+        "ListGroups": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html",
+            "description": "Lists the groups associated with a user pool.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ListIdentityProviders": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html",
+            "description": "Lists information about all identity providers for a user pool.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ListResourceServers": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListResourceServers.html",
+            "description": "Lists the resource servers for a user pool.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListTagsForResource.html",
+            "description": "Lists the tags that are assigned to an Amazon Cognito user pool.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": false
+                }
+            }
+        },
+        "ListUserImportJobs": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html",
+            "description": "Lists the user import jobs..",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ListUserPoolClients": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html",
+            "description": "Lists the clients that have been created for the specified user pool.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ListUserPools": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html",
+            "description": "Lists the user pools associated with an AWS account.",
+            "accessLevel": "List"
+        },
+        "ListUsers": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html",
+            "description": "Lists the users in the Amazon Cognito user pool.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ListUsersInGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html",
+            "description": "Lists the users in the specified group.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "ResendConfirmationCode": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html",
+            "description": "Resends the confirmation (for confirmation of registration) to a specific user in the user pool.",
+            "accessLevel": "Write"
+        },
+        "RespondToAuthChallenge": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html",
+            "description": "Responds to the authentication challenge.",
+            "accessLevel": "Write"
+        },
+        "SetRiskConfiguration": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html",
+            "description": "sets the risk configuration setting for the userpool / userpool client",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "SetUICustomization": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUICustomization.html",
+            "description": "Sets the UI customization information for a user pool's built-in app UI.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "SetUserMFAPreference": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html",
+            "description": "Sets MFA preference for the user in the userpool",
+            "accessLevel": "Write"
+        },
+        "SetUserPoolMfaConfig": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html",
+            "description": "Sets the MFA configuration for the userpool",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "SetUserSettings": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserSettings.html",
+            "description": "Sets the user settings like multi-factor authentication (MFA).",
+            "accessLevel": "Write"
+        },
+        "SignUp": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html",
+            "description": "Registers the user in the specified user pool and creates a user name, password, and user attributes.",
+            "accessLevel": "Write"
+        },
+        "StartUserImportJob": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartUserImportJob.html",
+            "description": "Starts the user import.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "StopUserImportJob": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StopUserImportJob.html",
+            "description": "Stops the user import job.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_TagResource.html",
+            "description": "Assigns a set of tags to an Amazon Cognito user pool.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "userpool": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UntagResource.html",
+            "description": "Removes the specified tags from an Amazon Cognito user pool.",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "userpool": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateAuthEventFeedback": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html",
+            "description": "Updates the feedback for the user authentication event",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateDeviceStatus": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html",
+            "description": "Updates the device status.",
+            "accessLevel": "Write"
+        },
+        "UpdateGroup": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html",
+            "description": "Updates the specified group with the specified attributes.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateIdentityProvider": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html",
+            "description": "Updates identity provider information for a user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateResourceServer": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateResourceServer.html",
+            "description": "Updates the name and scopes of resource server.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateUserAttributes": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html",
+            "description": "Allows a user to update a specific attribute (one at a time).",
+            "accessLevel": "Write"
+        },
+        "UpdateUserPool": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html",
+            "description": "Updates the specified user pool with the specified attributes.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UpdateUserPoolClient": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html",
+            "description": "Allows the developer to update the specified user pool client and password policy.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateUserPoolDomain": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolDomain.html",
+            "description": "Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "userpool": {
+                    "required": true
+                }
+            }
+        },
+        "VerifySoftwareToken": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifySoftwareToken.html",
+            "description": "Registers a user's entered TOTP code and mark the user's software token MFA status as verified if successful.",
+            "accessLevel": "Write"
+        },
+        "VerifyUserAttribute": {
+            "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html",
+            "description": "Verifies a user attribute using a one time verification code.",
+            "accessLevel": "Write"
+        }
+    };
 
     /**
      * Adds additional user attributes to the user pool schema.

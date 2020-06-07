@@ -7,7 +7,305 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Securityhub extends PolicyStatement {
     public servicePrefix = 'securityhub';
-    public actions : Actions = { "AcceptInvitation": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html", "description": "Grants permission to accept Security Hub invitations to become a member account", "accessLevel": "Write" }, "BatchDisableStandards": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchDisableStandards.html", "description": "Grants permission to disable standards in Security Hub", "accessLevel": "Write", "resourceTypes": { "standards-subscription": { "required": true } } }, "BatchEnableStandards": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchEnableStandards.html", "description": "Grants permission to enable standards in Security Hub", "accessLevel": "Write", "resourceTypes": { "standard": { "required": true } } }, "BatchImportFindings": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html", "description": "Grants permission to import findings into Security Hub from an integrated product", "accessLevel": "Write", "conditions": ["securityhub:TargetAccount"] }, "BatchUpdateFindings": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html", "description": "Grants permission to update customer-controlled fields for a selected set of Security Hub findings", "accessLevel": "Write" }, "CreateActionTarget": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html", "description": "Grants permission to create custom actions in Security Hub", "accessLevel": "Write" }, "CreateInsight": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateInsight.html", "description": "Grants permission to create insights in Security Hub. Insights are collections of related findings", "accessLevel": "Write" }, "CreateMembers": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateMembers.html", "description": "Grants permission to create member accounts in Security Hub", "accessLevel": "Write" }, "DeclineInvitations": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeclineInvitations.html", "description": "Grants permission to decline Security Hub invitations to become a member account", "accessLevel": "Write" }, "DeleteActionTarget": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteActionTarget.html", "description": "Grants permission to delete custom actions in Security Hub", "accessLevel": "Write", "resourceTypes": { "action-target": { "required": true } } }, "DeleteInsight": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInsight.html", "description": "Grants permission to delete insights from Security Hub", "accessLevel": "Write", "resourceTypes": { "insight": { "required": true } } }, "DeleteInvitations": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInvitations.html", "description": "Grants permission to delete Security Hub invitations to become a member account", "accessLevel": "Write" }, "DeleteMembers": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteMembers.html", "description": "Grants permission to delete Security Hub member accounts", "accessLevel": "Write" }, "DescribeActionTargets": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html", "description": "Grants permission to retrieve a list of custom actions using the API", "accessLevel": "Read" }, "DescribeHub": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html", "description": "Grants permission to retrieve information about the hub resource in your account", "accessLevel": "Read" }, "DescribeProducts": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html", "description": "Grants permission to retrieve information about the available Security Hub product integrations", "accessLevel": "Read" }, "DescribeStandards": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html", "description": "Grants permission to retrieve information about Security Hub standards", "accessLevel": "Read", "resourceTypes": { "hub": { "required": true } } }, "DescribeStandardsControls": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html", "description": "Grants permission to retrieve information about Security Hub standards controls", "accessLevel": "Read", "resourceTypes": { "hub": { "required": true } } }, "DisableImportFindingsForProduct": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html", "description": "Grants permission to disable the findings importing for a Security Hub integrated product", "accessLevel": "Write", "resourceTypes": { "product": { "required": true } } }, "DisableSecurityHub": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html", "description": "Grants permission to disable Security Hub", "accessLevel": "Write" }, "DisassociateFromMasterAccount": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html", "description": "Grants permission to a Security Hub member account to disassociate from the associated master account", "accessLevel": "Write" }, "DisassociateMembers": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateMembers.html", "description": "Grants permission to disassociate Security Hub member accounts from the associated master account", "accessLevel": "Write" }, "EnableImportFindingsForProduct": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableImportFindingsForProduct.html", "description": "Grants permission to enable the findings importing for a Security Hub integrated product", "accessLevel": "Write", "resourceTypes": { "product": { "required": true } } }, "EnableSecurityHub": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html", "description": "Grants permission to enable Security Hub", "accessLevel": "Write", "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "GetEnabledStandards": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html", "description": "Grants permission to retrieve a list of the standards that are enabled in Security Hub", "accessLevel": "List" }, "GetFindings": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindings.html", "description": "Grants permission to retrieve a list of findings from Security Hub", "accessLevel": "Read" }, "GetInsightResults": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightResults.html", "description": "Grants permission to retrieve insight results from Security Hub", "accessLevel": "Read", "resourceTypes": { "insight": { "required": true } } }, "GetInsights": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsights.html", "description": "Grants permission to retrieve Security Hub insights", "accessLevel": "List", "resourceTypes": { "insight": { "required": true } } }, "GetInvitationsCount": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInvitationsCount.html", "description": "Grants permission to retrieve the count of Security Hub membership invitations sent to the account", "accessLevel": "Read" }, "GetMasterAccount": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMasterAccount.html", "description": "Grants permission to retrieve details about the Security Hub master account", "accessLevel": "Read" }, "GetMembers": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMembers.html", "description": "Grants permission to retrieve the details of Security Hub member accounts", "accessLevel": "Read" }, "InviteMembers": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_InviteMembers.html", "description": "Grants permission to invite other AWS accounts to become Security Hub member accounts", "accessLevel": "Write" }, "ListEnabledProductsForImport": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html", "description": "Grants permission to retrieve the Security Hub integrated products that are currently enabled", "accessLevel": "List" }, "ListInvitations": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListInvitations.html", "description": "Grants permission to retrieve the Security Hub invitations sent to the account", "accessLevel": "List" }, "ListMembers": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListMembers.html", "description": "Grants permission to retrieve details about Security Hub member accounts associated with the master account", "accessLevel": "List" }, "ListTagsForResource": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html", "description": "Grants permission to list of tags associated with a resource", "accessLevel": "List", "resourceTypes": { "hub": { "required": true } } }, "TagResource": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html", "description": "Grants permission to add tags to a Security Hub resource", "accessLevel": "Write", "resourceTypes": { "hub": { "required": true } } }, "UntagResource": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html", "description": "Grants permission to remove tags from a Security Hub resource", "accessLevel": "Write", "resourceTypes": { "hub": { "required": true } } }, "UpdateActionTarget": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html", "description": "Grants permission to update custom actions in Security Hub", "accessLevel": "Write", "resourceTypes": { "action-target": { "required": true } } }, "UpdateFindings": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html", "description": "Grants permission to update Security Hub findings", "accessLevel": "Write" }, "UpdateInsight": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html", "description": "Grants permission to update insights in Security Hub", "accessLevel": "Write", "resourceTypes": { "insight": { "required": true } } }, "UpdateStandardsControl": { "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html", "description": "Grants permission to update Security Hub standards controls", "accessLevel": "Write", "resourceTypes": { "hub": { "required": true } } } };
+    public actions : Actions = {
+        "AcceptInvitation": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html",
+            "description": "Grants permission to accept Security Hub invitations to become a member account",
+            "accessLevel": "Write"
+        },
+        "BatchDisableStandards": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchDisableStandards.html",
+            "description": "Grants permission to disable standards in Security Hub",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "standards-subscription": {
+                    "required": true
+                }
+            }
+        },
+        "BatchEnableStandards": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchEnableStandards.html",
+            "description": "Grants permission to enable standards in Security Hub",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "standard": {
+                    "required": true
+                }
+            }
+        },
+        "BatchImportFindings": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html",
+            "description": "Grants permission to import findings into Security Hub from an integrated product",
+            "accessLevel": "Write",
+            "conditions": [
+                "securityhub:TargetAccount"
+            ]
+        },
+        "BatchUpdateFindings": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html",
+            "description": "Grants permission to update customer-controlled fields for a selected set of Security Hub findings",
+            "accessLevel": "Write"
+        },
+        "CreateActionTarget": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html",
+            "description": "Grants permission to create custom actions in Security Hub",
+            "accessLevel": "Write"
+        },
+        "CreateInsight": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateInsight.html",
+            "description": "Grants permission to create insights in Security Hub. Insights are collections of related findings",
+            "accessLevel": "Write"
+        },
+        "CreateMembers": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateMembers.html",
+            "description": "Grants permission to create member accounts in Security Hub",
+            "accessLevel": "Write"
+        },
+        "DeclineInvitations": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeclineInvitations.html",
+            "description": "Grants permission to decline Security Hub invitations to become a member account",
+            "accessLevel": "Write"
+        },
+        "DeleteActionTarget": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteActionTarget.html",
+            "description": "Grants permission to delete custom actions in Security Hub",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "action-target": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteInsight": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInsight.html",
+            "description": "Grants permission to delete insights from Security Hub",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "insight": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteInvitations": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInvitations.html",
+            "description": "Grants permission to delete Security Hub invitations to become a member account",
+            "accessLevel": "Write"
+        },
+        "DeleteMembers": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteMembers.html",
+            "description": "Grants permission to delete Security Hub member accounts",
+            "accessLevel": "Write"
+        },
+        "DescribeActionTargets": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html",
+            "description": "Grants permission to retrieve a list of custom actions using the API",
+            "accessLevel": "Read"
+        },
+        "DescribeHub": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html",
+            "description": "Grants permission to retrieve information about the hub resource in your account",
+            "accessLevel": "Read"
+        },
+        "DescribeProducts": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html",
+            "description": "Grants permission to retrieve information about the available Security Hub product integrations",
+            "accessLevel": "Read"
+        },
+        "DescribeStandards": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html",
+            "description": "Grants permission to retrieve information about Security Hub standards",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "hub": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeStandardsControls": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html",
+            "description": "Grants permission to retrieve information about Security Hub standards controls",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "hub": {
+                    "required": true
+                }
+            }
+        },
+        "DisableImportFindingsForProduct": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html",
+            "description": "Grants permission to disable the findings importing for a Security Hub integrated product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "product": {
+                    "required": true
+                }
+            }
+        },
+        "DisableSecurityHub": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html",
+            "description": "Grants permission to disable Security Hub",
+            "accessLevel": "Write"
+        },
+        "DisassociateFromMasterAccount": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html",
+            "description": "Grants permission to a Security Hub member account to disassociate from the associated master account",
+            "accessLevel": "Write"
+        },
+        "DisassociateMembers": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateMembers.html",
+            "description": "Grants permission to disassociate Security Hub member accounts from the associated master account",
+            "accessLevel": "Write"
+        },
+        "EnableImportFindingsForProduct": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableImportFindingsForProduct.html",
+            "description": "Grants permission to enable the findings importing for a Security Hub integrated product",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "product": {
+                    "required": true
+                }
+            }
+        },
+        "EnableSecurityHub": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html",
+            "description": "Grants permission to enable Security Hub",
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "GetEnabledStandards": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html",
+            "description": "Grants permission to retrieve a list of the standards that are enabled in Security Hub",
+            "accessLevel": "List"
+        },
+        "GetFindings": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindings.html",
+            "description": "Grants permission to retrieve a list of findings from Security Hub",
+            "accessLevel": "Read"
+        },
+        "GetInsightResults": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightResults.html",
+            "description": "Grants permission to retrieve insight results from Security Hub",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "insight": {
+                    "required": true
+                }
+            }
+        },
+        "GetInsights": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsights.html",
+            "description": "Grants permission to retrieve Security Hub insights",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "insight": {
+                    "required": true
+                }
+            }
+        },
+        "GetInvitationsCount": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInvitationsCount.html",
+            "description": "Grants permission to retrieve the count of Security Hub membership invitations sent to the account",
+            "accessLevel": "Read"
+        },
+        "GetMasterAccount": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMasterAccount.html",
+            "description": "Grants permission to retrieve details about the Security Hub master account",
+            "accessLevel": "Read"
+        },
+        "GetMembers": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMembers.html",
+            "description": "Grants permission to retrieve the details of Security Hub member accounts",
+            "accessLevel": "Read"
+        },
+        "InviteMembers": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_InviteMembers.html",
+            "description": "Grants permission to invite other AWS accounts to become Security Hub member accounts",
+            "accessLevel": "Write"
+        },
+        "ListEnabledProductsForImport": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html",
+            "description": "Grants permission to retrieve the Security Hub integrated products that are currently enabled",
+            "accessLevel": "List"
+        },
+        "ListInvitations": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListInvitations.html",
+            "description": "Grants permission to retrieve the Security Hub invitations sent to the account",
+            "accessLevel": "List"
+        },
+        "ListMembers": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListMembers.html",
+            "description": "Grants permission to retrieve details about Security Hub member accounts associated with the master account",
+            "accessLevel": "List"
+        },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html",
+            "description": "Grants permission to list of tags associated with a resource",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "hub": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html",
+            "description": "Grants permission to add tags to a Security Hub resource",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "hub": {
+                    "required": true
+                }
+            }
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html",
+            "description": "Grants permission to remove tags from a Security Hub resource",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "hub": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateActionTarget": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html",
+            "description": "Grants permission to update custom actions in Security Hub",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "action-target": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateFindings": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html",
+            "description": "Grants permission to update Security Hub findings",
+            "accessLevel": "Write"
+        },
+        "UpdateInsight": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html",
+            "description": "Grants permission to update insights in Security Hub",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "insight": {
+                    "required": true
+                }
+            }
+        },
+        "UpdateStandardsControl": {
+            "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html",
+            "description": "Grants permission to update Security Hub standards controls",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "hub": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Grants permission to accept Security Hub invitations to become a member account

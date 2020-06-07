@@ -7,7 +7,319 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Glacier extends PolicyStatement {
     public servicePrefix = 'glacier';
-    public actions : Actions = { "AbortMultipartUpload": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html", "description": "Aborts a multipart upload identified by the upload ID", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "AbortVaultLock": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AbortVaultLock.html", "description": "Aborts the vault locking process if the vault lock is not in the Locked state", "accessLevel": "Permissions management", "resourceTypes": { "vault": { "required": true } } }, "AddTagsToVault": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html", "description": "Adds the specified tags to a vault", "accessLevel": "Tagging", "resourceTypes": { "vault": { "required": true } } }, "CompleteMultipartUpload": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html", "description": "Completes a multipart upload process", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "CompleteVaultLock": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-CompleteVaultLock.html", "description": "Completes the vault locking process", "accessLevel": "Permissions management", "resourceTypes": { "vault": { "required": true } } }, "CreateVault": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html", "description": "Creates a new vault with the specified name", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "DeleteArchive": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html", "description": "Deletes an archive from a vault", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } }, "conditions": ["glacier:ArchiveAgeInDays"] }, "DeleteVault": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html", "description": "Deletes a vault", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "DeleteVaultAccessPolicy": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-DeleteVaultAccessPolicy.html", "description": "Deletes the access policy associated with the specified vault", "accessLevel": "Permissions management", "resourceTypes": { "vault": { "required": true } } }, "DeleteVaultNotifications": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html", "description": "Deletes the notification configuration set for a vault", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "DescribeJob": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html", "description": "Returns information about a job you previously initiated", "accessLevel": "Read", "resourceTypes": { "vault": { "required": true } } }, "DescribeVault": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get..html", "description": "Returns information about a vault", "accessLevel": "Read", "resourceTypes": { "vault": { "required": true } } }, "GetDataRetrievalPolicy": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetDataRetrievalPolicy.html", "description": "Returns the current data retrieval policy for the account and region specified in the GET request", "accessLevel": "Read" }, "GetJobOutput": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html", "description": "Downloads the output of the job you initiated", "accessLevel": "Read", "resourceTypes": { "vault": { "required": true } } }, "GetVaultAccessPolicy": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultAccessPolicy.html", "description": "Retrieves the access-policy subresource set on the vault", "accessLevel": "Read", "resourceTypes": { "vault": { "required": true } } }, "GetVaultLock": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultLock.html", "description": "Retrieves attributes from the lock-policy subresource set on the specified vault", "accessLevel": "Read", "resourceTypes": { "vault": { "required": true } } }, "GetVaultNotifications": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html", "description": "Retrieves the notification-configuration subresource set on the vault", "accessLevel": "Read", "resourceTypes": { "vault": { "required": true } } }, "InitiateJob": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html", "description": "Initiates a job of the specified type", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } }, "conditions": ["glacier:ArchiveAgeInDays"] }, "InitiateMultipartUpload": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html", "description": "Initiates a multipart upload", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "InitiateVaultLock": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-InitiateVaultLock.html", "description": "Initiates the vault locking process", "accessLevel": "Permissions management", "resourceTypes": { "vault": { "required": true } } }, "ListJobs": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html", "description": "Lists jobs for a vault that are in-progress and jobs that have recently finished", "accessLevel": "List", "resourceTypes": { "vault": { "required": true } } }, "ListMultipartUploads": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html", "description": "Lists in-progress multipart uploads for the specified vault", "accessLevel": "List", "resourceTypes": { "vault": { "required": true } } }, "ListParts": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html", "description": "Lists the parts of an archive that have been uploaded in a specific multipart upload", "accessLevel": "List", "resourceTypes": { "vault": { "required": true } } }, "ListProvisionedCapacity": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListProvisionedCapacity.html", "description": "This operation lists the provisioned capacity for the specified AWS account.", "accessLevel": "List" }, "ListTagsForVault": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListTagsForVault.html", "description": "Lists all the tags attached to a vault", "accessLevel": "List", "resourceTypes": { "vault": { "required": true } } }, "ListVaults": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html", "description": "Lists all vaults", "accessLevel": "List" }, "PurchaseProvisionedCapacity": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-PurchaseProvisionedCapacity.html", "description": "This operation purchases a provisioned capacity unit for an AWS account.", "accessLevel": "Write" }, "RemoveTagsFromVault": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-RemoveTagsFromVault.html", "description": "Removes one or more tags from the set of tags attached to a vault", "accessLevel": "Tagging", "resourceTypes": { "vault": { "required": true } } }, "SetDataRetrievalPolicy": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetDataRetrievalPolicy.html", "description": "Sets and then enacts a data retrieval policy in the region specified in the PUT request", "accessLevel": "Permissions management" }, "SetVaultAccessPolicy": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html", "description": "Configures an access policy for a vault and will overwrite an existing policy", "accessLevel": "Permissions management", "resourceTypes": { "vault": { "required": true } } }, "SetVaultNotifications": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html", "description": "Configures vault notifications", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "UploadArchive": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html", "description": "Adds an archive to a vault", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } }, "UploadMultipartPart": { "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html", "description": "Uploads a part of an archive", "accessLevel": "Write", "resourceTypes": { "vault": { "required": true } } } };
+    public actions : Actions = {
+        "AbortMultipartUpload": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html",
+            "description": "Aborts a multipart upload identified by the upload ID",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "AbortVaultLock": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AbortVaultLock.html",
+            "description": "Aborts the vault locking process if the vault lock is not in the Locked state",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "AddTagsToVault": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html",
+            "description": "Adds the specified tags to a vault",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "CompleteMultipartUpload": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html",
+            "description": "Completes a multipart upload process",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "CompleteVaultLock": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-CompleteVaultLock.html",
+            "description": "Completes the vault locking process",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "CreateVault": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html",
+            "description": "Creates a new vault with the specified name",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteArchive": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html",
+            "description": "Deletes an archive from a vault",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "glacier:ArchiveAgeInDays"
+            ]
+        },
+        "DeleteVault": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html",
+            "description": "Deletes a vault",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteVaultAccessPolicy": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-DeleteVaultAccessPolicy.html",
+            "description": "Deletes the access policy associated with the specified vault",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "DeleteVaultNotifications": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html",
+            "description": "Deletes the notification configuration set for a vault",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeJob": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html",
+            "description": "Returns information about a job you previously initiated",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeVault": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get..html",
+            "description": "Returns information about a vault",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "GetDataRetrievalPolicy": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetDataRetrievalPolicy.html",
+            "description": "Returns the current data retrieval policy for the account and region specified in the GET request",
+            "accessLevel": "Read"
+        },
+        "GetJobOutput": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html",
+            "description": "Downloads the output of the job you initiated",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "GetVaultAccessPolicy": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultAccessPolicy.html",
+            "description": "Retrieves the access-policy subresource set on the vault",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "GetVaultLock": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultLock.html",
+            "description": "Retrieves attributes from the lock-policy subresource set on the specified vault",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "GetVaultNotifications": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html",
+            "description": "Retrieves the notification-configuration subresource set on the vault",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "InitiateJob": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html",
+            "description": "Initiates a job of the specified type",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            },
+            "conditions": [
+                "glacier:ArchiveAgeInDays"
+            ]
+        },
+        "InitiateMultipartUpload": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html",
+            "description": "Initiates a multipart upload",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "InitiateVaultLock": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-InitiateVaultLock.html",
+            "description": "Initiates the vault locking process",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "ListJobs": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html",
+            "description": "Lists jobs for a vault that are in-progress and jobs that have recently finished",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "ListMultipartUploads": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html",
+            "description": "Lists in-progress multipart uploads for the specified vault",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "ListParts": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html",
+            "description": "Lists the parts of an archive that have been uploaded in a specific multipart upload",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "ListProvisionedCapacity": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListProvisionedCapacity.html",
+            "description": "This operation lists the provisioned capacity for the specified AWS account.",
+            "accessLevel": "List"
+        },
+        "ListTagsForVault": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListTagsForVault.html",
+            "description": "Lists all the tags attached to a vault",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "ListVaults": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html",
+            "description": "Lists all vaults",
+            "accessLevel": "List"
+        },
+        "PurchaseProvisionedCapacity": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-PurchaseProvisionedCapacity.html",
+            "description": "This operation purchases a provisioned capacity unit for an AWS account.",
+            "accessLevel": "Write"
+        },
+        "RemoveTagsFromVault": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-RemoveTagsFromVault.html",
+            "description": "Removes one or more tags from the set of tags attached to a vault",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "SetDataRetrievalPolicy": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetDataRetrievalPolicy.html",
+            "description": "Sets and then enacts a data retrieval policy in the region specified in the PUT request",
+            "accessLevel": "Permissions management"
+        },
+        "SetVaultAccessPolicy": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html",
+            "description": "Configures an access policy for a vault and will overwrite an existing policy",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "SetVaultNotifications": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html",
+            "description": "Configures vault notifications",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "UploadArchive": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html",
+            "description": "Adds an archive to a vault",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        },
+        "UploadMultipartPart": {
+            "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html",
+            "description": "Uploads a part of an archive",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "vault": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Aborts a multipart upload identified by the upload ID

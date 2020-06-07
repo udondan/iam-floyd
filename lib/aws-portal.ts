@@ -7,7 +7,43 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class AwsPortal extends PolicyStatement {
     public servicePrefix = 'aws-portal';
-    public actions : Actions = { "ModifyAccount": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to modify Account Settings.", "accessLevel": "Write" }, "ModifyBilling": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to modify billing settings.", "accessLevel": "Write" }, "ModifyPaymentMethods": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to modify payment methods.", "accessLevel": "Write" }, "ViewAccount": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to view account settings.", "accessLevel": "Read" }, "ViewBilling": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to view billing pages in the console.", "accessLevel": "Read" }, "ViewPaymentMethods": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to view payment methods.", "accessLevel": "Read" }, "ViewUsage": { "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions", "description": "Allow or deny IAM users permission to view AWS usage reports.", "accessLevel": "Read" } };
+    public actions : Actions = {
+        "ModifyAccount": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to modify Account Settings.",
+            "accessLevel": "Write"
+        },
+        "ModifyBilling": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to modify billing settings.",
+            "accessLevel": "Write"
+        },
+        "ModifyPaymentMethods": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to modify payment methods.",
+            "accessLevel": "Write"
+        },
+        "ViewAccount": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to view account settings.",
+            "accessLevel": "Read"
+        },
+        "ViewBilling": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to view billing pages in the console.",
+            "accessLevel": "Read"
+        },
+        "ViewPaymentMethods": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to view payment methods.",
+            "accessLevel": "Read"
+        },
+        "ViewUsage": {
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
+            "description": "Allow or deny IAM users permission to view AWS usage reports.",
+            "accessLevel": "Read"
+        }
+    };
 
     /**
      * Allow or deny IAM users permission to modify Account Settings.

@@ -7,7 +7,109 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class Cassandra extends PolicyStatement {
     public servicePrefix = 'cassandra';
-    public actions : Actions = { "Alter": { "url": "", "description": "Grants permission to alter a keyspace or table", "accessLevel": "Write", "resourceTypes": { "keyspace": { "required": false }, "table": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "Create": { "url": "", "description": "Grants permission to create a keyspace or table", "accessLevel": "Write", "resourceTypes": { "keyspace": { "required": false }, "table": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "Drop": { "url": "", "description": "Grants permission to drop a keyspace or table", "accessLevel": "Write", "resourceTypes": { "keyspace": { "required": false }, "table": { "required": false } } }, "Modify": { "url": "", "description": "Grants permission to INSERT, UPDATE or DELETE data in a table", "accessLevel": "Write", "resourceTypes": { "table": { "required": true } } }, "Select": { "url": "", "description": "Grants permission to SELECT data from a table", "accessLevel": "Read", "resourceTypes": { "table": { "required": true } } }, "TagResource": { "url": "", "description": "Grants permission to tag a keyspace or table", "accessLevel": "Tagging", "resourceTypes": { "keyspace": { "required": false }, "table": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] }, "UntagResource": { "url": "", "description": "Grants permission to untag a keyspace or table", "accessLevel": "Tagging", "resourceTypes": { "keyspace": { "required": false }, "table": { "required": false } }, "conditions": ["aws:RequestTag/${TagKey}", "aws:TagKeys"] } };
+    public actions : Actions = {
+        "Alter": {
+            "url": "",
+            "description": "Grants permission to alter a keyspace or table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "keyspace": {
+                    "required": false
+                },
+                "table": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "Create": {
+            "url": "",
+            "description": "Grants permission to create a keyspace or table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "keyspace": {
+                    "required": false
+                },
+                "table": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "Drop": {
+            "url": "",
+            "description": "Grants permission to drop a keyspace or table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "keyspace": {
+                    "required": false
+                },
+                "table": {
+                    "required": false
+                }
+            }
+        },
+        "Modify": {
+            "url": "",
+            "description": "Grants permission to INSERT, UPDATE or DELETE data in a table",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "Select": {
+            "url": "",
+            "description": "Grants permission to SELECT data from a table",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "table": {
+                    "required": true
+                }
+            }
+        },
+        "TagResource": {
+            "url": "",
+            "description": "Grants permission to tag a keyspace or table",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "keyspace": {
+                    "required": false
+                },
+                "table": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        },
+        "UntagResource": {
+            "url": "",
+            "description": "Grants permission to untag a keyspace or table",
+            "accessLevel": "Tagging",
+            "resourceTypes": {
+                "keyspace": {
+                    "required": false
+                },
+                "table": {
+                    "required": false
+                }
+            },
+            "conditions": [
+                "aws:RequestTag/${TagKey}",
+                "aws:TagKeys"
+            ]
+        }
+    };
 
     /**
      * Grants permission to alter a keyspace or table

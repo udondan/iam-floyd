@@ -7,7 +7,38 @@ import { PolicyStatement, Actions } from "./shared";
  */
 export class ExecuteApi extends PolicyStatement {
     public servicePrefix = 'execute-api';
-    public actions : Actions = { "InvalidateCache": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html", "description": "Used to invalidate API cache upon a client request", "accessLevel": "Write", "resourceTypes": { "execute-api-general": { "required": true } } }, "Invoke": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html", "description": "Used to invoke an API upon a client request", "accessLevel": "Write", "resourceTypes": { "execute-api-general": { "required": true } } }, "ManageConnections": { "url": "https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html", "description": "ManageConnections controls access to the @connections API", "accessLevel": "Write", "resourceTypes": { "execute-api-general": { "required": true } } } };
+    public actions : Actions = {
+        "InvalidateCache": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html",
+            "description": "Used to invalidate API cache upon a client request",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "execute-api-general": {
+                    "required": true
+                }
+            }
+        },
+        "Invoke": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html",
+            "description": "Used to invoke an API upon a client request",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "execute-api-general": {
+                    "required": true
+                }
+            }
+        },
+        "ManageConnections": {
+            "url": "https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html",
+            "description": "ManageConnections controls access to the @connections API",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "execute-api-general": {
+                    "required": true
+                }
+            }
+        }
+    };
 
     /**
      * Used to invalidate API cache upon a client request
