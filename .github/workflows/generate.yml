@@ -27,7 +27,7 @@ jobs:
             git config --local user.email "action@github.com" &&
             git config --local user.name "GitHub Action" &&
             rm -rf node_modules tsconfig.json &&
-            make pregenerate &&
+            npm run pregenerate &&
             git add * &&
             git commit -m "Adds latest IAM updates from AWS" &&
             git push
