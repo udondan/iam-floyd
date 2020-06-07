@@ -1,4 +1,13 @@
 {
+    "scripts": {
+        "prepregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
+        "pregenerate": "rm -fv lib/*.ts",
+        "generate": "tsc bin/*.ts lib/generator/*.ts && node bin/generate.js",
+        "build": "jsii",
+        "build:watch": "jsii -w",
+        "package": "jsii-pacmak",
+        "test": "npx ts-node test/main.ts"
+    },
     "name": "iam-floyd",
     "description": "Helper library for CDK to easily generate AWS IAM policy statements",
     "version": "0.0.0",
@@ -29,14 +38,6 @@
     "stability": "experimental",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
-    "scripts": {
-        "pregenerate": "rm -f lib/*.js lib/*.ts",
-        "generate": "tsc && node bin/generate.js",
-        "build": "jsii",
-        "build:watch": "jsii -w",
-        "package": "jsii-pacmak",
-        "test": "npx ts-node test/main.ts"
-    },
     "jsii": {
         "outdir": "dist",
         "excludeTypescript": [
