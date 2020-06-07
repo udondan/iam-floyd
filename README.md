@@ -364,7 +364,7 @@ AWS and their services are trademarks, registered trademarks or trade dress of A
 This project is not affiliated, funded, or in any way associated with AWS.
 
    [source]: https://github.com/udondan/iam-floyd
-   [docs]: https://awscdk.io/packages/iam-floyd@0.2.0
+   [docs]: https://awscdk.io/packages/iam-floyd@0.3.1
    [npm]: https://www.npmjs.com/package/iam-floyd
    [PyPI]: https://pypi.org/project/iam-floyd/
    [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
