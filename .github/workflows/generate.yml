@@ -1,0 +1,25 @@
+---
+name: Generate Code from AWS documentation
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+
+      - name: Checkout code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Generate code
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: make generate
