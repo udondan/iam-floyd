@@ -23,10 +23,35 @@ export class CodeguruReviewer extends PolicyStatement {
             "description": "Grants permission to perform webbased oauth handshake for 3rd party providers.",
             "accessLevel": "Read"
         },
+        "DescribeCodeReview": {
+            "url": "",
+            "description": "Grants permission to describe a code review.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "codereview": {
+                    "required": true
+                }
+            }
+        },
+        "DescribeRecommendationFeedback": {
+            "url": "",
+            "description": "Grants permission to describe a recommendation feedback on a code review.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "codereview": {
+                    "required": true
+                }
+            }
+        },
         "DescribeRepositoryAssociation": {
             "url": "",
             "description": "Grants permission to describe a repository association.",
-            "accessLevel": "Read"
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "association": {
+                    "required": true
+                }
+            }
         },
         "DisassociateRepository": {
             "url": "",
@@ -43,6 +68,31 @@ export class CodeguruReviewer extends PolicyStatement {
             "description": "Grants permission to view pull request metrics in console.",
             "accessLevel": "Read"
         },
+        "ListCodeReviews": {
+            "url": "",
+            "description": "Grants permission to list summary of code reviews.",
+            "accessLevel": "List"
+        },
+        "ListRecommendationFeedback": {
+            "url": "",
+            "description": "Grants permission to list summary of recommendation feedback on a code review.",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "codereview": {
+                    "required": true
+                }
+            }
+        },
+        "ListRecommendations": {
+            "url": "",
+            "description": "Grants permission to list summary of recommendations on a code review",
+            "accessLevel": "List",
+            "resourceTypes": {
+                "codereview": {
+                    "required": true
+                }
+            }
+        },
         "ListRepositoryAssociations": {
             "url": "",
             "description": "Grants permission to list summary of repository associations.",
@@ -52,6 +102,16 @@ export class CodeguruReviewer extends PolicyStatement {
             "url": "",
             "description": "Grants permission to list 3rd party providers repositories in console.",
             "accessLevel": "Read"
+        },
+        "PutRecommendationFeedback": {
+            "url": "",
+            "description": "Grants permission to put feedback for a recommendation on a code review.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "codereview": {
+                    "required": true
+                }
+            }
         }
     };
 
@@ -76,6 +136,30 @@ export class CodeguruReviewer extends PolicyStatement {
      */
     public createConnectionToken () {
         this.add('codeguru-reviewer:CreateConnectionToken');
+        return this;
+    }
+
+    /**
+     * Grants permission to describe a code review.
+     *
+     * Access Level: Read
+     *
+     *
+     */
+    public describeCodeReview () {
+        this.add('codeguru-reviewer:DescribeCodeReview');
+        return this;
+    }
+
+    /**
+     * Grants permission to describe a recommendation feedback on a code review.
+     *
+     * Access Level: Read
+     *
+     *
+     */
+    public describeRecommendationFeedback () {
+        this.add('codeguru-reviewer:DescribeRecommendationFeedback');
         return this;
     }
 
@@ -116,6 +200,42 @@ export class CodeguruReviewer extends PolicyStatement {
     }
 
     /**
+     * Grants permission to list summary of code reviews.
+     *
+     * Access Level: List
+     *
+     *
+     */
+    public listCodeReviews () {
+        this.add('codeguru-reviewer:ListCodeReviews');
+        return this;
+    }
+
+    /**
+     * Grants permission to list summary of recommendation feedback on a code review.
+     *
+     * Access Level: List
+     *
+     *
+     */
+    public listRecommendationFeedback () {
+        this.add('codeguru-reviewer:ListRecommendationFeedback');
+        return this;
+    }
+
+    /**
+     * Grants permission to list summary of recommendations on a code review
+     *
+     * Access Level: List
+     *
+     *
+     */
+    public listRecommendations () {
+        this.add('codeguru-reviewer:ListRecommendations');
+        return this;
+    }
+
+    /**
      * Grants permission to list summary of repository associations.
      *
      * Access Level: List
@@ -136,6 +256,18 @@ export class CodeguruReviewer extends PolicyStatement {
      */
     public listThirdPartyRepositories () {
         this.add('codeguru-reviewer:ListThirdPartyRepositories');
+        return this;
+    }
+
+    /**
+     * Grants permission to put feedback for a recommendation on a code review.
+     *
+     * Access Level: Write
+     *
+     *
+     */
+    public putRecommendationFeedback () {
+        this.add('codeguru-reviewer:PutRecommendationFeedback');
         return this;
     }
 }
