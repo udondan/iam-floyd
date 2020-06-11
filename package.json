@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "prepregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
-    "pregenerate": "rm -fv lib/*.ts",
+    "pregenerate": "find lib bin -name \"*.js\" -type f -exec rm -vf {} \\;",
     "generate": "tsc bin/*.ts lib/generator/*.ts && node bin/generate.js",
     "build": "jsii",
     "build:watch": "jsii -w",
@@ -77,7 +76,9 @@
     "request-promise-native": "^1.0.8",
     "ts-morph": "^7.1.0",
     "ts-node": "^8.1.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "@types/glob": "^7.1.2",
+    "glob": "^7.1.6"
   },
   "dependencies": {
     "@aws-cdk/aws-iam": "^1.42.1",

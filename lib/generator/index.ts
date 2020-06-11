@@ -2,6 +2,8 @@ import 'colors';
 
 import { ts } from '@ts-morph/common';
 import cheerio = require('cheerio');
+import fs = require('fs');
+import glob = require('glob');
 import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
@@ -9,11 +11,13 @@ import { fixes } from './fixes';
 
 const project = new Project();
 const modules: Module[] = [];
+const timeThreshold = new Date();
+timeThreshold.setHours(timeThreshold.getHours() - 3);
 
 export interface Module {
-  name: string;
+  name?: string;
   filename: string;
-  url: string;
+  url?: string;
   actions?: Actions;
   fixes?: {
     [key: string]: any;
@@ -48,7 +52,7 @@ export function getAwsServices(): Promise<string[]> {
         }
 
         const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
-        var match;
+        var match: RegExpExecArray;
         const services: string[] = [];
         do {
           match = re.exec(body);
@@ -68,11 +72,21 @@ export function getContent(service: string): Promise<Module> {
 
   const urlPattern =
     'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     var actions: Actions = {};
     var action: string;
+    const module: Module = {
+      filename: service.replace(/[^a-z0-9-]/i, '-'),
+    };
 
     const url = urlPattern.replace('%s', service);
+
+    const lastModified = await getLastModified(url);
+    if (lastModified < timeThreshold) {
+      console.log(`Skipping, last modified on ${lastModified}`.green);
+      return resolve(module);
+    }
+
     request(url, function (err: any, _: request.Response, body: any) {
       if (err) {
         return reject(err);
@@ -81,17 +95,14 @@ export function getContent(service: string): Promise<Module> {
       process.stdout.write('Parsing '.blue);
 
       const $ = cheerio.load(body);
-
       const servicePrefix = $('code').first().text().trim();
 
       if (servicePrefix == '') {
         console.error(`PREFIX NOT FOUND FOR ${service}`.red.bold);
       }
-      const module: Module = {
-        name: servicePrefix,
-        filename: service.replace(/[^a-z0-9-]/i, '-'),
-        url: url,
-      };
+
+      module.name = servicePrefix;
+      module.url = url;
 
       if (service in fixes) {
         module.fixes = fixes[service];
@@ -167,6 +178,7 @@ export function getContent(service: string): Promise<Module> {
 }
 
 export function createModules(services: string[]) {
+  createCache();
   return new Promise(async (resolve, reject) => {
     for (const service of services) {
       await getContent(service).then(createModule).catch(reject);
@@ -176,6 +188,16 @@ export function createModules(services: string[]) {
 }
 
 export function createModule(module: Module): Promise<void> {
+  if (typeof module.name === 'undefined') {
+    //it was skipped, restore from cache
+    fs.renameSync(
+      `lib/.cache/${module.filename}.ts`,
+      `lib/${module.filename}.ts`
+    );
+    modules.push(module);
+    return Promise.resolve();
+  }
+
   process.stdout.write(`Generating `.cyan);
 
   if (module.fixes && 'id' in module.fixes) {
@@ -246,7 +268,6 @@ export function createIndex() {
 
   modules.sort().forEach((module) => {
     sourceFile.addExportDeclaration({
-      namedExports: [camelCase(module.name)],
       moduleSpecifier: `./${module.filename}`,
     });
   });
@@ -304,5 +325,33 @@ function formatCode(file: SourceFile) {
     semicolons: ts.SemicolonPreference.Insert,
     indentSize: 2,
     trimTrailingWhitespace: true,
+  });
+}
+
+function createCache() {
+  const dir = 'lib';
+  const cacheDir = `${dir}/.cache`;
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir);
+  }
+
+  for (let file of glob.sync(`${dir}/*.ts`)) {
+    const fileName = (file as string).split('/').slice(-1)[0];
+    fs.renameSync(file, `${cacheDir}/${fileName}`);
+  }
+}
+
+function getLastModified(url: string): Promise<Date> {
+  return new Promise((resolve, reject) => {
+    request(url, { method: 'HEAD' }, function (err, response, _) {
+      if (err) {
+        return reject(err);
+      }
+      var lastModified = new Date();
+      if ('last-modified' in response.headers) {
+        lastModified = new Date(response.headers['last-modified']);
+      }
+      resolve(lastModified);
+    });
   });
 }
