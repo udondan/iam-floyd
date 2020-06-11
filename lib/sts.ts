@@ -130,6 +130,11 @@ export class Sts extends PolicyStatement {
                 "aws:RequestTag/${TagKey}"
             ]
         },
+        "GetServiceBearerToken": {
+            "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-permissions-reference.html",
+            "description": "Returns an authentication bearer token for an AWS account, IAM Role, or an IAM user",
+            "accessLevel": "Read"
+        },
         "GetSessionToken": {
             "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html",
             "description": "Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for an AWS account or IAM user",
@@ -237,6 +242,18 @@ export class Sts extends PolicyStatement {
      */
     public getFederationToken () {
         this.add('sts:GetFederationToken');
+        return this;
+    }
+
+    /**
+     * Returns an authentication bearer token for an AWS account, IAM Role, or an IAM user
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-permissions-reference.html
+     */
+    public getServiceBearerToken () {
+        this.add('sts:GetServiceBearerToken');
         return this;
     }
 

@@ -8,6 +8,21 @@ import { PolicyStatement, Actions } from "./shared";
 export class ComputeOptimizer extends PolicyStatement {
     public servicePrefix = 'compute-optimizer';
     public actions : Actions = {
+        "DescribeRecommendationExportJobs": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html",
+            "description": "Grants permission to view the status of recommendation export jobs.",
+            "accessLevel": "List"
+        },
+        "ExportAutoScalingGroupRecommendations": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportAutoScalingGroupRecommendations.html",
+            "description": "Grants permission to export autoscaling group recommendations to S3 for the provided accounts.",
+            "accessLevel": "Write"
+        },
+        "ExportEC2InstanceRecommendations": {
+            "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEC2InstanceRecommendations.html",
+            "description": "Grants permission to export EC2 instance recommendations to S3 for the provided accounts.",
+            "accessLevel": "Write"
+        },
         "GetAutoScalingGroupRecommendations": {
             "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html",
             "description": "Grants permission to get recommendations for the provided autoscaling groups.",
@@ -39,6 +54,42 @@ export class ComputeOptimizer extends PolicyStatement {
             "accessLevel": "Write"
         }
     };
+
+    /**
+     * Grants permission to view the status of recommendation export jobs.
+     *
+     * Access Level: List
+     *
+     * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html
+     */
+    public describeRecommendationExportJobs () {
+        this.add('compute-optimizer:DescribeRecommendationExportJobs');
+        return this;
+    }
+
+    /**
+     * Grants permission to export autoscaling group recommendations to S3 for the provided accounts.
+     *
+     * Access Level: Write
+     *
+     * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportAutoScalingGroupRecommendations.html
+     */
+    public exportAutoScalingGroupRecommendations () {
+        this.add('compute-optimizer:ExportAutoScalingGroupRecommendations');
+        return this;
+    }
+
+    /**
+     * Grants permission to export EC2 instance recommendations to S3 for the provided accounts.
+     *
+     * Access Level: Write
+     *
+     * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEC2InstanceRecommendations.html
+     */
+    public exportEC2InstanceRecommendations () {
+        this.add('compute-optimizer:ExportEC2InstanceRecommendations');
+        return this;
+    }
 
     /**
      * Grants permission to get recommendations for the provided autoscaling groups.

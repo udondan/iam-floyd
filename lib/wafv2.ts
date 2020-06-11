@@ -85,6 +85,16 @@ export class Wafv2 extends PolicyStatement {
                 "aws:TagKeys"
             ]
         },
+        "DeleteFirewallManagerRuleGroups": {
+            "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html",
+            "description": "Grants permission to delete specified FirewallManagedRulesGroups from the specified WebACL if not managed by Firewall Manager anymore.",
+            "accessLevel": "Write",
+            "resourceTypes": {
+                "webacl": {
+                    "required": true
+                }
+            }
+        },
         "DeleteIPSet": {
             "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html",
             "description": "Grants permission to delete the specified IPSet.",
@@ -101,6 +111,16 @@ export class Wafv2 extends PolicyStatement {
             "accessLevel": "Write",
             "resourceTypes": {
                 "webacl": {
+                    "required": true
+                }
+            }
+        },
+        "DeletePermissionPolicy": {
+            "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html",
+            "description": "Grants permission to delete the PermissionPolicy on the specified RuleGroup.",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "rulegroup": {
                     "required": true
                 }
             }
@@ -178,6 +198,16 @@ export class Wafv2 extends PolicyStatement {
             "conditions": [
                 "aws:ResourceTag/${TagKey}"
             ]
+        },
+        "GetPermissionPolicy": {
+            "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetPermissionPolicy.html",
+            "description": "Grants permission to view PermissionPolicy on the specified RuleGroup.",
+            "accessLevel": "Read",
+            "resourceTypes": {
+                "rulegroup": {
+                    "required": true
+                }
+            }
         },
         "GetRateBasedStatementManagedKeys": {
             "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html",
@@ -322,6 +352,16 @@ export class Wafv2 extends PolicyStatement {
             "accessLevel": "Write",
             "resourceTypes": {
                 "webacl": {
+                    "required": true
+                }
+            }
+        },
+        "PutPermissionPolicy": {
+            "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html",
+            "description": "Grants permission to attach the specified IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup across accounts.",
+            "accessLevel": "Permissions management",
+            "resourceTypes": {
+                "rulegroup": {
                     "required": true
                 }
             }
@@ -499,6 +539,18 @@ export class Wafv2 extends PolicyStatement {
     }
 
     /**
+     * Grants permission to delete specified FirewallManagedRulesGroups from the specified WebACL if not managed by Firewall Manager anymore.
+     *
+     * Access Level: Write
+     *
+     * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html
+     */
+    public deleteFirewallManagerRuleGroups () {
+        this.add('wafv2:DeleteFirewallManagerRuleGroups');
+        return this;
+    }
+
+    /**
      * Grants permission to delete the specified IPSet.
      *
      * Access Level: Write
@@ -519,6 +571,18 @@ export class Wafv2 extends PolicyStatement {
      */
     public deleteLoggingConfiguration () {
         this.add('wafv2:DeleteLoggingConfiguration');
+        return this;
+    }
+
+    /**
+     * Grants permission to delete the PermissionPolicy on the specified RuleGroup.
+     *
+     * Access Level: Permissions management
+     *
+     * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html
+     */
+    public deletePermissionPolicy () {
+        this.add('wafv2:DeletePermissionPolicy');
         return this;
     }
 
@@ -603,6 +667,18 @@ export class Wafv2 extends PolicyStatement {
      */
     public getLoggingConfiguration () {
         this.add('wafv2:GetLoggingConfiguration');
+        return this;
+    }
+
+    /**
+     * Grants permission to view PermissionPolicy on the specified RuleGroup.
+     *
+     * Access Level: Read
+     *
+     * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetPermissionPolicy.html
+     */
+    public getPermissionPolicy () {
+        this.add('wafv2:GetPermissionPolicy');
         return this;
     }
 
@@ -783,6 +859,18 @@ export class Wafv2 extends PolicyStatement {
      */
     public putLoggingConfiguration () {
         this.add('wafv2:PutLoggingConfiguration');
+        return this;
+    }
+
+    /**
+     * Grants permission to attach the specified IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup across accounts.
+     *
+     * Access Level: Permissions management
+     *
+     * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html
+     */
+    public putPermissionPolicy () {
+        this.add('wafv2:PutPermissionPolicy');
         return this;
     }
 

@@ -11,24 +11,43 @@ export class Servicediscovery extends PolicyStatement {
         "CreateHttpNamespace": {
             "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html",
             "description": "Creates an HTTP namespace.",
-            "accessLevel": "Write"
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
         },
         "CreatePrivateDnsNamespace": {
             "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html",
             "description": "Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC.",
-            "accessLevel": "Write"
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
         },
         "CreatePublicDnsNamespace": {
             "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html",
             "description": "Creates a public namespace based on DNS, which will be visible on the internet.",
-            "accessLevel": "Write"
+            "accessLevel": "Write",
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
         },
         "CreateService": {
             "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html",
             "description": "Creates a service.",
             "accessLevel": "Write",
+            "resourceTypes": {
+                "namespace": {
+                    "required": true
+                }
+            },
             "conditions": [
-                "servicediscovery:NamespaceArn"
+                "servicediscovery:NamespaceArn",
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
             ]
         },
         "DeleteNamespace": {
@@ -55,6 +74,11 @@ export class Servicediscovery extends PolicyStatement {
             "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html",
             "description": "Deletes the records and the health check, if any, that Amazon Route 53 created for the specified instance.",
             "accessLevel": "Write",
+            "resourceTypes": {
+                "service": {
+                    "required": true
+                }
+            },
             "conditions": [
                 "servicediscovery:ServiceArn"
             ]
@@ -132,12 +156,40 @@ export class Servicediscovery extends PolicyStatement {
             "description": "Gets settings for all the services that match specified filters.",
             "accessLevel": "List"
         },
+        "ListTagsForResource": {
+            "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html",
+            "description": "Lists tags for the specified resource.",
+            "accessLevel": "List"
+        },
         "RegisterInstance": {
             "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html",
             "description": "Registers an instance based on the settings in a specified service.",
             "accessLevel": "Write",
+            "resourceTypes": {
+                "service": {
+                    "required": true
+                }
+            },
             "conditions": [
                 "servicediscovery:ServiceArn"
+            ]
+        },
+        "TagResource": {
+            "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html",
+            "description": "Adds one or more tags to the specified resource.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
+            ]
+        },
+        "UntagResource": {
+            "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html",
+            "description": "Removes one or more tags from the specified resource.",
+            "accessLevel": "Tagging",
+            "conditions": [
+                "aws:TagKeys",
+                "aws:RequestTag/${TagKey}"
             ]
         },
         "UpdateInstanceCustomHealthStatus": {
@@ -365,6 +417,18 @@ export class Servicediscovery extends PolicyStatement {
     }
 
     /**
+     * Lists tags for the specified resource.
+     *
+     * Access Level: List
+     *
+     * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html
+     */
+    public listTagsForResource () {
+        this.add('servicediscovery:ListTagsForResource');
+        return this;
+    }
+
+    /**
      * Registers an instance based on the settings in a specified service.
      *
      * Access Level: Write
@@ -373,6 +437,30 @@ export class Servicediscovery extends PolicyStatement {
      */
     public registerInstance () {
         this.add('servicediscovery:RegisterInstance');
+        return this;
+    }
+
+    /**
+     * Adds one or more tags to the specified resource.
+     *
+     * Access Level: Tagging
+     *
+     * https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html
+     */
+    public tagResource () {
+        this.add('servicediscovery:TagResource');
+        return this;
+    }
+
+    /**
+     * Removes one or more tags from the specified resource.
+     *
+     * Access Level: Tagging
+     *
+     * https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html
+     */
+    public untagResource () {
+        this.add('servicediscovery:UntagResource');
         return this;
     }
 
