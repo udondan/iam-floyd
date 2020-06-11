@@ -8,11 +8,11 @@ import { Project, Scope, SourceFile } from 'ts-morph';
 import { fixes } from './fixes';
 
 const project = new Project();
-
-const modules: string[] = [];
+const modules: Module[] = [];
 
 export interface Module {
   name: string;
+  filename: string;
   url: string;
   actions?: Actions;
   fixes?: {
@@ -56,7 +56,7 @@ export function getAwsServices(): Promise<string[]> {
             services.push(match[1]);
           }
         } while (match);
-        resolve(services);
+        resolve(services.sort());
       }
     );
   });
@@ -89,6 +89,7 @@ export function getContent(service: string): Promise<Module> {
       }
       const module: Module = {
         name: servicePrefix,
+        filename: service.replace(/[^a-z0-9-]/i, '-'),
         url: url,
       };
 
@@ -177,14 +178,13 @@ export function createModules(services: string[]) {
 export function createModule(module: Module): Promise<void> {
   process.stdout.write(`Generating `.cyan);
 
-  var moduleName = module.name;
   if (module.fixes && 'id' in module.fixes) {
-    moduleName = module.fixes.id;
+    module.name = module.fixes.id;
   }
 
-  modules.push(moduleName);
+  modules.push(module);
 
-  const sourceFile = project.createSourceFile(`./lib/${moduleName}.ts`);
+  const sourceFile = project.createSourceFile(`./lib/${module.filename}.ts`);
 
   sourceFile.addImportDeclaration({
     namedImports: ['PolicyStatement', 'Actions'],
@@ -192,7 +192,7 @@ export function createModule(module: Module): Promise<void> {
   });
 
   const classDeclaration = sourceFile.addClass({
-    name: camelCase(moduleName),
+    name: camelCase(module.name),
     extends: 'PolicyStatement',
     isExported: true,
   });
@@ -246,8 +246,8 @@ export function createIndex() {
 
   modules.sort().forEach((module) => {
     sourceFile.addExportDeclaration({
-      namedExports: [camelCase(module)],
-      moduleSpecifier: `./${module}`,
+      namedExports: [camelCase(module.name)],
+      moduleSpecifier: `./${module.filename}`,
     });
   });
 

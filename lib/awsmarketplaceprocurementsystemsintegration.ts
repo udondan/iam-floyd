@@ -1,12 +1,12 @@
 import { PolicyStatement, Actions } from "./shared";
 
 /**
- * Action provider for service aws-marketplace
+ * Action provider for service aws-marketplace-procurement-systems-integration
  *
  * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceprocurementsystemsintegration.html
  */
 export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace';
+  public servicePrefix = 'aws-marketplace-procurement-systems-integration';
   public actions : Actions = {
     "DescribeProcurementSystemConfiguration": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html",
@@ -28,7 +28,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
   public describeProcurementSystemConfiguration () {
-    this.add('aws-marketplace:DescribeProcurementSystemConfiguration');
+    this.add('aws-marketplace-procurement-systems-integration:DescribeProcurementSystemConfiguration');
     return this;
   }
 
@@ -40,7 +40,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
   public putProcurementSystemConfiguration () {
-    this.add('aws-marketplace:PutProcurementSystemConfiguration');
+    this.add('aws-marketplace-procurement-systems-integration:PutProcurementSystemConfiguration');
     return this;
   }
 }

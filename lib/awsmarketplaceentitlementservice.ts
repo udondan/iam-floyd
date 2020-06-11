@@ -1,12 +1,12 @@
 import { PolicyStatement, Actions } from "./shared";
 
 /**
- * Action provider for service aws-marketplace
+ * Action provider for service aws-marketplace-entitlement-service
  *
  * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html
  */
 export class AwsMarketplaceEntitlementService extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace';
+  public servicePrefix = 'aws-marketplace-entitlement-service';
   public actions : Actions = {
     "GetEntitlements": {
       "url": "",
@@ -23,7 +23,7 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
    *
    */
   public getEntitlements () {
-    this.add('aws-marketplace:GetEntitlements');
+    this.add('aws-marketplace-entitlement-service:GetEntitlements');
     return this;
   }
 }

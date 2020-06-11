@@ -1,12 +1,12 @@
 import { PolicyStatement, Actions } from "./shared";
 
 /**
- * Action provider for service aws-marketplace
+ * Action provider for service aws-marketplace-metering-service
  *
  * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemeteringservice.html
  */
 export class AwsMarketplaceMeteringService extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace';
+  public servicePrefix = 'aws-marketplace-metering-service';
   public actions : Actions = {
     "BatchMeterUsage": {
       "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html",
@@ -38,7 +38,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html
    */
   public batchMeterUsage () {
-    this.add('aws-marketplace:BatchMeterUsage');
+    this.add('aws-marketplace-metering-service:BatchMeterUsage');
     return this;
   }
 
@@ -50,7 +50,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html
    */
   public meterUsage () {
-    this.add('aws-marketplace:MeterUsage');
+    this.add('aws-marketplace-metering-service:MeterUsage');
     return this;
   }
 
@@ -62,7 +62,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html
    */
   public registerUsage () {
-    this.add('aws-marketplace:RegisterUsage');
+    this.add('aws-marketplace-metering-service:RegisterUsage');
     return this;
   }
 
@@ -74,7 +74,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html
    */
   public resolveCustomer () {
-    this.add('aws-marketplace:ResolveCustomer');
+    this.add('aws-marketplace-metering-service:ResolveCustomer');
     return this;
   }
 }

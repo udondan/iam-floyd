@@ -1,12 +1,12 @@
 import { PolicyStatement, Actions } from "./shared";
 
 /**
- * Action provider for service aws-marketplace
+ * Action provider for service aws-marketplace-image-building-service
  *
  * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html
  */
 export class AwsMarketplaceImageBuildingService extends PolicyStatement {
-  public servicePrefix = 'aws-marketplace';
+  public servicePrefix = 'aws-marketplace-image-building-service';
   public actions : Actions = {
     "DescribeBuilds": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
@@ -33,7 +33,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
   public describeBuilds () {
-    this.add('aws-marketplace:DescribeBuilds');
+    this.add('aws-marketplace-image-building-service:DescribeBuilds');
     return this;
   }
 
@@ -45,7 +45,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
   public listBuilds () {
-    this.add('aws-marketplace:ListBuilds');
+    this.add('aws-marketplace-image-building-service:ListBuilds');
     return this;
   }
 
@@ -57,7 +57,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
   public startBuild () {
-    this.add('aws-marketplace:StartBuild');
+    this.add('aws-marketplace-image-building-service:StartBuild');
     return this;
   }
 }
