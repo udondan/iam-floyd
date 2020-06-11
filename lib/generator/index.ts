@@ -12,7 +12,7 @@ import { fixes } from './fixes';
 const project = new Project();
 const modules: Module[] = [];
 const timeThreshold = new Date();
-timeThreshold.setHours(timeThreshold.getHours() - 3);
+timeThreshold.setHours(timeThreshold.getHours() - 2);
 
 export interface Module {
   name?: string;
