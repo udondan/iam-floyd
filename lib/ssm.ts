@@ -6,2558 +6,2558 @@ import { PolicyStatement, Actions } from "./shared";
  * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html
  */
 export class Ssm extends PolicyStatement {
-    public servicePrefix = 'ssm';
-    public actions : Actions = {
-        "AddTagsToResource": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html",
-            "description": "Grants permission to add or overwrite one or more tags for a specified AWS resource",
-            "accessLevel": "Tagging",
-            "resourceTypes": {
-                "document": {
-                    "required": false
-                },
-                "maintenancewindow": {
-                    "required": false
-                },
-                "managed-instance": {
-                    "required": false
-                },
-                "parameter": {
-                    "required": false
-                },
-                "patchbaseline": {
-                    "required": false
-                }
-            }
-        },
-        "CancelCommand": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelCommand.html",
-            "description": "Grants permission to cancel a specified Run Command command",
-            "accessLevel": "Write"
-        },
-        "CancelMaintenanceWindowExecution": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelMaintenanceWindowExecution.html",
-            "description": "Grants permission to cancel an in-progress maintenance window execution",
-            "accessLevel": "Write"
-        },
-        "CreateActivation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateActivation.html",
-            "description": "Grants permission to create an activation that is used to register on-premises servers and virtual machines (VMs) with Systems Manager",
-            "accessLevel": "Write"
-        },
-        "CreateAssociation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html",
-            "description": "Grants permission to associate a specified Systems Manager document with specified instances or other targets",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "CreateAssociationBatch": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html",
-            "description": "Grants permission to combine entries for multiple CreateAssociation operations in a single command",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "CreateDocument": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html",
-            "description": "Grants permission to create a Systems Manager SSM document",
-            "accessLevel": "Write",
-            "conditions": [
-                "aws:RequestTag/${TagKey}",
-                "aws:TagKeys"
-            ]
-        },
-        "CreateMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html",
-            "description": "Grants permission to create a maintenance window",
-            "accessLevel": "Write",
-            "conditions": [
-                "aws:RequestTag/${TagKey}",
-                "aws:TagKeys"
-            ]
-        },
-        "CreateOpsItem": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsItem.html",
-            "description": "Grants permission to create an OpsItem in OpsCenter",
-            "accessLevel": "Write"
-        },
-        "CreatePatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html",
-            "description": "Grants permission to create a patch baseline",
-            "accessLevel": "Write",
-            "conditions": [
-                "aws:RequestTag/${TagKey}",
-                "aws:TagKeys"
-            ]
-        },
-        "CreateResourceDataSync": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateResourceDataSync.html",
-            "description": "Grants permission to create a resource data sync configuration, which regularly collects inventory data from managed instances and updates the data in an Amazon S3 bucket",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "resourcedatasync": {
-                    "required": true
-                }
-            },
-            "conditions": [
-                "ssm:SyncType"
-            ]
-        },
-        "DeleteActivation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteActivation.html",
-            "description": "Grants permission to delete a specified activation for managed instances",
-            "accessLevel": "Write"
-        },
-        "DeleteAssociation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html",
-            "description": "Grants permission to disassociate a specified SSM document from a specified instance",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "DeleteDocument": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteDocument.html",
-            "description": "Grants permission to delete a specified SSM document and its instance associations",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "DeleteInventory": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteInventory.html",
-            "description": "Grants permission to delete a specified custom inventory type, or the data associated with a custom inventory type",
-            "accessLevel": "Write"
-        },
-        "DeleteMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteMaintenanceWindow.html",
-            "description": "Grants permission to delete a specified maintenance window",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "DeleteParameter": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html",
-            "description": "Grants permission to delete a specified SSM parameter",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "DeleteParameters": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html",
-            "description": "Grants permission to delete multiple specified SSM parameters",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "DeletePatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeletePatchBaseline.html",
-            "description": "Grants permission to delete a specified patch baseline",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "DeleteResourceDataSync": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourceDataSync.html",
-            "description": "Grants permission to delete a specified resource data sync",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "resourcedatasync": {
-                    "required": true
-                }
-            },
-            "conditions": [
-                "ssm:SyncType"
-            ]
-        },
-        "DeregisterManagedInstance": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterManagedInstance.html",
-            "description": "Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "managed-instance": {
-                    "required": true
-                }
-            }
-        },
-        "DeregisterPatchBaselineForPatchGroup": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterPatchBaselineForPatchGroup.html",
-            "description": "Grants permission to deregister a specified patch baseline from being the default patch baseline for a specified patch group",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "DeregisterTargetFromMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTargetFromMaintenanceWindow.html",
-            "description": "Grants permission to deregister a specified target from a maintenance window",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "DeregisterTaskFromMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTaskFromMaintenanceWindow.html",
-            "description": "Grants permission to deregister a specified task from a maintenance window",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeActivations": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeActivations.html",
-            "description": "Grants permission to view details about a specified managed instance activation, such as when it was created and the number of instances registered using the activation",
-            "accessLevel": "Read"
-        },
-        "DescribeAssociation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociation.html",
-            "description": "Grants permission to view details about the specified association for a specified instance or target",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeAssociationExecutionTargets": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutionTargets.html",
-            "description": "Grants permission to view information about a specified association execution",
-            "accessLevel": "Read"
-        },
-        "DescribeAssociationExecutions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutions.html",
-            "description": "Grants permission to view all executions for a specified association",
-            "accessLevel": "Read"
-        },
-        "DescribeAutomationExecutions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationExecutions.html",
-            "description": "Grants permission to view details about all active and terminated Automation executions",
-            "accessLevel": "Read"
-        },
-        "DescribeAutomationStepExecutions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationStepExecutions.html",
-            "description": "Grants permission to view information about all active and terminated step executions in an Automation workflow",
-            "accessLevel": "Read"
-        },
-        "DescribeAvailablePatches": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAvailablePatches.html",
-            "description": "Grants permission to view all patches eligible to include in a patch baseline",
-            "accessLevel": "Read"
-        },
-        "DescribeDocument": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocument.html",
-            "description": "Grants permission to view details about a specified SSM document",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeDocumentParameters": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
-            "description": "Grants permission to display information about SSM document parameters in the Systems Manager console (internal Systems Manager action)",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeDocumentPermission": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocumentPermission.html",
-            "description": "Grants permission to view the permissions for a specified SSM document",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeEffectiveInstanceAssociations": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html",
-            "description": "Grants permission to view all current associations for a specified instance",
-            "accessLevel": "Read"
-        },
-        "DescribeEffectivePatchesForPatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectivePatchesForPatchBaseline.html",
-            "description": "Grants permission to view details about the patches currently associated with the specified patch baseline (Windows only)",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeInstanceAssociationsStatus": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html",
-            "description": "Grants permission to view the status of the associations for a specified instance",
-            "accessLevel": "Read"
-        },
-        "DescribeInstanceInformation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceInformation.html",
-            "description": "Grants permission to view details about a specified instance",
-            "accessLevel": "Read"
-        },
-        "DescribeInstancePatchStates": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStates.html",
-            "description": "Grants permission to view status details about patches on a specified instance",
-            "accessLevel": "Read"
-        },
-        "DescribeInstancePatchStatesForPatchGroup": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStatesForPatchGroup.html",
-            "description": "Grants permission to describe the high-level patch state for the instances in the specified patch group",
-            "accessLevel": "Read"
-        },
-        "DescribeInstancePatches": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatches.html",
-            "description": "Grants permission to view general details about the patches on a specified instance",
-            "accessLevel": "Read"
-        },
-        "DescribeInstanceProperties": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
-            "description": "Grants permission to user's Amazon EC2 console to render managed instances' nodes",
-            "accessLevel": "Read"
-        },
-        "DescribeInventoryDeletions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInventoryDeletions.html",
-            "description": "Grants permission to view details about a specified inventory deletion",
-            "accessLevel": "Read"
-        },
-        "DescribeMaintenanceWindowExecutionTaskInvocations": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTaskInvocations.html",
-            "description": "Grants permission to view details of a specified task execution for a maintenance window",
-            "accessLevel": "List"
-        },
-        "DescribeMaintenanceWindowExecutionTasks": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTasks.html",
-            "description": "Grants permission to view details about the tasks that ran during a specified maintenance window execution",
-            "accessLevel": "List"
-        },
-        "DescribeMaintenanceWindowExecutions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutions.html",
-            "description": "Grants permission to view the executions of a specified maintenance window",
-            "accessLevel": "List",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeMaintenanceWindowSchedule": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowSchedule.html",
-            "description": "Grants permission to view details about upcoming executions of a specified maintenance window",
-            "accessLevel": "List"
-        },
-        "DescribeMaintenanceWindowTargets": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTargets.html",
-            "description": "Grants permission to view a list of the targets associated with a specified maintenance window",
-            "accessLevel": "List",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeMaintenanceWindowTasks": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTasks.html",
-            "description": "Grants permission to view a list of the tasks associated with a specified maintenance window",
-            "accessLevel": "List",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "DescribeMaintenanceWindows": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindows.html",
-            "description": "Grants permission to view information about all or specified maintenance windows",
-            "accessLevel": "List"
-        },
-        "DescribeMaintenanceWindowsForTarget": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowsForTarget.html",
-            "description": "Grants permission to view information about the maintenance window targets and tasks associated with a specified instance",
-            "accessLevel": "List"
-        },
-        "DescribeOpsItems": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeOpsItems.html",
-            "description": "Grants permission to view details about specified OpsItems",
-            "accessLevel": "Read"
-        },
-        "DescribeParameters": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html",
-            "description": "Grants permission to view details about a specified SSM parameter",
-            "accessLevel": "List"
-        },
-        "DescribePatchBaselines": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchBaselines.html",
-            "description": "Grants permission to view information about patch baselines that meet the specified criteria",
-            "accessLevel": "List"
-        },
-        "DescribePatchGroupState": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroupState.html",
-            "description": "Grants permission to view aggregated status details for patches for a specified patch group",
-            "accessLevel": "Read"
-        },
-        "DescribePatchGroups": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroups.html",
-            "description": "Grants permission to view information about the patch baseline for a specified patch group",
-            "accessLevel": "List"
-        },
-        "DescribePatchProperties": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html",
-            "description": "Grants permission to view details of available patches for a specified operating system and patch property",
-            "accessLevel": "List"
-        },
-        "DescribeSessions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeSessions.html",
-            "description": "Grants permission to view a list of recent Session Manager sessions that meet the specified search criteria",
-            "accessLevel": "List"
-        },
-        "GetAutomationExecution": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AutomationExecution.html",
-            "description": "Grants permission to view details of a specified Automation execution",
-            "accessLevel": "Read"
-        },
-        "GetCommandInvocation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCommandInvocation.html",
-            "description": "Grants permission to view details about the command execution of a specified invocation or plugin",
-            "accessLevel": "Read"
-        },
-        "GetConnectionStatus": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionStatus.html",
-            "description": "Grants permission to view the Session Manager connection status for a specified managed instance",
-            "accessLevel": "Read"
-        },
-        "GetDefaultPatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDefaultPatchBaseline.html",
-            "description": "Grants permission to view the current default patch baseline for a specified operating system type",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "GetDeployablePatchSnapshotForInstance": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDeployablePatchSnapshotForInstance.html",
-            "description": "Grants permission to retrieve the current patch baseline snapshot for a specified instance",
-            "accessLevel": "Read"
-        },
-        "GetDocument": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html",
-            "description": "Grants permission to view the contents of a specified SSM document",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "GetInventory": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventory.html",
-            "description": "Grants permission to view instance inventory details per the specified criteria",
-            "accessLevel": "Read"
-        },
-        "GetInventorySchema": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventorySchema.html",
-            "description": "Grants permission to view a list of inventory types or attribute names for a specified inventory item type",
-            "accessLevel": "Read"
-        },
-        "GetMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindow.html",
-            "description": "Grants permission to view details about a specified maintenance window",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "GetMaintenanceWindowExecution": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecution.html",
-            "description": "Grants permission to view details about a specified maintenance window execution",
-            "accessLevel": "Read"
-        },
-        "GetMaintenanceWindowExecutionTask": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTask.html",
-            "description": "Grants permission to view details about a specified maintenance window execution task",
-            "accessLevel": "Read"
-        },
-        "GetMaintenanceWindowExecutionTaskInvocation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTaskInvocation.html",
-            "description": "Grants permission to view details about a specific maintenance window task running on a specific target",
-            "accessLevel": "Read"
-        },
-        "GetMaintenanceWindowTask": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowTask.html",
-            "description": "Grants permission to view details about tasks registered with a specified maintenance window",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "GetManifest": {
-            "url": "",
-            "description": "Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)",
-            "accessLevel": "Read"
-        },
-        "GetOpsItem": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsItem.html",
-            "description": "Grants permission to view information about a specified OpsItem",
-            "accessLevel": "Read"
-        },
-        "GetOpsSummary": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsSummary.html",
-            "description": "Grants permission to view summary information about OpsItems based on specified filters and aggregators",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "resourcedatasync": {
-                    "required": true
-                }
-            }
-        },
-        "GetParameter": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html",
-            "description": "Grants permission to view information about a specified parameter",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "GetParameterHistory": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html",
-            "description": "Grants permission to view details and changes for a specified parameter",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "GetParameters": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html",
-            "description": "Grants permission to view information about multiple specified parameters",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "GetParametersByPath": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html",
-            "description": "Grants permission to view information about parameters in a specified hierarchy",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "GetPatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaseline.html",
-            "description": "Grants permission to view information about a specified patch baseline",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "GetPatchBaselineForPatchGroup": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaselineForPatchGroup.html",
-            "description": "Grants permission to view the ID of the current patch baseline for a specified patch group",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "GetServiceSetting": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetServiceSetting.html",
-            "description": "Grants permission to view the account-level setting for an AWS service",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "servicesetting": {
-                    "required": true
-                }
-            }
-        },
-        "LabelParameterVersion": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_LabelParameterVersion.html",
-            "description": "Grants permission to apply an identifying label to a specified version of a parameter",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            }
-        },
-        "ListAssociationVersions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociationVersions.html",
-            "description": "Grants permission to list versions of the specified association",
-            "accessLevel": "List"
-        },
-        "ListAssociations": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociations.html",
-            "description": "Grants permission to list the associations for a specified SSM document or managed instance",
-            "accessLevel": "List"
-        },
-        "ListCommandInvocations": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommandInvocations.html",
-            "description": "Grants permission to list information about command invocations sent to a specified instance",
-            "accessLevel": "Read"
-        },
-        "ListCommands": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommands.html",
-            "description": "Grants permission to list the commands sent to a specified instance",
-            "accessLevel": "Read"
-        },
-        "ListComplianceItems": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceItems.html",
-            "description": "Grants permission to list compliance status for specified resource types on a specified resource",
-            "accessLevel": "List"
-        },
-        "ListComplianceSummaries": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceSummaries.html",
-            "description": "Grants permission to list a summary count of compliant and noncompliant resources for a specified compliance type",
-            "accessLevel": "List"
-        },
-        "ListDocumentVersions": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentVersions.html",
-            "description": "Grants permission to list all versions of a specified document",
-            "accessLevel": "List",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "ListDocuments": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html",
-            "description": "Grants permission to view information about a specified SSM document",
-            "accessLevel": "List"
-        },
-        "ListInstanceAssociations": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
-            "description": "Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)",
-            "accessLevel": "List"
-        },
-        "ListInventoryEntries": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListInventoryEntries.html",
-            "description": "Grants permission to view a list of specified inventory types for a specified instance",
-            "accessLevel": "List"
-        },
-        "ListResourceComplianceSummaries": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceComplianceSummaries.html",
-            "description": "Grants permission to list resource-level summary count",
-            "accessLevel": "List"
-        },
-        "ListResourceDataSync": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceDataSync.html",
-            "description": "Grants permission to list information about resource data sync configurations in an account",
-            "accessLevel": "List",
-            "conditions": [
-                "ssm:SyncType"
-            ]
-        },
-        "ListTagsForResource": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html",
-            "description": "Grants permission to view a list of resource tags for a specified resource",
-            "accessLevel": "Read",
-            "resourceTypes": {
-                "document": {
-                    "required": false
-                },
-                "maintenancewindow": {
-                    "required": false
-                },
-                "managed-instance": {
-                    "required": false
-                },
-                "parameter": {
-                    "required": false
-                },
-                "patchbaseline": {
-                    "required": false
-                }
-            }
-        },
-        "ModifyDocumentPermission": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html",
-            "description": "Grants permission to share a custom SSM document publicly or privately with specified AWS accounts",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "PutComplianceItems": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html",
-            "description": "Grants permission to register a compliance type and other compliance details on a specified resource",
-            "accessLevel": "Write"
-        },
-        "PutConfigurePackageResult": {
-            "url": "",
-            "description": "Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)",
-            "accessLevel": "Read"
-        },
-        "PutInventory": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html",
-            "description": "Grants permission to add or update inventory items on multiple specified managed instances",
-            "accessLevel": "Write"
-        },
-        "PutParameter": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html",
-            "description": "Grants permission to create an SSM parameter",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "parameter": {
-                    "required": true
-                }
-            },
-            "conditions": [
-                "aws:RequestTag/${TagKey}",
-                "aws:TagKeys"
-            ]
-        },
-        "RegisterDefaultPatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterDefaultPatchBaseline.html",
-            "description": "Grants permission to specify the default patch baseline for an operating system type",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "RegisterPatchBaselineForPatchGroup": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterPatchBaselineForPatchGroup.html",
-            "description": "Grants permission to specify the default patch baseline for a specified patch group",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "RegisterTargetWithMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html",
-            "description": "Grants permission to register a target with a specified maintenance window",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "RegisterTaskWithMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html",
-            "description": "Grants permission to register a task with a specified maintenance window",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "RemoveTagsFromResource": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html",
-            "description": "Grants permission to remove a specified tag key from a specified resource",
-            "accessLevel": "Tagging",
-            "resourceTypes": {
-                "document": {
-                    "required": false
-                },
-                "maintenancewindow": {
-                    "required": false
-                },
-                "managed-instance": {
-                    "required": false
-                },
-                "parameter": {
-                    "required": false
-                },
-                "patchbaseline": {
-                    "required": false
-                }
-            }
-        },
-        "ResetServiceSetting": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResetServiceSetting.html",
-            "description": "Grants permission to reset the service setting for an AWS account to the default value",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "servicesetting": {
-                    "required": true
-                }
-            }
-        },
-        "ResumeSession": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResumeSession.html",
-            "description": "Grants permission to reconnect a Session Manager session to a managed instance",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "session": {
-                    "required": true
-                }
-            }
-        },
-        "SendAutomationSignal": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendAutomationSignal.html",
-            "description": "Grants permission to send a signal to change the current behavior or status of a specified Automation execution",
-            "accessLevel": "Write"
-        },
-        "SendCommand": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendCommand.html",
-            "description": "Grants permission to run commands on one or more specified managed instances",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                },
-                "instance": {
-                    "required": false
-                },
-                "managed-instance": {
-                    "required": false
-                }
-            },
-            "conditions": [
-                "aws:ResourceTag/${TagKey}",
-                "ssm:resourceTag/tag-key"
-            ]
-        },
-        "StartAssociationsOnce": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html",
-            "description": "Grants permission to run a specified association manually",
-            "accessLevel": "Write"
-        },
-        "StartAutomationExecution": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html",
-            "description": "Grants permission to initiate the execution of an Automation document",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": true
-                }
-            }
-        },
-        "StartSession": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html",
-            "description": "Grants permission to initiate a connection to a specified target for a Session Manager session",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "instance": {
-                    "required": true
-                },
-                "document": {
-                    "required": false
-                }
-            },
-            "conditions": [
-                "ssm:SessionDocumentAccessCheck"
-            ]
-        },
-        "StopAutomationExecution": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StopAutomationExecution.html",
-            "description": "Grants permission to stop a specified Automation execution that is already in progress",
-            "accessLevel": "Write"
-        },
-        "TerminateSession": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_TerminateSession.html",
-            "description": "Grants permission to permanently end a Session Manager connection to an instance.",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "session": {
-                    "required": true
-                }
-            }
-        },
-        "UpdateAssociation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html",
-            "description": "Grants permission to update an association and immediately run the association on the specified targets",
-            "accessLevel": "Write"
-        },
-        "UpdateAssociationStatus": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html",
-            "description": "Grants permission to update the status of the SSM document associated with a specified instance",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "document": {
-                    "required": false
-                }
-            }
-        },
-        "UpdateDocument": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html",
-            "description": "Grants permission to update one or more values for an SSM document",
-            "accessLevel": "Write"
-        },
-        "UpdateDocumentDefaultVersion": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html",
-            "description": "Grants permission to change the default version of an SSM document",
-            "accessLevel": "Write"
-        },
-        "UpdateInstanceAssociationStatus": {
-            "url": "",
-            "description": "Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)",
-            "accessLevel": "Write"
-        },
-        "UpdateInstanceInformation": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
-            "description": "Used by SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud",
-            "accessLevel": "Write"
-        },
-        "UpdateMaintenanceWindow": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindow.html",
-            "description": "Grants permission to update a specified maintenance window",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "UpdateMaintenanceWindowTarget": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTarget.html",
-            "description": "Grants permission to update a specified maintenance window target",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "UpdateMaintenanceWindowTask": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTask.html",
-            "description": "Grants permission to update a specified maintenance window task",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "maintenancewindow": {
-                    "required": true
-                }
-            }
-        },
-        "UpdateManagedInstanceRole": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateManagedInstanceRole.html",
-            "description": "Grants permission to assign or change the IAM role assigned to a specified managed instance",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "managed-instance": {
-                    "required": true
-                }
-            }
-        },
-        "UpdateOpsItem": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateOpsItem.html",
-            "description": "Grants permission to edit or change an OpsItem",
-            "accessLevel": "Write"
-        },
-        "UpdatePatchBaseline": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdatePatchBaseline.html",
-            "description": "Grants permission to update a specified patch baseline",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "patchbaseline": {
-                    "required": true
-                }
-            }
-        },
-        "UpdateResourceDataSync": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html",
-            "description": "Grants permission to update a resource data sync",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "resourcedatasync": {
-                    "required": true
-                }
-            },
-            "conditions": [
-                "ssm:SyncType"
-            ]
-        },
-        "UpdateServiceSetting": {
-            "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html",
-            "description": "Grants permission to update the service setting for an AWS account",
-            "accessLevel": "Write",
-            "resourceTypes": {
-                "servicesetting": {
-                    "required": true
-                }
-            }
+  public servicePrefix = 'ssm';
+  public actions : Actions = {
+    "AddTagsToResource": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html",
+      "description": "Grants permission to add or overwrite one or more tags for a specified AWS resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "document": {
+          "required": false
+        },
+        "maintenancewindow": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        },
+        "parameter": {
+          "required": false
+        },
+        "patchbaseline": {
+          "required": false
         }
-    };
-
-    /**
-     * Grants permission to add or overwrite one or more tags for a specified AWS resource
-     *
-     * Access Level: Tagging
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html
-     */
-    public addTagsToResource () {
-        this.add('ssm:AddTagsToResource');
-        return this;
-    }
-
-    /**
-     * Grants permission to cancel a specified Run Command command
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelCommand.html
-     */
-    public cancelCommand () {
-        this.add('ssm:CancelCommand');
-        return this;
-    }
-
-    /**
-     * Grants permission to cancel an in-progress maintenance window execution
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelMaintenanceWindowExecution.html
-     */
-    public cancelMaintenanceWindowExecution () {
-        this.add('ssm:CancelMaintenanceWindowExecution');
-        return this;
-    }
-
-    /**
-     * Grants permission to create an activation that is used to register on-premises servers and virtual machines (VMs) with Systems Manager
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateActivation.html
-     */
-    public createActivation () {
-        this.add('ssm:CreateActivation');
-        return this;
-    }
-
-    /**
-     * Grants permission to associate a specified Systems Manager document with specified instances or other targets
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html
-     */
-    public createAssociation () {
-        this.add('ssm:CreateAssociation');
-        return this;
-    }
-
-    /**
-     * Grants permission to combine entries for multiple CreateAssociation operations in a single command
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html
-     */
-    public createAssociationBatch () {
-        this.add('ssm:CreateAssociationBatch');
-        return this;
-    }
-
-    /**
-     * Grants permission to create a Systems Manager SSM document
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html
-     */
-    public createDocument () {
-        this.add('ssm:CreateDocument');
-        return this;
-    }
-
-    /**
-     * Grants permission to create a maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html
-     */
-    public createMaintenanceWindow () {
-        this.add('ssm:CreateMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to create an OpsItem in OpsCenter
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsItem.html
-     */
-    public createOpsItem () {
-        this.add('ssm:CreateOpsItem');
-        return this;
-    }
-
-    /**
-     * Grants permission to create a patch baseline
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html
-     */
-    public createPatchBaseline () {
-        this.add('ssm:CreatePatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to create a resource data sync configuration, which regularly collects inventory data from managed instances and updates the data in an Amazon S3 bucket
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateResourceDataSync.html
-     */
-    public createResourceDataSync () {
-        this.add('ssm:CreateResourceDataSync');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified activation for managed instances
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteActivation.html
-     */
-    public deleteActivation () {
-        this.add('ssm:DeleteActivation');
-        return this;
-    }
-
-    /**
-     * Grants permission to disassociate a specified SSM document from a specified instance
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html
-     */
-    public deleteAssociation () {
-        this.add('ssm:DeleteAssociation');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified SSM document and its instance associations
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteDocument.html
-     */
-    public deleteDocument () {
-        this.add('ssm:DeleteDocument');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified custom inventory type, or the data associated with a custom inventory type
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteInventory.html
-     */
-    public deleteInventory () {
-        this.add('ssm:DeleteInventory');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteMaintenanceWindow.html
-     */
-    public deleteMaintenanceWindow () {
-        this.add('ssm:DeleteMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified SSM parameter
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html
-     */
-    public deleteParameter () {
-        this.add('ssm:DeleteParameter');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete multiple specified SSM parameters
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html
-     */
-    public deleteParameters () {
-        this.add('ssm:DeleteParameters');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified patch baseline
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeletePatchBaseline.html
-     */
-    public deletePatchBaseline () {
-        this.add('ssm:DeletePatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to delete a specified resource data sync
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourceDataSync.html
-     */
-    public deleteResourceDataSync () {
-        this.add('ssm:DeleteResourceDataSync');
-        return this;
-    }
-
-    /**
-     * Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterManagedInstance.html
-     */
-    public deregisterManagedInstance () {
-        this.add('ssm:DeregisterManagedInstance');
-        return this;
-    }
-
-    /**
-     * Grants permission to deregister a specified patch baseline from being the default patch baseline for a specified patch group
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterPatchBaselineForPatchGroup.html
-     */
-    public deregisterPatchBaselineForPatchGroup () {
-        this.add('ssm:DeregisterPatchBaselineForPatchGroup');
-        return this;
-    }
-
-    /**
-     * Grants permission to deregister a specified target from a maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTargetFromMaintenanceWindow.html
-     */
-    public deregisterTargetFromMaintenanceWindow () {
-        this.add('ssm:DeregisterTargetFromMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to deregister a specified task from a maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTaskFromMaintenanceWindow.html
-     */
-    public deregisterTaskFromMaintenanceWindow () {
-        this.add('ssm:DeregisterTaskFromMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified managed instance activation, such as when it was created and the number of instances registered using the activation
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeActivations.html
-     */
-    public describeActivations () {
-        this.add('ssm:DescribeActivations');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about the specified association for a specified instance or target
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociation.html
-     */
-    public describeAssociation () {
-        this.add('ssm:DescribeAssociation');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about a specified association execution
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutionTargets.html
-     */
-    public describeAssociationExecutionTargets () {
-        this.add('ssm:DescribeAssociationExecutionTargets');
-        return this;
-    }
-
-    /**
-     * Grants permission to view all executions for a specified association
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutions.html
-     */
-    public describeAssociationExecutions () {
-        this.add('ssm:DescribeAssociationExecutions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about all active and terminated Automation executions
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationExecutions.html
-     */
-    public describeAutomationExecutions () {
-        this.add('ssm:DescribeAutomationExecutions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about all active and terminated step executions in an Automation workflow
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationStepExecutions.html
-     */
-    public describeAutomationStepExecutions () {
-        this.add('ssm:DescribeAutomationStepExecutions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view all patches eligible to include in a patch baseline
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAvailablePatches.html
-     */
-    public describeAvailablePatches () {
-        this.add('ssm:DescribeAvailablePatches');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified SSM document
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocument.html
-     */
-    public describeDocument () {
-        this.add('ssm:DescribeDocument');
-        return this;
-    }
-
-    /**
-     * Grants permission to display information about SSM document parameters in the Systems Manager console (internal Systems Manager action)
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
-     */
-    public describeDocumentParameters () {
-        this.add('ssm:DescribeDocumentParameters');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the permissions for a specified SSM document
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocumentPermission.html
-     */
-    public describeDocumentPermission () {
-        this.add('ssm:DescribeDocumentPermission');
-        return this;
-    }
-
-    /**
-     * Grants permission to view all current associations for a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html
-     */
-    public describeEffectiveInstanceAssociations () {
-        this.add('ssm:DescribeEffectiveInstanceAssociations');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about the patches currently associated with the specified patch baseline (Windows only)
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectivePatchesForPatchBaseline.html
-     */
-    public describeEffectivePatchesForPatchBaseline () {
-        this.add('ssm:DescribeEffectivePatchesForPatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the status of the associations for a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html
-     */
-    public describeInstanceAssociationsStatus () {
-        this.add('ssm:DescribeInstanceAssociationsStatus');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceInformation.html
-     */
-    public describeInstanceInformation () {
-        this.add('ssm:DescribeInstanceInformation');
-        return this;
-    }
-
-    /**
-     * Grants permission to view status details about patches on a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStates.html
-     */
-    public describeInstancePatchStates () {
-        this.add('ssm:DescribeInstancePatchStates');
-        return this;
-    }
-
-    /**
-     * Grants permission to describe the high-level patch state for the instances in the specified patch group
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStatesForPatchGroup.html
-     */
-    public describeInstancePatchStatesForPatchGroup () {
-        this.add('ssm:DescribeInstancePatchStatesForPatchGroup');
-        return this;
-    }
-
-    /**
-     * Grants permission to view general details about the patches on a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatches.html
-     */
-    public describeInstancePatches () {
-        this.add('ssm:DescribeInstancePatches');
-        return this;
-    }
-
-    /**
-     * Grants permission to user's Amazon EC2 console to render managed instances' nodes
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
-     */
-    public describeInstanceProperties () {
-        this.add('ssm:DescribeInstanceProperties');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified inventory deletion
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInventoryDeletions.html
-     */
-    public describeInventoryDeletions () {
-        this.add('ssm:DescribeInventoryDeletions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details of a specified task execution for a maintenance window
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTaskInvocations.html
-     */
-    public describeMaintenanceWindowExecutionTaskInvocations () {
-        this.add('ssm:DescribeMaintenanceWindowExecutionTaskInvocations');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about the tasks that ran during a specified maintenance window execution
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTasks.html
-     */
-    public describeMaintenanceWindowExecutionTasks () {
-        this.add('ssm:DescribeMaintenanceWindowExecutionTasks');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the executions of a specified maintenance window
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutions.html
-     */
-    public describeMaintenanceWindowExecutions () {
-        this.add('ssm:DescribeMaintenanceWindowExecutions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about upcoming executions of a specified maintenance window
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowSchedule.html
-     */
-    public describeMaintenanceWindowSchedule () {
-        this.add('ssm:DescribeMaintenanceWindowSchedule');
-        return this;
-    }
-
-    /**
-     * Grants permission to view a list of the targets associated with a specified maintenance window
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTargets.html
-     */
-    public describeMaintenanceWindowTargets () {
-        this.add('ssm:DescribeMaintenanceWindowTargets');
-        return this;
-    }
-
-    /**
-     * Grants permission to view a list of the tasks associated with a specified maintenance window
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTasks.html
-     */
-    public describeMaintenanceWindowTasks () {
-        this.add('ssm:DescribeMaintenanceWindowTasks');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about all or specified maintenance windows
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindows.html
-     */
-    public describeMaintenanceWindows () {
-        this.add('ssm:DescribeMaintenanceWindows');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about the maintenance window targets and tasks associated with a specified instance
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowsForTarget.html
-     */
-    public describeMaintenanceWindowsForTarget () {
-        this.add('ssm:DescribeMaintenanceWindowsForTarget');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about specified OpsItems
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeOpsItems.html
-     */
-    public describeOpsItems () {
-        this.add('ssm:DescribeOpsItems');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified SSM parameter
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html
-     */
-    public describeParameters () {
-        this.add('ssm:DescribeParameters');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about patch baselines that meet the specified criteria
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchBaselines.html
-     */
-    public describePatchBaselines () {
-        this.add('ssm:DescribePatchBaselines');
-        return this;
-    }
-
-    /**
-     * Grants permission to view aggregated status details for patches for a specified patch group
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroupState.html
-     */
-    public describePatchGroupState () {
-        this.add('ssm:DescribePatchGroupState');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about the patch baseline for a specified patch group
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroups.html
-     */
-    public describePatchGroups () {
-        this.add('ssm:DescribePatchGroups');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details of available patches for a specified operating system and patch property
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html
-     */
-    public describePatchProperties () {
-        this.add('ssm:DescribePatchProperties');
-        return this;
-    }
-
-    /**
-     * Grants permission to view a list of recent Session Manager sessions that meet the specified search criteria
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeSessions.html
-     */
-    public describeSessions () {
-        this.add('ssm:DescribeSessions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details of a specified Automation execution
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AutomationExecution.html
-     */
-    public getAutomationExecution () {
-        this.add('ssm:GetAutomationExecution');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about the command execution of a specified invocation or plugin
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCommandInvocation.html
-     */
-    public getCommandInvocation () {
-        this.add('ssm:GetCommandInvocation');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the Session Manager connection status for a specified managed instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionStatus.html
-     */
-    public getConnectionStatus () {
-        this.add('ssm:GetConnectionStatus');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the current default patch baseline for a specified operating system type
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDefaultPatchBaseline.html
-     */
-    public getDefaultPatchBaseline () {
-        this.add('ssm:GetDefaultPatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to retrieve the current patch baseline snapshot for a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDeployablePatchSnapshotForInstance.html
-     */
-    public getDeployablePatchSnapshotForInstance () {
-        this.add('ssm:GetDeployablePatchSnapshotForInstance');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the contents of a specified SSM document
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html
-     */
-    public getDocument () {
-        this.add('ssm:GetDocument');
-        return this;
-    }
-
-    /**
-     * Grants permission to view instance inventory details per the specified criteria
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventory.html
-     */
-    public getInventory () {
-        this.add('ssm:GetInventory');
-        return this;
-    }
-
-    /**
-     * Grants permission to view a list of inventory types or attribute names for a specified inventory item type
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventorySchema.html
-     */
-    public getInventorySchema () {
-        this.add('ssm:GetInventorySchema');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified maintenance window
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindow.html
-     */
-    public getMaintenanceWindow () {
-        this.add('ssm:GetMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified maintenance window execution
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecution.html
-     */
-    public getMaintenanceWindowExecution () {
-        this.add('ssm:GetMaintenanceWindowExecution');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specified maintenance window execution task
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTask.html
-     */
-    public getMaintenanceWindowExecutionTask () {
-        this.add('ssm:GetMaintenanceWindowExecutionTask');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about a specific maintenance window task running on a specific target
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTaskInvocation.html
-     */
-    public getMaintenanceWindowExecutionTaskInvocation () {
-        this.add('ssm:GetMaintenanceWindowExecutionTaskInvocation');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details about tasks registered with a specified maintenance window
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowTask.html
-     */
-    public getMaintenanceWindowTask () {
-        this.add('ssm:GetMaintenanceWindowTask');
-        return this;
-    }
-
-    /**
-     * Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
-     *
-     * Access Level: Read
-     *
-     *
-     */
-    public getManifest () {
-        this.add('ssm:GetManifest');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about a specified OpsItem
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsItem.html
-     */
-    public getOpsItem () {
-        this.add('ssm:GetOpsItem');
-        return this;
-    }
-
-    /**
-     * Grants permission to view summary information about OpsItems based on specified filters and aggregators
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsSummary.html
-     */
-    public getOpsSummary () {
-        this.add('ssm:GetOpsSummary');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about a specified parameter
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html
-     */
-    public getParameter () {
-        this.add('ssm:GetParameter');
-        return this;
-    }
-
-    /**
-     * Grants permission to view details and changes for a specified parameter
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html
-     */
-    public getParameterHistory () {
-        this.add('ssm:GetParameterHistory');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about multiple specified parameters
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html
-     */
-    public getParameters () {
-        this.add('ssm:GetParameters');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about parameters in a specified hierarchy
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html
-     */
-    public getParametersByPath () {
-        this.add('ssm:GetParametersByPath');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about a specified patch baseline
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaseline.html
-     */
-    public getPatchBaseline () {
-        this.add('ssm:GetPatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the ID of the current patch baseline for a specified patch group
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaselineForPatchGroup.html
-     */
-    public getPatchBaselineForPatchGroup () {
-        this.add('ssm:GetPatchBaselineForPatchGroup');
-        return this;
-    }
-
-    /**
-     * Grants permission to view the account-level setting for an AWS service
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetServiceSetting.html
-     */
-    public getServiceSetting () {
-        this.add('ssm:GetServiceSetting');
-        return this;
-    }
-
-    /**
-     * Grants permission to apply an identifying label to a specified version of a parameter
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_LabelParameterVersion.html
-     */
-    public labelParameterVersion () {
-        this.add('ssm:LabelParameterVersion');
-        return this;
-    }
-
-    /**
-     * Grants permission to list versions of the specified association
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociationVersions.html
-     */
-    public listAssociationVersions () {
-        this.add('ssm:ListAssociationVersions');
-        return this;
-    }
-
-    /**
-     * Grants permission to list the associations for a specified SSM document or managed instance
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociations.html
-     */
-    public listAssociations () {
-        this.add('ssm:ListAssociations');
-        return this;
-    }
-
-    /**
-     * Grants permission to list information about command invocations sent to a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommandInvocations.html
-     */
-    public listCommandInvocations () {
-        this.add('ssm:ListCommandInvocations');
-        return this;
-    }
-
-    /**
-     * Grants permission to list the commands sent to a specified instance
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommands.html
-     */
-    public listCommands () {
-        this.add('ssm:ListCommands');
-        return this;
-    }
-
-    /**
-     * Grants permission to list compliance status for specified resource types on a specified resource
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceItems.html
-     */
-    public listComplianceItems () {
-        this.add('ssm:ListComplianceItems');
-        return this;
-    }
-
-    /**
-     * Grants permission to list a summary count of compliant and noncompliant resources for a specified compliance type
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceSummaries.html
-     */
-    public listComplianceSummaries () {
-        this.add('ssm:ListComplianceSummaries');
-        return this;
-    }
-
-    /**
-     * Grants permission to list all versions of a specified document
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentVersions.html
-     */
-    public listDocumentVersions () {
-        this.add('ssm:ListDocumentVersions');
-        return this;
-    }
-
-    /**
-     * Grants permission to view information about a specified SSM document
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html
-     */
-    public listDocuments () {
-        this.add('ssm:ListDocuments');
-        return this;
-    }
-
-    /**
-     * Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
-     */
-    public listInstanceAssociations () {
-        this.add('ssm:ListInstanceAssociations');
-        return this;
-    }
-
-    /**
-     * Grants permission to view a list of specified inventory types for a specified instance
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListInventoryEntries.html
-     */
-    public listInventoryEntries () {
-        this.add('ssm:ListInventoryEntries');
-        return this;
-    }
-
-    /**
-     * Grants permission to list resource-level summary count
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceComplianceSummaries.html
-     */
-    public listResourceComplianceSummaries () {
-        this.add('ssm:ListResourceComplianceSummaries');
-        return this;
-    }
-
-    /**
-     * Grants permission to list information about resource data sync configurations in an account
-     *
-     * Access Level: List
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceDataSync.html
-     */
-    public listResourceDataSync () {
-        this.add('ssm:ListResourceDataSync');
-        return this;
-    }
-
-    /**
-     * Grants permission to view a list of resource tags for a specified resource
-     *
-     * Access Level: Read
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html
-     */
-    public listTagsForResource () {
-        this.add('ssm:ListTagsForResource');
-        return this;
-    }
-
-    /**
-     * Grants permission to share a custom SSM document publicly or privately with specified AWS accounts
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html
-     */
-    public modifyDocumentPermission () {
-        this.add('ssm:ModifyDocumentPermission');
-        return this;
-    }
-
-    /**
-     * Grants permission to register a compliance type and other compliance details on a specified resource
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html
-     */
-    public putComplianceItems () {
-        this.add('ssm:PutComplianceItems');
-        return this;
-    }
-
-    /**
-     * Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
-     *
-     * Access Level: Read
-     *
-     *
-     */
-    public putConfigurePackageResult () {
-        this.add('ssm:PutConfigurePackageResult');
-        return this;
-    }
-
-    /**
-     * Grants permission to add or update inventory items on multiple specified managed instances
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html
-     */
-    public putInventory () {
-        this.add('ssm:PutInventory');
-        return this;
-    }
-
-    /**
-     * Grants permission to create an SSM parameter
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html
-     */
-    public putParameter () {
-        this.add('ssm:PutParameter');
-        return this;
-    }
-
-    /**
-     * Grants permission to specify the default patch baseline for an operating system type
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterDefaultPatchBaseline.html
-     */
-    public registerDefaultPatchBaseline () {
-        this.add('ssm:RegisterDefaultPatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to specify the default patch baseline for a specified patch group
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterPatchBaselineForPatchGroup.html
-     */
-    public registerPatchBaselineForPatchGroup () {
-        this.add('ssm:RegisterPatchBaselineForPatchGroup');
-        return this;
-    }
-
-    /**
-     * Grants permission to register a target with a specified maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html
-     */
-    public registerTargetWithMaintenanceWindow () {
-        this.add('ssm:RegisterTargetWithMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to register a task with a specified maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html
-     */
-    public registerTaskWithMaintenanceWindow () {
-        this.add('ssm:RegisterTaskWithMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to remove a specified tag key from a specified resource
-     *
-     * Access Level: Tagging
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html
-     */
-    public removeTagsFromResource () {
-        this.add('ssm:RemoveTagsFromResource');
-        return this;
-    }
-
-    /**
-     * Grants permission to reset the service setting for an AWS account to the default value
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResetServiceSetting.html
-     */
-    public resetServiceSetting () {
-        this.add('ssm:ResetServiceSetting');
-        return this;
-    }
-
-    /**
-     * Grants permission to reconnect a Session Manager session to a managed instance
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResumeSession.html
-     */
-    public resumeSession () {
-        this.add('ssm:ResumeSession');
-        return this;
-    }
-
-    /**
-     * Grants permission to send a signal to change the current behavior or status of a specified Automation execution
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendAutomationSignal.html
-     */
-    public sendAutomationSignal () {
-        this.add('ssm:SendAutomationSignal');
-        return this;
-    }
-
-    /**
-     * Grants permission to run commands on one or more specified managed instances
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendCommand.html
-     */
-    public sendCommand () {
-        this.add('ssm:SendCommand');
-        return this;
-    }
-
-    /**
-     * Grants permission to run a specified association manually
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html
-     */
-    public startAssociationsOnce () {
-        this.add('ssm:StartAssociationsOnce');
-        return this;
-    }
-
-    /**
-     * Grants permission to initiate the execution of an Automation document
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html
-     */
-    public startAutomationExecution () {
-        this.add('ssm:StartAutomationExecution');
-        return this;
-    }
-
-    /**
-     * Grants permission to initiate a connection to a specified target for a Session Manager session
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
-     */
-    public startSession () {
-        this.add('ssm:StartSession');
-        return this;
-    }
-
-    /**
-     * Grants permission to stop a specified Automation execution that is already in progress
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StopAutomationExecution.html
-     */
-    public stopAutomationExecution () {
-        this.add('ssm:StopAutomationExecution');
-        return this;
-    }
-
-    /**
-     * Grants permission to permanently end a Session Manager connection to an instance.
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_TerminateSession.html
-     */
-    public terminateSession () {
-        this.add('ssm:TerminateSession');
-        return this;
-    }
-
-    /**
-     * Grants permission to update an association and immediately run the association on the specified targets
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html
-     */
-    public updateAssociation () {
-        this.add('ssm:UpdateAssociation');
-        return this;
-    }
-
-    /**
-     * Grants permission to update the status of the SSM document associated with a specified instance
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html
-     */
-    public updateAssociationStatus () {
-        this.add('ssm:UpdateAssociationStatus');
-        return this;
-    }
-
-    /**
-     * Grants permission to update one or more values for an SSM document
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html
-     */
-    public updateDocument () {
-        this.add('ssm:UpdateDocument');
-        return this;
-    }
-
-    /**
-     * Grants permission to change the default version of an SSM document
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html
-     */
-    public updateDocumentDefaultVersion () {
-        this.add('ssm:UpdateDocumentDefaultVersion');
-        return this;
-    }
-
-    /**
-     * Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
-     *
-     * Access Level: Write
-     *
-     *
-     */
-    public updateInstanceAssociationStatus () {
-        this.add('ssm:UpdateInstanceAssociationStatus');
-        return this;
-    }
-
-    /**
-     * Used by SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
-     */
-    public updateInstanceInformation () {
-        this.add('ssm:UpdateInstanceInformation');
-        return this;
-    }
-
-    /**
-     * Grants permission to update a specified maintenance window
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindow.html
-     */
-    public updateMaintenanceWindow () {
-        this.add('ssm:UpdateMaintenanceWindow');
-        return this;
-    }
-
-    /**
-     * Grants permission to update a specified maintenance window target
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTarget.html
-     */
-    public updateMaintenanceWindowTarget () {
-        this.add('ssm:UpdateMaintenanceWindowTarget');
-        return this;
-    }
-
-    /**
-     * Grants permission to update a specified maintenance window task
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTask.html
-     */
-    public updateMaintenanceWindowTask () {
-        this.add('ssm:UpdateMaintenanceWindowTask');
-        return this;
-    }
-
-    /**
-     * Grants permission to assign or change the IAM role assigned to a specified managed instance
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateManagedInstanceRole.html
-     */
-    public updateManagedInstanceRole () {
-        this.add('ssm:UpdateManagedInstanceRole');
-        return this;
-    }
-
-    /**
-     * Grants permission to edit or change an OpsItem
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateOpsItem.html
-     */
-    public updateOpsItem () {
-        this.add('ssm:UpdateOpsItem');
-        return this;
-    }
-
-    /**
-     * Grants permission to update a specified patch baseline
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdatePatchBaseline.html
-     */
-    public updatePatchBaseline () {
-        this.add('ssm:UpdatePatchBaseline');
-        return this;
-    }
-
-    /**
-     * Grants permission to update a resource data sync
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html
-     */
-    public updateResourceDataSync () {
-        this.add('ssm:UpdateResourceDataSync');
-        return this;
-    }
-
-    /**
-     * Grants permission to update the service setting for an AWS account
-     *
-     * Access Level: Write
-     *
-     * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html
-     */
-    public updateServiceSetting () {
-        this.add('ssm:UpdateServiceSetting');
-        return this;
-    }
+      }
+    },
+    "CancelCommand": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelCommand.html",
+      "description": "Grants permission to cancel a specified Run Command command",
+      "accessLevel": "Write"
+    },
+    "CancelMaintenanceWindowExecution": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelMaintenanceWindowExecution.html",
+      "description": "Grants permission to cancel an in-progress maintenance window execution",
+      "accessLevel": "Write"
+    },
+    "CreateActivation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateActivation.html",
+      "description": "Grants permission to create an activation that is used to register on-premises servers and virtual machines (VMs) with Systems Manager",
+      "accessLevel": "Write"
+    },
+    "CreateAssociation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html",
+      "description": "Grants permission to associate a specified Systems Manager document with specified instances or other targets",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "CreateAssociationBatch": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html",
+      "description": "Grants permission to combine entries for multiple CreateAssociation operations in a single command",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "CreateDocument": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html",
+      "description": "Grants permission to create a Systems Manager SSM document",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html",
+      "description": "Grants permission to create a maintenance window",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateOpsItem": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsItem.html",
+      "description": "Grants permission to create an OpsItem in OpsCenter",
+      "accessLevel": "Write"
+    },
+    "CreatePatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html",
+      "description": "Grants permission to create a patch baseline",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateResourceDataSync": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateResourceDataSync.html",
+      "description": "Grants permission to create a resource data sync configuration, which regularly collects inventory data from managed instances and updates the data in an Amazon S3 bucket",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "resourcedatasync": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "ssm:SyncType"
+      ]
+    },
+    "DeleteActivation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteActivation.html",
+      "description": "Grants permission to delete a specified activation for managed instances",
+      "accessLevel": "Write"
+    },
+    "DeleteAssociation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html",
+      "description": "Grants permission to disassociate a specified SSM document from a specified instance",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "DeleteDocument": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteDocument.html",
+      "description": "Grants permission to delete a specified SSM document and its instance associations",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "DeleteInventory": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteInventory.html",
+      "description": "Grants permission to delete a specified custom inventory type, or the data associated with a custom inventory type",
+      "accessLevel": "Write"
+    },
+    "DeleteMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteMaintenanceWindow.html",
+      "description": "Grants permission to delete a specified maintenance window",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "DeleteParameter": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html",
+      "description": "Grants permission to delete a specified SSM parameter",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "DeleteParameters": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html",
+      "description": "Grants permission to delete multiple specified SSM parameters",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "DeletePatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeletePatchBaseline.html",
+      "description": "Grants permission to delete a specified patch baseline",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "DeleteResourceDataSync": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourceDataSync.html",
+      "description": "Grants permission to delete a specified resource data sync",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "resourcedatasync": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "ssm:SyncType"
+      ]
+    },
+    "DeregisterManagedInstance": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterManagedInstance.html",
+      "description": "Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "managed-instance": {
+          "required": true
+        }
+      }
+    },
+    "DeregisterPatchBaselineForPatchGroup": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterPatchBaselineForPatchGroup.html",
+      "description": "Grants permission to deregister a specified patch baseline from being the default patch baseline for a specified patch group",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "DeregisterTargetFromMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTargetFromMaintenanceWindow.html",
+      "description": "Grants permission to deregister a specified target from a maintenance window",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "DeregisterTaskFromMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTaskFromMaintenanceWindow.html",
+      "description": "Grants permission to deregister a specified task from a maintenance window",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "DescribeActivations": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeActivations.html",
+      "description": "Grants permission to view details about a specified managed instance activation, such as when it was created and the number of instances registered using the activation",
+      "accessLevel": "Read"
+    },
+    "DescribeAssociation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociation.html",
+      "description": "Grants permission to view details about the specified association for a specified instance or target",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "DescribeAssociationExecutionTargets": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutionTargets.html",
+      "description": "Grants permission to view information about a specified association execution",
+      "accessLevel": "Read"
+    },
+    "DescribeAssociationExecutions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutions.html",
+      "description": "Grants permission to view all executions for a specified association",
+      "accessLevel": "Read"
+    },
+    "DescribeAutomationExecutions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationExecutions.html",
+      "description": "Grants permission to view details about all active and terminated Automation executions",
+      "accessLevel": "Read"
+    },
+    "DescribeAutomationStepExecutions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationStepExecutions.html",
+      "description": "Grants permission to view information about all active and terminated step executions in an Automation workflow",
+      "accessLevel": "Read"
+    },
+    "DescribeAvailablePatches": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAvailablePatches.html",
+      "description": "Grants permission to view all patches eligible to include in a patch baseline",
+      "accessLevel": "Read"
+    },
+    "DescribeDocument": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocument.html",
+      "description": "Grants permission to view details about a specified SSM document",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "DescribeDocumentParameters": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
+      "description": "Grants permission to display information about SSM document parameters in the Systems Manager console (internal Systems Manager action)",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "DescribeDocumentPermission": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocumentPermission.html",
+      "description": "Grants permission to view the permissions for a specified SSM document",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "DescribeEffectiveInstanceAssociations": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html",
+      "description": "Grants permission to view all current associations for a specified instance",
+      "accessLevel": "Read"
+    },
+    "DescribeEffectivePatchesForPatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectivePatchesForPatchBaseline.html",
+      "description": "Grants permission to view details about the patches currently associated with the specified patch baseline (Windows only)",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "DescribeInstanceAssociationsStatus": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html",
+      "description": "Grants permission to view the status of the associations for a specified instance",
+      "accessLevel": "Read"
+    },
+    "DescribeInstanceInformation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceInformation.html",
+      "description": "Grants permission to view details about a specified instance",
+      "accessLevel": "Read"
+    },
+    "DescribeInstancePatchStates": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStates.html",
+      "description": "Grants permission to view status details about patches on a specified instance",
+      "accessLevel": "Read"
+    },
+    "DescribeInstancePatchStatesForPatchGroup": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStatesForPatchGroup.html",
+      "description": "Grants permission to describe the high-level patch state for the instances in the specified patch group",
+      "accessLevel": "Read"
+    },
+    "DescribeInstancePatches": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatches.html",
+      "description": "Grants permission to view general details about the patches on a specified instance",
+      "accessLevel": "Read"
+    },
+    "DescribeInstanceProperties": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
+      "description": "Grants permission to user's Amazon EC2 console to render managed instances' nodes",
+      "accessLevel": "Read"
+    },
+    "DescribeInventoryDeletions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInventoryDeletions.html",
+      "description": "Grants permission to view details about a specified inventory deletion",
+      "accessLevel": "Read"
+    },
+    "DescribeMaintenanceWindowExecutionTaskInvocations": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTaskInvocations.html",
+      "description": "Grants permission to view details of a specified task execution for a maintenance window",
+      "accessLevel": "List"
+    },
+    "DescribeMaintenanceWindowExecutionTasks": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTasks.html",
+      "description": "Grants permission to view details about the tasks that ran during a specified maintenance window execution",
+      "accessLevel": "List"
+    },
+    "DescribeMaintenanceWindowExecutions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutions.html",
+      "description": "Grants permission to view the executions of a specified maintenance window",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "DescribeMaintenanceWindowSchedule": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowSchedule.html",
+      "description": "Grants permission to view details about upcoming executions of a specified maintenance window",
+      "accessLevel": "List"
+    },
+    "DescribeMaintenanceWindowTargets": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTargets.html",
+      "description": "Grants permission to view a list of the targets associated with a specified maintenance window",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "DescribeMaintenanceWindowTasks": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTasks.html",
+      "description": "Grants permission to view a list of the tasks associated with a specified maintenance window",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "DescribeMaintenanceWindows": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindows.html",
+      "description": "Grants permission to view information about all or specified maintenance windows",
+      "accessLevel": "List"
+    },
+    "DescribeMaintenanceWindowsForTarget": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowsForTarget.html",
+      "description": "Grants permission to view information about the maintenance window targets and tasks associated with a specified instance",
+      "accessLevel": "List"
+    },
+    "DescribeOpsItems": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeOpsItems.html",
+      "description": "Grants permission to view details about specified OpsItems",
+      "accessLevel": "Read"
+    },
+    "DescribeParameters": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html",
+      "description": "Grants permission to view details about a specified SSM parameter",
+      "accessLevel": "List"
+    },
+    "DescribePatchBaselines": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchBaselines.html",
+      "description": "Grants permission to view information about patch baselines that meet the specified criteria",
+      "accessLevel": "List"
+    },
+    "DescribePatchGroupState": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroupState.html",
+      "description": "Grants permission to view aggregated status details for patches for a specified patch group",
+      "accessLevel": "Read"
+    },
+    "DescribePatchGroups": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroups.html",
+      "description": "Grants permission to view information about the patch baseline for a specified patch group",
+      "accessLevel": "List"
+    },
+    "DescribePatchProperties": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html",
+      "description": "Grants permission to view details of available patches for a specified operating system and patch property",
+      "accessLevel": "List"
+    },
+    "DescribeSessions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeSessions.html",
+      "description": "Grants permission to view a list of recent Session Manager sessions that meet the specified search criteria",
+      "accessLevel": "List"
+    },
+    "GetAutomationExecution": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AutomationExecution.html",
+      "description": "Grants permission to view details of a specified Automation execution",
+      "accessLevel": "Read"
+    },
+    "GetCommandInvocation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCommandInvocation.html",
+      "description": "Grants permission to view details about the command execution of a specified invocation or plugin",
+      "accessLevel": "Read"
+    },
+    "GetConnectionStatus": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionStatus.html",
+      "description": "Grants permission to view the Session Manager connection status for a specified managed instance",
+      "accessLevel": "Read"
+    },
+    "GetDefaultPatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDefaultPatchBaseline.html",
+      "description": "Grants permission to view the current default patch baseline for a specified operating system type",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "GetDeployablePatchSnapshotForInstance": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDeployablePatchSnapshotForInstance.html",
+      "description": "Grants permission to retrieve the current patch baseline snapshot for a specified instance",
+      "accessLevel": "Read"
+    },
+    "GetDocument": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html",
+      "description": "Grants permission to view the contents of a specified SSM document",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "GetInventory": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventory.html",
+      "description": "Grants permission to view instance inventory details per the specified criteria",
+      "accessLevel": "Read"
+    },
+    "GetInventorySchema": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventorySchema.html",
+      "description": "Grants permission to view a list of inventory types or attribute names for a specified inventory item type",
+      "accessLevel": "Read"
+    },
+    "GetMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindow.html",
+      "description": "Grants permission to view details about a specified maintenance window",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "GetMaintenanceWindowExecution": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecution.html",
+      "description": "Grants permission to view details about a specified maintenance window execution",
+      "accessLevel": "Read"
+    },
+    "GetMaintenanceWindowExecutionTask": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTask.html",
+      "description": "Grants permission to view details about a specified maintenance window execution task",
+      "accessLevel": "Read"
+    },
+    "GetMaintenanceWindowExecutionTaskInvocation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTaskInvocation.html",
+      "description": "Grants permission to view details about a specific maintenance window task running on a specific target",
+      "accessLevel": "Read"
+    },
+    "GetMaintenanceWindowTask": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowTask.html",
+      "description": "Grants permission to view details about tasks registered with a specified maintenance window",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "GetManifest": {
+      "url": "",
+      "description": "Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)",
+      "accessLevel": "Read"
+    },
+    "GetOpsItem": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsItem.html",
+      "description": "Grants permission to view information about a specified OpsItem",
+      "accessLevel": "Read"
+    },
+    "GetOpsSummary": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsSummary.html",
+      "description": "Grants permission to view summary information about OpsItems based on specified filters and aggregators",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "resourcedatasync": {
+          "required": true
+        }
+      }
+    },
+    "GetParameter": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html",
+      "description": "Grants permission to view information about a specified parameter",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "GetParameterHistory": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html",
+      "description": "Grants permission to view details and changes for a specified parameter",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "GetParameters": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html",
+      "description": "Grants permission to view information about multiple specified parameters",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "GetParametersByPath": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html",
+      "description": "Grants permission to view information about parameters in a specified hierarchy",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "GetPatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaseline.html",
+      "description": "Grants permission to view information about a specified patch baseline",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "GetPatchBaselineForPatchGroup": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaselineForPatchGroup.html",
+      "description": "Grants permission to view the ID of the current patch baseline for a specified patch group",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "GetServiceSetting": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetServiceSetting.html",
+      "description": "Grants permission to view the account-level setting for an AWS service",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "servicesetting": {
+          "required": true
+        }
+      }
+    },
+    "LabelParameterVersion": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_LabelParameterVersion.html",
+      "description": "Grants permission to apply an identifying label to a specified version of a parameter",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      }
+    },
+    "ListAssociationVersions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociationVersions.html",
+      "description": "Grants permission to list versions of the specified association",
+      "accessLevel": "List"
+    },
+    "ListAssociations": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociations.html",
+      "description": "Grants permission to list the associations for a specified SSM document or managed instance",
+      "accessLevel": "List"
+    },
+    "ListCommandInvocations": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommandInvocations.html",
+      "description": "Grants permission to list information about command invocations sent to a specified instance",
+      "accessLevel": "Read"
+    },
+    "ListCommands": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommands.html",
+      "description": "Grants permission to list the commands sent to a specified instance",
+      "accessLevel": "Read"
+    },
+    "ListComplianceItems": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceItems.html",
+      "description": "Grants permission to list compliance status for specified resource types on a specified resource",
+      "accessLevel": "List"
+    },
+    "ListComplianceSummaries": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceSummaries.html",
+      "description": "Grants permission to list a summary count of compliant and noncompliant resources for a specified compliance type",
+      "accessLevel": "List"
+    },
+    "ListDocumentVersions": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentVersions.html",
+      "description": "Grants permission to list all versions of a specified document",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "ListDocuments": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html",
+      "description": "Grants permission to view information about a specified SSM document",
+      "accessLevel": "List"
+    },
+    "ListInstanceAssociations": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
+      "description": "Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)",
+      "accessLevel": "List"
+    },
+    "ListInventoryEntries": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListInventoryEntries.html",
+      "description": "Grants permission to view a list of specified inventory types for a specified instance",
+      "accessLevel": "List"
+    },
+    "ListResourceComplianceSummaries": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceComplianceSummaries.html",
+      "description": "Grants permission to list resource-level summary count",
+      "accessLevel": "List"
+    },
+    "ListResourceDataSync": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceDataSync.html",
+      "description": "Grants permission to list information about resource data sync configurations in an account",
+      "accessLevel": "List",
+      "conditions": [
+        "ssm:SyncType"
+      ]
+    },
+    "ListTagsForResource": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html",
+      "description": "Grants permission to view a list of resource tags for a specified resource",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": false
+        },
+        "maintenancewindow": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        },
+        "parameter": {
+          "required": false
+        },
+        "patchbaseline": {
+          "required": false
+        }
+      }
+    },
+    "ModifyDocumentPermission": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html",
+      "description": "Grants permission to share a custom SSM document publicly or privately with specified AWS accounts",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "PutComplianceItems": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html",
+      "description": "Grants permission to register a compliance type and other compliance details on a specified resource",
+      "accessLevel": "Write"
+    },
+    "PutConfigurePackageResult": {
+      "url": "",
+      "description": "Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)",
+      "accessLevel": "Read"
+    },
+    "PutInventory": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html",
+      "description": "Grants permission to add or update inventory items on multiple specified managed instances",
+      "accessLevel": "Write"
+    },
+    "PutParameter": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html",
+      "description": "Grants permission to create an SSM parameter",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "parameter": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "RegisterDefaultPatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterDefaultPatchBaseline.html",
+      "description": "Grants permission to specify the default patch baseline for an operating system type",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "RegisterPatchBaselineForPatchGroup": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterPatchBaselineForPatchGroup.html",
+      "description": "Grants permission to specify the default patch baseline for a specified patch group",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "RegisterTargetWithMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html",
+      "description": "Grants permission to register a target with a specified maintenance window",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "RegisterTaskWithMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html",
+      "description": "Grants permission to register a task with a specified maintenance window",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "RemoveTagsFromResource": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html",
+      "description": "Grants permission to remove a specified tag key from a specified resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "document": {
+          "required": false
+        },
+        "maintenancewindow": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        },
+        "parameter": {
+          "required": false
+        },
+        "patchbaseline": {
+          "required": false
+        }
+      }
+    },
+    "ResetServiceSetting": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResetServiceSetting.html",
+      "description": "Grants permission to reset the service setting for an AWS account to the default value",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "servicesetting": {
+          "required": true
+        }
+      }
+    },
+    "ResumeSession": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResumeSession.html",
+      "description": "Grants permission to reconnect a Session Manager session to a managed instance",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "session": {
+          "required": true
+        }
+      }
+    },
+    "SendAutomationSignal": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendAutomationSignal.html",
+      "description": "Grants permission to send a signal to change the current behavior or status of a specified Automation execution",
+      "accessLevel": "Write"
+    },
+    "SendCommand": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendCommand.html",
+      "description": "Grants permission to run commands on one or more specified managed instances",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "StartAssociationsOnce": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html",
+      "description": "Grants permission to run a specified association manually",
+      "accessLevel": "Write"
+    },
+    "StartAutomationExecution": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html",
+      "description": "Grants permission to initiate the execution of an Automation document",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
+    "StartSession": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html",
+      "description": "Grants permission to initiate a connection to a specified target for a Session Manager session",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "instance": {
+          "required": true
+        },
+        "document": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "ssm:SessionDocumentAccessCheck"
+      ]
+    },
+    "StopAutomationExecution": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StopAutomationExecution.html",
+      "description": "Grants permission to stop a specified Automation execution that is already in progress",
+      "accessLevel": "Write"
+    },
+    "TerminateSession": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_TerminateSession.html",
+      "description": "Grants permission to permanently end a Session Manager connection to an instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "session": {
+          "required": true
+        }
+      }
+    },
+    "UpdateAssociation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html",
+      "description": "Grants permission to update an association and immediately run the association on the specified targets",
+      "accessLevel": "Write"
+    },
+    "UpdateAssociationStatus": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html",
+      "description": "Grants permission to update the status of the SSM document associated with a specified instance",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": false
+        }
+      }
+    },
+    "UpdateDocument": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html",
+      "description": "Grants permission to update one or more values for an SSM document",
+      "accessLevel": "Write"
+    },
+    "UpdateDocumentDefaultVersion": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html",
+      "description": "Grants permission to change the default version of an SSM document",
+      "accessLevel": "Write"
+    },
+    "UpdateInstanceAssociationStatus": {
+      "url": "",
+      "description": "Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)",
+      "accessLevel": "Write"
+    },
+    "UpdateInstanceInformation": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
+      "description": "Used by SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud",
+      "accessLevel": "Write"
+    },
+    "UpdateMaintenanceWindow": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindow.html",
+      "description": "Grants permission to update a specified maintenance window",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "UpdateMaintenanceWindowTarget": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTarget.html",
+      "description": "Grants permission to update a specified maintenance window target",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "UpdateMaintenanceWindowTask": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTask.html",
+      "description": "Grants permission to update a specified maintenance window task",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "maintenancewindow": {
+          "required": true
+        }
+      }
+    },
+    "UpdateManagedInstanceRole": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateManagedInstanceRole.html",
+      "description": "Grants permission to assign or change the IAM role assigned to a specified managed instance",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "managed-instance": {
+          "required": true
+        }
+      }
+    },
+    "UpdateOpsItem": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateOpsItem.html",
+      "description": "Grants permission to edit or change an OpsItem",
+      "accessLevel": "Write"
+    },
+    "UpdatePatchBaseline": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdatePatchBaseline.html",
+      "description": "Grants permission to update a specified patch baseline",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "patchbaseline": {
+          "required": true
+        }
+      }
+    },
+    "UpdateResourceDataSync": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html",
+      "description": "Grants permission to update a resource data sync",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "resourcedatasync": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "ssm:SyncType"
+      ]
+    },
+    "UpdateServiceSetting": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html",
+      "description": "Grants permission to update the service setting for an AWS account",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "servicesetting": {
+          "required": true
+        }
+      }
+    }
+  };
+
+  /**
+   * Grants permission to add or overwrite one or more tags for a specified AWS resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html
+   */
+  public addTagsToResource () {
+    this.add('ssm:AddTagsToResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to cancel a specified Run Command command
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelCommand.html
+   */
+  public cancelCommand () {
+    this.add('ssm:CancelCommand');
+    return this;
+  }
+
+  /**
+   * Grants permission to cancel an in-progress maintenance window execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelMaintenanceWindowExecution.html
+   */
+  public cancelMaintenanceWindowExecution () {
+    this.add('ssm:CancelMaintenanceWindowExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an activation that is used to register on-premises servers and virtual machines (VMs) with Systems Manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateActivation.html
+   */
+  public createActivation () {
+    this.add('ssm:CreateActivation');
+    return this;
+  }
+
+  /**
+   * Grants permission to associate a specified Systems Manager document with specified instances or other targets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html
+   */
+  public createAssociation () {
+    this.add('ssm:CreateAssociation');
+    return this;
+  }
+
+  /**
+   * Grants permission to combine entries for multiple CreateAssociation operations in a single command
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html
+   */
+  public createAssociationBatch () {
+    this.add('ssm:CreateAssociationBatch');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a Systems Manager SSM document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html
+   */
+  public createDocument () {
+    this.add('ssm:CreateDocument');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html
+   */
+  public createMaintenanceWindow () {
+    this.add('ssm:CreateMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an OpsItem in OpsCenter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsItem.html
+   */
+  public createOpsItem () {
+    this.add('ssm:CreateOpsItem');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a patch baseline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html
+   */
+  public createPatchBaseline () {
+    this.add('ssm:CreatePatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a resource data sync configuration, which regularly collects inventory data from managed instances and updates the data in an Amazon S3 bucket
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateResourceDataSync.html
+   */
+  public createResourceDataSync () {
+    this.add('ssm:CreateResourceDataSync');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified activation for managed instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteActivation.html
+   */
+  public deleteActivation () {
+    this.add('ssm:DeleteActivation');
+    return this;
+  }
+
+  /**
+   * Grants permission to disassociate a specified SSM document from a specified instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html
+   */
+  public deleteAssociation () {
+    this.add('ssm:DeleteAssociation');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified SSM document and its instance associations
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteDocument.html
+   */
+  public deleteDocument () {
+    this.add('ssm:DeleteDocument');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified custom inventory type, or the data associated with a custom inventory type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteInventory.html
+   */
+  public deleteInventory () {
+    this.add('ssm:DeleteInventory');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteMaintenanceWindow.html
+   */
+  public deleteMaintenanceWindow () {
+    this.add('ssm:DeleteMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified SSM parameter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html
+   */
+  public deleteParameter () {
+    this.add('ssm:DeleteParameter');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete multiple specified SSM parameters
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html
+   */
+  public deleteParameters () {
+    this.add('ssm:DeleteParameters');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified patch baseline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeletePatchBaseline.html
+   */
+  public deletePatchBaseline () {
+    this.add('ssm:DeletePatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a specified resource data sync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourceDataSync.html
+   */
+  public deleteResourceDataSync () {
+    this.add('ssm:DeleteResourceDataSync');
+    return this;
+  }
+
+  /**
+   * Grants permission to deregister a specified on-premises server or virtual machine (VM) from Systems Manager
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterManagedInstance.html
+   */
+  public deregisterManagedInstance () {
+    this.add('ssm:DeregisterManagedInstance');
+    return this;
+  }
+
+  /**
+   * Grants permission to deregister a specified patch baseline from being the default patch baseline for a specified patch group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterPatchBaselineForPatchGroup.html
+   */
+  public deregisterPatchBaselineForPatchGroup () {
+    this.add('ssm:DeregisterPatchBaselineForPatchGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to deregister a specified target from a maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTargetFromMaintenanceWindow.html
+   */
+  public deregisterTargetFromMaintenanceWindow () {
+    this.add('ssm:DeregisterTargetFromMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to deregister a specified task from a maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTaskFromMaintenanceWindow.html
+   */
+  public deregisterTaskFromMaintenanceWindow () {
+    this.add('ssm:DeregisterTaskFromMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified managed instance activation, such as when it was created and the number of instances registered using the activation
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeActivations.html
+   */
+  public describeActivations () {
+    this.add('ssm:DescribeActivations');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about the specified association for a specified instance or target
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociation.html
+   */
+  public describeAssociation () {
+    this.add('ssm:DescribeAssociation');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about a specified association execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutionTargets.html
+   */
+  public describeAssociationExecutionTargets () {
+    this.add('ssm:DescribeAssociationExecutionTargets');
+    return this;
+  }
+
+  /**
+   * Grants permission to view all executions for a specified association
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutions.html
+   */
+  public describeAssociationExecutions () {
+    this.add('ssm:DescribeAssociationExecutions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about all active and terminated Automation executions
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationExecutions.html
+   */
+  public describeAutomationExecutions () {
+    this.add('ssm:DescribeAutomationExecutions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about all active and terminated step executions in an Automation workflow
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationStepExecutions.html
+   */
+  public describeAutomationStepExecutions () {
+    this.add('ssm:DescribeAutomationStepExecutions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view all patches eligible to include in a patch baseline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAvailablePatches.html
+   */
+  public describeAvailablePatches () {
+    this.add('ssm:DescribeAvailablePatches');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified SSM document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocument.html
+   */
+  public describeDocument () {
+    this.add('ssm:DescribeDocument');
+    return this;
+  }
+
+  /**
+   * Grants permission to display information about SSM document parameters in the Systems Manager console (internal Systems Manager action)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public describeDocumentParameters () {
+    this.add('ssm:DescribeDocumentParameters');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the permissions for a specified SSM document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocumentPermission.html
+   */
+  public describeDocumentPermission () {
+    this.add('ssm:DescribeDocumentPermission');
+    return this;
+  }
+
+  /**
+   * Grants permission to view all current associations for a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html
+   */
+  public describeEffectiveInstanceAssociations () {
+    this.add('ssm:DescribeEffectiveInstanceAssociations');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about the patches currently associated with the specified patch baseline (Windows only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectivePatchesForPatchBaseline.html
+   */
+  public describeEffectivePatchesForPatchBaseline () {
+    this.add('ssm:DescribeEffectivePatchesForPatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the status of the associations for a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html
+   */
+  public describeInstanceAssociationsStatus () {
+    this.add('ssm:DescribeInstanceAssociationsStatus');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceInformation.html
+   */
+  public describeInstanceInformation () {
+    this.add('ssm:DescribeInstanceInformation');
+    return this;
+  }
+
+  /**
+   * Grants permission to view status details about patches on a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStates.html
+   */
+  public describeInstancePatchStates () {
+    this.add('ssm:DescribeInstancePatchStates');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe the high-level patch state for the instances in the specified patch group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStatesForPatchGroup.html
+   */
+  public describeInstancePatchStatesForPatchGroup () {
+    this.add('ssm:DescribeInstancePatchStatesForPatchGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to view general details about the patches on a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatches.html
+   */
+  public describeInstancePatches () {
+    this.add('ssm:DescribeInstancePatches');
+    return this;
+  }
+
+  /**
+   * Grants permission to user's Amazon EC2 console to render managed instances' nodes
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public describeInstanceProperties () {
+    this.add('ssm:DescribeInstanceProperties');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified inventory deletion
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInventoryDeletions.html
+   */
+  public describeInventoryDeletions () {
+    this.add('ssm:DescribeInventoryDeletions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details of a specified task execution for a maintenance window
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTaskInvocations.html
+   */
+  public describeMaintenanceWindowExecutionTaskInvocations () {
+    this.add('ssm:DescribeMaintenanceWindowExecutionTaskInvocations');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about the tasks that ran during a specified maintenance window execution
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTasks.html
+   */
+  public describeMaintenanceWindowExecutionTasks () {
+    this.add('ssm:DescribeMaintenanceWindowExecutionTasks');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the executions of a specified maintenance window
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutions.html
+   */
+  public describeMaintenanceWindowExecutions () {
+    this.add('ssm:DescribeMaintenanceWindowExecutions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about upcoming executions of a specified maintenance window
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowSchedule.html
+   */
+  public describeMaintenanceWindowSchedule () {
+    this.add('ssm:DescribeMaintenanceWindowSchedule');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of the targets associated with a specified maintenance window
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTargets.html
+   */
+  public describeMaintenanceWindowTargets () {
+    this.add('ssm:DescribeMaintenanceWindowTargets');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of the tasks associated with a specified maintenance window
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTasks.html
+   */
+  public describeMaintenanceWindowTasks () {
+    this.add('ssm:DescribeMaintenanceWindowTasks');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about all or specified maintenance windows
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindows.html
+   */
+  public describeMaintenanceWindows () {
+    this.add('ssm:DescribeMaintenanceWindows');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about the maintenance window targets and tasks associated with a specified instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowsForTarget.html
+   */
+  public describeMaintenanceWindowsForTarget () {
+    this.add('ssm:DescribeMaintenanceWindowsForTarget');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about specified OpsItems
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeOpsItems.html
+   */
+  public describeOpsItems () {
+    this.add('ssm:DescribeOpsItems');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified SSM parameter
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html
+   */
+  public describeParameters () {
+    this.add('ssm:DescribeParameters');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about patch baselines that meet the specified criteria
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchBaselines.html
+   */
+  public describePatchBaselines () {
+    this.add('ssm:DescribePatchBaselines');
+    return this;
+  }
+
+  /**
+   * Grants permission to view aggregated status details for patches for a specified patch group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroupState.html
+   */
+  public describePatchGroupState () {
+    this.add('ssm:DescribePatchGroupState');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about the patch baseline for a specified patch group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroups.html
+   */
+  public describePatchGroups () {
+    this.add('ssm:DescribePatchGroups');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details of available patches for a specified operating system and patch property
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html
+   */
+  public describePatchProperties () {
+    this.add('ssm:DescribePatchProperties');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of recent Session Manager sessions that meet the specified search criteria
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeSessions.html
+   */
+  public describeSessions () {
+    this.add('ssm:DescribeSessions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details of a specified Automation execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AutomationExecution.html
+   */
+  public getAutomationExecution () {
+    this.add('ssm:GetAutomationExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about the command execution of a specified invocation or plugin
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCommandInvocation.html
+   */
+  public getCommandInvocation () {
+    this.add('ssm:GetCommandInvocation');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the Session Manager connection status for a specified managed instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionStatus.html
+   */
+  public getConnectionStatus () {
+    this.add('ssm:GetConnectionStatus');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the current default patch baseline for a specified operating system type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDefaultPatchBaseline.html
+   */
+  public getDefaultPatchBaseline () {
+    this.add('ssm:GetDefaultPatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve the current patch baseline snapshot for a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDeployablePatchSnapshotForInstance.html
+   */
+  public getDeployablePatchSnapshotForInstance () {
+    this.add('ssm:GetDeployablePatchSnapshotForInstance');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the contents of a specified SSM document
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html
+   */
+  public getDocument () {
+    this.add('ssm:GetDocument');
+    return this;
+  }
+
+  /**
+   * Grants permission to view instance inventory details per the specified criteria
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventory.html
+   */
+  public getInventory () {
+    this.add('ssm:GetInventory');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of inventory types or attribute names for a specified inventory item type
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventorySchema.html
+   */
+  public getInventorySchema () {
+    this.add('ssm:GetInventorySchema');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified maintenance window
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindow.html
+   */
+  public getMaintenanceWindow () {
+    this.add('ssm:GetMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified maintenance window execution
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecution.html
+   */
+  public getMaintenanceWindowExecution () {
+    this.add('ssm:GetMaintenanceWindowExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specified maintenance window execution task
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTask.html
+   */
+  public getMaintenanceWindowExecutionTask () {
+    this.add('ssm:GetMaintenanceWindowExecutionTask');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about a specific maintenance window task running on a specific target
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTaskInvocation.html
+   */
+  public getMaintenanceWindowExecutionTaskInvocation () {
+    this.add('ssm:GetMaintenanceWindowExecutionTaskInvocation');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details about tasks registered with a specified maintenance window
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowTask.html
+   */
+  public getMaintenanceWindowTask () {
+    this.add('ssm:GetMaintenanceWindowTask');
+    return this;
+  }
+
+  /**
+   * Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
+   *
+   * Access Level: Read
+   *
+   *
+   */
+  public getManifest () {
+    this.add('ssm:GetManifest');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about a specified OpsItem
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsItem.html
+   */
+  public getOpsItem () {
+    this.add('ssm:GetOpsItem');
+    return this;
+  }
+
+  /**
+   * Grants permission to view summary information about OpsItems based on specified filters and aggregators
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsSummary.html
+   */
+  public getOpsSummary () {
+    this.add('ssm:GetOpsSummary');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about a specified parameter
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html
+   */
+  public getParameter () {
+    this.add('ssm:GetParameter');
+    return this;
+  }
+
+  /**
+   * Grants permission to view details and changes for a specified parameter
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html
+   */
+  public getParameterHistory () {
+    this.add('ssm:GetParameterHistory');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about multiple specified parameters
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html
+   */
+  public getParameters () {
+    this.add('ssm:GetParameters');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about parameters in a specified hierarchy
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html
+   */
+  public getParametersByPath () {
+    this.add('ssm:GetParametersByPath');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about a specified patch baseline
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaseline.html
+   */
+  public getPatchBaseline () {
+    this.add('ssm:GetPatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the ID of the current patch baseline for a specified patch group
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaselineForPatchGroup.html
+   */
+  public getPatchBaselineForPatchGroup () {
+    this.add('ssm:GetPatchBaselineForPatchGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the account-level setting for an AWS service
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetServiceSetting.html
+   */
+  public getServiceSetting () {
+    this.add('ssm:GetServiceSetting');
+    return this;
+  }
+
+  /**
+   * Grants permission to apply an identifying label to a specified version of a parameter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_LabelParameterVersion.html
+   */
+  public labelParameterVersion () {
+    this.add('ssm:LabelParameterVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to list versions of the specified association
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociationVersions.html
+   */
+  public listAssociationVersions () {
+    this.add('ssm:ListAssociationVersions');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the associations for a specified SSM document or managed instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociations.html
+   */
+  public listAssociations () {
+    this.add('ssm:ListAssociations');
+    return this;
+  }
+
+  /**
+   * Grants permission to list information about command invocations sent to a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommandInvocations.html
+   */
+  public listCommandInvocations () {
+    this.add('ssm:ListCommandInvocations');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the commands sent to a specified instance
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommands.html
+   */
+  public listCommands () {
+    this.add('ssm:ListCommands');
+    return this;
+  }
+
+  /**
+   * Grants permission to list compliance status for specified resource types on a specified resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceItems.html
+   */
+  public listComplianceItems () {
+    this.add('ssm:ListComplianceItems');
+    return this;
+  }
+
+  /**
+   * Grants permission to list a summary count of compliant and noncompliant resources for a specified compliance type
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceSummaries.html
+   */
+  public listComplianceSummaries () {
+    this.add('ssm:ListComplianceSummaries');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all versions of a specified document
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentVersions.html
+   */
+  public listDocumentVersions () {
+    this.add('ssm:ListDocumentVersions');
+    return this;
+  }
+
+  /**
+   * Grants permission to view information about a specified SSM document
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html
+   */
+  public listDocuments () {
+    this.add('ssm:ListDocuments');
+    return this;
+  }
+
+  /**
+   * Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public listInstanceAssociations () {
+    this.add('ssm:ListInstanceAssociations');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of specified inventory types for a specified instance
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListInventoryEntries.html
+   */
+  public listInventoryEntries () {
+    this.add('ssm:ListInventoryEntries');
+    return this;
+  }
+
+  /**
+   * Grants permission to list resource-level summary count
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceComplianceSummaries.html
+   */
+  public listResourceComplianceSummaries () {
+    this.add('ssm:ListResourceComplianceSummaries');
+    return this;
+  }
+
+  /**
+   * Grants permission to list information about resource data sync configurations in an account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceDataSync.html
+   */
+  public listResourceDataSync () {
+    this.add('ssm:ListResourceDataSync');
+    return this;
+  }
+
+  /**
+   * Grants permission to view a list of resource tags for a specified resource
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html
+   */
+  public listTagsForResource () {
+    this.add('ssm:ListTagsForResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to share a custom SSM document publicly or privately with specified AWS accounts
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html
+   */
+  public modifyDocumentPermission () {
+    this.add('ssm:ModifyDocumentPermission');
+    return this;
+  }
+
+  /**
+   * Grants permission to register a compliance type and other compliance details on a specified resource
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html
+   */
+  public putComplianceItems () {
+    this.add('ssm:PutComplianceItems');
+    return this;
+  }
+
+  /**
+   * Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
+   *
+   * Access Level: Read
+   *
+   *
+   */
+  public putConfigurePackageResult () {
+    this.add('ssm:PutConfigurePackageResult');
+    return this;
+  }
+
+  /**
+   * Grants permission to add or update inventory items on multiple specified managed instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html
+   */
+  public putInventory () {
+    this.add('ssm:PutInventory');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an SSM parameter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html
+   */
+  public putParameter () {
+    this.add('ssm:PutParameter');
+    return this;
+  }
+
+  /**
+   * Grants permission to specify the default patch baseline for an operating system type
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterDefaultPatchBaseline.html
+   */
+  public registerDefaultPatchBaseline () {
+    this.add('ssm:RegisterDefaultPatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to specify the default patch baseline for a specified patch group
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterPatchBaselineForPatchGroup.html
+   */
+  public registerPatchBaselineForPatchGroup () {
+    this.add('ssm:RegisterPatchBaselineForPatchGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to register a target with a specified maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html
+   */
+  public registerTargetWithMaintenanceWindow () {
+    this.add('ssm:RegisterTargetWithMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to register a task with a specified maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html
+   */
+  public registerTaskWithMaintenanceWindow () {
+    this.add('ssm:RegisterTaskWithMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove a specified tag key from a specified resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html
+   */
+  public removeTagsFromResource () {
+    this.add('ssm:RemoveTagsFromResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to reset the service setting for an AWS account to the default value
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResetServiceSetting.html
+   */
+  public resetServiceSetting () {
+    this.add('ssm:ResetServiceSetting');
+    return this;
+  }
+
+  /**
+   * Grants permission to reconnect a Session Manager session to a managed instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResumeSession.html
+   */
+  public resumeSession () {
+    this.add('ssm:ResumeSession');
+    return this;
+  }
+
+  /**
+   * Grants permission to send a signal to change the current behavior or status of a specified Automation execution
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendAutomationSignal.html
+   */
+  public sendAutomationSignal () {
+    this.add('ssm:SendAutomationSignal');
+    return this;
+  }
+
+  /**
+   * Grants permission to run commands on one or more specified managed instances
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendCommand.html
+   */
+  public sendCommand () {
+    this.add('ssm:SendCommand');
+    return this;
+  }
+
+  /**
+   * Grants permission to run a specified association manually
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html
+   */
+  public startAssociationsOnce () {
+    this.add('ssm:StartAssociationsOnce');
+    return this;
+  }
+
+  /**
+   * Grants permission to initiate the execution of an Automation document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html
+   */
+  public startAutomationExecution () {
+    this.add('ssm:StartAutomationExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to initiate a connection to a specified target for a Session Manager session
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
+   */
+  public startSession () {
+    this.add('ssm:StartSession');
+    return this;
+  }
+
+  /**
+   * Grants permission to stop a specified Automation execution that is already in progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StopAutomationExecution.html
+   */
+  public stopAutomationExecution () {
+    this.add('ssm:StopAutomationExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to permanently end a Session Manager connection to an instance.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_TerminateSession.html
+   */
+  public terminateSession () {
+    this.add('ssm:TerminateSession');
+    return this;
+  }
+
+  /**
+   * Grants permission to update an association and immediately run the association on the specified targets
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html
+   */
+  public updateAssociation () {
+    this.add('ssm:UpdateAssociation');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the status of the SSM document associated with a specified instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html
+   */
+  public updateAssociationStatus () {
+    this.add('ssm:UpdateAssociationStatus');
+    return this;
+  }
+
+  /**
+   * Grants permission to update one or more values for an SSM document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html
+   */
+  public updateDocument () {
+    this.add('ssm:UpdateDocument');
+    return this;
+  }
+
+  /**
+   * Grants permission to change the default version of an SSM document
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html
+   */
+  public updateDocumentDefaultVersion () {
+    this.add('ssm:UpdateDocumentDefaultVersion');
+    return this;
+  }
+
+  /**
+   * Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
+   *
+   * Access Level: Write
+   *
+   *
+   */
+  public updateInstanceAssociationStatus () {
+    this.add('ssm:UpdateInstanceAssociationStatus');
+    return this;
+  }
+
+  /**
+   * Used by SSM Agent to send a heartbeat signal to the Systems Manager service in the cloud
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
+   */
+  public updateInstanceInformation () {
+    this.add('ssm:UpdateInstanceInformation');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a specified maintenance window
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindow.html
+   */
+  public updateMaintenanceWindow () {
+    this.add('ssm:UpdateMaintenanceWindow');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a specified maintenance window target
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTarget.html
+   */
+  public updateMaintenanceWindowTarget () {
+    this.add('ssm:UpdateMaintenanceWindowTarget');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a specified maintenance window task
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTask.html
+   */
+  public updateMaintenanceWindowTask () {
+    this.add('ssm:UpdateMaintenanceWindowTask');
+    return this;
+  }
+
+  /**
+   * Grants permission to assign or change the IAM role assigned to a specified managed instance
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateManagedInstanceRole.html
+   */
+  public updateManagedInstanceRole () {
+    this.add('ssm:UpdateManagedInstanceRole');
+    return this;
+  }
+
+  /**
+   * Grants permission to edit or change an OpsItem
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateOpsItem.html
+   */
+  public updateOpsItem () {
+    this.add('ssm:UpdateOpsItem');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a specified patch baseline
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdatePatchBaseline.html
+   */
+  public updatePatchBaseline () {
+    this.add('ssm:UpdatePatchBaseline');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a resource data sync
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html
+   */
+  public updateResourceDataSync () {
+    this.add('ssm:UpdateResourceDataSync');
+    return this;
+  }
+
+  /**
+   * Grants permission to update the service setting for an AWS account
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html
+   */
+  public updateServiceSetting () {
+    this.add('ssm:UpdateServiceSetting');
+    return this;
+  }
 }
