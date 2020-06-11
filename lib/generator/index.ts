@@ -60,7 +60,7 @@ export function getAwsServices(): Promise<string[]> {
             services.push(match[1]);
           }
         } while (match);
-        resolve(services.sort());
+        resolve(services.sort()); // shortcut helper for testing: .slice(0, 3)
       }
     );
   });
@@ -267,7 +267,17 @@ export function createIndex() {
   });
 
   modules.sort().forEach((module) => {
+    const source = project.addSourceFileAtPath(`./lib/${module.filename}.ts`);
+    const exports = [];
+
+    source.getClasses().forEach((item) => {
+      if (item.isExported()) {
+        exports.push(item.getName());
+      }
+    });
+
     sourceFile.addExportDeclaration({
+      namedExports: exports,
       moduleSpecifier: `./${module.filename}`,
     });
   });
