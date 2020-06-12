@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service application-autoscaling
@@ -59,6 +59,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Deletes an Application Auto Scaling scaling policy that was previously created.

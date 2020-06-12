@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service textract
@@ -39,6 +39,7 @@ export class Textract extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Detects instances of real-world document entities within an image provided as input.

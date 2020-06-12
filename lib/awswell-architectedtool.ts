@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service wellarchitected
@@ -47,6 +47,13 @@ export class Wellarchitected extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html",
       "description": "Lists the workloads in this account.",
       "accessLevel": "List"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "workload": {
+      "name": "workload",
+      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}",
+      "conditionKeys": []
     }
   };
 

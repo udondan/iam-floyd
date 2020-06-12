@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sms
@@ -159,6 +159,7 @@ export class Sms extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Create an application configuration to migrate on-premise application onto AWS..

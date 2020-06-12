@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service dax
@@ -264,6 +264,13 @@ export class Dax extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateSubnetGroup.html",
       "description": "The UpdateSubnetGroup action modifies an existing subnet group.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "application": {
+      "name": "application",
+      "arn": "arn:${Partition}:dax:${Region}:${Account}:cache/${ClusterName}",
+      "conditionKeys": []
     }
   };
 

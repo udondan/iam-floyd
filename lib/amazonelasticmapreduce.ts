@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service elasticmapreduce
@@ -357,6 +357,24 @@ export class Elasticmapreduce extends PolicyStatement {
       "url": "",
       "description": "Grants permission to use the EMR management console to view events from all clusters.",
       "accessLevel": "List"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "cluster": {
+      "name": "cluster",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticmapreduce:ResourceTag/${TagKey}"
+      ]
+    },
+    "editor": {
+      "name": "editor",
+      "arn": "arn:${Partition}:elasticmapreduce:${Region}:${Account}:editor/${EditorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticmapreduce:ResourceTag/${TagKey}"
+      ]
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codeguru-profiler
@@ -157,6 +157,13 @@ export class CodeguruProfiler extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "ProfilingGroup": {
+      "name": "ProfilingGroup",
+      "arn": "arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${profilingGroupName}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sso
@@ -279,6 +279,7 @@ export class Sso extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Connect a directory to be used by AWS Single Sign-On

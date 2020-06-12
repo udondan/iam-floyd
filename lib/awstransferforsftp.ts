@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service transfer
@@ -201,6 +201,22 @@ export class Transfer extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:transfer:${region}:${account}:user/${serverId}/${username}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "server": {
+      "name": "server",
+      "arn": "arn:${Partition}:transfer:${region}:${account}:server/${serverId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

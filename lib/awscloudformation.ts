@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cloudformation
@@ -557,6 +557,27 @@ export class Cloudformation extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html",
       "description": "Validates a specified template.",
       "accessLevel": "Read"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "stack": {
+      "name": "stack",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "stackset": {
+      "name": "stackset",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "changeset": {
+      "name": "changeset",
+      "arn": "arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}:${Id}",
+      "conditionKeys": []
     }
   };
 

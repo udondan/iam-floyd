@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-portal
@@ -44,6 +44,7 @@ export class AwsPortal extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Allow or deny IAM users permission to modify Account Settings.

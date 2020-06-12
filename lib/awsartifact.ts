@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service artifact
@@ -50,6 +50,23 @@ export class Artifact extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "report-package": {
+      "name": "report-package",
+      "arn": "arn:${Partition}:artifact:::report-package/*",
+      "conditionKeys": []
+    },
+    "customer-agreement": {
+      "name": "customer-agreement",
+      "arn": "arn:${Partition}:artifact::${Account}:customer-agreement/*",
+      "conditionKeys": []
+    },
+    "agreement": {
+      "name": "agreement",
+      "arn": "arn:${Partition}:artifact:::agreement/*",
+      "conditionKeys": []
     }
   };
 

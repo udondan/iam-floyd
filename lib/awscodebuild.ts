@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codebuild
@@ -372,6 +372,32 @@ export class Codebuild extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "build": {
+      "name": "build",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}",
+      "conditionKeys": []
+    },
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:project/${ProjectName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "report-group": {
+      "name": "report-group",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report-group/${ReportGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "report": {
+      "name": "report",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:report/${ReportGroupName}:${ReportId}",
+      "conditionKeys": []
     }
   };
 

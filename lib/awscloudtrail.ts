@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cloudtrail
@@ -162,6 +162,13 @@ export class Cloudtrail extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "trail": {
+      "name": "trail",
+      "arn": "arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}",
+      "conditionKeys": []
     }
   };
 

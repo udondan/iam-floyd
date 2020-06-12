@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service directconnect
@@ -655,6 +655,34 @@ export class Directconnect extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "dxcon": {
+      "name": "dxcon",
+      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dxcon/${ConnectionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dxlag": {
+      "name": "dxlag",
+      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dxlag/${LagId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dxvif": {
+      "name": "dxvif",
+      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dxvif/${VirtualInterfaceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dx-gateway": {
+      "name": "dx-gateway",
+      "arn": "arn:${Partition}:directconnect::${Account}:dx-gateway/${DirectConnectGatewayId}",
+      "conditionKeys": []
     }
   };
 

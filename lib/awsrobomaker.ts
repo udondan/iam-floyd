@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service robomaker
@@ -427,6 +427,57 @@ export class Robomaker extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "robotApplication": {
+      "name": "robotApplication",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "simulationApplication": {
+      "name": "simulationApplication",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "simulationJob": {
+      "name": "simulationJob",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "simulationJobBatch": {
+      "name": "simulationJobBatch",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "deploymentJob": {
+      "name": "deploymentJob",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "robot": {
+      "name": "robot",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "deploymentFleet": {
+      "name": "deploymentFleet",
+      "arn": "arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

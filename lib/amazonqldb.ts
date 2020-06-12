@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service qldb
@@ -238,6 +238,22 @@ export class Qldb extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "ledger": {
+      "name": "ledger",
+      "arn": "arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "stream": {
+      "name": "stream",
+      "arn": "arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

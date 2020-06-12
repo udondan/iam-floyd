@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service opsworks
@@ -702,6 +702,13 @@ export class Opsworks extends PolicyStatement {
           "required": false
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "stack": {
+      "name": "stack",
+      "arn": "arn:${Partition}:opsworks:${Region}:${Account}:stack/${StackId}/",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service trustedadvisor
@@ -97,6 +97,13 @@ export class Trustedadvisor extends PolicyStatement {
       "url": "",
       "description": "Update notification preferences",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "checks": {
+      "name": "checks",
+      "arn": "arn:${Partition}:trustedadvisor:${Region}:${Account}:checks/${CategoryCode}/${CheckId}",
+      "conditionKeys": []
     }
   };
 

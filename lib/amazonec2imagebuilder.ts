@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service imagebuilder
@@ -467,6 +467,69 @@ export class Imagebuilder extends PolicyStatement {
       "conditions": [
         "aws:ResourceTag/${TagKey}"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "component": {
+      "name": "component",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}/${ComponentBuildVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "componentVersion": {
+      "name": "componentVersion",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "distributionConfiguration": {
+      "name": "distributionConfiguration",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:distribution-configuration/${DistributionConfigurationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "image": {
+      "name": "image",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}/${ImageBuildVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "imageVersion": {
+      "name": "imageVersion",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "imageRecipe": {
+      "name": "imageRecipe",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "imagePipeline": {
+      "name": "imagePipeline",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:image-pipeline/${ImagePipelineName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "infrastructureConfiguration": {
+      "name": "infrastructureConfiguration",
+      "arn": "arn:${Partition}:imagebuilder:${Region}:${Account}:infrastructure-configuration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "kmsKey": {
+      "name": "kmsKey",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
+      "conditionKeys": []
     }
   };
 

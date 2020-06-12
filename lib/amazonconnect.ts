@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service connect
@@ -402,6 +402,60 @@ export class Connect extends PolicyStatement {
       "conditions": [
         "aws:ResourceTag/${TagKey}"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "instance": {
+      "name": "instance",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}",
+      "conditionKeys": []
+    },
+    "contact": {
+      "name": "contact",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact/${ContactId}",
+      "conditionKeys": []
+    },
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent/${UserId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "routing-profile": {
+      "name": "routing-profile",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}",
+      "conditionKeys": []
+    },
+    "security-profile": {
+      "name": "security-profile",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/security-profile/${SecurityProfileId}",
+      "conditionKeys": []
+    },
+    "hierarchy-group": {
+      "name": "hierarchy-group",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-group/${HierarchyGroupId}",
+      "conditionKeys": []
+    },
+    "queue": {
+      "name": "queue",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}",
+      "conditionKeys": []
+    },
+    "contact-flow": {
+      "name": "contact-flow",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}",
+      "conditionKeys": []
+    },
+    "hours-of-operation": {
+      "name": "hours-of-operation",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/operating-hours/${HoursOfOperationId}",
+      "conditionKeys": []
+    },
+    "phone-number": {
+      "name": "phone-number",
+      "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-numbers/${PhoneNumberId}",
+      "conditionKeys": []
     }
   };
 

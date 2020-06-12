@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service translate
@@ -54,6 +54,7 @@ export class Translate extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * A synchronous action that deletes a custom terminology.

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codestar-connections
@@ -153,6 +153,13 @@ export class CodestarConnections extends PolicyStatement {
         "codestar-connections:ProviderAction",
         "codestar-connections:ProviderPermissionsRequired"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Connection": {
+      "name": "Connection",
+      "arn": "arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}",
+      "conditionKeys": []
     }
   };
 

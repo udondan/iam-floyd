@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-marketplace-management
@@ -34,6 +34,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
       "accessLevel": "List"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.

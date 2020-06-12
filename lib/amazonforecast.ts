@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service forecast
@@ -250,6 +250,43 @@ export class Forecast extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "dataset": {
+      "name": "dataset",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}",
+      "conditionKeys": []
+    },
+    "datasetGroup": {
+      "name": "datasetGroup",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}",
+      "conditionKeys": []
+    },
+    "datasetImportJob": {
+      "name": "datasetImportJob",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    "algorithm": {
+      "name": "algorithm",
+      "arn": "arn:${Partition}:forecast:::algorithm/${ResourceId}",
+      "conditionKeys": []
+    },
+    "predictor": {
+      "name": "predictor",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}",
+      "conditionKeys": []
+    },
+    "forecast": {
+      "name": "forecast",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}",
+      "conditionKeys": []
+    },
+    "forecastExport": {
+      "name": "forecastExport",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}",
+      "conditionKeys": []
     }
   };
 

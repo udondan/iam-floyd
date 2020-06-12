@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service deepcomposer
@@ -117,6 +117,23 @@ export class Deepcomposer extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "model": {
+      "name": "model",
+      "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}",
+      "conditionKeys": []
+    },
+    "composition": {
+      "name": "composition",
+      "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}",
+      "conditionKeys": []
+    },
+    "audio": {
+      "name": "audio",
+      "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:audio/${AudioId}",
+      "conditionKeys": []
     }
   };
 

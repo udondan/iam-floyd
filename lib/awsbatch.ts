@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service batch
@@ -110,6 +110,18 @@ export class Batch extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html",
       "description": "Updates a job queue.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "job-queue": {
+      "name": "job-queue",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}",
+      "conditionKeys": []
+    },
+    "job-definition": {
+      "name": "job-definition",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service datapipeline
@@ -177,6 +177,7 @@ export class Datapipeline extends PolicyStatement {
       ]
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.

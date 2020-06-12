@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mediastore
@@ -137,6 +137,13 @@ export class Mediastore extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_UntagResource.html",
       "description": "Grants permission to remove tags from any container in the current account.",
       "accessLevel": "Tagging"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "container": {
+      "name": "container",
+      "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service dataexchange
@@ -253,6 +253,30 @@ export class Dataexchange extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "jobs": {
+      "name": "jobs",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}",
+      "conditionKeys": [
+        "dataexchange:JobType"
+      ]
+    },
+    "data-sets": {
+      "name": "data-sets",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}",
+      "conditionKeys": []
+    },
+    "revisions": {
+      "name": "revisions",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}",
+      "conditionKeys": []
+    },
+    "assets": {
+      "name": "assets",
+      "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}",
+      "conditionKeys": []
     }
   };
 

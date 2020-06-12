@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cloud9
@@ -164,6 +164,15 @@ export class Cloud9 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html",
       "description": "Grants permission to update IDE-specific settings of an AWS Cloud9 user.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "environment": {
+      "name": "environment",
+      "arn": "arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

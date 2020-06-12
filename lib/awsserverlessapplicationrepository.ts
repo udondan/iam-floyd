@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service serverlessrepo
@@ -160,6 +160,13 @@ export class Serverlessrepo extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "applications": {
+      "name": "applications",
+      "arn": "arn:${Partition}:serverlessrepo:${Region}:${Account}:applications/${ResourceId}",
+      "conditionKeys": []
     }
   };
 

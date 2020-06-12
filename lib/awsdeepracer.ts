@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service deepracer
@@ -231,6 +231,38 @@ export class Deepracer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-train-models-define-reward-function",
       "description": "Grants permission to test reward functions for correctness",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "reinforcement_learning_model": {
+      "name": "reinforcement_learning_model",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:model/reinforcement_learning/${ResourceId}",
+      "conditionKeys": []
+    },
+    "training_job": {
+      "name": "training_job",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:training_job/${ResourceId}",
+      "conditionKeys": []
+    },
+    "evaluation_job": {
+      "name": "evaluation_job",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}: evaluation_job/${ResourceId}",
+      "conditionKeys": []
+    },
+    "leaderboard_evaluation_job": {
+      "name": "leaderboard_evaluation_job",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:leaderboard_evaluation_job/${ResourceId}",
+      "conditionKeys": []
+    },
+    "track": {
+      "name": "track",
+      "arn": "arn:${Partition}:deepracer:${Region}::track/${ResourceId}",
+      "conditionKeys": []
+    },
+    "leaderboard": {
+      "name": "leaderboard",
+      "arn": "arn:${Partition}:deepracer:${Region}::leaderboard/${ResourceId}",
+      "conditionKeys": []
     }
   };
 

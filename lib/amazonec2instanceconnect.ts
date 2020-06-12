@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ec2-instance-connect
@@ -19,6 +19,16 @@ export class Ec2InstanceConnect extends PolicyStatement {
       },
       "conditions": [
         "ec2:osuser"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "instance": {
+      "name": "instance",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ec2:ResourceTag/${TagKey}"
       ]
     }
   };

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cognito-identity
@@ -189,6 +189,15 @@ export class CognitoIdentity extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "identitypool": {
+      "name": "identitypool",
+      "arn": "arn:${Partition}:cognito-identity:${Region}:${Account}:identitypool/${IdentityPoolId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

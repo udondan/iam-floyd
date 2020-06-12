@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service guardduty
@@ -588,6 +588,41 @@ export class Guardduty extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "detector": {
+      "name": "detector",
+      "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "filter": {
+      "name": "filter",
+      "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/filter/${FilterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "ipset": {
+      "name": "ipset",
+      "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/ipset/${IPSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "threatintelset": {
+      "name": "threatintelset",
+      "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${ThreatIntelSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "publishingdestination": {
+      "name": "publishingdestination",
+      "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${PublishingDestinationId}",
+      "conditionKeys": []
     }
   };
 

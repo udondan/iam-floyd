@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service resource-groups
@@ -133,6 +133,15 @@ export class ResourceGroups extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "group": {
+      "name": "group",
+      "arn": "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

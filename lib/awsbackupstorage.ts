@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service backup-storage
@@ -14,6 +14,7 @@ export class BackupStorage extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Associates a KMS key to a backup vault

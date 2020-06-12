@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service storagegateway
@@ -780,6 +780,46 @@ export class Storagegateway extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "device": {
+      "name": "device",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}",
+      "conditionKeys": []
+    },
+    "gateway": {
+      "name": "gateway",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "share": {
+      "name": "share",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "tape": {
+      "name": "tape",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "target": {
+      "name": "target",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}",
+      "conditionKeys": []
+    },
+    "volume": {
+      "name": "volume",
+      "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

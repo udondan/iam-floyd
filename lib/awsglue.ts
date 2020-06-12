@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service glue
@@ -1154,6 +1154,80 @@ export class Glue extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "catalog": {
+      "name": "catalog",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:catalog",
+      "conditionKeys": []
+    },
+    "database": {
+      "name": "database",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:database/${DatabaseName}",
+      "conditionKeys": []
+    },
+    "table": {
+      "name": "table",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:table/${TableName}",
+      "conditionKeys": []
+    },
+    "tableversion": {
+      "name": "tableversion",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:tableVersion/${TableVersionName}",
+      "conditionKeys": []
+    },
+    "connection": {
+      "name": "connection",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:connection/${ConnectionName}",
+      "conditionKeys": []
+    },
+    "userdefinedfunction": {
+      "name": "userdefinedfunction",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${UserDefinedFunctionName}",
+      "conditionKeys": []
+    },
+    "devendpoint": {
+      "name": "devendpoint",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:devendpoint/${DevEndpointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "job": {
+      "name": "job",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:job/${JobName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "trigger": {
+      "name": "trigger",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:trigger/${TriggerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "crawler": {
+      "name": "crawler",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:crawler/${CrawlerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "workflow": {
+      "name": "workflow",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:workflow/${WorkflowName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "mlTransform": {
+      "name": "mlTransform",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:mlTransform/${TransformId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

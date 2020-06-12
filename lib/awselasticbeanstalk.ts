@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service elasticbeanstalk
@@ -660,6 +660,49 @@ export class Elasticbeanstalk extends PolicyStatement {
           ]
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "application": {
+      "name": "application",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "applicationversion": {
+      "name": "applicationversion",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticbeanstalk:InApplication"
+      ]
+    },
+    "configurationtemplate": {
+      "name": "configurationtemplate",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticbeanstalk:InApplication"
+      ]
+    },
+    "environment": {
+      "name": "environment",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "elasticbeanstalk:InApplication"
+      ]
+    },
+    "solutionstack": {
+      "name": "solutionstack",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}",
+      "conditionKeys": []
+    },
+    "platform": {
+      "name": "platform",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}",
+      "conditionKeys": []
     }
   };
 

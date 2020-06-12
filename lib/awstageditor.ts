@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service resource-explorer
@@ -24,6 +24,7 @@ export class ResourceExplorer extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Grants permission to retrieve the resource types currently supported by Tag Editor

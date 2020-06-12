@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service license-manager
@@ -135,6 +135,15 @@ export class LicenseManager extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html",
       "description": "Updates service settings",
       "accessLevel": "Permissions management"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "license-configuration": {
+      "name": "license-configuration",
+      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}",
+      "conditionKeys": [
+        "license-manager:ResourceTag/${TagKey}"
+      ]
     }
   };
 

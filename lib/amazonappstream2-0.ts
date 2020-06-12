@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service appstream
@@ -544,6 +544,36 @@ export class Appstream extends PolicyStatement {
         }
       },
       "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "fleet": {
+      "name": "fleet",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:fleet/${FleetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "image": {
+      "name": "image",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:image/${ImageName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "image-builder": {
+      "name": "image-builder",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:image-builder/${ImageBuilderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "stack": {
+      "name": "stack",
+      "arn": "arn:${Partition}:appstream:${Region}:${Account}:stack/${StackName}",
+      "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     }

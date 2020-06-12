@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codedeploy
@@ -441,6 +441,28 @@ export class Codedeploy extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "application": {
+      "name": "application",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:application:${ApplicationName}",
+      "conditionKeys": []
+    },
+    "deploymentconfig": {
+      "name": "deploymentconfig",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:deploymentconfig:${DeploymentConfigurationName}",
+      "conditionKeys": []
+    },
+    "deploymentgroup": {
+      "name": "deploymentgroup",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:deploymentgroup:${ApplicationName}/${DeploymentGroupName}",
+      "conditionKeys": []
+    },
+    "instance": {
+      "name": "instance",
+      "arn": "arn:${Partition}:codedeploy:${Region}:${Account}:instance:${InstanceName}",
+      "conditionKeys": []
     }
   };
 

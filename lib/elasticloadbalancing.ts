@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service elasticloadbalancing
@@ -257,6 +257,22 @@ export class Elasticloadbalancing extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "listener": {
+      "name": "listener",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}",
+      "conditionKeys": []
+    },
+    "loadbalancer": {
+      "name": "loadbalancer",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "elasticloadbalancing:ResourceTag/${TagKey}"
+      ]
     }
   };
 

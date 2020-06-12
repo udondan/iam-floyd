@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-marketplace-metering-service
@@ -29,6 +29,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.

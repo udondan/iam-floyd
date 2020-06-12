@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service organizations
@@ -488,6 +488,43 @@ export class Organizations extends PolicyStatement {
       "conditions": [
         "organizations:PolicyType"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "account": {
+      "name": "account",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}",
+      "conditionKeys": []
+    },
+    "handshake": {
+      "name": "handshake",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}",
+      "conditionKeys": []
+    },
+    "organization": {
+      "name": "organization",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:organization/o-${OrganizationId}",
+      "conditionKeys": []
+    },
+    "organizationalunit": {
+      "name": "organizationalunit",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
+      "conditionKeys": []
+    },
+    "policy": {
+      "name": "policy",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
+      "conditionKeys": []
+    },
+    "awspolicy": {
+      "name": "awspolicy",
+      "arn": "arn:${Partition}:organizations::aws:policy/${PolicyType}/p-${PolicyId}",
+      "conditionKeys": []
+    },
+    "root": {
+      "name": "root",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}",
+      "conditionKeys": []
     }
   };
 

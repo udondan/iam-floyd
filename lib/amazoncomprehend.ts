@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service comprehend
@@ -374,6 +374,29 @@ export class Comprehend extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "document-classifier": {
+      "name": "document-classifier",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:document-classifier/${DocumentClassifierName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "entity-recognizer": {
+      "name": "entity-recognizer",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer/${EntityRecognizerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "document-classifier-endpoint": {
+      "name": "document-classifier-endpoint",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service swf
@@ -547,6 +547,15 @@ export class Swf extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "domain": {
+      "name": "domain",
+      "arn": "arn:${Partition}:swf::${Account}:domain/${DomainName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

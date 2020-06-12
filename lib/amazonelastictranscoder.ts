@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service elastictranscoder
@@ -160,6 +160,23 @@ export class Elastictranscoder extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "job": {
+      "name": "job",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}",
+      "conditionKeys": []
+    },
+    "pipeline": {
+      "name": "pipeline",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}",
+      "conditionKeys": []
+    },
+    "preset": {
+      "name": "preset",
+      "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}",
+      "conditionKeys": []
     }
   };
 

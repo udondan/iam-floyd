@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service backup
@@ -395,6 +395,23 @@ export class Backup extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "backupVault": {
+      "name": "backupVault",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}",
+      "conditionKeys": []
+    },
+    "backupPlan": {
+      "name": "backupPlan",
+      "arn": "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}",
+      "conditionKeys": []
+    },
+    "recoveryPoint": {
+      "name": "recoveryPoint",
+      "arn": "arn:${Partition}:${Vendor}:${Region}:*:${ResourceType}:${RecoveryPointId}",
+      "conditionKeys": []
     }
   };
 

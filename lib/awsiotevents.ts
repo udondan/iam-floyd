@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iotevents
@@ -221,6 +221,22 @@ export class Iotevents extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "detectorModel": {
+      "name": "detectorModel",
+      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "input": {
+      "name": "input",
+      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:input/${inputName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

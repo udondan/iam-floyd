@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iot-device-tester
@@ -34,6 +34,7 @@ export class IotDeviceTester extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible

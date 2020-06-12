@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mobilehub
@@ -152,6 +152,13 @@ export class Mobilehub extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html",
       "description": "Verify AWS Mobile Hub is enabled in the account",
       "accessLevel": "Read"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:mobilehub:${Region}:${Account}:project/${ProjectId}",
+      "conditionKeys": []
     }
   };
 

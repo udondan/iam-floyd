@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service pi
@@ -27,6 +27,13 @@ export class Pi extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "metric-resource": {
+      "name": "metric-resource",
+      "arn": "arn:${Partition}:pi:${Region}:${Account}:metrics/${ServiceType}/${Identifier}",
+      "conditionKeys": []
     }
   };
 

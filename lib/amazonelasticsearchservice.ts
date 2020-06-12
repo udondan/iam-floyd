@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service es
@@ -297,6 +297,13 @@ export class Es extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "domain": {
+      "name": "domain",
+      "arn": "arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service servicecatalog
@@ -634,6 +634,22 @@ export class Servicecatalog extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateTagOption.html",
       "description": "Updates the specified TagOption.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Portfolio": {
+      "name": "Portfolio",
+      "arn": "arn:${Partition}:catalog:${Region}:${Account}:portfolio/${PortfolioId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Product": {
+      "name": "Product",
+      "arn": "arn:${Partition}:catalog:${Region}:${Account}:product/${ProductId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service apigateway
@@ -93,6 +93,15 @@ export class Apigateway extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "apigateway-general": {
+      "name": "apigateway-general",
+      "arn": "arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

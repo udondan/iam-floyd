@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codepipeline
@@ -372,6 +372,43 @@ export class Codepipeline extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "action": {
+      "name": "action",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}/${ActionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "actiontype": {
+      "name": "actiontype",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:actiontype:${Owner}/${Category}/${Provider}/${Version}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "pipeline": {
+      "name": "pipeline",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "stage": {
+      "name": "stage",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "webhook": {
+      "name": "webhook",
+      "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

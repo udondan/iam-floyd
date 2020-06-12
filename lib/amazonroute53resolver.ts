@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service route53resolver
@@ -236,6 +236,22 @@ export class Route53resolver extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "resolver-rule": {
+      "name": "resolver-rule",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "resolver-endpoint": {
+      "name": "resolver-endpoint",
+      "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

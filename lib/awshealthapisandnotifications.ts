@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service health
@@ -90,6 +90,13 @@ export class Health extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html",
       "description": "Enables the Organizational View feature.",
       "accessLevel": "Permissions management"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "event": {
+      "name": "event",
+      "arn": "arn:${Partition}:health:*::event/${Service}/${EventTypeCode}/*",
+      "conditionKeys": []
     }
   };
 

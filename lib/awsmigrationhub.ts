@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mgh
@@ -162,6 +162,18 @@ export class Mgh extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "progressUpdateStream": {
+      "name": "progressUpdateStream",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}",
+      "conditionKeys": []
+    },
+    "migrationTask": {
+      "name": "migrationTask",
+      "arn": "arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}/migrationTask/${Task}",
+      "conditionKeys": []
     }
   };
 

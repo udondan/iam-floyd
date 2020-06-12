@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iot
@@ -1962,6 +1962,159 @@ export class Iot extends PolicyStatement {
       "url": "API_ValidateSecurityProfileBehaviors.html",
       "description": "Validates a Device Defender security profile behaviors specification.",
       "accessLevel": "Read"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "client": {
+      "name": "client",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:client/${ClientId}",
+      "conditionKeys": []
+    },
+    "index": {
+      "name": "index",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:index/${IndexName}",
+      "conditionKeys": []
+    },
+    "job": {
+      "name": "job",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:job/${JobId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "tunnel": {
+      "name": "tunnel",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:tunnel/${TunnelId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "thing": {
+      "name": "thing",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}",
+      "conditionKeys": []
+    },
+    "thinggroup": {
+      "name": "thinggroup",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "billinggroup": {
+      "name": "billinggroup",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:billinggroup/${BillingGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dynamicthinggroup": {
+      "name": "dynamicthinggroup",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "thingtype": {
+      "name": "thingtype",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thingtype/${ThingTypeName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "topic": {
+      "name": "topic",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:topic/${TopicName}",
+      "conditionKeys": []
+    },
+    "topicfilter": {
+      "name": "topicfilter",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:topicfilter/${TopicFilter}",
+      "conditionKeys": []
+    },
+    "rolealias": {
+      "name": "rolealias",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:rolealias/${RoleAlias}",
+      "conditionKeys": []
+    },
+    "role": {
+      "name": "role",
+      "arn": "arn:${Partition}:iam::${Account}:role/${Role}",
+      "conditionKeys": []
+    },
+    "authorizer": {
+      "name": "authorizer",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:authorizer/${AuthorizerName}",
+      "conditionKeys": []
+    },
+    "policy": {
+      "name": "policy",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:policy/${PolicyName}",
+      "conditionKeys": []
+    },
+    "cert": {
+      "name": "cert",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:cert/${Certificate}",
+      "conditionKeys": []
+    },
+    "cacert": {
+      "name": "cacert",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:cacert/${CACertificate}",
+      "conditionKeys": []
+    },
+    "stream": {
+      "name": "stream",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:stream/${streamId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "otaupdate": {
+      "name": "otaupdate",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:otaupdate/${otaUpdateId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "scheduledaudit": {
+      "name": "scheduledaudit",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:scheduledaudit/${ScheduleName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "mitigationaction": {
+      "name": "mitigationaction",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:mitigationaction/${MitigationActionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "securityprofile": {
+      "name": "securityprofile",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dimension": {
+      "name": "dimension",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:dimension/${DimensionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "rule": {
+      "name": "rule",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:rule/${ruleName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "provisioningtemplate": {
+      "name": "provisioningtemplate",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${provisioningTemplate}",
+      "conditionKeys": []
     }
   };
 

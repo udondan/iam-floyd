@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mediapackage-vod
@@ -163,6 +163,29 @@ export class MediapackageVod extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "assets": {
+      "name": "assets",
+      "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "packaging-configurations": {
+      "name": "packaging-configurations",
+      "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "packaging-groups": {
+      "name": "packaging-groups",
+      "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

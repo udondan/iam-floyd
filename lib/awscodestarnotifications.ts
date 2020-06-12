@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codestar-notifications
@@ -172,6 +172,15 @@ export class CodestarNotifications extends PolicyStatement {
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
         "codestar-notifications:NotificationsForResource"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "notificationrule": {
+      "name": "notificationrule",
+      "arn": "arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

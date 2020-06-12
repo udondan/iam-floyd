@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service access-analyzer
@@ -184,6 +184,20 @@ export class AccessAnalyzer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html",
       "description": "Grants permission to modify findings.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Analyzer": {
+      "name": "Analyzer",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "ArchiveRule": {
+      "name": "ArchiveRule",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}/archive-rule/${ruleName}",
+      "conditionKeys": []
     }
   };
 

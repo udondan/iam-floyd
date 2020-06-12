@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service logs
@@ -347,6 +347,18 @@ export class Logs extends PolicyStatement {
       "url": "",
       "description": "Updates the log delivery information for specified log delivery",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "log-group": {
+      "name": "log-group",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}",
+      "conditionKeys": []
+    },
+    "log-stream": {
+      "name": "log-stream",
+      "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}",
+      "conditionKeys": []
     }
   };
 

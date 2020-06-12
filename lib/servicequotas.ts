@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service servicequotas
@@ -103,6 +103,13 @@ export class Servicequotas extends PolicyStatement {
       "conditions": [
         "servicequotas:service"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "quota": {
+      "name": "quota",
+      "arn": "arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}",
+      "conditionKeys": []
     }
   };
 

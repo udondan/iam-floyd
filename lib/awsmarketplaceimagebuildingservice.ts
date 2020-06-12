@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-marketplace-image-building-service
@@ -24,6 +24,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Describes Image Builds identified by a build Id

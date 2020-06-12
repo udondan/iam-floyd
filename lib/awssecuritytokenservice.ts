@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sts
@@ -158,6 +158,20 @@ export class Sts extends PolicyStatement {
         "aws:RequestTag/${TagKey}",
         "sts:TransitiveTagKeys"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "role": {
+      "name": "role",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "conditionKeys": []
     }
   };
 

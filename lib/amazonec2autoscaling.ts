@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service autoscaling
@@ -642,6 +642,21 @@ export class Autoscaling extends PolicyStatement {
         "autoscaling:MinSize",
         "autoscaling:VPCZoneIdentifiers"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "autoScalingGroup": {
+      "name": "autoScalingGroup",
+      "arn": "arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}",
+      "conditionKeys": [
+        "autoscaling:ResourceTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "launchConfiguration": {
+      "name": "launchConfiguration",
+      "arn": "arn:${Partition}:autoscaling:${Region}:${Account}:launchConfiguration:${Id}:launchConfigurationName/${LaunchConfigurationName}",
+      "conditionKeys": []
     }
   };
 

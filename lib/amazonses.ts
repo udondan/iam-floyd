@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ses
@@ -415,6 +415,48 @@ export class Ses extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html",
       "description": "Verifies an email address. This action causes a confirmation email message to be sent to the specified address. This action is throttled at one request per second",
       "accessLevel": "Read"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "configuration-set": {
+      "name": "configuration-set",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+      "conditionKeys": []
+    },
+    "custom-verification-email-template": {
+      "name": "custom-verification-email-template",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${CustomVerificationEmailTemplateName}",
+      "conditionKeys": []
+    },
+    "event-destination": {
+      "name": "event-destination",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}",
+      "conditionKeys": []
+    },
+    "identity": {
+      "name": "identity",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}",
+      "conditionKeys": []
+    },
+    "receipt-filter": {
+      "name": "receipt-filter",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:receipt-filter/${ReceiptFilterName}",
+      "conditionKeys": []
+    },
+    "receipt-rule": {
+      "name": "receipt-rule",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:receipt-rule-set/${ReceiptRuleSetName}:receipt-rule/${ReceiptRuleName}",
+      "conditionKeys": []
+    },
+    "receipt-rule-set": {
+      "name": "receipt-rule-set",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:receipt-rule-set/${ReceiptRuleSetName}",
+      "conditionKeys": []
+    },
+    "template": {
+      "name": "template",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}",
+      "conditionKeys": []
     }
   };
 

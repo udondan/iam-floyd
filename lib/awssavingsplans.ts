@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service savingsplans
@@ -88,6 +88,15 @@ export class Savingsplans extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "savingsplan": {
+      "name": "savingsplan",
+      "arn": "arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

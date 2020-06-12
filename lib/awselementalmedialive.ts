@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service medialive
@@ -444,6 +444,53 @@ export class Medialive extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "channel": {
+      "name": "channel",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channel:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "input": {
+      "name": "input",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:input:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "input-device": {
+      "name": "input-device",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputDevice:*",
+      "conditionKeys": []
+    },
+    "input-security-group": {
+      "name": "input-security-group",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "multiplex": {
+      "name": "multiplex",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:multiplex:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "reservation": {
+      "name": "reservation",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:reservation:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "offering": {
+      "name": "offering",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:offering:*",
+      "conditionKeys": []
     }
   };
 

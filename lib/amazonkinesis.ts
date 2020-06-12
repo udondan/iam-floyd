@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service kinesis
@@ -244,6 +244,18 @@ export class Kinesis extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html",
       "description": "Updates the shard count of the specified stream to the specified number of shards.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "stream": {
+      "name": "stream",
+      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
+      "conditionKeys": []
+    },
+    "consumer": {
+      "name": "consumer",
+      "arn": "arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}",
+      "conditionKeys": []
     }
   };
 

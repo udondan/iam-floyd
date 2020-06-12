@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sqs
@@ -202,6 +202,13 @@ export class Sqs extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "queue": {
+      "name": "queue",
+      "arn": "arn:${Partition}:sqs:${Region}:${Account}:${QueueName}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service dynamodb
@@ -524,6 +524,33 @@ export class Dynamodb extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "index": {
+      "name": "index",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}",
+      "conditionKeys": []
+    },
+    "stream": {
+      "name": "stream",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}",
+      "conditionKeys": []
+    },
+    "table": {
+      "name": "table",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}",
+      "conditionKeys": []
+    },
+    "backup": {
+      "name": "backup",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}",
+      "conditionKeys": []
+    },
+    "global-table": {
+      "name": "global-table",
+      "arn": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
+      "conditionKeys": []
     }
   };
 

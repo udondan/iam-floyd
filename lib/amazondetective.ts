@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service detective
@@ -157,6 +157,13 @@ export class Detective extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Graph": {
+      "name": "Graph",
+      "arn": "arn:${Partition}:detective:${Region}:${Account}:graph:${ResourceId}",
+      "conditionKeys": []
     }
   };
 

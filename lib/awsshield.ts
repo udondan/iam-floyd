@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service shield
@@ -117,6 +117,18 @@ export class Shield extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateSubscription.html",
       "description": "Updates the details of an existing subscription",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "attack": {
+      "name": "attack",
+      "arn": "arn:${Partition}:shield::${Account}:attack/${Id}",
+      "conditionKeys": []
+    },
+    "protection": {
+      "name": "protection",
+      "arn": "arn:${Partition}:shield::${Account}:protection/${Id}",
+      "conditionKeys": []
     }
   };
 

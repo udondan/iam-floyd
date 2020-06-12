@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cur
@@ -42,6 +42,13 @@ export class Cur extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "cur": {
+      "name": "cur",
+      "arn": "arn:${Partition}:cur:${Region}:${Account}:definition/${ReportName}",
+      "conditionKeys": []
     }
   };
 

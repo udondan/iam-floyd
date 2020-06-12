@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service neptune-db
@@ -17,6 +17,13 @@ export class NeptuneDb extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "database": {
+      "name": "database",
+      "arn": "arn:${Partition}:neptune-db:${Region}:${Account}:${RelativeId}/database",
+      "conditionKeys": []
     }
   };
 

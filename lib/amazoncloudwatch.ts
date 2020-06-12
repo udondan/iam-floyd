@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cloudwatch
@@ -268,6 +268,27 @@ export class Cloudwatch extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "alarm": {
+      "name": "alarm",
+      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dashboard": {
+      "name": "dashboard",
+      "arn": "arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}",
+      "conditionKeys": []
+    },
+    "insight-rule": {
+      "name": "insight-rule",
+      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

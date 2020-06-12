@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ssm
@@ -1022,6 +1022,106 @@ export class Ssm extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "association": {
+      "name": "association",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:association/${AssociationId}",
+      "conditionKeys": []
+    },
+    "automation-execution": {
+      "name": "automation-execution",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:automation-execution/${AutomationExecutionId}",
+      "conditionKeys": []
+    },
+    "automation-definition": {
+      "name": "automation-definition",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName:VersionId}",
+      "conditionKeys": []
+    },
+    "document": {
+      "name": "document",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "instance": {
+      "name": "instance",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "maintenancewindow": {
+      "name": "maintenancewindow",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:maintenancewindow/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "managed-instance": {
+      "name": "managed-instance",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${ManagedInstanceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "managed-instance-inventory": {
+      "name": "managed-instance-inventory",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:managed-instance-inventory/${InstanceId}",
+      "conditionKeys": []
+    },
+    "opsitem": {
+      "name": "opsitem",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:opsitem/${ResourceId}",
+      "conditionKeys": []
+    },
+    "parameter": {
+      "name": "parameter",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:parameter/${FullyQualifiedParameterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "patchbaseline": {
+      "name": "patchbaseline",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:patchbaseline/${PatchBaselineIdResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ssm:resourceTag/tag-key"
+      ]
+    },
+    "session": {
+      "name": "session",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:session/${SessionId}",
+      "conditionKeys": []
+    },
+    "resourcedatasync": {
+      "name": "resourcedatasync",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}",
+      "conditionKeys": []
+    },
+    "servicesetting": {
+      "name": "servicesetting",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:servicesetting/${ResourceId}",
+      "conditionKeys": []
+    },
+    "windowtarget": {
+      "name": "windowtarget",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:windowtarget/${WindowTargetId}",
+      "conditionKeys": []
+    },
+    "windowtask": {
+      "name": "windowtask",
+      "arn": "arn:${Partition}:ssm:${Region}:${Account}:windowtask/${WindowTaskId}",
+      "conditionKeys": []
     }
   };
 

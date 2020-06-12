@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service devicefarm
@@ -829,6 +829,115 @@ export class Devicefarm extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "run": {
+      "name": "run",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "job": {
+      "name": "job",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}",
+      "conditionKeys": []
+    },
+    "suite": {
+      "name": "suite",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}",
+      "conditionKeys": []
+    },
+    "test": {
+      "name": "test",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}",
+      "conditionKeys": []
+    },
+    "upload": {
+      "name": "upload",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}",
+      "conditionKeys": []
+    },
+    "artifact": {
+      "name": "artifact",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}",
+      "conditionKeys": []
+    },
+    "sample": {
+      "name": "sample",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}",
+      "conditionKeys": []
+    },
+    "networkprofile": {
+      "name": "networkprofile",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "deviceinstance": {
+      "name": "deviceinstance",
+      "arn": "arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "session": {
+      "name": "session",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "devicepool": {
+      "name": "devicepool",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "device": {
+      "name": "device",
+      "arn": "arn:${Partition}:devicefarm:${Region}::device:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "instanceprofile": {
+      "name": "instanceprofile",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "vpceconfiguration": {
+      "name": "vpceconfiguration",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "testgrid-project": {
+      "name": "testgrid-project",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "testgrid-session": {
+      "name": "testgrid-session",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

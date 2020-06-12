@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ram
@@ -256,6 +256,29 @@ export class Ram extends PolicyStatement {
         "ram:ResourceShareName",
         "ram:AllowsExternalPrincipals",
         "ram:RequestedAllowsExternalPrincipals"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "resource-share": {
+      "name": "resource-share",
+      "arn": "arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ram:AllowsExternalPrincipals",
+        "ram:ResourceShareName"
+      ]
+    },
+    "resource-share-invitation": {
+      "name": "resource-share-invitation",
+      "arn": "arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}",
+      "conditionKeys": []
+    },
+    "permission": {
+      "name": "permission",
+      "arn": "arn:${Partition}:ram::${Account}:permission/${ResourcePath}",
+      "conditionKeys": [
+        "ram:PermissionArn"
       ]
     }
   };

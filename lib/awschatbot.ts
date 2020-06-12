@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service chatbot
@@ -67,6 +67,13 @@ export class Chatbot extends PolicyStatement {
       "url": "",
       "description": "Updates an AWS Chatbot Slack Channel Configuration.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "ChatbotConfiguration": {
+      "name": "ChatbotConfiguration",
+      "arn": "arn:${Partition}:chatbot::${account}:${resourceType}/${resourceName}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service appmesh
@@ -376,6 +376,43 @@ export class Appmesh extends PolicyStatement {
           "required": false
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "mesh": {
+      "name": "mesh",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "virtualService": {
+      "name": "virtualService",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "virtualNode": {
+      "name": "virtualNode",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "virtualRouter": {
+      "name": "virtualRouter",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "route": {
+      "name": "route",
+      "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

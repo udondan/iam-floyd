@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service secretsmanager
@@ -265,6 +265,18 @@ export class Secretsmanager extends PolicyStatement {
         "secretsmanager:VersionStage",
         "secretsmanager:resource/AllowRotationLambdaArn",
         "secretsmanager:ResourceTag/tag-key"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Secret": {
+      "name": "Secret",
+      "arn": "arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}",
+      "conditionKeys": [
+        "aws:RequestTag/tag-key",
+        "aws:TagKeys",
+        "secretsmanager:ResourceTag/tag-key",
+        "secretsmanager:resource/AllowRotationLambdaArn"
       ]
     }
   };

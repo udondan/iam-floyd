@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service outposts
@@ -32,6 +32,23 @@ export class Outposts extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html",
       "description": "Lists the sites for the specified AWS account",
       "accessLevel": "List"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Outpost": {
+      "name": "Outpost",
+      "arn": "arn:${Partition}:outposts:${Region}:${Account}:outpost/${OutpostId}",
+      "conditionKeys": []
+    },
+    "Site": {
+      "name": "Site",
+      "arn": "arn:${Partition}:outposts:${Region}:${Account}:site/${SiteId}",
+      "conditionKeys": []
+    },
+    "Order": {
+      "name": "Order",
+      "arn": "arn:${Partition}:outposts:${Region}:${Account}:order/${OrderId}",
+      "conditionKeys": []
     }
   };
 

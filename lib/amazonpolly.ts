@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service polly
@@ -72,6 +72,13 @@ export class Polly extends PolicyStatement {
           "required": false
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "lexicon": {
+      "name": "lexicon",
+      "arn": "arn:${Partition}:polly:${Region}:${Account}:lexicon/${LexiconName}",
+      "conditionKeys": []
     }
   };
 

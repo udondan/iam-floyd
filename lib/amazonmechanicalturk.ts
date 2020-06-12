@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mechanicalturk
@@ -204,6 +204,7 @@ export class Mechanicalturk extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * The AcceptQualificationRequest operation grants a Worker's request for a Qualification

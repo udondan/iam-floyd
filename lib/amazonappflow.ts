@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service appflow
@@ -147,6 +147,20 @@ export class Appflow extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "flow": {
+      "name": "flow",
+      "arn": "arn:${Partition}:appflow::${Account}:flow/${flowName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "connectorprofile": {
+      "name": "connectorprofile",
+      "arn": "arn:${Partition}:appflow::${Account}:connectorprofile/${profileName}",
+      "conditionKeys": []
     }
   };
 

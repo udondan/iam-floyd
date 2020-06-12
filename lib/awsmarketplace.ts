@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-marketplace
@@ -79,6 +79,7 @@ export class AwsMarketplace extends PolicyStatement {
       "accessLevel": "List"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).

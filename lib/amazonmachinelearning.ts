@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service machinelearning
@@ -309,6 +309,28 @@ export class Machinelearning extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "batchprediction": {
+      "name": "batchprediction",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}",
+      "conditionKeys": []
+    },
+    "datasource": {
+      "name": "datasource",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}",
+      "conditionKeys": []
+    },
+    "evaluation": {
+      "name": "evaluation",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}",
+      "conditionKeys": []
+    },
+    "mlmodel": {
+      "name": "mlmodel",
+      "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}",
+      "conditionKeys": []
     }
   };
 

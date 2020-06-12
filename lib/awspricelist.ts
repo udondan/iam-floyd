@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service pricing
@@ -24,6 +24,7 @@ export class Pricing extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).

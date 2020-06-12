@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service workspaces
@@ -250,6 +250,28 @@ export class Workspaces extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "workspacebundle": {
+      "name": "workspacebundle",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspacebundle/${BundleId}",
+      "conditionKeys": []
+    },
+    "workspaceipgroup": {
+      "name": "workspaceipgroup",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspaceipgroup/${GroupId}",
+      "conditionKeys": []
+    },
+    "directoryid": {
+      "name": "directoryid",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:directory/${DirectoryId}",
+      "conditionKeys": []
+    },
+    "workspaceid": {
+      "name": "workspaceid",
+      "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspace/${WorkspaceId}",
+      "conditionKeys": []
     }
   };
 

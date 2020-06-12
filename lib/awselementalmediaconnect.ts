@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mediaconnect
@@ -77,6 +77,28 @@ export class Mediaconnect extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html",
       "description": "Grants permission to update the source of any flow.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Entitlement": {
+      "name": "Entitlement",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:entitlement:${FlowId}:${EntitlementName}",
+      "conditionKeys": []
+    },
+    "Flow": {
+      "name": "Flow",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}",
+      "conditionKeys": []
+    },
+    "Output": {
+      "name": "Output",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:output:${OutputId}:${OutputName}",
+      "conditionKeys": []
+    },
+    "Source": {
+      "name": "Source",
+      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:source:${SourceId}:${SourceName}",
+      "conditionKeys": []
     }
   };
 

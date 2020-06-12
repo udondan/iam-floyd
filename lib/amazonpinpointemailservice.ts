@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ses-pinpoint
@@ -403,6 +403,41 @@ export class SesPinpoint extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "configuration-set": {
+      "name": "configuration-set",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dedicated-ip-pool": {
+      "name": "dedicated-ip-pool",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${CustomVerificationEmailTemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "deliverability-test-report": {
+      "name": "deliverability-test-report",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${CustomVerificationEmailTemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "event-destination": {
+      "name": "event-destination",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}",
+      "conditionKeys": []
+    },
+    "identity": {
+      "name": "identity",
+      "arn": "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

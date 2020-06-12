@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service kinesisvideo
@@ -328,6 +328,22 @@ export class Kinesisvideo extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "stream": {
+      "name": "stream",
+      "arn": "arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "channel": {
+      "name": "channel",
+      "arn": "arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

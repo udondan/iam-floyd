@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cloudfront
@@ -376,6 +376,27 @@ export class Cloudfront extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "distribution": {
+      "name": "distribution",
+      "arn": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "streaming-distribution": {
+      "name": "streaming-distribution",
+      "arn": "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "origin-access-identity": {
+      "name": "origin-access-identity",
+      "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}",
+      "conditionKeys": []
     }
   };
 

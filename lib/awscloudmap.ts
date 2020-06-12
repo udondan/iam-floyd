@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service servicediscovery
@@ -209,6 +209,22 @@ export class Servicediscovery extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "namespace": {
+      "name": "namespace",
+      "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "service": {
+      "name": "service",
+      "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

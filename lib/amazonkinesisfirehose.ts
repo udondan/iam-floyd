@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service firehose
@@ -133,6 +133,15 @@ export class Firehose extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "deliverystream": {
+      "name": "deliverystream",
+      "arn": "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service kendra
@@ -298,6 +298,29 @@ export class Kendra extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "index": {
+      "name": "index",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "data-source": {
+      "name": "data-source",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "faq": {
+      "name": "faq",
+      "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

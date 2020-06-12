@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service amplify
@@ -393,6 +393,34 @@ export class Amplify extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "apps": {
+      "name": "apps",
+      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "branches": {
+      "name": "branches",
+      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "jobs": {
+      "name": "jobs",
+      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}/jobs/${JobId}",
+      "conditionKeys": []
+    },
+    "domains": {
+      "name": "domains",
+      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

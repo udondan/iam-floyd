@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service fms
@@ -150,6 +150,15 @@ export class Fms extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "policy": {
+      "name": "policy",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:policy/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

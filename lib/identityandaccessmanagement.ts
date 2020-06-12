@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iam
@@ -1364,6 +1364,77 @@ export class Iam extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "access-report": {
+      "name": "access-report",
+      "arn": "arn:${Partition}:iam::${Account}:access-report/${EntityPath}",
+      "conditionKeys": []
+    },
+    "assumed-role": {
+      "name": "assumed-role",
+      "arn": "arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}",
+      "conditionKeys": []
+    },
+    "federated-user": {
+      "name": "federated-user",
+      "arn": "arn:${Partition}:iam::${Account}:federated-user/${UserName}",
+      "conditionKeys": []
+    },
+    "group": {
+      "name": "group",
+      "arn": "arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}",
+      "conditionKeys": []
+    },
+    "instance-profile": {
+      "name": "instance-profile",
+      "arn": "arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}",
+      "conditionKeys": []
+    },
+    "mfa": {
+      "name": "mfa",
+      "arn": "arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}",
+      "conditionKeys": []
+    },
+    "oidc-provider": {
+      "name": "oidc-provider",
+      "arn": "arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}",
+      "conditionKeys": []
+    },
+    "policy": {
+      "name": "policy",
+      "arn": "arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}",
+      "conditionKeys": []
+    },
+    "role": {
+      "name": "role",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "conditionKeys": [
+        "iam:ResourceTag/${TagKey}"
+      ]
+    },
+    "saml-provider": {
+      "name": "saml-provider",
+      "arn": "arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}",
+      "conditionKeys": []
+    },
+    "server-certificate": {
+      "name": "server-certificate",
+      "arn": "arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}",
+      "conditionKeys": []
+    },
+    "sms-mfa": {
+      "name": "sms-mfa",
+      "arn": "arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}",
+      "conditionKeys": []
+    },
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "conditionKeys": [
+        "iam:ResourceTag/${TagKey}"
+      ]
     }
   };
 

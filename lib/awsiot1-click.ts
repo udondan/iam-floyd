@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iot1click
@@ -276,6 +276,22 @@ export class Iot1click extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "device": {
+      "name": "device",
+      "arn": "arn:${Partition}:iot1click:${Region}:${Account}:devices/${DeviceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:iot1click:${Region}:${Account}:projects/${ProjectName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

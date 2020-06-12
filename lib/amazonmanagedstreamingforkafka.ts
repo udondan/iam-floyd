@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service kafka
@@ -138,6 +138,15 @@ export class Kafka extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring",
       "description": "Updates the monitoring settings for the cluster.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "cluster": {
+      "name": "cluster",
+      "arn": "arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${UUID}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

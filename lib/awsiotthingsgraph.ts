@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iotthingsgraph
@@ -283,6 +283,25 @@ export class Iotthingsgraph extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UploadEntityDefinitions.html",
       "description": "Asynchronously uploads one or more entity definitions to the user's namespace.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Workflow": {
+      "name": "Workflow",
+      "arn": "arn:${Partition}:iotthingsgraph:${Region}:${Account}:Workflow/${NamespacePath}",
+      "conditionKeys": []
+    },
+    "System": {
+      "name": "System",
+      "arn": "arn:${Partition}:iotthingsgraph:${Region}:${Account}:System/${NamespacePath}",
+      "conditionKeys": []
+    },
+    "SystemInstance": {
+      "name": "SystemInstance",
+      "arn": "arn:${Partition}:iotthingsgraph:${Region}:${Account}:Deployment/${NamespacePath}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

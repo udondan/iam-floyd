@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service waf
@@ -745,6 +745,76 @@ export class Waf extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "bytematchset": {
+      "name": "bytematchset",
+      "arn": "arn:${Partition}:waf::${Account}:bytematchset/${Id}",
+      "conditionKeys": []
+    },
+    "ipset": {
+      "name": "ipset",
+      "arn": "arn:${Partition}:waf::${Account}:ipset/${Id}",
+      "conditionKeys": []
+    },
+    "ratebasedrule": {
+      "name": "ratebasedrule",
+      "arn": "arn:${Partition}:waf::${Account}:ratebasedrule/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "rule": {
+      "name": "rule",
+      "arn": "arn:${Partition}:waf::${Account}:rule/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "sizeconstraintset": {
+      "name": "sizeconstraintset",
+      "arn": "arn:${Partition}:waf::${Account}:sizeconstraintset/${Id}",
+      "conditionKeys": []
+    },
+    "sqlinjectionmatchset": {
+      "name": "sqlinjectionmatchset",
+      "arn": "arn:${Partition}:waf::${Account}:sqlinjectionset/${Id}",
+      "conditionKeys": []
+    },
+    "webacl": {
+      "name": "webacl",
+      "arn": "arn:${Partition}:waf::${Account}:webacl/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "xssmatchset": {
+      "name": "xssmatchset",
+      "arn": "arn:${Partition}:waf::${Account}:xssmatchset/${Id}",
+      "conditionKeys": []
+    },
+    "regexmatchset": {
+      "name": "regexmatchset",
+      "arn": "arn:${Partition}:waf::${Account}:regexmatch/${Id}",
+      "conditionKeys": []
+    },
+    "regexpatternset": {
+      "name": "regexpatternset",
+      "arn": "arn:${Partition}:waf::${Account}:regexpatternset/${Id}",
+      "conditionKeys": []
+    },
+    "geomatchset": {
+      "name": "geomatchset",
+      "arn": "arn:${Partition}:waf::${Account}:geomatchset/${Id}",
+      "conditionKeys": []
+    },
+    "rulegroup": {
+      "name": "rulegroup",
+      "arn": "arn:${Partition}:waf::${Account}:rulegroup/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

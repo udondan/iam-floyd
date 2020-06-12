@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sdb
@@ -102,6 +102,13 @@ export class Sdb extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "domain": {
+      "name": "domain",
+      "arn": "arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}",
+      "conditionKeys": []
     }
   };
 

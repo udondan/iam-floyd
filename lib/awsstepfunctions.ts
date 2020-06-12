@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service states
@@ -214,6 +214,27 @@ export class States extends PolicyStatement {
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "activity": {
+      "name": "activity",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "execution": {
+      "name": "execution",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}",
+      "conditionKeys": []
+    },
+    "statemachine": {
+      "name": "statemachine",
+      "arn": "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

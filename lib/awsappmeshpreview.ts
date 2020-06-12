@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service appmesh-preview
@@ -283,6 +283,33 @@ export class AppmeshPreview extends PolicyStatement {
           "required": false
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "mesh": {
+      "name": "mesh",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}",
+      "conditionKeys": []
+    },
+    "virtualService": {
+      "name": "virtualService",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}",
+      "conditionKeys": []
+    },
+    "virtualNode": {
+      "name": "virtualNode",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}",
+      "conditionKeys": []
+    },
+    "virtualRouter": {
+      "name": "virtualRouter",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}",
+      "conditionKeys": []
+    },
+    "route": {
+      "name": "route",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}",
+      "conditionKeys": []
     }
   };
 

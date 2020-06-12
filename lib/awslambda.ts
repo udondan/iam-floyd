@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service lambda
@@ -520,6 +520,38 @@ export class Lambda extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "function": {
+      "name": "function",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
+      "conditionKeys": []
+    },
+    "function version": {
+      "name": "function version",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}",
+      "conditionKeys": []
+    },
+    "function alias": {
+      "name": "function alias",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}",
+      "conditionKeys": []
+    },
+    "layer": {
+      "name": "layer",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}",
+      "conditionKeys": []
+    },
+    "layerVersion": {
+      "name": "layerVersion",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
+      "conditionKeys": []
+    },
+    "eventSourceMapping": {
+      "name": "eventSourceMapping",
+      "arn": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service s3
@@ -1628,6 +1628,28 @@ export class S3 extends PolicyStatement {
         "s3:ExistingJobOperation",
         "s3:JobSuspendedCause"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "accesspoint": {
+      "name": "accesspoint",
+      "arn": "arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}",
+      "conditionKeys": []
+    },
+    "bucket": {
+      "name": "bucket",
+      "arn": "arn:${Partition}:s3:::${BucketName}",
+      "conditionKeys": []
+    },
+    "object": {
+      "name": "object",
+      "arn": "arn:${Partition}:s3:::${BucketName}/${ObjectName}",
+      "conditionKeys": []
+    },
+    "job": {
+      "name": "job",
+      "arn": "arn:${Partition}:s3:${Region}:${Account}:job/${JobId}",
+      "conditionKeys": []
     }
   };
 

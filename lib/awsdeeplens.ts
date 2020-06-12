@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service deeplens
@@ -190,6 +190,23 @@ export class Deeplens extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "device": {
+      "name": "device",
+      "arn": "arn:${Partition}:deeplens:${Region}:${Account}:device/${DeviceName}",
+      "conditionKeys": []
+    },
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:deeplens:${Region}:${Account}:project/${ProjectName}",
+      "conditionKeys": []
+    },
+    "model": {
+      "name": "model",
+      "arn": "arn:${Partition}:deeplens:${Region}:${Account}:model/${ModelName}",
+      "conditionKeys": []
     }
   };
 

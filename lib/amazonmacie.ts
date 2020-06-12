@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service macie2
@@ -378,6 +378,36 @@ export class Macie2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html",
       "description": "Grants permission to update Amazon Macie configuration settings for an AWS organization",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "ClassificationJob": {
+      "name": "ClassificationJob",
+      "arn": "arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "CustomDataIdentifier": {
+      "name": "CustomDataIdentifier",
+      "arn": "arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Member": {
+      "name": "Member",
+      "arn": "arn:${Partition}:macie2::${Account}:member/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "FindingsFilter": {
+      "name": "FindingsFilter",
+      "arn": "arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

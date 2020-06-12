@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mq
@@ -221,6 +221,22 @@ export class Mq extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "brokers": {
+      "name": "brokers",
+      "arn": "arn:${Partition}:mq:${Region}:${Account}:broker:${broker-id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "configurations": {
+      "name": "configurations",
+      "arn": "arn:${Partition}:mq:${Region}:${Account}:configuration:${configuration-id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

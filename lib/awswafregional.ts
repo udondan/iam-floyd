@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service waf-regional
@@ -788,6 +788,81 @@ export class WafRegional extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "bytematchset": {
+      "name": "bytematchset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:bytematchset/${Id}",
+      "conditionKeys": []
+    },
+    "ipset": {
+      "name": "ipset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:ipset/${Id}",
+      "conditionKeys": []
+    },
+    "loadbalancer/app/": {
+      "name": "loadbalancer/app/",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+      "conditionKeys": []
+    },
+    "ratebasedrule": {
+      "name": "ratebasedrule",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:ratebasedrule/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "rule": {
+      "name": "rule",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:rule/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "sizeconstraintset": {
+      "name": "sizeconstraintset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:sizeconstraintset/${Id}",
+      "conditionKeys": []
+    },
+    "sqlinjectionmatchset": {
+      "name": "sqlinjectionmatchset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:sqlinjectionset/${Id}",
+      "conditionKeys": []
+    },
+    "webacl": {
+      "name": "webacl",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:webacl/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "xssmatchset": {
+      "name": "xssmatchset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:xssmatchset/${Id}",
+      "conditionKeys": []
+    },
+    "regexmatchset": {
+      "name": "regexmatchset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:regexmatch/${Id}",
+      "conditionKeys": []
+    },
+    "regexpatternset": {
+      "name": "regexpatternset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:regexpatternset/${Id}",
+      "conditionKeys": []
+    },
+    "geomatchset": {
+      "name": "geomatchset",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:geomatchset/${Id}",
+      "conditionKeys": []
+    },
+    "rulegroup": {
+      "name": "rulegroup",
+      "arn": "arn:${Partition}:waf-regional:${Region}:${Account}:rulegroup/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

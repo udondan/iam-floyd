@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service fsx
@@ -182,6 +182,29 @@ export class Fsx extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "file-system": {
+      "name": "file-system",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:file-system/*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "backup": {
+      "name": "backup",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:backup/*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "task": {
+      "name": "task",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:task/*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service acm-pca
@@ -211,6 +211,15 @@ export class AcmPca extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "certificate-authority": {
+      "name": "certificate-authority",
+      "arn": "arn:${Partition}:acm-pca:${Region}:${Account}:certificate-authority/${CertificateAuthorityId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

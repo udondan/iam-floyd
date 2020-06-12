@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service securityhub
@@ -304,6 +304,45 @@ export class Securityhub extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "insight": {
+      "name": "insight",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:insight/${CompanyId}/${ProductId}/${UniqueId}",
+      "conditionKeys": []
+    },
+    "standard": {
+      "name": "standard",
+      "arn": "arn:${Partition}:securityhub:::ruleset/${StandardsName}/v/${StandardsVersion}",
+      "conditionKeys": []
+    },
+    "standards-subscription": {
+      "name": "standards-subscription",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:subscription/${StandardsName}/v/${StandardsVersion}",
+      "conditionKeys": []
+    },
+    "product-subscription": {
+      "name": "product-subscription",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product-subscription/${Company}/${ProductId}",
+      "conditionKeys": []
+    },
+    "product": {
+      "name": "product",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}",
+      "conditionKeys": []
+    },
+    "hub": {
+      "name": "hub",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:hub/default",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "action-target": {
+      "name": "action-target",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:action/custom/${Id}",
+      "conditionKeys": []
     }
   };
 

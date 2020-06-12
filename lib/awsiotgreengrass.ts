@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service greengrass
@@ -946,6 +946,131 @@ export class Greengrass extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "connectivityInfo": {
+      "name": "connectivityInfo",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo",
+      "conditionKeys": []
+    },
+    "artifact": {
+      "name": "artifact",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}/artifacts/lambda/${ArtifactId}",
+      "conditionKeys": []
+    },
+    "certificateAuthority": {
+      "name": "certificateAuthority",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/certificateauthorities/${CertificateAuthorityId}",
+      "conditionKeys": []
+    },
+    "deployment": {
+      "name": "deployment",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}",
+      "conditionKeys": []
+    },
+    "bulkDeployment": {
+      "name": "bulkDeployment",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/bulk/deployments/${BulkDeploymentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "group": {
+      "name": "group",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "groupVersion": {
+      "name": "groupVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "coreDefinition": {
+      "name": "coreDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "coreDefinitionVersion": {
+      "name": "coreDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "deviceDefinition": {
+      "name": "deviceDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "deviceDefinitionVersion": {
+      "name": "deviceDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "functionDefinition": {
+      "name": "functionDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "functionDefinitionVersion": {
+      "name": "functionDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "subscriptionDefinition": {
+      "name": "subscriptionDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "subscriptionDefinitionVersion": {
+      "name": "subscriptionDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "loggerDefinition": {
+      "name": "loggerDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "loggerDefinitionVersion": {
+      "name": "loggerDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "resourceDefinition": {
+      "name": "resourceDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "resourceDefinitionVersion": {
+      "name": "resourceDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
+    },
+    "connectorDefinition": {
+      "name": "connectorDefinition",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "connectorDefinitionVersion": {
+      "name": "connectorDefinitionVersion",
+      "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}",
+      "conditionKeys": []
     }
   };
 

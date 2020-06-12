@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service budgets
@@ -27,6 +27,13 @@ export class Budgets extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "budget": {
+      "name": "budget",
+      "arn": "arn:${Partition}:budgets::${Account}:budget/${BudgetName}",
+      "conditionKeys": []
     }
   };
 

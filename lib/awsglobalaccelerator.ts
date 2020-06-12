@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service globalaccelerator
@@ -233,6 +233,29 @@ export class Globalaccelerator extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_WithdrawByoipCidr.html",
       "description": "Stops advertising an IPv4 address range that is provisioned as an address pool.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "accelerator": {
+      "name": "accelerator",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "listener": {
+      "name": "listener",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "endpointgroup": {
+      "name": "endpointgroup",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

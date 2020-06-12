@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sumerian
@@ -22,6 +22,13 @@ export class Sumerian extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:sumerian:${Region}:${Account}:project:${ProjectName}",
+      "conditionKeys": []
     }
   };
 

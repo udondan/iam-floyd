@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iotanalytics
@@ -353,6 +353,44 @@ export class Iotanalytics extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "channel": {
+      "name": "channel",
+      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "iotanalytics:ResourceTag/${TagKey}"
+      ]
+    },
+    "dataset": {
+      "name": "dataset",
+      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "iotanalytics:ResourceTag/${TagKey}"
+      ]
+    },
+    "datastore": {
+      "name": "datastore",
+      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "iotanalytics:ResourceTag/${TagKey}"
+      ]
+    },
+    "pipeline": {
+      "name": "pipeline",
+      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys",
+        "iotanalytics:ResourceTag/${TagKey}"
+      ]
     }
   };
 

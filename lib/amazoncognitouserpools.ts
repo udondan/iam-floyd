@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cognito-idp
@@ -888,6 +888,15 @@ export class CognitoIdp extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html",
       "description": "Verifies a user attribute using a one time verification code.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "userpool": {
+      "name": "userpool",
+      "arn": "arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

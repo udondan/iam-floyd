@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service freertos
@@ -86,6 +86,15 @@ export class Freertos extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "configuration": {
+      "name": "configuration",
+      "arn": "arn:${Partition}:freertos:${Region}:${Account}:configuration/${configurationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

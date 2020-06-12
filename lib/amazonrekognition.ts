@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service rekognition
@@ -358,6 +358,28 @@ export class Rekognition extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "collection": {
+      "name": "collection",
+      "arn": "arn:${Partition}:rekognition:${Region}:${Account}:collection/${CollectionId}",
+      "conditionKeys": []
+    },
+    "streamprocessor": {
+      "name": "streamprocessor",
+      "arn": "arn:${Partition}:rekognition:${Region}:${Account}:streamprocessor/${StreamprocessorId}",
+      "conditionKeys": []
+    },
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/${CreationTimestamp}",
+      "conditionKeys": []
+    },
+    "projectversion": {
+      "name": "projectversion",
+      "arn": "arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/version/${VersionName}/${CreationTimestamp}",
+      "conditionKeys": []
     }
   };
 

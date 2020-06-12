@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service a4b
@@ -690,6 +690,64 @@ export class A4b extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "profile": {
+      "name": "profile",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:profile/${Resource_id}",
+      "conditionKeys": []
+    },
+    "room": {
+      "name": "room",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "device": {
+      "name": "device",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "skillgroup": {
+      "name": "skillgroup",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:skill-group/${Resource_id}",
+      "conditionKeys": []
+    },
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "addressbook": {
+      "name": "addressbook",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:address-book/${Resource_id}",
+      "conditionKeys": []
+    },
+    "conferenceprovider": {
+      "name": "conferenceprovider",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${Resource_id}",
+      "conditionKeys": []
+    },
+    "contact": {
+      "name": "contact",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:contact/${Resource_id}",
+      "conditionKeys": []
+    },
+    "schedule": {
+      "name": "schedule",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:schedule/${Resource_id}",
+      "conditionKeys": []
+    },
+    "networkprofile": {
+      "name": "networkprofile",
+      "arn": "arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}",
+      "conditionKeys": []
     }
   };
 

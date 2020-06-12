@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service elasticloadbalancing-v2
@@ -354,6 +354,55 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       "url": "",
       "description": "Gives WebAcl permission to WAF",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "listener/app": {
+      "name": "listener/app",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}",
+      "conditionKeys": []
+    },
+    "listener-rule/app": {
+      "name": "listener-rule/app",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}",
+      "conditionKeys": []
+    },
+    "listener/net": {
+      "name": "listener/net",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}",
+      "conditionKeys": []
+    },
+    "listener-rule/net": {
+      "name": "listener-rule/net",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}",
+      "conditionKeys": []
+    },
+    "loadbalancer/app/": {
+      "name": "loadbalancer/app/",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+      "conditionKeys": [
+        "aws:RequestTag/tag-key",
+        "aws:TagKeys",
+        "elasticloadbalancing:ResourceTag/tag-key"
+      ]
+    },
+    "loadbalancer/net/": {
+      "name": "loadbalancer/net/",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}",
+      "conditionKeys": [
+        "aws:RequestTag/tag-key",
+        "aws:TagKeys",
+        "elasticloadbalancing:ResourceTag/tag-key"
+      ]
+    },
+    "targetgroup": {
+      "name": "targetgroup",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}",
+      "conditionKeys": [
+        "aws:RequestTag/tag-key",
+        "aws:TagKeys",
+        "elasticloadbalancing:ResourceTag/tag-key"
+      ]
     }
   };
 

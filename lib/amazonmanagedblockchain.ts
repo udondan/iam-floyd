@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service managedblockchain
@@ -192,6 +192,33 @@ export class Managedblockchain extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "network": {
+      "name": "network",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}",
+      "conditionKeys": []
+    },
+    "member": {
+      "name": "member",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}",
+      "conditionKeys": []
+    },
+    "node": {
+      "name": "node",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}",
+      "conditionKeys": []
+    },
+    "proposal": {
+      "name": "proposal",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}",
+      "conditionKeys": []
+    },
+    "invitation": {
+      "name": "invitation",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service lex
@@ -454,6 +454,46 @@ export class Lex extends PolicyStatement {
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "bot": {
+      "name": "bot",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "bot version": {
+      "name": "bot version",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "bot alias": {
+      "name": "bot alias",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "channel": {
+      "name": "channel",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "intent version": {
+      "name": "intent version",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}",
+      "conditionKeys": []
+    },
+    "slottype version": {
+      "name": "slottype version",
+      "arn": "arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}",
+      "conditionKeys": []
     }
   };
 

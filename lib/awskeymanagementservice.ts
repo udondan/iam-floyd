@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service kms
@@ -615,6 +615,18 @@ export class Kms extends PolicyStatement {
         "kms:SigningAlgorithm",
         "kms:ViaService"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "alias": {
+      "name": "alias",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:alias/${Alias}",
+      "conditionKeys": []
+    },
+    "key": {
+      "name": "key",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
+      "conditionKeys": []
     }
   };
 

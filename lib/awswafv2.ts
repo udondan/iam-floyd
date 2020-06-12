@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service wafv2
@@ -463,6 +463,46 @@ export class Wafv2 extends PolicyStatement {
       "conditions": [
         "aws:ResourceTag/${TagKey}"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "webacl": {
+      "name": "webacl",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "ipset": {
+      "name": "ipset",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "rulegroup": {
+      "name": "rulegroup",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "regexpatternset": {
+      "name": "regexpatternset",
+      "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "loadbalancer/app/": {
+      "name": "loadbalancer/app/",
+      "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
+      "conditionKeys": []
+    },
+    "apigateway": {
+      "name": "apigateway",
+      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${ApiId}/stages/prod",
+      "conditionKeys": []
     }
   };
 

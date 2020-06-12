@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service personalize
@@ -352,6 +352,58 @@ export class Personalize extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "schema": {
+      "name": "schema",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:schema/${ResourceId}",
+      "conditionKeys": []
+    },
+    "featureTransformation": {
+      "name": "featureTransformation",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:feature-transformation/${ResourceId}",
+      "conditionKeys": []
+    },
+    "dataset": {
+      "name": "dataset",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset/${ResourceId}",
+      "conditionKeys": []
+    },
+    "datasetGroup": {
+      "name": "datasetGroup",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-group/${ResourceId}",
+      "conditionKeys": []
+    },
+    "datasetImportJob": {
+      "name": "datasetImportJob",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:dataset-import-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    "solution": {
+      "name": "solution",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:solution/${ResourceId}",
+      "conditionKeys": []
+    },
+    "campaign": {
+      "name": "campaign",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:campaign/${ResourceId}",
+      "conditionKeys": []
+    },
+    "eventTracker": {
+      "name": "eventTracker",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:event-tracker/${ResourceId}",
+      "conditionKeys": []
+    },
+    "recipe": {
+      "name": "recipe",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:recipe/${ResourceId}",
+      "conditionKeys": []
+    },
+    "algorithm": {
+      "name": "algorithm",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:algorithm/${ResourceId}",
+      "conditionKeys": []
     }
   };
 

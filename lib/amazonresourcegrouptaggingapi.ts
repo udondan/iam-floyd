@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service tag
@@ -49,6 +49,7 @@ export class Tag extends PolicyStatement {
       "accessLevel": "Tagging"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Describe the status of the StartReportCreation operation.

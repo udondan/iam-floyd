@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service xray
@@ -142,6 +142,18 @@ export class Xray extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "group": {
+      "name": "group",
+      "arn": "arn:${Partition}:xray:${Region}:${Account}:group/${GroupName}/${Id}",
+      "conditionKeys": []
+    },
+    "sampling-rule": {
+      "name": "sampling-rule",
+      "arn": "arn:${Partition}:xray:${Region}:${Account}:sampling-rule/${SamplingRuleName}",
+      "conditionKeys": []
     }
   };
 

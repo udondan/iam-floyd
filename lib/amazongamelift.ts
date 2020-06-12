@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service gamelift
@@ -651,6 +651,57 @@ export class Gamelift extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ValidateMatchmakingRuleSet.html",
       "description": "Validates the syntax of a FlexMatch matchmaking rule set.",
       "accessLevel": "Read"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "alias": {
+      "name": "alias",
+      "arn": "arn:${Partition}:gamelift:${Region}::alias/${AliasId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "build": {
+      "name": "build",
+      "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "script": {
+      "name": "script",
+      "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "fleet": {
+      "name": "fleet",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:fleet/${FleetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "gameSessionQueue": {
+      "name": "gameSessionQueue",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:gamesessionqueue/${GameSessionQueueName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "matchmakingConfiguration": {
+      "name": "matchmakingConfiguration",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:matchmakingconfiguration/${MatchmakingConfigurationName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "matchmakingRuleSet": {
+      "name": "matchmakingRuleSet",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:matchmakingruleset/${MatchmakingRuleSetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

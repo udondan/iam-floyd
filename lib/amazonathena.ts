@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service athena
@@ -311,6 +311,22 @@ export class Athena extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "datacatalog": {
+      "name": "datacatalog",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "workgroup": {
+      "name": "workgroup",
+      "arn": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

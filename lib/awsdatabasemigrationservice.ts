@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service dms
@@ -460,6 +460,56 @@ export class Dms extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "ReplicationInstance": {
+      "name": "ReplicationInstance",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:rep:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:rep-tag/${TagKey}"
+      ]
+    },
+    "ReplicationTask": {
+      "name": "ReplicationTask",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:task:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:task-tag/${TagKey}"
+      ]
+    },
+    "Endpoint": {
+      "name": "Endpoint",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:endpoint:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:endpoint-tag/${TagKey}"
+      ]
+    },
+    "Certificate": {
+      "name": "Certificate",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:cert:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:cert-tag/${TagKey}"
+      ]
+    },
+    "EventSubscription": {
+      "name": "EventSubscription",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:es:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:es-tag/${TagKey}"
+      ]
+    },
+    "ReplicationSubnetGroup": {
+      "name": "ReplicationSubnetGroup",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:subgrp:*",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "dms:subgrp-tag/${TagKey}"
+      ]
     }
   };
 

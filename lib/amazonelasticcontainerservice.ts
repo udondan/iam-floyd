@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ecs
@@ -528,6 +528,56 @@ export class Ecs extends PolicyStatement {
       "conditions": [
         "ecs:cluster",
         "ecs:service"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "cluster": {
+      "name": "cluster",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    "container-instance": {
+      "name": "container-instance",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    "service": {
+      "name": "service",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    "task": {
+      "name": "task",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    "task-definition": {
+      "name": "task-definition",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
+    "task-set": {
+      "name": "task-set",
+      "arn": "arn:${Partition}:ecs:${region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
       ]
     }
   };

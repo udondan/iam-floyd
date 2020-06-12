@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service groundstation
@@ -252,6 +252,55 @@ export class Groundstation extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Config": {
+      "name": "Config",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:config/${configType}/${configId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "groundstation:configId",
+        "groundstation:configType"
+      ]
+    },
+    "Contact": {
+      "name": "Contact",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:contact/${contactId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "groundstation:contactId"
+      ]
+    },
+    "DataflowEndpointGroup": {
+      "name": "DataflowEndpointGroup",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${dataflowEndpointGroupId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "groundstation:dataflowEndpointGroupId"
+      ]
+    },
+    "GroundStationResource": {
+      "name": "GroundStationResource",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${groundStationId}",
+      "conditionKeys": [
+        "groundstation:groundStationId"
+      ]
+    },
+    "MissionProfile": {
+      "name": "MissionProfile",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${missionProfileId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "groundstation:missionProfileId"
+      ]
+    },
+    "Satellite": {
+      "name": "Satellite",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:satellite/${satelliteId}",
+      "conditionKeys": [
+        "groundstation:satelliteId"
+      ]
     }
   };
 

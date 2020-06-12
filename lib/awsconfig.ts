@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service config
@@ -575,6 +575,51 @@ export class Config extends PolicyStatement {
       "conditions": [
         "aws:TagKeys"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "AggregationAuthorization": {
+      "name": "AggregationAuthorization",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "ConfigurationAggregator": {
+      "name": "ConfigurationAggregator",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "ConfigRule": {
+      "name": "ConfigRule",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "ConformancePack": {
+      "name": "ConformancePack",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "OrganizationConfigRule": {
+      "name": "OrganizationConfigRule",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:organization-config-rule/${OrganizationConfigRuleId}",
+      "conditionKeys": []
+    },
+    "OrganizationConformancePack": {
+      "name": "OrganizationConformancePack",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:organization-conformance-pack/${OrganizationConformancePackId}",
+      "conditionKeys": []
+    },
+    "RemediationConfiguration": {
+      "name": "RemediationConfiguration",
+      "arn": "arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}",
+      "conditionKeys": []
     }
   };
 

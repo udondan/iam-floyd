@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service ecr
@@ -300,6 +300,16 @@ export class Ecr extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "repository": {
+      "name": "repository",
+      "arn": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecr:ResourceTag/${TagKey}"
+      ]
     }
   };
 

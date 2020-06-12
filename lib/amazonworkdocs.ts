@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service workdocs
@@ -264,6 +264,7 @@ export class Workdocs extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Grants permission to abort the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload.

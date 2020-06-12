@@ -7,6 +7,7 @@ import glob = require('glob');
 import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
+import { ResourceTypes } from '../shared';
 import { fixes } from './fixes';
 
 const project = new Project();
@@ -19,10 +20,12 @@ export interface Module {
   filename: string;
   url?: string;
   actions?: Actions;
+  resourceTypes?: ResourceTypes;
   fixes?: {
     [key: string]: any;
   };
 }
+
 export interface Actions {
   [key: string]: Action;
 }
@@ -32,12 +35,12 @@ export interface Action {
   description: string;
   accessLevel: string;
   resourceTypes?: {
-    [key: string]: ResourceType;
+    [key: string]: ResourceTypeOnAction;
   };
   conditions?: string[];
 }
 
-export interface ResourceType {
+export interface ResourceTypeOnAction {
   required: boolean;
   conditions?: string[];
 }
@@ -74,6 +77,7 @@ export function getContent(service: string): Promise<Module> {
     'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
   return new Promise(async (resolve, reject) => {
     var actions: Actions = {};
+    var resourceTypes: ResourceTypes = {};
     var action: string;
     const module: Module = {
       filename: service.replace(/[^a-z0-9-]/i, '-'),
@@ -108,9 +112,10 @@ export function getContent(service: string): Promise<Module> {
         module.fixes = fixes[service];
       }
 
-      const table = $('.table-container').first().find('table').first();
+      const tableActions = getTable($, 'Actions');
+      const tableResourceTypes = getTable($, 'Resource Types');
 
-      table.find('tr').each((_: number, element: CheerioElement) => {
+      tableActions.find('tr').each((_: number, element: CheerioElement) => {
         const tds = $(element).find('td');
         const tdLength = tds.length;
         var first = tds.first();
@@ -172,6 +177,31 @@ export function getContent(service: string): Promise<Module> {
 
       module.actions = actions;
 
+      tableResourceTypes
+        .find('tr')
+        .each((_: number, element: CheerioElement) => {
+          const tds = $(element).find('td');
+          const name = tds.first().text().trim();
+          const arn = tds.first().next().text().trim();
+          const conditionKeys = tds
+            .first()
+            .next()
+            .next()
+            .find('p')
+            .toArray()
+            .map((element) => {
+              return $(element).text().trim();
+            });
+          if (name.length) {
+            resourceTypes[name] = {
+              name: name,
+              arn: arn,
+              conditionKeys: conditionKeys,
+            };
+          }
+        });
+      module.resourceTypes = resourceTypes;
+
       resolve(module);
     });
   });
@@ -209,7 +239,7 @@ export function createModule(module: Module): Promise<void> {
   const sourceFile = project.createSourceFile(`./lib/${module.filename}.ts`);
 
   sourceFile.addImportDeclaration({
-    namedImports: ['PolicyStatement', 'Actions'],
+    namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
     moduleSpecifier: './shared',
   });
 
@@ -234,6 +264,13 @@ export function createModule(module: Module): Promise<void> {
     scope: Scope.Public,
     type: 'Actions',
     initializer: JSON.stringify(module.actions, null, 2),
+  });
+
+  classDeclaration.addProperty({
+    name: 'resourceTypes',
+    scope: Scope.Public,
+    type: 'ResourceTypes',
+    initializer: JSON.stringify(module.resourceTypes, null, 2),
   });
 
   for (const [name, action] of Object.entries(module.actions!)) {
@@ -368,4 +405,13 @@ function getLastModified(url: string): Promise<Date> {
       resolve(lastModified);
     });
   });
+}
+
+function getTable($: CheerioStatic, title: string) {
+  const table = $('.table-container table')
+    .toArray()
+    .filter((element) => {
+      return $(element).find('th').first().text() == title;
+    });
+  return $(table[0]);
 }

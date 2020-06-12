@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mediapackage
@@ -151,6 +151,22 @@ export class Mediapackage extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "channels": {
+      "name": "channels",
+      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "origin_endpoints": {
+      "name": "origin_endpoints",
+      "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

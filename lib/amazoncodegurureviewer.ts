@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codeguru-reviewer
@@ -112,6 +112,25 @@ export class CodeguruReviewer extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "association": {
+      "name": "association",
+      "arn": "arn:${Partition}:codeguru-reviewer::${Account}:association:${ResourceId}",
+      "conditionKeys": []
+    },
+    "codereview": {
+      "name": "codereview",
+      "arn": "arn:${Partition}:codeguru-reviewer::${Account}:.+:.+",
+      "conditionKeys": []
+    },
+    "repository": {
+      "name": "repository",
+      "arn": "arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

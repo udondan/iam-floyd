@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service importexport
@@ -39,6 +39,7 @@ export class Importexport extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * This action cancels a specified job. Only the job owner can cancel it. The action fails if the job has already started or is complete.

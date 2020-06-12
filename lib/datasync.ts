@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service datasync
@@ -276,6 +276,34 @@ export class Datasync extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "agent": {
+      "name": "agent",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "location": {
+      "name": "location",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "task": {
+      "name": "task",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "taskexecution": {
+      "name": "taskexecution",
+      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}/execution/${ExecutionId}",
+      "conditionKeys": []
     }
   };
 

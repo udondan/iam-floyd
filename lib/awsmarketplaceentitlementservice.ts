@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-marketplace-entitlement-service
@@ -14,6 +14,7 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions

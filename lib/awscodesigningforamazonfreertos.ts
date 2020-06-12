@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service signer
@@ -114,6 +114,20 @@ export class Signer extends PolicyStatement {
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "signing-profile": {
+      "name": "signing-profile",
+      "arn": "arn:${Partition}:signer:${Region}::/signing-profiles/${profileName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "signing-job": {
+      "name": "signing-job",
+      "arn": "arn:${Partition}:signer:${Region}::/signing-jobs/${jobId}",
+      "conditionKeys": []
     }
   };
 

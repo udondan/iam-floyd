@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service rds
@@ -1436,6 +1436,131 @@ export class Rds extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "cluster": {
+      "name": "cluster",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:cluster-tag/${TagKey}"
+      ]
+    },
+    "cluster-endpoint": {
+      "name": "cluster-endpoint",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "cluster-pg": {
+      "name": "cluster-pg",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:cluster-pg-tag/${TagKey}"
+      ]
+    },
+    "cluster-snapshot": {
+      "name": "cluster-snapshot",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:cluster-snapshot-tag/${TagKey}"
+      ]
+    },
+    "db": {
+      "name": "db",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:DatabaseClass",
+        "rds:DatabaseEngine",
+        "rds:DatabaseName",
+        "rds:MultiAz",
+        "rds:Piops",
+        "rds:StorageEncrypted",
+        "rds:StorageSize",
+        "rds:Vpc",
+        "rds:db-tag/${TagKey}"
+      ]
+    },
+    "es": {
+      "name": "es",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:es-tag/${TagKey}"
+      ]
+    },
+    "global-cluster": {
+      "name": "global-cluster",
+      "arn": "arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}",
+      "conditionKeys": []
+    },
+    "og": {
+      "name": "og",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:og-tag/${TagKey}"
+      ]
+    },
+    "pg": {
+      "name": "pg",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:pg-tag/${TagKey}"
+      ]
+    },
+    "proxy": {
+      "name": "proxy",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}",
+      "conditionKeys": []
+    },
+    "ri": {
+      "name": "ri",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:ri-tag/${TagKey}"
+      ]
+    },
+    "secgrp": {
+      "name": "secgrp",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:secgrp-tag/${TagKey}"
+      ]
+    },
+    "snapshot": {
+      "name": "snapshot",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:snapshot-tag/${TagKey}"
+      ]
+    },
+    "subgrp": {
+      "name": "subgrp",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "rds:subgrp-tag/${TagKey}"
+      ]
+    },
+    "target": {
+      "name": "target",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:target:${TargetId}",
+      "conditionKeys": []
+    },
+    "target-group": {
+      "name": "target-group",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}",
+      "conditionKeys": []
     }
   };
 

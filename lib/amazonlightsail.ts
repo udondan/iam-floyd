@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service lightsail
@@ -1055,6 +1055,98 @@ export class Lightsail extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabaseParameters.html",
       "description": "Updates the parameters of a relational database.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Domain": {
+      "name": "Domain",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Instance": {
+      "name": "Instance",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "InstanceSnapshot": {
+      "name": "InstanceSnapshot",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "KeyPair": {
+      "name": "KeyPair",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "StaticIp": {
+      "name": "StaticIp",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Disk": {
+      "name": "Disk",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "DiskSnapshot": {
+      "name": "DiskSnapshot",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "LoadBalancer": {
+      "name": "LoadBalancer",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "PeeredVpc": {
+      "name": "PeeredVpc",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:PeeredVpc/${Id}",
+      "conditionKeys": []
+    },
+    "LoadBalancerTlsCertificate": {
+      "name": "LoadBalancerTlsCertificate",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}",
+      "conditionKeys": []
+    },
+    "ExportSnapshotRecord": {
+      "name": "ExportSnapshotRecord",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}",
+      "conditionKeys": []
+    },
+    "CloudFormationStackRecord": {
+      "name": "CloudFormationStackRecord",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}",
+      "conditionKeys": []
+    },
+    "RelationalDatabase": {
+      "name": "RelationalDatabase",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "RelationalDatabaseSnapshot": {
+      "name": "RelationalDatabaseSnapshot",
+      "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

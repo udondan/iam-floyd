@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service appsync
@@ -254,6 +254,35 @@ export class Appsync extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateType.html",
       "description": "Updates a Type object.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "datasource": {
+      "name": "datasource",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}",
+      "conditionKeys": []
+    },
+    "graphqlapi": {
+      "name": "graphqlapi",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "field": {
+      "name": "field",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}",
+      "conditionKeys": []
+    },
+    "type": {
+      "name": "type",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}",
+      "conditionKeys": []
+    },
+    "function": {
+      "name": "function",
+      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}",
+      "conditionKeys": []
     }
   };
 

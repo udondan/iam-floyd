@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service clouddirectory
@@ -659,6 +659,28 @@ export class Clouddirectory extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "appliedSchema": {
+      "name": "appliedSchema",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}/schema/${SchemaName}/${Version}",
+      "conditionKeys": []
+    },
+    "developmentSchema": {
+      "name": "developmentSchema",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:schema/development/${SchemaName}",
+      "conditionKeys": []
+    },
+    "directory": {
+      "name": "directory",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}",
+      "conditionKeys": []
+    },
+    "publishedSchema": {
+      "name": "publishedSchema",
+      "arn": "arn:${Partition}:clouddirectory:${Region}:${Account}:schema/published/${SchemaName}/${Version}",
+      "conditionKeys": []
     }
   };
 

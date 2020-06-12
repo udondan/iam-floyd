@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service route53
@@ -484,6 +484,43 @@ export class Route53 extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "change": {
+      "name": "change",
+      "arn": "arn:${Partition}:route53:::change/${Id}",
+      "conditionKeys": []
+    },
+    "delegationset": {
+      "name": "delegationset",
+      "arn": "arn:${Partition}:route53:::delegationset/${Id}",
+      "conditionKeys": []
+    },
+    "healthcheck": {
+      "name": "healthcheck",
+      "arn": "arn:${Partition}:route53:::healthcheck/${Id}",
+      "conditionKeys": []
+    },
+    "hostedzone": {
+      "name": "hostedzone",
+      "arn": "arn:${Partition}:route53:::hostedzone/${Id}",
+      "conditionKeys": []
+    },
+    "trafficpolicy": {
+      "name": "trafficpolicy",
+      "arn": "arn:${Partition}:route53:::trafficpolicy/${Id}",
+      "conditionKeys": []
+    },
+    "trafficpolicyinstance": {
+      "name": "trafficpolicyinstance",
+      "arn": "arn:${Partition}:route53:::trafficpolicyinstance/${Id}",
+      "conditionKeys": []
+    },
+    "queryloggingconfig": {
+      "name": "queryloggingconfig",
+      "arn": "arn:${Partition}:route53:::queryloggingconfig/${Id}",
+      "conditionKeys": []
     }
   };
 

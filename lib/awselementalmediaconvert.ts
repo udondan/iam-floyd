@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mediaconvert
@@ -269,6 +269,39 @@ export class Mediaconvert extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Job": {
+      "name": "Job",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}",
+      "conditionKeys": []
+    },
+    "Queue": {
+      "name": "Queue",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Preset": {
+      "name": "Preset",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "JobTemplate": {
+      "name": "JobTemplate",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "CertificateAssociation": {
+      "name": "CertificateAssociation",
+      "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}",
+      "conditionKeys": []
     }
   };
 

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cloudsearch
@@ -327,6 +327,13 @@ export class Cloudsearch extends PolicyStatement {
           "required": false
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "domain": {
+      "name": "domain",
+      "arn": "arn:${Partition}:cloudsearch:${Region}:${Account}:domain/${DomainName}",
+      "conditionKeys": []
     }
   };
 

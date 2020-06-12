@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mobiletargeting
@@ -1191,6 +1191,48 @@ export class Mobiletargeting extends PolicyStatement {
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "apps": {
+      "name": "apps",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "campaigns": {
+      "name": "campaigns",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/campaigns/${CampaignId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "journeys": {
+      "name": "journeys",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "segments": {
+      "name": "segments",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/segments/${SegmentId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "templates": {
+      "name": "templates",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:templates/${TemplateName}/${ChannelType}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "recommenders": {
+      "name": "recommenders",
+      "arn": "arn:${Partition}:mobiletargeting:${Region}:${Account}:recommenders/${RecommenderId}",
+      "conditionKeys": []
     }
   };
 

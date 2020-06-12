@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service workmailmessageflow
@@ -17,6 +17,13 @@ export class Workmailmessageflow extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "RawMessage": {
+      "name": "RawMessage",
+      "arn": "arn:${Partition}:workmailmessageflow:${Region}:${Account}:message/${OrganizationId}/${Context}/${MessageId}",
+      "conditionKeys": []
     }
   };
 

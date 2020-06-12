@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service events
@@ -328,6 +328,27 @@ export class Events extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "event-source": {
+      "name": "event-source",
+      "arn": "arn:${Partition}:events:${Region}::event-source/${EventSourceName}",
+      "conditionKeys": []
+    },
+    "event-bus": {
+      "name": "event-bus",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "rule": {
+      "name": "rule",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:rule/[${EventBusName}/]${RuleName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

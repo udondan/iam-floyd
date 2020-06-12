@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service glacier
@@ -318,6 +318,13 @@ export class Glacier extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "vault": {
+      "name": "vault",
+      "arn": "arn:${Partition}:glacier:${Region}:${Account}:vaults/${VaultName}",
+      "conditionKeys": []
     }
   };
 

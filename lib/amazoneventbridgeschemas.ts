@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service schemas
@@ -327,6 +327,29 @@ export class Schemas extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "discoverer": {
+      "name": "discoverer",
+      "arn": "arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "registry": {
+      "name": "registry",
+      "arn": "arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "schema": {
+      "name": "schema",
+      "arn": "arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

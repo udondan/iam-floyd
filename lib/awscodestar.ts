@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service codestar
@@ -208,6 +208,22 @@ export class Codestar extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:iam::${Account}:user/${aws:username}",
+      "conditionKeys": [
+        "iam:ResourceTag/${TagKey}"
+      ]
     }
   };
 

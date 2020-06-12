@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service macie
@@ -53,6 +53,7 @@ export class Macie extends PolicyStatement {
       ]
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Enables the user to associate a specified AWS account with Amazon Macie as a member account.

@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service transcribe
@@ -144,6 +144,7 @@ export class Transcribe extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.

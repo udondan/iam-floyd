@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service iotsitewise
@@ -605,6 +605,57 @@ export class Iotsitewise extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "asset": {
+      "name": "asset",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "asset-model": {
+      "name": "asset-model",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "gateway": {
+      "name": "gateway",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "portal": {
+      "name": "portal",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "project": {
+      "name": "project",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "dashboard": {
+      "name": "dashboard",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "access-policy": {
+      "name": "access-policy",
+      "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

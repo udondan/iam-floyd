@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service sns
@@ -244,6 +244,13 @@ export class Sns extends PolicyStatement {
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "topic": {
+      "name": "topic",
+      "arn": "arn:${Partition}:sns:${Region}:${Account}:${TopicName}",
+      "conditionKeys": []
     }
   };
 

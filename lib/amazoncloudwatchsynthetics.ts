@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service synthetics
@@ -102,6 +102,13 @@ export class Synthetics extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "canary": {
+      "name": "canary",
+      "arn": "arn:${Partition}:synthetics::${Account}:canary:${CanaryName}",
+      "conditionKeys": []
     }
   };
 

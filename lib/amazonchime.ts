@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service chime
@@ -926,6 +926,15 @@ export class Chime extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
       "description": "Grants permission to validate the account resource in your Amazon Chime account",
       "accessLevel": "Read"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "meeting": {
+      "name": "meeting",
+      "arn": "arn:${Partition}:chime::${AccountId}:meeting/${MeetingId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

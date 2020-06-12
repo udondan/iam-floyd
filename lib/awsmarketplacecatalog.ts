@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service aws-marketplace-catalog
@@ -60,6 +60,18 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       "url": "",
       "description": "Update the content of an existing task.",
       "accessLevel": "Write"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "Entity": {
+      "name": "Entity",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/${EntityType}/${ResourceId}",
+      "conditionKeys": []
+    },
+    "ChangeSet": {
+      "name": "ChangeSet",
+      "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/ChangeSet/${ResourceId}",
+      "conditionKeys": []
     }
   };
 

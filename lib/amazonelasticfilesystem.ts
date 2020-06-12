@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service elasticfilesystem
@@ -287,6 +287,22 @@ export class Elasticfilesystem extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "file-system": {
+      "name": "file-system",
+      "arn": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "access-point": {
+      "name": "access-point",
+      "arn": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

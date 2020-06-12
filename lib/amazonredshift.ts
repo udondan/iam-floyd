@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service redshift
@@ -845,6 +845,83 @@ export class Redshift extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html",
       "description": "Grants permission to terminate running queries and loads through the Amazon Redshift console",
       "accessLevel": "List"
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "cluster": {
+      "name": "cluster",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}",
+      "conditionKeys": []
+    },
+    "dbgroup": {
+      "name": "dbgroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}",
+      "conditionKeys": []
+    },
+    "dbname": {
+      "name": "dbname",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}",
+      "conditionKeys": []
+    },
+    "dbuser": {
+      "name": "dbuser",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}",
+      "conditionKeys": []
+    },
+    "eventsubscription": {
+      "name": "eventsubscription",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}",
+      "conditionKeys": []
+    },
+    "hsmclientcertificate": {
+      "name": "hsmclientcertificate",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}",
+      "conditionKeys": []
+    },
+    "hsmconfiguration": {
+      "name": "hsmconfiguration",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}",
+      "conditionKeys": []
+    },
+    "parametergroup": {
+      "name": "parametergroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}",
+      "conditionKeys": []
+    },
+    "securitygroup": {
+      "name": "securitygroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}",
+      "conditionKeys": []
+    },
+    "securitygroupingress-cidr": {
+      "name": "securitygroupingress-cidr",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}",
+      "conditionKeys": []
+    },
+    "securitygroupingress-ec2securitygroup": {
+      "name": "securitygroupingress-ec2securitygroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}",
+      "conditionKeys": []
+    },
+    "snapshot": {
+      "name": "snapshot",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}",
+      "conditionKeys": []
+    },
+    "snapshotcopygrant": {
+      "name": "snapshotcopygrant",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}",
+      "conditionKeys": []
+    },
+    "snapshotschedule": {
+      "name": "snapshotschedule",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ParameterGroupName}",
+      "conditionKeys": []
+    },
+    "subnetgroup": {
+      "name": "subnetgroup",
+      "arn": "arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}",
+      "conditionKeys": []
     }
   };
 

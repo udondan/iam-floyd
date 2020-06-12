@@ -12,6 +12,16 @@ export interface Actions {
   [key: string]: Action;
 }
 
+export interface ResourceTypes {
+  [key: string]: ResourceType;
+}
+
+export interface ResourceType {
+  name: string;
+  arn: string;
+  conditionKeys: string[];
+}
+
 /**
  * Access level classifications for the actions in a service
  *

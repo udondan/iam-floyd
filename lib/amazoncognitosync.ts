@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cognito-sync
@@ -192,6 +192,23 @@ export class CognitoSync extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "dataset": {
+      "name": "dataset",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}/dataset/${DatasetName}",
+      "conditionKeys": []
+    },
+    "identity": {
+      "name": "identity",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}",
+      "conditionKeys": []
+    },
+    "identitypool": {
+      "name": "identitypool",
+      "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}",
+      "conditionKeys": []
     }
   };
 

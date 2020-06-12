@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service mediatailor
@@ -68,6 +68,15 @@ export class Mediatailor extends PolicyStatement {
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "playbackConfiguration": {
+      "name": "playbackConfiguration",
+      "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

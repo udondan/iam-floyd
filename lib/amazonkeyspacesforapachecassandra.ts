@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service cassandra
@@ -107,6 +107,22 @@ export class Cassandra extends PolicyStatement {
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
+      ]
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "keyspace": {
+      "name": "keyspace",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "table": {
+      "name": "table",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${tableName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
       ]
     }
   };

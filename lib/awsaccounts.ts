@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service account
@@ -30,6 +30,7 @@ export class Account extends PolicyStatement {
       "accessLevel": "List"
     }
   };
+  public resourceTypes : ResourceTypes = {};
 
   /**
    * Grants permission to disable a region

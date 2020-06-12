@@ -1,4 +1,4 @@
-import { PolicyStatement, Actions } from "./shared";
+import { Actions, PolicyStatement, ResourceTypes } from "./shared";
 
 /**
  * Action provider for service quicksight
@@ -576,6 +576,37 @@ export class Quicksight extends PolicyStatement {
           "required": true
         }
       }
+    }
+  };
+  public resourceTypes : ResourceTypes = {
+    "user": {
+      "name": "user",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:user/${ResourceId}",
+      "conditionKeys": []
+    },
+    "group": {
+      "name": "group",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:group/${ResourceId}",
+      "conditionKeys": []
+    },
+    "dashboard": {
+      "name": "dashboard",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "template": {
+      "name": "template",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "assignment": {
+      "name": "assignment",
+      "arn": "arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}",
+      "conditionKeys": []
     }
   };
 
