@@ -38,7 +38,7 @@ While [method chaining] is not seen a lot in CDK-land, this library's goal is to
 
 ## <a name='Usage'></a>Usage
 
-The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is an extension of the original `PolicyStatement` of the `@aws-cdk/aws-iam` package, so you can use it as drop-in replacement,
+The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is an extension of the original `PolicyStatement` of the `@aws-cdk/aws-iam` package, so you can use it as drop-in replacement.
 
 A statement provider has methods for every single action of a service. Calling such method will add the related action to the list of actions of the statement:
 
@@ -49,7 +49,7 @@ import * as statement from 'iam-floyd';
 new statement.Ec2().startInstances();
 ```
 
-Every method again returns the statement provider, so you can chain method calls:
+Every method returns the statement provider, so you can chain method calls:
 
 ```typescript
 new statement.Ec2()
@@ -245,7 +245,7 @@ new statement.Ec2()
     );
 ```
 
-There exists 5 access levels:
+There exist 5 access levels:
 
 * LIST
 * READ
@@ -342,10 +342,10 @@ new iam.PolicyDocument({
 * Support for resource types in `allActions()`
 * Support for resource types in action methods
 * Support for conditions in action methods
+* Support for `NotResources`
 * Compile action list down to the smallest possible pattern
 * Add useful standard conditions as methods
 * Add useful action collections based on common use cases
-* Add support for `NotResources`
 
 ## <a name='Floyd'></a>Floyd?
 
