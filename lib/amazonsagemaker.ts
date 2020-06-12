@@ -1673,8 +1673,6 @@ export class Sagemaker extends PolicyStatement {
    * Retrieve metrics associated with SageMaker Resources such as Training Jobs. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Read
-   *
-   *
    */
   public batchGetMetrics () {
     this.add('sagemaker:BatchGetMetrics');
@@ -1685,8 +1683,6 @@ export class Sagemaker extends PolicyStatement {
    * Publish metrics associated with a SageMaker Resource such as a Training Job. This API is not publicly exposed at this point, however admins can control this action
    *
    * Access Level: Write
-   *
-   *
    */
   public batchPutMetrics () {
     this.add('sagemaker:BatchPutMetrics');

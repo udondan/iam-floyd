@@ -24,8 +24,6 @@ export class ElasticInference extends PolicyStatement {
    * Connects customer to Elastic Inference accelerator
    *
    * Access Level: Write
-   *
-   *
    */
   public connect () {
     this.add('elastic-inference:Connect');

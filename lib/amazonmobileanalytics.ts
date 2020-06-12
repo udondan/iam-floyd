@@ -29,8 +29,6 @@ export class Mobileanalytics extends PolicyStatement {
    * Grant access to financial metrics for an app
    *
    * Access Level: Read
-   *
-   *
    */
   public getFinancialReports () {
     this.add('mobileanalytics:GetFinancialReports');
@@ -41,8 +39,6 @@ export class Mobileanalytics extends PolicyStatement {
    * Grant access to standard metrics for an app
    *
    * Access Level: Read
-   *
-   *
    */
   public getReports () {
     this.add('mobileanalytics:GetReports');

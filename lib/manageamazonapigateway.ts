@@ -172,8 +172,6 @@ export class Apigateway extends PolicyStatement {
    * Used to update the Resource Policy for a given API
    *
    * Access Level: Write
-   *
-   *
    */
   public updateRestApiPolicy () {
     this.add('apigateway:UpdateRestApiPolicy');

@@ -1647,8 +1647,6 @@ export class S3 extends PolicyStatement {
    * Allows circumvention of governance-mode object retention settings
    *
    * Access Level: Permissions management
-   *
-   *
    */
   public bypassGovernanceRetention () {
     this.add('s3:BypassGovernanceRetention');
@@ -2187,8 +2185,6 @@ export class S3 extends PolicyStatement {
    * Permission exercised by S3 replication
    *
    * Access Level: Read
-   *
-   *
    */
   public getObjectVersionForReplication () {
     this.add('s3:GetObjectVersionForReplication');
@@ -2319,8 +2315,6 @@ export class S3 extends PolicyStatement {
    * Permission exercised by S3 replication
    *
    * Access Level: Permissions management
-   *
-   *
    */
   public objectOwnerOverrideToBucketOwner () {
     this.add('s3:ObjectOwnerOverrideToBucketOwner');
@@ -2655,8 +2649,6 @@ export class S3 extends PolicyStatement {
    * Permission exercised by S3 replication
    *
    * Access Level: Write
-   *
-   *
    */
   public replicateDelete () {
     this.add('s3:ReplicateDelete');
@@ -2667,8 +2659,6 @@ export class S3 extends PolicyStatement {
    * Permission exercised by S3 replication
    *
    * Access Level: Write
-   *
-   *
    */
   public replicateObject () {
     this.add('s3:ReplicateObject');
@@ -2679,8 +2669,6 @@ export class S3 extends PolicyStatement {
    * Permission exercised by S3 replication
    *
    * Access Level: Tagging
-   *
-   *
    */
   public replicateTags () {
     this.add('s3:ReplicateTags');

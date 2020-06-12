@@ -331,8 +331,6 @@ export class CognitoSync extends PolicyStatement {
    * A permission that grants the ability to query records.
    *
    * Access Level: Read
-   *
-   *
    */
   public queryRecords () {
     this.add('cognito-sync:QueryRecords');
@@ -367,8 +365,6 @@ export class CognitoSync extends PolicyStatement {
    * A permission that grants ability to configure datasets.
    *
    * Access Level: Write
-   *
-   *
    */
   public setDatasetConfiguration () {
     this.add('cognito-sync:SetDatasetConfiguration');

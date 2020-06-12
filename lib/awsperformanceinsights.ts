@@ -34,8 +34,6 @@ export class Pi extends PolicyStatement {
    * For a specific time period, retrieve the top N dimension keys for a metric.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeDimensionKeys () {
     this.add('pi:DescribeDimensionKeys');
@@ -46,8 +44,6 @@ export class Pi extends PolicyStatement {
    * Retrieve PI metrics for a set of data sources, over a time period.
    *
    * Access Level: Read
-   *
-   *
    */
   public getResourceMetrics () {
     this.add('pi:GetResourceMetrics');

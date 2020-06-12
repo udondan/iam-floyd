@@ -735,8 +735,6 @@ export class Dynamodb extends PolicyStatement {
    * Describes one or more of the Reserved Capacity purchased
    *
    * Access Level: Read
-   *
-   *
    */
   public describeReservedCapacity () {
     this.add('dynamodb:DescribeReservedCapacity');
@@ -747,8 +745,6 @@ export class Dynamodb extends PolicyStatement {
    * Describes Reserved Capacity offerings that are available for purchase
    *
    * Access Level: Read
-   *
-   *
    */
   public describeReservedCapacityOfferings () {
     this.add('dynamodb:DescribeReservedCapacityOfferings');
@@ -915,8 +911,6 @@ export class Dynamodb extends PolicyStatement {
    * Purchases Reserved Capacity for use with your account
    *
    * Access Level: Write
-   *
-   *
    */
   public purchaseReservedCapacityOfferings () {
     this.add('dynamodb:PurchaseReservedCapacityOfferings');

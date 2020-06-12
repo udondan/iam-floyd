@@ -769,8 +769,6 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * Gives WebAcl permission to WAF
    *
    * Access Level: Write
-   *
-   *
    */
   public setWebAcl () {
     this.add('elasticloadbalancing-v2:SetWebAcl');

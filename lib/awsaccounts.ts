@@ -35,8 +35,6 @@ export class Account extends PolicyStatement {
    * Grants permission to disable a region
    *
    * Access Level: Write
-   *
-   *
    */
   public disableRegion () {
     this.add('account:DisableRegion');
@@ -47,8 +45,6 @@ export class Account extends PolicyStatement {
    * Grants permission to enable a region
    *
    * Access Level: Write
-   *
-   *
    */
   public enableRegion () {
     this.add('account:EnableRegion');
@@ -59,8 +55,6 @@ export class Account extends PolicyStatement {
    * Grants permission to list regions
    *
    * Access Level: List
-   *
-   *
    */
   public listRegions () {
     this.add('account:ListRegions');

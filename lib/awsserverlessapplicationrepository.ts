@@ -167,8 +167,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Creates an application, optionally including an AWS SAM file to create the first application version in the same call.
    *
    * Access Level: Write
-   *
-   *
    */
   public createApplication () {
     this.add('serverlessrepo:CreateApplication');
@@ -179,8 +177,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Creates an application version.
    *
    * Access Level: Write
-   *
-   *
    */
   public createApplicationVersion () {
     this.add('serverlessrepo:CreateApplicationVersion');
@@ -191,8 +187,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Creates an AWS CloudFormation ChangeSet for the given application.
    *
    * Access Level: Write
-   *
-   *
    */
   public createCloudFormationChangeSet () {
     this.add('serverlessrepo:CreateCloudFormationChangeSet');
@@ -203,8 +197,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Creates an AWS CloudFormation template
    *
    * Access Level: Write
-   *
-   *
    */
   public createCloudFormationTemplate () {
     this.add('serverlessrepo:CreateCloudFormationTemplate');
@@ -215,8 +207,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Deletes the specified application
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteApplication () {
     this.add('serverlessrepo:DeleteApplication');
@@ -227,8 +217,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Gets the specified application.
    *
    * Access Level: Read
-   *
-   *
    */
   public getApplication () {
     this.add('serverlessrepo:GetApplication');
@@ -239,8 +227,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Gets the policy for the specified application.
    *
    * Access Level: Read
-   *
-   *
    */
   public getApplicationPolicy () {
     this.add('serverlessrepo:GetApplicationPolicy');
@@ -251,8 +237,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Gets the specified AWS CloudFormation template
    *
    * Access Level: Read
-   *
-   *
    */
   public getCloudFormationTemplate () {
     this.add('serverlessrepo:GetCloudFormationTemplate');
@@ -263,8 +247,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Retrieves the list of applications nested in the containing application
    *
    * Access Level: List
-   *
-   *
    */
   public listApplicationDependencies () {
     this.add('serverlessrepo:ListApplicationDependencies');
@@ -275,8 +257,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Lists versions for the specified application owned by the requester.
    *
    * Access Level: List
-   *
-   *
    */
   public listApplicationVersions () {
     this.add('serverlessrepo:ListApplicationVersions');
@@ -287,8 +267,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Lists applications owned by the requester.
    *
    * Access Level: List
-   *
-   *
    */
   public listApplications () {
     this.add('serverlessrepo:ListApplications');
@@ -299,8 +277,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Puts the policy for the specified application.
    *
    * Access Level: Write
-   *
-   *
    */
   public putApplicationPolicy () {
     this.add('serverlessrepo:PutApplicationPolicy');
@@ -311,8 +287,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Gets all applications authorized for this user
    *
    * Access Level: Read
-   *
-   *
    */
   public searchApplications () {
     this.add('serverlessrepo:SearchApplications');
@@ -323,8 +297,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Unshares the specified application
    *
    * Access Level: Write
-   *
-   *
    */
   public unshareApplication () {
     this.add('serverlessrepo:UnshareApplication');
@@ -335,8 +307,6 @@ export class Serverlessrepo extends PolicyStatement {
    * Updates meta-data of the application
    *
    * Access Level: Write
-   *
-   *
    */
   public updateApplication () {
     this.add('serverlessrepo:UpdateApplication');

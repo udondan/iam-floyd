@@ -115,8 +115,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to alter a keyspace or table
    *
    * Access Level: Write
-   *
-   *
    */
   public alter () {
     this.add('cassandra:Alter');
@@ -127,8 +125,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to create a keyspace or table
    *
    * Access Level: Write
-   *
-   *
    */
   public create () {
     this.add('cassandra:Create');
@@ -139,8 +135,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to drop a keyspace or table
    *
    * Access Level: Write
-   *
-   *
    */
   public drop () {
     this.add('cassandra:Drop');
@@ -151,8 +145,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to INSERT, UPDATE or DELETE data in a table
    *
    * Access Level: Write
-   *
-   *
    */
   public modify () {
     this.add('cassandra:Modify');
@@ -163,8 +155,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to SELECT data from a table
    *
    * Access Level: Read
-   *
-   *
    */
   public select () {
     this.add('cassandra:Select');
@@ -175,8 +165,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to tag a keyspace or table
    *
    * Access Level: Tagging
-   *
-   *
    */
   public tagResource () {
     this.add('cassandra:TagResource');
@@ -187,8 +175,6 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to untag a keyspace or table
    *
    * Access Level: Tagging
-   *
-   *
    */
   public untagResource () {
     this.add('cassandra:UntagResource');

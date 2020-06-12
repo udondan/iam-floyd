@@ -197,8 +197,6 @@ export class Deeplens extends PolicyStatement {
    * Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.
    *
    * Access Level: Permissions management
-   *
-   *
    */
   public associateServiceRoleToAccount () {
     this.add('deeplens:AssociateServiceRoleToAccount');
@@ -209,8 +207,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens devices.
    *
    * Access Level: Read
-   *
-   *
    */
   public batchGetDevice () {
     this.add('deeplens:BatchGetDevice');
@@ -221,8 +217,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens Models.
    *
    * Access Level: Read
-   *
-   *
    */
   public batchGetModel () {
     this.add('deeplens:BatchGetModel');
@@ -233,8 +227,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens Projects.
    *
    * Access Level: Read
-   *
-   *
    */
   public batchGetProject () {
     this.add('deeplens:BatchGetProject');
@@ -245,8 +237,6 @@ export class Deeplens extends PolicyStatement {
    * Creates a certificate package that is used to successfully authenticate and Register an AWS DeepLens device.
    *
    * Access Level: Write
-   *
-   *
    */
   public createDeviceCertificates () {
     this.add('deeplens:CreateDeviceCertificates');
@@ -257,8 +247,6 @@ export class Deeplens extends PolicyStatement {
    * Creates a new AWS DeepLens Model.
    *
    * Access Level: Write
-   *
-   *
    */
   public createModel () {
     this.add('deeplens:CreateModel');
@@ -269,8 +257,6 @@ export class Deeplens extends PolicyStatement {
    * Creates a new AWS DeepLens Project.
    *
    * Access Level: Write
-   *
-   *
    */
   public createProject () {
     this.add('deeplens:CreateProject');
@@ -281,8 +267,6 @@ export class Deeplens extends PolicyStatement {
    * Deletes an AWS DeepLens Model.
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteModel () {
     this.add('deeplens:DeleteModel');
@@ -293,8 +277,6 @@ export class Deeplens extends PolicyStatement {
    * Deletes an AWS DeepLens Project.
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteProject () {
     this.add('deeplens:DeleteProject');
@@ -305,8 +287,6 @@ export class Deeplens extends PolicyStatement {
    * Deploys an AWS DeepLens project to a registered AWS DeepLens device.
    *
    * Access Level: Write
-   *
-   *
    */
   public deployProject () {
     this.add('deeplens:DeployProject');
@@ -317,8 +297,6 @@ export class Deeplens extends PolicyStatement {
    * Begins a device de-registration workflow for a registered AWS DeepLens device.
    *
    * Access Level: Write
-   *
-   *
    */
   public deregisterDevice () {
     this.add('deeplens:DeregisterDevice');
@@ -329,8 +307,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves the account level resources associated with the user's account.
    *
    * Access Level: Read
-   *
-   *
    */
   public getAssociatedResources () {
     this.add('deeplens:GetAssociatedResources');
@@ -341,8 +317,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves the the deployment status of a particular AWS DeepLens device, along with any associated metadata.
    *
    * Access Level: Read
-   *
-   *
    */
   public getDeploymentStatus () {
     this.add('deeplens:GetDeploymentStatus');
@@ -353,8 +327,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves information about an AWS DeepLens device.
    *
    * Access Level: Read
-   *
-   *
    */
   public getDevice () {
     this.add('deeplens:GetDevice');
@@ -365,8 +337,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves an AWS DeepLens Model.
    *
    * Access Level: Read
-   *
-   *
    */
   public getModel () {
     this.add('deeplens:GetModel');
@@ -377,8 +347,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves an AWS DeepLens Project.
    *
    * Access Level: Read
-   *
-   *
    */
   public getProject () {
     this.add('deeplens:GetProject');
@@ -389,8 +357,6 @@ export class Deeplens extends PolicyStatement {
    * Creates a new AWS DeepLens project from a sample project template.
    *
    * Access Level: Write
-   *
-   *
    */
   public importProjectFromTemplate () {
     this.add('deeplens:ImportProjectFromTemplate');
@@ -401,8 +367,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens Deployment identifiers.
    *
    * Access Level: List
-   *
-   *
    */
   public listDeployments () {
     this.add('deeplens:ListDeployments');
@@ -413,8 +377,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens device identifiers.
    *
    * Access Level: List
-   *
-   *
    */
   public listDevices () {
     this.add('deeplens:ListDevices');
@@ -425,8 +387,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens Model identifiers.
    *
    * Access Level: List
-   *
-   *
    */
   public listModels () {
     this.add('deeplens:ListModels');
@@ -437,8 +397,6 @@ export class Deeplens extends PolicyStatement {
    * Retrieves a list of AWS DeepLens Project identifiers.
    *
    * Access Level: List
-   *
-   *
    */
   public listProjects () {
     this.add('deeplens:ListProjects');
@@ -449,8 +407,6 @@ export class Deeplens extends PolicyStatement {
    * Begins a device registration workflow for an AWS DeepLens device.
    *
    * Access Level: Write
-   *
-   *
    */
   public registerDevice () {
     this.add('deeplens:RegisterDevice');
@@ -461,8 +417,6 @@ export class Deeplens extends PolicyStatement {
    * Removes a deployed AWS DeepLens project from an AWS DeepLens device.
    *
    * Access Level: Write
-   *
-   *
    */
   public removeProject () {
     this.add('deeplens:RemoveProject');
@@ -473,8 +427,6 @@ export class Deeplens extends PolicyStatement {
    * Updates an existing AWS DeepLens Project.
    *
    * Access Level: Write
-   *
-   *
    */
   public updateProject () {
     this.add('deeplens:UpdateProject');

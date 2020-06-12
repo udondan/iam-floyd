@@ -484,8 +484,6 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to view information about a notebook, including status, user, role, tags, location, and more.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeEditor () {
     this.add('elasticmapreduce:DescribeEditor');
@@ -568,8 +566,6 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to list summary information for accessible EMR notebooks.
    *
    * Access Level: List
-   *
-   *
    */
   public listEditors () {
     this.add('elasticmapreduce:ListEditors');
@@ -796,8 +792,6 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to use the EMR management console to view events from all clusters.
    *
    * Access Level: List
-   *
-   *
    */
   public viewEventsFromAllClustersInConsole () {
     this.add('elasticmapreduce:ViewEventsFromAllClustersInConsole');

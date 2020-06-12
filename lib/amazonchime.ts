@@ -2013,8 +2013,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to invite users from a third party provider to your Amazon Chime account
    *
    * Access Level: Write
-   *
-   *
    */
   public inviteUsersFromProvider () {
     this.add('chime:InviteUsersFromProvider');

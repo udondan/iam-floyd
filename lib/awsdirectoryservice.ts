@@ -654,8 +654,6 @@ export class Ds extends PolicyStatement {
    * Authorizes an application for your AWS Directory.
    *
    * Access Level: Write
-   *
-   *
    */
   public authorizeApplication () {
     this.add('ds:AuthorizeApplication');
@@ -678,8 +676,6 @@ export class Ds extends PolicyStatement {
    * Verifies that the alias is available for use.
    *
    * Access Level: Read
-   *
-   *
    */
   public checkAlias () {
     this.add('ds:CheckAlias');
@@ -750,8 +746,6 @@ export class Ds extends PolicyStatement {
    * Creates a IdentityPool Directory in the AWS cloud.
    *
    * Access Level: Tagging
-   *
-   *
    */
   public createIdentityPoolDirectory () {
     this.add('ds:CreateIdentityPoolDirectory');
@@ -1074,8 +1068,6 @@ export class Ds extends PolicyStatement {
    *
    *
    * Access Level: Read
-   *
-   *
    */
   public getAuthorizedApplicationDetails () {
     this.add('ds:GetAuthorizedApplicationDetails');
@@ -1110,8 +1102,6 @@ export class Ds extends PolicyStatement {
    * Obtains the aws applications authorized for a directory.
    *
    * Access Level: Read
-   *
-   *
    */
   public listAuthorizedApplications () {
     this.add('ds:ListAuthorizedApplications');
@@ -1290,8 +1280,6 @@ export class Ds extends PolicyStatement {
    * Unauthorizes an application from your AWS Directory.
    *
    * Access Level: Write
-   *
-   *
    */
   public unauthorizeApplication () {
     this.add('ds:UnauthorizeApplication');

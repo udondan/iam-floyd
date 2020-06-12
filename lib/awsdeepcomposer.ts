@@ -124,8 +124,6 @@ export class Deepcomposer extends PolicyStatement {
    * Associates a DeepComposer coupon (or DSN) with the account associated with the sender of the request.
    *
    * Access Level: Write
-   *
-   *
    */
   public associateCoupon () {
     this.add('deepcomposer:AssociateCoupon');
@@ -268,8 +266,6 @@ export class Deepcomposer extends PolicyStatement {
    * Returns a list of all the training options or topic for creating/training a model.
    *
    * Access Level: List
-   *
-   *
    */
   public listTrainingTopics () {
     this.add('deepcomposer:ListTrainingTopics');

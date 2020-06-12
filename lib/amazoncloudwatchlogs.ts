@@ -390,8 +390,6 @@ export class Logs extends PolicyStatement {
    * Creates the log delivery
    *
    * Access Level: Write
-   *
-   *
    */
   public createLogDelivery () {
     this.add('logs:CreateLogDelivery');
@@ -438,8 +436,6 @@ export class Logs extends PolicyStatement {
    * Deletes the log delivery information for specified log delivery
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteLogDelivery () {
     this.add('logs:DeleteLogDelivery');
@@ -642,8 +638,6 @@ export class Logs extends PolicyStatement {
    * Gets the log delivery information for specified log delivery
    *
    * Access Level: Read
-   *
-   *
    */
   public getLogDelivery () {
     this.add('logs:GetLogDelivery');
@@ -702,8 +696,6 @@ export class Logs extends PolicyStatement {
    * Lists all the log deliveries for specified account and/or log source
    *
    * Access Level: List
-   *
-   *
    */
   public listLogDeliveries () {
     this.add('logs:ListLogDeliveries');
@@ -870,8 +862,6 @@ export class Logs extends PolicyStatement {
    * Updates the log delivery information for specified log delivery
    *
    * Access Level: Write
-   *
-   *
    */
   public updateLogDelivery () {
     this.add('logs:UpdateLogDelivery');

@@ -172,8 +172,6 @@ export class Support extends PolicyStatement {
    * This is an internally managed function which allows secondary services to read AWS Support case attributes.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeCaseAttributes () {
     this.add('support:DescribeCaseAttributes');
@@ -208,8 +206,6 @@ export class Support extends PolicyStatement {
    * Returns issue types for AWS Support cases.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeIssueTypes () {
     this.add('support:DescribeIssueTypes');
@@ -244,8 +240,6 @@ export class Support extends PolicyStatement {
    * Returns the support level for an AWS Account identifier.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeSupportLevel () {
     this.add('support:DescribeSupportLevel');
@@ -304,8 +298,6 @@ export class Support extends PolicyStatement {
    * This is an internally managed function to initiate a call on AWS Support Center.
    *
    * Access Level: Write
-   *
-   *
    */
   public initiateCallForCase () {
     this.add('support:InitiateCallForCase');
@@ -316,8 +308,6 @@ export class Support extends PolicyStatement {
    * This is an internally managed function to initiate a chat on AWS Support Center.
    *
    * Access Level: Write
-   *
-   *
    */
   public initiateChatForCase () {
     this.add('support:InitiateChatForCase');
@@ -328,8 +318,6 @@ export class Support extends PolicyStatement {
    * This is an internally managed function which allows secondary services to attach attributes to AWS Support cases.
    *
    * Access Level: Write
-   *
-   *
    */
   public putCaseAttributes () {
     this.add('support:PutCaseAttributes');
@@ -340,8 +328,6 @@ export class Support extends PolicyStatement {
    * Rate an AWS Support case communication.
    *
    * Access Level: Write
-   *
-   *
    */
   public rateCaseCommunication () {
     this.add('support:RateCaseCommunication');
@@ -376,8 +362,6 @@ export class Support extends PolicyStatement {
    * Returns a list of AWS Support cases that matches the given inputs.
    *
    * Access Level: Read
-   *
-   *
    */
   public searchForCases () {
     this.add('support:SearchForCases');

@@ -44,8 +44,6 @@ export class Ec2messages extends PolicyStatement {
    * Acknowledges a message, ensuring it will not be delivered again
    *
    * Access Level: Write
-   *
-   *
    */
   public acknowledgeMessage () {
     this.add('ec2messages:AcknowledgeMessage');
@@ -56,8 +54,6 @@ export class Ec2messages extends PolicyStatement {
    * Deletes a message
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteMessage () {
     this.add('ec2messages:DeleteMessage');
@@ -68,8 +64,6 @@ export class Ec2messages extends PolicyStatement {
    * Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again
    *
    * Access Level: Write
-   *
-   *
    */
   public failMessage () {
     this.add('ec2messages:FailMessage');
@@ -80,8 +74,6 @@ export class Ec2messages extends PolicyStatement {
    * Routes traffic to the correct endpoint based on the given destination for the messages
    *
    * Access Level: Read
-   *
-   *
    */
   public getEndpoint () {
     this.add('ec2messages:GetEndpoint');
@@ -92,8 +84,6 @@ export class Ec2messages extends PolicyStatement {
    * Delivers messages to clients/instances using long polling
    *
    * Access Level: Read
-   *
-   *
    */
   public getMessages () {
     this.add('ec2messages:GetMessages');
@@ -104,8 +94,6 @@ export class Ec2messages extends PolicyStatement {
    * Sends replies from clients/instances to upstream service
    *
    * Access Level: Write
-   *
-   *
    */
   public sendReply () {
     this.add('ec2messages:SendReply');

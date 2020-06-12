@@ -74,8 +74,6 @@ export class Chatbot extends PolicyStatement {
    * Creates an AWS Chatbot Chime Webhook Configuration.
    *
    * Access Level: Write
-   *
-   *
    */
   public createChimeWebhookConfiguration () {
     this.add('chatbot:CreateChimeWebhookConfiguration');
@@ -86,8 +84,6 @@ export class Chatbot extends PolicyStatement {
    * Creates an AWS Chatbot Slack Channel Configuration.
    *
    * Access Level: Write
-   *
-   *
    */
   public createSlackChannelConfiguration () {
     this.add('chatbot:CreateSlackChannelConfiguration');
@@ -98,8 +94,6 @@ export class Chatbot extends PolicyStatement {
    * Deletes an AWS Chatbot Chime Webhook Configuration.
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteChimeWebhookConfiguration () {
     this.add('chatbot:DeleteChimeWebhookConfiguration');
@@ -110,8 +104,6 @@ export class Chatbot extends PolicyStatement {
    * Deletes an AWS Chatbot Slack Channel Configuration.
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteSlackChannelConfiguration () {
     this.add('chatbot:DeleteSlackChannelConfiguration');
@@ -122,8 +114,6 @@ export class Chatbot extends PolicyStatement {
    * Lists all AWS Chatbot Chime Webhook Configurations in an AWS Account.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeChimeWebhookConfigurations () {
     this.add('chatbot:DescribeChimeWebhookConfigurations');
@@ -134,8 +124,6 @@ export class Chatbot extends PolicyStatement {
    * Lists all AWS Chatbot Slack Channel Configurations in an AWS account.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeSlackChannelConfigurations () {
     this.add('chatbot:DescribeSlackChannelConfigurations');
@@ -146,8 +134,6 @@ export class Chatbot extends PolicyStatement {
    * Lists all public Slack channels in the Slack workspace connected to the AWS Account onboarded with AWS Chatbot service.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeSlackChannels () {
     this.add('chatbot:DescribeSlackChannels');
@@ -158,8 +144,6 @@ export class Chatbot extends PolicyStatement {
    * Lists all authorized Slack workspaces connected to the AWS Account onboarded with AWS Chatbot service.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeSlackWorkspaces () {
     this.add('chatbot:DescribeSlackWorkspaces');
@@ -170,8 +154,6 @@ export class Chatbot extends PolicyStatement {
    * Generate OAuth parameters to request Slack OAuth code to be used by the AWS Chatbot service.
    *
    * Access Level: Read
-   *
-   *
    */
   public getSlackOauthParameters () {
     this.add('chatbot:GetSlackOauthParameters');
@@ -182,8 +164,6 @@ export class Chatbot extends PolicyStatement {
    * Redeem previously generated parameters with Slack API, to acquire OAuth tokens to be used by the AWS Chatbot service.
    *
    * Access Level: Write
-   *
-   *
    */
   public redeemSlackOauthCode () {
     this.add('chatbot:RedeemSlackOauthCode');
@@ -194,8 +174,6 @@ export class Chatbot extends PolicyStatement {
    * Updates an AWS Chatbot Chime Webhook Configuration.
    *
    * Access Level: Write
-   *
-   *
    */
   public updateChimeWebhookConfiguration () {
     this.add('chatbot:UpdateChimeWebhookConfiguration');
@@ -206,8 +184,6 @@ export class Chatbot extends PolicyStatement {
    * Updates an AWS Chatbot Slack Channel Configuration.
    *
    * Access Level: Write
-   *
-   *
    */
   public updateSlackChannelConfiguration () {
     this.add('chatbot:UpdateSlackChannelConfiguration');

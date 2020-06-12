@@ -236,8 +236,6 @@ export class Detective extends PolicyStatement {
    * Grants permission to retrieve a behavior graph's eligibility for a free trial period
    *
    * Access Level: Read
-   *
-   *
    */
   public getFreeTrialEligibility () {
     this.add('detective:GetFreeTrialEligibility');
@@ -248,8 +246,6 @@ export class Detective extends PolicyStatement {
    * Grants permission to retrieve the data ingestion state of a behavior graph
    *
    * Access Level: Read
-   *
-   *
    */
   public getGraphIngestState () {
     this.add('detective:GetGraphIngestState');
@@ -272,8 +268,6 @@ export class Detective extends PolicyStatement {
    * Grants permission to retrieve information about Amazon Detective's pricing
    *
    * Access Level: Read
-   *
-   *
    */
   public getPricingInformation () {
     this.add('detective:GetPricingInformation');
@@ -284,8 +278,6 @@ export class Detective extends PolicyStatement {
    * Grants permission to list usage information of a behavior graph
    *
    * Access Level: Read
-   *
-   *
    */
   public getUsageInformation () {
     this.add('detective:GetUsageInformation');
@@ -344,8 +336,6 @@ export class Detective extends PolicyStatement {
    * Grants permission to search the data stored in a behavior graph
    *
    * Access Level: Read
-   *
-   *
    */
   public searchGraph () {
     this.add('detective:SearchGraph');

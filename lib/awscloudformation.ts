@@ -636,8 +636,6 @@ export class Cloudformation extends PolicyStatement {
    *
    *
    * Access Level: Write
-   *
-   *
    */
   public createUploadBucket () {
     this.add('cloudformation:CreateUploadBucket');
@@ -1164,8 +1162,6 @@ export class Cloudformation extends PolicyStatement {
    * Tagging cloudformation resources.
    *
    * Access Level: Tagging
-   *
-   *
    */
   public tagResource () {
     this.add('cloudformation:TagResource');
@@ -1176,8 +1172,6 @@ export class Cloudformation extends PolicyStatement {
    * Untagging cloudformation resources.
    *
    * Access Level: Tagging
-   *
-   *
    */
   public untagResource () {
     this.add('cloudformation:UntagResource');

@@ -568,8 +568,6 @@ export class Codedeploy extends PolicyStatement {
    * Create CloudFormation deployment to cooperate ochestration for a CloudFormation stack update.
    *
    * Access Level: Write
-   *
-   *
    */
   public createCloudFormationDeployment () {
     this.add('codedeploy:CreateCloudFormationDeployment');

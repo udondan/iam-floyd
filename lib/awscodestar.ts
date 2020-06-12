@@ -251,8 +251,6 @@ export class Codestar extends PolicyStatement {
    * Grants access to extended delete APIs.
    *
    * Access Level: Write
-   *
-   *
    */
   public deleteExtendedAccess () {
     this.add('codestar:DeleteExtendedAccess');
@@ -323,8 +321,6 @@ export class Codestar extends PolicyStatement {
    * Grants access to extended read APIs.
    *
    * Access Level: Read
-   *
-   *
    */
   public getExtendedAccess () {
     this.add('codestar:GetExtendedAccess');
@@ -395,8 +391,6 @@ export class Codestar extends PolicyStatement {
    * Grants access to extended write APIs.
    *
    * Access Level: Write
-   *
-   *
    */
   public putExtendedAccess () {
     this.add('codestar:PutExtendedAccess');

@@ -79,8 +79,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Complete an existing task and submit the content to the associated change.
    *
    * Access Level: Write
-   *
-   *
    */
   public completeTask () {
     this.add('aws-marketplace-catalog:CompleteTask');
@@ -115,8 +113,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Returns the details of an existing task.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeTask () {
     this.add('aws-marketplace-catalog:DescribeTask');
@@ -151,8 +147,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Lists existing tasks.
    *
    * Access Level: List
-   *
-   *
    */
   public listTasks () {
     this.add('aws-marketplace-catalog:ListTasks');
@@ -175,8 +169,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * Update the content of an existing task.
    *
    * Access Level: Write
-   *
-   *
    */
   public updateTask () {
     this.add('aws-marketplace-catalog:UpdateTask');

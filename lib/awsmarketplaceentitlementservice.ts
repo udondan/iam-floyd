@@ -19,8 +19,6 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
    * Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions
    *
    * Access Level: Read
-   *
-   *
    */
   public getEntitlements () {
     this.add('aws-marketplace-entitlement-service:GetEntitlements');

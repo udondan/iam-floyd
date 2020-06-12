@@ -671,8 +671,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to disable replication for a Lambda@Edge function
    *
    * Access Level: Permissions management
-   *
-   *
    */
   public disableReplication () {
     this.add('lambda:DisableReplication');
@@ -683,8 +681,6 @@ export class Lambda extends PolicyStatement {
    * Grants permission to enable replication for a Lambda@Edge function
    *
    * Access Level: Permissions management
-   *
-   *
    */
   public enableReplication () {
     this.add('lambda:EnableReplication');

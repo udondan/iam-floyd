@@ -245,8 +245,12 @@ export function createModule(module: Module): Promise<void> {
       [`this.add('${module.name}:${name}');`, 'return this;'].join('\n')
     );
 
+    var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
+    if (action.url.length) {
+      desc += `\n\n${action.url}`;
+    }
     method.addJsDoc({
-      description: `\n${action.description}\n\nAccess Level: ${action.accessLevel}\n\n${action.url}`,
+      description: desc,
     });
   }
 

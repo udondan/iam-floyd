@@ -71,8 +71,6 @@ export class Dbqms extends PolicyStatement {
    * Add a query to the history
    *
    * Access Level: Write
-   *
-   *
    */
   public createQueryHistory () {
     this.add('dbqms:CreateQueryHistory');

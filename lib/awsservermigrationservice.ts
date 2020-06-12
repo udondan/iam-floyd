@@ -332,8 +332,6 @@ export class Sms extends PolicyStatement {
    * Gets messages from AWS Server Migration Service to Server Migration Connector.
    *
    * Access Level: Read
-   *
-   *
    */
   public getMessages () {
     this.add('sms:GetMessages');
@@ -440,8 +438,6 @@ export class Sms extends PolicyStatement {
    * Send message from Server Migration Connector to AWS Server Migration Service.
    *
    * Access Level: Write
-   *
-   *
    */
   public sendMessage () {
     this.add('sms:SendMessage');

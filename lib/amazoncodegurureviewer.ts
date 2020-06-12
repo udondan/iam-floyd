@@ -119,8 +119,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to associates a repository with Amazon CodeGuru Reviewer.
    *
    * Access Level: Write
-   *
-   *
    */
   public associateRepository () {
     this.add('codeguru-reviewer:AssociateRepository');
@@ -131,8 +129,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to perform webbased oauth handshake for 3rd party providers.
    *
    * Access Level: Read
-   *
-   *
    */
   public createConnectionToken () {
     this.add('codeguru-reviewer:CreateConnectionToken');
@@ -143,8 +139,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to describe a code review.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeCodeReview () {
     this.add('codeguru-reviewer:DescribeCodeReview');
@@ -155,8 +149,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to describe a recommendation feedback on a code review.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeRecommendationFeedback () {
     this.add('codeguru-reviewer:DescribeRecommendationFeedback');
@@ -167,8 +159,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to describe a repository association.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeRepositoryAssociation () {
     this.add('codeguru-reviewer:DescribeRepositoryAssociation');
@@ -179,8 +169,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to disassociate a repository with Amazon CodeGuru Reviewer.
    *
    * Access Level: Write
-   *
-   *
    */
   public disassociateRepository () {
     this.add('codeguru-reviewer:DisassociateRepository');
@@ -191,8 +179,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to view pull request metrics in console.
    *
    * Access Level: Read
-   *
-   *
    */
   public getMetricsData () {
     this.add('codeguru-reviewer:GetMetricsData');
@@ -203,8 +189,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list summary of code reviews.
    *
    * Access Level: List
-   *
-   *
    */
   public listCodeReviews () {
     this.add('codeguru-reviewer:ListCodeReviews');
@@ -215,8 +199,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list summary of recommendation feedback on a code review.
    *
    * Access Level: List
-   *
-   *
    */
   public listRecommendationFeedback () {
     this.add('codeguru-reviewer:ListRecommendationFeedback');
@@ -227,8 +209,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list summary of recommendations on a code review
    *
    * Access Level: List
-   *
-   *
    */
   public listRecommendations () {
     this.add('codeguru-reviewer:ListRecommendations');
@@ -239,8 +219,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list summary of repository associations.
    *
    * Access Level: List
-   *
-   *
    */
   public listRepositoryAssociations () {
     this.add('codeguru-reviewer:ListRepositoryAssociations');
@@ -251,8 +229,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to list 3rd party providers repositories in console.
    *
    * Access Level: Read
-   *
-   *
    */
   public listThirdPartyRepositories () {
     this.add('codeguru-reviewer:ListThirdPartyRepositories');
@@ -263,8 +239,6 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to put feedback for a recommendation on a code review.
    *
    * Access Level: Write
-   *
-   *
    */
   public putRecommendationFeedback () {
     this.add('codeguru-reviewer:PutRecommendationFeedback');

@@ -743,8 +743,6 @@ export class Cloudfront extends PolicyStatement {
    * List the distributions associated a Lambda function.
    *
    * Access Level: List
-   *
-   *
    */
   public listDistributionsByLambdaFunction () {
     this.add('cloudfront:ListDistributionsByLambdaFunction');

@@ -104,8 +104,6 @@ export class Trustedadvisor extends PolicyStatement {
    * View support plan and various TA preferences.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeAccount () {
     this.add('trustedadvisor:DescribeAccount');
@@ -116,8 +114,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Resolve whether Account has disabled Trusted Advisor
    *
    * Access Level: Read
-   *
-   *
    */
   public describeAccountAccess () {
     this.add('trustedadvisor:DescribeAccountAccess');
@@ -128,8 +124,6 @@ export class Trustedadvisor extends PolicyStatement {
    * View details for the check items
    *
    * Access Level: Read
-   *
-   *
    */
   public describeCheckItems () {
     this.add('trustedadvisor:DescribeCheckItems');
@@ -140,8 +134,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Describe check refresh statuses
    *
    * Access Level: Read
-   *
-   *
    */
   public describeCheckRefreshStatuses () {
     this.add('trustedadvisor:DescribeCheckRefreshStatuses');
@@ -152,8 +144,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Describes the check's summaries
    *
    * Access Level: Read
-   *
-   *
    */
   public describeCheckSummaries () {
     this.add('trustedadvisor:DescribeCheckSummaries');
@@ -164,8 +154,6 @@ export class Trustedadvisor extends PolicyStatement {
    * List valid Trusted Advisor checks and details.
    *
    * Access Level: Read
-   *
-   *
    */
   public describeChecks () {
     this.add('trustedadvisor:DescribeChecks');
@@ -176,8 +164,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Describes the notification preferences for the account
    *
    * Access Level: Read
-   *
-   *
    */
   public describeNotificationPreferences () {
     this.add('trustedadvisor:DescribeNotificationPreferences');
@@ -188,8 +174,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Exclude recommendations for checks for a given customer
    *
    * Access Level: Write
-   *
-   *
    */
   public excludeCheckItems () {
     this.add('trustedadvisor:ExcludeCheckItems');
@@ -200,8 +184,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Include recommendations for checks for a given customer
    *
    * Access Level: Write
-   *
-   *
    */
   public includeCheckItems () {
     this.add('trustedadvisor:IncludeCheckItems');
@@ -212,8 +194,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Enqueue a refresh for the specified check
    *
    * Access Level: Write
-   *
-   *
    */
   public refreshCheck () {
     this.add('trustedadvisor:RefreshCheck');
@@ -224,8 +204,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Toggle whether TrustedAdvisor is enabled/disabled for the account
    *
    * Access Level: Write
-   *
-   *
    */
   public setAccountAccess () {
     this.add('trustedadvisor:SetAccountAccess');
@@ -236,8 +214,6 @@ export class Trustedadvisor extends PolicyStatement {
    * Update notification preferences
    *
    * Access Level: Write
-   *
-   *
    */
   public updateNotificationPreferences () {
     this.add('trustedadvisor:UpdateNotificationPreferences');

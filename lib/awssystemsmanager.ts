@@ -1881,8 +1881,6 @@ export class Ssm extends PolicyStatement {
    * Used by Systems Manager and SSM Agent to determine package installation requirements for an instance (internal Systems Manager call)
    *
    * Access Level: Read
-   *
-   *
    */
   public getManifest () {
     this.add('ssm:GetManifest');
@@ -2193,8 +2191,6 @@ export class Ssm extends PolicyStatement {
    * Used by SSM Agent to generate a report of the results of specific agent requests (internal Systems Manager call)
    *
    * Access Level: Read
-   *
-   *
    */
   public putConfigurePackageResult () {
     this.add('ssm:PutConfigurePackageResult');
@@ -2445,8 +2441,6 @@ export class Ssm extends PolicyStatement {
    * Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)
    *
    * Access Level: Write
-   *
-   *
    */
   public updateInstanceAssociationStatus () {
     this.add('ssm:UpdateInstanceAssociationStatus');
