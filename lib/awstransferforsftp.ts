@@ -114,7 +114,7 @@ export class Transfer extends PolicyStatement {
       "description": "Enables the caller to list users associated with a server.",
       "accessLevel": "List",
       "resourceTypes": {
-        "user": {
+        "server": {
           "required": true
         }
       }
@@ -161,7 +161,7 @@ export class Transfer extends PolicyStatement {
       "description": "Enables the caller to test a server's custom identity provider.",
       "accessLevel": "Read",
       "resourceTypes": {
-        "server": {
+        "user": {
           "required": true
         }
       }
@@ -197,9 +197,6 @@ export class Transfer extends PolicyStatement {
       "description": "Enables the caller to update the configuration of a user",
       "accessLevel": "Write",
       "resourceTypes": {
-        "server": {
-          "required": true
-        },
         "user": {
           "required": true
         }

@@ -131,8 +131,8 @@ export class Sts extends PolicyStatement {
       ]
     },
     "GetServiceBearerToken": {
-      "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-permissions-reference.html",
-      "description": "Returns an authentication bearer token for an AWS account, IAM Role, or an IAM user",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html",
+      "description": "Returns a STS bearer token for an AWS root user, IAM role, or an IAM user",
       "accessLevel": "Read"
     },
     "GetSessionToken": {
@@ -246,11 +246,11 @@ export class Sts extends PolicyStatement {
   }
 
   /**
-   * Returns an authentication bearer token for an AWS account, IAM Role, or an IAM user
+   * Returns a STS bearer token for an AWS root user, IAM role, or an IAM user
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-permissions-reference.html
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
   public getServiceBearerToken () {
     this.add('sts:GetServiceBearerToken');
