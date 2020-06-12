@@ -1,11 +1,13 @@
 # IAM Floyd
 
-[![Source](https://img.shields.io/badge/Source-GitHub-blue)][source]
-[![Docs](https://img.shields.io/badge/Docs-awscdk.io-orange)][docs]
-[![npm version](https://badge.fury.io/js/iam-floyd.svg)][npm]
-[![PyPI version](https://badge.fury.io/py/iam-floyd.svg)][PyPI]
-[![NuGet version](https://badge.fury.io/nu/IAM.Floyd.svg)][NuGet]
+[![Source](https://img.shields.io/badge/Source-GitHub-blue?logo=github)][source]
+[![Docs](https://img.shields.io/badge/awscdk.io-iam--floyd-orange)][docs]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
+
+[![npm package](https://badge.fury.io/js/iam-floyd.svg)][npm]
+[![PyPI package](https://badge.fury.io/py/iam-floyd.svg)][PyPI]
+[![NuGet package](https://badge.fury.io/nu/IAM.Floyd.svg)][NuGet]
+[![Maven package](https://img.shields.io/badge/maven%20package-0.6.0-brightgreen)][Maven]
 
 AWS [IAM policy statement][statement] generator.
 
@@ -368,6 +370,7 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [npm]: https://www.npmjs.com/package/iam-floyd
    [PyPI]: https://pypi.org/project/iam-floyd/
    [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
+   [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/master/LICENSE
    [CDK]: https://aws.amazon.com/cdk/
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
