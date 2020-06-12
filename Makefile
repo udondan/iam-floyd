@@ -8,6 +8,8 @@ generate:
 	@npm run generate
 	@find lib bin -name "*.js" -type f -exec rm -vf {} \;
 
+package: build
+	@npm run package
 
 tag:
 	@git tag -a "v$(VERSION)" -m 'Creates tag "v$(VERSION)"'
