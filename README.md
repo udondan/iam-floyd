@@ -7,7 +7,7 @@
 [![NuGet version](https://badge.fury.io/nu/IAM.Floyd.svg)][NuGet]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
 
-Helper library for [CDK] to easily generate AWS [IAM policy statements][statement].
+AWS [IAM policy statement][statement] generator.
 
 > This is an early version of the package. The signature of methods will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.
 >

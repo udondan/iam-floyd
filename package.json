@@ -8,7 +8,7 @@
     "test": "npx ts-node test/main.ts"
   },
   "name": "iam-floyd",
-  "description": "Helper library for CDK to easily generate AWS IAM policy statements",
+  "description": "AWS IAM policy statement generator",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "author": {
