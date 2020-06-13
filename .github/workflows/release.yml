@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 1
 
       - name: Update Readme
-        uses: udondan/ver2doc@v1.0.0
+        uses: udondan/ver2doc@v1.0.1
         with:
           FILE: README.md
           PATTERN: (iam-floyd\@|maven%20package-)[0-9.]+
