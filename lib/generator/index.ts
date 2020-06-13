@@ -13,7 +13,7 @@ import { fixes } from './fixes';
 const project = new Project();
 const modules: Module[] = [];
 const timeThreshold = new Date();
-timeThreshold.setHours(timeThreshold.getHours() - 2);
+timeThreshold.setHours(timeThreshold.getHours() - 345672);
 
 export interface Module {
   name?: string;
@@ -85,10 +85,13 @@ export function getContent(service: string): Promise<Module> {
 
     const url = urlPattern.replace('%s', service);
 
-    const lastModified = await getLastModified(url);
-    if (lastModified < timeThreshold) {
-      console.log(`Skipping, last modified on ${lastModified}`.green);
-      return resolve(module);
+    const cachedFile = `lib/.cache/${module.filename}.ts`;
+    if (fs.existsSync(cachedFile)) {
+      const lastModified = await getLastModified(url);
+      if (lastModified < timeThreshold) {
+        console.log(`Skipping, last modified on ${lastModified}`.green);
+        return resolve(module);
+      }
     }
 
     request(url, function (err: any, _: request.Response, body: any) {
