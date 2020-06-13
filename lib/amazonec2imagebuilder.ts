@@ -102,7 +102,9 @@ export class Imagebuilder extends PolicyStatement {
       },
       "conditions": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "imagebuilder:CreatedResourceTagKeys",
+        "imagebuilder:CreatedResourceTag/<key>"
       ]
     },
     "DeleteComponent": {
@@ -465,7 +467,9 @@ export class Imagebuilder extends PolicyStatement {
         }
       },
       "conditions": [
-        "aws:ResourceTag/${TagKey}"
+        "aws:ResourceTag/${TagKey}",
+        "imagebuilder:CreatedResourceTagKeys",
+        "imagebuilder:CreatedResourceTag/<key>"
       ]
     }
   };

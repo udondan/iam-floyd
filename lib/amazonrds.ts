@@ -55,6 +55,9 @@ export class Rds extends PolicyStatement {
         "pg": {
           "required": false
         },
+        "proxy": {
+          "required": false
+        },
         "ri": {
           "required": false
         },
@@ -65,6 +68,9 @@ export class Rds extends PolicyStatement {
           "required": false
         },
         "subgrp": {
+          "required": false
+        },
+        "target-group": {
           "required": false
         }
       },
@@ -303,7 +309,11 @@ export class Rds extends PolicyStatement {
     "CreateDBProxy": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html",
       "description": "Grants permission to create a database proxy",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateDBSecurityGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html",
@@ -907,6 +917,9 @@ export class Rds extends PolicyStatement {
         "pg": {
           "required": false
         },
+        "proxy": {
+          "required": false
+        },
         "ri": {
           "required": false
         },
@@ -917,6 +930,9 @@ export class Rds extends PolicyStatement {
           "required": false
         },
         "subgrp": {
+          "required": false
+        },
+        "target-group": {
           "required": false
         }
       }
@@ -1200,6 +1216,9 @@ export class Rds extends PolicyStatement {
         "pg": {
           "required": false
         },
+        "proxy": {
+          "required": false
+        },
         "ri": {
           "required": false
         },
@@ -1210,6 +1229,9 @@ export class Rds extends PolicyStatement {
           "required": false
         },
         "subgrp": {
+          "required": false
+        },
+        "target-group": {
           "required": false
         }
       },
@@ -1518,7 +1540,9 @@ export class Rds extends PolicyStatement {
     "proxy": {
       "name": "proxy",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "ri": {
       "name": "ri",
@@ -1560,7 +1584,9 @@ export class Rds extends PolicyStatement {
     "target-group": {
       "name": "target-group",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 

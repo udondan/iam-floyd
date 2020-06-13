@@ -1213,6 +1213,16 @@ export class Iot extends PolicyStatement {
       "description": "Gets a list of all mitigation actions that match the specified filter criteria.",
       "accessLevel": "List"
     },
+    "ListNamedShadowsForThing": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListNamedShadowsForThing.html",
+      "description": "Lists all named shadows for a given thing.",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "thing": {
+          "required": true
+        }
+      }
+    },
     "ListOTAUpdates": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListOTAUpdates.html",
       "description": "Lists OTA update jobs in the account.",
@@ -3663,6 +3673,18 @@ export class Iot extends PolicyStatement {
    */
   public listMitigationActions () {
     this.add('iot:ListMitigationActions');
+    return this;
+  }
+
+  /**
+   * Lists all named shadows for a given thing.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListNamedShadowsForThing.html
+   */
+  public listNamedShadowsForThing () {
+    this.add('iot:ListNamedShadowsForThing');
     return this;
   }
 
