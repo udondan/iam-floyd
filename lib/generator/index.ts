@@ -186,6 +186,20 @@ export function getContent(service: string): Promise<Module> {
           const tds = $(element).find('td');
           const name = tds.first().text().trim();
           const arn = tds.first().next().text().trim();
+          if (!name.length && !arn.length) {
+            return;
+          }
+
+          if (
+            !arn.match(
+              /arn:\$\{Partition\}:[a-z0-9_-]+:(?:\$\{Region\})?:\$\{Account\}:[a-z0-9_-]+\/\$\{[A-Za-z0-9_:-]+\}$/
+            )
+          ) {
+            console.warn(
+              `\nARN for ${module.name}:${name} did not match allowed pattern, possibly error in documentation: ${arn}`
+                .yellow
+            );
+          }
           const conditionKeys = tds
             .first()
             .next()
