@@ -76,9 +76,6 @@ export function getContent(service: string): Promise<Module> {
   const urlPattern =
     'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
   return new Promise(async (resolve, reject) => {
-    var actions: Actions = {};
-    var resourceTypes: ResourceTypes = {};
-    var action: string;
     const module: Module = {
       filename: service.replace(/[^a-z0-9-]/i, '-'),
     };
@@ -115,99 +112,8 @@ export function getContent(service: string): Promise<Module> {
         module.fixes = fixes[service];
       }
 
-      const tableActions = getTable($, 'Actions');
-      const tableResourceTypes = getTable($, 'Resource Types');
-
-      tableActions.find('tr').each((_: number, element: CheerioElement) => {
-        const tds = $(element).find('td');
-        const tdLength = tds.length;
-        var first = tds.first();
-
-        if (tdLength == 6) {
-          // it's a new action
-
-          action = first.text().replace('[permission only]', '').trim();
-          actions[action] = {
-            url: first.find('a[href]').attr('href')?.trim() || '',
-            description: cleanDescription(first.next().text().trim()),
-            accessLevel: first.next().next().text().trim(),
-          };
-          first = first.next().next().next();
-        }
-
-        if (tdLength != 6 && tdLength != 3) {
-          const content = cleanDescription(tds.text());
-          if (content.length && !content.startsWith('SCENARIO:')) {
-            console.warn(
-              `skipping row due to unexpected number of fields: ${content}`
-                .yellow
-            );
-          }
-          return;
-        }
-
-        var resourceType = first.text().trim();
-        var required = false;
-        var conditionKeys = first.next().find('p');
-        const conditions: string[] = [];
-        if (conditionKeys.length) {
-          conditionKeys.each((_, conditionKey) => {
-            conditions.push(cleanDescription($(conditionKey).text()));
-          });
-        }
-        if (resourceType.length) {
-          if (typeof actions[action].resourceTypes == 'undefined') {
-            actions[action].resourceTypes = {};
-          }
-
-          if (resourceType.indexOf('*') >= 0) {
-            resourceType = resourceType.slice(0, -1);
-            required = true;
-          }
-
-          actions[action].resourceTypes![resourceType] = {
-            required: required,
-          };
-          if (conditions.length) {
-            actions[action].resourceTypes![
-              resourceType
-            ].conditions = conditions;
-          }
-        } else if (conditions.length) {
-          actions[action].conditions = conditions;
-        }
-      });
-
-      module.actions = actions;
-
-      tableResourceTypes
-        .find('tr')
-        .each((_: number, element: CheerioElement) => {
-          const tds = $(element).find('td');
-          const name = tds.first().text().trim();
-          const arn = tds.first().next().text().trim();
-          if (!name.length && !arn.length) {
-            return;
-          }
-
-          const conditionKeys = tds
-            .first()
-            .next()
-            .next()
-            .find('p')
-            .toArray()
-            .map((element) => {
-              return $(element).text().trim();
-            });
-          if (name.length) {
-            resourceTypes[name] = {
-              name: name,
-              arn: arnFixer(module.name, name, arn),
-              conditionKeys: conditionKeys,
-            };
-          }
-        });
-      module.resourceTypes = resourceTypes;
+      module.actions = parseActionTable($);
+      module.resourceTypes = parseResourceTypeTable($, module.name);
 
       resolve(module);
     });
@@ -421,4 +327,102 @@ function getTable($: CheerioStatic, title: string) {
       return $(element).find('th').first().text() == title;
     });
   return $(table[0]);
+}
+
+function parseActionTable($: CheerioStatic): Actions {
+  const actions: Actions = {};
+  const tableActions = getTable($, 'Actions');
+
+  var action: string;
+  tableActions.find('tr').each((_: number, element: CheerioElement) => {
+    const tds = $(element).find('td');
+    const tdLength = tds.length;
+    var first = tds.first();
+
+    if (tdLength == 6) {
+      // it's a new action
+
+      action = first.text().replace('[permission only]', '').trim();
+      actions[action] = {
+        url: first.find('a[href]').attr('href')?.trim() || '',
+        description: cleanDescription(first.next().text().trim()),
+        accessLevel: first.next().next().text().trim(),
+      };
+      first = first.next().next().next();
+    }
+
+    if (tdLength != 6 && tdLength != 3) {
+      const content = cleanDescription(tds.text());
+      if (content.length && !content.startsWith('SCENARIO:')) {
+        console.warn(
+          `skipping row due to unexpected number of fields: ${content}`.yellow
+        );
+      }
+      return;
+    }
+
+    var resourceType = first.text().trim();
+    var required = false;
+    var conditionKeys = first.next().find('p');
+    const conditions: string[] = [];
+    if (conditionKeys.length) {
+      conditionKeys.each((_, conditionKey) => {
+        conditions.push(cleanDescription($(conditionKey).text()));
+      });
+    }
+    if (resourceType.length) {
+      if (typeof actions[action].resourceTypes == 'undefined') {
+        actions[action].resourceTypes = {};
+      }
+
+      if (resourceType.indexOf('*') >= 0) {
+        resourceType = resourceType.slice(0, -1);
+        required = true;
+      }
+
+      actions[action].resourceTypes![resourceType] = {
+        required: required,
+      };
+      if (conditions.length) {
+        actions[action].resourceTypes![resourceType].conditions = conditions;
+      }
+    } else if (conditions.length) {
+      actions[action].conditions = conditions;
+    }
+  });
+  return actions;
+}
+
+function parseResourceTypeTable(
+  $: CheerioStatic,
+  service: string
+): ResourceTypes {
+  const resourceTypes: ResourceTypes = {};
+  const tableResourceTypes = getTable($, 'Resource Types');
+  tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
+    const tds = $(element).find('td');
+    const name = tds.first().text().trim();
+    const arn = tds.first().next().text().trim();
+    if (!name.length && !arn.length) {
+      return;
+    }
+
+    const conditionKeys = tds
+      .first()
+      .next()
+      .next()
+      .find('p')
+      .toArray()
+      .map((element) => {
+        return $(element).text().trim();
+      });
+    if (name.length) {
+      resourceTypes[name] = {
+        name: name,
+        arn: arnFixer(service, name, arn),
+        conditionKeys: conditionKeys,
+      };
+    }
+  });
+  return resourceTypes;
 }
