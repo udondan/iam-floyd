@@ -152,14 +152,14 @@ export class Appflow extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "flow": {
       "name": "flow",
-      "arn": "arn:${Partition}:appflow::${Account}:flow/${flowName}",
+      "arn": "arn:${Partition}:appflow:${Region}:${Account}:flow/${flowName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "connectorprofile": {
       "name": "connectorprofile",
-      "arn": "arn:${Partition}:appflow::${Account}:connectorprofile/${profileName}",
+      "arn": "arn:${Partition}:appflow:${Region}:${Account}:connectorprofile/${profileName}",
       "conditionKeys": []
     }
   };

@@ -1369,69 +1369,69 @@ export class Iam extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "access-report": {
       "name": "access-report",
-      "arn": "arn:${Partition}:iam::${Account}:access-report/${EntityPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:access-report/${EntityPath}",
       "conditionKeys": []
     },
     "assumed-role": {
       "name": "assumed-role",
-      "arn": "arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:assumed-role/${RoleName}/${RoleSessionName}",
       "conditionKeys": []
     },
     "federated-user": {
       "name": "federated-user",
-      "arn": "arn:${Partition}:iam::${Account}:federated-user/${UserName}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:federated-user/${UserName}",
       "conditionKeys": []
     },
     "group": {
       "name": "group",
-      "arn": "arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:group/${GroupNameWithPath}",
       "conditionKeys": []
     },
     "instance-profile": {
       "name": "instance-profile",
-      "arn": "arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:instance-profile/${InstanceProfileNameWithPath}",
       "conditionKeys": []
     },
     "mfa": {
       "name": "mfa",
-      "arn": "arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:mfa/${Path}/${MfaTokenId}",
       "conditionKeys": []
     },
     "oidc-provider": {
       "name": "oidc-provider",
-      "arn": "arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:oidc-provider/${OidcProviderName}",
       "conditionKeys": []
     },
     "policy": {
       "name": "policy",
-      "arn": "arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:policy/${PolicyNameWithPath}",
       "conditionKeys": []
     },
     "role": {
       "name": "role",
-      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}",
       "conditionKeys": [
         "iam:ResourceTag/${TagKey}"
       ]
     },
     "saml-provider": {
       "name": "saml-provider",
-      "arn": "arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:saml-provider/${SamlProviderName}",
       "conditionKeys": []
     },
     "server-certificate": {
       "name": "server-certificate",
-      "arn": "arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:server-certificate/${CertificateNameWithPath}",
       "conditionKeys": []
     },
     "sms-mfa": {
       "name": "sms-mfa",
-      "arn": "arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:sms-mfa/${MfaTokenIdWithPath}",
       "conditionKeys": []
     },
     "user": {
       "name": "user",
-      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}",
       "conditionKeys": [
         "iam:ResourceTag/${TagKey}"
       ]

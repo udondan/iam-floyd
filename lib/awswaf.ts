@@ -750,68 +750,68 @@ export class Waf extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "bytematchset": {
       "name": "bytematchset",
-      "arn": "arn:${Partition}:waf::${Account}:bytematchset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:bytematchset/${Id}",
       "conditionKeys": []
     },
     "ipset": {
       "name": "ipset",
-      "arn": "arn:${Partition}:waf::${Account}:ipset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:ipset/${Id}",
       "conditionKeys": []
     },
     "ratebasedrule": {
       "name": "ratebasedrule",
-      "arn": "arn:${Partition}:waf::${Account}:ratebasedrule/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:ratebasedrule/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "rule": {
       "name": "rule",
-      "arn": "arn:${Partition}:waf::${Account}:rule/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:rule/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "sizeconstraintset": {
       "name": "sizeconstraintset",
-      "arn": "arn:${Partition}:waf::${Account}:sizeconstraintset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:sizeconstraintset/${Id}",
       "conditionKeys": []
     },
     "sqlinjectionmatchset": {
       "name": "sqlinjectionmatchset",
-      "arn": "arn:${Partition}:waf::${Account}:sqlinjectionset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:sqlinjectionset/${Id}",
       "conditionKeys": []
     },
     "webacl": {
       "name": "webacl",
-      "arn": "arn:${Partition}:waf::${Account}:webacl/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:webacl/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "xssmatchset": {
       "name": "xssmatchset",
-      "arn": "arn:${Partition}:waf::${Account}:xssmatchset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:xssmatchset/${Id}",
       "conditionKeys": []
     },
     "regexmatchset": {
       "name": "regexmatchset",
-      "arn": "arn:${Partition}:waf::${Account}:regexmatch/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:regexmatch/${Id}",
       "conditionKeys": []
     },
     "regexpatternset": {
       "name": "regexpatternset",
-      "arn": "arn:${Partition}:waf::${Account}:regexpatternset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:regexpatternset/${Id}",
       "conditionKeys": []
     },
     "geomatchset": {
       "name": "geomatchset",
-      "arn": "arn:${Partition}:waf::${Account}:geomatchset/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:geomatchset/${Id}",
       "conditionKeys": []
     },
     "rulegroup": {
       "name": "rulegroup",
-      "arn": "arn:${Partition}:waf::${Account}:rulegroup/${Id}",
+      "arn": "arn:${Partition}:waf:${Region}:${Account}:rulegroup/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

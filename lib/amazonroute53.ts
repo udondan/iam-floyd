@@ -489,37 +489,37 @@ export class Route53 extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "change": {
       "name": "change",
-      "arn": "arn:${Partition}:route53:::change/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:change/${Id}",
       "conditionKeys": []
     },
     "delegationset": {
       "name": "delegationset",
-      "arn": "arn:${Partition}:route53:::delegationset/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:delegationset/${Id}",
       "conditionKeys": []
     },
     "healthcheck": {
       "name": "healthcheck",
-      "arn": "arn:${Partition}:route53:::healthcheck/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:healthcheck/${Id}",
       "conditionKeys": []
     },
     "hostedzone": {
       "name": "hostedzone",
-      "arn": "arn:${Partition}:route53:::hostedzone/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:hostedzone/${Id}",
       "conditionKeys": []
     },
     "trafficpolicy": {
       "name": "trafficpolicy",
-      "arn": "arn:${Partition}:route53:::trafficpolicy/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:trafficpolicy/${Id}",
       "conditionKeys": []
     },
     "trafficpolicyinstance": {
       "name": "trafficpolicyinstance",
-      "arn": "arn:${Partition}:route53:::trafficpolicyinstance/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:trafficpolicyinstance/${Id}",
       "conditionKeys": []
     },
     "queryloggingconfig": {
       "name": "queryloggingconfig",
-      "arn": "arn:${Partition}:route53:::queryloggingconfig/${Id}",
+      "arn": "arn:${Partition}:route53:${Region}:${Account}:queryloggingconfig/${Id}",
       "conditionKeys": []
     }
   };

@@ -122,12 +122,12 @@ export class Shield extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "attack": {
       "name": "attack",
-      "arn": "arn:${Partition}:shield::${Account}:attack/${Id}",
+      "arn": "arn:${Partition}:shield:${Region}:${Account}:attack/${Id}",
       "conditionKeys": []
     },
     "protection": {
       "name": "protection",
-      "arn": "arn:${Partition}:shield::${Account}:protection/${Id}",
+      "arn": "arn:${Partition}:shield:${Region}:${Account}:protection/${Id}",
       "conditionKeys": []
     }
   };

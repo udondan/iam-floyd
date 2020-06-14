@@ -32,7 +32,7 @@ export class Budgets extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "budget": {
       "name": "budget",
-      "arn": "arn:${Partition}:budgets::${Account}:budget/${BudgetName}",
+      "arn": "arn:${Partition}:budgets:${Region}:${Account}:budget/${BudgetName}",
       "conditionKeys": []
     }
   };

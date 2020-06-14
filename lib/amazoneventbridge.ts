@@ -334,7 +334,7 @@ export class Events extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "event-source": {
       "name": "event-source",
-      "arn": "arn:${Partition}:events:${Region}::event-source/${EventSourceName}",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:event-source/${EventSourceName}",
       "conditionKeys": []
     },
     "event-bus": {

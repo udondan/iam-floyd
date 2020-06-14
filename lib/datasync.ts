@@ -281,28 +281,28 @@ export class Datasync extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "agent": {
       "name": "agent",
-      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}",
+      "arn": "arn:${Partition}:datasync:${Region}:${Account}:agent/${AgentId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "location": {
       "name": "location",
-      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}",
+      "arn": "arn:${Partition}:datasync:${Region}:${Account}:location/${LocationId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "task": {
       "name": "task",
-      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}",
+      "arn": "arn:${Partition}:datasync:${Region}:${Account}:task/${TaskId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "taskexecution": {
       "name": "taskexecution",
-      "arn": "arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}/execution/${ExecutionId}",
+      "arn": "arn:${Partition}:datasync:${Region}:${Account}:task/${TaskId}/execution/${ExecutionId}",
       "conditionKeys": []
     }
   };

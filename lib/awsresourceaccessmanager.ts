@@ -276,7 +276,7 @@ export class Ram extends PolicyStatement {
     },
     "permission": {
       "name": "permission",
-      "arn": "arn:${Partition}:ram::${Account}:permission/${ResourcePath}",
+      "arn": "arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}",
       "conditionKeys": [
         "ram:PermissionArn"
       ]

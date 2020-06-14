@@ -656,21 +656,21 @@ export class Gamelift extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "alias": {
       "name": "alias",
-      "arn": "arn:${Partition}:gamelift:${Region}::alias/${AliasId}",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:alias/${AliasId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "build": {
       "name": "build",
-      "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:build/${BuildId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "script": {
       "name": "script",
-      "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:script/${ScriptId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

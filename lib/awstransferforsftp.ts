@@ -206,14 +206,14 @@ export class Transfer extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "user": {
       "name": "user",
-      "arn": "arn:${Partition}:transfer:${region}:${account}:user/${serverId}/${username}",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:user/${serverId}/${username}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "server": {
       "name": "server",
-      "arn": "arn:${Partition}:transfer:${region}:${account}:server/${serverId}",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:server/${serverId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

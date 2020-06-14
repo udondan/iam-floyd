@@ -72,7 +72,7 @@ export class Chatbot extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "ChatbotConfiguration": {
       "name": "ChatbotConfiguration",
-      "arn": "arn:${Partition}:chatbot::${account}:${resourceType}/${resourceName}",
+      "arn": "arn:${Partition}:chatbot:${Region}:${Account}:${resourceType}/${resourceName}",
       "conditionKeys": []
     }
   };

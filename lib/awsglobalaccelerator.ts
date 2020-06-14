@@ -238,21 +238,21 @@ export class Globalaccelerator extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "accelerator": {
       "name": "accelerator",
-      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}",
+      "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "listener": {
       "name": "listener",
-      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}",
+      "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "endpointgroup": {
       "name": "endpointgroup",
-      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
+      "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

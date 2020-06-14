@@ -117,12 +117,12 @@ export class CodeguruReviewer extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "association": {
       "name": "association",
-      "arn": "arn:${Partition}:codeguru-reviewer::${Account}:association:${ResourceId}",
+      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}",
       "conditionKeys": []
     },
     "codereview": {
       "name": "codereview",
-      "arn": "arn:${Partition}:codeguru-reviewer::${Account}:.+:.+",
+      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:.+:.+",
       "conditionKeys": []
     },
     "repository": {

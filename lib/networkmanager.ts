@@ -407,28 +407,28 @@ export class Networkmanager extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "global-network": {
       "name": "global-network",
-      "arn": "arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:global-network/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "site": {
       "name": "site",
-      "arn": "arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:site/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "link": {
       "name": "link",
-      "arn": "arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:link/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "device": {
       "name": "device",
-      "arn": "arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:device/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

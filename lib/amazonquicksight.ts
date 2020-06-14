@@ -605,7 +605,7 @@ export class Quicksight extends PolicyStatement {
     },
     "assignment": {
       "name": "assignment",
-      "arn": "arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:assignment/${ResourceId}",
       "conditionKeys": []
     }
   };

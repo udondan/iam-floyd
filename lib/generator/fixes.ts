@@ -40,3 +40,30 @@ export const fixes: Fixes = {
     id: 'elasticloadbalancing-v2',
   },
 };
+
+export function arnFixer(
+  service: string,
+  resource: string,
+  arn: string
+): string {
+  const splits = arn.split(':');
+
+  // filling in blank region and account, as many doc pages leave them empty
+  splits[3] = '${Region}';
+  splits[4] = '${Account}';
+  arn = splits.join(':');
+
+  // valid patterns
+  // arn:partition:service:region:account-id:resource-id
+  // arn:partition:service:region:account-id:resource-type/resource-id
+  // arn:partition:service:region:account-id:resource-type:resource-id
+  var r = `arn:\\$\\{Partition\\}:[a-z0-9_-]+:(\\$\\{Region\\})?:\\$\\{(Account)\\}(:[a-z0-9_-]+)?((\\/|:)(\\$\\{[a-z0-9_-]+\\}|[a-z0-9_-]+))*(\\/|:)\\$\\{[a-z0-9_-]+\\}$`;
+  var re = new RegExp(r, 'i');
+  if (!arn.match(re)) {
+    console.warn(
+      `\nARN for ${service}:${resource} did not match allowed pattern, possibly error in documentation: ${arn}`
+        .yellow
+    );
+  }
+  return arn;
+}

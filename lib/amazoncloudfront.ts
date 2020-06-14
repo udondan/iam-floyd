@@ -381,21 +381,21 @@ export class Cloudfront extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "distribution": {
       "name": "distribution",
-      "arn": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
+      "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "streaming-distribution": {
       "name": "streaming-distribution",
-      "arn": "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}",
+      "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:streaming-distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "origin-access-identity": {
       "name": "origin-access-identity",
-      "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}",
+      "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:origin-access-identity/${Id}",
       "conditionKeys": []
     }
   };

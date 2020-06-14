@@ -553,7 +553,7 @@ export class Swf extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "domain": {
       "name": "domain",
-      "arn": "arn:${Partition}:swf::${Account}:domain/${DomainName}",
+      "arn": "arn:${Partition}:swf:${Region}:${Account}:domain/${DomainName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

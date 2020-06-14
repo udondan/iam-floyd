@@ -501,7 +501,7 @@ export class Wafv2 extends PolicyStatement {
     },
     "apigateway": {
       "name": "apigateway",
-      "arn": "arn:${Partition}:apigateway:${Region}::/restapis/${ApiId}/stages/prod",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/prod",
       "conditionKeys": []
     }
   };

@@ -2049,7 +2049,7 @@ export class Iot extends PolicyStatement {
     },
     "role": {
       "name": "role",
-      "arn": "arn:${Partition}:iam::${Account}:role/${Role}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:role/${Role}",
       "conditionKeys": []
     },
     "authorizer": {

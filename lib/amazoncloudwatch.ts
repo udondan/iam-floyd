@@ -281,7 +281,7 @@ export class Cloudwatch extends PolicyStatement {
     },
     "dashboard": {
       "name": "dashboard",
-      "arn": "arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}",
+      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:dashboard/${DashboardName}",
       "conditionKeys": []
     },
     "insight-rule": {

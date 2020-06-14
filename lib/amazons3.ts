@@ -1638,12 +1638,12 @@ export class S3 extends PolicyStatement {
     },
     "bucket": {
       "name": "bucket",
-      "arn": "arn:${Partition}:s3:::${BucketName}",
+      "arn": "arn:${Partition}:s3:${Region}:${Account}:${BucketName}",
       "conditionKeys": []
     },
     "object": {
       "name": "object",
-      "arn": "arn:${Partition}:s3:::${BucketName}/${ObjectName}",
+      "arn": "arn:${Partition}:s3:${Region}:${Account}:${BucketName}/${ObjectName}",
       "conditionKeys": []
     },
     "job": {

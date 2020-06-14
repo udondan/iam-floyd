@@ -220,7 +220,7 @@ export class Codestar extends PolicyStatement {
     },
     "user": {
       "name": "user",
-      "arn": "arn:${Partition}:iam::${Account}:user/${aws:username}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${aws:username}",
       "conditionKeys": [
         "iam:ResourceTag/${TagKey}"
       ]

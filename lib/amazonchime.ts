@@ -931,7 +931,7 @@ export class Chime extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "meeting": {
       "name": "meeting",
-      "arn": "arn:${Partition}:chime::${AccountId}:meeting/${MeetingId}",
+      "arn": "arn:${Partition}:chime:${Region}:${Account}:meeting/${MeetingId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

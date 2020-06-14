@@ -107,7 +107,7 @@ export class Synthetics extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "canary": {
       "name": "canary",
-      "arn": "arn:${Partition}:synthetics::${Account}:canary:${CanaryName}",
+      "arn": "arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}",
       "conditionKeys": []
     }
   };

@@ -574,7 +574,7 @@ export class Ecs extends PolicyStatement {
     },
     "task-set": {
       "name": "task-set",
-      "arn": "arn:${Partition}:ecs:${region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ecs:ResourceTag/${TagKey}"

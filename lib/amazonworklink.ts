@@ -351,7 +351,7 @@ export class Worklink extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "fleet": {
       "name": "fleet",
-      "arn": "arn:${Partition}:worklink::${Account}:fleet/${fleetName}",
+      "arn": "arn:${Partition}:worklink:${Region}:${Account}:fleet/${fleetName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

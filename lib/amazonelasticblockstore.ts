@@ -42,7 +42,7 @@ export class Ebs extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "snapshot": {
       "name": "snapshot",
-      "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:snapshot/${SnapshotId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

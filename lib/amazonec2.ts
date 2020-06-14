@@ -4506,7 +4506,7 @@ export class Ec2 extends PolicyStatement {
     },
     "fpga-image": {
       "name": "fpga-image",
-      "arn": "arn:${Partition}:ec2:${Region}::fpga-image/${FpgaImageId}",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:fpga-image/${FpgaImageId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
@@ -4518,7 +4518,7 @@ export class Ec2 extends PolicyStatement {
     },
     "image": {
       "name": "image",
-      "arn": "arn:${Partition}:ec2:${Region}::image/${ImageId}",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:image/${ImageId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
@@ -4704,7 +4704,7 @@ export class Ec2 extends PolicyStatement {
     },
     "snapshot": {
       "name": "snapshot",
-      "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:snapshot/${SnapshotId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",

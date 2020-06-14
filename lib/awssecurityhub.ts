@@ -314,7 +314,7 @@ export class Securityhub extends PolicyStatement {
     },
     "standard": {
       "name": "standard",
-      "arn": "arn:${Partition}:securityhub:::ruleset/${StandardsName}/v/${StandardsVersion}",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:ruleset/${StandardsName}/v/${StandardsVersion}",
       "conditionKeys": []
     },
     "standards-subscription": {

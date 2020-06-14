@@ -493,37 +493,37 @@ export class Organizations extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "account": {
       "name": "account",
-      "arn": "arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:account/o-${OrganizationId}/${AccountId}",
       "conditionKeys": []
     },
     "handshake": {
       "name": "handshake",
-      "arn": "arn:${Partition}:organizations::${MasterAccountId}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}",
       "conditionKeys": []
     },
     "organization": {
       "name": "organization",
-      "arn": "arn:${Partition}:organizations::${MasterAccountId}:organization/o-${OrganizationId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:organization/o-${OrganizationId}",
       "conditionKeys": []
     },
     "organizationalunit": {
       "name": "organizationalunit",
-      "arn": "arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
       "conditionKeys": []
     },
     "policy": {
       "name": "policy",
-      "arn": "arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
       "conditionKeys": []
     },
     "awspolicy": {
       "name": "awspolicy",
-      "arn": "arn:${Partition}:organizations::aws:policy/${PolicyType}/p-${PolicyId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:policy/${PolicyType}/p-${PolicyId}",
       "conditionKeys": []
     },
     "root": {
       "name": "root",
-      "arn": "arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}",
+      "arn": "arn:${Partition}:organizations:${Region}:${Account}:root/o-${OrganizationId}/r-${RootId}",
       "conditionKeys": []
     }
   };

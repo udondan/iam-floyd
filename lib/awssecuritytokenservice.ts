@@ -163,14 +163,14 @@ export class Sts extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "role": {
       "name": "role",
-      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "user": {
       "name": "user",
-      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}",
       "conditionKeys": []
     }
   };

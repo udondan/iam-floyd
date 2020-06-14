@@ -256,12 +256,12 @@ export class Deepracer extends PolicyStatement {
     },
     "track": {
       "name": "track",
-      "arn": "arn:${Partition}:deepracer:${Region}::track/${ResourceId}",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:track/${ResourceId}",
       "conditionKeys": []
     },
     "leaderboard": {
       "name": "leaderboard",
-      "arn": "arn:${Partition}:deepracer:${Region}::leaderboard/${ResourceId}",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:leaderboard/${ResourceId}",
       "conditionKeys": []
     }
   };

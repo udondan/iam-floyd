@@ -8,7 +8,7 @@ import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
 import { ResourceTypes } from '../shared';
-import { fixes } from './fixes';
+import { arnFixer, fixes } from './fixes';
 
 const project = new Project();
 const modules: Module[] = [];
@@ -190,16 +190,6 @@ export function getContent(service: string): Promise<Module> {
             return;
           }
 
-          if (
-            !arn.match(
-              /arn:\$\{Partition\}:[a-z0-9_-]+:(?:\$\{Region\})?:\$\{Account\}:[a-z0-9_-]+\/\$\{[A-Za-z0-9_:-]+\}$/
-            )
-          ) {
-            console.warn(
-              `\nARN for ${module.name}:${name} did not match allowed pattern, possibly error in documentation: ${arn}`
-                .yellow
-            );
-          }
           const conditionKeys = tds
             .first()
             .next()
@@ -212,7 +202,7 @@ export function getContent(service: string): Promise<Module> {
           if (name.length) {
             resourceTypes[name] = {
               name: name,
-              arn: arn,
+              arn: arnFixer(module.name, name, arn),
               conditionKeys: conditionKeys,
             };
           }

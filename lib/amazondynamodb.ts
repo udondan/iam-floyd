@@ -549,7 +549,7 @@ export class Dynamodb extends PolicyStatement {
     },
     "global-table": {
       "name": "global-table",
-      "arn": "arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}",
+      "arn": "arn:${Partition}:dynamodb:${Region}:${Account}:global-table/${GlobalTableName}",
       "conditionKeys": []
     }
   };

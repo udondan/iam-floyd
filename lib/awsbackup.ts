@@ -410,7 +410,7 @@ export class Backup extends PolicyStatement {
     },
     "recoveryPoint": {
       "name": "recoveryPoint",
-      "arn": "arn:${Partition}:${Vendor}:${Region}:*:${ResourceType}:${RecoveryPointId}",
+      "arn": "arn:${Partition}:${Vendor}:${Region}:${Account}:${ResourceType}:${RecoveryPointId}",
       "conditionKeys": []
     }
   };

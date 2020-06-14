@@ -383,28 +383,28 @@ export class Macie2 extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "ClassificationJob": {
       "name": "ClassificationJob",
-      "arn": "arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "CustomDataIdentifier": {
       "name": "CustomDataIdentifier",
-      "arn": "arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "Member": {
       "name": "Member",
-      "arn": "arn:${Partition}:macie2::${Account}:member/${ResourceId}",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "FindingsFilter": {
       "name": "FindingsFilter",
-      "arn": "arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}",
+      "arn": "arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

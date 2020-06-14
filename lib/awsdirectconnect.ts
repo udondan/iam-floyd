@@ -681,7 +681,7 @@ export class Directconnect extends PolicyStatement {
     },
     "dx-gateway": {
       "name": "dx-gateway",
-      "arn": "arn:${Partition}:directconnect::${Account}:dx-gateway/${DirectConnectGatewayId}",
+      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dx-gateway/${DirectConnectGatewayId}",
       "conditionKeys": []
     }
   };

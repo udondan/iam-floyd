@@ -119,14 +119,14 @@ export class Signer extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "signing-profile": {
       "name": "signing-profile",
-      "arn": "arn:${Partition}:signer:${Region}::/signing-profiles/${profileName}",
+      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${profileName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "signing-job": {
       "name": "signing-job",
-      "arn": "arn:${Partition}:signer:${Region}::/signing-jobs/${jobId}",
+      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${jobId}",
       "conditionKeys": []
     }
   };

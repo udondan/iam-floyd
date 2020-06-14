@@ -270,7 +270,7 @@ export class Forecast extends PolicyStatement {
     },
     "algorithm": {
       "name": "algorithm",
-      "arn": "arn:${Partition}:forecast:::algorithm/${ResourceId}",
+      "arn": "arn:${Partition}:forecast:${Region}:${Account}:algorithm/${ResourceId}",
       "conditionKeys": []
     },
     "predictor": {

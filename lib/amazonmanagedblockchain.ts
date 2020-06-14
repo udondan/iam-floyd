@@ -197,7 +197,7 @@ export class Managedblockchain extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "network": {
       "name": "network",
-      "arn": "arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:networks/${NetworkId}",
       "conditionKeys": []
     },
     "member": {
@@ -212,7 +212,7 @@ export class Managedblockchain extends PolicyStatement {
     },
     "proposal": {
       "name": "proposal",
-      "arn": "arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}",
+      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:proposals/${ProposalId}",
       "conditionKeys": []
     },
     "invitation": {

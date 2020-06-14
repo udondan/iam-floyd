@@ -95,7 +95,7 @@ export class Health extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "event": {
       "name": "event",
-      "arn": "arn:${Partition}:health:*::event/${Service}/${EventTypeCode}/*",
+      "arn": "arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/*",
       "conditionKeys": []
     }
   };

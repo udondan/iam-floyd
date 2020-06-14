@@ -1518,7 +1518,7 @@ export class Rds extends PolicyStatement {
     },
     "global-cluster": {
       "name": "global-cluster",
-      "arn": "arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}",
+      "arn": "arn:${Partition}:rds:${Region}:${Account}:${GlobalCluster}",
       "conditionKeys": []
     },
     "og": {

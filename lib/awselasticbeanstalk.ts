@@ -696,12 +696,12 @@ export class Elasticbeanstalk extends PolicyStatement {
     },
     "solutionstack": {
       "name": "solutionstack",
-      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:solutionstack/${SolutionStackName}",
       "conditionKeys": []
     },
     "platform": {
       "name": "platform",
-      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:platform/${PlatformNameWithVersion}",
       "conditionKeys": []
     }
   };

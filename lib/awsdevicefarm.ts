@@ -885,7 +885,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "deviceinstance": {
       "name": "deviceinstance",
-      "arn": "arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:deviceinstance:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -906,7 +906,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "device": {
       "name": "device",
-      "arn": "arn:${Partition}:devicefarm:${Region}::device:${ResourceId}",
+      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:device:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

@@ -94,7 +94,7 @@ export class Savingsplans extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "savingsplan": {
       "name": "savingsplan",
-      "arn": "arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}",
+      "arn": "arn:${Partition}:savingsplans:${Region}:${Account}:savingsplan/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

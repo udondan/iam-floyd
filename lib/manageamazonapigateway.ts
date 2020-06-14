@@ -98,7 +98,7 @@ export class Apigateway extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "apigateway-general": {
       "name": "apigateway-general",
-      "arn": "arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:${ApiGatewayResourcePath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]

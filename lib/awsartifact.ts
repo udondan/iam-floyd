@@ -55,17 +55,17 @@ export class Artifact extends PolicyStatement {
   public resourceTypes : ResourceTypes = {
     "report-package": {
       "name": "report-package",
-      "arn": "arn:${Partition}:artifact:::report-package/*",
+      "arn": "arn:${Partition}:artifact:${Region}:${Account}:report-package/*",
       "conditionKeys": []
     },
     "customer-agreement": {
       "name": "customer-agreement",
-      "arn": "arn:${Partition}:artifact::${Account}:customer-agreement/*",
+      "arn": "arn:${Partition}:artifact:${Region}:${Account}:customer-agreement/*",
       "conditionKeys": []
     },
     "agreement": {
       "name": "agreement",
-      "arn": "arn:${Partition}:artifact:::agreement/*",
+      "arn": "arn:${Partition}:artifact:${Region}:${Account}:agreement/*",
       "conditionKeys": []
     }
   };
