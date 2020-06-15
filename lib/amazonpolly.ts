@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Polly extends PolicyStatement {
   public servicePrefix = 'polly';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeleteLexicon": {
       "url": "https://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html",
       "description": "Deletes the specified pronunciation lexicon stored in an AWS Region",
@@ -74,9 +74,10 @@ export class Polly extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "lexicon": {
       "name": "lexicon",
+      "url": "https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html",
       "arn": "arn:${Partition}:polly:${Region}:${Account}:lexicon/${LexiconName}",
       "conditionKeys": []
     }
@@ -89,7 +90,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html
    */
-  public deleteLexicon () {
+  public deleteLexicon() {
     this.add('polly:DeleteLexicon');
     return this;
   }
@@ -101,7 +102,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html
    */
-  public describeVoices () {
+  public describeVoices() {
     this.add('polly:DescribeVoices');
     return this;
   }
@@ -113,7 +114,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html
    */
-  public getLexicon () {
+  public getLexicon() {
     this.add('polly:GetLexicon');
     return this;
   }
@@ -125,7 +126,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_GetSpeechSynthesisTask.html
    */
-  public getSpeechSynthesisTask () {
+  public getSpeechSynthesisTask() {
     this.add('polly:GetSpeechSynthesisTask');
     return this;
   }
@@ -137,7 +138,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html
    */
-  public listLexicons () {
+  public listLexicons() {
     this.add('polly:ListLexicons');
     return this;
   }
@@ -149,7 +150,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_ListSpeechSynthesisTasks.html
    */
-  public listSpeechSynthesisTasks () {
+  public listSpeechSynthesisTasks() {
     this.add('polly:ListSpeechSynthesisTasks');
     return this;
   }
@@ -161,7 +162,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html
    */
-  public putLexicon () {
+  public putLexicon() {
     this.add('polly:PutLexicon');
     return this;
   }
@@ -173,7 +174,7 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html
    */
-  public startSpeechSynthesisTask () {
+  public startSpeechSynthesisTask() {
     this.add('polly:StartSpeechSynthesisTask');
     return this;
   }
@@ -185,8 +186,27 @@ export class Polly extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html
    */
-  public synthesizeSpeech () {
+  public synthesizeSpeech() {
     this.add('polly:SynthesizeSpeech');
     return this;
+  }
+
+  /**
+   * Adds a resource of type lexicon to the statement
+   *
+   * https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html
+   *
+   * @param lexiconName - Identifier for the lexiconName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLexicon(lexiconName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:polly:${Region}:${Account}:lexicon/${LexiconName}';
+    arn = arn.replace('${LexiconName}', lexiconName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

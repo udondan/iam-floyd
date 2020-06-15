@@ -7,21 +7,21 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplaceEntitlementService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-entitlement-service';
-  public actions : Actions = {
+  public actions: Actions = {
     "GetEntitlements": {
       "url": "",
       "description": "Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions",
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions
    *
    * Access Level: Read
    */
-  public getEntitlements () {
+  public getEntitlements() {
     this.add('aws-marketplace-entitlement-service:GetEntitlements');
     return this;
   }

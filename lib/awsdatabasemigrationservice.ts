@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Dms extends PolicyStatement {
   public servicePrefix = 'dms';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddTagsToResource": {
       "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html",
       "description": "Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task",
@@ -462,10 +462,11 @@ export class Dms extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "ReplicationInstance": {
       "name": "ReplicationInstance",
-      "arn": "arn:${Partition}:dms:${Region}:${Account}:rep:*",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "dms:rep-tag/${TagKey}"
@@ -473,7 +474,8 @@ export class Dms extends PolicyStatement {
     },
     "ReplicationTask": {
       "name": "ReplicationTask",
-      "arn": "arn:${Partition}:dms:${Region}:${Account}:task:*",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTask.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "dms:task-tag/${TagKey}"
@@ -481,7 +483,8 @@ export class Dms extends PolicyStatement {
     },
     "Endpoint": {
       "name": "Endpoint",
-      "arn": "arn:${Partition}:dms:${Region}:${Account}:endpoint:*",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_Endpoint.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:endpoint:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "dms:endpoint-tag/${TagKey}"
@@ -489,7 +492,8 @@ export class Dms extends PolicyStatement {
     },
     "Certificate": {
       "name": "Certificate",
-      "arn": "arn:${Partition}:dms:${Region}:${Account}:cert:*",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_Certificate.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "dms:cert-tag/${TagKey}"
@@ -497,7 +501,8 @@ export class Dms extends PolicyStatement {
     },
     "EventSubscription": {
       "name": "EventSubscription",
-      "arn": "arn:${Partition}:dms:${Region}:${Account}:es:*",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_EventSubscription.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "dms:es-tag/${TagKey}"
@@ -505,7 +510,8 @@ export class Dms extends PolicyStatement {
     },
     "ReplicationSubnetGroup": {
       "name": "ReplicationSubnetGroup",
-      "arn": "arn:${Partition}:dms:${Region}:${Account}:subgrp:*",
+      "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationSubnetGroup.html",
+      "arn": "arn:${Partition}:dms:${Region}:${Account}:subgrp:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "dms:subgrp-tag/${TagKey}"
@@ -520,7 +526,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource () {
+  public addTagsToResource() {
     this.add('dms:AddTagsToResource');
     return this;
   }
@@ -532,7 +538,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ApplyPendingMaintenanceAction.html
    */
-  public applyPendingMaintenanceAction () {
+  public applyPendingMaintenanceAction() {
     this.add('dms:ApplyPendingMaintenanceAction');
     return this;
   }
@@ -544,7 +550,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html
    */
-  public createEndpoint () {
+  public createEndpoint() {
     this.add('dms:CreateEndpoint');
     return this;
   }
@@ -556,7 +562,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEventSubscription.html
    */
-  public createEventSubscription () {
+  public createEventSubscription() {
     this.add('dms:CreateEventSubscription');
     return this;
   }
@@ -568,7 +574,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html
    */
-  public createReplicationInstance () {
+  public createReplicationInstance() {
     this.add('dms:CreateReplicationInstance');
     return this;
   }
@@ -580,7 +586,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html
    */
-  public createReplicationSubnetGroup () {
+  public createReplicationSubnetGroup() {
     this.add('dms:CreateReplicationSubnetGroup');
     return this;
   }
@@ -592,7 +598,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html
    */
-  public createReplicationTask () {
+  public createReplicationTask() {
     this.add('dms:CreateReplicationTask');
     return this;
   }
@@ -604,7 +610,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteCertificate.html
    */
-  public deleteCertificate () {
+  public deleteCertificate() {
     this.add('dms:DeleteCertificate');
     return this;
   }
@@ -616,7 +622,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEndpoint.html
    */
-  public deleteEndpoint () {
+  public deleteEndpoint() {
     this.add('dms:DeleteEndpoint');
     return this;
   }
@@ -628,7 +634,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEventSubscription.html
    */
-  public deleteEventSubscription () {
+  public deleteEventSubscription() {
     this.add('dms:DeleteEventSubscription');
     return this;
   }
@@ -640,7 +646,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationInstance.html
    */
-  public deleteReplicationInstance () {
+  public deleteReplicationInstance() {
     this.add('dms:DeleteReplicationInstance');
     return this;
   }
@@ -652,7 +658,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html
    */
-  public deleteReplicationSubnetGroup () {
+  public deleteReplicationSubnetGroup() {
     this.add('dms:DeleteReplicationSubnetGroup');
     return this;
   }
@@ -664,7 +670,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html
    */
-  public deleteReplicationTask () {
+  public deleteReplicationTask() {
     this.add('dms:DeleteReplicationTask');
     return this;
   }
@@ -676,7 +682,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html
    */
-  public describeAccountAttributes () {
+  public describeAccountAttributes() {
     this.add('dms:DescribeAccountAttributes');
     return this;
   }
@@ -688,7 +694,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html
    */
-  public describeCertificates () {
+  public describeCertificates() {
     this.add('dms:DescribeCertificates');
     return this;
   }
@@ -700,7 +706,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConnections.html
    */
-  public describeConnections () {
+  public describeConnections() {
     this.add('dms:DescribeConnections');
     return this;
   }
@@ -712,7 +718,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointTypes.html
    */
-  public describeEndpointTypes () {
+  public describeEndpointTypes() {
     this.add('dms:DescribeEndpointTypes');
     return this;
   }
@@ -724,7 +730,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpoints.html
    */
-  public describeEndpoints () {
+  public describeEndpoints() {
     this.add('dms:DescribeEndpoints');
     return this;
   }
@@ -736,7 +742,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventCategories.html
    */
-  public describeEventCategories () {
+  public describeEventCategories() {
     this.add('dms:DescribeEventCategories');
     return this;
   }
@@ -748,7 +754,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventSubscriptions.html
    */
-  public describeEventSubscriptions () {
+  public describeEventSubscriptions() {
     this.add('dms:DescribeEventSubscriptions');
     return this;
   }
@@ -760,7 +766,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEvents.html
    */
-  public describeEvents () {
+  public describeEvents() {
     this.add('dms:DescribeEvents');
     return this;
   }
@@ -772,7 +778,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeOrderableReplicationInstances.html
    */
-  public describeOrderableReplicationInstances () {
+  public describeOrderableReplicationInstances() {
     this.add('dms:DescribeOrderableReplicationInstances');
     return this;
   }
@@ -784,7 +790,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRefreshSchemasStatus.html
    */
-  public describeRefreshSchemasStatus () {
+  public describeRefreshSchemasStatus() {
     this.add('dms:DescribeRefreshSchemasStatus');
     return this;
   }
@@ -796,7 +802,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstanceTaskLogs.html
    */
-  public describeReplicationInstanceTaskLogs () {
+  public describeReplicationInstanceTaskLogs() {
     this.add('dms:DescribeReplicationInstanceTaskLogs');
     return this;
   }
@@ -808,7 +814,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstances.html
    */
-  public describeReplicationInstances () {
+  public describeReplicationInstances() {
     this.add('dms:DescribeReplicationInstances');
     return this;
   }
@@ -820,7 +826,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationSubnetGroups.html
    */
-  public describeReplicationSubnetGroups () {
+  public describeReplicationSubnetGroups() {
     this.add('dms:DescribeReplicationSubnetGroups');
     return this;
   }
@@ -832,7 +838,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentResults.html
    */
-  public describeReplicationTaskAssessmentResults () {
+  public describeReplicationTaskAssessmentResults() {
     this.add('dms:DescribeReplicationTaskAssessmentResults');
     return this;
   }
@@ -844,7 +850,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTasks.html
    */
-  public describeReplicationTasks () {
+  public describeReplicationTasks() {
     this.add('dms:DescribeReplicationTasks');
     return this;
   }
@@ -856,7 +862,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html
    */
-  public describeSchemas () {
+  public describeSchemas() {
     this.add('dms:DescribeSchemas');
     return this;
   }
@@ -868,7 +874,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html
    */
-  public describeTableStatistics () {
+  public describeTableStatistics() {
     this.add('dms:DescribeTableStatistics');
     return this;
   }
@@ -880,7 +886,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ImportCertificate.html
    */
-  public importCertificate () {
+  public importCertificate() {
     this.add('dms:ImportCertificate');
     return this;
   }
@@ -892,7 +898,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('dms:ListTagsForResource');
     return this;
   }
@@ -904,7 +910,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html
    */
-  public modifyEndpoint () {
+  public modifyEndpoint() {
     this.add('dms:ModifyEndpoint');
     return this;
   }
@@ -916,7 +922,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEventSubscription.html
    */
-  public modifyEventSubscription () {
+  public modifyEventSubscription() {
     this.add('dms:ModifyEventSubscription');
     return this;
   }
@@ -928,7 +934,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html
    */
-  public modifyReplicationInstance () {
+  public modifyReplicationInstance() {
     this.add('dms:ModifyReplicationInstance');
     return this;
   }
@@ -940,7 +946,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html
    */
-  public modifyReplicationSubnetGroup () {
+  public modifyReplicationSubnetGroup() {
     this.add('dms:ModifyReplicationSubnetGroup');
     return this;
   }
@@ -952,7 +958,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html
    */
-  public modifyReplicationTask () {
+  public modifyReplicationTask() {
     this.add('dms:ModifyReplicationTask');
     return this;
   }
@@ -964,7 +970,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RebootReplicationInstance.html
    */
-  public rebootReplicationInstance () {
+  public rebootReplicationInstance() {
     this.add('dms:RebootReplicationInstance');
     return this;
   }
@@ -976,7 +982,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html
    */
-  public refreshSchemas () {
+  public refreshSchemas() {
     this.add('dms:RefreshSchemas');
     return this;
   }
@@ -988,7 +994,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReloadTables.html
    */
-  public reloadTables () {
+  public reloadTables() {
     this.add('dms:ReloadTables');
     return this;
   }
@@ -1000,7 +1006,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource () {
+  public removeTagsFromResource() {
     this.add('dms:RemoveTagsFromResource');
     return this;
   }
@@ -1012,7 +1018,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html
    */
-  public startReplicationTask () {
+  public startReplicationTask() {
     this.add('dms:StartReplicationTask');
     return this;
   }
@@ -1024,7 +1030,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html
    */
-  public startReplicationTaskAssessment () {
+  public startReplicationTaskAssessment() {
     this.add('dms:StartReplicationTaskAssessment');
     return this;
   }
@@ -1036,7 +1042,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html
    */
-  public stopReplicationTask () {
+  public stopReplicationTask() {
     this.add('dms:StopReplicationTask');
     return this;
   }
@@ -1048,8 +1054,146 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html
    */
-  public testConnection () {
+  public testConnection() {
     this.add('dms:TestConnection');
     return this;
+  }
+
+  /**
+   * Adds a resource of type ReplicationInstance to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - dms:rep-tag/${TagKey}
+   */
+  public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ReplicationTask to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationTask.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - dms:task-tag/${TagKey}
+   */
+  public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_Endpoint.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - dms:endpoint-tag/${TagKey}
+   */
+  public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:endpoint:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Certificate to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_Certificate.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - dms:cert-tag/${TagKey}
+   */
+  public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type EventSubscription to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_EventSubscription.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - dms:es-tag/${TagKey}
+   */
+  public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ReplicationSubnetGroup to the statement
+   *
+   * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationSubnetGroup.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - dms:subgrp-tag/${TagKey}
+   */
+  public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dms:${Region}:${Account}:subgrp:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

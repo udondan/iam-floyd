@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class CodestarNotifications extends PolicyStatement {
   public servicePrefix = 'codestar-notifications';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateNotificationRule": {
       "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html",
       "description": "Grants permission to create a notification rule for a resource",
@@ -175,9 +175,10 @@ export class CodestarNotifications extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "notificationrule": {
       "name": "notificationrule",
+      "url": "https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_service-with-iam.html",
       "arn": "arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -192,7 +193,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html
    */
-  public createNotificationRule () {
+  public createNotificationRule() {
     this.add('codestar-notifications:CreateNotificationRule');
     return this;
   }
@@ -204,7 +205,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteNotificationRule.html
    */
-  public deleteNotificationRule () {
+  public deleteNotificationRule() {
     this.add('codestar-notifications:DeleteNotificationRule');
     return this;
   }
@@ -216,7 +217,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteTarget.html
    */
-  public deleteTarget () {
+  public deleteTarget() {
     this.add('codestar-notifications:DeleteTarget');
     return this;
   }
@@ -228,7 +229,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DescribeNotificationRule.html
    */
-  public describeNotificationRule () {
+  public describeNotificationRule() {
     this.add('codestar-notifications:DescribeNotificationRule');
     return this;
   }
@@ -240,7 +241,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListEventTypes.html
    */
-  public listEventTypes () {
+  public listEventTypes() {
     this.add('codestar-notifications:ListEventTypes');
     return this;
   }
@@ -252,7 +253,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListNotificationRules.html
    */
-  public listNotificationRules () {
+  public listNotificationRules() {
     this.add('codestar-notifications:ListNotificationRules');
     return this;
   }
@@ -264,7 +265,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('codestar-notifications:ListTagsForResource');
     return this;
   }
@@ -276,7 +277,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTargets.html
    */
-  public listTargets () {
+  public listTargets() {
     this.add('codestar-notifications:ListTargets');
     return this;
   }
@@ -288,7 +289,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Subscribe.html
    */
-  public subscribe () {
+  public subscribe() {
     this.add('codestar-notifications:Subscribe');
     return this;
   }
@@ -300,7 +301,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('codestar-notifications:TagResource');
     return this;
   }
@@ -312,7 +313,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Unsubscribe.html
    */
-  public unsubscribe () {
+  public unsubscribe() {
     this.add('codestar-notifications:Unsubscribe');
     return this;
   }
@@ -324,7 +325,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('codestar-notifications:UntagResource');
     return this;
   }
@@ -336,8 +337,30 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UpdateNotificationRule.html
    */
-  public updateNotificationRule () {
+  public updateNotificationRule() {
     this.add('codestar-notifications:UpdateNotificationRule');
     return this;
+  }
+
+  /**
+   * Adds a resource of type notificationrule to the statement
+   *
+   * https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_service-with-iam.html
+   *
+   * @param notificationRuleId - Identifier for the notificationRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onNotificationrule(notificationRuleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}';
+    arn = arn.replace('${NotificationRuleId}', notificationRuleId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

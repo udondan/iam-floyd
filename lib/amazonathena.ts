@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Athena extends PolicyStatement {
   public servicePrefix = 'athena';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchGetNamedQuery": {
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html",
       "description": "Grants permissions to get information about one or more named queries.",
@@ -313,9 +313,10 @@ export class Athena extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "datacatalog": {
       "name": "datacatalog",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html",
       "arn": "arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -323,6 +324,7 @@ export class Athena extends PolicyStatement {
     },
     "workgroup": {
       "name": "workgroup",
+      "url": "https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html",
       "arn": "arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -337,7 +339,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html
    */
-  public batchGetNamedQuery () {
+  public batchGetNamedQuery() {
     this.add('athena:BatchGetNamedQuery');
     return this;
   }
@@ -349,7 +351,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html
    */
-  public batchGetQueryExecution () {
+  public batchGetQueryExecution() {
     this.add('athena:BatchGetQueryExecution');
     return this;
   }
@@ -361,7 +363,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateDataCatalog.html
    */
-  public createDataCatalog () {
+  public createDataCatalog() {
     this.add('athena:CreateDataCatalog');
     return this;
   }
@@ -373,7 +375,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html
    */
-  public createNamedQuery () {
+  public createNamedQuery() {
     this.add('athena:CreateNamedQuery');
     return this;
   }
@@ -385,7 +387,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html
    */
-  public createWorkGroup () {
+  public createWorkGroup() {
     this.add('athena:CreateWorkGroup');
     return this;
   }
@@ -397,7 +399,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteDataCatalog.html
    */
-  public deleteDataCatalog () {
+  public deleteDataCatalog() {
     this.add('athena:DeleteDataCatalog');
     return this;
   }
@@ -409,7 +411,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html
    */
-  public deleteNamedQuery () {
+  public deleteNamedQuery() {
     this.add('athena:DeleteNamedQuery');
     return this;
   }
@@ -421,7 +423,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteWorkGroup.html
    */
-  public deleteWorkGroup () {
+  public deleteWorkGroup() {
     this.add('athena:DeleteWorkGroup');
     return this;
   }
@@ -433,7 +435,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDataCatalog.html
    */
-  public getDataCatalog () {
+  public getDataCatalog() {
     this.add('athena:GetDataCatalog');
     return this;
   }
@@ -445,7 +447,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetDatabase.html
    */
-  public getDatabase () {
+  public getDatabase() {
     this.add('athena:GetDatabase');
     return this;
   }
@@ -457,7 +459,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html
    */
-  public getNamedQuery () {
+  public getNamedQuery() {
     this.add('athena:GetNamedQuery');
     return this;
   }
@@ -469,7 +471,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html
    */
-  public getQueryExecution () {
+  public getQueryExecution() {
     this.add('athena:GetQueryExecution');
     return this;
   }
@@ -481,7 +483,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html
    */
-  public getQueryResults () {
+  public getQueryResults() {
     this.add('athena:GetQueryResults');
     return this;
   }
@@ -493,7 +495,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies
    */
-  public getQueryResultsStream () {
+  public getQueryResultsStream() {
     this.add('athena:GetQueryResultsStream');
     return this;
   }
@@ -505,7 +507,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ GetTableMetadata.html
    */
-  public getTableMetadata () {
+  public getTableMetadata() {
     this.add('athena:GetTableMetadata');
     return this;
   }
@@ -517,7 +519,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_GetWorkGroup.html
    */
-  public getWorkGroup () {
+  public getWorkGroup() {
     this.add('athena:GetWorkGroup');
     return this;
   }
@@ -529,7 +531,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDataCatalogs.html
    */
-  public listDataCatalogs () {
+  public listDataCatalogs() {
     this.add('athena:ListDataCatalogs');
     return this;
   }
@@ -541,7 +543,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListDatabases.html
    */
-  public listDatabases () {
+  public listDatabases() {
     this.add('athena:ListDatabases');
     return this;
   }
@@ -553,7 +555,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html
    */
-  public listNamedQueries () {
+  public listNamedQueries() {
     this.add('athena:ListNamedQueries');
     return this;
   }
@@ -565,7 +567,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html
    */
-  public listQueryExecutions () {
+  public listQueryExecutions() {
     this.add('athena:ListQueryExecutions');
     return this;
   }
@@ -577,7 +579,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTableMetadata.html
    */
-  public listTableMetadata () {
+  public listTableMetadata() {
     this.add('athena:ListTableMetadata');
     return this;
   }
@@ -589,7 +591,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('athena:ListTagsForResource');
     return this;
   }
@@ -601,7 +603,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_ListWorkGroups.html
    */
-  public listWorkGroups () {
+  public listWorkGroups() {
     this.add('athena:ListWorkGroups');
     return this;
   }
@@ -613,7 +615,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html
    */
-  public startQueryExecution () {
+  public startQueryExecution() {
     this.add('athena:StartQueryExecution');
     return this;
   }
@@ -625,7 +627,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html
    */
-  public stopQueryExecution () {
+  public stopQueryExecution() {
     this.add('athena:StopQueryExecution');
     return this;
   }
@@ -637,7 +639,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('athena:TagResource');
     return this;
   }
@@ -649,7 +651,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('athena:UntagResource');
     return this;
   }
@@ -661,7 +663,7 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateDataCatalog.html
    */
-  public updateDataCatalog () {
+  public updateDataCatalog() {
     this.add('athena:UpdateDataCatalog');
     return this;
   }
@@ -673,8 +675,52 @@ export class Athena extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateWorkGroup.html
    */
-  public updateWorkGroup () {
+  public updateWorkGroup() {
     this.add('athena:UpdateWorkGroup');
     return this;
+  }
+
+  /**
+   * Adds a resource of type datacatalog to the statement
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html
+   *
+   * @param dataCatalogName - Identifier for the dataCatalogName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}';
+    arn = arn.replace('${DataCatalogName}', dataCatalogName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type workgroup to the statement
+   *
+   * https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html
+   *
+   * @param workGroupName - Identifier for the workGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}';
+    arn = arn.replace('${WorkGroupName}', workGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

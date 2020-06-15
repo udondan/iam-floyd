@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class ResourceGroups extends PolicyStatement {
   public servicePrefix = 'resource-groups';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateGroup": {
       "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html",
       "description": "Creates a group with a specified name, description, and resource query.",
@@ -135,9 +135,10 @@ export class ResourceGroups extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "group": {
       "name": "group",
+      "url": "https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html",
       "arn": "arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -152,7 +153,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html
    */
-  public createGroup () {
+  public createGroup() {
     this.add('resource-groups:CreateGroup');
     return this;
   }
@@ -164,7 +165,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html
    */
-  public deleteGroup () {
+  public deleteGroup() {
     this.add('resource-groups:DeleteGroup');
     return this;
   }
@@ -176,7 +177,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html
    */
-  public getGroup () {
+  public getGroup() {
     this.add('resource-groups:GetGroup');
     return this;
   }
@@ -188,7 +189,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html
    */
-  public getGroupQuery () {
+  public getGroupQuery() {
     this.add('resource-groups:GetGroupQuery');
     return this;
   }
@@ -200,7 +201,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html
    */
-  public getTags () {
+  public getTags() {
     this.add('resource-groups:GetTags');
     return this;
   }
@@ -212,7 +213,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html
    */
-  public listGroupResources () {
+  public listGroupResources() {
     this.add('resource-groups:ListGroupResources');
     return this;
   }
@@ -224,7 +225,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html
    */
-  public listGroups () {
+  public listGroups() {
     this.add('resource-groups:ListGroups');
     return this;
   }
@@ -236,7 +237,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html
    */
-  public searchResources () {
+  public searchResources() {
     this.add('resource-groups:SearchResources');
     return this;
   }
@@ -248,7 +249,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html
    */
-  public tag () {
+  public tag() {
     this.add('resource-groups:Tag');
     return this;
   }
@@ -260,7 +261,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html
    */
-  public untag () {
+  public untag() {
     this.add('resource-groups:Untag');
     return this;
   }
@@ -272,7 +273,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html
    */
-  public updateGroup () {
+  public updateGroup() {
     this.add('resource-groups:UpdateGroup');
     return this;
   }
@@ -284,8 +285,30 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html
    */
-  public updateGroupQuery () {
+  public updateGroupQuery() {
     this.add('resource-groups:UpdateGroupQuery');
     return this;
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html
+   *
+   * @param groupName - Identifier for the groupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}';
+    arn = arn.replace('${GroupName}', groupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

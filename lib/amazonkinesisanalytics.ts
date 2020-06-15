@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Kinesisanalytics extends PolicyStatement {
   public servicePrefix = 'kinesisanalytics';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddApplicationInput": {
       "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html",
       "description": "Adds input to the application.",
@@ -175,9 +175,10 @@ export class Kinesisanalytics extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
+      "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html",
       "arn": "arn:${Partition}:kinesisanalytics:${Region}:${Account}:application/${ApplicationName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -192,7 +193,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html
    */
-  public addApplicationInput () {
+  public addApplicationInput() {
     this.add('kinesisanalytics:AddApplicationInput');
     return this;
   }
@@ -204,7 +205,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html
    */
-  public addApplicationOutput () {
+  public addApplicationOutput() {
     this.add('kinesisanalytics:AddApplicationOutput');
     return this;
   }
@@ -216,7 +217,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html
    */
-  public addApplicationReferenceDataSource () {
+  public addApplicationReferenceDataSource() {
     this.add('kinesisanalytics:AddApplicationReferenceDataSource');
     return this;
   }
@@ -228,7 +229,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html
    */
-  public createApplication () {
+  public createApplication() {
     this.add('kinesisanalytics:CreateApplication');
     return this;
   }
@@ -240,7 +241,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html
    */
-  public deleteApplication () {
+  public deleteApplication() {
     this.add('kinesisanalytics:DeleteApplication');
     return this;
   }
@@ -252,7 +253,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html
    */
-  public deleteApplicationOutput () {
+  public deleteApplicationOutput() {
     this.add('kinesisanalytics:DeleteApplicationOutput');
     return this;
   }
@@ -264,7 +265,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html
    */
-  public deleteApplicationReferenceDataSource () {
+  public deleteApplicationReferenceDataSource() {
     this.add('kinesisanalytics:DeleteApplicationReferenceDataSource');
     return this;
   }
@@ -276,7 +277,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html
    */
-  public describeApplication () {
+  public describeApplication() {
     this.add('kinesisanalytics:DescribeApplication');
     return this;
   }
@@ -288,7 +289,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html
    */
-  public discoverInputSchema () {
+  public discoverInputSchema() {
     this.add('kinesisanalytics:DiscoverInputSchema');
     return this;
   }
@@ -300,7 +301,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas
    */
-  public getApplicationState () {
+  public getApplicationState() {
     this.add('kinesisanalytics:GetApplicationState');
     return this;
   }
@@ -312,7 +313,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html
    */
-  public listApplications () {
+  public listApplications() {
     this.add('kinesisanalytics:ListApplications');
     return this;
   }
@@ -324,7 +325,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('kinesisanalytics:ListTagsForResource');
     return this;
   }
@@ -336,7 +337,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html
    */
-  public startApplication () {
+  public startApplication() {
     this.add('kinesisanalytics:StartApplication');
     return this;
   }
@@ -348,7 +349,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html
    */
-  public stopApplication () {
+  public stopApplication() {
     this.add('kinesisanalytics:StopApplication');
     return this;
   }
@@ -360,7 +361,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('kinesisanalytics:TagResource');
     return this;
   }
@@ -372,7 +373,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('kinesisanalytics:UntagResource');
     return this;
   }
@@ -384,8 +385,30 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html
    */
-  public updateApplication () {
+  public updateApplication() {
     this.add('kinesisanalytics:UpdateApplication');
     return this;
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kinesisanalytics:${Region}:${Account}:application/${ApplicationName}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

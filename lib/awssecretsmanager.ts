@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Secretsmanager extends PolicyStatement {
   public servicePrefix = 'secretsmanager';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelRotateSecret": {
       "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions",
       "description": "Enables the user to cancel an in-progress secret rotation.",
@@ -268,9 +268,10 @@ export class Secretsmanager extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Secret": {
       "name": "Secret",
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources",
       "arn": "arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}",
       "conditionKeys": [
         "aws:RequestTag/tag-key",
@@ -288,7 +289,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public cancelRotateSecret () {
+  public cancelRotateSecret() {
     this.add('secretsmanager:CancelRotateSecret');
     return this;
   }
@@ -300,7 +301,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public createSecret () {
+  public createSecret() {
     this.add('secretsmanager:CreateSecret');
     return this;
   }
@@ -312,7 +313,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public deleteResourcePolicy () {
+  public deleteResourcePolicy() {
     this.add('secretsmanager:DeleteResourcePolicy');
     return this;
   }
@@ -324,7 +325,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public deleteSecret () {
+  public deleteSecret() {
     this.add('secretsmanager:DeleteSecret');
     return this;
   }
@@ -336,7 +337,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public describeSecret () {
+  public describeSecret() {
     this.add('secretsmanager:DescribeSecret');
     return this;
   }
@@ -348,7 +349,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public getRandomPassword () {
+  public getRandomPassword() {
     this.add('secretsmanager:GetRandomPassword');
     return this;
   }
@@ -360,7 +361,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public getResourcePolicy () {
+  public getResourcePolicy() {
     this.add('secretsmanager:GetResourcePolicy');
     return this;
   }
@@ -372,7 +373,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public getSecretValue () {
+  public getSecretValue() {
     this.add('secretsmanager:GetSecretValue');
     return this;
   }
@@ -384,7 +385,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public listSecretVersionIds () {
+  public listSecretVersionIds() {
     this.add('secretsmanager:ListSecretVersionIds');
     return this;
   }
@@ -396,7 +397,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public listSecrets () {
+  public listSecrets() {
     this.add('secretsmanager:ListSecrets');
     return this;
   }
@@ -408,7 +409,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public putResourcePolicy () {
+  public putResourcePolicy() {
     this.add('secretsmanager:PutResourcePolicy');
     return this;
   }
@@ -420,7 +421,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public putSecretValue () {
+  public putSecretValue() {
     this.add('secretsmanager:PutSecretValue');
     return this;
   }
@@ -432,7 +433,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public restoreSecret () {
+  public restoreSecret() {
     this.add('secretsmanager:RestoreSecret');
     return this;
   }
@@ -444,7 +445,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public rotateSecret () {
+  public rotateSecret() {
     this.add('secretsmanager:RotateSecret');
     return this;
   }
@@ -456,7 +457,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public tagResource () {
+  public tagResource() {
     this.add('secretsmanager:TagResource');
     return this;
   }
@@ -468,7 +469,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public untagResource () {
+  public untagResource() {
     this.add('secretsmanager:UntagResource');
     return this;
   }
@@ -480,7 +481,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public updateSecret () {
+  public updateSecret() {
     this.add('secretsmanager:UpdateSecret');
     return this;
   }
@@ -492,8 +493,33 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public updateSecretVersionStage () {
+  public updateSecretVersionStage() {
     this.add('secretsmanager:UpdateSecretVersionStage');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Secret to the statement
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources
+   *
+   * @param secretId - Identifier for the secretId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/tag-key
+   *  - aws:TagKeys
+   *  - secretsmanager:ResourceTag/tag-key
+   *  - secretsmanager:resource/AllowRotationLambdaArn
+   */
+  public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}';
+    arn = arn.replace('${SecretId}', secretId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

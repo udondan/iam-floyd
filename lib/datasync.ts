@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Datasync extends PolicyStatement {
   public servicePrefix = 'datasync';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelTaskExecution": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html",
       "description": "Cancels execution of a sync task.",
@@ -278,9 +278,10 @@ export class Datasync extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "agent": {
       "name": "agent",
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/agent.html",
       "arn": "arn:${Partition}:datasync:${Region}:${Account}:agent/${AgentId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -288,6 +289,7 @@ export class Datasync extends PolicyStatement {
     },
     "location": {
       "name": "location",
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/location.html",
       "arn": "arn:${Partition}:datasync:${Region}:${Account}:location/${LocationId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -295,6 +297,7 @@ export class Datasync extends PolicyStatement {
     },
     "task": {
       "name": "task",
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/task.html",
       "arn": "arn:${Partition}:datasync:${Region}:${Account}:task/${TaskId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -302,6 +305,7 @@ export class Datasync extends PolicyStatement {
     },
     "taskexecution": {
       "name": "taskexecution",
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/taskexecution.html",
       "arn": "arn:${Partition}:datasync:${Region}:${Account}:task/${TaskId}/execution/${ExecutionId}",
       "conditionKeys": []
     }
@@ -314,7 +318,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html
    */
-  public cancelTaskExecution () {
+  public cancelTaskExecution() {
     this.add('datasync:CancelTaskExecution');
     return this;
   }
@@ -326,7 +330,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html
    */
-  public createAgent () {
+  public createAgent() {
     this.add('datasync:CreateAgent');
     return this;
   }
@@ -338,7 +342,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationEfs.html
    */
-  public createLocationEfs () {
+  public createLocationEfs() {
     this.add('datasync:CreateLocationEfs');
     return this;
   }
@@ -350,7 +354,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html
    */
-  public createLocationNfs () {
+  public createLocationNfs() {
     this.add('datasync:CreateLocationNfs');
     return this;
   }
@@ -362,7 +366,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html
    */
-  public createLocationS3 () {
+  public createLocationS3() {
     this.add('datasync:CreateLocationS3');
     return this;
   }
@@ -374,7 +378,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html
    */
-  public createLocationSmb () {
+  public createLocationSmb() {
     this.add('datasync:CreateLocationSmb');
     return this;
   }
@@ -386,7 +390,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html
    */
-  public createTask () {
+  public createTask() {
     this.add('datasync:CreateTask');
     return this;
   }
@@ -398,7 +402,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteAgent.html
    */
-  public deleteAgent () {
+  public deleteAgent() {
     this.add('datasync:DeleteAgent');
     return this;
   }
@@ -410,7 +414,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteLocation.html
    */
-  public deleteLocation () {
+  public deleteLocation() {
     this.add('datasync:DeleteLocation');
     return this;
   }
@@ -422,7 +426,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteTask.html
    */
-  public deleteTask () {
+  public deleteTask() {
     this.add('datasync:DeleteTask');
     return this;
   }
@@ -434,7 +438,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html
    */
-  public describeAgent () {
+  public describeAgent() {
     this.add('datasync:DescribeAgent');
     return this;
   }
@@ -446,7 +450,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationEfs.html
    */
-  public describeLocationEfs () {
+  public describeLocationEfs() {
     this.add('datasync:DescribeLocationEfs');
     return this;
   }
@@ -458,7 +462,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationNfs.html
    */
-  public describeLocationNfs () {
+  public describeLocationNfs() {
     this.add('datasync:DescribeLocationNfs');
     return this;
   }
@@ -470,7 +474,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationS3.html
    */
-  public describeLocationS3 () {
+  public describeLocationS3() {
     this.add('datasync:DescribeLocationS3');
     return this;
   }
@@ -482,7 +486,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationSmb.html
    */
-  public describeLocationSmb () {
+  public describeLocationSmb() {
     this.add('datasync:DescribeLocationSmb');
     return this;
   }
@@ -494,7 +498,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTask.html
    */
-  public describeTask () {
+  public describeTask() {
     this.add('datasync:DescribeTask');
     return this;
   }
@@ -506,7 +510,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html
    */
-  public describeTaskExecution () {
+  public describeTaskExecution() {
     this.add('datasync:DescribeTaskExecution');
     return this;
   }
@@ -518,7 +522,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html
    */
-  public listAgents () {
+  public listAgents() {
     this.add('datasync:ListAgents');
     return this;
   }
@@ -530,7 +534,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html
    */
-  public listLocations () {
+  public listLocations() {
     this.add('datasync:ListLocations');
     return this;
   }
@@ -542,7 +546,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('datasync:ListTagsForResource');
     return this;
   }
@@ -554,7 +558,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html
    */
-  public listTaskExecutions () {
+  public listTaskExecutions() {
     this.add('datasync:ListTaskExecutions');
     return this;
   }
@@ -566,7 +570,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html
    */
-  public listTasks () {
+  public listTasks() {
     this.add('datasync:ListTasks');
     return this;
   }
@@ -578,7 +582,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html
    */
-  public startTaskExecution () {
+  public startTaskExecution() {
     this.add('datasync:StartTaskExecution');
     return this;
   }
@@ -590,7 +594,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('datasync:TagResource');
     return this;
   }
@@ -602,7 +606,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('datasync:UntagResource');
     return this;
   }
@@ -614,7 +618,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateAgent.html
    */
-  public updateAgent () {
+  public updateAgent() {
     this.add('datasync:UpdateAgent');
     return this;
   }
@@ -626,8 +630,95 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTask.html
    */
-  public updateTask () {
+  public updateTask() {
     this.add('datasync:UpdateTask');
     return this;
+  }
+
+  /**
+   * Adds a resource of type agent to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/agent.html
+   *
+   * @param agentId - Identifier for the agentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAgent(agentId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:datasync:${Region}:${Account}:agent/${AgentId}';
+    arn = arn.replace('${AgentId}', agentId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type location to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/location.html
+   *
+   * @param locationId - Identifier for the locationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onLocation(locationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:datasync:${Region}:${Account}:location/${LocationId}';
+    arn = arn.replace('${LocationId}', locationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type task to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/task.html
+   *
+   * @param taskId - Identifier for the taskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTask(taskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:datasync:${Region}:${Account}:task/${TaskId}';
+    arn = arn.replace('${TaskId}', taskId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type taskexecution to the statement
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/taskexecution.html
+   *
+   * @param taskId - Identifier for the taskId.
+   * @param executionId - Identifier for the executionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTaskexecution(taskId: string, executionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:datasync:${Region}:${Account}:task/${TaskId}/execution/${ExecutionId}';
+    arn = arn.replace('${TaskId}', taskId);
+    arn = arn.replace('${ExecutionId}', executionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

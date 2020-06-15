@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class CognitoSync extends PolicyStatement {
   public servicePrefix = 'cognito-sync';
-  public actions : Actions = {
+  public actions: Actions = {
     "BulkPublish": {
       "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html",
       "description": "Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream.",
@@ -194,19 +194,22 @@ export class CognitoSync extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "dataset": {
       "name": "dataset",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets",
       "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}/dataset/${DatasetName}",
       "conditionKeys": []
     },
     "identity": {
       "name": "identity",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html#authenticated-and-unauthenticated-identities",
       "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}",
       "conditionKeys": []
     },
     "identitypool": {
       "name": "identitypool",
+      "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html",
       "arn": "arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}",
       "conditionKeys": []
     }
@@ -219,7 +222,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html
    */
-  public bulkPublish () {
+  public bulkPublish() {
     this.add('cognito-sync:BulkPublish');
     return this;
   }
@@ -231,7 +234,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DeleteDataset.html
    */
-  public deleteDataset () {
+  public deleteDataset() {
     this.add('cognito-sync:DeleteDataset');
     return this;
   }
@@ -243,7 +246,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeDataset.html
    */
-  public describeDataset () {
+  public describeDataset() {
     this.add('cognito-sync:DescribeDataset');
     return this;
   }
@@ -255,7 +258,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html
    */
-  public describeIdentityPoolUsage () {
+  public describeIdentityPoolUsage() {
     this.add('cognito-sync:DescribeIdentityPoolUsage');
     return this;
   }
@@ -267,7 +270,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityUsage.html
    */
-  public describeIdentityUsage () {
+  public describeIdentityUsage() {
     this.add('cognito-sync:DescribeIdentityUsage');
     return this;
   }
@@ -279,7 +282,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetBulkPublishDetails.html
    */
-  public getBulkPublishDetails () {
+  public getBulkPublishDetails() {
     this.add('cognito-sync:GetBulkPublishDetails');
     return this;
   }
@@ -291,7 +294,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetCognitoEvents.html
    */
-  public getCognitoEvents () {
+  public getCognitoEvents() {
     this.add('cognito-sync:GetCognitoEvents');
     return this;
   }
@@ -303,7 +306,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetIdentityPoolConfiguration.html
    */
-  public getIdentityPoolConfiguration () {
+  public getIdentityPoolConfiguration() {
     this.add('cognito-sync:GetIdentityPoolConfiguration');
     return this;
   }
@@ -315,7 +318,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListDatasets.html
    */
-  public listDatasets () {
+  public listDatasets() {
     this.add('cognito-sync:ListDatasets');
     return this;
   }
@@ -327,7 +330,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListIdentityPoolUsage.html
    */
-  public listIdentityPoolUsage () {
+  public listIdentityPoolUsage() {
     this.add('cognito-sync:ListIdentityPoolUsage');
     return this;
   }
@@ -339,7 +342,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListRecords.html
    */
-  public listRecords () {
+  public listRecords() {
     this.add('cognito-sync:ListRecords');
     return this;
   }
@@ -349,7 +352,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public queryRecords () {
+  public queryRecords() {
     this.add('cognito-sync:QueryRecords');
     return this;
   }
@@ -361,7 +364,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html
    */
-  public registerDevice () {
+  public registerDevice() {
     this.add('cognito-sync:RegisterDevice');
     return this;
   }
@@ -373,7 +376,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetCognitoEvents.html
    */
-  public setCognitoEvents () {
+  public setCognitoEvents() {
     this.add('cognito-sync:SetCognitoEvents');
     return this;
   }
@@ -383,7 +386,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public setDatasetConfiguration () {
+  public setDatasetConfiguration() {
     this.add('cognito-sync:SetDatasetConfiguration');
     return this;
   }
@@ -395,7 +398,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetIdentityPoolConfiguration.html
    */
-  public setIdentityPoolConfiguration () {
+  public setIdentityPoolConfiguration() {
     this.add('cognito-sync:SetIdentityPoolConfiguration');
     return this;
   }
@@ -407,7 +410,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SubscribeToDataset.html
    */
-  public subscribeToDataset () {
+  public subscribeToDataset() {
     this.add('cognito-sync:SubscribeToDataset');
     return this;
   }
@@ -419,7 +422,7 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html
    */
-  public unsubscribeFromDataset () {
+  public unsubscribeFromDataset() {
     this.add('cognito-sync:UnsubscribeFromDataset');
     return this;
   }
@@ -431,8 +434,71 @@ export class CognitoSync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html
    */
-  public updateRecords () {
+  public updateRecords() {
     this.add('cognito-sync:UpdateRecords');
     return this;
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets
+   *
+   * @param identityPoolId - Identifier for the identityPoolId.
+   * @param identityId - Identifier for the identityId.
+   * @param datasetName - Identifier for the datasetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDataset(identityPoolId: string, identityId: string, datasetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}/dataset/${DatasetName}';
+    arn = arn.replace('${IdentityPoolId}', identityPoolId);
+    arn = arn.replace('${IdentityId}', identityId);
+    arn = arn.replace('${DatasetName}', datasetName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type identity to the statement
+   *
+   * https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html#authenticated-and-unauthenticated-identities
+   *
+   * @param identityPoolId - Identifier for the identityPoolId.
+   * @param identityId - Identifier for the identityId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIdentity(identityPoolId: string, identityId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}';
+    arn = arn.replace('${IdentityPoolId}', identityPoolId);
+    arn = arn.replace('${IdentityId}', identityId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type identitypool to the statement
+   *
+   * https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html
+   *
+   * @param identityPoolId - Identifier for the identityPoolId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}';
+    arn = arn.replace('${IdentityPoolId}', identityPoolId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

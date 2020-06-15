@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Macie extends PolicyStatement {
   public servicePrefix = 'macie';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateMemberAccount": {
       "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html",
       "description": "Enables the user to associate a specified AWS account with Amazon Macie as a member account.",
@@ -53,7 +53,7 @@ export class Macie extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Enables the user to associate a specified AWS account with Amazon Macie as a member account.
@@ -62,7 +62,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html
    */
-  public associateMemberAccount () {
+  public associateMemberAccount() {
     this.add('macie:AssociateMemberAccount');
     return this;
   }
@@ -74,7 +74,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html
    */
-  public associateS3Resources () {
+  public associateS3Resources() {
     this.add('macie:AssociateS3Resources');
     return this;
   }
@@ -86,7 +86,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html
    */
-  public disassociateMemberAccount () {
+  public disassociateMemberAccount() {
     this.add('macie:DisassociateMemberAccount');
     return this;
   }
@@ -98,7 +98,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html
    */
-  public disassociateS3Resources () {
+  public disassociateS3Resources() {
     this.add('macie:DisassociateS3Resources');
     return this;
   }
@@ -110,7 +110,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html
    */
-  public listMemberAccounts () {
+  public listMemberAccounts() {
     this.add('macie:ListMemberAccounts');
     return this;
   }
@@ -122,7 +122,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html
    */
-  public listS3Resources () {
+  public listS3Resources() {
     this.add('macie:ListS3Resources');
     return this;
   }
@@ -134,7 +134,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html
    */
-  public updateS3Resources () {
+  public updateS3Resources() {
     this.add('macie:UpdateS3Resources');
     return this;
   }

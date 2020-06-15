@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Translate extends PolicyStatement {
   public servicePrefix = 'translate';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeleteTerminology": {
       "url": "https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html",
       "description": "A synchronous action that deletes a custom terminology.",
@@ -54,7 +54,7 @@ export class Translate extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * A synchronous action that deletes a custom terminology.
@@ -63,7 +63,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html
    */
-  public deleteTerminology () {
+  public deleteTerminology() {
     this.add('translate:DeleteTerminology');
     return this;
   }
@@ -75,7 +75,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_DescribeTextTranslationJob.html
    */
-  public describeTextTranslationJob () {
+  public describeTextTranslationJob() {
     this.add('translate:DescribeTextTranslationJob');
     return this;
   }
@@ -87,7 +87,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_GetTerminology.html
    */
-  public getTerminology () {
+  public getTerminology() {
     this.add('translate:GetTerminology');
     return this;
   }
@@ -99,7 +99,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ImportTerminology.html
    */
-  public importTerminology () {
+  public importTerminology() {
     this.add('translate:ImportTerminology');
     return this;
   }
@@ -111,7 +111,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ListTerminologies.html
    */
-  public listTerminologies () {
+  public listTerminologies() {
     this.add('translate:ListTerminologies');
     return this;
   }
@@ -123,7 +123,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ListTextTranslationJobs.html
    */
-  public listTextTranslationJobs () {
+  public listTextTranslationJobs() {
     this.add('translate:ListTextTranslationJobs');
     return this;
   }
@@ -135,7 +135,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_StartTextTranslationJob.html
    */
-  public startTextTranslationJob () {
+  public startTextTranslationJob() {
     this.add('translate:StartTextTranslationJob');
     return this;
   }
@@ -147,7 +147,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_StopTextTranslationJob.html
    */
-  public stopTextTranslationJob () {
+  public stopTextTranslationJob() {
     this.add('translate:StopTextTranslationJob');
     return this;
   }
@@ -159,7 +159,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html
    */
-  public translateText () {
+  public translateText() {
     this.add('translate:TranslateText');
     return this;
   }

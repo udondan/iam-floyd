@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Wafv2 extends PolicyStatement {
   public servicePrefix = 'wafv2';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateWebACL": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html",
       "description": "Grants permission to associate a WebACL with a resource.",
@@ -465,9 +465,10 @@ export class Wafv2 extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "webacl": {
       "name": "webacl",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
       "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -475,6 +476,7 @@ export class Wafv2 extends PolicyStatement {
     },
     "ipset": {
       "name": "ipset",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html",
       "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -482,6 +484,7 @@ export class Wafv2 extends PolicyStatement {
     },
     "rulegroup": {
       "name": "rulegroup",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html",
       "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -489,6 +492,7 @@ export class Wafv2 extends PolicyStatement {
     },
     "regexpatternset": {
       "name": "regexpatternset",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html",
       "arn": "arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -496,12 +500,14 @@ export class Wafv2 extends PolicyStatement {
     },
     "loadbalancer/app/": {
       "name": "loadbalancer/app/",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
       "conditionKeys": []
     },
     "apigateway": {
       "name": "apigateway",
-      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/prod",
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",
+      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}",
       "conditionKeys": []
     }
   };
@@ -513,7 +519,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
    */
-  public associateWebACL () {
+  public associateWebACL() {
     this.add('wafv2:AssociateWebACL');
     return this;
   }
@@ -525,7 +531,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CheckCapacity.html
    */
-  public checkCapacity () {
+  public checkCapacity() {
     this.add('wafv2:CheckCapacity');
     return this;
   }
@@ -537,7 +543,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html
    */
-  public createIPSet () {
+  public createIPSet() {
     this.add('wafv2:CreateIPSet');
     return this;
   }
@@ -549,7 +555,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html
    */
-  public createRegexPatternSet () {
+  public createRegexPatternSet() {
     this.add('wafv2:CreateRegexPatternSet');
     return this;
   }
@@ -561,7 +567,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html
    */
-  public createRuleGroup () {
+  public createRuleGroup() {
     this.add('wafv2:CreateRuleGroup');
     return this;
   }
@@ -573,7 +579,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html
    */
-  public createWebACL () {
+  public createWebACL() {
     this.add('wafv2:CreateWebACL');
     return this;
   }
@@ -585,7 +591,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html
    */
-  public deleteFirewallManagerRuleGroups () {
+  public deleteFirewallManagerRuleGroups() {
     this.add('wafv2:DeleteFirewallManagerRuleGroups');
     return this;
   }
@@ -597,7 +603,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html
    */
-  public deleteIPSet () {
+  public deleteIPSet() {
     this.add('wafv2:DeleteIPSet');
     return this;
   }
@@ -609,7 +615,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html
    */
-  public deleteLoggingConfiguration () {
+  public deleteLoggingConfiguration() {
     this.add('wafv2:DeleteLoggingConfiguration');
     return this;
   }
@@ -621,7 +627,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html
    */
-  public deletePermissionPolicy () {
+  public deletePermissionPolicy() {
     this.add('wafv2:DeletePermissionPolicy');
     return this;
   }
@@ -633,7 +639,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRegexPatternSet.html
    */
-  public deleteRegexPatternSet () {
+  public deleteRegexPatternSet() {
     this.add('wafv2:DeleteRegexPatternSet');
     return this;
   }
@@ -645,7 +651,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRuleGroup.html
    */
-  public deleteRuleGroup () {
+  public deleteRuleGroup() {
     this.add('wafv2:DeleteRuleGroup');
     return this;
   }
@@ -657,7 +663,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html
    */
-  public deleteWebACL () {
+  public deleteWebACL() {
     this.add('wafv2:DeleteWebACL');
     return this;
   }
@@ -669,7 +675,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedRuleGroup.html
    */
-  public describeManagedRuleGroup () {
+  public describeManagedRuleGroup() {
     this.add('wafv2:DescribeManagedRuleGroup');
     return this;
   }
@@ -681,7 +687,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html
    */
-  public disassociateWebACL () {
+  public disassociateWebACL() {
     this.add('wafv2:DisassociateWebACL');
     return this;
   }
@@ -693,7 +699,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html
    */
-  public getIPSet () {
+  public getIPSet() {
     this.add('wafv2:GetIPSet');
     return this;
   }
@@ -705,7 +711,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html
    */
-  public getLoggingConfiguration () {
+  public getLoggingConfiguration() {
     this.add('wafv2:GetLoggingConfiguration');
     return this;
   }
@@ -717,7 +723,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetPermissionPolicy.html
    */
-  public getPermissionPolicy () {
+  public getPermissionPolicy() {
     this.add('wafv2:GetPermissionPolicy');
     return this;
   }
@@ -729,7 +735,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html
    */
-  public getRateBasedStatementManagedKeys () {
+  public getRateBasedStatementManagedKeys() {
     this.add('wafv2:GetRateBasedStatementManagedKeys');
     return this;
   }
@@ -741,7 +747,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html
    */
-  public getRegexPatternSet () {
+  public getRegexPatternSet() {
     this.add('wafv2:GetRegexPatternSet');
     return this;
   }
@@ -753,7 +759,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRuleGroup.html
    */
-  public getRuleGroup () {
+  public getRuleGroup() {
     this.add('wafv2:GetRuleGroup');
     return this;
   }
@@ -765,7 +771,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetSampledRequests.html
    */
-  public getSampledRequests () {
+  public getSampledRequests() {
     this.add('wafv2:GetSampledRequests');
     return this;
   }
@@ -777,7 +783,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html
    */
-  public getWebACL () {
+  public getWebACL() {
     this.add('wafv2:GetWebACL');
     return this;
   }
@@ -789,7 +795,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html
    */
-  public getWebACLForResource () {
+  public getWebACLForResource() {
     this.add('wafv2:GetWebACLForResource');
     return this;
   }
@@ -801,7 +807,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroups.html
    */
-  public listAvailableManagedRuleGroups () {
+  public listAvailableManagedRuleGroups() {
     this.add('wafv2:ListAvailableManagedRuleGroups');
     return this;
   }
@@ -813,7 +819,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListIPSets.html
    */
-  public listIPSets () {
+  public listIPSets() {
     this.add('wafv2:ListIPSets');
     return this;
   }
@@ -825,7 +831,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListLoggingConfigurations.html
    */
-  public listLoggingConfigurations () {
+  public listLoggingConfigurations() {
     this.add('wafv2:ListLoggingConfigurations');
     return this;
   }
@@ -837,7 +843,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRegexPatternSets.html
    */
-  public listRegexPatternSets () {
+  public listRegexPatternSets() {
     this.add('wafv2:ListRegexPatternSets');
     return this;
   }
@@ -849,7 +855,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html
    */
-  public listResourcesForWebACL () {
+  public listResourcesForWebACL() {
     this.add('wafv2:ListResourcesForWebACL');
     return this;
   }
@@ -861,7 +867,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRuleGroups.html
    */
-  public listRuleGroups () {
+  public listRuleGroups() {
     this.add('wafv2:ListRuleGroups');
     return this;
   }
@@ -873,7 +879,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('wafv2:ListTagsForResource');
     return this;
   }
@@ -885,7 +891,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListWebACLs.html
    */
-  public listWebACLs () {
+  public listWebACLs() {
     this.add('wafv2:ListWebACLs');
     return this;
   }
@@ -897,7 +903,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html
    */
-  public putLoggingConfiguration () {
+  public putLoggingConfiguration() {
     this.add('wafv2:PutLoggingConfiguration');
     return this;
   }
@@ -909,7 +915,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html
    */
-  public putPermissionPolicy () {
+  public putPermissionPolicy() {
     this.add('wafv2:PutPermissionPolicy');
     return this;
   }
@@ -921,7 +927,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('wafv2:TagResource');
     return this;
   }
@@ -933,7 +939,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('wafv2:UntagResource');
     return this;
   }
@@ -945,7 +951,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html
    */
-  public updateIPSet () {
+  public updateIPSet() {
     this.add('wafv2:UpdateIPSet');
     return this;
   }
@@ -957,7 +963,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html
    */
-  public updateRegexPatternSet () {
+  public updateRegexPatternSet() {
     this.add('wafv2:UpdateRegexPatternSet');
     return this;
   }
@@ -969,7 +975,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRuleGroup.html
    */
-  public updateRuleGroup () {
+  public updateRuleGroup() {
     this.add('wafv2:UpdateRuleGroup');
     return this;
   }
@@ -981,8 +987,154 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
    */
-  public updateWebACL () {
+  public updateWebACL() {
     this.add('wafv2:UpdateWebACL');
     return this;
+  }
+
+  /**
+   * Adds a resource of type webacl to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}';
+    arn = arn.replace('${Scope}', scope);
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ipset to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}';
+    arn = arn.replace('${Scope}', scope);
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type rulegroup to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}';
+    arn = arn.replace('${Scope}', scope);
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type regexpatternset to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html
+   *
+   * @param scope - Identifier for the scope.
+   * @param name - Identifier for the name.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}';
+    arn = arn.replace('${Scope}', scope);
+    arn = arn.replace('${Name}', name);
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type loadbalancer/app/ to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type apigateway to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html
+   *
+   * @param apiId - Identifier for the apiId.
+   * @param stageName - Identifier for the stageName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onApigateway(apiId: string, stageName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}';
+    arn = arn.replace('${ApiId}', apiId);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

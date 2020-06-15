@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Textract extends PolicyStatement {
   public servicePrefix = 'textract';
-  public actions : Actions = {
+  public actions: Actions = {
     "AnalyzeDocument": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html",
       "description": "Detects instances of real-world document entities within an image provided as input.",
@@ -39,7 +39,7 @@ export class Textract extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Detects instances of real-world document entities within an image provided as input.
@@ -48,7 +48,7 @@ export class Textract extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html
    */
-  public analyzeDocument () {
+  public analyzeDocument() {
     this.add('textract:AnalyzeDocument');
     return this;
   }
@@ -60,7 +60,7 @@ export class Textract extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_DetectDocumentText.html
    */
-  public detectDocumentText () {
+  public detectDocumentText() {
     this.add('textract:DetectDocumentText');
     return this;
   }
@@ -72,7 +72,7 @@ export class Textract extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentAnalysis.html
    */
-  public getDocumentAnalysis () {
+  public getDocumentAnalysis() {
     this.add('textract:GetDocumentAnalysis');
     return this;
   }
@@ -84,7 +84,7 @@ export class Textract extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentTextDetection.html
    */
-  public getDocumentTextDetection () {
+  public getDocumentTextDetection() {
     this.add('textract:GetDocumentTextDetection');
     return this;
   }
@@ -96,7 +96,7 @@ export class Textract extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html
    */
-  public startDocumentAnalysis () {
+  public startDocumentAnalysis() {
     this.add('textract:StartDocumentAnalysis');
     return this;
   }
@@ -108,7 +108,7 @@ export class Textract extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html
    */
-  public startDocumentTextDetection () {
+  public startDocumentTextDetection() {
     this.add('textract:StartDocumentTextDetection');
     return this;
   }

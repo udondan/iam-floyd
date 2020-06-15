@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Firehose extends PolicyStatement {
   public servicePrefix = 'firehose';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateDeliveryStream": {
       "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html",
       "description": "Creates a delivery stream.",
@@ -135,9 +135,10 @@ export class Firehose extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "deliverystream": {
       "name": "deliverystream",
+      "url": "https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html",
       "arn": "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -152,7 +153,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html
    */
-  public createDeliveryStream () {
+  public createDeliveryStream() {
     this.add('firehose:CreateDeliveryStream');
     return this;
   }
@@ -164,7 +165,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html
    */
-  public deleteDeliveryStream () {
+  public deleteDeliveryStream() {
     this.add('firehose:DeleteDeliveryStream');
     return this;
   }
@@ -176,7 +177,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html
    */
-  public describeDeliveryStream () {
+  public describeDeliveryStream() {
     this.add('firehose:DescribeDeliveryStream');
     return this;
   }
@@ -188,7 +189,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html
    */
-  public listDeliveryStreams () {
+  public listDeliveryStreams() {
     this.add('firehose:ListDeliveryStreams');
     return this;
   }
@@ -200,7 +201,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListTagsForDeliveryStream.html
    */
-  public listTagsForDeliveryStream () {
+  public listTagsForDeliveryStream() {
     this.add('firehose:ListTagsForDeliveryStream');
     return this;
   }
@@ -212,7 +213,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html
    */
-  public putRecord () {
+  public putRecord() {
     this.add('firehose:PutRecord');
     return this;
   }
@@ -224,7 +225,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html
    */
-  public putRecordBatch () {
+  public putRecordBatch() {
     this.add('firehose:PutRecordBatch');
     return this;
   }
@@ -236,7 +237,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html
    */
-  public startDeliveryStreamEncryption () {
+  public startDeliveryStreamEncryption() {
     this.add('firehose:StartDeliveryStreamEncryption');
     return this;
   }
@@ -248,7 +249,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StopDeliveryStreamEncryption.html
    */
-  public stopDeliveryStreamEncryption () {
+  public stopDeliveryStreamEncryption() {
     this.add('firehose:StopDeliveryStreamEncryption');
     return this;
   }
@@ -260,7 +261,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_TagDeliveryStream.html
    */
-  public tagDeliveryStream () {
+  public tagDeliveryStream() {
     this.add('firehose:TagDeliveryStream');
     return this;
   }
@@ -272,7 +273,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UntagDeliveryStream.html
    */
-  public untagDeliveryStream () {
+  public untagDeliveryStream() {
     this.add('firehose:UntagDeliveryStream');
     return this;
   }
@@ -284,8 +285,30 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html
    */
-  public updateDestination () {
+  public updateDestination() {
     this.add('firehose:UpdateDestination');
     return this;
+  }
+
+  /**
+   * Adds a resource of type deliverystream to the statement
+   *
+   * https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html
+   *
+   * @param deliveryStreamName - Identifier for the deliveryStreamName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeliverystream(deliveryStreamName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}';
+    arn = arn.replace('${DeliveryStreamName}', deliveryStreamName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

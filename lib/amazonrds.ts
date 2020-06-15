@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Rds extends PolicyStatement {
   public servicePrefix = 'rds';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddRoleToDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html",
       "description": "Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.",
@@ -1460,9 +1460,10 @@ export class Rds extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1471,6 +1472,7 @@ export class Rds extends PolicyStatement {
     },
     "cluster-endpoint": {
       "name": "cluster-endpoint",
+      "url": "{ActionsDocRoot}API_DBClusterEndpoint.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1478,6 +1480,7 @@ export class Rds extends PolicyStatement {
     },
     "cluster-pg": {
       "name": "cluster-pg",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1486,6 +1489,7 @@ export class Rds extends PolicyStatement {
     },
     "cluster-snapshot": {
       "name": "cluster-snapshot",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1494,6 +1498,7 @@ export class Rds extends PolicyStatement {
     },
     "db": {
       "name": "db",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1510,6 +1515,7 @@ export class Rds extends PolicyStatement {
     },
     "es": {
       "name": "es",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1518,11 +1524,13 @@ export class Rds extends PolicyStatement {
     },
     "global-cluster": {
       "name": "global-cluster",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:${GlobalCluster}",
       "conditionKeys": []
     },
     "og": {
       "name": "og",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithOptionGroups.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1531,6 +1539,7 @@ export class Rds extends PolicyStatement {
     },
     "pg": {
       "name": "pg",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1539,6 +1548,7 @@ export class Rds extends PolicyStatement {
     },
     "proxy": {
       "name": "proxy",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1546,6 +1556,7 @@ export class Rds extends PolicyStatement {
     },
     "ri": {
       "name": "ri",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1554,6 +1565,7 @@ export class Rds extends PolicyStatement {
     },
     "secgrp": {
       "name": "secgrp",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1562,6 +1574,7 @@ export class Rds extends PolicyStatement {
     },
     "snapshot": {
       "name": "snapshot",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1570,6 +1583,7 @@ export class Rds extends PolicyStatement {
     },
     "subgrp": {
       "name": "subgrp",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Scenarios.html#USER_VPC.Scenario1",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1578,11 +1592,13 @@ export class Rds extends PolicyStatement {
     },
     "target": {
       "name": "target",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:target:${TargetId}",
       "conditionKeys": []
     },
     "target-group": {
       "name": "target-group",
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1597,7 +1613,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html
    */
-  public addRoleToDBCluster () {
+  public addRoleToDBCluster() {
     this.add('rds:AddRoleToDBCluster');
     return this;
   }
@@ -1609,7 +1625,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html
    */
-  public addRoleToDBInstance () {
+  public addRoleToDBInstance() {
     this.add('rds:AddRoleToDBInstance');
     return this;
   }
@@ -1621,7 +1637,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddSourceIdentifierToSubscription.html
    */
-  public addSourceIdentifierToSubscription () {
+  public addSourceIdentifierToSubscription() {
     this.add('rds:AddSourceIdentifierToSubscription');
     return this;
   }
@@ -1633,7 +1649,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource () {
+  public addTagsToResource() {
     this.add('rds:AddTagsToResource');
     return this;
   }
@@ -1645,7 +1661,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ApplyPendingMaintenanceAction.html
    */
-  public applyPendingMaintenanceAction () {
+  public applyPendingMaintenanceAction() {
     this.add('rds:ApplyPendingMaintenanceAction');
     return this;
   }
@@ -1657,7 +1673,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html
    */
-  public authorizeDBSecurityGroupIngress () {
+  public authorizeDBSecurityGroupIngress() {
     this.add('rds:AuthorizeDBSecurityGroupIngress');
     return this;
   }
@@ -1669,7 +1685,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BacktrackDBCluster.html
    */
-  public backtrackDBCluster () {
+  public backtrackDBCluster() {
     this.add('rds:BacktrackDBCluster');
     return this;
   }
@@ -1681,7 +1697,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CancelExportTask.html
    */
-  public cancelExportTask () {
+  public cancelExportTask() {
     this.add('rds:CancelExportTask');
     return this;
   }
@@ -1693,7 +1709,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html
    */
-  public copyDBClusterParameterGroup () {
+  public copyDBClusterParameterGroup() {
     this.add('rds:CopyDBClusterParameterGroup');
     return this;
   }
@@ -1705,7 +1721,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html
    */
-  public copyDBClusterSnapshot () {
+  public copyDBClusterSnapshot() {
     this.add('rds:CopyDBClusterSnapshot');
     return this;
   }
@@ -1717,7 +1733,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html
    */
-  public copyDBParameterGroup () {
+  public copyDBParameterGroup() {
     this.add('rds:CopyDBParameterGroup');
     return this;
   }
@@ -1729,7 +1745,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html
    */
-  public copyDBSnapshot () {
+  public copyDBSnapshot() {
     this.add('rds:CopyDBSnapshot');
     return this;
   }
@@ -1741,7 +1757,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html
    */
-  public copyOptionGroup () {
+  public copyOptionGroup() {
     this.add('rds:CopyOptionGroup');
     return this;
   }
@@ -1753,7 +1769,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
    */
-  public createDBCluster () {
+  public createDBCluster() {
     this.add('rds:CreateDBCluster');
     return this;
   }
@@ -1765,7 +1781,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html
    */
-  public createDBClusterEndpoint () {
+  public createDBClusterEndpoint() {
     this.add('rds:CreateDBClusterEndpoint');
     return this;
   }
@@ -1777,7 +1793,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html
    */
-  public createDBClusterParameterGroup () {
+  public createDBClusterParameterGroup() {
     this.add('rds:CreateDBClusterParameterGroup');
     return this;
   }
@@ -1789,7 +1805,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html
    */
-  public createDBClusterSnapshot () {
+  public createDBClusterSnapshot() {
     this.add('rds:CreateDBClusterSnapshot');
     return this;
   }
@@ -1801,7 +1817,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
    */
-  public createDBInstance () {
+  public createDBInstance() {
     this.add('rds:CreateDBInstance');
     return this;
   }
@@ -1813,7 +1829,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html
    */
-  public createDBInstanceReadReplica () {
+  public createDBInstanceReadReplica() {
     this.add('rds:CreateDBInstanceReadReplica');
     return this;
   }
@@ -1825,7 +1841,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html
    */
-  public createDBParameterGroup () {
+  public createDBParameterGroup() {
     this.add('rds:CreateDBParameterGroup');
     return this;
   }
@@ -1837,7 +1853,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html
    */
-  public createDBProxy () {
+  public createDBProxy() {
     this.add('rds:CreateDBProxy');
     return this;
   }
@@ -1849,7 +1865,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html
    */
-  public createDBSecurityGroup () {
+  public createDBSecurityGroup() {
     this.add('rds:CreateDBSecurityGroup');
     return this;
   }
@@ -1861,7 +1877,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html
    */
-  public createDBSnapshot () {
+  public createDBSnapshot() {
     this.add('rds:CreateDBSnapshot');
     return this;
   }
@@ -1873,7 +1889,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html
    */
-  public createDBSubnetGroup () {
+  public createDBSubnetGroup() {
     this.add('rds:CreateDBSubnetGroup');
     return this;
   }
@@ -1885,7 +1901,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html
    */
-  public createEventSubscription () {
+  public createEventSubscription() {
     this.add('rds:CreateEventSubscription');
     return this;
   }
@@ -1897,7 +1913,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateGlobalCluster.html
    */
-  public createGlobalCluster () {
+  public createGlobalCluster() {
     this.add('rds:CreateGlobalCluster');
     return this;
   }
@@ -1909,7 +1925,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html
    */
-  public createOptionGroup () {
+  public createOptionGroup() {
     this.add('rds:CreateOptionGroup');
     return this;
   }
@@ -1921,7 +1937,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html
    */
-  public deleteDBCluster () {
+  public deleteDBCluster() {
     this.add('rds:DeleteDBCluster');
     return this;
   }
@@ -1933,7 +1949,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterEndpoint.html
    */
-  public deleteDBClusterEndpoint () {
+  public deleteDBClusterEndpoint() {
     this.add('rds:DeleteDBClusterEndpoint');
     return this;
   }
@@ -1945,7 +1961,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterParameterGroup.html
    */
-  public deleteDBClusterParameterGroup () {
+  public deleteDBClusterParameterGroup() {
     this.add('rds:DeleteDBClusterParameterGroup');
     return this;
   }
@@ -1957,7 +1973,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterSnapshot.html
    */
-  public deleteDBClusterSnapshot () {
+  public deleteDBClusterSnapshot() {
     this.add('rds:DeleteDBClusterSnapshot');
     return this;
   }
@@ -1969,7 +1985,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html
    */
-  public deleteDBInstance () {
+  public deleteDBInstance() {
     this.add('rds:DeleteDBInstance');
     return this;
   }
@@ -1981,7 +1997,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstanceAutomatedBackup.html
    */
-  public deleteDBInstanceAutomatedBackup () {
+  public deleteDBInstanceAutomatedBackup() {
     this.add('rds:DeleteDBInstanceAutomatedBackup');
     return this;
   }
@@ -1993,7 +2009,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html
    */
-  public deleteDBParameterGroup () {
+  public deleteDBParameterGroup() {
     this.add('rds:DeleteDBParameterGroup');
     return this;
   }
@@ -2005,7 +2021,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBProxy.html
    */
-  public deleteDBProxy () {
+  public deleteDBProxy() {
     this.add('rds:DeleteDBProxy');
     return this;
   }
@@ -2017,7 +2033,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSecurityGroup.html
    */
-  public deleteDBSecurityGroup () {
+  public deleteDBSecurityGroup() {
     this.add('rds:DeleteDBSecurityGroup');
     return this;
   }
@@ -2029,7 +2045,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSnapshot.html
    */
-  public deleteDBSnapshot () {
+  public deleteDBSnapshot() {
     this.add('rds:DeleteDBSnapshot');
     return this;
   }
@@ -2041,7 +2057,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSubnetGroup.html
    */
-  public deleteDBSubnetGroup () {
+  public deleteDBSubnetGroup() {
     this.add('rds:DeleteDBSubnetGroup');
     return this;
   }
@@ -2053,7 +2069,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteEventSubscription.html
    */
-  public deleteEventSubscription () {
+  public deleteEventSubscription() {
     this.add('rds:DeleteEventSubscription');
     return this;
   }
@@ -2065,7 +2081,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteGlobalCluster.html
    */
-  public deleteGlobalCluster () {
+  public deleteGlobalCluster() {
     this.add('rds:DeleteGlobalCluster');
     return this;
   }
@@ -2077,7 +2093,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteOptionGroup.html
    */
-  public deleteOptionGroup () {
+  public deleteOptionGroup() {
     this.add('rds:DeleteOptionGroup');
     return this;
   }
@@ -2089,7 +2105,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeregisterDBProxyTargets.html
    */
-  public deregisterDBProxyTargets () {
+  public deregisterDBProxyTargets() {
     this.add('rds:DeregisterDBProxyTargets');
     return this;
   }
@@ -2101,7 +2117,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeAccountAttributes.html
    */
-  public describeAccountAttributes () {
+  public describeAccountAttributes() {
     this.add('rds:DescribeAccountAttributes');
     return this;
   }
@@ -2113,7 +2129,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html
    */
-  public describeCertificates () {
+  public describeCertificates() {
     this.add('rds:DescribeCertificates');
     return this;
   }
@@ -2125,7 +2141,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterBacktracks.html
    */
-  public describeDBClusterBacktracks () {
+  public describeDBClusterBacktracks() {
     this.add('rds:DescribeDBClusterBacktracks');
     return this;
   }
@@ -2137,7 +2153,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterEndpoints.html
    */
-  public describeDBClusterEndpoints () {
+  public describeDBClusterEndpoints() {
     this.add('rds:DescribeDBClusterEndpoints');
     return this;
   }
@@ -2149,7 +2165,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html
    */
-  public describeDBClusterParameterGroups () {
+  public describeDBClusterParameterGroups() {
     this.add('rds:DescribeDBClusterParameterGroups');
     return this;
   }
@@ -2161,7 +2177,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html
    */
-  public describeDBClusterParameters () {
+  public describeDBClusterParameters() {
     this.add('rds:DescribeDBClusterParameters');
     return this;
   }
@@ -2173,7 +2189,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshotAttributes.html
    */
-  public describeDBClusterSnapshotAttributes () {
+  public describeDBClusterSnapshotAttributes() {
     this.add('rds:DescribeDBClusterSnapshotAttributes');
     return this;
   }
@@ -2185,7 +2201,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html
    */
-  public describeDBClusterSnapshots () {
+  public describeDBClusterSnapshots() {
     this.add('rds:DescribeDBClusterSnapshots');
     return this;
   }
@@ -2197,7 +2213,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html
    */
-  public describeDBClusters () {
+  public describeDBClusters() {
     this.add('rds:DescribeDBClusters');
     return this;
   }
@@ -2209,7 +2225,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html
    */
-  public describeDBEngineVersions () {
+  public describeDBEngineVersions() {
     this.add('rds:DescribeDBEngineVersions');
     return this;
   }
@@ -2221,7 +2237,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstanceAutomatedBackups.html
    */
-  public describeDBInstanceAutomatedBackups () {
+  public describeDBInstanceAutomatedBackups() {
     this.add('rds:DescribeDBInstanceAutomatedBackups');
     return this;
   }
@@ -2233,7 +2249,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html
    */
-  public describeDBInstances () {
+  public describeDBInstances() {
     this.add('rds:DescribeDBInstances');
     return this;
   }
@@ -2245,7 +2261,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html
    */
-  public describeDBLogFiles () {
+  public describeDBLogFiles() {
     this.add('rds:DescribeDBLogFiles');
     return this;
   }
@@ -2257,7 +2273,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html
    */
-  public describeDBParameterGroups () {
+  public describeDBParameterGroups() {
     this.add('rds:DescribeDBParameterGroups');
     return this;
   }
@@ -2269,7 +2285,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameters.html
    */
-  public describeDBParameters () {
+  public describeDBParameters() {
     this.add('rds:DescribeDBParameters');
     return this;
   }
@@ -2281,7 +2297,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxies.html
    */
-  public describeDBProxies () {
+  public describeDBProxies() {
     this.add('rds:DescribeDBProxies');
     return this;
   }
@@ -2293,7 +2309,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyTargetGroups.html
    */
-  public describeDBProxyTargetGroups () {
+  public describeDBProxyTargetGroups() {
     this.add('rds:DescribeDBProxyTargetGroups');
     return this;
   }
@@ -2305,7 +2321,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyTargets.html
    */
-  public describeDBProxyTargets () {
+  public describeDBProxyTargets() {
     this.add('rds:DescribeDBProxyTargets');
     return this;
   }
@@ -2317,7 +2333,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSecurityGroups.html
    */
-  public describeDBSecurityGroups () {
+  public describeDBSecurityGroups() {
     this.add('rds:DescribeDBSecurityGroups');
     return this;
   }
@@ -2329,7 +2345,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotAttributes.html
    */
-  public describeDBSnapshotAttributes () {
+  public describeDBSnapshotAttributes() {
     this.add('rds:DescribeDBSnapshotAttributes');
     return this;
   }
@@ -2341,7 +2357,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html
    */
-  public describeDBSnapshots () {
+  public describeDBSnapshots() {
     this.add('rds:DescribeDBSnapshots');
     return this;
   }
@@ -2353,7 +2369,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSubnetGroups.html
    */
-  public describeDBSubnetGroups () {
+  public describeDBSubnetGroups() {
     this.add('rds:DescribeDBSubnetGroups');
     return this;
   }
@@ -2365,7 +2381,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultClusterParameters.html
    */
-  public describeEngineDefaultClusterParameters () {
+  public describeEngineDefaultClusterParameters() {
     this.add('rds:DescribeEngineDefaultClusterParameters');
     return this;
   }
@@ -2377,7 +2393,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html
    */
-  public describeEngineDefaultParameters () {
+  public describeEngineDefaultParameters() {
     this.add('rds:DescribeEngineDefaultParameters');
     return this;
   }
@@ -2389,7 +2405,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html
    */
-  public describeEventCategories () {
+  public describeEventCategories() {
     this.add('rds:DescribeEventCategories');
     return this;
   }
@@ -2401,7 +2417,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventSubscriptions.html
    */
-  public describeEventSubscriptions () {
+  public describeEventSubscriptions() {
     this.add('rds:DescribeEventSubscriptions');
     return this;
   }
@@ -2413,7 +2429,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html
    */
-  public describeEvents () {
+  public describeEvents() {
     this.add('rds:DescribeEvents');
     return this;
   }
@@ -2425,7 +2441,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeExportTasks.html
    */
-  public describeExportTasks () {
+  public describeExportTasks() {
     this.add('rds:DescribeExportTasks');
     return this;
   }
@@ -2437,7 +2453,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeGlobalClusters.html
    */
-  public describeGlobalClusters () {
+  public describeGlobalClusters() {
     this.add('rds:DescribeGlobalClusters');
     return this;
   }
@@ -2449,7 +2465,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html
    */
-  public describeOptionGroupOptions () {
+  public describeOptionGroupOptions() {
     this.add('rds:DescribeOptionGroupOptions');
     return this;
   }
@@ -2461,7 +2477,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroups.html
    */
-  public describeOptionGroups () {
+  public describeOptionGroups() {
     this.add('rds:DescribeOptionGroups');
     return this;
   }
@@ -2473,7 +2489,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOrderableDBInstanceOptions.html
    */
-  public describeOrderableDBInstanceOptions () {
+  public describeOrderableDBInstanceOptions() {
     this.add('rds:DescribeOrderableDBInstanceOptions');
     return this;
   }
@@ -2485,7 +2501,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribePendingMaintenanceActions.html
    */
-  public describePendingMaintenanceActions () {
+  public describePendingMaintenanceActions() {
     this.add('rds:DescribePendingMaintenanceActions');
     return this;
   }
@@ -2497,7 +2513,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstances.html
    */
-  public describeReservedDBInstances () {
+  public describeReservedDBInstances() {
     this.add('rds:DescribeReservedDBInstances');
     return this;
   }
@@ -2509,7 +2525,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstancesOfferings.html
    */
-  public describeReservedDBInstancesOfferings () {
+  public describeReservedDBInstancesOfferings() {
     this.add('rds:DescribeReservedDBInstancesOfferings');
     return this;
   }
@@ -2521,7 +2537,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeSourceRegions.html
    */
-  public describeSourceRegions () {
+  public describeSourceRegions() {
     this.add('rds:DescribeSourceRegions');
     return this;
   }
@@ -2533,7 +2549,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeValidDBInstanceModifications.html
    */
-  public describeValidDBInstanceModifications () {
+  public describeValidDBInstanceModifications() {
     this.add('rds:DescribeValidDBInstanceModifications');
     return this;
   }
@@ -2545,7 +2561,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/RESTReference.html#RESTReference.DownloadCompleteDBLogFile
    */
-  public downloadCompleteDBLogFile () {
+  public downloadCompleteDBLogFile() {
     this.add('rds:DownloadCompleteDBLogFile');
     return this;
   }
@@ -2557,7 +2573,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DownloadDBLogFilePortion.html
    */
-  public downloadDBLogFilePortion () {
+  public downloadDBLogFilePortion() {
     this.add('rds:DownloadDBLogFilePortion');
     return this;
   }
@@ -2569,7 +2585,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverDBCluster.html
    */
-  public failoverDBCluster () {
+  public failoverDBCluster() {
     this.add('rds:FailoverDBCluster');
     return this;
   }
@@ -2581,7 +2597,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('rds:ListTagsForResource');
     return this;
   }
@@ -2593,7 +2609,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCurrentDBClusterCapacity.html
    */
-  public modifyCurrentDBClusterCapacity () {
+  public modifyCurrentDBClusterCapacity() {
     this.add('rds:ModifyCurrentDBClusterCapacity');
     return this;
   }
@@ -2605,7 +2621,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html
    */
-  public modifyDBCluster () {
+  public modifyDBCluster() {
     this.add('rds:ModifyDBCluster');
     return this;
   }
@@ -2617,7 +2633,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterEndpoint.html
    */
-  public modifyDBClusterEndpoint () {
+  public modifyDBClusterEndpoint() {
     this.add('rds:ModifyDBClusterEndpoint');
     return this;
   }
@@ -2629,7 +2645,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterParameterGroup.html
    */
-  public modifyDBClusterParameterGroup () {
+  public modifyDBClusterParameterGroup() {
     this.add('rds:ModifyDBClusterParameterGroup');
     return this;
   }
@@ -2641,7 +2657,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html
    */
-  public modifyDBClusterSnapshotAttribute () {
+  public modifyDBClusterSnapshotAttribute() {
     this.add('rds:ModifyDBClusterSnapshotAttribute');
     return this;
   }
@@ -2653,7 +2669,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html
    */
-  public modifyDBInstance () {
+  public modifyDBInstance() {
     this.add('rds:ModifyDBInstance');
     return this;
   }
@@ -2665,7 +2681,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html
    */
-  public modifyDBParameterGroup () {
+  public modifyDBParameterGroup() {
     this.add('rds:ModifyDBParameterGroup');
     return this;
   }
@@ -2677,7 +2693,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxy.html
    */
-  public modifyDBProxy () {
+  public modifyDBProxy() {
     this.add('rds:ModifyDBProxy');
     return this;
   }
@@ -2689,7 +2705,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxyTargetGroup.html
    */
-  public modifyDBProxyTargetGroup () {
+  public modifyDBProxyTargetGroup() {
     this.add('rds:ModifyDBProxyTargetGroup');
     return this;
   }
@@ -2701,7 +2717,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshot.html
    */
-  public modifyDBSnapshot () {
+  public modifyDBSnapshot() {
     this.add('rds:ModifyDBSnapshot');
     return this;
   }
@@ -2713,7 +2729,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html
    */
-  public modifyDBSnapshotAttribute () {
+  public modifyDBSnapshotAttribute() {
     this.add('rds:ModifyDBSnapshotAttribute');
     return this;
   }
@@ -2725,7 +2741,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSubnetGroup.html
    */
-  public modifyDBSubnetGroup () {
+  public modifyDBSubnetGroup() {
     this.add('rds:ModifyDBSubnetGroup');
     return this;
   }
@@ -2737,7 +2753,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyEventSubscription.html
    */
-  public modifyEventSubscription () {
+  public modifyEventSubscription() {
     this.add('rds:ModifyEventSubscription');
     return this;
   }
@@ -2749,7 +2765,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyGlobalCluster.html
    */
-  public modifyGlobalCluster () {
+  public modifyGlobalCluster() {
     this.add('rds:ModifyGlobalCluster');
     return this;
   }
@@ -2761,7 +2777,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html
    */
-  public modifyOptionGroup () {
+  public modifyOptionGroup() {
     this.add('rds:ModifyOptionGroup');
     return this;
   }
@@ -2773,7 +2789,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html
    */
-  public promoteReadReplica () {
+  public promoteReadReplica() {
     this.add('rds:PromoteReadReplica');
     return this;
   }
@@ -2785,7 +2801,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplicaDBCluster.html
    */
-  public promoteReadReplicaDBCluster () {
+  public promoteReadReplicaDBCluster() {
     this.add('rds:PromoteReadReplicaDBCluster');
     return this;
   }
@@ -2797,7 +2813,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html
    */
-  public purchaseReservedDBInstancesOffering () {
+  public purchaseReservedDBInstancesOffering() {
     this.add('rds:PurchaseReservedDBInstancesOffering');
     return this;
   }
@@ -2809,7 +2825,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBInstance.html
    */
-  public rebootDBInstance () {
+  public rebootDBInstance() {
     this.add('rds:RebootDBInstance');
     return this;
   }
@@ -2821,7 +2837,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RegisterDBProxyTargets.html
    */
-  public registerDBProxyTargets () {
+  public registerDBProxyTargets() {
     this.add('rds:RegisterDBProxyTargets');
     return this;
   }
@@ -2833,7 +2849,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveFromGlobalCluster.html
    */
-  public removeFromGlobalCluster () {
+  public removeFromGlobalCluster() {
     this.add('rds:RemoveFromGlobalCluster');
     return this;
   }
@@ -2845,7 +2861,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html
    */
-  public removeRoleFromDBCluster () {
+  public removeRoleFromDBCluster() {
     this.add('rds:RemoveRoleFromDBCluster');
     return this;
   }
@@ -2857,7 +2873,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html
    */
-  public removeRoleFromDBInstance () {
+  public removeRoleFromDBInstance() {
     this.add('rds:RemoveRoleFromDBInstance');
     return this;
   }
@@ -2869,7 +2885,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveSourceIdentifierFromSubscription.html
    */
-  public removeSourceIdentifierFromSubscription () {
+  public removeSourceIdentifierFromSubscription() {
     this.add('rds:RemoveSourceIdentifierFromSubscription');
     return this;
   }
@@ -2881,7 +2897,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource () {
+  public removeTagsFromResource() {
     this.add('rds:RemoveTagsFromResource');
     return this;
   }
@@ -2893,7 +2909,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBClusterParameterGroup.html
    */
-  public resetDBClusterParameterGroup () {
+  public resetDBClusterParameterGroup() {
     this.add('rds:ResetDBClusterParameterGroup');
     return this;
   }
@@ -2905,7 +2921,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBParameterGroup.html
    */
-  public resetDBParameterGroup () {
+  public resetDBParameterGroup() {
     this.add('rds:ResetDBParameterGroup');
     return this;
   }
@@ -2917,7 +2933,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html
    */
-  public restoreDBClusterFromS3 () {
+  public restoreDBClusterFromS3() {
     this.add('rds:RestoreDBClusterFromS3');
     return this;
   }
@@ -2929,7 +2945,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html
    */
-  public restoreDBClusterFromSnapshot () {
+  public restoreDBClusterFromSnapshot() {
     this.add('rds:RestoreDBClusterFromSnapshot');
     return this;
   }
@@ -2941,7 +2957,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html
    */
-  public restoreDBClusterToPointInTime () {
+  public restoreDBClusterToPointInTime() {
     this.add('rds:RestoreDBClusterToPointInTime');
     return this;
   }
@@ -2953,7 +2969,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html
    */
-  public restoreDBInstanceFromDBSnapshot () {
+  public restoreDBInstanceFromDBSnapshot() {
     this.add('rds:RestoreDBInstanceFromDBSnapshot');
     return this;
   }
@@ -2965,7 +2981,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html
    */
-  public restoreDBInstanceFromS3 () {
+  public restoreDBInstanceFromS3() {
     this.add('rds:RestoreDBInstanceFromS3');
     return this;
   }
@@ -2977,7 +2993,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html
    */
-  public restoreDBInstanceToPointInTime () {
+  public restoreDBInstanceToPointInTime() {
     this.add('rds:RestoreDBInstanceToPointInTime');
     return this;
   }
@@ -2989,7 +3005,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RevokeDBSecurityGroupIngress.html
    */
-  public revokeDBSecurityGroupIngress () {
+  public revokeDBSecurityGroupIngress() {
     this.add('rds:RevokeDBSecurityGroupIngress');
     return this;
   }
@@ -3001,7 +3017,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartActivityStream.html
    */
-  public startActivityStream () {
+  public startActivityStream() {
     this.add('rds:StartActivityStream');
     return this;
   }
@@ -3013,7 +3029,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBCluster.html
    */
-  public startDBCluster () {
+  public startDBCluster() {
     this.add('rds:StartDBCluster');
     return this;
   }
@@ -3025,7 +3041,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstance.html
    */
-  public startDBInstance () {
+  public startDBInstance() {
     this.add('rds:StartDBInstance');
     return this;
   }
@@ -3037,7 +3053,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html
    */
-  public startExportTask () {
+  public startExportTask() {
     this.add('rds:StartExportTask');
     return this;
   }
@@ -3049,7 +3065,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopActivityStream.html
    */
-  public stopActivityStream () {
+  public stopActivityStream() {
     this.add('rds:StopActivityStream');
     return this;
   }
@@ -3061,7 +3077,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBCluster.html
    */
-  public stopDBCluster () {
+  public stopDBCluster() {
     this.add('rds:StopDBCluster');
     return this;
   }
@@ -3073,8 +3089,373 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstance.html
    */
-  public stopDBInstance () {
+  public stopDBInstance() {
     this.add('rds:StopDBInstance');
     return this;
+  }
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html
+   *
+   * @param dbClusterInstanceName - Identifier for the dbClusterInstanceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:cluster-tag/${TagKey}
+   */
+  public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
+    arn = arn.replace('${DbClusterInstanceName}', dbClusterInstanceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type cluster-endpoint to the statement
+   *
+   * {ActionsDocRoot}API_DBClusterEndpoint.html
+   *
+   * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}';
+    arn = arn.replace('${DbClusterEndpoint}', dbClusterEndpoint);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type cluster-pg to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html
+   *
+   * @param clusterParameterGroupName - Identifier for the clusterParameterGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:cluster-pg-tag/${TagKey}
+   */
+  public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}';
+    arn = arn.replace('${ClusterParameterGroupName}', clusterParameterGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type cluster-snapshot to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
+   *
+   * @param clusterSnapshotName - Identifier for the clusterSnapshotName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:cluster-snapshot-tag/${TagKey}
+   */
+  public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}';
+    arn = arn.replace('${ClusterSnapshotName}', clusterSnapshotName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type db to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html
+   *
+   * @param dbInstanceName - Identifier for the dbInstanceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:DatabaseClass
+   *  - rds:DatabaseEngine
+   *  - rds:DatabaseName
+   *  - rds:MultiAz
+   *  - rds:Piops
+   *  - rds:StorageEncrypted
+   *  - rds:StorageSize
+   *  - rds:Vpc
+   *  - rds:db-tag/${TagKey}
+   */
+  public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}';
+    arn = arn.replace('${DbInstanceName}', dbInstanceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type es to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html
+   *
+   * @param subscriptionName - Identifier for the subscriptionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:es-tag/${TagKey}
+   */
+  public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}';
+    arn = arn.replace('${SubscriptionName}', subscriptionName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type global-cluster to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html
+   *
+   * @param globalCluster - Identifier for the globalCluster.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGlobalCluster(globalCluster: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:${GlobalCluster}';
+    arn = arn.replace('${GlobalCluster}', globalCluster);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type og to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithOptionGroups.html
+   *
+   * @param optionGroupName - Identifier for the optionGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:og-tag/${TagKey}
+   */
+  public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}';
+    arn = arn.replace('${OptionGroupName}', optionGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pg to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html
+   *
+   * @param parameterGroupName - Identifier for the parameterGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:pg-tag/${TagKey}
+   */
+  public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}';
+    arn = arn.replace('${ParameterGroupName}', parameterGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type proxy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   *
+   * @param dbProxyId - Identifier for the dbProxyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}';
+    arn = arn.replace('${DbProxyId}', dbProxyId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ri to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html
+   *
+   * @param reservedDbInstanceName - Identifier for the reservedDbInstanceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:ri-tag/${TagKey}
+   */
+  public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}';
+    arn = arn.replace('${ReservedDbInstanceName}', reservedDbInstanceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type secgrp to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html
+   *
+   * @param securityGroupName - Identifier for the securityGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:secgrp-tag/${TagKey}
+   */
+  public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}';
+    arn = arn.replace('${SecurityGroupName}', securityGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type snapshot to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
+   *
+   * @param snapshotName - Identifier for the snapshotName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:snapshot-tag/${TagKey}
+   */
+  public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}';
+    arn = arn.replace('${SnapshotName}', snapshotName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type subgrp to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Scenarios.html#USER_VPC.Scenario1
+   *
+   * @param subnetGroupName - Identifier for the subnetGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - rds:subgrp-tag/${TagKey}
+   */
+  public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}';
+    arn = arn.replace('${SubnetGroupName}', subnetGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type target to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   *
+   * @param targetId - Identifier for the targetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:target:${TargetId}';
+    arn = arn.replace('${TargetId}', targetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type target-group to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBProxy.html
+   *
+   * @param targetGroupId - Identifier for the targetGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}';
+    arn = arn.replace('${TargetGroupId}', targetGroupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

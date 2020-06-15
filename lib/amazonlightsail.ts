@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Lightsail extends PolicyStatement {
   public servicePrefix = 'lightsail';
-  public actions : Actions = {
+  public actions: Actions = {
     "AllocateStaticIp": {
       "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html",
       "description": "Creates a static IP address that can be attached to an instance.",
@@ -1057,9 +1057,10 @@ export class Lightsail extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Domain": {
       "name": "Domain",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1067,6 +1068,7 @@ export class Lightsail extends PolicyStatement {
     },
     "Instance": {
       "name": "Instance",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1074,6 +1076,7 @@ export class Lightsail extends PolicyStatement {
     },
     "InstanceSnapshot": {
       "name": "InstanceSnapshot",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1081,6 +1084,7 @@ export class Lightsail extends PolicyStatement {
     },
     "KeyPair": {
       "name": "KeyPair",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1088,6 +1092,7 @@ export class Lightsail extends PolicyStatement {
     },
     "StaticIp": {
       "name": "StaticIp",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1095,6 +1100,7 @@ export class Lightsail extends PolicyStatement {
     },
     "Disk": {
       "name": "Disk",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1102,6 +1108,7 @@ export class Lightsail extends PolicyStatement {
     },
     "DiskSnapshot": {
       "name": "DiskSnapshot",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1109,6 +1116,7 @@ export class Lightsail extends PolicyStatement {
     },
     "LoadBalancer": {
       "name": "LoadBalancer",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1116,26 +1124,31 @@ export class Lightsail extends PolicyStatement {
     },
     "PeeredVpc": {
       "name": "PeeredVpc",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/PeeredVpc.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:PeeredVpc/${Id}",
       "conditionKeys": []
     },
     "LoadBalancerTlsCertificate": {
       "name": "LoadBalancerTlsCertificate",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/LoadBalancerTlsCertificate.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}",
       "conditionKeys": []
     },
     "ExportSnapshotRecord": {
       "name": "ExportSnapshotRecord",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}",
       "conditionKeys": []
     },
     "CloudFormationStackRecord": {
       "name": "CloudFormationStackRecord",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}",
       "conditionKeys": []
     },
     "RelationalDatabase": {
       "name": "RelationalDatabase",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1143,6 +1156,7 @@ export class Lightsail extends PolicyStatement {
     },
     "RelationalDatabaseSnapshot": {
       "name": "RelationalDatabaseSnapshot",
+      "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html",
       "arn": "arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1157,7 +1171,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html
    */
-  public allocateStaticIp () {
+  public allocateStaticIp() {
     this.add('lightsail:AllocateStaticIp');
     return this;
   }
@@ -1169,7 +1183,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachDisk.html
    */
-  public attachDisk () {
+  public attachDisk() {
     this.add('lightsail:AttachDisk');
     return this;
   }
@@ -1181,7 +1195,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachInstancesToLoadBalancer.html
    */
-  public attachInstancesToLoadBalancer () {
+  public attachInstancesToLoadBalancer() {
     this.add('lightsail:AttachInstancesToLoadBalancer');
     return this;
   }
@@ -1193,7 +1207,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachLoadBalancerTlsCertificate.html
    */
-  public attachLoadBalancerTlsCertificate () {
+  public attachLoadBalancerTlsCertificate() {
     this.add('lightsail:AttachLoadBalancerTlsCertificate');
     return this;
   }
@@ -1205,7 +1219,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AttachStaticIp.html
    */
-  public attachStaticIp () {
+  public attachStaticIp() {
     this.add('lightsail:AttachStaticIp');
     return this;
   }
@@ -1217,7 +1231,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloseInstancePublicPorts.html
    */
-  public closeInstancePublicPorts () {
+  public closeInstancePublicPorts() {
     this.add('lightsail:CloseInstancePublicPorts');
     return this;
   }
@@ -1229,7 +1243,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CopySnapshot.html
    */
-  public copySnapshot () {
+  public copySnapshot() {
     this.add('lightsail:CopySnapshot');
     return this;
   }
@@ -1241,7 +1255,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html
    */
-  public createCloudFormationStack () {
+  public createCloudFormationStack() {
     this.add('lightsail:CreateCloudFormationStack');
     return this;
   }
@@ -1253,7 +1267,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDisk.html
    */
-  public createDisk () {
+  public createDisk() {
     this.add('lightsail:CreateDisk');
     return this;
   }
@@ -1265,7 +1279,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html
    */
-  public createDiskFromSnapshot () {
+  public createDiskFromSnapshot() {
     this.add('lightsail:CreateDiskFromSnapshot');
     return this;
   }
@@ -1277,7 +1291,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html
    */
-  public createDiskSnapshot () {
+  public createDiskSnapshot() {
     this.add('lightsail:CreateDiskSnapshot');
     return this;
   }
@@ -1289,7 +1303,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html
    */
-  public createDomain () {
+  public createDomain() {
     this.add('lightsail:CreateDomain');
     return this;
   }
@@ -1301,7 +1315,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomainEntry.html
    */
-  public createDomainEntry () {
+  public createDomainEntry() {
     this.add('lightsail:CreateDomainEntry');
     return this;
   }
@@ -1313,7 +1327,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html
    */
-  public createInstanceSnapshot () {
+  public createInstanceSnapshot() {
     this.add('lightsail:CreateInstanceSnapshot');
     return this;
   }
@@ -1325,7 +1339,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html
    */
-  public createInstances () {
+  public createInstances() {
     this.add('lightsail:CreateInstances');
     return this;
   }
@@ -1337,7 +1351,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html
    */
-  public createInstancesFromSnapshot () {
+  public createInstancesFromSnapshot() {
     this.add('lightsail:CreateInstancesFromSnapshot');
     return this;
   }
@@ -1349,7 +1363,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html
    */
-  public createKeyPair () {
+  public createKeyPair() {
     this.add('lightsail:CreateKeyPair');
     return this;
   }
@@ -1361,7 +1375,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html
    */
-  public createLoadBalancer () {
+  public createLoadBalancer() {
     this.add('lightsail:CreateLoadBalancer');
     return this;
   }
@@ -1373,7 +1387,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancerTlsCertificate.html
    */
-  public createLoadBalancerTlsCertificate () {
+  public createLoadBalancerTlsCertificate() {
     this.add('lightsail:CreateLoadBalancerTlsCertificate');
     return this;
   }
@@ -1385,7 +1399,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabase.html
    */
-  public createRelationalDatabase () {
+  public createRelationalDatabase() {
     this.add('lightsail:CreateRelationalDatabase');
     return this;
   }
@@ -1397,7 +1411,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html
    */
-  public createRelationalDatabaseFromSnapshot () {
+  public createRelationalDatabaseFromSnapshot() {
     this.add('lightsail:CreateRelationalDatabaseFromSnapshot');
     return this;
   }
@@ -1409,7 +1423,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseSnapshot.html
    */
-  public createRelationalDatabaseSnapshot () {
+  public createRelationalDatabaseSnapshot() {
     this.add('lightsail:CreateRelationalDatabaseSnapshot');
     return this;
   }
@@ -1421,7 +1435,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDisk.html
    */
-  public deleteDisk () {
+  public deleteDisk() {
     this.add('lightsail:DeleteDisk');
     return this;
   }
@@ -1433,7 +1447,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDiskSnapshot.html
    */
-  public deleteDiskSnapshot () {
+  public deleteDiskSnapshot() {
     this.add('lightsail:DeleteDiskSnapshot');
     return this;
   }
@@ -1445,7 +1459,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomain.html
    */
-  public deleteDomain () {
+  public deleteDomain() {
     this.add('lightsail:DeleteDomain');
     return this;
   }
@@ -1457,7 +1471,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html
    */
-  public deleteDomainEntry () {
+  public deleteDomainEntry() {
     this.add('lightsail:DeleteDomainEntry');
     return this;
   }
@@ -1469,7 +1483,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstance.html
    */
-  public deleteInstance () {
+  public deleteInstance() {
     this.add('lightsail:DeleteInstance');
     return this;
   }
@@ -1481,7 +1495,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteInstanceSnapshot.html
    */
-  public deleteInstanceSnapshot () {
+  public deleteInstanceSnapshot() {
     this.add('lightsail:DeleteInstanceSnapshot');
     return this;
   }
@@ -1493,7 +1507,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKeyPair.html
    */
-  public deleteKeyPair () {
+  public deleteKeyPair() {
     this.add('lightsail:DeleteKeyPair');
     return this;
   }
@@ -1505,7 +1519,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteKnownHostKeys.html
    */
-  public deleteKnownHostKeys () {
+  public deleteKnownHostKeys() {
     this.add('lightsail:DeleteKnownHostKeys');
     return this;
   }
@@ -1517,7 +1531,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancer.html
    */
-  public deleteLoadBalancer () {
+  public deleteLoadBalancer() {
     this.add('lightsail:DeleteLoadBalancer');
     return this;
   }
@@ -1529,7 +1543,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html
    */
-  public deleteLoadBalancerTlsCertificate () {
+  public deleteLoadBalancerTlsCertificate() {
     this.add('lightsail:DeleteLoadBalancerTlsCertificate');
     return this;
   }
@@ -1541,7 +1555,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabase.html
    */
-  public deleteRelationalDatabase () {
+  public deleteRelationalDatabase() {
     this.add('lightsail:DeleteRelationalDatabase');
     return this;
   }
@@ -1553,7 +1567,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteRelationalDatabaseSnapshot.html
    */
-  public deleteRelationalDatabaseSnapshot () {
+  public deleteRelationalDatabaseSnapshot() {
     this.add('lightsail:DeleteRelationalDatabaseSnapshot');
     return this;
   }
@@ -1565,7 +1579,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachDisk.html
    */
-  public detachDisk () {
+  public detachDisk() {
     this.add('lightsail:DetachDisk');
     return this;
   }
@@ -1577,7 +1591,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html
    */
-  public detachInstancesFromLoadBalancer () {
+  public detachInstancesFromLoadBalancer() {
     this.add('lightsail:DetachInstancesFromLoadBalancer');
     return this;
   }
@@ -1589,7 +1603,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachStaticIp.html
    */
-  public detachStaticIp () {
+  public detachStaticIp() {
     this.add('lightsail:DetachStaticIp');
     return this;
   }
@@ -1601,7 +1615,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html
    */
-  public downloadDefaultKeyPair () {
+  public downloadDefaultKeyPair() {
     this.add('lightsail:DownloadDefaultKeyPair');
     return this;
   }
@@ -1613,7 +1627,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshot.html
    */
-  public exportSnapshot () {
+  public exportSnapshot() {
     this.add('lightsail:ExportSnapshot');
     return this;
   }
@@ -1625,7 +1639,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetActiveNames.html
    */
-  public getActiveNames () {
+  public getActiveNames() {
     this.add('lightsail:GetActiveNames');
     return this;
   }
@@ -1637,7 +1651,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html
    */
-  public getBlueprints () {
+  public getBlueprints() {
     this.add('lightsail:GetBlueprints');
     return this;
   }
@@ -1649,7 +1663,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBundles.html
    */
-  public getBundles () {
+  public getBundles() {
     this.add('lightsail:GetBundles');
     return this;
   }
@@ -1661,7 +1675,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCloudFormationStackRecords.html
    */
-  public getCloudFormationStackRecords () {
+  public getCloudFormationStackRecords() {
     this.add('lightsail:GetCloudFormationStackRecords');
     return this;
   }
@@ -1673,7 +1687,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisk.html
    */
-  public getDisk () {
+  public getDisk() {
     this.add('lightsail:GetDisk');
     return this;
   }
@@ -1685,7 +1699,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshot.html
    */
-  public getDiskSnapshot () {
+  public getDiskSnapshot() {
     this.add('lightsail:GetDiskSnapshot');
     return this;
   }
@@ -1697,7 +1711,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDiskSnapshots.html
    */
-  public getDiskSnapshots () {
+  public getDiskSnapshots() {
     this.add('lightsail:GetDiskSnapshots');
     return this;
   }
@@ -1709,7 +1723,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDisks.html
    */
-  public getDisks () {
+  public getDisks() {
     this.add('lightsail:GetDisks');
     return this;
   }
@@ -1721,7 +1735,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomain.html
    */
-  public getDomain () {
+  public getDomain() {
     this.add('lightsail:GetDomain');
     return this;
   }
@@ -1733,7 +1747,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomains.html
    */
-  public getDomains () {
+  public getDomains() {
     this.add('lightsail:GetDomains');
     return this;
   }
@@ -1745,7 +1759,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetExportSnapshotRecords.html
    */
-  public getExportSnapshotRecords () {
+  public getExportSnapshotRecords() {
     this.add('lightsail:GetExportSnapshotRecords');
     return this;
   }
@@ -1757,7 +1771,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstance.html
    */
-  public getInstance () {
+  public getInstance() {
     this.add('lightsail:GetInstance');
     return this;
   }
@@ -1769,7 +1783,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceAccessDetails.html
    */
-  public getInstanceAccessDetails () {
+  public getInstanceAccessDetails() {
     this.add('lightsail:GetInstanceAccessDetails');
     return this;
   }
@@ -1781,7 +1795,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceMetricData.html
    */
-  public getInstanceMetricData () {
+  public getInstanceMetricData() {
     this.add('lightsail:GetInstanceMetricData');
     return this;
   }
@@ -1793,7 +1807,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstancePortStates.html
    */
-  public getInstancePortStates () {
+  public getInstancePortStates() {
     this.add('lightsail:GetInstancePortStates');
     return this;
   }
@@ -1805,7 +1819,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html
    */
-  public getInstanceSnapshot () {
+  public getInstanceSnapshot() {
     this.add('lightsail:GetInstanceSnapshot');
     return this;
   }
@@ -1817,7 +1831,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshots.html
    */
-  public getInstanceSnapshots () {
+  public getInstanceSnapshots() {
     this.add('lightsail:GetInstanceSnapshots');
     return this;
   }
@@ -1829,7 +1843,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceState.html
    */
-  public getInstanceState () {
+  public getInstanceState() {
     this.add('lightsail:GetInstanceState');
     return this;
   }
@@ -1841,7 +1855,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html
    */
-  public getInstances () {
+  public getInstances() {
     this.add('lightsail:GetInstances');
     return this;
   }
@@ -1853,7 +1867,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPair.html
    */
-  public getKeyPair () {
+  public getKeyPair() {
     this.add('lightsail:GetKeyPair');
     return this;
   }
@@ -1865,7 +1879,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetKeyPairs.html
    */
-  public getKeyPairs () {
+  public getKeyPairs() {
     this.add('lightsail:GetKeyPairs');
     return this;
   }
@@ -1877,7 +1891,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancer.html
    */
-  public getLoadBalancer () {
+  public getLoadBalancer() {
     this.add('lightsail:GetLoadBalancer');
     return this;
   }
@@ -1889,7 +1903,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerMetricData.html
    */
-  public getLoadBalancerMetricData () {
+  public getLoadBalancerMetricData() {
     this.add('lightsail:GetLoadBalancerMetricData');
     return this;
   }
@@ -1901,7 +1915,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteLoadBalancerTlsCertificate.html
    */
-  public getLoadBalancerTlsCertificates () {
+  public getLoadBalancerTlsCertificates() {
     this.add('lightsail:GetLoadBalancerTlsCertificates');
     return this;
   }
@@ -1913,7 +1927,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancers.html
    */
-  public getLoadBalancers () {
+  public getLoadBalancers() {
     this.add('lightsail:GetLoadBalancers');
     return this;
   }
@@ -1925,7 +1939,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperation.html
    */
-  public getOperation () {
+  public getOperation() {
     this.add('lightsail:GetOperation');
     return this;
   }
@@ -1937,7 +1951,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperations.html
    */
-  public getOperations () {
+  public getOperations() {
     this.add('lightsail:GetOperations');
     return this;
   }
@@ -1949,7 +1963,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperationsForResource.html
    */
-  public getOperationsForResource () {
+  public getOperationsForResource() {
     this.add('lightsail:GetOperationsForResource');
     return this;
   }
@@ -1961,7 +1975,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html
    */
-  public getRegions () {
+  public getRegions() {
     this.add('lightsail:GetRegions');
     return this;
   }
@@ -1973,7 +1987,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabase.html
    */
-  public getRelationalDatabase () {
+  public getRelationalDatabase() {
     this.add('lightsail:GetRelationalDatabase');
     return this;
   }
@@ -1985,7 +1999,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html
    */
-  public getRelationalDatabaseBlueprints () {
+  public getRelationalDatabaseBlueprints() {
     this.add('lightsail:GetRelationalDatabaseBlueprints');
     return this;
   }
@@ -1997,7 +2011,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBundles.html
    */
-  public getRelationalDatabaseBundles () {
+  public getRelationalDatabaseBundles() {
     this.add('lightsail:GetRelationalDatabaseBundles');
     return this;
   }
@@ -2009,7 +2023,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseEvents.html
    */
-  public getRelationalDatabaseEvents () {
+  public getRelationalDatabaseEvents() {
     this.add('lightsail:GetRelationalDatabaseEvents');
     return this;
   }
@@ -2021,7 +2035,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogEvents.html
    */
-  public getRelationalDatabaseLogEvents () {
+  public getRelationalDatabaseLogEvents() {
     this.add('lightsail:GetRelationalDatabaseLogEvents');
     return this;
   }
@@ -2033,7 +2047,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseLogStreams.html
    */
-  public getRelationalDatabaseLogStreams () {
+  public getRelationalDatabaseLogStreams() {
     this.add('lightsail:GetRelationalDatabaseLogStreams');
     return this;
   }
@@ -2045,7 +2059,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMasterUserPassword.html
    */
-  public getRelationalDatabaseMasterUserPassword () {
+  public getRelationalDatabaseMasterUserPassword() {
     this.add('lightsail:GetRelationalDatabaseMasterUserPassword');
     return this;
   }
@@ -2057,7 +2071,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseMetricData.html
    */
-  public getRelationalDatabaseMetricData () {
+  public getRelationalDatabaseMetricData() {
     this.add('lightsail:GetRelationalDatabaseMetricData');
     return this;
   }
@@ -2069,7 +2083,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseParameters.html
    */
-  public getRelationalDatabaseParameters () {
+  public getRelationalDatabaseParameters() {
     this.add('lightsail:GetRelationalDatabaseParameters');
     return this;
   }
@@ -2081,7 +2095,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshot.html
    */
-  public getRelationalDatabaseSnapshot () {
+  public getRelationalDatabaseSnapshot() {
     this.add('lightsail:GetRelationalDatabaseSnapshot');
     return this;
   }
@@ -2093,7 +2107,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseSnapshots.html
    */
-  public getRelationalDatabaseSnapshots () {
+  public getRelationalDatabaseSnapshots() {
     this.add('lightsail:GetRelationalDatabaseSnapshots');
     return this;
   }
@@ -2105,7 +2119,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabases.html
    */
-  public getRelationalDatabases () {
+  public getRelationalDatabases() {
     this.add('lightsail:GetRelationalDatabases');
     return this;
   }
@@ -2117,7 +2131,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html
    */
-  public getStaticIp () {
+  public getStaticIp() {
     this.add('lightsail:GetStaticIp');
     return this;
   }
@@ -2129,7 +2143,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIps.html
    */
-  public getStaticIps () {
+  public getStaticIps() {
     this.add('lightsail:GetStaticIps');
     return this;
   }
@@ -2141,7 +2155,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ImportKeyPair.html
    */
-  public importKeyPair () {
+  public importKeyPair() {
     this.add('lightsail:ImportKeyPair');
     return this;
   }
@@ -2153,7 +2167,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_IsVpcPeered.html
    */
-  public isVpcPeered () {
+  public isVpcPeered() {
     this.add('lightsail:IsVpcPeered');
     return this;
   }
@@ -2165,7 +2179,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_OpenInstancePublicPorts.html
    */
-  public openInstancePublicPorts () {
+  public openInstancePublicPorts() {
     this.add('lightsail:OpenInstancePublicPorts');
     return this;
   }
@@ -2177,7 +2191,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PeerVpc.html
    */
-  public peerVpc () {
+  public peerVpc() {
     this.add('lightsail:PeerVpc');
     return this;
   }
@@ -2189,7 +2203,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_PutInstancePublicPorts.html
    */
-  public putInstancePublicPorts () {
+  public putInstancePublicPorts() {
     this.add('lightsail:PutInstancePublicPorts');
     return this;
   }
@@ -2201,7 +2215,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootInstance.html
    */
-  public rebootInstance () {
+  public rebootInstance() {
     this.add('lightsail:RebootInstance');
     return this;
   }
@@ -2213,7 +2227,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RebootRelationalDatabase.html
    */
-  public rebootRelationalDatabase () {
+  public rebootRelationalDatabase() {
     this.add('lightsail:RebootRelationalDatabase');
     return this;
   }
@@ -2225,7 +2239,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ReleaseStaticIp.html
    */
-  public releaseStaticIp () {
+  public releaseStaticIp() {
     this.add('lightsail:ReleaseStaticIp');
     return this;
   }
@@ -2237,7 +2251,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartInstance.html
    */
-  public startInstance () {
+  public startInstance() {
     this.add('lightsail:StartInstance');
     return this;
   }
@@ -2249,7 +2263,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StartRelationalDatabase.html
    */
-  public startRelationalDatabase () {
+  public startRelationalDatabase() {
     this.add('lightsail:StartRelationalDatabase');
     return this;
   }
@@ -2261,7 +2275,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopInstance.html
    */
-  public stopInstance () {
+  public stopInstance() {
     this.add('lightsail:StopInstance');
     return this;
   }
@@ -2273,7 +2287,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopRelationalDatabase.html
    */
-  public stopRelationalDatabase () {
+  public stopRelationalDatabase() {
     this.add('lightsail:StopRelationalDatabase');
     return this;
   }
@@ -2285,7 +2299,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('lightsail:TagResource');
     return this;
   }
@@ -2297,7 +2311,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UnpeerVpc.html
    */
-  public unpeerVpc () {
+  public unpeerVpc() {
     this.add('lightsail:UnpeerVpc');
     return this;
   }
@@ -2309,7 +2323,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('lightsail:UntagResource');
     return this;
   }
@@ -2321,7 +2335,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateDomainEntry.html
    */
-  public updateDomainEntry () {
+  public updateDomainEntry() {
     this.add('lightsail:UpdateDomainEntry');
     return this;
   }
@@ -2333,7 +2347,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DetachInstancesFromLoadBalancer.html
    */
-  public updateLoadBalancerAttribute () {
+  public updateLoadBalancerAttribute() {
     this.add('lightsail:UpdateLoadBalancerAttribute');
     return this;
   }
@@ -2345,7 +2359,7 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabase.html
    */
-  public updateRelationalDatabase () {
+  public updateRelationalDatabase() {
     this.add('lightsail:UpdateRelationalDatabase');
     return this;
   }
@@ -2357,8 +2371,304 @@ export class Lightsail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateRelationalDatabaseParameters.html
    */
-  public updateRelationalDatabaseParameters () {
+  public updateRelationalDatabaseParameters() {
     this.add('lightsail:UpdateRelationalDatabaseParameters');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Domain to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDomain(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Instance to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInstance(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type InstanceSnapshot to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInstanceSnapshot(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type KeyPair to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onKeyPair(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type StaticIp to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Disk to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDisk(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type DiskSnapshot to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type LoadBalancer to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onLoadBalancer(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type PeeredVpc to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/PeeredVpc.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPeeredVpc(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:PeeredVpc/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type LoadBalancerTlsCertificate to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/LoadBalancerTlsCertificate.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLoadBalancerTlsCertificate(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ExportSnapshotRecord to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type CloudFormationStackRecord to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RelationalDatabase to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRelationalDatabase(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RelationalDatabaseSnapshot to the statement
+   *
+   * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

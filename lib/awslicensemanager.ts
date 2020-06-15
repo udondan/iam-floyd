@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class LicenseManager extends PolicyStatement {
   public servicePrefix = 'license-manager';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateLicenseConfiguration": {
       "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html",
       "description": "Creates a new license configuration",
@@ -137,9 +137,10 @@ export class LicenseManager extends PolicyStatement {
       "accessLevel": "Permissions management"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "license-configuration": {
       "name": "license-configuration",
+      "url": "",
       "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}",
       "conditionKeys": [
         "license-manager:ResourceTag/${TagKey}"
@@ -154,7 +155,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html
    */
-  public createLicenseConfiguration () {
+  public createLicenseConfiguration() {
     this.add('license-manager:CreateLicenseConfiguration');
     return this;
   }
@@ -166,7 +167,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseConfiguration.html
    */
-  public deleteLicenseConfiguration () {
+  public deleteLicenseConfiguration() {
     this.add('license-manager:DeleteLicenseConfiguration');
     return this;
   }
@@ -178,7 +179,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html
    */
-  public getLicenseConfiguration () {
+  public getLicenseConfiguration() {
     this.add('license-manager:GetLicenseConfiguration');
     return this;
   }
@@ -190,7 +191,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html
    */
-  public getServiceSettings () {
+  public getServiceSettings() {
     this.add('license-manager:GetServiceSettings');
     return this;
   }
@@ -202,7 +203,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html
    */
-  public listAssociationsForLicenseConfiguration () {
+  public listAssociationsForLicenseConfiguration() {
     this.add('license-manager:ListAssociationsForLicenseConfiguration');
     return this;
   }
@@ -214,7 +215,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html
    */
-  public listLicenseConfigurations () {
+  public listLicenseConfigurations() {
     this.add('license-manager:ListLicenseConfigurations');
     return this;
   }
@@ -226,7 +227,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseSpecificationsForResource.html
    */
-  public listLicenseSpecificationsForResource () {
+  public listLicenseSpecificationsForResource() {
     this.add('license-manager:ListLicenseSpecificationsForResource');
     return this;
   }
@@ -238,7 +239,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListResourceInventory.html
    */
-  public listResourceInventory () {
+  public listResourceInventory() {
     this.add('license-manager:ListResourceInventory');
     return this;
   }
@@ -250,7 +251,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('license-manager:ListTagsForResource');
     return this;
   }
@@ -262,7 +263,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUsageForLicenseConfiguration.html
    */
-  public listUsageForLicenseConfiguration () {
+  public listUsageForLicenseConfiguration() {
     this.add('license-manager:ListUsageForLicenseConfiguration');
     return this;
   }
@@ -274,7 +275,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('license-manager:TagResource');
     return this;
   }
@@ -286,7 +287,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('license-manager:UntagResource');
     return this;
   }
@@ -298,7 +299,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseConfiguration.html
    */
-  public updateLicenseConfiguration () {
+  public updateLicenseConfiguration() {
     this.add('license-manager:UpdateLicenseConfiguration');
     return this;
   }
@@ -310,7 +311,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseSpecificationsForResource.html
    */
-  public updateLicenseSpecificationsForResource () {
+  public updateLicenseSpecificationsForResource() {
     this.add('license-manager:UpdateLicenseSpecificationsForResource');
     return this;
   }
@@ -322,8 +323,28 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html
    */
-  public updateServiceSettings () {
+  public updateServiceSettings() {
     this.add('license-manager:UpdateServiceSettings');
     return this;
+  }
+
+  /**
+   * Adds a resource of type license-configuration to the statement
+   *
+   * @param licenseConfigurationId - Identifier for the licenseConfigurationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - license-manager:ResourceTag/${TagKey}
+   */
+  public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}';
+    arn = arn.replace('${LicenseConfigurationId}', licenseConfigurationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

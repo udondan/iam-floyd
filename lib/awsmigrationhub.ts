@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mgh extends PolicyStatement {
   public servicePrefix = 'mgh';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateCreatedArtifact": {
       "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html",
       "description": "Associate a given AWS artifact to a MigrationTask",
@@ -164,14 +164,16 @@ export class Mgh extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "progressUpdateStream": {
       "name": "progressUpdateStream",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html",
       "arn": "arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}",
       "conditionKeys": []
     },
     "migrationTask": {
       "name": "migrationTask",
+      "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_MigrationTask.html",
       "arn": "arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}/migrationTask/${Task}",
       "conditionKeys": []
     }
@@ -184,7 +186,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html
    */
-  public associateCreatedArtifact () {
+  public associateCreatedArtifact() {
     this.add('mgh:AssociateCreatedArtifact');
     return this;
   }
@@ -196,7 +198,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html
    */
-  public associateDiscoveredResource () {
+  public associateDiscoveredResource() {
     this.add('mgh:AssociateDiscoveredResource');
     return this;
   }
@@ -208,7 +210,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateHomeRegionControl.html
    */
-  public createHomeRegionControl () {
+  public createHomeRegionControl() {
     this.add('mgh:CreateHomeRegionControl');
     return this;
   }
@@ -220,7 +222,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html
    */
-  public createProgressUpdateStream () {
+  public createProgressUpdateStream() {
     this.add('mgh:CreateProgressUpdateStream');
     return this;
   }
@@ -232,7 +234,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html
    */
-  public deleteProgressUpdateStream () {
+  public deleteProgressUpdateStream() {
     this.add('mgh:DeleteProgressUpdateStream');
     return this;
   }
@@ -244,7 +246,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html
    */
-  public describeApplicationState () {
+  public describeApplicationState() {
     this.add('mgh:DescribeApplicationState');
     return this;
   }
@@ -256,7 +258,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeHomeRegionControls.html
    */
-  public describeHomeRegionControls () {
+  public describeHomeRegionControls() {
     this.add('mgh:DescribeHomeRegionControls');
     return this;
   }
@@ -268,7 +270,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html
    */
-  public describeMigrationTask () {
+  public describeMigrationTask() {
     this.add('mgh:DescribeMigrationTask');
     return this;
   }
@@ -280,7 +282,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html
    */
-  public disassociateCreatedArtifact () {
+  public disassociateCreatedArtifact() {
     this.add('mgh:DisassociateCreatedArtifact');
     return this;
   }
@@ -292,7 +294,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html
    */
-  public disassociateDiscoveredResource () {
+  public disassociateDiscoveredResource() {
     this.add('mgh:DisassociateDiscoveredResource');
     return this;
   }
@@ -304,7 +306,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_GetHomeRegion.html
    */
-  public getHomeRegion () {
+  public getHomeRegion() {
     this.add('mgh:GetHomeRegion');
     return this;
   }
@@ -316,7 +318,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html
    */
-  public importMigrationTask () {
+  public importMigrationTask() {
     this.add('mgh:ImportMigrationTask');
     return this;
   }
@@ -328,7 +330,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html
    */
-  public listCreatedArtifacts () {
+  public listCreatedArtifacts() {
     this.add('mgh:ListCreatedArtifacts');
     return this;
   }
@@ -340,7 +342,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html
    */
-  public listDiscoveredResources () {
+  public listDiscoveredResources() {
     this.add('mgh:ListDiscoveredResources');
     return this;
   }
@@ -352,7 +354,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html
    */
-  public listMigrationTasks () {
+  public listMigrationTasks() {
     this.add('mgh:ListMigrationTasks');
     return this;
   }
@@ -364,7 +366,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html
    */
-  public listProgressUpdateStreams () {
+  public listProgressUpdateStreams() {
     this.add('mgh:ListProgressUpdateStreams');
     return this;
   }
@@ -376,7 +378,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html
    */
-  public notifyApplicationState () {
+  public notifyApplicationState() {
     this.add('mgh:NotifyApplicationState');
     return this;
   }
@@ -388,7 +390,7 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html
    */
-  public notifyMigrationTaskState () {
+  public notifyMigrationTaskState() {
     this.add('mgh:NotifyMigrationTaskState');
     return this;
   }
@@ -400,8 +402,48 @@ export class Mgh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html
    */
-  public putResourceAttributes () {
+  public putResourceAttributes() {
     this.add('mgh:PutResourceAttributes');
     return this;
+  }
+
+  /**
+   * Adds a resource of type progressUpdateStream to the statement
+   *
+   * https://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html
+   *
+   * @param stream - Identifier for the stream.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProgressUpdateStream(stream: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}';
+    arn = arn.replace('${Stream}', stream);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type migrationTask to the statement
+   *
+   * https://docs.aws.amazon.com/migrationhub/latest/ug/API_MigrationTask.html
+   *
+   * @param stream - Identifier for the stream.
+   * @param task - Identifier for the task.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onMigrationTask(stream: string, task: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}/migrationTask/${Task}';
+    arn = arn.replace('${Stream}', stream);
+    arn = arn.replace('${Task}', task);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

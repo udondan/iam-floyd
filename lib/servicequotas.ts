@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Servicequotas extends PolicyStatement {
   public servicePrefix = 'servicequotas';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateServiceQuotaTemplate": {
       "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html",
       "description": "Grants permission to associate the Service Quotas template with your organization",
@@ -105,9 +105,10 @@ export class Servicequotas extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "quota": {
       "name": "quota",
+      "url": "https://docs.aws.amazon.com/servicequotas/latest/userguide/quota-as-resource.html",
       "arn": "arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}",
       "conditionKeys": []
     }
@@ -120,7 +121,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html
    */
-  public associateServiceQuotaTemplate () {
+  public associateServiceQuotaTemplate() {
     this.add('servicequotas:AssociateServiceQuotaTemplate');
     return this;
   }
@@ -132,7 +133,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DeleteServiceQuotaIncreaseRequestFromTemplate.html
    */
-  public deleteServiceQuotaIncreaseRequestFromTemplate () {
+  public deleteServiceQuotaIncreaseRequestFromTemplate() {
     this.add('servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate');
     return this;
   }
@@ -144,7 +145,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_DisassociateServiceQuotaTemplate.html
    */
-  public disassociateServiceQuotaTemplate () {
+  public disassociateServiceQuotaTemplate() {
     this.add('servicequotas:DisassociateServiceQuotaTemplate');
     return this;
   }
@@ -156,7 +157,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAWSDefaultServiceQuota.html
    */
-  public getAWSDefaultServiceQuota () {
+  public getAWSDefaultServiceQuota() {
     this.add('servicequotas:GetAWSDefaultServiceQuota');
     return this;
   }
@@ -168,7 +169,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetAssociationForServiceQuotaTemplate.html
    */
-  public getAssociationForServiceQuotaTemplate () {
+  public getAssociationForServiceQuotaTemplate() {
     this.add('servicequotas:GetAssociationForServiceQuotaTemplate');
     return this;
   }
@@ -180,7 +181,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetRequestedServiceQuotaChange.html
    */
-  public getRequestedServiceQuotaChange () {
+  public getRequestedServiceQuotaChange() {
     this.add('servicequotas:GetRequestedServiceQuotaChange');
     return this;
   }
@@ -192,7 +193,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuota.html
    */
-  public getServiceQuota () {
+  public getServiceQuota() {
     this.add('servicequotas:GetServiceQuota');
     return this;
   }
@@ -204,7 +205,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_GetServiceQuotaIncreaseRequestFromTemplate.html
    */
-  public getServiceQuotaIncreaseRequestFromTemplate () {
+  public getServiceQuotaIncreaseRequestFromTemplate() {
     this.add('servicequotas:GetServiceQuotaIncreaseRequestFromTemplate');
     return this;
   }
@@ -216,7 +217,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListAWSDefaultServiceQuotas.html
    */
-  public listAWSDefaultServiceQuotas () {
+  public listAWSDefaultServiceQuotas() {
     this.add('servicequotas:ListAWSDefaultServiceQuotas');
     return this;
   }
@@ -228,7 +229,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistory.html
    */
-  public listRequestedServiceQuotaChangeHistory () {
+  public listRequestedServiceQuotaChangeHistory() {
     this.add('servicequotas:ListRequestedServiceQuotaChangeHistory');
     return this;
   }
@@ -240,7 +241,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListRequestedServiceQuotaChangeHistoryByQuota.html
    */
-  public listRequestedServiceQuotaChangeHistoryByQuota () {
+  public listRequestedServiceQuotaChangeHistoryByQuota() {
     this.add('servicequotas:ListRequestedServiceQuotaChangeHistoryByQuota');
     return this;
   }
@@ -252,7 +253,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotaIncreaseRequestsInTemplate
    */
-  public listServiceQuotaIncreaseRequestsInTemplate () {
+  public listServiceQuotaIncreaseRequestsInTemplate() {
     this.add('servicequotas:ListServiceQuotaIncreaseRequestsInTemplate');
     return this;
   }
@@ -264,7 +265,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html
    */
-  public listServiceQuotas () {
+  public listServiceQuotas() {
     this.add('servicequotas:ListServiceQuotas');
     return this;
   }
@@ -276,7 +277,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServices.html
    */
-  public listServices () {
+  public listServices() {
     this.add('servicequotas:ListServices');
     return this;
   }
@@ -288,7 +289,7 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html
    */
-  public putServiceQuotaIncreaseRequestIntoTemplate () {
+  public putServiceQuotaIncreaseRequestIntoTemplate() {
     this.add('servicequotas:PutServiceQuotaIncreaseRequestIntoTemplate');
     return this;
   }
@@ -300,8 +301,29 @@ export class Servicequotas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html
    */
-  public requestServiceQuotaIncrease () {
+  public requestServiceQuotaIncrease() {
     this.add('servicequotas:RequestServiceQuotaIncrease');
     return this;
+  }
+
+  /**
+   * Adds a resource of type quota to the statement
+   *
+   * https://docs.aws.amazon.com/servicequotas/latest/userguide/quota-as-resource.html
+   *
+   * @param serviceCode - Identifier for the serviceCode.
+   * @param quotaCode - Identifier for the quotaCode.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onQuota(serviceCode: string, quotaCode: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}';
+    arn = arn.replace('${ServiceCode}', serviceCode);
+    arn = arn.replace('${QuotaCode}', quotaCode);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

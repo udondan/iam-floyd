@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Elasticfilesystem extends PolicyStatement {
   public servicePrefix = 'elasticfilesystem';
-  public actions : Actions = {
+  public actions: Actions = {
     "Backup": {
       "url": "https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html",
       "description": "Starts a backup job for an existing file system.",
@@ -289,9 +289,10 @@ export class Elasticfilesystem extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "file-system": {
       "name": "file-system",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources",
       "arn": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -299,6 +300,7 @@ export class Elasticfilesystem extends PolicyStatement {
     },
     "access-point": {
       "name": "access-point",
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources",
       "arn": "arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -313,7 +315,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
    */
-  public backup () {
+  public backup() {
     this.add('elasticfilesystem:Backup');
     return this;
   }
@@ -325,7 +327,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
-  public clientMount () {
+  public clientMount() {
     this.add('elasticfilesystem:ClientMount');
     return this;
   }
@@ -337,7 +339,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
-  public clientRootAccess () {
+  public clientRootAccess() {
     this.add('elasticfilesystem:ClientRootAccess');
     return this;
   }
@@ -349,7 +351,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
-  public clientWrite () {
+  public clientWrite() {
     this.add('elasticfilesystem:ClientWrite');
     return this;
   }
@@ -361,7 +363,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateAccessPoint.html
    */
-  public createAccessPoint () {
+  public createAccessPoint() {
     this.add('elasticfilesystem:CreateAccessPoint');
     return this;
   }
@@ -373,7 +375,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html
    */
-  public createFileSystem () {
+  public createFileSystem() {
     this.add('elasticfilesystem:CreateFileSystem');
     return this;
   }
@@ -385,7 +387,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html
    */
-  public createMountTarget () {
+  public createMountTarget() {
     this.add('elasticfilesystem:CreateMountTarget');
     return this;
   }
@@ -397,7 +399,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html
    */
-  public createTags () {
+  public createTags() {
     this.add('elasticfilesystem:CreateTags');
     return this;
   }
@@ -409,7 +411,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteAccessPoint.html
    */
-  public deleteAccessPoint () {
+  public deleteAccessPoint() {
     this.add('elasticfilesystem:DeleteAccessPoint');
     return this;
   }
@@ -421,7 +423,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystem.html
    */
-  public deleteFileSystem () {
+  public deleteFileSystem() {
     this.add('elasticfilesystem:DeleteFileSystem');
     return this;
   }
@@ -433,7 +435,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystemPolicy.html
    */
-  public deleteFileSystemPolicy () {
+  public deleteFileSystemPolicy() {
     this.add('elasticfilesystem:DeleteFileSystemPolicy');
     return this;
   }
@@ -445,7 +447,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html
    */
-  public deleteMountTarget () {
+  public deleteMountTarget() {
     this.add('elasticfilesystem:DeleteMountTarget');
     return this;
   }
@@ -457,7 +459,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html
    */
-  public deleteTags () {
+  public deleteTags() {
     this.add('elasticfilesystem:DeleteTags');
     return this;
   }
@@ -469,7 +471,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeAccessPoints.html
    */
-  public describeAccessPoints () {
+  public describeAccessPoints() {
     this.add('elasticfilesystem:DescribeAccessPoints');
     return this;
   }
@@ -481,7 +483,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystemPolicy.html
    */
-  public describeFileSystemPolicy () {
+  public describeFileSystemPolicy() {
     this.add('elasticfilesystem:DescribeFileSystemPolicy');
     return this;
   }
@@ -493,7 +495,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html
    */
-  public describeFileSystems () {
+  public describeFileSystems() {
     this.add('elasticfilesystem:DescribeFileSystems');
     return this;
   }
@@ -505,7 +507,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeLifecycleConfiguration.html
    */
-  public describeLifecycleConfiguration () {
+  public describeLifecycleConfiguration() {
     this.add('elasticfilesystem:DescribeLifecycleConfiguration');
     return this;
   }
@@ -517,7 +519,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html
    */
-  public describeMountTargetSecurityGroups () {
+  public describeMountTargetSecurityGroups() {
     this.add('elasticfilesystem:DescribeMountTargetSecurityGroups');
     return this;
   }
@@ -529,7 +531,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html
    */
-  public describeMountTargets () {
+  public describeMountTargets() {
     this.add('elasticfilesystem:DescribeMountTargets');
     return this;
   }
@@ -541,7 +543,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html
    */
-  public describeTags () {
+  public describeTags() {
     this.add('elasticfilesystem:DescribeTags');
     return this;
   }
@@ -553,7 +555,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('elasticfilesystem:ListTagsForResource');
     return this;
   }
@@ -565,7 +567,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html
    */
-  public modifyMountTargetSecurityGroups () {
+  public modifyMountTargetSecurityGroups() {
     this.add('elasticfilesystem:ModifyMountTargetSecurityGroups');
     return this;
   }
@@ -577,7 +579,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_PutFileSystemPolicy.html
    */
-  public putFileSystemPolicy () {
+  public putFileSystemPolicy() {
     this.add('elasticfilesystem:PutFileSystemPolicy');
     return this;
   }
@@ -589,7 +591,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_PutLifecycleConfiguration.html
    */
-  public putLifecycleConfiguration () {
+  public putLifecycleConfiguration() {
     this.add('elasticfilesystem:PutLifecycleConfiguration');
     return this;
   }
@@ -601,7 +603,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
    */
-  public restore () {
+  public restore() {
     this.add('elasticfilesystem:Restore');
     return this;
   }
@@ -613,7 +615,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('elasticfilesystem:TagResource');
     return this;
   }
@@ -625,7 +627,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('elasticfilesystem:UntagResource');
     return this;
   }
@@ -637,8 +639,52 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UpdateFileSystem.html
    */
-  public updateFileSystem () {
+  public updateFileSystem() {
     this.add('elasticfilesystem:UpdateFileSystem');
     return this;
+  }
+
+  /**
+   * Adds a resource of type file-system to the statement
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources
+   *
+   * @param fileSystemId - Identifier for the fileSystemId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}';
+    arn = arn.replace('${FileSystemId}', fileSystemId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type access-point to the statement
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources
+   *
+   * @param accessPointId - Identifier for the accessPointId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAccessPoint(accessPointId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}';
+    arn = arn.replace('${AccessPointId}', accessPointId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Deeplens extends PolicyStatement {
   public servicePrefix = 'deeplens';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateServiceRoleToAccount": {
       "url": "",
       "description": "Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.",
@@ -192,19 +192,22 @@ export class Deeplens extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "device": {
       "name": "device",
+      "url": "",
       "arn": "arn:${Partition}:deeplens:${Region}:${Account}:device/${DeviceName}",
       "conditionKeys": []
     },
     "project": {
       "name": "project",
+      "url": "",
       "arn": "arn:${Partition}:deeplens:${Region}:${Account}:project/${ProjectName}",
       "conditionKeys": []
     },
     "model": {
       "name": "model",
+      "url": "",
       "arn": "arn:${Partition}:deeplens:${Region}:${Account}:model/${ModelName}",
       "conditionKeys": []
     }
@@ -215,7 +218,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Permissions management
    */
-  public associateServiceRoleToAccount () {
+  public associateServiceRoleToAccount() {
     this.add('deeplens:AssociateServiceRoleToAccount');
     return this;
   }
@@ -225,7 +228,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public batchGetDevice () {
+  public batchGetDevice() {
     this.add('deeplens:BatchGetDevice');
     return this;
   }
@@ -235,7 +238,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public batchGetModel () {
+  public batchGetModel() {
     this.add('deeplens:BatchGetModel');
     return this;
   }
@@ -245,7 +248,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public batchGetProject () {
+  public batchGetProject() {
     this.add('deeplens:BatchGetProject');
     return this;
   }
@@ -255,7 +258,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createDeviceCertificates () {
+  public createDeviceCertificates() {
     this.add('deeplens:CreateDeviceCertificates');
     return this;
   }
@@ -265,7 +268,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createModel () {
+  public createModel() {
     this.add('deeplens:CreateModel');
     return this;
   }
@@ -275,7 +278,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createProject () {
+  public createProject() {
     this.add('deeplens:CreateProject');
     return this;
   }
@@ -285,7 +288,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteModel () {
+  public deleteModel() {
     this.add('deeplens:DeleteModel');
     return this;
   }
@@ -295,7 +298,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteProject () {
+  public deleteProject() {
     this.add('deeplens:DeleteProject');
     return this;
   }
@@ -305,7 +308,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deployProject () {
+  public deployProject() {
     this.add('deeplens:DeployProject');
     return this;
   }
@@ -315,7 +318,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deregisterDevice () {
+  public deregisterDevice() {
     this.add('deeplens:DeregisterDevice');
     return this;
   }
@@ -325,7 +328,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getAssociatedResources () {
+  public getAssociatedResources() {
     this.add('deeplens:GetAssociatedResources');
     return this;
   }
@@ -335,7 +338,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getDeploymentStatus () {
+  public getDeploymentStatus() {
     this.add('deeplens:GetDeploymentStatus');
     return this;
   }
@@ -345,7 +348,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getDevice () {
+  public getDevice() {
     this.add('deeplens:GetDevice');
     return this;
   }
@@ -355,7 +358,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getModel () {
+  public getModel() {
     this.add('deeplens:GetModel');
     return this;
   }
@@ -365,7 +368,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getProject () {
+  public getProject() {
     this.add('deeplens:GetProject');
     return this;
   }
@@ -375,7 +378,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public importProjectFromTemplate () {
+  public importProjectFromTemplate() {
     this.add('deeplens:ImportProjectFromTemplate');
     return this;
   }
@@ -385,7 +388,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listDeployments () {
+  public listDeployments() {
     this.add('deeplens:ListDeployments');
     return this;
   }
@@ -395,7 +398,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listDevices () {
+  public listDevices() {
     this.add('deeplens:ListDevices');
     return this;
   }
@@ -405,7 +408,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listModels () {
+  public listModels() {
     this.add('deeplens:ListModels');
     return this;
   }
@@ -415,7 +418,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listProjects () {
+  public listProjects() {
     this.add('deeplens:ListProjects');
     return this;
   }
@@ -425,7 +428,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public registerDevice () {
+  public registerDevice() {
     this.add('deeplens:RegisterDevice');
     return this;
   }
@@ -435,7 +438,7 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public removeProject () {
+  public removeProject() {
     this.add('deeplens:RemoveProject');
     return this;
   }
@@ -445,8 +448,59 @@ export class Deeplens extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateProject () {
+  public updateProject() {
     this.add('deeplens:UpdateProject');
     return this;
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * @param deviceName - Identifier for the deviceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDevice(deviceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:device/${DeviceName}';
+    arn = arn.replace('${DeviceName}', deviceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProject(projectName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:project/${ProjectName}';
+    arn = arn.replace('${ProjectName}', projectName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model to the statement
+   *
+   * @param modelName - Identifier for the modelName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onModel(modelName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:model/${ModelName}';
+    arn = arn.replace('${ModelName}', modelName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Greengrass extends PolicyStatement {
   public servicePrefix = 'greengrass';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateRoleToGroup": {
       "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html",
       "description": "Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.",
@@ -948,29 +948,34 @@ export class Greengrass extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "connectivityInfo": {
       "name": "connectivityInfo",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectivityinfo.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo",
       "conditionKeys": []
     },
     "artifact": {
       "name": "artifact",
+      "url": "",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}/artifacts/lambda/${ArtifactId}",
       "conditionKeys": []
     },
     "certificateAuthority": {
       "name": "certificateAuthority",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-sec.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/certificateauthorities/${CertificateAuthorityId}",
       "conditionKeys": []
     },
     "deployment": {
       "name": "deployment",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-createdeploymentrequest.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}",
       "conditionKeys": []
     },
     "bulkDeployment": {
       "name": "bulkDeployment",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/developerguide/bulk-deploy-cli.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/bulk/deployments/${BulkDeploymentId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -978,6 +983,7 @@ export class Greengrass extends PolicyStatement {
     },
     "group": {
       "name": "group",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-groupinformation.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -985,11 +991,13 @@ export class Greengrass extends PolicyStatement {
     },
     "groupVersion": {
       "name": "groupVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-groupversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "coreDefinition": {
       "name": "coreDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-core.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -997,11 +1005,13 @@ export class Greengrass extends PolicyStatement {
     },
     "coreDefinitionVersion": {
       "name": "coreDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-coredefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "deviceDefinition": {
       "name": "deviceDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-device.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1009,11 +1019,13 @@ export class Greengrass extends PolicyStatement {
     },
     "deviceDefinitionVersion": {
       "name": "deviceDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-devicedefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "functionDefinition": {
       "name": "functionDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-function.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1021,11 +1033,13 @@ export class Greengrass extends PolicyStatement {
     },
     "functionDefinitionVersion": {
       "name": "functionDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-functiondefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "subscriptionDefinition": {
       "name": "subscriptionDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-subscription.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1033,11 +1047,13 @@ export class Greengrass extends PolicyStatement {
     },
     "subscriptionDefinitionVersion": {
       "name": "subscriptionDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-subscriptiondefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "loggerDefinition": {
       "name": "loggerDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-logger.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1045,11 +1061,13 @@ export class Greengrass extends PolicyStatement {
     },
     "loggerDefinitionVersion": {
       "name": "loggerDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-loggerdefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "resourceDefinition": {
       "name": "resourceDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resource.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1057,11 +1075,13 @@ export class Greengrass extends PolicyStatement {
     },
     "resourceDefinitionVersion": {
       "name": "resourceDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resourcedefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     },
     "connectorDefinition": {
       "name": "connectorDefinition",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connector.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -1069,6 +1089,7 @@ export class Greengrass extends PolicyStatement {
     },
     "connectorDefinitionVersion": {
       "name": "connectorDefinitionVersion",
+      "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectordefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
     }
@@ -1081,7 +1102,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html
    */
-  public associateRoleToGroup () {
+  public associateRoleToGroup() {
     this.add('greengrass:AssociateRoleToGroup');
     return this;
   }
@@ -1093,7 +1114,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/associateserviceroletoaccount-put.html
    */
-  public associateServiceRoleToAccount () {
+  public associateServiceRoleToAccount() {
     this.add('greengrass:AssociateServiceRoleToAccount');
     return this;
   }
@@ -1105,7 +1126,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinition-post.html
    */
-  public createConnectorDefinition () {
+  public createConnectorDefinition() {
     this.add('greengrass:CreateConnectorDefinition');
     return this;
   }
@@ -1117,7 +1138,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinitionversion-post.html
    */
-  public createConnectorDefinitionVersion () {
+  public createConnectorDefinitionVersion() {
     this.add('greengrass:CreateConnectorDefinitionVersion');
     return this;
   }
@@ -1129,7 +1150,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinition-post.html
    */
-  public createCoreDefinition () {
+  public createCoreDefinition() {
     this.add('greengrass:CreateCoreDefinition');
     return this;
   }
@@ -1141,7 +1162,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinitionversion-post.html
    */
-  public createCoreDefinitionVersion () {
+  public createCoreDefinitionVersion() {
     this.add('greengrass:CreateCoreDefinitionVersion');
     return this;
   }
@@ -1153,7 +1174,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html
    */
-  public createDeployment () {
+  public createDeployment() {
     this.add('greengrass:CreateDeployment');
     return this;
   }
@@ -1165,7 +1186,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html
    */
-  public createDeviceDefinition () {
+  public createDeviceDefinition() {
     this.add('greengrass:CreateDeviceDefinition');
     return this;
   }
@@ -1177,7 +1198,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinitionversion-post.html
    */
-  public createDeviceDefinitionVersion () {
+  public createDeviceDefinitionVersion() {
     this.add('greengrass:CreateDeviceDefinitionVersion');
     return this;
   }
@@ -1189,7 +1210,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html
    */
-  public createFunctionDefinition () {
+  public createFunctionDefinition() {
     this.add('greengrass:CreateFunctionDefinition');
     return this;
   }
@@ -1201,7 +1222,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinitionversion-post.html
    */
-  public createFunctionDefinitionVersion () {
+  public createFunctionDefinitionVersion() {
     this.add('greengrass:CreateFunctionDefinitionVersion');
     return this;
   }
@@ -1213,7 +1234,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroup-post.html
    */
-  public createGroup () {
+  public createGroup() {
     this.add('greengrass:CreateGroup');
     return this;
   }
@@ -1225,7 +1246,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupcertificateauthority-post.html
    */
-  public createGroupCertificateAuthority () {
+  public createGroupCertificateAuthority() {
     this.add('greengrass:CreateGroupCertificateAuthority');
     return this;
   }
@@ -1237,7 +1258,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroupversion-post.html
    */
-  public createGroupVersion () {
+  public createGroupVersion() {
     this.add('greengrass:CreateGroupVersion');
     return this;
   }
@@ -1249,7 +1270,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinition-post.html
    */
-  public createLoggerDefinition () {
+  public createLoggerDefinition() {
     this.add('greengrass:CreateLoggerDefinition');
     return this;
   }
@@ -1261,7 +1282,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinitionversion-post.html
    */
-  public createLoggerDefinitionVersion () {
+  public createLoggerDefinitionVersion() {
     this.add('greengrass:CreateLoggerDefinitionVersion');
     return this;
   }
@@ -1273,7 +1294,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinition-post.html
    */
-  public createResourceDefinition () {
+  public createResourceDefinition() {
     this.add('greengrass:CreateResourceDefinition');
     return this;
   }
@@ -1285,7 +1306,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinitionversion-post.html
    */
-  public createResourceDefinitionVersion () {
+  public createResourceDefinitionVersion() {
     this.add('greengrass:CreateResourceDefinitionVersion');
     return this;
   }
@@ -1297,7 +1318,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsoftwareupdatejob-post.html
    */
-  public createSoftwareUpdateJob () {
+  public createSoftwareUpdateJob() {
     this.add('greengrass:CreateSoftwareUpdateJob');
     return this;
   }
@@ -1309,7 +1330,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html
    */
-  public createSubscriptionDefinition () {
+  public createSubscriptionDefinition() {
     this.add('greengrass:CreateSubscriptionDefinition');
     return this;
   }
@@ -1321,7 +1342,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinitionversion-post.html
    */
-  public createSubscriptionDefinitionVersion () {
+  public createSubscriptionDefinitionVersion() {
     this.add('greengrass:CreateSubscriptionDefinitionVersion');
     return this;
   }
@@ -1333,7 +1354,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteconnectordefinition-delete.html
    */
-  public deleteConnectorDefinition () {
+  public deleteConnectorDefinition() {
     this.add('greengrass:DeleteConnectorDefinition');
     return this;
   }
@@ -1345,7 +1366,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html
    */
-  public deleteCoreDefinition () {
+  public deleteCoreDefinition() {
     this.add('greengrass:DeleteCoreDefinition');
     return this;
   }
@@ -1357,7 +1378,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletedevicedefinition-delete.html
    */
-  public deleteDeviceDefinition () {
+  public deleteDeviceDefinition() {
     this.add('greengrass:DeleteDeviceDefinition');
     return this;
   }
@@ -1369,7 +1390,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletefunctiondefinition-delete.html
    */
-  public deleteFunctionDefinition () {
+  public deleteFunctionDefinition() {
     this.add('greengrass:DeleteFunctionDefinition');
     return this;
   }
@@ -1381,7 +1402,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletegroup-delete.html
    */
-  public deleteGroup () {
+  public deleteGroup() {
     this.add('greengrass:DeleteGroup');
     return this;
   }
@@ -1393,7 +1414,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html
    */
-  public deleteLoggerDefinition () {
+  public deleteLoggerDefinition() {
     this.add('greengrass:DeleteLoggerDefinition');
     return this;
   }
@@ -1405,7 +1426,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deleteresourcedefinition-delete.html
    */
-  public deleteResourceDefinition () {
+  public deleteResourceDefinition() {
     this.add('greengrass:DeleteResourceDefinition');
     return this;
   }
@@ -1417,7 +1438,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/deletesubscriptiondefinition-delete.html
    */
-  public deleteSubscriptionDefinition () {
+  public deleteSubscriptionDefinition() {
     this.add('greengrass:DeleteSubscriptionDefinition');
     return this;
   }
@@ -1429,7 +1450,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/disassociaterolefromgroup-delete.html
    */
-  public disassociateRoleFromGroup () {
+  public disassociateRoleFromGroup() {
     this.add('greengrass:DisassociateRoleFromGroup');
     return this;
   }
@@ -1441,7 +1462,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html
    */
-  public disassociateServiceRoleFromAccount () {
+  public disassociateServiceRoleFromAccount() {
     this.add('greengrass:DisassociateServiceRoleFromAccount');
     return this;
   }
@@ -1453,7 +1474,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html
    */
-  public getAssociatedRole () {
+  public getAssociatedRole() {
     this.add('greengrass:GetAssociatedRole');
     return this;
   }
@@ -1465,7 +1486,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getbulkdeploymentstatus-get.html
    */
-  public getBulkDeploymentStatus () {
+  public getBulkDeploymentStatus() {
     this.add('greengrass:GetBulkDeploymentStatus');
     return this;
   }
@@ -1477,7 +1498,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectivityinfo-get.html
    */
-  public getConnectivityInfo () {
+  public getConnectivityInfo() {
     this.add('greengrass:GetConnectivityInfo');
     return this;
   }
@@ -1489,7 +1510,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinition-get.html
    */
-  public getConnectorDefinition () {
+  public getConnectorDefinition() {
     this.add('greengrass:GetConnectorDefinition');
     return this;
   }
@@ -1501,7 +1522,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getconnectordefinitionversion-get.html
    */
-  public getConnectorDefinitionVersion () {
+  public getConnectorDefinitionVersion() {
     this.add('greengrass:GetConnectorDefinitionVersion');
     return this;
   }
@@ -1513,7 +1534,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html
    */
-  public getCoreDefinition () {
+  public getCoreDefinition() {
     this.add('greengrass:GetCoreDefinition');
     return this;
   }
@@ -1525,7 +1546,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinitionversion-get.html
    */
-  public getCoreDefinitionVersion () {
+  public getCoreDefinitionVersion() {
     this.add('greengrass:GetCoreDefinitionVersion');
     return this;
   }
@@ -1537,7 +1558,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html
    */
-  public getDeploymentStatus () {
+  public getDeploymentStatus() {
     this.add('greengrass:GetDeploymentStatus');
     return this;
   }
@@ -1549,7 +1570,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinition-get.html
    */
-  public getDeviceDefinition () {
+  public getDeviceDefinition() {
     this.add('greengrass:GetDeviceDefinition');
     return this;
   }
@@ -1561,7 +1582,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinitionversion-get.html
    */
-  public getDeviceDefinitionVersion () {
+  public getDeviceDefinitionVersion() {
     this.add('greengrass:GetDeviceDefinitionVersion');
     return this;
   }
@@ -1573,7 +1594,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinition-get.html
    */
-  public getFunctionDefinition () {
+  public getFunctionDefinition() {
     this.add('greengrass:GetFunctionDefinition');
     return this;
   }
@@ -1585,7 +1606,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinitionversion-get.html
    */
-  public getFunctionDefinitionVersion () {
+  public getFunctionDefinitionVersion() {
     this.add('greengrass:GetFunctionDefinitionVersion');
     return this;
   }
@@ -1597,7 +1618,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html
    */
-  public getGroup () {
+  public getGroup() {
     this.add('greengrass:GetGroup');
     return this;
   }
@@ -1609,7 +1630,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateauthority-get.html
    */
-  public getGroupCertificateAuthority () {
+  public getGroupCertificateAuthority() {
     this.add('greengrass:GetGroupCertificateAuthority');
     return this;
   }
@@ -1621,7 +1642,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateconfiguration-get.html
    */
-  public getGroupCertificateConfiguration () {
+  public getGroupCertificateConfiguration() {
     this.add('greengrass:GetGroupCertificateConfiguration');
     return this;
   }
@@ -1633,7 +1654,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getgroupversion-get.html
    */
-  public getGroupVersion () {
+  public getGroupVersion() {
     this.add('greengrass:GetGroupVersion');
     return this;
   }
@@ -1645,7 +1666,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinition-get.html
    */
-  public getLoggerDefinition () {
+  public getLoggerDefinition() {
     this.add('greengrass:GetLoggerDefinition');
     return this;
   }
@@ -1657,7 +1678,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinitionversion-get.html
    */
-  public getLoggerDefinitionVersion () {
+  public getLoggerDefinitionVersion() {
     this.add('greengrass:GetLoggerDefinitionVersion');
     return this;
   }
@@ -1669,7 +1690,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinition-get.html
    */
-  public getResourceDefinition () {
+  public getResourceDefinition() {
     this.add('greengrass:GetResourceDefinition');
     return this;
   }
@@ -1681,7 +1702,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getresourcedefinitionversion-get.html
    */
-  public getResourceDefinitionVersion () {
+  public getResourceDefinitionVersion() {
     this.add('greengrass:GetResourceDefinitionVersion');
     return this;
   }
@@ -1693,7 +1714,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getserviceroleforaccount-get.html
    */
-  public getServiceRoleForAccount () {
+  public getServiceRoleForAccount() {
     this.add('greengrass:GetServiceRoleForAccount');
     return this;
   }
@@ -1705,7 +1726,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html
    */
-  public getSubscriptionDefinition () {
+  public getSubscriptionDefinition() {
     this.add('greengrass:GetSubscriptionDefinition');
     return this;
   }
@@ -1717,7 +1738,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinitionversion-get.html
    */
-  public getSubscriptionDefinitionVersion () {
+  public getSubscriptionDefinitionVersion() {
     this.add('greengrass:GetSubscriptionDefinitionVersion');
     return this;
   }
@@ -1729,7 +1750,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeploymentdetailedreports-get.html
    */
-  public listBulkDeploymentDetailedReports () {
+  public listBulkDeploymentDetailedReports() {
     this.add('greengrass:ListBulkDeploymentDetailedReports');
     return this;
   }
@@ -1741,7 +1762,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listbulkdeployments-get.html
    */
-  public listBulkDeployments () {
+  public listBulkDeployments() {
     this.add('greengrass:ListBulkDeployments');
     return this;
   }
@@ -1753,7 +1774,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitionversions-get.html
    */
-  public listConnectorDefinitionVersions () {
+  public listConnectorDefinitionVersions() {
     this.add('greengrass:ListConnectorDefinitionVersions');
     return this;
   }
@@ -1765,7 +1786,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listconnectordefinitions-get.html
    */
-  public listConnectorDefinitions () {
+  public listConnectorDefinitions() {
     this.add('greengrass:ListConnectorDefinitions');
     return this;
   }
@@ -1777,7 +1798,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitionversions-get.html
    */
-  public listCoreDefinitionVersions () {
+  public listCoreDefinitionVersions() {
     this.add('greengrass:ListCoreDefinitionVersions');
     return this;
   }
@@ -1789,7 +1810,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listcoredefinitions-get.html
    */
-  public listCoreDefinitions () {
+  public listCoreDefinitions() {
     this.add('greengrass:ListCoreDefinitions');
     return this;
   }
@@ -1801,7 +1822,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html
    */
-  public listDeployments () {
+  public listDeployments() {
     this.add('greengrass:ListDeployments');
     return this;
   }
@@ -1813,7 +1834,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitionversions-get.html
    */
-  public listDeviceDefinitionVersions () {
+  public listDeviceDefinitionVersions() {
     this.add('greengrass:ListDeviceDefinitionVersions');
     return this;
   }
@@ -1825,7 +1846,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listdevicedefinitions-get.html
    */
-  public listDeviceDefinitions () {
+  public listDeviceDefinitions() {
     this.add('greengrass:ListDeviceDefinitions');
     return this;
   }
@@ -1837,7 +1858,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html
    */
-  public listFunctionDefinitionVersions () {
+  public listFunctionDefinitionVersions() {
     this.add('greengrass:ListFunctionDefinitionVersions');
     return this;
   }
@@ -1849,7 +1870,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitions-get.html
    */
-  public listFunctionDefinitions () {
+  public listFunctionDefinitions() {
     this.add('greengrass:ListFunctionDefinitions');
     return this;
   }
@@ -1861,7 +1882,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupcertificateauthorities-get.html
    */
-  public listGroupCertificateAuthorities () {
+  public listGroupCertificateAuthorities() {
     this.add('greengrass:ListGroupCertificateAuthorities');
     return this;
   }
@@ -1873,7 +1894,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroupversions-get.html
    */
-  public listGroupVersions () {
+  public listGroupVersions() {
     this.add('greengrass:ListGroupVersions');
     return this;
   }
@@ -1885,7 +1906,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html
    */
-  public listGroups () {
+  public listGroups() {
     this.add('greengrass:ListGroups');
     return this;
   }
@@ -1897,7 +1918,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitionversions-get.html
    */
-  public listLoggerDefinitionVersions () {
+  public listLoggerDefinitionVersions() {
     this.add('greengrass:ListLoggerDefinitionVersions');
     return this;
   }
@@ -1909,7 +1930,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitions-get.html
    */
-  public listLoggerDefinitions () {
+  public listLoggerDefinitions() {
     this.add('greengrass:ListLoggerDefinitions');
     return this;
   }
@@ -1921,7 +1942,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitionversions-get.html
    */
-  public listResourceDefinitionVersions () {
+  public listResourceDefinitionVersions() {
     this.add('greengrass:ListResourceDefinitionVersions');
     return this;
   }
@@ -1933,7 +1954,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listresourcedefinitions-get.html
    */
-  public listResourceDefinitions () {
+  public listResourceDefinitions() {
     this.add('greengrass:ListResourceDefinitions');
     return this;
   }
@@ -1945,7 +1966,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitionversions-get.html
    */
-  public listSubscriptionDefinitionVersions () {
+  public listSubscriptionDefinitionVersions() {
     this.add('greengrass:ListSubscriptionDefinitionVersions');
     return this;
   }
@@ -1957,7 +1978,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listsubscriptiondefinitions-get.html
    */
-  public listSubscriptionDefinitions () {
+  public listSubscriptionDefinitions() {
     this.add('greengrass:ListSubscriptionDefinitions');
     return this;
   }
@@ -1969,7 +1990,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listtagsforresource-get.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('greengrass:ListTagsForResource');
     return this;
   }
@@ -1981,7 +2002,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/resetdeployments-post.html
    */
-  public resetDeployments () {
+  public resetDeployments() {
     this.add('greengrass:ResetDeployments');
     return this;
   }
@@ -1993,7 +2014,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html
    */
-  public startBulkDeployment () {
+  public startBulkDeployment() {
     this.add('greengrass:StartBulkDeployment');
     return this;
   }
@@ -2005,7 +2026,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/stopbulkdeployment-put.html
    */
-  public stopBulkDeployment () {
+  public stopBulkDeployment() {
     this.add('greengrass:StopBulkDeployment');
     return this;
   }
@@ -2017,7 +2038,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/tagresource-post.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('greengrass:TagResource');
     return this;
   }
@@ -2029,7 +2050,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/untagresource-delete.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('greengrass:UntagResource');
     return this;
   }
@@ -2041,7 +2062,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectivityinfo-put.html
    */
-  public updateConnectivityInfo () {
+  public updateConnectivityInfo() {
     this.add('greengrass:UpdateConnectivityInfo');
     return this;
   }
@@ -2053,7 +2074,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectordefinition-put.html
    */
-  public updateConnectorDefinition () {
+  public updateConnectorDefinition() {
     this.add('greengrass:UpdateConnectorDefinition');
     return this;
   }
@@ -2065,7 +2086,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatecoredefinition-put.html
    */
-  public updateCoreDefinition () {
+  public updateCoreDefinition() {
     this.add('greengrass:UpdateCoreDefinition');
     return this;
   }
@@ -2077,7 +2098,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatedevicedefinition-put.html
    */
-  public updateDeviceDefinition () {
+  public updateDeviceDefinition() {
     this.add('greengrass:UpdateDeviceDefinition');
     return this;
   }
@@ -2089,7 +2110,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html
    */
-  public updateFunctionDefinition () {
+  public updateFunctionDefinition() {
     this.add('greengrass:UpdateFunctionDefinition');
     return this;
   }
@@ -2101,7 +2122,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updategroup-put.html
    */
-  public updateGroup () {
+  public updateGroup() {
     this.add('greengrass:UpdateGroup');
     return this;
   }
@@ -2113,7 +2134,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updategroupcertificateconfiguration-put.html
    */
-  public updateGroupCertificateConfiguration () {
+  public updateGroupCertificateConfiguration() {
     this.add('greengrass:UpdateGroupCertificateConfiguration');
     return this;
   }
@@ -2125,7 +2146,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateloggerdefinition-put.html
    */
-  public updateLoggerDefinition () {
+  public updateLoggerDefinition() {
     this.add('greengrass:UpdateLoggerDefinition');
     return this;
   }
@@ -2137,7 +2158,7 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updateresourcedefinition-put.html
    */
-  public updateResourceDefinition () {
+  public updateResourceDefinition() {
     this.add('greengrass:UpdateResourceDefinition');
     return this;
   }
@@ -2149,8 +2170,456 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/updatesubscriptiondefinition-put.html
    */
-  public updateSubscriptionDefinition () {
+  public updateSubscriptionDefinition() {
     this.add('greengrass:UpdateSubscriptionDefinition');
     return this;
+  }
+
+  /**
+   * Adds a resource of type connectivityInfo to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectivityinfo.html
+   *
+   * @param thingName - Identifier for the thingName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo';
+    arn = arn.replace('${ThingName}', thingName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type artifact to the statement
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param deploymentId - Identifier for the deploymentId.
+   * @param artifactId - Identifier for the artifactId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onArtifact(groupId: string, deploymentId: string, artifactId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}/artifacts/lambda/${ArtifactId}';
+    arn = arn.replace('${GroupId}', groupId);
+    arn = arn.replace('${DeploymentId}', deploymentId);
+    arn = arn.replace('${ArtifactId}', artifactId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type certificateAuthority to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-sec.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param certificateAuthorityId - Identifier for the certificateAuthorityId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCertificateAuthority(groupId: string, certificateAuthorityId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/certificateauthorities/${CertificateAuthorityId}';
+    arn = arn.replace('${GroupId}', groupId);
+    arn = arn.replace('${CertificateAuthorityId}', certificateAuthorityId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deployment to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-createdeploymentrequest.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param deploymentId - Identifier for the deploymentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDeployment(groupId: string, deploymentId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}';
+    arn = arn.replace('${GroupId}', groupId);
+    arn = arn.replace('${DeploymentId}', deploymentId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type bulkDeployment to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/developerguide/bulk-deploy-cli.html
+   *
+   * @param bulkDeploymentId - Identifier for the bulkDeploymentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBulkDeployment(bulkDeploymentId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/bulk/deployments/${BulkDeploymentId}';
+    arn = arn.replace('${BulkDeploymentId}', bulkDeploymentId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-groupinformation.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onGroup(groupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}';
+    arn = arn.replace('${GroupId}', groupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type groupVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-groupversion.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGroupVersion(groupId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/versions/${VersionId}';
+    arn = arn.replace('${GroupId}', groupId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type coreDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-core.html
+   *
+   * @param coreDefinitionId - Identifier for the coreDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onCoreDefinition(coreDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}';
+    arn = arn.replace('${CoreDefinitionId}', coreDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type coreDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-coredefinitionversion.html
+   *
+   * @param coreDefinitionId - Identifier for the coreDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCoreDefinitionVersion(coreDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${CoreDefinitionId}', coreDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deviceDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-device.html
+   *
+   * @param deviceDefinitionId - Identifier for the deviceDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeviceDefinition(deviceDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}';
+    arn = arn.replace('${DeviceDefinitionId}', deviceDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deviceDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-devicedefinitionversion.html
+   *
+   * @param deviceDefinitionId - Identifier for the deviceDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDeviceDefinitionVersion(deviceDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${DeviceDefinitionId}', deviceDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type functionDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-function.html
+   *
+   * @param functionDefinitionId - Identifier for the functionDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFunctionDefinition(functionDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}';
+    arn = arn.replace('${FunctionDefinitionId}', functionDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type functionDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-functiondefinitionversion.html
+   *
+   * @param functionDefinitionId - Identifier for the functionDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunctionDefinitionVersion(functionDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${FunctionDefinitionId}', functionDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type subscriptionDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-subscription.html
+   *
+   * @param subscriptionDefinitionId - Identifier for the subscriptionDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSubscriptionDefinition(subscriptionDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}';
+    arn = arn.replace('${SubscriptionDefinitionId}', subscriptionDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type subscriptionDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-subscriptiondefinitionversion.html
+   *
+   * @param subscriptionDefinitionId - Identifier for the subscriptionDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSubscriptionDefinitionVersion(subscriptionDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${SubscriptionDefinitionId}', subscriptionDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type loggerDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-logger.html
+   *
+   * @param loggerDefinitionId - Identifier for the loggerDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onLoggerDefinition(loggerDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}';
+    arn = arn.replace('${LoggerDefinitionId}', loggerDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type loggerDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-loggerdefinitionversion.html
+   *
+   * @param loggerDefinitionId - Identifier for the loggerDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLoggerDefinitionVersion(loggerDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${LoggerDefinitionId}', loggerDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type resourceDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resource.html
+   *
+   * @param resourceDefinitionId - Identifier for the resourceDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onResourceDefinition(resourceDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}';
+    arn = arn.replace('${ResourceDefinitionId}', resourceDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type resourceDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resourcedefinitionversion.html
+   *
+   * @param resourceDefinitionId - Identifier for the resourceDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onResourceDefinitionVersion(resourceDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${ResourceDefinitionId}', resourceDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type connectorDefinition to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connector.html
+   *
+   * @param connectorDefinitionId - Identifier for the connectorDefinitionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConnectorDefinition(connectorDefinitionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}';
+    arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type connectorDefinitionVersion to the statement
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectordefinitionversion.html
+   *
+   * @param connectorDefinitionId - Identifier for the connectorDefinitionId.
+   * @param versionId - Identifier for the versionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConnectorDefinitionVersion(connectorDefinitionId: string, versionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}';
+    arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
+    arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

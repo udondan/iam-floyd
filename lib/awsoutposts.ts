@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Outposts extends PolicyStatement {
   public servicePrefix = 'outposts';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateOutpost": {
       "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html",
       "description": "Creates an Outpost",
@@ -34,19 +34,22 @@ export class Outposts extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Outpost": {
       "name": "Outpost",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_Outpost.html",
       "arn": "arn:${Partition}:outposts:${Region}:${Account}:outpost/${OutpostId}",
       "conditionKeys": []
     },
     "Site": {
       "name": "Site",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_Site.html",
       "arn": "arn:${Partition}:outposts:${Region}:${Account}:site/${SiteId}",
       "conditionKeys": []
     },
     "Order": {
       "name": "Order",
+      "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html",
       "arn": "arn:${Partition}:outposts:${Region}:${Account}:order/${OrderId}",
       "conditionKeys": []
     }
@@ -59,7 +62,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html
    */
-  public createOutpost () {
+  public createOutpost() {
     this.add('outposts:CreateOutpost');
     return this;
   }
@@ -71,7 +74,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html
    */
-  public getOutpost () {
+  public getOutpost() {
     this.add('outposts:GetOutpost');
     return this;
   }
@@ -83,7 +86,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostInstanceTypes.html
    */
-  public getOutpostInstanceTypes () {
+  public getOutpostInstanceTypes() {
     this.add('outposts:GetOutpostInstanceTypes');
     return this;
   }
@@ -95,7 +98,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOutposts.html
    */
-  public listOutposts () {
+  public listOutposts() {
     this.add('outposts:ListOutposts');
     return this;
   }
@@ -107,8 +110,65 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html
    */
-  public listSites () {
+  public listSites() {
     this.add('outposts:ListSites');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Outpost to the statement
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_Outpost.html
+   *
+   * @param outpostId - Identifier for the outpostId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOutpost(outpostId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:outposts:${Region}:${Account}:outpost/${OutpostId}';
+    arn = arn.replace('${OutpostId}', outpostId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Site to the statement
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/API_Site.html
+   *
+   * @param siteId - Identifier for the siteId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSite(siteId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:outposts:${Region}:${Account}:site/${SiteId}';
+    arn = arn.replace('${SiteId}', siteId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Order to the statement
+   *
+   * https://docs.aws.amazon.com/outposts/latest/APIReference/Welcome.html
+   *
+   * @param orderId - Identifier for the orderId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOrder(orderId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:outposts:${Region}:${Account}:order/${OrderId}';
+    arn = arn.replace('${OrderId}', orderId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Health extends PolicyStatement {
   public servicePrefix = 'health';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeAffectedAccountsForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html",
       "description": "Gets a list of accounts that have been affected by the specified events in organization.",
@@ -92,10 +92,11 @@ export class Health extends PolicyStatement {
       "accessLevel": "Permissions management"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "event": {
       "name": "event",
-      "arn": "arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/*",
+      "url": "https://docs.aws.amazon.com/health/latest/ug/supported-operations.html",
+      "arn": "arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}",
       "conditionKeys": []
     }
   };
@@ -107,7 +108,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html
    */
-  public describeAffectedAccountsForOrganization () {
+  public describeAffectedAccountsForOrganization() {
     this.add('health:DescribeAffectedAccountsForOrganization');
     return this;
   }
@@ -119,7 +120,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html
    */
-  public describeAffectedEntities () {
+  public describeAffectedEntities() {
     this.add('health:DescribeAffectedEntities');
     return this;
   }
@@ -131,7 +132,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html
    */
-  public describeAffectedEntitiesForOrganization () {
+  public describeAffectedEntitiesForOrganization() {
     this.add('health:DescribeAffectedEntitiesForOrganization');
     return this;
   }
@@ -143,7 +144,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html
    */
-  public describeEntityAggregates () {
+  public describeEntityAggregates() {
     this.add('health:DescribeEntityAggregates');
     return this;
   }
@@ -155,7 +156,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html
    */
-  public describeEventAggregates () {
+  public describeEventAggregates() {
     this.add('health:DescribeEventAggregates');
     return this;
   }
@@ -167,7 +168,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html
    */
-  public describeEventDetails () {
+  public describeEventDetails() {
     this.add('health:DescribeEventDetails');
     return this;
   }
@@ -179,7 +180,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html
    */
-  public describeEventDetailsForOrganization () {
+  public describeEventDetailsForOrganization() {
     this.add('health:DescribeEventDetailsForOrganization');
     return this;
   }
@@ -191,7 +192,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html
    */
-  public describeEventTypes () {
+  public describeEventTypes() {
     this.add('health:DescribeEventTypes');
     return this;
   }
@@ -203,7 +204,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html
    */
-  public describeEvents () {
+  public describeEvents() {
     this.add('health:DescribeEvents');
     return this;
   }
@@ -215,7 +216,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html
    */
-  public describeEventsForOrganization () {
+  public describeEventsForOrganization() {
     this.add('health:DescribeEventsForOrganization');
     return this;
   }
@@ -227,7 +228,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html
    */
-  public describeHealthServiceStatusForOrganization () {
+  public describeHealthServiceStatusForOrganization() {
     this.add('health:DescribeHealthServiceStatusForOrganization');
     return this;
   }
@@ -239,7 +240,7 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DisableHealthServiceAccessForOrganization.html
    */
-  public disableHealthServiceAccessForOrganization () {
+  public disableHealthServiceAccessForOrganization() {
     this.add('health:DisableHealthServiceAccessForOrganization');
     return this;
   }
@@ -251,8 +252,31 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html
    */
-  public enableHealthServiceAccessForOrganization () {
+  public enableHealthServiceAccessForOrganization() {
     this.add('health:EnableHealthServiceAccessForOrganization');
     return this;
+  }
+
+  /**
+   * Adds a resource of type event to the statement
+   *
+   * https://docs.aws.amazon.com/health/latest/ug/supported-operations.html
+   *
+   * @param service - Identifier for the service.
+   * @param eventTypeCode - Identifier for the eventTypeCode.
+   * @param eventTypePlusId - Identifier for the eventTypePlusId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEvent(service: string, eventTypeCode: string, eventTypePlusId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}';
+    arn = arn.replace('${Service}', service);
+    arn = arn.replace('${EventTypeCode}', eventTypeCode);
+    arn = arn.replace('${EventTypePlusId}', eventTypePlusId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

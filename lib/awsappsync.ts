@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Appsync extends PolicyStatement {
   public servicePrefix = 'appsync';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateApiKey": {
       "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiKey.html",
       "description": "Creates a unique key that you can distribute to clients who are executing your API.",
@@ -256,14 +256,16 @@ export class Appsync extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "datasource": {
       "name": "datasource",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html",
       "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}",
       "conditionKeys": []
     },
     "graphqlapi": {
       "name": "graphqlapi",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html",
       "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -271,16 +273,19 @@ export class Appsync extends PolicyStatement {
     },
     "field": {
       "name": "field",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html",
       "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}",
       "conditionKeys": []
     },
     "type": {
       "name": "type",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type",
       "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}",
       "conditionKeys": []
     },
     "function": {
       "name": "function",
+      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html",
       "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}",
       "conditionKeys": []
     }
@@ -293,7 +298,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiKey.html
    */
-  public createApiKey () {
+  public createApiKey() {
     this.add('appsync:CreateApiKey');
     return this;
   }
@@ -305,7 +310,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDataSource.html
    */
-  public createDataSource () {
+  public createDataSource() {
     this.add('appsync:CreateDataSource');
     return this;
   }
@@ -317,7 +322,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateFunction.html
    */
-  public createFunction () {
+  public createFunction() {
     this.add('appsync:CreateFunction');
     return this;
   }
@@ -329,7 +334,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html
    */
-  public createGraphqlApi () {
+  public createGraphqlApi() {
     this.add('appsync:CreateGraphqlApi');
     return this;
   }
@@ -341,7 +346,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html
    */
-  public createResolver () {
+  public createResolver() {
     this.add('appsync:CreateResolver');
     return this;
   }
@@ -353,7 +358,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateType.html
    */
-  public createType () {
+  public createType() {
     this.add('appsync:CreateType');
     return this;
   }
@@ -365,7 +370,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApiKey.html
    */
-  public deleteApiKey () {
+  public deleteApiKey() {
     this.add('appsync:DeleteApiKey');
     return this;
   }
@@ -377,7 +382,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDataSource.html
    */
-  public deleteDataSource () {
+  public deleteDataSource() {
     this.add('appsync:DeleteDataSource');
     return this;
   }
@@ -389,7 +394,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteFunction.html
    */
-  public deleteFunction () {
+  public deleteFunction() {
     this.add('appsync:DeleteFunction');
     return this;
   }
@@ -401,7 +406,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteGraphqlApi.html
    */
-  public deleteGraphqlApi () {
+  public deleteGraphqlApi() {
     this.add('appsync:DeleteGraphqlApi');
     return this;
   }
@@ -413,7 +418,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteResolver.html
    */
-  public deleteResolver () {
+  public deleteResolver() {
     this.add('appsync:DeleteResolver');
     return this;
   }
@@ -425,7 +430,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteType.html
    */
-  public deleteType () {
+  public deleteType() {
     this.add('appsync:DeleteType');
     return this;
   }
@@ -437,7 +442,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDataSource.html
    */
-  public getDataSource () {
+  public getDataSource() {
     this.add('appsync:GetDataSource');
     return this;
   }
@@ -449,7 +454,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetFunction.html
    */
-  public getFunction () {
+  public getFunction() {
     this.add('appsync:GetFunction');
     return this;
   }
@@ -461,7 +466,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApi.html
    */
-  public getGraphqlApi () {
+  public getGraphqlApi() {
     this.add('appsync:GetGraphqlApi');
     return this;
   }
@@ -473,7 +478,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetIntrospectionSchema.html
    */
-  public getIntrospectionSchema () {
+  public getIntrospectionSchema() {
     this.add('appsync:GetIntrospectionSchema');
     return this;
   }
@@ -485,7 +490,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetResolver.html
    */
-  public getResolver () {
+  public getResolver() {
     this.add('appsync:GetResolver');
     return this;
   }
@@ -497,7 +502,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetSchemaCreationStatus.html
    */
-  public getSchemaCreationStatus () {
+  public getSchemaCreationStatus() {
     this.add('appsync:GetSchemaCreationStatus');
     return this;
   }
@@ -509,7 +514,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetType.html
    */
-  public getType () {
+  public getType() {
     this.add('appsync:GetType');
     return this;
   }
@@ -521,7 +526,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html
    */
-  public graphQL () {
+  public graphQL() {
     this.add('appsync:GraphQL');
     return this;
   }
@@ -533,7 +538,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListApiKeys.html
    */
-  public listApiKeys () {
+  public listApiKeys() {
     this.add('appsync:ListApiKeys');
     return this;
   }
@@ -545,7 +550,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDataSources.html
    */
-  public listDataSources () {
+  public listDataSources() {
     this.add('appsync:ListDataSources');
     return this;
   }
@@ -557,7 +562,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListFunctions.html
    */
-  public listFunctions () {
+  public listFunctions() {
     this.add('appsync:ListFunctions');
     return this;
   }
@@ -569,7 +574,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListGraphqlApis.html
    */
-  public listGraphqlApis () {
+  public listGraphqlApis() {
     this.add('appsync:ListGraphqlApis');
     return this;
   }
@@ -581,7 +586,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolvers.html
    */
-  public listResolvers () {
+  public listResolvers() {
     this.add('appsync:ListResolvers');
     return this;
   }
@@ -593,7 +598,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolversByFunction.html
    */
-  public listResolversByFunction () {
+  public listResolversByFunction() {
     this.add('appsync:ListResolversByFunction');
     return this;
   }
@@ -605,7 +610,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('appsync:ListTagsForResource');
     return this;
   }
@@ -617,7 +622,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTypes.html
    */
-  public listTypes () {
+  public listTypes() {
     this.add('appsync:ListTypes');
     return this;
   }
@@ -629,7 +634,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartSchemaCreation.html
    */
-  public startSchemaCreation () {
+  public startSchemaCreation() {
     this.add('appsync:StartSchemaCreation');
     return this;
   }
@@ -641,7 +646,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('appsync:TagResource');
     return this;
   }
@@ -653,7 +658,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('appsync:UntagResource');
     return this;
   }
@@ -665,7 +670,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApiKey.html
    */
-  public updateApiKey () {
+  public updateApiKey() {
     this.add('appsync:UpdateApiKey');
     return this;
   }
@@ -677,7 +682,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDataSource.html
    */
-  public updateDataSource () {
+  public updateDataSource() {
     this.add('appsync:UpdateDataSource');
     return this;
   }
@@ -689,7 +694,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateFunction.html
    */
-  public updateFunction () {
+  public updateFunction() {
     this.add('appsync:UpdateFunction');
     return this;
   }
@@ -701,7 +706,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html
    */
-  public updateGraphqlApi () {
+  public updateGraphqlApi() {
     this.add('appsync:UpdateGraphqlApi');
     return this;
   }
@@ -713,7 +718,7 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateResolver.html
    */
-  public updateResolver () {
+  public updateResolver() {
     this.add('appsync:UpdateResolver');
     return this;
   }
@@ -725,8 +730,116 @@ export class Appsync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateType.html
    */
-  public updateType () {
+  public updateType() {
     this.add('appsync:UpdateType');
     return this;
+  }
+
+  /**
+   * Adds a resource of type datasource to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param datasourceName - Identifier for the datasourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDatasource(graphQLAPIId: string, datasourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}';
+    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
+    arn = arn.replace('${DatasourceName}', datasourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type graphqlapi to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}';
+    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type field to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param typeName - Identifier for the typeName.
+   * @param fieldName - Identifier for the fieldName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onField(graphQLAPIId: string, typeName: string, fieldName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}';
+    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
+    arn = arn.replace('${TypeName}', typeName);
+    arn = arn.replace('${FieldName}', fieldName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type type to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param typeName - Identifier for the typeName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onType(graphQLAPIId: string, typeName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}';
+    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
+    arn = arn.replace('${TypeName}', typeName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type function to the statement
+   *
+   * https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html
+   *
+   * @param graphQLAPIId - Identifier for the graphQLAPIId.
+   * @param functionId - Identifier for the functionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunction(graphQLAPIId: string, functionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}';
+    arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
+    arn = arn.replace('${FunctionId}', functionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

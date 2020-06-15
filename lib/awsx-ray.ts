@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Xray extends PolicyStatement {
   public servicePrefix = 'xray';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchGetTraces": {
       "url": "https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html",
       "description": "Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs.",
@@ -144,14 +144,16 @@ export class Xray extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "group": {
       "name": "group",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-groups",
       "arn": "arn:${Partition}:xray:${Region}:${Account}:group/${GroupName}/${Id}",
       "conditionKeys": []
     },
     "sampling-rule": {
       "name": "sampling-rule",
+      "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-sampling",
       "arn": "arn:${Partition}:xray:${Region}:${Account}:sampling-rule/${SamplingRuleName}",
       "conditionKeys": []
     }
@@ -164,7 +166,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html
    */
-  public batchGetTraces () {
+  public batchGetTraces() {
     this.add('xray:BatchGetTraces');
     return this;
   }
@@ -176,7 +178,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_CreateGroup.html
    */
-  public createGroup () {
+  public createGroup() {
     this.add('xray:CreateGroup');
     return this;
   }
@@ -188,7 +190,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_CreateSamplingRule.html
    */
-  public createSamplingRule () {
+  public createSamplingRule() {
     this.add('xray:CreateSamplingRule');
     return this;
   }
@@ -200,7 +202,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_DeleteGroup.html
    */
-  public deleteGroup () {
+  public deleteGroup() {
     this.add('xray:DeleteGroup');
     return this;
   }
@@ -212,7 +214,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_DeleteSamplingRule.html
    */
-  public deleteSamplingRule () {
+  public deleteSamplingRule() {
     this.add('xray:DeleteSamplingRule');
     return this;
   }
@@ -224,7 +226,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetEncryptionConfig.html
    */
-  public getEncryptionConfig () {
+  public getEncryptionConfig() {
     this.add('xray:GetEncryptionConfig');
     return this;
   }
@@ -236,7 +238,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetGroup.html
    */
-  public getGroup () {
+  public getGroup() {
     this.add('xray:GetGroup');
     return this;
   }
@@ -248,7 +250,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetGroups.html
    */
-  public getGroups () {
+  public getGroups() {
     this.add('xray:GetGroups');
     return this;
   }
@@ -260,7 +262,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html
    */
-  public getSamplingRules () {
+  public getSamplingRules() {
     this.add('xray:GetSamplingRules');
     return this;
   }
@@ -272,7 +274,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingStatisticSummaries.html
    */
-  public getSamplingStatisticSummaries () {
+  public getSamplingStatisticSummaries() {
     this.add('xray:GetSamplingStatisticSummaries');
     return this;
   }
@@ -284,7 +286,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html
    */
-  public getSamplingTargets () {
+  public getSamplingTargets() {
     this.add('xray:GetSamplingTargets');
     return this;
   }
@@ -296,7 +298,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetServiceGraph.html
    */
-  public getServiceGraph () {
+  public getServiceGraph() {
     this.add('xray:GetServiceGraph');
     return this;
   }
@@ -308,7 +310,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetTimeSeriesServiceStatistics.html
    */
-  public getTimeSeriesServiceStatistics () {
+  public getTimeSeriesServiceStatistics() {
     this.add('xray:GetTimeSeriesServiceStatistics');
     return this;
   }
@@ -320,7 +322,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html
    */
-  public getTraceGraph () {
+  public getTraceGraph() {
     this.add('xray:GetTraceGraph');
     return this;
   }
@@ -332,7 +334,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html
    */
-  public getTraceSummaries () {
+  public getTraceSummaries() {
     this.add('xray:GetTraceSummaries');
     return this;
   }
@@ -344,7 +346,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_PutEncryptionConfig.html
    */
-  public putEncryptionConfig () {
+  public putEncryptionConfig() {
     this.add('xray:PutEncryptionConfig');
     return this;
   }
@@ -356,7 +358,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html
    */
-  public putTelemetryRecords () {
+  public putTelemetryRecords() {
     this.add('xray:PutTelemetryRecords');
     return this;
   }
@@ -368,7 +370,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html
    */
-  public putTraceSegments () {
+  public putTraceSegments() {
     this.add('xray:PutTraceSegments');
     return this;
   }
@@ -380,7 +382,7 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_UpdateGroup.html
    */
-  public updateGroup () {
+  public updateGroup() {
     this.add('xray:UpdateGroup');
     return this;
   }
@@ -392,8 +394,48 @@ export class Xray extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/xray/latest/api/API_UpdateSamplingRule.html
    */
-  public updateSamplingRule () {
+  public updateSamplingRule() {
     this.add('xray:UpdateSamplingRule');
     return this;
+  }
+
+  /**
+   * Adds a resource of type group to the statement
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-groups
+   *
+   * @param groupName - Identifier for the groupName.
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGroup(groupName: string, id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:xray:${Region}:${Account}:group/${GroupName}/${Id}';
+    arn = arn.replace('${GroupName}', groupName);
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type sampling-rule to the statement
+   *
+   * https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-sampling
+   *
+   * @param samplingRuleName - Identifier for the samplingRuleName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSamplingRule(samplingRuleName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:xray:${Region}:${Account}:sampling-rule/${SamplingRuleName}';
+    arn = arn.replace('${SamplingRuleName}', samplingRuleName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

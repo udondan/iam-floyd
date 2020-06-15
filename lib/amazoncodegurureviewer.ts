@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class CodeguruReviewer extends PolicyStatement {
   public servicePrefix = 'codeguru-reviewer';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateRepository": {
       "url": "",
       "description": "Grants permission to associates a repository with Amazon CodeGuru Reviewer.",
@@ -114,19 +114,22 @@ export class CodeguruReviewer extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "association": {
       "name": "association",
+      "url": "",
       "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}",
       "conditionKeys": []
     },
     "codereview": {
       "name": "codereview",
-      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:.+:.+",
+      "url": "",
+      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}",
       "conditionKeys": []
     },
     "repository": {
       "name": "repository",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
       "arn": "arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -139,7 +142,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public associateRepository () {
+  public associateRepository() {
     this.add('codeguru-reviewer:AssociateRepository');
     return this;
   }
@@ -149,7 +152,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public createConnectionToken () {
+  public createConnectionToken() {
     this.add('codeguru-reviewer:CreateConnectionToken');
     return this;
   }
@@ -159,7 +162,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeCodeReview () {
+  public describeCodeReview() {
     this.add('codeguru-reviewer:DescribeCodeReview');
     return this;
   }
@@ -169,7 +172,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeRecommendationFeedback () {
+  public describeRecommendationFeedback() {
     this.add('codeguru-reviewer:DescribeRecommendationFeedback');
     return this;
   }
@@ -179,7 +182,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeRepositoryAssociation () {
+  public describeRepositoryAssociation() {
     this.add('codeguru-reviewer:DescribeRepositoryAssociation');
     return this;
   }
@@ -189,7 +192,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public disassociateRepository () {
+  public disassociateRepository() {
     this.add('codeguru-reviewer:DisassociateRepository');
     return this;
   }
@@ -199,7 +202,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getMetricsData () {
+  public getMetricsData() {
     this.add('codeguru-reviewer:GetMetricsData');
     return this;
   }
@@ -209,7 +212,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listCodeReviews () {
+  public listCodeReviews() {
     this.add('codeguru-reviewer:ListCodeReviews');
     return this;
   }
@@ -219,7 +222,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRecommendationFeedback () {
+  public listRecommendationFeedback() {
     this.add('codeguru-reviewer:ListRecommendationFeedback');
     return this;
   }
@@ -229,7 +232,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRecommendations () {
+  public listRecommendations() {
     this.add('codeguru-reviewer:ListRecommendations');
     return this;
   }
@@ -239,7 +242,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRepositoryAssociations () {
+  public listRepositoryAssociations() {
     this.add('codeguru-reviewer:ListRepositoryAssociations');
     return this;
   }
@@ -249,7 +252,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public listThirdPartyRepositories () {
+  public listThirdPartyRepositories() {
     this.add('codeguru-reviewer:ListThirdPartyRepositories');
     return this;
   }
@@ -259,8 +262,64 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public putRecommendationFeedback () {
+  public putRecommendationFeedback() {
     this.add('codeguru-reviewer:PutRecommendationFeedback');
     return this;
+  }
+
+  /**
+   * Adds a resource of type association to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAssociation(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:association:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type codereview to the statement
+   *
+   * @param codeReviewUuid - Identifier for the codeReviewUuid.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCodereview(codeReviewUuid: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}';
+    arn = arn.replace('${CodeReviewUuid}', codeReviewUuid);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type repository to the statement
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param repositoryName - Identifier for the repositoryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';
+    arn = arn.replace('${RepositoryName}', repositoryName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

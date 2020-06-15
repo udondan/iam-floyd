@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Freertos extends PolicyStatement {
   public servicePrefix = 'freertos';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateSoftwareConfiguration": {
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
       "description": "Creates a software configuration.",
@@ -88,9 +88,10 @@ export class Freertos extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "configuration": {
       "name": "configuration",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
       "arn": "arn:${Partition}:freertos:${Region}:${Account}:configuration/${configurationName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -105,7 +106,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public createSoftwareConfiguration () {
+  public createSoftwareConfiguration() {
     this.add('freertos:CreateSoftwareConfiguration');
     return this;
   }
@@ -117,7 +118,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public deleteSoftwareConfiguration () {
+  public deleteSoftwareConfiguration() {
     this.add('freertos:DeleteSoftwareConfiguration');
     return this;
   }
@@ -129,7 +130,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public describeHardwarePlatform () {
+  public describeHardwarePlatform() {
     this.add('freertos:DescribeHardwarePlatform');
     return this;
   }
@@ -141,7 +142,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public describeSoftwareConfiguration () {
+  public describeSoftwareConfiguration() {
     this.add('freertos:DescribeSoftwareConfiguration');
     return this;
   }
@@ -153,7 +154,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public getSoftwareURL () {
+  public getSoftwareURL() {
     this.add('freertos:GetSoftwareURL');
     return this;
   }
@@ -165,7 +166,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public getSoftwareURLForConfiguration () {
+  public getSoftwareURLForConfiguration() {
     this.add('freertos:GetSoftwareURLForConfiguration');
     return this;
   }
@@ -177,7 +178,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listFreeRTOSVersions () {
+  public listFreeRTOSVersions() {
     this.add('freertos:ListFreeRTOSVersions');
     return this;
   }
@@ -189,7 +190,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listHardwarePlatforms () {
+  public listHardwarePlatforms() {
     this.add('freertos:ListHardwarePlatforms');
     return this;
   }
@@ -201,7 +202,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listHardwareVendors () {
+  public listHardwareVendors() {
     this.add('freertos:ListHardwareVendors');
     return this;
   }
@@ -213,7 +214,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listSoftwareConfigurations () {
+  public listSoftwareConfigurations() {
     this.add('freertos:ListSoftwareConfigurations');
     return this;
   }
@@ -225,8 +226,30 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public updateSoftwareConfiguration () {
+  public updateSoftwareConfiguration() {
     this.add('freertos:UpdateSoftwareConfiguration');
     return this;
+  }
+
+  /**
+   * Adds a resource of type configuration to the statement
+   *
+   * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
+   *
+   * @param configurationName - Identifier for the configurationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConfiguration(configurationName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:freertos:${Region}:${Account}:configuration/${configurationName}';
+    arn = arn.replace('${configurationName}', configurationName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

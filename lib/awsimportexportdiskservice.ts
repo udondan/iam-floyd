@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Importexport extends PolicyStatement {
   public servicePrefix = 'importexport';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html",
       "description": "This action cancels a specified job. Only the job owner can cancel it. The action fails if the job has already started or is complete.",
@@ -39,7 +39,7 @@ export class Importexport extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * This action cancels a specified job. Only the job owner can cancel it. The action fails if the job has already started or is complete.
@@ -48,7 +48,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html
    */
-  public cancelJob () {
+  public cancelJob() {
     this.add('importexport:CancelJob');
     return this;
   }
@@ -60,7 +60,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html
    */
-  public createJob () {
+  public createJob() {
     this.add('importexport:CreateJob');
     return this;
   }
@@ -72,7 +72,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html
    */
-  public getShippingLabel () {
+  public getShippingLabel() {
     this.add('importexport:GetShippingLabel');
     return this;
   }
@@ -84,7 +84,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html
    */
-  public getStatus () {
+  public getStatus() {
     this.add('importexport:GetStatus');
     return this;
   }
@@ -96,7 +96,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html
    */
-  public listJobs () {
+  public listJobs() {
     this.add('importexport:ListJobs');
     return this;
   }
@@ -108,7 +108,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html
    */
-  public updateJob () {
+  public updateJob() {
     this.add('importexport:UpdateJob');
     return this;
   }

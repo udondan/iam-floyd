@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Codestar extends PolicyStatement {
   public servicePrefix = 'codestar';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateTeamMember": {
       "url": "https://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html",
       "description": "Adds a user to the team for an AWS CodeStar project.",
@@ -210,9 +210,10 @@ export class Codestar extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
+      "url": "https://docs.aws.amazon.com/codestar/latest/userguide/working-with-projects.html",
       "arn": "arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -220,7 +221,8 @@ export class Codestar extends PolicyStatement {
     },
     "user": {
       "name": "user",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${aws:username}",
+      "url": "",
+      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}",
       "conditionKeys": [
         "iam:ResourceTag/${TagKey}"
       ]
@@ -234,7 +236,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html
    */
-  public associateTeamMember () {
+  public associateTeamMember() {
     this.add('codestar:AssociateTeamMember');
     return this;
   }
@@ -246,7 +248,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html
    */
-  public createProject () {
+  public createProject() {
     this.add('codestar:CreateProject');
     return this;
   }
@@ -258,7 +260,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateUserProfile.html
    */
-  public createUserProfile () {
+  public createUserProfile() {
     this.add('codestar:CreateUserProfile');
     return this;
   }
@@ -268,7 +270,7 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteExtendedAccess () {
+  public deleteExtendedAccess() {
     this.add('codestar:DeleteExtendedAccess');
     return this;
   }
@@ -280,7 +282,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteProject.html
    */
-  public deleteProject () {
+  public deleteProject() {
     this.add('codestar:DeleteProject');
     return this;
   }
@@ -292,7 +294,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html
    */
-  public deleteUserProfile () {
+  public deleteUserProfile() {
     this.add('codestar:DeleteUserProfile');
     return this;
   }
@@ -304,7 +306,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeProject.html
    */
-  public describeProject () {
+  public describeProject() {
     this.add('codestar:DescribeProject');
     return this;
   }
@@ -316,7 +318,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeUserProfile.html
    */
-  public describeUserProfile () {
+  public describeUserProfile() {
     this.add('codestar:DescribeUserProfile');
     return this;
   }
@@ -328,7 +330,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DisassociateTeamMember.html
    */
-  public disassociateTeamMember () {
+  public disassociateTeamMember() {
     this.add('codestar:DisassociateTeamMember');
     return this;
   }
@@ -338,7 +340,7 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getExtendedAccess () {
+  public getExtendedAccess() {
     this.add('codestar:GetExtendedAccess');
     return this;
   }
@@ -350,7 +352,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListProjects.html
    */
-  public listProjects () {
+  public listProjects() {
     this.add('codestar:ListProjects');
     return this;
   }
@@ -362,7 +364,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListResources.html
    */
-  public listResources () {
+  public listResources() {
     this.add('codestar:ListResources');
     return this;
   }
@@ -374,7 +376,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTagsForProject.html
    */
-  public listTagsForProject () {
+  public listTagsForProject() {
     this.add('codestar:ListTagsForProject');
     return this;
   }
@@ -386,7 +388,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTeamMembers.html
    */
-  public listTeamMembers () {
+  public listTeamMembers() {
     this.add('codestar:ListTeamMembers');
     return this;
   }
@@ -398,7 +400,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListUserProfiles.html
    */
-  public listUserProfiles () {
+  public listUserProfiles() {
     this.add('codestar:ListUserProfiles');
     return this;
   }
@@ -408,7 +410,7 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public putExtendedAccess () {
+  public putExtendedAccess() {
     this.add('codestar:PutExtendedAccess');
     return this;
   }
@@ -420,7 +422,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_TagProject.html
    */
-  public tagProject () {
+  public tagProject() {
     this.add('codestar:TagProject');
     return this;
   }
@@ -432,7 +434,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UntagProject.html
    */
-  public untagProject () {
+  public untagProject() {
     this.add('codestar:UntagProject');
     return this;
   }
@@ -444,7 +446,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateProject.html
    */
-  public updateProject () {
+  public updateProject() {
     this.add('codestar:UpdateProject');
     return this;
   }
@@ -456,7 +458,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateTeamMember.html
    */
-  public updateTeamMember () {
+  public updateTeamMember() {
     this.add('codestar:UpdateTeamMember');
     return this;
   }
@@ -468,8 +470,50 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateUserProfile.html
    */
-  public updateUserProfile () {
+  public updateUserProfile() {
     this.add('codestar:UpdateUserProfile');
     return this;
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/codestar/latest/userguide/working-with-projects.html
+   *
+   * @param projectId - Identifier for the projectId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onProject(projectId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}';
+    arn = arn.replace('${ProjectId}', projectId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * @param userNameWithPath - Identifier for the userNameWithPath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - iam:ResourceTag/${TagKey}
+   */
+  public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';
+    arn = arn.replace('${UserNameWithPath}', userNameWithPath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

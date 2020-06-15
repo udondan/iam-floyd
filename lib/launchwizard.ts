@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Launchwizard extends PolicyStatement {
   public servicePrefix = 'launchwizard';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeleteApp": {
       "url": "https://docs.aws.amazon.com/launchwizard/",
       "description": "Delete an application",
@@ -49,7 +49,7 @@ export class Launchwizard extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Delete an application
@@ -58,7 +58,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public deleteApp () {
+  public deleteApp() {
     this.add('launchwizard:DeleteApp');
     return this;
   }
@@ -70,7 +70,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public describeProvisionedApp () {
+  public describeProvisionedApp() {
     this.add('launchwizard:DescribeProvisionedApp');
     return this;
   }
@@ -82,7 +82,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public describeProvisioningEvents () {
+  public describeProvisioningEvents() {
     this.add('launchwizard:DescribeProvisioningEvents');
     return this;
   }
@@ -94,7 +94,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public getInfrastructureSuggestion () {
+  public getInfrastructureSuggestion() {
     this.add('launchwizard:GetInfrastructureSuggestion');
     return this;
   }
@@ -106,7 +106,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public getIpAddress () {
+  public getIpAddress() {
     this.add('launchwizard:GetIpAddress');
     return this;
   }
@@ -118,7 +118,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public getResourceCostEstimate () {
+  public getResourceCostEstimate() {
     this.add('launchwizard:GetResourceCostEstimate');
     return this;
   }
@@ -130,7 +130,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public listProvisionedApps () {
+  public listProvisionedApps() {
     this.add('launchwizard:ListProvisionedApps');
     return this;
   }
@@ -142,7 +142,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public startProvisioning () {
+  public startProvisioning() {
     this.add('launchwizard:StartProvisioning');
     return this;
   }

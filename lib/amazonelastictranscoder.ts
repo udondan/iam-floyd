@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Elastictranscoder extends PolicyStatement {
   public servicePrefix = 'elastictranscoder';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html",
       "description": "Cancel a job that Elastic Transcoder has not begun to process",
@@ -162,19 +162,22 @@ export class Elastictranscoder extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "job": {
       "name": "job",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html",
       "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}",
       "conditionKeys": []
     },
     "pipeline": {
       "name": "pipeline",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html",
       "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}",
       "conditionKeys": []
     },
     "preset": {
       "name": "preset",
+      "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html",
       "arn": "arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}",
       "conditionKeys": []
     }
@@ -187,7 +190,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html
    */
-  public cancelJob () {
+  public cancelJob() {
     this.add('elastictranscoder:CancelJob');
     return this;
   }
@@ -199,7 +202,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html
    */
-  public createJob () {
+  public createJob() {
     this.add('elastictranscoder:CreateJob');
     return this;
   }
@@ -211,7 +214,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html
    */
-  public createPipeline () {
+  public createPipeline() {
     this.add('elastictranscoder:CreatePipeline');
     return this;
   }
@@ -223,7 +226,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html
    */
-  public createPreset () {
+  public createPreset() {
     this.add('elastictranscoder:CreatePreset');
     return this;
   }
@@ -235,7 +238,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html
    */
-  public deletePipeline () {
+  public deletePipeline() {
     this.add('elastictranscoder:DeletePipeline');
     return this;
   }
@@ -247,7 +250,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html
    */
-  public deletePreset () {
+  public deletePreset() {
     this.add('elastictranscoder:DeletePreset');
     return this;
   }
@@ -259,7 +262,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html
    */
-  public listJobsByPipeline () {
+  public listJobsByPipeline() {
     this.add('elastictranscoder:ListJobsByPipeline');
     return this;
   }
@@ -271,7 +274,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html
    */
-  public listJobsByStatus () {
+  public listJobsByStatus() {
     this.add('elastictranscoder:ListJobsByStatus');
     return this;
   }
@@ -283,7 +286,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html
    */
-  public listPipelines () {
+  public listPipelines() {
     this.add('elastictranscoder:ListPipelines');
     return this;
   }
@@ -295,7 +298,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html
    */
-  public listPresets () {
+  public listPresets() {
     this.add('elastictranscoder:ListPresets');
     return this;
   }
@@ -307,7 +310,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html
    */
-  public readJob () {
+  public readJob() {
     this.add('elastictranscoder:ReadJob');
     return this;
   }
@@ -319,7 +322,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html
    */
-  public readPipeline () {
+  public readPipeline() {
     this.add('elastictranscoder:ReadPipeline');
     return this;
   }
@@ -331,7 +334,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html
    */
-  public readPreset () {
+  public readPreset() {
     this.add('elastictranscoder:ReadPreset');
     return this;
   }
@@ -343,7 +346,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html
    */
-  public testRole () {
+  public testRole() {
     this.add('elastictranscoder:TestRole');
     return this;
   }
@@ -355,7 +358,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html
    */
-  public updatePipeline () {
+  public updatePipeline() {
     this.add('elastictranscoder:UpdatePipeline');
     return this;
   }
@@ -367,7 +370,7 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html
    */
-  public updatePipelineNotifications () {
+  public updatePipelineNotifications() {
     this.add('elastictranscoder:UpdatePipelineNotifications');
     return this;
   }
@@ -379,8 +382,65 @@ export class Elastictranscoder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html
    */
-  public updatePipelineStatus () {
+  public updatePipelineStatus() {
     this.add('elastictranscoder:UpdatePipelineStatus');
     return this;
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html
+   *
+   * @param pipelineId - Identifier for the pipelineId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}';
+    arn = arn.replace('${PipelineId}', pipelineId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type preset to the statement
+   *
+   * https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html
+   *
+   * @param presetId - Identifier for the presetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPreset(presetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}';
+    arn = arn.replace('${PresetId}', presetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

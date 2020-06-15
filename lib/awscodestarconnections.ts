@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class CodestarConnections extends PolicyStatement {
   public servicePrefix = 'codestar-connections';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateConnection": {
       "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html",
       "description": "Grants permission to create a Connection resource",
@@ -155,9 +155,10 @@ export class CodestarConnections extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Connection": {
       "name": "Connection",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Connection.html",
       "arn": "arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}",
       "conditionKeys": []
     }
@@ -170,7 +171,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
    */
-  public createConnection () {
+  public createConnection() {
     this.add('codestar-connections:CreateConnection');
     return this;
   }
@@ -182,7 +183,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html
    */
-  public deleteConnection () {
+  public deleteConnection() {
     this.add('codestar-connections:DeleteConnection');
     return this;
   }
@@ -194,7 +195,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html
    */
-  public getConnection () {
+  public getConnection() {
     this.add('codestar-connections:GetConnection');
     return this;
   }
@@ -206,7 +207,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
-  public getIndividualAccessToken () {
+  public getIndividualAccessToken() {
     this.add('codestar-connections:GetIndividualAccessToken');
     return this;
   }
@@ -218,7 +219,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
-  public getInstallationUrl () {
+  public getInstallationUrl() {
     this.add('codestar-connections:GetInstallationUrl');
     return this;
   }
@@ -230,7 +231,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
    */
-  public listConnections () {
+  public listConnections() {
     this.add('codestar-connections:ListConnections');
     return this;
   }
@@ -242,7 +243,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
-  public listInstallationTargets () {
+  public listInstallationTargets() {
     this.add('codestar-connections:ListInstallationTargets');
     return this;
   }
@@ -254,7 +255,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('codestar-connections:ListTagsForResource');
     return this;
   }
@@ -266,7 +267,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-passconnection
    */
-  public passConnection () {
+  public passConnection() {
     this.add('codestar-connections:PassConnection');
     return this;
   }
@@ -278,7 +279,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
-  public startOAuthHandshake () {
+  public startOAuthHandshake() {
     this.add('codestar-connections:StartOAuthHandshake');
     return this;
   }
@@ -290,7 +291,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('codestar-connections:TagResource');
     return this;
   }
@@ -302,7 +303,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('codestar-connections:UntagResource');
     return this;
   }
@@ -314,7 +315,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
-  public updateConnectionInstallation () {
+  public updateConnectionInstallation() {
     this.add('codestar-connections:UpdateConnectionInstallation');
     return this;
   }
@@ -326,8 +327,27 @@ export class CodestarConnections extends PolicyStatement {
    *
    * ${AuthZDocPage}#connections-use
    */
-  public useConnection () {
+  public useConnection() {
     this.add('codestar-connections:UseConnection');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Connection to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Connection.html
+   *
+   * @param connectionId - Identifier for the connectionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}';
+    arn = arn.replace('${ConnectionId}', connectionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

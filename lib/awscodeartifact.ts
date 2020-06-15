@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Codeartifact extends PolicyStatement {
   public servicePrefix = 'codeartifact';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateExternalConnection": {
       "url": "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssociateExternalConnection.html",
       "description": "Grants permission to add an external connection to a repository",
@@ -349,19 +349,22 @@ export class Codeartifact extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "domain": {
       "name": "domain",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
       "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}",
       "conditionKeys": []
     },
     "repository": {
       "name": "repository",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html",
       "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}",
       "conditionKeys": []
     },
     "package": {
       "name": "package",
+      "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html",
       "arn": "arn:${Partition}:codeartifact:${Region}:${Account}:package/${DomainName}/${RepositoryName}/${PackageFormat}/${PackageNamespace}/${PackageName}",
       "conditionKeys": []
     }
@@ -374,7 +377,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssociateExternalConnection.html
    */
-  public associateExternalConnection () {
+  public associateExternalConnection() {
     this.add('codeartifact:AssociateExternalConnection');
     return this;
   }
@@ -386,7 +389,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repos-upstream.html
    */
-  public associateWithDownstreamRepository () {
+  public associateWithDownstreamRepository() {
     this.add('codeartifact:AssociateWithDownstreamRepository');
     return this;
   }
@@ -398,7 +401,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CopyPackageVersions.html
    */
-  public copyPackageVersions () {
+  public copyPackageVersions() {
     this.add('codeartifact:CopyPackageVersions');
     return this;
   }
@@ -410,7 +413,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateDomain.html
    */
-  public createDomain () {
+  public createDomain() {
     this.add('codeartifact:CreateDomain');
     return this;
   }
@@ -422,7 +425,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html
    */
-  public createRepository () {
+  public createRepository() {
     this.add('codeartifact:CreateRepository');
     return this;
   }
@@ -434,7 +437,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomain.html
    */
-  public deleteDomain () {
+  public deleteDomain() {
     this.add('codeartifact:DeleteDomain');
     return this;
   }
@@ -446,7 +449,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteDomainPermissionsPolicy.html
    */
-  public deleteDomainPermissionsPolicy () {
+  public deleteDomainPermissionsPolicy() {
     this.add('codeartifact:DeleteDomainPermissionsPolicy');
     return this;
   }
@@ -458,7 +461,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html
    */
-  public deletePackageVersions () {
+  public deletePackageVersions() {
     this.add('codeartifact:DeletePackageVersions');
     return this;
   }
@@ -470,7 +473,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepository.html
    */
-  public deleteRepository () {
+  public deleteRepository() {
     this.add('codeartifact:DeleteRepository');
     return this;
   }
@@ -482,7 +485,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeleteRepositoryPermissionsPolicy.html
    */
-  public deleteRepositoryPermissionsPolicy () {
+  public deleteRepositoryPermissionsPolicy() {
     this.add('codeartifact:DeleteRepositoryPermissionsPolicy');
     return this;
   }
@@ -494,7 +497,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribeDomain.html
    */
-  public describeDomain () {
+  public describeDomain() {
     this.add('codeartifact:DescribeDomain');
     return this;
   }
@@ -506,7 +509,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html
    */
-  public describePackageVersion () {
+  public describePackageVersion() {
     this.add('codeartifact:DescribePackageVersion');
     return this;
   }
@@ -518,7 +521,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribeRepository.html
    */
-  public describeRepository () {
+  public describeRepository() {
     this.add('codeartifact:DescribeRepository');
     return this;
   }
@@ -530,7 +533,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisassociateExternalConnection.html
    */
-  public disassociateExternalConnection () {
+  public disassociateExternalConnection() {
     this.add('codeartifact:DisassociateExternalConnection');
     return this;
   }
@@ -542,7 +545,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html
    */
-  public disposePackageVersions () {
+  public disposePackageVersions() {
     this.add('codeartifact:DisposePackageVersions');
     return this;
   }
@@ -554,7 +557,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetAuthorizationToken.html
    */
-  public getAuthorizationToken () {
+  public getAuthorizationToken() {
     this.add('codeartifact:GetAuthorizationToken');
     return this;
   }
@@ -566,7 +569,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetDomainPermissionsPolicy.html
    */
-  public getDomainPermissionsPolicy () {
+  public getDomainPermissionsPolicy() {
     this.add('codeartifact:GetDomainPermissionsPolicy');
     return this;
   }
@@ -578,7 +581,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetPackageVersionAsset.html
    */
-  public getPackageVersionAsset () {
+  public getPackageVersionAsset() {
     this.add('codeartifact:GetPackageVersionAsset');
     return this;
   }
@@ -590,7 +593,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetPackageVersionReadme.html
    */
-  public getPackageVersionReadme () {
+  public getPackageVersionReadme() {
     this.add('codeartifact:GetPackageVersionReadme');
     return this;
   }
@@ -602,7 +605,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetRepositoryEndpoint.html
    */
-  public getRepositoryEndpoint () {
+  public getRepositoryEndpoint() {
     this.add('codeartifact:GetRepositoryEndpoint');
     return this;
   }
@@ -614,7 +617,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_GetRepositoryPermissionsPolicy.html
    */
-  public getRepositoryPermissionsPolicy () {
+  public getRepositoryPermissionsPolicy() {
     this.add('codeartifact:GetRepositoryPermissionsPolicy');
     return this;
   }
@@ -626,7 +629,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html
    */
-  public listDomains () {
+  public listDomains() {
     this.add('codeartifact:ListDomains');
     return this;
   }
@@ -638,7 +641,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersionAssets.html
    */
-  public listPackageVersionAssets () {
+  public listPackageVersionAssets() {
     this.add('codeartifact:ListPackageVersionAssets');
     return this;
   }
@@ -650,7 +653,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersionDependencies.html
    */
-  public listPackageVersionDependencies () {
+  public listPackageVersionDependencies() {
     this.add('codeartifact:ListPackageVersionDependencies');
     return this;
   }
@@ -662,7 +665,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html
    */
-  public listPackageVersions () {
+  public listPackageVersions() {
     this.add('codeartifact:ListPackageVersions');
     return this;
   }
@@ -674,7 +677,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html
    */
-  public listPackages () {
+  public listPackages() {
     this.add('codeartifact:ListPackages');
     return this;
   }
@@ -686,7 +689,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html
    */
-  public listRepositories () {
+  public listRepositories() {
     this.add('codeartifact:ListRepositories');
     return this;
   }
@@ -698,7 +701,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositoriesInDomain.html
    */
-  public listRepositoriesInDomain () {
+  public listRepositoriesInDomain() {
     this.add('codeartifact:ListRepositoriesInDomain');
     return this;
   }
@@ -710,7 +713,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
    */
-  public publishPackageVersion () {
+  public publishPackageVersion() {
     this.add('codeartifact:PublishPackageVersion');
     return this;
   }
@@ -722,7 +725,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutDomainPermissionsPolicy.html
    */
-  public putDomainPermissionsPolicy () {
+  public putDomainPermissionsPolicy() {
     this.add('codeartifact:PutDomainPermissionsPolicy');
     return this;
   }
@@ -734,7 +737,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
    */
-  public putPackageMetadata () {
+  public putPackageMetadata() {
     this.add('codeartifact:PutPackageMetadata');
     return this;
   }
@@ -746,7 +749,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PutRepositoryPermissionsPolicy.html
    */
-  public putRepositoryPermissionsPolicy () {
+  public putRepositoryPermissionsPolicy() {
     this.add('codeartifact:PutRepositoryPermissionsPolicy');
     return this;
   }
@@ -758,7 +761,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
    */
-  public readFromRepository () {
+  public readFromRepository() {
     this.add('codeartifact:ReadFromRepository');
     return this;
   }
@@ -770,7 +773,7 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html
    */
-  public updatePackageVersionsStatus () {
+  public updatePackageVersionsStatus() {
     this.add('codeartifact:UpdatePackageVersionsStatus');
     return this;
   }
@@ -782,8 +785,75 @@ export class Codeartifact extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html
    */
-  public updateRepository () {
+  public updateRepository() {
     this.add('codeartifact:UpdateRepository');
     return this;
+  }
+
+  /**
+   * Adds a resource of type domain to the statement
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}';
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type repository to the statement
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param repositoryName - Identifier for the repositoryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRepository(domainName: string, repositoryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}';
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${RepositoryName}', repositoryName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type package to the statement
+   *
+   * https://docs.aws.amazon.com/codeartifact/latest/userguide/repo-policies.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param repositoryName - Identifier for the repositoryName.
+   * @param packageFormat - Identifier for the packageFormat.
+   * @param packageNamespace - Identifier for the packageNamespace.
+   * @param packageName - Identifier for the packageName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPackage(domainName: string, repositoryName: string, packageFormat: string, packageNamespace: string, packageName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:package/${DomainName}/${RepositoryName}/${PackageFormat}/${PackageNamespace}/${PackageName}';
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${RepositoryName}', repositoryName);
+    arn = arn.replace('${PackageFormat}', packageFormat);
+    arn = arn.replace('${PackageNamespace}', packageNamespace);
+    arn = arn.replace('${PackageName}', packageName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

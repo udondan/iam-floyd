@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplaceMeteringService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-metering-service';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchMeterUsage": {
       "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html",
       "description": "Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.",
@@ -29,7 +29,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.
@@ -38,7 +38,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html
    */
-  public batchMeterUsage () {
+  public batchMeterUsage() {
     this.add('aws-marketplace-metering-service:BatchMeterUsage');
     return this;
   }
@@ -50,7 +50,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html
    */
-  public meterUsage () {
+  public meterUsage() {
     this.add('aws-marketplace-metering-service:MeterUsage');
     return this;
   }
@@ -62,7 +62,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html
    */
-  public registerUsage () {
+  public registerUsage() {
     this.add('aws-marketplace-metering-service:RegisterUsage');
     return this;
   }
@@ -74,7 +74,7 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html
    */
-  public resolveCustomer () {
+  public resolveCustomer() {
     this.add('aws-marketplace-metering-service:ResolveCustomer');
     return this;
   }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Groundtruthlabeling extends PolicyStatement {
   public servicePrefix = 'groundtruthlabeling';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeConsoleJob": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file",
       "description": "Get status of GroundTruthLabeling Jobs.",
@@ -29,7 +29,7 @@ export class Groundtruthlabeling extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Get status of GroundTruthLabeling Jobs.
@@ -38,7 +38,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
-  public describeConsoleJob () {
+  public describeConsoleJob() {
     this.add('groundtruthlabeling:DescribeConsoleJob');
     return this;
   }
@@ -50,7 +50,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
-  public listDatasetObjects () {
+  public listDatasetObjects() {
     this.add('groundtruthlabeling:ListDatasetObjects');
     return this;
   }
@@ -62,7 +62,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-data-filtering
    */
-  public runFilterOrSampleDatasetJob () {
+  public runFilterOrSampleDatasetJob() {
     this.add('groundtruthlabeling:RunFilterOrSampleDatasetJob');
     return this;
   }
@@ -74,7 +74,7 @@ export class Groundtruthlabeling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file
    */
-  public runGenerateManifestByCrawlingJob () {
+  public runGenerateManifestByCrawlingJob() {
     this.add('groundtruthlabeling:RunGenerateManifestByCrawlingJob');
     return this;
   }

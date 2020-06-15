@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class States extends PolicyStatement {
   public servicePrefix = 'states';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateActivity": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html",
       "description": "Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.",
@@ -217,9 +217,10 @@ export class States extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "activity": {
       "name": "activity",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html",
       "arn": "arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -227,11 +228,13 @@ export class States extends PolicyStatement {
     },
     "execution": {
       "name": "execution",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-executions.html",
       "arn": "arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}",
       "conditionKeys": []
     },
     "statemachine": {
       "name": "statemachine",
+      "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html",
       "arn": "arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -246,7 +249,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html
    */
-  public createActivity () {
+  public createActivity() {
     this.add('states:CreateActivity');
     return this;
   }
@@ -258,7 +261,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html
    */
-  public createStateMachine () {
+  public createStateMachine() {
     this.add('states:CreateStateMachine');
     return this;
   }
@@ -270,7 +273,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteActivity.html
    */
-  public deleteActivity () {
+  public deleteActivity() {
     this.add('states:DeleteActivity');
     return this;
   }
@@ -282,7 +285,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachine.html
    */
-  public deleteStateMachine () {
+  public deleteStateMachine() {
     this.add('states:DeleteStateMachine');
     return this;
   }
@@ -294,7 +297,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html
    */
-  public describeActivity () {
+  public describeActivity() {
     this.add('states:DescribeActivity');
     return this;
   }
@@ -306,7 +309,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeExecution.html
    */
-  public describeExecution () {
+  public describeExecution() {
     this.add('states:DescribeExecution');
     return this;
   }
@@ -318,7 +321,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html
    */
-  public describeStateMachine () {
+  public describeStateMachine() {
     this.add('states:DescribeStateMachine');
     return this;
   }
@@ -330,7 +333,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineForExecution.html
    */
-  public describeStateMachineForExecution () {
+  public describeStateMachineForExecution() {
     this.add('states:DescribeStateMachineForExecution');
     return this;
   }
@@ -342,7 +345,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetActivityTask.html
    */
-  public getActivityTask () {
+  public getActivityTask() {
     this.add('states:GetActivityTask');
     return this;
   }
@@ -354,7 +357,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetExecutionHistory.html
    */
-  public getExecutionHistory () {
+  public getExecutionHistory() {
     this.add('states:GetExecutionHistory');
     return this;
   }
@@ -366,7 +369,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html
    */
-  public listActivities () {
+  public listActivities() {
     this.add('states:ListActivities');
     return this;
   }
@@ -378,7 +381,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html
    */
-  public listExecutions () {
+  public listExecutions() {
     this.add('states:ListExecutions');
     return this;
   }
@@ -390,7 +393,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachines.html
    */
-  public listStateMachines () {
+  public listStateMachines() {
     this.add('states:ListStateMachines');
     return this;
   }
@@ -402,7 +405,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('states:ListTagsForResource');
     return this;
   }
@@ -414,7 +417,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskFailure.html
    */
-  public sendTaskFailure () {
+  public sendTaskFailure() {
     this.add('states:SendTaskFailure');
     return this;
   }
@@ -426,7 +429,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskHeartbeat.html
    */
-  public sendTaskHeartbeat () {
+  public sendTaskHeartbeat() {
     this.add('states:SendTaskHeartbeat');
     return this;
   }
@@ -438,7 +441,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskSuccess.html
    */
-  public sendTaskSuccess () {
+  public sendTaskSuccess() {
     this.add('states:SendTaskSuccess');
     return this;
   }
@@ -450,7 +453,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html
    */
-  public startExecution () {
+  public startExecution() {
     this.add('states:StartExecution');
     return this;
   }
@@ -462,7 +465,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html
    */
-  public stopExecution () {
+  public stopExecution() {
     this.add('states:StopExecution');
     return this;
   }
@@ -474,7 +477,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('states:TagResource');
     return this;
   }
@@ -486,7 +489,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('states:UntagResource');
     return this;
   }
@@ -498,8 +501,73 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html
    */
-  public updateStateMachine () {
+  public updateStateMachine() {
     this.add('states:UpdateStateMachine');
     return this;
+  }
+
+  /**
+   * Adds a resource of type activity to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html
+   *
+   * @param activityName - Identifier for the activityName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}';
+    arn = arn.replace('${ActivityName}', activityName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type execution to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-executions.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param executionId - Identifier for the executionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onExecution(stateMachineName: string, executionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}';
+    arn = arn.replace('${StateMachineName}', stateMachineName);
+    arn = arn.replace('${ExecutionId}', executionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type statemachine to the statement
+   *
+   * https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html
+   *
+   * @param stateMachineName - Identifier for the stateMachineName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}';
+    arn = arn.replace('${StateMachineName}', stateMachineName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

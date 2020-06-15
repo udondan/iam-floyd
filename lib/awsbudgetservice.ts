@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Budgets extends PolicyStatement {
   public servicePrefix = 'budgets';
-  public actions : Actions = {
+  public actions: Actions = {
     "ModifyBudget": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Modify budgets and budget details",
@@ -29,9 +29,10 @@ export class Budgets extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "budget": {
       "name": "budget",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html",
       "arn": "arn:${Partition}:budgets:${Region}:${Account}:budget/${BudgetName}",
       "conditionKeys": []
     }
@@ -44,7 +45,7 @@ export class Budgets extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyBudget () {
+  public modifyBudget() {
     this.add('budgets:ModifyBudget');
     return this;
   }
@@ -56,8 +57,27 @@ export class Budgets extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewBudget () {
+  public viewBudget() {
     this.add('budgets:ViewBudget');
     return this;
+  }
+
+  /**
+   * Adds a resource of type budget to the statement
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html
+   *
+   * @param budgetName - Identifier for the budgetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBudget(budgetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:budgets:${Region}:${Account}:budget/${BudgetName}';
+    arn = arn.replace('${BudgetName}', budgetName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mobileanalytics extends PolicyStatement {
   public servicePrefix = 'mobileanalytics';
-  public actions : Actions = {
+  public actions: Actions = {
     "GetFinancialReports": {
       "url": "",
       "description": "Grant access to financial metrics for an app",
@@ -24,14 +24,14 @@ export class Mobileanalytics extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grant access to financial metrics for an app
    *
    * Access Level: Read
    */
-  public getFinancialReports () {
+  public getFinancialReports() {
     this.add('mobileanalytics:GetFinancialReports');
     return this;
   }
@@ -41,7 +41,7 @@ export class Mobileanalytics extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getReports () {
+  public getReports() {
     this.add('mobileanalytics:GetReports');
     return this;
   }
@@ -53,7 +53,7 @@ export class Mobileanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html
    */
-  public putEvents () {
+  public putEvents() {
     this.add('mobileanalytics:PutEvents');
     return this;
   }

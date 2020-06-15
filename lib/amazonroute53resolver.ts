@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Route53resolver extends PolicyStatement {
   public servicePrefix = 'route53resolver';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateResolverEndpointIpAddress": {
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html",
       "description": "Grants permission to associate a specified IP address with a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).",
@@ -238,9 +238,10 @@ export class Route53resolver extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "resolver-rule": {
       "name": "resolver-rule",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
       "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -248,6 +249,7 @@ export class Route53resolver extends PolicyStatement {
     },
     "resolver-endpoint": {
       "name": "resolver-endpoint",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",
       "arn": "arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -262,7 +264,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html
    */
-  public associateResolverEndpointIpAddress () {
+  public associateResolverEndpointIpAddress() {
     this.add('route53resolver:AssociateResolverEndpointIpAddress');
     return this;
   }
@@ -274,7 +276,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html
    */
-  public associateResolverRule () {
+  public associateResolverRule() {
     this.add('route53resolver:AssociateResolverRule');
     return this;
   }
@@ -286,7 +288,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html
    */
-  public createResolverEndpoint () {
+  public createResolverEndpoint() {
     this.add('route53resolver:CreateResolverEndpoint');
     return this;
   }
@@ -298,7 +300,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html
    */
-  public createResolverRule () {
+  public createResolverRule() {
     this.add('route53resolver:CreateResolverRule');
     return this;
   }
@@ -310,7 +312,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html
    */
-  public deleteResolverEndpoint () {
+  public deleteResolverEndpoint() {
     this.add('route53resolver:DeleteResolverEndpoint');
     return this;
   }
@@ -322,7 +324,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html
    */
-  public deleteResolverRule () {
+  public deleteResolverRule() {
     this.add('route53resolver:DeleteResolverRule');
     return this;
   }
@@ -334,7 +336,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html
    */
-  public disassociateResolverEndpointIpAddress () {
+  public disassociateResolverEndpointIpAddress() {
     this.add('route53resolver:DisassociateResolverEndpointIpAddress');
     return this;
   }
@@ -346,7 +348,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html
    */
-  public disassociateResolverRule () {
+  public disassociateResolverRule() {
     this.add('route53resolver:DisassociateResolverRule');
     return this;
   }
@@ -358,7 +360,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html
    */
-  public getResolverEndpoint () {
+  public getResolverEndpoint() {
     this.add('route53resolver:GetResolverEndpoint');
     return this;
   }
@@ -370,7 +372,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html
    */
-  public getResolverRule () {
+  public getResolverRule() {
     this.add('route53resolver:GetResolverRule');
     return this;
   }
@@ -382,7 +384,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html
    */
-  public getResolverRuleAssociation () {
+  public getResolverRuleAssociation() {
     this.add('route53resolver:GetResolverRuleAssociation');
     return this;
   }
@@ -394,7 +396,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRulePolicy.html
    */
-  public getResolverRulePolicy () {
+  public getResolverRulePolicy() {
     this.add('route53resolver:GetResolverRulePolicy');
     return this;
   }
@@ -406,7 +408,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpointIpAddresses.html
    */
-  public listResolverEndpointIpAddresses () {
+  public listResolverEndpointIpAddresses() {
     this.add('route53resolver:ListResolverEndpointIpAddresses');
     return this;
   }
@@ -418,7 +420,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html
    */
-  public listResolverEndpoints () {
+  public listResolverEndpoints() {
     this.add('route53resolver:ListResolverEndpoints');
     return this;
   }
@@ -430,7 +432,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html
    */
-  public listResolverRuleAssociations () {
+  public listResolverRuleAssociations() {
     this.add('route53resolver:ListResolverRuleAssociations');
     return this;
   }
@@ -442,7 +444,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html
    */
-  public listResolverRules () {
+  public listResolverRules() {
     this.add('route53resolver:ListResolverRules');
     return this;
   }
@@ -454,7 +456,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('route53resolver:ListTagsForResource');
     return this;
   }
@@ -466,7 +468,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html
    */
-  public putResolverRulePolicy () {
+  public putResolverRulePolicy() {
     this.add('route53resolver:PutResolverRulePolicy');
     return this;
   }
@@ -478,7 +480,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('route53resolver:TagResource');
     return this;
   }
@@ -490,7 +492,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('route53resolver:UntagResource');
     return this;
   }
@@ -502,7 +504,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html
    */
-  public updateResolverEndpoint () {
+  public updateResolverEndpoint() {
     this.add('route53resolver:UpdateResolverEndpoint');
     return this;
   }
@@ -514,8 +516,52 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html
    */
-  public updateResolverRule () {
+  public updateResolverRule() {
     this.add('route53resolver:UpdateResolverRule');
     return this;
+  }
+
+  /**
+   * Adds a resource of type resolver-rule to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onResolverRule(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type resolver-endpoint to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

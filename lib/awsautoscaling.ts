@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AutoscalingPlans extends PolicyStatement {
   public servicePrefix = 'autoscaling-plans';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateScalingPlan": {
       "url": "https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html",
       "description": "Creates a scaling plan.",
@@ -39,7 +39,7 @@ export class AutoscalingPlans extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Creates a scaling plan.
@@ -48,7 +48,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html
    */
-  public createScalingPlan () {
+  public createScalingPlan() {
     this.add('autoscaling-plans:CreateScalingPlan');
     return this;
   }
@@ -60,7 +60,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html
    */
-  public deleteScalingPlan () {
+  public deleteScalingPlan() {
     this.add('autoscaling-plans:DeleteScalingPlan');
     return this;
   }
@@ -72,7 +72,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html
    */
-  public describeScalingPlanResources () {
+  public describeScalingPlanResources() {
     this.add('autoscaling-plans:DescribeScalingPlanResources');
     return this;
   }
@@ -84,7 +84,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html
    */
-  public describeScalingPlans () {
+  public describeScalingPlans() {
     this.add('autoscaling-plans:DescribeScalingPlans');
     return this;
   }
@@ -96,7 +96,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html
    */
-  public getScalingPlanResourceForecastData () {
+  public getScalingPlanResourceForecastData() {
     this.add('autoscaling-plans:GetScalingPlanResourceForecastData');
     return this;
   }
@@ -108,7 +108,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html
    */
-  public updateScalingPlan () {
+  public updateScalingPlan() {
     this.add('autoscaling-plans:UpdateScalingPlan');
     return this;
   }

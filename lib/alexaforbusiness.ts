@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class A4b extends PolicyStatement {
   public servicePrefix = 'a4b';
-  public actions : Actions = {
+  public actions: Actions = {
     "ApproveSkill": {
       "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ApproveSkill.html",
       "description": "Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.",
@@ -692,14 +692,16 @@ export class A4b extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "profile": {
       "name": "profile",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Profile.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:profile/${Resource_id}",
       "conditionKeys": []
     },
     "room": {
       "name": "room",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Room.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -707,6 +709,7 @@ export class A4b extends PolicyStatement {
     },
     "device": {
       "name": "device",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Device.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -714,11 +717,13 @@ export class A4b extends PolicyStatement {
     },
     "skillgroup": {
       "name": "skillgroup",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_SkillGroup.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:skill-group/${Resource_id}",
       "conditionKeys": []
     },
     "user": {
       "name": "user",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_UserData.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -726,26 +731,31 @@ export class A4b extends PolicyStatement {
     },
     "addressbook": {
       "name": "addressbook",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_AddressBook.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:address-book/${Resource_id}",
       "conditionKeys": []
     },
     "conferenceprovider": {
       "name": "conferenceprovider",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ConferenceProvider.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${Resource_id}",
       "conditionKeys": []
     },
     "contact": {
       "name": "contact",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Contact.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:contact/${Resource_id}",
       "conditionKeys": []
     },
     "schedule": {
       "name": "schedule",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_BusinessReportSchedule.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:schedule/${Resource_id}",
       "conditionKeys": []
     },
     "networkprofile": {
       "name": "networkprofile",
+      "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_NetworkProfile.html",
       "arn": "arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}",
       "conditionKeys": []
     }
@@ -758,7 +768,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ApproveSkill.html
    */
-  public approveSkill () {
+  public approveSkill() {
     this.add('a4b:ApproveSkill');
     return this;
   }
@@ -770,7 +780,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateContactWithAddressBook.html
    */
-  public associateContactWithAddressBook () {
+  public associateContactWithAddressBook() {
     this.add('a4b:AssociateContactWithAddressBook');
     return this;
   }
@@ -782,7 +792,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateDeviceWithRoom.html
    */
-  public associateDeviceWithRoom () {
+  public associateDeviceWithRoom() {
     this.add('a4b:AssociateDeviceWithRoom');
     return this;
   }
@@ -794,7 +804,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateSkillGroupWithRoom.html
    */
-  public associateSkillGroupWithRoom () {
+  public associateSkillGroupWithRoom() {
     this.add('a4b:AssociateSkillGroupWithRoom');
     return this;
   }
@@ -806,7 +816,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateSkillWithSkillGroup.html
    */
-  public associateSkillWithSkillGroup () {
+  public associateSkillWithSkillGroup() {
     this.add('a4b:AssociateSkillWithSkillGroup');
     return this;
   }
@@ -818,7 +828,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AssociateSkillWithUsers.html
    */
-  public associateSkillWithUsers () {
+  public associateSkillWithUsers() {
     this.add('a4b:AssociateSkillWithUsers');
     return this;
   }
@@ -830,7 +840,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html
    */
-  public completeRegistration () {
+  public completeRegistration() {
     this.add('a4b:CompleteRegistration');
     return this;
   }
@@ -842,7 +852,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateAddressBook.html
    */
-  public createAddressBook () {
+  public createAddressBook() {
     this.add('a4b:CreateAddressBook');
     return this;
   }
@@ -854,7 +864,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateBusinessReportSchedule.html
    */
-  public createBusinessReportSchedule () {
+  public createBusinessReportSchedule() {
     this.add('a4b:CreateBusinessReportSchedule');
     return this;
   }
@@ -866,7 +876,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateConferenceProvider.html
    */
-  public createConferenceProvider () {
+  public createConferenceProvider() {
     this.add('a4b:CreateConferenceProvider');
     return this;
   }
@@ -878,7 +888,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateContact.html
    */
-  public createContact () {
+  public createContact() {
     this.add('a4b:CreateContact');
     return this;
   }
@@ -890,7 +900,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateProfile.html
    */
-  public createProfile () {
+  public createProfile() {
     this.add('a4b:CreateProfile');
     return this;
   }
@@ -902,7 +912,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateRoom.html
    */
-  public createRoom () {
+  public createRoom() {
     this.add('a4b:CreateRoom');
     return this;
   }
@@ -914,7 +924,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateSkillGroup.html
    */
-  public createSkillGroup () {
+  public createSkillGroup() {
     this.add('a4b:CreateSkillGroup');
     return this;
   }
@@ -926,7 +936,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_CreateUser.html
    */
-  public createUser () {
+  public createUser() {
     this.add('a4b:CreateUser');
     return this;
   }
@@ -938,7 +948,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteAddressBook.html
    */
-  public deleteAddressBook () {
+  public deleteAddressBook() {
     this.add('a4b:DeleteAddressBook');
     return this;
   }
@@ -950,7 +960,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteBusinessReportSchedule.html
    */
-  public deleteBusinessReportSchedule () {
+  public deleteBusinessReportSchedule() {
     this.add('a4b:DeleteBusinessReportSchedule');
     return this;
   }
@@ -962,7 +972,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteConferenceProvider.html
    */
-  public deleteConferenceProvider () {
+  public deleteConferenceProvider() {
     this.add('a4b:DeleteConferenceProvider');
     return this;
   }
@@ -974,7 +984,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteContact.html
    */
-  public deleteContact () {
+  public deleteContact() {
     this.add('a4b:DeleteContact');
     return this;
   }
@@ -986,7 +996,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteDevice.html
    */
-  public deleteDevice () {
+  public deleteDevice() {
     this.add('a4b:DeleteDevice');
     return this;
   }
@@ -998,7 +1008,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteProfile.html
    */
-  public deleteProfile () {
+  public deleteProfile() {
     this.add('a4b:DeleteProfile');
     return this;
   }
@@ -1010,7 +1020,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteRoom.html
    */
-  public deleteRoom () {
+  public deleteRoom() {
     this.add('a4b:DeleteRoom');
     return this;
   }
@@ -1022,7 +1032,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteRoomSkillParameter.html
    */
-  public deleteRoomSkillParameter () {
+  public deleteRoomSkillParameter() {
     this.add('a4b:DeleteRoomSkillParameter');
     return this;
   }
@@ -1034,7 +1044,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteSkillAuthorization.html
    */
-  public deleteSkillAuthorization () {
+  public deleteSkillAuthorization() {
     this.add('a4b:DeleteSkillAuthorization');
     return this;
   }
@@ -1046,7 +1056,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteSkillGroup.html
    */
-  public deleteSkillGroup () {
+  public deleteSkillGroup() {
     this.add('a4b:DeleteSkillGroup');
     return this;
   }
@@ -1058,7 +1068,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DeleteUser.html
    */
-  public deleteUser () {
+  public deleteUser() {
     this.add('a4b:DeleteUser');
     return this;
   }
@@ -1070,7 +1080,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateContactFromAddressBook.html
    */
-  public disassociateContactFromAddressBook () {
+  public disassociateContactFromAddressBook() {
     this.add('a4b:DisassociateContactFromAddressBook');
     return this;
   }
@@ -1082,7 +1092,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateDeviceFromRoom.html
    */
-  public disassociateDeviceFromRoom () {
+  public disassociateDeviceFromRoom() {
     this.add('a4b:DisassociateDeviceFromRoom');
     return this;
   }
@@ -1094,7 +1104,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateSkillFromSkillGroup.html
    */
-  public disassociateSkillFromSkillGroup () {
+  public disassociateSkillFromSkillGroup() {
     this.add('a4b:DisassociateSkillFromSkillGroup');
     return this;
   }
@@ -1106,7 +1116,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateSkillFromUsers.html
    */
-  public disassociateSkillFromUsers () {
+  public disassociateSkillFromUsers() {
     this.add('a4b:DisassociateSkillFromUsers');
     return this;
   }
@@ -1118,7 +1128,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_DisassociateSkillGroupFromRoom.html
    */
-  public disassociateSkillGroupFromRoom () {
+  public disassociateSkillGroupFromRoom() {
     this.add('a4b:DisassociateSkillGroupFromRoom');
     return this;
   }
@@ -1130,7 +1140,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ForgetSmartHomeAppliances.html
    */
-  public forgetSmartHomeAppliances () {
+  public forgetSmartHomeAppliances() {
     this.add('a4b:ForgetSmartHomeAppliances');
     return this;
   }
@@ -1142,7 +1152,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetAddressBook.html
    */
-  public getAddressBook () {
+  public getAddressBook() {
     this.add('a4b:GetAddressBook');
     return this;
   }
@@ -1154,7 +1164,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetConferencePreference.html
    */
-  public getConferencePreference () {
+  public getConferencePreference() {
     this.add('a4b:GetConferencePreference');
     return this;
   }
@@ -1166,7 +1176,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetConferenceProvider.html
    */
-  public getConferenceProvider () {
+  public getConferenceProvider() {
     this.add('a4b:GetConferenceProvider');
     return this;
   }
@@ -1178,7 +1188,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetContact.html
    */
-  public getContact () {
+  public getContact() {
     this.add('a4b:GetContact');
     return this;
   }
@@ -1190,7 +1200,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetDevice.html
    */
-  public getDevice () {
+  public getDevice() {
     this.add('a4b:GetDevice');
     return this;
   }
@@ -1202,7 +1212,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetNetworkProfile.html
    */
-  public getNetworkProfile () {
+  public getNetworkProfile() {
     this.add('a4b:GetNetworkProfile');
     return this;
   }
@@ -1214,7 +1224,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetProfile.html
    */
-  public getProfile () {
+  public getProfile() {
     this.add('a4b:GetProfile');
     return this;
   }
@@ -1226,7 +1236,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetRoom.html
    */
-  public getRoom () {
+  public getRoom() {
     this.add('a4b:GetRoom');
     return this;
   }
@@ -1238,7 +1248,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetRoomSkillParameter.html
    */
-  public getRoomSkillParameter () {
+  public getRoomSkillParameter() {
     this.add('a4b:GetRoomSkillParameter');
     return this;
   }
@@ -1250,7 +1260,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_GetSkillGroup.html
    */
-  public getSkillGroup () {
+  public getSkillGroup() {
     this.add('a4b:GetSkillGroup');
     return this;
   }
@@ -1262,7 +1272,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListBusinessReportSchedules.html
    */
-  public listBusinessReportSchedules () {
+  public listBusinessReportSchedules() {
     this.add('a4b:ListBusinessReportSchedules');
     return this;
   }
@@ -1274,7 +1284,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListConferenceProviders.html
    */
-  public listConferenceProviders () {
+  public listConferenceProviders() {
     this.add('a4b:ListConferenceProviders');
     return this;
   }
@@ -1286,7 +1296,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListDeviceEvents.html
    */
-  public listDeviceEvents () {
+  public listDeviceEvents() {
     this.add('a4b:ListDeviceEvents');
     return this;
   }
@@ -1298,7 +1308,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSkills.html
    */
-  public listSkills () {
+  public listSkills() {
     this.add('a4b:ListSkills');
     return this;
   }
@@ -1310,7 +1320,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSkillsStoreCategories.html
    */
-  public listSkillsStoreCategories () {
+  public listSkillsStoreCategories() {
     this.add('a4b:ListSkillsStoreCategories');
     return this;
   }
@@ -1322,7 +1332,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSkillsStoreSkillsByCategory.html
    */
-  public listSkillsStoreSkillsByCategory () {
+  public listSkillsStoreSkillsByCategory() {
     this.add('a4b:ListSkillsStoreSkillsByCategory');
     return this;
   }
@@ -1334,7 +1344,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListSmartHomeAppliances.html
    */
-  public listSmartHomeAppliances () {
+  public listSmartHomeAppliances() {
     this.add('a4b:ListSmartHomeAppliances');
     return this;
   }
@@ -1346,7 +1356,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ListTags.html
    */
-  public listTags () {
+  public listTags() {
     this.add('a4b:ListTags');
     return this;
   }
@@ -1358,7 +1368,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutConferencePreference.html
    */
-  public putConferencePreference () {
+  public putConferencePreference() {
     this.add('a4b:PutConferencePreference');
     return this;
   }
@@ -1370,7 +1380,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html
    */
-  public putDeviceSetupEvents () {
+  public putDeviceSetupEvents() {
     this.add('a4b:PutDeviceSetupEvents');
     return this;
   }
@@ -1382,7 +1392,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutRoomSkillParameter.html
    */
-  public putRoomSkillParameter () {
+  public putRoomSkillParameter() {
     this.add('a4b:PutRoomSkillParameter');
     return this;
   }
@@ -1394,7 +1404,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_PutSkillAuthorization.html
    */
-  public putSkillAuthorization () {
+  public putSkillAuthorization() {
     this.add('a4b:PutSkillAuthorization');
     return this;
   }
@@ -1406,7 +1416,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_RegisterAVSDevice.html
    */
-  public registerAVSDevice () {
+  public registerAVSDevice() {
     this.add('a4b:RegisterAVSDevice');
     return this;
   }
@@ -1418,7 +1428,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/ag/manage-devices.html
    */
-  public registerDevice () {
+  public registerDevice() {
     this.add('a4b:RegisterDevice');
     return this;
   }
@@ -1430,7 +1440,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_RejectSkill.html
    */
-  public rejectSkill () {
+  public rejectSkill() {
     this.add('a4b:RejectSkill');
     return this;
   }
@@ -1442,7 +1452,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ResolveRoom.html
    */
-  public resolveRoom () {
+  public resolveRoom() {
     this.add('a4b:ResolveRoom');
     return this;
   }
@@ -1454,7 +1464,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_RevokeInvitation.html
    */
-  public revokeInvitation () {
+  public revokeInvitation() {
     this.add('a4b:RevokeInvitation');
     return this;
   }
@@ -1466,7 +1476,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchAddressBooks.html
    */
-  public searchAddressBooks () {
+  public searchAddressBooks() {
     this.add('a4b:SearchAddressBooks');
     return this;
   }
@@ -1478,7 +1488,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchContacts.html
    */
-  public searchContacts () {
+  public searchContacts() {
     this.add('a4b:SearchContacts');
     return this;
   }
@@ -1490,7 +1500,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchDevices.html
    */
-  public searchDevices () {
+  public searchDevices() {
     this.add('a4b:SearchDevices');
     return this;
   }
@@ -1502,7 +1512,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchNetworkProfiles.html
    */
-  public searchNetworkProfiles () {
+  public searchNetworkProfiles() {
     this.add('a4b:SearchNetworkProfiles');
     return this;
   }
@@ -1514,7 +1524,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchProfiles.html
    */
-  public searchProfiles () {
+  public searchProfiles() {
     this.add('a4b:SearchProfiles');
     return this;
   }
@@ -1526,7 +1536,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchRooms.html
    */
-  public searchRooms () {
+  public searchRooms() {
     this.add('a4b:SearchRooms');
     return this;
   }
@@ -1538,7 +1548,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchSkillGroups.html
    */
-  public searchSkillGroups () {
+  public searchSkillGroups() {
     this.add('a4b:SearchSkillGroups');
     return this;
   }
@@ -1550,7 +1560,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchUsers.html
    */
-  public searchUsers () {
+  public searchUsers() {
     this.add('a4b:SearchUsers');
     return this;
   }
@@ -1562,7 +1572,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SendInvitation.html
    */
-  public sendInvitation () {
+  public sendInvitation() {
     this.add('a4b:SendInvitation');
     return this;
   }
@@ -1574,7 +1584,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_StartDeviceSync.html
    */
-  public startDeviceSync () {
+  public startDeviceSync() {
     this.add('a4b:StartDeviceSync');
     return this;
   }
@@ -1586,7 +1596,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_StartSmartHomeApplianceDiscovery.html
    */
-  public startSmartHomeApplianceDiscovery () {
+  public startSmartHomeApplianceDiscovery() {
     this.add('a4b:StartSmartHomeApplianceDiscovery');
     return this;
   }
@@ -1598,7 +1608,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('a4b:TagResource');
     return this;
   }
@@ -1610,7 +1620,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('a4b:UntagResource');
     return this;
   }
@@ -1622,7 +1632,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateAddressBook.html
    */
-  public updateAddressBook () {
+  public updateAddressBook() {
     this.add('a4b:UpdateAddressBook');
     return this;
   }
@@ -1634,7 +1644,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateBusinessReportSchedule.html
    */
-  public updateBusinessReportSchedule () {
+  public updateBusinessReportSchedule() {
     this.add('a4b:UpdateBusinessReportSchedule');
     return this;
   }
@@ -1646,7 +1656,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateConferenceProvider.html
    */
-  public updateConferenceProvider () {
+  public updateConferenceProvider() {
     this.add('a4b:UpdateConferenceProvider');
     return this;
   }
@@ -1658,7 +1668,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateContact.html
    */
-  public updateContact () {
+  public updateContact() {
     this.add('a4b:UpdateContact');
     return this;
   }
@@ -1670,7 +1680,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateDevice.html
    */
-  public updateDevice () {
+  public updateDevice() {
     this.add('a4b:UpdateDevice');
     return this;
   }
@@ -1682,7 +1692,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateProfile.html
    */
-  public updateProfile () {
+  public updateProfile() {
     this.add('a4b:UpdateProfile');
     return this;
   }
@@ -1694,7 +1704,7 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateRoom.html
    */
-  public updateRoom () {
+  public updateRoom() {
     this.add('a4b:UpdateRoom');
     return this;
   }
@@ -1706,8 +1716,207 @@ export class A4b extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UpdateSkillGroup.html
    */
-  public updateSkillGroup () {
+  public updateSkillGroup() {
     this.add('a4b:UpdateSkillGroup');
     return this;
+  }
+
+  /**
+   * Adds a resource of type profile to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_Profile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:profile/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type room to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_Room.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_Device.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type skillgroup to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SkillGroup.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSkillgroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:skill-group/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_UserData.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type addressbook to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_AddressBook.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAddressbook(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:address-book/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type conferenceprovider to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_ConferenceProvider.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConferenceprovider(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type contact to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_Contact.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onContact(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:contact/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type schedule to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_BusinessReportSchedule.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:schedule/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type networkprofile to the statement
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_NetworkProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}';
+    arn = arn.replace('${Resource_id}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

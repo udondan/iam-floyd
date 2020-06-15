@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Macie2 extends PolicyStatement {
   public servicePrefix = 'macie2';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/macie/latest/APIReference/invitations-accept.html",
       "description": "Grants permission to accept an Amazon Macie membership invitation",
@@ -380,9 +380,10 @@ export class Macie2 extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "ClassificationJob": {
       "name": "ClassificationJob",
+      "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
       "arn": "arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -390,6 +391,7 @@ export class Macie2 extends PolicyStatement {
     },
     "CustomDataIdentifier": {
       "name": "CustomDataIdentifier",
+      "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html.html",
       "arn": "arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -397,6 +399,7 @@ export class Macie2 extends PolicyStatement {
     },
     "Member": {
       "name": "Member",
+      "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
       "arn": "arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -404,6 +407,7 @@ export class Macie2 extends PolicyStatement {
     },
     "FindingsFilter": {
       "name": "FindingsFilter",
+      "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
       "arn": "arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -418,7 +422,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-accept.html
    */
-  public acceptInvitation () {
+  public acceptInvitation() {
     this.add('macie2:AcceptInvitation');
     return this;
   }
@@ -430,7 +434,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-archive.html
    */
-  public archiveFindings () {
+  public archiveFindings() {
     this.add('macie2:ArchiveFindings');
     return this;
   }
@@ -442,7 +446,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-get.html
    */
-  public batchGetCustomDataIdentifiers () {
+  public batchGetCustomDataIdentifiers() {
     this.add('macie2:BatchGetCustomDataIdentifiers');
     return this;
   }
@@ -454,7 +458,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs.html
    */
-  public createClassificationJob () {
+  public createClassificationJob() {
     this.add('macie2:CreateClassificationJob');
     return this;
   }
@@ -466,7 +470,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers.html
    */
-  public createCustomDataIdentifier () {
+  public createCustomDataIdentifier() {
     this.add('macie2:CreateCustomDataIdentifier');
     return this;
   }
@@ -478,7 +482,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
-  public createFindingsFilter () {
+  public createFindingsFilter() {
     this.add('macie2:CreateFindingsFilter');
     return this;
   }
@@ -490,7 +494,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations.html
    */
-  public createInvitations () {
+  public createInvitations() {
     this.add('macie2:CreateInvitations');
     return this;
   }
@@ -502,7 +506,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
-  public createMember () {
+  public createMember() {
     this.add('macie2:CreateMember');
     return this;
   }
@@ -514,7 +518,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-sample.html
    */
-  public createSampleFindings () {
+  public createSampleFindings() {
     this.add('macie2:CreateSampleFindings');
     return this;
   }
@@ -526,7 +530,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-decline.html
    */
-  public declineInvitations () {
+  public declineInvitations() {
     this.add('macie2:DeclineInvitations');
     return this;
   }
@@ -538,7 +542,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html
    */
-  public deleteCustomDataIdentifier () {
+  public deleteCustomDataIdentifier() {
     this.add('macie2:DeleteCustomDataIdentifier');
     return this;
   }
@@ -550,7 +554,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
-  public deleteFindingsFilter () {
+  public deleteFindingsFilter() {
     this.add('macie2:DeleteFindingsFilter');
     return this;
   }
@@ -562,7 +566,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-delete.html
    */
-  public deleteInvitations () {
+  public deleteInvitations() {
     this.add('macie2:DeleteInvitations');
     return this;
   }
@@ -574,7 +578,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html
    */
-  public deleteMember () {
+  public deleteMember() {
     this.add('macie2:DeleteMember');
     return this;
   }
@@ -586,7 +590,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html
    */
-  public describeBuckets () {
+  public describeBuckets() {
     this.add('macie2:DescribeBuckets');
     return this;
   }
@@ -598,7 +602,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
-  public describeClassificationJob () {
+  public describeClassificationJob() {
     this.add('macie2:DescribeClassificationJob');
     return this;
   }
@@ -610,7 +614,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html
    */
-  public describeOrganizationConfiguration () {
+  public describeOrganizationConfiguration() {
     this.add('macie2:DescribeOrganizationConfiguration');
     return this;
   }
@@ -622,7 +626,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public disableMacie () {
+  public disableMacie() {
     this.add('macie2:DisableMacie');
     return this;
   }
@@ -634,7 +638,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
-  public disableOrganizationAdminAccount () {
+  public disableOrganizationAdminAccount() {
     this.add('macie2:DisableOrganizationAdminAccount');
     return this;
   }
@@ -646,7 +650,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/master-disassociate.html
    */
-  public disassociateFromMasterAccount () {
+  public disassociateFromMasterAccount() {
     this.add('macie2:DisassociateFromMasterAccount');
     return this;
   }
@@ -658,7 +662,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-disassociate-id.html
    */
-  public disassociateMember () {
+  public disassociateMember() {
     this.add('macie2:DisassociateMember');
     return this;
   }
@@ -670,7 +674,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public enableMacie () {
+  public enableMacie() {
     this.add('macie2:EnableMacie');
     return this;
   }
@@ -682,7 +686,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
-  public enableOrganizationAdminAccount () {
+  public enableOrganizationAdminAccount() {
     this.add('macie2:EnableOrganizationAdminAccount');
     return this;
   }
@@ -694,7 +698,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3-statistics.html
    */
-  public getBucketStatistics () {
+  public getBucketStatistics() {
     this.add('macie2:GetBucketStatistics');
     return this;
   }
@@ -706,7 +710,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html
    */
-  public getClassificationExportConfiguration () {
+  public getClassificationExportConfiguration() {
     this.add('macie2:GetClassificationExportConfiguration');
     return this;
   }
@@ -718,7 +722,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html
    */
-  public getCustomDataIdentifier () {
+  public getCustomDataIdentifier() {
     this.add('macie2:GetCustomDataIdentifier');
     return this;
   }
@@ -730,7 +734,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-statistics.html
    */
-  public getFindingStatistics () {
+  public getFindingStatistics() {
     this.add('macie2:GetFindingStatistics');
     return this;
   }
@@ -742,7 +746,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-describe.html
    */
-  public getFindings () {
+  public getFindings() {
     this.add('macie2:GetFindings');
     return this;
   }
@@ -754,7 +758,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
-  public getFindingsFilter () {
+  public getFindingsFilter() {
     this.add('macie2:GetFindingsFilter');
     return this;
   }
@@ -766,7 +770,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-count.html
    */
-  public getInvitationsCount () {
+  public getInvitationsCount() {
     this.add('macie2:GetInvitationsCount');
     return this;
   }
@@ -778,7 +782,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public getMacieSession () {
+  public getMacieSession() {
     this.add('macie2:GetMacieSession');
     return this;
   }
@@ -790,7 +794,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/master.html
    */
-  public getMasterAccount () {
+  public getMasterAccount() {
     this.add('macie2:GetMasterAccount');
     return this;
   }
@@ -802,7 +806,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html
    */
-  public getMember () {
+  public getMember() {
     this.add('macie2:GetMember');
     return this;
   }
@@ -814,7 +818,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/usage-statistics.html
    */
-  public getUsageStatistics () {
+  public getUsageStatistics() {
     this.add('macie2:GetUsageStatistics');
     return this;
   }
@@ -826,7 +830,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/usage.html
    */
-  public getUsageTotals () {
+  public getUsageTotals() {
     this.add('macie2:GetUsageTotals');
     return this;
   }
@@ -838,7 +842,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-list.html
    */
-  public listClassificationJobs () {
+  public listClassificationJobs() {
     this.add('macie2:ListClassificationJobs');
     return this;
   }
@@ -850,7 +854,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-list.html
    */
-  public listCustomDataIdentifiers () {
+  public listCustomDataIdentifiers() {
     this.add('macie2:ListCustomDataIdentifiers');
     return this;
   }
@@ -862,7 +866,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings.html
    */
-  public listFindings () {
+  public listFindings() {
     this.add('macie2:ListFindings');
     return this;
   }
@@ -874,7 +878,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
-  public listFindingsFilters () {
+  public listFindingsFilters() {
     this.add('macie2:ListFindingsFilters');
     return this;
   }
@@ -886,7 +890,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations.html
    */
-  public listInvitations () {
+  public listInvitations() {
     this.add('macie2:ListInvitations');
     return this;
   }
@@ -898,7 +902,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
-  public listMembers () {
+  public listMembers() {
     this.add('macie2:ListMembers');
     return this;
   }
@@ -910,7 +914,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
-  public listOrganizationAdminAccounts () {
+  public listOrganizationAdminAccounts() {
     this.add('macie2:ListOrganizationAdminAccounts');
     return this;
   }
@@ -922,7 +926,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public listTagsForResources () {
+  public listTagsForResources() {
     this.add('macie2:ListTagsForResources');
     return this;
   }
@@ -934,7 +938,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html
    */
-  public putClassificationExportConfiguration () {
+  public putClassificationExportConfiguration() {
     this.add('macie2:PutClassificationExportConfiguration');
     return this;
   }
@@ -946,7 +950,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('macie2:TagResource');
     return this;
   }
@@ -958,7 +962,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-test.html
    */
-  public testCustomDataIdentifier () {
+  public testCustomDataIdentifier() {
     this.add('macie2:TestCustomDataIdentifier');
     return this;
   }
@@ -970,7 +974,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-unarchive.html
    */
-  public unarchiveFindings () {
+  public unarchiveFindings() {
     this.add('macie2:UnarchiveFindings');
     return this;
   }
@@ -982,7 +986,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('macie2:UntagResource');
     return this;
   }
@@ -994,7 +998,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
-  public updateClassificationJob () {
+  public updateClassificationJob() {
     this.add('macie2:UpdateClassificationJob');
     return this;
   }
@@ -1006,7 +1010,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
-  public updateFindingsFilter () {
+  public updateFindingsFilter() {
     this.add('macie2:UpdateFindingsFilter');
     return this;
   }
@@ -1018,7 +1022,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public updateMacieSession () {
+  public updateMacieSession() {
     this.add('macie2:UpdateMacieSession');
     return this;
   }
@@ -1030,7 +1034,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie-members-id.html
    */
-  public updateMemberSession () {
+  public updateMemberSession() {
     this.add('macie2:UpdateMemberSession');
     return this;
   }
@@ -1042,8 +1046,96 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html
    */
-  public updateOrganizationConfiguration () {
+  public updateOrganizationConfiguration() {
     this.add('macie2:UpdateOrganizationConfiguration');
     return this;
+  }
+
+  /**
+   * Adds a resource of type ClassificationJob to the statement
+   *
+   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type CustomDataIdentifier to the statement
+   *
+   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Member to the statement
+   *
+   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type FindingsFilter to the statement
+   *
+   * https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

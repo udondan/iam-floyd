@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Sumerian extends PolicyStatement {
   public servicePrefix = 'sumerian';
-  public actions : Actions = {
+  public actions: Actions = {
     "Login": {
       "url": "https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html",
       "description": "Grant login access to the Sumerian console.",
@@ -24,9 +24,10 @@ export class Sumerian extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
+      "url": "",
       "arn": "arn:${Partition}:sumerian:${Region}:${Account}:project:${ProjectName}",
       "conditionKeys": []
     }
@@ -39,7 +40,7 @@ export class Sumerian extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html
    */
-  public login () {
+  public login() {
     this.add('sumerian:Login');
     return this;
   }
@@ -51,8 +52,25 @@ export class Sumerian extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html
    */
-  public viewRelease () {
+  public viewRelease() {
     this.add('sumerian:ViewRelease');
     return this;
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProject(projectName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sumerian:${Region}:${Account}:project:${ProjectName}';
+    arn = arn.replace('${ProjectName}', projectName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

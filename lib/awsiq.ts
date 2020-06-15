@@ -7,14 +7,14 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Iq extends PolicyStatement {
   public servicePrefix = 'iq';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateProject": {
       "url": "https://aws.amazon.com/iq/",
       "description": "Grants permission to submit new project requests",
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to submit new project requests
@@ -23,7 +23,7 @@ export class Iq extends PolicyStatement {
    *
    * https://aws.amazon.com/iq/
    */
-  public createProject () {
+  public createProject() {
     this.add('iq:CreateProject');
     return this;
   }

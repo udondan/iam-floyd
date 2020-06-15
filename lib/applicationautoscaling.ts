@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class ApplicationAutoscaling extends PolicyStatement {
   public servicePrefix = 'application-autoscaling';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeleteScalingPolicy": {
       "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html",
       "description": "Deletes an Application Auto Scaling scaling policy that was previously created.",
@@ -59,7 +59,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Deletes an Application Auto Scaling scaling policy that was previously created.
@@ -68,7 +68,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html
    */
-  public deleteScalingPolicy () {
+  public deleteScalingPolicy() {
     this.add('application-autoscaling:DeleteScalingPolicy');
     return this;
   }
@@ -80,7 +80,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScheduledAction.html
    */
-  public deleteScheduledAction () {
+  public deleteScheduledAction() {
     this.add('application-autoscaling:DeleteScheduledAction');
     return this;
   }
@@ -92,7 +92,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeregisterScalableTarget.html
    */
-  public deregisterScalableTarget () {
+  public deregisterScalableTarget() {
     this.add('application-autoscaling:DeregisterScalableTarget');
     return this;
   }
@@ -104,7 +104,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html
    */
-  public describeScalableTargets () {
+  public describeScalableTargets() {
     this.add('application-autoscaling:DescribeScalableTargets');
     return this;
   }
@@ -116,7 +116,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html
    */
-  public describeScalingActivities () {
+  public describeScalingActivities() {
     this.add('application-autoscaling:DescribeScalingActivities');
     return this;
   }
@@ -128,7 +128,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingPolicies.html
    */
-  public describeScalingPolicies () {
+  public describeScalingPolicies() {
     this.add('application-autoscaling:DescribeScalingPolicies');
     return this;
   }
@@ -140,7 +140,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScheduledActions.html
    */
-  public describeScheduledActions () {
+  public describeScheduledActions() {
     this.add('application-autoscaling:DescribeScheduledActions');
     return this;
   }
@@ -152,7 +152,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html
    */
-  public putScalingPolicy () {
+  public putScalingPolicy() {
     this.add('application-autoscaling:PutScalingPolicy');
     return this;
   }
@@ -164,7 +164,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html
    */
-  public putScheduledAction () {
+  public putScheduledAction() {
     this.add('application-autoscaling:PutScheduledAction');
     return this;
   }
@@ -176,7 +176,7 @@ export class ApplicationAutoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html
    */
-  public registerScalableTarget () {
+  public registerScalableTarget() {
     this.add('application-autoscaling:RegisterScalableTarget');
     return this;
   }

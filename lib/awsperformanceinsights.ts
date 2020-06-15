@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Pi extends PolicyStatement {
   public servicePrefix = 'pi';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeDimensionKeys": {
       "url": "",
       "description": "For a specific time period, retrieve the top N dimension keys for a metric.",
@@ -29,9 +29,10 @@ export class Pi extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "metric-resource": {
       "name": "metric-resource",
+      "url": "",
       "arn": "arn:${Partition}:pi:${Region}:${Account}:metrics/${ServiceType}/${Identifier}",
       "conditionKeys": []
     }
@@ -42,7 +43,7 @@ export class Pi extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeDimensionKeys () {
+  public describeDimensionKeys() {
     this.add('pi:DescribeDimensionKeys');
     return this;
   }
@@ -52,8 +53,27 @@ export class Pi extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getResourceMetrics () {
+  public getResourceMetrics() {
     this.add('pi:GetResourceMetrics');
     return this;
+  }
+
+  /**
+   * Adds a resource of type metric-resource to the statement
+   *
+   * @param serviceType - Identifier for the serviceType.
+   * @param identifier - Identifier for the identifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onMetricResource(serviceType: string, identifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:pi:${Region}:${Account}:metrics/${ServiceType}/${Identifier}';
+    arn = arn.replace('${ServiceType}', serviceType);
+    arn = arn.replace('${Identifier}', identifier);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

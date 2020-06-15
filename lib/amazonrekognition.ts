@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Rekognition extends PolicyStatement {
   public servicePrefix = 'rekognition';
-  public actions : Actions = {
+  public actions: Actions = {
     "CompareFaces": {
       "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html",
       "description": "Compares a face in source input image with each face detected in the target input image.",
@@ -360,24 +360,28 @@ export class Rekognition extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "collection": {
       "name": "collection",
+      "url": "https://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html",
       "arn": "arn:${Partition}:rekognition:${Region}:${Account}:collection/${CollectionId}",
       "conditionKeys": []
     },
     "streamprocessor": {
       "name": "streamprocessor",
+      "url": "",
       "arn": "arn:${Partition}:rekognition:${Region}:${Account}:streamprocessor/${StreamprocessorId}",
       "conditionKeys": []
     },
     "project": {
       "name": "project",
+      "url": "",
       "arn": "arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/${CreationTimestamp}",
       "conditionKeys": []
     },
     "projectversion": {
       "name": "projectversion",
+      "url": "",
       "arn": "arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/version/${VersionName}/${CreationTimestamp}",
       "conditionKeys": []
     }
@@ -390,7 +394,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html
    */
-  public compareFaces () {
+  public compareFaces() {
     this.add('rekognition:CompareFaces');
     return this;
   }
@@ -402,7 +406,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html
    */
-  public createCollection () {
+  public createCollection() {
     this.add('rekognition:CreateCollection');
     return this;
   }
@@ -414,7 +418,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject.html
    */
-  public createProject () {
+  public createProject() {
     this.add('rekognition:CreateProject');
     return this;
   }
@@ -426,7 +430,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion.html
    */
-  public createProjectVersion () {
+  public createProjectVersion() {
     this.add('rekognition:CreateProjectVersion');
     return this;
   }
@@ -438,7 +442,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html
    */
-  public createStreamProcessor () {
+  public createStreamProcessor() {
     this.add('rekognition:CreateStreamProcessor');
     return this;
   }
@@ -450,7 +454,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html
    */
-  public deleteCollection () {
+  public deleteCollection() {
     this.add('rekognition:DeleteCollection');
     return this;
   }
@@ -462,7 +466,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html
    */
-  public deleteFaces () {
+  public deleteFaces() {
     this.add('rekognition:DeleteFaces');
     return this;
   }
@@ -474,7 +478,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject.html
    */
-  public deleteProject () {
+  public deleteProject() {
     this.add('rekognition:DeleteProject');
     return this;
   }
@@ -486,7 +490,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProjectVersion.html
    */
-  public deleteProjectVersion () {
+  public deleteProjectVersion() {
     this.add('rekognition:DeleteProjectVersion');
     return this;
   }
@@ -498,7 +502,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteStreamProcessor.html
    */
-  public deleteStreamProcessor () {
+  public deleteStreamProcessor() {
     this.add('rekognition:DeleteStreamProcessor');
     return this;
   }
@@ -510,7 +514,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeCollection.html
    */
-  public describeCollection () {
+  public describeCollection() {
     this.add('rekognition:DescribeCollection');
     return this;
   }
@@ -522,7 +526,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions.html
    */
-  public describeProjectVersions () {
+  public describeProjectVersions() {
     this.add('rekognition:DescribeProjectVersions');
     return this;
   }
@@ -534,7 +538,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects.html
    */
-  public describeProjects () {
+  public describeProjects() {
     this.add('rekognition:DescribeProjects');
     return this;
   }
@@ -546,7 +550,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeStreamProcessorh.html
    */
-  public describeStreamProcessor () {
+  public describeStreamProcessor() {
     this.add('rekognition:DescribeStreamProcessor');
     return this;
   }
@@ -558,7 +562,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels.html
    */
-  public detectCustomLabels () {
+  public detectCustomLabels() {
     this.add('rekognition:DetectCustomLabels');
     return this;
   }
@@ -570,7 +574,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html
    */
-  public detectFaces () {
+  public detectFaces() {
     this.add('rekognition:DetectFaces');
     return this;
   }
@@ -582,7 +586,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html
    */
-  public detectLabels () {
+  public detectLabels() {
     this.add('rekognition:DetectLabels');
     return this;
   }
@@ -594,7 +598,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html
    */
-  public detectModerationLabels () {
+  public detectModerationLabels() {
     this.add('rekognition:DetectModerationLabels');
     return this;
   }
@@ -606,7 +610,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectText.html
    */
-  public detectText () {
+  public detectText() {
     this.add('rekognition:DetectText');
     return this;
   }
@@ -618,7 +622,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityInfo.html
    */
-  public getCelebrityInfo () {
+  public getCelebrityInfo() {
     this.add('rekognition:GetCelebrityInfo');
     return this;
   }
@@ -630,7 +634,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityRecognition.html
    */
-  public getCelebrityRecognition () {
+  public getCelebrityRecognition() {
     this.add('rekognition:GetCelebrityRecognition');
     return this;
   }
@@ -642,7 +646,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetContentModeration.html
    */
-  public getContentModeration () {
+  public getContentModeration() {
     this.add('rekognition:GetContentModeration');
     return this;
   }
@@ -654,7 +658,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceDetection.html
    */
-  public getFaceDetection () {
+  public getFaceDetection() {
     this.add('rekognition:GetFaceDetection');
     return this;
   }
@@ -666,7 +670,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceSearch.html
    */
-  public getFaceSearch () {
+  public getFaceSearch() {
     this.add('rekognition:GetFaceSearch');
     return this;
   }
@@ -678,7 +682,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetLabelDetection.html
    */
-  public getLabelDetection () {
+  public getLabelDetection() {
     this.add('rekognition:GetLabelDetection');
     return this;
   }
@@ -690,7 +694,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetPersonTracking.html
    */
-  public getPersonTracking () {
+  public getPersonTracking() {
     this.add('rekognition:GetPersonTracking');
     return this;
   }
@@ -702,7 +706,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetTextDetection.html
    */
-  public getTextDetection () {
+  public getTextDetection() {
     this.add('rekognition:GetTextDetection');
     return this;
   }
@@ -714,7 +718,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html
    */
-  public indexFaces () {
+  public indexFaces() {
     this.add('rekognition:IndexFaces');
     return this;
   }
@@ -726,7 +730,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListCollections.html
    */
-  public listCollections () {
+  public listCollections() {
     this.add('rekognition:ListCollections');
     return this;
   }
@@ -738,7 +742,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html
    */
-  public listFaces () {
+  public listFaces() {
     this.add('rekognition:ListFaces');
     return this;
   }
@@ -750,7 +754,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_ListStreamProcessors.html
    */
-  public listStreamProcessors () {
+  public listStreamProcessors() {
     this.add('rekognition:ListStreamProcessors');
     return this;
   }
@@ -762,7 +766,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html
    */
-  public recognizeCelebrities () {
+  public recognizeCelebrities() {
     this.add('rekognition:RecognizeCelebrities');
     return this;
   }
@@ -774,7 +778,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html
    */
-  public searchFaces () {
+  public searchFaces() {
     this.add('rekognition:SearchFaces');
     return this;
   }
@@ -786,7 +790,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html
    */
-  public searchFacesByImage () {
+  public searchFacesByImage() {
     this.add('rekognition:SearchFacesByImage');
     return this;
   }
@@ -798,7 +802,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartCelebrityRecognition.html
    */
-  public startCelebrityRecognition () {
+  public startCelebrityRecognition() {
     this.add('rekognition:StartCelebrityRecognition');
     return this;
   }
@@ -810,7 +814,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html
    */
-  public startContentModeration () {
+  public startContentModeration() {
     this.add('rekognition:StartContentModeration');
     return this;
   }
@@ -822,7 +826,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceDetection.html
    */
-  public startFaceDetection () {
+  public startFaceDetection() {
     this.add('rekognition:StartFaceDetection');
     return this;
   }
@@ -834,7 +838,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceSearch.html
    */
-  public startFaceSearch () {
+  public startFaceSearch() {
     this.add('rekognition:StartFaceSearch');
     return this;
   }
@@ -846,7 +850,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartLabelDetection.html
    */
-  public startLabelDetection () {
+  public startLabelDetection() {
     this.add('rekognition:StartLabelDetection');
     return this;
   }
@@ -858,7 +862,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartPersonTracking.html
    */
-  public startPersonTracking () {
+  public startPersonTracking() {
     this.add('rekognition:StartPersonTracking');
     return this;
   }
@@ -870,7 +874,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion.html
    */
-  public startProjectVersion () {
+  public startProjectVersion() {
     this.add('rekognition:StartProjectVersion');
     return this;
   }
@@ -882,7 +886,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartStreamProcessor.html
    */
-  public startStreamProcessor () {
+  public startStreamProcessor() {
     this.add('rekognition:StartStreamProcessor');
     return this;
   }
@@ -894,7 +898,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartTextDetection.html
    */
-  public startTextDetection () {
+  public startTextDetection() {
     this.add('rekognition:StartTextDetection');
     return this;
   }
@@ -906,7 +910,7 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion.html
    */
-  public stopProjectVersion () {
+  public stopProjectVersion() {
     this.add('rekognition:StopProjectVersion');
     return this;
   }
@@ -918,8 +922,84 @@ export class Rekognition extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rekognition/latest/dg/API_StopStreamProcessor.html
    */
-  public stopStreamProcessor () {
+  public stopStreamProcessor() {
     this.add('rekognition:StopStreamProcessor');
     return this;
+  }
+
+  /**
+   * Adds a resource of type collection to the statement
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html
+   *
+   * @param collectionId - Identifier for the collectionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:collection/${CollectionId}';
+    arn = arn.replace('${CollectionId}', collectionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type streamprocessor to the statement
+   *
+   * @param streamprocessorId - Identifier for the streamprocessorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:streamprocessor/${StreamprocessorId}';
+    arn = arn.replace('${StreamprocessorId}', streamprocessorId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param creationTimestamp - Identifier for the creationTimestamp.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProject(projectName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/${CreationTimestamp}';
+    arn = arn.replace('${ProjectName}', projectName);
+    arn = arn.replace('${CreationTimestamp}', creationTimestamp);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type projectversion to the statement
+   *
+   * @param projectName - Identifier for the projectName.
+   * @param versionName - Identifier for the versionName.
+   * @param creationTimestamp - Identifier for the creationTimestamp.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProjectversion(projectName: string, versionName: string, creationTimestamp: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/version/${VersionName}/${CreationTimestamp}';
+    arn = arn.replace('${ProjectName}', projectName);
+    arn = arn.replace('${VersionName}', versionName);
+    arn = arn.replace('${CreationTimestamp}', creationTimestamp);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

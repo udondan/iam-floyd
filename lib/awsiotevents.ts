@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Iotevents extends PolicyStatement {
   public servicePrefix = 'iotevents';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchPutMessage": {
       "url": "https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html",
       "description": "Sends a set of messages to the AWS IoT Events system.",
@@ -223,9 +223,10 @@ export class Iotevents extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "detectorModel": {
       "name": "detectorModel",
+      "url": "https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html",
       "arn": "arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -233,6 +234,7 @@ export class Iotevents extends PolicyStatement {
     },
     "input": {
       "name": "input",
+      "url": "https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html",
       "arn": "arn:${Partition}:iotevents:${Region}:${Account}:input/${inputName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -247,7 +249,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html
    */
-  public batchPutMessage () {
+  public batchPutMessage() {
     this.add('iotevents:BatchPutMessage');
     return this;
   }
@@ -259,7 +261,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchUpdateDetector.html
    */
-  public batchUpdateDetector () {
+  public batchUpdateDetector() {
     this.add('iotevents:BatchUpdateDetector');
     return this;
   }
@@ -271,7 +273,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html
    */
-  public createDetectorModel () {
+  public createDetectorModel() {
     this.add('iotevents:CreateDetectorModel');
     return this;
   }
@@ -283,7 +285,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateInput.html
    */
-  public createInput () {
+  public createInput() {
     this.add('iotevents:CreateInput');
     return this;
   }
@@ -295,7 +297,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DeleteDetectorModel.html
    */
-  public deleteDetectorModel () {
+  public deleteDetectorModel() {
     this.add('iotevents:DeleteDetectorModel');
     return this;
   }
@@ -307,7 +309,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DeleteInput.html
    */
-  public deleteInput () {
+  public deleteInput() {
     this.add('iotevents:DeleteInput');
     return this;
   }
@@ -319,7 +321,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_DescribeDetector.html
    */
-  public describeDetector () {
+  public describeDetector() {
     this.add('iotevents:DescribeDetector');
     return this;
   }
@@ -331,7 +333,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeDetectorModel.html
    */
-  public describeDetectorModel () {
+  public describeDetectorModel() {
     this.add('iotevents:DescribeDetectorModel');
     return this;
   }
@@ -343,7 +345,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeInput.html
    */
-  public describeInput () {
+  public describeInput() {
     this.add('iotevents:DescribeInput');
     return this;
   }
@@ -355,7 +357,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeLoggingOptions.html
    */
-  public describeLoggingOptions () {
+  public describeLoggingOptions() {
     this.add('iotevents:DescribeLoggingOptions');
     return this;
   }
@@ -367,7 +369,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListDetectorModelVersions.html
    */
-  public listDetectorModelVersions () {
+  public listDetectorModelVersions() {
     this.add('iotevents:ListDetectorModelVersions');
     return this;
   }
@@ -379,7 +381,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListDetectorModels.html
    */
-  public listDetectorModels () {
+  public listDetectorModels() {
     this.add('iotevents:ListDetectorModels');
     return this;
   }
@@ -391,7 +393,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html
    */
-  public listDetectors () {
+  public listDetectors() {
     this.add('iotevents:ListDetectors');
     return this;
   }
@@ -403,7 +405,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListInputs.html
    */
-  public listInputs () {
+  public listInputs() {
     this.add('iotevents:ListInputs');
     return this;
   }
@@ -415,7 +417,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('iotevents:ListTagsForResource');
     return this;
   }
@@ -427,7 +429,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_PutLoggingOptions.html
    */
-  public putLoggingOptions () {
+  public putLoggingOptions() {
     this.add('iotevents:PutLoggingOptions');
     return this;
   }
@@ -439,7 +441,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('iotevents:TagResource');
     return this;
   }
@@ -451,7 +453,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('iotevents:UntagResource');
     return this;
   }
@@ -463,7 +465,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateDetectorModel.html
    */
-  public updateDetectorModel () {
+  public updateDetectorModel() {
     this.add('iotevents:UpdateDetectorModel');
     return this;
   }
@@ -475,7 +477,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateInput.html
    */
-  public updateInput () {
+  public updateInput() {
     this.add('iotevents:UpdateInput');
     return this;
   }
@@ -487,8 +489,52 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateInputRouting.html
    */
-  public updateInputRouting () {
+  public updateInputRouting() {
     this.add('iotevents:UpdateInputRouting');
     return this;
+  }
+
+  /**
+   * Adds a resource of type detectorModel to the statement
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
+   *
+   * @param detectorModelName - Identifier for the detectorModelName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}';
+    arn = arn.replace('${DetectorModelName}', detectorModelName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type input to the statement
+   *
+   * https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html
+   *
+   * @param inputName - Identifier for the inputName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInput(inputName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:input/${inputName}';
+    arn = arn.replace('${inputName}', inputName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

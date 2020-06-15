@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Pricing extends PolicyStatement {
   public servicePrefix = 'pricing';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeServices": {
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html",
       "description": "Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).",
@@ -24,7 +24,7 @@ export class Pricing extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Returns the service details for all (paginated) services (if serviceCode is not set) or service detail for a particular service (if given serviceCode).
@@ -33,7 +33,7 @@ export class Pricing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html
    */
-  public describeServices () {
+  public describeServices() {
     this.add('pricing:DescribeServices');
     return this;
   }
@@ -45,7 +45,7 @@ export class Pricing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html
    */
-  public getAttributeValues () {
+  public getAttributeValues() {
     this.add('pricing:GetAttributeValues');
     return this;
   }
@@ -57,7 +57,7 @@ export class Pricing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html
    */
-  public getProducts () {
+  public getProducts() {
     this.add('pricing:GetProducts');
     return this;
   }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Awsconnector extends PolicyStatement {
   public servicePrefix = 'awsconnector';
-  public actions : Actions = {
+  public actions: Actions = {
     "GetConnectorHealth": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
       "description": "Retrieves all health metrics that were published from the Server Migration Connector.",
@@ -24,7 +24,7 @@ export class Awsconnector extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Retrieves all health metrics that were published from the Server Migration Connector.
@@ -33,7 +33,7 @@ export class Awsconnector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions
    */
-  public getConnectorHealth () {
+  public getConnectorHealth() {
     this.add('awsconnector:GetConnectorHealth');
     return this;
   }
@@ -45,7 +45,7 @@ export class Awsconnector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions
    */
-  public registerConnector () {
+  public registerConnector() {
     this.add('awsconnector:RegisterConnector');
     return this;
   }
@@ -57,7 +57,7 @@ export class Awsconnector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions
    */
-  public validateConnectorId () {
+  public validateConnectorId() {
     this.add('awsconnector:ValidateConnectorId');
     return this;
   }

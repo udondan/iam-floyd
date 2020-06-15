@@ -22,8 +22,8 @@ AWS [IAM policy statement][statement] generator.
 	* [allow](#allow)
 	* [deny](#deny)
 	* [allActions](#allActions)
-	* [withCondition](#withCondition)
-	* [onResources](#onResources)
+	* [if](#if)
+	* [on, on*](#onon)
 	* [not](#not)
 * [But I don't use CDK. Can I still use this package?](#ButIdontuseCDK.CanIstillusethispackage)
 * [Roadmap](#Roadmap)
@@ -106,24 +106,36 @@ new statement.Ec2()
     .allActions();
 ```
 
-To add conditions to the statement you can use `withCondition()`:
+To add conditions to the statement you can use `if()`:
 
 ```typescript
 new statement.Ec2()
     .allow()
     .startInstances()
-    .withCondition('StringEquals', {
+    .if('StringEquals', {
         'aws:RequestTag/Owner': '${aws:username}',
     });
 ```
 
-By default the statement applies to all resources. To limit to specific resources, add them via `onResources()`
+By default the statement applies to all resources. To limit to specific resources, add them via `on*()`.
+
+For every resource type an `on*()` method exists:
 
 ```typescript
 new statement.S3()
     .allow()
     .allActions()
-    .onResources(
+    .onBucket('some-bucket')
+    .onObject('some-bucket', 'some/path/*');
+```
+
+If instead you have an ARN ready, use the `on()` method:
+
+```typescript
+new statement.S3()
+    .allow()
+    .allActions()
+    .on(
         'arn:aws:s3:::some-bucket',
         'arn:aws:s3:::another-bucket'
     );
@@ -136,7 +148,7 @@ new statement.S3()
     .allow()
     .not()
     .deleteBucket()
-    .onResources('arn:aws:s3:::some-bucket');
+    .onBucket('some-bucket');
 ```
 
 ## <a name='Examples'></a>Examples
@@ -147,13 +159,13 @@ new iam.PolicyDocument({
         new statement.Ec2()
             .allow()
             .startInstances()
-            .withCondition('StringEquals', {
+            .if('StringEquals', {
                 'aws:RequestTag/Owner': '${aws:username}',
             }),
         new statement.Ec2()
             .allow()
             .stopInstances()
-            .withCondition('StringEquals', {
+            .if('StringEquals', {
                 'ec2:ResourceTag/Owner': '${aws:username}',
             }),
         new statement.Ec2()
@@ -175,13 +187,13 @@ new iam.PolicyDocument({
         new statement.All() // allow absolutely everything that is triggered via CFN
             .allow()
             .allActions()
-            .withCondition('ForAnyValue:StringEquals', {
+            .if('ForAnyValue:StringEquals', {
                 'aws:CalledVia': 'cloudformation.amazonaws.com',
             }),
         new statement.S3() // allow access to the CDK staging bucket
             .allow()
             .allActions()
-            .onResources('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
+            .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
         new statement.Account() // even when triggered via CFN, do not allow modifications of the account
             .deny()
             .allActions(
@@ -255,7 +267,7 @@ There exist 5 access levels:
 * PERMISSION_MANAGEMENT
 * TAGGING
 
-### <a name='withCondition'></a>withCondition
+### <a name='if'></a>if
 
 Adds a condition to the statement.
 
@@ -265,22 +277,31 @@ This is basically the same as `addCondition()` of the original `iam.PolicyStatem
 new statement.Ec2()
     .allow()
     .startInstances()
-    .withCondition('StringEquals', {
+    .if('StringEquals', {
         'aws:RequestTag/Owner': '${aws:username}',
     });
 ```
 
-### <a name='onResources'></a>onResources
+### <a name='onon'></a>on, on*
 
 Limit statement to specified resources.
 
-This is basically the same as `addResources()` of the original `iam.PolicyStatement`. Only difference is, it returns the statement so you can use it with method chaining.
+For every resource type an `on*()` method exists:
 
 ```typescript
 new statement.S3()
     .allow()
     .allActions()
-    .onResources('arn:aws:s3:::some-bucket');
+    .onBucket('some-bucket');
+```
+
+If instead you have an ARN ready, use the `on()` method:
+
+```typescript
+new statement.S3()
+    .allow()
+    .allActions()
+    .on('arn:aws:s3:::some-bucket');
 ```
 
 If no resources are applied to the statement, it defaults to all resources (`*`). You can also be verbose and set this yourself:
@@ -289,7 +310,7 @@ If no resources are applied to the statement, it defaults to all resources (`*`)
 new statement.S3()
     .allow()
     .allActions()
-    .onResources('*');
+    .on('*');
 ```
 
 ### <a name='not'></a>not
@@ -303,7 +324,7 @@ new statement.S3()
     .allow()
     .not()
     .deleteBucket()
-    .onResources('arn:aws:s3:::some-bucket');
+    .onBucket('some-bucket');
 ```
 
 **Wrong:** `s3:DeleteBucket` will be added to the list of `Action`
@@ -313,7 +334,7 @@ new statement.S3()
     .allow()
     .deleteBucket()
     .not()
-    .onResources('arn:aws:s3:::some-bucket');
+    .onBucket('some-bucket');
 ```
 
 ## <a name='ButIdontuseCDK.CanIstillusethispackage'></a>But I don't use CDK. Can I still use this package?
@@ -325,7 +346,7 @@ new statement.Ec2()
     .allow()
     .startInstances()
     .stopInstances()
-    .onResources('*')
+    .on('*')
     .toJSON();
 
 new iam.PolicyDocument({
@@ -334,16 +355,14 @@ new iam.PolicyDocument({
             .allow()
             .startInstances()
             .stopInstances()
-            .onResources('*'),
+            .on('*'),
     ],
 }).toJSON();
 ```
 
 ## <a name='Roadmap'></a>Roadmap
 
-* Support for resource types in `allActions()`
-* Support for resource types in action methods
-* Support for conditions in action methods
+* Support for conditions (also in action methods?)
 * Support for `NotResources`
 * Compile action list down to the smallest possible pattern
 * Add useful standard conditions as methods

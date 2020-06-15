@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Connect extends PolicyStatement {
   public servicePrefix = 'connect';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateInstance": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to create a new Amazon Connect instance. The associated required actions grant permissions to configure instance settings.",
@@ -404,19 +404,22 @@ export class Connect extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "instance": {
       "name": "instance",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}",
       "conditionKeys": []
     },
     "contact": {
       "name": "contact",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-attributes.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact/${ContactId}",
       "conditionKeys": []
     },
     "user": {
       "name": "user",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/connect-agents.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent/${UserId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -424,36 +427,43 @@ export class Connect extends PolicyStatement {
     },
     "routing-profile": {
       "name": "routing-profile",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}",
       "conditionKeys": []
     },
     "security-profile": {
       "name": "security-profile",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/security-profile/${SecurityProfileId}",
       "conditionKeys": []
     },
     "hierarchy-group": {
       "name": "hierarchy-group",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-group/${HierarchyGroupId}",
       "conditionKeys": []
     },
     "queue": {
       "name": "queue",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}",
       "conditionKeys": []
     },
     "contact-flow": {
       "name": "contact-flow",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}",
       "conditionKeys": []
     },
     "hours-of-operation": {
       "name": "hours-of-operation",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/operating-hours/${HoursOfOperationId}",
       "conditionKeys": []
     },
     "phone-number": {
       "name": "phone-number",
+      "url": "https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-numbers/${PhoneNumberId}",
       "conditionKeys": []
     }
@@ -466,7 +476,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
-  public createInstance () {
+  public createInstance() {
     this.add('connect:CreateInstance');
     return this;
   }
@@ -478,7 +488,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html
    */
-  public createUser () {
+  public createUser() {
     this.add('connect:CreateUser');
     return this;
   }
@@ -490,7 +500,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html
    */
-  public deleteUser () {
+  public deleteUser() {
     this.add('connect:DeleteUser');
     return this;
   }
@@ -502,7 +512,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
-  public describeInstance () {
+  public describeInstance() {
     this.add('connect:DescribeInstance');
     return this;
   }
@@ -514,7 +524,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html
    */
-  public describeUser () {
+  public describeUser() {
     this.add('connect:DescribeUser');
     return this;
   }
@@ -526,7 +536,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyGroup.html
    */
-  public describeUserHierarchyGroup () {
+  public describeUserHierarchyGroup() {
     this.add('connect:DescribeUserHierarchyGroup');
     return this;
   }
@@ -538,7 +548,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUserHierarchyStructure.html
    */
-  public describeUserHierarchyStructure () {
+  public describeUserHierarchyStructure() {
     this.add('connect:DescribeUserHierarchyStructure');
     return this;
   }
@@ -550,7 +560,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
-  public destroyInstance () {
+  public destroyInstance() {
     this.add('connect:DestroyInstance');
     return this;
   }
@@ -562,7 +572,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html
    */
-  public getContactAttributes () {
+  public getContactAttributes() {
     this.add('connect:GetContactAttributes');
     return this;
   }
@@ -574,7 +584,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetCurrentMetricData.html
    */
-  public getCurrentMetricData () {
+  public getCurrentMetricData() {
     this.add('connect:GetCurrentMetricData');
     return this;
   }
@@ -586,7 +596,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetFederationToken.html
    */
-  public getFederationToken () {
+  public getFederationToken() {
     this.add('connect:GetFederationToken');
     return this;
   }
@@ -598,7 +608,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
-  public getFederationTokens () {
+  public getFederationTokens() {
     this.add('connect:GetFederationTokens');
     return this;
   }
@@ -610,7 +620,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html
    */
-  public getMetricData () {
+  public getMetricData() {
     this.add('connect:GetMetricData');
     return this;
   }
@@ -622,7 +632,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListContactFlows.html
    */
-  public listContactFlows () {
+  public listContactFlows() {
     this.add('connect:ListContactFlows');
     return this;
   }
@@ -634,7 +644,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListHoursOfOperations.html
    */
-  public listHoursOfOperations () {
+  public listHoursOfOperations() {
     this.add('connect:ListHoursOfOperations');
     return this;
   }
@@ -646,7 +656,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
-  public listInstances () {
+  public listInstances() {
     this.add('connect:ListInstances');
     return this;
   }
@@ -658,7 +668,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html
    */
-  public listPhoneNumbers () {
+  public listPhoneNumbers() {
     this.add('connect:ListPhoneNumbers');
     return this;
   }
@@ -670,7 +680,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueues.html
    */
-  public listQueues () {
+  public listQueues() {
     this.add('connect:ListQueues');
     return this;
   }
@@ -682,7 +692,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfiles.html
    */
-  public listRoutingProfiles () {
+  public listRoutingProfiles() {
     this.add('connect:ListRoutingProfiles');
     return this;
   }
@@ -694,7 +704,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListSecurityProfiles.html
    */
-  public listSecurityProfiles () {
+  public listSecurityProfiles() {
     this.add('connect:ListSecurityProfiles');
     return this;
   }
@@ -706,7 +716,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('connect:ListTagsForResource');
     return this;
   }
@@ -718,7 +728,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUserHierarchyGroups.html
    */
-  public listUserHierarchyGroups () {
+  public listUserHierarchyGroups() {
     this.add('connect:ListUserHierarchyGroups');
     return this;
   }
@@ -730,7 +740,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListUsers.html
    */
-  public listUsers () {
+  public listUsers() {
     this.add('connect:ListUsers');
     return this;
   }
@@ -742,7 +752,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
-  public modifyInstance () {
+  public modifyInstance() {
     this.add('connect:ModifyInstance');
     return this;
   }
@@ -754,7 +764,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html
    */
-  public startChatContact () {
+  public startChatContact() {
     this.add('connect:StartChatContact');
     return this;
   }
@@ -766,7 +776,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundVoiceContact.html
    */
-  public startOutboundVoiceContact () {
+  public startOutboundVoiceContact() {
     this.add('connect:StartOutboundVoiceContact');
     return this;
   }
@@ -778,7 +788,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html
    */
-  public stopContact () {
+  public stopContact() {
     this.add('connect:StopContact');
     return this;
   }
@@ -790,7 +800,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('connect:TagResource');
     return this;
   }
@@ -802,7 +812,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('connect:UntagResource');
     return this;
   }
@@ -814,7 +824,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactAttributes.html
    */
-  public updateContactAttributes () {
+  public updateContactAttributes() {
     this.add('connect:UpdateContactAttributes');
     return this;
   }
@@ -826,7 +836,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html
    */
-  public updateUserHierarchy () {
+  public updateUserHierarchy() {
     this.add('connect:UpdateUserHierarchy');
     return this;
   }
@@ -838,7 +848,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserIdentityInfo.html
    */
-  public updateUserIdentityInfo () {
+  public updateUserIdentityInfo() {
     this.add('connect:UpdateUserIdentityInfo');
     return this;
   }
@@ -850,7 +860,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserPhoneConfig.html
    */
-  public updateUserPhoneConfig () {
+  public updateUserPhoneConfig() {
     this.add('connect:UpdateUserPhoneConfig');
     return this;
   }
@@ -862,7 +872,7 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserRoutingProfile.html
    */
-  public updateUserRoutingProfile () {
+  public updateUserRoutingProfile() {
     this.add('connect:UpdateUserRoutingProfile');
     return this;
   }
@@ -874,8 +884,219 @@ export class Connect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserSecurityProfiles.html
    */
-  public updateUserSecurityProfiles () {
+  public updateUserSecurityProfiles() {
     this.add('connect:UpdateUserSecurityProfiles');
     return this;
+  }
+
+  /**
+   * Adds a resource of type instance to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type contact to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-attributes.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param contactId - Identifier for the contactId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onContact(instanceId: string, contactId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact/${ContactId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${ContactId}', contactId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-agents.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param userId - Identifier for the userId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent/${UserId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${UserId}', userId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type routing-profile to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param routingProfileId - Identifier for the routingProfileId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${RoutingProfileId}', routingProfileId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type security-profile to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param securityProfileId - Identifier for the securityProfileId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSecurityProfile(instanceId: string, securityProfileId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/security-profile/${SecurityProfileId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${SecurityProfileId}', securityProfileId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type hierarchy-group to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param hierarchyGroupId - Identifier for the hierarchyGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHierarchyGroup(instanceId: string, hierarchyGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent-group/${HierarchyGroupId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${HierarchyGroupId}', hierarchyGroupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type queue to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/create-queue.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param queueId - Identifier for the queueId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onQueue(instanceId: string, queueId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/queue/${QueueId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${QueueId}', queueId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type contact-flow to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param contactFlowId - Identifier for the contactFlowId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${ContactFlowId}', contactFlowId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type hours-of-operation to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param hoursOfOperationId - Identifier for the hoursOfOperationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHoursOfOperation(instanceId: string, hoursOfOperationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/operating-hours/${HoursOfOperationId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${HoursOfOperationId}', hoursOfOperationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type phone-number to the statement
+   *
+   * https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param phoneNumberId - Identifier for the phoneNumberId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPhoneNumber(instanceId: string, phoneNumberId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/phone-numbers/${PhoneNumberId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${PhoneNumberId}', phoneNumberId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

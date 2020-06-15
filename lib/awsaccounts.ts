@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Account extends PolicyStatement {
   public servicePrefix = 'account';
-  public actions : Actions = {
+  public actions: Actions = {
     "DisableRegion": {
       "url": "",
       "description": "Grants permission to disable a region",
@@ -30,14 +30,14 @@ export class Account extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to disable a region
    *
    * Access Level: Write
    */
-  public disableRegion () {
+  public disableRegion() {
     this.add('account:DisableRegion');
     return this;
   }
@@ -47,7 +47,7 @@ export class Account extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public enableRegion () {
+  public enableRegion() {
     this.add('account:EnableRegion');
     return this;
   }
@@ -57,7 +57,7 @@ export class Account extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRegions () {
+  public listRegions() {
     this.add('account:ListRegions');
     return this;
   }

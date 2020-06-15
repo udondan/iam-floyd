@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Schemas extends PolicyStatement {
   public servicePrefix = 'schemas';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateDiscoverer": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer",
       "description": "Creates an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents",
@@ -329,9 +329,10 @@ export class Schemas extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "discoverer": {
       "name": "discoverer",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",
       "arn": "arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -339,6 +340,7 @@ export class Schemas extends PolicyStatement {
     },
     "registry": {
       "name": "registry",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",
       "arn": "arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -346,6 +348,7 @@ export class Schemas extends PolicyStatement {
     },
     "schema": {
       "name": "schema",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",
       "arn": "arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -360,7 +363,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer
    */
-  public createDiscoverer () {
+  public createDiscoverer() {
     this.add('schemas:CreateDiscoverer');
     return this;
   }
@@ -372,7 +375,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#CreateRegistry
    */
-  public createRegistry () {
+  public createRegistry() {
     this.add('schemas:CreateRegistry');
     return this;
   }
@@ -384,7 +387,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#CreateSchema
    */
-  public createSchema () {
+  public createSchema() {
     this.add('schemas:CreateSchema');
     return this;
   }
@@ -396,7 +399,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DeleteDiscoverer
    */
-  public deleteDiscoverer () {
+  public deleteDiscoverer() {
     this.add('schemas:DeleteDiscoverer');
     return this;
   }
@@ -408,7 +411,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DeleteRegistry
    */
-  public deleteRegistry () {
+  public deleteRegistry() {
     this.add('schemas:DeleteRegistry');
     return this;
   }
@@ -420,7 +423,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#DeleteResourcePolicy
    */
-  public deleteResourcePolicy () {
+  public deleteResourcePolicy() {
     this.add('schemas:DeleteResourcePolicy');
     return this;
   }
@@ -432,7 +435,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DeleteSchema
    */
-  public deleteSchema () {
+  public deleteSchema() {
     this.add('schemas:DeleteSchema');
     return this;
   }
@@ -444,7 +447,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-version-schemaversion.html#DeleteSchemaVersion
    */
-  public deleteSchemaVersion () {
+  public deleteSchemaVersion() {
     this.add('schemas:DeleteSchemaVersion');
     return this;
   }
@@ -456,7 +459,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#DescribeCodeBinding
    */
-  public describeCodeBinding () {
+  public describeCodeBinding() {
     this.add('schemas:DescribeCodeBinding');
     return this;
   }
@@ -468,7 +471,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DescribeDiscoverer
    */
-  public describeDiscoverer () {
+  public describeDiscoverer() {
     this.add('schemas:DescribeDiscoverer');
     return this;
   }
@@ -480,7 +483,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DescribeRegistry
    */
-  public describeRegistry () {
+  public describeRegistry() {
     this.add('schemas:DescribeRegistry');
     return this;
   }
@@ -492,7 +495,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DescribeSchema
    */
-  public describeSchema () {
+  public describeSchema() {
     this.add('schemas:DescribeSchema');
     return this;
   }
@@ -504,7 +507,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language-source.html#GetCodeBindingSource
    */
-  public getCodeBindingSource () {
+  public getCodeBindingSource() {
     this.add('schemas:GetCodeBindingSource');
     return this;
   }
@@ -516,7 +519,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discover.html#GetDiscoveredSchema
    */
-  public getDiscoveredSchema () {
+  public getDiscoveredSchema() {
     this.add('schemas:GetDiscoveredSchema');
     return this;
   }
@@ -528,7 +531,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#GetResourcePolicy
    */
-  public getResourcePolicy () {
+  public getResourcePolicy() {
     this.add('schemas:GetResourcePolicy');
     return this;
   }
@@ -540,7 +543,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#ListDiscoverers
    */
-  public listDiscoverers () {
+  public listDiscoverers() {
     this.add('schemas:ListDiscoverers');
     return this;
   }
@@ -552,7 +555,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries.html#ListRegistries
    */
-  public listRegistries () {
+  public listRegistries() {
     this.add('schemas:ListRegistries');
     return this;
   }
@@ -564,7 +567,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-versions.html#ListSchemaVersions
    */
-  public listSchemaVersions () {
+  public listSchemaVersions() {
     this.add('schemas:ListSchemaVersions');
     return this;
   }
@@ -576,7 +579,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas.html#ListSchemas
    */
-  public listSchemas () {
+  public listSchemas() {
     this.add('schemas:ListSchemas');
     return this;
   }
@@ -588,7 +591,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#ListTagsForResource
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('schemas:ListTagsForResource');
     return this;
   }
@@ -600,7 +603,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#PutCodeBinding
    */
-  public putCodeBinding () {
+  public putCodeBinding() {
     this.add('schemas:PutCodeBinding');
     return this;
   }
@@ -612,7 +615,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#PutResourcePolicy
    */
-  public putResourcePolicy () {
+  public putResourcePolicy() {
     this.add('schemas:PutResourcePolicy');
     return this;
   }
@@ -624,7 +627,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-search.html#SearchSchemas
    */
-  public searchSchemas () {
+  public searchSchemas() {
     this.add('schemas:SearchSchemas');
     return this;
   }
@@ -636,7 +639,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StartDiscoverer
    */
-  public startDiscoverer () {
+  public startDiscoverer() {
     this.add('schemas:StartDiscoverer');
     return this;
   }
@@ -648,7 +651,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StopDiscoverer
    */
-  public stopDiscoverer () {
+  public stopDiscoverer() {
     this.add('schemas:StopDiscoverer');
     return this;
   }
@@ -660,7 +663,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#TagResource
    */
-  public tagResource () {
+  public tagResource() {
     this.add('schemas:TagResource');
     return this;
   }
@@ -672,7 +675,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#UntagResource
    */
-  public untagResource () {
+  public untagResource() {
     this.add('schemas:UntagResource');
     return this;
   }
@@ -684,7 +687,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#UpdateDiscoverer
    */
-  public updateDiscoverer () {
+  public updateDiscoverer() {
     this.add('schemas:UpdateDiscoverer');
     return this;
   }
@@ -696,7 +699,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#UpdateRegistry
    */
-  public updateRegistry () {
+  public updateRegistry() {
     this.add('schemas:UpdateRegistry');
     return this;
   }
@@ -708,8 +711,76 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#UpdateSchema
    */
-  public updateSchema () {
+  public updateSchema() {
     this.add('schemas:UpdateSchema');
     return this;
+  }
+
+  /**
+   * Adds a resource of type discoverer to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   *
+   * @param discovererId - Identifier for the discovererId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDiscoverer(discovererId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}';
+    arn = arn.replace('${DiscovererId}', discovererId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type registry to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   *
+   * @param registryName - Identifier for the registryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}';
+    arn = arn.replace('${RegistryName}', registryName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type schema to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html
+   *
+   * @param registryName - Identifier for the registryName.
+   * @param schemaName - Identifier for the schemaName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSchema(registryName: string, schemaName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}';
+    arn = arn.replace('${RegistryName}', registryName);
+    arn = arn.replace('${SchemaName}', schemaName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

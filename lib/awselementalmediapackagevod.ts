@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class MediapackageVod extends PolicyStatement {
   public servicePrefix = 'mediapackage-vod';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateAsset": {
       "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost",
       "description": "Grants permission to create an asset in AWS Elemental MediaPackage",
@@ -166,9 +166,10 @@ export class MediapackageVod extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "assets": {
       "name": "assets",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html",
       "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -176,6 +177,7 @@ export class MediapackageVod extends PolicyStatement {
     },
     "packaging-configurations": {
       "name": "packaging-configurations",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-cfig.html",
       "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -183,6 +185,7 @@ export class MediapackageVod extends PolicyStatement {
     },
     "packaging-groups": {
       "name": "packaging-groups",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-group.html",
       "arn": "arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -197,7 +200,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost
    */
-  public createAsset () {
+  public createAsset() {
     this.add('mediapackage-vod:CreateAsset');
     return this;
   }
@@ -209,7 +212,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationspost
    */
-  public createPackagingConfiguration () {
+  public createPackagingConfiguration() {
     this.add('mediapackage-vod:CreatePackagingConfiguration');
     return this;
   }
@@ -221,7 +224,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupspost
    */
-  public createPackagingGroup () {
+  public createPackagingGroup() {
     this.add('mediapackage-vod:CreatePackagingGroup');
     return this;
   }
@@ -233,7 +236,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-iddelete
    */
-  public deleteAsset () {
+  public deleteAsset() {
     this.add('mediapackage-vod:DeleteAsset');
     return this;
   }
@@ -245,7 +248,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-iddelete
    */
-  public deletePackagingConfiguration () {
+  public deletePackagingConfiguration() {
     this.add('mediapackage-vod:DeletePackagingConfiguration');
     return this;
   }
@@ -257,7 +260,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-iddelete
    */
-  public deletePackagingGroup () {
+  public deletePackagingGroup() {
     this.add('mediapackage-vod:DeletePackagingGroup');
     return this;
   }
@@ -269,7 +272,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-idget
    */
-  public describeAsset () {
+  public describeAsset() {
     this.add('mediapackage-vod:DescribeAsset');
     return this;
   }
@@ -281,7 +284,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-idget
    */
-  public describePackagingConfiguration () {
+  public describePackagingConfiguration() {
     this.add('mediapackage-vod:DescribePackagingConfiguration');
     return this;
   }
@@ -293,7 +296,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-idget
    */
-  public describePackagingGroup () {
+  public describePackagingGroup() {
     this.add('mediapackage-vod:DescribePackagingGroup');
     return this;
   }
@@ -305,7 +308,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetsget
    */
-  public listAssets () {
+  public listAssets() {
     this.add('mediapackage-vod:ListAssets');
     return this;
   }
@@ -317,7 +320,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationsget
    */
-  public listPackagingConfigurations () {
+  public listPackagingConfigurations() {
     this.add('mediapackage-vod:ListPackagingConfigurations');
     return this;
   }
@@ -329,7 +332,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupsget
    */
-  public listPackagingGroups () {
+  public listPackagingGroups() {
     this.add('mediapackage-vod:ListPackagingGroups');
     return this;
   }
@@ -341,7 +344,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnget
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('mediapackage-vod:ListTagsForResource');
     return this;
   }
@@ -353,7 +356,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
-  public tagResource () {
+  public tagResource() {
     this.add('mediapackage-vod:TagResource');
     return this;
   }
@@ -365,8 +368,74 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
-  public untagResource () {
+  public untagResource() {
     this.add('mediapackage-vod:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type assets to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html
+   *
+   * @param assetIdentifier - Identifier for the assetIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}';
+    arn = arn.replace('${AssetIdentifier}', assetIdentifier);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type packaging-configurations to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-cfig.html
+   *
+   * @param packagingConfigurationIdentifier - Identifier for the packagingConfigurationIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}';
+    arn = arn.replace('${PackagingConfigurationIdentifier}', packagingConfigurationIdentifier);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type packaging-groups to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-group.html
+   *
+   * @param packagingGroupIdentifier - Identifier for the packagingGroupIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}';
+    arn = arn.replace('${PackagingGroupIdentifier}', packagingGroupIdentifier);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

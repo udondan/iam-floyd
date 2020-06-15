@@ -7,14 +7,14 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Codeguru extends PolicyStatement {
   public servicePrefix = 'codeguru';
-  public actions : Actions = {
+  public actions: Actions = {
     "GetCodeGuruFreeTrialSummary": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html",
       "description": "Gets free trial summary for the CodeGuru service which includes expiration date.",
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Gets free trial summary for the CodeGuru service which includes expiration date.
@@ -23,7 +23,7 @@ export class Codeguru extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html
    */
-  public getCodeGuruFreeTrialSummary () {
+  public getCodeGuruFreeTrialSummary() {
     this.add('codeguru:GetCodeGuruFreeTrialSummary');
     return this;
   }

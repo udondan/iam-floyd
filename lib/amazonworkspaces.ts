@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Workspaces extends PolicyStatement {
   public servicePrefix = 'workspaces';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateIpGroups": {
       "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html",
       "description": "Associates the specified IP access control group with the specified directory.",
@@ -252,24 +252,28 @@ export class Workspaces extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "workspacebundle": {
       "name": "workspacebundle",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html",
       "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspacebundle/${BundleId}",
       "conditionKeys": []
     },
     "workspaceipgroup": {
       "name": "workspaceipgroup",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-ip-access-control-groups.html",
       "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspaceipgroup/${GroupId}",
       "conditionKeys": []
     },
     "directoryid": {
       "name": "directoryid",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/manage-workspaces-directory.html",
       "arn": "arn:${Partition}:workspaces:${Region}:${Account}:directory/${DirectoryId}",
       "conditionKeys": []
     },
     "workspaceid": {
       "name": "workspaceid",
+      "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html",
       "arn": "arn:${Partition}:workspaces:${Region}:${Account}:workspace/${WorkspaceId}",
       "conditionKeys": []
     }
@@ -282,7 +286,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html
    */
-  public associateIpGroups () {
+  public associateIpGroups() {
     this.add('workspaces:AssociateIpGroups');
     return this;
   }
@@ -294,7 +298,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html
    */
-  public authorizeIpRules () {
+  public authorizeIpRules() {
     this.add('workspaces:AuthorizeIpRules');
     return this;
   }
@@ -306,7 +310,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateIpGroup.html
    */
-  public createIpGroup () {
+  public createIpGroup() {
     this.add('workspaces:CreateIpGroup');
     return this;
   }
@@ -318,7 +322,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateTags.html
    */
-  public createTags () {
+  public createTags() {
     this.add('workspaces:CreateTags');
     return this;
   }
@@ -330,7 +334,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaces.html
    */
-  public createWorkspaces () {
+  public createWorkspaces() {
     this.add('workspaces:CreateWorkspaces');
     return this;
   }
@@ -342,7 +346,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteIpGroup.html
    */
-  public deleteIpGroup () {
+  public deleteIpGroup() {
     this.add('workspaces:DeleteIpGroup');
     return this;
   }
@@ -354,7 +358,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteTags.html
    */
-  public deleteTags () {
+  public deleteTags() {
     this.add('workspaces:DeleteTags');
     return this;
   }
@@ -366,7 +370,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceImage.html
    */
-  public deleteWorkspaceImage () {
+  public deleteWorkspaceImage() {
     this.add('workspaces:DeleteWorkspaceImage');
     return this;
   }
@@ -378,7 +382,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccount.html
    */
-  public describeAccount () {
+  public describeAccount() {
     this.add('workspaces:DescribeAccount');
     return this;
   }
@@ -390,7 +394,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccountModifications.html
    */
-  public describeAccountModifications () {
+  public describeAccountModifications() {
     this.add('workspaces:DescribeAccountModifications');
     return this;
   }
@@ -402,7 +406,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientProperties.html
    */
-  public describeClientProperties () {
+  public describeClientProperties() {
     this.add('workspaces:DescribeClientProperties');
     return this;
   }
@@ -414,7 +418,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html
    */
-  public describeIpGroups () {
+  public describeIpGroups() {
     this.add('workspaces:DescribeIpGroups');
     return this;
   }
@@ -426,7 +430,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeTags.html
    */
-  public describeTags () {
+  public describeTags() {
     this.add('workspaces:DescribeTags');
     return this;
   }
@@ -438,7 +442,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceBundles.html
    */
-  public describeWorkspaceBundles () {
+  public describeWorkspaceBundles() {
     this.add('workspaces:DescribeWorkspaceBundles');
     return this;
   }
@@ -450,7 +454,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html
    */
-  public describeWorkspaceDirectories () {
+  public describeWorkspaceDirectories() {
     this.add('workspaces:DescribeWorkspaceDirectories');
     return this;
   }
@@ -462,7 +466,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html
    */
-  public describeWorkspaceImages () {
+  public describeWorkspaceImages() {
     this.add('workspaces:DescribeWorkspaceImages');
     return this;
   }
@@ -474,7 +478,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html
    */
-  public describeWorkspaces () {
+  public describeWorkspaces() {
     this.add('workspaces:DescribeWorkspaces');
     return this;
   }
@@ -486,7 +490,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesConnectionStatus.html
    */
-  public describeWorkspacesConnectionStatus () {
+  public describeWorkspacesConnectionStatus() {
     this.add('workspaces:DescribeWorkspacesConnectionStatus');
     return this;
   }
@@ -498,7 +502,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateIpGroups.html
    */
-  public disassociateIpGroups () {
+  public disassociateIpGroups() {
     this.add('workspaces:DisassociateIpGroups');
     return this;
   }
@@ -510,7 +514,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html
    */
-  public importWorkspaceImage () {
+  public importWorkspaceImage() {
     this.add('workspaces:ImportWorkspaceImage');
     return this;
   }
@@ -522,7 +526,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ListAvailableManagementCidrRanges.html
    */
-  public listAvailableManagementCidrRanges () {
+  public listAvailableManagementCidrRanges() {
     this.add('workspaces:ListAvailableManagementCidrRanges');
     return this;
   }
@@ -534,7 +538,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyAccount.html
    */
-  public modifyAccount () {
+  public modifyAccount() {
     this.add('workspaces:ModifyAccount');
     return this;
   }
@@ -546,7 +550,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyClientProperties.html
    */
-  public modifyClientProperties () {
+  public modifyClientProperties() {
     this.add('workspaces:ModifyClientProperties');
     return this;
   }
@@ -558,7 +562,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceProperties.html
    */
-  public modifyWorkspaceProperties () {
+  public modifyWorkspaceProperties() {
     this.add('workspaces:ModifyWorkspaceProperties');
     return this;
   }
@@ -570,7 +574,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceState.html
    */
-  public modifyWorkspaceState () {
+  public modifyWorkspaceState() {
     this.add('workspaces:ModifyWorkspaceState');
     return this;
   }
@@ -582,7 +586,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RebootWorkspaces.html
    */
-  public rebootWorkspaces () {
+  public rebootWorkspaces() {
     this.add('workspaces:RebootWorkspaces');
     return this;
   }
@@ -594,7 +598,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RebuildWorkspaces.html
    */
-  public rebuildWorkspaces () {
+  public rebuildWorkspaces() {
     this.add('workspaces:RebuildWorkspaces');
     return this;
   }
@@ -606,7 +610,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html
    */
-  public revokeIpRules () {
+  public revokeIpRules() {
     this.add('workspaces:RevokeIpRules');
     return this;
   }
@@ -618,7 +622,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspaces.html
    */
-  public startWorkspaces () {
+  public startWorkspaces() {
     this.add('workspaces:StartWorkspaces');
     return this;
   }
@@ -630,7 +634,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspaces.html
    */
-  public stopWorkspaces () {
+  public stopWorkspaces() {
     this.add('workspaces:StopWorkspaces');
     return this;
   }
@@ -642,7 +646,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspaces.html
    */
-  public terminateWorkspaces () {
+  public terminateWorkspaces() {
     this.add('workspaces:TerminateWorkspaces');
     return this;
   }
@@ -654,8 +658,84 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html
    */
-  public updateRulesOfIpGroup () {
+  public updateRulesOfIpGroup() {
     this.add('workspaces:UpdateRulesOfIpGroup');
     return this;
+  }
+
+  /**
+   * Adds a resource of type workspacebundle to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html
+   *
+   * @param bundleId - Identifier for the bundleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWorkspacebundle(bundleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspacebundle/${BundleId}';
+    arn = arn.replace('${BundleId}', bundleId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type workspaceipgroup to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-ip-access-control-groups.html
+   *
+   * @param groupId - Identifier for the groupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWorkspaceipgroup(groupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspaceipgroup/${GroupId}';
+    arn = arn.replace('${GroupId}', groupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type directoryid to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/manage-workspaces-directory.html
+   *
+   * @param directoryId - Identifier for the directoryId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:directory/${DirectoryId}';
+    arn = arn.replace('${DirectoryId}', directoryId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type workspaceid to the statement
+   *
+   * https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html
+   *
+   * @param workspaceId - Identifier for the workspaceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onWorkspaceid(workspaceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspace/${WorkspaceId}';
+    arn = arn.replace('${WorkspaceId}', workspaceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

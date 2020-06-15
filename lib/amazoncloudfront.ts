@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Cloudfront extends PolicyStatement {
   public servicePrefix = 'cloudfront';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCloudFrontOriginAccessIdentity": {
       "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateCloudFrontOriginAccessIdentity.html",
       "description": "This action creates a new CloudFront origin access identity (POST /2019-03-26/origin-access-identity/cloudfront).",
@@ -378,9 +378,10 @@ export class Cloudfront extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "distribution": {
       "name": "distribution",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
       "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -388,6 +389,7 @@ export class Cloudfront extends PolicyStatement {
     },
     "streaming-distribution": {
       "name": "streaming-distribution",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
       "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:streaming-distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -395,6 +397,7 @@ export class Cloudfront extends PolicyStatement {
     },
     "origin-access-identity": {
       "name": "origin-access-identity",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview",
       "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:origin-access-identity/${Id}",
       "conditionKeys": []
     }
@@ -407,7 +410,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateCloudFrontOriginAccessIdentity.html
    */
-  public createCloudFrontOriginAccessIdentity () {
+  public createCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:CreateCloudFrontOriginAccessIdentity');
     return this;
   }
@@ -419,7 +422,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistribution.html
    */
-  public createDistribution () {
+  public createDistribution() {
     this.add('cloudfront:CreateDistribution');
     return this;
   }
@@ -431,7 +434,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistributionWithTags.html
    */
-  public createDistributionWithTags () {
+  public createDistributionWithTags() {
     this.add('cloudfront:CreateDistributionWithTags');
     return this;
   }
@@ -443,7 +446,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateFieldLevelEncryptionConfig.html
    */
-  public createFieldLevelEncryptionConfig () {
+  public createFieldLevelEncryptionConfig() {
     this.add('cloudfront:CreateFieldLevelEncryptionConfig');
     return this;
   }
@@ -455,7 +458,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateFieldLevelEncryptionProfile.html
    */
-  public createFieldLevelEncryptionProfile () {
+  public createFieldLevelEncryptionProfile() {
     this.add('cloudfront:CreateFieldLevelEncryptionProfile');
     return this;
   }
@@ -467,7 +470,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateInvalidation.html
    */
-  public createInvalidation () {
+  public createInvalidation() {
     this.add('cloudfront:CreateInvalidation');
     return this;
   }
@@ -479,7 +482,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreatePublicKey.html
    */
-  public createPublicKey () {
+  public createPublicKey() {
     this.add('cloudfront:CreatePublicKey');
     return this;
   }
@@ -491,7 +494,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistribution.html
    */
-  public createStreamingDistribution () {
+  public createStreamingDistribution() {
     this.add('cloudfront:CreateStreamingDistribution');
     return this;
   }
@@ -503,7 +506,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistributionWithTags.html
    */
-  public createStreamingDistributionWithTags () {
+  public createStreamingDistributionWithTags() {
     this.add('cloudfront:CreateStreamingDistributionWithTags');
     return this;
   }
@@ -515,7 +518,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteCloudFrontOriginAccessIdentity.html
    */
-  public deleteCloudFrontOriginAccessIdentity () {
+  public deleteCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:DeleteCloudFrontOriginAccessIdentity');
     return this;
   }
@@ -527,7 +530,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteDistribution.html
    */
-  public deleteDistribution () {
+  public deleteDistribution() {
     this.add('cloudfront:DeleteDistribution');
     return this;
   }
@@ -539,7 +542,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteFieldLevelEncryptionConfig.html
    */
-  public deleteFieldLevelEncryptionConfig () {
+  public deleteFieldLevelEncryptionConfig() {
     this.add('cloudfront:DeleteFieldLevelEncryptionConfig');
     return this;
   }
@@ -551,7 +554,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteFieldLevelEncryptionProfile.html
    */
-  public deleteFieldLevelEncryptionProfile () {
+  public deleteFieldLevelEncryptionProfile() {
     this.add('cloudfront:DeleteFieldLevelEncryptionProfile');
     return this;
   }
@@ -563,7 +566,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeletePublicKey.html
    */
-  public deletePublicKey () {
+  public deletePublicKey() {
     this.add('cloudfront:DeletePublicKey');
     return this;
   }
@@ -575,7 +578,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteStreamingDistribution.html
    */
-  public deleteStreamingDistribution () {
+  public deleteStreamingDistribution() {
     this.add('cloudfront:DeleteStreamingDistribution');
     return this;
   }
@@ -587,7 +590,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetCloudFrontOriginAccessIdentity.html
    */
-  public getCloudFrontOriginAccessIdentity () {
+  public getCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:GetCloudFrontOriginAccessIdentity');
     return this;
   }
@@ -599,7 +602,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetCloudFrontOriginAccessIdentityConfig.html
    */
-  public getCloudFrontOriginAccessIdentityConfig () {
+  public getCloudFrontOriginAccessIdentityConfig() {
     this.add('cloudfront:GetCloudFrontOriginAccessIdentityConfig');
     return this;
   }
@@ -611,7 +614,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetDistribution.html
    */
-  public getDistribution () {
+  public getDistribution() {
     this.add('cloudfront:GetDistribution');
     return this;
   }
@@ -623,7 +626,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetDistributionConfig.html
    */
-  public getDistributionConfig () {
+  public getDistributionConfig() {
     this.add('cloudfront:GetDistributionConfig');
     return this;
   }
@@ -635,7 +638,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryption.html
    */
-  public getFieldLevelEncryption () {
+  public getFieldLevelEncryption() {
     this.add('cloudfront:GetFieldLevelEncryption');
     return this;
   }
@@ -647,7 +650,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionConfig.html
    */
-  public getFieldLevelEncryptionConfig () {
+  public getFieldLevelEncryptionConfig() {
     this.add('cloudfront:GetFieldLevelEncryptionConfig');
     return this;
   }
@@ -659,7 +662,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionProfile.html
    */
-  public getFieldLevelEncryptionProfile () {
+  public getFieldLevelEncryptionProfile() {
     this.add('cloudfront:GetFieldLevelEncryptionProfile');
     return this;
   }
@@ -671,7 +674,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionProfileConfig.html
    */
-  public getFieldLevelEncryptionProfileConfig () {
+  public getFieldLevelEncryptionProfileConfig() {
     this.add('cloudfront:GetFieldLevelEncryptionProfileConfig');
     return this;
   }
@@ -683,7 +686,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetInvalidation.html
    */
-  public getInvalidation () {
+  public getInvalidation() {
     this.add('cloudfront:GetInvalidation');
     return this;
   }
@@ -695,7 +698,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetPublicKey.html
    */
-  public getPublicKey () {
+  public getPublicKey() {
     this.add('cloudfront:GetPublicKey');
     return this;
   }
@@ -707,7 +710,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetPublicKeyConfig.html
    */
-  public getPublicKeyConfig () {
+  public getPublicKeyConfig() {
     this.add('cloudfront:GetPublicKeyConfig');
     return this;
   }
@@ -719,7 +722,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetStreamingDistribution.html
    */
-  public getStreamingDistribution () {
+  public getStreamingDistribution() {
     this.add('cloudfront:GetStreamingDistribution');
     return this;
   }
@@ -731,7 +734,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetStreamingDistributionConfig.html
    */
-  public getStreamingDistributionConfig () {
+  public getStreamingDistributionConfig() {
     this.add('cloudfront:GetStreamingDistributionConfig');
     return this;
   }
@@ -743,7 +746,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListCloudFrontOriginAccessIdentities.html
    */
-  public listCloudFrontOriginAccessIdentities () {
+  public listCloudFrontOriginAccessIdentities() {
     this.add('cloudfront:ListCloudFrontOriginAccessIdentities');
     return this;
   }
@@ -755,7 +758,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListDistributions.html
    */
-  public listDistributions () {
+  public listDistributions() {
     this.add('cloudfront:ListDistributions');
     return this;
   }
@@ -765,7 +768,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listDistributionsByLambdaFunction () {
+  public listDistributionsByLambdaFunction() {
     this.add('cloudfront:ListDistributionsByLambdaFunction');
     return this;
   }
@@ -777,7 +780,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListDistributionsByWebACLId.html
    */
-  public listDistributionsByWebACLId () {
+  public listDistributionsByWebACLId() {
     this.add('cloudfront:ListDistributionsByWebACLId');
     return this;
   }
@@ -789,7 +792,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListFieldLevelEncryptionConfigs.html
    */
-  public listFieldLevelEncryptionConfigs () {
+  public listFieldLevelEncryptionConfigs() {
     this.add('cloudfront:ListFieldLevelEncryptionConfigs');
     return this;
   }
@@ -801,7 +804,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListFieldLevelEncryptionProfiles.html
    */
-  public listFieldLevelEncryptionProfiles () {
+  public listFieldLevelEncryptionProfiles() {
     this.add('cloudfront:ListFieldLevelEncryptionProfiles');
     return this;
   }
@@ -813,7 +816,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListInvalidations.html
    */
-  public listInvalidations () {
+  public listInvalidations() {
     this.add('cloudfront:ListInvalidations');
     return this;
   }
@@ -825,7 +828,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListPublicKeys.html
    */
-  public listPublicKeys () {
+  public listPublicKeys() {
     this.add('cloudfront:ListPublicKeys');
     return this;
   }
@@ -837,7 +840,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListStreamingDistributions.html
    */
-  public listStreamingDistributions () {
+  public listStreamingDistributions() {
     this.add('cloudfront:ListStreamingDistributions');
     return this;
   }
@@ -849,7 +852,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('cloudfront:ListTagsForResource');
     return this;
   }
@@ -861,7 +864,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('cloudfront:TagResource');
     return this;
   }
@@ -873,7 +876,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('cloudfront:UntagResource');
     return this;
   }
@@ -885,7 +888,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateCloudFrontOriginAccessIdentity.html
    */
-  public updateCloudFrontOriginAccessIdentity () {
+  public updateCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:UpdateCloudFrontOriginAccessIdentity');
     return this;
   }
@@ -897,7 +900,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateDistribution.html
    */
-  public updateDistribution () {
+  public updateDistribution() {
     this.add('cloudfront:UpdateDistribution');
     return this;
   }
@@ -909,7 +912,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateFieldLevelEncryptionConfig.html
    */
-  public updateFieldLevelEncryptionConfig () {
+  public updateFieldLevelEncryptionConfig() {
     this.add('cloudfront:UpdateFieldLevelEncryptionConfig');
     return this;
   }
@@ -921,7 +924,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateFieldLevelEncryptionProfile.html
    */
-  public updateFieldLevelEncryptionProfile () {
+  public updateFieldLevelEncryptionProfile() {
     this.add('cloudfront:UpdateFieldLevelEncryptionProfile');
     return this;
   }
@@ -933,7 +936,7 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdatePublicKey.html
    */
-  public updatePublicKey () {
+  public updatePublicKey() {
     this.add('cloudfront:UpdatePublicKey');
     return this;
   }
@@ -945,8 +948,71 @@ export class Cloudfront extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateStreamingDistribution.html
    */
-  public updateStreamingDistribution () {
+  public updateStreamingDistribution() {
     this.add('cloudfront:UpdateStreamingDistribution');
     return this;
+  }
+
+  /**
+   * Adds a resource of type distribution to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
+   *
+   * @param distributionId - Identifier for the distributionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDistribution(distributionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront:${Region}:${Account}:distribution/${DistributionId}';
+    arn = arn.replace('${DistributionId}', distributionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type streaming-distribution to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
+   *
+   * @param distributionId - Identifier for the distributionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onStreamingDistribution(distributionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront:${Region}:${Account}:streaming-distribution/${DistributionId}';
+    arn = arn.replace('${DistributionId}', distributionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type origin-access-identity to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOriginAccessIdentity(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront:${Region}:${Account}:origin-access-identity/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

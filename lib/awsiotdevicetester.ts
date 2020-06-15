@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class IotDeviceTester extends PolicyStatement {
   public servicePrefix = 'iot-device-tester';
-  public actions : Actions = {
+  public actions: Actions = {
     "CheckVersion": {
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
       "description": "Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible",
@@ -34,7 +34,7 @@ export class IotDeviceTester extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible
@@ -43,7 +43,7 @@ export class IotDeviceTester extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
-  public checkVersion () {
+  public checkVersion() {
     this.add('iot-device-tester:CheckVersion');
     return this;
   }
@@ -55,7 +55,7 @@ export class IotDeviceTester extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
-  public downloadTestSuite () {
+  public downloadTestSuite() {
     this.add('iot-device-tester:DownloadTestSuite');
     return this;
   }
@@ -67,7 +67,7 @@ export class IotDeviceTester extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
-  public latestIdt () {
+  public latestIdt() {
     this.add('iot-device-tester:LatestIdt');
     return this;
   }
@@ -79,7 +79,7 @@ export class IotDeviceTester extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
-  public sendMetrics () {
+  public sendMetrics() {
     this.add('iot-device-tester:SendMetrics');
     return this;
   }
@@ -91,7 +91,7 @@ export class IotDeviceTester extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html
    */
-  public supportedVersion () {
+  public supportedVersion() {
     this.add('iot-device-tester:SupportedVersion');
     return this;
   }

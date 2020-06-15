@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Appmesh extends PolicyStatement {
   public servicePrefix = 'appmesh';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateMesh": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html",
       "description": "Creates a service mesh.",
@@ -378,9 +378,10 @@ export class Appmesh extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "mesh": {
       "name": "mesh",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html",
       "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -388,6 +389,7 @@ export class Appmesh extends PolicyStatement {
     },
     "virtualService": {
       "name": "virtualService",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html",
       "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -395,6 +397,7 @@ export class Appmesh extends PolicyStatement {
     },
     "virtualNode": {
       "name": "virtualNode",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html",
       "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -402,6 +405,7 @@ export class Appmesh extends PolicyStatement {
     },
     "virtualRouter": {
       "name": "virtualRouter",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html",
       "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -409,6 +413,7 @@ export class Appmesh extends PolicyStatement {
     },
     "route": {
       "name": "route",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html",
       "arn": "arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -423,7 +428,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html
    */
-  public createMesh () {
+  public createMesh() {
     this.add('appmesh:CreateMesh');
     return this;
   }
@@ -435,7 +440,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html
    */
-  public createRoute () {
+  public createRoute() {
     this.add('appmesh:CreateRoute');
     return this;
   }
@@ -447,7 +452,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html
    */
-  public createVirtualNode () {
+  public createVirtualNode() {
     this.add('appmesh:CreateVirtualNode');
     return this;
   }
@@ -459,7 +464,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html
    */
-  public createVirtualRouter () {
+  public createVirtualRouter() {
     this.add('appmesh:CreateVirtualRouter');
     return this;
   }
@@ -471,7 +476,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualService.html
    */
-  public createVirtualService () {
+  public createVirtualService() {
     this.add('appmesh:CreateVirtualService');
     return this;
   }
@@ -483,7 +488,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteMesh.html
    */
-  public deleteMesh () {
+  public deleteMesh() {
     this.add('appmesh:DeleteMesh');
     return this;
   }
@@ -495,7 +500,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteRoute.html
    */
-  public deleteRoute () {
+  public deleteRoute() {
     this.add('appmesh:DeleteRoute');
     return this;
   }
@@ -507,7 +512,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualNode.html
    */
-  public deleteVirtualNode () {
+  public deleteVirtualNode() {
     this.add('appmesh:DeleteVirtualNode');
     return this;
   }
@@ -519,7 +524,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualRouter.html
    */
-  public deleteVirtualRouter () {
+  public deleteVirtualRouter() {
     this.add('appmesh:DeleteVirtualRouter');
     return this;
   }
@@ -531,7 +536,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualService.html
    */
-  public deleteVirtualService () {
+  public deleteVirtualService() {
     this.add('appmesh:DeleteVirtualService');
     return this;
   }
@@ -543,7 +548,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeMesh.html
    */
-  public describeMesh () {
+  public describeMesh() {
     this.add('appmesh:DescribeMesh');
     return this;
   }
@@ -555,7 +560,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeRoute.html
    */
-  public describeRoute () {
+  public describeRoute() {
     this.add('appmesh:DescribeRoute');
     return this;
   }
@@ -567,7 +572,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualNode.html
    */
-  public describeVirtualNode () {
+  public describeVirtualNode() {
     this.add('appmesh:DescribeVirtualNode');
     return this;
   }
@@ -579,7 +584,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualRouter.html
    */
-  public describeVirtualRouter () {
+  public describeVirtualRouter() {
     this.add('appmesh:DescribeVirtualRouter');
     return this;
   }
@@ -591,7 +596,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualService.html
    */
-  public describeVirtualService () {
+  public describeVirtualService() {
     this.add('appmesh:DescribeVirtualService');
     return this;
   }
@@ -603,7 +608,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListMeshes.html
    */
-  public listMeshes () {
+  public listMeshes() {
     this.add('appmesh:ListMeshes');
     return this;
   }
@@ -615,7 +620,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListRoutes.html
    */
-  public listRoutes () {
+  public listRoutes() {
     this.add('appmesh:ListRoutes');
     return this;
   }
@@ -627,7 +632,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('appmesh:ListTagsForResource');
     return this;
   }
@@ -639,7 +644,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualNodes.html
    */
-  public listVirtualNodes () {
+  public listVirtualNodes() {
     this.add('appmesh:ListVirtualNodes');
     return this;
   }
@@ -651,7 +656,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualRouters.html
    */
-  public listVirtualRouters () {
+  public listVirtualRouters() {
     this.add('appmesh:ListVirtualRouters');
     return this;
   }
@@ -663,7 +668,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualServices.html
    */
-  public listVirtualServices () {
+  public listVirtualServices() {
     this.add('appmesh:ListVirtualServices');
     return this;
   }
@@ -675,7 +680,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html
    */
-  public streamAggregatedResources () {
+  public streamAggregatedResources() {
     this.add('appmesh:StreamAggregatedResources');
     return this;
   }
@@ -687,7 +692,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('appmesh:TagResource');
     return this;
   }
@@ -699,7 +704,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('appmesh:UntagResource');
     return this;
   }
@@ -711,7 +716,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateMesh.html
    */
-  public updateMesh () {
+  public updateMesh() {
     this.add('appmesh:UpdateMesh');
     return this;
   }
@@ -723,7 +728,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateRoute.html
    */
-  public updateRoute () {
+  public updateRoute() {
     this.add('appmesh:UpdateRoute');
     return this;
   }
@@ -735,7 +740,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualNode.html
    */
-  public updateVirtualNode () {
+  public updateVirtualNode() {
     this.add('appmesh:UpdateVirtualNode');
     return this;
   }
@@ -747,7 +752,7 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualRouter.html
    */
-  public updateVirtualRouter () {
+  public updateVirtualRouter() {
     this.add('appmesh:UpdateVirtualRouter');
     return this;
   }
@@ -759,8 +764,128 @@ export class Appmesh extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualService.html
    */
-  public updateVirtualService () {
+  public updateVirtualService() {
     this.add('appmesh:UpdateVirtualService');
     return this;
+  }
+
+  /**
+   * Adds a resource of type mesh to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type virtualService to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualServiceName - Identifier for the virtualServiceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${VirtualServiceName}', virtualServiceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type virtualNode to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualNodeName - Identifier for the virtualNodeName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${VirtualNodeName}', virtualNodeName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type virtualRouter to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualRouterName - Identifier for the virtualRouterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${VirtualRouterName}', virtualRouterName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type route to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualRouterName - Identifier for the virtualRouterName.
+   * @param routeName - Identifier for the routeName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRoute(meshName: string, virtualRouterName: string, routeName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${VirtualRouterName}', virtualRouterName);
+    arn = arn.replace('${RouteName}', routeName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

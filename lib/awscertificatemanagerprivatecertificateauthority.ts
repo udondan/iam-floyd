@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AcmPca extends PolicyStatement {
   public servicePrefix = 'acm-pca';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCertificateAuthority": {
       "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html",
       "description": "Creates an ACM Private CA and its associated private key and configuration.",
@@ -213,9 +213,10 @@ export class AcmPca extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "certificate-authority": {
       "name": "certificate-authority",
+      "url": "https://docs.aws.amazon.com/acm-pca/latest/userguide/authen-overview.html#acm-pca-resources-operations",
       "arn": "arn:${Partition}:acm-pca:${Region}:${Account}:certificate-authority/${CertificateAuthorityId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -230,7 +231,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html
    */
-  public createCertificateAuthority () {
+  public createCertificateAuthority() {
     this.add('acm-pca:CreateCertificateAuthority');
     return this;
   }
@@ -242,7 +243,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html
    */
-  public createCertificateAuthorityAuditReport () {
+  public createCertificateAuthorityAuditReport() {
     this.add('acm-pca:CreateCertificateAuthorityAuditReport');
     return this;
   }
@@ -254,7 +255,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html
    */
-  public createPermission () {
+  public createPermission() {
     this.add('acm-pca:CreatePermission');
     return this;
   }
@@ -266,7 +267,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html
    */
-  public deleteCertificateAuthority () {
+  public deleteCertificateAuthority() {
     this.add('acm-pca:DeleteCertificateAuthority');
     return this;
   }
@@ -278,7 +279,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html
    */
-  public deletePermission () {
+  public deletePermission() {
     this.add('acm-pca:DeletePermission');
     return this;
   }
@@ -290,7 +291,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html
    */
-  public describeCertificateAuthority () {
+  public describeCertificateAuthority() {
     this.add('acm-pca:DescribeCertificateAuthority');
     return this;
   }
@@ -302,7 +303,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthorityAuditReport.html
    */
-  public describeCertificateAuthorityAuditReport () {
+  public describeCertificateAuthorityAuditReport() {
     this.add('acm-pca:DescribeCertificateAuthorityAuditReport');
     return this;
   }
@@ -314,7 +315,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html
    */
-  public getCertificate () {
+  public getCertificate() {
     this.add('acm-pca:GetCertificate');
     return this;
   }
@@ -326,7 +327,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html
    */
-  public getCertificateAuthorityCertificate () {
+  public getCertificateAuthorityCertificate() {
     this.add('acm-pca:GetCertificateAuthorityCertificate');
     return this;
   }
@@ -338,7 +339,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html
    */
-  public getCertificateAuthorityCsr () {
+  public getCertificateAuthorityCsr() {
     this.add('acm-pca:GetCertificateAuthorityCsr');
     return this;
   }
@@ -350,7 +351,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html
    */
-  public importCertificateAuthorityCertificate () {
+  public importCertificateAuthorityCertificate() {
     this.add('acm-pca:ImportCertificateAuthorityCertificate');
     return this;
   }
@@ -362,7 +363,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html
    */
-  public issueCertificate () {
+  public issueCertificate() {
     this.add('acm-pca:IssueCertificate');
     return this;
   }
@@ -374,7 +375,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html
    */
-  public listCertificateAuthorities () {
+  public listCertificateAuthorities() {
     this.add('acm-pca:ListCertificateAuthorities');
     return this;
   }
@@ -386,7 +387,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html
    */
-  public listPermissions () {
+  public listPermissions() {
     this.add('acm-pca:ListPermissions');
     return this;
   }
@@ -398,7 +399,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html
    */
-  public listTags () {
+  public listTags() {
     this.add('acm-pca:ListTags');
     return this;
   }
@@ -410,7 +411,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html
    */
-  public restoreCertificateAuthority () {
+  public restoreCertificateAuthority() {
     this.add('acm-pca:RestoreCertificateAuthority');
     return this;
   }
@@ -422,7 +423,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html
    */
-  public revokeCertificate () {
+  public revokeCertificate() {
     this.add('acm-pca:RevokeCertificate');
     return this;
   }
@@ -434,7 +435,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html
    */
-  public tagCertificateAuthority () {
+  public tagCertificateAuthority() {
     this.add('acm-pca:TagCertificateAuthority');
     return this;
   }
@@ -446,7 +447,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html
    */
-  public untagCertificateAuthority () {
+  public untagCertificateAuthority() {
     this.add('acm-pca:UntagCertificateAuthority');
     return this;
   }
@@ -458,8 +459,30 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html
    */
-  public updateCertificateAuthority () {
+  public updateCertificateAuthority() {
     this.add('acm-pca:UpdateCertificateAuthority');
     return this;
+  }
+
+  /**
+   * Adds a resource of type certificate-authority to the statement
+   *
+   * https://docs.aws.amazon.com/acm-pca/latest/userguide/authen-overview.html#acm-pca-resources-operations
+   *
+   * @param certificateAuthorityId - Identifier for the certificateAuthorityId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onCertificateAuthority(certificateAuthorityId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:acm-pca:${Region}:${Account}:certificate-authority/${CertificateAuthorityId}';
+    arn = arn.replace('${CertificateAuthorityId}', certificateAuthorityId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

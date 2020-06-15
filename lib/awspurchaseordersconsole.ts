@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class PurchaseOrders extends PolicyStatement {
   public servicePrefix = 'purchase-orders';
-  public actions : Actions = {
+  public actions: Actions = {
     "ModifyPurchaseOrders": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Modify purchase orders and details",
@@ -19,7 +19,7 @@ export class PurchaseOrders extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Modify purchase orders and details
@@ -28,7 +28,7 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyPurchaseOrders () {
+  public modifyPurchaseOrders() {
     this.add('purchase-orders:ModifyPurchaseOrders');
     return this;
   }
@@ -40,7 +40,7 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewPurchaseOrders () {
+  public viewPurchaseOrders() {
     this.add('purchase-orders:ViewPurchaseOrders');
     return this;
   }

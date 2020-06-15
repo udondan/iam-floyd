@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Trustedadvisor extends PolicyStatement {
   public servicePrefix = 'trustedadvisor';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeAccount": {
       "url": "",
       "description": "View support plan and various TA preferences.",
@@ -99,9 +99,10 @@ export class Trustedadvisor extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "checks": {
       "name": "checks",
+      "url": "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html",
       "arn": "arn:${Partition}:trustedadvisor:${Region}:${Account}:checks/${CategoryCode}/${CheckId}",
       "conditionKeys": []
     }
@@ -112,7 +113,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeAccount () {
+  public describeAccount() {
     this.add('trustedadvisor:DescribeAccount');
     return this;
   }
@@ -122,7 +123,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeAccountAccess () {
+  public describeAccountAccess() {
     this.add('trustedadvisor:DescribeAccountAccess');
     return this;
   }
@@ -132,7 +133,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeCheckItems () {
+  public describeCheckItems() {
     this.add('trustedadvisor:DescribeCheckItems');
     return this;
   }
@@ -142,7 +143,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeCheckRefreshStatuses () {
+  public describeCheckRefreshStatuses() {
     this.add('trustedadvisor:DescribeCheckRefreshStatuses');
     return this;
   }
@@ -152,7 +153,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeCheckSummaries () {
+  public describeCheckSummaries() {
     this.add('trustedadvisor:DescribeCheckSummaries');
     return this;
   }
@@ -162,7 +163,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeChecks () {
+  public describeChecks() {
     this.add('trustedadvisor:DescribeChecks');
     return this;
   }
@@ -172,7 +173,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeNotificationPreferences () {
+  public describeNotificationPreferences() {
     this.add('trustedadvisor:DescribeNotificationPreferences');
     return this;
   }
@@ -182,7 +183,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public excludeCheckItems () {
+  public excludeCheckItems() {
     this.add('trustedadvisor:ExcludeCheckItems');
     return this;
   }
@@ -192,7 +193,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public includeCheckItems () {
+  public includeCheckItems() {
     this.add('trustedadvisor:IncludeCheckItems');
     return this;
   }
@@ -202,7 +203,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public refreshCheck () {
+  public refreshCheck() {
     this.add('trustedadvisor:RefreshCheck');
     return this;
   }
@@ -212,7 +213,7 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public setAccountAccess () {
+  public setAccountAccess() {
     this.add('trustedadvisor:SetAccountAccess');
     return this;
   }
@@ -222,8 +223,29 @@ export class Trustedadvisor extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateNotificationPreferences () {
+  public updateNotificationPreferences() {
     this.add('trustedadvisor:UpdateNotificationPreferences');
     return this;
+  }
+
+  /**
+   * Adds a resource of type checks to the statement
+   *
+   * https://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html
+   *
+   * @param categoryCode - Identifier for the categoryCode.
+   * @param checkId - Identifier for the checkId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onChecks(categoryCode: string, checkId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:trustedadvisor:${Region}:${Account}:checks/${CategoryCode}/${CheckId}';
+    arn = arn.replace('${CategoryCode}', categoryCode);
+    arn = arn.replace('${CheckId}', checkId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

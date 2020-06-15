@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Kendra extends PolicyStatement {
   public servicePrefix = 'kendra';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchDeleteDocument": {
       "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html",
       "description": "Batch Delete document",
@@ -300,9 +300,10 @@ export class Kendra extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "index": {
       "name": "index",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/index.html",
       "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -310,6 +311,7 @@ export class Kendra extends PolicyStatement {
     },
     "data-source": {
       "name": "data-source",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/data-source.html",
       "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -317,6 +319,7 @@ export class Kendra extends PolicyStatement {
     },
     "faq": {
       "name": "faq",
+      "url": "https://docs.aws.amazon.com/kendra/latest/dg/faq.html",
       "arn": "arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -331,7 +334,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html
    */
-  public batchDeleteDocument () {
+  public batchDeleteDocument() {
     this.add('kendra:BatchDeleteDocument');
     return this;
   }
@@ -343,7 +346,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html
    */
-  public batchPutDocument () {
+  public batchPutDocument() {
     this.add('kendra:BatchPutDocument');
     return this;
   }
@@ -355,7 +358,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateDataSource.html
    */
-  public createDataSource () {
+  public createDataSource() {
     this.add('kendra:CreateDataSource');
     return this;
   }
@@ -367,7 +370,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFaq.html
    */
-  public createFaq () {
+  public createFaq() {
     this.add('kendra:CreateFaq');
     return this;
   }
@@ -379,7 +382,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html
    */
-  public createIndex () {
+  public createIndex() {
     this.add('kendra:CreateIndex');
     return this;
   }
@@ -391,7 +394,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteDataSource.html
    */
-  public deleteDataSource () {
+  public deleteDataSource() {
     this.add('kendra:DeleteDataSource');
     return this;
   }
@@ -403,7 +406,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteFaq.html
    */
-  public deleteFaq () {
+  public deleteFaq() {
     this.add('kendra:DeleteFaq');
     return this;
   }
@@ -415,7 +418,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteIndex.html
    */
-  public deleteIndex () {
+  public deleteIndex() {
     this.add('kendra:DeleteIndex');
     return this;
   }
@@ -427,7 +430,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeDataSource.html
    */
-  public describeDataSource () {
+  public describeDataSource() {
     this.add('kendra:DescribeDataSource');
     return this;
   }
@@ -439,7 +442,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeFaq.html
    */
-  public describeFaq () {
+  public describeFaq() {
     this.add('kendra:DescribeFaq');
     return this;
   }
@@ -451,7 +454,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeIndex.html
    */
-  public describeIndex () {
+  public describeIndex() {
     this.add('kendra:DescribeIndex');
     return this;
   }
@@ -463,7 +466,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSourceSyncJobs.html
    */
-  public listDataSourceSyncJobs () {
+  public listDataSourceSyncJobs() {
     this.add('kendra:ListDataSourceSyncJobs');
     return this;
   }
@@ -475,7 +478,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSources.html
    */
-  public listDataSources () {
+  public listDataSources() {
     this.add('kendra:ListDataSources');
     return this;
   }
@@ -487,7 +490,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListFaqs.html
    */
-  public listFaqs () {
+  public listFaqs() {
     this.add('kendra:ListFaqs');
     return this;
   }
@@ -499,7 +502,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListIndices.html
    */
-  public listIndices () {
+  public listIndices() {
     this.add('kendra:ListIndices');
     return this;
   }
@@ -511,7 +514,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('kendra:ListTagsForResource');
     return this;
   }
@@ -523,7 +526,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html
    */
-  public query () {
+  public query() {
     this.add('kendra:Query');
     return this;
   }
@@ -535,7 +538,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_StartDataSourceSyncJob.html
    */
-  public startDataSourceSyncJob () {
+  public startDataSourceSyncJob() {
     this.add('kendra:StartDataSourceSyncJob');
     return this;
   }
@@ -547,7 +550,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_StopDataSourceSyncJob.html
    */
-  public stopDataSourceSyncJob () {
+  public stopDataSourceSyncJob() {
     this.add('kendra:StopDataSourceSyncJob');
     return this;
   }
@@ -559,7 +562,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_SubmitFeedback.html
    */
-  public submitFeedback () {
+  public submitFeedback() {
     this.add('kendra:SubmitFeedback');
     return this;
   }
@@ -571,7 +574,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('kendra:TagResource');
     return this;
   }
@@ -583,7 +586,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('kendra:UntagResource');
     return this;
   }
@@ -595,7 +598,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateDataSource.html
    */
-  public updateDataSource () {
+  public updateDataSource() {
     this.add('kendra:UpdateDataSource');
     return this;
   }
@@ -607,8 +610,78 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateIndex.html
    */
-  public updateIndex () {
+  public updateIndex() {
     this.add('kendra:UpdateIndex');
     return this;
+  }
+
+  /**
+   * Adds a resource of type index to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/index.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}';
+    arn = arn.replace('${IndexId}', indexId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type data-source to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/data-source.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param dataSourceId - Identifier for the dataSourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}';
+    arn = arn.replace('${IndexId}', indexId);
+    arn = arn.replace('${DataSourceId}', dataSourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type faq to the statement
+   *
+   * https://docs.aws.amazon.com/kendra/latest/dg/faq.html
+   *
+   * @param indexId - Identifier for the indexId.
+   * @param faqId - Identifier for the faqId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}';
+    arn = arn.replace('${IndexId}', indexId);
+    arn = arn.replace('${FaqId}', faqId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

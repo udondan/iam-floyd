@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Iotanalytics extends PolicyStatement {
   public servicePrefix = 'iotanalytics';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchPutMessage": {
       "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html",
       "description": "Puts a batch of messages into the specified channel.",
@@ -355,9 +355,10 @@ export class Iotanalytics extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "channel": {
       "name": "channel",
+      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
       "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -367,6 +368,7 @@ export class Iotanalytics extends PolicyStatement {
     },
     "dataset": {
       "name": "dataset",
+      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
       "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -376,6 +378,7 @@ export class Iotanalytics extends PolicyStatement {
     },
     "datastore": {
       "name": "datastore",
+      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
       "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -385,6 +388,7 @@ export class Iotanalytics extends PolicyStatement {
     },
     "pipeline": {
       "name": "pipeline",
+      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
       "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -401,7 +405,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html
    */
-  public batchPutMessage () {
+  public batchPutMessage() {
     this.add('iotanalytics:BatchPutMessage');
     return this;
   }
@@ -413,7 +417,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CancelPipelineReprocessing.html
    */
-  public cancelPipelineReprocessing () {
+  public cancelPipelineReprocessing() {
     this.add('iotanalytics:CancelPipelineReprocessing');
     return this;
   }
@@ -425,7 +429,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateChannel.html
    */
-  public createChannel () {
+  public createChannel() {
     this.add('iotanalytics:CreateChannel');
     return this;
   }
@@ -437,7 +441,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDataset.html
    */
-  public createDataset () {
+  public createDataset() {
     this.add('iotanalytics:CreateDataset');
     return this;
   }
@@ -449,7 +453,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatasetContent.html
    */
-  public createDatasetContent () {
+  public createDatasetContent() {
     this.add('iotanalytics:CreateDatasetContent');
     return this;
   }
@@ -461,7 +465,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatastore.html
    */
-  public createDatastore () {
+  public createDatastore() {
     this.add('iotanalytics:CreateDatastore');
     return this;
   }
@@ -473,7 +477,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreatePipeline.html
    */
-  public createPipeline () {
+  public createPipeline() {
     this.add('iotanalytics:CreatePipeline');
     return this;
   }
@@ -485,7 +489,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteChannel.html
    */
-  public deleteChannel () {
+  public deleteChannel() {
     this.add('iotanalytics:DeleteChannel');
     return this;
   }
@@ -497,7 +501,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDataset.html
    */
-  public deleteDataset () {
+  public deleteDataset() {
     this.add('iotanalytics:DeleteDataset');
     return this;
   }
@@ -509,7 +513,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatasetContent.html
    */
-  public deleteDatasetContent () {
+  public deleteDatasetContent() {
     this.add('iotanalytics:DeleteDatasetContent');
     return this;
   }
@@ -521,7 +525,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatastore.html
    */
-  public deleteDatastore () {
+  public deleteDatastore() {
     this.add('iotanalytics:DeleteDatastore');
     return this;
   }
@@ -533,7 +537,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeletePipeline.html
    */
-  public deletePipeline () {
+  public deletePipeline() {
     this.add('iotanalytics:DeletePipeline');
     return this;
   }
@@ -545,7 +549,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeChannel.html
    */
-  public describeChannel () {
+  public describeChannel() {
     this.add('iotanalytics:DescribeChannel');
     return this;
   }
@@ -557,7 +561,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDataset.html
    */
-  public describeDataset () {
+  public describeDataset() {
     this.add('iotanalytics:DescribeDataset');
     return this;
   }
@@ -569,7 +573,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDatastore.html
    */
-  public describeDatastore () {
+  public describeDatastore() {
     this.add('iotanalytics:DescribeDatastore');
     return this;
   }
@@ -581,7 +585,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeLoggingOptions.html
    */
-  public describeLoggingOptions () {
+  public describeLoggingOptions() {
     this.add('iotanalytics:DescribeLoggingOptions');
     return this;
   }
@@ -593,7 +597,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribePipeline.html
    */
-  public describePipeline () {
+  public describePipeline() {
     this.add('iotanalytics:DescribePipeline');
     return this;
   }
@@ -605,7 +609,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_GetDatasetContent.html
    */
-  public getDatasetContent () {
+  public getDatasetContent() {
     this.add('iotanalytics:GetDatasetContent');
     return this;
   }
@@ -617,7 +621,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListChannels.html
    */
-  public listChannels () {
+  public listChannels() {
     this.add('iotanalytics:ListChannels');
     return this;
   }
@@ -629,7 +633,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatasets.html
    */
-  public listDatasets () {
+  public listDatasets() {
     this.add('iotanalytics:ListDatasets');
     return this;
   }
@@ -641,7 +645,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatastores.html
    */
-  public listDatastores () {
+  public listDatastores() {
     this.add('iotanalytics:ListDatastores');
     return this;
   }
@@ -653,7 +657,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListPipelines.html
    */
-  public listPipelines () {
+  public listPipelines() {
     this.add('iotanalytics:ListPipelines');
     return this;
   }
@@ -665,7 +669,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('iotanalytics:ListTagsForResource');
     return this;
   }
@@ -677,7 +681,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_PutLoggingOptions.html
    */
-  public putLoggingOptions () {
+  public putLoggingOptions() {
     this.add('iotanalytics:PutLoggingOptions');
     return this;
   }
@@ -689,7 +693,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_RunPipelineActivity.html
    */
-  public runPipelineActivity () {
+  public runPipelineActivity() {
     this.add('iotanalytics:RunPipelineActivity');
     return this;
   }
@@ -701,7 +705,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_SampleChannelData.html
    */
-  public sampleChannelData () {
+  public sampleChannelData() {
     this.add('iotanalytics:SampleChannelData');
     return this;
   }
@@ -713,7 +717,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_StartPipelineReprocessing.html
    */
-  public startPipelineReprocessing () {
+  public startPipelineReprocessing() {
     this.add('iotanalytics:StartPipelineReprocessing');
     return this;
   }
@@ -725,7 +729,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('iotanalytics:TagResource');
     return this;
   }
@@ -737,7 +741,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('iotanalytics:UntagResource');
     return this;
   }
@@ -749,7 +753,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateChannel.html
    */
-  public updateChannel () {
+  public updateChannel() {
     this.add('iotanalytics:UpdateChannel');
     return this;
   }
@@ -761,7 +765,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDataset.html
    */
-  public updateDataset () {
+  public updateDataset() {
     this.add('iotanalytics:UpdateDataset');
     return this;
   }
@@ -773,7 +777,7 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDatastore.html
    */
-  public updateDatastore () {
+  public updateDatastore() {
     this.add('iotanalytics:UpdateDatastore');
     return this;
   }
@@ -785,8 +789,104 @@ export class Iotanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdatePipeline.html
    */
-  public updatePipeline () {
+  public updatePipeline() {
     this.add('iotanalytics:UpdatePipeline');
     return this;
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
+   *
+   * @param channelName - Identifier for the channelName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/${TagKey}
+   *  - aws:TagKeys
+   *  - iotanalytics:ResourceTag/${TagKey}
+   */
+  public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}';
+    arn = arn.replace('${ChannelName}', channelName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
+   *
+   * @param datasetName - Identifier for the datasetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/${TagKey}
+   *  - aws:TagKeys
+   *  - iotanalytics:ResourceTag/${TagKey}
+   */
+  public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}';
+    arn = arn.replace('${DatasetName}', datasetName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datastore to the statement
+   *
+   * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
+   *
+   * @param datastoreName - Identifier for the datastoreName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/${TagKey}
+   *  - aws:TagKeys
+   *  - iotanalytics:ResourceTag/${TagKey}
+   */
+  public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}';
+    arn = arn.replace('${DatastoreName}', datastoreName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/${TagKey}
+   *  - aws:TagKeys
+   *  - iotanalytics:ResourceTag/${TagKey}
+   */
+  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

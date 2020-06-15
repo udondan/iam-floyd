@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Lambda extends PolicyStatement {
   public servicePrefix = 'lambda';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddLayerVersionPermission": {
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html",
       "description": "Grants permission to add permissions to the resource-based policy of a version of an AWS Lambda layer",
@@ -522,34 +522,40 @@ export class Lambda extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "function": {
       "name": "function",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
       "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}",
       "conditionKeys": []
     },
     "function version": {
       "name": "function version",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
       "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}",
       "conditionKeys": []
     },
     "function alias": {
       "name": "function alias",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
       "arn": "arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}",
       "conditionKeys": []
     },
     "layer": {
       "name": "layer",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
       "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}",
       "conditionKeys": []
     },
     "layerVersion": {
       "name": "layerVersion",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
       "arn": "arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}",
       "conditionKeys": []
     },
     "eventSourceMapping": {
       "name": "eventSourceMapping",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",
       "arn": "arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}",
       "conditionKeys": []
     }
@@ -562,7 +568,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html
    */
-  public addLayerVersionPermission () {
+  public addLayerVersionPermission() {
     this.add('lambda:AddLayerVersionPermission');
     return this;
   }
@@ -574,7 +580,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
-  public addPermission () {
+  public addPermission() {
     this.add('lambda:AddPermission');
     return this;
   }
@@ -586,7 +592,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html
    */
-  public createAlias () {
+  public createAlias() {
     this.add('lambda:CreateAlias');
     return this;
   }
@@ -598,7 +604,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html
    */
-  public createEventSourceMapping () {
+  public createEventSourceMapping() {
     this.add('lambda:CreateEventSourceMapping');
     return this;
   }
@@ -610,7 +616,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
-  public createFunction () {
+  public createFunction() {
     this.add('lambda:CreateFunction');
     return this;
   }
@@ -622,7 +628,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html
    */
-  public deleteAlias () {
+  public deleteAlias() {
     this.add('lambda:DeleteAlias');
     return this;
   }
@@ -634,7 +640,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html
    */
-  public deleteEventSourceMapping () {
+  public deleteEventSourceMapping() {
     this.add('lambda:DeleteEventSourceMapping');
     return this;
   }
@@ -646,7 +652,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html
    */
-  public deleteFunction () {
+  public deleteFunction() {
     this.add('lambda:DeleteFunction');
     return this;
   }
@@ -658,7 +664,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionConcurrency.html
    */
-  public deleteFunctionConcurrency () {
+  public deleteFunctionConcurrency() {
     this.add('lambda:DeleteFunctionConcurrency');
     return this;
   }
@@ -670,7 +676,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionEventInvokeConfig.html
    */
-  public deleteFunctionEventInvokeConfig () {
+  public deleteFunctionEventInvokeConfig() {
     this.add('lambda:DeleteFunctionEventInvokeConfig');
     return this;
   }
@@ -682,7 +688,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html
    */
-  public deleteLayerVersion () {
+  public deleteLayerVersion() {
     this.add('lambda:DeleteLayerVersion');
     return this;
   }
@@ -694,7 +700,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteProvisionedConcurrencyConfig.html
    */
-  public deleteProvisionedConcurrencyConfig () {
+  public deleteProvisionedConcurrencyConfig() {
     this.add('lambda:DeleteProvisionedConcurrencyConfig');
     return this;
   }
@@ -704,7 +710,7 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Permissions management
    */
-  public disableReplication () {
+  public disableReplication() {
     this.add('lambda:DisableReplication');
     return this;
   }
@@ -714,7 +720,7 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Permissions management
    */
-  public enableReplication () {
+  public enableReplication() {
     this.add('lambda:EnableReplication');
     return this;
   }
@@ -726,7 +732,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html
    */
-  public getAccountSettings () {
+  public getAccountSettings() {
     this.add('lambda:GetAccountSettings');
     return this;
   }
@@ -738,7 +744,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetAlias.html
    */
-  public getAlias () {
+  public getAlias() {
     this.add('lambda:GetAlias');
     return this;
   }
@@ -750,7 +756,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html
    */
-  public getEventSourceMapping () {
+  public getEventSourceMapping() {
     this.add('lambda:GetEventSourceMapping');
     return this;
   }
@@ -762,7 +768,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunction.html
    */
-  public getFunction () {
+  public getFunction() {
     this.add('lambda:GetFunction');
     return this;
   }
@@ -774,7 +780,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConcurrency.html
    */
-  public getFunctionConcurrency () {
+  public getFunctionConcurrency() {
     this.add('lambda:GetFunctionConcurrency');
     return this;
   }
@@ -786,7 +792,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html
    */
-  public getFunctionConfiguration () {
+  public getFunctionConfiguration() {
     this.add('lambda:GetFunctionConfiguration');
     return this;
   }
@@ -798,7 +804,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionEventInvokeConfig.html
    */
-  public getFunctionEventInvokeConfig () {
+  public getFunctionEventInvokeConfig() {
     this.add('lambda:GetFunctionEventInvokeConfig');
     return this;
   }
@@ -810,7 +816,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersion.html
    */
-  public getLayerVersion () {
+  public getLayerVersion() {
     this.add('lambda:GetLayerVersion');
     return this;
   }
@@ -822,7 +828,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionByArn.html
    */
-  public getLayerVersionByArn () {
+  public getLayerVersionByArn() {
     this.add('lambda:GetLayerVersionByArn');
     return this;
   }
@@ -834,7 +840,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionPolicy.html
    */
-  public getLayerVersionPolicy () {
+  public getLayerVersionPolicy() {
     this.add('lambda:GetLayerVersionPolicy');
     return this;
   }
@@ -846,7 +852,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetPolicy.html
    */
-  public getPolicy () {
+  public getPolicy() {
     this.add('lambda:GetPolicy');
     return this;
   }
@@ -858,7 +864,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetProvisionedConcurrencyConfig.html
    */
-  public getProvisionedConcurrencyConfig () {
+  public getProvisionedConcurrencyConfig() {
     this.add('lambda:GetProvisionedConcurrencyConfig');
     return this;
   }
@@ -870,7 +876,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html
    */
-  public invokeAsync () {
+  public invokeAsync() {
     this.add('lambda:InvokeAsync');
     return this;
   }
@@ -882,7 +888,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html
    */
-  public invokeFunction () {
+  public invokeFunction() {
     this.add('lambda:InvokeFunction');
     return this;
   }
@@ -894,7 +900,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListAliases.html
    */
-  public listAliases () {
+  public listAliases() {
     this.add('lambda:ListAliases');
     return this;
   }
@@ -906,7 +912,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListEventSourceMappings.html
    */
-  public listEventSourceMappings () {
+  public listEventSourceMappings() {
     this.add('lambda:ListEventSourceMappings');
     return this;
   }
@@ -918,7 +924,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctionEventInvokeConfigs.html
    */
-  public listFunctionEventInvokeConfigs () {
+  public listFunctionEventInvokeConfigs() {
     this.add('lambda:ListFunctionEventInvokeConfigs');
     return this;
   }
@@ -930,7 +936,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html
    */
-  public listFunctions () {
+  public listFunctions() {
     this.add('lambda:ListFunctions');
     return this;
   }
@@ -942,7 +948,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayerVersions.html
    */
-  public listLayerVersions () {
+  public listLayerVersions() {
     this.add('lambda:ListLayerVersions');
     return this;
   }
@@ -954,7 +960,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListLayers.html
    */
-  public listLayers () {
+  public listLayers() {
     this.add('lambda:ListLayers');
     return this;
   }
@@ -966,7 +972,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListProvisionedConcurrencyConfigs.html
    */
-  public listProvisionedConcurrencyConfigs () {
+  public listProvisionedConcurrencyConfigs() {
     this.add('lambda:ListProvisionedConcurrencyConfigs');
     return this;
   }
@@ -978,7 +984,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html
    */
-  public listTags () {
+  public listTags() {
     this.add('lambda:ListTags');
     return this;
   }
@@ -990,7 +996,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_ListVersionsByFunction.html
    */
-  public listVersionsByFunction () {
+  public listVersionsByFunction() {
     this.add('lambda:ListVersionsByFunction');
     return this;
   }
@@ -1002,7 +1008,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html
    */
-  public publishLayerVersion () {
+  public publishLayerVersion() {
     this.add('lambda:PublishLayerVersion');
     return this;
   }
@@ -1014,7 +1020,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PublishVersion.html
    */
-  public publishVersion () {
+  public publishVersion() {
     this.add('lambda:PublishVersion');
     return this;
   }
@@ -1026,7 +1032,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionConcurrency.html
    */
-  public putFunctionConcurrency () {
+  public putFunctionConcurrency() {
     this.add('lambda:PutFunctionConcurrency');
     return this;
   }
@@ -1038,7 +1044,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionEventInvokeConfig.html
    */
-  public putFunctionEventInvokeConfig () {
+  public putFunctionEventInvokeConfig() {
     this.add('lambda:PutFunctionEventInvokeConfig');
     return this;
   }
@@ -1050,7 +1056,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html
    */
-  public putProvisionedConcurrencyConfig () {
+  public putProvisionedConcurrencyConfig() {
     this.add('lambda:PutProvisionedConcurrencyConfig');
     return this;
   }
@@ -1062,7 +1068,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html
    */
-  public removeLayerVersionPermission () {
+  public removeLayerVersionPermission() {
     this.add('lambda:RemoveLayerVersionPermission');
     return this;
   }
@@ -1074,7 +1080,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html
    */
-  public removePermission () {
+  public removePermission() {
     this.add('lambda:RemovePermission');
     return this;
   }
@@ -1086,7 +1092,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('lambda:TagResource');
     return this;
   }
@@ -1098,7 +1104,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('lambda:UntagResource');
     return this;
   }
@@ -1110,7 +1116,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html
    */
-  public updateAlias () {
+  public updateAlias() {
     this.add('lambda:UpdateAlias');
     return this;
   }
@@ -1122,7 +1128,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html
    */
-  public updateEventSourceMapping () {
+  public updateEventSourceMapping() {
     this.add('lambda:UpdateEventSourceMapping');
     return this;
   }
@@ -1134,7 +1140,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html
    */
-  public updateFunctionCode () {
+  public updateFunctionCode() {
     this.add('lambda:UpdateFunctionCode');
     return this;
   }
@@ -1146,7 +1152,7 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html
    */
-  public updateFunctionConfiguration () {
+  public updateFunctionConfiguration() {
     this.add('lambda:UpdateFunctionConfiguration');
     return this;
   }
@@ -1158,8 +1164,128 @@ export class Lambda extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionEventInvokeConfig.html
    */
-  public updateFunctionEventInvokeConfig () {
+  public updateFunctionEventInvokeConfig() {
     this.add('lambda:UpdateFunctionEventInvokeConfig');
     return this;
+  }
+
+  /**
+   * Adds a resource of type function to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunction(functionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}';
+    arn = arn.replace('${FunctionName}', functionName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type function version to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param version - Identifier for the version.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunctionVersion(functionName: string, version: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}';
+    arn = arn.replace('${FunctionName}', functionName);
+    arn = arn.replace('${Version}', version);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type function alias to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param functionName - Identifier for the functionName.
+   * @param alias - Identifier for the alias.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFunctionAlias(functionName: string, alias: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}';
+    arn = arn.replace('${FunctionName}', functionName);
+    arn = arn.replace('${Alias}', alias);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type layer to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param layerName - Identifier for the layerName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLayer(layerName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}';
+    arn = arn.replace('${LayerName}', layerName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type layerVersion to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param layerName - Identifier for the layerName.
+   * @param layerVersion - Identifier for the layerVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLayerVersion(layerName: string, layerVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}';
+    arn = arn.replace('${LayerName}', layerName);
+    arn = arn.replace('${LayerVersion}', layerVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type eventSourceMapping to the statement
+   *
+   * https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html
+   *
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}';
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

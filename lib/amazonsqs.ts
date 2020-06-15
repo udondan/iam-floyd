@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Sqs extends PolicyStatement {
   public servicePrefix = 'sqs';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddPermission": {
       "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html",
       "description": "Adds a permission to a queue for a specific principal.",
@@ -204,9 +204,10 @@ export class Sqs extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "queue": {
       "name": "queue",
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html",
       "arn": "arn:${Partition}:sqs:${Region}:${Account}:${QueueName}",
       "conditionKeys": []
     }
@@ -219,7 +220,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html
    */
-  public addPermission () {
+  public addPermission() {
     this.add('sqs:AddPermission');
     return this;
   }
@@ -231,7 +232,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibility.html
    */
-  public changeMessageVisibility () {
+  public changeMessageVisibility() {
     this.add('sqs:ChangeMessageVisibility');
     return this;
   }
@@ -243,7 +244,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ChangeMessageVisibilityBatch.html
    */
-  public changeMessageVisibilityBatch () {
+  public changeMessageVisibilityBatch() {
     this.add('sqs:ChangeMessageVisibilityBatch');
     return this;
   }
@@ -255,7 +256,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html
    */
-  public createQueue () {
+  public createQueue() {
     this.add('sqs:CreateQueue');
     return this;
   }
@@ -267,7 +268,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessage.html
    */
-  public deleteMessage () {
+  public deleteMessage() {
     this.add('sqs:DeleteMessage');
     return this;
   }
@@ -279,7 +280,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteMessageBatch.html
    */
-  public deleteMessageBatch () {
+  public deleteMessageBatch() {
     this.add('sqs:DeleteMessageBatch');
     return this;
   }
@@ -291,7 +292,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_DeleteQueue.html
    */
-  public deleteQueue () {
+  public deleteQueue() {
     this.add('sqs:DeleteQueue');
     return this;
   }
@@ -303,7 +304,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueAttributes.html
    */
-  public getQueueAttributes () {
+  public getQueueAttributes() {
     this.add('sqs:GetQueueAttributes');
     return this;
   }
@@ -315,7 +316,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_GetQueueUrl.html
    */
-  public getQueueUrl () {
+  public getQueueUrl() {
     this.add('sqs:GetQueueUrl');
     return this;
   }
@@ -327,7 +328,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListDeadLetterSourceQueues.html
    */
-  public listDeadLetterSourceQueues () {
+  public listDeadLetterSourceQueues() {
     this.add('sqs:ListDeadLetterSourceQueues');
     return this;
   }
@@ -339,7 +340,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueueTags.html
    */
-  public listQueueTags () {
+  public listQueueTags() {
     this.add('sqs:ListQueueTags');
     return this;
   }
@@ -351,7 +352,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ListQueues.html
    */
-  public listQueues () {
+  public listQueues() {
     this.add('sqs:ListQueues');
     return this;
   }
@@ -363,7 +364,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_PurgeQueue.html
    */
-  public purgeQueue () {
+  public purgeQueue() {
     this.add('sqs:PurgeQueue');
     return this;
   }
@@ -375,7 +376,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_ReceiveMessage.html
    */
-  public receiveMessage () {
+  public receiveMessage() {
     this.add('sqs:ReceiveMessage');
     return this;
   }
@@ -387,7 +388,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_RemovePermission.html
    */
-  public removePermission () {
+  public removePermission() {
     this.add('sqs:RemovePermission');
     return this;
   }
@@ -399,7 +400,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html
    */
-  public sendMessage () {
+  public sendMessage() {
     this.add('sqs:SendMessage');
     return this;
   }
@@ -411,7 +412,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessageBatch.html
    */
-  public sendMessageBatch () {
+  public sendMessageBatch() {
     this.add('sqs:SendMessageBatch');
     return this;
   }
@@ -423,7 +424,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html
    */
-  public setQueueAttributes () {
+  public setQueueAttributes() {
     this.add('sqs:SetQueueAttributes');
     return this;
   }
@@ -435,7 +436,7 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_TagQueue.html
    */
-  public tagQueue () {
+  public tagQueue() {
     this.add('sqs:TagQueue');
     return this;
   }
@@ -447,8 +448,27 @@ export class Sqs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_UntagQueue.html
    */
-  public untagQueue () {
+  public untagQueue() {
     this.add('sqs:UntagQueue');
     return this;
+  }
+
+  /**
+   * Adds a resource of type queue to the statement
+   *
+   * https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html
+   *
+   * @param queueName - Identifier for the queueName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sqs:${Region}:${Account}:${QueueName}';
+    arn = arn.replace('${QueueName}', queueName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

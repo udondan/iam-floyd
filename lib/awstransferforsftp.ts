@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Transfer extends PolicyStatement {
   public servicePrefix = 'transfer';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateServer": {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html",
       "description": "Enables the caller to create a server.",
@@ -203,9 +203,10 @@ export class Transfer extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "user": {
       "name": "user",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/users.html",
       "arn": "arn:${Partition}:transfer:${Region}:${Account}:user/${serverId}/${username}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -213,6 +214,7 @@ export class Transfer extends PolicyStatement {
     },
     "server": {
       "name": "server",
+      "url": "https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html",
       "arn": "arn:${Partition}:transfer:${Region}:${Account}:server/${serverId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -227,7 +229,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html
    */
-  public createServer () {
+  public createServer() {
     this.add('transfer:CreateServer');
     return this;
   }
@@ -239,7 +241,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html
    */
-  public createUser () {
+  public createUser() {
     this.add('transfer:CreateUser');
     return this;
   }
@@ -251,7 +253,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html
    */
-  public deleteServer () {
+  public deleteServer() {
     this.add('transfer:DeleteServer');
     return this;
   }
@@ -263,7 +265,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html
    */
-  public deleteSshPublicKey () {
+  public deleteSshPublicKey() {
     this.add('transfer:DeleteSshPublicKey');
     return this;
   }
@@ -275,7 +277,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html
    */
-  public deleteUser () {
+  public deleteUser() {
     this.add('transfer:DeleteUser');
     return this;
   }
@@ -287,7 +289,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html
    */
-  public describeServer () {
+  public describeServer() {
     this.add('transfer:DescribeServer');
     return this;
   }
@@ -299,7 +301,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html
    */
-  public describeUser () {
+  public describeUser() {
     this.add('transfer:DescribeUser');
     return this;
   }
@@ -311,7 +313,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html
    */
-  public importSshPublicKey () {
+  public importSshPublicKey() {
     this.add('transfer:ImportSshPublicKey');
     return this;
   }
@@ -323,7 +325,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html
    */
-  public listServers () {
+  public listServers() {
     this.add('transfer:ListServers');
     return this;
   }
@@ -335,7 +337,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('transfer:ListTagsForResource');
     return this;
   }
@@ -347,7 +349,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html
    */
-  public listUsers () {
+  public listUsers() {
     this.add('transfer:ListUsers');
     return this;
   }
@@ -359,7 +361,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html
    */
-  public startServer () {
+  public startServer() {
     this.add('transfer:StartServer');
     return this;
   }
@@ -371,7 +373,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html
    */
-  public stopServer () {
+  public stopServer() {
     this.add('transfer:StopServer');
     return this;
   }
@@ -383,7 +385,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('transfer:TagResource');
     return this;
   }
@@ -395,7 +397,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html
    */
-  public testIdentityProvider () {
+  public testIdentityProvider() {
     this.add('transfer:TestIdentityProvider');
     return this;
   }
@@ -407,7 +409,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('transfer:UntagResource');
     return this;
   }
@@ -419,7 +421,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html
    */
-  public updateServer () {
+  public updateServer() {
     this.add('transfer:UpdateServer');
     return this;
   }
@@ -431,8 +433,54 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html
    */
-  public updateUser () {
+  public updateUser() {
     this.add('transfer:UpdateUser');
     return this;
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/users.html
+   *
+   * @param serverId - Identifier for the serverId.
+   * @param username - Identifier for the username.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onUser(serverId: string, username: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:user/${serverId}/${username}';
+    arn = arn.replace('${serverId}', serverId);
+    arn = arn.replace('${username}', username);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type server to the statement
+   *
+   * https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html
+   *
+   * @param serverId - Identifier for the serverId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onServer(serverId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:server/${serverId}';
+    arn = arn.replace('${serverId}', serverId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

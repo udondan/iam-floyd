@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Iotsitewise extends PolicyStatement {
   public servicePrefix = 'iotsitewise';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateAssets.html",
       "description": "Associate child assets to the parent via specified model hiearchy.",
@@ -607,9 +607,10 @@ export class Iotsitewise extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "asset": {
       "name": "asset",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Asset.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -617,6 +618,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "asset-model": {
       "name": "asset-model",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetModel.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -624,6 +626,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "gateway": {
       "name": "gateway",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Gateway.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -631,6 +634,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "portal": {
       "name": "portal",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Portal.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -638,6 +642,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "project": {
       "name": "project",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Project.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -645,6 +650,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "dashboard": {
       "name": "dashboard",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Dashboard.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -652,6 +658,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "access-policy": {
       "name": "access-policy",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AccessPolicy.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -666,7 +673,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateAssets.html
    */
-  public associateAssets () {
+  public associateAssets() {
     this.add('iotsitewise:AssociateAssets');
     return this;
   }
@@ -678,7 +685,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchAssociateProjectAssets.html
    */
-  public batchAssociateProjectAssets () {
+  public batchAssociateProjectAssets() {
     this.add('iotsitewise:BatchAssociateProjectAssets');
     return this;
   }
@@ -690,7 +697,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDisassociateProjectAssets.html
    */
-  public batchDisassociateProjectAssets () {
+  public batchDisassociateProjectAssets() {
     this.add('iotsitewise:BatchDisassociateProjectAssets');
     return this;
   }
@@ -702,7 +709,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html
    */
-  public batchPutAssetPropertyValue () {
+  public batchPutAssetPropertyValue() {
     this.add('iotsitewise:BatchPutAssetPropertyValue');
     return this;
   }
@@ -714,7 +721,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
    */
-  public createAccessPolicy () {
+  public createAccessPolicy() {
     this.add('iotsitewise:CreateAccessPolicy');
     return this;
   }
@@ -726,7 +733,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html
    */
-  public createAsset () {
+  public createAsset() {
     this.add('iotsitewise:CreateAsset');
     return this;
   }
@@ -738,7 +745,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html
    */
-  public createAssetModel () {
+  public createAssetModel() {
     this.add('iotsitewise:CreateAssetModel');
     return this;
   }
@@ -750,7 +757,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
    */
-  public createDashboard () {
+  public createDashboard() {
     this.add('iotsitewise:CreateDashboard');
     return this;
   }
@@ -762,7 +769,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html
    */
-  public createGateway () {
+  public createGateway() {
     this.add('iotsitewise:CreateGateway');
     return this;
   }
@@ -774,7 +781,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html
    */
-  public createPortal () {
+  public createPortal() {
     this.add('iotsitewise:CreatePortal');
     return this;
   }
@@ -786,7 +793,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html
    */
-  public createProject () {
+  public createProject() {
     this.add('iotsitewise:CreateProject');
     return this;
   }
@@ -798,7 +805,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAccessPolicy.html
    */
-  public deleteAccessPolicy () {
+  public deleteAccessPolicy() {
     this.add('iotsitewise:DeleteAccessPolicy');
     return this;
   }
@@ -810,7 +817,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAsset.html
    */
-  public deleteAsset () {
+  public deleteAsset() {
     this.add('iotsitewise:DeleteAsset');
     return this;
   }
@@ -822,7 +829,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModel.html
    */
-  public deleteAssetModel () {
+  public deleteAssetModel() {
     this.add('iotsitewise:DeleteAssetModel');
     return this;
   }
@@ -834,7 +841,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDashboard.html
    */
-  public deleteDashboard () {
+  public deleteDashboard() {
     this.add('iotsitewise:DeleteDashboard');
     return this;
   }
@@ -846,7 +853,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteGateway.html
    */
-  public deleteGateway () {
+  public deleteGateway() {
     this.add('iotsitewise:DeleteGateway');
     return this;
   }
@@ -858,7 +865,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html
    */
-  public deletePortal () {
+  public deletePortal() {
     this.add('iotsitewise:DeletePortal');
     return this;
   }
@@ -870,7 +877,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteProject.html
    */
-  public deleteProject () {
+  public deleteProject() {
     this.add('iotsitewise:DeleteProject');
     return this;
   }
@@ -882,7 +889,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAccessPolicy.html
    */
-  public describeAccessPolicy () {
+  public describeAccessPolicy() {
     this.add('iotsitewise:DescribeAccessPolicy');
     return this;
   }
@@ -894,7 +901,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html
    */
-  public describeAsset () {
+  public describeAsset() {
     this.add('iotsitewise:DescribeAsset');
     return this;
   }
@@ -906,7 +913,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html
    */
-  public describeAssetModel () {
+  public describeAssetModel() {
     this.add('iotsitewise:DescribeAssetModel');
     return this;
   }
@@ -918,7 +925,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html
    */
-  public describeAssetProperty () {
+  public describeAssetProperty() {
     this.add('iotsitewise:DescribeAssetProperty');
     return this;
   }
@@ -930,7 +937,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDashboard.html
    */
-  public describeDashboard () {
+  public describeDashboard() {
     this.add('iotsitewise:DescribeDashboard');
     return this;
   }
@@ -942,7 +949,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html
    */
-  public describeGateway () {
+  public describeGateway() {
     this.add('iotsitewise:DescribeGateway');
     return this;
   }
@@ -954,7 +961,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html
    */
-  public describeGatewayCapabilityConfiguration () {
+  public describeGatewayCapabilityConfiguration() {
     this.add('iotsitewise:DescribeGatewayCapabilityConfiguration');
     return this;
   }
@@ -966,7 +973,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeLoggingOptions.html
    */
-  public describeLoggingOptions () {
+  public describeLoggingOptions() {
     this.add('iotsitewise:DescribeLoggingOptions');
     return this;
   }
@@ -978,7 +985,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePortal.html
    */
-  public describePortal () {
+  public describePortal() {
     this.add('iotsitewise:DescribePortal');
     return this;
   }
@@ -990,7 +997,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeProject.html
    */
-  public describeProject () {
+  public describeProject() {
     this.add('iotsitewise:DescribeProject');
     return this;
   }
@@ -1002,7 +1009,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html
    */
-  public disassociateAssets () {
+  public disassociateAssets() {
     this.add('iotsitewise:DisassociateAssets');
     return this;
   }
@@ -1014,7 +1021,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyAggregates.html
    */
-  public getAssetPropertyAggregates () {
+  public getAssetPropertyAggregates() {
     this.add('iotsitewise:GetAssetPropertyAggregates');
     return this;
   }
@@ -1026,7 +1033,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html
    */
-  public getAssetPropertyValue () {
+  public getAssetPropertyValue() {
     this.add('iotsitewise:GetAssetPropertyValue');
     return this;
   }
@@ -1038,7 +1045,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValueHistory.html
    */
-  public getAssetPropertyValueHistory () {
+  public getAssetPropertyValueHistory() {
     this.add('iotsitewise:GetAssetPropertyValueHistory');
     return this;
   }
@@ -1050,7 +1057,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAccessPolicies.html
    */
-  public listAccessPolicies () {
+  public listAccessPolicies() {
     this.add('iotsitewise:ListAccessPolicies');
     return this;
   }
@@ -1062,7 +1069,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html
    */
-  public listAssetModels () {
+  public listAssetModels() {
     this.add('iotsitewise:ListAssetModels');
     return this;
   }
@@ -1074,7 +1081,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssets.html
    */
-  public listAssets () {
+  public listAssets() {
     this.add('iotsitewise:ListAssets');
     return this;
   }
@@ -1086,7 +1093,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssociatedAssets.html
    */
-  public listAssociatedAssets () {
+  public listAssociatedAssets() {
     this.add('iotsitewise:ListAssociatedAssets');
     return this;
   }
@@ -1098,7 +1105,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDashboards.html
    */
-  public listDashboards () {
+  public listDashboards() {
     this.add('iotsitewise:ListDashboards');
     return this;
   }
@@ -1110,7 +1117,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListGateways.html
    */
-  public listGateways () {
+  public listGateways() {
     this.add('iotsitewise:ListGateways');
     return this;
   }
@@ -1122,7 +1129,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPortals.html
    */
-  public listPortals () {
+  public listPortals() {
     this.add('iotsitewise:ListPortals');
     return this;
   }
@@ -1134,7 +1141,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjectAssets.html
    */
-  public listProjectAssets () {
+  public listProjectAssets() {
     this.add('iotsitewise:ListProjectAssets');
     return this;
   }
@@ -1146,7 +1153,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjects.html
    */
-  public listProjects () {
+  public listProjects() {
     this.add('iotsitewise:ListProjects');
     return this;
   }
@@ -1158,7 +1165,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('iotsitewise:ListTagsForResource');
     return this;
   }
@@ -1170,7 +1177,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutLoggingOptions.html
    */
-  public putLoggingOptions () {
+  public putLoggingOptions() {
     this.add('iotsitewise:PutLoggingOptions');
     return this;
   }
@@ -1182,7 +1189,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('iotsitewise:TagResource');
     return this;
   }
@@ -1194,7 +1201,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('iotsitewise:UntagResource');
     return this;
   }
@@ -1206,7 +1213,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAccessPolicy.html
    */
-  public updateAccessPolicy () {
+  public updateAccessPolicy() {
     this.add('iotsitewise:UpdateAccessPolicy');
     return this;
   }
@@ -1218,7 +1225,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAsset.html
    */
-  public updateAsset () {
+  public updateAsset() {
     this.add('iotsitewise:UpdateAsset');
     return this;
   }
@@ -1230,7 +1237,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html
    */
-  public updateAssetModel () {
+  public updateAssetModel() {
     this.add('iotsitewise:UpdateAssetModel');
     return this;
   }
@@ -1242,7 +1249,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html
    */
-  public updateAssetProperty () {
+  public updateAssetProperty() {
     this.add('iotsitewise:UpdateAssetProperty');
     return this;
   }
@@ -1254,7 +1261,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateDashboard.html
    */
-  public updateDashboard () {
+  public updateDashboard() {
     this.add('iotsitewise:UpdateDashboard');
     return this;
   }
@@ -1266,7 +1273,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGateway.html
    */
-  public updateGateway () {
+  public updateGateway() {
     this.add('iotsitewise:UpdateGateway');
     return this;
   }
@@ -1278,7 +1285,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGatewayCapabilityConfiguration.html
    */
-  public updateGatewayCapabilityConfiguration () {
+  public updateGatewayCapabilityConfiguration() {
     this.add('iotsitewise:UpdateGatewayCapabilityConfiguration');
     return this;
   }
@@ -1290,7 +1297,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdatePortal.html
    */
-  public updatePortal () {
+  public updatePortal() {
     this.add('iotsitewise:UpdatePortal');
     return this;
   }
@@ -1302,8 +1309,162 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateProject.html
    */
-  public updateProject () {
+  public updateProject() {
     this.add('iotsitewise:UpdateProject');
     return this;
+  }
+
+  /**
+   * Adds a resource of type asset to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Asset.html
+   *
+   * @param assetId - Identifier for the assetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}';
+    arn = arn.replace('${AssetId}', assetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type asset-model to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetModel.html
+   *
+   * @param assetModelId - Identifier for the assetModelId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}';
+    arn = arn.replace('${AssetModelId}', assetModelId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type gateway to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Gateway.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}';
+    arn = arn.replace('${GatewayId}', gatewayId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type portal to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Portal.html
+   *
+   * @param portalId - Identifier for the portalId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}';
+    arn = arn.replace('${PortalId}', portalId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Project.html
+   *
+   * @param projectId - Identifier for the projectId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onProject(projectId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}';
+    arn = arn.replace('${ProjectId}', projectId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Dashboard.html
+   *
+   * @param dashboardId - Identifier for the dashboardId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}';
+    arn = arn.replace('${DashboardId}', dashboardId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type access-policy to the statement
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AccessPolicy.html
+   *
+   * @param accessPolicyId - Identifier for the accessPolicyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}';
+    arn = arn.replace('${AccessPolicyId}', accessPolicyId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

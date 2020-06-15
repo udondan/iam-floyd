@@ -7,14 +7,14 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class BackupStorage extends PolicyStatement {
   public servicePrefix = 'backup-storage';
-  public actions : Actions = {
+  public actions: Actions = {
     "MountCapsule": {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html",
       "description": "Associates a KMS key to a backup vault",
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Associates a KMS key to a backup vault
@@ -23,7 +23,7 @@ export class BackupStorage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html
    */
-  public mountCapsule () {
+  public mountCapsule() {
     this.add('backup-storage:MountCapsule');
     return this;
   }

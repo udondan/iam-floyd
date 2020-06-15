@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Ram extends PolicyStatement {
   public servicePrefix = 'ram';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcceptResourceShareInvitation": {
       "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html",
       "description": "Accept the specified resource share invitation",
@@ -259,9 +259,10 @@ export class Ram extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "resource-share": {
       "name": "resource-share",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html",
       "arn": "arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -271,11 +272,13 @@ export class Ram extends PolicyStatement {
     },
     "resource-share-invitation": {
       "name": "resource-share-invitation",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShareInvitation.html",
       "arn": "arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}",
       "conditionKeys": []
     },
     "permission": {
       "name": "permission",
+      "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html",
       "arn": "arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}",
       "conditionKeys": [
         "ram:PermissionArn"
@@ -290,7 +293,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html
    */
-  public acceptResourceShareInvitation () {
+  public acceptResourceShareInvitation() {
     this.add('ram:AcceptResourceShareInvitation');
     return this;
   }
@@ -302,7 +305,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html
    */
-  public associateResourceShare () {
+  public associateResourceShare() {
     this.add('ram:AssociateResourceShare');
     return this;
   }
@@ -314,7 +317,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html
    */
-  public associateResourceSharePermission () {
+  public associateResourceSharePermission() {
     this.add('ram:AssociateResourceSharePermission');
     return this;
   }
@@ -326,7 +329,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
-  public createResourceShare () {
+  public createResourceShare() {
     this.add('ram:CreateResourceShare');
     return this;
   }
@@ -338,7 +341,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html
    */
-  public deleteResourceShare () {
+  public deleteResourceShare() {
     this.add('ram:DeleteResourceShare');
     return this;
   }
@@ -350,7 +353,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html
    */
-  public disassociateResourceShare () {
+  public disassociateResourceShare() {
     this.add('ram:DisassociateResourceShare');
     return this;
   }
@@ -362,7 +365,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html
    */
-  public disassociateResourceSharePermission () {
+  public disassociateResourceSharePermission() {
     this.add('ram:DisassociateResourceSharePermission');
     return this;
   }
@@ -374,7 +377,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html
    */
-  public enableSharingWithAwsOrganization () {
+  public enableSharingWithAwsOrganization() {
     this.add('ram:EnableSharingWithAwsOrganization');
     return this;
   }
@@ -386,7 +389,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetPermission.html
    */
-  public getPermission () {
+  public getPermission() {
     this.add('ram:GetPermission');
     return this;
   }
@@ -398,7 +401,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourcePolicies.html
    */
-  public getResourcePolicies () {
+  public getResourcePolicies() {
     this.add('ram:GetResourcePolicies');
     return this;
   }
@@ -410,7 +413,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareAssociations.html
    */
-  public getResourceShareAssociations () {
+  public getResourceShareAssociations() {
     this.add('ram:GetResourceShareAssociations');
     return this;
   }
@@ -422,7 +425,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html
    */
-  public getResourceShareInvitations () {
+  public getResourceShareInvitations() {
     this.add('ram:GetResourceShareInvitations');
     return this;
   }
@@ -434,7 +437,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShares.html
    */
-  public getResourceShares () {
+  public getResourceShares() {
     this.add('ram:GetResourceShares');
     return this;
   }
@@ -446,7 +449,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPendingInvitationResources.html
    */
-  public listPendingInvitationResources () {
+  public listPendingInvitationResources() {
     this.add('ram:ListPendingInvitationResources');
     return this;
   }
@@ -458,7 +461,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPermissions.html
    */
-  public listPermissions () {
+  public listPermissions() {
     this.add('ram:ListPermissions');
     return this;
   }
@@ -470,7 +473,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListPrincipals.html
    */
-  public listPrincipals () {
+  public listPrincipals() {
     this.add('ram:ListPrincipals');
     return this;
   }
@@ -482,7 +485,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html
    */
-  public listResourceSharePermissions () {
+  public listResourceSharePermissions() {
     this.add('ram:ListResourceSharePermissions');
     return this;
   }
@@ -494,7 +497,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResources.html
    */
-  public listResources () {
+  public listResources() {
     this.add('ram:ListResources');
     return this;
   }
@@ -506,7 +509,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html
    */
-  public rejectResourceShareInvitation () {
+  public rejectResourceShareInvitation() {
     this.add('ram:RejectResourceShareInvitation');
     return this;
   }
@@ -518,7 +521,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('ram:TagResource');
     return this;
   }
@@ -530,7 +533,7 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('ram:UntagResource');
     return this;
   }
@@ -542,8 +545,73 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html
    */
-  public updateResourceShare () {
+  public updateResourceShare() {
     this.add('ram:UpdateResourceShare');
     return this;
+  }
+
+  /**
+   * Adds a resource of type resource-share to the statement
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ram:AllowsExternalPrincipals
+   *  - ram:ResourceShareName
+   */
+  public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}';
+    arn = arn.replace('${ResourcePath}', resourcePath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type resource-share-invitation to the statement
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShareInvitation.html
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}';
+    arn = arn.replace('${ResourcePath}', resourcePath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type permission to the statement
+   *
+   * https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html
+   *
+   * @param resourcePath - Identifier for the resourcePath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - ram:PermissionArn
+   */
+  public onPermission(resourcePath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}';
+    arn = arn.replace('${ResourcePath}', resourcePath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

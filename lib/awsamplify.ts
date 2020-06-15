@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Amplify extends PolicyStatement {
   public servicePrefix = 'amplify';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateApp": {
       "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "description": "Creates a new Amplify App.",
@@ -395,9 +395,10 @@ export class Amplify extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "apps": {
       "name": "apps",
+      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -405,6 +406,7 @@ export class Amplify extends PolicyStatement {
     },
     "branches": {
       "name": "branches",
+      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -412,11 +414,13 @@ export class Amplify extends PolicyStatement {
     },
     "jobs": {
       "name": "jobs",
+      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}/jobs/${JobId}",
       "conditionKeys": []
     },
     "domains": {
       "name": "domains",
+      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -431,7 +435,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createApp () {
+  public createApp() {
     this.add('amplify:CreateApp');
     return this;
   }
@@ -443,7 +447,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createBackendEnvironment () {
+  public createBackendEnvironment() {
     this.add('amplify:CreateBackendEnvironment');
     return this;
   }
@@ -455,7 +459,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createBranch () {
+  public createBranch() {
     this.add('amplify:CreateBranch');
     return this;
   }
@@ -467,7 +471,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createDeployment () {
+  public createDeployment() {
     this.add('amplify:CreateDeployment');
     return this;
   }
@@ -479,7 +483,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createDomainAssociation () {
+  public createDomainAssociation() {
     this.add('amplify:CreateDomainAssociation');
     return this;
   }
@@ -491,7 +495,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createWebHook () {
+  public createWebHook() {
     this.add('amplify:CreateWebHook');
     return this;
   }
@@ -503,7 +507,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteApp () {
+  public deleteApp() {
     this.add('amplify:DeleteApp');
     return this;
   }
@@ -515,7 +519,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteBackendEnvironment () {
+  public deleteBackendEnvironment() {
     this.add('amplify:DeleteBackendEnvironment');
     return this;
   }
@@ -527,7 +531,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteBranch () {
+  public deleteBranch() {
     this.add('amplify:DeleteBranch');
     return this;
   }
@@ -539,7 +543,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteDomainAssociation () {
+  public deleteDomainAssociation() {
     this.add('amplify:DeleteDomainAssociation');
     return this;
   }
@@ -551,7 +555,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteJob () {
+  public deleteJob() {
     this.add('amplify:DeleteJob');
     return this;
   }
@@ -563,7 +567,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteWebHook () {
+  public deleteWebHook() {
     this.add('amplify:DeleteWebHook');
     return this;
   }
@@ -575,7 +579,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public generateAccessLogs () {
+  public generateAccessLogs() {
     this.add('amplify:GenerateAccessLogs');
     return this;
   }
@@ -587,7 +591,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getApp () {
+  public getApp() {
     this.add('amplify:GetApp');
     return this;
   }
@@ -599,7 +603,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getArtifactUrl () {
+  public getArtifactUrl() {
     this.add('amplify:GetArtifactUrl');
     return this;
   }
@@ -611,7 +615,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getBackendEnvironment () {
+  public getBackendEnvironment() {
     this.add('amplify:GetBackendEnvironment');
     return this;
   }
@@ -623,7 +627,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getBranch () {
+  public getBranch() {
     this.add('amplify:GetBranch');
     return this;
   }
@@ -635,7 +639,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getDomainAssociation () {
+  public getDomainAssociation() {
     this.add('amplify:GetDomainAssociation');
     return this;
   }
@@ -647,7 +651,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getJob () {
+  public getJob() {
     this.add('amplify:GetJob');
     return this;
   }
@@ -659,7 +663,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getWebHook () {
+  public getWebHook() {
     this.add('amplify:GetWebHook');
     return this;
   }
@@ -671,7 +675,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listApps () {
+  public listApps() {
     this.add('amplify:ListApps');
     return this;
   }
@@ -683,7 +687,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listArtifacts () {
+  public listArtifacts() {
     this.add('amplify:ListArtifacts');
     return this;
   }
@@ -695,7 +699,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listBackendEnvironments () {
+  public listBackendEnvironments() {
     this.add('amplify:ListBackendEnvironments');
     return this;
   }
@@ -707,7 +711,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listBranches () {
+  public listBranches() {
     this.add('amplify:ListBranches');
     return this;
   }
@@ -719,7 +723,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listDomainAssociations () {
+  public listDomainAssociations() {
     this.add('amplify:ListDomainAssociations');
     return this;
   }
@@ -731,7 +735,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listJobs () {
+  public listJobs() {
     this.add('amplify:ListJobs');
     return this;
   }
@@ -743,7 +747,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listWebHooks () {
+  public listWebHooks() {
     this.add('amplify:ListWebHooks');
     return this;
   }
@@ -755,7 +759,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public startDeployment () {
+  public startDeployment() {
     this.add('amplify:StartDeployment');
     return this;
   }
@@ -767,7 +771,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public startJob () {
+  public startJob() {
     this.add('amplify:StartJob');
     return this;
   }
@@ -779,7 +783,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public stopJob () {
+  public stopJob() {
     this.add('amplify:StopJob');
     return this;
   }
@@ -791,7 +795,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('amplify:TagResource');
     return this;
   }
@@ -803,7 +807,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('amplify:UntagResource');
     return this;
   }
@@ -815,7 +819,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateApp () {
+  public updateApp() {
     this.add('amplify:UpdateApp');
     return this;
   }
@@ -827,7 +831,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateBranch () {
+  public updateBranch() {
     this.add('amplify:UpdateBranch');
     return this;
   }
@@ -839,7 +843,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateDomainAssociation () {
+  public updateDomainAssociation() {
     this.add('amplify:UpdateDomainAssociation');
     return this;
   }
@@ -851,8 +855,101 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateWebHook () {
+  public updateWebHook() {
     this.add('amplify:UpdateWebHook');
     return this;
+  }
+
+  /**
+   * Adds a resource of type apps to the statement
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onApps(appId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}';
+    arn = arn.replace('${AppId}', appId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type branches to the statement
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param branchName - Identifier for the branchName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}';
+    arn = arn.replace('${AppId}', appId);
+    arn = arn.replace('${BranchName}', branchName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type jobs to the statement
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param branchName - Identifier for the branchName.
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onJobs(appId: string, branchName: string, jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}/jobs/${JobId}';
+    arn = arn.replace('${AppId}', appId);
+    arn = arn.replace('${BranchName}', branchName);
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type domains to the statement
+   *
+   * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
+   *
+   * @param appId - Identifier for the appId.
+   * @param domainName - Identifier for the domainName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}';
+    arn = arn.replace('${AppId}', appId);
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Detective extends PolicyStatement {
   public servicePrefix = 'detective';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html",
       "description": "Grants permission to accept an invitation to become a member of a behavior graph",
@@ -159,9 +159,10 @@ export class Detective extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Graph": {
       "name": "Graph",
+      "url": "https://docs.aws.amazon.com/detective/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources",
       "arn": "arn:${Partition}:detective:${Region}:${Account}:graph:${ResourceId}",
       "conditionKeys": []
     }
@@ -174,7 +175,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html
    */
-  public acceptInvitation () {
+  public acceptInvitation() {
     this.add('detective:AcceptInvitation');
     return this;
   }
@@ -186,7 +187,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html
    */
-  public createGraph () {
+  public createGraph() {
     this.add('detective:CreateGraph');
     return this;
   }
@@ -198,7 +199,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateMembers.html
    */
-  public createMembers () {
+  public createMembers() {
     this.add('detective:CreateMembers');
     return this;
   }
@@ -210,7 +211,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteGraph.html
    */
-  public deleteGraph () {
+  public deleteGraph() {
     this.add('detective:DeleteGraph');
     return this;
   }
@@ -222,7 +223,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteMembers.html
    */
-  public deleteMembers () {
+  public deleteMembers() {
     this.add('detective:DeleteMembers');
     return this;
   }
@@ -234,7 +235,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DisassociateMembership.html
    */
-  public disassociateMembership () {
+  public disassociateMembership() {
     this.add('detective:DisassociateMembership');
     return this;
   }
@@ -244,7 +245,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getFreeTrialEligibility () {
+  public getFreeTrialEligibility() {
     this.add('detective:GetFreeTrialEligibility');
     return this;
   }
@@ -254,7 +255,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getGraphIngestState () {
+  public getGraphIngestState() {
     this.add('detective:GetGraphIngestState');
     return this;
   }
@@ -266,7 +267,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_GetMembers.html
    */
-  public getMembers () {
+  public getMembers() {
     this.add('detective:GetMembers');
     return this;
   }
@@ -276,7 +277,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getPricingInformation () {
+  public getPricingInformation() {
     this.add('detective:GetPricingInformation');
     return this;
   }
@@ -286,7 +287,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getUsageInformation () {
+  public getUsageInformation() {
     this.add('detective:GetUsageInformation');
     return this;
   }
@@ -298,7 +299,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListGraphs.html
    */
-  public listGraphs () {
+  public listGraphs() {
     this.add('detective:ListGraphs');
     return this;
   }
@@ -310,7 +311,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvitations.html
    */
-  public listInvitations () {
+  public listInvitations() {
     this.add('detective:ListInvitations');
     return this;
   }
@@ -322,7 +323,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListMembers.html
    */
-  public listMembers () {
+  public listMembers() {
     this.add('detective:ListMembers');
     return this;
   }
@@ -334,7 +335,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_RejectInvitation.html
    */
-  public rejectInvitation () {
+  public rejectInvitation() {
     this.add('detective:RejectInvitation');
     return this;
   }
@@ -344,7 +345,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public searchGraph () {
+  public searchGraph() {
     this.add('detective:SearchGraph');
     return this;
   }
@@ -356,8 +357,27 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_StartMonitoringMember.html
    */
-  public startMonitoringMember () {
+  public startMonitoringMember() {
     this.add('detective:StartMonitoringMember');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Graph to the statement
+   *
+   * https://docs.aws.amazon.com/detective/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGraph(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:detective:${Region}:${Account}:graph:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

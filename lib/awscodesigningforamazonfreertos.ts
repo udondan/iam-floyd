@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Signer extends PolicyStatement {
   public servicePrefix = 'signer';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelSigningProfile": {
       "url": "https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html",
       "description": "Cancels a signing profile.",
@@ -116,9 +116,10 @@ export class Signer extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "signing-profile": {
       "name": "signing-profile",
+      "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",
       "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${profileName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -126,6 +127,7 @@ export class Signer extends PolicyStatement {
     },
     "signing-job": {
       "name": "signing-job",
+      "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",
       "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${jobId}",
       "conditionKeys": []
     }
@@ -138,7 +140,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html
    */
-  public cancelSigningProfile () {
+  public cancelSigningProfile() {
     this.add('signer:CancelSigningProfile');
     return this;
   }
@@ -150,7 +152,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html
    */
-  public describeSigningJob () {
+  public describeSigningJob() {
     this.add('signer:DescribeSigningJob');
     return this;
   }
@@ -162,7 +164,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html
    */
-  public getSigningPlatform () {
+  public getSigningPlatform() {
     this.add('signer:GetSigningPlatform');
     return this;
   }
@@ -174,7 +176,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html
    */
-  public getSigningProfile () {
+  public getSigningProfile() {
     this.add('signer:GetSigningProfile');
     return this;
   }
@@ -186,7 +188,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html
    */
-  public listSigningJobs () {
+  public listSigningJobs() {
     this.add('signer:ListSigningJobs');
     return this;
   }
@@ -198,7 +200,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html
    */
-  public listSigningPlatforms () {
+  public listSigningPlatforms() {
     this.add('signer:ListSigningPlatforms');
     return this;
   }
@@ -210,7 +212,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html
    */
-  public listSigningProfiles () {
+  public listSigningProfiles() {
     this.add('signer:ListSigningProfiles');
     return this;
   }
@@ -222,7 +224,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('signer:ListTagsForResource');
     return this;
   }
@@ -234,7 +236,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html
    */
-  public putSigningProfile () {
+  public putSigningProfile() {
     this.add('signer:PutSigningProfile');
     return this;
   }
@@ -246,7 +248,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html
    */
-  public startSigningJob () {
+  public startSigningJob() {
     this.add('signer:StartSigningJob');
     return this;
   }
@@ -258,7 +260,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('signer:TagResource');
     return this;
   }
@@ -270,8 +272,49 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('signer:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type signing-profile to the statement
+   *
+   * https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html
+   *
+   * @param profileName - Identifier for the profileName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSigningProfile(profileName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${profileName}';
+    arn = arn.replace('${profileName}', profileName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type signing-job to the statement
+   *
+   * https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${jobId}';
+    arn = arn.replace('${jobId}', jobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Machinelearning extends PolicyStatement {
   public servicePrefix = 'machinelearning';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_AddTags.html",
       "description": "Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value",
@@ -311,24 +311,28 @@ export class Machinelearning extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "batchprediction": {
       "name": "batchprediction",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions",
       "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}",
       "conditionKeys": []
     },
     "datasource": {
       "name": "datasource",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources",
       "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}",
       "conditionKeys": []
     },
     "evaluation": {
       "name": "evaluation",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations",
       "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}",
       "conditionKeys": []
     },
     "mlmodel": {
       "name": "mlmodel",
+      "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models",
       "arn": "arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}",
       "conditionKeys": []
     }
@@ -341,7 +345,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_AddTags.html
    */
-  public addTags () {
+  public addTags() {
     this.add('machinelearning:AddTags');
     return this;
   }
@@ -353,7 +357,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateBatchPrediction.html
    */
-  public createBatchPrediction () {
+  public createBatchPrediction() {
     this.add('machinelearning:CreateBatchPrediction');
     return this;
   }
@@ -365,7 +369,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRDS.html
    */
-  public createDataSourceFromRDS () {
+  public createDataSourceFromRDS() {
     this.add('machinelearning:CreateDataSourceFromRDS');
     return this;
   }
@@ -377,7 +381,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRedshift.html
    */
-  public createDataSourceFromRedshift () {
+  public createDataSourceFromRedshift() {
     this.add('machinelearning:CreateDataSourceFromRedshift');
     return this;
   }
@@ -389,7 +393,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromS3.html
    */
-  public createDataSourceFromS3 () {
+  public createDataSourceFromS3() {
     this.add('machinelearning:CreateDataSourceFromS3');
     return this;
   }
@@ -401,7 +405,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateEvaluation.html
    */
-  public createEvaluation () {
+  public createEvaluation() {
     this.add('machinelearning:CreateEvaluation');
     return this;
   }
@@ -413,7 +417,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateMLModel.html
    */
-  public createMLModel () {
+  public createMLModel() {
     this.add('machinelearning:CreateMLModel');
     return this;
   }
@@ -425,7 +429,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateRealtimeEndpoint.html
    */
-  public createRealtimeEndpoint () {
+  public createRealtimeEndpoint() {
     this.add('machinelearning:CreateRealtimeEndpoint');
     return this;
   }
@@ -437,7 +441,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteBatchPrediction.html
    */
-  public deleteBatchPrediction () {
+  public deleteBatchPrediction() {
     this.add('machinelearning:DeleteBatchPrediction');
     return this;
   }
@@ -449,7 +453,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteDataSource.html
    */
-  public deleteDataSource () {
+  public deleteDataSource() {
     this.add('machinelearning:DeleteDataSource');
     return this;
   }
@@ -461,7 +465,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteEvaluation.html
    */
-  public deleteEvaluation () {
+  public deleteEvaluation() {
     this.add('machinelearning:DeleteEvaluation');
     return this;
   }
@@ -473,7 +477,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteMLModel.html
    */
-  public deleteMLModel () {
+  public deleteMLModel() {
     this.add('machinelearning:DeleteMLModel');
     return this;
   }
@@ -485,7 +489,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteRealtimeEndpoint.html
    */
-  public deleteRealtimeEndpoint () {
+  public deleteRealtimeEndpoint() {
     this.add('machinelearning:DeleteRealtimeEndpoint');
     return this;
   }
@@ -497,7 +501,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteTags.html
    */
-  public deleteTags () {
+  public deleteTags() {
     this.add('machinelearning:DeleteTags');
     return this;
   }
@@ -509,7 +513,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeBatchPredictions.html
    */
-  public describeBatchPredictions () {
+  public describeBatchPredictions() {
     this.add('machinelearning:DescribeBatchPredictions');
     return this;
   }
@@ -521,7 +525,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeDataSources.html
    */
-  public describeDataSources () {
+  public describeDataSources() {
     this.add('machinelearning:DescribeDataSources');
     return this;
   }
@@ -533,7 +537,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeEvaluations.html
    */
-  public describeEvaluations () {
+  public describeEvaluations() {
     this.add('machinelearning:DescribeEvaluations');
     return this;
   }
@@ -545,7 +549,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeMLModels.html
    */
-  public describeMLModels () {
+  public describeMLModels() {
     this.add('machinelearning:DescribeMLModels');
     return this;
   }
@@ -557,7 +561,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeTags.html
    */
-  public describeTags () {
+  public describeTags() {
     this.add('machinelearning:DescribeTags');
     return this;
   }
@@ -569,7 +573,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetBatchPrediction.html
    */
-  public getBatchPrediction () {
+  public getBatchPrediction() {
     this.add('machinelearning:GetBatchPrediction');
     return this;
   }
@@ -581,7 +585,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetDataSource.html
    */
-  public getDataSource () {
+  public getDataSource() {
     this.add('machinelearning:GetDataSource');
     return this;
   }
@@ -593,7 +597,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetEvaluation.html
    */
-  public getEvaluation () {
+  public getEvaluation() {
     this.add('machinelearning:GetEvaluation');
     return this;
   }
@@ -605,7 +609,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetMLModel.html
    */
-  public getMLModel () {
+  public getMLModel() {
     this.add('machinelearning:GetMLModel');
     return this;
   }
@@ -617,7 +621,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_Predict.html
    */
-  public predict () {
+  public predict() {
     this.add('machinelearning:Predict');
     return this;
   }
@@ -629,7 +633,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateBatchPrediction.html
    */
-  public updateBatchPrediction () {
+  public updateBatchPrediction() {
     this.add('machinelearning:UpdateBatchPrediction');
     return this;
   }
@@ -641,7 +645,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateDataSource.html
    */
-  public updateDataSource () {
+  public updateDataSource() {
     this.add('machinelearning:UpdateDataSource');
     return this;
   }
@@ -653,7 +657,7 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateEvaluation.html
    */
-  public updateEvaluation () {
+  public updateEvaluation() {
     this.add('machinelearning:UpdateEvaluation');
     return this;
   }
@@ -665,8 +669,84 @@ export class Machinelearning extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_UpdateMLModel.html
    */
-  public updateMLModel () {
+  public updateMLModel() {
     this.add('machinelearning:UpdateMLModel');
     return this;
+  }
+
+  /**
+   * Adds a resource of type batchprediction to the statement
+   *
+   * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions
+   *
+   * @param batchPredictionId - Identifier for the batchPredictionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBatchprediction(batchPredictionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}';
+    arn = arn.replace('${BatchPredictionId}', batchPredictionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datasource to the statement
+   *
+   * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources
+   *
+   * @param datasourceId - Identifier for the datasourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDatasource(datasourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}';
+    arn = arn.replace('${DatasourceId}', datasourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type evaluation to the statement
+   *
+   * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations
+   *
+   * @param evaluationId - Identifier for the evaluationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEvaluation(evaluationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}';
+    arn = arn.replace('${EvaluationId}', evaluationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type mlmodel to the statement
+   *
+   * https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models
+   *
+   * @param mlModelId - Identifier for the mlModelId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onMlmodel(mlModelId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}';
+    arn = arn.replace('${MlModelId}', mlModelId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

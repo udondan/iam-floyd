@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Deepracer extends PolicyStatement {
   public servicePrefix = 'deepracer';
-  public actions : Actions = {
+  public actions: Actions = {
     "CloneReinforcementLearningModel": {
       "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model",
       "description": "Grants permission to clone existing DeepRacer models",
@@ -233,34 +233,40 @@ export class Deepracer extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "reinforcement_learning_model": {
       "name": "reinforcement_learning_model",
+      "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
       "arn": "arn:${Partition}:deepracer:${Region}:${Account}:model/reinforcement_learning/${ResourceId}",
       "conditionKeys": []
     },
     "training_job": {
       "name": "training_job",
+      "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",
       "arn": "arn:${Partition}:deepracer:${Region}:${Account}:training_job/${ResourceId}",
       "conditionKeys": []
     },
     "evaluation_job": {
       "name": "evaluation_job",
-      "arn": "arn:${Partition}:deepracer:${Region}:${Account}: evaluation_job/${ResourceId}",
+      "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html",
+      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}",
       "conditionKeys": []
     },
     "leaderboard_evaluation_job": {
       "name": "leaderboard_evaluation_job",
+      "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
       "arn": "arn:${Partition}:deepracer:${Region}:${Account}:leaderboard_evaluation_job/${ResourceId}",
       "conditionKeys": []
     },
     "track": {
       "name": "track",
+      "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html",
       "arn": "arn:${Partition}:deepracer:${Region}:${Account}:track/${ResourceId}",
       "conditionKeys": []
     },
     "leaderboard": {
       "name": "leaderboard",
+      "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
       "arn": "arn:${Partition}:deepracer:${Region}:${Account}:leaderboard/${ResourceId}",
       "conditionKeys": []
     }
@@ -273,7 +279,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model
    */
-  public cloneReinforcementLearningModel () {
+  public cloneReinforcementLearningModel() {
     this.add('deepracer:CloneReinforcementLearningModel');
     return this;
   }
@@ -285,7 +291,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public createAccountResources () {
+  public createAccountResources() {
     this.add('deepracer:CreateAccountResources');
     return this;
   }
@@ -297,7 +303,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public createLeaderboardSubmission () {
+  public createLeaderboardSubmission() {
     this.add('deepracer:CreateLeaderboardSubmission');
     return this;
   }
@@ -309,7 +315,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public createReinforcementLearningModel () {
+  public createReinforcementLearningModel() {
     this.add('deepracer:CreateReinforcementLearningModel');
     return this;
   }
@@ -321,7 +327,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public deleteAccountResources () {
+  public deleteAccountResources() {
     this.add('deepracer:DeleteAccountResources');
     return this;
   }
@@ -333,7 +339,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public deleteModel () {
+  public deleteModel() {
     this.add('deepracer:DeleteModel');
     return this;
   }
@@ -345,7 +351,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public getAccountResources () {
+  public getAccountResources() {
     this.add('deepracer:GetAccountResources');
     return this;
   }
@@ -357,7 +363,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public getAlias () {
+  public getAlias() {
     this.add('deepracer:GetAlias');
     return this;
   }
@@ -369,7 +375,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
-  public getEvaluation () {
+  public getEvaluation() {
     this.add('deepracer:GetEvaluation');
     return this;
   }
@@ -381,7 +387,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public getLatestUserSubmission () {
+  public getLatestUserSubmission() {
     this.add('deepracer:GetLatestUserSubmission');
     return this;
   }
@@ -393,7 +399,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public getLeaderboard () {
+  public getLeaderboard() {
     this.add('deepracer:GetLeaderboard');
     return this;
   }
@@ -405,7 +411,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public getModel () {
+  public getModel() {
     this.add('deepracer:GetModel');
     return this;
   }
@@ -417,7 +423,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public getRankedUserSubmission () {
+  public getRankedUserSubmission() {
     this.add('deepracer:GetRankedUserSubmission');
     return this;
   }
@@ -429,7 +435,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    */
-  public getTrack () {
+  public getTrack() {
     this.add('deepracer:GetTrack');
     return this;
   }
@@ -441,7 +447,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public getTrainingJob () {
+  public getTrainingJob() {
     this.add('deepracer:GetTrainingJob');
     return this;
   }
@@ -453,7 +459,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
-  public listEvaluations () {
+  public listEvaluations() {
     this.add('deepracer:ListEvaluations');
     return this;
   }
@@ -465,7 +471,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public listLeaderboardSubmissions () {
+  public listLeaderboardSubmissions() {
     this.add('deepracer:ListLeaderboardSubmissions');
     return this;
   }
@@ -477,7 +483,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public listLeaderboards () {
+  public listLeaderboards() {
     this.add('deepracer:ListLeaderboards');
     return this;
   }
@@ -489,7 +495,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public listModels () {
+  public listModels() {
     this.add('deepracer:ListModels');
     return this;
   }
@@ -501,7 +507,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    */
-  public listTracks () {
+  public listTracks() {
     this.add('deepracer:ListTracks');
     return this;
   }
@@ -513,7 +519,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public listTrainingJobs () {
+  public listTrainingJobs() {
     this.add('deepracer:ListTrainingJobs');
     return this;
   }
@@ -525,7 +531,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    */
-  public setAlias () {
+  public setAlias() {
     this.add('deepracer:SetAlias');
     return this;
   }
@@ -537,7 +543,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
-  public startEvaluation () {
+  public startEvaluation() {
     this.add('deepracer:StartEvaluation');
     return this;
   }
@@ -549,7 +555,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
    */
-  public stopEvaluation () {
+  public stopEvaluation() {
     this.add('deepracer:StopEvaluation');
     return this;
   }
@@ -561,7 +567,7 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
    */
-  public stopTrainingReinforcementLearningModel () {
+  public stopTrainingReinforcementLearningModel() {
     this.add('deepracer:StopTrainingReinforcementLearningModel');
     return this;
   }
@@ -573,8 +579,122 @@ export class Deepracer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-train-models-define-reward-function
    */
-  public testRewardFunction () {
+  public testRewardFunction() {
     this.add('deepracer:TestRewardFunction');
     return this;
+  }
+
+  /**
+   * Adds a resource of type reinforcement_learning_model to the statement
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onReinforcementLearningModel(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:model/reinforcement_learning/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type training_job to the statement
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTrainingJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:training_job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type evaluation_job to the statement
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-test-in-simulator.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type leaderboard_evaluation_job to the statement
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLeaderboardEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:leaderboard_evaluation_job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type track to the statement
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTrack(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:track/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type leaderboard to the statement
+   *
+   * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLeaderboard(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:leaderboard/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

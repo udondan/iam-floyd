@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Securityhub extends PolicyStatement {
   public servicePrefix = 'securityhub';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html",
       "description": "Grants permission to accept Security Hub invitations to become a member account",
@@ -306,34 +306,40 @@ export class Securityhub extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "insight": {
       "name": "insight",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:insight/${CompanyId}/${ProductId}/${UniqueId}",
       "conditionKeys": []
     },
     "standard": {
       "name": "standard",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:ruleset/${StandardsName}/v/${StandardsVersion}",
       "conditionKeys": []
     },
     "standards-subscription": {
       "name": "standards-subscription",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:subscription/${StandardsName}/v/${StandardsVersion}",
       "conditionKeys": []
     },
     "product-subscription": {
       "name": "product-subscription",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product-subscription/${Company}/${ProductId}",
       "conditionKeys": []
     },
     "product": {
       "name": "product",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}",
       "conditionKeys": []
     },
     "hub": {
       "name": "hub",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:hub/default",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -341,6 +347,7 @@ export class Securityhub extends PolicyStatement {
     },
     "action-target": {
       "name": "action-target",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
       "arn": "arn:${Partition}:securityhub:${Region}:${Account}:action/custom/${Id}",
       "conditionKeys": []
     }
@@ -353,7 +360,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html
    */
-  public acceptInvitation () {
+  public acceptInvitation() {
     this.add('securityhub:AcceptInvitation');
     return this;
   }
@@ -365,7 +372,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchDisableStandards.html
    */
-  public batchDisableStandards () {
+  public batchDisableStandards() {
     this.add('securityhub:BatchDisableStandards');
     return this;
   }
@@ -377,7 +384,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchEnableStandards.html
    */
-  public batchEnableStandards () {
+  public batchEnableStandards() {
     this.add('securityhub:BatchEnableStandards');
     return this;
   }
@@ -389,7 +396,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html
    */
-  public batchImportFindings () {
+  public batchImportFindings() {
     this.add('securityhub:BatchImportFindings');
     return this;
   }
@@ -401,7 +408,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html
    */
-  public batchUpdateFindings () {
+  public batchUpdateFindings() {
     this.add('securityhub:BatchUpdateFindings');
     return this;
   }
@@ -413,7 +420,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html
    */
-  public createActionTarget () {
+  public createActionTarget() {
     this.add('securityhub:CreateActionTarget');
     return this;
   }
@@ -425,7 +432,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateInsight.html
    */
-  public createInsight () {
+  public createInsight() {
     this.add('securityhub:CreateInsight');
     return this;
   }
@@ -437,7 +444,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateMembers.html
    */
-  public createMembers () {
+  public createMembers() {
     this.add('securityhub:CreateMembers');
     return this;
   }
@@ -449,7 +456,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeclineInvitations.html
    */
-  public declineInvitations () {
+  public declineInvitations() {
     this.add('securityhub:DeclineInvitations');
     return this;
   }
@@ -461,7 +468,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteActionTarget.html
    */
-  public deleteActionTarget () {
+  public deleteActionTarget() {
     this.add('securityhub:DeleteActionTarget');
     return this;
   }
@@ -473,7 +480,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInsight.html
    */
-  public deleteInsight () {
+  public deleteInsight() {
     this.add('securityhub:DeleteInsight');
     return this;
   }
@@ -485,7 +492,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInvitations.html
    */
-  public deleteInvitations () {
+  public deleteInvitations() {
     this.add('securityhub:DeleteInvitations');
     return this;
   }
@@ -497,7 +504,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteMembers.html
    */
-  public deleteMembers () {
+  public deleteMembers() {
     this.add('securityhub:DeleteMembers');
     return this;
   }
@@ -509,7 +516,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html
    */
-  public describeActionTargets () {
+  public describeActionTargets() {
     this.add('securityhub:DescribeActionTargets');
     return this;
   }
@@ -521,7 +528,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html
    */
-  public describeHub () {
+  public describeHub() {
     this.add('securityhub:DescribeHub');
     return this;
   }
@@ -533,7 +540,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html
    */
-  public describeProducts () {
+  public describeProducts() {
     this.add('securityhub:DescribeProducts');
     return this;
   }
@@ -545,7 +552,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html
    */
-  public describeStandards () {
+  public describeStandards() {
     this.add('securityhub:DescribeStandards');
     return this;
   }
@@ -557,7 +564,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html
    */
-  public describeStandardsControls () {
+  public describeStandardsControls() {
     this.add('securityhub:DescribeStandardsControls');
     return this;
   }
@@ -569,7 +576,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html
    */
-  public disableImportFindingsForProduct () {
+  public disableImportFindingsForProduct() {
     this.add('securityhub:DisableImportFindingsForProduct');
     return this;
   }
@@ -581,7 +588,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html
    */
-  public disableSecurityHub () {
+  public disableSecurityHub() {
     this.add('securityhub:DisableSecurityHub');
     return this;
   }
@@ -593,7 +600,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html
    */
-  public disassociateFromMasterAccount () {
+  public disassociateFromMasterAccount() {
     this.add('securityhub:DisassociateFromMasterAccount');
     return this;
   }
@@ -605,7 +612,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateMembers.html
    */
-  public disassociateMembers () {
+  public disassociateMembers() {
     this.add('securityhub:DisassociateMembers');
     return this;
   }
@@ -617,7 +624,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableImportFindingsForProduct.html
    */
-  public enableImportFindingsForProduct () {
+  public enableImportFindingsForProduct() {
     this.add('securityhub:EnableImportFindingsForProduct');
     return this;
   }
@@ -629,7 +636,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html
    */
-  public enableSecurityHub () {
+  public enableSecurityHub() {
     this.add('securityhub:EnableSecurityHub');
     return this;
   }
@@ -641,7 +648,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html
    */
-  public getEnabledStandards () {
+  public getEnabledStandards() {
     this.add('securityhub:GetEnabledStandards');
     return this;
   }
@@ -653,7 +660,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindings.html
    */
-  public getFindings () {
+  public getFindings() {
     this.add('securityhub:GetFindings');
     return this;
   }
@@ -665,7 +672,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightResults.html
    */
-  public getInsightResults () {
+  public getInsightResults() {
     this.add('securityhub:GetInsightResults');
     return this;
   }
@@ -677,7 +684,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsights.html
    */
-  public getInsights () {
+  public getInsights() {
     this.add('securityhub:GetInsights');
     return this;
   }
@@ -689,7 +696,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInvitationsCount.html
    */
-  public getInvitationsCount () {
+  public getInvitationsCount() {
     this.add('securityhub:GetInvitationsCount');
     return this;
   }
@@ -701,7 +708,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMasterAccount.html
    */
-  public getMasterAccount () {
+  public getMasterAccount() {
     this.add('securityhub:GetMasterAccount');
     return this;
   }
@@ -713,7 +720,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMembers.html
    */
-  public getMembers () {
+  public getMembers() {
     this.add('securityhub:GetMembers');
     return this;
   }
@@ -725,7 +732,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_InviteMembers.html
    */
-  public inviteMembers () {
+  public inviteMembers() {
     this.add('securityhub:InviteMembers');
     return this;
   }
@@ -737,7 +744,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html
    */
-  public listEnabledProductsForImport () {
+  public listEnabledProductsForImport() {
     this.add('securityhub:ListEnabledProductsForImport');
     return this;
   }
@@ -749,7 +756,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListInvitations.html
    */
-  public listInvitations () {
+  public listInvitations() {
     this.add('securityhub:ListInvitations');
     return this;
   }
@@ -761,7 +768,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListMembers.html
    */
-  public listMembers () {
+  public listMembers() {
     this.add('securityhub:ListMembers');
     return this;
   }
@@ -773,7 +780,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('securityhub:ListTagsForResource');
     return this;
   }
@@ -785,7 +792,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('securityhub:TagResource');
     return this;
   }
@@ -797,7 +804,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('securityhub:UntagResource');
     return this;
   }
@@ -809,7 +816,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html
    */
-  public updateActionTarget () {
+  public updateActionTarget() {
     this.add('securityhub:UpdateActionTarget');
     return this;
   }
@@ -821,7 +828,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html
    */
-  public updateFindings () {
+  public updateFindings() {
     this.add('securityhub:UpdateFindings');
     return this;
   }
@@ -833,7 +840,7 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html
    */
-  public updateInsight () {
+  public updateInsight() {
     this.add('securityhub:UpdateInsight');
     return this;
   }
@@ -845,8 +852,154 @@ export class Securityhub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html
    */
-  public updateStandardsControl () {
+  public updateStandardsControl() {
     this.add('securityhub:UpdateStandardsControl');
     return this;
+  }
+
+  /**
+   * Adds a resource of type insight to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param companyId - Identifier for the companyId.
+   * @param productId - Identifier for the productId.
+   * @param uniqueId - Identifier for the uniqueId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onInsight(companyId: string, productId: string, uniqueId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:insight/${CompanyId}/${ProductId}/${UniqueId}';
+    arn = arn.replace('${CompanyId}', companyId);
+    arn = arn.replace('${ProductId}', productId);
+    arn = arn.replace('${UniqueId}', uniqueId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type standard to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param standardsName - Identifier for the standardsName.
+   * @param standardsVersion - Identifier for the standardsVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStandard(standardsName: string, standardsVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:ruleset/${StandardsName}/v/${StandardsVersion}';
+    arn = arn.replace('${StandardsName}', standardsName);
+    arn = arn.replace('${StandardsVersion}', standardsVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type standards-subscription to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param standardsName - Identifier for the standardsName.
+   * @param standardsVersion - Identifier for the standardsVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStandardsSubscription(standardsName: string, standardsVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:subscription/${StandardsName}/v/${StandardsVersion}';
+    arn = arn.replace('${StandardsName}', standardsName);
+    arn = arn.replace('${StandardsVersion}', standardsVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type product-subscription to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param company - Identifier for the company.
+   * @param productId - Identifier for the productId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProductSubscription(company: string, productId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:product-subscription/${Company}/${ProductId}';
+    arn = arn.replace('${Company}', company);
+    arn = arn.replace('${ProductId}', productId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type product to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param company - Identifier for the company.
+   * @param productId - Identifier for the productId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProduct(company: string, productId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}';
+    arn = arn.replace('${Company}', company);
+    arn = arn.replace('${ProductId}', productId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type hub to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onHub(account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:hub/default';
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type action-target to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onActionTarget(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:action/custom/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

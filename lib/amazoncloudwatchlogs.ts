@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Logs extends PolicyStatement {
   public servicePrefix = 'logs';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateKmsKey": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateKmsKey.html",
       "description": "Associates the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group.",
@@ -349,14 +349,16 @@ export class Logs extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "log-group": {
       "name": "log-group",
+      "url": "",
       "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}",
       "conditionKeys": []
     },
     "log-stream": {
       "name": "log-stream",
+      "url": "",
       "arn": "arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}",
       "conditionKeys": []
     }
@@ -369,7 +371,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateKmsKey.html
    */
-  public associateKmsKey () {
+  public associateKmsKey() {
     this.add('logs:AssociateKmsKey');
     return this;
   }
@@ -381,7 +383,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html
    */
-  public cancelExportTask () {
+  public cancelExportTask() {
     this.add('logs:CancelExportTask');
     return this;
   }
@@ -393,7 +395,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html
    */
-  public createExportTask () {
+  public createExportTask() {
     this.add('logs:CreateExportTask');
     return this;
   }
@@ -403,7 +405,7 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createLogDelivery () {
+  public createLogDelivery() {
     this.add('logs:CreateLogDelivery');
     return this;
   }
@@ -415,7 +417,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html
    */
-  public createLogGroup () {
+  public createLogGroup() {
     this.add('logs:CreateLogGroup');
     return this;
   }
@@ -427,7 +429,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogStream.html
    */
-  public createLogStream () {
+  public createLogStream() {
     this.add('logs:CreateLogStream');
     return this;
   }
@@ -439,7 +441,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDestination.html
    */
-  public deleteDestination () {
+  public deleteDestination() {
     this.add('logs:DeleteDestination');
     return this;
   }
@@ -449,7 +451,7 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteLogDelivery () {
+  public deleteLogDelivery() {
     this.add('logs:DeleteLogDelivery');
     return this;
   }
@@ -461,7 +463,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogGroup.html
    */
-  public deleteLogGroup () {
+  public deleteLogGroup() {
     this.add('logs:DeleteLogGroup');
     return this;
   }
@@ -473,7 +475,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogStream.html
    */
-  public deleteLogStream () {
+  public deleteLogStream() {
     this.add('logs:DeleteLogStream');
     return this;
   }
@@ -485,7 +487,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteMetricFilter.html
    */
-  public deleteMetricFilter () {
+  public deleteMetricFilter() {
     this.add('logs:DeleteMetricFilter');
     return this;
   }
@@ -497,7 +499,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteResourcePolicy.html
    */
-  public deleteResourcePolicy () {
+  public deleteResourcePolicy() {
     this.add('logs:DeleteResourcePolicy');
     return this;
   }
@@ -509,7 +511,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html
    */
-  public deleteRetentionPolicy () {
+  public deleteRetentionPolicy() {
     this.add('logs:DeleteRetentionPolicy');
     return this;
   }
@@ -521,7 +523,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html
    */
-  public deleteSubscriptionFilter () {
+  public deleteSubscriptionFilter() {
     this.add('logs:DeleteSubscriptionFilter');
     return this;
   }
@@ -533,7 +535,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDestinations.html
    */
-  public describeDestinations () {
+  public describeDestinations() {
     this.add('logs:DescribeDestinations');
     return this;
   }
@@ -545,7 +547,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html
    */
-  public describeExportTasks () {
+  public describeExportTasks() {
     this.add('logs:DescribeExportTasks');
     return this;
   }
@@ -557,7 +559,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html
    */
-  public describeLogGroups () {
+  public describeLogGroups() {
     this.add('logs:DescribeLogGroups');
     return this;
   }
@@ -569,7 +571,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html
    */
-  public describeLogStreams () {
+  public describeLogStreams() {
     this.add('logs:DescribeLogStreams');
     return this;
   }
@@ -581,7 +583,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeMetricFilters.html
    */
-  public describeMetricFilters () {
+  public describeMetricFilters() {
     this.add('logs:DescribeMetricFilters');
     return this;
   }
@@ -593,7 +595,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueries.html
    */
-  public describeQueries () {
+  public describeQueries() {
     this.add('logs:DescribeQueries');
     return this;
   }
@@ -605,7 +607,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeResourcePolicies.html
    */
-  public describeResourcePolicies () {
+  public describeResourcePolicies() {
     this.add('logs:DescribeResourcePolicies');
     return this;
   }
@@ -617,7 +619,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html
    */
-  public describeSubscriptionFilters () {
+  public describeSubscriptionFilters() {
     this.add('logs:DescribeSubscriptionFilters');
     return this;
   }
@@ -629,7 +631,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateKmsKey.html
    */
-  public disassociateKmsKey () {
+  public disassociateKmsKey() {
     this.add('logs:DisassociateKmsKey');
     return this;
   }
@@ -641,7 +643,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html
    */
-  public filterLogEvents () {
+  public filterLogEvents() {
     this.add('logs:FilterLogEvents');
     return this;
   }
@@ -651,7 +653,7 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getLogDelivery () {
+  public getLogDelivery() {
     this.add('logs:GetLogDelivery');
     return this;
   }
@@ -663,7 +665,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html
    */
-  public getLogEvents () {
+  public getLogEvents() {
     this.add('logs:GetLogEvents');
     return this;
   }
@@ -675,7 +677,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html
    */
-  public getLogGroupFields () {
+  public getLogGroupFields() {
     this.add('logs:GetLogGroupFields');
     return this;
   }
@@ -687,7 +689,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html
    */
-  public getLogRecord () {
+  public getLogRecord() {
     this.add('logs:GetLogRecord');
     return this;
   }
@@ -699,7 +701,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html
    */
-  public getQueryResults () {
+  public getQueryResults() {
     this.add('logs:GetQueryResults');
     return this;
   }
@@ -709,7 +711,7 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listLogDeliveries () {
+  public listLogDeliveries() {
     this.add('logs:ListLogDeliveries');
     return this;
   }
@@ -721,7 +723,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html
    */
-  public listTagsLogGroup () {
+  public listTagsLogGroup() {
     this.add('logs:ListTagsLogGroup');
     return this;
   }
@@ -733,7 +735,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html
    */
-  public putDestination () {
+  public putDestination() {
     this.add('logs:PutDestination');
     return this;
   }
@@ -745,7 +747,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html
    */
-  public putDestinationPolicy () {
+  public putDestinationPolicy() {
     this.add('logs:PutDestinationPolicy');
     return this;
   }
@@ -757,7 +759,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html
    */
-  public putLogEvents () {
+  public putLogEvents() {
     this.add('logs:PutLogEvents');
     return this;
   }
@@ -769,7 +771,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html
    */
-  public putMetricFilter () {
+  public putMetricFilter() {
     this.add('logs:PutMetricFilter');
     return this;
   }
@@ -781,7 +783,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutResourcePolicy.html
    */
-  public putResourcePolicy () {
+  public putResourcePolicy() {
     this.add('logs:PutResourcePolicy');
     return this;
   }
@@ -793,7 +795,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html
    */
-  public putRetentionPolicy () {
+  public putRetentionPolicy() {
     this.add('logs:PutRetentionPolicy');
     return this;
   }
@@ -805,7 +807,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html
    */
-  public putSubscriptionFilter () {
+  public putSubscriptionFilter() {
     this.add('logs:PutSubscriptionFilter');
     return this;
   }
@@ -817,7 +819,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html
    */
-  public startQuery () {
+  public startQuery() {
     this.add('logs:StartQuery');
     return this;
   }
@@ -829,7 +831,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StopQuery.html
    */
-  public stopQuery () {
+  public stopQuery() {
     this.add('logs:StopQuery');
     return this;
   }
@@ -841,7 +843,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html
    */
-  public tagLogGroup () {
+  public tagLogGroup() {
     this.add('logs:TagLogGroup');
     return this;
   }
@@ -853,7 +855,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestMetricFilter.html
    */
-  public testMetricFilter () {
+  public testMetricFilter() {
     this.add('logs:TestMetricFilter');
     return this;
   }
@@ -865,7 +867,7 @@ export class Logs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html
    */
-  public untagLogGroup () {
+  public untagLogGroup() {
     this.add('logs:UntagLogGroup');
     return this;
   }
@@ -875,8 +877,44 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateLogDelivery () {
+  public updateLogDelivery() {
     this.add('logs:UpdateLogDelivery');
     return this;
+  }
+
+  /**
+   * Adds a resource of type log-group to the statement
+   *
+   * @param logGroupName - Identifier for the logGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}';
+    arn = arn.replace('${LogGroupName}', logGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type log-stream to the statement
+   *
+   * @param logGroupName - Identifier for the logGroupName.
+   * @param logStreamName - Identifier for the logStreamName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onLogStream(logGroupName: string, logStreamName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}';
+    arn = arn.replace('${LogGroupName}', logGroupName);
+    arn = arn.replace('${LogStreamName}', logStreamName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

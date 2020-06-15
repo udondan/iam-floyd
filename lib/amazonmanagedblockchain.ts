@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Managedblockchain extends PolicyStatement {
   public servicePrefix = 'managedblockchain';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateMember": {
       "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html",
       "description": "Grants permission to create a member of an Amazon Managed Blockchain network.",
@@ -194,29 +194,34 @@ export class Managedblockchain extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "network": {
       "name": "network",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html",
       "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:networks/${NetworkId}",
       "conditionKeys": []
     },
     "member": {
       "name": "member",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Member.html",
       "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}",
       "conditionKeys": []
     },
     "node": {
       "name": "node",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Node.html",
       "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}",
       "conditionKeys": []
     },
     "proposal": {
       "name": "proposal",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html",
       "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:proposals/${ProposalId}",
       "conditionKeys": []
     },
     "invitation": {
       "name": "invitation",
+      "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Invitation.html",
       "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}",
       "conditionKeys": []
     }
@@ -229,7 +234,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html
    */
-  public createMember () {
+  public createMember() {
     this.add('managedblockchain:CreateMember');
     return this;
   }
@@ -241,7 +246,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNetwork.html
    */
-  public createNetwork () {
+  public createNetwork() {
     this.add('managedblockchain:CreateNetwork');
     return this;
   }
@@ -253,7 +258,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNode.html
    */
-  public createNode () {
+  public createNode() {
     this.add('managedblockchain:CreateNode');
     return this;
   }
@@ -265,7 +270,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateProposal.html
    */
-  public createProposal () {
+  public createProposal() {
     this.add('managedblockchain:CreateProposal');
     return this;
   }
@@ -277,7 +282,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteMember.html
    */
-  public deleteMember () {
+  public deleteMember() {
     this.add('managedblockchain:DeleteMember');
     return this;
   }
@@ -289,7 +294,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteNode.html
    */
-  public deleteNode () {
+  public deleteNode() {
     this.add('managedblockchain:DeleteNode');
     return this;
   }
@@ -301,7 +306,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetMember.html
    */
-  public getMember () {
+  public getMember() {
     this.add('managedblockchain:GetMember');
     return this;
   }
@@ -313,7 +318,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNetwork.html
    */
-  public getNetwork () {
+  public getNetwork() {
     this.add('managedblockchain:GetNetwork');
     return this;
   }
@@ -325,7 +330,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNode.html
    */
-  public getNode () {
+  public getNode() {
     this.add('managedblockchain:GetNode');
     return this;
   }
@@ -337,7 +342,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetProposal.html
    */
-  public getProposal () {
+  public getProposal() {
     this.add('managedblockchain:GetProposal');
     return this;
   }
@@ -349,7 +354,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListInvitations.html
    */
-  public listInvitations () {
+  public listInvitations() {
     this.add('managedblockchain:ListInvitations');
     return this;
   }
@@ -361,7 +366,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListMembers.html
    */
-  public listMembers () {
+  public listMembers() {
     this.add('managedblockchain:ListMembers');
     return this;
   }
@@ -373,7 +378,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNetworks.html
    */
-  public listNetworks () {
+  public listNetworks() {
     this.add('managedblockchain:ListNetworks');
     return this;
   }
@@ -385,7 +390,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNodes.html
    */
-  public listNodes () {
+  public listNodes() {
     this.add('managedblockchain:ListNodes');
     return this;
   }
@@ -397,7 +402,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposalVotes.html
    */
-  public listProposalVotes () {
+  public listProposalVotes() {
     this.add('managedblockchain:ListProposalVotes');
     return this;
   }
@@ -409,7 +414,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposals.html
    */
-  public listProposals () {
+  public listProposals() {
     this.add('managedblockchain:ListProposals');
     return this;
   }
@@ -421,7 +426,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_RejectInvitation.html
    */
-  public rejectInvitation () {
+  public rejectInvitation() {
     this.add('managedblockchain:RejectInvitation');
     return this;
   }
@@ -433,7 +438,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html
    */
-  public updateMember () {
+  public updateMember() {
     this.add('managedblockchain:UpdateMember');
     return this;
   }
@@ -445,7 +450,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html
    */
-  public updateNode () {
+  public updateNode() {
     this.add('managedblockchain:UpdateNode');
     return this;
   }
@@ -457,8 +462,103 @@ export class Managedblockchain extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_VoteOnProposal.html
    */
-  public voteOnProposal () {
+  public voteOnProposal() {
     this.add('managedblockchain:VoteOnProposal');
     return this;
+  }
+
+  /**
+   * Adds a resource of type network to the statement
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html
+   *
+   * @param networkId - Identifier for the networkId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onNetwork(networkId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:networks/${NetworkId}';
+    arn = arn.replace('${NetworkId}', networkId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type member to the statement
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Member.html
+   *
+   * @param memberId - Identifier for the memberId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onMember(memberId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}';
+    arn = arn.replace('${MemberId}', memberId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type node to the statement
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Node.html
+   *
+   * @param nodeId - Identifier for the nodeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}';
+    arn = arn.replace('${NodeId}', nodeId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type proposal to the statement
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html
+   *
+   * @param proposalId - Identifier for the proposalId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProposal(proposalId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:proposals/${ProposalId}';
+    arn = arn.replace('${ProposalId}', proposalId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type invitation to the statement
+   *
+   * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Invitation.html
+   *
+   * @param invitationId - Identifier for the invitationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}';
+    arn = arn.replace('${InvitationId}', invitationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

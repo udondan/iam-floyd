@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Events extends PolicyStatement {
   public servicePrefix = 'events';
-  public actions : Actions = {
+  public actions: Actions = {
     "ActivateEventSource": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html",
       "description": "Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.",
@@ -331,14 +331,16 @@ export class Events extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "event-source": {
       "name": "event-source",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format",
       "arn": "arn:${Partition}:events:${Region}:${Account}:event-source/${EventSourceName}",
       "conditionKeys": []
     },
     "event-bus": {
       "name": "event-bus",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format",
       "arn": "arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -346,7 +348,8 @@ export class Events extends PolicyStatement {
     },
     "rule": {
       "name": "rule",
-      "arn": "arn:${Partition}:events:${Region}:${Account}:rule/[${EventBusName}/]${RuleName}",
+      "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format",
+      "arn": "arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -360,7 +363,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html
    */
-  public activateEventSource () {
+  public activateEventSource() {
     this.add('events:ActivateEventSource');
     return this;
   }
@@ -372,7 +375,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html
    */
-  public createEventBus () {
+  public createEventBus() {
     this.add('events:CreateEventBus');
     return this;
   }
@@ -384,7 +387,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreatePartnerEventSource.html
    */
-  public createPartnerEventSource () {
+  public createPartnerEventSource() {
     this.add('events:CreatePartnerEventSource');
     return this;
   }
@@ -396,7 +399,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeactivateEventSource.html
    */
-  public deactivateEventSource () {
+  public deactivateEventSource() {
     this.add('events:DeactivateEventSource');
     return this;
   }
@@ -408,7 +411,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
    */
-  public deleteEventBus () {
+  public deleteEventBus() {
     this.add('events:DeleteEventBus');
     return this;
   }
@@ -420,7 +423,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeletePartnerEventSource
    */
-  public deletePartnerEventSource () {
+  public deletePartnerEventSource() {
     this.add('events:DeletePartnerEventSource');
     return this;
   }
@@ -432,7 +435,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DeleteRule.html
    */
-  public deleteRule () {
+  public deleteRule() {
     this.add('events:DeleteRule');
     return this;
   }
@@ -444,7 +447,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html
    */
-  public describeEventBus () {
+  public describeEventBus() {
     this.add('events:DescribeEventBus');
     return this;
   }
@@ -456,7 +459,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html
    */
-  public describeEventSource () {
+  public describeEventSource() {
     this.add('events:DescribeEventSource');
     return this;
   }
@@ -468,7 +471,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribePartnerEventSource.html
    */
-  public describePartnerEventSource () {
+  public describePartnerEventSource() {
     this.add('events:DescribePartnerEventSource');
     return this;
   }
@@ -480,7 +483,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeRule.html
    */
-  public describeRule () {
+  public describeRule() {
     this.add('events:DescribeRule');
     return this;
   }
@@ -492,7 +495,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html
    */
-  public disableRule () {
+  public disableRule() {
     this.add('events:DisableRule');
     return this;
   }
@@ -504,7 +507,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_EnableRule.html
    */
-  public enableRule () {
+  public enableRule() {
     this.add('events:EnableRule');
     return this;
   }
@@ -516,7 +519,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventBuses.html
    */
-  public listEventBuses () {
+  public listEventBuses() {
     this.add('events:ListEventBuses');
     return this;
   }
@@ -528,7 +531,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventSources.html
    */
-  public listEventSources () {
+  public listEventSources() {
     this.add('events:ListEventSources');
     return this;
   }
@@ -540,7 +543,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSourceAccounts.html
    */
-  public listPartnerEventSourceAccounts () {
+  public listPartnerEventSourceAccounts() {
     this.add('events:ListPartnerEventSourceAccounts');
     return this;
   }
@@ -552,7 +555,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSources.html
    */
-  public listPartnerEventSources () {
+  public listPartnerEventSources() {
     this.add('events:ListPartnerEventSources');
     return this;
   }
@@ -564,7 +567,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRuleNamesByTarget.html
    */
-  public listRuleNamesByTarget () {
+  public listRuleNamesByTarget() {
     this.add('events:ListRuleNamesByTarget');
     return this;
   }
@@ -576,7 +579,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRules.html
    */
-  public listRules () {
+  public listRules() {
     this.add('events:ListRules');
     return this;
   }
@@ -588,7 +591,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('events:ListTagsForResource');
     return this;
   }
@@ -600,7 +603,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html
    */
-  public listTargetsByRule () {
+  public listTargetsByRule() {
     this.add('events:ListTargetsByRule');
     return this;
   }
@@ -612,7 +615,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html
    */
-  public putEvents () {
+  public putEvents() {
     this.add('events:PutEvents');
     return this;
   }
@@ -624,7 +627,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPartnerEvents.html
    */
-  public putPartnerEvents () {
+  public putPartnerEvents() {
     this.add('events:PutPartnerEvents');
     return this;
   }
@@ -636,7 +639,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutPermission.html
    */
-  public putPermission () {
+  public putPermission() {
     this.add('events:PutPermission');
     return this;
   }
@@ -648,7 +651,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html
    */
-  public putRule () {
+  public putRule() {
     this.add('events:PutRule');
     return this;
   }
@@ -660,7 +663,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html
    */
-  public putTargets () {
+  public putTargets() {
     this.add('events:PutTargets');
     return this;
   }
@@ -672,7 +675,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html
    */
-  public removePermission () {
+  public removePermission() {
     this.add('events:RemovePermission');
     return this;
   }
@@ -684,7 +687,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemoveTargets.html
    */
-  public removeTargets () {
+  public removeTargets() {
     this.add('events:RemoveTargets');
     return this;
   }
@@ -696,7 +699,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('events:TagResource');
     return this;
   }
@@ -708,7 +711,7 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TestEventPattern.html
    */
-  public testEventPattern () {
+  public testEventPattern() {
     this.add('events:TestEventPattern');
     return this;
   }
@@ -720,8 +723,71 @@ export class Events extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('events:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type event-source to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param eventSourceName - Identifier for the eventSourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEventSource(eventSourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:event-source/${EventSourceName}';
+    arn = arn.replace('${EventSourceName}', eventSourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type event-bus to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param eventBusName - Identifier for the eventBusName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}';
+    arn = arn.replace('${EventBusName}', eventBusName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type rule to the statement
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
+   *
+   * @param ruleName - Identifier for the ruleName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}';
+    arn = arn.replace('${RuleName}', ruleName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

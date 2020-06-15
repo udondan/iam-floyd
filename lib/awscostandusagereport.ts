@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Cur extends PolicyStatement {
   public servicePrefix = 'cur';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeleteReportDefinition": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html",
       "description": "Delete Cost and Usage Report Definition",
@@ -44,9 +44,10 @@ export class Cur extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "cur": {
       "name": "cur",
+      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports",
       "arn": "arn:${Partition}:cur:${Region}:${Account}:definition/${ReportName}",
       "conditionKeys": []
     }
@@ -59,7 +60,7 @@ export class Cur extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html
    */
-  public deleteReportDefinition () {
+  public deleteReportDefinition() {
     this.add('cur:DeleteReportDefinition');
     return this;
   }
@@ -71,7 +72,7 @@ export class Cur extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html
    */
-  public describeReportDefinitions () {
+  public describeReportDefinitions() {
     this.add('cur:DescribeReportDefinitions');
     return this;
   }
@@ -83,7 +84,7 @@ export class Cur extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/modify-report-definition.html
    */
-  public modifyReportDefinition () {
+  public modifyReportDefinition() {
     this.add('cur:ModifyReportDefinition');
     return this;
   }
@@ -95,8 +96,27 @@ export class Cur extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html
    */
-  public putReportDefinition () {
+  public putReportDefinition() {
     this.add('cur:PutReportDefinition');
     return this;
+  }
+
+  /**
+   * Adds a resource of type cur to the statement
+   *
+   * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports
+   *
+   * @param reportName - Identifier for the reportName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCur(reportName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cur:${Region}:${Account}:definition/${ReportName}';
+    arn = arn.replace('${ReportName}', reportName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

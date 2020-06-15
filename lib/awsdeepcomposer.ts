@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Deepcomposer extends PolicyStatement {
   public servicePrefix = 'deepcomposer';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateCoupon": {
       "url": "",
       "description": "Associates a DeepComposer coupon (or DSN) with the account associated with the sender of the request.",
@@ -119,19 +119,22 @@ export class Deepcomposer extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "model": {
       "name": "model",
+      "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html",
       "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}",
       "conditionKeys": []
     },
     "composition": {
       "name": "composition",
+      "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
       "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}",
       "conditionKeys": []
     },
     "audio": {
       "name": "audio",
+      "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
       "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:audio/${AudioId}",
       "conditionKeys": []
     }
@@ -142,7 +145,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public associateCoupon () {
+  public associateCoupon() {
     this.add('deepcomposer:AssociateCoupon');
     return this;
   }
@@ -154,7 +157,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public createAudio () {
+  public createAudio() {
     this.add('deepcomposer:CreateAudio');
     return this;
   }
@@ -166,7 +169,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public createComposition () {
+  public createComposition() {
     this.add('deepcomposer:CreateComposition');
     return this;
   }
@@ -178,7 +181,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public createModel () {
+  public createModel() {
     this.add('deepcomposer:CreateModel');
     return this;
   }
@@ -190,7 +193,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public deleteComposition () {
+  public deleteComposition() {
     this.add('deepcomposer:DeleteComposition');
     return this;
   }
@@ -202,7 +205,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public deleteModel () {
+  public deleteModel() {
     this.add('deepcomposer:DeleteModel');
     return this;
   }
@@ -214,7 +217,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public getComposition () {
+  public getComposition() {
     this.add('deepcomposer:GetComposition');
     return this;
   }
@@ -226,7 +229,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public getModel () {
+  public getModel() {
     this.add('deepcomposer:GetModel');
     return this;
   }
@@ -238,7 +241,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public getSampleModel () {
+  public getSampleModel() {
     this.add('deepcomposer:GetSampleModel');
     return this;
   }
@@ -250,7 +253,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public listCompositions () {
+  public listCompositions() {
     this.add('deepcomposer:ListCompositions');
     return this;
   }
@@ -262,7 +265,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public listModels () {
+  public listModels() {
     this.add('deepcomposer:ListModels');
     return this;
   }
@@ -274,7 +277,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public listSampleModels () {
+  public listSampleModels() {
     this.add('deepcomposer:ListSampleModels');
     return this;
   }
@@ -284,7 +287,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listTrainingTopics () {
+  public listTrainingTopics() {
     this.add('deepcomposer:ListTrainingTopics');
     return this;
   }
@@ -296,7 +299,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public updateComposition () {
+  public updateComposition() {
     this.add('deepcomposer:UpdateComposition');
     return this;
   }
@@ -308,8 +311,65 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public updateModel () {
+  public updateModel() {
     this.add('deepcomposer:UpdateModel');
     return this;
+  }
+
+  /**
+   * Adds a resource of type model to the statement
+   *
+   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
+   *
+   * @param modelId - Identifier for the modelId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onModel(modelId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}';
+    arn = arn.replace('${ModelId}', modelId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type composition to the statement
+   *
+   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   *
+   * @param compositionId - Identifier for the compositionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}';
+    arn = arn.replace('${CompositionId}', compositionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type audio to the statement
+   *
+   * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
+   *
+   * @param audioId - Identifier for the audioId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAudio(audioId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:audio/${AudioId}';
+    arn = arn.replace('${AudioId}', audioId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

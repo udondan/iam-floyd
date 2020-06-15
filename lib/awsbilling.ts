@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsPortal extends PolicyStatement {
   public servicePrefix = 'aws-portal';
-  public actions : Actions = {
+  public actions: Actions = {
     "ModifyAccount": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Allow or deny IAM users permission to modify Account Settings.",
@@ -44,7 +44,7 @@ export class AwsPortal extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Allow or deny IAM users permission to modify Account Settings.
@@ -53,7 +53,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyAccount () {
+  public modifyAccount() {
     this.add('aws-portal:ModifyAccount');
     return this;
   }
@@ -65,7 +65,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyBilling () {
+  public modifyBilling() {
     this.add('aws-portal:ModifyBilling');
     return this;
   }
@@ -77,7 +77,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyPaymentMethods () {
+  public modifyPaymentMethods() {
     this.add('aws-portal:ModifyPaymentMethods');
     return this;
   }
@@ -89,7 +89,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewAccount () {
+  public viewAccount() {
     this.add('aws-portal:ViewAccount');
     return this;
   }
@@ -101,7 +101,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewBilling () {
+  public viewBilling() {
     this.add('aws-portal:ViewBilling');
     return this;
   }
@@ -113,7 +113,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewPaymentMethods () {
+  public viewPaymentMethods() {
     this.add('aws-portal:ViewPaymentMethods');
     return this;
   }
@@ -125,7 +125,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewUsage () {
+  public viewUsage() {
     this.add('aws-portal:ViewUsage');
     return this;
   }

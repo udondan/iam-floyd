@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Dax extends PolicyStatement {
   public servicePrefix = 'dax';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchGetItem": {
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
       "description": "The BatchGetItem action returns the attributes of one or more items from one or more tables.",
@@ -266,9 +266,10 @@ export class Dax extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.access-control.html",
       "arn": "arn:${Partition}:dax:${Region}:${Account}:cache/${ClusterName}",
       "conditionKeys": []
     }
@@ -281,7 +282,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html
    */
-  public batchGetItem () {
+  public batchGetItem() {
     this.add('dax:BatchGetItem');
     return this;
   }
@@ -293,7 +294,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
    */
-  public batchWriteItem () {
+  public batchWriteItem() {
     this.add('dax:BatchWriteItem');
     return this;
   }
@@ -305,7 +306,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html
    */
-  public conditionCheckItem () {
+  public conditionCheckItem() {
     this.add('dax:ConditionCheckItem');
     return this;
   }
@@ -317,7 +318,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateCluster.html
    */
-  public createCluster () {
+  public createCluster() {
     this.add('dax:CreateCluster');
     return this;
   }
@@ -329,7 +330,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateParameterGroup.html
    */
-  public createParameterGroup () {
+  public createParameterGroup() {
     this.add('dax:CreateParameterGroup');
     return this;
   }
@@ -341,7 +342,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateSubnetGroup.html
    */
-  public createSubnetGroup () {
+  public createSubnetGroup() {
     this.add('dax:CreateSubnetGroup');
     return this;
   }
@@ -353,7 +354,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DecreaseReplicationFactor.html
    */
-  public decreaseReplicationFactor () {
+  public decreaseReplicationFactor() {
     this.add('dax:DecreaseReplicationFactor');
     return this;
   }
@@ -365,7 +366,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DeleteCluster.html
    */
-  public deleteCluster () {
+  public deleteCluster() {
     this.add('dax:DeleteCluster');
     return this;
   }
@@ -377,7 +378,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
-  public deleteItem () {
+  public deleteItem() {
     this.add('dax:DeleteItem');
     return this;
   }
@@ -389,7 +390,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DeleteParameterGroup.html
    */
-  public deleteParameterGroup () {
+  public deleteParameterGroup() {
     this.add('dax:DeleteParameterGroup');
     return this;
   }
@@ -401,7 +402,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DeleteSubnetGroup.html
    */
-  public deleteSubnetGroup () {
+  public deleteSubnetGroup() {
     this.add('dax:DeleteSubnetGroup');
     return this;
   }
@@ -413,7 +414,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeClusters.html
    */
-  public describeClusters () {
+  public describeClusters() {
     this.add('dax:DescribeClusters');
     return this;
   }
@@ -425,7 +426,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeDefaultParameters.html
    */
-  public describeDefaultParameters () {
+  public describeDefaultParameters() {
     this.add('dax:DescribeDefaultParameters');
     return this;
   }
@@ -437,7 +438,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeEvents.html
    */
-  public describeEvents () {
+  public describeEvents() {
     this.add('dax:DescribeEvents');
     return this;
   }
@@ -449,7 +450,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeParameterGroups.html
    */
-  public describeParameterGroups () {
+  public describeParameterGroups() {
     this.add('dax:DescribeParameterGroups');
     return this;
   }
@@ -461,7 +462,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeParameters.html
    */
-  public describeParameters () {
+  public describeParameters() {
     this.add('dax:DescribeParameters');
     return this;
   }
@@ -473,7 +474,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_DescribeSubnetGroups.html
    */
-  public describeSubnetGroups () {
+  public describeSubnetGroups() {
     this.add('dax:DescribeSubnetGroups');
     return this;
   }
@@ -485,7 +486,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
-  public getItem () {
+  public getItem() {
     this.add('dax:GetItem');
     return this;
   }
@@ -497,7 +498,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_IncreaseReplicationFactor.html
    */
-  public increaseReplicationFactor () {
+  public increaseReplicationFactor() {
     this.add('dax:IncreaseReplicationFactor');
     return this;
   }
@@ -509,7 +510,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_ListTags.html
    */
-  public listTags () {
+  public listTags() {
     this.add('dax:ListTags');
     return this;
   }
@@ -521,7 +522,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
-  public putItem () {
+  public putItem() {
     this.add('dax:PutItem');
     return this;
   }
@@ -533,7 +534,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
    */
-  public query () {
+  public query() {
     this.add('dax:Query');
     return this;
   }
@@ -545,7 +546,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_RebootNode.html
    */
-  public rebootNode () {
+  public rebootNode() {
     this.add('dax:RebootNode');
     return this;
   }
@@ -557,7 +558,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
    */
-  public scan () {
+  public scan() {
     this.add('dax:Scan');
     return this;
   }
@@ -569,7 +570,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('dax:TagResource');
     return this;
   }
@@ -581,7 +582,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('dax:UntagResource');
     return this;
   }
@@ -593,7 +594,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateCluster.html
    */
-  public updateCluster () {
+  public updateCluster() {
     this.add('dax:UpdateCluster');
     return this;
   }
@@ -605,7 +606,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */
-  public updateItem () {
+  public updateItem() {
     this.add('dax:UpdateItem');
     return this;
   }
@@ -617,7 +618,7 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateParameterGroup.html
    */
-  public updateParameterGroup () {
+  public updateParameterGroup() {
     this.add('dax:UpdateParameterGroup');
     return this;
   }
@@ -629,8 +630,27 @@ export class Dax extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_UpdateSubnetGroup.html
    */
-  public updateSubnetGroup () {
+  public updateSubnetGroup() {
     this.add('dax:UpdateSubnetGroup');
     return this;
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.access-control.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onApplication(clusterName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dax:${Region}:${Account}:cache/${ClusterName}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

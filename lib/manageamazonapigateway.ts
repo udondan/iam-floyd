@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Apigateway extends PolicyStatement {
   public servicePrefix = 'apigateway';
-  public actions : Actions = {
+  public actions: Actions = {
     "DELETE": {
       "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html",
       "description": "Used to delete resources",
@@ -95,9 +95,10 @@ export class Apigateway extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "apigateway-general": {
       "name": "apigateway-general",
+      "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html",
       "arn": "arn:${Partition}:apigateway:${Region}:${Account}:${ApiGatewayResourcePath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -112,7 +113,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html
    */
-  public dELETE () {
+  public dELETE() {
     this.add('apigateway:DELETE');
     return this;
   }
@@ -124,7 +125,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html
    */
-  public gET () {
+  public gET() {
     this.add('apigateway:GET');
     return this;
   }
@@ -136,7 +137,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html
    */
-  public pATCH () {
+  public pATCH() {
     this.add('apigateway:PATCH');
     return this;
   }
@@ -148,7 +149,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html
    */
-  public pOST () {
+  public pOST() {
     this.add('apigateway:POST');
     return this;
   }
@@ -160,7 +161,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html
    */
-  public pUT () {
+  public pUT() {
     this.add('apigateway:PUT');
     return this;
   }
@@ -172,7 +173,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html
    */
-  public setWebACL () {
+  public setWebACL() {
     this.add('apigateway:SetWebACL');
     return this;
   }
@@ -182,8 +183,30 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateRestApiPolicy () {
+  public updateRestApiPolicy() {
     this.add('apigateway:UpdateRestApiPolicy');
     return this;
+  }
+
+  /**
+   * Adds a resource of type apigateway-general to the statement
+   *
+   * https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html
+   *
+   * @param apiGatewayResourcePath - Identifier for the apiGatewayResourcePath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onApigatewayGeneral(apiGatewayResourcePath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}:${Account}:${ApiGatewayResourcePath}';
+    arn = arn.replace('${ApiGatewayResourcePath}', apiGatewayResourcePath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

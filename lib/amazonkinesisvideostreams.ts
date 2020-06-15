@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Kinesisvideo extends PolicyStatement {
   public servicePrefix = 'kinesisvideo';
-  public actions : Actions = {
+  public actions: Actions = {
     "ConnectAsMaster": {
       "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsMaster.html",
       "description": "Grants permission to connect as a master to the signaling channel specified by the endpoint",
@@ -330,9 +330,10 @@ export class Kinesisvideo extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "stream": {
       "name": "stream",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html",
       "arn": "arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -340,6 +341,7 @@ export class Kinesisvideo extends PolicyStatement {
     },
     "channel": {
       "name": "channel",
+      "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/kinesisvideostreams-webrtc-dg/latest/devguide/kvswebrtc-how-it-works.html",
       "arn": "arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -354,7 +356,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsMaster.html
    */
-  public connectAsMaster () {
+  public connectAsMaster() {
     this.add('kinesisvideo:ConnectAsMaster');
     return this;
   }
@@ -366,7 +368,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsViewer.html
    */
-  public connectAsViewer () {
+  public connectAsViewer() {
     this.add('kinesisvideo:ConnectAsViewer');
     return this;
   }
@@ -378,7 +380,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateSignalingChannel.html
    */
-  public createSignalingChannel () {
+  public createSignalingChannel() {
     this.add('kinesisvideo:CreateSignalingChannel');
     return this;
   }
@@ -390,7 +392,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html
    */
-  public createStream () {
+  public createStream() {
     this.add('kinesisvideo:CreateStream');
     return this;
   }
@@ -402,7 +404,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteSignalingChannel.html
    */
-  public deleteSignalingChannel () {
+  public deleteSignalingChannel() {
     this.add('kinesisvideo:DeleteSignalingChannel');
     return this;
   }
@@ -414,7 +416,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteStream.html
    */
-  public deleteStream () {
+  public deleteStream() {
     this.add('kinesisvideo:DeleteStream');
     return this;
   }
@@ -426,7 +428,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeSignalingChannel.html
    */
-  public describeSignalingChannel () {
+  public describeSignalingChannel() {
     this.add('kinesisvideo:DescribeSignalingChannel');
     return this;
   }
@@ -438,7 +440,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html
    */
-  public describeStream () {
+  public describeStream() {
     this.add('kinesisvideo:DescribeStream');
     return this;
   }
@@ -450,7 +452,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetClip.html
    */
-  public getClip () {
+  public getClip() {
     this.add('kinesisvideo:GetClip');
     return this;
   }
@@ -462,7 +464,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDASHStreamingSessionURL.html
    */
-  public getDASHStreamingSessionURL () {
+  public getDASHStreamingSessionURL() {
     this.add('kinesisvideo:GetDASHStreamingSessionURL');
     return this;
   }
@@ -474,7 +476,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html
    */
-  public getDataEndpoint () {
+  public getDataEndpoint() {
     this.add('kinesisvideo:GetDataEndpoint');
     return this;
   }
@@ -486,7 +488,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetHLSStreamingSessionURL.html
    */
-  public getHLSStreamingSessionURL () {
+  public getHLSStreamingSessionURL() {
     this.add('kinesisvideo:GetHLSStreamingSessionURL');
     return this;
   }
@@ -498,7 +500,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetIceServerConfig.html
    */
-  public getIceServerConfig () {
+  public getIceServerConfig() {
     this.add('kinesisvideo:GetIceServerConfig');
     return this;
   }
@@ -510,7 +512,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMedia.html
    */
-  public getMedia () {
+  public getMedia() {
     this.add('kinesisvideo:GetMedia');
     return this;
   }
@@ -522,7 +524,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMediaForFragmentList.html
    */
-  public getMediaForFragmentList () {
+  public getMediaForFragmentList() {
     this.add('kinesisvideo:GetMediaForFragmentList');
     return this;
   }
@@ -534,7 +536,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetSignalingChannelEndpoint.html
    */
-  public getSignalingChannelEndpoint () {
+  public getSignalingChannelEndpoint() {
     this.add('kinesisvideo:GetSignalingChannelEndpoint');
     return this;
   }
@@ -546,7 +548,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListFragments.html
    */
-  public listFragments () {
+  public listFragments() {
     this.add('kinesisvideo:ListFragments');
     return this;
   }
@@ -558,7 +560,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListSignalingChannels.html
    */
-  public listSignalingChannels () {
+  public listSignalingChannels() {
     this.add('kinesisvideo:ListSignalingChannels');
     return this;
   }
@@ -570,7 +572,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListStreams.html
    */
-  public listStreams () {
+  public listStreams() {
     this.add('kinesisvideo:ListStreams');
     return this;
   }
@@ -582,7 +584,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('kinesisvideo:ListTagsForResource');
     return this;
   }
@@ -594,7 +596,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForStream.html
    */
-  public listTagsForStream () {
+  public listTagsForStream() {
     this.add('kinesisvideo:ListTagsForStream');
     return this;
   }
@@ -606,7 +608,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_PutMedia.html
    */
-  public putMedia () {
+  public putMedia() {
     this.add('kinesisvideo:PutMedia');
     return this;
   }
@@ -618,7 +620,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_SendAlexaOfferToMaster.html
    */
-  public sendAlexaOfferToMaster () {
+  public sendAlexaOfferToMaster() {
     this.add('kinesisvideo:SendAlexaOfferToMaster');
     return this;
   }
@@ -630,7 +632,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('kinesisvideo:TagResource');
     return this;
   }
@@ -642,7 +644,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html
    */
-  public tagStream () {
+  public tagStream() {
     this.add('kinesisvideo:TagStream');
     return this;
   }
@@ -654,7 +656,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('kinesisvideo:UntagResource');
     return this;
   }
@@ -666,7 +668,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html
    */
-  public untagStream () {
+  public untagStream() {
     this.add('kinesisvideo:UntagStream');
     return this;
   }
@@ -678,7 +680,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateDataRetention.html
    */
-  public updateDataRetention () {
+  public updateDataRetention() {
     this.add('kinesisvideo:UpdateDataRetention');
     return this;
   }
@@ -690,7 +692,7 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateSignalingChannel.html
    */
-  public updateSignalingChannel () {
+  public updateSignalingChannel() {
     this.add('kinesisvideo:UpdateSignalingChannel');
     return this;
   }
@@ -702,8 +704,56 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html
    */
-  public updateStream () {
+  public updateStream() {
     this.add('kinesisvideo:UpdateStream');
     return this;
+  }
+
+  /**
+   * Adds a resource of type stream to the statement
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html
+   *
+   * @param streamName - Identifier for the streamName.
+   * @param creationTime - Identifier for the creationTime.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}';
+    arn = arn.replace('${StreamName}', streamName);
+    arn = arn.replace('${CreationTime}', creationTime);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/kinesisvideostreams-webrtc-dg/latest/devguide/kvswebrtc-how-it-works.html
+   *
+   * @param channelName - Identifier for the channelName.
+   * @param creationTime - Identifier for the creationTime.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}';
+    arn = arn.replace('${ChannelName}', channelName);
+    arn = arn.replace('${CreationTime}', creationTime);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

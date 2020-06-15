@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Workmail extends PolicyStatement {
   public servicePrefix = 'workmail';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddMembersToGroup": {
       "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html",
       "description": "Adds a list of members (users or groups) to a group.",
@@ -944,9 +944,10 @@ export class Workmail extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "organization": {
       "name": "organization",
+      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html",
       "arn": "arn:${Partition}:workmail:${Region}:${Account}:organization/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -961,7 +962,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
    */
-  public addMembersToGroup () {
+  public addMembersToGroup() {
     this.add('workmail:AddMembersToGroup');
     return this;
   }
@@ -973,7 +974,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssociateDelegateToResource.html
    */
-  public associateDelegateToResource () {
+  public associateDelegateToResource() {
     this.add('workmail:AssociateDelegateToResource');
     return this;
   }
@@ -985,7 +986,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssociateMemberToGroup.html
    */
-  public associateMemberToGroup () {
+  public associateMemberToGroup() {
     this.add('workmail:AssociateMemberToGroup');
     return this;
   }
@@ -997,7 +998,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateAlias.html
    */
-  public createAlias () {
+  public createAlias() {
     this.add('workmail:CreateAlias');
     return this;
   }
@@ -1009,7 +1010,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateGroup.html
    */
-  public createGroup () {
+  public createGroup() {
     this.add('workmail:CreateGroup');
     return this;
   }
@@ -1021,7 +1022,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html
    */
-  public createInboundMailFlowRule () {
+  public createInboundMailFlowRule() {
     this.add('workmail:CreateInboundMailFlowRule');
     return this;
   }
@@ -1033,7 +1034,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html
    */
-  public createMailDomain () {
+  public createMailDomain() {
     this.add('workmail:CreateMailDomain');
     return this;
   }
@@ -1045,7 +1046,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html
    */
-  public createMailUser () {
+  public createMailUser() {
     this.add('workmail:CreateMailUser');
     return this;
   }
@@ -1057,7 +1058,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html
    */
-  public createOrganization () {
+  public createOrganization() {
     this.add('workmail:CreateOrganization');
     return this;
   }
@@ -1069,7 +1070,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html
    */
-  public createOutboundMailFlowRule () {
+  public createOutboundMailFlowRule() {
     this.add('workmail:CreateOutboundMailFlowRule');
     return this;
   }
@@ -1081,7 +1082,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateResource.html
    */
-  public createResource () {
+  public createResource() {
     this.add('workmail:CreateResource');
     return this;
   }
@@ -1093,7 +1094,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
    */
-  public createSmtpGateway () {
+  public createSmtpGateway() {
     this.add('workmail:CreateSmtpGateway');
     return this;
   }
@@ -1105,7 +1106,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateUser.html
    */
-  public createUser () {
+  public createUser() {
     this.add('workmail:CreateUser');
     return this;
   }
@@ -1117,7 +1118,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAccessControlRule.html
    */
-  public deleteAccessControlRule () {
+  public deleteAccessControlRule() {
     this.add('workmail:DeleteAccessControlRule');
     return this;
   }
@@ -1129,7 +1130,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAlias.html
    */
-  public deleteAlias () {
+  public deleteAlias() {
     this.add('workmail:DeleteAlias');
     return this;
   }
@@ -1141,7 +1142,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteGroup.html
    */
-  public deleteGroup () {
+  public deleteGroup() {
     this.add('workmail:DeleteGroup');
     return this;
   }
@@ -1153,7 +1154,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html
    */
-  public deleteInboundMailFlowRule () {
+  public deleteInboundMailFlowRule() {
     this.add('workmail:DeleteInboundMailFlowRule');
     return this;
   }
@@ -1165,7 +1166,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/remove_domain.html
    */
-  public deleteMailDomain () {
+  public deleteMailDomain() {
     this.add('workmail:DeleteMailDomain');
     return this;
   }
@@ -1177,7 +1178,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMailboxPermissions.html
    */
-  public deleteMailboxPermissions () {
+  public deleteMailboxPermissions() {
     this.add('workmail:DeleteMailboxPermissions');
     return this;
   }
@@ -1189,7 +1190,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remove_mobile_device
    */
-  public deleteMobileDevice () {
+  public deleteMobileDevice() {
     this.add('workmail:DeleteMobileDevice');
     return this;
   }
@@ -1201,7 +1202,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html
    */
-  public deleteOrganization () {
+  public deleteOrganization() {
     this.add('workmail:DeleteOrganization');
     return this;
   }
@@ -1213,7 +1214,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html
    */
-  public deleteOutboundMailFlowRule () {
+  public deleteOutboundMailFlowRule() {
     this.add('workmail:DeleteOutboundMailFlowRule');
     return this;
   }
@@ -1225,7 +1226,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteResource.html
    */
-  public deleteResource () {
+  public deleteResource() {
     this.add('workmail:DeleteResource');
     return this;
   }
@@ -1237,7 +1238,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteRetentionPolicy.html
    */
-  public deleteRetentionPolicy () {
+  public deleteRetentionPolicy() {
     this.add('workmail:DeleteRetentionPolicy');
     return this;
   }
@@ -1249,7 +1250,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
    */
-  public deleteSmtpGateway () {
+  public deleteSmtpGateway() {
     this.add('workmail:DeleteSmtpGateway');
     return this;
   }
@@ -1261,7 +1262,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteUser.html
    */
-  public deleteUser () {
+  public deleteUser() {
     this.add('workmail:DeleteUser');
     return this;
   }
@@ -1273,7 +1274,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeregisterFromWorkMail.html
    */
-  public deregisterFromWorkMail () {
+  public deregisterFromWorkMail() {
     this.add('workmail:DeregisterFromWorkMail');
     return this;
   }
@@ -1285,7 +1286,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html
    */
-  public describeDirectories () {
+  public describeDirectories() {
     this.add('workmail:DescribeDirectories');
     return this;
   }
@@ -1297,7 +1298,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeGroup.html
    */
-  public describeGroup () {
+  public describeGroup() {
     this.add('workmail:DescribeGroup');
     return this;
   }
@@ -1309,7 +1310,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions
    */
-  public describeInboundMailFlowRule () {
+  public describeInboundMailFlowRule() {
     this.add('workmail:DescribeInboundMailFlowRule');
     return this;
   }
@@ -1321,7 +1322,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html
    */
-  public describeKmsKeys () {
+  public describeKmsKeys() {
     this.add('workmail:DescribeKmsKeys');
     return this;
   }
@@ -1333,7 +1334,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html
    */
-  public describeMailDomains () {
+  public describeMailDomains() {
     this.add('workmail:DescribeMailDomains');
     return this;
   }
@@ -1345,7 +1346,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
    */
-  public describeMailGroups () {
+  public describeMailGroups() {
     this.add('workmail:DescribeMailGroups');
     return this;
   }
@@ -1357,7 +1358,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html
    */
-  public describeMailUsers () {
+  public describeMailUsers() {
     this.add('workmail:DescribeMailUsers');
     return this;
   }
@@ -1369,7 +1370,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeOrganization.html
    */
-  public describeOrganization () {
+  public describeOrganization() {
     this.add('workmail:DescribeOrganization');
     return this;
   }
@@ -1381,7 +1382,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html
    */
-  public describeOrganizations () {
+  public describeOrganizations() {
     this.add('workmail:DescribeOrganizations');
     return this;
   }
@@ -1393,7 +1394,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound
    */
-  public describeOutboundMailFlowRule () {
+  public describeOutboundMailFlowRule() {
     this.add('workmail:DescribeOutboundMailFlowRule');
     return this;
   }
@@ -1405,7 +1406,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeResource.html
    */
-  public describeResource () {
+  public describeResource() {
     this.add('workmail:DescribeResource');
     return this;
   }
@@ -1417,7 +1418,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
    */
-  public describeSmtpGateway () {
+  public describeSmtpGateway() {
     this.add('workmail:DescribeSmtpGateway');
     return this;
   }
@@ -1429,7 +1430,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeUser.html
    */
-  public describeUser () {
+  public describeUser() {
     this.add('workmail:DescribeUser');
     return this;
   }
@@ -1441,7 +1442,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/remove_group.html
    */
-  public disableMailGroups () {
+  public disableMailGroups() {
     this.add('workmail:DisableMailGroups');
     return this;
   }
@@ -1453,7 +1454,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-mailboxes.html#delete_user_mailbox
    */
-  public disableMailUsers () {
+  public disableMailUsers() {
     this.add('workmail:DisableMailUsers');
     return this;
   }
@@ -1465,7 +1466,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DisassociateDelegateFromResource.html
    */
-  public disassociateDelegateFromResource () {
+  public disassociateDelegateFromResource() {
     this.add('workmail:DisassociateDelegateFromResource');
     return this;
   }
@@ -1477,7 +1478,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_DisassociateMemberFromGroup.html
    */
-  public disassociateMemberFromGroup () {
+  public disassociateMemberFromGroup() {
     this.add('workmail:DisassociateMemberFromGroup');
     return this;
   }
@@ -1489,7 +1490,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html
    */
-  public enableMailDomain () {
+  public enableMailDomain() {
     this.add('workmail:EnableMailDomain');
     return this;
   }
@@ -1501,7 +1502,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/enable_existing_group.html
    */
-  public enableMailGroups () {
+  public enableMailGroups() {
     this.add('workmail:EnableMailGroups');
     return this;
   }
@@ -1513,7 +1514,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html#enable_existing_user
    */
-  public enableMailUsers () {
+  public enableMailUsers() {
     this.add('workmail:EnableMailUsers');
     return this;
   }
@@ -1525,7 +1526,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetAccessControlEffect.html
    */
-  public getAccessControlEffect () {
+  public getAccessControlEffect() {
     this.add('workmail:GetAccessControlEffect');
     return this;
   }
@@ -1537,7 +1538,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetDefaultRetentionPolicy.html
    */
-  public getDefaultRetentionPolicy () {
+  public getDefaultRetentionPolicy() {
     this.add('workmail:GetDefaultRetentionPolicy');
     return this;
   }
@@ -1549,7 +1550,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html
    */
-  public getJournalingRules () {
+  public getJournalingRules() {
     this.add('workmail:GetJournalingRules');
     return this;
   }
@@ -1561,7 +1562,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html
    */
-  public getMailDomainDetails () {
+  public getMailDomainDetails() {
     this.add('workmail:GetMailDomainDetails');
     return this;
   }
@@ -1573,7 +1574,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
    */
-  public getMailGroupDetails () {
+  public getMailGroupDetails() {
     this.add('workmail:GetMailGroupDetails');
     return this;
   }
@@ -1585,7 +1586,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html
    */
-  public getMailUserDetails () {
+  public getMailUserDetails() {
     this.add('workmail:GetMailUserDetails');
     return this;
   }
@@ -1597,7 +1598,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMailboxDetails.html
    */
-  public getMailboxDetails () {
+  public getMailboxDetails() {
     this.add('workmail:GetMailboxDetails');
     return this;
   }
@@ -1609,7 +1610,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html
    */
-  public getMobileDeviceDetails () {
+  public getMobileDeviceDetails() {
     this.add('workmail:GetMobileDeviceDetails');
     return this;
   }
@@ -1621,7 +1622,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html
    */
-  public getMobileDevicesForUser () {
+  public getMobileDevicesForUser() {
     this.add('workmail:GetMobileDevicesForUser');
     return this;
   }
@@ -1633,7 +1634,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html
    */
-  public getMobilePolicyDetails () {
+  public getMobilePolicyDetails() {
     this.add('workmail:GetMobilePolicyDetails');
     return this;
   }
@@ -1645,7 +1646,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAccessControlRules.html
    */
-  public listAccessControlRules () {
+  public listAccessControlRules() {
     this.add('workmail:ListAccessControlRules');
     return this;
   }
@@ -1657,7 +1658,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAliases.html
    */
-  public listAliases () {
+  public listAliases() {
     this.add('workmail:ListAliases');
     return this;
   }
@@ -1669,7 +1670,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroupMembers.html
    */
-  public listGroupMembers () {
+  public listGroupMembers() {
     this.add('workmail:ListGroupMembers');
     return this;
   }
@@ -1681,7 +1682,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroups.html
    */
-  public listGroups () {
+  public listGroups() {
     this.add('workmail:ListGroups');
     return this;
   }
@@ -1693,7 +1694,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions
    */
-  public listInboundMailFlowRules () {
+  public listInboundMailFlowRules() {
     this.add('workmail:ListInboundMailFlowRules');
     return this;
   }
@@ -1705,7 +1706,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailboxPermissions.html
    */
-  public listMailboxPermissions () {
+  public listMailboxPermissions() {
     this.add('workmail:ListMailboxPermissions');
     return this;
   }
@@ -1717,7 +1718,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
    */
-  public listMembersInMailGroup () {
+  public listMembersInMailGroup() {
     this.add('workmail:ListMembersInMailGroup');
     return this;
   }
@@ -1729,7 +1730,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html
    */
-  public listOrganizations () {
+  public listOrganizations() {
     this.add('workmail:ListOrganizations');
     return this;
   }
@@ -1741,7 +1742,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound
    */
-  public listOutboundMailFlowRules () {
+  public listOutboundMailFlowRules() {
     this.add('workmail:ListOutboundMailFlowRules');
     return this;
   }
@@ -1753,7 +1754,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListResourceDelegates.html
    */
-  public listResourceDelegates () {
+  public listResourceDelegates() {
     this.add('workmail:ListResourceDelegates');
     return this;
   }
@@ -1765,7 +1766,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListResources.html
    */
-  public listResources () {
+  public listResources() {
     this.add('workmail:ListResources');
     return this;
   }
@@ -1777,7 +1778,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
    */
-  public listSmtpGateways () {
+  public listSmtpGateways() {
     this.add('workmail:ListSmtpGateways');
     return this;
   }
@@ -1789,7 +1790,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('workmail:ListTagsForResource');
     return this;
   }
@@ -1801,7 +1802,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListUsers.html
    */
-  public listUsers () {
+  public listUsers() {
     this.add('workmail:ListUsers');
     return this;
   }
@@ -1813,7 +1814,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutAccessControlRule.html
    */
-  public putAccessControlRule () {
+  public putAccessControlRule() {
     this.add('workmail:PutAccessControlRule');
     return this;
   }
@@ -1825,7 +1826,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutMailboxPermissions.html
    */
-  public putMailboxPermissions () {
+  public putMailboxPermissions() {
     this.add('workmail:PutMailboxPermissions');
     return this;
   }
@@ -1837,7 +1838,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutRetentionPolicy.html
    */
-  public putRetentionPolicy () {
+  public putRetentionPolicy() {
     this.add('workmail:PutRetentionPolicy');
     return this;
   }
@@ -1849,7 +1850,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_RegisterToWorkMail.html
    */
-  public registerToWorkMail () {
+  public registerToWorkMail() {
     this.add('workmail:RegisterToWorkMail');
     return this;
   }
@@ -1861,7 +1862,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
    */
-  public removeMembersFromGroup () {
+  public removeMembersFromGroup() {
     this.add('workmail:RemoveMembersFromGroup');
     return this;
   }
@@ -1873,7 +1874,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_ResetPassword.html
    */
-  public resetPassword () {
+  public resetPassword() {
     this.add('workmail:ResetPassword');
     return this;
   }
@@ -1885,7 +1886,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html#reset_user_password
    */
-  public resetUserPassword () {
+  public resetUserPassword() {
     this.add('workmail:ResetUserPassword');
     return this;
   }
@@ -1897,7 +1898,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html
    */
-  public searchMembers () {
+  public searchMembers() {
     this.add('workmail:SearchMembers');
     return this;
   }
@@ -1909,7 +1910,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html
    */
-  public setAdmin () {
+  public setAdmin() {
     this.add('workmail:SetAdmin');
     return this;
   }
@@ -1921,7 +1922,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html
    */
-  public setDefaultMailDomain () {
+  public setDefaultMailDomain() {
     this.add('workmail:SetDefaultMailDomain');
     return this;
   }
@@ -1933,7 +1934,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html
    */
-  public setJournalingRules () {
+  public setJournalingRules() {
     this.add('workmail:SetJournalingRules');
     return this;
   }
@@ -1945,7 +1946,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_group.html
    */
-  public setMailGroupDetails () {
+  public setMailGroupDetails() {
     this.add('workmail:SetMailGroupDetails');
     return this;
   }
@@ -1957,7 +1958,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html
    */
-  public setMailUserDetails () {
+  public setMailUserDetails() {
     this.add('workmail:SetMailUserDetails');
     return this;
   }
@@ -1969,7 +1970,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html
    */
-  public setMobilePolicyDetails () {
+  public setMobilePolicyDetails() {
     this.add('workmail:SetMobilePolicyDetails');
     return this;
   }
@@ -1981,7 +1982,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('workmail:TagResource');
     return this;
   }
@@ -1993,7 +1994,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html
    */
-  public testInboundMailFlowRules () {
+  public testInboundMailFlowRules() {
     this.add('workmail:TestInboundMailFlowRules');
     return this;
   }
@@ -2005,7 +2006,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html
    */
-  public testOutboundMailFlowRules () {
+  public testOutboundMailFlowRules() {
     this.add('workmail:TestOutboundMailFlowRules');
     return this;
   }
@@ -2017,7 +2018,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('workmail:UntagResource');
     return this;
   }
@@ -2029,7 +2030,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html
    */
-  public updateInboundMailFlowRule () {
+  public updateInboundMailFlowRule() {
     this.add('workmail:UpdateInboundMailFlowRule');
     return this;
   }
@@ -2041,7 +2042,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateMailboxQuota.html
    */
-  public updateMailboxQuota () {
+  public updateMailboxQuota() {
     this.add('workmail:UpdateMailboxQuota');
     return this;
   }
@@ -2053,7 +2054,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html
    */
-  public updateOutboundMailFlowRule () {
+  public updateOutboundMailFlowRule() {
     this.add('workmail:UpdateOutboundMailFlowRule');
     return this;
   }
@@ -2065,7 +2066,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdatePrimaryEmailAddress.html
    */
-  public updatePrimaryEmailAddress () {
+  public updatePrimaryEmailAddress() {
     this.add('workmail:UpdatePrimaryEmailAddress');
     return this;
   }
@@ -2077,7 +2078,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateResource.html
    */
-  public updateResource () {
+  public updateResource() {
     this.add('workmail:UpdateResource');
     return this;
   }
@@ -2089,7 +2090,7 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html
    */
-  public updateSmtpGateway () {
+  public updateSmtpGateway() {
     this.add('workmail:UpdateSmtpGateway');
     return this;
   }
@@ -2101,8 +2102,30 @@ export class Workmail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remote_wipe_device
    */
-  public wipeMobileDevice () {
+  public wipeMobileDevice() {
     this.add('workmail:WipeMobileDevice');
     return this;
+  }
+
+  /**
+   * Adds a resource of type organization to the statement
+   *
+   * https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onOrganization(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:workmail:${Region}:${Account}:organization/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

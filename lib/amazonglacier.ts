@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Glacier extends PolicyStatement {
   public servicePrefix = 'glacier';
-  public actions : Actions = {
+  public actions: Actions = {
     "AbortMultipartUpload": {
       "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html",
       "description": "Aborts a multipart upload identified by the upload ID",
@@ -320,9 +320,10 @@ export class Glacier extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "vault": {
       "name": "vault",
+      "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html",
       "arn": "arn:${Partition}:glacier:${Region}:${Account}:vaults/${VaultName}",
       "conditionKeys": []
     }
@@ -335,7 +336,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html
    */
-  public abortMultipartUpload () {
+  public abortMultipartUpload() {
     this.add('glacier:AbortMultipartUpload');
     return this;
   }
@@ -347,7 +348,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AbortVaultLock.html
    */
-  public abortVaultLock () {
+  public abortVaultLock() {
     this.add('glacier:AbortVaultLock');
     return this;
   }
@@ -359,7 +360,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html
    */
-  public addTagsToVault () {
+  public addTagsToVault() {
     this.add('glacier:AddTagsToVault');
     return this;
   }
@@ -371,7 +372,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html
    */
-  public completeMultipartUpload () {
+  public completeMultipartUpload() {
     this.add('glacier:CompleteMultipartUpload');
     return this;
   }
@@ -383,7 +384,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-CompleteVaultLock.html
    */
-  public completeVaultLock () {
+  public completeVaultLock() {
     this.add('glacier:CompleteVaultLock');
     return this;
   }
@@ -395,7 +396,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html
    */
-  public createVault () {
+  public createVault() {
     this.add('glacier:CreateVault');
     return this;
   }
@@ -407,7 +408,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html
    */
-  public deleteArchive () {
+  public deleteArchive() {
     this.add('glacier:DeleteArchive');
     return this;
   }
@@ -419,7 +420,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html
    */
-  public deleteVault () {
+  public deleteVault() {
     this.add('glacier:DeleteVault');
     return this;
   }
@@ -431,7 +432,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-DeleteVaultAccessPolicy.html
    */
-  public deleteVaultAccessPolicy () {
+  public deleteVaultAccessPolicy() {
     this.add('glacier:DeleteVaultAccessPolicy');
     return this;
   }
@@ -443,7 +444,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html
    */
-  public deleteVaultNotifications () {
+  public deleteVaultNotifications() {
     this.add('glacier:DeleteVaultNotifications');
     return this;
   }
@@ -455,7 +456,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html
    */
-  public describeJob () {
+  public describeJob() {
     this.add('glacier:DescribeJob');
     return this;
   }
@@ -467,7 +468,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get..html
    */
-  public describeVault () {
+  public describeVault() {
     this.add('glacier:DescribeVault');
     return this;
   }
@@ -479,7 +480,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetDataRetrievalPolicy.html
    */
-  public getDataRetrievalPolicy () {
+  public getDataRetrievalPolicy() {
     this.add('glacier:GetDataRetrievalPolicy');
     return this;
   }
@@ -491,7 +492,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html
    */
-  public getJobOutput () {
+  public getJobOutput() {
     this.add('glacier:GetJobOutput');
     return this;
   }
@@ -503,7 +504,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultAccessPolicy.html
    */
-  public getVaultAccessPolicy () {
+  public getVaultAccessPolicy() {
     this.add('glacier:GetVaultAccessPolicy');
     return this;
   }
@@ -515,7 +516,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-GetVaultLock.html
    */
-  public getVaultLock () {
+  public getVaultLock() {
     this.add('glacier:GetVaultLock');
     return this;
   }
@@ -527,7 +528,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html
    */
-  public getVaultNotifications () {
+  public getVaultNotifications() {
     this.add('glacier:GetVaultNotifications');
     return this;
   }
@@ -539,7 +540,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html
    */
-  public initiateJob () {
+  public initiateJob() {
     this.add('glacier:InitiateJob');
     return this;
   }
@@ -551,7 +552,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html
    */
-  public initiateMultipartUpload () {
+  public initiateMultipartUpload() {
     this.add('glacier:InitiateMultipartUpload');
     return this;
   }
@@ -563,7 +564,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-InitiateVaultLock.html
    */
-  public initiateVaultLock () {
+  public initiateVaultLock() {
     this.add('glacier:InitiateVaultLock');
     return this;
   }
@@ -575,7 +576,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html
    */
-  public listJobs () {
+  public listJobs() {
     this.add('glacier:ListJobs');
     return this;
   }
@@ -587,7 +588,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html
    */
-  public listMultipartUploads () {
+  public listMultipartUploads() {
     this.add('glacier:ListMultipartUploads');
     return this;
   }
@@ -599,7 +600,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html
    */
-  public listParts () {
+  public listParts() {
     this.add('glacier:ListParts');
     return this;
   }
@@ -611,7 +612,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListProvisionedCapacity.html
    */
-  public listProvisionedCapacity () {
+  public listProvisionedCapacity() {
     this.add('glacier:ListProvisionedCapacity');
     return this;
   }
@@ -623,7 +624,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListTagsForVault.html
    */
-  public listTagsForVault () {
+  public listTagsForVault() {
     this.add('glacier:ListTagsForVault');
     return this;
   }
@@ -635,7 +636,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html
    */
-  public listVaults () {
+  public listVaults() {
     this.add('glacier:ListVaults');
     return this;
   }
@@ -647,7 +648,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-PurchaseProvisionedCapacity.html
    */
-  public purchaseProvisionedCapacity () {
+  public purchaseProvisionedCapacity() {
     this.add('glacier:PurchaseProvisionedCapacity');
     return this;
   }
@@ -659,7 +660,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-RemoveTagsFromVault.html
    */
-  public removeTagsFromVault () {
+  public removeTagsFromVault() {
     this.add('glacier:RemoveTagsFromVault');
     return this;
   }
@@ -671,7 +672,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetDataRetrievalPolicy.html
    */
-  public setDataRetrievalPolicy () {
+  public setDataRetrievalPolicy() {
     this.add('glacier:SetDataRetrievalPolicy');
     return this;
   }
@@ -683,7 +684,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html
    */
-  public setVaultAccessPolicy () {
+  public setVaultAccessPolicy() {
     this.add('glacier:SetVaultAccessPolicy');
     return this;
   }
@@ -695,7 +696,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html
    */
-  public setVaultNotifications () {
+  public setVaultNotifications() {
     this.add('glacier:SetVaultNotifications');
     return this;
   }
@@ -707,7 +708,7 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html
    */
-  public uploadArchive () {
+  public uploadArchive() {
     this.add('glacier:UploadArchive');
     return this;
   }
@@ -719,8 +720,27 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html
    */
-  public uploadMultipartPart () {
+  public uploadMultipartPart() {
     this.add('glacier:UploadMultipartPart');
     return this;
+  }
+
+  /**
+   * Adds a resource of type vault to the statement
+   *
+   * https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html
+   *
+   * @param vaultName - Identifier for the vaultName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onVault(vaultName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:glacier:${Region}:${Account}:vaults/${VaultName}';
+    arn = arn.replace('${VaultName}', vaultName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

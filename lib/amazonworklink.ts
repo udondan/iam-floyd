@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Worklink extends PolicyStatement {
   public servicePrefix = 'worklink';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateDomain": {
       "url": "https://docs.aws.amazon.com/worklink/latest/api/API_AssociateDomain.html",
       "description": "Grants permission to associate a domain with an Amazon WorkLink fleet",
@@ -348,9 +348,10 @@ export class Worklink extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "fleet": {
       "name": "fleet",
+      "url": "https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet",
       "arn": "arn:${Partition}:worklink:${Region}:${Account}:fleet/${fleetName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -365,7 +366,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_AssociateDomain.html
    */
-  public associateDomain () {
+  public associateDomain() {
     this.add('worklink:AssociateDomain');
     return this;
   }
@@ -377,7 +378,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_AssociateWebsiteAuthorizationProvider.html
    */
-  public associateWebsiteAuthorizationProvider () {
+  public associateWebsiteAuthorizationProvider() {
     this.add('worklink:AssociateWebsiteAuthorizationProvider');
     return this;
   }
@@ -389,7 +390,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_AssociateWebsiteCertificateAuthority.html
    */
-  public associateWebsiteCertificateAuthority () {
+  public associateWebsiteCertificateAuthority() {
     this.add('worklink:AssociateWebsiteCertificateAuthority');
     return this;
   }
@@ -401,7 +402,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_CreateFleet.html
    */
-  public createFleet () {
+  public createFleet() {
     this.add('worklink:CreateFleet');
     return this;
   }
@@ -413,7 +414,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DeleteFleet.html
    */
-  public deleteFleet () {
+  public deleteFleet() {
     this.add('worklink:DeleteFleet');
     return this;
   }
@@ -425,7 +426,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeAuditStreamConfiguration.html
    */
-  public describeAuditStreamConfiguration () {
+  public describeAuditStreamConfiguration() {
     this.add('worklink:DescribeAuditStreamConfiguration');
     return this;
   }
@@ -437,7 +438,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeCompanyNetworkConfiguration.html
    */
-  public describeCompanyNetworkConfiguration () {
+  public describeCompanyNetworkConfiguration() {
     this.add('worklink:DescribeCompanyNetworkConfiguration');
     return this;
   }
@@ -449,7 +450,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDevice.html
    */
-  public describeDevice () {
+  public describeDevice() {
     this.add('worklink:DescribeDevice');
     return this;
   }
@@ -461,7 +462,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDevicePolicyConfiguration.html
    */
-  public describeDevicePolicyConfiguration () {
+  public describeDevicePolicyConfiguration() {
     this.add('worklink:DescribeDevicePolicyConfiguration');
     return this;
   }
@@ -473,7 +474,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDomain.html
    */
-  public describeDomain () {
+  public describeDomain() {
     this.add('worklink:DescribeDomain');
     return this;
   }
@@ -485,7 +486,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeFleetMetadata.html
    */
-  public describeFleetMetadata () {
+  public describeFleetMetadata() {
     this.add('worklink:DescribeFleetMetadata');
     return this;
   }
@@ -497,7 +498,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeIdentityProviderConfiguration.html
    */
-  public describeIdentityProviderConfiguration () {
+  public describeIdentityProviderConfiguration() {
     this.add('worklink:DescribeIdentityProviderConfiguration');
     return this;
   }
@@ -509,7 +510,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeWebsiteCertificateAuthority.html
    */
-  public describeWebsiteCertificateAuthority () {
+  public describeWebsiteCertificateAuthority() {
     this.add('worklink:DescribeWebsiteCertificateAuthority');
     return this;
   }
@@ -521,7 +522,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateDomain.html
    */
-  public disassociateDomain () {
+  public disassociateDomain() {
     this.add('worklink:DisassociateDomain');
     return this;
   }
@@ -533,7 +534,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateWebsiteAuthorizationProvider.html
    */
-  public disassociateWebsiteAuthorizationProvider () {
+  public disassociateWebsiteAuthorizationProvider() {
     this.add('worklink:DisassociateWebsiteAuthorizationProvider');
     return this;
   }
@@ -545,7 +546,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateWebsiteCertificateAuthority.html
    */
-  public disassociateWebsiteCertificateAuthority () {
+  public disassociateWebsiteCertificateAuthority() {
     this.add('worklink:DisassociateWebsiteCertificateAuthority');
     return this;
   }
@@ -557,7 +558,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListDevices.html
    */
-  public listDevices () {
+  public listDevices() {
     this.add('worklink:ListDevices');
     return this;
   }
@@ -569,7 +570,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListDomains.html
    */
-  public listDomains () {
+  public listDomains() {
     this.add('worklink:ListDomains');
     return this;
   }
@@ -581,7 +582,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListFleets.html
    */
-  public listFleets () {
+  public listFleets() {
     this.add('worklink:ListFleets');
     return this;
   }
@@ -593,7 +594,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('worklink:ListTagsForResource');
     return this;
   }
@@ -605,7 +606,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListWebsiteAuthorizationProviders.html
    */
-  public listWebsiteAuthorizationProviders () {
+  public listWebsiteAuthorizationProviders() {
     this.add('worklink:ListWebsiteAuthorizationProviders');
     return this;
   }
@@ -617,7 +618,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_ListWebsiteCertificateAuthorities.html
    */
-  public listWebsiteCertificateAuthorities () {
+  public listWebsiteCertificateAuthorities() {
     this.add('worklink:ListWebsiteCertificateAuthorities');
     return this;
   }
@@ -629,7 +630,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_RestoreDomainAccess.html
    */
-  public restoreDomainAccess () {
+  public restoreDomainAccess() {
     this.add('worklink:RestoreDomainAccess');
     return this;
   }
@@ -641,7 +642,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_RevokeDomainAccess.html
    */
-  public revokeDomainAccess () {
+  public revokeDomainAccess() {
     this.add('worklink:RevokeDomainAccess');
     return this;
   }
@@ -653,7 +654,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_SignOutUser.html
    */
-  public signOutUser () {
+  public signOutUser() {
     this.add('worklink:SignOutUser');
     return this;
   }
@@ -665,7 +666,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('worklink:TagResource');
     return this;
   }
@@ -677,7 +678,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('worklink:UntagResource');
     return this;
   }
@@ -689,7 +690,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateAuditStreamConfiguration.html
    */
-  public updateAuditStreamConfiguration () {
+  public updateAuditStreamConfiguration() {
     this.add('worklink:UpdateAuditStreamConfiguration');
     return this;
   }
@@ -701,7 +702,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateCompanyNetworkConfiguration.html
    */
-  public updateCompanyNetworkConfiguration () {
+  public updateCompanyNetworkConfiguration() {
     this.add('worklink:UpdateCompanyNetworkConfiguration');
     return this;
   }
@@ -713,7 +714,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateDevicePolicyConfiguration.html
    */
-  public updateDevicePolicyConfiguration () {
+  public updateDevicePolicyConfiguration() {
     this.add('worklink:UpdateDevicePolicyConfiguration');
     return this;
   }
@@ -725,7 +726,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateDomainMetadata.html
    */
-  public updateDomainMetadata () {
+  public updateDomainMetadata() {
     this.add('worklink:UpdateDomainMetadata');
     return this;
   }
@@ -737,7 +738,7 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateFleetMetadata.html
    */
-  public updateFleetMetadata () {
+  public updateFleetMetadata() {
     this.add('worklink:UpdateFleetMetadata');
     return this;
   }
@@ -749,8 +750,30 @@ export class Worklink extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UpdateIdentityProviderConfiguration.html
    */
-  public updateIdentityProviderConfiguration () {
+  public updateIdentityProviderConfiguration() {
     this.add('worklink:UpdateIdentityProviderConfiguration');
     return this;
+  }
+
+  /**
+   * Adds a resource of type fleet to the statement
+   *
+   * https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet
+   *
+   * @param fleetName - Identifier for the fleetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:worklink:${Region}:${Account}:fleet/${fleetName}';
+    arn = arn.replace('${fleetName}', fleetName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

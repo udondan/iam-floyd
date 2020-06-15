@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Ssmmessages extends PolicyStatement {
   public servicePrefix = 'ssmmessages';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateControlChannel": {
       "url": "",
       "description": "Registers a control channel for an instance to send control messages to Systems Manager service.",
@@ -29,14 +29,14 @@ export class Ssmmessages extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Registers a control channel for an instance to send control messages to Systems Manager service.
    *
    * Access Level: Write
    */
-  public createControlChannel () {
+  public createControlChannel() {
     this.add('ssmmessages:CreateControlChannel');
     return this;
   }
@@ -46,7 +46,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createDataChannel () {
+  public createDataChannel() {
     this.add('ssmmessages:CreateDataChannel');
     return this;
   }
@@ -56,7 +56,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public openControlChannel () {
+  public openControlChannel() {
     this.add('ssmmessages:OpenControlChannel');
     return this;
   }
@@ -66,7 +66,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public openDataChannel () {
+  public openDataChannel() {
     this.add('ssmmessages:OpenDataChannel');
     return this;
   }

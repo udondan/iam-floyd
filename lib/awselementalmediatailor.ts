@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mediatailor extends PolicyStatement {
   public servicePrefix = 'mediatailor';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeletePlaybackConfiguration": {
       "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html",
       "description": "Deletes the playback configuration for the specified name",
@@ -71,9 +71,10 @@ export class Mediatailor extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "playbackConfiguration": {
       "name": "playbackConfiguration",
+      "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",
       "arn": "arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -88,7 +89,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
-  public deletePlaybackConfiguration () {
+  public deletePlaybackConfiguration() {
     this.add('mediatailor:DeletePlaybackConfiguration');
     return this;
   }
@@ -100,7 +101,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration-name.html
    */
-  public getPlaybackConfiguration () {
+  public getPlaybackConfiguration() {
     this.add('mediatailor:GetPlaybackConfiguration');
     return this;
   }
@@ -112,7 +113,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfigurations.html
    */
-  public listPlaybackConfigurations () {
+  public listPlaybackConfigurations() {
     this.add('mediatailor:ListPlaybackConfigurations');
     return this;
   }
@@ -124,7 +125,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('mediatailor:ListTagsForResource');
     return this;
   }
@@ -136,7 +137,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html
    */
-  public putPlaybackConfiguration () {
+  public putPlaybackConfiguration() {
     this.add('mediatailor:PutPlaybackConfiguration');
     return this;
   }
@@ -148,7 +149,7 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('mediatailor:TagResource');
     return this;
   }
@@ -160,8 +161,30 @@ export class Mediatailor extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('mediatailor:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type playbackConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

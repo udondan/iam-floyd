@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Cassandra extends PolicyStatement {
   public servicePrefix = 'cassandra';
-  public actions : Actions = {
+  public actions: Actions = {
     "Alter": {
       "url": "",
       "description": "Grants permission to alter a keyspace or table",
@@ -110,16 +110,18 @@ export class Cassandra extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "keyspace": {
       "name": "keyspace",
-      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "table": {
       "name": "table",
+      "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
       "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${tableName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -132,7 +134,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public alter () {
+  public alter() {
     this.add('cassandra:Alter');
     return this;
   }
@@ -142,7 +144,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public create () {
+  public create() {
     this.add('cassandra:Create');
     return this;
   }
@@ -152,7 +154,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public drop () {
+  public drop() {
     this.add('cassandra:Drop');
     return this;
   }
@@ -162,7 +164,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public modify () {
+  public modify() {
     this.add('cassandra:Modify');
     return this;
   }
@@ -172,7 +174,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public select () {
+  public select() {
     this.add('cassandra:Select');
     return this;
   }
@@ -182,7 +184,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Tagging
    */
-  public tagResource () {
+  public tagResource() {
     this.add('cassandra:TagResource');
     return this;
   }
@@ -192,8 +194,54 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Tagging
    */
-  public untagResource () {
+  public untagResource() {
     this.add('cassandra:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type keyspace to the statement
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html
+   *
+   * @param keyspaceName - Identifier for the keyspaceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onKeyspace(keyspaceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}';
+    arn = arn.replace('${KeyspaceName}', keyspaceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type table to the statement
+   *
+   * https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html
+   *
+   * @param keyspaceName - Identifier for the keyspaceName.
+   * @param tableName - Identifier for the tableName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTable(keyspaceName: string, tableName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${tableName}';
+    arn = arn.replace('${KeyspaceName}', keyspaceName);
+    arn = arn.replace('${tableName}', tableName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

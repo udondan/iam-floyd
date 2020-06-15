@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mediaconvert extends PolicyStatement {
   public servicePrefix = 'mediaconvert';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateCertificate": {
       "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html",
       "description": "Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.",
@@ -271,14 +271,16 @@ export class Mediaconvert extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Job": {
       "name": "Job",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html",
       "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}",
       "conditionKeys": []
     },
     "Queue": {
       "name": "Queue",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html",
       "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -286,6 +288,7 @@ export class Mediaconvert extends PolicyStatement {
     },
     "Preset": {
       "name": "Preset",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html",
       "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -293,6 +296,7 @@ export class Mediaconvert extends PolicyStatement {
     },
     "JobTemplate": {
       "name": "JobTemplate",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html",
       "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -300,6 +304,7 @@ export class Mediaconvert extends PolicyStatement {
     },
     "CertificateAssociation": {
       "name": "CertificateAssociation",
+      "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html",
       "arn": "arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}",
       "conditionKeys": []
     }
@@ -312,7 +317,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html
    */
-  public associateCertificate () {
+  public associateCertificate() {
     this.add('mediaconvert:AssociateCertificate');
     return this;
   }
@@ -324,7 +329,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
-  public cancelJob () {
+  public cancelJob() {
     this.add('mediaconvert:CancelJob');
     return this;
   }
@@ -336,7 +341,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    */
-  public createJob () {
+  public createJob() {
     this.add('mediaconvert:CreateJob');
     return this;
   }
@@ -348,7 +353,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
-  public createJobTemplate () {
+  public createJobTemplate() {
     this.add('mediaconvert:CreateJobTemplate');
     return this;
   }
@@ -360,7 +365,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    */
-  public createPreset () {
+  public createPreset() {
     this.add('mediaconvert:CreatePreset');
     return this;
   }
@@ -372,7 +377,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    */
-  public createQueue () {
+  public createQueue() {
     this.add('mediaconvert:CreateQueue');
     return this;
   }
@@ -384,7 +389,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html
    */
-  public deleteJobTemplate () {
+  public deleteJobTemplate() {
     this.add('mediaconvert:DeleteJobTemplate');
     return this;
   }
@@ -396,7 +401,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html
    */
-  public deletePreset () {
+  public deletePreset() {
     this.add('mediaconvert:DeletePreset');
     return this;
   }
@@ -408,7 +413,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html
    */
-  public deleteQueue () {
+  public deleteQueue() {
     this.add('mediaconvert:DeleteQueue');
     return this;
   }
@@ -420,7 +425,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/endpoints.html
    */
-  public describeEndpoints () {
+  public describeEndpoints() {
     this.add('mediaconvert:DescribeEndpoints');
     return this;
   }
@@ -432,7 +437,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates-arn.html
    */
-  public disassociateCertificate () {
+  public disassociateCertificate() {
     this.add('mediaconvert:DisassociateCertificate');
     return this;
   }
@@ -444,7 +449,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
-  public getJob () {
+  public getJob() {
     this.add('mediaconvert:GetJob');
     return this;
   }
@@ -456,7 +461,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html
    */
-  public getJobTemplate () {
+  public getJobTemplate() {
     this.add('mediaconvert:GetJobTemplate');
     return this;
   }
@@ -468,7 +473,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html
    */
-  public getPreset () {
+  public getPreset() {
     this.add('mediaconvert:GetPreset');
     return this;
   }
@@ -480,7 +485,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html
    */
-  public getQueue () {
+  public getQueue() {
     this.add('mediaconvert:GetQueue');
     return this;
   }
@@ -492,7 +497,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html
    */
-  public listJobTemplates () {
+  public listJobTemplates() {
     this.add('mediaconvert:ListJobTemplates');
     return this;
   }
@@ -504,7 +509,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
    */
-  public listJobs () {
+  public listJobs() {
     this.add('mediaconvert:ListJobs');
     return this;
   }
@@ -516,7 +521,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    */
-  public listPresets () {
+  public listPresets() {
     this.add('mediaconvert:ListPresets');
     return this;
   }
@@ -528,7 +533,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    */
-  public listQueues () {
+  public listQueues() {
     this.add('mediaconvert:ListQueues');
     return this;
   }
@@ -540,7 +545,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('mediaconvert:ListTagsForResource');
     return this;
   }
@@ -552,7 +557,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('mediaconvert:TagResource');
     return this;
   }
@@ -564,7 +569,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('mediaconvert:UntagResource');
     return this;
   }
@@ -576,7 +581,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates-name.html
    */
-  public updateJobTemplate () {
+  public updateJobTemplate() {
     this.add('mediaconvert:UpdateJobTemplate');
     return this;
   }
@@ -588,7 +593,7 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets-name.html
    */
-  public updatePreset () {
+  public updatePreset() {
     this.add('mediaconvert:UpdatePreset');
     return this;
   }
@@ -600,8 +605,112 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues-name.html
    */
-  public updateQueue () {
+  public updateQueue() {
     this.add('mediaconvert:UpdateQueue');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Job to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onJob(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Queue to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
+   *
+   * @param queueName - Identifier for the queueName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}';
+    arn = arn.replace('${QueueName}', queueName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Preset to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
+   *
+   * @param presetName - Identifier for the presetName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}';
+    arn = arn.replace('${PresetName}', presetName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type JobTemplate to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobtemplates.html
+   *
+   * @param jobTemplateName - Identifier for the jobTemplateName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}';
+    arn = arn.replace('${JobTemplateName}', jobTemplateName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type CertificateAssociation to the statement
+   *
+   * https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html
+   *
+   * @param certificateArn - Identifier for the certificateArn.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}';
+    arn = arn.replace('${CertificateArn}', certificateArn);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

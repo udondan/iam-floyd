@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mediapackage extends PolicyStatement {
   public servicePrefix = 'mediapackage';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateChannel": {
       "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost",
       "description": "Grants permission to create a channel in AWS Elemental MediaPackage.",
@@ -153,9 +153,10 @@ export class Mediapackage extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "channels": {
       "name": "channels",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html",
       "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -163,6 +164,7 @@ export class Mediapackage extends PolicyStatement {
     },
     "origin_endpoints": {
       "name": "origin_endpoints",
+      "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html",
       "arn": "arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -177,7 +179,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost
    */
-  public createChannel () {
+  public createChannel() {
     this.add('mediapackage:CreateChannel');
     return this;
   }
@@ -189,7 +191,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost
    */
-  public createOriginEndpoint () {
+  public createOriginEndpoint() {
     this.add('mediapackage:CreateOriginEndpoint');
     return this;
   }
@@ -201,7 +203,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete
    */
-  public deleteChannel () {
+  public deleteChannel() {
     this.add('mediapackage:DeleteChannel');
     return this;
   }
@@ -213,7 +215,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete
    */
-  public deleteOriginEndpoint () {
+  public deleteOriginEndpoint() {
     this.add('mediapackage:DeleteOriginEndpoint');
     return this;
   }
@@ -225,7 +227,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget
    */
-  public describeChannel () {
+  public describeChannel() {
     this.add('mediapackage:DescribeChannel');
     return this;
   }
@@ -237,7 +239,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget
    */
-  public describeOriginEndpoint () {
+  public describeOriginEndpoint() {
     this.add('mediapackage:DescribeOriginEndpoint');
     return this;
   }
@@ -249,7 +251,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget
    */
-  public listChannels () {
+  public listChannels() {
     this.add('mediapackage:ListChannels');
     return this;
   }
@@ -261,7 +263,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget
    */
-  public listOriginEndpoints () {
+  public listOriginEndpoints() {
     this.add('mediapackage:ListOriginEndpoints');
     return this;
   }
@@ -273,7 +275,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnget
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('mediapackage:ListTagsForResource');
     return this;
   }
@@ -285,7 +287,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-ingest_endpoints-ingest_endpoint_id-credentials.html#channels-id-ingest_endpoints-ingest_endpoint_id-credentialsput
    */
-  public rotateIngestEndpointCredentials () {
+  public rotateIngestEndpointCredentials() {
     this.add('mediapackage:RotateIngestEndpointCredentials');
     return this;
   }
@@ -297,7 +299,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
-  public tagResource () {
+  public tagResource() {
     this.add('mediapackage:TagResource');
     return this;
   }
@@ -309,7 +311,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
-  public untagResource () {
+  public untagResource() {
     this.add('mediapackage:UntagResource');
     return this;
   }
@@ -321,7 +323,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput
    */
-  public updateChannel () {
+  public updateChannel() {
     this.add('mediapackage:UpdateChannel');
     return this;
   }
@@ -333,8 +335,52 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput
    */
-  public updateOriginEndpoint () {
+  public updateOriginEndpoint() {
     this.add('mediapackage:UpdateOriginEndpoint');
     return this;
+  }
+
+  /**
+   * Adds a resource of type channels to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html
+   *
+   * @param channelIdentifier - Identifier for the channelIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}';
+    arn = arn.replace('${ChannelIdentifier}', channelIdentifier);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type origin_endpoints to the statement
+   *
+   * https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html
+   *
+   * @param originEndpointIdentifier - Identifier for the originEndpointIdentifier.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}';
+    arn = arn.replace('${OriginEndpointIdentifier}', originEndpointIdentifier);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Guardduty extends PolicyStatement {
   public servicePrefix = 'guardduty';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_AcceptInvitation.html",
       "description": "Grants permission to accept invitations to become a GuardDuty member account.",
@@ -590,9 +590,10 @@ export class Guardduty extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "detector": {
       "name": "detector",
+      "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources",
       "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -600,6 +601,7 @@ export class Guardduty extends PolicyStatement {
     },
     "filter": {
       "name": "filter",
+      "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources",
       "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/filter/${FilterName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -607,6 +609,7 @@ export class Guardduty extends PolicyStatement {
     },
     "ipset": {
       "name": "ipset",
+      "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources",
       "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/ipset/${IPSetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -614,6 +617,7 @@ export class Guardduty extends PolicyStatement {
     },
     "threatintelset": {
       "name": "threatintelset",
+      "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources",
       "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${ThreatIntelSetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -621,6 +625,7 @@ export class Guardduty extends PolicyStatement {
     },
     "publishingdestination": {
       "name": "publishingdestination",
+      "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources",
       "arn": "arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${PublishingDestinationId}",
       "conditionKeys": []
     }
@@ -633,7 +638,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_AcceptInvitation.html
    */
-  public acceptInvitation () {
+  public acceptInvitation() {
     this.add('guardduty:AcceptInvitation');
     return this;
   }
@@ -645,7 +650,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ArchiveFindings.html
    */
-  public archiveFindings () {
+  public archiveFindings() {
     this.add('guardduty:ArchiveFindings');
     return this;
   }
@@ -657,7 +662,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateDetector.html
    */
-  public createDetector () {
+  public createDetector() {
     this.add('guardduty:CreateDetector');
     return this;
   }
@@ -669,7 +674,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateFilter.html
    */
-  public createFilter () {
+  public createFilter() {
     this.add('guardduty:CreateFilter');
     return this;
   }
@@ -681,7 +686,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateIPSet.html
    */
-  public createIPSet () {
+  public createIPSet() {
     this.add('guardduty:CreateIPSet');
     return this;
   }
@@ -693,7 +698,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html
    */
-  public createMembers () {
+  public createMembers() {
     this.add('guardduty:CreateMembers');
     return this;
   }
@@ -705,7 +710,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreatePublishingDestination.html
    */
-  public createPublishingDestination () {
+  public createPublishingDestination() {
     this.add('guardduty:CreatePublishingDestination');
     return this;
   }
@@ -717,7 +722,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateSampleFindings.html
    */
-  public createSampleFindings () {
+  public createSampleFindings() {
     this.add('guardduty:CreateSampleFindings');
     return this;
   }
@@ -729,7 +734,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateThreatIntelSet.html
    */
-  public createThreatIntelSet () {
+  public createThreatIntelSet() {
     this.add('guardduty:CreateThreatIntelSet');
     return this;
   }
@@ -741,7 +746,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeclineInvitations.html
    */
-  public declineInvitations () {
+  public declineInvitations() {
     this.add('guardduty:DeclineInvitations');
     return this;
   }
@@ -753,7 +758,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteDetector.html
    */
-  public deleteDetector () {
+  public deleteDetector() {
     this.add('guardduty:DeleteDetector');
     return this;
   }
@@ -765,7 +770,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteFilter.html
    */
-  public deleteFilter () {
+  public deleteFilter() {
     this.add('guardduty:DeleteFilter');
     return this;
   }
@@ -777,7 +782,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteIPSet.html
    */
-  public deleteIPSet () {
+  public deleteIPSet() {
     this.add('guardduty:DeleteIPSet');
     return this;
   }
@@ -789,7 +794,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteInvitations.html
    */
-  public deleteInvitations () {
+  public deleteInvitations() {
     this.add('guardduty:DeleteInvitations');
     return this;
   }
@@ -801,7 +806,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html
    */
-  public deleteMembers () {
+  public deleteMembers() {
     this.add('guardduty:DeleteMembers');
     return this;
   }
@@ -813,7 +818,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeletePublishingDestination.html
    */
-  public deletePublishingDestination () {
+  public deletePublishingDestination() {
     this.add('guardduty:DeletePublishingDestination');
     return this;
   }
@@ -825,7 +830,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteThreatIntelSet.html
    */
-  public deleteThreatIntelSet () {
+  public deleteThreatIntelSet() {
     this.add('guardduty:DeleteThreatIntelSet');
     return this;
   }
@@ -837,7 +842,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html
    */
-  public describeOrganizationConfiguration () {
+  public describeOrganizationConfiguration() {
     this.add('guardduty:DescribeOrganizationConfiguration');
     return this;
   }
@@ -849,7 +854,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribePublishingDestination.html
    */
-  public describePublishingDestination () {
+  public describePublishingDestination() {
     this.add('guardduty:DescribePublishingDestination');
     return this;
   }
@@ -861,7 +866,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisableOrganizationAdminAccount.html
    */
-  public disableOrganizationAdminAccount () {
+  public disableOrganizationAdminAccount() {
     this.add('guardduty:DisableOrganizationAdminAccount');
     return this;
   }
@@ -873,7 +878,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateFromMasterAccount.html
    */
-  public disassociateFromMasterAccount () {
+  public disassociateFromMasterAccount() {
     this.add('guardduty:DisassociateFromMasterAccount');
     return this;
   }
@@ -885,7 +890,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html
    */
-  public disassociateMembers () {
+  public disassociateMembers() {
     this.add('guardduty:DisassociateMembers');
     return this;
   }
@@ -897,7 +902,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_EnableOrganizationAdminAccount.html
    */
-  public enableOrganizationAdminAccount () {
+  public enableOrganizationAdminAccount() {
     this.add('guardduty:EnableOrganizationAdminAccount');
     return this;
   }
@@ -909,7 +914,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetDetector.html
    */
-  public getDetector () {
+  public getDetector() {
     this.add('guardduty:GetDetector');
     return this;
   }
@@ -921,7 +926,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetFilter.html
    */
-  public getFilter () {
+  public getFilter() {
     this.add('guardduty:GetFilter');
     return this;
   }
@@ -933,7 +938,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetFindings.html
    */
-  public getFindings () {
+  public getFindings() {
     this.add('guardduty:GetFindings');
     return this;
   }
@@ -945,7 +950,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetFindingsStatistics.html
    */
-  public getFindingsStatistics () {
+  public getFindingsStatistics() {
     this.add('guardduty:GetFindingsStatistics');
     return this;
   }
@@ -957,7 +962,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetIPSet.html
    */
-  public getIPSet () {
+  public getIPSet() {
     this.add('guardduty:GetIPSet');
     return this;
   }
@@ -969,7 +974,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetInvitationsCount.html
    */
-  public getInvitationsCount () {
+  public getInvitationsCount() {
     this.add('guardduty:GetInvitationsCount');
     return this;
   }
@@ -981,7 +986,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMasterAccount.html
    */
-  public getMasterAccount () {
+  public getMasterAccount() {
     this.add('guardduty:GetMasterAccount');
     return this;
   }
@@ -993,7 +998,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMembers.html
    */
-  public getMembers () {
+  public getMembers() {
     this.add('guardduty:GetMembers');
     return this;
   }
@@ -1005,7 +1010,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetThreatIntelSet.html
    */
-  public getThreatIntelSet () {
+  public getThreatIntelSet() {
     this.add('guardduty:GetThreatIntelSet');
     return this;
   }
@@ -1017,7 +1022,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html
    */
-  public inviteMembers () {
+  public inviteMembers() {
     this.add('guardduty:InviteMembers');
     return this;
   }
@@ -1029,7 +1034,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html
    */
-  public listDetectors () {
+  public listDetectors() {
     this.add('guardduty:ListDetectors');
     return this;
   }
@@ -1041,7 +1046,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListFilters.html
    */
-  public listFilters () {
+  public listFilters() {
     this.add('guardduty:ListFilters');
     return this;
   }
@@ -1053,7 +1058,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListFindings.html
    */
-  public listFindings () {
+  public listFindings() {
     this.add('guardduty:ListFindings');
     return this;
   }
@@ -1065,7 +1070,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListInvitations.html
    */
-  public listInvitations () {
+  public listInvitations() {
     this.add('guardduty:ListInvitations');
     return this;
   }
@@ -1077,7 +1082,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListMembers.html
    */
-  public listMembers () {
+  public listMembers() {
     this.add('guardduty:ListMembers');
     return this;
   }
@@ -1089,7 +1094,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListOrganizationAdminAccounts.html
    */
-  public listOrganizationAdminAccounts () {
+  public listOrganizationAdminAccounts() {
     this.add('guardduty:ListOrganizationAdminAccounts');
     return this;
   }
@@ -1101,7 +1106,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListPublishingDestinations.html
    */
-  public listPublishingDestinations () {
+  public listPublishingDestinations() {
     this.add('guardduty:ListPublishingDestinations');
     return this;
   }
@@ -1113,7 +1118,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('guardduty:ListTagsForResource');
     return this;
   }
@@ -1125,7 +1130,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListThreatIntelSets.html
    */
-  public listThreatIntelSets () {
+  public listThreatIntelSets() {
     this.add('guardduty:ListThreatIntelSets');
     return this;
   }
@@ -1137,7 +1142,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StartMonitoringMembers.html
    */
-  public startMonitoringMembers () {
+  public startMonitoringMembers() {
     this.add('guardduty:StartMonitoringMembers');
     return this;
   }
@@ -1149,7 +1154,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html
    */
-  public stopMonitoringMembers () {
+  public stopMonitoringMembers() {
     this.add('guardduty:StopMonitoringMembers');
     return this;
   }
@@ -1161,7 +1166,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('guardduty:TagResource');
     return this;
   }
@@ -1173,7 +1178,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UnarchiveFindings.html
    */
-  public unarchiveFindings () {
+  public unarchiveFindings() {
     this.add('guardduty:UnarchiveFindings');
     return this;
   }
@@ -1185,7 +1190,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('guardduty:UntagResource');
     return this;
   }
@@ -1197,7 +1202,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateDetector.html
    */
-  public updateDetector () {
+  public updateDetector() {
     this.add('guardduty:UpdateDetector');
     return this;
   }
@@ -1209,7 +1214,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateFilter.html
    */
-  public updateFilter () {
+  public updateFilter() {
     this.add('guardduty:UpdateFilter');
     return this;
   }
@@ -1221,7 +1226,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateFindingsFeedback.html
    */
-  public updateFindingsFeedback () {
+  public updateFindingsFeedback() {
     this.add('guardduty:UpdateFindingsFeedback');
     return this;
   }
@@ -1233,7 +1238,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateIPSet.html
    */
-  public updateIPSet () {
+  public updateIPSet() {
     this.add('guardduty:UpdateIPSet');
     return this;
   }
@@ -1245,7 +1250,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateOrganizationConfiguration.html
    */
-  public updateOrganizationConfiguration () {
+  public updateOrganizationConfiguration() {
     this.add('guardduty:UpdateOrganizationConfiguration');
     return this;
   }
@@ -1257,7 +1262,7 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdatePublishingDestination.html
    */
-  public updatePublishingDestination () {
+  public updatePublishingDestination() {
     this.add('guardduty:UpdatePublishingDestination');
     return this;
   }
@@ -1269,8 +1274,123 @@ export class Guardduty extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdateThreatIntelSet.html
    */
-  public updateThreatIntelSet () {
+  public updateThreatIntelSet() {
     this.add('guardduty:UpdateThreatIntelSet');
     return this;
+  }
+
+  /**
+   * Adds a resource of type detector to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}';
+    arn = arn.replace('${DetectorId}', detectorId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type filter to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param filterName - Identifier for the filterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFilter(detectorId: string, filterName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/filter/${FilterName}';
+    arn = arn.replace('${DetectorId}', detectorId);
+    arn = arn.replace('${FilterName}', filterName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ipset to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param iPSetId - Identifier for the iPSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onIpset(detectorId: string, iPSetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/ipset/${IPSetId}';
+    arn = arn.replace('${DetectorId}', detectorId);
+    arn = arn.replace('${IPSetId}', iPSetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type threatintelset to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param threatIntelSetId - Identifier for the threatIntelSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onThreatintelset(detectorId: string, threatIntelSetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${ThreatIntelSetId}';
+    arn = arn.replace('${DetectorId}', detectorId);
+    arn = arn.replace('${ThreatIntelSetId}', threatIntelSetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type publishingdestination to the statement
+   *
+   * https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources
+   *
+   * @param detectorId - Identifier for the detectorId.
+   * @param publishingDestinationId - Identifier for the publishingDestinationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPublishingdestination(detectorId: string, publishingDestinationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${PublishingDestinationId}';
+    arn = arn.replace('${DetectorId}', detectorId);
+    arn = arn.replace('${PublishingDestinationId}', publishingDestinationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

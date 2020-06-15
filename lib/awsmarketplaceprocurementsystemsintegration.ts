@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-procurement-systems-integration';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeProcurementSystemConfiguration": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html",
       "description": "Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.",
@@ -19,7 +19,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.
@@ -28,7 +28,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
-  public describeProcurementSystemConfiguration () {
+  public describeProcurementSystemConfiguration() {
     this.add('aws-marketplace-procurement-systems-integration:DescribeProcurementSystemConfiguration');
     return this;
   }
@@ -40,7 +40,7 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html
    */
-  public putProcurementSystemConfiguration () {
+  public putProcurementSystemConfiguration() {
     this.add('aws-marketplace-procurement-systems-integration:PutProcurementSystemConfiguration');
     return this;
   }

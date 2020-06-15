@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Globalaccelerator extends PolicyStatement {
   public servicePrefix = 'globalaccelerator';
-  public actions : Actions = {
+  public actions: Actions = {
     "AdvertiseByoipCidr": {
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_AdvertiseByoipCidr.html",
       "description": "Advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).",
@@ -235,9 +235,10 @@ export class Globalaccelerator extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "accelerator": {
       "name": "accelerator",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html",
       "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -245,6 +246,7 @@ export class Globalaccelerator extends PolicyStatement {
     },
     "listener": {
       "name": "listener",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html",
       "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -252,6 +254,7 @@ export class Globalaccelerator extends PolicyStatement {
     },
     "endpointgroup": {
       "name": "endpointgroup",
+      "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_EndpointGroup.html",
       "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -266,7 +269,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AdvertiseByoipCidr.html
    */
-  public advertiseByoipCidr () {
+  public advertiseByoipCidr() {
     this.add('globalaccelerator:AdvertiseByoipCidr');
     return this;
   }
@@ -278,7 +281,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateAccelerator.html
    */
-  public createAccelerator () {
+  public createAccelerator() {
     this.add('globalaccelerator:CreateAccelerator');
     return this;
   }
@@ -290,7 +293,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html
    */
-  public createEndpointGroup () {
+  public createEndpointGroup() {
     this.add('globalaccelerator:CreateEndpointGroup');
     return this;
   }
@@ -302,7 +305,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateListener.html
    */
-  public createListener () {
+  public createListener() {
     this.add('globalaccelerator:CreateListener');
     return this;
   }
@@ -314,7 +317,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteAccelerator.html
    */
-  public deleteAccelerator () {
+  public deleteAccelerator() {
     this.add('globalaccelerator:DeleteAccelerator');
     return this;
   }
@@ -326,7 +329,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteEndpointGroup.html
    */
-  public deleteEndpointGroup () {
+  public deleteEndpointGroup() {
     this.add('globalaccelerator:DeleteEndpointGroup');
     return this;
   }
@@ -338,7 +341,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteListener.html
    */
-  public deleteListener () {
+  public deleteListener() {
     this.add('globalaccelerator:DeleteListener');
     return this;
   }
@@ -350,7 +353,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeprovisionByoipCidr.html
    */
-  public deprovisionByoipCidr () {
+  public deprovisionByoipCidr() {
     this.add('globalaccelerator:DeprovisionByoipCidr');
     return this;
   }
@@ -362,7 +365,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html
    */
-  public describeAccelerator () {
+  public describeAccelerator() {
     this.add('globalaccelerator:DescribeAccelerator');
     return this;
   }
@@ -374,7 +377,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAcceleratorAttributes.html
    */
-  public describeAcceleratorAttributes () {
+  public describeAcceleratorAttributes() {
     this.add('globalaccelerator:DescribeAcceleratorAttributes');
     return this;
   }
@@ -386,7 +389,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeEndpointGroup.html
    */
-  public describeEndpointGroup () {
+  public describeEndpointGroup() {
     this.add('globalaccelerator:DescribeEndpointGroup');
     return this;
   }
@@ -398,7 +401,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeListener.html
    */
-  public describeListener () {
+  public describeListener() {
     this.add('globalaccelerator:DescribeListener');
     return this;
   }
@@ -410,7 +413,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListAccelerators.html
    */
-  public listAccelerators () {
+  public listAccelerators() {
     this.add('globalaccelerator:ListAccelerators');
     return this;
   }
@@ -422,7 +425,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListByoipCidrs.html
    */
-  public listByoipCidrs () {
+  public listByoipCidrs() {
     this.add('globalaccelerator:ListByoipCidrs');
     return this;
   }
@@ -434,7 +437,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListEndpointGroups.html
    */
-  public listEndpointGroups () {
+  public listEndpointGroups() {
     this.add('globalaccelerator:ListEndpointGroups');
     return this;
   }
@@ -446,7 +449,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListListeners.html
    */
-  public listListeners () {
+  public listListeners() {
     this.add('globalaccelerator:ListListeners');
     return this;
   }
@@ -458,7 +461,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('globalaccelerator:ListTagsForResource');
     return this;
   }
@@ -470,7 +473,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ProvisionByoipCidr.html
    */
-  public provisionByoipCidr () {
+  public provisionByoipCidr() {
     this.add('globalaccelerator:ProvisionByoipCidr');
     return this;
   }
@@ -482,7 +485,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('globalaccelerator:TagResource');
     return this;
   }
@@ -494,7 +497,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('globalaccelerator:UntagResource');
     return this;
   }
@@ -506,7 +509,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAccelerator.html
    */
-  public updateAccelerator () {
+  public updateAccelerator() {
     this.add('globalaccelerator:UpdateAccelerator');
     return this;
   }
@@ -518,7 +521,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAcceleratorAttributes.html
    */
-  public updateAcceleratorAttributes () {
+  public updateAcceleratorAttributes() {
     this.add('globalaccelerator:UpdateAcceleratorAttributes');
     return this;
   }
@@ -530,7 +533,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html
    */
-  public updateEndpointGroup () {
+  public updateEndpointGroup() {
     this.add('globalaccelerator:UpdateEndpointGroup');
     return this;
   }
@@ -542,7 +545,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateListener.html
    */
-  public updateListener () {
+  public updateListener() {
     this.add('globalaccelerator:UpdateListener');
     return this;
   }
@@ -554,8 +557,80 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_WithdrawByoipCidr.html
    */
-  public withdrawByoipCidr () {
+  public withdrawByoipCidr() {
     this.add('globalaccelerator:WithdrawByoipCidr');
     return this;
+  }
+
+  /**
+   * Adds a resource of type accelerator to the statement
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html
+   *
+   * @param acceleratorId - Identifier for the acceleratorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAccelerator(acceleratorId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}';
+    arn = arn.replace('${AcceleratorId}', acceleratorId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type listener to the statement
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html
+   *
+   * @param acceleratorId - Identifier for the acceleratorId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onListener(acceleratorId: string, listenerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}';
+    arn = arn.replace('${AcceleratorId}', acceleratorId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type endpointgroup to the statement
+   *
+   * https://docs.aws.amazon.com/global-accelerator/latest/api/API_EndpointGroup.html
+   *
+   * @param acceleratorId - Identifier for the acceleratorId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param endpointGroupId - Identifier for the endpointGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}';
+    arn = arn.replace('${AcceleratorId}', acceleratorId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${EndpointGroupId}', endpointGroupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplace extends PolicyStatement {
   public servicePrefix = 'aws-marketplace';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcceptAgreementApprovalRequest": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
       "description": "Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).",
@@ -79,7 +79,7 @@ export class AwsMarketplace extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).
@@ -88,7 +88,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public acceptAgreementApprovalRequest () {
+  public acceptAgreementApprovalRequest() {
     this.add('aws-marketplace:AcceptAgreementApprovalRequest');
     return this;
   }
@@ -100,7 +100,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public cancelAgreementRequest () {
+  public cancelAgreementRequest() {
     this.add('aws-marketplace:CancelAgreementRequest');
     return this;
   }
@@ -112,7 +112,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public describeAgreement () {
+  public describeAgreement() {
     this.add('aws-marketplace:DescribeAgreement');
     return this;
   }
@@ -124,7 +124,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public getAgreementApprovalRequest () {
+  public getAgreementApprovalRequest() {
     this.add('aws-marketplace:GetAgreementApprovalRequest');
     return this;
   }
@@ -136,7 +136,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public getAgreementRequest () {
+  public getAgreementRequest() {
     this.add('aws-marketplace:GetAgreementRequest');
     return this;
   }
@@ -148,7 +148,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public getAgreementTerms () {
+  public getAgreementTerms() {
     this.add('aws-marketplace:GetAgreementTerms');
     return this;
   }
@@ -160,7 +160,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public listAgreementApprovalRequests () {
+  public listAgreementApprovalRequests() {
     this.add('aws-marketplace:ListAgreementApprovalRequests');
     return this;
   }
@@ -172,7 +172,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public listAgreementRequests () {
+  public listAgreementRequests() {
     this.add('aws-marketplace:ListAgreementRequests');
     return this;
   }
@@ -184,7 +184,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public rejectAgreementApprovalRequest () {
+  public rejectAgreementApprovalRequest() {
     this.add('aws-marketplace:RejectAgreementApprovalRequest');
     return this;
   }
@@ -196,7 +196,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public searchAgreements () {
+  public searchAgreements() {
     this.add('aws-marketplace:SearchAgreements');
     return this;
   }
@@ -208,7 +208,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public subscribe () {
+  public subscribe() {
     this.add('aws-marketplace:Subscribe');
     return this;
   }
@@ -220,7 +220,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public unsubscribe () {
+  public unsubscribe() {
     this.add('aws-marketplace:Unsubscribe');
     return this;
   }
@@ -232,7 +232,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public updateAgreementApprovalRequest () {
+  public updateAgreementApprovalRequest() {
     this.add('aws-marketplace:UpdateAgreementApprovalRequest');
     return this;
   }
@@ -244,7 +244,7 @@ export class AwsMarketplace extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions
    */
-  public viewSubscriptions () {
+  public viewSubscriptions() {
     this.add('aws-marketplace:ViewSubscriptions');
     return this;
   }

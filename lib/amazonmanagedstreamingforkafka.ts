@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Kafka extends PolicyStatement {
   public servicePrefix = 'kafka';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCluster": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster",
       "description": "Grants permission to create a cluster.",
@@ -140,9 +140,10 @@ export class Kafka extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
+      "url": "",
       "arn": "arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${UUID}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -157,7 +158,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster
    */
-  public createCluster () {
+  public createCluster() {
     this.add('kafka:CreateCluster');
     return this;
   }
@@ -169,7 +170,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
-  public createConfiguration () {
+  public createConfiguration() {
     this.add('kafka:CreateConfiguration');
     return this;
   }
@@ -181,7 +182,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster
    */
-  public deleteCluster () {
+  public deleteCluster() {
     this.add('kafka:DeleteCluster');
     return this;
   }
@@ -193,7 +194,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster
    */
-  public describeCluster () {
+  public describeCluster() {
     this.add('kafka:DescribeCluster');
     return this;
   }
@@ -205,7 +206,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation
    */
-  public describeClusterOperation () {
+  public describeClusterOperation() {
     this.add('kafka:DescribeClusterOperation');
     return this;
   }
@@ -217,7 +218,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration
    */
-  public describeConfiguration () {
+  public describeConfiguration() {
     this.add('kafka:DescribeConfiguration');
     return this;
   }
@@ -229,7 +230,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision
    */
-  public describeConfigurationRevision () {
+  public describeConfigurationRevision() {
     this.add('kafka:DescribeConfigurationRevision');
     return this;
   }
@@ -241,7 +242,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers
    */
-  public getBootstrapBrokers () {
+  public getBootstrapBrokers() {
     this.add('kafka:GetBootstrapBrokers');
     return this;
   }
@@ -253,7 +254,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions
    */
-  public getCompatibleKafkaVersions () {
+  public getCompatibleKafkaVersions() {
     this.add('kafka:GetCompatibleKafkaVersions');
     return this;
   }
@@ -265,7 +266,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations
    */
-  public listClusterOperations () {
+  public listClusterOperations() {
     this.add('kafka:ListClusterOperations');
     return this;
   }
@@ -277,7 +278,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters
    */
-  public listClusters () {
+  public listClusters() {
     this.add('kafka:ListClusters');
     return this;
   }
@@ -289,7 +290,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
-  public listConfigurations () {
+  public listConfigurations() {
     this.add('kafka:ListConfigurations');
     return this;
   }
@@ -301,7 +302,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes
    */
-  public listNodes () {
+  public listNodes() {
     this.add('kafka:ListNodes');
     return this;
   }
@@ -313,7 +314,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('kafka:ListTagsForResource');
     return this;
   }
@@ -325,7 +326,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource
    */
-  public tagResource () {
+  public tagResource() {
     this.add('kafka:TagResource');
     return this;
   }
@@ -337,7 +338,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource
    */
-  public untagResource () {
+  public untagResource() {
     this.add('kafka:UntagResource');
     return this;
   }
@@ -349,7 +350,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount
    */
-  public updateBrokerCount () {
+  public updateBrokerCount() {
     this.add('kafka:UpdateBrokerCount');
     return this;
   }
@@ -361,7 +362,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage
    */
-  public updateBrokerStorage () {
+  public updateBrokerStorage() {
     this.add('kafka:UpdateBrokerStorage');
     return this;
   }
@@ -373,7 +374,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration
    */
-  public updateClusterConfiguration () {
+  public updateClusterConfiguration() {
     this.add('kafka:UpdateClusterConfiguration');
     return this;
   }
@@ -385,7 +386,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion
    */
-  public updateClusterKafkaVersion () {
+  public updateClusterKafkaVersion() {
     this.add('kafka:UpdateClusterKafkaVersion');
     return this;
   }
@@ -397,8 +398,30 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring
    */
-  public updateMonitoring () {
+  public updateMonitoring() {
     this.add('kafka:UpdateMonitoring');
     return this;
+  }
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onCluster(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${UUID}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

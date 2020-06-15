@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Robomaker extends PolicyStatement {
   public servicePrefix = 'robomaker';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchDescribeSimulationJob": {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDescribeSimulationJob.html",
       "description": "Describe multiple simulation jobs",
@@ -429,9 +429,10 @@ export class Robomaker extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "robotApplication": {
       "name": "robotApplication",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-robot-applications.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -439,6 +440,7 @@ export class Robomaker extends PolicyStatement {
     },
     "simulationApplication": {
       "name": "simulationApplication",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -446,6 +448,7 @@ export class Robomaker extends PolicyStatement {
     },
     "simulationJob": {
       "name": "simulationJob",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/simulation.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -453,6 +456,7 @@ export class Robomaker extends PolicyStatement {
     },
     "simulationJobBatch": {
       "name": "simulationJobBatch",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/simulation-job-batch.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -460,6 +464,7 @@ export class Robomaker extends PolicyStatement {
     },
     "deploymentJob": {
       "name": "deploymentJob",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -467,6 +472,7 @@ export class Robomaker extends PolicyStatement {
     },
     "robot": {
       "name": "robot",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -474,6 +480,7 @@ export class Robomaker extends PolicyStatement {
     },
     "deploymentFleet": {
       "name": "deploymentFleet",
+      "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html",
       "arn": "arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -488,7 +495,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDescribeSimulationJob.html
    */
-  public batchDescribeSimulationJob () {
+  public batchDescribeSimulationJob() {
     this.add('robomaker:BatchDescribeSimulationJob');
     return this;
   }
@@ -500,7 +507,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelDeploymentJob.html
    */
-  public cancelDeploymentJob () {
+  public cancelDeploymentJob() {
     this.add('robomaker:CancelDeploymentJob');
     return this;
   }
@@ -512,7 +519,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelSimulationJob.html
    */
-  public cancelSimulationJob () {
+  public cancelSimulationJob() {
     this.add('robomaker:CancelSimulationJob');
     return this;
   }
@@ -524,7 +531,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CancelSimulationJobBatch.html
    */
-  public cancelSimulationJobBatch () {
+  public cancelSimulationJobBatch() {
     this.add('robomaker:CancelSimulationJobBatch');
     return this;
   }
@@ -536,7 +543,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html
    */
-  public createDeploymentJob () {
+  public createDeploymentJob() {
     this.add('robomaker:CreateDeploymentJob');
     return this;
   }
@@ -548,7 +555,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateFleet.html
    */
-  public createFleet () {
+  public createFleet() {
     this.add('robomaker:CreateFleet');
     return this;
   }
@@ -560,7 +567,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html
    */
-  public createRobot () {
+  public createRobot() {
     this.add('robomaker:CreateRobot');
     return this;
   }
@@ -572,7 +579,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplication.html
    */
-  public createRobotApplication () {
+  public createRobotApplication() {
     this.add('robomaker:CreateRobotApplication');
     return this;
   }
@@ -584,7 +591,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html
    */
-  public createRobotApplicationVersion () {
+  public createRobotApplicationVersion() {
     this.add('robomaker:CreateRobotApplicationVersion');
     return this;
   }
@@ -596,7 +603,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplication.html
    */
-  public createSimulationApplication () {
+  public createSimulationApplication() {
     this.add('robomaker:CreateSimulationApplication');
     return this;
   }
@@ -608,7 +615,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html
    */
-  public createSimulationApplicationVersion () {
+  public createSimulationApplicationVersion() {
     this.add('robomaker:CreateSimulationApplicationVersion');
     return this;
   }
@@ -620,7 +627,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html
    */
-  public createSimulationJob () {
+  public createSimulationJob() {
     this.add('robomaker:CreateSimulationJob');
     return this;
   }
@@ -632,7 +639,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteFleet.html
    */
-  public deleteFleet () {
+  public deleteFleet() {
     this.add('robomaker:DeleteFleet');
     return this;
   }
@@ -644,7 +651,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteRobot.html
    */
-  public deleteRobot () {
+  public deleteRobot() {
     this.add('robomaker:DeleteRobot');
     return this;
   }
@@ -656,7 +663,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteRobotApplication.html
    */
-  public deleteRobotApplication () {
+  public deleteRobotApplication() {
     this.add('robomaker:DeleteRobotApplication');
     return this;
   }
@@ -668,7 +675,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeleteSimulationApplication.html
    */
-  public deleteSimulationApplication () {
+  public deleteSimulationApplication() {
     this.add('robomaker:DeleteSimulationApplication');
     return this;
   }
@@ -680,7 +687,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DeregisterRobot.html
    */
-  public deregisterRobot () {
+  public deregisterRobot() {
     this.add('robomaker:DeregisterRobot');
     return this;
   }
@@ -692,7 +699,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeDeploymentJob.html
    */
-  public describeDeploymentJob () {
+  public describeDeploymentJob() {
     this.add('robomaker:DescribeDeploymentJob');
     return this;
   }
@@ -704,7 +711,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeFleet.html
    */
-  public describeFleet () {
+  public describeFleet() {
     this.add('robomaker:DescribeFleet');
     return this;
   }
@@ -716,7 +723,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeRobot.html
    */
-  public describeRobot () {
+  public describeRobot() {
     this.add('robomaker:DescribeRobot');
     return this;
   }
@@ -728,7 +735,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeRobotApplication.html
    */
-  public describeRobotApplication () {
+  public describeRobotApplication() {
     this.add('robomaker:DescribeRobotApplication');
     return this;
   }
@@ -740,7 +747,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationApplication.html
    */
-  public describeSimulationApplication () {
+  public describeSimulationApplication() {
     this.add('robomaker:DescribeSimulationApplication');
     return this;
   }
@@ -752,7 +759,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationJob.html
    */
-  public describeSimulationJob () {
+  public describeSimulationJob() {
     this.add('robomaker:DescribeSimulationJob');
     return this;
   }
@@ -764,7 +771,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_DescribeSimulationJobBatch.html
    */
-  public describeSimulationJobBatch () {
+  public describeSimulationJobBatch() {
     this.add('robomaker:DescribeSimulationJobBatch');
     return this;
   }
@@ -776,7 +783,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListDeploymentJobs.html
    */
-  public listDeploymentJobs () {
+  public listDeploymentJobs() {
     this.add('robomaker:ListDeploymentJobs');
     return this;
   }
@@ -788,7 +795,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListFleets.html
    */
-  public listFleets () {
+  public listFleets() {
     this.add('robomaker:ListFleets');
     return this;
   }
@@ -800,7 +807,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListRobotApplications.html
    */
-  public listRobotApplications () {
+  public listRobotApplications() {
     this.add('robomaker:ListRobotApplications');
     return this;
   }
@@ -812,7 +819,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListRobots.html
    */
-  public listRobots () {
+  public listRobots() {
     this.add('robomaker:ListRobots');
     return this;
   }
@@ -824,7 +831,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationApplications.html
    */
-  public listSimulationApplications () {
+  public listSimulationApplications() {
     this.add('robomaker:ListSimulationApplications');
     return this;
   }
@@ -836,7 +843,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationJobBatches.html
    */
-  public listSimulationJobBatches () {
+  public listSimulationJobBatches() {
     this.add('robomaker:ListSimulationJobBatches');
     return this;
   }
@@ -848,7 +855,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListSimulationJobs.html
    */
-  public listSimulationJobs () {
+  public listSimulationJobs() {
     this.add('robomaker:ListSimulationJobs');
     return this;
   }
@@ -860,7 +867,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('robomaker:ListTagsForResource');
     return this;
   }
@@ -872,7 +879,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_RegisterRobot.html
    */
-  public registerRobot () {
+  public registerRobot() {
     this.add('robomaker:RegisterRobot');
     return this;
   }
@@ -884,7 +891,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_RestartSimulationJob.html
    */
-  public restartSimulationJob () {
+  public restartSimulationJob() {
     this.add('robomaker:RestartSimulationJob');
     return this;
   }
@@ -896,7 +903,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html
    */
-  public startSimulationJobBatch () {
+  public startSimulationJobBatch() {
     this.add('robomaker:StartSimulationJobBatch');
     return this;
   }
@@ -908,7 +915,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html
    */
-  public syncDeploymentJob () {
+  public syncDeploymentJob() {
     this.add('robomaker:SyncDeploymentJob');
     return this;
   }
@@ -920,7 +927,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('robomaker:TagResource');
     return this;
   }
@@ -932,7 +939,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('robomaker:UntagResource');
     return this;
   }
@@ -944,7 +951,7 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateRobotApplication.html
    */
-  public updateRobotApplication () {
+  public updateRobotApplication() {
     this.add('robomaker:UpdateRobotApplication');
     return this;
   }
@@ -956,8 +963,170 @@ export class Robomaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UpdateSimulationApplication.html
    */
-  public updateSimulationApplication () {
+  public updateSimulationApplication() {
     this.add('robomaker:UpdateSimulationApplication');
     return this;
+  }
+
+  /**
+   * Adds a resource of type robotApplication to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/managing-robot-applications.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param createdOnEpoch - Identifier for the createdOnEpoch.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRobotApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type simulationApplication to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param createdOnEpoch - Identifier for the createdOnEpoch.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSimulationApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type simulationJob to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/simulation.html
+   *
+   * @param simulationJobId - Identifier for the simulationJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}';
+    arn = arn.replace('${SimulationJobId}', simulationJobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type simulationJobBatch to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/simulation-job-batch.html
+   *
+   * @param simulationJobBatchId - Identifier for the simulationJobBatchId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}';
+    arn = arn.replace('${SimulationJobBatchId}', simulationJobBatchId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deploymentJob to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html
+   *
+   * @param deploymentJobId - Identifier for the deploymentJobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}';
+    arn = arn.replace('${DeploymentJobId}', deploymentJobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type robot to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html
+   *
+   * @param robotName - Identifier for the robotName.
+   * @param createdOnEpoch - Identifier for the createdOnEpoch.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}';
+    arn = arn.replace('${RobotName}', robotName);
+    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deploymentFleet to the statement
+   *
+   * https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html
+   *
+   * @param fleetName - Identifier for the fleetName.
+   * @param createdOnEpoch - Identifier for the createdOnEpoch.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}';
+    arn = arn.replace('${FleetName}', fleetName);
+    arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

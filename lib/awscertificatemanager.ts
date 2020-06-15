@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Acm extends PolicyStatement {
   public servicePrefix = 'acm';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddTagsToCertificate": {
       "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html",
       "description": "Adds one or more tags to a certificate.",
@@ -140,9 +140,10 @@ export class Acm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "certificate": {
       "name": "certificate",
+      "url": "https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations",
       "arn": "arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -157,7 +158,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html
    */
-  public addTagsToCertificate () {
+  public addTagsToCertificate() {
     this.add('acm:AddTagsToCertificate');
     return this;
   }
@@ -169,7 +170,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html
    */
-  public deleteCertificate () {
+  public deleteCertificate() {
     this.add('acm:DeleteCertificate');
     return this;
   }
@@ -181,7 +182,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html
    */
-  public describeCertificate () {
+  public describeCertificate() {
     this.add('acm:DescribeCertificate');
     return this;
   }
@@ -193,7 +194,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ExportCertificate.html
    */
-  public exportCertificate () {
+  public exportCertificate() {
     this.add('acm:ExportCertificate');
     return this;
   }
@@ -205,7 +206,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html
    */
-  public getCertificate () {
+  public getCertificate() {
     this.add('acm:GetCertificate');
     return this;
   }
@@ -217,7 +218,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html
    */
-  public importCertificate () {
+  public importCertificate() {
     this.add('acm:ImportCertificate');
     return this;
   }
@@ -229,7 +230,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html
    */
-  public listCertificates () {
+  public listCertificates() {
     this.add('acm:ListCertificates');
     return this;
   }
@@ -241,7 +242,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html
    */
-  public listTagsForCertificate () {
+  public listTagsForCertificate() {
     this.add('acm:ListTagsForCertificate');
     return this;
   }
@@ -253,7 +254,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html
    */
-  public removeTagsFromCertificate () {
+  public removeTagsFromCertificate() {
     this.add('acm:RemoveTagsFromCertificate');
     return this;
   }
@@ -265,7 +266,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RenewCertificate.html
    */
-  public renewCertificate () {
+  public renewCertificate() {
     this.add('acm:RenewCertificate');
     return this;
   }
@@ -277,7 +278,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html
    */
-  public requestCertificate () {
+  public requestCertificate() {
     this.add('acm:RequestCertificate');
     return this;
   }
@@ -289,7 +290,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html
    */
-  public resendValidationEmail () {
+  public resendValidationEmail() {
     this.add('acm:ResendValidationEmail');
     return this;
   }
@@ -301,8 +302,30 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificateOptions.html
    */
-  public updateCertificateOptions () {
+  public updateCertificateOptions() {
     this.add('acm:UpdateCertificateOptions');
     return this;
+  }
+
+  /**
+   * Adds a resource of type certificate to the statement
+   *
+   * https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations
+   *
+   * @param certificateId - Identifier for the certificateId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}';
+    arn = arn.replace('${CertificateId}', certificateId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

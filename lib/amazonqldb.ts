@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Qldb extends PolicyStatement {
   public servicePrefix = 'qldb';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelJournalKinesisStream": {
       "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html",
       "description": "Grants permission to cancel a journal kinesis stream",
@@ -240,9 +240,10 @@ export class Qldb extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "ledger": {
       "name": "ledger",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html",
       "arn": "arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -250,6 +251,7 @@ export class Qldb extends PolicyStatement {
     },
     "stream": {
       "name": "stream",
+      "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html",
       "arn": "arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -264,7 +266,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html
    */
-  public cancelJournalKinesisStream () {
+  public cancelJournalKinesisStream() {
     this.add('qldb:CancelJournalKinesisStream');
     return this;
   }
@@ -276,7 +278,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html
    */
-  public createLedger () {
+  public createLedger() {
     this.add('qldb:CreateLedger');
     return this;
   }
@@ -288,7 +290,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DeleteLedger.html
    */
-  public deleteLedger () {
+  public deleteLedger() {
     this.add('qldb:DeleteLedger');
     return this;
   }
@@ -300,7 +302,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalKinesisStream.html
    */
-  public describeJournalKinesisStream () {
+  public describeJournalKinesisStream() {
     this.add('qldb:DescribeJournalKinesisStream');
     return this;
   }
@@ -312,7 +314,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeJournalS3Export.html
    */
-  public describeJournalS3Export () {
+  public describeJournalS3Export() {
     this.add('qldb:DescribeJournalS3Export');
     return this;
   }
@@ -324,7 +326,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_DescribeLedger.html
    */
-  public describeLedger () {
+  public describeLedger() {
     this.add('qldb:DescribeLedger');
     return this;
   }
@@ -336,7 +338,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
    */
-  public executeStatement () {
+  public executeStatement() {
     this.add('qldb:ExecuteStatement');
     return this;
   }
@@ -348,7 +350,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ExportJournalToS3.html
    */
-  public exportJournalToS3 () {
+  public exportJournalToS3() {
     this.add('qldb:ExportJournalToS3');
     return this;
   }
@@ -360,7 +362,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetBlock.html
    */
-  public getBlock () {
+  public getBlock() {
     this.add('qldb:GetBlock');
     return this;
   }
@@ -372,7 +374,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetDigest.html
    */
-  public getDigest () {
+  public getDigest() {
     this.add('qldb:GetDigest');
     return this;
   }
@@ -384,7 +386,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_GetRevision.html
    */
-  public getRevision () {
+  public getRevision() {
     this.add('qldb:GetRevision');
     return this;
   }
@@ -396,7 +398,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
    */
-  public insertSampleData () {
+  public insertSampleData() {
     this.add('qldb:InsertSampleData');
     return this;
   }
@@ -408,7 +410,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalKinesisStreamsForLedger.html
    */
-  public listJournalKinesisStreamsForLedger () {
+  public listJournalKinesisStreamsForLedger() {
     this.add('qldb:ListJournalKinesisStreamsForLedger');
     return this;
   }
@@ -420,7 +422,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3Exports.html
    */
-  public listJournalS3Exports () {
+  public listJournalS3Exports() {
     this.add('qldb:ListJournalS3Exports');
     return this;
   }
@@ -432,7 +434,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListJournalS3ExportsForLedger.html
    */
-  public listJournalS3ExportsForLedger () {
+  public listJournalS3ExportsForLedger() {
     this.add('qldb:ListJournalS3ExportsForLedger');
     return this;
   }
@@ -444,7 +446,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListLedgers.html
    */
-  public listLedgers () {
+  public listLedgers() {
     this.add('qldb:ListLedgers');
     return this;
   }
@@ -456,7 +458,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('qldb:ListTagsForResource');
     return this;
   }
@@ -468,7 +470,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/Using.API.html
    */
-  public sendCommand () {
+  public sendCommand() {
     this.add('qldb:SendCommand');
     return this;
   }
@@ -480,7 +482,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/console_QLDB.html
    */
-  public showCatalog () {
+  public showCatalog() {
     this.add('qldb:ShowCatalog');
     return this;
   }
@@ -492,7 +494,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_StreamJournalToKinesis.html
    */
-  public streamJournalToKinesis () {
+  public streamJournalToKinesis() {
     this.add('qldb:StreamJournalToKinesis');
     return this;
   }
@@ -504,7 +506,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('qldb:TagResource');
     return this;
   }
@@ -516,7 +518,7 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('qldb:UntagResource');
     return this;
   }
@@ -528,8 +530,54 @@ export class Qldb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UpdateLedger.html
    */
-  public updateLedger () {
+  public updateLedger() {
     this.add('qldb:UpdateLedger');
     return this;
+  }
+
+  /**
+   * Adds a resource of type ledger to the statement
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html
+   *
+   * @param ledgerName - Identifier for the ledgerName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}';
+    arn = arn.replace('${LedgerName}', ledgerName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type stream to the statement
+   *
+   * https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html
+   *
+   * @param ledgerName - Identifier for the ledgerName.
+   * @param streamId - Identifier for the streamId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onStream(ledgerName: string, streamId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}';
+    arn = arn.replace('${LedgerName}', ledgerName);
+    arn = arn.replace('${StreamId}', streamId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Frauddetector extends PolicyStatement {
   public servicePrefix = 'frauddetector';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchCreateVariable": {
       "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchCreateVariable",
       "description": "Creates a batch of variables.",
@@ -169,7 +169,7 @@ export class Frauddetector extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Creates a batch of variables.
@@ -178,7 +178,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchCreateVariable
    */
-  public batchCreateVariable () {
+  public batchCreateVariable() {
     this.add('frauddetector:BatchCreateVariable');
     return this;
   }
@@ -190,7 +190,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchGetVariable
    */
-  public batchGetVariable () {
+  public batchGetVariable() {
     this.add('frauddetector:BatchGetVariable');
     return this;
   }
@@ -202,7 +202,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateDetectorVersion
    */
-  public createDetectorVersion () {
+  public createDetectorVersion() {
     this.add('frauddetector:CreateDetectorVersion');
     return this;
   }
@@ -214,7 +214,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion
    */
-  public createModelVersion () {
+  public createModelVersion() {
     this.add('frauddetector:CreateModelVersion');
     return this;
   }
@@ -226,7 +226,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateRule.html
    */
-  public createRule () {
+  public createRule() {
     this.add('frauddetector:CreateRule');
     return this;
   }
@@ -238,7 +238,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateVariable.html
    */
-  public createVariable () {
+  public createVariable() {
     this.add('frauddetector:CreateVariable');
     return this;
   }
@@ -250,7 +250,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetector
    */
-  public deleteDetector () {
+  public deleteDetector() {
     this.add('frauddetector:DeleteDetector');
     return this;
   }
@@ -262,7 +262,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetectorVersion
    */
-  public deleteDetectorVersion () {
+  public deleteDetectorVersion() {
     this.add('frauddetector:DeleteDetectorVersion');
     return this;
   }
@@ -274,7 +274,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEvent
    */
-  public deleteEvent () {
+  public deleteEvent() {
     this.add('frauddetector:DeleteEvent');
     return this;
   }
@@ -286,7 +286,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteRuleVersion
    */
-  public deleteRuleVersion () {
+  public deleteRuleVersion() {
     this.add('frauddetector:DeleteRuleVersion');
     return this;
   }
@@ -298,7 +298,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeDetector
    */
-  public describeDetector () {
+  public describeDetector() {
     this.add('frauddetector:DescribeDetector');
     return this;
   }
@@ -310,7 +310,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeModelVersions
    */
-  public describeModelVersions () {
+  public describeModelVersions() {
     this.add('frauddetector:DescribeModelVersions');
     return this;
   }
@@ -322,7 +322,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectorVersion
    */
-  public getDetectorVersion () {
+  public getDetectorVersion() {
     this.add('frauddetector:GetDetectorVersion');
     return this;
   }
@@ -334,7 +334,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectors
    */
-  public getDetectors () {
+  public getDetectors() {
     this.add('frauddetector:GetDetectors');
     return this;
   }
@@ -346,7 +346,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetExternalModels
    */
-  public getExternalModels () {
+  public getExternalModels() {
     this.add('frauddetector:GetExternalModels');
     return this;
   }
@@ -358,7 +358,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModelVersion
    */
-  public getModelVersion () {
+  public getModelVersion() {
     this.add('frauddetector:GetModelVersion');
     return this;
   }
@@ -370,7 +370,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetModels
    */
-  public getModels () {
+  public getModels() {
     this.add('frauddetector:GetModels');
     return this;
   }
@@ -382,7 +382,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetOutcomes
    */
-  public getOutcomes () {
+  public getOutcomes() {
     this.add('frauddetector:GetOutcomes');
     return this;
   }
@@ -394,7 +394,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetPrediction
    */
-  public getPrediction () {
+  public getPrediction() {
     this.add('frauddetector:GetPrediction');
     return this;
   }
@@ -406,7 +406,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetRules.html
    */
-  public getRules () {
+  public getRules() {
     this.add('frauddetector:GetRules');
     return this;
   }
@@ -418,7 +418,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetVariables
    */
-  public getVariables () {
+  public getVariables() {
     this.add('frauddetector:GetVariables');
     return this;
   }
@@ -430,7 +430,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutDetector.html
    */
-  public putDetector () {
+  public putDetector() {
     this.add('frauddetector:PutDetector');
     return this;
   }
@@ -442,7 +442,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutExternalModel.html
    */
-  public putExternalModel () {
+  public putExternalModel() {
     this.add('frauddetector:PutExternalModel');
     return this;
   }
@@ -454,7 +454,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutModel
    */
-  public putModel () {
+  public putModel() {
     this.add('frauddetector:PutModel');
     return this;
   }
@@ -466,7 +466,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutOutcome.html
    */
-  public putOutcome () {
+  public putOutcome() {
     this.add('frauddetector:PutOutcome');
     return this;
   }
@@ -478,7 +478,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersion
    */
-  public updateDetectorVersion () {
+  public updateDetectorVersion() {
     this.add('frauddetector:UpdateDetectorVersion');
     return this;
   }
@@ -490,7 +490,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionMetadata
    */
-  public updateDetectorVersionMetadata () {
+  public updateDetectorVersionMetadata() {
     this.add('frauddetector:UpdateDetectorVersionMetadata');
     return this;
   }
@@ -502,7 +502,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateDetectorVersionStatus
    */
-  public updateDetectorVersionStatus () {
+  public updateDetectorVersionStatus() {
     this.add('frauddetector:UpdateDetectorVersionStatus');
     return this;
   }
@@ -514,7 +514,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersion
    */
-  public updateModelVersion () {
+  public updateModelVersion() {
     this.add('frauddetector:UpdateModelVersion');
     return this;
   }
@@ -526,7 +526,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateRuleMetadata.html
    */
-  public updateRuleMetadata () {
+  public updateRuleMetadata() {
     this.add('frauddetector:UpdateRuleMetadata');
     return this;
   }
@@ -538,7 +538,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateRuleVersion.html
    */
-  public updateRuleVersion () {
+  public updateRuleVersion() {
     this.add('frauddetector:UpdateRuleVersion');
     return this;
   }
@@ -550,7 +550,7 @@ export class Frauddetector extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateVariable.html
    */
-  public updateVariable () {
+  public updateVariable() {
     this.add('frauddetector:UpdateVariable');
     return this;
   }

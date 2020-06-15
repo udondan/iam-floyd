@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Devicefarm extends PolicyStatement {
   public servicePrefix = 'devicefarm';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateDevicePool": {
       "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html",
       "description": "Grants permission to create a device pool within a project",
@@ -831,9 +831,10 @@ export class Devicefarm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -841,6 +842,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "run": {
       "name": "run",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Run.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -848,36 +850,43 @@ export class Devicefarm extends PolicyStatement {
     },
     "job": {
       "name": "job",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}",
       "conditionKeys": []
     },
     "suite": {
       "name": "suite",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Suite.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}",
       "conditionKeys": []
     },
     "test": {
       "name": "test",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Test.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}",
       "conditionKeys": []
     },
     "upload": {
       "name": "upload",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}",
       "conditionKeys": []
     },
     "artifact": {
       "name": "artifact",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}",
       "conditionKeys": []
     },
     "sample": {
       "name": "sample",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}",
       "conditionKeys": []
     },
     "networkprofile": {
       "name": "networkprofile",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -885,6 +894,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "deviceinstance": {
       "name": "deviceinstance",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:deviceinstance:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -892,6 +902,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "session": {
       "name": "session",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -899,6 +910,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "devicepool": {
       "name": "devicepool",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -906,6 +918,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "device": {
       "name": "device",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:device:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -913,6 +926,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "instanceprofile": {
       "name": "instanceprofile",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -920,6 +934,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "vpceconfiguration": {
       "name": "vpceconfiguration",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -927,6 +942,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "testgrid-project": {
       "name": "testgrid-project",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridProject.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -934,6 +950,7 @@ export class Devicefarm extends PolicyStatement {
     },
     "testgrid-session": {
       "name": "testgrid-session",
+      "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridSession.html",
       "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -948,7 +965,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html
    */
-  public createDevicePool () {
+  public createDevicePool() {
     this.add('devicefarm:CreateDevicePool');
     return this;
   }
@@ -960,7 +977,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateInstanceProfile.html
    */
-  public createInstanceProfile () {
+  public createInstanceProfile() {
     this.add('devicefarm:CreateInstanceProfile');
     return this;
   }
@@ -972,7 +989,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateNetworkProfile.html
    */
-  public createNetworkProfile () {
+  public createNetworkProfile() {
     this.add('devicefarm:CreateNetworkProfile');
     return this;
   }
@@ -984,7 +1001,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html
    */
-  public createProject () {
+  public createProject() {
     this.add('devicefarm:CreateProject');
     return this;
   }
@@ -996,7 +1013,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateRemoteAccessSession.html
    */
-  public createRemoteAccessSession () {
+  public createRemoteAccessSession() {
     this.add('devicefarm:CreateRemoteAccessSession');
     return this;
   }
@@ -1008,7 +1025,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridProject.html
    */
-  public createTestGridProject () {
+  public createTestGridProject() {
     this.add('devicefarm:CreateTestGridProject');
     return this;
   }
@@ -1020,7 +1037,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateTestGridUrl.html
    */
-  public createTestGridUrl () {
+  public createTestGridUrl() {
     this.add('devicefarm:CreateTestGridUrl');
     return this;
   }
@@ -1032,7 +1049,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html
    */
-  public createUpload () {
+  public createUpload() {
     this.add('devicefarm:CreateUpload');
     return this;
   }
@@ -1044,7 +1061,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateVPCEConfiguration.html
    */
-  public createVPCEConfiguration () {
+  public createVPCEConfiguration() {
     this.add('devicefarm:CreateVPCEConfiguration');
     return this;
   }
@@ -1056,7 +1073,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteDevicePool.html
    */
-  public deleteDevicePool () {
+  public deleteDevicePool() {
     this.add('devicefarm:DeleteDevicePool');
     return this;
   }
@@ -1068,7 +1085,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteInstanceProfile.html
    */
-  public deleteInstanceProfile () {
+  public deleteInstanceProfile() {
     this.add('devicefarm:DeleteInstanceProfile');
     return this;
   }
@@ -1080,7 +1097,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/DeleteNetworkProfile.html
    */
-  public deleteNetworkProfile () {
+  public deleteNetworkProfile() {
     this.add('devicefarm:DeleteNetworkProfile');
     return this;
   }
@@ -1092,7 +1109,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteProject.html
    */
-  public deleteProject () {
+  public deleteProject() {
     this.add('devicefarm:DeleteProject');
     return this;
   }
@@ -1104,7 +1121,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRemoteAccessSession.html
    */
-  public deleteRemoteAccessSession () {
+  public deleteRemoteAccessSession() {
     this.add('devicefarm:DeleteRemoteAccessSession');
     return this;
   }
@@ -1116,7 +1133,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRun.html
    */
-  public deleteRun () {
+  public deleteRun() {
     this.add('devicefarm:DeleteRun');
     return this;
   }
@@ -1128,7 +1145,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteTestGridProject.html
    */
-  public deleteTestGridProject () {
+  public deleteTestGridProject() {
     this.add('devicefarm:DeleteTestGridProject');
     return this;
   }
@@ -1140,7 +1157,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteUpload.html
    */
-  public deleteUpload () {
+  public deleteUpload() {
     this.add('devicefarm:DeleteUpload');
     return this;
   }
@@ -1152,7 +1169,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteVPCEConfiguration.html
    */
-  public deleteVPCEConfiguration () {
+  public deleteVPCEConfiguration() {
     this.add('devicefarm:DeleteVPCEConfiguration');
     return this;
   }
@@ -1164,7 +1181,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetAccountSettings.html
    */
-  public getAccountSettings () {
+  public getAccountSettings() {
     this.add('devicefarm:GetAccountSettings');
     return this;
   }
@@ -1176,7 +1193,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevice.html
    */
-  public getDevice () {
+  public getDevice() {
     this.add('devicefarm:GetDevice');
     return this;
   }
@@ -1188,7 +1205,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDeviceInstance.html
    */
-  public getDeviceInstance () {
+  public getDeviceInstance() {
     this.add('devicefarm:GetDeviceInstance');
     return this;
   }
@@ -1200,7 +1217,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePool.html
    */
-  public getDevicePool () {
+  public getDevicePool() {
     this.add('devicefarm:GetDevicePool');
     return this;
   }
@@ -1212,7 +1229,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePoolCompatibility.html
    */
-  public getDevicePoolCompatibility () {
+  public getDevicePoolCompatibility() {
     this.add('devicefarm:GetDevicePoolCompatibility');
     return this;
   }
@@ -1224,7 +1241,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetInstanceProfile.html
    */
-  public getInstanceProfile () {
+  public getInstanceProfile() {
     this.add('devicefarm:GetInstanceProfile');
     return this;
   }
@@ -1236,7 +1253,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetJob.html
    */
-  public getJob () {
+  public getJob() {
     this.add('devicefarm:GetJob');
     return this;
   }
@@ -1248,7 +1265,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetNetworkProfile.html
    */
-  public getNetworkProfile () {
+  public getNetworkProfile() {
     this.add('devicefarm:GetNetworkProfile');
     return this;
   }
@@ -1260,7 +1277,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetOfferingStatus.html
    */
-  public getOfferingStatus () {
+  public getOfferingStatus() {
     this.add('devicefarm:GetOfferingStatus');
     return this;
   }
@@ -1272,7 +1289,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetProject.html
    */
-  public getProject () {
+  public getProject() {
     this.add('devicefarm:GetProject');
     return this;
   }
@@ -1284,7 +1301,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRemoteAccessSession.html
    */
-  public getRemoteAccessSession () {
+  public getRemoteAccessSession() {
     this.add('devicefarm:GetRemoteAccessSession');
     return this;
   }
@@ -1296,7 +1313,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRun.html
    */
-  public getRun () {
+  public getRun() {
     this.add('devicefarm:GetRun');
     return this;
   }
@@ -1308,7 +1325,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetSuite.html
    */
-  public getSuite () {
+  public getSuite() {
     this.add('devicefarm:GetSuite');
     return this;
   }
@@ -1320,7 +1337,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html
    */
-  public getTest () {
+  public getTest() {
     this.add('devicefarm:GetTest');
     return this;
   }
@@ -1332,7 +1349,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTestGridProject.html
    */
-  public getTestGridProject () {
+  public getTestGridProject() {
     this.add('devicefarm:GetTestGridProject');
     return this;
   }
@@ -1344,7 +1361,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTestGridSession.html
    */
-  public getTestGridSession () {
+  public getTestGridSession() {
     this.add('devicefarm:GetTestGridSession');
     return this;
   }
@@ -1356,7 +1373,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetUpload.html
    */
-  public getUpload () {
+  public getUpload() {
     this.add('devicefarm:GetUpload');
     return this;
   }
@@ -1368,7 +1385,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetVPCEConfiguration.html
    */
-  public getVPCEConfiguration () {
+  public getVPCEConfiguration() {
     this.add('devicefarm:GetVPCEConfiguration');
     return this;
   }
@@ -1380,7 +1397,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html
    */
-  public installToRemoteAccessSession () {
+  public installToRemoteAccessSession() {
     this.add('devicefarm:InstallToRemoteAccessSession');
     return this;
   }
@@ -1392,7 +1409,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListArtifacts.html
    */
-  public listArtifacts () {
+  public listArtifacts() {
     this.add('devicefarm:ListArtifacts');
     return this;
   }
@@ -1404,7 +1421,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDeviceInstances.html
    */
-  public listDeviceInstances () {
+  public listDeviceInstances() {
     this.add('devicefarm:ListDeviceInstances');
     return this;
   }
@@ -1416,7 +1433,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevicePools.html
    */
-  public listDevicePools () {
+  public listDevicePools() {
     this.add('devicefarm:ListDevicePools');
     return this;
   }
@@ -1428,7 +1445,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html
    */
-  public listDevices () {
+  public listDevices() {
     this.add('devicefarm:ListDevices');
     return this;
   }
@@ -1440,7 +1457,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListInstanceProfiles.html
    */
-  public listInstanceProfiles () {
+  public listInstanceProfiles() {
     this.add('devicefarm:ListInstanceProfiles');
     return this;
   }
@@ -1452,7 +1469,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html
    */
-  public listJobs () {
+  public listJobs() {
     this.add('devicefarm:ListJobs');
     return this;
   }
@@ -1464,7 +1481,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListNetworkProfiles.html
    */
-  public listNetworkProfiles () {
+  public listNetworkProfiles() {
     this.add('devicefarm:ListNetworkProfiles');
     return this;
   }
@@ -1476,7 +1493,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingPromotions.html
    */
-  public listOfferingPromotions () {
+  public listOfferingPromotions() {
     this.add('devicefarm:ListOfferingPromotions');
     return this;
   }
@@ -1488,7 +1505,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingTransactions.html
    */
-  public listOfferingTransactions () {
+  public listOfferingTransactions() {
     this.add('devicefarm:ListOfferingTransactions');
     return this;
   }
@@ -1500,7 +1517,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferings.html
    */
-  public listOfferings () {
+  public listOfferings() {
     this.add('devicefarm:ListOfferings');
     return this;
   }
@@ -1512,7 +1529,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListProjects.html
    */
-  public listProjects () {
+  public listProjects() {
     this.add('devicefarm:ListProjects');
     return this;
   }
@@ -1524,7 +1541,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRemoteAccessSessions.html
    */
-  public listRemoteAccessSessions () {
+  public listRemoteAccessSessions() {
     this.add('devicefarm:ListRemoteAccessSessions');
     return this;
   }
@@ -1536,7 +1553,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRuns.html
    */
-  public listRuns () {
+  public listRuns() {
     this.add('devicefarm:ListRuns');
     return this;
   }
@@ -1548,7 +1565,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSamples.html
    */
-  public listSamples () {
+  public listSamples() {
     this.add('devicefarm:ListSamples');
     return this;
   }
@@ -1560,7 +1577,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSuites.html
    */
-  public listSuites () {
+  public listSuites() {
     this.add('devicefarm:ListSuites');
     return this;
   }
@@ -1572,7 +1589,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('devicefarm:ListTagsForResource');
     return this;
   }
@@ -1584,7 +1601,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridProjects.html
    */
-  public listTestGridProjects () {
+  public listTestGridProjects() {
     this.add('devicefarm:ListTestGridProjects');
     return this;
   }
@@ -1596,7 +1613,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessionActions.html
    */
-  public listTestGridSessionActions () {
+  public listTestGridSessionActions() {
     this.add('devicefarm:ListTestGridSessionActions');
     return this;
   }
@@ -1608,7 +1625,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessionArtifacts.html
    */
-  public listTestGridSessionArtifacts () {
+  public listTestGridSessionArtifacts() {
     this.add('devicefarm:ListTestGridSessionArtifacts');
     return this;
   }
@@ -1620,7 +1637,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTestGridSessions.html
    */
-  public listTestGridSessions () {
+  public listTestGridSessions() {
     this.add('devicefarm:ListTestGridSessions');
     return this;
   }
@@ -1632,7 +1649,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTests.html
    */
-  public listTests () {
+  public listTests() {
     this.add('devicefarm:ListTests');
     return this;
   }
@@ -1644,7 +1661,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUniqueProblems.html
    */
-  public listUniqueProblems () {
+  public listUniqueProblems() {
     this.add('devicefarm:ListUniqueProblems');
     return this;
   }
@@ -1656,7 +1673,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html
    */
-  public listUploads () {
+  public listUploads() {
     this.add('devicefarm:ListUploads');
     return this;
   }
@@ -1668,7 +1685,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListVPCEConfigurations.html
    */
-  public listVPCEConfigurations () {
+  public listVPCEConfigurations() {
     this.add('devicefarm:ListVPCEConfigurations');
     return this;
   }
@@ -1680,7 +1697,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_PurchaseOffering.html
    */
-  public purchaseOffering () {
+  public purchaseOffering() {
     this.add('devicefarm:PurchaseOffering');
     return this;
   }
@@ -1692,7 +1709,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RenewOffering.html
    */
-  public renewOffering () {
+  public renewOffering() {
     this.add('devicefarm:RenewOffering');
     return this;
   }
@@ -1704,7 +1721,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ScheduleRun.html
    */
-  public scheduleRun () {
+  public scheduleRun() {
     this.add('devicefarm:ScheduleRun');
     return this;
   }
@@ -1716,7 +1733,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopJob.html
    */
-  public stopJob () {
+  public stopJob() {
     this.add('devicefarm:StopJob');
     return this;
   }
@@ -1728,7 +1745,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRemoteAccessSession.html
    */
-  public stopRemoteAccessSession () {
+  public stopRemoteAccessSession() {
     this.add('devicefarm:StopRemoteAccessSession');
     return this;
   }
@@ -1740,7 +1757,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRun.html
    */
-  public stopRun () {
+  public stopRun() {
     this.add('devicefarm:StopRun');
     return this;
   }
@@ -1752,7 +1769,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('devicefarm:TagResource');
     return this;
   }
@@ -1764,7 +1781,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('devicefarm:UntagResource');
     return this;
   }
@@ -1776,7 +1793,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDeviceInstance.html
    */
-  public updateDeviceInstance () {
+  public updateDeviceInstance() {
     this.add('devicefarm:UpdateDeviceInstance');
     return this;
   }
@@ -1788,7 +1805,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html
    */
-  public updateDevicePool () {
+  public updateDevicePool() {
     this.add('devicefarm:UpdateDevicePool');
     return this;
   }
@@ -1800,7 +1817,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateInstanceProfile.html
    */
-  public updateInstanceProfile () {
+  public updateInstanceProfile() {
     this.add('devicefarm:UpdateInstanceProfile');
     return this;
   }
@@ -1812,7 +1829,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateNetworkProfile.html
    */
-  public updateNetworkProfile () {
+  public updateNetworkProfile() {
     this.add('devicefarm:UpdateNetworkProfile');
     return this;
   }
@@ -1824,7 +1841,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html
    */
-  public updateProject () {
+  public updateProject() {
     this.add('devicefarm:UpdateProject');
     return this;
   }
@@ -1836,7 +1853,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateTestGridProject.html
    */
-  public updateTestGridProject () {
+  public updateTestGridProject() {
     this.add('devicefarm:UpdateTestGridProject');
     return this;
   }
@@ -1848,7 +1865,7 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateUpload.html
    */
-  public updateUpload () {
+  public updateUpload() {
     this.add('devicefarm:UpdateUpload');
     return this;
   }
@@ -1860,8 +1877,364 @@ export class Devicefarm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateVPCEConfiguration.html
    */
-  public updateVPCEConfiguration () {
+  public updateVPCEConfiguration() {
     this.add('devicefarm:UpdateVPCEConfiguration');
     return this;
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type run to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Run.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRun(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type job to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type suite to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Suite.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSuite(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type test to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Test.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTest(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type upload to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type artifact to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type sample to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type networkprofile to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deviceinstance to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeviceinstance(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:deviceinstance:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type session to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type devicepool to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:device:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type instanceprofile to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type vpceconfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type testgrid-project to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridProject.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTestgridProject(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type testgrid-session to the statement
+   *
+   * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridSession.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTestgridSession(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

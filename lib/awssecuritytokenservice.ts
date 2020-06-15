@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Sts extends PolicyStatement {
   public servicePrefix = 'sts';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssumeRole": {
       "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html",
       "description": "Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to",
@@ -160,9 +160,10 @@ export class Sts extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "role": {
       "name": "role",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
       "arn": "arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -170,6 +171,7 @@ export class Sts extends PolicyStatement {
     },
     "user": {
       "name": "user",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html",
       "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}",
       "conditionKeys": []
     }
@@ -182,7 +184,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
-  public assumeRole () {
+  public assumeRole() {
     this.add('sts:AssumeRole');
     return this;
   }
@@ -194,7 +196,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
-  public assumeRoleWithSAML () {
+  public assumeRoleWithSAML() {
     this.add('sts:AssumeRoleWithSAML');
     return this;
   }
@@ -206,7 +208,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
-  public assumeRoleWithWebIdentity () {
+  public assumeRoleWithWebIdentity() {
     this.add('sts:AssumeRoleWithWebIdentity');
     return this;
   }
@@ -218,7 +220,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html
    */
-  public decodeAuthorizationMessage () {
+  public decodeAuthorizationMessage() {
     this.add('sts:DecodeAuthorizationMessage');
     return this;
   }
@@ -230,7 +232,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html
    */
-  public getAccessKeyInfo () {
+  public getAccessKeyInfo() {
     this.add('sts:GetAccessKeyInfo');
     return this;
   }
@@ -242,7 +244,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html
    */
-  public getCallerIdentity () {
+  public getCallerIdentity() {
     this.add('sts:GetCallerIdentity');
     return this;
   }
@@ -254,7 +256,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
    */
-  public getFederationToken () {
+  public getFederationToken() {
     this.add('sts:GetFederationToken');
     return this;
   }
@@ -266,7 +268,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
-  public getServiceBearerToken () {
+  public getServiceBearerToken() {
     this.add('sts:GetServiceBearerToken');
     return this;
   }
@@ -278,7 +280,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
    */
-  public getSessionToken () {
+  public getSessionToken() {
     this.add('sts:GetSessionToken');
     return this;
   }
@@ -290,8 +292,49 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
-  public tagSession () {
+  public tagSession() {
     this.add('sts:TagSession');
     return this;
+  }
+
+  /**
+   * Adds a resource of type role to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
+   *
+   * @param roleNameWithPath - Identifier for the roleNameWithPath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onRole(roleNameWithPath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}';
+    arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type user to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html
+   *
+   * @param userNameWithPath - Identifier for the userNameWithPath.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';
+    arn = arn.replace('${UserNameWithPath}', userNameWithPath);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

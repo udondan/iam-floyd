@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Cloud9 extends PolicyStatement {
   public servicePrefix = 'cloud9';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateEnvironmentEC2": {
       "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html",
       "description": "Grants permission to create an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance.",
@@ -166,9 +166,10 @@ export class Cloud9 extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "environment": {
       "name": "environment",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-environment",
       "arn": "arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -183,7 +184,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html
    */
-  public createEnvironmentEC2 () {
+  public createEnvironmentEC2() {
     this.add('cloud9:CreateEnvironmentEC2');
     return this;
   }
@@ -195,7 +196,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentMembership.html
    */
-  public createEnvironmentMembership () {
+  public createEnvironmentMembership() {
     this.add('cloud9:CreateEnvironmentMembership');
     return this;
   }
@@ -207,7 +208,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html
    */
-  public deleteEnvironment () {
+  public deleteEnvironment() {
     this.add('cloud9:DeleteEnvironment');
     return this;
   }
@@ -219,7 +220,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironmentMembership.html
    */
-  public deleteEnvironmentMembership () {
+  public deleteEnvironmentMembership() {
     this.add('cloud9:DeleteEnvironmentMembership');
     return this;
   }
@@ -231,7 +232,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentMemberships.html
    */
-  public describeEnvironmentMemberships () {
+  public describeEnvironmentMemberships() {
     this.add('cloud9:DescribeEnvironmentMemberships');
     return this;
   }
@@ -243,7 +244,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentStatus.html
    */
-  public describeEnvironmentStatus () {
+  public describeEnvironmentStatus() {
     this.add('cloud9:DescribeEnvironmentStatus');
     return this;
   }
@@ -255,7 +256,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironments.html
    */
-  public describeEnvironments () {
+  public describeEnvironments() {
     this.add('cloud9:DescribeEnvironments');
     return this;
   }
@@ -267,7 +268,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
-  public getUserSettings () {
+  public getUserSettings() {
     this.add('cloud9:GetUserSettings');
     return this;
   }
@@ -279,7 +280,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListEnvironments.html
    */
-  public listEnvironments () {
+  public listEnvironments() {
     this.add('cloud9:ListEnvironments');
     return this;
   }
@@ -291,7 +292,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('cloud9:ListTagsForResource');
     return this;
   }
@@ -303,7 +304,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('cloud9:TagResource');
     return this;
   }
@@ -315,7 +316,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('cloud9:UntagResource');
     return this;
   }
@@ -327,7 +328,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironment.html
    */
-  public updateEnvironment () {
+  public updateEnvironment() {
     this.add('cloud9:UpdateEnvironment');
     return this;
   }
@@ -339,7 +340,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironmentMembership.html
    */
-  public updateEnvironmentMembership () {
+  public updateEnvironmentMembership() {
     this.add('cloud9:UpdateEnvironmentMembership');
     return this;
   }
@@ -351,8 +352,30 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
-  public updateUserSettings () {
+  public updateUserSettings() {
     this.add('cloud9:UpdateUserSettings');
     return this;
+  }
+
+  /**
+   * Adds a resource of type environment to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-environment
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

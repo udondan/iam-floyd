@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Appconfig extends PolicyStatement {
   public servicePrefix = 'appconfig';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateApplication": {
       "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html",
       "description": "Grants permission to create an application",
@@ -442,9 +442,10 @@ export class Appconfig extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-application.html",
       "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -452,6 +453,7 @@ export class Appconfig extends PolicyStatement {
     },
     "environment": {
       "name": "environment",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-environment.html",
       "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -459,6 +461,7 @@ export class Appconfig extends PolicyStatement {
     },
     "configurationprofile": {
       "name": "configurationprofile",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-profile.html",
       "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -466,6 +469,7 @@ export class Appconfig extends PolicyStatement {
     },
     "deploymentstrategy": {
       "name": "deploymentstrategy",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-deployment-strategy.html",
       "arn": "arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -473,6 +477,7 @@ export class Appconfig extends PolicyStatement {
     },
     "deployment": {
       "name": "deployment",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-deploying.html",
       "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -487,7 +492,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html
    */
-  public createApplication () {
+  public createApplication() {
     this.add('appconfig:CreateApplication');
     return this;
   }
@@ -499,7 +504,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html
    */
-  public createConfigurationProfile () {
+  public createConfigurationProfile() {
     this.add('appconfig:CreateConfigurationProfile');
     return this;
   }
@@ -511,7 +516,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateDeploymentStrategy.html
    */
-  public createDeploymentStrategy () {
+  public createDeploymentStrategy() {
     this.add('appconfig:CreateDeploymentStrategy');
     return this;
   }
@@ -523,7 +528,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html
    */
-  public createEnvironment () {
+  public createEnvironment() {
     this.add('appconfig:CreateEnvironment');
     return this;
   }
@@ -535,7 +540,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteApplication.html
    */
-  public deleteApplication () {
+  public deleteApplication() {
     this.add('appconfig:DeleteApplication');
     return this;
   }
@@ -547,7 +552,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteConfigurationProfile.html
    */
-  public deleteConfigurationProfile () {
+  public deleteConfigurationProfile() {
     this.add('appconfig:DeleteConfigurationProfile');
     return this;
   }
@@ -559,7 +564,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteDeploymentStrategy.html
    */
-  public deleteDeploymentStrategy () {
+  public deleteDeploymentStrategy() {
     this.add('appconfig:DeleteDeploymentStrategy');
     return this;
   }
@@ -571,7 +576,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteEnvironment.html
    */
-  public deleteEnvironment () {
+  public deleteEnvironment() {
     this.add('appconfig:DeleteEnvironment');
     return this;
   }
@@ -583,7 +588,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html
    */
-  public getApplication () {
+  public getApplication() {
     this.add('appconfig:GetApplication');
     return this;
   }
@@ -595,7 +600,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html
    */
-  public getConfiguration () {
+  public getConfiguration() {
     this.add('appconfig:GetConfiguration');
     return this;
   }
@@ -607,7 +612,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html
    */
-  public getConfigurationProfile () {
+  public getConfigurationProfile() {
     this.add('appconfig:GetConfigurationProfile');
     return this;
   }
@@ -619,7 +624,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html
    */
-  public getDeployment () {
+  public getDeployment() {
     this.add('appconfig:GetDeployment');
     return this;
   }
@@ -631,7 +636,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html
    */
-  public getDeploymentStrategy () {
+  public getDeploymentStrategy() {
     this.add('appconfig:GetDeploymentStrategy');
     return this;
   }
@@ -643,7 +648,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html
    */
-  public getEnvironment () {
+  public getEnvironment() {
     this.add('appconfig:GetEnvironment');
     return this;
   }
@@ -655,7 +660,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListApplications.html
    */
-  public listApplications () {
+  public listApplications() {
     this.add('appconfig:ListApplications');
     return this;
   }
@@ -667,7 +672,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListConfigurationProfiles.html
    */
-  public listConfigurationProfiles () {
+  public listConfigurationProfiles() {
     this.add('appconfig:ListConfigurationProfiles');
     return this;
   }
@@ -679,7 +684,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeploymentStrategies.html
    */
-  public listDeploymentStrategies () {
+  public listDeploymentStrategies() {
     this.add('appconfig:ListDeploymentStrategies');
     return this;
   }
@@ -691,7 +696,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeployments.html
    */
-  public listDeployments () {
+  public listDeployments() {
     this.add('appconfig:ListDeployments');
     return this;
   }
@@ -703,7 +708,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListEnvironments.html
    */
-  public listEnvironments () {
+  public listEnvironments() {
     this.add('appconfig:ListEnvironments');
     return this;
   }
@@ -715,7 +720,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('appconfig:ListTagsForResource');
     return this;
   }
@@ -727,7 +732,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html
    */
-  public startDeployment () {
+  public startDeployment() {
     this.add('appconfig:StartDeployment');
     return this;
   }
@@ -739,7 +744,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopDeployment.html
    */
-  public stopDeployment () {
+  public stopDeployment() {
     this.add('appconfig:StopDeployment');
     return this;
   }
@@ -751,7 +756,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('appconfig:TagResource');
     return this;
   }
@@ -763,7 +768,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('appconfig:UntagResource');
     return this;
   }
@@ -775,7 +780,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html
    */
-  public updateApplication () {
+  public updateApplication() {
     this.add('appconfig:UpdateApplication');
     return this;
   }
@@ -787,7 +792,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html
    */
-  public updateConfigurationProfile () {
+  public updateConfigurationProfile() {
     this.add('appconfig:UpdateConfigurationProfile');
     return this;
   }
@@ -799,7 +804,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html
    */
-  public updateDeploymentStrategy () {
+  public updateDeploymentStrategy() {
     this.add('appconfig:UpdateDeploymentStrategy');
     return this;
   }
@@ -811,7 +816,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html
    */
-  public updateEnvironment () {
+  public updateEnvironment() {
     this.add('appconfig:UpdateEnvironment');
     return this;
   }
@@ -823,8 +828,126 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ValidateConfiguration.html
    */
-  public validateConfiguration () {
+  public validateConfiguration() {
     this.add('appconfig:ValidateConfiguration');
     return this;
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-application.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}';
+    arn = arn.replace('${ApplicationId}', applicationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type environment to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-environment.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param environmentId - Identifier for the environmentId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}';
+    arn = arn.replace('${ApplicationId}', applicationId);
+    arn = arn.replace('${EnvironmentId}', environmentId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type configurationprofile to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-profile.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param configurationProfileId - Identifier for the configurationProfileId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}';
+    arn = arn.replace('${ApplicationId}', applicationId);
+    arn = arn.replace('${ConfigurationProfileId}', configurationProfileId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deploymentstrategy to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-deployment-strategy.html
+   *
+   * @param deploymentStrategyId - Identifier for the deploymentStrategyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}';
+    arn = arn.replace('${DeploymentStrategyId}', deploymentStrategyId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type deployment to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-deploying.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param environmentId - Identifier for the environmentId.
+   * @param deploymentNumber - Identifier for the deploymentNumber.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDeployment(applicationId: string, environmentId: string, deploymentNumber: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}';
+    arn = arn.replace('${ApplicationId}', applicationId);
+    arn = arn.replace('${EnvironmentId}', environmentId);
+    arn = arn.replace('${DeploymentNumber}', deploymentNumber);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

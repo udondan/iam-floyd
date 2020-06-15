@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Medialive extends PolicyStatement {
   public servicePrefix = 'medialive';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchUpdateSchedule": {
       "url": "https://docs.aws.amazon.com/medialive/latest/ug/batching-actions.html",
       "description": "Grants permission to add and remove actions from a channel's schedule.",
@@ -446,50 +446,57 @@ export class Medialive extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "channel": {
       "name": "channel",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channel:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/channels.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:channel:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "input": {
       "name": "input",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:input:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/inputs.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:input:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "input-device": {
       "name": "input-device",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputDevice:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/inputdevices.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputDevice:${ResourceName}",
       "conditionKeys": []
     },
     "input-security-group": {
       "name": "input-security-group",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/inputsecuritygroups.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "multiplex": {
       "name": "multiplex",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:multiplex:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/multiplexes.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:multiplex:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "reservation": {
       "name": "reservation",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:reservation:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/reservations.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:reservation:${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "offering": {
       "name": "offering",
-      "arn": "arn:${Partition}:medialive:${Region}:${Account}:offering:*",
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/input-output-reservations.html",
+      "arn": "arn:${Partition}:medialive:${Region}:${Account}:offering:${ResourceName}",
       "conditionKeys": []
     }
   };
@@ -501,7 +508,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/batching-actions.html
    */
-  public batchUpdateSchedule () {
+  public batchUpdateSchedule() {
     this.add('medialive:BatchUpdateSchedule');
     return this;
   }
@@ -513,7 +520,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-channel-scratch.html
    */
-  public createChannel () {
+  public createChannel() {
     this.add('medialive:CreateChannel');
     return this;
   }
@@ -525,7 +532,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html
    */
-  public createInput () {
+  public createInput() {
     this.add('medialive:CreateInput');
     return this;
   }
@@ -537,7 +544,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html
    */
-  public createInputSecurityGroup () {
+  public createInputSecurityGroup() {
     this.add('medialive:CreateInputSecurityGroup');
     return this;
   }
@@ -549,7 +556,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-multiplex.html
    */
-  public createMultiplex () {
+  public createMultiplex() {
     this.add('medialive:CreateMultiplex');
     return this;
   }
@@ -561,7 +568,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
-  public createTags () {
+  public createTags() {
     this.add('medialive:CreateTags');
     return this;
   }
@@ -573,7 +580,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
    */
-  public deleteChannel () {
+  public deleteChannel() {
     this.add('medialive:DeleteChannel');
     return this;
   }
@@ -585,7 +592,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/delete-input.html
    */
-  public deleteInput () {
+  public deleteInput() {
     this.add('medialive:DeleteInput');
     return this;
   }
@@ -597,7 +604,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/delete-input-security-group.html
    */
-  public deleteInputSecurityGroup () {
+  public deleteInputSecurityGroup() {
     this.add('medialive:DeleteInputSecurityGroup');
     return this;
   }
@@ -609,7 +616,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/delete-multiplex.html
    */
-  public deleteMultiplex () {
+  public deleteMultiplex() {
     this.add('medialive:DeleteMultiplex');
     return this;
   }
@@ -621,7 +628,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/deleting-reservations.html
    */
-  public deleteReservation () {
+  public deleteReservation() {
     this.add('medialive:DeleteReservation');
     return this;
   }
@@ -633,7 +640,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
-  public deleteTags () {
+  public deleteTags() {
     this.add('medialive:DeleteTags');
     return this;
   }
@@ -645,7 +652,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html
    */
-  public describeChannel () {
+  public describeChannel() {
     this.add('medialive:DescribeChannel');
     return this;
   }
@@ -657,7 +664,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html
    */
-  public describeInput () {
+  public describeInput() {
     this.add('medialive:DescribeInput');
     return this;
   }
@@ -669,7 +676,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
-  public describeInputDevice () {
+  public describeInputDevice() {
     this.add('medialive:DescribeInputDevice');
     return this;
   }
@@ -681,7 +688,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
-  public describeInputSecurityGroup () {
+  public describeInputSecurityGroup() {
     this.add('medialive:DescribeInputSecurityGroup');
     return this;
   }
@@ -693,7 +700,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-multiplex-configuration.html
    */
-  public describeMultiplex () {
+  public describeMultiplex() {
     this.add('medialive:DescribeMultiplex');
     return this;
   }
@@ -705,7 +712,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
-  public describeOffering () {
+  public describeOffering() {
     this.add('medialive:DescribeOffering');
     return this;
   }
@@ -717,7 +724,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html
    */
-  public describeReservation () {
+  public describeReservation() {
     this.add('medialive:DescribeReservation');
     return this;
   }
@@ -729,7 +736,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-actions-schedule.html
    */
-  public describeSchedule () {
+  public describeSchedule() {
     this.add('medialive:DescribeSchedule');
     return this;
   }
@@ -741,7 +748,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-channel-configuration.html
    */
-  public listChannels () {
+  public listChannels() {
     this.add('medialive:ListChannels');
     return this;
   }
@@ -753,7 +760,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
-  public listInputDevices () {
+  public listInputDevices() {
     this.add('medialive:ListInputDevices');
     return this;
   }
@@ -765,7 +772,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
-  public listInputSecurityGroups () {
+  public listInputSecurityGroups() {
     this.add('medialive:ListInputSecurityGroups');
     return this;
   }
@@ -777,7 +784,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html
    */
-  public listInputs () {
+  public listInputs() {
     this.add('medialive:ListInputs');
     return this;
   }
@@ -789,7 +796,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/viewing-multiplex-configuration.html
    */
-  public listMultiplexes () {
+  public listMultiplexes() {
     this.add('medialive:ListMultiplexes');
     return this;
   }
@@ -801,7 +808,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
-  public listOfferings () {
+  public listOfferings() {
     this.add('medialive:ListOfferings');
     return this;
   }
@@ -813,7 +820,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/view-reservations.html
    */
-  public listReservations () {
+  public listReservations() {
     this.add('medialive:ListReservations');
     return this;
   }
@@ -825,7 +832,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('medialive:ListTagsForResource');
     return this;
   }
@@ -837,7 +844,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
-  public purchaseOffering () {
+  public purchaseOffering() {
     this.add('medialive:PurchaseOffering');
     return this;
   }
@@ -849,7 +856,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
    */
-  public startChannel () {
+  public startChannel() {
     this.add('medialive:StartChannel');
     return this;
   }
@@ -861,7 +868,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-a-multiplex.html
    */
-  public startMultiplex () {
+  public startMultiplex() {
     this.add('medialive:StartMultiplex');
     return this;
   }
@@ -873,7 +880,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-deleting-a-channel.html
    */
-  public stopChannel () {
+  public stopChannel() {
     this.add('medialive:StopChannel');
     return this;
   }
@@ -885,7 +892,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/starting-stopping-a-multiplex.html
    */
-  public stopMultiplex () {
+  public stopMultiplex() {
     this.add('medialive:StopMultiplex');
     return this;
   }
@@ -897,7 +904,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
    */
-  public updateChannel () {
+  public updateChannel() {
     this.add('medialive:UpdateChannel');
     return this;
   }
@@ -909,7 +916,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/editing-deleting-channel.html
    */
-  public updateChannelClass () {
+  public updateChannelClass() {
     this.add('medialive:UpdateChannelClass');
     return this;
   }
@@ -921,7 +928,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input.html
    */
-  public updateInput () {
+  public updateInput() {
     this.add('medialive:UpdateInput');
     return this;
   }
@@ -933,7 +940,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
    */
-  public updateInputDevice () {
+  public updateInputDevice() {
     this.add('medialive:UpdateInputDevice');
     return this;
   }
@@ -945,7 +952,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html
    */
-  public updateInputSecurityGroup () {
+  public updateInputSecurityGroup() {
     this.add('medialive:UpdateInputSecurityGroup');
     return this;
   }
@@ -957,7 +964,7 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/edit-multiplex.html
    */
-  public updateMultiplex () {
+  public updateMultiplex() {
     this.add('medialive:UpdateMultiplex');
     return this;
   }
@@ -969,8 +976,156 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/reservations.html
    */
-  public updateReservation () {
+  public updateReservation() {
     this.add('medialive:UpdateReservation');
     return this;
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/channels.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onChannel(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:channel:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type input to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/inputs.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInput(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:input:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type input-device to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/inputdevices.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onInputDevice(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputDevice:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type input-security-group to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/inputsecuritygroups.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInputSecurityGroup(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type multiplex to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/multiplexes.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onMultiplex(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:multiplex:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type reservation to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/reservations.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onReservation(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:reservation:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type offering to the statement
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/input-output-reservations.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOffering(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:medialive:${Region}:${Account}:offering:${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

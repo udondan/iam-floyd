@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Cloudwatch extends PolicyStatement {
   public servicePrefix = 'cloudwatch';
-  public actions : Actions = {
+  public actions: Actions = {
     "DeleteAlarms": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html",
       "description": "Deletes all specified alarms. In the event of an error, no alarms are deleted",
@@ -271,9 +271,10 @@ export class Cloudwatch extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "alarm": {
       "name": "alarm",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html",
       "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -281,11 +282,13 @@ export class Cloudwatch extends PolicyStatement {
     },
     "dashboard": {
       "name": "dashboard",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html",
       "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:dashboard/${DashboardName}",
       "conditionKeys": []
     },
     "insight-rule": {
       "name": "insight-rule",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html",
       "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -300,7 +303,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html
    */
-  public deleteAlarms () {
+  public deleteAlarms() {
     this.add('cloudwatch:DeleteAlarms');
     return this;
   }
@@ -312,7 +315,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAnomalyDetector.html
    */
-  public deleteAnomalyDetector () {
+  public deleteAnomalyDetector() {
     this.add('cloudwatch:DeleteAnomalyDetector');
     return this;
   }
@@ -324,7 +327,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html
    */
-  public deleteDashboards () {
+  public deleteDashboards() {
     this.add('cloudwatch:DeleteDashboards');
     return this;
   }
@@ -336,7 +339,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteInsightRules.html
    */
-  public deleteInsightRules () {
+  public deleteInsightRules() {
     this.add('cloudwatch:DeleteInsightRules');
     return this;
   }
@@ -348,7 +351,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html
    */
-  public describeAlarmHistory () {
+  public describeAlarmHistory() {
     this.add('cloudwatch:DescribeAlarmHistory');
     return this;
   }
@@ -360,7 +363,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html
    */
-  public describeAlarms () {
+  public describeAlarms() {
     this.add('cloudwatch:DescribeAlarms');
     return this;
   }
@@ -372,7 +375,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html
    */
-  public describeAlarmsForMetric () {
+  public describeAlarmsForMetric() {
     this.add('cloudwatch:DescribeAlarmsForMetric');
     return this;
   }
@@ -384,7 +387,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAnomalyDetectors.html
    */
-  public describeAnomalyDetectors () {
+  public describeAnomalyDetectors() {
     this.add('cloudwatch:DescribeAnomalyDetectors');
     return this;
   }
@@ -396,7 +399,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html
    */
-  public describeInsightRules () {
+  public describeInsightRules() {
     this.add('cloudwatch:DescribeInsightRules');
     return this;
   }
@@ -408,7 +411,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html
    */
-  public disableAlarmActions () {
+  public disableAlarmActions() {
     this.add('cloudwatch:DisableAlarmActions');
     return this;
   }
@@ -420,7 +423,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableInsightRules.html
    */
-  public disableInsightRules () {
+  public disableInsightRules() {
     this.add('cloudwatch:DisableInsightRules');
     return this;
   }
@@ -432,7 +435,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html
    */
-  public enableAlarmActions () {
+  public enableAlarmActions() {
     this.add('cloudwatch:EnableAlarmActions');
     return this;
   }
@@ -444,7 +447,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableInsightRules.html
    */
-  public enableInsightRules () {
+  public enableInsightRules() {
     this.add('cloudwatch:EnableInsightRules');
     return this;
   }
@@ -456,7 +459,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html
    */
-  public getDashboard () {
+  public getDashboard() {
     this.add('cloudwatch:GetDashboard');
     return this;
   }
@@ -468,7 +471,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html
    */
-  public getInsightRuleReport () {
+  public getInsightRuleReport() {
     this.add('cloudwatch:GetInsightRuleReport');
     return this;
   }
@@ -480,7 +483,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html
    */
-  public getMetricData () {
+  public getMetricData() {
     this.add('cloudwatch:GetMetricData');
     return this;
   }
@@ -492,7 +495,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html
    */
-  public getMetricStatistics () {
+  public getMetricStatistics() {
     this.add('cloudwatch:GetMetricStatistics');
     return this;
   }
@@ -504,7 +507,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html
    */
-  public getMetricWidgetImage () {
+  public getMetricWidgetImage() {
     this.add('cloudwatch:GetMetricWidgetImage');
     return this;
   }
@@ -516,7 +519,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html
    */
-  public listDashboards () {
+  public listDashboards() {
     this.add('cloudwatch:ListDashboards');
     return this;
   }
@@ -528,7 +531,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html
    */
-  public listMetrics () {
+  public listMetrics() {
     this.add('cloudwatch:ListMetrics');
     return this;
   }
@@ -540,7 +543,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('cloudwatch:ListTagsForResource');
     return this;
   }
@@ -552,7 +555,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutAnomalyDetector.html
    */
-  public putAnomalyDetector () {
+  public putAnomalyDetector() {
     this.add('cloudwatch:PutAnomalyDetector');
     return this;
   }
@@ -564,7 +567,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html
    */
-  public putDashboard () {
+  public putDashboard() {
     this.add('cloudwatch:PutDashboard');
     return this;
   }
@@ -576,7 +579,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html
    */
-  public putInsightRule () {
+  public putInsightRule() {
     this.add('cloudwatch:PutInsightRule');
     return this;
   }
@@ -588,7 +591,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html
    */
-  public putMetricAlarm () {
+  public putMetricAlarm() {
     this.add('cloudwatch:PutMetricAlarm');
     return this;
   }
@@ -600,7 +603,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html
    */
-  public putMetricData () {
+  public putMetricData() {
     this.add('cloudwatch:PutMetricData');
     return this;
   }
@@ -612,7 +615,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html
    */
-  public setAlarmState () {
+  public setAlarmState() {
     this.add('cloudwatch:SetAlarmState');
     return this;
   }
@@ -624,7 +627,7 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('cloudwatch:TagResource');
     return this;
   }
@@ -636,8 +639,71 @@ export class Cloudwatch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('cloudwatch:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type alarm to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param alarmName - Identifier for the alarmName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}';
+    arn = arn.replace('${AlarmName}', alarmName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type dashboard to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param dashboardName - Identifier for the dashboardName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDashboard(dashboardName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:dashboard/${DashboardName}';
+    arn = arn.replace('${DashboardName}', dashboardName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type insight-rule to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html
+   *
+   * @param insightRuleName - Identifier for the insightRuleName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}';
+    arn = arn.replace('${InsightRuleName}', insightRuleName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

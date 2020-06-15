@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mobilehub extends PolicyStatement {
   public servicePrefix = 'mobilehub';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateProject": {
       "url": "https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html",
       "description": "Create a project",
@@ -154,9 +154,10 @@ export class Mobilehub extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
+      "url": "https://docs.aws.amazon.com/mobile-hub/latest/developerguide/reference-mobile-hub-iam-managed-policies.html",
       "arn": "arn:${Partition}:mobilehub:${Region}:${Account}:project/${ProjectId}",
       "conditionKeys": []
     }
@@ -169,7 +170,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public createProject () {
+  public createProject() {
     this.add('mobilehub:CreateProject');
     return this;
   }
@@ -181,7 +182,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public createServiceRole () {
+  public createServiceRole() {
     this.add('mobilehub:CreateServiceRole');
     return this;
   }
@@ -193,7 +194,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public deleteProject () {
+  public deleteProject() {
     this.add('mobilehub:DeleteProject');
     return this;
   }
@@ -205,7 +206,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public deleteProjectSnapshot () {
+  public deleteProjectSnapshot() {
     this.add('mobilehub:DeleteProjectSnapshot');
     return this;
   }
@@ -217,7 +218,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public deployToStage () {
+  public deployToStage() {
     this.add('mobilehub:DeployToStage');
     return this;
   }
@@ -229,7 +230,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public describeBundle () {
+  public describeBundle() {
     this.add('mobilehub:DescribeBundle');
     return this;
   }
@@ -241,7 +242,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public exportBundle () {
+  public exportBundle() {
     this.add('mobilehub:ExportBundle');
     return this;
   }
@@ -253,7 +254,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public exportProject () {
+  public exportProject() {
     this.add('mobilehub:ExportProject');
     return this;
   }
@@ -265,7 +266,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public generateProjectParameters () {
+  public generateProjectParameters() {
     this.add('mobilehub:GenerateProjectParameters');
     return this;
   }
@@ -277,7 +278,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public getProject () {
+  public getProject() {
     this.add('mobilehub:GetProject');
     return this;
   }
@@ -289,7 +290,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public getProjectSnapshot () {
+  public getProjectSnapshot() {
     this.add('mobilehub:GetProjectSnapshot');
     return this;
   }
@@ -301,7 +302,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public importProject () {
+  public importProject() {
     this.add('mobilehub:ImportProject');
     return this;
   }
@@ -313,7 +314,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public installBundle () {
+  public installBundle() {
     this.add('mobilehub:InstallBundle');
     return this;
   }
@@ -325,7 +326,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listAvailableConnectors () {
+  public listAvailableConnectors() {
     this.add('mobilehub:ListAvailableConnectors');
     return this;
   }
@@ -337,7 +338,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listAvailableFeatures () {
+  public listAvailableFeatures() {
     this.add('mobilehub:ListAvailableFeatures');
     return this;
   }
@@ -349,7 +350,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listAvailableRegions () {
+  public listAvailableRegions() {
     this.add('mobilehub:ListAvailableRegions');
     return this;
   }
@@ -361,7 +362,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listBundles () {
+  public listBundles() {
     this.add('mobilehub:ListBundles');
     return this;
   }
@@ -373,7 +374,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listProjectSnapshots () {
+  public listProjectSnapshots() {
     this.add('mobilehub:ListProjectSnapshots');
     return this;
   }
@@ -385,7 +386,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listProjects () {
+  public listProjects() {
     this.add('mobilehub:ListProjects');
     return this;
   }
@@ -397,7 +398,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public synchronizeProject () {
+  public synchronizeProject() {
     this.add('mobilehub:SynchronizeProject');
     return this;
   }
@@ -409,7 +410,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public updateProject () {
+  public updateProject() {
     this.add('mobilehub:UpdateProject');
     return this;
   }
@@ -421,7 +422,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public validateProject () {
+  public validateProject() {
     this.add('mobilehub:ValidateProject');
     return this;
   }
@@ -433,8 +434,27 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public verifyServiceRole () {
+  public verifyServiceRole() {
     this.add('mobilehub:VerifyServiceRole');
     return this;
+  }
+
+  /**
+   * Adds a resource of type project to the statement
+   *
+   * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/reference-mobile-hub-iam-managed-policies.html
+   *
+   * @param projectId - Identifier for the projectId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProject(projectId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mobilehub:${Region}:${Account}:project/${ProjectId}';
+    arn = arn.replace('${ProjectId}', projectId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

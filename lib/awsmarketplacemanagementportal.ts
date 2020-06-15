@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplaceManagement extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-management';
-  public actions : Actions = {
+  public actions: Actions = {
     "uploadFiles": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
       "description": "Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.",
@@ -34,7 +34,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.
@@ -43,7 +43,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public uploadFiles () {
+  public uploadFiles() {
     this.add('aws-marketplace-management:uploadFiles');
     return this;
   }
@@ -55,7 +55,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewMarketing () {
+  public viewMarketing() {
     this.add('aws-marketplace-management:viewMarketing');
     return this;
   }
@@ -67,7 +67,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewReports () {
+  public viewReports() {
     this.add('aws-marketplace-management:viewReports');
     return this;
   }
@@ -79,7 +79,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewSettings () {
+  public viewSettings() {
     this.add('aws-marketplace-management:viewSettings');
     return this;
   }
@@ -91,7 +91,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewSupport () {
+  public viewSupport() {
     this.add('aws-marketplace-management:viewSupport');
     return this;
   }

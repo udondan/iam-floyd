@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class CodeguruProfiler extends PolicyStatement {
   public servicePrefix = 'codeguru-profiler';
-  public actions : Actions = {
+  public actions: Actions = {
     "ConfigureAgent": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html",
       "description": "Grants permission for an agent to register with the orchestration service and retrieve profiling configuration information",
@@ -159,9 +159,10 @@ export class CodeguruProfiler extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "ProfilingGroup": {
       "name": "ProfilingGroup",
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html",
       "arn": "arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${profilingGroupName}",
       "conditionKeys": []
     }
@@ -174,7 +175,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html
    */
-  public configureAgent () {
+  public configureAgent() {
     this.add('codeguru-profiler:ConfigureAgent');
     return this;
   }
@@ -186,7 +187,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_CreateProfilingGroup.html
    */
-  public createProfilingGroup () {
+  public createProfilingGroup() {
     this.add('codeguru-profiler:CreateProfilingGroup');
     return this;
   }
@@ -198,7 +199,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DeleteProfilingGroup.html
    */
-  public deleteProfilingGroup () {
+  public deleteProfilingGroup() {
     this.add('codeguru-profiler:DeleteProfilingGroup');
     return this;
   }
@@ -210,7 +211,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DescribeProfilingGroup.html
    */
-  public describeProfilingGroup () {
+  public describeProfilingGroup() {
     this.add('codeguru-profiler:DescribeProfilingGroup');
     return this;
   }
@@ -222,7 +223,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReport.html
    */
-  public getFindingsReport () {
+  public getFindingsReport() {
     this.add('codeguru-profiler:GetFindingsReport');
     return this;
   }
@@ -234,7 +235,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReportAccountSummary.html
    */
-  public getFindingsReportAccountSummary () {
+  public getFindingsReportAccountSummary() {
     this.add('codeguru-profiler:GetFindingsReportAccountSummary');
     return this;
   }
@@ -246,7 +247,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetPolicy.html
    */
-  public getPolicy () {
+  public getPolicy() {
     this.add('codeguru-profiler:GetPolicy');
     return this;
   }
@@ -258,7 +259,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html
    */
-  public getProfile () {
+  public getProfile() {
     this.add('codeguru-profiler:GetProfile');
     return this;
   }
@@ -270,7 +271,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetRecommendations.html
    */
-  public getRecommendations () {
+  public getRecommendations() {
     this.add('codeguru-profiler:GetRecommendations');
     return this;
   }
@@ -282,7 +283,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListFindingsReports.html
    */
-  public listFindingsReports () {
+  public listFindingsReports() {
     this.add('codeguru-profiler:ListFindingsReports');
     return this;
   }
@@ -294,7 +295,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html
    */
-  public listProfileTimes () {
+  public listProfileTimes() {
     this.add('codeguru-profiler:ListProfileTimes');
     return this;
   }
@@ -306,7 +307,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfilingGroups.html
    */
-  public listProfilingGroups () {
+  public listProfilingGroups() {
     this.add('codeguru-profiler:ListProfilingGroups');
     return this;
   }
@@ -318,7 +319,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html
    */
-  public postAgentProfile () {
+  public postAgentProfile() {
     this.add('codeguru-profiler:PostAgentProfile');
     return this;
   }
@@ -330,7 +331,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PutPermission.html
    */
-  public putPermission () {
+  public putPermission() {
     this.add('codeguru-profiler:PutPermission');
     return this;
   }
@@ -342,7 +343,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemovePermission.html
    */
-  public removePermission () {
+  public removePermission() {
     this.add('codeguru-profiler:RemovePermission');
     return this;
   }
@@ -354,8 +355,27 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UpdateProfilingGroup.html
    */
-  public updateProfilingGroup () {
+  public updateProfilingGroup() {
     this.add('codeguru-profiler:UpdateProfilingGroup');
     return this;
+  }
+
+  /**
+   * Adds a resource of type ProfilingGroup to the statement
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html
+   *
+   * @param profilingGroupName - Identifier for the profilingGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${profilingGroupName}';
+    arn = arn.replace('${profilingGroupName}', profilingGroupName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

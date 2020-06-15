@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Fms extends PolicyStatement {
   public servicePrefix = 'fms';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateAdminAccount": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html",
       "description": "Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts",
@@ -153,9 +153,10 @@ export class Fms extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "policy": {
       "name": "policy",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html",
       "arn": "arn:${Partition}:fms:${Region}:${Account}:policy/${Id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -170,7 +171,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html
    */
-  public associateAdminAccount () {
+  public associateAdminAccount() {
     this.add('fms:AssociateAdminAccount');
     return this;
   }
@@ -182,7 +183,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html
    */
-  public deleteNotificationChannel () {
+  public deleteNotificationChannel() {
     this.add('fms:DeleteNotificationChannel');
     return this;
   }
@@ -194,7 +195,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html
    */
-  public deletePolicy () {
+  public deletePolicy() {
     this.add('fms:DeletePolicy');
     return this;
   }
@@ -206,7 +207,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html
    */
-  public disassociateAdminAccount () {
+  public disassociateAdminAccount() {
     this.add('fms:DisassociateAdminAccount');
     return this;
   }
@@ -218,7 +219,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html
    */
-  public getAdminAccount () {
+  public getAdminAccount() {
     this.add('fms:GetAdminAccount');
     return this;
   }
@@ -230,7 +231,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html
    */
-  public getComplianceDetail () {
+  public getComplianceDetail() {
     this.add('fms:GetComplianceDetail');
     return this;
   }
@@ -242,7 +243,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html
    */
-  public getNotificationChannel () {
+  public getNotificationChannel() {
     this.add('fms:GetNotificationChannel');
     return this;
   }
@@ -254,7 +255,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html
    */
-  public getPolicy () {
+  public getPolicy() {
     this.add('fms:GetPolicy');
     return this;
   }
@@ -266,7 +267,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html
    */
-  public getProtectionStatus () {
+  public getProtectionStatus() {
     this.add('fms:GetProtectionStatus');
     return this;
   }
@@ -278,7 +279,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html
    */
-  public listComplianceStatus () {
+  public listComplianceStatus() {
     this.add('fms:ListComplianceStatus');
     return this;
   }
@@ -290,7 +291,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html
    */
-  public listMemberAccounts () {
+  public listMemberAccounts() {
     this.add('fms:ListMemberAccounts');
     return this;
   }
@@ -302,7 +303,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html
    */
-  public listPolicies () {
+  public listPolicies() {
     this.add('fms:ListPolicies');
     return this;
   }
@@ -314,7 +315,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('fms:ListTagsForResource');
     return this;
   }
@@ -326,7 +327,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html
    */
-  public putNotificationChannel () {
+  public putNotificationChannel() {
     this.add('fms:PutNotificationChannel');
     return this;
   }
@@ -338,7 +339,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html
    */
-  public putPolicy () {
+  public putPolicy() {
     this.add('fms:PutPolicy');
     return this;
   }
@@ -350,7 +351,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('fms:TagResource');
     return this;
   }
@@ -362,8 +363,30 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('fms:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type policy to the statement
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPolicy(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fms:${Region}:${Account}:policy/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

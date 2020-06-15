@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class ResourceExplorer extends PolicyStatement {
   public servicePrefix = 'resource-explorer';
-  public actions : Actions = {
+  public actions: Actions = {
     "ListResourceTypes": {
       "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te",
       "description": "Grants permission to retrieve the resource types currently supported by Tag Editor",
@@ -24,7 +24,7 @@ export class ResourceExplorer extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to retrieve the resource types currently supported by Tag Editor
@@ -33,7 +33,7 @@ export class ResourceExplorer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
-  public listResourceTypes () {
+  public listResourceTypes() {
     this.add('resource-explorer:ListResourceTypes');
     return this;
   }
@@ -45,7 +45,7 @@ export class ResourceExplorer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
-  public listResources () {
+  public listResources() {
     this.add('resource-explorer:ListResources');
     return this;
   }
@@ -57,7 +57,7 @@ export class ResourceExplorer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */
-  public listTags () {
+  public listTags() {
     this.add('resource-explorer:ListTags');
     return this;
   }

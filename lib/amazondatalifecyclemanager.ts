@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Dlm extends PolicyStatement {
   public servicePrefix = 'dlm';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateLifecyclePolicy": {
       "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html",
       "description": "Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies.",
@@ -83,9 +83,10 @@ export class Dlm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "policy": {
       "name": "policy",
+      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_LifecyclePolicy.html",
       "arn": "arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -100,7 +101,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html
    */
-  public createLifecyclePolicy () {
+  public createLifecyclePolicy() {
     this.add('dlm:CreateLifecyclePolicy');
     return this;
   }
@@ -112,7 +113,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html
    */
-  public deleteLifecyclePolicy () {
+  public deleteLifecyclePolicy() {
     this.add('dlm:DeleteLifecyclePolicy');
     return this;
   }
@@ -124,7 +125,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html
    */
-  public getLifecyclePolicies () {
+  public getLifecyclePolicies() {
     this.add('dlm:GetLifecyclePolicies');
     return this;
   }
@@ -136,7 +137,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html
    */
-  public getLifecyclePolicy () {
+  public getLifecyclePolicy() {
     this.add('dlm:GetLifecyclePolicy');
     return this;
   }
@@ -148,7 +149,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('dlm:ListTagsForResource');
     return this;
   }
@@ -160,7 +161,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('dlm:TagResource');
     return this;
   }
@@ -172,7 +173,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('dlm:UntagResource');
     return this;
   }
@@ -184,8 +185,30 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html
    */
-  public updateLifecyclePolicy () {
+  public updateLifecyclePolicy() {
     this.add('dlm:UpdateLifecyclePolicy');
     return this;
+  }
+
+  /**
+   * Adds a resource of type policy to the statement
+   *
+   * https://docs.aws.amazon.com/dlm/latest/APIReference/API_LifecyclePolicy.html
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPolicy(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

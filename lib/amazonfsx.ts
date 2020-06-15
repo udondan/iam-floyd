@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Fsx extends PolicyStatement {
   public servicePrefix = 'fsx';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelDataRepositoryTask": {
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CancelDataRepositoryTask.html",
       "description": "This action cancels a data repository task",
@@ -184,24 +184,27 @@ export class Fsx extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "file-system": {
       "name": "file-system",
-      "arn": "arn:${Partition}:fsx:${Region}:${Account}:file-system/*",
+      "url": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:file-system/${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "backup": {
       "name": "backup",
-      "arn": "arn:${Partition}:fsx:${Region}:${Account}:backup/*",
+      "url": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:backup/${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
     },
     "task": {
       "name": "task",
-      "arn": "arn:${Partition}:fsx:${Region}:${Account}:task/*",
+      "url": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources",
+      "arn": "arn:${Partition}:fsx:${Region}:${Account}:task/${ResourceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -215,7 +218,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CancelDataRepositoryTask.html
    */
-  public cancelDataRepositoryTask () {
+  public cancelDataRepositoryTask() {
     this.add('fsx:CancelDataRepositoryTask');
     return this;
   }
@@ -227,7 +230,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
-  public createBackup () {
+  public createBackup() {
     this.add('fsx:CreateBackup');
     return this;
   }
@@ -239,7 +242,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
-  public createDataRepositoryTask () {
+  public createDataRepositoryTask() {
     this.add('fsx:CreateDataRepositoryTask');
     return this;
   }
@@ -251,7 +254,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
-  public createFileSystem () {
+  public createFileSystem() {
     this.add('fsx:CreateFileSystem');
     return this;
   }
@@ -263,7 +266,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
-  public createFileSystemFromBackup () {
+  public createFileSystemFromBackup() {
     this.add('fsx:CreateFileSystemFromBackup');
     return this;
   }
@@ -275,7 +278,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteBackup.html
    */
-  public deleteBackup () {
+  public deleteBackup() {
     this.add('fsx:DeleteBackup');
     return this;
   }
@@ -287,7 +290,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html
    */
-  public deleteFileSystem () {
+  public deleteFileSystem() {
     this.add('fsx:DeleteFileSystem');
     return this;
   }
@@ -299,7 +302,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html
    */
-  public describeBackups () {
+  public describeBackups() {
     this.add('fsx:DescribeBackups');
     return this;
   }
@@ -311,7 +314,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeDataRepositoryTasks.html
    */
-  public describeDataRepositoryTasks () {
+  public describeDataRepositoryTasks() {
     this.add('fsx:DescribeDataRepositoryTasks');
     return this;
   }
@@ -323,7 +326,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html
    */
-  public describeFileSystems () {
+  public describeFileSystems() {
     this.add('fsx:DescribeFileSystems');
     return this;
   }
@@ -335,7 +338,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('fsx:ListTagsForResource');
     return this;
   }
@@ -347,7 +350,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('fsx:TagResource');
     return this;
   }
@@ -359,7 +362,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('fsx:UntagResource');
     return this;
   }
@@ -371,8 +374,74 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateFileSystem.html
    */
-  public updateFileSystem () {
+  public updateFileSystem() {
     this.add('fsx:UpdateFileSystem');
     return this;
+  }
+
+  /**
+   * Adds a resource of type file-system to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFileSystem(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type backup to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBackup(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type task to the statement
+   *
+   * https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources
+   *
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTask(resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${ResourceName}';
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

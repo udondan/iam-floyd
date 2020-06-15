@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Ecs extends PolicyStatement {
   public servicePrefix = 'ecs';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCluster": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html",
       "description": "Creates a new Amazon ECS cluster.",
@@ -531,9 +531,10 @@ export class Ecs extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html",
       "arn": "arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -542,6 +543,7 @@ export class Ecs extends PolicyStatement {
     },
     "container-instance": {
       "name": "container-instance",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html",
       "arn": "arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -550,6 +552,7 @@ export class Ecs extends PolicyStatement {
     },
     "service": {
       "name": "service",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html",
       "arn": "arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -558,6 +561,7 @@ export class Ecs extends PolicyStatement {
     },
     "task": {
       "name": "task",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html",
       "arn": "arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -566,6 +570,7 @@ export class Ecs extends PolicyStatement {
     },
     "task-definition": {
       "name": "task-definition",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html",
       "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -574,6 +579,7 @@ export class Ecs extends PolicyStatement {
     },
     "task-set": {
       "name": "task-set",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html",
       "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -589,7 +595,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html
    */
-  public createCluster () {
+  public createCluster() {
     this.add('ecs:CreateCluster');
     return this;
   }
@@ -601,7 +607,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
-  public createService () {
+  public createService() {
     this.add('ecs:CreateService');
     return this;
   }
@@ -613,7 +619,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html
    */
-  public createTaskSet () {
+  public createTaskSet() {
     this.add('ecs:CreateTaskSet');
     return this;
   }
@@ -625,7 +631,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAccountSetting.html
    */
-  public deleteAccountSetting () {
+  public deleteAccountSetting() {
     this.add('ecs:DeleteAccountSetting');
     return this;
   }
@@ -637,7 +643,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html
    */
-  public deleteAttributes () {
+  public deleteAttributes() {
     this.add('ecs:DeleteAttributes');
     return this;
   }
@@ -649,7 +655,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCluster.html
    */
-  public deleteCluster () {
+  public deleteCluster() {
     this.add('ecs:DeleteCluster');
     return this;
   }
@@ -661,7 +667,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html
    */
-  public deleteService () {
+  public deleteService() {
     this.add('ecs:DeleteService');
     return this;
   }
@@ -673,7 +679,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskSet.html
    */
-  public deleteTaskSet () {
+  public deleteTaskSet() {
     this.add('ecs:DeleteTaskSet');
     return this;
   }
@@ -685,7 +691,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html
    */
-  public deregisterContainerInstance () {
+  public deregisterContainerInstance() {
     this.add('ecs:DeregisterContainerInstance');
     return this;
   }
@@ -697,7 +703,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html
    */
-  public deregisterTaskDefinition () {
+  public deregisterTaskDefinition() {
     this.add('ecs:DeregisterTaskDefinition');
     return this;
   }
@@ -709,7 +715,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html
    */
-  public describeClusters () {
+  public describeClusters() {
     this.add('ecs:DescribeClusters');
     return this;
   }
@@ -721,7 +727,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html
    */
-  public describeContainerInstances () {
+  public describeContainerInstances() {
     this.add('ecs:DescribeContainerInstances');
     return this;
   }
@@ -733,7 +739,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html
    */
-  public describeServices () {
+  public describeServices() {
     this.add('ecs:DescribeServices');
     return this;
   }
@@ -745,7 +751,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskDefinition.html
    */
-  public describeTaskDefinition () {
+  public describeTaskDefinition() {
     this.add('ecs:DescribeTaskDefinition');
     return this;
   }
@@ -757,7 +763,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html
    */
-  public describeTaskSets () {
+  public describeTaskSets() {
     this.add('ecs:DescribeTaskSets');
     return this;
   }
@@ -769,7 +775,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html
    */
-  public describeTasks () {
+  public describeTasks() {
     this.add('ecs:DescribeTasks');
     return this;
   }
@@ -781,7 +787,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DiscoverPollEndpoint.html
    */
-  public discoverPollEndpoint () {
+  public discoverPollEndpoint() {
     this.add('ecs:DiscoverPollEndpoint');
     return this;
   }
@@ -793,7 +799,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAccountSettings.html
    */
-  public listAccountSettings () {
+  public listAccountSettings() {
     this.add('ecs:ListAccountSettings');
     return this;
   }
@@ -805,7 +811,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html
    */
-  public listAttributes () {
+  public listAttributes() {
     this.add('ecs:ListAttributes');
     return this;
   }
@@ -817,7 +823,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html
    */
-  public listClusters () {
+  public listClusters() {
     this.add('ecs:ListClusters');
     return this;
   }
@@ -829,7 +835,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html
    */
-  public listContainerInstances () {
+  public listContainerInstances() {
     this.add('ecs:ListContainerInstances');
     return this;
   }
@@ -841,7 +847,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
    */
-  public listServices () {
+  public listServices() {
     this.add('ecs:ListServices');
     return this;
   }
@@ -853,7 +859,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('ecs:ListTagsForResource');
     return this;
   }
@@ -865,7 +871,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
    */
-  public listTaskDefinitionFamilies () {
+  public listTaskDefinitionFamilies() {
     this.add('ecs:ListTaskDefinitionFamilies');
     return this;
   }
@@ -877,7 +883,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTaskDefinitions.html
    */
-  public listTaskDefinitions () {
+  public listTaskDefinitions() {
     this.add('ecs:ListTaskDefinitions');
     return this;
   }
@@ -889,7 +895,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html
    */
-  public listTasks () {
+  public listTasks() {
     this.add('ecs:ListTasks');
     return this;
   }
@@ -901,7 +907,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html
    */
-  public poll () {
+  public poll() {
     this.add('ecs:Poll');
     return this;
   }
@@ -913,7 +919,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html
    */
-  public putAccountSetting () {
+  public putAccountSetting() {
     this.add('ecs:PutAccountSetting');
     return this;
   }
@@ -925,7 +931,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html
    */
-  public putAccountSettingDefault () {
+  public putAccountSettingDefault() {
     this.add('ecs:PutAccountSettingDefault');
     return this;
   }
@@ -937,7 +943,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html
    */
-  public putAttributes () {
+  public putAttributes() {
     this.add('ecs:PutAttributes');
     return this;
   }
@@ -949,7 +955,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html
    */
-  public registerContainerInstance () {
+  public registerContainerInstance() {
     this.add('ecs:RegisterContainerInstance');
     return this;
   }
@@ -961,7 +967,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterTaskDefinition.html
    */
-  public registerTaskDefinition () {
+  public registerTaskDefinition() {
     this.add('ecs:RegisterTaskDefinition');
     return this;
   }
@@ -973,7 +979,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html
    */
-  public runTask () {
+  public runTask() {
     this.add('ecs:RunTask');
     return this;
   }
@@ -985,7 +991,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html
    */
-  public startTask () {
+  public startTask() {
     this.add('ecs:StartTask');
     return this;
   }
@@ -997,7 +1003,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#enable_cloudwatch
    */
-  public startTelemetrySession () {
+  public startTelemetrySession() {
     this.add('ecs:StartTelemetrySession');
     return this;
   }
@@ -1009,7 +1015,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopTask.html
    */
-  public stopTask () {
+  public stopTask() {
     this.add('ecs:StopTask');
     return this;
   }
@@ -1021,7 +1027,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitAttachmentStateChanges.html
    */
-  public submitAttachmentStateChanges () {
+  public submitAttachmentStateChanges() {
     this.add('ecs:SubmitAttachmentStateChanges');
     return this;
   }
@@ -1033,7 +1039,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitContainerStateChange.html
    */
-  public submitContainerStateChange () {
+  public submitContainerStateChange() {
     this.add('ecs:SubmitContainerStateChange');
     return this;
   }
@@ -1045,7 +1051,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitTaskStateChange.html
    */
-  public submitTaskStateChange () {
+  public submitTaskStateChange() {
     this.add('ecs:SubmitTaskStateChange');
     return this;
   }
@@ -1057,7 +1063,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('ecs:TagResource');
     return this;
   }
@@ -1069,7 +1075,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('ecs:UntagResource');
     return this;
   }
@@ -1081,7 +1087,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html
    */
-  public updateContainerAgent () {
+  public updateContainerAgent() {
     this.add('ecs:UpdateContainerAgent');
     return this;
   }
@@ -1093,7 +1099,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html
    */
-  public updateContainerInstancesState () {
+  public updateContainerInstancesState() {
     this.add('ecs:UpdateContainerInstancesState');
     return this;
   }
@@ -1105,7 +1111,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
    */
-  public updateService () {
+  public updateService() {
     this.add('ecs:UpdateService');
     return this;
   }
@@ -1117,7 +1123,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateServicePrimaryTaskSet.html
    */
-  public updateServicePrimaryTaskSet () {
+  public updateServicePrimaryTaskSet() {
     this.add('ecs:UpdateServicePrimaryTaskSet');
     return this;
   }
@@ -1129,8 +1135,152 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskSet.html
    */
-  public updateTaskSet () {
+  public updateTaskSet() {
     this.add('ecs:UpdateTaskSet');
     return this;
+  }
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecs:ResourceTag/${TagKey}
+   */
+  public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type container-instance to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html
+   *
+   * @param containerInstanceId - Identifier for the containerInstanceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecs:ResourceTag/${TagKey}
+   */
+  public onContainerInstance(containerInstanceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}';
+    arn = arn.replace('${ContainerInstanceId}', containerInstanceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type service to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html
+   *
+   * @param serviceName - Identifier for the serviceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecs:ResourceTag/${TagKey}
+   */
+  public onService(serviceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}';
+    arn = arn.replace('${ServiceName}', serviceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type task to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html
+   *
+   * @param taskId - Identifier for the taskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecs:ResourceTag/${TagKey}
+   */
+  public onTask(taskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
+    arn = arn.replace('${TaskId}', taskId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type task-definition to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html
+   *
+   * @param taskDefinitionFamilyName - Identifier for the taskDefinitionFamilyName.
+   * @param taskDefinitionRevisionNumber - Identifier for the taskDefinitionRevisionNumber.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecs:ResourceTag/${TagKey}
+   */
+  public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}';
+    arn = arn.replace('${TaskDefinitionFamilyName}', taskDefinitionFamilyName);
+    arn = arn.replace('${TaskDefinitionRevisionNumber}', taskDefinitionRevisionNumber);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type task-set to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param serviceName - Identifier for the serviceName.
+   * @param taskSetId - Identifier for the taskSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecs:ResourceTag/${TagKey}
+   */
+  public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${ServiceName}', serviceName);
+    arn = arn.replace('${TaskSetId}', taskSetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

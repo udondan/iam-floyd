@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mediastore extends PolicyStatement {
   public servicePrefix = 'mediastore';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateContainer": {
       "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html",
       "description": "Grants permission to create containers.",
@@ -139,9 +139,10 @@ export class Mediastore extends PolicyStatement {
       "accessLevel": "Tagging"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "container": {
       "name": "container",
+      "url": "https://docs.aws.amazon.com/mediastore/latest/ug/containers.html",
       "arn": "arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}",
       "conditionKeys": []
     }
@@ -154,7 +155,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html
    */
-  public createContainer () {
+  public createContainer() {
     this.add('mediastore:CreateContainer');
     return this;
   }
@@ -166,7 +167,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainer.html
    */
-  public deleteContainer () {
+  public deleteContainer() {
     this.add('mediastore:DeleteContainer');
     return this;
   }
@@ -178,7 +179,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainerPolicy.html
    */
-  public deleteContainerPolicy () {
+  public deleteContainerPolicy() {
     this.add('mediastore:DeleteContainerPolicy');
     return this;
   }
@@ -190,7 +191,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteCorsPolicy.html
    */
-  public deleteCorsPolicy () {
+  public deleteCorsPolicy() {
     this.add('mediastore:DeleteCorsPolicy');
     return this;
   }
@@ -202,7 +203,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteLifecyclePolicy.html
    */
-  public deleteLifecyclePolicy () {
+  public deleteLifecyclePolicy() {
     this.add('mediastore:DeleteLifecyclePolicy');
     return this;
   }
@@ -214,7 +215,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteMetricPolicy.html
    */
-  public deleteMetricPolicy () {
+  public deleteMetricPolicy() {
     this.add('mediastore:DeleteMetricPolicy');
     return this;
   }
@@ -226,7 +227,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DeleteObject.html
    */
-  public deleteObject () {
+  public deleteObject() {
     this.add('mediastore:DeleteObject');
     return this;
   }
@@ -238,7 +239,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_DescribeContainer.html
    */
-  public describeContainer () {
+  public describeContainer() {
     this.add('mediastore:DescribeContainer');
     return this;
   }
@@ -250,7 +251,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DescribeObject.html
    */
-  public describeObject () {
+  public describeObject() {
     this.add('mediastore:DescribeObject');
     return this;
   }
@@ -262,7 +263,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetContainerPolicy.html
    */
-  public getContainerPolicy () {
+  public getContainerPolicy() {
     this.add('mediastore:GetContainerPolicy');
     return this;
   }
@@ -274,7 +275,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetCorsPolicy.html
    */
-  public getCorsPolicy () {
+  public getCorsPolicy() {
     this.add('mediastore:GetCorsPolicy');
     return this;
   }
@@ -286,7 +287,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetLifecyclePolicy.html
    */
-  public getLifecyclePolicy () {
+  public getLifecyclePolicy() {
     this.add('mediastore:GetLifecyclePolicy');
     return this;
   }
@@ -298,7 +299,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetMetricPolicy.html
    */
-  public getMetricPolicy () {
+  public getMetricPolicy() {
     this.add('mediastore:GetMetricPolicy');
     return this;
   }
@@ -310,7 +311,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_GetObject.html
    */
-  public getObject () {
+  public getObject() {
     this.add('mediastore:GetObject');
     return this;
   }
@@ -322,7 +323,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListContainers.html
    */
-  public listContainers () {
+  public listContainers() {
     this.add('mediastore:ListContainers');
     return this;
   }
@@ -334,7 +335,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_ListItems.html
    */
-  public listItems () {
+  public listItems() {
     this.add('mediastore:ListItems');
     return this;
   }
@@ -346,7 +347,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('mediastore:ListTagsForResource');
     return this;
   }
@@ -358,7 +359,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutContainerPolicy.html
    */
-  public putContainerPolicy () {
+  public putContainerPolicy() {
     this.add('mediastore:PutContainerPolicy');
     return this;
   }
@@ -370,7 +371,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutCorsPolicy.html
    */
-  public putCorsPolicy () {
+  public putCorsPolicy() {
     this.add('mediastore:PutCorsPolicy');
     return this;
   }
@@ -382,7 +383,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutLifecyclePolicy.html
    */
-  public putLifecyclePolicy () {
+  public putLifecyclePolicy() {
     this.add('mediastore:PutLifecyclePolicy');
     return this;
   }
@@ -394,7 +395,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutMetricPolicy.html
    */
-  public putMetricPolicy () {
+  public putMetricPolicy() {
     this.add('mediastore:PutMetricPolicy');
     return this;
   }
@@ -406,7 +407,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_PutObject.html
    */
-  public putObject () {
+  public putObject() {
     this.add('mediastore:PutObject');
     return this;
   }
@@ -418,7 +419,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html
    */
-  public startAccessLogging () {
+  public startAccessLogging() {
     this.add('mediastore:StartAccessLogging');
     return this;
   }
@@ -430,7 +431,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_StopAccessLogging.html
    */
-  public stopAccessLogging () {
+  public stopAccessLogging() {
     this.add('mediastore:StopAccessLogging');
     return this;
   }
@@ -442,7 +443,7 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('mediastore:TagResource');
     return this;
   }
@@ -454,8 +455,27 @@ export class Mediastore extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediastore/latest/apireference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('mediastore:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type container to the statement
+   *
+   * https://docs.aws.amazon.com/mediastore/latest/ug/containers.html
+   *
+   * @param containerName - Identifier for the containerName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onContainer(containerName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}';
+    arn = arn.replace('${ContainerName}', containerName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

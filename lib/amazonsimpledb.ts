@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Sdb extends PolicyStatement {
   public servicePrefix = 'sdb';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchDeleteAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html",
       "description": "Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.",
@@ -104,9 +104,10 @@ export class Sdb extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "domain": {
       "name": "domain",
+      "url": "https://docs.aws.amazon.com/sdb/latest/APIReference/DataModel.html",
       "arn": "arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}",
       "conditionKeys": []
     }
@@ -119,7 +120,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html
    */
-  public batchDeleteAttributes () {
+  public batchDeleteAttributes() {
     this.add('sdb:BatchDeleteAttributes');
     return this;
   }
@@ -131,7 +132,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html
    */
-  public batchPutAttributes () {
+  public batchPutAttributes() {
     this.add('sdb:BatchPutAttributes');
     return this;
   }
@@ -143,7 +144,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html
    */
-  public createDomain () {
+  public createDomain() {
     this.add('sdb:CreateDomain');
     return this;
   }
@@ -155,7 +156,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html
    */
-  public deleteAttributes () {
+  public deleteAttributes() {
     this.add('sdb:DeleteAttributes');
     return this;
   }
@@ -167,7 +168,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html
    */
-  public deleteDomain () {
+  public deleteDomain() {
     this.add('sdb:DeleteDomain');
     return this;
   }
@@ -179,7 +180,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html
    */
-  public domainMetadata () {
+  public domainMetadata() {
     this.add('sdb:DomainMetadata');
     return this;
   }
@@ -191,7 +192,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html
    */
-  public getAttributes () {
+  public getAttributes() {
     this.add('sdb:GetAttributes');
     return this;
   }
@@ -203,7 +204,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html
    */
-  public listDomains () {
+  public listDomains() {
     this.add('sdb:ListDomains');
     return this;
   }
@@ -215,7 +216,7 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html
    */
-  public putAttributes () {
+  public putAttributes() {
     this.add('sdb:PutAttributes');
     return this;
   }
@@ -227,8 +228,27 @@ export class Sdb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html
    */
-  public select () {
+  public select() {
     this.add('sdb:Select');
     return this;
+  }
+
+  /**
+   * Adds a resource of type domain to the statement
+   *
+   * https://docs.aws.amazon.com/sdb/latest/APIReference/DataModel.html
+   *
+   * @param domainName - Identifier for the domainName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}';
+    arn = arn.replace('${DomainName}', domainName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

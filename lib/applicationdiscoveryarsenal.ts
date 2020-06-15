@@ -7,14 +7,14 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Arsenal extends PolicyStatement {
   public servicePrefix = 'arsenal';
-  public actions : Actions = {
+  public actions: Actions = {
     "RegisterOnPremisesAgent": {
       "url": "https://docs.aws.amazon.com/setting-up.html#setting-up-user-policy",
       "description": "Grants permission to register AWS provided data collectors to the Application Discovery Service",
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to register AWS provided data collectors to the Application Discovery Service
@@ -23,7 +23,7 @@ export class Arsenal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/setting-up.html#setting-up-user-policy
    */
-  public registerOnPremisesAgent () {
+  public registerOnPremisesAgent() {
     this.add('arsenal:RegisterOnPremisesAgent');
     return this;
   }

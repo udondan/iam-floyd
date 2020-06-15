@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Comprehendmedical extends PolicyStatement {
   public servicePrefix = 'comprehendmedical';
-  public actions : Actions = {
+  public actions: Actions = {
     "DetectEntities": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html",
       "description": "Inspects the specified text for the specified type of entities and returns information about them.",
@@ -19,7 +19,7 @@ export class Comprehendmedical extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Inspects the specified text for the specified type of entities and returns information about them.
@@ -28,7 +28,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html
    */
-  public detectEntities () {
+  public detectEntities() {
     this.add('comprehendmedical:DetectEntities');
     return this;
   }
@@ -40,7 +40,7 @@ export class Comprehendmedical extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectPHI.html
    */
-  public detectPHI () {
+  public detectPHI() {
     this.add('comprehendmedical:DetectPHI');
     return this;
   }

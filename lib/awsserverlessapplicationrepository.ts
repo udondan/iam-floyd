@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Serverlessrepo extends PolicyStatement {
   public servicePrefix = 'serverlessrepo';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateApplication": {
       "url": "",
       "description": "Creates an application, optionally including an AWS SAM file to create the first application version in the same call.",
@@ -162,9 +162,10 @@ export class Serverlessrepo extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "applications": {
       "name": "applications",
+      "url": "",
       "arn": "arn:${Partition}:serverlessrepo:${Region}:${Account}:applications/${ResourceId}",
       "conditionKeys": []
     }
@@ -175,7 +176,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createApplication () {
+  public createApplication() {
     this.add('serverlessrepo:CreateApplication');
     return this;
   }
@@ -185,7 +186,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createApplicationVersion () {
+  public createApplicationVersion() {
     this.add('serverlessrepo:CreateApplicationVersion');
     return this;
   }
@@ -195,7 +196,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createCloudFormationChangeSet () {
+  public createCloudFormationChangeSet() {
     this.add('serverlessrepo:CreateCloudFormationChangeSet');
     return this;
   }
@@ -205,7 +206,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createCloudFormationTemplate () {
+  public createCloudFormationTemplate() {
     this.add('serverlessrepo:CreateCloudFormationTemplate');
     return this;
   }
@@ -215,7 +216,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteApplication () {
+  public deleteApplication() {
     this.add('serverlessrepo:DeleteApplication');
     return this;
   }
@@ -225,7 +226,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getApplication () {
+  public getApplication() {
     this.add('serverlessrepo:GetApplication');
     return this;
   }
@@ -235,7 +236,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getApplicationPolicy () {
+  public getApplicationPolicy() {
     this.add('serverlessrepo:GetApplicationPolicy');
     return this;
   }
@@ -245,7 +246,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getCloudFormationTemplate () {
+  public getCloudFormationTemplate() {
     this.add('serverlessrepo:GetCloudFormationTemplate');
     return this;
   }
@@ -255,7 +256,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listApplicationDependencies () {
+  public listApplicationDependencies() {
     this.add('serverlessrepo:ListApplicationDependencies');
     return this;
   }
@@ -265,7 +266,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listApplicationVersions () {
+  public listApplicationVersions() {
     this.add('serverlessrepo:ListApplicationVersions');
     return this;
   }
@@ -275,7 +276,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listApplications () {
+  public listApplications() {
     this.add('serverlessrepo:ListApplications');
     return this;
   }
@@ -285,7 +286,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public putApplicationPolicy () {
+  public putApplicationPolicy() {
     this.add('serverlessrepo:PutApplicationPolicy');
     return this;
   }
@@ -295,7 +296,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public searchApplications () {
+  public searchApplications() {
     this.add('serverlessrepo:SearchApplications');
     return this;
   }
@@ -305,7 +306,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public unshareApplication () {
+  public unshareApplication() {
     this.add('serverlessrepo:UnshareApplication');
     return this;
   }
@@ -315,8 +316,25 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateApplication () {
+  public updateApplication() {
     this.add('serverlessrepo:UpdateApplication');
     return this;
+  }
+
+  /**
+   * Adds a resource of type applications to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onApplications(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:serverlessrepo:${Region}:${Account}:applications/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

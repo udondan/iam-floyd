@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class RdsData extends PolicyStatement {
   public servicePrefix = 'rds-data';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchExecuteStatement": {
       "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html",
       "description": "Runs a batch SQL statement over an array of data.",
@@ -39,7 +39,7 @@ export class RdsData extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Runs a batch SQL statement over an array of data.
@@ -48,7 +48,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html
    */
-  public batchExecuteStatement () {
+  public batchExecuteStatement() {
     this.add('rds-data:BatchExecuteStatement');
     return this;
   }
@@ -60,7 +60,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html
    */
-  public beginTransaction () {
+  public beginTransaction() {
     this.add('rds-data:BeginTransaction');
     return this;
   }
@@ -72,7 +72,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html
    */
-  public commitTransaction () {
+  public commitTransaction() {
     this.add('rds-data:CommitTransaction');
     return this;
   }
@@ -84,7 +84,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html
    */
-  public executeSql () {
+  public executeSql() {
     this.add('rds-data:ExecuteSql');
     return this;
   }
@@ -96,7 +96,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html
    */
-  public executeStatement () {
+  public executeStatement() {
     this.add('rds-data:ExecuteStatement');
     return this;
   }
@@ -108,7 +108,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html
    */
-  public rollbackTransaction () {
+  public rollbackTransaction() {
     this.add('rds-data:RollbackTransaction');
     return this;
   }

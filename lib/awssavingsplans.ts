@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Savingsplans extends PolicyStatement {
   public servicePrefix = 'savingsplans';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateSavingsPlan": {
       "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html",
       "description": "Grants permission to create a savings plan",
@@ -91,9 +91,10 @@ export class Savingsplans extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "savingsplan": {
       "name": "savingsplan",
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html",
       "arn": "arn:${Partition}:savingsplans:${Region}:${Account}:savingsplan/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -108,7 +109,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html
    */
-  public createSavingsPlan () {
+  public createSavingsPlan() {
     this.add('savingsplans:CreateSavingsPlan');
     return this;
   }
@@ -120,7 +121,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html
    */
-  public describeSavingsPlanRates () {
+  public describeSavingsPlanRates() {
     this.add('savingsplans:DescribeSavingsPlanRates');
     return this;
   }
@@ -132,7 +133,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html
    */
-  public describeSavingsPlans () {
+  public describeSavingsPlans() {
     this.add('savingsplans:DescribeSavingsPlans');
     return this;
   }
@@ -144,7 +145,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferingRates.html
    */
-  public describeSavingsPlansOfferingRates () {
+  public describeSavingsPlansOfferingRates() {
     this.add('savingsplans:DescribeSavingsPlansOfferingRates');
     return this;
   }
@@ -156,7 +157,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html
    */
-  public describeSavingsPlansOfferings () {
+  public describeSavingsPlansOfferings() {
     this.add('savingsplans:DescribeSavingsPlansOfferings');
     return this;
   }
@@ -168,7 +169,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('savingsplans:ListTagsForResource');
     return this;
   }
@@ -180,7 +181,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('savingsplans:TagResource');
     return this;
   }
@@ -192,8 +193,30 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('savingsplans:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type savingsplan to the statement
+   *
+   * https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSavingsplan(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:savingsplans:${Region}:${Account}:savingsplan/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

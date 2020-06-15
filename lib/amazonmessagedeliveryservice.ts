@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Ec2messages extends PolicyStatement {
   public servicePrefix = 'ec2messages';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcknowledgeMessage": {
       "url": "",
       "description": "Acknowledges a message, ensuring it will not be delivered again",
@@ -39,14 +39,14 @@ export class Ec2messages extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Acknowledges a message, ensuring it will not be delivered again
    *
    * Access Level: Write
    */
-  public acknowledgeMessage () {
+  public acknowledgeMessage() {
     this.add('ec2messages:AcknowledgeMessage');
     return this;
   }
@@ -56,7 +56,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteMessage () {
+  public deleteMessage() {
     this.add('ec2messages:DeleteMessage');
     return this;
   }
@@ -66,7 +66,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public failMessage () {
+  public failMessage() {
     this.add('ec2messages:FailMessage');
     return this;
   }
@@ -76,7 +76,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getEndpoint () {
+  public getEndpoint() {
     this.add('ec2messages:GetEndpoint');
     return this;
   }
@@ -86,7 +86,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getMessages () {
+  public getMessages() {
     this.add('ec2messages:GetMessages');
     return this;
   }
@@ -96,7 +96,7 @@ export class Ec2messages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public sendReply () {
+  public sendReply() {
     this.add('ec2messages:SendReply');
     return this;
   }

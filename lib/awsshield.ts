@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Shield extends PolicyStatement {
   public servicePrefix = 'shield';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateDRTLogBucket": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html",
       "description": "Authorizes the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs",
@@ -119,14 +119,16 @@ export class Shield extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "attack": {
       "name": "attack",
+      "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AttackDetail.html",
       "arn": "arn:${Partition}:shield:${Region}:${Account}:attack/${Id}",
       "conditionKeys": []
     },
     "protection": {
       "name": "protection",
+      "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_Protection.html",
       "arn": "arn:${Partition}:shield:${Region}:${Account}:protection/${Id}",
       "conditionKeys": []
     }
@@ -139,7 +141,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html
    */
-  public associateDRTLogBucket () {
+  public associateDRTLogBucket() {
     this.add('shield:AssociateDRTLogBucket');
     return this;
   }
@@ -151,7 +153,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTRole.html
    */
-  public associateDRTRole () {
+  public associateDRTRole() {
     this.add('shield:AssociateDRTRole');
     return this;
   }
@@ -163,7 +165,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html
    */
-  public createProtection () {
+  public createProtection() {
     this.add('shield:CreateProtection');
     return this;
   }
@@ -175,7 +177,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html
    */
-  public createSubscription () {
+  public createSubscription() {
     this.add('shield:CreateSubscription');
     return this;
   }
@@ -187,7 +189,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html
    */
-  public deleteProtection () {
+  public deleteProtection() {
     this.add('shield:DeleteProtection');
     return this;
   }
@@ -199,7 +201,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html
    */
-  public deleteSubscription () {
+  public deleteSubscription() {
     this.add('shield:DeleteSubscription');
     return this;
   }
@@ -211,7 +213,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html
    */
-  public describeAttack () {
+  public describeAttack() {
     this.add('shield:DescribeAttack');
     return this;
   }
@@ -223,7 +225,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeDRTAccess.html
    */
-  public describeDRTAccess () {
+  public describeDRTAccess() {
     this.add('shield:DescribeDRTAccess');
     return this;
   }
@@ -235,7 +237,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeEmergencyContactSettings.html
    */
-  public describeEmergencyContactSettings () {
+  public describeEmergencyContactSettings() {
     this.add('shield:DescribeEmergencyContactSettings');
     return this;
   }
@@ -247,7 +249,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html
    */
-  public describeProtection () {
+  public describeProtection() {
     this.add('shield:DescribeProtection');
     return this;
   }
@@ -259,7 +261,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html
    */
-  public describeSubscription () {
+  public describeSubscription() {
     this.add('shield:DescribeSubscription');
     return this;
   }
@@ -271,7 +273,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTLogBucket.html
    */
-  public disassociateDRTLogBucket () {
+  public disassociateDRTLogBucket() {
     this.add('shield:DisassociateDRTLogBucket');
     return this;
   }
@@ -283,7 +285,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTRole.html
    */
-  public disassociateDRTRole () {
+  public disassociateDRTRole() {
     this.add('shield:DisassociateDRTRole');
     return this;
   }
@@ -295,7 +297,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_GetSubscriptionState.html
    */
-  public getSubscriptionState () {
+  public getSubscriptionState() {
     this.add('shield:GetSubscriptionState');
     return this;
   }
@@ -307,7 +309,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html
    */
-  public listAttacks () {
+  public listAttacks() {
     this.add('shield:ListAttacks');
     return this;
   }
@@ -319,7 +321,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html
    */
-  public listProtections () {
+  public listProtections() {
     this.add('shield:ListProtections');
     return this;
   }
@@ -331,7 +333,7 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateEmergencyContactSettings.html
    */
-  public updateEmergencyContactSettings () {
+  public updateEmergencyContactSettings() {
     this.add('shield:UpdateEmergencyContactSettings');
     return this;
   }
@@ -343,8 +345,46 @@ export class Shield extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateSubscription.html
    */
-  public updateSubscription () {
+  public updateSubscription() {
     this.add('shield:UpdateSubscription');
     return this;
+  }
+
+  /**
+   * Adds a resource of type attack to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AttackDetail.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAttack(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:shield:${Region}:${Account}:attack/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type protection to the statement
+   *
+   * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_Protection.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onProtection(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:shield:${Region}:${Account}:protection/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

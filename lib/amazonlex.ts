@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Lex extends PolicyStatement {
   public servicePrefix = 'lex';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateBotVersion": {
       "url": "https://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html",
       "description": "Creates a new version based on the $LATEST version of the specified bot.",
@@ -456,9 +456,10 @@ export class Lex extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "bot": {
       "name": "bot",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html",
       "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -466,6 +467,7 @@ export class Lex extends PolicyStatement {
     },
     "bot version": {
       "name": "bot version",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html",
       "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -473,6 +475,7 @@ export class Lex extends PolicyStatement {
     },
     "bot alias": {
       "name": "bot alias",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotAliasMetadata.html",
       "arn": "arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -480,6 +483,7 @@ export class Lex extends PolicyStatement {
     },
     "channel": {
       "name": "channel",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotChannelAssociation.html",
       "arn": "arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -487,11 +491,13 @@ export class Lex extends PolicyStatement {
     },
     "intent version": {
       "name": "intent version",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_Intent.html",
       "arn": "arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}",
       "conditionKeys": []
     },
     "slottype version": {
       "name": "slottype version",
+      "url": "https://docs.aws.amazon.com/lex/latest/dg/API_SlotTypeMetadata.html",
       "arn": "arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}",
       "conditionKeys": []
     }
@@ -504,7 +510,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html
    */
-  public createBotVersion () {
+  public createBotVersion() {
     this.add('lex:CreateBotVersion');
     return this;
   }
@@ -516,7 +522,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateIntentVersion.html
    */
-  public createIntentVersion () {
+  public createIntentVersion() {
     this.add('lex:CreateIntentVersion');
     return this;
   }
@@ -528,7 +534,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateSlotTypeVersion.html
    */
-  public createSlotTypeVersion () {
+  public createSlotTypeVersion() {
     this.add('lex:CreateSlotTypeVersion');
     return this;
   }
@@ -540,7 +546,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBot.html
    */
-  public deleteBot () {
+  public deleteBot() {
     this.add('lex:DeleteBot');
     return this;
   }
@@ -552,7 +558,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotAlias.html
    */
-  public deleteBotAlias () {
+  public deleteBotAlias() {
     this.add('lex:DeleteBotAlias');
     return this;
   }
@@ -564,7 +570,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotChannelAssociation.html
    */
-  public deleteBotChannelAssociation () {
+  public deleteBotChannelAssociation() {
     this.add('lex:DeleteBotChannelAssociation');
     return this;
   }
@@ -576,7 +582,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotVersion.html
    */
-  public deleteBotVersion () {
+  public deleteBotVersion() {
     this.add('lex:DeleteBotVersion');
     return this;
   }
@@ -588,7 +594,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntent.html
    */
-  public deleteIntent () {
+  public deleteIntent() {
     this.add('lex:DeleteIntent');
     return this;
   }
@@ -600,7 +606,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntentVersion.html
    */
-  public deleteIntentVersion () {
+  public deleteIntentVersion() {
     this.add('lex:DeleteIntentVersion');
     return this;
   }
@@ -612,7 +618,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_DeleteSession.html
    */
-  public deleteSession () {
+  public deleteSession() {
     this.add('lex:DeleteSession');
     return this;
   }
@@ -624,7 +630,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotType.html
    */
-  public deleteSlotType () {
+  public deleteSlotType() {
     this.add('lex:DeleteSlotType');
     return this;
   }
@@ -636,7 +642,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotTypeVersion.html
    */
-  public deleteSlotTypeVersion () {
+  public deleteSlotTypeVersion() {
     this.add('lex:DeleteSlotTypeVersion');
     return this;
   }
@@ -648,7 +654,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteUtterances.html
    */
-  public deleteUtterances () {
+  public deleteUtterances() {
     this.add('lex:DeleteUtterances');
     return this;
   }
@@ -660,7 +666,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBot.html
    */
-  public getBot () {
+  public getBot() {
     this.add('lex:GetBot');
     return this;
   }
@@ -672,7 +678,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAlias.html
    */
-  public getBotAlias () {
+  public getBotAlias() {
     this.add('lex:GetBotAlias');
     return this;
   }
@@ -684,7 +690,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAliases.html
    */
-  public getBotAliases () {
+  public getBotAliases() {
     this.add('lex:GetBotAliases');
     return this;
   }
@@ -696,7 +702,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociation.html
    */
-  public getBotChannelAssociation () {
+  public getBotChannelAssociation() {
     this.add('lex:GetBotChannelAssociation');
     return this;
   }
@@ -708,7 +714,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociations.html
    */
-  public getBotChannelAssociations () {
+  public getBotChannelAssociations() {
     this.add('lex:GetBotChannelAssociations');
     return this;
   }
@@ -720,7 +726,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotVersions.html
    */
-  public getBotVersions () {
+  public getBotVersions() {
     this.add('lex:GetBotVersions');
     return this;
   }
@@ -732,7 +738,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBots.html
    */
-  public getBots () {
+  public getBots() {
     this.add('lex:GetBots');
     return this;
   }
@@ -744,7 +750,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntent.html
    */
-  public getBuiltinIntent () {
+  public getBuiltinIntent() {
     this.add('lex:GetBuiltinIntent');
     return this;
   }
@@ -756,7 +762,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntents.html
    */
-  public getBuiltinIntents () {
+  public getBuiltinIntents() {
     this.add('lex:GetBuiltinIntents');
     return this;
   }
@@ -768,7 +774,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinSlotTypes.html
    */
-  public getBuiltinSlotTypes () {
+  public getBuiltinSlotTypes() {
     this.add('lex:GetBuiltinSlotTypes');
     return this;
   }
@@ -780,7 +786,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetExport.html
    */
-  public getExport () {
+  public getExport() {
     this.add('lex:GetExport');
     return this;
   }
@@ -792,7 +798,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetImport.html
    */
-  public getImport () {
+  public getImport() {
     this.add('lex:GetImport');
     return this;
   }
@@ -804,7 +810,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntent.html
    */
-  public getIntent () {
+  public getIntent() {
     this.add('lex:GetIntent');
     return this;
   }
@@ -816,7 +822,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntentVersions.html
    */
-  public getIntentVersions () {
+  public getIntentVersions() {
     this.add('lex:GetIntentVersions');
     return this;
   }
@@ -828,7 +834,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntents.html
    */
-  public getIntents () {
+  public getIntents() {
     this.add('lex:GetIntents');
     return this;
   }
@@ -840,7 +846,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_GetSession.html
    */
-  public getSession () {
+  public getSession() {
     this.add('lex:GetSession');
     return this;
   }
@@ -852,7 +858,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotType.html
    */
-  public getSlotType () {
+  public getSlotType() {
     this.add('lex:GetSlotType');
     return this;
   }
@@ -864,7 +870,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypeVersions.html
    */
-  public getSlotTypeVersions () {
+  public getSlotTypeVersions() {
     this.add('lex:GetSlotTypeVersions');
     return this;
   }
@@ -876,7 +882,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypes.html
    */
-  public getSlotTypes () {
+  public getSlotTypes() {
     this.add('lex:GetSlotTypes');
     return this;
   }
@@ -888,7 +894,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetUtterancesView.html
    */
-  public getUtterancesView () {
+  public getUtterancesView() {
     this.add('lex:GetUtterancesView');
     return this;
   }
@@ -900,7 +906,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('lex:ListTagsForResource');
     return this;
   }
@@ -912,7 +918,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html
    */
-  public postContent () {
+  public postContent() {
     this.add('lex:PostContent');
     return this;
   }
@@ -924,7 +930,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html
    */
-  public postText () {
+  public postText() {
     this.add('lex:PostText');
     return this;
   }
@@ -936,7 +942,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html
    */
-  public putBot () {
+  public putBot() {
     this.add('lex:PutBot');
     return this;
   }
@@ -948,7 +954,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBotAlias.html
    */
-  public putBotAlias () {
+  public putBotAlias() {
     this.add('lex:PutBotAlias');
     return this;
   }
@@ -960,7 +966,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutIntent.html
    */
-  public putIntent () {
+  public putIntent() {
     this.add('lex:PutIntent');
     return this;
   }
@@ -972,7 +978,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PutSession.html
    */
-  public putSession () {
+  public putSession() {
     this.add('lex:PutSession');
     return this;
   }
@@ -984,7 +990,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutSlotType.html
    */
-  public putSlotType () {
+  public putSlotType() {
     this.add('lex:PutSlotType');
     return this;
   }
@@ -996,7 +1002,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_StartImport.html
    */
-  public startImport () {
+  public startImport() {
     this.add('lex:StartImport');
     return this;
   }
@@ -1008,7 +1014,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('lex:TagResource');
     return this;
   }
@@ -1020,8 +1026,146 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('lex:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type bot to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html
+   *
+   * @param botName - Identifier for the botName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBot(botName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}';
+    arn = arn.replace('${BotName}', botName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type bot version to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html
+   *
+   * @param botName - Identifier for the botName.
+   * @param botVersion - Identifier for the botVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}';
+    arn = arn.replace('${BotName}', botName);
+    arn = arn.replace('${BotVersion}', botVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type bot alias to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_BotAliasMetadata.html
+   *
+   * @param botName - Identifier for the botName.
+   * @param botAlias - Identifier for the botAlias.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}';
+    arn = arn.replace('${BotName}', botName);
+    arn = arn.replace('${BotAlias}', botAlias);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type channel to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_BotChannelAssociation.html
+   *
+   * @param botName - Identifier for the botName.
+   * @param botAlias - Identifier for the botAlias.
+   * @param channelName - Identifier for the channelName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onChannel(botName: string, botAlias: string, channelName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}';
+    arn = arn.replace('${BotName}', botName);
+    arn = arn.replace('${BotAlias}', botAlias);
+    arn = arn.replace('${ChannelName}', channelName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type intent version to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_Intent.html
+   *
+   * @param intentName - Identifier for the intentName.
+   * @param intentVersion - Identifier for the intentVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onIntentVersion(intentName: string, intentVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}';
+    arn = arn.replace('${IntentName}', intentName);
+    arn = arn.replace('${IntentVersion}', intentVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type slottype version to the statement
+   *
+   * https://docs.aws.amazon.com/lex/latest/dg/API_SlotTypeMetadata.html
+   *
+   * @param slotName - Identifier for the slotName.
+   * @param slotVersion - Identifier for the slotVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSlottypeVersion(slotName: string, slotVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}';
+    arn = arn.replace('${SlotName}', slotName);
+    arn = arn.replace('${SlotVersion}', slotVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Synthetics extends PolicyStatement {
   public servicePrefix = 'synthetics';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCanary": {
       "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html",
       "description": "Create a canary.",
@@ -104,9 +104,10 @@ export class Synthetics extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "canary": {
       "name": "canary",
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html",
       "arn": "arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}",
       "conditionKeys": []
     }
@@ -119,7 +120,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html
    */
-  public createCanary () {
+  public createCanary() {
     this.add('synthetics:CreateCanary');
     return this;
   }
@@ -131,7 +132,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html
    */
-  public deleteCanary () {
+  public deleteCanary() {
     this.add('synthetics:DeleteCanary');
     return this;
   }
@@ -143,7 +144,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html
    */
-  public describeCanaries () {
+  public describeCanaries() {
     this.add('synthetics:DescribeCanaries');
     return this;
   }
@@ -155,7 +156,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanariesLastRun.html
    */
-  public describeCanariesLastRun () {
+  public describeCanariesLastRun() {
     this.add('synthetics:DescribeCanariesLastRun');
     return this;
   }
@@ -167,7 +168,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html
    */
-  public getCanaryRuns () {
+  public getCanaryRuns() {
     this.add('synthetics:GetCanaryRuns');
     return this;
   }
@@ -179,7 +180,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('synthetics:ListTagsForResource');
     return this;
   }
@@ -191,7 +192,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StartCanary.html
    */
-  public startCanary () {
+  public startCanary() {
     this.add('synthetics:StartCanary');
     return this;
   }
@@ -203,7 +204,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StopCanary.html
    */
-  public stopCanary () {
+  public stopCanary() {
     this.add('synthetics:StopCanary');
     return this;
   }
@@ -215,7 +216,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('synthetics:TagResource');
     return this;
   }
@@ -227,7 +228,7 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('synthetics:UntagResource');
     return this;
   }
@@ -239,8 +240,27 @@ export class Synthetics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html
    */
-  public updateCanary () {
+  public updateCanary() {
     this.add('synthetics:UpdateCanary');
     return this;
+  }
+
+  /**
+   * Adds a resource of type canary to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html
+   *
+   * @param canaryName - Identifier for the canaryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}';
+    arn = arn.replace('${CanaryName}', canaryName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

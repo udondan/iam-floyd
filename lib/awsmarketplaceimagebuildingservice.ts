@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplaceImageBuildingService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-image-building-service';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeBuilds": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
       "description": "Describes Image Builds identified by a build Id",
@@ -24,7 +24,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Describes Image Builds identified by a build Id
@@ -33,7 +33,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
-  public describeBuilds () {
+  public describeBuilds() {
     this.add('aws-marketplace-image-building-service:DescribeBuilds');
     return this;
   }
@@ -45,7 +45,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
-  public listBuilds () {
+  public listBuilds() {
     this.add('aws-marketplace-image-building-service:ListBuilds');
     return this;
   }
@@ -57,7 +57,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
-  public startBuild () {
+  public startBuild() {
     this.add('aws-marketplace-image-building-service:StartBuild');
     return this;
   }

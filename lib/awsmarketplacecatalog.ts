@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AwsMarketplaceCatalog extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-catalog';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelChangeSet": {
       "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html",
       "description": "Cancels a running change set.",
@@ -62,14 +62,16 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Entity": {
       "name": "Entity",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html#API_DescribeEntity_ResponseSyntax",
       "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/${EntityType}/${ResourceId}",
       "conditionKeys": []
     },
     "ChangeSet": {
       "name": "ChangeSet",
+      "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_ResponseSyntax",
       "arn": "arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/ChangeSet/${ResourceId}",
       "conditionKeys": []
     }
@@ -82,7 +84,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html
    */
-  public cancelChangeSet () {
+  public cancelChangeSet() {
     this.add('aws-marketplace-catalog:CancelChangeSet');
     return this;
   }
@@ -92,7 +94,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public completeTask () {
+  public completeTask() {
     this.add('aws-marketplace-catalog:CompleteTask');
     return this;
   }
@@ -104,7 +106,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html
    */
-  public describeChangeSet () {
+  public describeChangeSet() {
     this.add('aws-marketplace-catalog:DescribeChangeSet');
     return this;
   }
@@ -116,7 +118,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html
    */
-  public describeEntity () {
+  public describeEntity() {
     this.add('aws-marketplace-catalog:DescribeEntity');
     return this;
   }
@@ -126,7 +128,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeTask () {
+  public describeTask() {
     this.add('aws-marketplace-catalog:DescribeTask');
     return this;
   }
@@ -138,7 +140,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html
    */
-  public listChangeSets () {
+  public listChangeSets() {
     this.add('aws-marketplace-catalog:ListChangeSets');
     return this;
   }
@@ -150,7 +152,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html
    */
-  public listEntities () {
+  public listEntities() {
     this.add('aws-marketplace-catalog:ListEntities');
     return this;
   }
@@ -160,7 +162,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listTasks () {
+  public listTasks() {
     this.add('aws-marketplace-catalog:ListTasks');
     return this;
   }
@@ -172,7 +174,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html
    */
-  public startChangeSet () {
+  public startChangeSet() {
     this.add('aws-marketplace-catalog:StartChangeSet');
     return this;
   }
@@ -182,8 +184,52 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateTask () {
+  public updateTask() {
     this.add('aws-marketplace-catalog:UpdateTask');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Entity to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html#API_DescribeEntity_ResponseSyntax
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param entityType - Identifier for the entityType.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onEntity(catalog: string, entityType: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/${EntityType}/${ResourceId}';
+    arn = arn.replace('${Catalog}', catalog);
+    arn = arn.replace('${EntityType}', entityType);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ChangeSet to the statement
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_ResponseSyntax
+   *
+   * @param catalog - Identifier for the catalog.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onChangeSet(catalog: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:aws-marketplace:${Region}:${Account}:${Catalog}/ChangeSet/${ResourceId}';
+    arn = arn.replace('${Catalog}', catalog);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

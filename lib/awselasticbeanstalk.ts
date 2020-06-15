@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Elasticbeanstalk extends PolicyStatement {
   public servicePrefix = 'elasticbeanstalk';
-  public actions : Actions = {
+  public actions: Actions = {
     "AbortEnvironmentUpdate": {
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html",
       "description": "Grants permission to cancel in-progress environment configuration update or application version deployment.",
@@ -662,9 +662,10 @@ export class Elasticbeanstalk extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
       "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -672,6 +673,7 @@ export class Elasticbeanstalk extends PolicyStatement {
     },
     "applicationversion": {
       "name": "applicationversion",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
       "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -680,6 +682,7 @@ export class Elasticbeanstalk extends PolicyStatement {
     },
     "configurationtemplate": {
       "name": "configurationtemplate",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
       "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -688,6 +691,7 @@ export class Elasticbeanstalk extends PolicyStatement {
     },
     "environment": {
       "name": "environment",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
       "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -696,11 +700,13 @@ export class Elasticbeanstalk extends PolicyStatement {
     },
     "solutionstack": {
       "name": "solutionstack",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
       "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:solutionstack/${SolutionStackName}",
       "conditionKeys": []
     },
     "platform": {
       "name": "platform",
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
       "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:platform/${PlatformNameWithVersion}",
       "conditionKeys": []
     }
@@ -713,7 +719,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html
    */
-  public abortEnvironmentUpdate () {
+  public abortEnvironmentUpdate() {
     this.add('elasticbeanstalk:AbortEnvironmentUpdate');
     return this;
   }
@@ -725,7 +731,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
-  public addTags () {
+  public addTags() {
     this.add('elasticbeanstalk:AddTags');
     return this;
   }
@@ -737,7 +743,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ApplyEnvironmentManagedAction.html
    */
-  public applyEnvironmentManagedAction () {
+  public applyEnvironmentManagedAction() {
     this.add('elasticbeanstalk:ApplyEnvironmentManagedAction');
     return this;
   }
@@ -749,7 +755,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CheckDNSAvailability.html
    */
-  public checkDNSAvailability () {
+  public checkDNSAvailability() {
     this.add('elasticbeanstalk:CheckDNSAvailability');
     return this;
   }
@@ -761,7 +767,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html
    */
-  public composeEnvironments () {
+  public composeEnvironments() {
     this.add('elasticbeanstalk:ComposeEnvironments');
     return this;
   }
@@ -773,7 +779,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html
    */
-  public createApplication () {
+  public createApplication() {
     this.add('elasticbeanstalk:CreateApplication');
     return this;
   }
@@ -785,7 +791,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplicationVersion.html
    */
-  public createApplicationVersion () {
+  public createApplicationVersion() {
     this.add('elasticbeanstalk:CreateApplicationVersion');
     return this;
   }
@@ -797,7 +803,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateConfigurationTemplate.html
    */
-  public createConfigurationTemplate () {
+  public createConfigurationTemplate() {
     this.add('elasticbeanstalk:CreateConfigurationTemplate');
     return this;
   }
@@ -809,7 +815,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html
    */
-  public createEnvironment () {
+  public createEnvironment() {
     this.add('elasticbeanstalk:CreateEnvironment');
     return this;
   }
@@ -821,7 +827,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreatePlatformVersion.html
    */
-  public createPlatformVersion () {
+  public createPlatformVersion() {
     this.add('elasticbeanstalk:CreatePlatformVersion');
     return this;
   }
@@ -833,7 +839,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateStorageLocation.html
    */
-  public createStorageLocation () {
+  public createStorageLocation() {
     this.add('elasticbeanstalk:CreateStorageLocation');
     return this;
   }
@@ -845,7 +851,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteApplication.html
    */
-  public deleteApplication () {
+  public deleteApplication() {
     this.add('elasticbeanstalk:DeleteApplication');
     return this;
   }
@@ -857,7 +863,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteApplicationVersion.html
    */
-  public deleteApplicationVersion () {
+  public deleteApplicationVersion() {
     this.add('elasticbeanstalk:DeleteApplicationVersion');
     return this;
   }
@@ -869,7 +875,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteConfigurationTemplate.html
    */
-  public deleteConfigurationTemplate () {
+  public deleteConfigurationTemplate() {
     this.add('elasticbeanstalk:DeleteConfigurationTemplate');
     return this;
   }
@@ -881,7 +887,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteEnvironmentConfiguration.html
    */
-  public deleteEnvironmentConfiguration () {
+  public deleteEnvironmentConfiguration() {
     this.add('elasticbeanstalk:DeleteEnvironmentConfiguration');
     return this;
   }
@@ -893,7 +899,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeletePlatformVersion.html
    */
-  public deletePlatformVersion () {
+  public deletePlatformVersion() {
     this.add('elasticbeanstalk:DeletePlatformVersion');
     return this;
   }
@@ -905,7 +911,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeAccountAttributes.html
    */
-  public describeAccountAttributes () {
+  public describeAccountAttributes() {
     this.add('elasticbeanstalk:DescribeAccountAttributes');
     return this;
   }
@@ -917,7 +923,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeApplicationVersions.html
    */
-  public describeApplicationVersions () {
+  public describeApplicationVersions() {
     this.add('elasticbeanstalk:DescribeApplicationVersions');
     return this;
   }
@@ -929,7 +935,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeApplications.html
    */
-  public describeApplications () {
+  public describeApplications() {
     this.add('elasticbeanstalk:DescribeApplications');
     return this;
   }
@@ -941,7 +947,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationOptions.html
    */
-  public describeConfigurationOptions () {
+  public describeConfigurationOptions() {
     this.add('elasticbeanstalk:DescribeConfigurationOptions');
     return this;
   }
@@ -953,7 +959,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html
    */
-  public describeConfigurationSettings () {
+  public describeConfigurationSettings() {
     this.add('elasticbeanstalk:DescribeConfigurationSettings');
     return this;
   }
@@ -965,7 +971,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentHealth.html
    */
-  public describeEnvironmentHealth () {
+  public describeEnvironmentHealth() {
     this.add('elasticbeanstalk:DescribeEnvironmentHealth');
     return this;
   }
@@ -977,7 +983,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentManagedActionHistory.html
    */
-  public describeEnvironmentManagedActionHistory () {
+  public describeEnvironmentManagedActionHistory() {
     this.add('elasticbeanstalk:DescribeEnvironmentManagedActionHistory');
     return this;
   }
@@ -989,7 +995,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentManagedActions.html
    */
-  public describeEnvironmentManagedActions () {
+  public describeEnvironmentManagedActions() {
     this.add('elasticbeanstalk:DescribeEnvironmentManagedActions');
     return this;
   }
@@ -1001,7 +1007,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironmentResources.html
    */
-  public describeEnvironmentResources () {
+  public describeEnvironmentResources() {
     this.add('elasticbeanstalk:DescribeEnvironmentResources');
     return this;
   }
@@ -1013,7 +1019,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html
    */
-  public describeEnvironments () {
+  public describeEnvironments() {
     this.add('elasticbeanstalk:DescribeEnvironments');
     return this;
   }
@@ -1025,7 +1031,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEvents.html
    */
-  public describeEvents () {
+  public describeEvents() {
     this.add('elasticbeanstalk:DescribeEvents');
     return this;
   }
@@ -1037,7 +1043,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeInstancesHealth.html
    */
-  public describeInstancesHealth () {
+  public describeInstancesHealth() {
     this.add('elasticbeanstalk:DescribeInstancesHealth');
     return this;
   }
@@ -1049,7 +1055,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribePlatformVersion.html
    */
-  public describePlatformVersion () {
+  public describePlatformVersion() {
     this.add('elasticbeanstalk:DescribePlatformVersion');
     return this;
   }
@@ -1061,7 +1067,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html
    */
-  public listAvailableSolutionStacks () {
+  public listAvailableSolutionStacks() {
     this.add('elasticbeanstalk:ListAvailableSolutionStacks');
     return this;
   }
@@ -1073,7 +1079,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformBranches.html
    */
-  public listPlatformBranches () {
+  public listPlatformBranches() {
     this.add('elasticbeanstalk:ListPlatformBranches');
     return this;
   }
@@ -1085,7 +1091,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html
    */
-  public listPlatformVersions () {
+  public listPlatformVersions() {
     this.add('elasticbeanstalk:ListPlatformVersions');
     return this;
   }
@@ -1097,7 +1103,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('elasticbeanstalk:ListTagsForResource');
     return this;
   }
@@ -1109,7 +1115,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html
    */
-  public rebuildEnvironment () {
+  public rebuildEnvironment() {
     this.add('elasticbeanstalk:RebuildEnvironment');
     return this;
   }
@@ -1121,7 +1127,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
-  public removeTags () {
+  public removeTags() {
     this.add('elasticbeanstalk:RemoveTags');
     return this;
   }
@@ -1133,7 +1139,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RequestEnvironmentInfo.html
    */
-  public requestEnvironmentInfo () {
+  public requestEnvironmentInfo() {
     this.add('elasticbeanstalk:RequestEnvironmentInfo');
     return this;
   }
@@ -1145,7 +1151,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RestartAppServer.html
    */
-  public restartAppServer () {
+  public restartAppServer() {
     this.add('elasticbeanstalk:RestartAppServer');
     return this;
   }
@@ -1157,7 +1163,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RetrieveEnvironmentInfo.html
    */
-  public retrieveEnvironmentInfo () {
+  public retrieveEnvironmentInfo() {
     this.add('elasticbeanstalk:RetrieveEnvironmentInfo');
     return this;
   }
@@ -1169,7 +1175,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_SwapEnvironmentCNAMEs.html
    */
-  public swapEnvironmentCNAMEs () {
+  public swapEnvironmentCNAMEs() {
     this.add('elasticbeanstalk:SwapEnvironmentCNAMEs');
     return this;
   }
@@ -1181,7 +1187,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html
    */
-  public terminateEnvironment () {
+  public terminateEnvironment() {
     this.add('elasticbeanstalk:TerminateEnvironment');
     return this;
   }
@@ -1193,7 +1199,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplication.html
    */
-  public updateApplication () {
+  public updateApplication() {
     this.add('elasticbeanstalk:UpdateApplication');
     return this;
   }
@@ -1205,7 +1211,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html
    */
-  public updateApplicationResourceLifecycle () {
+  public updateApplicationResourceLifecycle() {
     this.add('elasticbeanstalk:UpdateApplicationResourceLifecycle');
     return this;
   }
@@ -1217,7 +1223,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationVersion.html
    */
-  public updateApplicationVersion () {
+  public updateApplicationVersion() {
     this.add('elasticbeanstalk:UpdateApplicationVersion');
     return this;
   }
@@ -1229,7 +1235,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateConfigurationTemplate.html
    */
-  public updateConfigurationTemplate () {
+  public updateConfigurationTemplate() {
     this.add('elasticbeanstalk:UpdateConfigurationTemplate');
     return this;
   }
@@ -1241,7 +1247,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateEnvironment.html
    */
-  public updateEnvironment () {
+  public updateEnvironment() {
     this.add('elasticbeanstalk:UpdateEnvironment');
     return this;
   }
@@ -1253,8 +1259,143 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ValidateConfigurationSettings.html
    */
-  public validateConfigurationSettings () {
+  public validateConfigurationSettings() {
     this.add('elasticbeanstalk:ValidateConfigurationSettings');
     return this;
+  }
+
+  /**
+   * Adds a resource of type application to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type applicationversion to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param versionLabel - Identifier for the versionLabel.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - elasticbeanstalk:InApplication
+   */
+  public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${VersionLabel}', versionLabel);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type configurationtemplate to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param templateName - Identifier for the templateName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - elasticbeanstalk:InApplication
+   */
+  public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${TemplateName}', templateName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type environment to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param applicationName - Identifier for the applicationName.
+   * @param environmentName - Identifier for the environmentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - elasticbeanstalk:InApplication
+   */
+  public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}';
+    arn = arn.replace('${ApplicationName}', applicationName);
+    arn = arn.replace('${EnvironmentName}', environmentName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type solutionstack to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param solutionStackName - Identifier for the solutionStackName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onSolutionstack(solutionStackName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:solutionstack/${SolutionStackName}';
+    arn = arn.replace('${SolutionStackName}', solutionStackName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type platform to the statement
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
+   *
+   * @param platformNameWithVersion - Identifier for the platformNameWithVersion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPlatform(platformNameWithVersion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:platform/${PlatformNameWithVersion}';
+    arn = arn.replace('${PlatformNameWithVersion}', platformNameWithVersion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Ce extends PolicyStatement {
   public servicePrefix = 'ce';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCostCategoryDefinition": {
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html",
       "description": "Grants permission to create a new Cost Category with the requested name and rules.",
@@ -104,7 +104,7 @@ export class Ce extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to create a new Cost Category with the requested name and rules.
@@ -113,7 +113,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html
    */
-  public createCostCategoryDefinition () {
+  public createCostCategoryDefinition() {
     this.add('ce:CreateCostCategoryDefinition');
     return this;
   }
@@ -125,7 +125,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html
    */
-  public deleteCostCategoryDefinition () {
+  public deleteCostCategoryDefinition() {
     this.add('ce:DeleteCostCategoryDefinition');
     return this;
   }
@@ -137,7 +137,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html
    */
-  public describeCostCategoryDefinition () {
+  public describeCostCategoryDefinition() {
     this.add('ce:DescribeCostCategoryDefinition');
     return this;
   }
@@ -149,7 +149,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html
    */
-  public getCostAndUsage () {
+  public getCostAndUsage() {
     this.add('ce:GetCostAndUsage');
     return this;
   }
@@ -161,7 +161,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html
    */
-  public getCostAndUsageWithResources () {
+  public getCostAndUsageWithResources() {
     this.add('ce:GetCostAndUsageWithResources');
     return this;
   }
@@ -173,7 +173,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html
    */
-  public getCostForecast () {
+  public getCostForecast() {
     this.add('ce:GetCostForecast');
     return this;
   }
@@ -185,7 +185,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html
    */
-  public getDimensionValues () {
+  public getDimensionValues() {
     this.add('ce:GetDimensionValues');
     return this;
   }
@@ -197,7 +197,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html
    */
-  public getReservationCoverage () {
+  public getReservationCoverage() {
     this.add('ce:GetReservationCoverage');
     return this;
   }
@@ -209,7 +209,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html
    */
-  public getReservationPurchaseRecommendation () {
+  public getReservationPurchaseRecommendation() {
     this.add('ce:GetReservationPurchaseRecommendation');
     return this;
   }
@@ -221,7 +221,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html
    */
-  public getReservationUtilization () {
+  public getReservationUtilization() {
     this.add('ce:GetReservationUtilization');
     return this;
   }
@@ -233,7 +233,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetRightsizingRecommendation.html
    */
-  public getRightsizingRecommendation () {
+  public getRightsizingRecommendation() {
     this.add('ce:GetRightsizingRecommendation');
     return this;
   }
@@ -245,7 +245,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansCoverage.html
    */
-  public getSavingsPlansCoverage () {
+  public getSavingsPlansCoverage() {
     this.add('ce:GetSavingsPlansCoverage');
     return this;
   }
@@ -257,7 +257,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansPurchaseRecommendation.html
    */
-  public getSavingsPlansPurchaseRecommendation () {
+  public getSavingsPlansPurchaseRecommendation() {
     this.add('ce:GetSavingsPlansPurchaseRecommendation');
     return this;
   }
@@ -269,7 +269,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilization.html
    */
-  public getSavingsPlansUtilization () {
+  public getSavingsPlansUtilization() {
     this.add('ce:GetSavingsPlansUtilization');
     return this;
   }
@@ -281,7 +281,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html
    */
-  public getSavingsPlansUtilizationDetails () {
+  public getSavingsPlansUtilizationDetails() {
     this.add('ce:GetSavingsPlansUtilizationDetails');
     return this;
   }
@@ -293,7 +293,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html
    */
-  public getTags () {
+  public getTags() {
     this.add('ce:GetTags');
     return this;
   }
@@ -305,7 +305,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html
    */
-  public getUsageForecast () {
+  public getUsageForecast() {
     this.add('ce:GetUsageForecast');
     return this;
   }
@@ -317,7 +317,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html
    */
-  public listCostCategoryDefinitions () {
+  public listCostCategoryDefinitions() {
     this.add('ce:ListCostCategoryDefinitions');
     return this;
   }
@@ -329,7 +329,7 @@ export class Ce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html
    */
-  public updateCostCategoryDefinition () {
+  public updateCostCategoryDefinition() {
     this.add('ce:UpdateCostCategoryDefinition');
     return this;
   }

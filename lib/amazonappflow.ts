@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Appflow extends PolicyStatement {
   public servicePrefix = 'appflow';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateConnectorProfile": {
       "url": "https://docs.aws.amazon.com/",
       "description": "Grants permission to create a login profile to be used with AppFlow flows",
@@ -149,9 +149,10 @@ export class Appflow extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "flow": {
       "name": "flow",
+      "url": "https://docs.aws.amazon.com/",
       "arn": "arn:${Partition}:appflow:${Region}:${Account}:flow/${flowName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -159,6 +160,7 @@ export class Appflow extends PolicyStatement {
     },
     "connectorprofile": {
       "name": "connectorprofile",
+      "url": "https://docs.aws.amazon.com/",
       "arn": "arn:${Partition}:appflow:${Region}:${Account}:connectorprofile/${profileName}",
       "conditionKeys": []
     }
@@ -168,10 +170,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to create a login profile to be used with AppFlow flows
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/
    */
-  public createConnectorProfile () {
+  public createConnectorProfile() {
     this.add('appflow:CreateConnectorProfile');
     return this;
   }
@@ -180,10 +180,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to create an AppFlow flow
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/
    */
-  public createFlow () {
+  public createFlow() {
     this.add('appflow:CreateFlow');
     return this;
   }
@@ -192,10 +190,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to delete a login profile set up for use with AppFlow
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/
    */
-  public deleteConnectorProfile () {
+  public deleteConnectorProfile() {
     this.add('appflow:DeleteConnectorProfile');
     return this;
   }
@@ -204,10 +200,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to delete an AppFlow flow
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/
    */
-  public deleteFlow () {
+  public deleteFlow() {
     this.add('appflow:DeleteFlow');
     return this;
   }
@@ -216,10 +210,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to describe all fields supported by AppFlow
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/
    */
-  public describeConnectorFields () {
+  public describeConnectorFields() {
     this.add('appflow:DescribeConnectorFields');
     return this;
   }
@@ -228,10 +220,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to describe all login profiles configured in AppFlow
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/
    */
-  public describeConnectorProfiles () {
+  public describeConnectorProfiles() {
     this.add('appflow:DescribeConnectorProfiles');
     return this;
   }
@@ -240,10 +230,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to describe all connectors supported by AppFlow
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/
    */
-  public describeConnectors () {
+  public describeConnectors() {
     this.add('appflow:DescribeConnectors');
     return this;
   }
@@ -252,10 +240,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to describe all flow executions for a flow configured in AppFlow
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/
    */
-  public describeFlowExecution () {
+  public describeFlowExecution() {
     this.add('appflow:DescribeFlowExecution');
     return this;
   }
@@ -264,10 +250,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to describe all flows configured in AppFlow
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/
    */
-  public describeFlows () {
+  public describeFlows() {
     this.add('appflow:DescribeFlows');
     return this;
   }
@@ -276,10 +260,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to list all fields supported by AppFlow
    *
    * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/
    */
-  public listConnectorFields () {
+  public listConnectorFields() {
     this.add('appflow:ListConnectorFields');
     return this;
   }
@@ -291,7 +273,7 @@ export class Appflow extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('appflow:ListTagsForResource');
     return this;
   }
@@ -300,10 +282,8 @@ export class Appflow extends PolicyStatement {
    * Grants permission to run a flow configured in AppFlow
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/
    */
-  public runFlow () {
+  public runFlow() {
     this.add('appflow:RunFlow');
     return this;
   }
@@ -315,7 +295,7 @@ export class Appflow extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('appflow:TagResource');
     return this;
   }
@@ -327,7 +307,7 @@ export class Appflow extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('appflow:UntagResource');
     return this;
   }
@@ -336,11 +316,46 @@ export class Appflow extends PolicyStatement {
    * Grants permission to update an AppFlow flow
    *
    * Access Level: Write
-   *
-   * https://docs.aws.amazon.com/
    */
-  public updateFlow () {
+  public updateFlow() {
     this.add('appflow:UpdateFlow');
     return this;
+  }
+
+  /**
+   * Adds a resource of type flow to the statement
+   *
+   * @param flowName - Identifier for the flowName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFlow(flowName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appflow:${Region}:${Account}:flow/${flowName}';
+    arn = arn.replace('${flowName}', flowName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type connectorprofile to the statement
+   *
+   * @param profileName - Identifier for the profileName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConnectorprofile(profileName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appflow:${Region}:${Account}:connectorprofile/${profileName}';
+    arn = arn.replace('${profileName}', profileName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

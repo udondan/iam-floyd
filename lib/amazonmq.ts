@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Mq extends PolicyStatement {
   public servicePrefix = 'mq';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateBroker": {
       "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post",
       "description": "Grants permission to create a broker.",
@@ -223,9 +223,10 @@ export class Mq extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "brokers": {
       "name": "brokers",
+      "url": "",
       "arn": "arn:${Partition}:mq:${Region}:${Account}:broker:${broker-id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -233,6 +234,7 @@ export class Mq extends PolicyStatement {
     },
     "configurations": {
       "name": "configurations",
+      "url": "",
       "arn": "arn:${Partition}:mq:${Region}:${Account}:configuration:${configuration-id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -247,7 +249,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
    */
-  public createBroker () {
+  public createBroker() {
     this.add('mq:CreateBroker');
     return this;
   }
@@ -259,7 +261,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post
    */
-  public createConfiguration () {
+  public createConfiguration() {
     this.add('mq:CreateConfiguration');
     return this;
   }
@@ -271,7 +273,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-post
    */
-  public createTags () {
+  public createTags() {
     this.add('mq:CreateTags');
     return this;
   }
@@ -283,7 +285,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post
    */
-  public createUser () {
+  public createUser() {
     this.add('mq:CreateUser');
     return this;
   }
@@ -295,7 +297,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete
    */
-  public deleteBroker () {
+  public deleteBroker() {
     this.add('mq:DeleteBroker');
     return this;
   }
@@ -307,7 +309,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-delete
    */
-  public deleteTags () {
+  public deleteTags() {
     this.add('mq:DeleteTags');
     return this;
   }
@@ -319,7 +321,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete
    */
-  public deleteUser () {
+  public deleteUser() {
     this.add('mq:DeleteUser');
     return this;
   }
@@ -331,7 +333,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get
    */
-  public describeBroker () {
+  public describeBroker() {
     this.add('mq:DescribeBroker');
     return this;
   }
@@ -343,7 +345,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-engine-types.html#broker-engine-types-http-methods
    */
-  public describeBrokerEngineTypes () {
+  public describeBrokerEngineTypes() {
     this.add('mq:DescribeBrokerEngineTypes');
     return this;
   }
@@ -355,7 +357,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-instance-options.html#broker-engine-types-http-methods
    */
-  public describeBrokerInstanceOptions () {
+  public describeBrokerInstanceOptions() {
     this.add('mq:DescribeBrokerInstanceOptions');
     return this;
   }
@@ -367,7 +369,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get
    */
-  public describeConfiguration () {
+  public describeConfiguration() {
     this.add('mq:DescribeConfiguration');
     return this;
   }
@@ -379,7 +381,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get
    */
-  public describeConfigurationRevision () {
+  public describeConfigurationRevision() {
     this.add('mq:DescribeConfigurationRevision');
     return this;
   }
@@ -391,7 +393,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get
    */
-  public describeUser () {
+  public describeUser() {
     this.add('mq:DescribeUser');
     return this;
   }
@@ -403,7 +405,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get
    */
-  public listBrokers () {
+  public listBrokers() {
     this.add('mq:ListBrokers');
     return this;
   }
@@ -415,7 +417,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get
    */
-  public listConfigurationRevisions () {
+  public listConfigurationRevisions() {
     this.add('mq:ListConfigurationRevisions');
     return this;
   }
@@ -427,7 +429,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get
    */
-  public listConfigurations () {
+  public listConfigurations() {
     this.add('mq:ListConfigurations');
     return this;
   }
@@ -439,7 +441,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-get
    */
-  public listTags () {
+  public listTags() {
     this.add('mq:ListTags');
     return this;
   }
@@ -451,7 +453,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get
    */
-  public listUsers () {
+  public listUsers() {
     this.add('mq:ListUsers');
     return this;
   }
@@ -463,7 +465,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post
    */
-  public rebootBroker () {
+  public rebootBroker() {
     this.add('mq:RebootBroker');
     return this;
   }
@@ -475,7 +477,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get
    */
-  public updateBroker () {
+  public updateBroker() {
     this.add('mq:UpdateBroker');
     return this;
   }
@@ -487,7 +489,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put
    */
-  public updateConfiguration () {
+  public updateConfiguration() {
     this.add('mq:UpdateConfiguration');
     return this;
   }
@@ -499,8 +501,48 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put
    */
-  public updateUser () {
+  public updateUser() {
     this.add('mq:UpdateUser');
     return this;
+  }
+
+  /**
+   * Adds a resource of type brokers to the statement
+   *
+   * @param brokerId - Identifier for the brokerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mq:${Region}:${Account}:broker:${broker-id}';
+    arn = arn.replace('${broker-id}', brokerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type configurations to the statement
+   *
+   * @param configurationId - Identifier for the configurationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:mq:${Region}:${Account}:configuration:${configuration-id}';
+    arn = arn.replace('${configuration-id}', configurationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

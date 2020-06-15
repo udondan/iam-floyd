@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Batch extends PolicyStatement {
   public servicePrefix = 'batch';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html",
       "description": "Cancels jobs in an AWS Batch job queue.",
@@ -112,14 +112,16 @@ export class Batch extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "job-queue": {
       "name": "job-queue",
+      "url": "",
       "arn": "arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}",
       "conditionKeys": []
     },
     "job-definition": {
       "name": "job-definition",
+      "url": "",
       "arn": "arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}",
       "conditionKeys": []
     }
@@ -132,7 +134,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html
    */
-  public cancelJob () {
+  public cancelJob() {
     this.add('batch:CancelJob');
     return this;
   }
@@ -144,7 +146,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html
    */
-  public createComputeEnvironment () {
+  public createComputeEnvironment() {
     this.add('batch:CreateComputeEnvironment');
     return this;
   }
@@ -156,7 +158,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
-  public createJobQueue () {
+  public createJobQueue() {
     this.add('batch:CreateJobQueue');
     return this;
   }
@@ -168,7 +170,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html
    */
-  public deleteComputeEnvironment () {
+  public deleteComputeEnvironment() {
     this.add('batch:DeleteComputeEnvironment');
     return this;
   }
@@ -180,7 +182,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html
    */
-  public deleteJobQueue () {
+  public deleteJobQueue() {
     this.add('batch:DeleteJobQueue');
     return this;
   }
@@ -192,7 +194,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html
    */
-  public deregisterJobDefinition () {
+  public deregisterJobDefinition() {
     this.add('batch:DeregisterJobDefinition');
     return this;
   }
@@ -204,7 +206,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html
    */
-  public describeComputeEnvironments () {
+  public describeComputeEnvironments() {
     this.add('batch:DescribeComputeEnvironments');
     return this;
   }
@@ -216,7 +218,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html
    */
-  public describeJobDefinitions () {
+  public describeJobDefinitions() {
     this.add('batch:DescribeJobDefinitions');
     return this;
   }
@@ -228,7 +230,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html
    */
-  public describeJobQueues () {
+  public describeJobQueues() {
     this.add('batch:DescribeJobQueues');
     return this;
   }
@@ -240,7 +242,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html
    */
-  public describeJobs () {
+  public describeJobs() {
     this.add('batch:DescribeJobs');
     return this;
   }
@@ -252,7 +254,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html
    */
-  public listJobs () {
+  public listJobs() {
     this.add('batch:ListJobs');
     return this;
   }
@@ -264,7 +266,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
-  public registerJobDefinition () {
+  public registerJobDefinition() {
     this.add('batch:RegisterJobDefinition');
     return this;
   }
@@ -276,7 +278,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
-  public submitJob () {
+  public submitJob() {
     this.add('batch:SubmitJob');
     return this;
   }
@@ -288,7 +290,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html
    */
-  public terminateJob () {
+  public terminateJob() {
     this.add('batch:TerminateJob');
     return this;
   }
@@ -300,7 +302,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html
    */
-  public updateComputeEnvironment () {
+  public updateComputeEnvironment() {
     this.add('batch:UpdateComputeEnvironment');
     return this;
   }
@@ -312,8 +314,44 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html
    */
-  public updateJobQueue () {
+  public updateJobQueue() {
     this.add('batch:UpdateJobQueue');
     return this;
+  }
+
+  /**
+   * Adds a resource of type job-queue to the statement
+   *
+   * @param jobQueueName - Identifier for the jobQueueName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}';
+    arn = arn.replace('${JobQueueName}', jobQueueName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type job-definition to the statement
+   *
+   * @param jobDefinitionName - Identifier for the jobDefinitionName.
+   * @param revision - Identifier for the revision.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onJobDefinition(jobDefinitionName: string, revision: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}';
+    arn = arn.replace('${JobDefinitionName}', jobDefinitionName);
+    arn = arn.replace('${Revision}', revision);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

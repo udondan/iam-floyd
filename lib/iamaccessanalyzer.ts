@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class AccessAnalyzer extends PolicyStatement {
   public servicePrefix = 'access-analyzer';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateAnalyzer": {
       "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html",
       "description": "Grants permission to create an analyzer.",
@@ -186,9 +186,10 @@ export class AccessAnalyzer extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Analyzer": {
       "name": "Analyzer",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",
       "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -196,6 +197,7 @@ export class AccessAnalyzer extends PolicyStatement {
     },
     "ArchiveRule": {
       "name": "ArchiveRule",
+      "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",
       "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}/archive-rule/${ruleName}",
       "conditionKeys": []
     }
@@ -208,7 +210,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html
    */
-  public createAnalyzer () {
+  public createAnalyzer() {
     this.add('access-analyzer:CreateAnalyzer');
     return this;
   }
@@ -220,7 +222,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateArchiveRule.html
    */
-  public createArchiveRule () {
+  public createArchiveRule() {
     this.add('access-analyzer:CreateArchiveRule');
     return this;
   }
@@ -232,7 +234,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html
    */
-  public deleteAnalyzer () {
+  public deleteAnalyzer() {
     this.add('access-analyzer:DeleteAnalyzer');
     return this;
   }
@@ -244,7 +246,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteArchiveRule.html
    */
-  public deleteArchiveRule () {
+  public deleteArchiveRule() {
     this.add('access-analyzer:DeleteArchiveRule');
     return this;
   }
@@ -256,7 +258,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzedResource.html
    */
-  public getAnalyzedResource () {
+  public getAnalyzedResource() {
     this.add('access-analyzer:GetAnalyzedResource');
     return this;
   }
@@ -268,7 +270,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html
    */
-  public getAnalyzer () {
+  public getAnalyzer() {
     this.add('access-analyzer:GetAnalyzer');
     return this;
   }
@@ -280,7 +282,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetArchiveRule.html
    */
-  public getArchiveRule () {
+  public getArchiveRule() {
     this.add('access-analyzer:GetArchiveRule');
     return this;
   }
@@ -292,7 +294,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFinding.html
    */
-  public getFinding () {
+  public getFinding() {
     this.add('access-analyzer:GetFinding');
     return this;
   }
@@ -304,7 +306,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzedResources.html
    */
-  public listAnalyzedResources () {
+  public listAnalyzedResources() {
     this.add('access-analyzer:ListAnalyzedResources');
     return this;
   }
@@ -316,7 +318,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html
    */
-  public listAnalyzers () {
+  public listAnalyzers() {
     this.add('access-analyzer:ListAnalyzers');
     return this;
   }
@@ -328,7 +330,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListArchiveRules.html
    */
-  public listArchiveRules () {
+  public listArchiveRules() {
     this.add('access-analyzer:ListArchiveRules');
     return this;
   }
@@ -340,7 +342,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindings.html
    */
-  public listFindings () {
+  public listFindings() {
     this.add('access-analyzer:ListFindings');
     return this;
   }
@@ -352,7 +354,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('access-analyzer:ListTagsForResource');
     return this;
   }
@@ -364,7 +366,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartResourceScan.html
    */
-  public startResourceScan () {
+  public startResourceScan() {
     this.add('access-analyzer:StartResourceScan');
     return this;
   }
@@ -376,7 +378,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('access-analyzer:TagResource');
     return this;
   }
@@ -388,7 +390,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('access-analyzer:UntagResource');
     return this;
   }
@@ -400,7 +402,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateArchiveRule.html
    */
-  public updateArchiveRule () {
+  public updateArchiveRule() {
     this.add('access-analyzer:UpdateArchiveRule');
     return this;
   }
@@ -412,8 +414,51 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html
    */
-  public updateFindings () {
+  public updateFindings() {
     this.add('access-analyzer:UpdateFindings');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Analyzer to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources
+   *
+   * @param analyzerName - Identifier for the analyzerName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}';
+    arn = arn.replace('${analyzerName}', analyzerName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ArchiveRule to the statement
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources
+   *
+   * @param analyzerName - Identifier for the analyzerName.
+   * @param ruleName - Identifier for the ruleName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onArchiveRule(analyzerName: string, ruleName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}/archive-rule/${ruleName}';
+    arn = arn.replace('${analyzerName}', analyzerName);
+    arn = arn.replace('${ruleName}', ruleName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

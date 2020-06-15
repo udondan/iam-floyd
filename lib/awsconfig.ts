@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Config extends PolicyStatement {
   public servicePrefix = 'config';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchGetAggregateResourceConfig": {
       "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetAggregateResourceConfig.html",
       "description": "Returns the current configuration items for resources that are present in your AWS Config aggregator",
@@ -577,9 +577,10 @@ export class Config extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "AggregationAuthorization": {
       "name": "AggregationAuthorization",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -587,6 +588,7 @@ export class Config extends PolicyStatement {
     },
     "ConfigurationAggregator": {
       "name": "ConfigurationAggregator",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigurationAggregator.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -594,6 +596,7 @@ export class Config extends PolicyStatement {
     },
     "ConfigRule": {
       "name": "ConfigRule",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigRule.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -601,6 +604,7 @@ export class Config extends PolicyStatement {
     },
     "ConformancePack": {
       "name": "ConformancePack",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConformancePack.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -608,16 +612,19 @@ export class Config extends PolicyStatement {
     },
     "OrganizationConfigRule": {
       "name": "OrganizationConfigRule",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConfigRule.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:organization-config-rule/${OrganizationConfigRuleId}",
       "conditionKeys": []
     },
     "OrganizationConformancePack": {
       "name": "OrganizationConformancePack",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConformancePack.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:organization-conformance-pack/${OrganizationConformancePackId}",
       "conditionKeys": []
     },
     "RemediationConfiguration": {
       "name": "RemediationConfiguration",
+      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_RemediationConfiguration.html",
       "arn": "arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}",
       "conditionKeys": []
     }
@@ -630,7 +637,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetAggregateResourceConfig.html
    */
-  public batchGetAggregateResourceConfig () {
+  public batchGetAggregateResourceConfig() {
     this.add('config:BatchGetAggregateResourceConfig');
     return this;
   }
@@ -642,7 +649,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetResourceConfig.html
    */
-  public batchGetResourceConfig () {
+  public batchGetResourceConfig() {
     this.add('config:BatchGetResourceConfig');
     return this;
   }
@@ -654,7 +661,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteAggregationAuthorization.html
    */
-  public deleteAggregationAuthorization () {
+  public deleteAggregationAuthorization() {
     this.add('config:DeleteAggregationAuthorization');
     return this;
   }
@@ -666,7 +673,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigRule.html
    */
-  public deleteConfigRule () {
+  public deleteConfigRule() {
     this.add('config:DeleteConfigRule');
     return this;
   }
@@ -678,7 +685,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationAggregator.html
    */
-  public deleteConfigurationAggregator () {
+  public deleteConfigurationAggregator() {
     this.add('config:DeleteConfigurationAggregator');
     return this;
   }
@@ -690,7 +697,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html
    */
-  public deleteConfigurationRecorder () {
+  public deleteConfigurationRecorder() {
     this.add('config:DeleteConfigurationRecorder');
     return this;
   }
@@ -702,7 +709,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConformancePack.html
    */
-  public deleteConformancePack () {
+  public deleteConformancePack() {
     this.add('config:DeleteConformancePack');
     return this;
   }
@@ -714,7 +721,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html
    */
-  public deleteDeliveryChannel () {
+  public deleteDeliveryChannel() {
     this.add('config:DeleteDeliveryChannel');
     return this;
   }
@@ -726,7 +733,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteEvaluationResults.html
    */
-  public deleteEvaluationResults () {
+  public deleteEvaluationResults() {
     this.add('config:DeleteEvaluationResults');
     return this;
   }
@@ -738,7 +745,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteOrganizationConfigRule.html
    */
-  public deleteOrganizationConfigRule () {
+  public deleteOrganizationConfigRule() {
     this.add('config:DeleteOrganizationConfigRule');
     return this;
   }
@@ -750,7 +757,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteOrganizationConformancePack.html
    */
-  public deleteOrganizationConformancePack () {
+  public deleteOrganizationConformancePack() {
     this.add('config:DeleteOrganizationConformancePack');
     return this;
   }
@@ -762,7 +769,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeletePendingAggregationRequest.html
    */
-  public deletePendingAggregationRequest () {
+  public deletePendingAggregationRequest() {
     this.add('config:DeletePendingAggregationRequest');
     return this;
   }
@@ -774,7 +781,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRemediationConfiguration.html
    */
-  public deleteRemediationConfiguration () {
+  public deleteRemediationConfiguration() {
     this.add('config:DeleteRemediationConfiguration');
     return this;
   }
@@ -786,7 +793,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRemediationExceptions.html
    */
-  public deleteRemediationExceptions () {
+  public deleteRemediationExceptions() {
     this.add('config:DeleteRemediationExceptions');
     return this;
   }
@@ -798,7 +805,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRetentionConfiguration.html
    */
-  public deleteRetentionConfiguration () {
+  public deleteRetentionConfiguration() {
     this.add('config:DeleteRetentionConfiguration');
     return this;
   }
@@ -810,7 +817,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DeliverConfigSnapshot.html
    */
-  public deliverConfigSnapshot () {
+  public deliverConfigSnapshot() {
     this.add('config:DeliverConfigSnapshot');
     return this;
   }
@@ -822,7 +829,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregateComplianceByConfigRules.html
    */
-  public describeAggregateComplianceByConfigRules () {
+  public describeAggregateComplianceByConfigRules() {
     this.add('config:DescribeAggregateComplianceByConfigRules');
     return this;
   }
@@ -834,7 +841,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregationAuthorizations.html
    */
-  public describeAggregationAuthorizations () {
+  public describeAggregationAuthorizations() {
     this.add('config:DescribeAggregationAuthorizations');
     return this;
   }
@@ -846,7 +853,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByConfigRule.html
    */
-  public describeComplianceByConfigRule () {
+  public describeComplianceByConfigRule() {
     this.add('config:DescribeComplianceByConfigRule');
     return this;
   }
@@ -858,7 +865,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByResource.html
    */
-  public describeComplianceByResource () {
+  public describeComplianceByResource() {
     this.add('config:DescribeComplianceByResource');
     return this;
   }
@@ -870,7 +877,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html
    */
-  public describeConfigRuleEvaluationStatus () {
+  public describeConfigRuleEvaluationStatus() {
     this.add('config:DescribeConfigRuleEvaluationStatus');
     return this;
   }
@@ -882,7 +889,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRules.html
    */
-  public describeConfigRules () {
+  public describeConfigRules() {
     this.add('config:DescribeConfigRules');
     return this;
   }
@@ -894,7 +901,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregatorSourcesStatus.html
    */
-  public describeConfigurationAggregatorSourcesStatus () {
+  public describeConfigurationAggregatorSourcesStatus() {
     this.add('config:DescribeConfigurationAggregatorSourcesStatus');
     return this;
   }
@@ -906,7 +913,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregators.html
    */
-  public describeConfigurationAggregators () {
+  public describeConfigurationAggregators() {
     this.add('config:DescribeConfigurationAggregators');
     return this;
   }
@@ -918,7 +925,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html
    */
-  public describeConfigurationRecorderStatus () {
+  public describeConfigurationRecorderStatus() {
     this.add('config:DescribeConfigurationRecorderStatus');
     return this;
   }
@@ -930,7 +937,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html
    */
-  public describeConfigurationRecorders () {
+  public describeConfigurationRecorders() {
     this.add('config:DescribeConfigurationRecorders');
     return this;
   }
@@ -942,7 +949,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePackCompliance.html
    */
-  public describeConformancePackCompliance () {
+  public describeConformancePackCompliance() {
     this.add('config:DescribeConformancePackCompliance');
     return this;
   }
@@ -954,7 +961,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePackStatus.html
    */
-  public describeConformancePackStatus () {
+  public describeConformancePackStatus() {
     this.add('config:DescribeConformancePackStatus');
     return this;
   }
@@ -966,7 +973,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePacks.html
    */
-  public describeConformancePacks () {
+  public describeConformancePacks() {
     this.add('config:DescribeConformancePacks');
     return this;
   }
@@ -978,7 +985,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannelStatus.html
    */
-  public describeDeliveryChannelStatus () {
+  public describeDeliveryChannelStatus() {
     this.add('config:DescribeDeliveryChannelStatus');
     return this;
   }
@@ -990,7 +997,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannels.html
    */
-  public describeDeliveryChannels () {
+  public describeDeliveryChannels() {
     this.add('config:DescribeDeliveryChannels');
     return this;
   }
@@ -1002,7 +1009,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRuleStatuses.html
    */
-  public describeOrganizationConfigRuleStatuses () {
+  public describeOrganizationConfigRuleStatuses() {
     this.add('config:DescribeOrganizationConfigRuleStatuses');
     return this;
   }
@@ -1014,7 +1021,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRules.html
    */
-  public describeOrganizationConfigRules () {
+  public describeOrganizationConfigRules() {
     this.add('config:DescribeOrganizationConfigRules');
     return this;
   }
@@ -1026,7 +1033,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePackStatuses.html
    */
-  public describeOrganizationConformancePackStatuses () {
+  public describeOrganizationConformancePackStatuses() {
     this.add('config:DescribeOrganizationConformancePackStatuses');
     return this;
   }
@@ -1038,7 +1045,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePacks.html
    */
-  public describeOrganizationConformancePacks () {
+  public describeOrganizationConformancePacks() {
     this.add('config:DescribeOrganizationConformancePacks');
     return this;
   }
@@ -1050,7 +1057,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribePendingAggregationRequests.html
    */
-  public describePendingAggregationRequests () {
+  public describePendingAggregationRequests() {
     this.add('config:DescribePendingAggregationRequests');
     return this;
   }
@@ -1062,7 +1069,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationConfigurations.html
    */
-  public describeRemediationConfigurations () {
+  public describeRemediationConfigurations() {
     this.add('config:DescribeRemediationConfigurations');
     return this;
   }
@@ -1074,7 +1081,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExceptions.html
    */
-  public describeRemediationExceptions () {
+  public describeRemediationExceptions() {
     this.add('config:DescribeRemediationExceptions');
     return this;
   }
@@ -1086,7 +1093,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExecutionStatus.html
    */
-  public describeRemediationExecutionStatus () {
+  public describeRemediationExecutionStatus() {
     this.add('config:DescribeRemediationExecutionStatus');
     return this;
   }
@@ -1098,7 +1105,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRetentionConfigurations.html
    */
-  public describeRetentionConfigurations () {
+  public describeRetentionConfigurations() {
     this.add('config:DescribeRetentionConfigurations');
     return this;
   }
@@ -1110,7 +1117,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateComplianceDetailsByConfigRule.html
    */
-  public getAggregateComplianceDetailsByConfigRule () {
+  public getAggregateComplianceDetailsByConfigRule() {
     this.add('config:GetAggregateComplianceDetailsByConfigRule');
     return this;
   }
@@ -1122,7 +1129,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateConfigRuleComplianceSummary.html
    */
-  public getAggregateConfigRuleComplianceSummary () {
+  public getAggregateConfigRuleComplianceSummary() {
     this.add('config:GetAggregateConfigRuleComplianceSummary');
     return this;
   }
@@ -1134,7 +1141,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateDiscoveredResourceCounts.html
    */
-  public getAggregateDiscoveredResourceCounts () {
+  public getAggregateDiscoveredResourceCounts() {
     this.add('config:GetAggregateDiscoveredResourceCounts');
     return this;
   }
@@ -1146,7 +1153,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateResourceConfig.html
    */
-  public getAggregateResourceConfig () {
+  public getAggregateResourceConfig() {
     this.add('config:GetAggregateResourceConfig');
     return this;
   }
@@ -1158,7 +1165,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByConfigRule.html
    */
-  public getComplianceDetailsByConfigRule () {
+  public getComplianceDetailsByConfigRule() {
     this.add('config:GetComplianceDetailsByConfigRule');
     return this;
   }
@@ -1170,7 +1177,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html
    */
-  public getComplianceDetailsByResource () {
+  public getComplianceDetailsByResource() {
     this.add('config:GetComplianceDetailsByResource');
     return this;
   }
@@ -1182,7 +1189,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByConfigRule.html
    */
-  public getComplianceSummaryByConfigRule () {
+  public getComplianceSummaryByConfigRule() {
     this.add('config:GetComplianceSummaryByConfigRule');
     return this;
   }
@@ -1194,7 +1201,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByResourceType.html
    */
-  public getComplianceSummaryByResourceType () {
+  public getComplianceSummaryByResourceType() {
     this.add('config:GetComplianceSummaryByResourceType');
     return this;
   }
@@ -1206,7 +1213,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceDetails.html
    */
-  public getConformancePackComplianceDetails () {
+  public getConformancePackComplianceDetails() {
     this.add('config:GetConformancePackComplianceDetails');
     return this;
   }
@@ -1218,7 +1225,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceSummary.html
    */
-  public getConformancePackComplianceSummary () {
+  public getConformancePackComplianceSummary() {
     this.add('config:GetConformancePackComplianceSummary');
     return this;
   }
@@ -1230,7 +1237,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetDiscoveredResourceCounts.html
    */
-  public getDiscoveredResourceCounts () {
+  public getDiscoveredResourceCounts() {
     this.add('config:GetDiscoveredResourceCounts');
     return this;
   }
@@ -1242,7 +1249,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationConfigRuleDetailedStatus.html
    */
-  public getOrganizationConfigRuleDetailedStatus () {
+  public getOrganizationConfigRuleDetailedStatus() {
     this.add('config:GetOrganizationConfigRuleDetailedStatus');
     return this;
   }
@@ -1254,7 +1261,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationConformancePackDetailedStatus.html
    */
-  public getOrganizationConformancePackDetailedStatus () {
+  public getOrganizationConformancePackDetailedStatus() {
     this.add('config:GetOrganizationConformancePackDetailedStatus');
     return this;
   }
@@ -1266,7 +1273,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html
    */
-  public getResourceConfigHistory () {
+  public getResourceConfigHistory() {
     this.add('config:GetResourceConfigHistory');
     return this;
   }
@@ -1278,7 +1285,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListAggregateDiscoveredResources.html
    */
-  public listAggregateDiscoveredResources () {
+  public listAggregateDiscoveredResources() {
     this.add('config:ListAggregateDiscoveredResources');
     return this;
   }
@@ -1290,7 +1297,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListDiscoveredResources.html
    */
-  public listDiscoveredResources () {
+  public listDiscoveredResources() {
     this.add('config:ListDiscoveredResources');
     return this;
   }
@@ -1302,7 +1309,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('config:ListTagsForResource');
     return this;
   }
@@ -1314,7 +1321,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutAggregationAuthorization.html
    */
-  public putAggregationAuthorization () {
+  public putAggregationAuthorization() {
     this.add('config:PutAggregationAuthorization');
     return this;
   }
@@ -1326,7 +1333,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html
    */
-  public putConfigRule () {
+  public putConfigRule() {
     this.add('config:PutConfigRule');
     return this;
   }
@@ -1338,7 +1345,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationAggregator.html
    */
-  public putConfigurationAggregator () {
+  public putConfigurationAggregator() {
     this.add('config:PutConfigurationAggregator');
     return this;
   }
@@ -1350,7 +1357,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html
    */
-  public putConfigurationRecorder () {
+  public putConfigurationRecorder() {
     this.add('config:PutConfigurationRecorder');
     return this;
   }
@@ -1362,7 +1369,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html
    */
-  public putConformancePack () {
+  public putConformancePack() {
     this.add('config:PutConformancePack');
     return this;
   }
@@ -1374,7 +1381,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html
    */
-  public putDeliveryChannel () {
+  public putDeliveryChannel() {
     this.add('config:PutDeliveryChannel');
     return this;
   }
@@ -1386,7 +1393,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutEvaluations.html
    */
-  public putEvaluations () {
+  public putEvaluations() {
     this.add('config:PutEvaluations');
     return this;
   }
@@ -1398,7 +1405,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html
    */
-  public putOrganizationConfigRule () {
+  public putOrganizationConfigRule() {
     this.add('config:PutOrganizationConfigRule');
     return this;
   }
@@ -1410,7 +1417,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html
    */
-  public putOrganizationConformancePack () {
+  public putOrganizationConformancePack() {
     this.add('config:PutOrganizationConformancePack');
     return this;
   }
@@ -1422,7 +1429,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html
    */
-  public putRemediationConfigurations () {
+  public putRemediationConfigurations() {
     this.add('config:PutRemediationConfigurations');
     return this;
   }
@@ -1434,7 +1441,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationExceptions.html
    */
-  public putRemediationExceptions () {
+  public putRemediationExceptions() {
     this.add('config:PutRemediationExceptions');
     return this;
   }
@@ -1446,7 +1453,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutRetentionConfiguration.html
    */
-  public putRetentionConfiguration () {
+  public putRetentionConfiguration() {
     this.add('config:PutRetentionConfiguration');
     return this;
   }
@@ -1458,7 +1465,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_SelectAggregateResourceConfig.html
    */
-  public selectAggregateResourceConfig () {
+  public selectAggregateResourceConfig() {
     this.add('config:SelectAggregateResourceConfig');
     return this;
   }
@@ -1470,7 +1477,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_SelectResourceConfig.html
    */
-  public selectResourceConfig () {
+  public selectResourceConfig() {
     this.add('config:SelectResourceConfig');
     return this;
   }
@@ -1482,7 +1489,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigRulesEvaluation.html
    */
-  public startConfigRulesEvaluation () {
+  public startConfigRulesEvaluation() {
     this.add('config:StartConfigRulesEvaluation');
     return this;
   }
@@ -1494,7 +1501,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html
    */
-  public startConfigurationRecorder () {
+  public startConfigurationRecorder() {
     this.add('config:StartConfigurationRecorder');
     return this;
   }
@@ -1506,7 +1513,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StartRemediationExecution.html
    */
-  public startRemediationExecution () {
+  public startRemediationExecution() {
     this.add('config:StartRemediationExecution');
     return this;
   }
@@ -1518,7 +1525,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html
    */
-  public stopConfigurationRecorder () {
+  public stopConfigurationRecorder() {
     this.add('config:StopConfigurationRecorder');
     return this;
   }
@@ -1530,7 +1537,7 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('config:TagResource');
     return this;
   }
@@ -1542,8 +1549,157 @@ export class Config extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('config:UntagResource');
     return this;
+  }
+
+  /**
+   * Adds a resource of type AggregationAuthorization to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html
+   *
+   * @param aggregatorAccount - Identifier for the aggregatorAccount.
+   * @param aggregatorRegion - Identifier for the aggregatorRegion.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAggregationAuthorization(aggregatorAccount: string, aggregatorRegion: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}';
+    arn = arn.replace('${AggregatorAccount}', aggregatorAccount);
+    arn = arn.replace('${AggregatorRegion}', aggregatorRegion);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ConfigurationAggregator to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigurationAggregator.html
+   *
+   * @param aggregatorId - Identifier for the aggregatorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}';
+    arn = arn.replace('${AggregatorId}', aggregatorId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ConfigRule to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigRule.html
+   *
+   * @param configRuleId - Identifier for the configRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}';
+    arn = arn.replace('${ConfigRuleId}', configRuleId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type ConformancePack to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConformancePack.html
+   *
+   * @param conformancePackName - Identifier for the conformancePackName.
+   * @param conformancePackId - Identifier for the conformancePackId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}';
+    arn = arn.replace('${ConformancePackName}', conformancePackName);
+    arn = arn.replace('${ConformancePackId}', conformancePackId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type OrganizationConfigRule to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConfigRule.html
+   *
+   * @param organizationConfigRuleId - Identifier for the organizationConfigRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:organization-config-rule/${OrganizationConfigRuleId}';
+    arn = arn.replace('${OrganizationConfigRuleId}', organizationConfigRuleId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type OrganizationConformancePack to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConformancePack.html
+   *
+   * @param organizationConformancePackId - Identifier for the organizationConformancePackId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:organization-conformance-pack/${OrganizationConformancePackId}';
+    arn = arn.replace('${OrganizationConformancePackId}', organizationConformancePackId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type RemediationConfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_RemediationConfiguration.html
+   *
+   * @param remediationConfigurationId - Identifier for the remediationConfigurationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}';
+    arn = arn.replace('${RemediationConfigurationId}', remediationConfigurationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

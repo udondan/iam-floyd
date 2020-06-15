@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Dataexchange extends PolicyStatement {
   public servicePrefix = 'dataexchange';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelJob": {
       "url": "${APIReferenceDocPage}/v1-jobs.html#CancelJob",
       "description": "Grants permissions to cancel a job.",
@@ -255,9 +255,10 @@ export class Dataexchange extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "jobs": {
       "name": "jobs",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html",
       "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}",
       "conditionKeys": [
         "dataexchange:JobType"
@@ -265,16 +266,19 @@ export class Dataexchange extends PolicyStatement {
     },
     "data-sets": {
       "name": "data-sets",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
       "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}",
       "conditionKeys": []
     },
     "revisions": {
       "name": "revisions",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions",
       "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}",
       "conditionKeys": []
     },
     "assets": {
       "name": "assets",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets",
       "arn": "arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}",
       "conditionKeys": []
     }
@@ -287,7 +291,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-jobs.html#CancelJob
    */
-  public cancelJob () {
+  public cancelJob() {
     this.add('dataexchange:CancelJob');
     return this;
   }
@@ -299,7 +303,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#CreateAsset
    */
-  public createAsset () {
+  public createAsset() {
     this.add('dataexchange:CreateAsset');
     return this;
   }
@@ -311,7 +315,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets.html#CreateDataSet
    */
-  public createDataSet () {
+  public createDataSet() {
     this.add('dataexchange:CreateDataSet');
     return this;
   }
@@ -323,7 +327,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-jobs.html#CreateJob
    */
-  public createJob () {
+  public createJob() {
     this.add('dataexchange:CreateJob');
     return this;
   }
@@ -335,7 +339,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#CreateRevision
    */
-  public createRevision () {
+  public createRevision() {
     this.add('dataexchange:CreateRevision');
     return this;
   }
@@ -347,7 +351,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#DeleteAsset
    */
-  public deleteAsset () {
+  public deleteAsset() {
     this.add('dataexchange:DeleteAsset');
     return this;
   }
@@ -359,7 +363,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid.html#DeleteDataSet
    */
-  public deleteDataSet () {
+  public deleteDataSet() {
     this.add('dataexchange:DeleteDataSet');
     return this;
   }
@@ -371,7 +375,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
    */
-  public deleteRevision () {
+  public deleteRevision() {
     this.add('dataexchange:DeleteRevision');
     return this;
   }
@@ -383,7 +387,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#GetAsset
    */
-  public getAsset () {
+  public getAsset() {
     this.add('dataexchange:GetAsset');
     return this;
   }
@@ -395,7 +399,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid.html#GetDataSet
    */
-  public getDataSet () {
+  public getDataSet() {
     this.add('dataexchange:GetDataSet');
     return this;
   }
@@ -407,7 +411,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-jobs.html#GetJob
    */
-  public getJob () {
+  public getJob() {
     this.add('dataexchange:GetJob');
     return this;
   }
@@ -419,7 +423,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#GetRevision
    */
-  public getRevision () {
+  public getRevision() {
     this.add('dataexchange:GetRevision');
     return this;
   }
@@ -431,7 +435,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#ListDataSetRevisions
    */
-  public listDataSetRevisions () {
+  public listDataSetRevisions() {
     this.add('dataexchange:ListDataSetRevisions');
     return this;
   }
@@ -443,7 +447,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets.html#ListDataSets
    */
-  public listDataSets () {
+  public listDataSets() {
     this.add('dataexchange:ListDataSets');
     return this;
   }
@@ -455,7 +459,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-jobs.html#ListJobs
    */
-  public listJobs () {
+  public listJobs() {
     this.add('dataexchange:ListJobs');
     return this;
   }
@@ -467,7 +471,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets.html#ListRevisionAssets
    */
-  public listRevisionAssets () {
+  public listRevisionAssets() {
     this.add('dataexchange:ListRevisionAssets');
     return this;
   }
@@ -479,7 +483,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/tags-resource-arn.html#ListTagsForResource
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('dataexchange:ListTagsForResource');
     return this;
   }
@@ -491,7 +495,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-jobs.html#StartJob
    */
-  public startJob () {
+  public startJob() {
     this.add('dataexchange:StartJob');
     return this;
   }
@@ -503,7 +507,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/tags-resource-arn.html#TagResource
    */
-  public tagResource () {
+  public tagResource() {
     this.add('dataexchange:TagResource');
     return this;
   }
@@ -515,7 +519,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/tags-resource-arn.html#UntagResource
    */
-  public untagResource () {
+  public untagResource() {
     this.add('dataexchange:UntagResource');
     return this;
   }
@@ -527,7 +531,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#UpdateAsset
    */
-  public updateAsset () {
+  public updateAsset() {
     this.add('dataexchange:UpdateAsset');
     return this;
   }
@@ -539,7 +543,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid.html#UpdateDataSet
    */
-  public updateDataSet () {
+  public updateDataSet() {
     this.add('dataexchange:UpdateDataSet');
     return this;
   }
@@ -551,8 +555,93 @@ export class Dataexchange extends PolicyStatement {
    *
    * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#UpdateRevision
    */
-  public updateRevision () {
+  public updateRevision() {
     this.add('dataexchange:UpdateRevision');
     return this;
+  }
+
+  /**
+   * Adds a resource of type jobs to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html
+   *
+   * @param jobId - Identifier for the jobId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - dataexchange:JobType
+   */
+  public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type data-sets to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDataSets(dataSetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}';
+    arn = arn.replace('${DataSetId}', dataSetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type revisions to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#revisions
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onRevisions(dataSetId: string, revisionId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}';
+    arn = arn.replace('${DataSetId}', dataSetId);
+    arn = arn.replace('${RevisionId}', revisionId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type assets to the statement
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html#assets
+   *
+   * @param dataSetId - Identifier for the dataSetId.
+   * @param revisionId - Identifier for the revisionId.
+   * @param assetId - Identifier for the assetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAssets(dataSetId: string, revisionId: string, assetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:data-sets/${DataSetId}/revisions/${RevisionId}/assets/${AssetId}';
+    arn = arn.replace('${DataSetId}', dataSetId);
+    arn = arn.replace('${RevisionId}', revisionId);
+    arn = arn.replace('${AssetId}', assetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Storagegateway extends PolicyStatement {
   public servicePrefix = 'storagegateway';
-  public actions : Actions = {
+  public actions: Actions = {
     "ActivateGateway": {
       "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ActivateGateway.html",
       "description": "This operation activates the gateway you previously deployed on your host.",
@@ -782,14 +782,16 @@ export class Storagegateway extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "device": {
       "name": "device",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html",
       "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}",
       "conditionKeys": []
     },
     "gateway": {
       "name": "gateway",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html",
       "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -797,6 +799,7 @@ export class Storagegateway extends PolicyStatement {
     },
     "share": {
       "name": "share",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html",
       "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -804,6 +807,7 @@ export class Storagegateway extends PolicyStatement {
     },
     "tape": {
       "name": "tape",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts",
       "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -811,11 +815,13 @@ export class Storagegateway extends PolicyStatement {
     },
     "target": {
       "name": "target",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html",
       "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}",
       "conditionKeys": []
     },
     "volume": {
       "name": "volume",
+      "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts",
       "arn": "arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -830,7 +836,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ActivateGateway.html
    */
-  public activateGateway () {
+  public activateGateway() {
     this.add('storagegateway:ActivateGateway');
     return this;
   }
@@ -842,7 +848,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddCache.html
    */
-  public addCache () {
+  public addCache() {
     this.add('storagegateway:AddCache');
     return this;
   }
@@ -854,7 +860,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource () {
+  public addTagsToResource() {
     this.add('storagegateway:AddTagsToResource');
     return this;
   }
@@ -866,7 +872,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddUploadBuffer.html
    */
-  public addUploadBuffer () {
+  public addUploadBuffer() {
     this.add('storagegateway:AddUploadBuffer');
     return this;
   }
@@ -878,7 +884,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddWorkingStorage.html
    */
-  public addWorkingStorage () {
+  public addWorkingStorage() {
     this.add('storagegateway:AddWorkingStorage');
     return this;
   }
@@ -890,7 +896,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AttachVolume.html
    */
-  public attachVolume () {
+  public attachVolume() {
     this.add('storagegateway:AttachVolume');
     return this;
   }
@@ -902,7 +908,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelArchival.html
    */
-  public cancelArchival () {
+  public cancelArchival() {
     this.add('storagegateway:CancelArchival');
     return this;
   }
@@ -914,7 +920,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CancelRetrieval.html
    */
-  public cancelRetrieval () {
+  public cancelRetrieval() {
     this.add('storagegateway:CancelRetrieval');
     return this;
   }
@@ -926,7 +932,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateCachediSCSIVolume.html
    */
-  public createCachediSCSIVolume () {
+  public createCachediSCSIVolume() {
     this.add('storagegateway:CreateCachediSCSIVolume');
     return this;
   }
@@ -938,7 +944,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html
    */
-  public createNFSFileShare () {
+  public createNFSFileShare() {
     this.add('storagegateway:CreateNFSFileShare');
     return this;
   }
@@ -950,7 +956,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSMBFileShare.html
    */
-  public createSMBFileShare () {
+  public createSMBFileShare() {
     this.add('storagegateway:CreateSMBFileShare');
     return this;
   }
@@ -962,7 +968,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshot.html
    */
-  public createSnapshot () {
+  public createSnapshot() {
     this.add('storagegateway:CreateSnapshot');
     return this;
   }
@@ -974,7 +980,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshotFromVolumeRecoveryPoint.html
    */
-  public createSnapshotFromVolumeRecoveryPoint () {
+  public createSnapshotFromVolumeRecoveryPoint() {
     this.add('storagegateway:CreateSnapshotFromVolumeRecoveryPoint');
     return this;
   }
@@ -986,7 +992,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateStorediSCSIVolume.html
    */
-  public createStorediSCSIVolume () {
+  public createStorediSCSIVolume() {
     this.add('storagegateway:CreateStorediSCSIVolume');
     return this;
   }
@@ -998,7 +1004,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapeWithBarcode.html
    */
-  public createTapeWithBarcode () {
+  public createTapeWithBarcode() {
     this.add('storagegateway:CreateTapeWithBarcode');
     return this;
   }
@@ -1010,7 +1016,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapes.html
    */
-  public createTapes () {
+  public createTapes() {
     this.add('storagegateway:CreateTapes');
     return this;
   }
@@ -1022,7 +1028,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteBandwidthRateLimit.html
    */
-  public deleteBandwidthRateLimit () {
+  public deleteBandwidthRateLimit() {
     this.add('storagegateway:DeleteBandwidthRateLimit');
     return this;
   }
@@ -1034,7 +1040,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteChapCredentials.html
    */
-  public deleteChapCredentials () {
+  public deleteChapCredentials() {
     this.add('storagegateway:DeleteChapCredentials');
     return this;
   }
@@ -1046,7 +1052,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteFileShare.html
    */
-  public deleteFileShare () {
+  public deleteFileShare() {
     this.add('storagegateway:DeleteFileShare');
     return this;
   }
@@ -1058,7 +1064,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteGateway.html
    */
-  public deleteGateway () {
+  public deleteGateway() {
     this.add('storagegateway:DeleteGateway');
     return this;
   }
@@ -1070,7 +1076,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteSnapshotSchedule.html
    */
-  public deleteSnapshotSchedule () {
+  public deleteSnapshotSchedule() {
     this.add('storagegateway:DeleteSnapshotSchedule');
     return this;
   }
@@ -1082,7 +1088,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTape.html
    */
-  public deleteTape () {
+  public deleteTape() {
     this.add('storagegateway:DeleteTape');
     return this;
   }
@@ -1094,7 +1100,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteTapeArchive.html
    */
-  public deleteTapeArchive () {
+  public deleteTapeArchive() {
     this.add('storagegateway:DeleteTapeArchive');
     return this;
   }
@@ -1106,7 +1112,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteVolume.html
    */
-  public deleteVolume () {
+  public deleteVolume() {
     this.add('storagegateway:DeleteVolume');
     return this;
   }
@@ -1118,7 +1124,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeBandwidthRateLimit.html
    */
-  public describeBandwidthRateLimit () {
+  public describeBandwidthRateLimit() {
     this.add('storagegateway:DescribeBandwidthRateLimit');
     return this;
   }
@@ -1130,7 +1136,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCache.html
    */
-  public describeCache () {
+  public describeCache() {
     this.add('storagegateway:DescribeCache');
     return this;
   }
@@ -1142,7 +1148,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeCachediSCSIVolumes.html
    */
-  public describeCachediSCSIVolumes () {
+  public describeCachediSCSIVolumes() {
     this.add('storagegateway:DescribeCachediSCSIVolumes');
     return this;
   }
@@ -1154,7 +1160,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeChapCredentials.html
    */
-  public describeChapCredentials () {
+  public describeChapCredentials() {
     this.add('storagegateway:DescribeChapCredentials');
     return this;
   }
@@ -1166,7 +1172,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeGatewayInformation.html
    */
-  public describeGatewayInformation () {
+  public describeGatewayInformation() {
     this.add('storagegateway:DescribeGatewayInformation');
     return this;
   }
@@ -1178,7 +1184,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeMaintenanceStartTime.html
    */
-  public describeMaintenanceStartTime () {
+  public describeMaintenanceStartTime() {
     this.add('storagegateway:DescribeMaintenanceStartTime');
     return this;
   }
@@ -1190,7 +1196,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeNFSFileShares.html
    */
-  public describeNFSFileShares () {
+  public describeNFSFileShares() {
     this.add('storagegateway:DescribeNFSFileShares');
     return this;
   }
@@ -1202,7 +1208,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSMBFileShares.html
    */
-  public describeSMBFileShares () {
+  public describeSMBFileShares() {
     this.add('storagegateway:DescribeSMBFileShares');
     return this;
   }
@@ -1214,7 +1220,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSMBSettings.html
    */
-  public describeSMBSettings () {
+  public describeSMBSettings() {
     this.add('storagegateway:DescribeSMBSettings');
     return this;
   }
@@ -1226,7 +1232,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSnapshotSchedule.html
    */
-  public describeSnapshotSchedule () {
+  public describeSnapshotSchedule() {
     this.add('storagegateway:DescribeSnapshotSchedule');
     return this;
   }
@@ -1238,7 +1244,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeStorediSCSIVolumes.html
    */
-  public describeStorediSCSIVolumes () {
+  public describeStorediSCSIVolumes() {
     this.add('storagegateway:DescribeStorediSCSIVolumes');
     return this;
   }
@@ -1250,7 +1256,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapeArchives.html
    */
-  public describeTapeArchives () {
+  public describeTapeArchives() {
     this.add('storagegateway:DescribeTapeArchives');
     return this;
   }
@@ -1262,7 +1268,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapeRecoveryPoints.html
    */
-  public describeTapeRecoveryPoints () {
+  public describeTapeRecoveryPoints() {
     this.add('storagegateway:DescribeTapeRecoveryPoints');
     return this;
   }
@@ -1274,7 +1280,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapes.html
    */
-  public describeTapes () {
+  public describeTapes() {
     this.add('storagegateway:DescribeTapes');
     return this;
   }
@@ -1286,7 +1292,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeUploadBuffer.html
    */
-  public describeUploadBuffer () {
+  public describeUploadBuffer() {
     this.add('storagegateway:DescribeUploadBuffer');
     return this;
   }
@@ -1298,7 +1304,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeVTLDevices.html
    */
-  public describeVTLDevices () {
+  public describeVTLDevices() {
     this.add('storagegateway:DescribeVTLDevices');
     return this;
   }
@@ -1310,7 +1316,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeWorkingStorage.html
    */
-  public describeWorkingStorage () {
+  public describeWorkingStorage() {
     this.add('storagegateway:DescribeWorkingStorage');
     return this;
   }
@@ -1322,7 +1328,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DetachVolume.html
    */
-  public detachVolume () {
+  public detachVolume() {
     this.add('storagegateway:DetachVolume');
     return this;
   }
@@ -1334,7 +1340,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DisableGateway.html
    */
-  public disableGateway () {
+  public disableGateway() {
     this.add('storagegateway:DisableGateway');
     return this;
   }
@@ -1346,7 +1352,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_JoinDomain.html
    */
-  public joinDomain () {
+  public joinDomain() {
     this.add('storagegateway:JoinDomain');
     return this;
   }
@@ -1358,7 +1364,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListFileShares.html
    */
-  public listFileShares () {
+  public listFileShares() {
     this.add('storagegateway:ListFileShares');
     return this;
   }
@@ -1370,7 +1376,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListGateways.html
    */
-  public listGateways () {
+  public listGateways() {
     this.add('storagegateway:ListGateways');
     return this;
   }
@@ -1382,7 +1388,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListLocalDisks.html
    */
-  public listLocalDisks () {
+  public listLocalDisks() {
     this.add('storagegateway:ListLocalDisks');
     return this;
   }
@@ -1394,7 +1400,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('storagegateway:ListTagsForResource');
     return this;
   }
@@ -1406,7 +1412,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTapes.html
    */
-  public listTapes () {
+  public listTapes() {
     this.add('storagegateway:ListTapes');
     return this;
   }
@@ -1418,7 +1424,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeInitiators.html
    */
-  public listVolumeInitiators () {
+  public listVolumeInitiators() {
     this.add('storagegateway:ListVolumeInitiators');
     return this;
   }
@@ -1430,7 +1436,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeRecoveryPoints.html
    */
-  public listVolumeRecoveryPoints () {
+  public listVolumeRecoveryPoints() {
     this.add('storagegateway:ListVolumeRecoveryPoints');
     return this;
   }
@@ -1442,7 +1448,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumes.html
    */
-  public listVolumes () {
+  public listVolumes() {
     this.add('storagegateway:ListVolumes');
     return this;
   }
@@ -1454,7 +1460,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_NotifyWhenUploaded.html
    */
-  public notifyWhenUploaded () {
+  public notifyWhenUploaded() {
     this.add('storagegateway:NotifyWhenUploaded');
     return this;
   }
@@ -1466,7 +1472,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RefreshCache.html
    */
-  public refreshCache () {
+  public refreshCache() {
     this.add('storagegateway:RefreshCache');
     return this;
   }
@@ -1478,7 +1484,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource () {
+  public removeTagsFromResource() {
     this.add('storagegateway:RemoveTagsFromResource');
     return this;
   }
@@ -1490,7 +1496,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ResetCache.html
    */
-  public resetCache () {
+  public resetCache() {
     this.add('storagegateway:ResetCache');
     return this;
   }
@@ -1502,7 +1508,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeArchive.html
    */
-  public retrieveTapeArchive () {
+  public retrieveTapeArchive() {
     this.add('storagegateway:RetrieveTapeArchive');
     return this;
   }
@@ -1514,7 +1520,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeRecoveryPoint.html
    */
-  public retrieveTapeRecoveryPoint () {
+  public retrieveTapeRecoveryPoint() {
     this.add('storagegateway:RetrieveTapeRecoveryPoint');
     return this;
   }
@@ -1526,7 +1532,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetLocalConsolePassword.html
    */
-  public setLocalConsolePassword () {
+  public setLocalConsolePassword() {
     this.add('storagegateway:SetLocalConsolePassword');
     return this;
   }
@@ -1538,7 +1544,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetSMBGuestPassword.html
    */
-  public setSMBGuestPassword () {
+  public setSMBGuestPassword() {
     this.add('storagegateway:SetSMBGuestPassword');
     return this;
   }
@@ -1550,7 +1556,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ShutdownGateway.html
    */
-  public shutdownGateway () {
+  public shutdownGateway() {
     this.add('storagegateway:ShutdownGateway');
     return this;
   }
@@ -1562,7 +1568,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartGateway.html
    */
-  public startGateway () {
+  public startGateway() {
     this.add('storagegateway:StartGateway');
     return this;
   }
@@ -1574,7 +1580,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateBandwidthRateLimit.html
    */
-  public updateBandwidthRateLimit () {
+  public updateBandwidthRateLimit() {
     this.add('storagegateway:UpdateBandwidthRateLimit');
     return this;
   }
@@ -1586,7 +1592,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateChapCredentials.html
    */
-  public updateChapCredentials () {
+  public updateChapCredentials() {
     this.add('storagegateway:UpdateChapCredentials');
     return this;
   }
@@ -1598,7 +1604,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateGatewayInformation.html
    */
-  public updateGatewayInformation () {
+  public updateGatewayInformation() {
     this.add('storagegateway:UpdateGatewayInformation');
     return this;
   }
@@ -1610,7 +1616,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateGatewaySoftwareNow.html
    */
-  public updateGatewaySoftwareNow () {
+  public updateGatewaySoftwareNow() {
     this.add('storagegateway:UpdateGatewaySoftwareNow');
     return this;
   }
@@ -1622,7 +1628,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateMaintenanceStartTime.html
    */
-  public updateMaintenanceStartTime () {
+  public updateMaintenanceStartTime() {
     this.add('storagegateway:UpdateMaintenanceStartTime');
     return this;
   }
@@ -1634,7 +1640,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateNFSFileShare.html
    */
-  public updateNFSFileShare () {
+  public updateNFSFileShare() {
     this.add('storagegateway:UpdateNFSFileShare');
     return this;
   }
@@ -1646,7 +1652,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSMBFileShare.html
    */
-  public updateSMBFileShare () {
+  public updateSMBFileShare() {
     this.add('storagegateway:UpdateSMBFileShare');
     return this;
   }
@@ -1658,7 +1664,7 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateSnapshotSchedule.html
    */
-  public updateSnapshotSchedule () {
+  public updateSnapshotSchedule() {
     this.add('storagegateway:UpdateSnapshotSchedule');
     return this;
   }
@@ -1670,8 +1676,140 @@ export class Storagegateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateVTLDeviceType.html
    */
-  public updateVTLDeviceType () {
+  public updateVTLDeviceType() {
     this.add('storagegateway:UpdateVTLDeviceType');
     return this;
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param vtldevice - Identifier for the vtldevice.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDevice(gatewayId: string, vtldevice: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}';
+    arn = arn.replace('${GatewayId}', gatewayId);
+    arn = arn.replace('${Vtldevice}', vtldevice);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type gateway to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}';
+    arn = arn.replace('${GatewayId}', gatewayId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type share to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html
+   *
+   * @param shareId - Identifier for the shareId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onShare(shareId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}';
+    arn = arn.replace('${ShareId}', shareId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type tape to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts
+   *
+   * @param tapeBarcode - Identifier for the tapeBarcode.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}';
+    arn = arn.replace('${TapeBarcode}', tapeBarcode);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type target to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param iscsiTarget - Identifier for the iscsiTarget.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTarget(gatewayId: string, iscsiTarget: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}';
+    arn = arn.replace('${GatewayId}', gatewayId);
+    arn = arn.replace('${IscsiTarget}', iscsiTarget);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type volume to the statement
+   *
+   * https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts
+   *
+   * @param gatewayId - Identifier for the gatewayId.
+   * @param volumeId - Identifier for the volumeId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}';
+    arn = arn.replace('${GatewayId}', gatewayId);
+    arn = arn.replace('${VolumeId}', volumeId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

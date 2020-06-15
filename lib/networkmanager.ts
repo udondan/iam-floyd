@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateCustomerGateway": {
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html",
       "description": "Grants permission to associate a customer gateway to a device",
@@ -404,9 +404,10 @@ export class Networkmanager extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "global-network": {
       "name": "global-network",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
       "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:global-network/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -414,6 +415,7 @@ export class Networkmanager extends PolicyStatement {
     },
     "site": {
       "name": "site",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
       "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:site/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -421,6 +423,7 @@ export class Networkmanager extends PolicyStatement {
     },
     "link": {
       "name": "link",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
       "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:link/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -428,6 +431,7 @@ export class Networkmanager extends PolicyStatement {
     },
     "device": {
       "name": "device",
+      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
       "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:device/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -442,7 +446,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html
    */
-  public associateCustomerGateway () {
+  public associateCustomerGateway() {
     this.add('networkmanager:AssociateCustomerGateway');
     return this;
   }
@@ -454,7 +458,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateLink.html
    */
-  public associateLink () {
+  public associateLink() {
     this.add('networkmanager:AssociateLink');
     return this;
   }
@@ -466,7 +470,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html
    */
-  public createDevice () {
+  public createDevice() {
     this.add('networkmanager:CreateDevice');
     return this;
   }
@@ -478,7 +482,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
    */
-  public createGlobalNetwork () {
+  public createGlobalNetwork() {
     this.add('networkmanager:CreateGlobalNetwork');
     return this;
   }
@@ -490,7 +494,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html
    */
-  public createLink () {
+  public createLink() {
     this.add('networkmanager:CreateLink');
     return this;
   }
@@ -502,7 +506,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html
    */
-  public createSite () {
+  public createSite() {
     this.add('networkmanager:CreateSite');
     return this;
   }
@@ -514,7 +518,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteDevice.html
    */
-  public deleteDevice () {
+  public deleteDevice() {
     this.add('networkmanager:DeleteDevice');
     return this;
   }
@@ -526,7 +530,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteGlobalNetwork.html
    */
-  public deleteGlobalNetwork () {
+  public deleteGlobalNetwork() {
     this.add('networkmanager:DeleteGlobalNetwork');
     return this;
   }
@@ -538,7 +542,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteLink.html
    */
-  public deleteLink () {
+  public deleteLink() {
     this.add('networkmanager:DeleteLink');
     return this;
   }
@@ -550,7 +554,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteSite.html
    */
-  public deleteSite () {
+  public deleteSite() {
     this.add('networkmanager:DeleteSite');
     return this;
   }
@@ -562,7 +566,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html
    */
-  public deregisterTransitGateway () {
+  public deregisterTransitGateway() {
     this.add('networkmanager:DeregisterTransitGateway');
     return this;
   }
@@ -574,7 +578,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DescribeGlobalNetworks.html
    */
-  public describeGlobalNetworks () {
+  public describeGlobalNetworks() {
     this.add('networkmanager:DescribeGlobalNetworks');
     return this;
   }
@@ -586,7 +590,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html
    */
-  public disassociateCustomerGateway () {
+  public disassociateCustomerGateway() {
     this.add('networkmanager:DisassociateCustomerGateway');
     return this;
   }
@@ -598,7 +602,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateLink.html
    */
-  public disassociateLink () {
+  public disassociateLink() {
     this.add('networkmanager:DisassociateLink');
     return this;
   }
@@ -610,7 +614,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCustomerGatewayAssociations.html
    */
-  public getCustomerGatewayAssociations () {
+  public getCustomerGatewayAssociations() {
     this.add('networkmanager:GetCustomerGatewayAssociations');
     return this;
   }
@@ -622,7 +626,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDevices.html
    */
-  public getDevices () {
+  public getDevices() {
     this.add('networkmanager:GetDevices');
     return this;
   }
@@ -634,7 +638,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinkAssociations.html
    */
-  public getLinkAssociations () {
+  public getLinkAssociations() {
     this.add('networkmanager:GetLinkAssociations');
     return this;
   }
@@ -646,7 +650,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinks.html
    */
-  public getLinks () {
+  public getLinks() {
     this.add('networkmanager:GetLinks');
     return this;
   }
@@ -658,7 +662,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSites.html
    */
-  public getSites () {
+  public getSites() {
     this.add('networkmanager:GetSites');
     return this;
   }
@@ -670,7 +674,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRegistrations.html
    */
-  public getTransitGatewayRegistrations () {
+  public getTransitGatewayRegistrations() {
     this.add('networkmanager:GetTransitGatewayRegistrations');
     return this;
   }
@@ -682,7 +686,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('networkmanager:ListTagsForResource');
     return this;
   }
@@ -694,7 +698,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html
    */
-  public registerTransitGateway () {
+  public registerTransitGateway() {
     this.add('networkmanager:RegisterTransitGateway');
     return this;
   }
@@ -706,7 +710,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('networkmanager:TagResource');
     return this;
   }
@@ -718,7 +722,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('networkmanager:UntagResource');
     return this;
   }
@@ -730,7 +734,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDevice.html
    */
-  public updateDevice () {
+  public updateDevice() {
     this.add('networkmanager:UpdateDevice');
     return this;
   }
@@ -742,7 +746,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateGlobalNetwork.html
    */
-  public updateGlobalNetwork () {
+  public updateGlobalNetwork() {
     this.add('networkmanager:UpdateGlobalNetwork');
     return this;
   }
@@ -754,7 +758,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateLink.html
    */
-  public updateLink () {
+  public updateLink() {
     this.add('networkmanager:UpdateLink');
     return this;
   }
@@ -766,8 +770,102 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateSite.html
    */
-  public updateSite () {
+  public updateSite() {
     this.add('networkmanager:UpdateSite');
     return this;
+  }
+
+  /**
+   * Adds a resource of type global-network to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onGlobalNetwork(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:global-network/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type site to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onSite(globalNetworkId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:site/${GlobalNetworkId}/${ResourceId}';
+    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type link to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onLink(globalNetworkId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:link/${GlobalNetworkId}/${ResourceId}';
+    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type device to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/
+   *
+   * @param globalNetworkId - Identifier for the globalNetworkId.
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onDevice(globalNetworkId: string, resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:device/${GlobalNetworkId}/${ResourceId}';
+    arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

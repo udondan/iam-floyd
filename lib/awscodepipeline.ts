@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Codepipeline extends PolicyStatement {
   public servicePrefix = 'codepipeline';
-  public actions : Actions = {
+  public actions: Actions = {
     "AcknowledgeJob": {
       "url": "https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeJob.html",
       "description": "Grants permission to view information about a specified job and whether that job has been received by the job worker",
@@ -374,9 +374,10 @@ export class Codepipeline extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "action": {
       "name": "action",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
       "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}/${ActionName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -384,6 +385,7 @@ export class Codepipeline extends PolicyStatement {
     },
     "actiontype": {
       "name": "actiontype",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
       "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:actiontype:${Owner}/${Category}/${Provider}/${Version}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -391,6 +393,7 @@ export class Codepipeline extends PolicyStatement {
     },
     "pipeline": {
       "name": "pipeline",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
       "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -398,6 +401,7 @@ export class Codepipeline extends PolicyStatement {
     },
     "stage": {
       "name": "stage",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
       "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -405,6 +409,7 @@ export class Codepipeline extends PolicyStatement {
     },
     "webhook": {
       "name": "webhook",
+      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format",
       "arn": "arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -419,7 +424,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeJob.html
    */
-  public acknowledgeJob () {
+  public acknowledgeJob() {
     this.add('codepipeline:AcknowledgeJob');
     return this;
   }
@@ -431,7 +436,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeThirdPartyJob.html
    */
-  public acknowledgeThirdPartyJob () {
+  public acknowledgeThirdPartyJob() {
     this.add('codepipeline:AcknowledgeThirdPartyJob');
     return this;
   }
@@ -443,7 +448,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreateCustomActionType.html
    */
-  public createCustomActionType () {
+  public createCustomActionType() {
     this.add('codepipeline:CreateCustomActionType');
     return this;
   }
@@ -455,7 +460,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreatePipeline.html
    */
-  public createPipeline () {
+  public createPipeline() {
     this.add('codepipeline:CreatePipeline');
     return this;
   }
@@ -467,7 +472,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteCustomActionType.html
    */
-  public deleteCustomActionType () {
+  public deleteCustomActionType() {
     this.add('codepipeline:DeleteCustomActionType');
     return this;
   }
@@ -479,7 +484,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeletePipeline.html
    */
-  public deletePipeline () {
+  public deletePipeline() {
     this.add('codepipeline:DeletePipeline');
     return this;
   }
@@ -491,7 +496,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteWebhook.html
    */
-  public deleteWebhook () {
+  public deleteWebhook() {
     this.add('codepipeline:DeleteWebhook');
     return this;
   }
@@ -503,7 +508,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeregisterWebhookWithThirdParty.html
    */
-  public deregisterWebhookWithThirdParty () {
+  public deregisterWebhookWithThirdParty() {
     this.add('codepipeline:DeregisterWebhookWithThirdParty');
     return this;
   }
@@ -515,7 +520,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DisableStageTransition.html
    */
-  public disableStageTransition () {
+  public disableStageTransition() {
     this.add('codepipeline:DisableStageTransition');
     return this;
   }
@@ -527,7 +532,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_EnableStageTransition.html
    */
-  public enableStageTransition () {
+  public enableStageTransition() {
     this.add('codepipeline:EnableStageTransition');
     return this;
   }
@@ -539,7 +544,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetJobDetails.html
    */
-  public getJobDetails () {
+  public getJobDetails() {
     this.add('codepipeline:GetJobDetails');
     return this;
   }
@@ -551,7 +556,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipeline.html
    */
-  public getPipeline () {
+  public getPipeline() {
     this.add('codepipeline:GetPipeline');
     return this;
   }
@@ -563,7 +568,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineExecution.html
    */
-  public getPipelineExecution () {
+  public getPipelineExecution() {
     this.add('codepipeline:GetPipelineExecution');
     return this;
   }
@@ -575,7 +580,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineState.html
    */
-  public getPipelineState () {
+  public getPipelineState() {
     this.add('codepipeline:GetPipelineState');
     return this;
   }
@@ -587,7 +592,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetThirdPartyJobDetails.html
    */
-  public getThirdPartyJobDetails () {
+  public getThirdPartyJobDetails() {
     this.add('codepipeline:GetThirdPartyJobDetails');
     return this;
   }
@@ -599,7 +604,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionExecutions.html
    */
-  public listActionExecutions () {
+  public listActionExecutions() {
     this.add('codepipeline:ListActionExecutions');
     return this;
   }
@@ -611,7 +616,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionTypes.html
    */
-  public listActionTypes () {
+  public listActionTypes() {
     this.add('codepipeline:ListActionTypes');
     return this;
   }
@@ -623,7 +628,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelineExecutions.html
    */
-  public listPipelineExecutions () {
+  public listPipelineExecutions() {
     this.add('codepipeline:ListPipelineExecutions');
     return this;
   }
@@ -635,7 +640,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelines.html
    */
-  public listPipelines () {
+  public listPipelines() {
     this.add('codepipeline:ListPipelines');
     return this;
   }
@@ -647,7 +652,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('codepipeline:ListTagsForResource');
     return this;
   }
@@ -659,7 +664,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListWebhooks.html
    */
-  public listWebhooks () {
+  public listWebhooks() {
     this.add('codepipeline:ListWebhooks');
     return this;
   }
@@ -671,7 +676,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForJobs.html
    */
-  public pollForJobs () {
+  public pollForJobs() {
     this.add('codepipeline:PollForJobs');
     return this;
   }
@@ -683,7 +688,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForThirdPartyJobs.html
    */
-  public pollForThirdPartyJobs () {
+  public pollForThirdPartyJobs() {
     this.add('codepipeline:PollForThirdPartyJobs');
     return this;
   }
@@ -695,7 +700,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutActionRevision.html
    */
-  public putActionRevision () {
+  public putActionRevision() {
     this.add('codepipeline:PutActionRevision');
     return this;
   }
@@ -707,7 +712,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutApprovalResult.html
    */
-  public putApprovalResult () {
+  public putApprovalResult() {
     this.add('codepipeline:PutApprovalResult');
     return this;
   }
@@ -719,7 +724,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutJobFailureResult.html
    */
-  public putJobFailureResult () {
+  public putJobFailureResult() {
     this.add('codepipeline:PutJobFailureResult');
     return this;
   }
@@ -731,7 +736,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutJobSuccessResult.html
    */
-  public putJobSuccessResult () {
+  public putJobSuccessResult() {
     this.add('codepipeline:PutJobSuccessResult');
     return this;
   }
@@ -743,7 +748,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutThirdPartyJobFailureResult.html
    */
-  public putThirdPartyJobFailureResult () {
+  public putThirdPartyJobFailureResult() {
     this.add('codepipeline:PutThirdPartyJobFailureResult');
     return this;
   }
@@ -755,7 +760,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutThirdPartyJobSuccessResult.html
    */
-  public putThirdPartyJobSuccessResult () {
+  public putThirdPartyJobSuccessResult() {
     this.add('codepipeline:PutThirdPartyJobSuccessResult');
     return this;
   }
@@ -767,7 +772,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutWebhook.html
    */
-  public putWebhook () {
+  public putWebhook() {
     this.add('codepipeline:PutWebhook');
     return this;
   }
@@ -779,7 +784,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RegisterWebhookWithThirdParty.html
    */
-  public registerWebhookWithThirdParty () {
+  public registerWebhookWithThirdParty() {
     this.add('codepipeline:RegisterWebhookWithThirdParty');
     return this;
   }
@@ -791,7 +796,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_RetryStageExecution.html
    */
-  public retryStageExecution () {
+  public retryStageExecution() {
     this.add('codepipeline:RetryStageExecution');
     return this;
   }
@@ -803,7 +808,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_StartPipelineExecution.html
    */
-  public startPipelineExecution () {
+  public startPipelineExecution() {
     this.add('codepipeline:StartPipelineExecution');
     return this;
   }
@@ -815,7 +820,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_StopPipelineExecution.html
    */
-  public stopPipelineExecution () {
+  public stopPipelineExecution() {
     this.add('codepipeline:StopPipelineExecution');
     return this;
   }
@@ -827,7 +832,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('codepipeline:TagResource');
     return this;
   }
@@ -839,7 +844,7 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('codepipeline:UntagResource');
     return this;
   }
@@ -851,8 +856,130 @@ export class Codepipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UpdatePipeline.html
    */
-  public updatePipeline () {
+  public updatePipeline() {
     this.add('codepipeline:UpdatePipeline');
     return this;
+  }
+
+  /**
+   * Adds a resource of type action to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param stageName - Identifier for the stageName.
+   * @param actionName - Identifier for the actionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onAction(pipelineName: string, stageName: string, actionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}/${ActionName}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${ActionName}', actionName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type actiontype to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
+   *
+   * @param owner - Identifier for the owner.
+   * @param category - Identifier for the category.
+   * @param provider - Identifier for the provider.
+   * @param version - Identifier for the version.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onActiontype(owner: string, category: string, provider: string, version: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:actiontype:${Owner}/${Category}/${Provider}/${Version}';
+    arn = arn.replace('${Owner}', owner);
+    arn = arn.replace('${Category}', category);
+    arn = arn.replace('${Provider}', provider);
+    arn = arn.replace('${Version}', version);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type pipeline to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type stage to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
+   *
+   * @param pipelineName - Identifier for the pipelineName.
+   * @param stageName - Identifier for the stageName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onStage(pipelineName: string, stageName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}';
+    arn = arn.replace('${PipelineName}', pipelineName);
+    arn = arn.replace('${StageName}', stageName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type webhook to the statement
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format
+   *
+   * @param webhookName - Identifier for the webhookName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}';
+    arn = arn.replace('${WebhookName}', webhookName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

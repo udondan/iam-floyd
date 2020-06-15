@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Sagemaker extends PolicyStatement {
   public servicePrefix = 'sagemaker';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddTags.html",
       "description": "Adds or overwrites one or more tags for the specified Amazon SageMaker resource.",
@@ -1644,14 +1644,16 @@ export class Sagemaker extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "human-loop": {
       "name": "human-loop",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:human-loop/${HumanLoopName}",
       "conditionKeys": []
     },
     "flow-definition": {
       "name": "flow-definition",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:flow-definition/${FlowDefinitionName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1660,6 +1662,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "human-task-ui": {
       "name": "human-task-ui",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:human-task-ui/${HumanTaskUiName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1668,6 +1671,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "labeling-job": {
       "name": "labeling-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1676,6 +1680,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "workteam": {
       "name": "workteam",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:workteam/${WorkteamName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1684,6 +1689,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "workforce": {
       "name": "workforce",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:workforce/${WorkforceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1692,6 +1698,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "domain": {
       "name": "domain",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1700,6 +1707,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "user-profile": {
       "name": "user-profile",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1708,6 +1716,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "app": {
       "name": "app",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1716,6 +1725,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "notebook-instance": {
       "name": "notebook-instance",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1724,21 +1734,25 @@ export class Sagemaker extends PolicyStatement {
     },
     "notebook-instance-lifecycle-config": {
       "name": "notebook-instance-lifecycle-config",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}",
       "conditionKeys": []
     },
     "code-repository": {
       "name": "code-repository",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}",
       "conditionKeys": []
     },
     "algorithm": {
       "name": "algorithm",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:algorithm/${AlgorithmName}",
       "conditionKeys": []
     },
     "training-job": {
       "name": "training-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1747,6 +1761,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "processing-job": {
       "name": "processing-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1755,6 +1770,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "hyper-parameter-tuning-job": {
       "name": "hyper-parameter-tuning-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1763,11 +1779,13 @@ export class Sagemaker extends PolicyStatement {
     },
     "model-package": {
       "name": "model-package",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model-package/${ModelPackageName}",
       "conditionKeys": []
     },
     "model": {
       "name": "model",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1776,6 +1794,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "endpoint-config": {
       "name": "endpoint-config",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1784,6 +1803,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "endpoint": {
       "name": "endpoint",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1792,6 +1812,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "transform-job": {
       "name": "transform-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1800,11 +1821,13 @@ export class Sagemaker extends PolicyStatement {
     },
     "compilation-job": {
       "name": "compilation-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:compilation-job/${CompilationJobName}",
       "conditionKeys": []
     },
     "automl-job": {
       "name": "automl-job",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:automl-job/${AutoMLJobJobName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1813,6 +1836,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "monitoring-schedule": {
       "name": "monitoring-schedule",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1821,6 +1845,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "experiment": {
       "name": "experiment",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:experiment/${ExperimentName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1829,6 +1854,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "experiment-trial": {
       "name": "experiment-trial",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial/${TrialName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1837,6 +1863,7 @@ export class Sagemaker extends PolicyStatement {
     },
     "experiment-trial-component": {
       "name": "experiment-trial-component",
+      "url": "",
       "arn": "arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial-component/${TrialComponentName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -1852,7 +1879,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddTags.html
    */
-  public addTags () {
+  public addTags() {
     this.add('sagemaker:AddTags');
     return this;
   }
@@ -1864,7 +1891,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AssociateTrialComponent.html
    */
-  public associateTrialComponent () {
+  public associateTrialComponent() {
     this.add('sagemaker:AssociateTrialComponent');
     return this;
   }
@@ -1874,7 +1901,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public batchGetMetrics () {
+  public batchGetMetrics() {
     this.add('sagemaker:BatchGetMetrics');
     return this;
   }
@@ -1884,7 +1911,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public batchPutMetrics () {
+  public batchPutMetrics() {
     this.add('sagemaker:BatchPutMetrics');
     return this;
   }
@@ -1896,7 +1923,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAlgorithm.html
    */
-  public createAlgorithm () {
+  public createAlgorithm() {
     this.add('sagemaker:CreateAlgorithm');
     return this;
   }
@@ -1908,7 +1935,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateApp.html
    */
-  public createApp () {
+  public createApp() {
     this.add('sagemaker:CreateApp');
     return this;
   }
@@ -1920,7 +1947,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAutoMLJob.html
    */
-  public createAutoMLJob () {
+  public createAutoMLJob() {
     this.add('sagemaker:CreateAutoMLJob');
     return this;
   }
@@ -1932,7 +1959,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCodeRepository.html
    */
-  public createCodeRepository () {
+  public createCodeRepository() {
     this.add('sagemaker:CreateCodeRepository');
     return this;
   }
@@ -1944,7 +1971,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCompilationJob.html
    */
-  public createCompilationJob () {
+  public createCompilationJob() {
     this.add('sagemaker:CreateCompilationJob');
     return this;
   }
@@ -1956,7 +1983,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDomain.html
    */
-  public createDomain () {
+  public createDomain() {
     this.add('sagemaker:CreateDomain');
     return this;
   }
@@ -1968,7 +1995,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html
    */
-  public createEndpoint () {
+  public createEndpoint() {
     this.add('sagemaker:CreateEndpoint');
     return this;
   }
@@ -1980,7 +2007,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html
    */
-  public createEndpointConfig () {
+  public createEndpointConfig() {
     this.add('sagemaker:CreateEndpointConfig');
     return this;
   }
@@ -1992,7 +2019,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateExperiment.html
    */
-  public createExperiment () {
+  public createExperiment() {
     this.add('sagemaker:CreateExperiment');
     return this;
   }
@@ -2004,7 +2031,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html
    */
-  public createFlowDefinition () {
+  public createFlowDefinition() {
     this.add('sagemaker:CreateFlowDefinition');
     return this;
   }
@@ -2016,7 +2043,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHumanTaskUi.html
    */
-  public createHumanTaskUi () {
+  public createHumanTaskUi() {
     this.add('sagemaker:CreateHumanTaskUi');
     return this;
   }
@@ -2028,7 +2055,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHyperParameterTuningJob.html
    */
-  public createHyperParameterTuningJob () {
+  public createHyperParameterTuningJob() {
     this.add('sagemaker:CreateHyperParameterTuningJob');
     return this;
   }
@@ -2040,7 +2067,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLabelingJob.html
    */
-  public createLabelingJob () {
+  public createLabelingJob() {
     this.add('sagemaker:CreateLabelingJob');
     return this;
   }
@@ -2052,7 +2079,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html
    */
-  public createModel () {
+  public createModel() {
     this.add('sagemaker:CreateModel');
     return this;
   }
@@ -2064,7 +2091,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModelPackage.html
    */
-  public createModelPackage () {
+  public createModelPackage() {
     this.add('sagemaker:CreateModelPackage');
     return this;
   }
@@ -2076,7 +2103,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateMonitoringSchedule.html
    */
-  public createMonitoringSchedule () {
+  public createMonitoringSchedule() {
     this.add('sagemaker:CreateMonitoringSchedule');
     return this;
   }
@@ -2088,7 +2115,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstance.html
    */
-  public createNotebookInstance () {
+  public createNotebookInstance() {
     this.add('sagemaker:CreateNotebookInstance');
     return this;
   }
@@ -2100,7 +2127,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstanceLifecycleConfig.html
    */
-  public createNotebookInstanceLifecycleConfig () {
+  public createNotebookInstanceLifecycleConfig() {
     this.add('sagemaker:CreateNotebookInstanceLifecycleConfig');
     return this;
   }
@@ -2112,7 +2139,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePresignedDomainUrl.html
    */
-  public createPresignedDomainUrl () {
+  public createPresignedDomainUrl() {
     this.add('sagemaker:CreatePresignedDomainUrl');
     return this;
   }
@@ -2124,7 +2151,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreatePresignedNotebookInstanceUrl.html
    */
-  public createPresignedNotebookInstanceUrl () {
+  public createPresignedNotebookInstanceUrl() {
     this.add('sagemaker:CreatePresignedNotebookInstanceUrl');
     return this;
   }
@@ -2136,7 +2163,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProcessingJob.html
    */
-  public createProcessingJob () {
+  public createProcessingJob() {
     this.add('sagemaker:CreateProcessingJob');
     return this;
   }
@@ -2148,7 +2175,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html
    */
-  public createTrainingJob () {
+  public createTrainingJob() {
     this.add('sagemaker:CreateTrainingJob');
     return this;
   }
@@ -2160,7 +2187,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTransformJob.html
    */
-  public createTransformJob () {
+  public createTransformJob() {
     this.add('sagemaker:CreateTransformJob');
     return this;
   }
@@ -2172,7 +2199,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrial.html
    */
-  public createTrial () {
+  public createTrial() {
     this.add('sagemaker:CreateTrial');
     return this;
   }
@@ -2184,7 +2211,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrialComponent.html
    */
-  public createTrialComponent () {
+  public createTrialComponent() {
     this.add('sagemaker:CreateTrialComponent');
     return this;
   }
@@ -2196,7 +2223,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateUserProfile.html
    */
-  public createUserProfile () {
+  public createUserProfile() {
     this.add('sagemaker:CreateUserProfile');
     return this;
   }
@@ -2208,7 +2235,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkteam.html
    */
-  public createWorkteam () {
+  public createWorkteam() {
     this.add('sagemaker:CreateWorkteam');
     return this;
   }
@@ -2220,7 +2247,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteAlgorithm.html
    */
-  public deleteAlgorithm () {
+  public deleteAlgorithm() {
     this.add('sagemaker:DeleteAlgorithm');
     return this;
   }
@@ -2232,7 +2259,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteApp.html
    */
-  public deleteApp () {
+  public deleteApp() {
     this.add('sagemaker:DeleteApp');
     return this;
   }
@@ -2244,7 +2271,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteCodeRepository.html
    */
-  public deleteCodeRepository () {
+  public deleteCodeRepository() {
     this.add('sagemaker:DeleteCodeRepository');
     return this;
   }
@@ -2256,7 +2283,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteDomain.html
    */
-  public deleteDomain () {
+  public deleteDomain() {
     this.add('sagemaker:DeleteDomain');
     return this;
   }
@@ -2268,7 +2295,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteEndpoint.html
    */
-  public deleteEndpoint () {
+  public deleteEndpoint() {
     this.add('sagemaker:DeleteEndpoint');
     return this;
   }
@@ -2280,7 +2307,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteEndpointConfig.html
    */
-  public deleteEndpointConfig () {
+  public deleteEndpointConfig() {
     this.add('sagemaker:DeleteEndpointConfig');
     return this;
   }
@@ -2292,7 +2319,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteExperiment.html
    */
-  public deleteExperiment () {
+  public deleteExperiment() {
     this.add('sagemaker:DeleteExperiment');
     return this;
   }
@@ -2304,7 +2331,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteFlowDefinition.html
    */
-  public deleteFlowDefinition () {
+  public deleteFlowDefinition() {
     this.add('sagemaker:DeleteFlowDefinition');
     return this;
   }
@@ -2316,7 +2343,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteHumanLoop.html
    */
-  public deleteHumanLoop () {
+  public deleteHumanLoop() {
     this.add('sagemaker:DeleteHumanLoop');
     return this;
   }
@@ -2328,7 +2355,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModel.html
    */
-  public deleteModel () {
+  public deleteModel() {
     this.add('sagemaker:DeleteModel');
     return this;
   }
@@ -2340,7 +2367,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteModelPackage.html
    */
-  public deleteModelPackage () {
+  public deleteModelPackage() {
     this.add('sagemaker:DeleteModelPackage');
     return this;
   }
@@ -2352,7 +2379,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteMonitoringSchedule.html
    */
-  public deleteMonitoringSchedule () {
+  public deleteMonitoringSchedule() {
     this.add('sagemaker:DeleteMonitoringSchedule');
     return this;
   }
@@ -2364,7 +2391,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteNotebookInstance.html
    */
-  public deleteNotebookInstance () {
+  public deleteNotebookInstance() {
     this.add('sagemaker:DeleteNotebookInstance');
     return this;
   }
@@ -2376,7 +2403,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteNotebookInstanceLifecycleConfig.html
    */
-  public deleteNotebookInstanceLifecycleConfig () {
+  public deleteNotebookInstanceLifecycleConfig() {
     this.add('sagemaker:DeleteNotebookInstanceLifecycleConfig');
     return this;
   }
@@ -2388,7 +2415,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTags.html
    */
-  public deleteTags () {
+  public deleteTags() {
     this.add('sagemaker:DeleteTags');
     return this;
   }
@@ -2400,7 +2427,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTrial.html
    */
-  public deleteTrial () {
+  public deleteTrial() {
     this.add('sagemaker:DeleteTrial');
     return this;
   }
@@ -2412,7 +2439,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTrialComponent.html
    */
-  public deleteTrialComponent () {
+  public deleteTrialComponent() {
     this.add('sagemaker:DeleteTrialComponent');
     return this;
   }
@@ -2424,7 +2451,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteUserProfile.html
    */
-  public deleteUserProfile () {
+  public deleteUserProfile() {
     this.add('sagemaker:DeleteUserProfile');
     return this;
   }
@@ -2436,7 +2463,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteWorkteam.html
    */
-  public deleteWorkteam () {
+  public deleteWorkteam() {
     this.add('sagemaker:DeleteWorkteam');
     return this;
   }
@@ -2448,7 +2475,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAlgorithm.html
    */
-  public describeAlgorithm () {
+  public describeAlgorithm() {
     this.add('sagemaker:DescribeAlgorithm');
     return this;
   }
@@ -2460,7 +2487,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeApp.html
    */
-  public describeApp () {
+  public describeApp() {
     this.add('sagemaker:DescribeApp');
     return this;
   }
@@ -2472,7 +2499,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeAutoMLJob.html
    */
-  public describeAutoMLJob () {
+  public describeAutoMLJob() {
     this.add('sagemaker:DescribeAutoMLJob');
     return this;
   }
@@ -2484,7 +2511,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeCodeRepository.html
    */
-  public describeCodeRepository () {
+  public describeCodeRepository() {
     this.add('sagemaker:DescribeCodeRepository');
     return this;
   }
@@ -2496,7 +2523,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeCompilationJob.html
    */
-  public describeCompilationJob () {
+  public describeCompilationJob() {
     this.add('sagemaker:DescribeCompilationJob');
     return this;
   }
@@ -2508,7 +2535,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeDomain.html
    */
-  public describeDomain () {
+  public describeDomain() {
     this.add('sagemaker:DescribeDomain');
     return this;
   }
@@ -2520,7 +2547,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html
    */
-  public describeEndpoint () {
+  public describeEndpoint() {
     this.add('sagemaker:DescribeEndpoint');
     return this;
   }
@@ -2532,7 +2559,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpointConfig.html
    */
-  public describeEndpointConfig () {
+  public describeEndpointConfig() {
     this.add('sagemaker:DescribeEndpointConfig');
     return this;
   }
@@ -2544,7 +2571,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeExperiment.html
    */
-  public describeExperiment () {
+  public describeExperiment() {
     this.add('sagemaker:DescribeExperiment');
     return this;
   }
@@ -2556,7 +2583,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeFlowDefinition.html
    */
-  public describeFlowDefinition () {
+  public describeFlowDefinition() {
     this.add('sagemaker:DescribeFlowDefinition');
     return this;
   }
@@ -2568,7 +2595,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeHumanLoop.html
    */
-  public describeHumanLoop () {
+  public describeHumanLoop() {
     this.add('sagemaker:DescribeHumanLoop');
     return this;
   }
@@ -2580,7 +2607,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeHumanTaskUi.html
    */
-  public describeHumanTaskUi () {
+  public describeHumanTaskUi() {
     this.add('sagemaker:DescribeHumanTaskUi');
     return this;
   }
@@ -2592,7 +2619,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeHyperParameterTuningJob.html
    */
-  public describeHyperParameterTuningJob () {
+  public describeHyperParameterTuningJob() {
     this.add('sagemaker:DescribeHyperParameterTuningJob');
     return this;
   }
@@ -2604,7 +2631,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeLabelingJob.html
    */
-  public describeLabelingJob () {
+  public describeLabelingJob() {
     this.add('sagemaker:DescribeLabelingJob');
     return this;
   }
@@ -2616,7 +2643,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModel.html
    */
-  public describeModel () {
+  public describeModel() {
     this.add('sagemaker:DescribeModel');
     return this;
   }
@@ -2628,7 +2655,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeModelPackage.html
    */
-  public describeModelPackage () {
+  public describeModelPackage() {
     this.add('sagemaker:DescribeModelPackage');
     return this;
   }
@@ -2640,7 +2667,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeMonitoringSchedule.html
    */
-  public describeMonitoringSchedule () {
+  public describeMonitoringSchedule() {
     this.add('sagemaker:DescribeMonitoringSchedule');
     return this;
   }
@@ -2652,7 +2679,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeNotebookInstance.html
    */
-  public describeNotebookInstance () {
+  public describeNotebookInstance() {
     this.add('sagemaker:DescribeNotebookInstance');
     return this;
   }
@@ -2664,7 +2691,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeNotebookInstanceLifecycleConfig.html
    */
-  public describeNotebookInstanceLifecycleConfig () {
+  public describeNotebookInstanceLifecycleConfig() {
     this.add('sagemaker:DescribeNotebookInstanceLifecycleConfig');
     return this;
   }
@@ -2676,7 +2703,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeProcessingJob.html
    */
-  public describeProcessingJob () {
+  public describeProcessingJob() {
     this.add('sagemaker:DescribeProcessingJob');
     return this;
   }
@@ -2688,7 +2715,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeSubscribedWorkteam.html
    */
-  public describeSubscribedWorkteam () {
+  public describeSubscribedWorkteam() {
     this.add('sagemaker:DescribeSubscribedWorkteam');
     return this;
   }
@@ -2700,7 +2727,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTrainingJob.html
    */
-  public describeTrainingJob () {
+  public describeTrainingJob() {
     this.add('sagemaker:DescribeTrainingJob');
     return this;
   }
@@ -2712,7 +2739,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTransformJob.html
    */
-  public describeTransformJob () {
+  public describeTransformJob() {
     this.add('sagemaker:DescribeTransformJob');
     return this;
   }
@@ -2724,7 +2751,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTrial.html
    */
-  public describeTrial () {
+  public describeTrial() {
     this.add('sagemaker:DescribeTrial');
     return this;
   }
@@ -2736,7 +2763,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeTrialComponent.html
    */
-  public describeTrialComponent () {
+  public describeTrialComponent() {
     this.add('sagemaker:DescribeTrialComponent');
     return this;
   }
@@ -2748,7 +2775,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeUserProfile.html
    */
-  public describeUserProfile () {
+  public describeUserProfile() {
     this.add('sagemaker:DescribeUserProfile');
     return this;
   }
@@ -2760,7 +2787,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeWorkforce.html
    */
-  public describeWorkforce () {
+  public describeWorkforce() {
     this.add('sagemaker:DescribeWorkforce');
     return this;
   }
@@ -2772,7 +2799,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeWorkteam.html
    */
-  public describeWorkteam () {
+  public describeWorkteam() {
     this.add('sagemaker:DescribeWorkteam');
     return this;
   }
@@ -2784,7 +2811,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DisassociateTrialComponent.html
    */
-  public disassociateTrialComponent () {
+  public disassociateTrialComponent() {
     this.add('sagemaker:DisassociateTrialComponent');
     return this;
   }
@@ -2796,7 +2823,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetSearchSuggestions.html
    */
-  public getSearchSuggestions () {
+  public getSearchSuggestions() {
     this.add('sagemaker:GetSearchSuggestions');
     return this;
   }
@@ -2808,7 +2835,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_InvokeEndpoint.html
    */
-  public invokeEndpoint () {
+  public invokeEndpoint() {
     this.add('sagemaker:InvokeEndpoint');
     return this;
   }
@@ -2820,7 +2847,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAlgorithms.html
    */
-  public listAlgorithms () {
+  public listAlgorithms() {
     this.add('sagemaker:ListAlgorithms');
     return this;
   }
@@ -2832,7 +2859,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListApps.html
    */
-  public listApps () {
+  public listApps() {
     this.add('sagemaker:ListApps');
     return this;
   }
@@ -2844,7 +2871,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListAutoMLJobs.html
    */
-  public listAutoMLJobs () {
+  public listAutoMLJobs() {
     this.add('sagemaker:ListAutoMLJobs');
     return this;
   }
@@ -2856,7 +2883,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListCandidatesForAutoMLJob.html
    */
-  public listCandidatesForAutoMLJob () {
+  public listCandidatesForAutoMLJob() {
     this.add('sagemaker:ListCandidatesForAutoMLJob');
     return this;
   }
@@ -2868,7 +2895,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListCodeRepositories.html
    */
-  public listCodeRepositories () {
+  public listCodeRepositories() {
     this.add('sagemaker:ListCodeRepositories');
     return this;
   }
@@ -2880,7 +2907,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListCompilationJobs.html
    */
-  public listCompilationJobs () {
+  public listCompilationJobs() {
     this.add('sagemaker:ListCompilationJobs');
     return this;
   }
@@ -2892,7 +2919,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListDomains.html
    */
-  public listDomains () {
+  public listDomains() {
     this.add('sagemaker:ListDomains');
     return this;
   }
@@ -2904,7 +2931,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListEndpointConfigs.html
    */
-  public listEndpointConfigs () {
+  public listEndpointConfigs() {
     this.add('sagemaker:ListEndpointConfigs');
     return this;
   }
@@ -2916,7 +2943,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListEndpoints.html
    */
-  public listEndpoints () {
+  public listEndpoints() {
     this.add('sagemaker:ListEndpoints');
     return this;
   }
@@ -2928,7 +2955,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListExperiments.html
    */
-  public listExperiments () {
+  public listExperiments() {
     this.add('sagemaker:ListExperiments');
     return this;
   }
@@ -2940,7 +2967,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListFlowDefinitions.html
    */
-  public listFlowDefinitions () {
+  public listFlowDefinitions() {
     this.add('sagemaker:ListFlowDefinitions');
     return this;
   }
@@ -2952,7 +2979,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListHumanLoops.html
    */
-  public listHumanLoops () {
+  public listHumanLoops() {
     this.add('sagemaker:ListHumanLoops');
     return this;
   }
@@ -2964,7 +2991,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListHumanTaskUis.html
    */
-  public listHumanTaskUis () {
+  public listHumanTaskUis() {
     this.add('sagemaker:ListHumanTaskUis');
     return this;
   }
@@ -2976,7 +3003,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListHyperParameterTuningJobs.html
    */
-  public listHyperParameterTuningJobs () {
+  public listHyperParameterTuningJobs() {
     this.add('sagemaker:ListHyperParameterTuningJobs');
     return this;
   }
@@ -2988,7 +3015,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListLabelingJobs.html
    */
-  public listLabelingJobs () {
+  public listLabelingJobs() {
     this.add('sagemaker:ListLabelingJobs');
     return this;
   }
@@ -3000,7 +3027,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListLabelingJobs.html
    */
-  public listLabelingJobsForWorkteam () {
+  public listLabelingJobsForWorkteam() {
     this.add('sagemaker:ListLabelingJobsForWorkteam');
     return this;
   }
@@ -3012,7 +3039,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModelPackages.html
    */
-  public listModelPackages () {
+  public listModelPackages() {
     this.add('sagemaker:ListModelPackages');
     return this;
   }
@@ -3024,7 +3051,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListModels.html
    */
-  public listModels () {
+  public listModels() {
     this.add('sagemaker:ListModels');
     return this;
   }
@@ -3036,7 +3063,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListMonitoringExecutions.html
    */
-  public listMonitoringExecutions () {
+  public listMonitoringExecutions() {
     this.add('sagemaker:ListMonitoringExecutions');
     return this;
   }
@@ -3048,7 +3075,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListMonitoringSchedules.html
    */
-  public listMonitoringSchedules () {
+  public listMonitoringSchedules() {
     this.add('sagemaker:ListMonitoringSchedules');
     return this;
   }
@@ -3060,7 +3087,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListNotebookInstanceLifecycleConfigs.html
    */
-  public listNotebookInstanceLifecycleConfigs () {
+  public listNotebookInstanceLifecycleConfigs() {
     this.add('sagemaker:ListNotebookInstanceLifecycleConfigs');
     return this;
   }
@@ -3072,7 +3099,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListNotebookInstances.html
    */
-  public listNotebookInstances () {
+  public listNotebookInstances() {
     this.add('sagemaker:ListNotebookInstances');
     return this;
   }
@@ -3084,7 +3111,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListProcessingJobs.html
    */
-  public listProcessingJobs () {
+  public listProcessingJobs() {
     this.add('sagemaker:ListProcessingJobs');
     return this;
   }
@@ -3096,7 +3123,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListSubscribedWorkteams.html
    */
-  public listSubscribedWorkteams () {
+  public listSubscribedWorkteams() {
     this.add('sagemaker:ListSubscribedWorkteams');
     return this;
   }
@@ -3108,7 +3135,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTags.html
    */
-  public listTags () {
+  public listTags() {
     this.add('sagemaker:ListTags');
     return this;
   }
@@ -3120,7 +3147,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTrainingJobs.html
    */
-  public listTrainingJobs () {
+  public listTrainingJobs() {
     this.add('sagemaker:ListTrainingJobs');
     return this;
   }
@@ -3132,7 +3159,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ ListTrainingJobsForHyperParameterTuningJob.html
    */
-  public listTrainingJobsForHyperParameterTuningJob () {
+  public listTrainingJobsForHyperParameterTuningJob() {
     this.add('sagemaker:ListTrainingJobsForHyperParameterTuningJob');
     return this;
   }
@@ -3144,7 +3171,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTransformJobs.html
    */
-  public listTransformJobs () {
+  public listTransformJobs() {
     this.add('sagemaker:ListTransformJobs');
     return this;
   }
@@ -3156,7 +3183,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTrialComponents.html
    */
-  public listTrialComponents () {
+  public listTrialComponents() {
     this.add('sagemaker:ListTrialComponents');
     return this;
   }
@@ -3168,7 +3195,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListTrials.html
    */
-  public listTrials () {
+  public listTrials() {
     this.add('sagemaker:ListTrials');
     return this;
   }
@@ -3180,7 +3207,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListUserProfiles.html
    */
-  public listUserProfiles () {
+  public listUserProfiles() {
     this.add('sagemaker:ListUserProfiles');
     return this;
   }
@@ -3192,7 +3219,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListWorkteams.html
    */
-  public listWorkteams () {
+  public listWorkteams() {
     this.add('sagemaker:ListWorkteams');
     return this;
   }
@@ -3204,7 +3231,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RenderUiTemplate.html
    */
-  public renderUiTemplate () {
+  public renderUiTemplate() {
     this.add('sagemaker:RenderUiTemplate');
     return this;
   }
@@ -3216,7 +3243,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_Search.html
    */
-  public search () {
+  public search() {
     this.add('sagemaker:Search');
     return this;
   }
@@ -3228,7 +3255,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartHumanLoop.html
    */
-  public startHumanLoop () {
+  public startHumanLoop() {
     this.add('sagemaker:StartHumanLoop');
     return this;
   }
@@ -3240,7 +3267,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartMonitoringSchedule.html
    */
-  public startMonitoringSchedule () {
+  public startMonitoringSchedule() {
     this.add('sagemaker:StartMonitoringSchedule');
     return this;
   }
@@ -3252,7 +3279,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartNotebookInstance.html
    */
-  public startNotebookInstance () {
+  public startNotebookInstance() {
     this.add('sagemaker:StartNotebookInstance');
     return this;
   }
@@ -3264,7 +3291,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopAutoMLJob.html
    */
-  public stopAutoMLJob () {
+  public stopAutoMLJob() {
     this.add('sagemaker:StopAutoMLJob');
     return this;
   }
@@ -3276,7 +3303,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopCompilationJob.html
    */
-  public stopCompilationJob () {
+  public stopCompilationJob() {
     this.add('sagemaker:StopCompilationJob');
     return this;
   }
@@ -3288,7 +3315,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopHumanLoop.html
    */
-  public stopHumanLoop () {
+  public stopHumanLoop() {
     this.add('sagemaker:StopHumanLoop');
     return this;
   }
@@ -3300,7 +3327,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopHyperParameterTuningJob.html
    */
-  public stopHyperParameterTuningJob () {
+  public stopHyperParameterTuningJob() {
     this.add('sagemaker:StopHyperParameterTuningJob');
     return this;
   }
@@ -3312,7 +3339,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopLabelingJob.html
    */
-  public stopLabelingJob () {
+  public stopLabelingJob() {
     this.add('sagemaker:StopLabelingJob');
     return this;
   }
@@ -3324,7 +3351,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopMonitoringSchedule.html
    */
-  public stopMonitoringSchedule () {
+  public stopMonitoringSchedule() {
     this.add('sagemaker:StopMonitoringSchedule');
     return this;
   }
@@ -3336,7 +3363,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopNotebookInstance.html
    */
-  public stopNotebookInstance () {
+  public stopNotebookInstance() {
     this.add('sagemaker:StopNotebookInstance');
     return this;
   }
@@ -3348,7 +3375,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopProcessingJob.html
    */
-  public stopProcessingJob () {
+  public stopProcessingJob() {
     this.add('sagemaker:StopProcessingJob');
     return this;
   }
@@ -3360,7 +3387,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopTrainingJob.html
    */
-  public stopTrainingJob () {
+  public stopTrainingJob() {
     this.add('sagemaker:StopTrainingJob');
     return this;
   }
@@ -3372,7 +3399,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_StopTransformJob.html
    */
-  public stopTransformJob () {
+  public stopTransformJob() {
     this.add('sagemaker:StopTransformJob');
     return this;
   }
@@ -3384,7 +3411,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateCodeRepository.html
    */
-  public updateCodeRepository () {
+  public updateCodeRepository() {
     this.add('sagemaker:UpdateCodeRepository');
     return this;
   }
@@ -3396,7 +3423,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDomain.html
    */
-  public updateDomain () {
+  public updateDomain() {
     this.add('sagemaker:UpdateDomain');
     return this;
   }
@@ -3408,7 +3435,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html
    */
-  public updateEndpoint () {
+  public updateEndpoint() {
     this.add('sagemaker:UpdateEndpoint');
     return this;
   }
@@ -3420,7 +3447,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpointWeightsAndCapacities.html
    */
-  public updateEndpointWeightsAndCapacities () {
+  public updateEndpointWeightsAndCapacities() {
     this.add('sagemaker:UpdateEndpointWeightsAndCapacities');
     return this;
   }
@@ -3432,7 +3459,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateExperiment.html
    */
-  public updateExperiment () {
+  public updateExperiment() {
     this.add('sagemaker:UpdateExperiment');
     return this;
   }
@@ -3444,7 +3471,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateMonitoringSchedule.html
    */
-  public updateMonitoringSchedule () {
+  public updateMonitoringSchedule() {
     this.add('sagemaker:UpdateMonitoringSchedule');
     return this;
   }
@@ -3456,7 +3483,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateNotebookInstance.html
    */
-  public updateNotebookInstance () {
+  public updateNotebookInstance() {
     this.add('sagemaker:UpdateNotebookInstance');
     return this;
   }
@@ -3468,7 +3495,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ UpdateNotebookInstanceLifecycleConfig.html
    */
-  public updateNotebookInstanceLifecycleConfig () {
+  public updateNotebookInstanceLifecycleConfig() {
     this.add('sagemaker:UpdateNotebookInstanceLifecycleConfig');
     return this;
   }
@@ -3480,7 +3507,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateTrial.html
    */
-  public updateTrial () {
+  public updateTrial() {
     this.add('sagemaker:UpdateTrial');
     return this;
   }
@@ -3492,7 +3519,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateTrialComponent.html
    */
-  public updateTrialComponent () {
+  public updateTrialComponent() {
     this.add('sagemaker:UpdateTrialComponent');
     return this;
   }
@@ -3504,7 +3531,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateUserProfile.html
    */
-  public updateUserProfile () {
+  public updateUserProfile() {
     this.add('sagemaker:UpdateUserProfile');
     return this;
   }
@@ -3516,7 +3543,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateWorkforce.html
    */
-  public updateWorkforce () {
+  public updateWorkforce() {
     this.add('sagemaker:UpdateWorkforce');
     return this;
   }
@@ -3528,8 +3555,559 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateWorkteam.html
    */
-  public updateWorkteam () {
+  public updateWorkteam() {
     this.add('sagemaker:UpdateWorkteam');
     return this;
+  }
+
+  /**
+   * Adds a resource of type human-loop to the statement
+   *
+   * @param humanLoopName - Identifier for the humanLoopName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHumanLoop(humanLoopName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:human-loop/${HumanLoopName}';
+    arn = arn.replace('${HumanLoopName}', humanLoopName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type flow-definition to the statement
+   *
+   * @param flowDefinitionName - Identifier for the flowDefinitionName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:flow-definition/${FlowDefinitionName}';
+    arn = arn.replace('${FlowDefinitionName}', flowDefinitionName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type human-task-ui to the statement
+   *
+   * @param humanTaskUiName - Identifier for the humanTaskUiName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:human-task-ui/${HumanTaskUiName}';
+    arn = arn.replace('${HumanTaskUiName}', humanTaskUiName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type labeling-job to the statement
+   *
+   * @param labelingJobName - Identifier for the labelingJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}';
+    arn = arn.replace('${LabelingJobName}', labelingJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type workteam to the statement
+   *
+   * @param workteamName - Identifier for the workteamName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:workteam/${WorkteamName}';
+    arn = arn.replace('${WorkteamName}', workteamName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type workforce to the statement
+   *
+   * @param workforceName - Identifier for the workforceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:workforce/${WorkforceName}';
+    arn = arn.replace('${WorkforceName}', workforceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type domain to the statement
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}';
+    arn = arn.replace('${DomainId}', domainId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type user-profile to the statement
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param userProfileName - Identifier for the userProfileName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}';
+    arn = arn.replace('${DomainId}', domainId);
+    arn = arn.replace('${UserProfileName}', userProfileName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type app to the statement
+   *
+   * @param domainId - Identifier for the domainId.
+   * @param userProfileName - Identifier for the userProfileName.
+   * @param appType - Identifier for the appType.
+   * @param appName - Identifier for the appName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onApp(domainId: string, userProfileName: string, appType: string, appName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}';
+    arn = arn.replace('${DomainId}', domainId);
+    arn = arn.replace('${UserProfileName}', userProfileName);
+    arn = arn.replace('${AppType}', appType);
+    arn = arn.replace('${AppName}', appName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type notebook-instance to the statement
+   *
+   * @param notebookInstanceName - Identifier for the notebookInstanceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}';
+    arn = arn.replace('${NotebookInstanceName}', notebookInstanceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type notebook-instance-lifecycle-config to the statement
+   *
+   * @param notebookInstanceLifecycleConfigName - Identifier for the notebookInstanceLifecycleConfigName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onNotebookInstanceLifecycleConfig(notebookInstanceLifecycleConfigName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance-lifecycle-config/${NotebookInstanceLifecycleConfigName}';
+    arn = arn.replace('${NotebookInstanceLifecycleConfigName}', notebookInstanceLifecycleConfigName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type code-repository to the statement
+   *
+   * @param codeRepositoryName - Identifier for the codeRepositoryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCodeRepository(codeRepositoryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:code-repository/${CodeRepositoryName}';
+    arn = arn.replace('${CodeRepositoryName}', codeRepositoryName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type algorithm to the statement
+   *
+   * @param algorithmName - Identifier for the algorithmName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAlgorithm(algorithmName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:algorithm/${AlgorithmName}';
+    arn = arn.replace('${AlgorithmName}', algorithmName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type training-job to the statement
+   *
+   * @param trainingJobName - Identifier for the trainingJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}';
+    arn = arn.replace('${TrainingJobName}', trainingJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type processing-job to the statement
+   *
+   * @param processingJobName - Identifier for the processingJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}';
+    arn = arn.replace('${ProcessingJobName}', processingJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type hyper-parameter-tuning-job to the statement
+   *
+   * @param hyperParameterTuningJobName - Identifier for the hyperParameterTuningJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}';
+    arn = arn.replace('${HyperParameterTuningJobName}', hyperParameterTuningJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model-package to the statement
+   *
+   * @param modelPackageName - Identifier for the modelPackageName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onModelPackage(modelPackageName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model-package/${ModelPackageName}';
+    arn = arn.replace('${ModelPackageName}', modelPackageName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type model to the statement
+   *
+   * @param modelName - Identifier for the modelName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onModel(modelName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}';
+    arn = arn.replace('${ModelName}', modelName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type endpoint-config to the statement
+   *
+   * @param endpointConfigName - Identifier for the endpointConfigName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}';
+    arn = arn.replace('${EndpointConfigName}', endpointConfigName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type endpoint to the statement
+   *
+   * @param endpointName - Identifier for the endpointName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}';
+    arn = arn.replace('${EndpointName}', endpointName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type transform-job to the statement
+   *
+   * @param transformJobName - Identifier for the transformJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}';
+    arn = arn.replace('${TransformJobName}', transformJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type compilation-job to the statement
+   *
+   * @param compilationJobName - Identifier for the compilationJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCompilationJob(compilationJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:compilation-job/${CompilationJobName}';
+    arn = arn.replace('${CompilationJobName}', compilationJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type automl-job to the statement
+   *
+   * @param autoMLJobJobName - Identifier for the autoMLJobJobName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onAutomlJob(autoMLJobJobName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:automl-job/${AutoMLJobJobName}';
+    arn = arn.replace('${AutoMLJobJobName}', autoMLJobJobName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type monitoring-schedule to the statement
+   *
+   * @param monitoringScheduleName - Identifier for the monitoringScheduleName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}';
+    arn = arn.replace('${MonitoringScheduleName}', monitoringScheduleName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type experiment to the statement
+   *
+   * @param experimentName - Identifier for the experimentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onExperiment(experimentName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment/${ExperimentName}';
+    arn = arn.replace('${ExperimentName}', experimentName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type experiment-trial to the statement
+   *
+   * @param trialName - Identifier for the trialName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onExperimentTrial(trialName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial/${TrialName}';
+    arn = arn.replace('${TrialName}', trialName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type experiment-trial-component to the statement
+   *
+   * @param trialComponentName - Identifier for the trialComponentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - sagemaker:ResourceTag/${TagKey}
+   */
+  public onExperimentTrialComponent(trialComponentName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial-component/${TrialComponentName}';
+    arn = arn.replace('${TrialComponentName}', trialComponentName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

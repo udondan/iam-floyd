@@ -18,6 +18,7 @@ export interface ResourceTypes {
 
 export interface ResourceType {
   name: string;
+  url: string;
   arn: string;
   conditionKeys: string[];
 }
@@ -132,7 +133,7 @@ export class PolicyStatement extends iam.PolicyStatement {
   /**
    * Adds a condition to the statement
    */
-  public withCondition(key: string, value: any) {
+  public if(key: string, value: any) {
     this.addCondition(key, value);
     return this;
   }
@@ -142,7 +143,7 @@ export class PolicyStatement extends iam.PolicyStatement {
    *
    * To allow all resources, pass `*`
    */
-  public onResources(...arns: string[]) {
+  public on(...arns: string[]) {
     this.addResources(...arns);
     return this;
   }

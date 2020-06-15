@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Forecast extends PolicyStatement {
   public servicePrefix = 'forecast';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateDataset": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html",
       "description": "Creates a dataset",
@@ -252,39 +252,46 @@ export class Forecast extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "dataset": {
       "name": "dataset",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}",
       "conditionKeys": []
     },
     "datasetGroup": {
       "name": "datasetGroup",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}",
       "conditionKeys": []
     },
     "datasetImportJob": {
       "name": "datasetImportJob",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}",
       "conditionKeys": []
     },
     "algorithm": {
       "name": "algorithm",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:algorithm/${ResourceId}",
       "conditionKeys": []
     },
     "predictor": {
       "name": "predictor",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}",
       "conditionKeys": []
     },
     "forecast": {
       "name": "forecast",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}",
       "conditionKeys": []
     },
     "forecastExport": {
       "name": "forecastExport",
+      "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}",
       "conditionKeys": []
     }
@@ -297,7 +304,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html
    */
-  public createDataset () {
+  public createDataset() {
     this.add('forecast:CreateDataset');
     return this;
   }
@@ -309,7 +316,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
    */
-  public createDatasetGroup () {
+  public createDatasetGroup() {
     this.add('forecast:CreateDatasetGroup');
     return this;
   }
@@ -321,7 +328,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
    */
-  public createDatasetImportJob () {
+  public createDatasetImportJob() {
     this.add('forecast:CreateDatasetImportJob');
     return this;
   }
@@ -333,7 +340,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html
    */
-  public createForecast () {
+  public createForecast() {
     this.add('forecast:CreateForecast');
     return this;
   }
@@ -345,7 +352,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html
    */
-  public createForecastExportJob () {
+  public createForecastExportJob() {
     this.add('forecast:CreateForecastExportJob');
     return this;
   }
@@ -357,7 +364,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html
    */
-  public createPredictor () {
+  public createPredictor() {
     this.add('forecast:CreatePredictor');
     return this;
   }
@@ -369,7 +376,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html
    */
-  public deleteDataset () {
+  public deleteDataset() {
     this.add('forecast:DeleteDataset');
     return this;
   }
@@ -381,7 +388,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html
    */
-  public deleteDatasetGroup () {
+  public deleteDatasetGroup() {
     this.add('forecast:DeleteDatasetGroup');
     return this;
   }
@@ -393,7 +400,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetImportJob.html
    */
-  public deleteDatasetImportJob () {
+  public deleteDatasetImportJob() {
     this.add('forecast:DeleteDatasetImportJob');
     return this;
   }
@@ -405,7 +412,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecast.html
    */
-  public deleteForecast () {
+  public deleteForecast() {
     this.add('forecast:DeleteForecast');
     return this;
   }
@@ -417,7 +424,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecastExportJob.html
    */
-  public deleteForecastExportJob () {
+  public deleteForecastExportJob() {
     this.add('forecast:DeleteForecastExportJob');
     return this;
   }
@@ -429,7 +436,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictor.html
    */
-  public deletePredictor () {
+  public deletePredictor() {
     this.add('forecast:DeletePredictor');
     return this;
   }
@@ -441,7 +448,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDataset.html
    */
-  public describeDataset () {
+  public describeDataset() {
     this.add('forecast:DescribeDataset');
     return this;
   }
@@ -453,7 +460,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html
    */
-  public describeDatasetGroup () {
+  public describeDatasetGroup() {
     this.add('forecast:DescribeDatasetGroup');
     return this;
   }
@@ -465,7 +472,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html
    */
-  public describeDatasetImportJob () {
+  public describeDatasetImportJob() {
     this.add('forecast:DescribeDatasetImportJob');
     return this;
   }
@@ -477,7 +484,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecast.html
    */
-  public describeForecast () {
+  public describeForecast() {
     this.add('forecast:DescribeForecast');
     return this;
   }
@@ -489,7 +496,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecastExportJob.html
    */
-  public describeForecastExportJob () {
+  public describeForecastExportJob() {
     this.add('forecast:DescribeForecastExportJob');
     return this;
   }
@@ -501,7 +508,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictor.html
    */
-  public describePredictor () {
+  public describePredictor() {
     this.add('forecast:DescribePredictor');
     return this;
   }
@@ -513,7 +520,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_GetAccuracyMetrics.html
    */
-  public getAccuracyMetrics () {
+  public getAccuracyMetrics() {
     this.add('forecast:GetAccuracyMetrics');
     return this;
   }
@@ -525,7 +532,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html
    */
-  public listDatasetGroups () {
+  public listDatasetGroups() {
     this.add('forecast:ListDatasetGroups');
     return this;
   }
@@ -537,7 +544,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html
    */
-  public listDatasetImportJobs () {
+  public listDatasetImportJobs() {
     this.add('forecast:ListDatasetImportJobs');
     return this;
   }
@@ -549,7 +556,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasets.html
    */
-  public listDatasets () {
+  public listDatasets() {
     this.add('forecast:ListDatasets');
     return this;
   }
@@ -561,7 +568,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecastExportJobs.html
    */
-  public listForecastExportJobs () {
+  public listForecastExportJobs() {
     this.add('forecast:ListForecastExportJobs');
     return this;
   }
@@ -573,7 +580,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecasts.html
    */
-  public listForecasts () {
+  public listForecasts() {
     this.add('forecast:ListForecasts');
     return this;
   }
@@ -585,7 +592,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictors.html
    */
-  public listPredictors () {
+  public listPredictors() {
     this.add('forecast:ListPredictors');
     return this;
   }
@@ -597,7 +604,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html
    */
-  public queryForecast () {
+  public queryForecast() {
     this.add('forecast:QueryForecast');
     return this;
   }
@@ -609,8 +616,127 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html
    */
-  public updateDatasetGroup () {
+  public updateDatasetGroup() {
     this.add('forecast:UpdateDatasetGroup');
     return this;
+  }
+
+  /**
+   * Adds a resource of type dataset to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datasetGroup to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type datasetImportJob to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type algorithm to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:algorithm/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type predictor to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type forecast to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type forecastExport to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Groundstation extends PolicyStatement {
   public servicePrefix = 'groundstation';
-  public actions : Actions = {
+  public actions: Actions = {
     "CancelContact": {
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CancelContact.html",
       "description": "Grants permission to cancel a contact",
@@ -254,9 +254,10 @@ export class Groundstation extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "Config": {
       "name": "Config",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ConfigListItem.html",
       "arn": "arn:${Partition}:groundstation:${Region}:${Account}:config/${configType}/${configId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -266,6 +267,7 @@ export class Groundstation extends PolicyStatement {
     },
     "Contact": {
       "name": "Contact",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ContactData.html",
       "arn": "arn:${Partition}:groundstation:${Region}:${Account}:contact/${contactId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -274,6 +276,7 @@ export class Groundstation extends PolicyStatement {
     },
     "DataflowEndpointGroup": {
       "name": "DataflowEndpointGroup",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html",
       "arn": "arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${dataflowEndpointGroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -282,6 +285,7 @@ export class Groundstation extends PolicyStatement {
     },
     "GroundStationResource": {
       "name": "GroundStationResource",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html",
       "arn": "arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${groundStationId}",
       "conditionKeys": [
         "groundstation:groundStationId"
@@ -289,6 +293,7 @@ export class Groundstation extends PolicyStatement {
     },
     "MissionProfile": {
       "name": "MissionProfile",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_MissionProfileListItem.html",
       "arn": "arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${missionProfileId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -297,6 +302,7 @@ export class Groundstation extends PolicyStatement {
     },
     "Satellite": {
       "name": "Satellite",
+      "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html",
       "arn": "arn:${Partition}:groundstation:${Region}:${Account}:satellite/${satelliteId}",
       "conditionKeys": [
         "groundstation:satelliteId"
@@ -311,7 +317,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CancelContact.html
    */
-  public cancelContact () {
+  public cancelContact() {
     this.add('groundstation:CancelContact');
     return this;
   }
@@ -323,7 +329,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html
    */
-  public createConfig () {
+  public createConfig() {
     this.add('groundstation:CreateConfig');
     return this;
   }
@@ -335,7 +341,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html
    */
-  public createDataflowEndpointGroup () {
+  public createDataflowEndpointGroup() {
     this.add('groundstation:CreateDataflowEndpointGroup');
     return this;
   }
@@ -347,7 +353,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html
    */
-  public createMissionProfile () {
+  public createMissionProfile() {
     this.add('groundstation:CreateMissionProfile');
     return this;
   }
@@ -359,7 +365,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteConfig.html
    */
-  public deleteConfig () {
+  public deleteConfig() {
     this.add('groundstation:DeleteConfig');
     return this;
   }
@@ -371,7 +377,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteDataflowEndpointGroup.html
    */
-  public deleteDataflowEndpointGroup () {
+  public deleteDataflowEndpointGroup() {
     this.add('groundstation:DeleteDataflowEndpointGroup');
     return this;
   }
@@ -383,7 +389,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteMissionProfile.html
    */
-  public deleteMissionProfile () {
+  public deleteMissionProfile() {
     this.add('groundstation:DeleteMissionProfile');
     return this;
   }
@@ -395,7 +401,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContact.html
    */
-  public describeContact () {
+  public describeContact() {
     this.add('groundstation:DescribeContact');
     return this;
   }
@@ -407,7 +413,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetConfig.html
    */
-  public getConfig () {
+  public getConfig() {
     this.add('groundstation:GetConfig');
     return this;
   }
@@ -419,7 +425,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetDataflowEndpointGroup.html
    */
-  public getDataflowEndpointGroup () {
+  public getDataflowEndpointGroup() {
     this.add('groundstation:GetDataflowEndpointGroup');
     return this;
   }
@@ -431,7 +437,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMinuteUsage.html
    */
-  public getMinuteUsage () {
+  public getMinuteUsage() {
     this.add('groundstation:GetMinuteUsage');
     return this;
   }
@@ -443,7 +449,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMissionProfile.html
    */
-  public getMissionProfile () {
+  public getMissionProfile() {
     this.add('groundstation:GetMissionProfile');
     return this;
   }
@@ -455,7 +461,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetSatellite.html
    */
-  public getSatellite () {
+  public getSatellite() {
     this.add('groundstation:GetSatellite');
     return this;
   }
@@ -467,7 +473,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListConfigs.html
    */
-  public listConfigs () {
+  public listConfigs() {
     this.add('groundstation:ListConfigs');
     return this;
   }
@@ -479,7 +485,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContacts.html
    */
-  public listContacts () {
+  public listContacts() {
     this.add('groundstation:ListContacts');
     return this;
   }
@@ -491,7 +497,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListDataflowEndpointGroups.html
    */
-  public listDataflowEndpointGroups () {
+  public listDataflowEndpointGroups() {
     this.add('groundstation:ListDataflowEndpointGroups');
     return this;
   }
@@ -503,7 +509,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStations.html
    */
-  public listGroundStations () {
+  public listGroundStations() {
     this.add('groundstation:ListGroundStations');
     return this;
   }
@@ -515,7 +521,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListMissionProfiles.html
    */
-  public listMissionProfiles () {
+  public listMissionProfiles() {
     this.add('groundstation:ListMissionProfiles');
     return this;
   }
@@ -527,7 +533,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListSatellites.html
    */
-  public listSatellites () {
+  public listSatellites() {
     this.add('groundstation:ListSatellites');
     return this;
   }
@@ -539,7 +545,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('groundstation:ListTagsForResource');
     return this;
   }
@@ -551,7 +557,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html
    */
-  public reserveContact () {
+  public reserveContact() {
     this.add('groundstation:ReserveContact');
     return this;
   }
@@ -563,7 +569,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('groundstation:TagResource');
     return this;
   }
@@ -575,7 +581,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('groundstation:UntagResource');
     return this;
   }
@@ -587,7 +593,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateConfig.html
    */
-  public updateConfig () {
+  public updateConfig() {
     this.add('groundstation:UpdateConfig');
     return this;
   }
@@ -599,8 +605,147 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateMissionProfile.html
    */
-  public updateMissionProfile () {
+  public updateMissionProfile() {
     this.add('groundstation:UpdateMissionProfile');
     return this;
+  }
+
+  /**
+   * Adds a resource of type Config to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ConfigListItem.html
+   *
+   * @param configType - Identifier for the configType.
+   * @param configId - Identifier for the configId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - groundstation:configId
+   *  - groundstation:configType
+   */
+  public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${configType}/${configId}';
+    arn = arn.replace('${configType}', configType);
+    arn = arn.replace('${configId}', configId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Contact to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ContactData.html
+   *
+   * @param contactId - Identifier for the contactId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - groundstation:contactId
+   */
+  public onContact(contactId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${contactId}';
+    arn = arn.replace('${contactId}', contactId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type DataflowEndpointGroup to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html
+   *
+   * @param dataflowEndpointGroupId - Identifier for the dataflowEndpointGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - groundstation:dataflowEndpointGroupId
+   */
+  public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${dataflowEndpointGroupId}';
+    arn = arn.replace('${dataflowEndpointGroupId}', dataflowEndpointGroupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type GroundStationResource to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html
+   *
+   * @param groundStationId - Identifier for the groundStationId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - groundstation:groundStationId
+   */
+  public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${groundStationId}';
+    arn = arn.replace('${groundStationId}', groundStationId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type MissionProfile to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_MissionProfileListItem.html
+   *
+   * @param missionProfileId - Identifier for the missionProfileId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - groundstation:missionProfileId
+   */
+  public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${missionProfileId}';
+    arn = arn.replace('${missionProfileId}', missionProfileId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Satellite to the statement
+   *
+   * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html
+   *
+   * @param satelliteId - Identifier for the satelliteId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - groundstation:satelliteId
+   */
+  public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${satelliteId}';
+    arn = arn.replace('${satelliteId}', satelliteId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

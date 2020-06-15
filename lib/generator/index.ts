@@ -13,7 +13,7 @@ import { arnFixer, fixes } from './fixes';
 const project = new Project();
 const modules: Module[] = [];
 const timeThreshold = new Date();
-timeThreshold.setHours(timeThreshold.getHours() - 2);
+timeThreshold.setHours(timeThreshold.getHours() - 3456462);
 
 export interface Module {
   name?: string;
@@ -196,12 +196,71 @@ export function createModule(module: Module): Promise<void> {
     );
 
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
-    if (action.url.length) {
+    if (action.url.length && action.url != 'https://docs.aws.amazon.com/') {
       desc += `\n\n${action.url}`;
     }
     method.addJsDoc({
       description: desc,
     });
+  }
+
+  for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
+    const method = classDeclaration.addMethod({
+      name: `on${camelCase(name)}`,
+      scope: Scope.Public,
+    });
+
+    const params = getArnPlaceholders(resourceType.arn);
+    params.forEach((param) => {
+      method.addParameter({
+        name: lowerFirst(camelCase(param)),
+        type: 'string',
+        hasQuestionToken: ['Partition', 'Region', 'Account'].includes(param),
+      });
+    });
+
+    const methodBody: string[] = [`var arn = '${resourceType.arn}';`];
+    var paramDocs = '';
+    params.forEach((param) => {
+      const paramName = lowerFirst(camelCase(param));
+      var orDefault = '';
+      if (param == 'Partition') {
+        orDefault = " || 'aws'";
+        paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`.`;
+      } else if (param == 'Region') {
+        orDefault = " || ''";
+        paramDocs += `\n@param ${paramName} - Region of the resource; defaults to empty string: all regions.`;
+      } else if (param == 'Account') {
+        orDefault = " || ''";
+        paramDocs += `\n@param ${paramName} - Account of the resource; defaults to empty string: all accounts.`;
+      } else {
+        paramDocs += `\n@param ${paramName} - Identifier for the ${paramName}.`;
+      }
+      methodBody.push(
+        `arn = arn.replace('\${${param}}', ${paramName}${orDefault});`
+      );
+    });
+
+    var desc = `\nAdds a resource of type ${resourceType.name} to the statement`;
+    if (
+      resourceType.url.length &&
+      resourceType.url != 'https://docs.aws.amazon.com/'
+    ) {
+      desc += `\n\n${resourceType.url}`;
+    }
+    desc += `\n${paramDocs}`;
+    if (resourceType.conditionKeys.length) {
+      desc += '\n\nPossible condition keys:';
+      resourceType.conditionKeys.forEach((key) => {
+        desc += `\n - ${key}`;
+      });
+    }
+    method.addJsDoc({
+      description: desc,
+    });
+
+    methodBody.push('return this.on(arn);');
+    method.setBodyText(methodBody.join('\n'));
   }
 
   formatCode(sourceFile);
@@ -248,17 +307,33 @@ function cleanDescription(description: string): string {
     .trim();
 }
 
+export function getArnPlaceholders(arn: string): RegExpMatchArray {
+  const matches = arn.match(/(?<=\$\{)[a-z0-9_-]+(?=\})/gi);
+
+  const toTheEnd = [];
+  while (matches.length) {
+    if (['Partition', 'Region', 'Account'].includes(matches[0])) {
+      toTheEnd.push(matches.shift());
+    } else {
+      break;
+    }
+  }
+
+  matches.push(...toTheEnd.reverse());
+  return matches;
+}
+
 function upperFirst(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function lowerFirst(str: string): string {
+export function lowerFirst(str: string): string {
   return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
-function camelCase(str: string) {
+export function camelCase(str: string) {
   return str
-    .split(/[_-]/)
+    .split(/[_-\s/]/)
     .map((str) => {
       return upperFirst(str);
     })
@@ -281,10 +356,10 @@ function formatCode(file: SourceFile) {
     insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces: true,
     insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces: true,
     insertSpaceAfterTypeAssertion: true,
-    insertSpaceBeforeFunctionParenthesis: true,
+    insertSpaceBeforeFunctionParenthesis: false,
     placeOpenBraceOnNewLineForFunctions: false,
     placeOpenBraceOnNewLineForControlBlocks: false,
-    insertSpaceBeforeTypeAnnotation: true,
+    insertSpaceBeforeTypeAnnotation: false,
     indentMultiLineObjectLiteralBeginningOnBlankLine: true,
     semicolons: ts.SemicolonPreference.Insert,
     indentSize: 2,
@@ -402,6 +477,7 @@ function parseResourceTypeTable(
   tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
     const tds = $(element).find('td');
     const name = tds.first().text().trim();
+    const url = tds.first().find('a[href]').attr('href')?.trim() || '';
     const arn = tds.first().next().text().trim();
     if (!name.length && !arn.length) {
       return;
@@ -419,6 +495,7 @@ function parseResourceTypeTable(
     if (name.length) {
       resourceTypes[name] = {
         name: name,
+        url: url,
         arn: arnFixer(service, name, arn),
         conditionKeys: conditionKeys,
       };

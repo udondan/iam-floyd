@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Elasticloadbalancing extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html",
       "description": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.",
@@ -259,14 +259,16 @@ export class Elasticloadbalancing extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "listener": {
       "name": "listener",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}",
       "conditionKeys": []
     },
     "loadbalancer": {
       "name": "loadbalancer",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
@@ -283,7 +285,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html
    */
-  public addTags () {
+  public addTags() {
     this.add('elasticloadbalancing:AddTags');
     return this;
   }
@@ -295,7 +297,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ApplySecurityGroupsToLoadBalancer.html
    */
-  public applySecurityGroupsToLoadBalancer () {
+  public applySecurityGroupsToLoadBalancer() {
     this.add('elasticloadbalancing:ApplySecurityGroupsToLoadBalancer');
     return this;
   }
@@ -307,7 +309,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AttachLoadBalancerToSubnets.html
    */
-  public attachLoadBalancerToSubnets () {
+  public attachLoadBalancerToSubnets() {
     this.add('elasticloadbalancing:AttachLoadBalancerToSubnets');
     return this;
   }
@@ -319,7 +321,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ConfigureHealthCheck.html
    */
-  public configureHealthCheck () {
+  public configureHealthCheck() {
     this.add('elasticloadbalancing:ConfigureHealthCheck');
     return this;
   }
@@ -331,7 +333,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateAppCookieStickinessPolicy.html
    */
-  public createAppCookieStickinessPolicy () {
+  public createAppCookieStickinessPolicy() {
     this.add('elasticloadbalancing:CreateAppCookieStickinessPolicy');
     return this;
   }
@@ -343,7 +345,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLBCookieStickinessPolicy.html
    */
-  public createLBCookieStickinessPolicy () {
+  public createLBCookieStickinessPolicy() {
     this.add('elasticloadbalancing:CreateLBCookieStickinessPolicy');
     return this;
   }
@@ -355,7 +357,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancer.html
    */
-  public createLoadBalancer () {
+  public createLoadBalancer() {
     this.add('elasticloadbalancing:CreateLoadBalancer');
     return this;
   }
@@ -367,7 +369,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerListeners.html
    */
-  public createLoadBalancerListeners () {
+  public createLoadBalancerListeners() {
     this.add('elasticloadbalancing:CreateLoadBalancerListeners');
     return this;
   }
@@ -379,7 +381,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerPolicy.html
    */
-  public createLoadBalancerPolicy () {
+  public createLoadBalancerPolicy() {
     this.add('elasticloadbalancing:CreateLoadBalancerPolicy');
     return this;
   }
@@ -391,7 +393,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancer.html
    */
-  public deleteLoadBalancer () {
+  public deleteLoadBalancer() {
     this.add('elasticloadbalancing:DeleteLoadBalancer');
     return this;
   }
@@ -403,7 +405,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerListeners.html
    */
-  public deleteLoadBalancerListeners () {
+  public deleteLoadBalancerListeners() {
     this.add('elasticloadbalancing:DeleteLoadBalancerListeners');
     return this;
   }
@@ -415,7 +417,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerPolicy.html
    */
-  public deleteLoadBalancerPolicy () {
+  public deleteLoadBalancerPolicy() {
     this.add('elasticloadbalancing:DeleteLoadBalancerPolicy');
     return this;
   }
@@ -427,7 +429,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeregisterInstancesFromLoadBalancer.html
    */
-  public deregisterInstancesFromLoadBalancer () {
+  public deregisterInstancesFromLoadBalancer() {
     this.add('elasticloadbalancing:DeregisterInstancesFromLoadBalancer');
     return this;
   }
@@ -439,7 +441,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeInstanceHealth.html
    */
-  public describeInstanceHealth () {
+  public describeInstanceHealth() {
     this.add('elasticloadbalancing:DescribeInstanceHealth');
     return this;
   }
@@ -451,7 +453,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerAttributes.html
    */
-  public describeLoadBalancerAttributes () {
+  public describeLoadBalancerAttributes() {
     this.add('elasticloadbalancing:DescribeLoadBalancerAttributes');
     return this;
   }
@@ -463,7 +465,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerPolicies.html
    */
-  public describeLoadBalancerPolicies () {
+  public describeLoadBalancerPolicies() {
     this.add('elasticloadbalancing:DescribeLoadBalancerPolicies');
     return this;
   }
@@ -475,7 +477,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerPolicyTypes.html
    */
-  public describeLoadBalancerPolicyTypes () {
+  public describeLoadBalancerPolicyTypes() {
     this.add('elasticloadbalancing:DescribeLoadBalancerPolicyTypes');
     return this;
   }
@@ -487,7 +489,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html
    */
-  public describeLoadBalancers () {
+  public describeLoadBalancers() {
     this.add('elasticloadbalancing:DescribeLoadBalancers');
     return this;
   }
@@ -499,7 +501,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeTags.html
    */
-  public describeTags () {
+  public describeTags() {
     this.add('elasticloadbalancing:DescribeTags');
     return this;
   }
@@ -511,7 +513,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DetachLoadBalancerFromSubnets.html
    */
-  public detachLoadBalancerFromSubnets () {
+  public detachLoadBalancerFromSubnets() {
     this.add('elasticloadbalancing:DetachLoadBalancerFromSubnets');
     return this;
   }
@@ -523,7 +525,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DisableAvailabilityZonesForLoadBalancer.html
    */
-  public disableAvailabilityZonesForLoadBalancer () {
+  public disableAvailabilityZonesForLoadBalancer() {
     this.add('elasticloadbalancing:DisableAvailabilityZonesForLoadBalancer');
     return this;
   }
@@ -535,7 +537,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_EnableAvailabilityZonesForLoadBalancer.html
    */
-  public enableAvailabilityZonesForLoadBalancer () {
+  public enableAvailabilityZonesForLoadBalancer() {
     this.add('elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer');
     return this;
   }
@@ -547,7 +549,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ModifyLoadBalancerAttributes.html
    */
-  public modifyLoadBalancerAttributes () {
+  public modifyLoadBalancerAttributes() {
     this.add('elasticloadbalancing:ModifyLoadBalancerAttributes');
     return this;
   }
@@ -559,7 +561,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RegisterInstancesWithLoadBalancer.html
    */
-  public registerInstancesWithLoadBalancer () {
+  public registerInstancesWithLoadBalancer() {
     this.add('elasticloadbalancing:RegisterInstancesWithLoadBalancer');
     return this;
   }
@@ -571,7 +573,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RemoveTags.html
    */
-  public removeTags () {
+  public removeTags() {
     this.add('elasticloadbalancing:RemoveTags');
     return this;
   }
@@ -583,7 +585,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerListenerSSLCertificate.html
    */
-  public setLoadBalancerListenerSSLCertificate () {
+  public setLoadBalancerListenerSSLCertificate() {
     this.add('elasticloadbalancing:SetLoadBalancerListenerSSLCertificate');
     return this;
   }
@@ -595,7 +597,7 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesForBackendServer.html
    */
-  public setLoadBalancerPoliciesForBackendServer () {
+  public setLoadBalancerPoliciesForBackendServer() {
     this.add('elasticloadbalancing:SetLoadBalancerPoliciesForBackendServer');
     return this;
   }
@@ -607,8 +609,55 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesOfListener.html
    */
-  public setLoadBalancerPoliciesOfListener () {
+  public setLoadBalancerPoliciesOfListener() {
     this.add('elasticloadbalancing:SetLoadBalancerPoliciesOfListener');
     return this;
+  }
+
+  /**
+   * Adds a resource of type listener to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onListener(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type loadbalancer to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/${TagKey}
+   *  - aws:TagKeys
+   *  - elasticloadbalancing:ResourceTag/${TagKey}
+   */
+  public onLoadbalancer(loadBalancerName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

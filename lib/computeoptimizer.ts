@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class ComputeOptimizer extends PolicyStatement {
   public servicePrefix = 'compute-optimizer';
-  public actions : Actions = {
+  public actions: Actions = {
     "DescribeRecommendationExportJobs": {
       "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html",
       "description": "Grants permission to view the status of recommendation export jobs.",
@@ -54,7 +54,7 @@ export class ComputeOptimizer extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to view the status of recommendation export jobs.
@@ -63,7 +63,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html
    */
-  public describeRecommendationExportJobs () {
+  public describeRecommendationExportJobs() {
     this.add('compute-optimizer:DescribeRecommendationExportJobs');
     return this;
   }
@@ -75,7 +75,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportAutoScalingGroupRecommendations.html
    */
-  public exportAutoScalingGroupRecommendations () {
+  public exportAutoScalingGroupRecommendations() {
     this.add('compute-optimizer:ExportAutoScalingGroupRecommendations');
     return this;
   }
@@ -87,7 +87,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEC2InstanceRecommendations.html
    */
-  public exportEC2InstanceRecommendations () {
+  public exportEC2InstanceRecommendations() {
     this.add('compute-optimizer:ExportEC2InstanceRecommendations');
     return this;
   }
@@ -99,7 +99,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html
    */
-  public getAutoScalingGroupRecommendations () {
+  public getAutoScalingGroupRecommendations() {
     this.add('compute-optimizer:GetAutoScalingGroupRecommendations');
     return this;
   }
@@ -111,7 +111,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2InstanceRecommendations.html
    */
-  public getEC2InstanceRecommendations () {
+  public getEC2InstanceRecommendations() {
     this.add('compute-optimizer:GetEC2InstanceRecommendations');
     return this;
   }
@@ -123,7 +123,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2RecommendationProjectedMetrics.html
    */
-  public getEC2RecommendationProjectedMetrics () {
+  public getEC2RecommendationProjectedMetrics() {
     this.add('compute-optimizer:GetEC2RecommendationProjectedMetrics');
     return this;
   }
@@ -135,7 +135,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEnrollmentStatus.html
    */
-  public getEnrollmentStatus () {
+  public getEnrollmentStatus() {
     this.add('compute-optimizer:GetEnrollmentStatus');
     return this;
   }
@@ -147,7 +147,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRecommendationSummaries.html
    */
-  public getRecommendationSummaries () {
+  public getRecommendationSummaries() {
     this.add('compute-optimizer:GetRecommendationSummaries');
     return this;
   }
@@ -159,7 +159,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_UpdateEnrollmentStatus.html
    */
-  public updateEnrollmentStatus () {
+  public updateEnrollmentStatus() {
     this.add('compute-optimizer:UpdateEnrollmentStatus');
     return this;
   }

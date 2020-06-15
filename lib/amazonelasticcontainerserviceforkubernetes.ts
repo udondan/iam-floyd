@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Eks extends PolicyStatement {
   public servicePrefix = 'eks';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateCluster": {
       "url": "https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html",
       "description": "Creates an Amazon EKS cluster.",
@@ -252,9 +252,10 @@ export class Eks extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/clusters.html",
       "arn": "arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -262,6 +263,7 @@ export class Eks extends PolicyStatement {
     },
     "nodegroup": {
       "name": "nodegroup",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html",
       "arn": "arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -269,6 +271,7 @@ export class Eks extends PolicyStatement {
     },
     "fargateprofile": {
       "name": "fargateprofile",
+      "url": "https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html",
       "arn": "arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -283,7 +286,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
-  public createCluster () {
+  public createCluster() {
     this.add('eks:CreateCluster');
     return this;
   }
@@ -295,7 +298,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateFargateProfile.html
    */
-  public createFargateProfile () {
+  public createFargateProfile() {
     this.add('eks:CreateFargateProfile');
     return this;
   }
@@ -307,7 +310,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateNodegroup.html
    */
-  public createNodegroup () {
+  public createNodegroup() {
     this.add('eks:CreateNodegroup');
     return this;
   }
@@ -319,7 +322,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html
    */
-  public deleteCluster () {
+  public deleteCluster() {
     this.add('eks:DeleteCluster');
     return this;
   }
@@ -331,7 +334,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteFargateProfile.html
    */
-  public deleteFargateProfile () {
+  public deleteFargateProfile() {
     this.add('eks:DeleteFargateProfile');
     return this;
   }
@@ -343,7 +346,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteNodegroup.html
    */
-  public deleteNodegroup () {
+  public deleteNodegroup() {
     this.add('eks:DeleteNodegroup');
     return this;
   }
@@ -355,7 +358,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html
    */
-  public describeCluster () {
+  public describeCluster() {
     this.add('eks:DescribeCluster');
     return this;
   }
@@ -367,7 +370,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeFargateProfile.html
    */
-  public describeFargateProfile () {
+  public describeFargateProfile() {
     this.add('eks:DescribeFargateProfile');
     return this;
   }
@@ -379,7 +382,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeNodegroup.html
    */
-  public describeNodegroup () {
+  public describeNodegroup() {
     this.add('eks:DescribeNodegroup');
     return this;
   }
@@ -391,7 +394,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html
    */
-  public describeUpdate () {
+  public describeUpdate() {
     this.add('eks:DescribeUpdate');
     return this;
   }
@@ -403,7 +406,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html
    */
-  public listClusters () {
+  public listClusters() {
     this.add('eks:ListClusters');
     return this;
   }
@@ -415,7 +418,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListFargateProfiles.html
    */
-  public listFargateProfiles () {
+  public listFargateProfiles() {
     this.add('eks:ListFargateProfiles');
     return this;
   }
@@ -427,7 +430,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListNodegroups.html
    */
-  public listNodegroups () {
+  public listNodegroups() {
     this.add('eks:ListNodegroups');
     return this;
   }
@@ -439,7 +442,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('eks:ListTagsForResource');
     return this;
   }
@@ -451,7 +454,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListUpdates.html
    */
-  public listUpdates () {
+  public listUpdates() {
     this.add('eks:ListUpdates');
     return this;
   }
@@ -463,7 +466,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('eks:TagResource');
     return this;
   }
@@ -475,7 +478,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('eks:UntagResource');
     return this;
   }
@@ -487,7 +490,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
-  public updateClusterConfig () {
+  public updateClusterConfig() {
     this.add('eks:UpdateClusterConfig');
     return this;
   }
@@ -499,7 +502,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html
    */
-  public updateClusterVersion () {
+  public updateClusterVersion() {
     this.add('eks:UpdateClusterVersion');
     return this;
   }
@@ -511,7 +514,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupConfig.html
    */
-  public updateNodegroupConfig () {
+  public updateNodegroupConfig() {
     this.add('eks:UpdateNodegroupConfig');
     return this;
   }
@@ -523,8 +526,82 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html
    */
-  public updateNodegroupVersion () {
+  public updateNodegroupVersion() {
     this.add('eks:UpdateNodegroupVersion');
     return this;
+  }
+
+  /**
+   * Adds a resource of type cluster to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/clusters.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type nodegroup to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param nodegroupName - Identifier for the nodegroupName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${NodegroupName}', nodegroupName);
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type fargateprofile to the statement
+   *
+   * https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html
+   *
+   * @param clusterName - Identifier for the clusterName.
+   * @param fargateProfileName - Identifier for the fargateProfileName.
+   * @param uUID - Identifier for the uUID.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}';
+    arn = arn.replace('${ClusterName}', clusterName);
+    arn = arn.replace('${FargateProfileName}', fargateProfileName);
+    arn = arn.replace('${UUID}', uUID);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

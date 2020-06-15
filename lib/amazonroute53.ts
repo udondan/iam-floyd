@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Route53 extends PolicyStatement {
   public servicePrefix = 'route53';
-  public actions : Actions = {
+  public actions: Actions = {
     "AssociateVPCWithHostedZone": {
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html",
       "description": "Grants permission to associate an additional Amazon VPC with a private hosted zone",
@@ -486,39 +486,46 @@ export class Route53 extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "change": {
       "name": "change",
+      "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:change/${Id}",
       "conditionKeys": []
     },
     "delegationset": {
       "name": "delegationset",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:delegationset/${Id}",
       "conditionKeys": []
     },
     "healthcheck": {
       "name": "healthcheck",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:healthcheck/${Id}",
       "conditionKeys": []
     },
     "hostedzone": {
       "name": "hostedzone",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:hostedzone/${Id}",
       "conditionKeys": []
     },
     "trafficpolicy": {
       "name": "trafficpolicy",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:trafficpolicy/${Id}",
       "conditionKeys": []
     },
     "trafficpolicyinstance": {
       "name": "trafficpolicyinstance",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:trafficpolicyinstance/${Id}",
       "conditionKeys": []
     },
     "queryloggingconfig": {
       "name": "queryloggingconfig",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html",
       "arn": "arn:${Partition}:route53:${Region}:${Account}:queryloggingconfig/${Id}",
       "conditionKeys": []
     }
@@ -531,7 +538,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html
    */
-  public associateVPCWithHostedZone () {
+  public associateVPCWithHostedZone() {
     this.add('route53:AssociateVPCWithHostedZone');
     return this;
   }
@@ -543,7 +550,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html
    */
-  public changeResourceRecordSets () {
+  public changeResourceRecordSets() {
     this.add('route53:ChangeResourceRecordSets');
     return this;
   }
@@ -555,7 +562,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeTagsForResource.html
    */
-  public changeTagsForResource () {
+  public changeTagsForResource() {
     this.add('route53:ChangeTagsForResource');
     return this;
   }
@@ -567,7 +574,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHealthCheck.html
    */
-  public createHealthCheck () {
+  public createHealthCheck() {
     this.add('route53:CreateHealthCheck');
     return this;
   }
@@ -579,7 +586,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html
    */
-  public createHostedZone () {
+  public createHostedZone() {
     this.add('route53:CreateHostedZone');
     return this;
   }
@@ -591,7 +598,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html
    */
-  public createQueryLoggingConfig () {
+  public createQueryLoggingConfig() {
     this.add('route53:CreateQueryLoggingConfig');
     return this;
   }
@@ -603,7 +610,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html
    */
-  public createReusableDelegationSet () {
+  public createReusableDelegationSet() {
     this.add('route53:CreateReusableDelegationSet');
     return this;
   }
@@ -615,7 +622,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html
    */
-  public createTrafficPolicy () {
+  public createTrafficPolicy() {
     this.add('route53:CreateTrafficPolicy');
     return this;
   }
@@ -627,7 +634,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicyInstance.html
    */
-  public createTrafficPolicyInstance () {
+  public createTrafficPolicyInstance() {
     this.add('route53:CreateTrafficPolicyInstance');
     return this;
   }
@@ -639,7 +646,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicyVersion.html
    */
-  public createTrafficPolicyVersion () {
+  public createTrafficPolicyVersion() {
     this.add('route53:CreateTrafficPolicyVersion');
     return this;
   }
@@ -651,7 +658,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html
    */
-  public createVPCAssociationAuthorization () {
+  public createVPCAssociationAuthorization() {
     this.add('route53:CreateVPCAssociationAuthorization');
     return this;
   }
@@ -663,7 +670,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteHealthCheck.html
    */
-  public deleteHealthCheck () {
+  public deleteHealthCheck() {
     this.add('route53:DeleteHealthCheck');
     return this;
   }
@@ -675,7 +682,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteHostedZone.html
    */
-  public deleteHostedZone () {
+  public deleteHostedZone() {
     this.add('route53:DeleteHostedZone');
     return this;
   }
@@ -687,7 +694,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteQueryLoggingConfig.html
    */
-  public deleteQueryLoggingConfig () {
+  public deleteQueryLoggingConfig() {
     this.add('route53:DeleteQueryLoggingConfig');
     return this;
   }
@@ -699,7 +706,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteReusableDelegationSet.html
    */
-  public deleteReusableDelegationSet () {
+  public deleteReusableDelegationSet() {
     this.add('route53:DeleteReusableDelegationSet');
     return this;
   }
@@ -711,7 +718,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html
    */
-  public deleteTrafficPolicy () {
+  public deleteTrafficPolicy() {
     this.add('route53:DeleteTrafficPolicy');
     return this;
   }
@@ -723,7 +730,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html
    */
-  public deleteTrafficPolicyInstance () {
+  public deleteTrafficPolicyInstance() {
     this.add('route53:DeleteTrafficPolicyInstance');
     return this;
   }
@@ -735,7 +742,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteVPCAssociationAuthorization.html
    */
-  public deleteVPCAssociationAuthorization () {
+  public deleteVPCAssociationAuthorization() {
     this.add('route53:DeleteVPCAssociationAuthorization');
     return this;
   }
@@ -747,7 +754,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_DisassociateVPCFromHostedZone.html
    */
-  public disassociateVPCFromHostedZone () {
+  public disassociateVPCFromHostedZone() {
     this.add('route53:DisassociateVPCFromHostedZone');
     return this;
   }
@@ -759,7 +766,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html
    */
-  public getAccountLimit () {
+  public getAccountLimit() {
     this.add('route53:GetAccountLimit');
     return this;
   }
@@ -771,7 +778,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html
    */
-  public getChange () {
+  public getChange() {
     this.add('route53:GetChange');
     return this;
   }
@@ -783,7 +790,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetCheckerIpRanges.html
    */
-  public getCheckerIpRanges () {
+  public getCheckerIpRanges() {
     this.add('route53:GetCheckerIpRanges');
     return this;
   }
@@ -795,7 +802,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetGeoLocation.html
    */
-  public getGeoLocation () {
+  public getGeoLocation() {
     this.add('route53:GetGeoLocation');
     return this;
   }
@@ -807,7 +814,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheck.html
    */
-  public getHealthCheck () {
+  public getHealthCheck() {
     this.add('route53:GetHealthCheck');
     return this;
   }
@@ -819,7 +826,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckCount.html
    */
-  public getHealthCheckCount () {
+  public getHealthCheckCount() {
     this.add('route53:GetHealthCheckCount');
     return this;
   }
@@ -831,7 +838,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckLastFailureReason.html
    */
-  public getHealthCheckLastFailureReason () {
+  public getHealthCheckLastFailureReason() {
     this.add('route53:GetHealthCheckLastFailureReason');
     return this;
   }
@@ -843,7 +850,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckStatus.html
    */
-  public getHealthCheckStatus () {
+  public getHealthCheckStatus() {
     this.add('route53:GetHealthCheckStatus');
     return this;
   }
@@ -855,7 +862,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZone.html
    */
-  public getHostedZone () {
+  public getHostedZone() {
     this.add('route53:GetHostedZone');
     return this;
   }
@@ -867,7 +874,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneCount.html
    */
-  public getHostedZoneCount () {
+  public getHostedZoneCount() {
     this.add('route53:GetHostedZoneCount');
     return this;
   }
@@ -879,7 +886,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html
    */
-  public getHostedZoneLimit () {
+  public getHostedZoneLimit() {
     this.add('route53:GetHostedZoneLimit');
     return this;
   }
@@ -891,7 +898,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html
    */
-  public getQueryLoggingConfig () {
+  public getQueryLoggingConfig() {
     this.add('route53:GetQueryLoggingConfig');
     return this;
   }
@@ -903,7 +910,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html
    */
-  public getReusableDelegationSet () {
+  public getReusableDelegationSet() {
     this.add('route53:GetReusableDelegationSet');
     return this;
   }
@@ -915,7 +922,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSetLimit.html
    */
-  public getReusableDelegationSetLimit () {
+  public getReusableDelegationSetLimit() {
     this.add('route53:GetReusableDelegationSetLimit');
     return this;
   }
@@ -927,7 +934,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html
    */
-  public getTrafficPolicy () {
+  public getTrafficPolicy() {
     this.add('route53:GetTrafficPolicy');
     return this;
   }
@@ -939,7 +946,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicyInstance.html
    */
-  public getTrafficPolicyInstance () {
+  public getTrafficPolicyInstance() {
     this.add('route53:GetTrafficPolicyInstance');
     return this;
   }
@@ -951,7 +958,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicyInstanceCount.html
    */
-  public getTrafficPolicyInstanceCount () {
+  public getTrafficPolicyInstanceCount() {
     this.add('route53:GetTrafficPolicyInstanceCount');
     return this;
   }
@@ -963,7 +970,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html
    */
-  public listGeoLocations () {
+  public listGeoLocations() {
     this.add('route53:ListGeoLocations');
     return this;
   }
@@ -975,7 +982,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHealthChecks.html
    */
-  public listHealthChecks () {
+  public listHealthChecks() {
     this.add('route53:ListHealthChecks');
     return this;
   }
@@ -987,7 +994,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZones.html
    */
-  public listHostedZones () {
+  public listHostedZones() {
     this.add('route53:ListHostedZones');
     return this;
   }
@@ -999,7 +1006,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByName.html
    */
-  public listHostedZonesByName () {
+  public listHostedZonesByName() {
     this.add('route53:ListHostedZonesByName');
     return this;
   }
@@ -1011,7 +1018,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html
    */
-  public listQueryLoggingConfigs () {
+  public listQueryLoggingConfigs() {
     this.add('route53:ListQueryLoggingConfigs');
     return this;
   }
@@ -1023,7 +1030,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResourceRecordSets.html
    */
-  public listResourceRecordSets () {
+  public listResourceRecordSets() {
     this.add('route53:ListResourceRecordSets');
     return this;
   }
@@ -1035,7 +1042,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListReusableDelegationSets.html
    */
-  public listReusableDelegationSets () {
+  public listReusableDelegationSets() {
     this.add('route53:ListReusableDelegationSets');
     return this;
   }
@@ -1047,7 +1054,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('route53:ListTagsForResource');
     return this;
   }
@@ -1059,7 +1066,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTagsForResources.html
    */
-  public listTagsForResources () {
+  public listTagsForResources() {
     this.add('route53:ListTagsForResources');
     return this;
   }
@@ -1071,7 +1078,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html
    */
-  public listTrafficPolicies () {
+  public listTrafficPolicies() {
     this.add('route53:ListTrafficPolicies');
     return this;
   }
@@ -1083,7 +1090,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstances.html
    */
-  public listTrafficPolicyInstances () {
+  public listTrafficPolicyInstances() {
     this.add('route53:ListTrafficPolicyInstances');
     return this;
   }
@@ -1095,7 +1102,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstancesByHostedZone.html
    */
-  public listTrafficPolicyInstancesByHostedZone () {
+  public listTrafficPolicyInstancesByHostedZone() {
     this.add('route53:ListTrafficPolicyInstancesByHostedZone');
     return this;
   }
@@ -1107,7 +1114,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyInstancesByPolicy.html
    */
-  public listTrafficPolicyInstancesByPolicy () {
+  public listTrafficPolicyInstancesByPolicy() {
     this.add('route53:ListTrafficPolicyInstancesByPolicy');
     return this;
   }
@@ -1119,7 +1126,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicyVersions.html
    */
-  public listTrafficPolicyVersions () {
+  public listTrafficPolicyVersions() {
     this.add('route53:ListTrafficPolicyVersions');
     return this;
   }
@@ -1131,7 +1138,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListVPCAssociationAuthorizations.html
    */
-  public listVPCAssociationAuthorizations () {
+  public listVPCAssociationAuthorizations() {
     this.add('route53:ListVPCAssociationAuthorizations');
     return this;
   }
@@ -1143,7 +1150,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_TestDNSAnswer.html
    */
-  public testDNSAnswer () {
+  public testDNSAnswer() {
     this.add('route53:TestDNSAnswer');
     return this;
   }
@@ -1155,7 +1162,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html
    */
-  public updateHealthCheck () {
+  public updateHealthCheck() {
     this.add('route53:UpdateHealthCheck');
     return this;
   }
@@ -1167,7 +1174,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHostedZoneComment.html
    */
-  public updateHostedZoneComment () {
+  public updateHostedZoneComment() {
     this.add('route53:UpdateHostedZoneComment');
     return this;
   }
@@ -1179,7 +1186,7 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateTrafficPolicyComment.html
    */
-  public updateTrafficPolicyComment () {
+  public updateTrafficPolicyComment() {
     this.add('route53:UpdateTrafficPolicyComment');
     return this;
   }
@@ -1191,8 +1198,141 @@ export class Route53 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateTrafficPolicyInstance.html
    */
-  public updateTrafficPolicyInstance () {
+  public updateTrafficPolicyInstance() {
     this.add('route53:UpdateTrafficPolicyInstance');
     return this;
+  }
+
+  /**
+   * Adds a resource of type change to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onChange(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:change/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type delegationset to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDelegationset(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:delegationset/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type healthcheck to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHealthcheck(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:healthcheck/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type hostedzone to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHostedzone(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:hostedzone/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type trafficpolicy to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTrafficpolicy(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:trafficpolicy/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type trafficpolicyinstance to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onTrafficpolicyinstance(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:trafficpolicyinstance/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type queryloggingconfig to the statement
+   *
+   * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onQueryloggingconfig(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:${Region}:${Account}:queryloggingconfig/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

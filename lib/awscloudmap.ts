@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Servicediscovery extends PolicyStatement {
   public servicePrefix = 'servicediscovery';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateHttpNamespace": {
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html",
       "description": "Creates an HTTP namespace.",
@@ -211,9 +211,10 @@ export class Servicediscovery extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "namespace": {
       "name": "namespace",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html",
       "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -221,6 +222,7 @@ export class Servicediscovery extends PolicyStatement {
     },
     "service": {
       "name": "service",
+      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html",
       "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -235,7 +237,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html
    */
-  public createHttpNamespace () {
+  public createHttpNamespace() {
     this.add('servicediscovery:CreateHttpNamespace');
     return this;
   }
@@ -247,7 +249,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html
    */
-  public createPrivateDnsNamespace () {
+  public createPrivateDnsNamespace() {
     this.add('servicediscovery:CreatePrivateDnsNamespace');
     return this;
   }
@@ -259,7 +261,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html
    */
-  public createPublicDnsNamespace () {
+  public createPublicDnsNamespace() {
     this.add('servicediscovery:CreatePublicDnsNamespace');
     return this;
   }
@@ -271,7 +273,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html
    */
-  public createService () {
+  public createService() {
     this.add('servicediscovery:CreateService');
     return this;
   }
@@ -283,7 +285,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteNamespace.html
    */
-  public deleteNamespace () {
+  public deleteNamespace() {
     this.add('servicediscovery:DeleteNamespace');
     return this;
   }
@@ -295,7 +297,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteService.html
    */
-  public deleteService () {
+  public deleteService() {
     this.add('servicediscovery:DeleteService');
     return this;
   }
@@ -307,7 +309,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html
    */
-  public deregisterInstance () {
+  public deregisterInstance() {
     this.add('servicediscovery:DeregisterInstance');
     return this;
   }
@@ -319,7 +321,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html
    */
-  public discoverInstances () {
+  public discoverInstances() {
     this.add('servicediscovery:DiscoverInstances');
     return this;
   }
@@ -331,7 +333,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstance.html
    */
-  public getInstance () {
+  public getInstance() {
     this.add('servicediscovery:GetInstance');
     return this;
   }
@@ -343,7 +345,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstancesHealthStatus.html
    */
-  public getInstancesHealthStatus () {
+  public getInstancesHealthStatus() {
     this.add('servicediscovery:GetInstancesHealthStatus');
     return this;
   }
@@ -355,7 +357,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetNamespace.html
    */
-  public getNamespace () {
+  public getNamespace() {
     this.add('servicediscovery:GetNamespace');
     return this;
   }
@@ -367,7 +369,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html
    */
-  public getOperation () {
+  public getOperation() {
     this.add('servicediscovery:GetOperation');
     return this;
   }
@@ -379,7 +381,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetService.html
    */
-  public getService () {
+  public getService() {
     this.add('servicediscovery:GetService');
     return this;
   }
@@ -391,7 +393,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html
    */
-  public listInstances () {
+  public listInstances() {
     this.add('servicediscovery:ListInstances');
     return this;
   }
@@ -403,7 +405,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListNamespaces.html
    */
-  public listNamespaces () {
+  public listNamespaces() {
     this.add('servicediscovery:ListNamespaces');
     return this;
   }
@@ -415,7 +417,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html
    */
-  public listOperations () {
+  public listOperations() {
     this.add('servicediscovery:ListOperations');
     return this;
   }
@@ -427,7 +429,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListServices.html
    */
-  public listServices () {
+  public listServices() {
     this.add('servicediscovery:ListServices');
     return this;
   }
@@ -439,7 +441,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('servicediscovery:ListTagsForResource');
     return this;
   }
@@ -451,7 +453,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html
    */
-  public registerInstance () {
+  public registerInstance() {
     this.add('servicediscovery:RegisterInstance');
     return this;
   }
@@ -463,7 +465,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('servicediscovery:TagResource');
     return this;
   }
@@ -475,7 +477,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('servicediscovery:UntagResource');
     return this;
   }
@@ -487,7 +489,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html
    */
-  public updateInstanceCustomHealthStatus () {
+  public updateInstanceCustomHealthStatus() {
     this.add('servicediscovery:UpdateInstanceCustomHealthStatus');
     return this;
   }
@@ -499,8 +501,52 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateService.html
    */
-  public updateService () {
+  public updateService() {
     this.add('servicediscovery:UpdateService');
     return this;
+  }
+
+  /**
+   * Adds a resource of type namespace to the statement
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html
+   *
+   * @param namespaceId - Identifier for the namespaceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}';
+    arn = arn.replace('${NamespaceId}', namespaceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type service to the statement
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html
+   *
+   * @param serviceId - Identifier for the serviceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onService(serviceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}';
+    arn = arn.replace('${ServiceId}', serviceId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

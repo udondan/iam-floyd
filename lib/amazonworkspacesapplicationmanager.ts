@@ -7,14 +7,14 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Wam extends PolicyStatement {
   public servicePrefix = 'wam';
-  public actions : Actions = {
+  public actions: Actions = {
     "AuthenticatePackager": {
       "url": "https://docs.aws.amazon.com/wam/latest/adminguide/iam.html",
       "description": "Allows the Amazon WAM packaging instance to access your application package catalog.",
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Allows the Amazon WAM packaging instance to access your application package catalog.
@@ -23,7 +23,7 @@ export class Wam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/wam/latest/adminguide/iam.html
    */
-  public authenticatePackager () {
+  public authenticatePackager() {
     this.add('wam:AuthenticatePackager');
     return this;
   }

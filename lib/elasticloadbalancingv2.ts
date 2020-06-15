@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class ElasticloadbalancingV2 extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing-v2';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddListenerCertificates": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddListenerCertificates.html",
       "description": "Adds the specified certificates to the specified secure listener.",
@@ -356,29 +356,34 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "listener/app": {
       "name": "listener/app",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}",
       "conditionKeys": []
     },
     "listener-rule/app": {
       "name": "listener-rule/app",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}",
       "conditionKeys": []
     },
     "listener/net": {
       "name": "listener/net",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}",
       "conditionKeys": []
     },
     "listener-rule/net": {
       "name": "listener-rule/net",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}",
       "conditionKeys": []
     },
     "loadbalancer/app/": {
       "name": "loadbalancer/app/",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
       "conditionKeys": [
         "aws:RequestTag/tag-key",
@@ -388,6 +393,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "loadbalancer/net/": {
       "name": "loadbalancer/net/",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}",
       "conditionKeys": [
         "aws:RequestTag/tag-key",
@@ -397,6 +403,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "targetgroup": {
       "name": "targetgroup",
+      "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}",
       "conditionKeys": [
         "aws:RequestTag/tag-key",
@@ -413,7 +420,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddListenerCertificates.html
    */
-  public addListenerCertificates () {
+  public addListenerCertificates() {
     this.add('elasticloadbalancing-v2:AddListenerCertificates');
     return this;
   }
@@ -425,7 +432,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddTags.html
    */
-  public addTags () {
+  public addTags() {
     this.add('elasticloadbalancing-v2:AddTags');
     return this;
   }
@@ -437,7 +444,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateListener.html
    */
-  public createListener () {
+  public createListener() {
     this.add('elasticloadbalancing-v2:CreateListener');
     return this;
   }
@@ -449,7 +456,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateLoadBalancer.html
    */
-  public createLoadBalancer () {
+  public createLoadBalancer() {
     this.add('elasticloadbalancing-v2:CreateLoadBalancer');
     return this;
   }
@@ -461,7 +468,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateRule.html
    */
-  public createRule () {
+  public createRule() {
     this.add('elasticloadbalancing-v2:CreateRule');
     return this;
   }
@@ -473,7 +480,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateTargetGroup.html
    */
-  public createTargetGroup () {
+  public createTargetGroup() {
     this.add('elasticloadbalancing-v2:CreateTargetGroup');
     return this;
   }
@@ -485,7 +492,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteListener.html
    */
-  public deleteListener () {
+  public deleteListener() {
     this.add('elasticloadbalancing-v2:DeleteListener');
     return this;
   }
@@ -497,7 +504,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteLoadBalancer.html
    */
-  public deleteLoadBalancer () {
+  public deleteLoadBalancer() {
     this.add('elasticloadbalancing-v2:DeleteLoadBalancer');
     return this;
   }
@@ -509,7 +516,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteRule.html
    */
-  public deleteRule () {
+  public deleteRule() {
     this.add('elasticloadbalancing-v2:DeleteRule');
     return this;
   }
@@ -521,7 +528,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteTargetGroup.html
    */
-  public deleteTargetGroup () {
+  public deleteTargetGroup() {
     this.add('elasticloadbalancing-v2:DeleteTargetGroup');
     return this;
   }
@@ -533,7 +540,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeregisterTargets.html
    */
-  public deregisterTargets () {
+  public deregisterTargets() {
     this.add('elasticloadbalancing-v2:DeregisterTargets');
     return this;
   }
@@ -545,7 +552,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeAccountLimits.html
    */
-  public describeAccountLimits () {
+  public describeAccountLimits() {
     this.add('elasticloadbalancing-v2:DescribeAccountLimits');
     return this;
   }
@@ -557,7 +564,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListenerCertificates.html
    */
-  public describeListenerCertificates () {
+  public describeListenerCertificates() {
     this.add('elasticloadbalancing-v2:DescribeListenerCertificates');
     return this;
   }
@@ -569,7 +576,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListeners.html
    */
-  public describeListeners () {
+  public describeListeners() {
     this.add('elasticloadbalancing-v2:DescribeListeners');
     return this;
   }
@@ -581,7 +588,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancerAttributes.html
    */
-  public describeLoadBalancerAttributes () {
+  public describeLoadBalancerAttributes() {
     this.add('elasticloadbalancing-v2:DescribeLoadBalancerAttributes');
     return this;
   }
@@ -593,7 +600,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html
    */
-  public describeLoadBalancers () {
+  public describeLoadBalancers() {
     this.add('elasticloadbalancing-v2:DescribeLoadBalancers');
     return this;
   }
@@ -605,7 +612,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeRules.html
    */
-  public describeRules () {
+  public describeRules() {
     this.add('elasticloadbalancing-v2:DescribeRules');
     return this;
   }
@@ -617,7 +624,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeSSLPolicies.html
    */
-  public describeSSLPolicies () {
+  public describeSSLPolicies() {
     this.add('elasticloadbalancing-v2:DescribeSSLPolicies');
     return this;
   }
@@ -629,7 +636,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTags.html
    */
-  public describeTags () {
+  public describeTags() {
     this.add('elasticloadbalancing-v2:DescribeTags');
     return this;
   }
@@ -641,7 +648,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroupAttributes.html
    */
-  public describeTargetGroupAttributes () {
+  public describeTargetGroupAttributes() {
     this.add('elasticloadbalancing-v2:DescribeTargetGroupAttributes');
     return this;
   }
@@ -653,7 +660,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html
    */
-  public describeTargetGroups () {
+  public describeTargetGroups() {
     this.add('elasticloadbalancing-v2:DescribeTargetGroups');
     return this;
   }
@@ -665,7 +672,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetHealth.html
    */
-  public describeTargetHealth () {
+  public describeTargetHealth() {
     this.add('elasticloadbalancing-v2:DescribeTargetHealth');
     return this;
   }
@@ -677,7 +684,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyListener.html
    */
-  public modifyListener () {
+  public modifyListener() {
     this.add('elasticloadbalancing-v2:ModifyListener');
     return this;
   }
@@ -689,7 +696,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyLoadBalancerAttributes.html
    */
-  public modifyLoadBalancerAttributes () {
+  public modifyLoadBalancerAttributes() {
     this.add('elasticloadbalancing-v2:ModifyLoadBalancerAttributes');
     return this;
   }
@@ -701,7 +708,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyRule.html
    */
-  public modifyRule () {
+  public modifyRule() {
     this.add('elasticloadbalancing-v2:ModifyRule');
     return this;
   }
@@ -713,7 +720,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroup.html
    */
-  public modifyTargetGroup () {
+  public modifyTargetGroup() {
     this.add('elasticloadbalancing-v2:ModifyTargetGroup');
     return this;
   }
@@ -725,7 +732,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroupAttributes.html
    */
-  public modifyTargetGroupAttributes () {
+  public modifyTargetGroupAttributes() {
     this.add('elasticloadbalancing-v2:ModifyTargetGroupAttributes');
     return this;
   }
@@ -737,7 +744,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RegisterTargets.html
    */
-  public registerTargets () {
+  public registerTargets() {
     this.add('elasticloadbalancing-v2:RegisterTargets');
     return this;
   }
@@ -749,7 +756,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveListenerCertificates.html
    */
-  public removeListenerCertificates () {
+  public removeListenerCertificates() {
     this.add('elasticloadbalancing-v2:RemoveListenerCertificates');
     return this;
   }
@@ -761,7 +768,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveTags.html
    */
-  public removeTags () {
+  public removeTags() {
     this.add('elasticloadbalancing-v2:RemoveTags');
     return this;
   }
@@ -773,7 +780,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetIpAddressType.html
    */
-  public setIpAddressType () {
+  public setIpAddressType() {
     this.add('elasticloadbalancing-v2:SetIpAddressType');
     return this;
   }
@@ -785,7 +792,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetRulePriorities.html
    */
-  public setRulePriorities () {
+  public setRulePriorities() {
     this.add('elasticloadbalancing-v2:SetRulePriorities');
     return this;
   }
@@ -797,7 +804,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSecurityGroups.html
    */
-  public setSecurityGroups () {
+  public setSecurityGroups() {
     this.add('elasticloadbalancing-v2:SetSecurityGroups');
     return this;
   }
@@ -809,7 +816,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSubnets.html
    */
-  public setSubnets () {
+  public setSubnets() {
     this.add('elasticloadbalancing-v2:SetSubnets');
     return this;
   }
@@ -819,8 +826,182 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public setWebAcl () {
+  public setWebAcl() {
     this.add('elasticloadbalancing-v2:SetWebAcl');
     return this;
+  }
+
+  /**
+   * Adds a resource of type listener/app to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onListenerApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type listener-rule/app to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param listenerRuleId - Identifier for the listenerRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onListenerRuleApp(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/app/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${ListenerRuleId}', listenerRuleId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type listener/net to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onListenerNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type listener-rule/net to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param listenerId - Identifier for the listenerId.
+   * @param listenerRuleId - Identifier for the listenerRuleId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onListenerRuleNet(loadBalancerName: string, loadBalancerId: string, listenerId: string, listenerRuleId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:listener-rule/net/${LoadBalancerName}/${LoadBalancerId}/${ListenerId}/${ListenerRuleId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${ListenerId}', listenerId);
+    arn = arn.replace('${ListenerRuleId}', listenerRuleId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type loadbalancer/app/ to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/tag-key
+   *  - aws:TagKeys
+   *  - elasticloadbalancing:ResourceTag/tag-key
+   */
+  public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type loadbalancer/net/ to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview
+   *
+   * @param loadBalancerName - Identifier for the loadBalancerName.
+   * @param loadBalancerId - Identifier for the loadBalancerId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/tag-key
+   *  - aws:TagKeys
+   *  - elasticloadbalancing:ResourceTag/tag-key
+   */
+  public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}';
+    arn = arn.replace('${LoadBalancerName}', loadBalancerName);
+    arn = arn.replace('${LoadBalancerId}', loadBalancerId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type targetgroup to the statement
+   *
+   * https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html
+   *
+   * @param targetGroupName - Identifier for the targetGroupName.
+   * @param targetGroupId - Identifier for the targetGroupId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:RequestTag/tag-key
+   *  - aws:TagKeys
+   *  - elasticloadbalancing:ResourceTag/tag-key
+   */
+  public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}';
+    arn = arn.replace('${TargetGroupName}', targetGroupName);
+    arn = arn.replace('${TargetGroupId}', targetGroupId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

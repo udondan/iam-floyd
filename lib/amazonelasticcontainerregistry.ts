@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Ecr extends PolicyStatement {
   public servicePrefix = 'ecr';
-  public actions : Actions = {
+  public actions: Actions = {
     "BatchCheckLayerAvailability": {
       "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html",
       "description": "Grants permission to check the availability of multiple image layers in a specified registry and repository",
@@ -302,9 +302,10 @@ export class Ecr extends PolicyStatement {
       }
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "repository": {
       "name": "repository",
+      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR_ARN_Format",
       "arn": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
@@ -320,7 +321,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html
    */
-  public batchCheckLayerAvailability () {
+  public batchCheckLayerAvailability() {
     this.add('ecr:BatchCheckLayerAvailability');
     return this;
   }
@@ -332,7 +333,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html
    */
-  public batchDeleteImage () {
+  public batchDeleteImage() {
     this.add('ecr:BatchDeleteImage');
     return this;
   }
@@ -344,7 +345,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html
    */
-  public batchGetImage () {
+  public batchGetImage() {
     this.add('ecr:BatchGetImage');
     return this;
   }
@@ -356,7 +357,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html
    */
-  public completeLayerUpload () {
+  public completeLayerUpload() {
     this.add('ecr:CompleteLayerUpload');
     return this;
   }
@@ -368,7 +369,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html
    */
-  public createRepository () {
+  public createRepository() {
     this.add('ecr:CreateRepository');
     return this;
   }
@@ -380,7 +381,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteLifecyclePolicy.html
    */
-  public deleteLifecyclePolicy () {
+  public deleteLifecyclePolicy() {
     this.add('ecr:DeleteLifecyclePolicy');
     return this;
   }
@@ -392,7 +393,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html
    */
-  public deleteRepository () {
+  public deleteRepository() {
     this.add('ecr:DeleteRepository');
     return this;
   }
@@ -404,7 +405,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html
    */
-  public deleteRepositoryPolicy () {
+  public deleteRepositoryPolicy() {
     this.add('ecr:DeleteRepositoryPolicy');
     return this;
   }
@@ -416,7 +417,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageScanFindings.html
    */
-  public describeImageScanFindings () {
+  public describeImageScanFindings() {
     this.add('ecr:DescribeImageScanFindings');
     return this;
   }
@@ -428,7 +429,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html
    */
-  public describeImages () {
+  public describeImages() {
     this.add('ecr:DescribeImages');
     return this;
   }
@@ -440,7 +441,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html
    */
-  public describeRepositories () {
+  public describeRepositories() {
     this.add('ecr:DescribeRepositories');
     return this;
   }
@@ -452,7 +453,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html
    */
-  public getAuthorizationToken () {
+  public getAuthorizationToken() {
     this.add('ecr:GetAuthorizationToken');
     return this;
   }
@@ -464,7 +465,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html
    */
-  public getDownloadUrlForLayer () {
+  public getDownloadUrlForLayer() {
     this.add('ecr:GetDownloadUrlForLayer');
     return this;
   }
@@ -476,7 +477,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicy.html
    */
-  public getLifecyclePolicy () {
+  public getLifecyclePolicy() {
     this.add('ecr:GetLifecyclePolicy');
     return this;
   }
@@ -488,7 +489,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicyPreview.html
    */
-  public getLifecyclePolicyPreview () {
+  public getLifecyclePolicyPreview() {
     this.add('ecr:GetLifecyclePolicyPreview');
     return this;
   }
@@ -500,7 +501,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html
    */
-  public getRepositoryPolicy () {
+  public getRepositoryPolicy() {
     this.add('ecr:GetRepositoryPolicy');
     return this;
   }
@@ -512,7 +513,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html
    */
-  public initiateLayerUpload () {
+  public initiateLayerUpload() {
     this.add('ecr:InitiateLayerUpload');
     return this;
   }
@@ -524,7 +525,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html
    */
-  public listImages () {
+  public listImages() {
     this.add('ecr:ListImages');
     return this;
   }
@@ -536,7 +537,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource () {
+  public listTagsForResource() {
     this.add('ecr:ListTagsForResource');
     return this;
   }
@@ -548,7 +549,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html
    */
-  public putImage () {
+  public putImage() {
     this.add('ecr:PutImage');
     return this;
   }
@@ -560,7 +561,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageScanningConfiguration.html
    */
-  public putImageScanningConfiguration () {
+  public putImageScanningConfiguration() {
     this.add('ecr:PutImageScanningConfiguration');
     return this;
   }
@@ -572,7 +573,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageTagMutability.html
    */
-  public putImageTagMutability () {
+  public putImageTagMutability() {
     this.add('ecr:PutImageTagMutability');
     return this;
   }
@@ -584,7 +585,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
    */
-  public putLifecyclePolicy () {
+  public putLifecyclePolicy() {
     this.add('ecr:PutLifecyclePolicy');
     return this;
   }
@@ -596,7 +597,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html
    */
-  public setRepositoryPolicy () {
+  public setRepositoryPolicy() {
     this.add('ecr:SetRepositoryPolicy');
     return this;
   }
@@ -608,7 +609,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html
    */
-  public startImageScan () {
+  public startImageScan() {
     this.add('ecr:StartImageScan');
     return this;
   }
@@ -620,7 +621,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartLifecyclePolicyPreview.html
    */
-  public startLifecyclePolicyPreview () {
+  public startLifecyclePolicyPreview() {
     this.add('ecr:StartLifecyclePolicyPreview');
     return this;
   }
@@ -632,7 +633,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_TagResource.html
    */
-  public tagResource () {
+  public tagResource() {
     this.add('ecr:TagResource');
     return this;
   }
@@ -644,7 +645,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html
    */
-  public untagResource () {
+  public untagResource() {
     this.add('ecr:UntagResource');
     return this;
   }
@@ -656,8 +657,31 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html
    */
-  public uploadLayerPart () {
+  public uploadLayerPart() {
     this.add('ecr:UploadLayerPart');
     return this;
+  }
+
+  /**
+   * Adds a resource of type repository to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR_ARN_Format
+   *
+   * @param repositoryName - Identifier for the repositoryName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   *  - ecr:ResourceTag/${TagKey}
+   */
+  public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}';
+    arn = arn.replace('${RepositoryName}', repositoryName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

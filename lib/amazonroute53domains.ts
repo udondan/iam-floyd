@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Route53domains extends PolicyStatement {
   public servicePrefix = 'route53domains';
-  public actions : Actions = {
+  public actions: Actions = {
     "CheckDomainAvailability": {
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainAvailability.html",
       "description": "Grants permission to check the availability of one domain name",
@@ -124,7 +124,7 @@ export class Route53domains extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Grants permission to check the availability of one domain name
@@ -133,7 +133,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainAvailability.html
    */
-  public checkDomainAvailability () {
+  public checkDomainAvailability() {
     this.add('route53domains:CheckDomainAvailability');
     return this;
   }
@@ -145,7 +145,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DeleteTagsForDomain.html
    */
-  public deleteTagsForDomain () {
+  public deleteTagsForDomain() {
     this.add('route53domains:DeleteTagsForDomain');
     return this;
   }
@@ -157,7 +157,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html
    */
-  public disableDomainAutoRenew () {
+  public disableDomainAutoRenew() {
     this.add('route53domains:DisableDomainAutoRenew');
     return this;
   }
@@ -169,7 +169,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainTransferLock.html
    */
-  public disableDomainTransferLock () {
+  public disableDomainTransferLock() {
     this.add('route53domains:DisableDomainTransferLock');
     return this;
   }
@@ -181,7 +181,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_DisableDomainAutoRenew.html
    */
-  public enableDomainAutoRenew () {
+  public enableDomainAutoRenew() {
     this.add('route53domains:EnableDomainAutoRenew');
     return this;
   }
@@ -193,7 +193,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_EnableDomainTransferLock.html
    */
-  public enableDomainTransferLock () {
+  public enableDomainTransferLock() {
     this.add('route53domains:EnableDomainTransferLock');
     return this;
   }
@@ -205,7 +205,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetContactReachabilityStatus.html
    */
-  public getContactReachabilityStatus () {
+  public getContactReachabilityStatus() {
     this.add('route53domains:GetContactReachabilityStatus');
     return this;
   }
@@ -217,7 +217,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainDetail.html
    */
-  public getDomainDetail () {
+  public getDomainDetail() {
     this.add('route53domains:GetDomainDetail');
     return this;
   }
@@ -229,7 +229,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainSuggestions.html
    */
-  public getDomainSuggestions () {
+  public getDomainSuggestions() {
     this.add('route53domains:GetDomainSuggestions');
     return this;
   }
@@ -241,7 +241,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html
    */
-  public getOperationDetail () {
+  public getOperationDetail() {
     this.add('route53domains:GetOperationDetail');
     return this;
   }
@@ -253,7 +253,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html
    */
-  public listDomains () {
+  public listDomains() {
     this.add('route53domains:ListDomains');
     return this;
   }
@@ -265,7 +265,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html
    */
-  public listOperations () {
+  public listOperations() {
     this.add('route53domains:ListOperations');
     return this;
   }
@@ -277,7 +277,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListTagsForDomain.html
    */
-  public listTagsForDomain () {
+  public listTagsForDomain() {
     this.add('route53domains:ListTagsForDomain');
     return this;
   }
@@ -289,7 +289,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RegisterDomain.html
    */
-  public registerDomain () {
+  public registerDomain() {
     this.add('route53domains:RegisterDomain');
     return this;
   }
@@ -301,7 +301,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RenewDomain.html
    */
-  public renewDomain () {
+  public renewDomain() {
     this.add('route53domains:RenewDomain');
     return this;
   }
@@ -313,7 +313,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendContactReachabilityEmail.html
    */
-  public resendContactReachabilityEmail () {
+  public resendContactReachabilityEmail() {
     this.add('route53domains:ResendContactReachabilityEmail');
     return this;
   }
@@ -325,7 +325,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RetrieveDomainAuthCode.html
    */
-  public retrieveDomainAuthCode () {
+  public retrieveDomainAuthCode() {
     this.add('route53domains:RetrieveDomainAuthCode');
     return this;
   }
@@ -337,7 +337,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomain.html
    */
-  public transferDomain () {
+  public transferDomain() {
     this.add('route53domains:TransferDomain');
     return this;
   }
@@ -349,7 +349,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html
    */
-  public updateDomainContact () {
+  public updateDomainContact() {
     this.add('route53domains:UpdateDomainContact');
     return this;
   }
@@ -361,7 +361,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContactPrivacy.html
    */
-  public updateDomainContactPrivacy () {
+  public updateDomainContactPrivacy() {
     this.add('route53domains:UpdateDomainContactPrivacy');
     return this;
   }
@@ -373,7 +373,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html
    */
-  public updateDomainNameservers () {
+  public updateDomainNameservers() {
     this.add('route53domains:UpdateDomainNameservers');
     return this;
   }
@@ -385,7 +385,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateTagsForDomain.html
    */
-  public updateTagsForDomain () {
+  public updateTagsForDomain() {
     this.add('route53domains:UpdateTagsForDomain');
     return this;
   }
@@ -397,7 +397,7 @@ export class Route53domains extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ViewBilling.html
    */
-  public viewBilling () {
+  public viewBilling() {
     this.add('route53domains:ViewBilling');
     return this;
   }

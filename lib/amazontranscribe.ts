@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Transcribe extends PolicyStatement {
   public servicePrefix = 'transcribe';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateMedicalVocabulary": {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html",
       "description": "Creates a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.",
@@ -144,7 +144,7 @@ export class Transcribe extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {};
+  public resourceTypes: ResourceTypes = {};
 
   /**
    * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.
@@ -153,7 +153,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html
    */
-  public createMedicalVocabulary () {
+  public createMedicalVocabulary() {
     this.add('transcribe:CreateMedicalVocabulary');
     return this;
   }
@@ -165,7 +165,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabulary.html
    */
-  public createVocabulary () {
+  public createVocabulary() {
     this.add('transcribe:CreateVocabulary');
     return this;
   }
@@ -177,7 +177,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabularyFilter.html
    */
-  public createVocabularyFilter () {
+  public createVocabularyFilter() {
     this.add('transcribe:CreateVocabularyFilter');
     return this;
   }
@@ -189,7 +189,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteMedicalTranscriptionJob.html
    */
-  public deleteMedicalTranscriptionJob () {
+  public deleteMedicalTranscriptionJob() {
     this.add('transcribe:DeleteMedicalTranscriptionJob');
     return this;
   }
@@ -201,7 +201,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteMedicalVocabulary.html
    */
-  public deleteMedicalVocabulary () {
+  public deleteMedicalVocabulary() {
     this.add('transcribe:DeleteMedicalVocabulary');
     return this;
   }
@@ -213,7 +213,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteTranscriptionJob.html
    */
-  public deleteTranscriptionJob () {
+  public deleteTranscriptionJob() {
     this.add('transcribe:DeleteTranscriptionJob');
     return this;
   }
@@ -225,7 +225,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteVocabulary.html
    */
-  public deleteVocabulary () {
+  public deleteVocabulary() {
     this.add('transcribe:DeleteVocabulary');
     return this;
   }
@@ -237,7 +237,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteVocabularyFilter.html
    */
-  public deleteVocabularyFilter () {
+  public deleteVocabularyFilter() {
     this.add('transcribe:DeleteVocabularyFilter');
     return this;
   }
@@ -249,7 +249,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetMedicalTranscriptionJob.html
    */
-  public getMedicalTranscriptionJob () {
+  public getMedicalTranscriptionJob() {
     this.add('transcribe:GetMedicalTranscriptionJob');
     return this;
   }
@@ -261,7 +261,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetMedicalVocabulary.html
    */
-  public getMedicalVocabulary () {
+  public getMedicalVocabulary() {
     this.add('transcribe:GetMedicalVocabulary');
     return this;
   }
@@ -273,7 +273,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html
    */
-  public getTranscriptionJob () {
+  public getTranscriptionJob() {
     this.add('transcribe:GetTranscriptionJob');
     return this;
   }
@@ -285,7 +285,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetVocabulary.html
    */
-  public getVocabulary () {
+  public getVocabulary() {
     this.add('transcribe:GetVocabulary');
     return this;
   }
@@ -297,7 +297,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_GetVocabularyFilter.html
    */
-  public getVocabularyFilter () {
+  public getVocabularyFilter() {
     this.add('transcribe:GetVocabularyFilter');
     return this;
   }
@@ -309,7 +309,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListMedicalTranscriptionJobs.html
    */
-  public listMedicalTranscriptionJobs () {
+  public listMedicalTranscriptionJobs() {
     this.add('transcribe:ListMedicalTranscriptionJobs');
     return this;
   }
@@ -321,7 +321,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListMedicalVocabularies.html
    */
-  public listMedicalVocabularies () {
+  public listMedicalVocabularies() {
     this.add('transcribe:ListMedicalVocabularies');
     return this;
   }
@@ -333,7 +333,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html
    */
-  public listTranscriptionJobs () {
+  public listTranscriptionJobs() {
     this.add('transcribe:ListTranscriptionJobs');
     return this;
   }
@@ -345,7 +345,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListVocabularies.html
    */
-  public listVocabularies () {
+  public listVocabularies() {
     this.add('transcribe:ListVocabularies');
     return this;
   }
@@ -357,7 +357,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListVocabularyFilters.html
    */
-  public listVocabularyFilters () {
+  public listVocabularyFilters() {
     this.add('transcribe:ListVocabularyFilters');
     return this;
   }
@@ -369,7 +369,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartMedicalStreamTranscription.html
    */
-  public startMedicalStreamTranscription () {
+  public startMedicalStreamTranscription() {
     this.add('transcribe:StartMedicalStreamTranscription');
     return this;
   }
@@ -381,7 +381,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartMedicalStreamTranscriptionWebSocket.html
    */
-  public startMedicalStreamTranscriptionWebSocket () {
+  public startMedicalStreamTranscriptionWebSocket() {
     this.add('transcribe:StartMedicalStreamTranscriptionWebSocket');
     return this;
   }
@@ -393,7 +393,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartMedicalTranscriptionJob.html
    */
-  public startMedicalTranscriptionJob () {
+  public startMedicalTranscriptionJob() {
     this.add('transcribe:StartMedicalTranscriptionJob');
     return this;
   }
@@ -405,7 +405,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartStreamTranscription.html
    */
-  public startStreamTranscription () {
+  public startStreamTranscription() {
     this.add('transcribe:StartStreamTranscription');
     return this;
   }
@@ -417,7 +417,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartStreamTranscriptionWebSocket.html
    */
-  public startStreamTranscriptionWebSocket () {
+  public startStreamTranscriptionWebSocket() {
     this.add('transcribe:StartStreamTranscriptionWebSocket');
     return this;
   }
@@ -429,7 +429,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html
    */
-  public startTranscriptionJob () {
+  public startTranscriptionJob() {
     this.add('transcribe:StartTranscriptionJob');
     return this;
   }
@@ -441,7 +441,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateMedicalVocabulary.html
    */
-  public updateMedicalVocabulary () {
+  public updateMedicalVocabulary() {
     this.add('transcribe:UpdateMedicalVocabulary');
     return this;
   }
@@ -453,7 +453,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html
    */
-  public updateVocabulary () {
+  public updateVocabulary() {
     this.add('transcribe:UpdateVocabulary');
     return this;
   }
@@ -465,7 +465,7 @@ export class Transcribe extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabularyFilter.html
    */
-  public updateVocabularyFilter () {
+  public updateVocabularyFilter() {
     this.add('transcribe:UpdateVocabularyFilter');
     return this;
   }

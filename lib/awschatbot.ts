@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Chatbot extends PolicyStatement {
   public servicePrefix = 'chatbot';
-  public actions : Actions = {
+  public actions: Actions = {
     "CreateChimeWebhookConfiguration": {
       "url": "",
       "description": "Creates an AWS Chatbot Chime Webhook Configuration.",
@@ -69,9 +69,10 @@ export class Chatbot extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "ChatbotConfiguration": {
       "name": "ChatbotConfiguration",
+      "url": "",
       "arn": "arn:${Partition}:chatbot:${Region}:${Account}:${resourceType}/${resourceName}",
       "conditionKeys": []
     }
@@ -82,7 +83,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createChimeWebhookConfiguration () {
+  public createChimeWebhookConfiguration() {
     this.add('chatbot:CreateChimeWebhookConfiguration');
     return this;
   }
@@ -92,7 +93,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createSlackChannelConfiguration () {
+  public createSlackChannelConfiguration() {
     this.add('chatbot:CreateSlackChannelConfiguration');
     return this;
   }
@@ -102,7 +103,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteChimeWebhookConfiguration () {
+  public deleteChimeWebhookConfiguration() {
     this.add('chatbot:DeleteChimeWebhookConfiguration');
     return this;
   }
@@ -112,7 +113,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteSlackChannelConfiguration () {
+  public deleteSlackChannelConfiguration() {
     this.add('chatbot:DeleteSlackChannelConfiguration');
     return this;
   }
@@ -122,7 +123,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeChimeWebhookConfigurations () {
+  public describeChimeWebhookConfigurations() {
     this.add('chatbot:DescribeChimeWebhookConfigurations');
     return this;
   }
@@ -132,7 +133,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeSlackChannelConfigurations () {
+  public describeSlackChannelConfigurations() {
     this.add('chatbot:DescribeSlackChannelConfigurations');
     return this;
   }
@@ -142,7 +143,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeSlackChannels () {
+  public describeSlackChannels() {
     this.add('chatbot:DescribeSlackChannels');
     return this;
   }
@@ -152,7 +153,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeSlackWorkspaces () {
+  public describeSlackWorkspaces() {
     this.add('chatbot:DescribeSlackWorkspaces');
     return this;
   }
@@ -162,7 +163,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getSlackOauthParameters () {
+  public getSlackOauthParameters() {
     this.add('chatbot:GetSlackOauthParameters');
     return this;
   }
@@ -172,7 +173,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public redeemSlackOauthCode () {
+  public redeemSlackOauthCode() {
     this.add('chatbot:RedeemSlackOauthCode');
     return this;
   }
@@ -182,7 +183,7 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateChimeWebhookConfiguration () {
+  public updateChimeWebhookConfiguration() {
     this.add('chatbot:UpdateChimeWebhookConfiguration');
     return this;
   }
@@ -192,8 +193,27 @@ export class Chatbot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateSlackChannelConfiguration () {
+  public updateSlackChannelConfiguration() {
     this.add('chatbot:UpdateSlackChannelConfiguration');
     return this;
+  }
+
+  /**
+   * Adds a resource of type ChatbotConfiguration to the statement
+   *
+   * @param resourceType - Identifier for the resourceType.
+   * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onChatbotConfiguration(resourceType: string, resourceName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:chatbot:${Region}:${Account}:${resourceType}/${resourceName}';
+    arn = arn.replace('${resourceType}', resourceType);
+    arn = arn.replace('${resourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }

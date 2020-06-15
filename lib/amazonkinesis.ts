@@ -7,7 +7,7 @@ import { Actions, PolicyStatement, ResourceTypes } from "./shared";
  */
 export class Kinesis extends PolicyStatement {
   public servicePrefix = 'kinesis';
-  public actions : Actions = {
+  public actions: Actions = {
     "AddTagsToStream": {
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html",
       "description": "Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags.",
@@ -246,14 +246,16 @@ export class Kinesis extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes : ResourceTypes = {
+  public resourceTypes: ResourceTypes = {
     "stream": {
       "name": "stream",
+      "url": "",
       "arn": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
       "conditionKeys": []
     },
     "consumer": {
       "name": "consumer",
+      "url": "",
       "arn": "arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}",
       "conditionKeys": []
     }
@@ -266,7 +268,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html
    */
-  public addTagsToStream () {
+  public addTagsToStream() {
     this.add('kinesis:AddTagsToStream');
     return this;
   }
@@ -278,7 +280,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html
    */
-  public createStream () {
+  public createStream() {
     this.add('kinesis:CreateStream');
     return this;
   }
@@ -290,7 +292,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html
    */
-  public decreaseStreamRetentionPeriod () {
+  public decreaseStreamRetentionPeriod() {
     this.add('kinesis:DecreaseStreamRetentionPeriod');
     return this;
   }
@@ -302,7 +304,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html
    */
-  public deleteStream () {
+  public deleteStream() {
     this.add('kinesis:DeleteStream');
     return this;
   }
@@ -314,7 +316,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeregisterStreamConsumer.html
    */
-  public deregisterStreamConsumer () {
+  public deregisterStreamConsumer() {
     this.add('kinesis:DeregisterStreamConsumer');
     return this;
   }
@@ -326,7 +328,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html
    */
-  public describeLimits () {
+  public describeLimits() {
     this.add('kinesis:DescribeLimits');
     return this;
   }
@@ -338,7 +340,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html
    */
-  public describeStream () {
+  public describeStream() {
     this.add('kinesis:DescribeStream');
     return this;
   }
@@ -350,7 +352,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamConsumer.html
    */
-  public describeStreamConsumer () {
+  public describeStreamConsumer() {
     this.add('kinesis:DescribeStreamConsumer');
     return this;
   }
@@ -362,7 +364,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStreamSummary.html
    */
-  public describeStreamSummary () {
+  public describeStreamSummary() {
     this.add('kinesis:DescribeStreamSummary');
     return this;
   }
@@ -374,7 +376,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html
    */
-  public disableEnhancedMonitoring () {
+  public disableEnhancedMonitoring() {
     this.add('kinesis:DisableEnhancedMonitoring');
     return this;
   }
@@ -386,7 +388,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html
    */
-  public enableEnhancedMonitoring () {
+  public enableEnhancedMonitoring() {
     this.add('kinesis:EnableEnhancedMonitoring');
     return this;
   }
@@ -398,7 +400,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html
    */
-  public getRecords () {
+  public getRecords() {
     this.add('kinesis:GetRecords');
     return this;
   }
@@ -410,7 +412,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html
    */
-  public getShardIterator () {
+  public getShardIterator() {
     this.add('kinesis:GetShardIterator');
     return this;
   }
@@ -422,7 +424,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html
    */
-  public increaseStreamRetentionPeriod () {
+  public increaseStreamRetentionPeriod() {
     this.add('kinesis:IncreaseStreamRetentionPeriod');
     return this;
   }
@@ -434,7 +436,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListShards.html
    */
-  public listShards () {
+  public listShards() {
     this.add('kinesis:ListShards');
     return this;
   }
@@ -446,7 +448,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreamConsumers.html
    */
-  public listStreamConsumers () {
+  public listStreamConsumers() {
     this.add('kinesis:ListStreamConsumers');
     return this;
   }
@@ -458,7 +460,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html
    */
-  public listStreams () {
+  public listStreams() {
     this.add('kinesis:ListStreams');
     return this;
   }
@@ -470,7 +472,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html
    */
-  public listTagsForStream () {
+  public listTagsForStream() {
     this.add('kinesis:ListTagsForStream');
     return this;
   }
@@ -482,7 +484,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html
    */
-  public mergeShards () {
+  public mergeShards() {
     this.add('kinesis:MergeShards');
     return this;
   }
@@ -494,7 +496,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html
    */
-  public putRecord () {
+  public putRecord() {
     this.add('kinesis:PutRecord');
     return this;
   }
@@ -506,7 +508,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html
    */
-  public putRecords () {
+  public putRecords() {
     this.add('kinesis:PutRecords');
     return this;
   }
@@ -518,7 +520,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RegisterStreamConsumer.html
    */
-  public registerStreamConsumer () {
+  public registerStreamConsumer() {
     this.add('kinesis:RegisterStreamConsumer');
     return this;
   }
@@ -530,7 +532,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html
    */
-  public removeTagsFromStream () {
+  public removeTagsFromStream() {
     this.add('kinesis:RemoveTagsFromStream');
     return this;
   }
@@ -542,7 +544,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html
    */
-  public splitShard () {
+  public splitShard() {
     this.add('kinesis:SplitShard');
     return this;
   }
@@ -554,7 +556,7 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SubscribeToShard.html
    */
-  public subscribeToShard () {
+  public subscribeToShard() {
     this.add('kinesis:SubscribeToShard');
     return this;
   }
@@ -566,8 +568,48 @@ export class Kinesis extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html
    */
-  public updateShardCount () {
+  public updateShardCount() {
     this.add('kinesis:UpdateShardCount');
     return this;
+  }
+
+  /**
+   * Adds a resource of type stream to the statement
+   *
+   * @param streamName - Identifier for the streamName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onStream(streamName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}';
+    arn = arn.replace('${StreamName}', streamName);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type consumer to the statement
+   *
+   * @param streamType - Identifier for the streamType.
+   * @param streamName - Identifier for the streamName.
+   * @param consumerName - Identifier for the consumerName.
+   * @param consumerCreationTimpstamp - Identifier for the consumerCreationTimpstamp.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onConsumer(streamType: string, streamName: string, consumerName: string, consumerCreationTimpstamp: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}';
+    arn = arn.replace('${StreamType}', streamType);
+    arn = arn.replace('${StreamName}', streamName);
+    arn = arn.replace('${ConsumerName}', consumerName);
+    arn = arn.replace('${ConsumerCreationTimpstamp}', consumerCreationTimpstamp);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }
