@@ -28,6 +28,7 @@ AWS [IAM policy statement][statement] generator.
 * [But I don't use CDK. Can I still use this package?](#ButIdontuseCDK.CanIstillusethispackage)
 * [Roadmap](#Roadmap)
 * [Floyd?](#Floyd)
+* [Similar projects](#Similarprojects)
 * [Legal](#Legal)
 
 <!-- vscode-markdown-toc-config
@@ -375,6 +376,12 @@ George Floyd has been murdered by racist police officers on May 25th, 2020.
 This package is not named after him to just remind you of him and his death. I want this package to be of great help to you and I want you to use it on a daily base. Every time you use it, I want you to remember our society is ill and needs change. The riots will stop. The news will fade. The issue persists!
 
 If this statement annoys you, this package is not for you.
+
+## <a name='Similarprojects'></a>Similar projects
+
+* [cdk-iam-actions](https://github.com/spacerat/cdk-iam-actions)
+* [cdk-iam-generator](https://github.com/srihariph/cdk-iam-generator)
+* [iam-policy-generator](https://github.com/aletheia/iam-policy-generator)
 
 ## <a name='Legal'></a>Legal
 
