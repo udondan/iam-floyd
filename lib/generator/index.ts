@@ -47,25 +47,27 @@ export interface ResourceTypeOnAction {
 
 export function getAwsServices(): Promise<string[]> {
   return new Promise((resolve, reject) => {
-    request(
-      'https://github.com/awsdocs/iam-user-guide/tree/master/doc_source',
-      function (err: any, _: request.Response, body: any) {
-        if (err) {
-          return reject(err);
-        }
-
-        const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
-        var match: RegExpExecArray;
-        const services: string[] = [];
-        do {
-          match = re.exec(body);
-          if (match) {
-            services.push(match[1]);
-          }
-        } while (match);
-        resolve(services.sort()); // shortcut helper for testing: .slice(0, 3)
+    const url =
+      'https://github.com/awsdocs/iam-user-guide/tree/master/doc_source';
+    request(url, function (err: any, _: request.Response, body: any) {
+      if (err) {
+        return reject(err);
       }
-    );
+
+      const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
+      var match: RegExpExecArray;
+      const services: string[] = [];
+      do {
+        match = re.exec(body);
+        if (match) {
+          services.push(match[1]);
+        }
+      } while (match);
+      if (!services.length) {
+        return reject(`Unable to find services on ${url}`);
+      }
+      resolve(services.sort()); // shortcut helper for testing: .slice(0, 3)
+    });
   });
 }
 
