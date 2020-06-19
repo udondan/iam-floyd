@@ -1,5 +1,5 @@
 /**
- * Modifiers can be used to extend the functionality any `Operator`, except the `null` operator
+ * Modifiers can be used to extend the functionality of any `Operator`, except the `null` operator
  */
 
 export enum OperatorModifier {
