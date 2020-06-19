@@ -277,7 +277,7 @@ export function createIndex() {
   const sourceFile = project.createSourceFile('./lib/index.ts');
 
   sourceFile.addExportDeclaration({
-    namedExports: ['AccessLevel', 'All'],
+    namedExports: ['AccessLevel', 'All', 'Operator', 'OperatorModifier'],
     moduleSpecifier: './shared',
   });
 

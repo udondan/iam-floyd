@@ -1,4 +1,4 @@
-export { AccessLevel, All } from "./shared";
+export { AccessLevel, All, Operator, OperatorModifier } from "./shared";
 export { A4b } from "./alexaforbusiness";
 export { ExecuteApi } from "./amazonapigateway";
 export { Appflow } from "./amazonappflow";
