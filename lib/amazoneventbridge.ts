@@ -145,22 +145,12 @@ export class Events extends PolicyStatement {
     "ListEventBuses": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventBuses.html",
       "description": "Lists all the event buses in your account, including the default event bus, custom event buses, and partner event buses.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "event-bus": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "ListEventSources": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListEventSources.html",
       "description": "Lists the event sources shared with this account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "event-source": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "ListPartnerEventSourceAccounts": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSourceAccounts.html",
@@ -175,32 +165,17 @@ export class Events extends PolicyStatement {
     "ListPartnerEventSources": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListPartnerEventSources.html",
       "description": "Called by an AWS partner to list all the partner event sources that they have created.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "event-source": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "ListRuleNamesByTarget": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRuleNamesByTarget.html",
       "description": "Lists the names of the rules that the given target is put to.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "rule": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "ListRules": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListRules.html",
       "description": "Lists the Amazon EventBridge rules in your account.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "rule": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTagsForResource.html",
