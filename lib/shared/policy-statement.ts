@@ -44,14 +44,11 @@ export class PolicyStatement extends iam.PolicyStatement {
         for (const [name, action] of Object.entries(this.actions)) {
           if (typeof rule === 'object') {
             //assume it's a regex
-
             if ((rule as RegExp).test(name)) {
               this.add(`${this.servicePrefix}:${name}`);
             }
           } else {
             // assume it's an AccessLevel
-            //TODO: support for resource types!
-
             if ((rule as AccessLevel) == action.accessLevel) {
               this.add(`${this.servicePrefix}:${name}`);
             }
