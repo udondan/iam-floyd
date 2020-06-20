@@ -3,8 +3,19 @@
  */
 
 export enum OperatorModifier {
+  /**
+   * You can add `IfExists` to the end of any condition operator name except the `Null` condition. For example, `StringLikeIfExists`. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy. If the key is not present, evaluate the condition element as true." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`.
+   */
   IF_EXISTS = 'IfExists',
+
+  /**
+   * Tests whether the value of every member of the request set is a subset of the condition key set. The condition returns true if every key value in the request matches at least one value in the policy. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string.
+   */
   FOR_ALL_VALUES = 'ForAllValues:',
+
+  /**
+   * Tests whether at least one member of the set of request values matches at least one member of the set of condition key values. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy. For no matching key or a null dataset, the condition returns false.
+   */
   FOR_ANY_VALUES = 'ForAnyValues:',
 }
 
