@@ -1253,7 +1253,7 @@ export class Kms extends PolicyStatement {
    */
   public ifBypassPolicyLockoutSafetyCheck(value?: boolean) {
     return this.if('Bool', {
-      'kms:BypassPolicyLockoutSafetyCheck': value || true,
+      'kms:BypassPolicyLockoutSafetyCheck': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -1378,7 +1378,7 @@ export class Kms extends PolicyStatement {
    */
   public ifGrantIsForAWSResource(value?: boolean) {
     return this.if('Bool', {
-      'kms:GrantIsForAWSResource': value || true,
+      'kms:GrantIsForAWSResource': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -1447,7 +1447,7 @@ export class Kms extends PolicyStatement {
    */
   public ifReEncryptOnSameKey(value?: boolean) {
     return this.if('Bool', {
-      'kms:ReEncryptOnSameKey': value || true,
+      'kms:ReEncryptOnSameKey': (typeof value !== 'undefined' ? value : true),
     });
   }
 

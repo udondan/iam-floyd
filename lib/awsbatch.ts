@@ -384,7 +384,7 @@ export class Batch extends PolicyStatement {
    */
   public ifPrivileged(value?: boolean) {
     return this.if('Bool', {
-      'batch:Privileged': value || true,
+      'batch:Privileged': (typeof value !== 'undefined' ? value : true),
     });
   }
 

@@ -634,7 +634,7 @@ export class Ram extends PolicyStatement {
    */
   public ifAllowsExternalPrincipals(value?: boolean) {
     return this.if('Bool', {
-      'ram:AllowsExternalPrincipals': value || true,
+      'ram:AllowsExternalPrincipals': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -675,7 +675,7 @@ export class Ram extends PolicyStatement {
    */
   public ifRequestedAllowsExternalPrincipals(value?: boolean) {
     return this.if('Bool', {
-      'ram:RequestedAllowsExternalPrincipals': value || true,
+      'ram:RequestedAllowsExternalPrincipals': (typeof value !== 'undefined' ? value : true),
     });
   }
 

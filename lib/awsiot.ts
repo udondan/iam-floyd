@@ -5184,7 +5184,7 @@ export class Iot extends PolicyStatement {
    */
   public ifDelete(value?: boolean) {
     return this.if('Bool', {
-      'iot:Delete': value || true,
+      'iot:Delete': (typeof value !== 'undefined' ? value : true),
     });
   }
 

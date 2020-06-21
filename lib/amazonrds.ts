@@ -3532,7 +3532,7 @@ export class Rds extends PolicyStatement {
    */
   public ifMultiAz(value?: boolean) {
     return this.if('Bool', {
-      'rds:MultiAz': value || true,
+      'rds:MultiAz': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -3559,7 +3559,7 @@ export class Rds extends PolicyStatement {
    */
   public ifStorageEncrypted(value?: boolean) {
     return this.if('Bool', {
-      'rds:StorageEncrypted': value || true,
+      'rds:StorageEncrypted': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -3586,7 +3586,7 @@ export class Rds extends PolicyStatement {
    */
   public ifVpc(value?: boolean) {
     return this.if('Bool', {
-      'rds:Vpc': value || true,
+      'rds:Vpc': (typeof value !== 'undefined' ? value : true),
     });
   }
 

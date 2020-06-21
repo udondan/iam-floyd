@@ -1431,7 +1431,7 @@ export class Autoscaling extends PolicyStatement {
    */
   public ifLaunchTemplateVersionSpecified(value?: boolean) {
     return this.if('Bool', {
-      'autoscaling:LaunchTemplateVersionSpecified': value || true,
+      'autoscaling:LaunchTemplateVersionSpecified': (typeof value !== 'undefined' ? value : true),
     });
   }
 

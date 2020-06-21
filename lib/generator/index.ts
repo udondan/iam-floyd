@@ -397,7 +397,7 @@ export function createModule(module: Module): Promise<void> {
 
         methodBody.push(
           `return this.if('Bool', {`,
-          `'${key}': value || true,`,
+          `'${key}': (typeof value !== 'undefined' ? value : true),`,
           `});`
         );
       } else {

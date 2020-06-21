@@ -3048,7 +3048,7 @@ export class Ssm extends PolicyStatement {
    */
   public ifSessionDocumentAccessCheck(value?: boolean) {
     return this.if('Bool', {
-      'ssm:SessionDocumentAccessCheck': value || true,
+      'ssm:SessionDocumentAccessCheck': (typeof value !== 'undefined' ? value : true),
     });
   }
 

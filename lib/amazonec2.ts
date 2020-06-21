@@ -10899,7 +10899,7 @@ export class Ec2 extends PolicyStatement {
    */
   public ifAssociatePublicIpAddress(value?: boolean) {
     return this.if('Bool', {
-      'ec2:AssociatePublicIpAddress': value || true,
+      'ec2:AssociatePublicIpAddress': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -11010,7 +11010,7 @@ export class Ec2 extends PolicyStatement {
    */
   public ifEbsOptimized(value?: boolean) {
     return this.if('Bool', {
-      'ec2:EbsOptimized': value || true,
+      'ec2:EbsOptimized': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -11037,7 +11037,7 @@ export class Ec2 extends PolicyStatement {
    */
   public ifEncrypted(value?: boolean) {
     return this.if('Bool', {
-      'ec2:Encrypted': value || true,
+      'ec2:Encrypted': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -11162,7 +11162,7 @@ export class Ec2 extends PolicyStatement {
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
     return this.if('Bool', {
-      'ec2:IsLaunchTemplateResource': value || true,
+      'ec2:IsLaunchTemplateResource': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -11455,7 +11455,7 @@ export class Ec2 extends PolicyStatement {
    */
   public ifPublic(value?: boolean) {
     return this.if('Bool', {
-      'ec2:Public': value || true,
+      'ec2:Public': (typeof value !== 'undefined' ? value : true),
     });
   }
 

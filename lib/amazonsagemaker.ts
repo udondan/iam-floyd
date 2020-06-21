@@ -4270,7 +4270,7 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifInterContainerTrafficEncryption(value?: boolean) {
     return this.if('Bool', {
-      'sagemaker:InterContainerTrafficEncryption': value || true,
+      'sagemaker:InterContainerTrafficEncryption': (typeof value !== 'undefined' ? value : true),
     });
   }
 
@@ -4311,7 +4311,7 @@ export class Sagemaker extends PolicyStatement {
    */
   public ifNetworkIsolation(value?: boolean) {
     return this.if('Bool', {
-      'sagemaker:NetworkIsolation': value || true,
+      'sagemaker:NetworkIsolation': (typeof value !== 'undefined' ? value : true),
     });
   }
 

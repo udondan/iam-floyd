@@ -556,7 +556,7 @@ export class Secretsmanager extends PolicyStatement {
    */
   public ifForceDeleteWithoutRecovery(value?: boolean) {
     return this.if('Bool', {
-      'secretsmanager:ForceDeleteWithoutRecovery': value || true,
+      'secretsmanager:ForceDeleteWithoutRecovery': (typeof value !== 'undefined' ? value : true),
     });
   }
 
