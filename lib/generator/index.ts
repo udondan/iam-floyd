@@ -326,7 +326,7 @@ export function createModule(module: Module): Promise<void> {
         methodBody.push('const props: any = {};');
       }
 
-      var methodName = `if${upperFirst(camelCase(name[1]))}`;
+      var methodName = createConditionNAme(key);
       if (name.length > 2 && !name[2].length) {
         // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
         methodName += 'Exists';
@@ -657,4 +657,23 @@ function parseConditionTable($: CheerioStatic): Conditions {
     }
   });
   return conditions;
+}
+
+export function createConditionNAme(key: string): string {
+  var methodName = 'if';
+  const split = key.split(/[:/]/);
+  // these are exceptions for the Security Token Service to:
+  // - make it clear to which provider the condition is for
+  // - avoid duplicate method names
+  if (split[0] == 'accounts.google.com') {
+    methodName += 'Google';
+  } else if (split[0] == 'cognito-identity.amazonaws.com') {
+    methodName += 'Cognito';
+  } else if (split[0] == 'www.amazon.com') {
+    methodName += 'Amazon';
+  } else if (split[0] == 'graph.facebook.com') {
+    methodName += 'Facebook';
+  }
+  methodName += upperFirst(camelCase(split[1]));
+  return methodName;
 }

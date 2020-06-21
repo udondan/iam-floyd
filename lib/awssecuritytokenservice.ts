@@ -346,7 +346,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAud(value: string | string[], operator?: string) {
+  public ifGoogleAud(value: string | string[], operator?: string) {
     const props: any = {};
     props[`accounts.google.com:aud`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -360,7 +360,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifOaud(value: string | string[], operator?: string) {
+  public ifGoogleOaud(value: string | string[], operator?: string) {
     const props: any = {};
     props[`accounts.google.com:oaud`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -374,7 +374,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifSub(value: string | string[], operator?: string) {
+  public ifGoogleSub(value: string | string[], operator?: string) {
     const props: any = {};
     props[`accounts.google.com:sub`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -388,7 +388,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAmr(value: string | string[], operator?: string) {
+  public ifCognitoAmr(value: string | string[], operator?: string) {
     const props: any = {};
     props[`cognito-identity.amazonaws.com:amr`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -402,7 +402,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAud(value: string | string[], operator?: string) {
+  public ifCognitoAud(value: string | string[], operator?: string) {
     const props: any = {};
     props[`cognito-identity.amazonaws.com:aud`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -416,7 +416,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifSub(value: string | string[], operator?: string) {
+  public ifCognitoSub(value: string | string[], operator?: string) {
     const props: any = {};
     props[`cognito-identity.amazonaws.com:sub`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -430,7 +430,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAppId(value: string | string[], operator?: string) {
+  public ifFacebookAppId(value: string | string[], operator?: string) {
     const props: any = {};
     props[`graph.facebook.com:app_id`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -444,7 +444,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifId(value: string | string[], operator?: string) {
+  public ifFacebookId(value: string | string[], operator?: string) {
     const props: any = {};
     props[`graph.facebook.com:id`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -948,7 +948,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifAppId(value: string | string[], operator?: string) {
+  public ifAmazonAppId(value: string | string[], operator?: string) {
     const props: any = {};
     props[`www.amazon.com:app_id`] = value;
     return this.if(operator || 'StringEquals', props);
@@ -962,7 +962,7 @@ export class Sts extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifUserId(value: string | string[], operator?: string) {
+  public ifAmazonUserId(value: string | string[], operator?: string) {
     const props: any = {};
     props[`www.amazon.com:user_id`] = value;
     return this.if(operator || 'StringEquals', props);
