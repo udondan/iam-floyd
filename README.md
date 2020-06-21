@@ -26,7 +26,6 @@ AWS [IAM policy statement][statement] generator.
 	* [on, on*](#onon)
 	* [not](#not)
 * [But I don't use CDK. Can I still use this package?](#ButIdontuseCDK.CanIstillusethispackage)
-* [Roadmap](#Roadmap)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -360,14 +359,6 @@ new iam.PolicyDocument({
     ],
 }).toJSON();
 ```
-
-## <a name='Roadmap'></a>Roadmap
-
-* Support for conditions (also in action methods?)
-* Support for `NotResources`
-* Compile action list down to the smallest possible pattern
-* Add useful standard conditions as methods
-* Add useful action collections based on common use cases
 
 ## <a name='Floyd'></a>Floyd?
 
