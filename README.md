@@ -22,8 +22,8 @@ AWS [IAM policy statement][statement] generator.
 	* [allow](#allow)
 	* [deny](#deny)
 	* [allActions](#allActions)
-	* [if](#if)
-	* [on, on*](#onon)
+	* [if*, if](#ifif)
+	* [on*, on](#onon)
 	* [not](#not)
 * [But I don't use CDK. Can I still use this package?](#ButIdontuseCDK.CanIstillusethispackage)
 * [Floyd?](#Floyd)
@@ -106,15 +106,35 @@ new statement.Ec2()
   .allActions();
 ```
 
+For every available condition key, there are `if*()` methods available.
 
-To add conditions to the statement you can use `if()`:
+```typescript
+new statement.Ec2()
+  .allow()
+  .startInstances()
+  .ifEncrypted()
+  .ifInstanceType(['t3.micro', 't3.nano'])
+  .ifAssociatePublicIpAddress(false)
+  .ifRequestTag('Owner', 'John')
+```
+
+Most of them allow an optional operator as last argument:
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .startInstances()
+  .ifInstanceType('*.nano', 'StringLike')
+```
+
+If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
 
 ```typescript
 new statement.Ec2()
   .allow()
   .startInstances()
   .if('StringEquals', {
-    'aws:RequestTag/Owner': '${aws:username}',
+    'aws:RequestTag/Owner': 'John',
   });
 ```
 
@@ -157,15 +177,20 @@ new statement.S3()
 ```typescript
 new iam.PolicyDocument({
   statements: [
-    new statement.Ec2().allow().startInstances().if('StringEquals', {
-      'aws:RequestTag/Owner': '${aws:username}',
-    }),
-    new statement.Ec2().allow().stopInstances().if('StringEquals', {
-      'ec2:ResourceTag/Owner': '${aws:username}',
-    }),
     new statement.Ec2()
       .allow()
-      .allActions(statement.AccessLevel.LIST, statement.AccessLevel.READ),
+      .startInstances()
+      .ifRequestTag('Owner', '${aws:username}'),
+    new statement.Ec2()
+      .allow()
+      .stopInstances()
+      .ifResourceTag('Owner', '${aws:username}'),
+    new statement.Ec2()
+      .allow()
+      .allActions(
+        statement.AccessLevel.LIST,
+        statement.AccessLevel.READ
+    ),
   ],
 });
 ```
@@ -179,9 +204,7 @@ new iam.PolicyDocument({
     new statement.All() // allow absolutely everything that is triggered via CFN
       .allow()
       .allActions()
-      .if('ForAnyValue:StringEquals', {
-        'aws:CalledVia': 'cloudformation.amazonaws.com',
-      }),
+      .ifCalledVia('cloudformation.amazonaws.com'),
     new statement.S3() // allow access to the CDK staging bucket
       .allow()
       .allActions()
@@ -259,11 +282,30 @@ There exist 5 access levels:
 * PERMISSION_MANAGEMENT
 * TAGGING
 
-### <a name='if'></a>if
+### <a name='ifif'></a>if*, if
 
-Adds a condition to the statement.
+For every available condition key, there are `if*()` methods available.
 
-This is basically the same as `addCondition()` of the original `iam.PolicyStatement`. Only difference is, it returns the statement so you can use it with method chaining.
+```typescript
+new statement.Ec2()
+  .allow()
+  .startInstances()
+  .ifEncrypted()
+  .ifInstanceType(['t3.micro', 't3.nano'])
+  .ifAssociatePublicIpAddress(false)
+  .ifRequestTag('Owner', 'John')
+```
+
+Most of them allow an optional operator as last argument:
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .startInstances()
+  .ifInstanceType('*.nano', 'StringLike')
+```
+
+If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
 
 ```typescript
 new statement.Ec2()
@@ -274,7 +316,7 @@ new statement.Ec2()
   });
 ```
 
-### <a name='onon'></a>on, on*
+### <a name='onon'></a>on*, on
 
 Limit statement to specified resources.
 
