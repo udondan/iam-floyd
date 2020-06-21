@@ -1472,7 +1472,7 @@ export class Rds extends PolicyStatement {
     },
     "cluster-endpoint": {
       "name": "cluster-endpoint",
-      "url": "{ActionsDocRoot}API_DBClusterEndpoint.html",
+      "url": "",
       "arn": "arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -3119,8 +3119,6 @@ export class Rds extends PolicyStatement {
 
   /**
    * Adds a resource of type cluster-endpoint to the statement
-   *
-   * {ActionsDocRoot}API_DBClusterEndpoint.html
    *
    * @param dbClusterEndpoint - Identifier for the dbClusterEndpoint.
    * @param account - Account of the resource; defaults to empty string: all accounts.

@@ -300,7 +300,7 @@ export class Redshift extends PolicyStatement {
       "accessLevel": "Write"
     },
     "DeleteScheduledAction": {
-      "url": "API_DeleteScheduledAction.html",
+      "url": "",
       "description": "Grants permission to delete an Amazon Redshift scheduled action",
       "accessLevel": "Write"
     },
@@ -465,7 +465,7 @@ export class Redshift extends PolicyStatement {
       "accessLevel": "Read"
     },
     "DescribeScheduledActions": {
-      "url": "API_DescribeScheduledActions.html",
+      "url": "",
       "description": "Grants permission to describe created Amazon Redshift scheduled actions",
       "accessLevel": "Read"
     },
@@ -1328,8 +1328,6 @@ export class Redshift extends PolicyStatement {
    * Grants permission to delete an Amazon Redshift scheduled action
    *
    * Access Level: Write
-   *
-   * API_DeleteScheduledAction.html
    */
   public deleteScheduledAction() {
     this.add('redshift:DeleteScheduledAction');
@@ -1664,8 +1662,6 @@ export class Redshift extends PolicyStatement {
    * Grants permission to describe created Amazon Redshift scheduled actions
    *
    * Access Level: Read
-   *
-   * API_DescribeScheduledActions.html
    */
   public describeScheduledActions() {
     this.add('redshift:DescribeScheduledActions');

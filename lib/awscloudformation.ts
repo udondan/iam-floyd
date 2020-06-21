@@ -1334,8 +1334,6 @@ export class Cloudformation extends PolicyStatement {
   /**
    * An AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete.
    *
-   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
-   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
@@ -1346,9 +1344,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * The template resource types, such as <code>AWS::EC2::Instance</code>. Use to control which resource types IAM users can work with when they want to import a resource into a stack.
-   *
-   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they want to import a resource into a stack.
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
@@ -1360,9 +1356,7 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
-   * The template resource types, such as <code>AWS::EC2::Instance</code>. Use to control which resource types IAM users can work with when they create or update a stack.
-   *
-   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they create or update a stack.
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
@@ -1376,8 +1370,6 @@ export class Cloudformation extends PolicyStatement {
   /**
    * The ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets.
    *
-   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
-   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1390,8 +1382,6 @@ export class Cloudformation extends PolicyStatement {
   /**
    * An Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action.
    *
-   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
-   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
@@ -1403,8 +1393,6 @@ export class Cloudformation extends PolicyStatement {
 
   /**
    * An Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks.
-   *
-   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`

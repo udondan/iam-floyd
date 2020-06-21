@@ -326,7 +326,7 @@ export function createModule(module: Module): Promise<void> {
         methodBody.push('const props: any = {};');
       }
 
-      var methodName = createConditionNAme(key);
+      var methodName = createConditionName(key);
       if (name.length > 2 && !name[2].length) {
         // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
         methodName += 'Exists';
@@ -552,7 +552,7 @@ function parseActionTable($: CheerioStatic): Actions {
 
       action = first.text().replace('[permission only]', '').trim();
       actions[action] = {
-        url: first.find('a[href]').attr('href')?.trim() || '',
+        url: validateUrl(first.find('a[href]').attr('href')?.trim()),
         description: cleanDescription(first.next().text().trim()),
         accessLevel: first.next().next().text().trim(),
       };
@@ -610,7 +610,7 @@ function parseResourceTypeTable(
   tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
     const tds = $(element).find('td');
     const name = tds.first().text().trim();
-    const url = tds.first().find('a[href]').attr('href')?.trim() || '';
+    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
     const arn = tds.first().next().text().trim();
     if (!name.length && !arn.length) {
       return;
@@ -643,7 +643,7 @@ function parseConditionTable($: CheerioStatic): Conditions {
   table.find('tr').each((_: number, element: CheerioElement) => {
     const tds = $(element).find('td');
     const key = tds.first().text().trim();
-    const url = tds.first().find('a[href]').attr('href')?.trim() || '';
+    const url = validateUrl(tds.first().find('a[href]').attr('href')?.trim());
     const description = cleanDescription(tds.first().next().text());
     const type = tds.first().next().next().text().trim();
 
@@ -660,7 +660,7 @@ function parseConditionTable($: CheerioStatic): Conditions {
   return conditions;
 }
 
-export function createConditionNAme(key: string): string {
+function createConditionName(key: string): string {
   var methodName = 'if';
   const split = key.split(/[:/]/);
   // these are exceptions for the Security Token Service to:
@@ -677,4 +677,19 @@ export function createConditionNAme(key: string): string {
   }
   methodName += upperFirst(camelCase(split[1]));
   return methodName;
+}
+
+function validateUrl(url: string) {
+  if (typeof url == 'undefined') {
+    return '';
+  }
+
+  try {
+    new URL(url);
+  } catch (_) {
+    console.warn(`Removed invalid URL ${url}`.red);
+    return '';
+  }
+
+  return url;
 }

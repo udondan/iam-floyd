@@ -39,7 +39,7 @@ export class CodestarConnections extends PolicyStatement {
       }
     },
     "GetIndividualAccessToken": {
-      "url": "${AuthZDocPage}#connections-permissions-actions-handshake",
+      "url": "",
       "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
       "accessLevel": "Read",
       "conditions": [
@@ -47,7 +47,7 @@ export class CodestarConnections extends PolicyStatement {
       ]
     },
     "GetInstallationUrl": {
-      "url": "${AuthZDocPage}#connections-permissions-actions-handshake",
+      "url": "",
       "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
       "accessLevel": "Read",
       "conditions": [
@@ -63,7 +63,7 @@ export class CodestarConnections extends PolicyStatement {
       ]
     },
     "ListInstallationTargets": {
-      "url": "${AuthZDocPage}#connections-permissions-actions-handshake",
+      "url": "",
       "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
       "accessLevel": "List"
     },
@@ -78,7 +78,7 @@ export class CodestarConnections extends PolicyStatement {
       }
     },
     "PassConnection": {
-      "url": "${AuthZDocPage}#connections-passconnection",
+      "url": "",
       "description": "Grants permission to pass a Connection resource to an AWS service that accepts a Connection ARN as input, such as codepipeline:CreatePipeline",
       "accessLevel": "Read",
       "resourceTypes": {
@@ -91,7 +91,7 @@ export class CodestarConnections extends PolicyStatement {
       ]
     },
     "StartOAuthHandshake": {
-      "url": "${AuthZDocPage}#connections-permissions-actions-handshake",
+      "url": "",
       "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
       "accessLevel": "Read",
       "conditions": [
@@ -127,7 +127,7 @@ export class CodestarConnections extends PolicyStatement {
       ]
     },
     "UpdateConnectionInstallation": {
-      "url": "${AuthZDocPage}#connections-permissions-actions-handshake",
+      "url": "",
       "description": "Grants permission to update a Connection resource with an installation of the CodeStar Connections App",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -140,7 +140,7 @@ export class CodestarConnections extends PolicyStatement {
       ]
     },
     "UseConnection": {
-      "url": "${AuthZDocPage}#connections-use",
+      "url": "",
       "description": "Grants permission to use a Connection resource to call provider actions",
       "accessLevel": "Read",
       "resourceTypes": {
@@ -204,8 +204,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: Read
-   *
-   * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
   public getIndividualAccessToken() {
     this.add('codestar-connections:GetIndividualAccessToken');
@@ -216,8 +214,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: Read
-   *
-   * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
   public getInstallationUrl() {
     this.add('codestar-connections:GetInstallationUrl');
@@ -240,8 +236,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: List
-   *
-   * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
   public listInstallationTargets() {
     this.add('codestar-connections:ListInstallationTargets');
@@ -264,8 +258,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to pass a Connection resource to an AWS service that accepts a Connection ARN as input, such as codepipeline:CreatePipeline
    *
    * Access Level: Read
-   *
-   * ${AuthZDocPage}#connections-passconnection
    */
   public passConnection() {
     this.add('codestar-connections:PassConnection');
@@ -276,8 +268,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: Read
-   *
-   * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
   public startOAuthHandshake() {
     this.add('codestar-connections:StartOAuthHandshake');
@@ -312,8 +302,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to update a Connection resource with an installation of the CodeStar Connections App
    *
    * Access Level: Write
-   *
-   * ${AuthZDocPage}#connections-permissions-actions-handshake
    */
   public updateConnectionInstallation() {
     this.add('codestar-connections:UpdateConnectionInstallation');
@@ -324,8 +312,6 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to use a Connection resource to call provider actions
    *
    * Access Level: Read
-   *
-   * ${AuthZDocPage}#connections-use
    */
   public useConnection() {
     this.add('codestar-connections:UseConnection');

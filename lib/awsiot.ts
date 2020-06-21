@@ -1642,7 +1642,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "TagResource": {
-      "url": "API_TagResource.html",
+      "url": "",
       "description": "Tag a specified resource",
       "accessLevel": "Tagging",
       "resourceTypes": {
@@ -1719,7 +1719,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UntagResource": {
-      "url": "API_UntagResource.html",
+      "url": "",
       "description": "Untag a specified resource",
       "accessLevel": "Tagging",
       "resourceTypes": {
@@ -1770,7 +1770,7 @@ export class Iot extends PolicyStatement {
       "accessLevel": "Write"
     },
     "UpdateAuthorizer": {
-      "url": "API_UpdateAuthorizer.html",
+      "url": "",
       "description": "Updates an authorizer",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1810,7 +1810,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UpdateDimension": {
-      "url": "API_UpdateDimension.html",
+      "url": "",
       "description": "Updates the definition for a dimension.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1860,7 +1860,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UpdateMitigationAction": {
-      "url": "API_UpdateMitigationAction.html",
+      "url": "",
       "description": "Updates the definition for the specified mitigation action.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1870,7 +1870,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UpdateProvisioningTemplate": {
-      "url": "API_UpdateProvisioningTemplate.html",
+      "url": "",
       "description": "Updates a fleet provisioning template.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1880,7 +1880,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UpdateRoleAlias": {
-      "url": "API_UpdateRoleAlias.html",
+      "url": "",
       "description": "Updates the role alias",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1893,7 +1893,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UpdateScheduledAudit": {
-      "url": "API_UpdateScheduledAudit.html",
+      "url": "",
       "description": "Updates a scheduled audit, including what checks are performed and how often the audit takes place.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1903,7 +1903,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "UpdateSecurityProfile": {
-      "url": "API_UpdateSecurityProfile.html",
+      "url": "",
       "description": "Updates a Device Defender security profile.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -1969,7 +1969,7 @@ export class Iot extends PolicyStatement {
       }
     },
     "ValidateSecurityProfileBehaviors": {
-      "url": "API_ValidateSecurityProfileBehaviors.html",
+      "url": "",
       "description": "Validates a Device Defender security profile behaviors specification.",
       "accessLevel": "Read"
     }
@@ -4353,8 +4353,6 @@ export class Iot extends PolicyStatement {
    * Tag a specified resource
    *
    * Access Level: Tagging
-   *
-   * API_TagResource.html
    */
   public tagResource() {
     this.add('iot:TagResource');
@@ -4401,8 +4399,6 @@ export class Iot extends PolicyStatement {
    * Untag a specified resource
    *
    * Access Level: Tagging
-   *
-   * API_UntagResource.html
    */
   public untagResource() {
     this.add('iot:UntagResource');
@@ -4425,8 +4421,6 @@ export class Iot extends PolicyStatement {
    * Updates an authorizer
    *
    * Access Level: Write
-   *
-   * API_UpdateAuthorizer.html
    */
   public updateAuthorizer() {
     this.add('iot:UpdateAuthorizer');
@@ -4473,8 +4467,6 @@ export class Iot extends PolicyStatement {
    * Updates the definition for a dimension.
    *
    * Access Level: Write
-   *
-   * API_UpdateDimension.html
    */
   public updateDimension() {
     this.add('iot:UpdateDimension');
@@ -4545,8 +4537,6 @@ export class Iot extends PolicyStatement {
    * Updates the definition for the specified mitigation action.
    *
    * Access Level: Write
-   *
-   * API_UpdateMitigationAction.html
    */
   public updateMitigationAction() {
     this.add('iot:UpdateMitigationAction');
@@ -4557,8 +4547,6 @@ export class Iot extends PolicyStatement {
    * Updates a fleet provisioning template.
    *
    * Access Level: Write
-   *
-   * API_UpdateProvisioningTemplate.html
    */
   public updateProvisioningTemplate() {
     this.add('iot:UpdateProvisioningTemplate');
@@ -4569,8 +4557,6 @@ export class Iot extends PolicyStatement {
    * Updates the role alias
    *
    * Access Level: Write
-   *
-   * API_UpdateRoleAlias.html
    */
   public updateRoleAlias() {
     this.add('iot:UpdateRoleAlias');
@@ -4581,8 +4567,6 @@ export class Iot extends PolicyStatement {
    * Updates a scheduled audit, including what checks are performed and how often the audit takes place.
    *
    * Access Level: Write
-   *
-   * API_UpdateScheduledAudit.html
    */
   public updateScheduledAudit() {
     this.add('iot:UpdateScheduledAudit');
@@ -4593,8 +4577,6 @@ export class Iot extends PolicyStatement {
    * Updates a Device Defender security profile.
    *
    * Access Level: Write
-   *
-   * API_UpdateSecurityProfile.html
    */
   public updateSecurityProfile() {
     this.add('iot:UpdateSecurityProfile');
@@ -4665,8 +4647,6 @@ export class Iot extends PolicyStatement {
    * Validates a Device Defender security profile behaviors specification.
    *
    * Access Level: Read
-   *
-   * API_ValidateSecurityProfileBehaviors.html
    */
   public validateSecurityProfileBehaviors() {
     this.add('iot:ValidateSecurityProfileBehaviors');

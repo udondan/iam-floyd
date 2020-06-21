@@ -64,7 +64,7 @@ export class Chime extends PolicyStatement {
       }
     },
     "BatchCreateRoomMembership": {
-      "url": "API_BatchCreateRoomMembership.html",
+      "url": "",
       "description": "Grants permission to batch add room members",
       "accessLevel": "Write"
     },
@@ -119,12 +119,12 @@ export class Chime extends PolicyStatement {
       }
     },
     "CreateBot": {
-      "url": "API_CreateBot.html",
+      "url": "",
       "description": "Grants permission to create a bot for an Amazon Chime Enterprise account",
       "accessLevel": "Write"
     },
     "CreateBotMembership": {
-      "url": "API_CreateBotMembership.html",
+      "url": "",
       "description": "Grants permission to add a bot to a chat room in your Amazon Chime Enterprise account",
       "accessLevel": "Write"
     },
@@ -153,12 +153,12 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "CreateRoom": {
-      "url": "API_CreateRoom.html",
+      "url": "",
       "description": "Grants permission to create a room",
       "accessLevel": "Write"
     },
     "CreateRoomMembership": {
-      "url": "API_CreateRoomMembership.html",
+      "url": "",
       "description": "Grants permission to add a room member",
       "accessLevel": "Write"
     },
@@ -218,7 +218,7 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "DeleteEventsConfiguration": {
-      "url": "API_DeleteEventsConfiguration.html",
+      "url": "",
       "description": "Grants permission to delete an events configuration for a bot to receive outgoing events",
       "accessLevel": "Write"
     },
@@ -248,12 +248,12 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "DeleteRoom": {
-      "url": "API_DeleteRoom.html",
+      "url": "",
       "description": "Grants permission to delete a room",
       "accessLevel": "Write"
     },
     "DeleteRoomMembership": {
-      "url": "API_DeleteRoomMembership.html",
+      "url": "",
       "description": "Grants permission to remove a room member",
       "accessLevel": "Write"
     },
@@ -348,7 +348,7 @@ export class Chime extends PolicyStatement {
       }
     },
     "GetBot": {
-      "url": "API_GetBot.html",
+      "url": "",
       "description": "Grants permission to retrieve details for the specified bot",
       "accessLevel": "Read"
     },
@@ -363,7 +363,7 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Read"
     },
     "GetEventsConfiguration": {
-      "url": "API_GetEventsConfiguration.html",
+      "url": "",
       "description": "Grants permission to retrieve details for an events configuration for a bot to receive outgoing events",
       "accessLevel": "Read"
     },
@@ -408,12 +408,12 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Read"
     },
     "GetRetentionSettings": {
-      "url": "API_GetRetentionSettings.html",
+      "url": "",
       "description": "Gets the retention settings for the specified Amazon Chime account.",
       "accessLevel": "Read"
     },
     "GetRoom": {
-      "url": "API_GetRoom.html",
+      "url": "",
       "description": "Grants permission to retrieve a room",
       "accessLevel": "Read"
     },
@@ -533,7 +533,7 @@ export class Chime extends PolicyStatement {
       }
     },
     "ListBots": {
-      "url": "API_ListBots.html",
+      "url": "",
       "description": "Grants permission to list the bots associated with the administrator's Amazon Chime Enterprise account",
       "accessLevel": "List"
     },
@@ -608,12 +608,12 @@ export class Chime extends PolicyStatement {
       "accessLevel": "List"
     },
     "ListRoomMemberships": {
-      "url": "API_ListRoomMemberships.html",
+      "url": "",
       "description": "Grants permission to list all room members",
       "accessLevel": "Read"
     },
     "ListRooms": {
-      "url": "API_ListRooms.html",
+      "url": "",
       "description": "Grants permission to list rooms",
       "accessLevel": "Read"
     },
@@ -653,12 +653,12 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "PutEventsConfiguration": {
-      "url": "API_PutEventsConfiguration.html",
+      "url": "",
       "description": "Grants permission to update details for an events configuration for a bot to receive outgoing events",
       "accessLevel": "Write"
     },
     "PutRetentionSettings": {
-      "url": "API_PutRetentionSettings.html",
+      "url": "",
       "description": "Puts retention settings for the specified Amazon Chime account",
       "accessLevel": "Write"
     },
@@ -693,17 +693,17 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "RedactConversationMessage": {
-      "url": "API_RedactConversationMessage.html",
+      "url": "",
       "description": "Redacts the specified Chime conversation Message",
       "accessLevel": "Write"
     },
     "RedactRoomMessage": {
-      "url": "API_RedactRoomMessage.html",
+      "url": "",
       "description": "Redacts the specified Chime room Message",
       "accessLevel": "Write"
     },
     "RegenerateSecurityToken": {
-      "url": "API_RegenerateSecurityToken.html",
+      "url": "",
       "description": "Grants permission to regenerate the security token for the specified bot",
       "accessLevel": "Write"
     },
@@ -853,7 +853,7 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "UpdateBot": {
-      "url": "API_UpdateBot.html",
+      "url": "",
       "description": "Grants permission to update the status of the specified bot",
       "accessLevel": "Write"
     },
@@ -883,12 +883,12 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Write"
     },
     "UpdateRoom": {
-      "url": "API_UpdateRoom.html",
+      "url": "",
       "description": "Grants permission to update a room",
       "accessLevel": "Write"
     },
     "UpdateRoomMembership": {
-      "url": "API_UpdateRoomMembership.html",
+      "url": "",
       "description": "Grants permission to update room membership role",
       "accessLevel": "Write"
     },
@@ -1063,8 +1063,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to batch add room members
    *
    * Access Level: Write
-   *
-   * API_BatchCreateRoomMembership.html
    */
   public batchCreateRoomMembership() {
     this.add('chime:BatchCreateRoomMembership');
@@ -1183,8 +1181,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a bot for an Amazon Chime Enterprise account
    *
    * Access Level: Write
-   *
-   * API_CreateBot.html
    */
   public createBot() {
     this.add('chime:CreateBot');
@@ -1195,8 +1191,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to add a bot to a chat room in your Amazon Chime Enterprise account
    *
    * Access Level: Write
-   *
-   * API_CreateBotMembership.html
    */
   public createBotMembership() {
     this.add('chime:CreateBotMembership');
@@ -1255,8 +1249,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a room
    *
    * Access Level: Write
-   *
-   * API_CreateRoom.html
    */
   public createRoom() {
     this.add('chime:CreateRoom');
@@ -1267,8 +1259,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to add a room member
    *
    * Access Level: Write
-   *
-   * API_CreateRoomMembership.html
    */
   public createRoomMembership() {
     this.add('chime:CreateRoomMembership');
@@ -1399,8 +1389,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to delete an events configuration for a bot to receive outgoing events
    *
    * Access Level: Write
-   *
-   * API_DeleteEventsConfiguration.html
    */
   public deleteEventsConfiguration() {
     this.add('chime:DeleteEventsConfiguration');
@@ -1459,8 +1447,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to delete a room
    *
    * Access Level: Write
-   *
-   * API_DeleteRoom.html
    */
   public deleteRoom() {
     this.add('chime:DeleteRoom');
@@ -1471,8 +1457,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to remove a room member
    *
    * Access Level: Write
-   *
-   * API_DeleteRoomMembership.html
    */
   public deleteRoomMembership() {
     this.add('chime:DeleteRoomMembership');
@@ -1687,8 +1671,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to retrieve details for the specified bot
    *
    * Access Level: Read
-   *
-   * API_GetBot.html
    */
   public getBot() {
     this.add('chime:GetBot');
@@ -1723,8 +1705,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to retrieve details for an events configuration for a bot to receive outgoing events
    *
    * Access Level: Read
-   *
-   * API_GetEventsConfiguration.html
    */
   public getEventsConfiguration() {
     this.add('chime:GetEventsConfiguration');
@@ -1819,8 +1799,6 @@ export class Chime extends PolicyStatement {
    * Gets the retention settings for the specified Amazon Chime account.
    *
    * Access Level: Read
-   *
-   * API_GetRetentionSettings.html
    */
   public getRetentionSettings() {
     this.add('chime:GetRetentionSettings');
@@ -1831,8 +1809,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to retrieve a room
    *
    * Access Level: Read
-   *
-   * API_GetRoom.html
    */
   public getRoom() {
     this.add('chime:GetRoom');
@@ -2093,8 +2069,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to list the bots associated with the administrator's Amazon Chime Enterprise account
    *
    * Access Level: List
-   *
-   * API_ListBots.html
    */
   public listBots() {
     this.add('chime:ListBots');
@@ -2261,8 +2235,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to list all room members
    *
    * Access Level: Read
-   *
-   * API_ListRoomMemberships.html
    */
   public listRoomMemberships() {
     this.add('chime:ListRoomMemberships');
@@ -2273,8 +2245,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to list rooms
    *
    * Access Level: Read
-   *
-   * API_ListRooms.html
    */
   public listRooms() {
     this.add('chime:ListRooms');
@@ -2357,8 +2327,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to update details for an events configuration for a bot to receive outgoing events
    *
    * Access Level: Write
-   *
-   * API_PutEventsConfiguration.html
    */
   public putEventsConfiguration() {
     this.add('chime:PutEventsConfiguration');
@@ -2369,8 +2337,6 @@ export class Chime extends PolicyStatement {
    * Puts retention settings for the specified Amazon Chime account
    *
    * Access Level: Write
-   *
-   * API_PutRetentionSettings.html
    */
   public putRetentionSettings() {
     this.add('chime:PutRetentionSettings');
@@ -2453,8 +2419,6 @@ export class Chime extends PolicyStatement {
    * Redacts the specified Chime conversation Message
    *
    * Access Level: Write
-   *
-   * API_RedactConversationMessage.html
    */
   public redactConversationMessage() {
     this.add('chime:RedactConversationMessage');
@@ -2465,8 +2429,6 @@ export class Chime extends PolicyStatement {
    * Redacts the specified Chime room Message
    *
    * Access Level: Write
-   *
-   * API_RedactRoomMessage.html
    */
   public redactRoomMessage() {
     this.add('chime:RedactRoomMessage');
@@ -2477,8 +2439,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to regenerate the security token for the specified bot
    *
    * Access Level: Write
-   *
-   * API_RegenerateSecurityToken.html
    */
   public regenerateSecurityToken() {
     this.add('chime:RegenerateSecurityToken');
@@ -2741,8 +2701,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to update the status of the specified bot
    *
    * Access Level: Write
-   *
-   * API_UpdateBot.html
    */
   public updateBot() {
     this.add('chime:UpdateBot');
@@ -2813,8 +2771,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to update a room
    *
    * Access Level: Write
-   *
-   * API_UpdateRoom.html
    */
   public updateRoom() {
     this.add('chime:UpdateRoom');
@@ -2825,8 +2781,6 @@ export class Chime extends PolicyStatement {
    * Grants permission to update room membership role
    *
    * Access Level: Write
-   *
-   * API_UpdateRoomMembership.html
    */
   public updateRoomMembership() {
     this.add('chime:UpdateRoomMembership');

@@ -9,7 +9,7 @@ export class Dataexchange extends PolicyStatement {
   public servicePrefix = 'dataexchange';
   public actions: Actions = {
     "CancelJob": {
-      "url": "${APIReferenceDocPage}/v1-jobs.html#CancelJob",
+      "url": "",
       "description": "Grants permissions to cancel a job.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -19,7 +19,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "CreateAsset": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#CreateAsset",
+      "url": "",
       "description": "Grants permission to create an asset (for example, in a Job).",
       "accessLevel": "Write",
       "conditions": [
@@ -29,7 +29,7 @@ export class Dataexchange extends PolicyStatement {
       ]
     },
     "CreateDataSet": {
-      "url": "${APIReferenceDocPage}/v1-data-sets.html#CreateDataSet",
+      "url": "",
       "description": "Grants permission to create a data set.",
       "accessLevel": "Write",
       "conditions": [
@@ -39,7 +39,7 @@ export class Dataexchange extends PolicyStatement {
       ]
     },
     "CreateJob": {
-      "url": "${APIReferenceDocPage}/v1-jobs.html#CreateJob",
+      "url": "",
       "description": "Grants permissions to create a job to import or export assets.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -49,7 +49,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "CreateRevision": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#CreateRevision",
+      "url": "",
       "description": "Grants permission to create a revision.",
       "accessLevel": "Write",
       "conditions": [
@@ -59,7 +59,7 @@ export class Dataexchange extends PolicyStatement {
       ]
     },
     "DeleteAsset": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#DeleteAsset",
+      "url": "",
       "description": "Grants permissions to delete an asset.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -69,7 +69,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "DeleteDataSet": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid.html#DeleteDataSet",
+      "url": "",
       "description": "Grants permissions to delete a data set.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -79,7 +79,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "DeleteRevision": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision",
+      "url": "",
       "description": "Grants permissions to delete a revision.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -89,7 +89,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "GetAsset": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#GetAsset",
+      "url": "",
       "description": "Grants permissions to get information about an asset and to export it (for example, in a Job).",
       "accessLevel": "Read",
       "resourceTypes": {
@@ -99,7 +99,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "GetDataSet": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid.html#GetDataSet",
+      "url": "",
       "description": "Grants permission to get information about a data set.",
       "accessLevel": "Read",
       "resourceTypes": {
@@ -109,7 +109,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "GetJob": {
-      "url": "${APIReferenceDocPage}/v1-jobs.html#GetJob",
+      "url": "",
       "description": "Grants permissions to get information about a job.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -119,7 +119,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "GetRevision": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#GetRevision",
+      "url": "",
       "description": "Grants permission to get information about a revision.",
       "accessLevel": "Read",
       "resourceTypes": {
@@ -129,7 +129,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "ListDataSetRevisions": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#ListDataSetRevisions",
+      "url": "",
       "description": "Grants permissions to list the revisions of a data set.",
       "accessLevel": "List",
       "resourceTypes": {
@@ -139,7 +139,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "ListDataSets": {
-      "url": "${APIReferenceDocPage}/v1-data-sets.html#ListDataSets",
+      "url": "",
       "description": "Grants permission to list data sets for the account.",
       "accessLevel": "List",
       "resourceTypes": {
@@ -149,7 +149,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "ListJobs": {
-      "url": "${APIReferenceDocPage}/v1-jobs.html#ListJobs",
+      "url": "",
       "description": "Grants permissions to list jobs for the account.",
       "accessLevel": "List",
       "resourceTypes": {
@@ -159,7 +159,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "ListRevisionAssets": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets.html#ListRevisionAssets",
+      "url": "",
       "description": "Grants permissions to get list the assets of a revision.",
       "accessLevel": "List",
       "resourceTypes": {
@@ -169,7 +169,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "ListTagsForResource": {
-      "url": "${APIReferenceDocPage}/tags-resource-arn.html#ListTagsForResource",
+      "url": "",
       "description": "Grants permission to list the tags that you associated with the specified resource.",
       "accessLevel": "Read",
       "resourceTypes": {
@@ -182,7 +182,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "StartJob": {
-      "url": "${APIReferenceDocPage}/v1-jobs.html#StartJob",
+      "url": "",
       "description": "Grants permissions to start a job.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -192,7 +192,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "TagResource": {
-      "url": "${APIReferenceDocPage}/tags-resource-arn.html#TagResource",
+      "url": "",
       "description": "Grants permission to add one or more tags to a specified resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
@@ -209,7 +209,7 @@ export class Dataexchange extends PolicyStatement {
       ]
     },
     "UntagResource": {
-      "url": "${APIReferenceDocPage}/tags-resource-arn.html#UntagResource",
+      "url": "",
       "description": "Grants permission to remove one or more tags from a specified resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
@@ -225,7 +225,7 @@ export class Dataexchange extends PolicyStatement {
       ]
     },
     "UpdateAsset": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#UpdateAsset",
+      "url": "",
       "description": "Grants permissions to get update information about an asset.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -235,7 +235,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "UpdateDataSet": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid.html#UpdateDataSet",
+      "url": "",
       "description": "Grants permissions to update information about a data set.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -245,7 +245,7 @@ export class Dataexchange extends PolicyStatement {
       }
     },
     "UpdateRevision": {
-      "url": "${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#UpdateRevision",
+      "url": "",
       "description": "Grants permissions to update information about a revision.",
       "accessLevel": "Write",
       "resourceTypes": {
@@ -288,8 +288,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to cancel a job.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-jobs.html#CancelJob
    */
   public cancelJob() {
     this.add('dataexchange:CancelJob');
@@ -300,8 +298,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create an asset (for example, in a Job).
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#CreateAsset
    */
   public createAsset() {
     this.add('dataexchange:CreateAsset');
@@ -312,8 +308,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create a data set.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets.html#CreateDataSet
    */
   public createDataSet() {
     this.add('dataexchange:CreateDataSet');
@@ -324,8 +318,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to create a job to import or export assets.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-jobs.html#CreateJob
    */
   public createJob() {
     this.add('dataexchange:CreateJob');
@@ -336,8 +328,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create a revision.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#CreateRevision
    */
   public createRevision() {
     this.add('dataexchange:CreateRevision');
@@ -348,8 +338,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to delete an asset.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#DeleteAsset
    */
   public deleteAsset() {
     this.add('dataexchange:DeleteAsset');
@@ -360,8 +348,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to delete a data set.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid.html#DeleteDataSet
    */
   public deleteDataSet() {
     this.add('dataexchange:DeleteDataSet');
@@ -372,8 +358,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to delete a revision.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#DeleteRevision
    */
   public deleteRevision() {
     this.add('dataexchange:DeleteRevision');
@@ -384,8 +368,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to get information about an asset and to export it (for example, in a Job).
    *
    * Access Level: Read
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#GetAsset
    */
   public getAsset() {
     this.add('dataexchange:GetAsset');
@@ -396,8 +378,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to get information about a data set.
    *
    * Access Level: Read
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid.html#GetDataSet
    */
   public getDataSet() {
     this.add('dataexchange:GetDataSet');
@@ -408,8 +388,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to get information about a job.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-jobs.html#GetJob
    */
   public getJob() {
     this.add('dataexchange:GetJob');
@@ -420,8 +398,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to get information about a revision.
    *
    * Access Level: Read
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#GetRevision
    */
   public getRevision() {
     this.add('dataexchange:GetRevision');
@@ -432,8 +408,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to list the revisions of a data set.
    *
    * Access Level: List
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions.html#ListDataSetRevisions
    */
   public listDataSetRevisions() {
     this.add('dataexchange:ListDataSetRevisions');
@@ -444,8 +418,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to list data sets for the account.
    *
    * Access Level: List
-   *
-   * ${APIReferenceDocPage}/v1-data-sets.html#ListDataSets
    */
   public listDataSets() {
     this.add('dataexchange:ListDataSets');
@@ -456,8 +428,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to list jobs for the account.
    *
    * Access Level: List
-   *
-   * ${APIReferenceDocPage}/v1-jobs.html#ListJobs
    */
   public listJobs() {
     this.add('dataexchange:ListJobs');
@@ -468,8 +438,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to get list the assets of a revision.
    *
    * Access Level: List
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets.html#ListRevisionAssets
    */
   public listRevisionAssets() {
     this.add('dataexchange:ListRevisionAssets');
@@ -480,8 +448,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to list the tags that you associated with the specified resource.
    *
    * Access Level: Read
-   *
-   * ${APIReferenceDocPage}/tags-resource-arn.html#ListTagsForResource
    */
   public listTagsForResource() {
     this.add('dataexchange:ListTagsForResource');
@@ -492,8 +458,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to start a job.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-jobs.html#StartJob
    */
   public startJob() {
     this.add('dataexchange:StartJob');
@@ -504,8 +468,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to add one or more tags to a specified resource.
    *
    * Access Level: Tagging
-   *
-   * ${APIReferenceDocPage}/tags-resource-arn.html#TagResource
    */
   public tagResource() {
     this.add('dataexchange:TagResource');
@@ -516,8 +478,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to remove one or more tags from a specified resource.
    *
    * Access Level: Tagging
-   *
-   * ${APIReferenceDocPage}/tags-resource-arn.html#UntagResource
    */
   public untagResource() {
     this.add('dataexchange:UntagResource');
@@ -528,8 +488,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to get update information about an asset.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid-assets-assetid.html#UpdateAsset
    */
   public updateAsset() {
     this.add('dataexchange:UpdateAsset');
@@ -540,8 +498,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to update information about a data set.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid.html#UpdateDataSet
    */
   public updateDataSet() {
     this.add('dataexchange:UpdateDataSet');
@@ -552,8 +508,6 @@ export class Dataexchange extends PolicyStatement {
    * Grants permissions to update information about a revision.
    *
    * Access Level: Write
-   *
-   * ${APIReferenceDocPage}/v1-data-sets-datasetid-revisions-revisionid.html#UpdateRevision
    */
   public updateRevision() {
     this.add('dataexchange:UpdateRevision');
