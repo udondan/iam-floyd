@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service application-autoscaling
@@ -60,6 +61,15 @@ export class ApplicationAutoscaling extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service application-autoscaling
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationautoscaling.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Deletes an Application Auto Scaling scaling policy that was previously created.

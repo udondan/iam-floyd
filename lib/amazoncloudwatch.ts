@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cloudwatch
@@ -295,6 +296,15 @@ export class Cloudwatch extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service cloudwatch
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Deletes all specified alarms. In the event of an error, no alarms are deleted

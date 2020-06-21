@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elasticloadbalancing
@@ -277,6 +278,15 @@ export class Elasticloadbalancing extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service elasticloadbalancing
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.

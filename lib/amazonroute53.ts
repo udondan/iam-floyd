@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service route53
@@ -530,6 +531,15 @@ export class Route53 extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service route53
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate an additional Amazon VPC with a private hosted zone

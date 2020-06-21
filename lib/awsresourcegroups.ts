@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service resource-groups
@@ -145,6 +146,15 @@ export class ResourceGroups extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service resource-groups
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourcegroups.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a group with a specified name, description, and resource query.

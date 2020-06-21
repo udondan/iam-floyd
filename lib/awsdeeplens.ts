@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service deeplens
@@ -212,6 +213,15 @@ export class Deeplens extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service deeplens
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeeplens.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.

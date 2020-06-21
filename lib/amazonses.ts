@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ses
@@ -467,6 +468,15 @@ export class Ses extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service ses
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonses.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a receipt rule set by cloning an existing one

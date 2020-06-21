@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service aws-portal
@@ -45,6 +46,15 @@ export class AwsPortal extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service aws-portal
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbilling.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Allow or deny IAM users permission to modify Account Settings.

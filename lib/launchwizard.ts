@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service launchwizard
@@ -50,6 +51,15 @@ export class Launchwizard extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service launchwizard
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_launchwizard.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Delete an application

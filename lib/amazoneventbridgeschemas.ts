@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service schemas
@@ -355,6 +356,15 @@ export class Schemas extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service schemas
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents

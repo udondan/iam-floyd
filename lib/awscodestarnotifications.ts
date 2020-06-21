@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codestar-notifications
@@ -185,6 +186,15 @@ export class CodestarNotifications extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service codestar-notifications
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a notification rule for a resource

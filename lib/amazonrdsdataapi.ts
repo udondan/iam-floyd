@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service rds-data
@@ -40,6 +41,15 @@ export class RdsData extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service rds-data
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Runs a batch SQL statement over an array of data.

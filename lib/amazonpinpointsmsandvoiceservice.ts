@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sms-voice
@@ -50,6 +51,15 @@ export class SmsVoice extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service sms-voice
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointsmsandvoiceservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Create a new configuration set. After you create the configuration set, you can add one or more event destinations to it.

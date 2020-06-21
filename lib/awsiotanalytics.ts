@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iotanalytics
@@ -397,6 +398,15 @@ export class Iotanalytics extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service iotanalytics
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Puts a batch of messages into the specified channel.

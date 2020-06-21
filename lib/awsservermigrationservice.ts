@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sms
@@ -160,6 +161,15 @@ export class Sms extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service sms
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservermigrationservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Create an application configuration to migrate on-premise application onto AWS..

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service execute-api
@@ -47,6 +48,15 @@ export class ExecuteApi extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service execute-api
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Used to invalidate API cache upon a client request

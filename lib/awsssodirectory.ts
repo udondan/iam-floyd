@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sso-directory
@@ -195,6 +196,15 @@ export class SsoDirectory extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service sso-directory
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsssodirectory.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds member to the group in the directory that AWS SSO provides by default

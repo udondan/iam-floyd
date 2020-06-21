@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service acm-pca
@@ -223,6 +224,15 @@ export class AcmPca extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service acm-pca
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanagerprivatecertificateauthority.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an ACM Private CA and its associated private key and configuration.

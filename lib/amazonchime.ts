@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service chime
@@ -938,6 +939,15 @@ export class Chime extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service chime
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonchime.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to accept the delegate invitation to share management of an Amazon Chime account with another AWS Account

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service qldb
@@ -258,6 +259,15 @@ export class Qldb extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service qldb
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to cancel a journal kinesis stream

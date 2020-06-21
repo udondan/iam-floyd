@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codedeploy
@@ -469,6 +470,15 @@ export class Codedeploy extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service codedeploy
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Add tags to one or more on-premises instances.

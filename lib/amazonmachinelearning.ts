@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service machinelearning
@@ -337,6 +338,15 @@ export class Machinelearning extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service machinelearning
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value

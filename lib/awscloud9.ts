@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cloud9
@@ -176,6 +177,15 @@ export class Cloud9 extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service cloud9
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance.

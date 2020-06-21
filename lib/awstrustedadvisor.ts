@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service trustedadvisor
@@ -107,6 +108,15 @@ export class Trustedadvisor extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service trustedadvisor
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * View support plan and various TA preferences.

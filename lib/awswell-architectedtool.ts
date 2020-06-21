@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service wellarchitected
@@ -57,6 +58,15 @@ export class Wellarchitected extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service wellarchitected
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a new workload.

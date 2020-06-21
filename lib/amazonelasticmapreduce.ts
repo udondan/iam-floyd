@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elasticmapreduce
@@ -379,6 +380,15 @@ export class Elasticmapreduce extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service elasticmapreduce
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticmapreduce.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to add an instance fleet to a running cluster.

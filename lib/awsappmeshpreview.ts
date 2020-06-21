@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service appmesh-preview
@@ -317,6 +318,15 @@ export class AppmeshPreview extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service appmesh-preview
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappmeshpreview.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a service mesh.

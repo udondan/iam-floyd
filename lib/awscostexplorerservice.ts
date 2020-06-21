@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ce
@@ -105,6 +106,15 @@ export class Ce extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service ce
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostexplorerservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a new Cost Category with the requested name and rules.

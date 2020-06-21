@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service storagegateway
@@ -828,6 +829,15 @@ export class Storagegateway extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service storagegateway
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonstoragegateway.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * This operation activates the gateway you previously deployed on your host.

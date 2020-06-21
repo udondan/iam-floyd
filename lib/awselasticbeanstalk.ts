@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elasticbeanstalk
@@ -711,6 +712,15 @@ export class Elasticbeanstalk extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service elasticbeanstalk
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselasticbeanstalk.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to cancel in-progress environment configuration update or application version deployment.

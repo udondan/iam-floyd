@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service appflow
@@ -165,6 +166,15 @@ export class Appflow extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service appflow
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappflow.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a login profile to be used with AppFlow flows

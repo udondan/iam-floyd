@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ds
@@ -623,6 +624,15 @@ export class Ds extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service ds
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectoryservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Accepts a directory sharing request that was sent from the directory owner account.

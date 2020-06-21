@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service aws-marketplace-entitlement-service
@@ -15,6 +16,15 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service aws-marketplace-entitlement-service
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions

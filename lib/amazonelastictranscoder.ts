@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elastictranscoder
@@ -182,6 +183,15 @@ export class Elastictranscoder extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service elastictranscoder
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelastictranscoder.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Cancel a job that Elastic Transcoder has not begun to process

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service servicediscovery
@@ -229,6 +230,15 @@ export class Servicediscovery extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service servicediscovery
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an HTTP namespace.

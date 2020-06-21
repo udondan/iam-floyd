@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service outposts
@@ -54,6 +55,15 @@ export class Outposts extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service outposts
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an Outpost

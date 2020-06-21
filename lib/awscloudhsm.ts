@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cloudhsm
@@ -256,6 +257,15 @@ export class Cloudhsm extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service cloudhsm
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudhsm.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds or overwrites one or more tags for the specified AWS CloudHSM resource

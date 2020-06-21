@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codeguru
@@ -15,6 +16,15 @@ export class Codeguru extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service codeguru
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Gets free trial summary for the CodeGuru service which includes expiration date.

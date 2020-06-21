@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codeguru-profiler
@@ -167,6 +168,15 @@ export class CodeguruProfiler extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service codeguru-profiler
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission for an agent to register with the orchestration service and retrieve profiling configuration information

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mediapackage
@@ -171,6 +172,15 @@ export class Mediapackage extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service mediapackage
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a channel in AWS Elemental MediaPackage.

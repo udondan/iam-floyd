@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service dynamodb
@@ -558,6 +559,15 @@ export class Dynamodb extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service dynamodb
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodb.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Returns the attributes of one or more items from one or more tables

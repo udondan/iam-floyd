@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cloudformation
@@ -583,6 +584,15 @@ export class Cloudformation extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service cloudformation
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Cancels an update on the specified stack.

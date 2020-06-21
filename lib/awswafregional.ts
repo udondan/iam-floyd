@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service waf-regional
@@ -878,6 +879,15 @@ export class WafRegional extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service waf-regional
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafregional.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates a WebACL with a resource.

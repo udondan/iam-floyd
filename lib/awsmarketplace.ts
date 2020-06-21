@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service aws-marketplace
@@ -80,6 +81,15 @@ export class AwsMarketplace extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service aws-marketplace
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplace.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).

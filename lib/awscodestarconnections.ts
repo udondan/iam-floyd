@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codestar-connections
@@ -163,6 +164,15 @@ export class CodestarConnections extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service codestar-connections
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a Connection resource

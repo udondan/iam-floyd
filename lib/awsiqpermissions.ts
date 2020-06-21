@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iq-permission
@@ -15,6 +16,15 @@ export class IqPermission extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service iq-permission
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to approve an access grant

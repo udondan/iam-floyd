@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service neptune-db
@@ -27,6 +28,15 @@ export class NeptuneDb extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service neptune-db
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Connect to database

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service aws-marketplace-procurement-systems-integration
@@ -20,6 +21,15 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service aws-marketplace-procurement-systems-integration
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceprocurementsystemsintegration.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.

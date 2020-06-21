@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iam
@@ -1450,6 +1451,15 @@ export class Iam extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service iam
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_identityandaccessmanagement.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to add a new client ID (audience) to the list of registered IDs for the specified IAM OpenID Connect (OIDC) provider resource

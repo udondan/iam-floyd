@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iotevents
@@ -241,6 +242,15 @@ export class Iotevents extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service iotevents
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotevents.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Sends a set of messages to the AWS IoT Events system.

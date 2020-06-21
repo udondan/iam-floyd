@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mediatailor
@@ -81,6 +82,15 @@ export class Mediatailor extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service mediatailor
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediatailor.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Deletes the playback configuration for the specified name

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mechanicalturk
@@ -205,6 +206,15 @@ export class Mechanicalturk extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service mechanicalturk
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmechanicalturk.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * The AcceptQualificationRequest operation grants a Worker's request for a Qualification

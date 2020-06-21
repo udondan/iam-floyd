@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service freertos
@@ -98,6 +99,15 @@ export class Freertos extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service freertos
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a software configuration.

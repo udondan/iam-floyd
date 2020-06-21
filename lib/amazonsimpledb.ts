@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sdb
@@ -112,6 +113,15 @@ export class Sdb extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service sdb
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.

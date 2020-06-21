@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codecommit
@@ -888,6 +889,15 @@ export class Codecommit extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service codecommit
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodecommit.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate an approval rule template with a repository

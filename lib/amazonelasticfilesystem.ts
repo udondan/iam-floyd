@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elasticfilesystem
@@ -307,6 +308,15 @@ export class Elasticfilesystem extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service elasticfilesystem
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticfilesystem.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Starts a backup job for an existing file system.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service imagebuilder
@@ -545,6 +546,15 @@ export class Imagebuilder extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service imagebuilder
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Cancel an image creation

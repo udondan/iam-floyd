@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cloudfront
@@ -402,6 +403,15 @@ export class Cloudfront extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service cloudfront
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * This action creates a new CloudFront origin access identity (POST /2019-03-26/origin-access-identity/cloudfront).

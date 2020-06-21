@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service macie2
@@ -414,6 +415,15 @@ export class Macie2 extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service macie2
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to accept an Amazon Macie membership invitation

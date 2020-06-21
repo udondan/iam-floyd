@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service firehose
@@ -145,6 +146,15 @@ export class Firehose extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service firehose
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a delivery stream.

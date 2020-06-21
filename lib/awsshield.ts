@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service shield
@@ -133,6 +134,15 @@ export class Shield extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service shield
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsshield.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Authorizes the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs

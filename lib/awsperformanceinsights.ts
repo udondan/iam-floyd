@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service pi
@@ -37,6 +38,15 @@ export class Pi extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service pi
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * For a specific time period, retrieve the top N dimension keys for a metric.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service artifact
@@ -72,6 +73,15 @@ export class Artifact extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service artifact
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsartifact.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to accept an AWS agreement that has not yet been accepted by the customer account.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service dms
@@ -518,6 +519,15 @@ export class Dms extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service dms
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task

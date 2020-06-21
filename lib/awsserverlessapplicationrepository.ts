@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service serverlessrepo
@@ -170,6 +171,15 @@ export class Serverlessrepo extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service serverlessrepo
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an application, optionally including an AWS SAM file to create the first application version in the same call.

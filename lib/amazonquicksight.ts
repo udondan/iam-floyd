@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service quicksight
@@ -614,6 +615,15 @@ export class Quicksight extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service quicksight
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * CreateAdmin enables the user to provision Amazon QuickSight administrators, authors, and readers.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ses-pinpoint
@@ -445,6 +446,15 @@ export class SesPinpoint extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service ses-pinpoint
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Create a configuration set. Configuration sets are groups of rules that you can apply to the emails you send using Amazon Pinpoint

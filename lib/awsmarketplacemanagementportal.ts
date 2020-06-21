@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service aws-marketplace-management
@@ -35,6 +36,15 @@ export class AwsMarketplaceManagement extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service aws-marketplace-management
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.

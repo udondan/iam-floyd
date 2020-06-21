@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service organizations
@@ -534,6 +535,15 @@ export class Organizations extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service organizations
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsorganizations.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to send a response to the originator of a handshake agreeing to the action proposed by the handshake request.

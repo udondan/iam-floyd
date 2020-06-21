@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service kinesisanalytics-v2
@@ -275,6 +276,15 @@ export class KinesisanalyticsV2 extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service kinesisanalytics-v2
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalyticsv2.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds cloudwatch logging option to the application.

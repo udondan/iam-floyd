@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service applicationinsights
@@ -95,6 +96,15 @@ export class Applicationinsights extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service applicationinsights
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an application from a resource group

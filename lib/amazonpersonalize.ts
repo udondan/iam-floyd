@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service personalize
@@ -416,6 +417,15 @@ export class Personalize extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service personalize
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpersonalize.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a campaign

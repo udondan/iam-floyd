@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codepipeline
@@ -416,6 +417,15 @@ export class Codepipeline extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service codepipeline
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodepipeline.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to view information about a specified job and whether that job has been received by the job worker

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service rds
@@ -1605,6 +1606,15 @@ export class Rds extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service rds
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.

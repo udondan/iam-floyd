@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service compute-optimizer
@@ -55,6 +56,15 @@ export class ComputeOptimizer extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service compute-optimizer
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_computeoptimizer.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to view the status of recommendation export jobs.

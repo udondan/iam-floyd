@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service acm
@@ -150,6 +151,15 @@ export class Acm extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service acm
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds one or more tags to a certificate.

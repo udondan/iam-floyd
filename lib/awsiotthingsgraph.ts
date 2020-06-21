@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iotthingsgraph
@@ -307,6 +308,15 @@ export class Iotthingsgraph extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service iotthingsgraph
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotthingsgraph.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates a device with a concrete thing that is in the user's registry. A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.

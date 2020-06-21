@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service groundtruthlabeling
@@ -30,6 +31,15 @@ export class Groundtruthlabeling extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service groundtruthlabeling
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongroundtruthlabeling.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Get status of GroundTruthLabeling Jobs.

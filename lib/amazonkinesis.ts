@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service kinesis
@@ -260,6 +261,15 @@ export class Kinesis extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service kinesis
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags.

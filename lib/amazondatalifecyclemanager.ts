@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service dlm
@@ -93,6 +94,15 @@ export class Dlm extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service dlm
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies.

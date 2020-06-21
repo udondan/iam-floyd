@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service globalaccelerator
@@ -261,6 +262,15 @@ export class Globalaccelerator extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service globalaccelerator
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglobalaccelerator.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).

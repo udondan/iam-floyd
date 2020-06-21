@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mgh
@@ -178,6 +179,15 @@ export class Mgh extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service mgh
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmigrationhub.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associate a given AWS artifact to a MigrationTask

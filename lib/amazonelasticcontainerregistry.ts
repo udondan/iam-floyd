@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ecr
@@ -313,6 +314,15 @@ export class Ecr extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service ecr
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to check the availability of multiple image layers in a specified registry and repository

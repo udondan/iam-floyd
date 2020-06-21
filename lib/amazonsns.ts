@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sns
@@ -254,6 +255,15 @@ export class Sns extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service sns
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsns.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.

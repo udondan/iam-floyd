@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service textract
@@ -40,6 +41,15 @@ export class Textract extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service textract
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontextract.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Detects instances of real-world document entities within an image provided as input.

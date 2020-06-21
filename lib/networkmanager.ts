@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service networkmanager
@@ -438,6 +439,15 @@ export class Networkmanager extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service networkmanager
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate a customer gateway to a device

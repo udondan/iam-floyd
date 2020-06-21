@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service fsx
@@ -210,6 +211,15 @@ export class Fsx extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service fsx
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfsx.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * This action cancels a data repository task

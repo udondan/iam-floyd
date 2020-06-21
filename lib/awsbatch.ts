@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service batch
@@ -126,6 +127,15 @@ export class Batch extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service batch
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Cancels jobs in an AWS Batch job queue.

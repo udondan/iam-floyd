@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sts
@@ -176,6 +177,15 @@ export class Sts extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service sts
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecuritytokenservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to

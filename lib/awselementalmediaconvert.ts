@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mediaconvert
@@ -309,6 +310,15 @@ export class Mediaconvert extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service mediaconvert
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconvert.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.

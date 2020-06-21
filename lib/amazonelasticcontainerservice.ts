@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ecs
@@ -587,6 +588,15 @@ export class Ecs extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service ecs
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a new Amazon ECS cluster.

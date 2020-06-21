@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elasticache
@@ -220,6 +221,15 @@ export class Elasticache extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service elasticache
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * The AddTagsToResource action adds up to 10 cost allocation tags to the named resource.

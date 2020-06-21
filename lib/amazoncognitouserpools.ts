@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cognito-idp
@@ -900,6 +901,15 @@ export class CognitoIdp extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service cognito-idp
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitouserpools.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds additional user attributes to the user pool schema.

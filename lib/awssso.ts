@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service sso
@@ -280,6 +281,15 @@ export class Sso extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service sso
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssso.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Connect a directory to be used by AWS Single Sign-On

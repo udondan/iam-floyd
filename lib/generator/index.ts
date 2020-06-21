@@ -188,10 +188,16 @@ export function createModule(module: Module): Promise<void> {
   modules.push(module);
 
   const sourceFile = project.createSourceFile(`./lib/${module.filename}.ts`);
+  const description = `\nAction provider for service ${module.name}\n\n${module.url}`;
 
   sourceFile.addImportDeclaration({
     namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
     moduleSpecifier: './shared',
+  });
+
+  sourceFile.addImportDeclaration({
+    namedImports: ['PolicyStatementProps'],
+    moduleSpecifier: '@aws-cdk/aws-iam',
   });
 
   const classDeclaration = sourceFile.addClass({
@@ -201,7 +207,7 @@ export function createModule(module: Module): Promise<void> {
   });
 
   classDeclaration.addJsDoc({
-    description: `\nAction provider for service ${module.name}\n\n${module.url}`,
+    description: description,
   });
 
   classDeclaration.addProperty({
@@ -222,6 +228,17 @@ export function createModule(module: Module): Promise<void> {
     scope: Scope.Public,
     type: 'ResourceTypes',
     initializer: JSON.stringify(module.resourceTypes, null, 2),
+  });
+
+  const constructor = classDeclaration.addConstructor({});
+  constructor.addParameter({
+    name: 'props',
+    type: 'PolicyStatementProps',
+    hasQuestionToken: true,
+  });
+  constructor.setBodyText('super(props);');
+  constructor.addJsDoc({
+    description: description,
   });
 
   for (const [name, action] of Object.entries(module.actions!)) {

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service comprehendmedical
@@ -20,6 +21,15 @@ export class Comprehendmedical extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service comprehendmedical
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Inspects the specified text for the specified type of entities and returns information about them.

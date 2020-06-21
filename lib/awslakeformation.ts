@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service lakeformation
@@ -80,6 +81,15 @@ export class Lakeformation extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service lakeformation
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslakeformation.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants data lake permissions to one or more principals in a batch.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service purchase-orders
@@ -20,6 +21,15 @@ export class PurchaseOrders extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service purchase-orders
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Modify purchase orders and details

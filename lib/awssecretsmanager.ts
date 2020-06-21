@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service secretsmanager
@@ -281,6 +282,15 @@ export class Secretsmanager extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service secretsmanager
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Enables the user to cancel an in-progress secret rotation.

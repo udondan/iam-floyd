@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service dataexchange
@@ -283,6 +284,15 @@ export class Dataexchange extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service dataexchange
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdataexchange.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permissions to cancel a job.

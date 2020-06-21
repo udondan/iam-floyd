@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service xray
@@ -158,6 +159,15 @@ export class Xray extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service xray
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsx-ray.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service appstream
@@ -582,6 +583,15 @@ export class Appstream extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service appstream
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappstream2.0.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate the specified fleet with the specified stack

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iot1click
@@ -296,6 +297,15 @@ export class Iot1click extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service iot1click
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiot1-click.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associate a device to a placement

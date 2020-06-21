@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service states
@@ -241,6 +242,15 @@ export class States extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service states
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.

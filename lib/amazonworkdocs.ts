@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service workdocs
@@ -265,6 +266,15 @@ export class Workdocs extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service workdocs
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkdocs.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to abort the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload.

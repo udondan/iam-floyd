@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service iot-device-tester
@@ -35,6 +36,15 @@ export class IotDeviceTester extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service iot-device-tester
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotdevicetester.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible

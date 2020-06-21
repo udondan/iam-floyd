@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service eks
@@ -278,6 +279,15 @@ export class Eks extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service eks
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerserviceforkubernetes.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates an Amazon EKS cluster.

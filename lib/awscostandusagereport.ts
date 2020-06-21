@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cur
@@ -52,6 +53,15 @@ export class Cur extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service cur
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostandusagereport.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Delete Cost and Usage Report Definition

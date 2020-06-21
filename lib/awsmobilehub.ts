@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mobilehub
@@ -162,6 +163,15 @@ export class Mobilehub extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service mobilehub
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmobilehub.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Create a project

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service route53domains
@@ -125,6 +126,15 @@ export class Route53domains extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service route53domains
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53domains.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to check the availability of one domain name

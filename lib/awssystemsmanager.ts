@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ssm
@@ -1140,6 +1141,15 @@ export class Ssm extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service ssm
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to add or overwrite one or more tags for a specified AWS resource

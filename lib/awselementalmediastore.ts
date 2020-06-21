@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mediastore
@@ -147,6 +148,15 @@ export class Mediastore extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service mediastore
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediastore.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create containers.

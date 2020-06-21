@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service autoscaling
@@ -661,6 +662,15 @@ export class Autoscaling extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service autoscaling
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2autoscaling.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Attaches one or more EC2 instances to the specified Auto Scaling group.

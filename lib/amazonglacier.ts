@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service glacier
@@ -328,6 +329,15 @@ export class Glacier extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service glacier
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Aborts a multipart upload identified by the upload ID

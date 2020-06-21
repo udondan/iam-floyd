@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service license-manager
@@ -147,6 +148,15 @@ export class LicenseManager extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service license-manager
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a new license configuration

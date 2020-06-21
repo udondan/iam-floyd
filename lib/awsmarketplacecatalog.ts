@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service aws-marketplace-catalog
@@ -76,6 +77,15 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service aws-marketplace-catalog
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Cancels a running change set.

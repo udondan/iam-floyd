@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codeguru-reviewer
@@ -136,6 +137,15 @@ export class CodeguruReviewer extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service codeguru-reviewer
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associates a repository with Amazon CodeGuru Reviewer.

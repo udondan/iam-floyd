@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service mobiletargeting
@@ -1241,6 +1242,15 @@ export class Mobiletargeting extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service mobiletargeting
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpoint.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Create an app.

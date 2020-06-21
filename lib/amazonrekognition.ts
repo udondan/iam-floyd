@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service rekognition
@@ -386,6 +387,15 @@ export class Rekognition extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service rekognition
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Compares a face in source input image with each face detected in the target input image.

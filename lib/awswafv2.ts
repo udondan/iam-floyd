@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service wafv2
@@ -511,6 +512,15 @@ export class Wafv2 extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service wafv2
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafv2.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate a WebACL with a resource.

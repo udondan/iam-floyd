@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service waf
@@ -829,6 +830,15 @@ export class Waf extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service waf
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswaf.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a ByteMatchSet.

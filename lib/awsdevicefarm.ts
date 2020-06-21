@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service devicefarm
@@ -957,6 +958,15 @@ export class Devicefarm extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service devicefarm
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdevicefarm.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a device pool within a project

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service medialive
@@ -500,6 +501,15 @@ export class Medialive extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service medialive
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to add and remove actions from a channel's schedule.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service detective
@@ -167,6 +168,15 @@ export class Detective extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service detective
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondetective.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to accept an invitation to become a member of a behavior graph

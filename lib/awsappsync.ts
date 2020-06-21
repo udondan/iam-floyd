@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service appsync
@@ -290,6 +291,15 @@ export class Appsync extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service appsync
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a unique key that you can distribute to clients who are executing your API.

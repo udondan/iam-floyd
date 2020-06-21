@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service kms
@@ -631,6 +632,15 @@ export class Kms extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service kms
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Controls permission to cancel the scheduled deletion of a customer master key.

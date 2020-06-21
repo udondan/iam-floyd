@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service es
@@ -307,6 +308,15 @@ export class Es extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service es
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Allows the destination domain owner to accept an inbound cross-cluster search connection request

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service awsconnector
@@ -25,6 +26,15 @@ export class Awsconnector extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service awsconnector
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Retrieves all health metrics that were published from the Server Migration Connector.

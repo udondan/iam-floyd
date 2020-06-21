@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service translate
@@ -55,6 +56,15 @@ export class Translate extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service translate
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranslate.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * A synchronous action that deletes a custom terminology.

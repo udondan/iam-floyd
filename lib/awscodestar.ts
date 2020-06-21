@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service codestar
@@ -228,6 +229,15 @@ export class Codestar extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service codestar
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestar.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds a user to the team for an AWS CodeStar project.

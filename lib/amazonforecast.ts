@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service forecast
@@ -296,6 +297,15 @@ export class Forecast extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service forecast
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonforecast.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a dataset

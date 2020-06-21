@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service importexport
@@ -40,6 +41,15 @@ export class Importexport extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service importexport
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsimportexportdiskservice.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * This action cancels a specified job. Only the job owner can cancel it. The action fails if the job has already started or is complete.

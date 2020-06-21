@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service elasticloadbalancing-v2
@@ -412,6 +413,15 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service elasticloadbalancing-v2
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds the specified certificates to the specified secure listener.

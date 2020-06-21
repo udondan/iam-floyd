@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ec2-instance-connect
@@ -33,6 +34,15 @@ export class Ec2InstanceConnect extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service ec2-instance-connect
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to push the SSH public key to the instance metadata where it remains for 60 seconds.

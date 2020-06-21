@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service greengrass
@@ -1094,6 +1095,15 @@ export class Greengrass extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service greengrass
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotgreengrass.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.

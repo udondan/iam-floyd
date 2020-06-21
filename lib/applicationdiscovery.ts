@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service discovery
@@ -135,6 +136,15 @@ export class Discovery extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service discovery
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscovery.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates one or more configuration items with an application.

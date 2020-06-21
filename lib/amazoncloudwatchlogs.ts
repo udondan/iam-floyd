@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service logs
@@ -363,6 +364,15 @@ export class Logs extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service logs
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group.

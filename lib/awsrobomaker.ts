@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service robomaker
@@ -487,6 +488,15 @@ export class Robomaker extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service robomaker
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Describe multiple simulation jobs

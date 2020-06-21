@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service a4b
@@ -760,6 +761,15 @@ export class A4b extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service a4b
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.

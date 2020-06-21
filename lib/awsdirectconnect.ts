@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service directconnect
@@ -689,6 +690,15 @@ export class Directconnect extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service directconnect
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service rds-db
@@ -27,6 +28,15 @@ export class RdsDb extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service rds-db
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Allows IAM role or user to connect to RDS database

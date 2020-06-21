@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ec2
@@ -4961,6 +4962,15 @@ export class Ec2 extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service ec2
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to accept a Convertible Reserved Instance exchange quote

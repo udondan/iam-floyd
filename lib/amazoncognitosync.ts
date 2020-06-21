@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service cognito-sync
@@ -214,6 +215,15 @@ export class CognitoSync extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service cognito-sync
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitosync.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream.

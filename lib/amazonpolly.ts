@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service polly
@@ -82,6 +83,15 @@ export class Polly extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service polly
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Deletes the specified pronunciation lexicon stored in an AWS Region

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service config
@@ -629,6 +630,15 @@ export class Config extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service config
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Returns the current configuration items for resources that are present in your AWS Config aggregator

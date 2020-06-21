@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service securityhub
@@ -452,6 +453,15 @@ export class Securityhub extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service securityhub
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to accept Security Hub invitations to become a member account

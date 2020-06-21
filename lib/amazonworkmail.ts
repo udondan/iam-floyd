@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service workmail
@@ -954,6 +955,15 @@ export class Workmail extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service workmail
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Adds a list of members (users or groups) to a group.

@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service fms
@@ -163,6 +164,15 @@ export class Fms extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service fms
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts

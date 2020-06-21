@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service lex
@@ -502,6 +503,15 @@ export class Lex extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service lex
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlex.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Creates a new version based on the $LATEST version of the specified bot.

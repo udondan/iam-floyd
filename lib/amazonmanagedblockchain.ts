@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service managedblockchain
@@ -226,6 +227,15 @@ export class Managedblockchain extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service managedblockchain
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmanagedblockchain.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to create a member of an Amazon Managed Blockchain network.

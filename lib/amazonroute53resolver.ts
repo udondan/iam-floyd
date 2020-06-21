@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service route53resolver
@@ -256,6 +257,15 @@ export class Route53resolver extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service route53resolver
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53resolver.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to associate a specified IP address with a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).

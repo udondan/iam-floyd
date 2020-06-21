@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service deepcomposer
@@ -139,6 +140,15 @@ export class Deepcomposer extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service deepcomposer
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Associates a DeepComposer coupon (or DSN) with the account associated with the sender of the request.

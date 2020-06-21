@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service ebs
@@ -49,6 +50,15 @@ export class Ebs extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service ebs
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to return the data of a block in an Amazon Elastic Block Store (EBS) snapshot

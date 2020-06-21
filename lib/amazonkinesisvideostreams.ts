@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service kinesisvideo
@@ -348,6 +349,15 @@ export class Kinesisvideo extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service kinesisvideo
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisvideostreams.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to connect as a master to the signaling channel specified by the endpoint

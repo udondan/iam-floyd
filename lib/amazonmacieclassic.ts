@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service macie
@@ -54,6 +55,15 @@ export class Macie extends PolicyStatement {
     }
   };
   public resourceTypes: ResourceTypes = {};
+
+  /**
+   * Action provider for service macie
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Enables the user to associate a specified AWS account with Amazon Macie as a member account.

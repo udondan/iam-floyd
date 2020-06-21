@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service events
@@ -330,6 +331,15 @@ export class Events extends PolicyStatement {
       ]
     }
   };
+
+  /**
+   * Action provider for service events
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridge.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.

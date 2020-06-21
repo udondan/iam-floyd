@@ -1,4 +1,5 @@
 import { Actions, PolicyStatement, ResourceTypes } from "./shared";
+import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
  * Action provider for service redshift
@@ -939,6 +940,15 @@ export class Redshift extends PolicyStatement {
       "conditionKeys": []
     }
   };
+
+  /**
+   * Action provider for service redshift
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonredshift.html
+   */
+  constructor (props?: PolicyStatementProps) {
+    super(props);
+  }
 
   /**
    * Grants permission to exchange a DC1 reserved node for a DC2 reserved node with no changes to the configuration
