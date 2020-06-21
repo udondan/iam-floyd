@@ -11,6 +11,8 @@
 
 AWS [IAM policy statement][statement] generator.
 
+[![Auto completion demo](./docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
+
 > This is an early version of the package. The signature of methods will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.
 >
 > If you see something off, think something could be done better or have any other suggestion, speak up. :-)
@@ -55,8 +57,8 @@ Every method returns the statement provider, so you can chain method calls:
 
 ```typescript
 new statement.Ec2()
-    .startInstances()
-    .stopInstances();
+  .startInstances()
+  .stopInstances();
 ```
 
 The default effect of any statement is `Allow`. To add some linguistic sugar you can explicitly call the `allow()` method:
