@@ -63,18 +63,18 @@ The default effect of any statement is `Allow`. To add some linguistic sugar you
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .startInstances()
-    .stopInstances();
+  .allow()
+  .startInstances()
+  .stopInstances();
 ```
 
 And of course `deny()`:
 
 ```typescript
 new statement.Ec2()
-    .deny()
-    .startInstances()
-    .stopInstances();
+  .deny()
+  .startInstances()
+  .stopInstances();
 ```
 
 If you don't want to be verbose and add every single action manually to the statement, you discovered the reason why this package was created. You can work with [access levels]!
@@ -83,38 +83,39 @@ There are 5 access levels you can use: `LIST`, `READ`, `WRITE`, `PERMISSION_MANA
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .allActions(
-        statement.AccessLevel.LIST,
-        statement.AccessLevel.READ
-    );
+  .allow()
+  .allActions(
+    statement.AccessLevel.LIST,
+    statement.AccessLevel.READ
+  );
 ```
 
 The `allActions()` method also accepts regular expressions which test against the action name:
 
 ```typescript
 new statement.Ec2()
-    .deny()
-    .allActions(/vpn/i);
+  .deny()
+  .allActions(/vpn/i);
 ```
 
 If no value is passed, all actions (`ec2:*`) will be added:
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .allActions();
+  .allow()
+  .allActions();
 ```
+
 
 To add conditions to the statement you can use `if()`:
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .startInstances()
-    .if('StringEquals', {
-        'aws:RequestTag/Owner': '${aws:username}',
-    });
+  .allow()
+  .startInstances()
+  .if('StringEquals', {
+    'aws:RequestTag/Owner': '${aws:username}',
+  });
 ```
 
 By default the statement applies to all resources. To limit to specific resources, add them via `on*()`.
@@ -123,90 +124,81 @@ For every resource type an `on*()` method exists:
 
 ```typescript
 new statement.S3()
-    .allow()
-    .allActions()
-    .onBucket('some-bucket')
-    .onObject('some-bucket', 'some/path/*');
+  .allow()
+  .allActions()
+  .onBucket('some-bucket')
+  .onObject('some-bucket', 'some/path/*');
 ```
 
 If instead you have an ARN ready, use the `on()` method:
 
 ```typescript
 new statement.S3()
-    .allow()
-    .allActions()
-    .on(
-        'arn:aws:s3:::some-bucket',
-        'arn:aws:s3:::another-bucket'
-    );
+  .allow()
+  .allActions()
+  .on(
+    'arn:aws:s3:::some-bucket',
+    'arn:aws:s3:::another-bucket'
+  );
 ```
 
 What about [notAction]? Yes, simply add a `not()` to the chain. Though it is important that you add it **before** you add actions.
 
 ```typescript
 new statement.S3()
-    .allow()
-    .not()
-    .deleteBucket()
-    .onBucket('some-bucket');
+  .allow()
+  .not()
+  .deleteBucket()
+  .onBucket('some-bucket');
 ```
 
 ## <a name='Examples'></a>Examples
 
 ```typescript
 new iam.PolicyDocument({
-    statements: [
-        new statement.Ec2()
-            .allow()
-            .startInstances()
-            .if('StringEquals', {
-                'aws:RequestTag/Owner': '${aws:username}',
-            }),
-        new statement.Ec2()
-            .allow()
-            .stopInstances()
-            .if('StringEquals', {
-                'ec2:ResourceTag/Owner': '${aws:username}',
-            }),
-        new statement.Ec2()
-            .allow()
-            .allActions(
-                statement.AccessLevel.LIST,
-                statement.AccessLevel.READ
-            ),
-    ],
+  statements: [
+    new statement.Ec2().allow().startInstances().if('StringEquals', {
+      'aws:RequestTag/Owner': '${aws:username}',
+    }),
+    new statement.Ec2().allow().stopInstances().if('StringEquals', {
+      'ec2:ResourceTag/Owner': '${aws:username}',
+    }),
+    new statement.Ec2()
+      .allow()
+      .allActions(statement.AccessLevel.LIST, statement.AccessLevel.READ),
+  ],
 });
 ```
 
 ```typescript
 new iam.PolicyDocument({
-    statements: [
-        new statement.Cloudformation() // allow all CFN actions
-            .allow()
-            .allActions(),
-        new statement.All() // allow absolutely everything that is triggered via CFN
-            .allow()
-            .allActions()
-            .if('ForAnyValue:StringEquals', {
-                'aws:CalledVia': 'cloudformation.amazonaws.com',
-            }),
-        new statement.S3() // allow access to the CDK staging bucket
-            .allow()
-            .allActions()
-            .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
-        new statement.Account() // even when triggered via CFN, do not allow modifications of the account
-            .deny()
-            .allActions(
-                statement.AccessLevel.PERMISSION_MANAGEMENT,
-                statement.AccessLevel.WRITE
-            ),
-        new statement.Organizations() // even when triggered via CFN, do not allow modifications of the organization
-            .deny()
-            .allActions(
-                statement.AccessLevel.PERMISSION_MANAGEMENT,
-                statement.AccessLevel.WRITE
-            ),
-    ],
+  statements: [
+    new statement.Cloudformation() // allow all CFN actions
+      .allow()
+      .allActions(),
+    new statement.All() // allow absolutely everything that is triggered via CFN
+      .allow()
+      .allActions()
+      .if('ForAnyValue:StringEquals', {
+        'aws:CalledVia': 'cloudformation.amazonaws.com',
+      }),
+    new statement.S3() // allow access to the CDK staging bucket
+      .allow()
+      .allActions()
+      .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
+    new statement.Account() // even when triggered via CFN, do not allow modifications of the account
+      .deny()
+      .allActions(
+        statement.AccessLevel.PERMISSION_MANAGEMENT,
+        statement.AccessLevel.WRITE
+      ),
+    new statement.Organizations() // even when triggered via CFN, do not allow modifications of the organization
+      .deny()
+      .allActions(
+        statement.AccessLevel.PERMISSION_MANAGEMENT,
+        statement.AccessLevel.WRITE
+      ),
+  ],
 });
 ```
 
@@ -218,8 +210,8 @@ Sets the `Effect` of the statement to `Allow`.
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .stopInstances();
+  .allow()
+  .stopInstances();
 ```
 
 ### <a name='deny'></a>deny
@@ -228,8 +220,8 @@ Sets the `Effect` of the statement to `Deny`.
 
 ```typescript
 new statement.Ec2()
-    .deny()
-    .stopInstances();
+  .deny()
+  .stopInstances();
 ```
 
 ### <a name='allActions'></a>allActions
@@ -238,25 +230,25 @@ This method allows you to add multiple actions at once. If called without parame
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .allActions();
+  .allow()
+  .allActions();
 ```
 
 The method can take regular expressions and [access levels] as options and will add only the matching actions:
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .allActions(/vpn/i);
+  .allow()
+  .allActions(/vpn/i);
 ```
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .allActions(
-        statement.AccessLevel.LIST,
-        statement.AccessLevel.READ
-    );
+  .allow()
+  .allActions(
+    statement.AccessLevel.LIST,
+    statement.AccessLevel.READ
+  );
 ```
 
 There exist 5 access levels:
@@ -275,11 +267,11 @@ This is basically the same as `addCondition()` of the original `iam.PolicyStatem
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .startInstances()
-    .if('StringEquals', {
-        'aws:RequestTag/Owner': '${aws:username}',
-    });
+  .allow()
+  .startInstances()
+  .if('StringEquals', {
+    'aws:RequestTag/Owner': '${aws:username}',
+  });
 ```
 
 ### <a name='onon'></a>on, on*
@@ -290,27 +282,27 @@ For every resource type an `on*()` method exists:
 
 ```typescript
 new statement.S3()
-    .allow()
-    .allActions()
-    .onBucket('some-bucket');
+  .allow()
+  .allActions()
+  .onBucket('some-bucket');
 ```
 
 If instead you have an ARN ready, use the `on()` method:
 
 ```typescript
 new statement.S3()
-    .allow()
-    .allActions()
-    .on('arn:aws:s3:::some-bucket');
+  .allow()
+  .allActions()
+  .on('arn:aws:s3:::some-bucket');
 ```
 
 If no resources are applied to the statement, it defaults to all resources (`*`). You can also be verbose and set this yourself:
 
 ```typescript
 new statement.S3()
-    .allow()
-    .allActions()
-    .on('*');
+  .allow()
+  .allActions()
+  .on('*');
 ```
 
 ### <a name='not'></a>not
@@ -321,20 +313,20 @@ Switches the policy provider to use [notAction]. Calling this method will change
 
 ```typescript
 new statement.S3()
-    .allow()
-    .not()
-    .deleteBucket()
-    .onBucket('some-bucket');
+  .allow()
+  .not()
+  .deleteBucket()
+  .onBucket('some-bucket');
 ```
 
 **Wrong:** `s3:DeleteBucket` will be added to the list of `Action`
 
 ```typescript
 new statement.S3()
-    .allow()
-    .deleteBucket()
-    .not()
-    .onBucket('some-bucket');
+  .allow()
+  .deleteBucket()
+  .not()
+  .onBucket('some-bucket');
 ```
 
 ## <a name='ButIdontuseCDK.CanIstillusethispackage'></a>But I don't use CDK. Can I still use this package?
@@ -343,20 +335,20 @@ Yes. While the package is designed to be used within CDK you can also just use i
 
 ```typescript
 new statement.Ec2()
-    .allow()
-    .startInstances()
-    .stopInstances()
-    .on('*')
-    .toJSON();
+  .allow()
+  .startInstances()
+  .stopInstances()
+  .on('*')
+  .toJSON();
 
 new iam.PolicyDocument({
-    statements: [
-        new statement.Ec2()
-            .allow()
-            .startInstances()
-            .stopInstances()
-            .on('*'),
-    ],
+  statements: [
+    new statement.Ec2()
+      .allow()
+      .startInstances()
+      .stopInstances()
+      .on('*'),
+  ],
 }).toJSON();
 ```
 
