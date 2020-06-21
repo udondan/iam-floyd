@@ -436,6 +436,7 @@ function cleanDescription(description: string): string {
   return description
     .replace(/[\r\n]+/g, ' ')
     .replace(/\s{2,}/g, ' ')
+    .replace(/<code>(.*?)<\/code>/g, '`$1`')
     .trim();
 }
 
