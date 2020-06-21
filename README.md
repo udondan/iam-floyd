@@ -115,16 +115,7 @@ new statement.Ec2()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
-  .ifRequestTag('Owner', 'John')
-```
-
-Most of them allow an optional operator as last argument:
-
-```typescript
-new statement.Ec2()
-  .allow()
-  .startInstances()
-  .ifInstanceType('*.nano', 'StringLike')
+  .ifRequestTag('Owner', 'John');
 ```
 
 If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
@@ -133,9 +124,17 @@ If you want to add a condition not covered by the available methods, you can def
 new statement.Ec2()
   .allow()
   .startInstances()
-  .if('StringEquals', {
-    'aws:RequestTag/Owner': 'John',
-  });
+  .if('aws:RequestTag/Owner', 'John');
+```
+
+Most of the `if*()` methods allow an optional operator as last argument:
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .startInstances()
+  .ifInstanceType('*.nano', 'StringLike')
+  .if('aws:RequestTag/Owner', 'John*', 'StringLike');
 ```
 
 By default the statement applies to all resources. To limit to specific resources, add them via `on*()`.

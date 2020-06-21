@@ -1315,9 +1315,7 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPolicyType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`organizations:PolicyType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`organizations:PolicyType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1329,8 +1327,6 @@ export class Organizations extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifServicePrincipal(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`organizations:ServicePrincipal`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`organizations:ServicePrincipal`, value, operator || 'StringEquals');
   }
 }

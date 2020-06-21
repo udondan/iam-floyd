@@ -1348,9 +1348,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifChangeSetName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloudformation:ChangeSetName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloudformation:ChangeSetName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1360,9 +1358,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifImportResourceTypes(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloudformation:ImportResourceTypes`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloudformation:ImportResourceTypes`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1372,9 +1368,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTypes(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloudformation:ResourceTypes`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloudformation:ResourceTypes`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1384,9 +1378,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifRoleArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloudformation:RoleArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`cloudformation:RoleArn`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -1396,9 +1388,7 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifStackPolicyUrl(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloudformation:StackPolicyUrl`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloudformation:StackPolicyUrl`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1408,8 +1398,6 @@ export class Cloudformation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTemplateUrl(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloudformation:TemplateUrl`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloudformation:TemplateUrl`, value, operator || 'StringEquals');
   }
 }

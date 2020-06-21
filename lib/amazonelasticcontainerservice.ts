@@ -1300,9 +1300,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ecs:ResourceTag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ecs:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1314,9 +1312,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifCluster(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ecs:cluster`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ecs:cluster`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -1328,9 +1324,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifContainerInstances(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ecs:container-instances`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ecs:container-instances`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -1342,9 +1336,7 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ecs:service`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ecs:service`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -1356,8 +1348,6 @@ export class Ecs extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifTaskDefinition(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ecs:task-definition`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ecs:task-definition`, value, operator || 'ArnEquals');
   }
 }

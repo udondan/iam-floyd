@@ -356,9 +356,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifBranchName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:BranchName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:BranchName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -370,9 +368,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFullRepositoryId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:FullRepositoryId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:FullRepositoryId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -384,9 +380,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInstallationId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:InstallationId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:InstallationId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -398,9 +392,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifOwnerId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:OwnerId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:OwnerId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -412,9 +404,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPassedToService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:PassedToService`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:PassedToService`, value, operator || 'StringEquals');
   }
 
   /**
@@ -426,9 +416,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifProviderAction(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:ProviderAction`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:ProviderAction`, value, operator || 'StringEquals');
   }
 
   /**
@@ -440,9 +428,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifProviderPermissionsRequired(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:ProviderPermissionsRequired`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:ProviderPermissionsRequired`, value, operator || 'StringEquals');
   }
 
   /**
@@ -454,9 +440,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifProviderType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:ProviderType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:ProviderType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -468,9 +452,7 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifProviderTypeFilter(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:ProviderTypeFilter`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:ProviderTypeFilter`, value, operator || 'StringEquals');
   }
 
   /**
@@ -482,8 +464,6 @@ export class CodestarConnections extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRepositoryName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`codestar-connections:RepositoryName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`codestar-connections:RepositoryName`, value, operator || 'StringEquals');
   }
 }

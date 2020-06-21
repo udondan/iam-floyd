@@ -1481,9 +1481,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFeedbackAddress(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ses:FeedbackAddress`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ses:FeedbackAddress`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1495,9 +1493,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFromAddress(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ses:FromAddress`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ses:FromAddress`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1509,9 +1505,7 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFromDisplayName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ses:FromDisplayName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ses:FromDisplayName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1523,8 +1517,6 @@ export class Ses extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRecipients(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ses:Recipients`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ses:Recipients`, value, operator || 'StringEquals');
   }
 }

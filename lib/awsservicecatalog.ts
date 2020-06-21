@@ -1714,9 +1714,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAccountLevel(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicecatalog:accountLevel`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicecatalog:accountLevel`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1728,9 +1726,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRoleLevel(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicecatalog:roleLevel`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicecatalog:roleLevel`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1742,8 +1738,6 @@ export class Servicecatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifUserLevel(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicecatalog:userLevel`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicecatalog:userLevel`, value, operator || 'StringEquals');
   }
 }

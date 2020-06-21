@@ -763,9 +763,7 @@ export class Glacier extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifArchiveAgeInDays(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`glacier:ArchiveAgeInDays`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`glacier:ArchiveAgeInDays`, value, operator || 'StringEquals');
   }
 
   /**
@@ -777,8 +775,6 @@ export class Glacier extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTagExists(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`glacier:ResourceTag/`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`glacier:ResourceTag/`, value, operator || 'StringEquals');
   }
 }

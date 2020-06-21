@@ -2530,9 +2530,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDbName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`redshift:DbName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`redshift:DbName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2544,9 +2542,7 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDbUser(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`redshift:DbUser`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`redshift:DbUser`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2558,8 +2554,6 @@ export class Redshift extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDurationSeconds(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`redshift:DurationSeconds`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`redshift:DurationSeconds`, value, operator || 'StringEquals');
   }
 }

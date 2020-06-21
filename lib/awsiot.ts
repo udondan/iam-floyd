@@ -5183,9 +5183,7 @@ export class Iot extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifDelete(value?: boolean) {
-    return this.if('Bool', {
-      'iot:Delete': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`iot:Delete`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -5195,9 +5193,7 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifThingGroupArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iot:ThingGroupArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iot:ThingGroupArn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -5207,8 +5203,6 @@ export class Iot extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTunnelDestinationService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iot:TunnelDestinationService`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iot:TunnelDestinationService`, value, operator || 'StringEquals');
   }
 }

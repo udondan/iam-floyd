@@ -569,9 +569,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifNamespaceArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicediscovery:NamespaceArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicediscovery:NamespaceArn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -583,9 +581,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifNamespaceName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicediscovery:NamespaceName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicediscovery:NamespaceName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -597,9 +593,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifServiceArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicediscovery:ServiceArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicediscovery:ServiceArn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -611,8 +605,6 @@ export class Servicediscovery extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifServiceName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`servicediscovery:ServiceName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`servicediscovery:ServiceName`, value, operator || 'StringEquals');
   }
 }

@@ -671,8 +671,6 @@ export class Dax extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEnclosingOperation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dax:EnclosingOperation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dax:EnclosingOperation`, value, operator || 'StringEquals');
   }
 }

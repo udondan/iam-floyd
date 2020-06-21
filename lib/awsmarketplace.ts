@@ -266,9 +266,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAgreementType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`aws-marketplace:AgreementType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`aws-marketplace:AgreementType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -278,8 +276,6 @@ export class AwsMarketplace extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPartyType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`aws-marketplace:PartyType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`aws-marketplace:PartyType`, value, operator || 'StringEquals');
   }
 }

@@ -888,9 +888,7 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCgwArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`networkmanager:cgwArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`networkmanager:cgwArn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -902,8 +900,6 @@ export class Networkmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTgwArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`networkmanager:tgwArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`networkmanager:tgwArn`, value, operator || 'StringEquals');
   }
 }

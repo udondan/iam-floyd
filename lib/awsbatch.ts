@@ -372,9 +372,7 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifImage(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`batch:Image`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`batch:Image`, value, operator || 'StringEquals');
   }
 
   /**
@@ -383,9 +381,7 @@ export class Batch extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPrivileged(value?: boolean) {
-    return this.if('Bool', {
-      'batch:Privileged': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`batch:Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -395,8 +391,6 @@ export class Batch extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifUser(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`batch:User`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`batch:User`, value, operator || 'StringEquals');
   }
 }

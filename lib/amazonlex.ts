@@ -1186,9 +1186,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAssociatedIntents(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`lex:associatedIntents`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`lex:associatedIntents`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1198,9 +1196,7 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAssociatedSlotTypes(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`lex:associatedSlotTypes`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`lex:associatedSlotTypes`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1210,8 +1206,6 @@ export class Lex extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifChannelType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`lex:channelType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`lex:channelType`, value, operator || 'StringEquals');
   }
 }

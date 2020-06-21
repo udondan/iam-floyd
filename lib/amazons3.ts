@@ -2834,9 +2834,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAccessPointNetworkOrigin(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:AccessPointNetworkOrigin`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:AccessPointNetworkOrigin`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2848,9 +2846,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDataAccessPointAccount(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:DataAccessPointAccount`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:DataAccessPointAccount`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2862,9 +2858,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDataAccessPointArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:DataAccessPointArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:DataAccessPointArn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2872,9 +2866,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifExistingJobOperation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:ExistingJobOperation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:ExistingJobOperation`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2882,9 +2874,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifExistingJobPriority(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`s3:ExistingJobPriority`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`s3:ExistingJobPriority`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -2897,9 +2887,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifExistingObjectTag(key: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:ExistingObjectTag/${ key }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:ExistingObjectTag/${ key }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2907,9 +2895,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifJobSuspendedCause(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:JobSuspendedCause`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:JobSuspendedCause`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2921,9 +2907,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifLocationConstraint(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:LocationConstraint`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:LocationConstraint`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2931,9 +2915,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRequestJobOperation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:RequestJobOperation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:RequestJobOperation`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2941,9 +2923,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRequestJobPriority(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`s3:RequestJobPriority`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`s3:RequestJobPriority`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -2956,9 +2936,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRequestObjectTag(key: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:RequestObjectTag/${ key }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:RequestObjectTag/${ key }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2970,9 +2948,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRequestObjectTagKeys(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:RequestObjectTagKeys`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:RequestObjectTagKeys`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2984,9 +2960,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVersionId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:VersionId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:VersionId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -2994,9 +2968,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAuthtype(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:authtype`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:authtype`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3008,9 +2980,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDelimiter(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:delimiter`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:delimiter`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3022,9 +2992,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifLocationconstraint(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:locationconstraint`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:locationconstraint`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3036,9 +3004,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxKeys(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`s3:max-keys`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`s3:max-keys`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -3050,9 +3016,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifObjectLockLegalHold(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:object-lock-legal-hold`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:object-lock-legal-hold`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3064,9 +3028,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifObjectLockMode(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:object-lock-mode`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:object-lock-mode`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3078,9 +3040,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifObjectLockRemainingRetentionDays(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:object-lock-remaining-retention-days`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:object-lock-remaining-retention-days`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3092,9 +3052,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifObjectLockRetainUntilDate(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:object-lock-retain-until-date`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:object-lock-retain-until-date`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3106,9 +3064,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPrefix(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:prefix`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:prefix`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3118,9 +3074,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSignatureage(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`s3:signatureage`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`s3:signatureage`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -3130,9 +3084,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSignatureversion(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:signatureversion`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:signatureversion`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3142,9 +3094,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVersionid(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:versionid`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:versionid`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3156,9 +3106,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzAcl(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-acl`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-acl`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3168,9 +3116,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzContentSha256(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-content-sha256`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-content-sha256`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3182,9 +3128,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzCopySource(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-copy-source`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-copy-source`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3192,9 +3136,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzGrantFullControl(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-grant-full-control`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-grant-full-control`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3202,9 +3144,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzGrantRead(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-grant-read`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-grant-read`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3212,9 +3152,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzGrantReadAcp(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-grant-read-acp`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-grant-read-acp`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3222,9 +3160,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzGrantWrite(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-grant-write`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-grant-write`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3232,9 +3168,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzGrantWriteAcp(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-grant-write-acp`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-grant-write-acp`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3246,9 +3180,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzMetadataDirective(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-metadata-directive`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-metadata-directive`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3260,9 +3192,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzServerSideEncryption(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-server-side-encryption`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-server-side-encryption`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3272,9 +3202,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-server-side-encryption-aws-kms-key-id`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3282,9 +3210,7 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzStorageClass(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-storage-class`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-storage-class`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3292,8 +3218,6 @@ export class S3 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifXAmzWebsiteRedirectLocation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`s3:x-amz-website-redirect-location`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`s3:x-amz-website-redirect-location`, value, operator || 'StringEquals');
   }
 }

@@ -1375,9 +1375,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifImageId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:ImageId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:ImageId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1389,9 +1387,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInstanceType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:InstanceType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:InstanceType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1403,9 +1399,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInstanceTypes(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:InstanceTypes`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:InstanceTypes`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1417,9 +1411,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifLaunchConfigurationName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:LaunchConfigurationName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:LaunchConfigurationName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1430,9 +1422,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifLaunchTemplateVersionSpecified(value?: boolean) {
-    return this.if('Bool', {
-      'autoscaling:LaunchTemplateVersionSpecified': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`autoscaling:LaunchTemplateVersionSpecified`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1444,9 +1434,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifLoadBalancerNames(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:LoadBalancerNames`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:LoadBalancerNames`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1458,9 +1446,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMaxSize(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:MaxSize`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`autoscaling:MaxSize`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -1472,9 +1458,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMinSize(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:MinSize`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`autoscaling:MinSize`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -1487,9 +1471,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:ResourceTag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1501,9 +1483,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifSpotPrice(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:SpotPrice`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`autoscaling:SpotPrice`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -1515,9 +1495,7 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifTargetGroupARNs(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:TargetGroupARNs`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`autoscaling:TargetGroupARNs`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -1529,8 +1507,6 @@ export class Autoscaling extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVPCZoneIdentifiers(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`autoscaling:VPCZoneIdentifiers`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`autoscaling:VPCZoneIdentifiers`, value, operator || 'StringEquals');
   }
 }

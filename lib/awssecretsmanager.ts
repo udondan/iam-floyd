@@ -542,9 +542,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDescription(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:Description`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`secretsmanager:Description`, value, operator || 'StringEquals');
   }
 
   /**
@@ -555,9 +553,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifForceDeleteWithoutRecovery(value?: boolean) {
-    return this.if('Bool', {
-      'secretsmanager:ForceDeleteWithoutRecovery': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`secretsmanager:ForceDeleteWithoutRecovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -569,9 +565,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifKmsKeyId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:KmsKeyId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`secretsmanager:KmsKeyId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -583,9 +577,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:Name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`secretsmanager:Name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -597,9 +589,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRecoveryWindowInDays(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:RecoveryWindowInDays`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`secretsmanager:RecoveryWindowInDays`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -612,9 +602,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:ResourceTag/${ tagkey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`secretsmanager:ResourceTag/${ tagkey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -626,9 +614,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifRotationLambdaARN(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:RotationLambdaARN`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`secretsmanager:RotationLambdaARN`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -640,9 +626,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifSecretId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:SecretId`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`secretsmanager:SecretId`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -654,9 +638,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVersionId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:VersionId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`secretsmanager:VersionId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -668,9 +650,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVersionStage(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:VersionStage`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`secretsmanager:VersionStage`, value, operator || 'StringEquals');
   }
 
   /**
@@ -683,8 +663,6 @@ export class Secretsmanager extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`secretsmanager:resource/${ allowRotationLambdaArn }`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnEquals');
   }
 }

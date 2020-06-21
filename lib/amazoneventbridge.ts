@@ -785,9 +785,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifTargetArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`events:TargetArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`events:TargetArn`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -799,9 +797,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDetailType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`events:detail-type`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`events:detail-type`, value, operator || 'StringEquals');
   }
 
   /**
@@ -813,9 +809,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDetailEventTypeCode(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`events:detail.eventTypeCode`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`events:detail.eventTypeCode`, value, operator || 'StringEquals');
   }
 
   /**
@@ -827,9 +821,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDetailService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`events:detail.service`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`events:detail.service`, value, operator || 'StringEquals');
   }
 
   /**
@@ -841,9 +833,7 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`events:detail.userIdentity.principalId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -855,8 +845,6 @@ export class Events extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSource(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`events:source`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`events:source`, value, operator || 'StringEquals');
   }
 }

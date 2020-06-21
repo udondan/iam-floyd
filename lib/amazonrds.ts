@@ -3476,9 +3476,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDatabaseClass(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:DatabaseClass`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:DatabaseClass`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3490,9 +3488,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDatabaseEngine(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:DatabaseEngine`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:DatabaseEngine`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3504,9 +3500,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDatabaseName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:DatabaseName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:DatabaseName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3518,9 +3512,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEndpointType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:EndpointType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:EndpointType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3531,9 +3523,7 @@ export class Rds extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifMultiAz(value?: boolean) {
-    return this.if('Bool', {
-      'rds:MultiAz': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`rds:MultiAz`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -3545,9 +3535,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPiops(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`rds:Piops`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`rds:Piops`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -3558,9 +3546,7 @@ export class Rds extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifStorageEncrypted(value?: boolean) {
-    return this.if('Bool', {
-      'rds:StorageEncrypted': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`rds:StorageEncrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -3572,9 +3558,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifStorageSize(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`rds:StorageSize`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`rds:StorageSize`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -3585,9 +3569,7 @@ export class Rds extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifVpc(value?: boolean) {
-    return this.if('Bool', {
-      'rds:Vpc': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`rds:Vpc`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -3600,9 +3582,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifClusterPgTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:cluster-pg-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:cluster-pg-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3615,9 +3595,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifClusterSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:cluster-snapshot-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:cluster-snapshot-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3630,9 +3608,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifClusterTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:cluster-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:cluster-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3645,9 +3621,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDbTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:db-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:db-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3660,9 +3634,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:es-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:es-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3675,9 +3647,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifOgTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:og-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:og-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3690,9 +3660,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPgTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:pg-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:pg-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3705,9 +3673,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:req-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:req-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3720,9 +3686,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRiTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:ri-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:ri-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3735,9 +3699,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSecgrpTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:secgrp-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:secgrp-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3750,9 +3712,7 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:snapshot-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:snapshot-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3765,8 +3725,6 @@ export class Rds extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`rds:subgrp-tag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`rds:subgrp-tag/${ tagKey }`, value, operator || 'StringEquals');
   }
 }

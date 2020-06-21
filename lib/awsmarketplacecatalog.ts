@@ -252,8 +252,6 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifChangeType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`catalog:ChangeType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`catalog:ChangeType`, value, operator || 'StringEquals');
   }
 }

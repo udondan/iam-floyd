@@ -1154,9 +1154,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifActivityTypeName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:activityType.name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:activityType.name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1168,9 +1166,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifActivityTypeVersion(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:activityType.version`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:activityType.version`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1182,9 +1178,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDefaultTaskListName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:defaultTaskList.name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:defaultTaskList.name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1196,9 +1190,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1210,9 +1202,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTagFilterTag(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:tagFilter.tag`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:tagFilter.tag`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1224,9 +1214,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTagListMember0(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:tagList.member.0`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:tagList.member.0`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1238,9 +1226,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTagListMember1(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:tagList.member.1`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:tagList.member.1`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1252,9 +1238,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTagListMember2(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:tagList.member.2`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:tagList.member.2`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1266,9 +1250,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTagListMember3(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:tagList.member.3`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:tagList.member.3`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1280,9 +1262,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTagListMember4(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:tagList.member.4`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:tagList.member.4`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1294,9 +1274,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTaskListName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:taskList.name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:taskList.name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1308,9 +1286,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTypeFilterName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:typeFilter.name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:typeFilter.name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1322,9 +1298,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTypeFilterVersion(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:typeFilter.version`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:typeFilter.version`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1336,9 +1310,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVersion(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:version`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:version`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1350,9 +1322,7 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifWorkflowTypeName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:workflowType.name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:workflowType.name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1364,8 +1334,6 @@ export class Swf extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifWorkflowTypeVersion(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`swf:workflowType.version`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`swf:workflowType.version`, value, operator || 'StringEquals');
   }
 }

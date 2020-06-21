@@ -633,9 +633,7 @@ export class Ram extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAllowsExternalPrincipals(value?: boolean) {
-    return this.if('Bool', {
-      'ram:AllowsExternalPrincipals': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ram:AllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -647,9 +645,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifPermissionArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ram:PermissionArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ram:PermissionArn`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -661,9 +657,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPrincipal(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ram:Principal`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ram:Principal`, value, operator || 'StringEquals');
   }
 
   /**
@@ -674,9 +668,7 @@ export class Ram extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifRequestedAllowsExternalPrincipals(value?: boolean) {
-    return this.if('Bool', {
-      'ram:RequestedAllowsExternalPrincipals': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ram:RequestedAllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -688,9 +680,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRequestedResourceType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ram:RequestedResourceType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ram:RequestedResourceType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -702,9 +692,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifResourceArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ram:ResourceArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ram:ResourceArn`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -716,9 +704,7 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceShareName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ram:ResourceShareName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ram:ResourceShareName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -730,8 +716,6 @@ export class Ram extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifShareOwnerAccountId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ram:ShareOwnerAccountId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringEquals');
   }
 }

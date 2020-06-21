@@ -618,8 +618,6 @@ export class Dataexchange extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifJobType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dataexchange:JobType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dataexchange:JobType`, value, operator || 'StringEquals');
   }
 }

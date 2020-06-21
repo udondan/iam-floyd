@@ -1407,9 +1407,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifIamArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`quicksight:IamArn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`quicksight:IamArn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1421,9 +1419,7 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSessionName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`quicksight:SessionName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`quicksight:SessionName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1435,8 +1431,6 @@ export class Quicksight extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifUserName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`quicksight:UserName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`quicksight:UserName`, value, operator || 'StringEquals');
   }
 }

@@ -1306,9 +1306,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifFunctionArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`lambda:FunctionArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`lambda:FunctionArn`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -1318,9 +1316,7 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifLayer(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`lambda:Layer`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`lambda:Layer`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1330,8 +1326,6 @@ export class Lambda extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPrincipal(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`lambda:Principal`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`lambda:Principal`, value, operator || 'StringEquals');
   }
 }

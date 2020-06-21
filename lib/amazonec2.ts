@@ -10885,9 +10885,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifAccepterVpc(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:AccepterVpc`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:AccepterVpc`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -10898,9 +10896,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAssociatePublicIpAddress(value?: boolean) {
-    return this.if('Bool', {
-      'ec2:AssociatePublicIpAddress': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ec2:AssociatePublicIpAddress`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -10912,9 +10908,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAuthenticationType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:AuthenticationType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:AuthenticationType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -10926,9 +10920,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAuthorizedService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:AuthorizedService`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:AuthorizedService`, value, operator || 'StringEquals');
   }
 
   /**
@@ -10940,9 +10932,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAuthorizedUser(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:AuthorizedUser`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:AuthorizedUser`, value, operator || 'StringEquals');
   }
 
   /**
@@ -10954,9 +10944,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAutoPlacement(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:AutoPlacement`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:AutoPlacement`, value, operator || 'StringEquals');
   }
 
   /**
@@ -10968,9 +10956,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAvailabilityZone(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:AvailabilityZone`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:AvailabilityZone`, value, operator || 'StringEquals');
   }
 
   /**
@@ -10982,9 +10968,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCreateAction(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:CreateAction`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:CreateAction`, value, operator || 'StringEquals');
   }
 
   /**
@@ -10996,9 +10980,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifDPDTimeoutSeconds(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:DPDTimeoutSeconds`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:DPDTimeoutSeconds`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11009,9 +10991,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEbsOptimized(value?: boolean) {
-    return this.if('Bool', {
-      'ec2:EbsOptimized': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ec2:EbsOptimized`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -11023,9 +11003,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifElasticGpuType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ElasticGpuType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:ElasticGpuType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11036,9 +11014,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEncrypted(value?: boolean) {
-    return this.if('Bool', {
-      'ec2:Encrypted': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ec2:Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -11050,9 +11026,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGatewayType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:GatewayType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:GatewayType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11064,9 +11038,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifHostRecovery(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:HostRecovery`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:HostRecovery`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11078,9 +11050,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifIKEVersions(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:IKEVersions`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:IKEVersions`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11092,9 +11062,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifImageType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ImageType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:ImageType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11106,9 +11074,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInsideTunnelCidr(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:InsideTunnelCidr`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:InsideTunnelCidr`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11120,9 +11086,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInstanceMarketType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:InstanceMarketType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:InstanceMarketType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11134,9 +11098,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifInstanceProfile(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:InstanceProfile`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:InstanceProfile`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11148,9 +11110,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInstanceType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:InstanceType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:InstanceType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11161,9 +11121,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
-    return this.if('Bool', {
-      'ec2:IsLaunchTemplateResource': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ec2:IsLaunchTemplateResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -11175,9 +11133,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifLaunchTemplate(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:LaunchTemplate`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:LaunchTemplate`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11189,9 +11145,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifMetadataHttpEndpoint(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:MetadataHttpEndpoint`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:MetadataHttpEndpoint`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11203,9 +11157,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:MetadataHttpPutResponseHopLimit`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:MetadataHttpPutResponseHopLimit`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11217,9 +11169,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifMetadataHttpTokens(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:MetadataHttpTokens`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:MetadataHttpTokens`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11231,9 +11181,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifOwner(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Owner`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Owner`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11245,9 +11193,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifParentSnapshot(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ParentSnapshot`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:ParentSnapshot`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11259,9 +11205,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifParentVolume(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ParentVolume`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:ParentVolume`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11273,9 +11217,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPermission(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Permission`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Permission`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11287,9 +11229,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPhase1DHGroupNumbers(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase1DHGroupNumbers`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:Phase1DHGroupNumbers`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11301,9 +11241,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPhase1EncryptionAlgorithms(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase1EncryptionAlgorithms`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Phase1EncryptionAlgorithms`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11315,9 +11253,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPhase1IntegrityAlgorithms(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase1IntegrityAlgorithms`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Phase1IntegrityAlgorithms`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11329,9 +11265,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPhase1LifetimeSeconds(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase1LifetimeSeconds`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:Phase1LifetimeSeconds`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11343,9 +11277,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPhase2DHGroupNumbers(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase2DHGroupNumbers`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:Phase2DHGroupNumbers`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11357,9 +11289,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPhase2EncryptionAlgorithms(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase2EncryptionAlgorithms`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Phase2EncryptionAlgorithms`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11371,9 +11301,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPhase2IntegrityAlgorithms(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase2IntegrityAlgorithms`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Phase2IntegrityAlgorithms`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11385,9 +11313,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifPhase2LifetimeSeconds(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Phase2LifetimeSeconds`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:Phase2LifetimeSeconds`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11399,9 +11325,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifPlacementGroup(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:PlacementGroup`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:PlacementGroup`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11413,9 +11337,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPlacementGroupStrategy(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:PlacementGroupStrategy`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:PlacementGroupStrategy`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11427,9 +11349,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPresharedKeys(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:PresharedKeys`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:PresharedKeys`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11441,9 +11361,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifProductCode(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ProductCode`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:ProductCode`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11454,9 +11372,7 @@ export class Ec2 extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPublic(value?: boolean) {
-    return this.if('Bool', {
-      'ec2:Public': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`ec2:Public`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -11468,9 +11384,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifQuantity(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Quantity`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:Quantity`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11482,9 +11396,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRegion(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Region`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Region`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11496,9 +11408,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRekeyFuzzPercentage(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:RekeyFuzzPercentage`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:RekeyFuzzPercentage`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11510,9 +11420,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRekeyMarginTimeSeconds(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:RekeyMarginTimeSeconds`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:RekeyMarginTimeSeconds`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11524,9 +11432,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifRequesterVpc(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:RequesterVpc`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:RequesterVpc`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11538,9 +11444,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifReservedInstancesOfferingType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ReservedInstancesOfferingType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:ReservedInstancesOfferingType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11552,9 +11456,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTagExists(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ResourceTag/`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:ResourceTag/`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11567,9 +11469,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:ResourceTag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11581,9 +11481,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifRoleDelivery(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:RoleDelivery`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:RoleDelivery`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11595,9 +11493,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRootDeviceType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:RootDeviceType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:RootDeviceType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11609,9 +11505,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRoutingType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:RoutingType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:RoutingType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11623,9 +11517,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSnapshotTime(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:SnapshotTime`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:SnapshotTime`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11637,9 +11529,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifSourceInstanceARN(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:SourceInstanceARN`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11651,9 +11541,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifSubnet(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Subnet`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:Subnet`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11665,9 +11553,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTenancy(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Tenancy`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:Tenancy`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11679,9 +11565,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifVolumeIops(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:VolumeIops`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:VolumeIops`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11693,9 +11577,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifVolumeSize(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`ec2:VolumeSize`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`ec2:VolumeSize`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -11707,9 +11589,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVolumeType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:VolumeType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:VolumeType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11721,9 +11601,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifVpc(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:Vpc`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`ec2:Vpc`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -11733,9 +11611,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVpceServiceName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:VpceServiceName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:VpceServiceName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11745,9 +11621,7 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVpceServiceOwner(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:VpceServiceOwner`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:VpceServiceOwner`, value, operator || 'StringEquals');
   }
 
   /**
@@ -11757,8 +11631,6 @@ export class Ec2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifVpceServicePrivateDnsName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`ec2:VpceServicePrivateDnsName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`ec2:VpceServicePrivateDnsName`, value, operator || 'StringEquals');
   }
 }

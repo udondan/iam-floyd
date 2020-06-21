@@ -766,9 +766,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifConfigId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:configId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:configId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -778,9 +776,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifConfigType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:configType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:configType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -790,9 +786,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifContactId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:contactId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:contactId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -802,9 +796,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDataflowEndpointGroupId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:dataflowEndpointGroupId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:dataflowEndpointGroupId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -814,9 +806,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGroundStationId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:groundStationId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:groundStationId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -826,9 +816,7 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifMissionProfileId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:missionProfileId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:missionProfileId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -838,8 +826,6 @@ export class Groundstation extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSatelliteId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`groundstation:satelliteId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`groundstation:satelliteId`, value, operator || 'StringEquals');
   }
 }

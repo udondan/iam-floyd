@@ -1252,9 +1252,7 @@ export class Kms extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifBypassPolicyLockoutSafetyCheck(value?: boolean) {
-    return this.if('Bool', {
-      'kms:BypassPolicyLockoutSafetyCheck': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`kms:BypassPolicyLockoutSafetyCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1266,9 +1264,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCallerAccount(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:CallerAccount`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:CallerAccount`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1280,9 +1276,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCustomerMasterKeySpec(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:CustomerMasterKeySpec`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:CustomerMasterKeySpec`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1294,9 +1288,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCustomerMasterKeyUsage(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:CustomerMasterKeyUsage`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:CustomerMasterKeyUsage`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1308,9 +1300,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDataKeyPairSpec(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:DataKeyPairSpec`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:DataKeyPairSpec`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1322,9 +1312,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEncryptionAlgorithm(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:EncryptionAlgorithm`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:EncryptionAlgorithm`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1336,9 +1324,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEncryptionContextKeys(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:EncryptionContextKeys`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:EncryptionContextKeys`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1350,9 +1336,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifExpirationModel(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:ExpirationModel`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:ExpirationModel`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1364,9 +1348,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGrantConstraintType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:GrantConstraintType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:GrantConstraintType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1377,9 +1359,7 @@ export class Kms extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifGrantIsForAWSResource(value?: boolean) {
-    return this.if('Bool', {
-      'kms:GrantIsForAWSResource': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`kms:GrantIsForAWSResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1391,9 +1371,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGrantOperations(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:GrantOperations`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:GrantOperations`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1405,9 +1383,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGranteePrincipal(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:GranteePrincipal`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:GranteePrincipal`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1419,9 +1395,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifKeyOrigin(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:KeyOrigin`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:KeyOrigin`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1433,9 +1407,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifMessageType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:MessageType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:MessageType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1446,9 +1418,7 @@ export class Kms extends PolicyStatement {
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifReEncryptOnSameKey(value?: boolean) {
-    return this.if('Bool', {
-      'kms:ReEncryptOnSameKey': (typeof value !== 'undefined' ? value : true),
-    });
+    return this.if(`kms:ReEncryptOnSameKey`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -1460,9 +1430,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRetiringPrincipal(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:RetiringPrincipal`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:RetiringPrincipal`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1474,9 +1442,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSigningAlgorithm(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:SigningAlgorithm`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:SigningAlgorithm`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1488,9 +1454,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
   public ifValidTo(value: number | number[], operator?: string) {
-    const props: any = {};
-    props[`kms:ValidTo`] = value;
-    return this.if(operator || 'NumericEquals', props);
+    return this.if(`kms:ValidTo`, value, operator || 'NumericEquals');
   }
 
   /**
@@ -1502,9 +1466,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifViaService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:ViaService`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:ViaService`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1516,9 +1478,7 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifWrappingAlgorithm(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:WrappingAlgorithm`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:WrappingAlgorithm`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1530,8 +1490,6 @@ export class Kms extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifWrappingKeySpec(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`kms:WrappingKeySpec`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`kms:WrappingKeySpec`, value, operator || 'StringEquals');
   }
 }

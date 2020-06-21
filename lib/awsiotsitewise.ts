@@ -1487,9 +1487,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAssetHierarchyPath(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:assetHierarchyPath`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:assetHierarchyPath`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1501,9 +1499,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifChildAssetId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:childAssetId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:childAssetId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1515,9 +1511,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGroup(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:group`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:group`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1529,9 +1523,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPortal(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:portal`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:portal`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1543,9 +1535,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifProject(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:project`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:project`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1557,9 +1547,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPropertyId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:propertyId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:propertyId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1571,8 +1559,6 @@ export class Iotsitewise extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifUser(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iotsitewise:user`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iotsitewise:user`, value, operator || 'StringEquals');
   }
 }

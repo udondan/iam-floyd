@@ -1939,9 +1939,7 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAmazonId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`a4b:amazonId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`a4b:amazonId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1953,8 +1951,6 @@ export class A4b extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFiltersDeviceType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`a4b:filters_deviceType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`a4b:filters_deviceType`, value, operator || 'StringEquals');
   }
 }

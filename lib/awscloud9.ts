@@ -398,9 +398,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEnvironmentId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloud9:EnvironmentId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloud9:EnvironmentId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -412,9 +410,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEnvironmentName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloud9:EnvironmentName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloud9:EnvironmentName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -426,9 +422,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifInstanceType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloud9:InstanceType`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloud9:InstanceType`, value, operator || 'StringEquals');
   }
 
   /**
@@ -440,9 +434,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPermissions(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloud9:Permissions`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloud9:Permissions`, value, operator || 'StringEquals');
   }
 
   /**
@@ -454,9 +446,7 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSubnetId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloud9:SubnetId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cloud9:SubnetId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -468,8 +458,6 @@ export class Cloud9 extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifUserArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cloud9:UserArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`cloud9:UserArn`, value, operator || 'ArnEquals');
   }
 }

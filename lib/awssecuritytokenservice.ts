@@ -357,9 +357,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGoogleAud(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`accounts.google.com:aud`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`accounts.google.com:aud`, value, operator || 'StringEquals');
   }
 
   /**
@@ -371,9 +369,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGoogleOaud(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`accounts.google.com:oaud`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`accounts.google.com:oaud`, value, operator || 'StringEquals');
   }
 
   /**
@@ -385,9 +381,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGoogleSub(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`accounts.google.com:sub`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`accounts.google.com:sub`, value, operator || 'StringEquals');
   }
 
   /**
@@ -399,9 +393,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCognitoAmr(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cognito-identity.amazonaws.com:amr`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cognito-identity.amazonaws.com:amr`, value, operator || 'StringEquals');
   }
 
   /**
@@ -413,9 +405,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCognitoAud(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cognito-identity.amazonaws.com:aud`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cognito-identity.amazonaws.com:aud`, value, operator || 'StringEquals');
   }
 
   /**
@@ -427,9 +417,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCognitoSub(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`cognito-identity.amazonaws.com:sub`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`cognito-identity.amazonaws.com:sub`, value, operator || 'StringEquals');
   }
 
   /**
@@ -441,9 +429,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFacebookAppId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`graph.facebook.com:app_id`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`graph.facebook.com:app_id`, value, operator || 'StringEquals');
   }
 
   /**
@@ -455,9 +441,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifFacebookId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`graph.facebook.com:id`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`graph.facebook.com:id`, value, operator || 'StringEquals');
   }
 
   /**
@@ -469,9 +453,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAud(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:aud`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:aud`, value, operator || 'StringEquals');
   }
 
   /**
@@ -483,9 +465,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:cn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:cn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -497,9 +477,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCommonName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:commonName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:commonName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -511,9 +489,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifDoc(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:doc`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:doc`, value, operator || 'StringEquals');
   }
 
   /**
@@ -525,9 +501,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEduorghomepageuri(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:eduorghomepageuri`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:eduorghomepageuri`, value, operator || 'StringEquals');
   }
 
   /**
@@ -539,9 +513,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEduorgidentityauthnpolicyuri(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:eduorgidentityauthnpolicyuri`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:eduorgidentityauthnpolicyuri`, value, operator || 'StringEquals');
   }
 
   /**
@@ -553,9 +525,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEduorglegalname(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:eduorglegalname`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:eduorglegalname`, value, operator || 'StringEquals');
   }
 
   /**
@@ -567,9 +537,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEduorgsuperioruri(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:eduorgsuperioruri`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:eduorgsuperioruri`, value, operator || 'StringEquals');
   }
 
   /**
@@ -581,9 +549,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEduorgwhitepagesuri(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:eduorgwhitepagesuri`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:eduorgwhitepagesuri`, value, operator || 'StringEquals');
   }
 
   /**
@@ -595,9 +561,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonaffiliation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonaffiliation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonaffiliation`, value, operator || 'StringEquals');
   }
 
   /**
@@ -609,9 +573,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonassurance(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonassurance`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonassurance`, value, operator || 'StringEquals');
   }
 
   /**
@@ -623,9 +585,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonentitlement(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonentitlement`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonentitlement`, value, operator || 'StringEquals');
   }
 
   /**
@@ -637,9 +597,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonnickname(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonnickname`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonnickname`, value, operator || 'StringEquals');
   }
 
   /**
@@ -651,9 +609,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonorgdn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonorgdn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonorgdn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -665,9 +621,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonorgunitdn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonorgunitdn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonorgunitdn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -679,9 +633,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonprimaryaffiliation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonprimaryaffiliation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonprimaryaffiliation`, value, operator || 'StringEquals');
   }
 
   /**
@@ -693,9 +645,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonprimaryorgunitdn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonprimaryorgunitdn`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonprimaryorgunitdn`, value, operator || 'StringEquals');
   }
 
   /**
@@ -707,9 +657,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonprincipalname(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonprincipalname`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonprincipalname`, value, operator || 'StringEquals');
   }
 
   /**
@@ -721,9 +669,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersonscopedaffiliation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersonscopedaffiliation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersonscopedaffiliation`, value, operator || 'StringEquals');
   }
 
   /**
@@ -735,9 +681,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEdupersontargetedid(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:edupersontargetedid`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:edupersontargetedid`, value, operator || 'StringEquals');
   }
 
   /**
@@ -749,9 +693,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifGivenName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:givenName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:givenName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -763,9 +705,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifIss(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:iss`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:iss`, value, operator || 'StringEquals');
   }
 
   /**
@@ -777,9 +717,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifMail(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:mail`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:mail`, value, operator || 'StringEquals');
   }
 
   /**
@@ -791,9 +729,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:name`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:name`, value, operator || 'StringEquals');
   }
 
   /**
@@ -805,9 +741,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifNamequalifier(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:namequalifier`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:namequalifier`, value, operator || 'StringEquals');
   }
 
   /**
@@ -819,9 +753,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifOrganizationStatus(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:organizationStatus`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:organizationStatus`, value, operator || 'StringEquals');
   }
 
   /**
@@ -833,9 +765,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPrimaryGroupSID(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:primaryGroupSID`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:primaryGroupSID`, value, operator || 'StringEquals');
   }
 
   /**
@@ -847,9 +777,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSub(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:sub`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:sub`, value, operator || 'StringEquals');
   }
 
   /**
@@ -861,9 +789,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSubType(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:sub_type`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:sub_type`, value, operator || 'StringEquals');
   }
 
   /**
@@ -875,9 +801,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSurname(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:surname`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:surname`, value, operator || 'StringEquals');
   }
 
   /**
@@ -889,9 +813,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifUid(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:uid`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:uid`, value, operator || 'StringEquals');
   }
 
   /**
@@ -903,9 +825,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifX500UniqueIdentifier(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`saml:x500UniqueIdentifier`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`saml:x500UniqueIdentifier`, value, operator || 'StringEquals');
   }
 
   /**
@@ -917,9 +837,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifExternalId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`sts:ExternalId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`sts:ExternalId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -931,9 +849,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifRoleSessionName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`sts:RoleSessionName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`sts:RoleSessionName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -945,9 +861,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifTransitiveTagKeys(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`sts:TransitiveTagKeys`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`sts:TransitiveTagKeys`, value, operator || 'StringEquals');
   }
 
   /**
@@ -959,9 +873,7 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAmazonAppId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`www.amazon.com:app_id`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`www.amazon.com:app_id`, value, operator || 'StringEquals');
   }
 
   /**
@@ -973,8 +885,6 @@ export class Sts extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAmazonUserId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`www.amazon.com:user_id`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`www.amazon.com:user_id`, value, operator || 'StringEquals');
   }
 }

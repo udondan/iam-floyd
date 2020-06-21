@@ -1023,8 +1023,6 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`elasticloadbalancing:ResourceTag/${ tagkey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`elasticloadbalancing:ResourceTag/${ tagkey }`, value, operator || 'StringEquals');
   }
 }

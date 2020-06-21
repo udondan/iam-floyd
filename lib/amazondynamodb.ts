@@ -1249,9 +1249,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAttributes(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dynamodb:Attributes`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dynamodb:Attributes`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1263,9 +1261,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifEnclosingOperation(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dynamodb:EnclosingOperation`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dynamodb:EnclosingOperation`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1277,9 +1273,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifLeadingKeys(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dynamodb:LeadingKeys`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dynamodb:LeadingKeys`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1291,9 +1285,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifReturnConsumedCapacity(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dynamodb:ReturnConsumedCapacity`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dynamodb:ReturnConsumedCapacity`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1305,9 +1297,7 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifReturnValues(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dynamodb:ReturnValues`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dynamodb:ReturnValues`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1319,8 +1309,6 @@ export class Dynamodb extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifSelect(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`dynamodb:Select`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`dynamodb:Select`, value, operator || 'StringEquals');
   }
 }

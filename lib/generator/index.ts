@@ -339,10 +339,6 @@ export function createModule(module: Module): Promise<void> {
       }
       const methodBody: string[] = [];
 
-      if (type in conditionTypeDefaults) {
-        methodBody.push('const props: any = {};');
-      }
-
       var methodName = createConditionName(key);
       if (name.length > 2 && !name[2].length) {
         // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
@@ -370,7 +366,6 @@ export function createModule(module: Module): Promise<void> {
       }
 
       if (type in conditionTypeDefaults) {
-        methodBody.push(`props[\`${propsKey}\`] = value;`);
         desc += `\n@param value The value(s) to check`;
         method.addParameter({
           name: 'value',
@@ -384,7 +379,7 @@ export function createModule(module: Module): Promise<void> {
           hasQuestionToken: true,
         });
         methodBody.push(
-          `return this.if(operator || '${conditionTypeDefaults[type].default}', props)`
+          `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
         );
       } else if (type == 'bool' || type == 'boolean') {
         desc += '\n@param value `true` or `false`. **Default:** `true`';
@@ -396,9 +391,7 @@ export function createModule(module: Module): Promise<void> {
         });
 
         methodBody.push(
-          `return this.if('Bool', {`,
-          `'${key}': (typeof value !== 'undefined' ? value : true),`,
-          `});`
+          `return this.if(\`${key}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
         );
       } else {
         throw new Error(`Unexpected condition type: ${type}`);

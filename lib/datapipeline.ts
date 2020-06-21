@@ -450,9 +450,7 @@ export class Datapipeline extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifPipelineCreator(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`datapipeline:PipelineCreator`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -464,9 +462,7 @@ export class Datapipeline extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifTag(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`datapipeline:Tag`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`datapipeline:Tag`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -478,8 +474,6 @@ export class Datapipeline extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifWorkerGroup(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`datapipeline:workerGroup`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`datapipeline:workerGroup`, value, operator || 'ArnEquals');
   }
 }

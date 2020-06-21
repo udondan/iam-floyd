@@ -3419,9 +3419,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifAWSServiceName(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:AWSServiceName`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iam:AWSServiceName`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3433,9 +3431,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifAssociatedResourceArn(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:AssociatedResourceArn`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`iam:AssociatedResourceArn`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -3447,9 +3443,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifOrganizationsPolicyId(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:OrganizationsPolicyId`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iam:OrganizationsPolicyId`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3461,9 +3455,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPassedToService(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:PassedToService`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iam:PassedToService`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3475,9 +3467,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifPermissionsBoundary(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:PermissionsBoundary`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iam:PermissionsBoundary`, value, operator || 'StringEquals');
   }
 
   /**
@@ -3489,9 +3479,7 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
   public ifPolicyARN(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:PolicyARN`] = value;
-    return this.if(operator || 'ArnEquals', props);
+    return this.if(`iam:PolicyARN`, value, operator || 'ArnEquals');
   }
 
   /**
@@ -3504,8 +3492,6 @@ export class Iam extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`iam:ResourceTag/${ tagKey }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
   }
 }

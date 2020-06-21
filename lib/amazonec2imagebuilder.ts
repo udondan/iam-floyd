@@ -1255,9 +1255,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCreatedResourceTag(key: string, value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`imagebuilder:CreatedResourceTag/${ key }`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`imagebuilder:CreatedResourceTag/${ key }`, value, operator || 'StringEquals');
   }
 
   /**
@@ -1269,8 +1267,6 @@ export class Imagebuilder extends PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
   public ifCreatedResourceTagKeys(value: string | string[], operator?: string) {
-    const props: any = {};
-    props[`imagebuilder:CreatedResourceTagKeys`] = value;
-    return this.if(operator || 'StringEquals', props);
+    return this.if(`imagebuilder:CreatedResourceTagKeys`, value, operator || 'StringEquals');
   }
 }
