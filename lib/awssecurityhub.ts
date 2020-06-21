@@ -997,4 +997,18 @@ export class Securityhub extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The ID of the AWS account into which you want to import findings. In the AWS Security Finding format, this field is called AwsAccountId
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTargetAccount(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`securityhub:TargetAccount`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

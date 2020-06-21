@@ -337,4 +337,634 @@ export class Sts extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters actions based on the Google application ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAud(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`accounts.google.com:aud`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the Google audience
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_oaud
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifOaud(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`accounts.google.com:oaud`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the subject of the claim (the Google user ID)
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSub(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`accounts.google.com:sub`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the login information for Amazon Cognito
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAmr(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cognito-identity.amazonaws.com:amr`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the Amazon Cognito identity pool ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAud(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cognito-identity.amazonaws.com:aud`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the subject of the claim (the Amazon Cognito user ID)
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSub(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cognito-identity.amazonaws.com:sub`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the Facebook application ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAppId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`graph.facebook.com:app_id`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the Facebook user ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`graph.facebook.com:id`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the endpoint URL to which SAML assertions are presented
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAud(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:aud`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduOrg attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_cn
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:cn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the commonName attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_commonname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCommonName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:commonName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the principal that was used to assume the role
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_doc
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDoc(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:doc`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduOrg attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorghomepageuri
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEduorghomepageuri(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:eduorghomepageuri`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduOrg attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEduorgidentityauthnpolicyuri(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:eduorgidentityauthnpolicyuri`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduOrg attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorglegalname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEduorglegalname(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:eduorglegalname`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduOrg attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgsuperioruri
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEduorgsuperioruri(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:eduorgsuperioruri`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduOrg attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgwhitepagesuri
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEduorgwhitepagesuri(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:eduorgwhitepagesuri`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonaffiliation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonaffiliation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonaffiliation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonassurance
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonassurance(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonassurance`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonentitlement
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonentitlement(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonentitlement`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonnickname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonnickname(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonnickname`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgdn
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonorgdn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonorgdn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgunitdn
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonorgunitdn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonorgunitdn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryaffiliation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonprimaryaffiliation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonprimaryaffiliation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryorgunitdn
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonprimaryorgunitdn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonprimaryorgunitdn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprincipalname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonprincipalname(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonprincipalname`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonscopedaffiliation
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersonscopedaffiliation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersonscopedaffiliation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the eduPerson attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersontargetedid
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEdupersontargetedid(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:edupersontargetedid`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the givenName attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_givenname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGivenName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:givenName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the issuer, which is represented by a URN
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_iss
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifIss(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:iss`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the mail attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_mail
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifMail(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:mail`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the name attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_name
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the hash value of the issuer, account ID, and friendly name
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_namequalifier
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifNamequalifier(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:namequalifier`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the organizationStatus attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_organizationstatus
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifOrganizationStatus(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:organizationStatus`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the primaryGroupSID attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_primarygroupsid
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPrimaryGroupSID(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:primaryGroupSID`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the subject of the claim (the SAML user ID)
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSub(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:sub`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the value persistent, transient, or the full Format URI
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_subtype
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSubType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:sub_type`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the surname attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_surname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSurname(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:surname`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the uid attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_uid
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUid(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:uid`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the uid attribute
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_x500uniqueidentifier
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifX500UniqueIdentifier(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`saml:x500UniqueIdentifier`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the unique identifier required when you assume a role in another account
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_externalid
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifExternalId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sts:ExternalId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the role session name required when you assume a role
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRoleSessionName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sts:RoleSessionName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the transitive tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TransitiveTagKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTransitiveTagKeys(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sts:TransitiveTagKeys`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the Login with Amazon application ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAppId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`www.amazon.com:app_id`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the Login with Amazon user ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUserId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`www.amazon.com:user_id`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

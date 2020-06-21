@@ -1196,4 +1196,95 @@ export class Dms extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request for Certificate
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCertTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:cert-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request for Endpoint
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEndpointTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:endpoint-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request for EventSubscription
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:es-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request for ReplicationInstance
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRepTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:rep-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:req-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request for ReplicationSubnetGroup
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:subgrp-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request for ReplicationTask
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTaskTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dms:task-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

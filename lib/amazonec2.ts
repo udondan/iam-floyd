@@ -10865,4 +10865,890 @@ export class Ec2 extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the ARN of an accepter VPC in a VPC peering connection
+   *
+   * https://docs.aws.amazon.com/vpc/latest/peering/security-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifAccepterVpc(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:AccepterVpc`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by whether the user wants to associate a public IP address with the instance
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAssociatePublicIpAddress(value?: boolean) {
+    return this.if('Bool', {
+      'ec2:AssociatePublicIpAddress': value || true,
+    });
+  }
+
+  /**
+   * Filters access by the authentication type for the VPN tunnel endpoints
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAuthenticationType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:AuthenticationType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the AWS service that has permission to use a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAuthorizedService(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:AuthorizedService`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by an IAM principal that has permission to use a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAuthorizedUser(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:AuthorizedUser`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the Auto Placement properties of a Dedicated Host
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAutoPlacement(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:AutoPlacement`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the name of an Availability Zone in an AWS Region
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAvailabilityZone(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:AvailabilityZone`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the name of a resource-creating API action
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCreateAction(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:CreateAction`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the duration after which DPD timeout occurs on a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifDPDTimeoutSeconds(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:DPDTimeoutSeconds`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by whether the instance is enabled for EBS optimization
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEbsOptimized(value?: boolean) {
+    return this.if('Bool', {
+      'ec2:EbsOptimized': value || true,
+    });
+  }
+
+  /**
+   * Filters access by the type of Elastic Graphics accelerator
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifElasticGpuType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ElasticGpuType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by whether the EBS volume is encrypted
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEncrypted(value?: boolean) {
+    return this.if('Bool', {
+      'ec2:Encrypted': value || true,
+    });
+  }
+
+  /**
+   * Filters access by the gateway type for a VPN endpoint on the AWS side of a VPN connection
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGatewayType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:GatewayType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by whether host recovery is enabled for a Dedicated Host
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifHostRecovery(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:HostRecovery`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the internet key exchange (IKE) versions that are permitted for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifIKEVersions(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:IKEVersions`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the type of image (machine, aki, or ari)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifImageType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ImageType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the range of inside IP addresses for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInsideTunnelCidr(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:InsideTunnelCidr`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the market or purchasing option of an instance (on-demand or spot)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInstanceMarketType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:InstanceMarketType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of an instance profile
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifInstanceProfile(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:InstanceProfile`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the type of instance
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInstanceType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:InstanceType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by whether users are able to override resources that are specified in the launch template
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifIsLaunchTemplateResource(value?: boolean) {
+    return this.if('Bool', {
+      'ec2:IsLaunchTemplateResource': value || true,
+    });
+  }
+
+  /**
+   * Filters access by the ARN of a launch template
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifLaunchTemplate(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:LaunchTemplate`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by whether the HTTP endpoint is enabled for the instance metadata service
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifMetadataHttpEndpoint(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:MetadataHttpEndpoint`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the allowed number of hops when calling the instance metadata service
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:MetadataHttpPutResponseHopLimit`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by whether tokens are required when calling the instance metadata service (optional or required)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifMetadataHttpTokens(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:MetadataHttpTokens`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the owner of the resource (amazon, aws-marketplace, or an AWS account ID)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifOwner(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Owner`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the parent snapshot
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifParentSnapshot(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ParentSnapshot`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the parent volume from which the snapshot was created
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifParentVolume(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ParentVolume`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the type of permission for a resource (INSTANCE-ATTACH or EIP-ASSOCIATE)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPermission(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Permission`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the Diffie-Hellman group numbers that are permitted for a VPN tunnel for the phase 1 IKE negotiations
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifPhase1DHGroupNumbers(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase1DHGroupNumbers`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the encryption algorithms that are permitted for a VPN tunnel for the phase 1 IKE negotiations
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.htmls
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPhase1EncryptionAlgorithms(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase1EncryptionAlgorithms`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the integrity algorithms that are permitted for a VPN tunnel for the phase 1 IKE negotiations
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPhase1IntegrityAlgorithms(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase1IntegrityAlgorithms`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the lifetime in seconds for phase 1 of the IKE negotiations for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifPhase1LifetimeSeconds(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase1LifetimeSeconds`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the Diffie-Hellman group numbers that are permitted for a VPN tunnel for the phase 2 IKE negotiations
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifPhase2DHGroupNumbers(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase2DHGroupNumbers`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the encryption algorithms that are permitted for a VPN tunnel for the phase 2 IKE negotiations
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPhase2EncryptionAlgorithms(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase2EncryptionAlgorithms`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the integrity algorithms that are permitted for a VPN tunnel for the phase 2 IKE negotiations
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPhase2IntegrityAlgorithms(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase2IntegrityAlgorithms`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the lifetime in seconds for phase 2 of the IKE negotiations for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifPhase2LifetimeSeconds(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Phase2LifetimeSeconds`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the placement group
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifPlacementGroup(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:PlacementGroup`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the instance placement strategy used by the placement group (cluster, spread, or partition)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPlacementGroupStrategy(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:PlacementGroupStrategy`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the pre-shared key (PSK) used to establish the initial IKE security association between a virtual private gateway and a customer gateway
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPresharedKeys(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:PresharedKeys`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the product code that is associated with the AMI
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProductCode(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ProductCode`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by whether the image has public launch permissions
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifPublic(value?: boolean) {
+    return this.if('Bool', {
+      'ec2:Public': value || true,
+    });
+  }
+
+  /**
+   * Filters access by the number of Dedicated Hosts in a request
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifQuantity(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Quantity`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the name of the AWS Region
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRegion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Region`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the percentage of increase of the rekey window (determined by the rekey margin time) within which the rekey time is randomly selected for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRekeyFuzzPercentage(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:RekeyFuzzPercentage`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the margin time before the phase 2 lifetime expires for a VPN tunnel
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRekeyMarginTimeSeconds(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:RekeyMarginTimeSeconds`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of a requester VPC in a VPC peering connection
+   *
+   * https://docs.aws.amazon.com/vpc/latest/peering/security-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifRequesterVpc(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:RequesterVpc`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the payment option of the Reserved Instance offering (No Upfront, Partial Upfront, or All Upfront)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html#ri-payment-options
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifReservedInstancesOfferingType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ReservedInstancesOfferingType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the preface string for a tag key and value pair that are attached to a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTagExists(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ResourceTag/`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:ResourceTag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the version of the instance metadata service for retrieving IAM role credentials for EC2
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRoleDelivery(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:RoleDelivery`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the root device type of the instance (ebs or instance-store)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRootDeviceType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:RootDeviceType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the routing type for the VPN connection
+   *
+   * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRoutingType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:RoutingType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the initiation time of a snapshot
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSnapshotTime(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:SnapshotTime`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the instance from which the request originated
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifSourceInstanceARN(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:SourceInstanceARN`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the subnet
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifSubnet(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Subnet`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the tenancy of the VPC or instance (default, dedicated, or host)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTenancy(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Tenancy`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the the number of input/output operations per second (IOPS) provisioned for the volume
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifVolumeIops(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:VolumeIops`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the size of the volume, in GiB.
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifVolumeSize(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`ec2:VolumeSize`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by the type of volume (gp2, io1, st1, sc1, or standard)
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVolumeType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:VolumeType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the VPC
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifVpc(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:Vpc`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the name of the VPC endpoint service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVpceServiceName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:VpceServiceName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the service owner of the VPC endpoint service (amazon, aws-marketplace, or an AWS account ID)
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVpceServiceOwner(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:VpceServiceOwner`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the private DNS name of the VPC endpoint service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVpceServicePrivateDnsName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ec2:VpceServicePrivateDnsName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -743,4 +743,32 @@ export class Glacier extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * How long an archive has been stored in the vault, in days.
+   *
+   * https://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifArchiveAgeInDays(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`glacier:ArchiveAgeInDays`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A customer-defined tag.
+   *
+   * https://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTagExists(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`glacier:ResourceTag/`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -363,4 +363,18 @@ export class CodestarNotifications extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access based on the ARN of the resource for which notifications are configured
+   *
+   * https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_id-based-policy-examples.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifNotificationsForResource(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-notifications:NotificationsForResource`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
 }

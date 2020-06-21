@@ -5186,4 +5186,39 @@ export class Iot extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The flag indicating whether or not to also delete an IoT Tunnel immediately
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifDelete(value?: boolean) {
+    return this.if('Bool', {
+      'iot:Delete': value || true,
+    });
+  }
+
+  /**
+   * The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifThingGroupArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iot:ThingGroupArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The list of all destination services for an IoT Tunnel
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTunnelDestinationService(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iot:TunnelDestinationService`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

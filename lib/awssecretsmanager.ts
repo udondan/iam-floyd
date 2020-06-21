@@ -522,4 +522,159 @@ export class Secretsmanager extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the description text in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDescription(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:Description`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by whether the secret is to be deleted immediately without any recovery window.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifForceDeleteWithoutRecovery(value?: boolean) {
+    return this.if('Bool', {
+      'secretsmanager:ForceDeleteWithoutRecovery': value || true,
+    });
+  }
+
+  /**
+   * Filters access by the ARN of the KMS key in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifKmsKeyId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:KmsKeyId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the friendly name of the secret in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:Name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the number of days that Secrets Manager waits before it can delete the secret.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRecoveryWindowInDays(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:RecoveryWindowInDays`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Filters access by a tag key and value pair.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param tagkey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:ResourceTag/${ tagkey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the rotation Lambda function in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifRotationLambdaARN(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:RotationLambdaARN`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the SecretID value in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifSecretId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:SecretId`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the unique identifier of the version of the secret in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVersionId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:VersionId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the list of version stages in the request.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVersionStage(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:VersionStage`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of the rotation Lambda function associated with the secret.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * @param allowRotationLambdaArn The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`secretsmanager:resource/${ allowRotationLambdaArn }`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
 }

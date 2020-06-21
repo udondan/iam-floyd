@@ -684,4 +684,17 @@ export class Ecr extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ecr:ResourceTag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

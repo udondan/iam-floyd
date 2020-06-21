@@ -653,4 +653,16 @@ export class Dax extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEnclosingOperation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dax:EnclosingOperation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

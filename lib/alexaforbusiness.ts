@@ -1919,4 +1919,32 @@ export class A4b extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters actions based on the Amazon Id in the request
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_RegisterAVSDevice.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAmazonId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`a4b:amazonId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the device type in the request
+   *
+   * https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchDevices.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFiltersDeviceType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`a4b:filters_deviceType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

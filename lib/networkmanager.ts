@@ -868,4 +868,32 @@ export class Networkmanager extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Controls which customer gateways can be associated or disassociated
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCgwArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`networkmanager:cgwArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls which transit gateways can be registered or deregistered
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTgwArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`networkmanager:tgwArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

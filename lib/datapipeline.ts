@@ -430,4 +430,46 @@ export class Datapipeline extends PolicyStatement {
     this.add('datapipeline:ValidatePipelineDefinition');
     return this;
   }
+
+  /**
+   * The IAM user that created the pipeline.
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-example-tag-policies.html#ex3
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifPipelineCreator(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`datapipeline:PipelineCreator`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * A customer-specified key/value pair that can be attached to a resource.
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-tags
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifTag(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`datapipeline:Tag`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The name of a worker group for which a Task Runner retrieves work.
+   *
+   * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-workergroup
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifWorkerGroup(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`datapipeline:workerGroup`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
 }

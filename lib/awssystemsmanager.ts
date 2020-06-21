@@ -3000,4 +3000,72 @@ export class Ssm extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by controlling whether the values for specified resources can be overwritten.
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifOverwrite(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ssm:Overwrite`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access for resources created in a hierarchical structure.
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRecursive(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ssm:Recursive`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by verifying that a user also has access to the default Session Manager configuration document.
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifSessionDocumentAccessCheck(value?: boolean) {
+    return this.if('Bool', {
+      'ssm:SessionDocumentAccessCheck': value || true,
+    });
+  }
+
+  /**
+   * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSyncType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ssm:SyncType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access based on a tag key-value pair assigned to the Systems Manager resource
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * @param tagkey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ssm:resourceTag/${ tagkey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -657,4 +657,32 @@ export class Sns extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription.
+   *
+   * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEndpoint(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sns:Endpoint`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The protocol value from a Subscribe request or a previously confirmed subscription.
+   *
+   * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProtocol(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sns:Protocol`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -863,4 +863,34 @@ export class Elasticmapreduce extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters actions based on whether the tag and value pair is provided with the action
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticmapreduce:RequestTag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters actions based on the tag and value pair associated with an Amazon EMR resource
+   *
+   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticmapreduce:ResourceTag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -1398,4 +1398,102 @@ export class Elasticbeanstalk extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by an application as a dependency or a constraint on an input parameter.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFromApplication(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:FromApplication`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by an application version as a dependency or a constraint on an input parameter.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFromApplicationVersion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:FromApplicationVersion`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by a configuration template as a dependency or a constraint on an input parameter.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFromConfigurationTemplate(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:FromConfigurationTemplate`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by an environment as a dependency or a constraint on an input parameter.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFromEnvironment(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:FromEnvironment`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by a platform as a dependency or a constraint on an input parameter.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFromPlatform(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:FromPlatform`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by a solution stack as a dependency or a constraint on an input parameter.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFromSolutionStack(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:FromSolutionStack`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the application that contains the resource that the action operates on.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifInApplication(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticbeanstalk:InApplication`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
 }

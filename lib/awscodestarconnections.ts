@@ -350,4 +350,144 @@ export class CodestarConnections extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the branch name that is passed in the request. Applies only to UseConnection requests for access to a specific repository branch
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifBranchName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:BranchName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the repository that is passed in the request. Applies only to UseConnection requests for access to a specific repository
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFullRepositoryId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:FullRepositoryId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the third-party ID (such as the Bitbucket App installation ID for CodeStar Connections) that is used to update a Connection. Allows you to restrict which third-party App installations can be used to make a Connection
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions-handshake
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInstallationId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:InstallationId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the owner of the third-party repository. Applies only to UseConnection requests for access to repositories owned by a specific user
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifOwnerId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:OwnerId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the service to which the principal is allowed to pass a Connection
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-passconnection
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPassedToService(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:PassedToService`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the provider action in a UseConnection request such as ListRepositories. See documentation for all valid values
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use-provider
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProviderAction(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:ProviderAction`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the write permissions of a provider action in a UseConnection request. Valid types include read_only and read_write
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProviderPermissionsRequired(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:ProviderPermissionsRequired`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the type of third-party provider passed in the request
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProviderType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:ProviderType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the type of third-party provider used to filter results
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProviderTypeFilter(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:ProviderTypeFilter`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the repository name that is passed in the request. Applies only to UseConnection requests for creating new repositories
+   *
+   * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRepositoryName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codestar-connections:RepositoryName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

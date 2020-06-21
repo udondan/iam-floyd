@@ -1168,4 +1168,40 @@ export class Lex extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Enables you to control access based on the intents included in the request.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAssociatedIntents(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`lex:associatedIntents`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to control access based on the slot types included in the request.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAssociatedSlotTypes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`lex:associatedSlotTypes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to control access based on the channel type included in the request.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifChannelType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`lex:channelType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

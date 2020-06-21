@@ -4110,4 +4110,339 @@ export class Sagemaker extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The list of all accelerator types associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAcceleratorTypes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:AcceleratorTypes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * App network access associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAppNetworkAccess(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:AppNetworkAccess`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The direct internet access associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDirectInternetAccess(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:DirectInternetAccess`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The Domain sharing output KMS key associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifDomainSharingOutputKmsKey(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:DomainSharingOutputKmsKey`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * File system access mode associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFileSystemAccessMode(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:FileSystemAccessMode`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * File system directory path associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFileSystemDirectoryPath(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:FileSystemDirectoryPath`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A file system ID associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFileSystemId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:FileSystemId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * File system type associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFileSystemType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:FileSystemType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The KMS Key Id of the EFS File System used for UserProfile home directories, which is associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifHomeEfsFileSystemKmsKey(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:HomeEfsFileSystemKmsKey`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The list of all instance types associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInstanceTypes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:InstanceTypes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The inter container traffic encryption associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifInterContainerTrafficEncryption(value?: boolean) {
+    return this.if('Bool', {
+      'sagemaker:InterContainerTrafficEncryption': value || true,
+    });
+  }
+
+  /**
+   * The max runtime in seconds associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaxRuntimeInSeconds(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:MaxRuntimeInSeconds`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * The model arn associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifModelArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:ModelArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The network isolation associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifNetworkIsolation(value?: boolean) {
+    return this.if('Bool', {
+      'sagemaker:NetworkIsolation': value || true,
+    });
+  }
+
+  /**
+   * The output kms key associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifOutputKmsKey(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:OutputKmsKey`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The preface string for a tag key and value pair attached to a resource.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTagExists(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:ResourceTag/`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag key and value pair.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:ResourceTag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The root access associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRootAccess(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:RootAccess`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The target model associated with the Multi-Model Endpoint in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTargetModel(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:TargetModel`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The volume kms key associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifVolumeKmsKey(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:VolumeKmsKey`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The list of all vpc security group ids associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVpcSecurityGroupIds(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:VpcSecurityGroupIds`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The list of all vpc subnets associated with the resource in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVpcSubnets(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:VpcSubnets`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The workteam arn associated to the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifWorkteamArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:WorkteamArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The workteam type associated to the request. This can be public-crowd, private-crowd or vendor-crowd.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifWorkteamType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`sagemaker:WorkteamType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

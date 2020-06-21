@@ -748,4 +748,88 @@ export class Groundstation extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the ID of a config
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifConfigId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:configId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the type of a config
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifConfigType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:configType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ID of a contact
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifContactId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:contactId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ID of a dataflow endpoint group
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDataflowEndpointGroupId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:dataflowEndpointGroupId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ID of a ground station
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGroundStationId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:groundStationId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ID of a mission profile
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifMissionProfileId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:missionProfileId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the ID of a satellite
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSatelliteId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`groundstation:satelliteId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

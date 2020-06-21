@@ -614,4 +614,114 @@ export class Ram extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals. External principals are AWS accounts that are outside of its AWS organization
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAllowsExternalPrincipals(value?: boolean) {
+    return this.if('Bool', {
+      'ram:AllowsExternalPrincipals': value || true,
+    });
+  }
+
+  /**
+   * Indicates that the action can only be performed on a resource using the specified Permission ARN.
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifPermissionArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ram:PermissionArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Principals with the specified format can be associated to or disassociated from a resource share
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPrincipal(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ram:Principal`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The request must have the specified value for 'allowExternalPrincipals'. External principals are AWS accounts that are outside of its AWS Organization
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifRequestedAllowsExternalPrincipals(value?: boolean) {
+    return this.if('Bool', {
+      'ram:RequestedAllowsExternalPrincipals': value || true,
+    });
+  }
+
+  /**
+   * Indicates that the action can only be performed on the specified resource type
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRequestedResourceType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ram:RequestedResourceType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Indicates that the action can only be performed on a resource with the specified ARN.
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifResourceArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ram:ResourceArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Indicates that the action can only be performed on a resource share with the specified name.
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceShareName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ram:ResourceShareName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Indicates that the action can only be performed on resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID.
+   *
+   * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifShareOwnerAccountId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ram:ShareOwnerAccountId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

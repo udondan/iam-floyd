@@ -644,4 +644,18 @@ export class Dataexchange extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Indicates that the action can only be performed on the specified job type.
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifJobType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dataexchange:JobType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

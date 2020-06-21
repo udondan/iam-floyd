@@ -1229,4 +1229,88 @@ export class Dynamodb extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filter based on the attribute (field or column) names of the table.
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAttributes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dynamodb:Attributes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa.
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEnclosingOperation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dynamodb:EnclosingOperation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters based on the partition key of the table.
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifLeadingKeys(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dynamodb:LeadingKeys`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filter based on the ReturnConsumedCapacity parameter of a request. Contains either "TOTAL" or "NONE".
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifReturnConsumedCapacity(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dynamodb:ReturnConsumedCapacity`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filter based on the ReturnValues parameter of request. Contains one of the following: "ALL_OLD", "UPDATED_OLD","ALL_NEW","UPDATED_NEW", or "NONE".
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifReturnValues(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dynamodb:ReturnValues`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filter based on the Select parameter of a Query or Scan request.
+   *
+   * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSelect(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`dynamodb:Select`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

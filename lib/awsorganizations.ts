@@ -1295,4 +1295,32 @@ export class Organizations extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Enables you to filter the request to only the specified policy type names.
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPolicyType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`organizations:PolicyType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to filter the request to only the specified service principal names.
+   *
+   * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifServicePrincipal(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`organizations:ServicePrincipal`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

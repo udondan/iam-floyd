@@ -765,4 +765,88 @@ export class Events extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The ARN of a target that can be put to a rule.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifTargetArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`events:TargetArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Matches the literal string of the detail-type filed of the event.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDetailType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`events:detail-type`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Matches the literal string for the detail.eventTypeCode field of the event.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-type-code
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDetailEventTypeCode(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`events:detail.eventTypeCode`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Matches the literal string for the detail.service field of the event.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDetailService(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`events:detail.service`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Matches the literal string for the detail.useridentity.principalid field of the event.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#consume-specific-events
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`events:detail.userIdentity.principalId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The AWS service or AWS partner event source that generated the event. Matches the literal string of the source field of the event.
+   *
+   * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSource(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`events:source`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

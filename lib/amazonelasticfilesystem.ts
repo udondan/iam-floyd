@@ -687,4 +687,18 @@ export class Elasticfilesystem extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The ARN of the access point used to mount the file system
+   *
+   * efs-access-points.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAccessPointArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticfilesystem:AccessPointArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

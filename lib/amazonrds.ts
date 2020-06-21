@@ -3458,4 +3458,307 @@ export class Rds extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * A type of DB instance class.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDatabaseClass(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:DatabaseClass`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A database engine. For possible values refer to engine parameter in https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDatabaseEngine(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:DatabaseEngine`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The user-defined name of the database on the DB instance.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDatabaseName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:DatabaseName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The type of the endpoint. One of: READER, WRITER, CUSTOM.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEndpointType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:EndpointType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A value that specifies whether the DB instance runs in multiple Availability Zones. To indicate that the DB instance is using Multi-AZ, specify true.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifMultiAz(value?: boolean) {
+    return this.if('Bool', {
+      'rds:MultiAz': value || true,
+    });
+  }
+
+  /**
+   * A value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifPiops(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`rds:Piops`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * A value that specifies whether the DB instance storage should be encrypted. To enforce storage encryption, specify true.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifStorageEncrypted(value?: boolean) {
+    return this.if('Bool', {
+      'rds:StorageEncrypted': value || true,
+    });
+  }
+
+  /**
+   * The storage volume size (in GB).
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifStorageSize(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`rds:StorageSize`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * A value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud (Amazon VPC). To indicate that the DB instance runs in an Amazon VPC, specify true.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifVpc(value?: boolean) {
+    return this.if('Bool', {
+      'rds:Vpc': value || true,
+    });
+  }
+
+  /**
+   * A tag attached to a DB cluster parameter group.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifClusterPgTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:cluster-pg-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB cluster snapshot.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifClusterSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:cluster-snapshot-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB cluster.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifClusterTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:cluster-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB instance.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDbTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:db-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to an event subscription.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:es-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB option group.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifOgTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:og-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB parameter group.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPgTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:pg-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Limits the set of tag keys and values that can be used to tag a resource.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:req-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a reserved DB instance.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRiTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:ri-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB security group.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSecgrpTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:secgrp-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB snapshot.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:snapshot-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A tag attached to a DB subnet group.
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`rds:subgrp-tag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

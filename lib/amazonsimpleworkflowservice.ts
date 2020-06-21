@@ -1134,4 +1134,228 @@ export class Swf extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Constrains the policy statement to only an activity type of the specified name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifActivityTypeName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:activityType.name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Contstrains the policy statement to only an activity type of the specified version.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifActivityTypeVersion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:activityType.version`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a matching defaultTaskList name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDefaultTaskListName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:defaultTaskList.name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only activities or workflows with the specified name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a matching tagFilter.tag value.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTagFilterTag(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:tagFilter.tag`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that contain the specified tag.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTagListMember0(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:tagList.member.0`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that contain the specified tag.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTagListMember1(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:tagList.member.1`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that contain the specified tag.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTagListMember2(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:tagList.member.2`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that contain the specified tag.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTagListMember3(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:tagList.member.3`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that contain the specified tag.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTagListMember4(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:tagList.member.4`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a tasklist with the specified name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTaskListName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:taskList.name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a type filter with the specified name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTypeFilterName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:typeFilter.name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a type filter with the specified version.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTypeFilterVersion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:typeFilter.version`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only activities or workflows with the specified version.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVersion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:version`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a workflow type of the specified name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifWorkflowTypeName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:workflowType.name`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Constrains the policy statement to only requests that specify a workflow type of the specified version.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifWorkflowTypeVersion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`swf:workflowType.version`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

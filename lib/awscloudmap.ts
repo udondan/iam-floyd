@@ -549,4 +549,60 @@ export class Servicediscovery extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * A filter that lets you get objects by specifying the Amazon Resource Name (ARN) for the related namespace.
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifNamespaceArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicediscovery:NamespaceArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A filter that lets you get objects by specifying the name of the related namespace.
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifNamespaceName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicediscovery:NamespaceName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A filter that lets you get objects by specifying the Amazon Resource Name (ARN) for the related service.
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifServiceArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicediscovery:ServiceArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * A filter that lets you get objects by specifying the name of the related service.
+   *
+   * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifServiceName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicediscovery:ServiceName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

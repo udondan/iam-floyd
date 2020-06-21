@@ -1387,4 +1387,46 @@ export class Quicksight extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * IAM user ARN or role ARN.
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifIamArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`quicksight:IamArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The session name.
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSessionName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`quicksight:SessionName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The user name.
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUserName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`quicksight:UserName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

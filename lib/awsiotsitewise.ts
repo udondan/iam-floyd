@@ -1467,4 +1467,102 @@ export class Iotsitewise extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * String of asset IDs in the asset hierarchy separated by forward slash.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_assetHierarchyPath.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAssetHierarchyPath(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:assetHierarchyPath`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * ID of an asset being associated as a child to another asset.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_childAssetId.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifChildAssetId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:childAssetId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Group ID.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GroupId.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGroup(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:group`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Portal ID.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PortalId.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPortal(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:portal`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Project ID.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ProjectId.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifProject(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:project`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Property ID.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PropertyId.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPropertyId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:propertyId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * User ID.
+   *
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UserId.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUser(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`iotsitewise:user`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

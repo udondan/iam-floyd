@@ -354,4 +354,39 @@ export class Batch extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The image used to start a container.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifImage(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`batch:Image`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifPrivileged(value?: boolean) {
+    return this.if('Bool', {
+      'batch:Privileged': value || true,
+    });
+  }
+
+  /**
+   * The user name or numeric uid to use inside the container.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUser(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`batch:User`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

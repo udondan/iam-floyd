@@ -1270,4 +1270,18 @@ export class Appstream extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the ID of the AppStream 2.0 user
+   *
+   * https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUserId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`appstream:userId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

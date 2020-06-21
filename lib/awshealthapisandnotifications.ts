@@ -279,4 +279,32 @@ export class Health extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The type of event.
+   *
+   * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEventTypeCode(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`health:eventTypeCode`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The service of the event.
+   *
+   * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifService(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`health:service`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

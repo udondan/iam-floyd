@@ -248,4 +248,28 @@ export class AwsMarketplace extends PolicyStatement {
     this.add('aws-marketplace:ViewSubscriptions');
     return this;
   }
+
+  /**
+   * Enables you to control access based on the type of the agreement.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAgreementType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`aws-marketplace:AgreementType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to control access based on the party type of the agreement.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPartyType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`aws-marketplace:PartyType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -1355,4 +1355,172 @@ export class Autoscaling extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The AMI used to create the instance.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifImageId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:ImageId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The type of instance, in terms of the hardware resources available.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInstanceType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:InstanceType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The types of instances, in terms of the hardware resources available.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifInstanceTypes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:InstanceTypes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The name of a launch configuration.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifLaunchConfigurationName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:LaunchConfigurationName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by whether users can specify any version of a launch template or only the Latest or Default version
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifLaunchTemplateVersionSpecified(value?: boolean) {
+    return this.if('Bool', {
+      'autoscaling:LaunchTemplateVersionSpecified': value || true,
+    });
+  }
+
+  /**
+   * The name of the load balancer.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifLoadBalancerNames(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:LoadBalancerNames`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The maximum scaling size.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaxSize(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:MaxSize`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * The minimum scaling size.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMinSize(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:MinSize`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * The value of a tag attached to a resource.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:ResourceTag/${ tagKey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The spot price associated with an instance.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifSpotPrice(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:SpotPrice`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * The ARN of a target group.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifTargetGroupARNs(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:TargetGroupARNs`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * The identifier of a VPC zone.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVPCZoneIdentifiers(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`autoscaling:VPCZoneIdentifiers`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

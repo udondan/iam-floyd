@@ -1004,4 +1004,17 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * A tag key and value pair.
+   *
+   * @param tagkey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`elasticloadbalancing:ResourceTag/${ tagkey }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

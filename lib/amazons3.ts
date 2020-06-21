@@ -2814,4 +2814,476 @@ export class S3 extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The network type from which traffic may be received by the access point involved in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAccessPointNetworkOrigin(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:AccessPointNetworkOrigin`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The AWS Account ID of the account that owns the data operations access point involved in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDataAccessPointAccount(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:DataAccessPointAccount`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The ARN of the data operations access point involved in the request
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDataAccessPointArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:DataAccessPointArn`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifExistingJobOperation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:ExistingJobOperation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifExistingJobPriority(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`s3:ExistingJobPriority`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Enables you to verify that an existing object tag has the specific tag key and value.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   *
+   * @param key The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifExistingObjectTag(key: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:ExistingObjectTag/${ key }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifJobSuspendedCause(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:JobSuspendedCause`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to restrict users to creating buckets in only a specific region.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifLocationConstraint(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:LocationConstraint`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRequestJobOperation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:RequestJobOperation`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifRequestJobPriority(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`s3:RequestJobPriority`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Restrict the tag keys and values that you want to allow on objects.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   *
+   * @param key The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRequestObjectTag(key: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:RequestObjectTag/${ key }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * restrict the tag keys that you want to allow on objects.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRequestObjectTagKeys(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:RequestObjectTagKeys`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to limit the permission for the s3:PutObjectVersionTagging action to a specific object version.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVersionId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:VersionId`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAuthtype(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:authtype`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to require the user to specify the delimiter parameter in the GET Bucket Object versions request.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDelimiter(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:delimiter`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to restrict the user to creating a bucket in only a specific region.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifLocationconstraint(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:locationconstraint`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to limit the number of keys Amazon S3 returns in response to ListBucket requests by requiring the user to specify the max-keys parameter.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMaxKeys(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`s3:max-keys`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Enables enforcement of the specified object legal hold status
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifObjectLockLegalHold(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:object-lock-legal-hold`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables enforcement of the specified object retention mode
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifObjectLockMode(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:object-lock-mode`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables enforcement of an object relative to the remaining retention days
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifObjectLockRemainingRetentionDays(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:object-lock-remaining-retention-days`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables enforcement of a specific retain-until-date
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifObjectLockRetainUntilDate(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:object-lock-retain-until-date`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to limit the response of the ListBucket API to key names with specific prefix.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPrefix(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:prefix`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifSignatureage(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`s3:signatureage`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSignatureversion(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:signatureversion`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifVersionid(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:versionid`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to require specific access permissions when uploading an object.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzAcl(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-acl`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzContentSha256(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-content-sha256`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to restrict the copy source to a specific bucket, a specific folder in the bucket, or a specific object in a bucket.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzCopySource(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-copy-source`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzGrantFullControl(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-grant-full-control`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzGrantRead(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-grant-read`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzGrantReadAcp(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-grant-read-acp`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzGrantWrite(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-grant-write`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzGrantWriteAcp(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-grant-write-acp`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to enforce certain behavior (COPY vs. REPLACE) when objects are uploaded.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzMetadataDirective(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-metadata-directive`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Enables you to require the user to specify this header in the request to ensure that objects the user uploads are encrypted when they are saved.
+   *
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzServerSideEncryption(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-server-side-encryption`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-server-side-encryption-aws-kms-key-id`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzStorageClass(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-storage-class`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifXAmzWebsiteRedirectLocation(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`s3:x-amz-website-redirect-location`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

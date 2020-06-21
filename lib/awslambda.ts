@@ -1288,4 +1288,40 @@ export class Lambda extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the ARN of an AWS Lambda function
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifFunctionArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`lambda:FunctionArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * Filters access by the ARN of an AWS Lambda layer
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifLayer(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`lambda:Layer`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by restricting the AWS service or account that can invoke a function
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifPrincipal(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`lambda:Principal`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

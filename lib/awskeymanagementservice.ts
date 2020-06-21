@@ -1233,4 +1233,295 @@ export class Kms extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Controls access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifBypassPolicyLockoutSafetyCheck(value?: boolean) {
+    return this.if('Bool', {
+      'kms:BypassPolicyLockoutSafetyCheck': value || true,
+    });
+  }
+
+  /**
+   * Controls access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCallerAccount(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:CallerAccount`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to an API operation based on the CustomerMasterKeySpec property of the CMK that is created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-spec
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCustomerMasterKeySpec(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:CustomerMasterKeySpec`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-usage
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCustomerMasterKeyUsage(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:CustomerMasterKeyUsage`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to GenerateDataKeyPair and GenerateDataKeyPairWithoutPlaintext operations based on the value of the DataKeyPairSpec parameter in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-data-key-pair-spec
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifDataKeyPairSpec(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:DataKeyPairSpec`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to encryption operations based on the value of the encryption algorithm in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEncryptionAlgorithm(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:EncryptionAlgorithm`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access based on the presence of specified keys in the encryption context. The encryption context is an optional element in a cryptographic operation.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifEncryptionContextKeys(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:EncryptionContextKeys`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifExpirationModel(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:ExpirationModel`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the CreateGrant operation based on the grant constraint in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGrantConstraintType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:GrantConstraintType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the CreateGrant operation when the request comes from a specified AWS service.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifGrantIsForAWSResource(value?: boolean) {
+    return this.if('Bool', {
+      'kms:GrantIsForAWSResource': value || true,
+    });
+  }
+
+  /**
+   * Controls access to the CreateGrant operation based on the operations in the grant.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGrantOperations(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:GrantOperations`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the CreateGrant operation based on the grantee principal in the grant.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifGranteePrincipal(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:GranteePrincipal`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to an API operation based on the Origin property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifKeyOrigin(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:KeyOrigin`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the Sign and Verify operations based on the value of the MessageType parameter in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifMessageType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:MessageType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifReEncryptOnSameKey(value?: boolean) {
+    return this.if('Bool', {
+      'kms:ReEncryptOnSameKey': value || true,
+    });
+  }
+
+  /**
+   * Controls access to the CreateGrant operation based on the retiring principal in the grant.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRetiringPrincipal(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:RetiringPrincipal`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the Sign and Verify operations based on the signing algorithm in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifSigningAlgorithm(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:SigningAlgorithm`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifValidTo(value: number | number[], operator?: string) {
+    const props: any = {};
+    props[`kms:ValidTo`] = value;
+    return this.if(operator || 'NumericEquals', props);
+  }
+
+  /**
+   * Controls access when a request made on the principal's behalf comes from a specified AWS service.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifViaService(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:ViaService`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifWrappingAlgorithm(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:WrappingAlgorithm`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Controls access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request.
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifWrappingKeySpec(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`kms:WrappingKeySpec`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

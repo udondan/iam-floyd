@@ -1234,4 +1234,33 @@ export class Imagebuilder extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by the tag key-value pairs attached to the resource created by Image Builder
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetag
+   *
+   * @param key The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`imagebuilder:CreatedResourceTag/${ key }`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Filters access by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetagkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifCreatedResourceTagKeys(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`imagebuilder:CreatedResourceTagKeys`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

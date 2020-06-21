@@ -1330,4 +1330,88 @@ export class Cloudformation extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * An AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete.
+   *
+   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifChangeSetName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudformation:ChangeSetName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The template resource types, such as <code>AWS::EC2::Instance</code>. Use to control which resource types IAM users can work with when they want to import a resource into a stack.
+   *
+   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifImportResourceTypes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudformation:ImportResourceTypes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The template resource types, such as <code>AWS::EC2::Instance</code>. Use to control which resource types IAM users can work with when they create or update a stack.
+   *
+   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifResourceTypes(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudformation:ResourceTypes`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets.
+   *
+   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifRoleArn(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudformation:RoleArn`] = value;
+    return this.if(operator || 'ArnEquals', props);
+  }
+
+  /**
+   * An Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action.
+   *
+   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifStackPolicyUrl(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudformation:StackPolicyUrl`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * An Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks.
+   *
+   * ${DocumenationLink}using-iam-template.html#using-iam-template-conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifTemplateUrl(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudformation:TemplateUrl`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

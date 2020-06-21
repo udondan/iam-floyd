@@ -1942,4 +1942,18 @@ export class Codecommit extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters access by Git reference to specified AWS CodeCommit actions
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-conditional-branch.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifReferences(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`codecommit:References`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

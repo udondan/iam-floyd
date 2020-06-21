@@ -1032,4 +1032,52 @@ export class SesPinpoint extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * The "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFeedbackAddress(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ses:FeedbackAddress`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The "From" address of a message.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFromAddress(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ses:FromAddress`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The "From" address that is used as the display name of a message.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifFromDisplayName(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ses:FromDisplayName`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRecipients(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`ses:Recipients`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

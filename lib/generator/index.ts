@@ -7,13 +7,34 @@ import glob = require('glob');
 import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
-import { ResourceTypes } from '../shared';
+import { Conditions, ResourceTypes } from '../shared';
 import { arnFixer, fixes } from './fixes';
 
 const project = new Project();
 const modules: Module[] = [];
 const timeThreshold = new Date();
 timeThreshold.setHours(timeThreshold.getHours() - 2);
+
+const conditionTypeDefaults = {
+  string: {
+    url:
+      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
+    default: 'StringEquals',
+    type: 'string',
+  },
+  arn: {
+    url:
+      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
+    default: 'ArnEquals',
+    type: 'string',
+  },
+  numeric: {
+    url:
+      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
+    default: 'NumericEquals',
+    type: 'number',
+  },
+};
 
 export interface Module {
   name?: string;
@@ -24,6 +45,7 @@ export interface Module {
   fixes?: {
     [key: string]: any;
   };
+  conditions?: Conditions;
 }
 
 export interface Actions {
@@ -66,7 +88,13 @@ export function getAwsServices(): Promise<string[]> {
       if (!services.length) {
         return reject(`Unable to find services on ${url}`);
       }
-      resolve(services.sort()); // shortcut helper for testing: .slice(0, 3)
+
+      // set env `SERVICE` to generate only a single service for testing purpose
+      const testOverride = process.env.SERVICE;
+      if (typeof testOverride !== 'undefined' && testOverride.length) {
+        return resolve([testOverride]);
+      }
+      resolve(services.sort());
     });
   });
 }
@@ -116,6 +144,7 @@ export function getContent(service: string): Promise<Module> {
 
       module.actions = parseActionTable($);
       module.resourceTypes = parseResourceTypeTable($, module.name);
+      module.conditions = parseConditionTable($);
 
       resolve(module);
     });
@@ -265,6 +294,100 @@ export function createModule(module: Module): Promise<void> {
     method.setBodyText(methodBody.join('\n'));
   }
 
+  for (const [key, condition] of Object.entries(module.conditions!)) {
+    if (!condition.isGlobal) {
+      const name = key.split(/[:/]/);
+      var desc = '';
+
+      if (condition.description.length) {
+        desc += `\n${condition.description}\n`;
+      }
+
+      if (condition.url.length) {
+        desc += `\n${condition.url}\n`;
+      }
+
+      var type = condition.type.toLowerCase();
+      if (type == 'arrayofstring') {
+        type = 'string';
+      } else if (type == 'long') {
+        type = 'numeric';
+      }
+      const methodBody: string[] = [];
+
+      if (type in conditionTypeDefaults) {
+        methodBody.push('const props: any = {};');
+      }
+
+      var methodName = `if${upperFirst(camelCase(name[1]))}`;
+      if (name.length > 2 && !name[2].length) {
+        // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
+        methodName += 'Exists';
+      }
+      const method = classDeclaration.addMethod({
+        name: methodName,
+        scope: Scope.Public,
+      });
+
+      var propsKey = `${name[0]}:${name[1]}`;
+
+      if (name.length > 2) {
+        // it is one of those tag keys
+        propsKey += '/';
+        if (name[2].length) {
+          const paramName = name[2].replace(/[^a-zA-Z0-9]/g, '');
+          desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
+          method.addParameter({
+            name: lowerFirst(paramName),
+            type: 'string',
+          });
+          propsKey += `\${${lowerFirst(paramName)}}`;
+        }
+      }
+
+      if (type in conditionTypeDefaults) {
+        methodBody.push(`props[\`${propsKey}\`] = value;`);
+        desc += `\n@param value The value(s) to check`;
+        method.addParameter({
+          name: 'value',
+          type: `${conditionTypeDefaults[type].type} | ${conditionTypeDefaults[type].type}[]`,
+        });
+
+        desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
+        method.addParameter({
+          name: 'operator',
+          type: 'string',
+          hasQuestionToken: true,
+        });
+        methodBody.push(
+          `return this.if(operator || '${conditionTypeDefaults[type].default}', props)`
+        );
+      } else if (type == 'bool' || type == 'boolean') {
+        desc += '\n@param value `true` or `false`. **Default:** `true`';
+
+        method.addParameter({
+          name: 'value',
+          type: 'boolean',
+          hasQuestionToken: true,
+        });
+
+        methodBody.push(
+          `return this.if('Bool', {`,
+          `'${key}': value || true,`,
+          `});`
+        );
+      } else {
+        throw new Error(`Unexpected condition type: ${type}`);
+      }
+
+      method.addJsDoc({
+        description: desc,
+      });
+
+      method.setBodyText(methodBody.join('\n'));
+    }
+  }
+
   formatCode(sourceFile);
   console.log('Done'.green);
   return sourceFile.save();
@@ -335,7 +458,7 @@ export function lowerFirst(str: string): string {
 
 export function camelCase(str: string) {
   return str
-    .split(/[_-\s/]/)
+    .split(/[_-\s\./]/)
     .map((str) => {
       return upperFirst(str);
     })
@@ -504,4 +627,27 @@ function parseResourceTypeTable(
     }
   });
   return resourceTypes;
+}
+
+function parseConditionTable($: CheerioStatic): Conditions {
+  const conditions: Conditions = {};
+  const table = getTable($, 'Condition Keys');
+  table.find('tr').each((_: number, element: CheerioElement) => {
+    const tds = $(element).find('td');
+    const key = tds.first().text().trim();
+    const url = tds.first().find('a[href]').attr('href')?.trim() || '';
+    const description = cleanDescription(tds.first().next().text());
+    const type = tds.first().next().next().text().trim();
+
+    if (key.length) {
+      conditions[key] = {
+        key: key,
+        description: description,
+        type: type,
+        url: url,
+        isGlobal: key.startsWith('aws:'),
+      };
+    }
+  });
+  return conditions;
 }

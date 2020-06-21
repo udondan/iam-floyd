@@ -1694,4 +1694,46 @@ export class Servicecatalog extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Allows users to see and perform actions on resources created by anyone in the account.
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifAccountLevel(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicecatalog:accountLevel`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Allows users to see and perform actions on resources created either by them or by anyone federating into the same role as them.
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifRoleLevel(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicecatalog:roleLevel`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
+
+  /**
+   * Allows users to see and perform actions on only resources that they created.
+   *
+   * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifUserLevel(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`servicecatalog:userLevel`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

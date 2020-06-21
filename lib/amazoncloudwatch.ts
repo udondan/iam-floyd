@@ -706,4 +706,18 @@ export class Cloudwatch extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Filters actions based on the presence of optional namespace values
+   *
+   * https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-namespace.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifNamespace(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`cloudwatch:namespace`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }

@@ -232,4 +232,18 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
+
+  /**
+   * Enables you to verify change type in the StartChangeSet request.
+   *
+   * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   */
+  public ifChangeType(value: string | string[], operator?: string) {
+    const props: any = {};
+    props[`catalog:ChangeType`] = value;
+    return this.if(operator || 'StringEquals', props);
+  }
 }
