@@ -1,15 +1,20 @@
 # IAM Floyd
 
 [![Source](https://img.shields.io/badge/Source-GitHub-blue?logo=github)][source]
-[![Docs](https://img.shields.io/badge/awscdk.io-iam--floyd-orange)][docs]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
+[![Docs](https://img.shields.io/badge/awscdk.io-iam--floyd-orange)][docs]
 
 [![npm package](https://badge.fury.io/js/iam-floyd.svg)][npm]
 [![PyPI package](https://badge.fury.io/py/iam-floyd.svg)][PyPI]
 [![NuGet package](https://badge.fury.io/nu/IAM.Floyd.svg)][NuGet]
 [![Maven package](https://img.shields.io/badge/maven%20package-0.13.0-brightgreen)][Maven]
 
-AWS [IAM policy statement][statement] generator.
+![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
+[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
+[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=PyPI&color=blueviolet)][PyPI]
+[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=NuGet&color=blueviolet)][NuGet]
+
+**AWS [IAM policy statement][statement] generator.**
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
 
