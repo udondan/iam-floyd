@@ -9,7 +9,7 @@ on:
       - VERSION
 
 jobs:
-  set-version:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,16 +35,6 @@ jobs:
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
           git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
 
-  release:
-    runs-on: ubuntu-latest
-    needs: set-version
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
       - name: Create tag
         run: |
           git config --local user.email "deemes79@googlemail.com"
