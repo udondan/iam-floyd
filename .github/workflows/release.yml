@@ -39,5 +39,5 @@ jobs:
         run: |
           git config --local user.email "deemes79@googlemail.com"
           git config --local user.name "udondan"
-          git tag -a "v$(cat VERSION)" -m 'Creates tag "v$(cat VERSION)"'
+          git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
