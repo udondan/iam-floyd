@@ -113,48 +113,52 @@ export function getContent(service: string): Promise<Module> {
   const urlPattern =
     'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
   return new Promise(async (resolve, reject) => {
-    const module: Module = {
-      filename: service.replace(/[^a-z0-9-]/i, '-'),
-    };
+    try {
+      const module: Module = {
+        filename: service.replace(/[^a-z0-9-]/i, '-'),
+      };
 
-    const url = urlPattern.replace('%s', service);
+      const url = urlPattern.replace('%s', service);
 
-    const cachedFile = `lib/.cache/${module.filename}.ts`;
-    if (fs.existsSync(cachedFile)) {
-      const lastModified = await getLastModified(url);
-      if (lastModified < timeThreshold) {
-        console.log(`Skipping, last modified on ${lastModified}`.green);
-        return resolve(module);
+      const cachedFile = `lib/.cache/${module.filename}.ts`;
+      if (fs.existsSync(cachedFile)) {
+        const lastModified = await getLastModified(url);
+        if (lastModified < timeThreshold) {
+          console.log(`Skipping, last modified on ${lastModified}`.green);
+          return resolve(module);
+        }
       }
+
+      request(url, function (err: any, _: request.Response, body: any) {
+        if (err) {
+          return reject(err);
+        }
+
+        process.stdout.write('Parsing '.blue);
+
+        const $ = cheerio.load(body);
+        const servicePrefix = $('code').first().text().trim();
+
+        if (servicePrefix == '') {
+          console.error(`PREFIX NOT FOUND FOR ${service}`.red.bold);
+        }
+
+        module.name = servicePrefix;
+        module.url = url;
+
+        if (service in fixes) {
+          module.fixes = fixes[service];
+        }
+
+        module.actions = parseActionTable($);
+        module.resourceTypes = parseResourceTypeTable($, module.name);
+        module.conditions = parseConditionTable($);
+
+        resolve(module);
+      });
+    } catch (e) {
+      reject(e);
     }
-
-    request(url, function (err: any, _: request.Response, body: any) {
-      if (err) {
-        return reject(err);
-      }
-
-      process.stdout.write('Parsing '.blue);
-
-      const $ = cheerio.load(body);
-      const servicePrefix = $('code').first().text().trim();
-
-      if (servicePrefix == '') {
-        console.error(`PREFIX NOT FOUND FOR ${service}`.red.bold);
-      }
-
-      module.name = servicePrefix;
-      module.url = url;
-
-      if (service in fixes) {
-        module.fixes = fixes[service];
-      }
-
-      module.actions = parseActionTable($);
-      module.resourceTypes = parseResourceTypeTable($, module.name);
-      module.conditions = parseConditionTable($);
-
-      resolve(module);
-    });
   });
 }
 
