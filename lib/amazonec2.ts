@@ -4222,6 +4222,9 @@ export class Ec2 extends PolicyStatement {
             "ec2:ElasticGpuType"
           ]
         },
+        "elastic-inference": {
+          "required": false
+        },
         "key-pair": {
           "required": false,
           "conditions": [
@@ -4506,10 +4509,16 @@ export class Ec2 extends PolicyStatement {
     "elastic-gpu": {
       "name": "elastic-gpu",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html",
-      "arn": "arn:${Partition}:ec2:${Region}:${Account}:elasticGpu/${ElasticGpuId}",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:elastic-gpu/${ElasticGpuId}",
       "conditionKeys": [
         "ec2:ElasticGpuType"
       ]
+    },
+    "elastic-inference": {
+      "name": "elastic-inference",
+      "url": "https://docs.aws.amazon.com/elastic-inference/latest/developerguide/what-is-ei.html",
+      "arn": "arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${ElasticInferenceAcceleratorId}",
+      "conditionKeys": []
     },
     "fpga-image": {
       "name": "fpga-image",
@@ -9901,8 +9910,27 @@ export class Ec2 extends PolicyStatement {
    *  - ec2:ElasticGpuType
    */
   public onElasticGpu(elasticGpuId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:elasticGpu/${ElasticGpuId}';
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:elastic-gpu/${ElasticGpuId}';
     arn = arn.replace('${ElasticGpuId}', elasticGpuId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type elastic-inference to the statement
+   *
+   * https://docs.aws.amazon.com/elastic-inference/latest/developerguide/what-is-ei.html
+   *
+   * @param elasticInferenceAcceleratorId - Identifier for the elasticInferenceAcceleratorId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onElasticInference(elasticInferenceAcceleratorId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${ElasticInferenceAcceleratorId}';
+    arn = arn.replace('${ElasticInferenceAcceleratorId}', elasticInferenceAcceleratorId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

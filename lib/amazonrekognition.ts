@@ -210,6 +210,11 @@ export class Rekognition extends PolicyStatement {
       "description": "Gets information about people detected within a video.",
       "accessLevel": "Read"
     },
+    "GetSegmentDetection": {
+      "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetSegmentDetection.html",
+      "description": "Gets segment detection results for a Rekognition Video analysis started by StartSegmentDetection.",
+      "accessLevel": "Read"
+    },
     "GetTextDetection": {
       "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_GetTextDetection.html",
       "description": "Gets text detection results for a Rekognition Video analysis started by StartTextDetection.",
@@ -324,6 +329,11 @@ export class Rekognition extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "StartSegmentDetection": {
+      "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartSegmentDetection.html",
+      "description": "Starts asynchronous detection of segments in a video.",
+      "accessLevel": "Write"
     },
     "StartStreamProcessor": {
       "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_StartStreamProcessor.html",
@@ -710,6 +720,18 @@ export class Rekognition extends PolicyStatement {
   }
 
   /**
+   * Gets segment detection results for a Rekognition Video analysis started by StartSegmentDetection.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_GetSegmentDetection.html
+   */
+  public getSegmentDetection() {
+    this.add('rekognition:GetSegmentDetection');
+    return this;
+  }
+
+  /**
    * Gets text detection results for a Rekognition Video analysis started by StartTextDetection.
    *
    * Access Level: Read
@@ -886,6 +908,18 @@ export class Rekognition extends PolicyStatement {
    */
   public startProjectVersion() {
     this.add('rekognition:StartProjectVersion');
+    return this;
+  }
+
+  /**
+   * Starts asynchronous detection of segments in a video.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/rekognition/latest/dg/API_StartSegmentDetection.html
+   */
+  public startSegmentDetection() {
+    this.add('rekognition:StartSegmentDetection');
     return this;
   }
 
