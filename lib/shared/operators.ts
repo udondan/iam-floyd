@@ -301,10 +301,10 @@ function applyModifiers(
     operator += OperatorModifier.IF_EXISTS;
   }
   if (modifiers.includes(OperatorModifier.FOR_ALL_VALUES)) {
-    operator = `${OperatorModifier.FOR_ALL_VALUES}operator`;
+    operator = `${OperatorModifier.FOR_ALL_VALUES}${operator}`;
   }
   if (modifiers.includes(OperatorModifier.FOR_ANY_VALUES)) {
-    operator = `${OperatorModifier.FOR_ANY_VALUES}operator`;
+    operator = `${OperatorModifier.FOR_ANY_VALUES}${operator}`;
   }
   return operator;
 }
