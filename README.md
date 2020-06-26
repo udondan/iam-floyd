@@ -11,8 +11,8 @@
 
 ![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
 [![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
-[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=PyPI&color=blueviolet)][PyPI]
-[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=NuGet&color=blueviolet)][NuGet]
+[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)][PyPI]
+[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
 
 **AWS [IAM policy statement][statement] generator.**
 
