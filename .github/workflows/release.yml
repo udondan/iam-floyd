@@ -16,7 +16,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Update Readme
         uses: udondan/ver2doc@v1.0.1
