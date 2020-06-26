@@ -70,6 +70,11 @@ export class Ssm extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html",
       "description": "Grants permission to create a Systems Manager SSM document",
       "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      },
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -929,12 +934,22 @@ export class Ssm extends PolicyStatement {
     "UpdateDocument": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html",
       "description": "Grants permission to update one or more values for an SSM document",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
     },
     "UpdateDocumentDefaultVersion": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html",
       "description": "Grants permission to change the default version of an SSM document",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
     },
     "UpdateInstanceAssociationStatus": {
       "url": "",

@@ -1173,13 +1173,13 @@ export class Glue extends PolicyStatement {
     "table": {
       "name": "table",
       "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html",
-      "arn": "arn:${Partition}:glue:${Region}:${Account}:table/${TableName}",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:table/${DatabaseName}/${TableName}",
       "conditionKeys": []
     },
     "tableversion": {
       "name": "tableversion",
       "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html",
-      "arn": "arn:${Partition}:glue:${Region}:${Account}:tableVersion/${TableVersionName}",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:tableVersion/${DatabaseName}/${TableName}/${TableVersionName}",
       "conditionKeys": []
     },
     "connection": {
@@ -1191,7 +1191,7 @@ export class Glue extends PolicyStatement {
     "userdefinedfunction": {
       "name": "userdefinedfunction",
       "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html",
-      "arn": "arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${UserDefinedFunctionName}",
+      "arn": "arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${DatabaseName}/${UserDefinedFunctionName}",
       "conditionKeys": []
     },
     "devendpoint": {
@@ -2794,13 +2794,15 @@ export class Glue extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
    *
+   * @param databaseName - Identifier for the databaseName.
    * @param tableName - Identifier for the tableName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onTable(tableName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:table/${TableName}';
+  public onTable(databaseName: string, tableName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:glue:${Region}:${Account}:table/${DatabaseName}/${TableName}';
+    arn = arn.replace('${DatabaseName}', databaseName);
     arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
@@ -2813,13 +2815,17 @@ export class Glue extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
    *
+   * @param databaseName - Identifier for the databaseName.
+   * @param tableName - Identifier for the tableName.
    * @param tableVersionName - Identifier for the tableVersionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onTableversion(tableVersionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:tableVersion/${TableVersionName}';
+  public onTableversion(databaseName: string, tableName: string, tableVersionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:glue:${Region}:${Account}:tableVersion/${DatabaseName}/${TableName}/${TableVersionName}';
+    arn = arn.replace('${DatabaseName}', databaseName);
+    arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${TableVersionName}', tableVersionName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
@@ -2851,13 +2857,15 @@ export class Glue extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html
    *
+   * @param databaseName - Identifier for the databaseName.
    * @param userDefinedFunctionName - Identifier for the userDefinedFunctionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onUserdefinedfunction(userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${UserDefinedFunctionName}';
+  public onUserdefinedfunction(databaseName: string, userDefinedFunctionName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${DatabaseName}/${UserDefinedFunctionName}';
+    arn = arn.replace('${DatabaseName}', databaseName);
     arn = arn.replace('${UserDefinedFunctionName}', userDefinedFunctionName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');

@@ -71,6 +71,22 @@ export class Appconfig extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "CreateHostedConfigurationVersion": {
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateHostedConfigurationVersion.html",
+      "description": "Grants permission to create a hosted configuration version",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "application": {
+          "required": true
+        },
+        "configurationprofile": {
+          "required": true
+        },
+        "hostedconfigurationversion": {
+          "required": true
+        }
+      }
+    },
     "DeleteApplication": {
       "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteApplication.html",
       "description": "Grants permission to delete an application",
@@ -113,6 +129,22 @@ export class Appconfig extends PolicyStatement {
           "required": true
         },
         "environment": {
+          "required": true
+        }
+      }
+    },
+    "DeleteHostedConfigurationVersion": {
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteHostedConfigurationVersion.html",
+      "description": "Grants permission to delete a hosted configuration version",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "application": {
+          "required": true
+        },
+        "configurationprofile": {
+          "required": true
+        },
+        "hostedconfigurationversion": {
           "required": true
         }
       }
@@ -213,6 +245,22 @@ export class Appconfig extends PolicyStatement {
         "aws:ResourceTag/${TagKey}"
       ]
     },
+    "GetHostedConfigurationVersion": {
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetHostedConfigurationVersion.html",
+      "description": "Grants permission to view details about a hosted configuration version",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "application": {
+          "required": true
+        },
+        "configurationprofile": {
+          "required": true
+        },
+        "hostedconfigurationversion": {
+          "required": true
+        }
+      }
+    },
     "ListApplications": {
       "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListApplications.html",
       "description": "Grants permission to list the applications in your account",
@@ -252,6 +300,19 @@ export class Appconfig extends PolicyStatement {
       "accessLevel": "List",
       "resourceTypes": {
         "application": {
+          "required": true
+        }
+      }
+    },
+    "ListHostedConfigurationVersions": {
+      "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListHostedConfigurationVersions.html",
+      "description": "Grants permission to list the hosted configuration versions for a configuration profile",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "application": {
+          "required": true
+        },
+        "configurationprofile": {
           "required": true
         }
       }
@@ -462,7 +523,7 @@ export class Appconfig extends PolicyStatement {
     },
     "configurationprofile": {
       "name": "configurationprofile",
-      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-profile.html",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html",
       "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -483,6 +544,12 @@ export class Appconfig extends PolicyStatement {
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
+    },
+    "hostedconfigurationversion": {
+      "name": "hostedconfigurationversion",
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html",
+      "arn": "arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}/hostedconfigurationversion/${VersionNumber}",
+      "conditionKeys": []
     }
   };
 
@@ -544,6 +611,18 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a hosted configuration version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateHostedConfigurationVersion.html
+   */
+  public createHostedConfigurationVersion() {
+    this.add('appconfig:CreateHostedConfigurationVersion');
+    return this;
+  }
+
+  /**
    * Grants permission to delete an application
    *
    * Access Level: Write
@@ -588,6 +667,18 @@ export class Appconfig extends PolicyStatement {
    */
   public deleteEnvironment() {
     this.add('appconfig:DeleteEnvironment');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a hosted configuration version
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteHostedConfigurationVersion.html
+   */
+  public deleteHostedConfigurationVersion() {
+    this.add('appconfig:DeleteHostedConfigurationVersion');
     return this;
   }
 
@@ -664,6 +755,18 @@ export class Appconfig extends PolicyStatement {
   }
 
   /**
+   * Grants permission to view details about a hosted configuration version
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetHostedConfigurationVersion.html
+   */
+  public getHostedConfigurationVersion() {
+    this.add('appconfig:GetHostedConfigurationVersion');
+    return this;
+  }
+
+  /**
    * Grants permission to list the applications in your account
    *
    * Access Level: List
@@ -720,6 +823,18 @@ export class Appconfig extends PolicyStatement {
    */
   public listEnvironments() {
     this.add('appconfig:ListEnvironments');
+    return this;
+  }
+
+  /**
+   * Grants permission to list the hosted configuration versions for a configuration profile
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListHostedConfigurationVersions.html
+   */
+  public listHostedConfigurationVersions() {
+    this.add('appconfig:ListHostedConfigurationVersions');
     return this;
   }
 
@@ -892,7 +1007,7 @@ export class Appconfig extends PolicyStatement {
   /**
    * Adds a resource of type configurationprofile to the statement
    *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-profile.html
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html
    *
    * @param applicationId - Identifier for the applicationId.
    * @param configurationProfileId - Identifier for the configurationProfileId.
@@ -955,6 +1070,29 @@ export class Appconfig extends PolicyStatement {
     arn = arn.replace('${ApplicationId}', applicationId);
     arn = arn.replace('${EnvironmentId}', environmentId);
     arn = arn.replace('${DeploymentNumber}', deploymentNumber);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type hostedconfigurationversion to the statement
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html
+   *
+   * @param applicationId - Identifier for the applicationId.
+   * @param configurationProfileId - Identifier for the configurationProfileId.
+   * @param versionNumber - Identifier for the versionNumber.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onHostedconfigurationversion(applicationId: string, configurationProfileId: string, versionNumber: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}/hostedconfigurationversion/${VersionNumber}';
+    arn = arn.replace('${ApplicationId}', applicationId);
+    arn = arn.replace('${ConfigurationProfileId}', configurationProfileId);
+    arn = arn.replace('${VersionNumber}', versionNumber);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

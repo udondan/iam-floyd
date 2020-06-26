@@ -303,6 +303,16 @@ export class Codecommit extends PolicyStatement {
         }
       }
     },
+    "GetCommentReactions": {
+      "url": "https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommentReactions.html",
+      "description": "Grants permission to get the reactions on a comment",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "repository": {
+          "required": true
+        }
+      }
+    },
     "GetCommentsForComparedCommit": {
       "url": "https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommentsForComparedCommit.html",
       "description": "Grants permission to get information about comments made on the comparison between two commits",
@@ -695,6 +705,16 @@ export class Codecommit extends PolicyStatement {
     "PostCommentReply": {
       "url": "https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PostCommentReply.html",
       "description": "Grants permission to post a comment in reply to a comment on a comparison between commits or a pull request",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "repository": {
+          "required": true
+        }
+      }
+    },
+    "PutCommentReaction": {
+      "url": "https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutCommentReaction.html",
+      "description": "Grants permission to post a reaction on a comment",
       "accessLevel": "Write",
       "resourceTypes": {
         "repository": {
@@ -1248,6 +1268,18 @@ export class Codecommit extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get the reactions on a comment
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommentReactions.html
+   */
+  public getCommentReactions() {
+    this.add('codecommit:GetCommentReactions');
+    return this;
+  }
+
+  /**
    * Grants permission to get information about comments made on the comparison between two commits
    *
    * Access Level: Read
@@ -1712,6 +1744,18 @@ export class Codecommit extends PolicyStatement {
    */
   public postCommentReply() {
     this.add('codecommit:PostCommentReply');
+    return this;
+  }
+
+  /**
+   * Grants permission to post a reaction on a comment
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutCommentReaction.html
+   */
+  public putCommentReaction() {
+    this.add('codecommit:PutCommentReaction');
     return this;
   }
 

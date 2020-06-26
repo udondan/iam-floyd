@@ -85,6 +85,20 @@ export class Autoscaling extends PolicyStatement {
         }
       }
     },
+    "CancelInstanceRefresh": {
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CancelInstanceRefresh.html",
+      "description": "Grants permission to cancel an instance refresh operation in progress",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "autoScalingGroup": {
+          "required": true,
+          "conditions": [
+            "autoscaling:ResourceTag/${TagKey}",
+            "aws:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
     "CompleteLifecycleAction": {
       "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CompleteLifecycleAction.html",
       "description": "Completes the lifecycle action for the specified token or instance with the specified result.",
@@ -279,6 +293,11 @@ export class Autoscaling extends PolicyStatement {
     "DescribeAutoScalingNotificationTypes": {
       "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingNotificationTypes.html",
       "description": "Describes the notification types that are supported by Auto Scaling.",
+      "accessLevel": "List"
+    },
+    "DescribeInstanceRefreshes": {
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeInstanceRefreshes.html",
+      "description": "Grants permission to describe one or more instance refreshes for an Auto Scaling group",
       "accessLevel": "List"
     },
     "DescribeLaunchConfigurations": {
@@ -594,6 +613,20 @@ export class Autoscaling extends PolicyStatement {
         }
       }
     },
+    "StartInstanceRefresh": {
+      "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_StartInstanceRefresh.html",
+      "description": "Grants permission to start a new instance refresh operation",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "autoScalingGroup": {
+          "required": true,
+          "conditions": [
+            "autoscaling:ResourceTag/${TagKey}",
+            "aws:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
     "SuspendProcesses": {
       "url": "https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SuspendProcesses.html",
       "description": "Suspends the specified Auto Scaling processes, or all processes, for the specified Auto Scaling group.",
@@ -729,6 +762,18 @@ export class Autoscaling extends PolicyStatement {
    */
   public batchPutScheduledUpdateGroupAction() {
     this.add('autoscaling:BatchPutScheduledUpdateGroupAction');
+    return this;
+  }
+
+  /**
+   * Grants permission to cancel an instance refresh operation in progress
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CancelInstanceRefresh.html
+   */
+  public cancelInstanceRefresh() {
+    this.add('autoscaling:CancelInstanceRefresh');
     return this;
   }
 
@@ -921,6 +966,18 @@ export class Autoscaling extends PolicyStatement {
    */
   public describeAutoScalingNotificationTypes() {
     this.add('autoscaling:DescribeAutoScalingNotificationTypes');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe one or more instance refreshes for an Auto Scaling group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeInstanceRefreshes.html
+   */
+  public describeInstanceRefreshes() {
+    this.add('autoscaling:DescribeInstanceRefreshes');
     return this;
   }
 
@@ -1281,6 +1338,18 @@ export class Autoscaling extends PolicyStatement {
    */
   public setInstanceProtection() {
     this.add('autoscaling:SetInstanceProtection');
+    return this;
+  }
+
+  /**
+   * Grants permission to start a new instance refresh operation
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_StartInstanceRefresh.html
+   */
+  public startInstanceRefresh() {
+    this.add('autoscaling:StartInstanceRefresh');
     return this;
   }
 
