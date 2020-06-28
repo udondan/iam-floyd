@@ -4,7 +4,7 @@
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
 [![Docs](https://img.shields.io/badge/awscdk.io-iam--floyd-orange)][docs]
 
-[![npm package](https://img.shields.io/npm/v/iam-floyd?color=)][npm]
+[![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
 [![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
 [![Maven package](https://img.shields.io/badge/maven-0.15.0-brightgreen)][Maven]
