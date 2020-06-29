@@ -23,7 +23,7 @@ jobs:
         uses: udondan/ver2doc@v1.0.1
         with:
           FILE: README.md
-          PATTERN: (iam-floyd\@|maven-)[0-9.]+
+          PATTERN: (iam-floyd\@|maven-v)[0-9.]+
           REPLACE: \${1}${VERSION}
       - name: Commit changes
         run: |
