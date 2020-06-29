@@ -341,9 +341,9 @@ export class Servicequotas extends PolicyStatement {
    * Filters or restricts access to a specified AWS service
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifService(value: string | string[], operator?: string) {
-    return this.if(`servicequotas:service`, value, operator || 'StringEquals');
+    return this.if(`servicequotas:service`, value, operator || 'StringLike');
   }
 }

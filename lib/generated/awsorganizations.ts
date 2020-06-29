@@ -1312,10 +1312,10 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPolicyType(value: string | string[], operator?: string) {
-    return this.if(`organizations:PolicyType`, value, operator || 'StringEquals');
+    return this.if(`organizations:PolicyType`, value, operator || 'StringLike');
   }
 
   /**
@@ -1324,9 +1324,9 @@ export class Organizations extends PolicyStatement {
    * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifServicePrincipal(value: string | string[], operator?: string) {
-    return this.if(`organizations:ServicePrincipal`, value, operator || 'StringEquals');
+    return this.if(`organizations:ServicePrincipal`, value, operator || 'StringLike');
   }
 }

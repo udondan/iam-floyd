@@ -10933,10 +10933,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthenticationType(value: string | string[], operator?: string) {
-    return this.if(`ec2:AuthenticationType`, value, operator || 'StringEquals');
+    return this.if(`ec2:AuthenticationType`, value, operator || 'StringLike');
   }
 
   /**
@@ -10945,10 +10945,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthorizedService(value: string | string[], operator?: string) {
-    return this.if(`ec2:AuthorizedService`, value, operator || 'StringEquals');
+    return this.if(`ec2:AuthorizedService`, value, operator || 'StringLike');
   }
 
   /**
@@ -10957,10 +10957,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAuthorizedUser(value: string | string[], operator?: string) {
-    return this.if(`ec2:AuthorizedUser`, value, operator || 'StringEquals');
+    return this.if(`ec2:AuthorizedUser`, value, operator || 'StringLike');
   }
 
   /**
@@ -10969,10 +10969,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAutoPlacement(value: string | string[], operator?: string) {
-    return this.if(`ec2:AutoPlacement`, value, operator || 'StringEquals');
+    return this.if(`ec2:AutoPlacement`, value, operator || 'StringLike');
   }
 
   /**
@@ -10981,10 +10981,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAvailabilityZone(value: string | string[], operator?: string) {
-    return this.if(`ec2:AvailabilityZone`, value, operator || 'StringEquals');
+    return this.if(`ec2:AvailabilityZone`, value, operator || 'StringLike');
   }
 
   /**
@@ -10993,10 +10993,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifCreateAction(value: string | string[], operator?: string) {
-    return this.if(`ec2:CreateAction`, value, operator || 'StringEquals');
+    return this.if(`ec2:CreateAction`, value, operator || 'StringLike');
   }
 
   /**
@@ -11028,10 +11028,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifElasticGpuType(value: string | string[], operator?: string) {
-    return this.if(`ec2:ElasticGpuType`, value, operator || 'StringEquals');
+    return this.if(`ec2:ElasticGpuType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11051,10 +11051,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifGatewayType(value: string | string[], operator?: string) {
-    return this.if(`ec2:GatewayType`, value, operator || 'StringEquals');
+    return this.if(`ec2:GatewayType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11063,10 +11063,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifHostRecovery(value: string | string[], operator?: string) {
-    return this.if(`ec2:HostRecovery`, value, operator || 'StringEquals');
+    return this.if(`ec2:HostRecovery`, value, operator || 'StringLike');
   }
 
   /**
@@ -11075,10 +11075,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIKEVersions(value: string | string[], operator?: string) {
-    return this.if(`ec2:IKEVersions`, value, operator || 'StringEquals');
+    return this.if(`ec2:IKEVersions`, value, operator || 'StringLike');
   }
 
   /**
@@ -11087,10 +11087,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifImageType(value: string | string[], operator?: string) {
-    return this.if(`ec2:ImageType`, value, operator || 'StringEquals');
+    return this.if(`ec2:ImageType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11099,10 +11099,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInsideTunnelCidr(value: string | string[], operator?: string) {
-    return this.if(`ec2:InsideTunnelCidr`, value, operator || 'StringEquals');
+    return this.if(`ec2:InsideTunnelCidr`, value, operator || 'StringLike');
   }
 
   /**
@@ -11111,10 +11111,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceMarketType(value: string | string[], operator?: string) {
-    return this.if(`ec2:InstanceMarketType`, value, operator || 'StringEquals');
+    return this.if(`ec2:InstanceMarketType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11135,10 +11135,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceType(value: string | string[], operator?: string) {
-    return this.if(`ec2:InstanceType`, value, operator || 'StringEquals');
+    return this.if(`ec2:InstanceType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11170,10 +11170,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMetadataHttpEndpoint(value: string | string[], operator?: string) {
-    return this.if(`ec2:MetadataHttpEndpoint`, value, operator || 'StringEquals');
+    return this.if(`ec2:MetadataHttpEndpoint`, value, operator || 'StringLike');
   }
 
   /**
@@ -11194,10 +11194,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifMetadataHttpTokens(value: string | string[], operator?: string) {
-    return this.if(`ec2:MetadataHttpTokens`, value, operator || 'StringEquals');
+    return this.if(`ec2:MetadataHttpTokens`, value, operator || 'StringLike');
   }
 
   /**
@@ -11206,10 +11206,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOwner(value: string | string[], operator?: string) {
-    return this.if(`ec2:Owner`, value, operator || 'StringEquals');
+    return this.if(`ec2:Owner`, value, operator || 'StringLike');
   }
 
   /**
@@ -11242,10 +11242,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPermission(value: string | string[], operator?: string) {
-    return this.if(`ec2:Permission`, value, operator || 'StringEquals');
+    return this.if(`ec2:Permission`, value, operator || 'StringLike');
   }
 
   /**
@@ -11266,10 +11266,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.htmls
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPhase1EncryptionAlgorithms(value: string | string[], operator?: string) {
-    return this.if(`ec2:Phase1EncryptionAlgorithms`, value, operator || 'StringEquals');
+    return this.if(`ec2:Phase1EncryptionAlgorithms`, value, operator || 'StringLike');
   }
 
   /**
@@ -11278,10 +11278,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPhase1IntegrityAlgorithms(value: string | string[], operator?: string) {
-    return this.if(`ec2:Phase1IntegrityAlgorithms`, value, operator || 'StringEquals');
+    return this.if(`ec2:Phase1IntegrityAlgorithms`, value, operator || 'StringLike');
   }
 
   /**
@@ -11314,10 +11314,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPhase2EncryptionAlgorithms(value: string | string[], operator?: string) {
-    return this.if(`ec2:Phase2EncryptionAlgorithms`, value, operator || 'StringEquals');
+    return this.if(`ec2:Phase2EncryptionAlgorithms`, value, operator || 'StringLike');
   }
 
   /**
@@ -11326,10 +11326,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPhase2IntegrityAlgorithms(value: string | string[], operator?: string) {
-    return this.if(`ec2:Phase2IntegrityAlgorithms`, value, operator || 'StringEquals');
+    return this.if(`ec2:Phase2IntegrityAlgorithms`, value, operator || 'StringLike');
   }
 
   /**
@@ -11362,10 +11362,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPlacementGroupStrategy(value: string | string[], operator?: string) {
-    return this.if(`ec2:PlacementGroupStrategy`, value, operator || 'StringEquals');
+    return this.if(`ec2:PlacementGroupStrategy`, value, operator || 'StringLike');
   }
 
   /**
@@ -11374,10 +11374,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPresharedKeys(value: string | string[], operator?: string) {
-    return this.if(`ec2:PresharedKeys`, value, operator || 'StringEquals');
+    return this.if(`ec2:PresharedKeys`, value, operator || 'StringLike');
   }
 
   /**
@@ -11386,10 +11386,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifProductCode(value: string | string[], operator?: string) {
-    return this.if(`ec2:ProductCode`, value, operator || 'StringEquals');
+    return this.if(`ec2:ProductCode`, value, operator || 'StringLike');
   }
 
   /**
@@ -11421,10 +11421,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRegion(value: string | string[], operator?: string) {
-    return this.if(`ec2:Region`, value, operator || 'StringEquals');
+    return this.if(`ec2:Region`, value, operator || 'StringLike');
   }
 
   /**
@@ -11469,10 +11469,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html#ri-payment-options
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifReservedInstancesOfferingType(value: string | string[], operator?: string) {
-    return this.if(`ec2:ReservedInstancesOfferingType`, value, operator || 'StringEquals');
+    return this.if(`ec2:ReservedInstancesOfferingType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11481,10 +11481,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTagExists(value: string | string[], operator?: string) {
-    return this.if(`ec2:ResourceTag/`, value, operator || 'StringEquals');
+    return this.if(`ec2:ResourceTag/`, value, operator || 'StringLike');
   }
 
   /**
@@ -11494,10 +11494,10 @@ export class Ec2 extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
+    return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -11518,10 +11518,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRootDeviceType(value: string | string[], operator?: string) {
-    return this.if(`ec2:RootDeviceType`, value, operator || 'StringEquals');
+    return this.if(`ec2:RootDeviceType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11530,10 +11530,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRoutingType(value: string | string[], operator?: string) {
-    return this.if(`ec2:RoutingType`, value, operator || 'StringEquals');
+    return this.if(`ec2:RoutingType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11542,10 +11542,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSnapshotTime(value: string | string[], operator?: string) {
-    return this.if(`ec2:SnapshotTime`, value, operator || 'StringEquals');
+    return this.if(`ec2:SnapshotTime`, value, operator || 'StringLike');
   }
 
   /**
@@ -11578,10 +11578,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTenancy(value: string | string[], operator?: string) {
-    return this.if(`ec2:Tenancy`, value, operator || 'StringEquals');
+    return this.if(`ec2:Tenancy`, value, operator || 'StringLike');
   }
 
   /**
@@ -11614,10 +11614,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVolumeType(value: string | string[], operator?: string) {
-    return this.if(`ec2:VolumeType`, value, operator || 'StringEquals');
+    return this.if(`ec2:VolumeType`, value, operator || 'StringLike');
   }
 
   /**
@@ -11636,29 +11636,29 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the name of the VPC endpoint service
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpceServiceName(value: string | string[], operator?: string) {
-    return this.if(`ec2:VpceServiceName`, value, operator || 'StringEquals');
+    return this.if(`ec2:VpceServiceName`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the service owner of the VPC endpoint service (amazon, aws-marketplace, or an AWS account ID)
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpceServiceOwner(value: string | string[], operator?: string) {
-    return this.if(`ec2:VpceServiceOwner`, value, operator || 'StringEquals');
+    return this.if(`ec2:VpceServiceOwner`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the private DNS name of the VPC endpoint service
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVpceServicePrivateDnsName(value: string | string[], operator?: string) {
-    return this.if(`ec2:VpceServicePrivateDnsName`, value, operator || 'StringEquals');
+    return this.if(`ec2:VpceServicePrivateDnsName`, value, operator || 'StringLike');
   }
 }

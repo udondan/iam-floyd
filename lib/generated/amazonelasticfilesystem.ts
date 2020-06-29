@@ -702,9 +702,9 @@ export class Elasticfilesystem extends PolicyStatement {
    * The ARN of the access point used to mount the file system
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAccessPointArn(value: string | string[], operator?: string) {
-    return this.if(`elasticfilesystem:AccessPointArn`, value, operator || 'StringEquals');
+    return this.if(`elasticfilesystem:AccessPointArn`, value, operator || 'StringLike');
   }
 }

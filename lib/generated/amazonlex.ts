@@ -1183,29 +1183,29 @@ export class Lex extends PolicyStatement {
    * Enables you to control access based on the intents included in the request.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAssociatedIntents(value: string | string[], operator?: string) {
-    return this.if(`lex:associatedIntents`, value, operator || 'StringEquals');
+    return this.if(`lex:associatedIntents`, value, operator || 'StringLike');
   }
 
   /**
    * Enables you to control access based on the slot types included in the request.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAssociatedSlotTypes(value: string | string[], operator?: string) {
-    return this.if(`lex:associatedSlotTypes`, value, operator || 'StringEquals');
+    return this.if(`lex:associatedSlotTypes`, value, operator || 'StringLike');
   }
 
   /**
    * Enables you to control access based on the channel type included in the request.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChannelType(value: string | string[], operator?: string) {
-    return this.if(`lex:channelType`, value, operator || 'StringEquals');
+    return this.if(`lex:channelType`, value, operator || 'StringLike');
   }
 }

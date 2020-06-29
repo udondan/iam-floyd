@@ -263,19 +263,19 @@ export class AwsMarketplace extends PolicyStatement {
    * Enables you to control access based on the type of the agreement.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAgreementType(value: string | string[], operator?: string) {
-    return this.if(`aws-marketplace:AgreementType`, value, operator || 'StringEquals');
+    return this.if(`aws-marketplace:AgreementType`, value, operator || 'StringLike');
   }
 
   /**
    * Enables you to control access based on the party type of the agreement.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPartyType(value: string | string[], operator?: string) {
-    return this.if(`aws-marketplace:PartyType`, value, operator || 'StringEquals');
+    return this.if(`aws-marketplace:PartyType`, value, operator || 'StringLike');
   }
 }

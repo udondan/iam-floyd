@@ -539,10 +539,10 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDescription(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:Description`, value, operator || 'StringEquals');
+    return this.if(`secretsmanager:Description`, value, operator || 'StringLike');
   }
 
   /**
@@ -562,10 +562,10 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifKmsKeyId(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:KmsKeyId`, value, operator || 'StringEquals');
+    return this.if(`secretsmanager:KmsKeyId`, value, operator || 'StringLike');
   }
 
   /**
@@ -574,10 +574,10 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifName(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:Name`, value, operator || 'StringEquals');
+    return this.if(`secretsmanager:Name`, value, operator || 'StringLike');
   }
 
   /**
@@ -599,10 +599,10 @@ export class Secretsmanager extends PolicyStatement {
    *
    * @param tagkey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:ResourceTag/${ tagkey }`, value, operator || 'StringEquals');
+    return this.if(`secretsmanager:ResourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -635,10 +635,10 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionId(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:VersionId`, value, operator || 'StringEquals');
+    return this.if(`secretsmanager:VersionId`, value, operator || 'StringLike');
   }
 
   /**
@@ -647,10 +647,10 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVersionStage(value: string | string[], operator?: string) {
-    return this.if(`secretsmanager:VersionStage`, value, operator || 'StringEquals');
+    return this.if(`secretsmanager:VersionStage`, value, operator || 'StringLike');
   }
 
   /**

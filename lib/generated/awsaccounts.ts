@@ -76,9 +76,9 @@ export class Account extends PolicyStatement {
    * Filters access by a list of regions
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTargetRegion(value: string | string[], operator?: string) {
-    return this.if(`account:TargetRegion`, value, operator || 'StringEquals');
+    return this.if(`account:TargetRegion`, value, operator || 'StringLike');
   }
 }

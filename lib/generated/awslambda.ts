@@ -1313,19 +1313,19 @@ export class Lambda extends PolicyStatement {
    * Filters access by the ARN of an AWS Lambda layer
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLayer(value: string | string[], operator?: string) {
-    return this.if(`lambda:Layer`, value, operator || 'StringEquals');
+    return this.if(`lambda:Layer`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by restricting the AWS service or account that can invoke a function
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPrincipal(value: string | string[], operator?: string) {
-    return this.if(`lambda:Principal`, value, operator || 'StringEquals');
+    return this.if(`lambda:Principal`, value, operator || 'StringLike');
   }
 }

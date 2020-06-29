@@ -296,10 +296,10 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEventTypeCode(value: string | string[], operator?: string) {
-    return this.if(`health:eventTypeCode`, value, operator || 'StringEquals');
+    return this.if(`health:eventTypeCode`, value, operator || 'StringLike');
   }
 
   /**
@@ -308,9 +308,9 @@ export class Health extends PolicyStatement {
    * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifService(value: string | string[], operator?: string) {
-    return this.if(`health:service`, value, operator || 'StringEquals');
+    return this.if(`health:service`, value, operator || 'StringLike');
   }
 }

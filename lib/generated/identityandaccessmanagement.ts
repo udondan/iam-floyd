@@ -3416,10 +3416,10 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifAWSServiceName(value: string | string[], operator?: string) {
-    return this.if(`iam:AWSServiceName`, value, operator || 'StringEquals');
+    return this.if(`iam:AWSServiceName`, value, operator || 'StringLike');
   }
 
   /**
@@ -3440,10 +3440,10 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOrganizationsPolicyId(value: string | string[], operator?: string) {
-    return this.if(`iam:OrganizationsPolicyId`, value, operator || 'StringEquals');
+    return this.if(`iam:OrganizationsPolicyId`, value, operator || 'StringLike');
   }
 
   /**
@@ -3452,10 +3452,10 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPassedToService(value: string | string[], operator?: string) {
-    return this.if(`iam:PassedToService`, value, operator || 'StringEquals');
+    return this.if(`iam:PassedToService`, value, operator || 'StringLike');
   }
 
   /**
@@ -3464,10 +3464,10 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifPermissionsBoundary(value: string | string[], operator?: string) {
-    return this.if(`iam:PermissionsBoundary`, value, operator || 'StringEquals');
+    return this.if(`iam:PermissionsBoundary`, value, operator || 'StringLike');
   }
 
   /**
@@ -3489,9 +3489,9 @@ export class Iam extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
+    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

@@ -3032,10 +3032,10 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifOverwrite(value: string | string[], operator?: string) {
-    return this.if(`ssm:Overwrite`, value, operator || 'StringEquals');
+    return this.if(`ssm:Overwrite`, value, operator || 'StringLike');
   }
 
   /**
@@ -3044,10 +3044,10 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRecursive(value: string | string[], operator?: string) {
-    return this.if(`ssm:Recursive`, value, operator || 'StringEquals');
+    return this.if(`ssm:Recursive`, value, operator || 'StringLike');
   }
 
   /**
@@ -3065,10 +3065,10 @@ export class Ssm extends PolicyStatement {
    * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSyncType(value: string | string[], operator?: string) {
-    return this.if(`ssm:SyncType`, value, operator || 'StringEquals');
+    return this.if(`ssm:SyncType`, value, operator || 'StringLike');
   }
 
   /**
@@ -3078,9 +3078,9 @@ export class Ssm extends PolicyStatement {
    *
    * @param tagkey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
-    return this.if(`ssm:resourceTag/${ tagkey }`, value, operator || 'StringEquals');
+    return this.if(`ssm:resourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 }

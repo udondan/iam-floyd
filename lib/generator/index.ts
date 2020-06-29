@@ -26,7 +26,7 @@ const conditionTypeDefaults = {
   string: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
-    default: 'StringEquals',
+    default: 'StringLike',
     type: 'string',
   },
   arn: {

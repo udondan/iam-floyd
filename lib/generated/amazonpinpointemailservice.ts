@@ -1047,39 +1047,39 @@ export class SesPinpoint extends PolicyStatement {
    * The "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFeedbackAddress(value: string | string[], operator?: string) {
-    return this.if(`ses:FeedbackAddress`, value, operator || 'StringEquals');
+    return this.if(`ses:FeedbackAddress`, value, operator || 'StringLike');
   }
 
   /**
    * The "From" address of a message.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFromAddress(value: string | string[], operator?: string) {
-    return this.if(`ses:FromAddress`, value, operator || 'StringEquals');
+    return this.if(`ses:FromAddress`, value, operator || 'StringLike');
   }
 
   /**
    * The "From" address that is used as the display name of a message.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifFromDisplayName(value: string | string[], operator?: string) {
-    return this.if(`ses:FromDisplayName`, value, operator || 'StringEquals');
+    return this.if(`ses:FromDisplayName`, value, operator || 'StringLike');
   }
 
   /**
    * The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifRecipients(value: string | string[], operator?: string) {
-    return this.if(`ses:Recipients`, value, operator || 'StringEquals');
+    return this.if(`ses:Recipients`, value, operator || 'StringLike');
   }
 }

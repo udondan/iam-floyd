@@ -1441,10 +1441,10 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifImageId(value: string | string[], operator?: string) {
-    return this.if(`autoscaling:ImageId`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:ImageId`, value, operator || 'StringLike');
   }
 
   /**
@@ -1453,10 +1453,10 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceType(value: string | string[], operator?: string) {
-    return this.if(`autoscaling:InstanceType`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:InstanceType`, value, operator || 'StringLike');
   }
 
   /**
@@ -1465,10 +1465,10 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifInstanceTypes(value: string | string[], operator?: string) {
-    return this.if(`autoscaling:InstanceTypes`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:InstanceTypes`, value, operator || 'StringLike');
   }
 
   /**
@@ -1477,10 +1477,10 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLaunchConfigurationName(value: string | string[], operator?: string) {
-    return this.if(`autoscaling:LaunchConfigurationName`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:LaunchConfigurationName`, value, operator || 'StringLike');
   }
 
   /**
@@ -1500,10 +1500,10 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifLoadBalancerNames(value: string | string[], operator?: string) {
-    return this.if(`autoscaling:LoadBalancerNames`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:LoadBalancerNames`, value, operator || 'StringLike');
   }
 
   /**
@@ -1537,10 +1537,10 @@ export class Autoscaling extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`autoscaling:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
@@ -1573,9 +1573,9 @@ export class Autoscaling extends PolicyStatement {
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifVPCZoneIdentifiers(value: string | string[], operator?: string) {
-    return this.if(`autoscaling:VPCZoneIdentifiers`, value, operator || 'StringEquals');
+    return this.if(`autoscaling:VPCZoneIdentifiers`, value, operator || 'StringLike');
   }
 }

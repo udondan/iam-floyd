@@ -794,10 +794,10 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailType(value: string | string[], operator?: string) {
-    return this.if(`events:detail-type`, value, operator || 'StringEquals');
+    return this.if(`events:detail-type`, value, operator || 'StringLike');
   }
 
   /**
@@ -806,10 +806,10 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-type-code
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailEventTypeCode(value: string | string[], operator?: string) {
-    return this.if(`events:detail.eventTypeCode`, value, operator || 'StringEquals');
+    return this.if(`events:detail.eventTypeCode`, value, operator || 'StringLike');
   }
 
   /**
@@ -818,10 +818,10 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-service
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailService(value: string | string[], operator?: string) {
-    return this.if(`events:detail.service`, value, operator || 'StringEquals');
+    return this.if(`events:detail.service`, value, operator || 'StringLike');
   }
 
   /**
@@ -830,10 +830,10 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#consume-specific-events
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string) {
-    return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringEquals');
+    return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringLike');
   }
 
   /**
@@ -842,9 +842,9 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-limit-access-control
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSource(value: string | string[], operator?: string) {
-    return this.if(`events:source`, value, operator || 'StringEquals');
+    return this.if(`events:source`, value, operator || 'StringLike');
   }
 }

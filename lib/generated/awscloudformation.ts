@@ -1345,30 +1345,30 @@ export class Cloudformation extends PolicyStatement {
    * An AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeSetName(value: string | string[], operator?: string) {
-    return this.if(`cloudformation:ChangeSetName`, value, operator || 'StringEquals');
+    return this.if(`cloudformation:ChangeSetName`, value, operator || 'StringLike');
   }
 
   /**
    * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they want to import a resource into a stack.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifImportResourceTypes(value: string | string[], operator?: string) {
-    return this.if(`cloudformation:ImportResourceTypes`, value, operator || 'StringEquals');
+    return this.if(`cloudformation:ImportResourceTypes`, value, operator || 'StringLike');
   }
 
   /**
    * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they create or update a stack.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTypes(value: string | string[], operator?: string) {
-    return this.if(`cloudformation:ResourceTypes`, value, operator || 'StringEquals');
+    return this.if(`cloudformation:ResourceTypes`, value, operator || 'StringLike');
   }
 
   /**
@@ -1385,19 +1385,19 @@ export class Cloudformation extends PolicyStatement {
    * An Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifStackPolicyUrl(value: string | string[], operator?: string) {
-    return this.if(`cloudformation:StackPolicyUrl`, value, operator || 'StringEquals');
+    return this.if(`cloudformation:StackPolicyUrl`, value, operator || 'StringLike');
   }
 
   /**
    * An Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifTemplateUrl(value: string | string[], operator?: string) {
-    return this.if(`cloudformation:TemplateUrl`, value, operator || 'StringEquals');
+    return this.if(`cloudformation:TemplateUrl`, value, operator || 'StringLike');
   }
 }

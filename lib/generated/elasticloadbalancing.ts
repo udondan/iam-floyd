@@ -675,10 +675,10 @@ export class Elasticloadbalancing extends PolicyStatement {
    * The preface string for a tag key and value pair attached to a resource.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTagExists(value: string | string[], operator?: string) {
-    return this.if(`elasticloadbalancing:ResourceTag/`, value, operator || 'StringEquals');
+    return this.if(`elasticloadbalancing:ResourceTag/`, value, operator || 'StringLike');
   }
 
   /**
@@ -686,9 +686,9 @@ export class Elasticloadbalancing extends PolicyStatement {
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
-    return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringEquals');
+    return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

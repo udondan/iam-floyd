@@ -668,9 +668,9 @@ export class Dax extends PolicyStatement {
    * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa.
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifEnclosingOperation(value: string | string[], operator?: string) {
-    return this.if(`dax:EnclosingOperation`, value, operator || 'StringEquals');
+    return this.if(`dax:EnclosingOperation`, value, operator || 'StringLike');
   }
 }

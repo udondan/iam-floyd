@@ -249,9 +249,9 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifChangeType(value: string | string[], operator?: string) {
-    return this.if(`catalog:ChangeType`, value, operator || 'StringEquals');
+    return this.if(`catalog:ChangeType`, value, operator || 'StringLike');
   }
 }

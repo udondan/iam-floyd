@@ -130,7 +130,7 @@ export class PolicyStatement extends iam.PolicyStatement {
   public if(key: string, value: any, operator?: string) {
     const props: any = {};
     props[key] = value;
-    this.addCondition(operator || 'StringEquals', props);
+    this.addCondition(operator || 'StringLike', props);
     return this;
   }
 

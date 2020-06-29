@@ -1404,10 +1404,10 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifIamArn(value: string | string[], operator?: string) {
-    return this.if(`quicksight:IamArn`, value, operator || 'StringEquals');
+    return this.if(`quicksight:IamArn`, value, operator || 'StringLike');
   }
 
   /**
@@ -1416,10 +1416,10 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifSessionName(value: string | string[], operator?: string) {
-    return this.if(`quicksight:SessionName`, value, operator || 'StringEquals');
+    return this.if(`quicksight:SessionName`, value, operator || 'StringLike');
   }
 
   /**
@@ -1428,9 +1428,9 @@ export class Quicksight extends PolicyStatement {
    * https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
   public ifUserName(value: string | string[], operator?: string) {
-    return this.if(`quicksight:UserName`, value, operator || 'StringEquals');
+    return this.if(`quicksight:UserName`, value, operator || 'StringLike');
   }
 }
