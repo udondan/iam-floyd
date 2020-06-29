@@ -120,7 +120,7 @@ export function getContent(service: string): Promise<Module> {
 
       const url = urlPattern.replace('%s', service);
 
-      const cachedFile = `lib/.cache/${module.filename}.ts`;
+      const cachedFile = `lib/generated/.cache/${module.filename}.ts`;
       if (fs.existsSync(cachedFile)) {
         const lastModified = await getLastModified(url);
         if (lastModified < timeThreshold) {
@@ -176,8 +176,8 @@ export function createModule(module: Module): Promise<void> {
   if (typeof module.name === 'undefined') {
     //it was skipped, restore from cache
     fs.renameSync(
-      `lib/.cache/${module.filename}.ts`,
-      `lib/${module.filename}.ts`
+      `lib/generated/.cache/${module.filename}.ts`,
+      `lib/generated/${module.filename}.ts`
     );
     modules.push(module);
     return Promise.resolve();
@@ -191,12 +191,14 @@ export function createModule(module: Module): Promise<void> {
 
   modules.push(module);
 
-  const sourceFile = project.createSourceFile(`./lib/${module.filename}.ts`);
+  const sourceFile = project.createSourceFile(
+    `./lib/generated/${module.filename}.ts`
+  );
   const description = `\nAction provider for service ${module.name}\n\n${module.url}`;
 
   sourceFile.addImportDeclaration({
     namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
-    moduleSpecifier: './shared',
+    moduleSpecifier: '../shared',
   });
 
   sourceFile.addImportDeclaration({
@@ -415,10 +417,14 @@ export function createModule(module: Module): Promise<void> {
 }
 
 export function createIndex() {
+  const filePath = './lib/index.ts';
   process.stdout.write('index: '.white);
   process.stdout.write('Generating '.cyan);
 
-  const sourceFile = project.createSourceFile('./lib/index.ts');
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+  }
+  const sourceFile = project.createSourceFile(filePath);
 
   sourceFile.addExportDeclaration({
     namedExports: ['AccessLevel', 'All', 'Operator', 'OperatorModifier'],
@@ -426,7 +432,9 @@ export function createIndex() {
   });
 
   modules.sort().forEach((module) => {
-    const source = project.addSourceFileAtPath(`./lib/${module.filename}.ts`);
+    const source = project.addSourceFileAtPath(
+      `./lib/generated/${module.filename}.ts`
+    );
     const exports = [];
 
     source.getClasses().forEach((item) => {
@@ -437,7 +445,7 @@ export function createIndex() {
 
     sourceFile.addExportDeclaration({
       namedExports: exports,
-      moduleSpecifier: `./${module.filename}`,
+      moduleSpecifier: `./generated/${module.filename}`,
     });
   });
 
@@ -515,7 +523,7 @@ function formatCode(file: SourceFile) {
 }
 
 function createCache() {
-  const dir = 'lib';
+  const dir = 'lib/generated';
   const cacheDir = `${dir}/.cache`;
   if (!fs.existsSync(cacheDir)) {
     fs.mkdirSync(cacheDir);

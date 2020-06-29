@@ -4,4 +4,4 @@ dist
 tsconfig.json
 **/*.js
 **/*.d.ts
-lib/.cache
+lib/generated/.cache
