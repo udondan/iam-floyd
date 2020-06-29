@@ -41,8 +41,23 @@ export interface Conditions {
  * Represents a statement in an IAM policy document.
  */
 export class PolicyStatement extends iam.PolicyStatement {
+  /**
+   * Contains a map of all actions of the service.
+   *
+   * @deprecated This map will be removed when reaching v1.0.0. It only is here as a hint of what elements are available.
+   */
   public actions: Actions = {};
+
+  /**
+   * Adds actions by name. Depending on the "mode", actions will be either added to the list of `Actions` or `NotActions`.
+   *
+   * @param actions Actions that will be added to the statement.
+   */
   public add = this.addActions;
+
+  /**
+   * Holds the prefix of the service actions, e.g. `ec2`
+   */
   public servicePrefix = '';
 
   /**
