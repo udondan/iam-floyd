@@ -650,18 +650,18 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/agent.html
    *
-   * @param accountId - Identifier for the accountId.
    * @param agentId - Identifier for the agentId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onAgent(accountId: string, agentId: string, region?: string, partition?: string) {
+  public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${AgentId}', agentId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -672,18 +672,18 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/location.html
    *
-   * @param accountId - Identifier for the accountId.
    * @param locationId - Identifier for the locationId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onLocation(accountId: string, locationId: string, region?: string, partition?: string) {
+  public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${LocationId}', locationId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -694,18 +694,18 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/task.html
    *
-   * @param accountId - Identifier for the accountId.
    * @param taskId - Identifier for the taskId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onTask(accountId: string, taskId: string, region?: string, partition?: string) {
+  public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${TaskId}', taskId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -716,17 +716,17 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/taskexecution.html
    *
-   * @param accountId - Identifier for the accountId.
    * @param taskId - Identifier for the taskId.
    * @param executionId - Identifier for the executionId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onTaskexecution(accountId: string, taskId: string, executionId: string, region?: string, partition?: string) {
+  public onTaskexecution(taskId: string, executionId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}/execution/${ExecutionId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${TaskId}', taskId);
     arn = arn.replace('${ExecutionId}', executionId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

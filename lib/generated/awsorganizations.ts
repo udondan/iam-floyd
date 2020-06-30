@@ -1164,14 +1164,14 @@ export class Organizations extends PolicyStatement {
    *
    * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
-   * @param accountId - Identifier for the accountId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAccount(masterAccountId: string, organizationId: string, accountId: string, partition?: string) {
+  public onAccount(masterAccountId: string, organizationId: string, accountId?: string, partition?: string) {
     var arn = 'arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}';
     arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${AccountId}', accountId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -276,7 +276,7 @@ export function createModule(module: Module): Promise<void> {
       method.addParameter({
         name: lowerFirst(camelCase(param)),
         type: 'string',
-        hasQuestionToken: ['Partition', 'Region', 'Account'].includes(param),
+        hasQuestionToken: /^(Partition|Region|Account(Id)?)$/.test(param),
       });
     });
 
@@ -291,7 +291,7 @@ export function createModule(module: Module): Promise<void> {
       } else if (param == 'Region') {
         orDefault = " || ''";
         paramDocs += `\n@param ${paramName} - Region of the resource; defaults to empty string: all regions.`;
-      } else if (param == 'Account') {
+      } else if (param.match(/^Account(Id)?$/)) {
         orDefault = " || ''";
         paramDocs += `\n@param ${paramName} - Account of the resource; defaults to empty string: all accounts.`;
       } else {
@@ -467,7 +467,7 @@ export function getArnPlaceholders(arn: string): RegExpMatchArray {
 
   const toTheEnd = [];
   while (matches.length) {
-    if (['Partition', 'Region', 'Account'].includes(matches[0])) {
+    if (/^(Partition|Region|Account(Id)?)$/.test(matches[0])) {
       toTheEnd.push(matches.shift());
     } else {
       break;

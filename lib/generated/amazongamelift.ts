@@ -1659,18 +1659,18 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
    *
-   * @param accountId - Identifier for the accountId.
    * @param buildId - Identifier for the buildId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onBuild(accountId: string, buildId: string, region?: string, partition?: string) {
+  public onBuild(buildId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${BuildId}', buildId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -1681,18 +1681,18 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
    *
-   * @param accountId - Identifier for the accountId.
    * @param scriptId - Identifier for the scriptId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onScript(accountId: string, scriptId: string, region?: string, partition?: string) {
+  public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${ScriptId}', scriptId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

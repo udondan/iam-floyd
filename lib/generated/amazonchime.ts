@@ -2884,17 +2884,17 @@ export class Chime extends PolicyStatement {
   /**
    * Adds a resource of type meeting to the statement
    *
-   * @param accountId - Identifier for the accountId.
    * @param meetingId - Identifier for the meetingId.
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onMeeting(accountId: string, meetingId: string, partition?: string) {
+  public onMeeting(meetingId: string, accountId?: string, partition?: string) {
     var arn = 'arn:${Partition}:chime::${AccountId}:meeting/${MeetingId}';
-    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${MeetingId}', meetingId);
+    arn = arn.replace('${AccountId}', accountId || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
