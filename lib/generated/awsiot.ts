@@ -2081,7 +2081,7 @@ export class Iot extends PolicyStatement {
     "stream": {
       "name": "stream",
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html",
-      "arn": "arn:${Partition}:iot:${Region}:${Account}:stream/${streamId}",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -2089,7 +2089,7 @@ export class Iot extends PolicyStatement {
     "otaupdate": {
       "name": "otaupdate",
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html",
-      "arn": "arn:${Partition}:iot:${Region}:${Account}:otaupdate/${otaUpdateId}",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -2129,7 +2129,7 @@ export class Iot extends PolicyStatement {
     "rule": {
       "name": "rule",
       "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html",
-      "arn": "arn:${Partition}:iot:${Region}:${Account}:rule/${ruleName}",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -2137,7 +2137,7 @@ export class Iot extends PolicyStatement {
     "provisioningtemplate": {
       "name": "provisioningtemplate",
       "url": "https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html",
-      "arn": "arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${provisioningTemplate}",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}",
       "conditionKeys": []
     }
   };
@@ -4987,8 +4987,8 @@ export class Iot extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:stream/${streamId}';
-    arn = arn.replace('${streamId}', streamId);
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}';
+    arn = arn.replace('${StreamId}', streamId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -5009,8 +5009,8 @@ export class Iot extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:otaupdate/${otaUpdateId}';
-    arn = arn.replace('${otaUpdateId}', otaUpdateId);
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}';
+    arn = arn.replace('${OtaUpdateId}', otaUpdateId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -5119,8 +5119,8 @@ export class Iot extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${ruleName}';
-    arn = arn.replace('${ruleName}', ruleName);
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}';
+    arn = arn.replace('${RuleName}', ruleName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -5138,8 +5138,8 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${provisioningTemplate}';
-    arn = arn.replace('${provisioningTemplate}', provisioningTemplate);
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}';
+    arn = arn.replace('${ProvisioningTemplate}', provisioningTemplate);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

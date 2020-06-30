@@ -581,7 +581,7 @@ export class Ecs extends PolicyStatement {
     "task-set": {
       "name": "task-set",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html",
-      "arn": "arn:${Partition}:ecs:${region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "ecs:ResourceTag/${TagKey}"
@@ -1272,24 +1272,24 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html
    *
-   * @param region - Identifier for the region.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param clusterName - Identifier for the clusterName.
    * @param serviceName - Identifier for the serviceName.
    * @param taskSetId - Identifier for the taskSetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    *  - ecs:ResourceTag/${TagKey}
    */
-  public onTaskSet(region: string, account?: string, clusterName: string, serviceName: string, taskSetId: string, partition?: string) {
-    var arn = 'arn:${Partition}:ecs:${region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}';
-    arn = arn.replace('${region}', region);
-    arn = arn.replace('${Account}', account || '');
+  public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}';
     arn = arn.replace('${ClusterName}', clusterName);
     arn = arn.replace('${ServiceName}', serviceName);
     arn = arn.replace('${TaskSetId}', taskSetId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

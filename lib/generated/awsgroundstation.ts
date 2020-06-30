@@ -259,7 +259,7 @@ export class Groundstation extends PolicyStatement {
     "Config": {
       "name": "Config",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ConfigListItem.html",
-      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:config/${configType}/${configId}",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "groundstation:configId",
@@ -269,7 +269,7 @@ export class Groundstation extends PolicyStatement {
     "Contact": {
       "name": "Contact",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ContactData.html",
-      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:contact/${contactId}",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "groundstation:contactId"
@@ -278,7 +278,7 @@ export class Groundstation extends PolicyStatement {
     "DataflowEndpointGroup": {
       "name": "DataflowEndpointGroup",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html",
-      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${dataflowEndpointGroupId}",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "groundstation:dataflowEndpointGroupId"
@@ -287,7 +287,7 @@ export class Groundstation extends PolicyStatement {
     "GroundStationResource": {
       "name": "GroundStationResource",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html",
-      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${groundStationId}",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}",
       "conditionKeys": [
         "groundstation:groundStationId"
       ]
@@ -295,7 +295,7 @@ export class Groundstation extends PolicyStatement {
     "MissionProfile": {
       "name": "MissionProfile",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_MissionProfileListItem.html",
-      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${missionProfileId}",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}",
         "groundstation:missionProfileId"
@@ -304,7 +304,7 @@ export class Groundstation extends PolicyStatement {
     "Satellite": {
       "name": "Satellite",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html",
-      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:satellite/${satelliteId}",
+      "arn": "arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}",
       "conditionKeys": [
         "groundstation:satelliteId"
       ]
@@ -637,9 +637,9 @@ export class Groundstation extends PolicyStatement {
    *  - groundstation:configType
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${configType}/${configId}';
-    arn = arn.replace('${configType}', configType);
-    arn = arn.replace('${configId}', configId);
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}';
+    arn = arn.replace('${ConfigType}', configType);
+    arn = arn.replace('${ConfigId}', configId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -661,8 +661,8 @@ export class Groundstation extends PolicyStatement {
    *  - groundstation:contactId
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${contactId}';
-    arn = arn.replace('${contactId}', contactId);
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}';
+    arn = arn.replace('${ContactId}', contactId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -684,8 +684,8 @@ export class Groundstation extends PolicyStatement {
    *  - groundstation:dataflowEndpointGroupId
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${dataflowEndpointGroupId}';
-    arn = arn.replace('${dataflowEndpointGroupId}', dataflowEndpointGroupId);
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}';
+    arn = arn.replace('${DataflowEndpointGroupId}', dataflowEndpointGroupId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -706,8 +706,8 @@ export class Groundstation extends PolicyStatement {
    *  - groundstation:groundStationId
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${groundStationId}';
-    arn = arn.replace('${groundStationId}', groundStationId);
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}';
+    arn = arn.replace('${GroundStationId}', groundStationId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -729,8 +729,8 @@ export class Groundstation extends PolicyStatement {
    *  - groundstation:missionProfileId
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${missionProfileId}';
-    arn = arn.replace('${missionProfileId}', missionProfileId);
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}';
+    arn = arn.replace('${MissionProfileId}', missionProfileId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -751,8 +751,8 @@ export class Groundstation extends PolicyStatement {
    *  - groundstation:satelliteId
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${satelliteId}';
-    arn = arn.replace('${satelliteId}', satelliteId);
+    var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}';
+    arn = arn.replace('${SatelliteId}', satelliteId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

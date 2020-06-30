@@ -154,7 +154,7 @@ export class Appflow extends PolicyStatement {
     "flow": {
       "name": "flow",
       "url": "https://docs.aws.amazon.com/",
-      "arn": "arn:${Partition}:appflow::${Account}:flow/${flowName}",
+      "arn": "arn:${Partition}:appflow::${Account}:flow/${FlowName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -162,7 +162,7 @@ export class Appflow extends PolicyStatement {
     "connectorprofile": {
       "name": "connectorprofile",
       "url": "https://docs.aws.amazon.com/",
-      "arn": "arn:${Partition}:appflow::${Account}:connectorprofile/${profileName}",
+      "arn": "arn:${Partition}:appflow::${Account}:connectorprofile/${ProfileName}",
       "conditionKeys": []
     }
   };
@@ -343,8 +343,8 @@ export class Appflow extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onFlow(flowName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow::${Account}:flow/${flowName}';
-    arn = arn.replace('${flowName}', flowName);
+    var arn = 'arn:${Partition}:appflow::${Account}:flow/${FlowName}';
+    arn = arn.replace('${FlowName}', flowName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -358,8 +358,8 @@ export class Appflow extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onConnectorprofile(profileName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow::${Account}:connectorprofile/${profileName}';
-    arn = arn.replace('${profileName}', profileName);
+    var arn = 'arn:${Partition}:appflow::${Account}:connectorprofile/${ProfileName}';
+    arn = arn.replace('${ProfileName}', profileName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

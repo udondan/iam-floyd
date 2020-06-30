@@ -121,7 +121,7 @@ export class Signer extends PolicyStatement {
     "signing-profile": {
       "name": "signing-profile",
       "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",
-      "arn": "arn:${Partition}:signer:${Region}::/signing-profiles/${profileName}",
+      "arn": "arn:${Partition}:signer:${Region}::/signing-profiles/${ProfileName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -129,7 +129,7 @@ export class Signer extends PolicyStatement {
     "signing-job": {
       "name": "signing-job",
       "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",
-      "arn": "arn:${Partition}:signer:${Region}::/signing-jobs/${jobId}",
+      "arn": "arn:${Partition}:signer:${Region}::/signing-jobs/${JobId}",
       "conditionKeys": []
     }
   };
@@ -300,8 +300,8 @@ export class Signer extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onSigningProfile(profileName: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:signer:${Region}::/signing-profiles/${profileName}';
-    arn = arn.replace('${profileName}', profileName);
+    var arn = 'arn:${Partition}:signer:${Region}::/signing-profiles/${ProfileName}';
+    arn = arn.replace('${ProfileName}', profileName);
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -317,8 +317,8 @@ export class Signer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onSigningJob(jobId: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:signer:${Region}::/signing-jobs/${jobId}';
-    arn = arn.replace('${jobId}', jobId);
+    var arn = 'arn:${Partition}:signer:${Region}::/signing-jobs/${JobId}';
+    arn = arn.replace('${JobId}', jobId);
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

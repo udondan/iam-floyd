@@ -236,7 +236,7 @@ export class Iotevents extends PolicyStatement {
     "input": {
       "name": "input",
       "url": "https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html",
-      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:input/${inputName}",
+      "arn": "arn:${Partition}:iotevents:${Region}:${Account}:input/${InputName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -540,8 +540,8 @@ export class Iotevents extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:input/${inputName}';
-    arn = arn.replace('${inputName}', inputName);
+    var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:input/${InputName}';
+    arn = arn.replace('${InputName}', inputName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

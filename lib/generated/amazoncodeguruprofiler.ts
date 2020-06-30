@@ -204,7 +204,7 @@ export class CodeguruProfiler extends PolicyStatement {
     "ProfilingGroup": {
       "name": "ProfilingGroup",
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html",
-      "arn": "arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${profilingGroupName}",
+      "arn": "arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}",
       "conditionKeys": []
     }
   };
@@ -469,8 +469,8 @@ export class CodeguruProfiler extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${profilingGroupName}';
-    arn = arn.replace('${profilingGroupName}', profilingGroupName);
+    var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}';
+    arn = arn.replace('${ProfilingGroupName}', profilingGroupName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

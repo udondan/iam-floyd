@@ -93,7 +93,7 @@ export class Freertos extends PolicyStatement {
     "configuration": {
       "name": "configuration",
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
-      "arn": "arn:${Partition}:freertos:${Region}:${Account}:configuration/${configurationName}",
+      "arn": "arn:${Partition}:freertos:${Region}:${Account}:configuration/${ConfigurationName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -255,8 +255,8 @@ export class Freertos extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onConfiguration(configurationName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:freertos:${Region}:${Account}:configuration/${configurationName}';
-    arn = arn.replace('${configurationName}', configurationName);
+    var arn = 'arn:${Partition}:freertos:${Region}:${Account}:configuration/${ConfigurationName}';
+    arn = arn.replace('${ConfigurationName}', configurationName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

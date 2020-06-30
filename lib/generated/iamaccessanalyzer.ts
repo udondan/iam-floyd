@@ -191,7 +191,7 @@ export class AccessAnalyzer extends PolicyStatement {
     "Analyzer": {
       "name": "Analyzer",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",
-      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -199,7 +199,7 @@ export class AccessAnalyzer extends PolicyStatement {
     "ArchiveRule": {
       "name": "ArchiveRule",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",
-      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}/archive-rule/${ruleName}",
+      "arn": "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}/archive-rule/${RuleName}",
       "conditionKeys": []
     }
   };
@@ -443,8 +443,8 @@ export class AccessAnalyzer extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}';
-    arn = arn.replace('${analyzerName}', analyzerName);
+    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}';
+    arn = arn.replace('${AnalyzerName}', analyzerName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -463,9 +463,9 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onArchiveRule(analyzerName: string, ruleName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${analyzerName}/archive-rule/${ruleName}';
-    arn = arn.replace('${analyzerName}', analyzerName);
-    arn = arn.replace('${ruleName}', ruleName);
+    var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}/archive-rule/${RuleName}';
+    arn = arn.replace('${AnalyzerName}', analyzerName);
+    arn = arn.replace('${RuleName}', ruleName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

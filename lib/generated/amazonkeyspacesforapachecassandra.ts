@@ -123,7 +123,7 @@ export class Cassandra extends PolicyStatement {
     "table": {
       "name": "table",
       "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",
-      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${tableName}",
+      "arn": "arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -246,9 +246,9 @@ export class Cassandra extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onTable(keyspaceName: string, tableName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${tableName}';
+    var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}';
     arn = arn.replace('${KeyspaceName}', keyspaceName);
-    arn = arn.replace('${tableName}', tableName);
+    arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

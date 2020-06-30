@@ -208,7 +208,7 @@ export class Transfer extends PolicyStatement {
     "user": {
       "name": "user",
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/users.html",
-      "arn": "arn:${Partition}:transfer:${region}:${account}:user/${serverId}/${username}",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${Username}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -216,7 +216,7 @@ export class Transfer extends PolicyStatement {
     "server": {
       "name": "server",
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html",
-      "arn": "arn:${Partition}:transfer:${region}:${account}:server/${serverId}",
+      "arn": "arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -453,21 +453,21 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/users.html
    *
-   * @param region - Identifier for the region.
-   * @param account - Identifier for the account.
    * @param serverId - Identifier for the serverId.
    * @param username - Identifier for the username.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onUser(region: string, account: string, serverId: string, username: string, partition?: string) {
-    var arn = 'arn:${Partition}:transfer:${region}:${account}:user/${serverId}/${username}';
-    arn = arn.replace('${region}', region);
-    arn = arn.replace('${account}', account);
-    arn = arn.replace('${serverId}', serverId);
-    arn = arn.replace('${username}', username);
+  public onUser(serverId: string, username: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${Username}';
+    arn = arn.replace('${ServerId}', serverId);
+    arn = arn.replace('${Username}', username);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -477,19 +477,19 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html
    *
-   * @param region - Identifier for the region.
-   * @param account - Identifier for the account.
    * @param serverId - Identifier for the serverId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onServer(region: string, account: string, serverId: string, partition?: string) {
-    var arn = 'arn:${Partition}:transfer:${region}:${account}:server/${serverId}';
-    arn = arn.replace('${region}', region);
-    arn = arn.replace('${account}', account);
-    arn = arn.replace('${serverId}', serverId);
+  public onServer(serverId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}';
+    arn = arn.replace('${ServerId}', serverId);
+    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

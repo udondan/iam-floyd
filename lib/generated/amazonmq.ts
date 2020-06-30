@@ -228,7 +228,7 @@ export class Mq extends PolicyStatement {
     "brokers": {
       "name": "brokers",
       "url": "",
-      "arn": "arn:${Partition}:mq:${Region}:${Account}:broker:${broker-id}",
+      "arn": "arn:${Partition}:mq:${Region}:${Account}:broker:${Broker-id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -236,7 +236,7 @@ export class Mq extends PolicyStatement {
     "configurations": {
       "name": "configurations",
       "url": "",
-      "arn": "arn:${Partition}:mq:${Region}:${Account}:configuration:${configuration-id}",
+      "arn": "arn:${Partition}:mq:${Region}:${Account}:configuration:${Configuration-id}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -528,8 +528,8 @@ export class Mq extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mq:${Region}:${Account}:broker:${broker-id}';
-    arn = arn.replace('${broker-id}', brokerId);
+    var arn = 'arn:${Partition}:mq:${Region}:${Account}:broker:${Broker-id}';
+    arn = arn.replace('${Broker-id}', brokerId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -548,8 +548,8 @@ export class Mq extends PolicyStatement {
    *  - aws:ResourceTag/${TagKey}
    */
   public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:mq:${Region}:${Account}:configuration:${configuration-id}';
-    arn = arn.replace('${configuration-id}', configurationId);
+    var arn = 'arn:${Partition}:mq:${Region}:${Account}:configuration:${Configuration-id}';
+    arn = arn.replace('${Configuration-id}', configurationId);
     arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');

@@ -128,10 +128,16 @@ export function arnFixer(
 ): string {
   var fixed = 0;
 
+  // ensure all ARN placeholders start with an uppercase letter
+  arn = arn.replace(/\$\{([a-z])/g, function (_, first: string) {
+    fixed = 1;
+    return `\${${first.toUpperCase()}`;
+  });
+
   // fix ARNs that have wildcards instead of identifiers
   if (arn.match(/(:|\/)[a-zA-Z-]+(:|\/)\*$/)) {
     arn = arn.slice(0, -1) + '${ResourceName}';
-    var fixed = 1;
+    var fixed = 2;
   }
 
   // fix ARNs specified in the global fixes object above
@@ -141,7 +147,7 @@ export function arnFixer(
     resource in fixes[service].resourceTypes &&
     'arn' in fixes[service].resourceTypes[resource]
   ) {
-    fixed = 2;
+    fixed = 3;
     arn = fixes[service].resourceTypes[resource].arn;
   }
 

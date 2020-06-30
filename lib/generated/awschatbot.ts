@@ -74,7 +74,7 @@ export class Chatbot extends PolicyStatement {
     "ChatbotConfiguration": {
       "name": "ChatbotConfiguration",
       "url": "",
-      "arn": "arn:${Partition}:chatbot::${account}:${resourceType}/${resourceName}",
+      "arn": "arn:${Partition}:chatbot::${Account}:${ResourceType}/${ResourceName}",
       "conditionKeys": []
     }
   };
@@ -211,16 +211,16 @@ export class Chatbot extends PolicyStatement {
   /**
    * Adds a resource of type ChatbotConfiguration to the statement
    *
-   * @param account - Identifier for the account.
    * @param resourceType - Identifier for the resourceType.
    * @param resourceName - Identifier for the resourceName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onChatbotConfiguration(account: string, resourceType: string, resourceName: string, partition?: string) {
-    var arn = 'arn:${Partition}:chatbot::${account}:${resourceType}/${resourceName}';
-    arn = arn.replace('${account}', account);
-    arn = arn.replace('${resourceType}', resourceType);
-    arn = arn.replace('${resourceName}', resourceName);
+  public onChatbotConfiguration(resourceType: string, resourceName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:chatbot::${Account}:${ResourceType}/${ResourceName}';
+    arn = arn.replace('${ResourceType}', resourceType);
+    arn = arn.replace('${ResourceName}', resourceName);
+    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
