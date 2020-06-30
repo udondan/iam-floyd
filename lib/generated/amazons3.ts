@@ -1641,13 +1641,13 @@ export class S3 extends PolicyStatement {
     "bucket": {
       "name": "bucket",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html",
-      "arn": "arn:${Partition}:s3:${Region}:${Account}:${BucketName}",
+      "arn": "arn:${Partition}:s3:::${BucketName}",
       "conditionKeys": []
     },
     "object": {
       "name": "object",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html",
-      "arn": "arn:${Partition}:s3:${Region}:${Account}:${BucketName}/${ObjectName}",
+      "arn": "arn:${Partition}:s3:::${BucketName}/${ObjectName}",
       "conditionKeys": []
     },
     "job": {
@@ -2772,15 +2772,11 @@ export class S3 extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html
    *
    * @param bucketName - Identifier for the bucketName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onBucket(bucketName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:${Region}:${Account}:${BucketName}';
+  public onBucket(bucketName: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3:::${BucketName}';
     arn = arn.replace('${BucketName}', bucketName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2792,16 +2788,12 @@ export class S3 extends PolicyStatement {
    *
    * @param bucketName - Identifier for the bucketName.
    * @param objectName - Identifier for the objectName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onObject(bucketName: string, objectName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:s3:${Region}:${Account}:${BucketName}/${ObjectName}';
+  public onObject(bucketName: string, objectName: string, partition?: string) {
+    var arn = 'arn:${Partition}:s3:::${BucketName}/${ObjectName}';
     arn = arn.replace('${BucketName}', bucketName);
     arn = arn.replace('${ObjectName}', objectName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

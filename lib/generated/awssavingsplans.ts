@@ -96,7 +96,7 @@ export class Savingsplans extends PolicyStatement {
     "savingsplan": {
       "name": "savingsplan",
       "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html",
-      "arn": "arn:${Partition}:savingsplans:${Region}:${Account}:savingsplan/${ResourceId}",
+      "arn": "arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -215,17 +215,15 @@ export class Savingsplans extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onSavingsplan(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:savingsplans:${Region}:${Account}:savingsplan/${ResourceId}';
+  public onSavingsplan(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

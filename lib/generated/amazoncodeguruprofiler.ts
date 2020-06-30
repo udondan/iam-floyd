@@ -9,6 +9,26 @@ import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 export class CodeguruProfiler extends PolicyStatement {
   public servicePrefix = 'codeguru-profiler';
   public actions: Actions = {
+    "AddNotificationChannels": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AddNotificationChannels.html",
+      "description": "Grants permission to add up to 2 topic ARNs of existing AWS SNS topics to publish notifications",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      }
+    },
+    "BatchGetFrameMetricData": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_BatchGetFrameMetricData.html",
+      "description": "Grants permission to get the frame metric data for a Profiling Group",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      }
+    },
     "ConfigureAgent": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html",
       "description": "Grants permission for an agent to register with the orchestration service and retrieve profiling configuration information",
@@ -49,20 +69,20 @@ export class CodeguruProfiler extends PolicyStatement {
         }
       }
     },
-    "GetFindingsReport": {
-      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReport.html",
-      "description": "Grants permission to get a recommendations report",
+    "GetFindingsReportAccountSummary": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReportAccountSummary.html",
+      "description": "Grants permission to get a summary of recent recommendations for each profiling group in the account",
+      "accessLevel": "Read"
+    },
+    "GetNotificationConfiguration": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetNotificationConfiguration.html",
+      "description": "Grants permission to get the notification configuration",
       "accessLevel": "Read",
       "resourceTypes": {
         "ProfilingGroup": {
           "required": true
         }
       }
-    },
-    "GetFindingsReportAccountSummary": {
-      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReportAccountSummary.html",
-      "description": "Grants permission to get a summary of recent recommendations for each profiling group in the account",
-      "accessLevel": "Read"
     },
     "GetPolicy": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetPolicy.html",
@@ -96,7 +116,7 @@ export class CodeguruProfiler extends PolicyStatement {
     },
     "ListFindingsReports": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListFindingsReports.html",
-      "description": "Grants permissions to list the available recommendations reports for a specific profiling group",
+      "description": "Grants permission to list the available recommendations reports for a specific profiling group",
       "accessLevel": "List",
       "resourceTypes": {
         "ProfilingGroup": {
@@ -106,7 +126,7 @@ export class CodeguruProfiler extends PolicyStatement {
     },
     "ListProfileTimes": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html",
-      "description": "Grants permissions to list the start times of the available aggregated profiles for a specific profiling group",
+      "description": "Grants permission to list the start times of the available aggregated profiles for a specific profiling group",
       "accessLevel": "List",
       "resourceTypes": {
         "ProfilingGroup": {
@@ -116,12 +136,12 @@ export class CodeguruProfiler extends PolicyStatement {
     },
     "ListProfilingGroups": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfilingGroups.html",
-      "description": "Grants permissions to list profiling groups in the account",
+      "description": "Grants permission to list profiling groups in the account",
       "accessLevel": "List"
     },
     "PostAgentProfile": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html",
-      "description": "Grants permissions to submit a profile collected by an agent belonging to a specific profiling group for aggregation",
+      "description": "Grants permission to submit a profile collected by an agent belonging to a specific profiling group for aggregation",
       "accessLevel": "Write",
       "resourceTypes": {
         "ProfilingGroup": {
@@ -131,8 +151,18 @@ export class CodeguruProfiler extends PolicyStatement {
     },
     "PutPermission": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PutPermission.html",
-      "description": "Grants permissions to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group.",
+      "description": "Grants permission to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group.",
       "accessLevel": "Permissions management",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      }
+    },
+    "RemoveNotificationChannel": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemoveNotificationChannel.html",
+      "description": "Grants permission to delete an already configured SNStopic arn from the notification configuration",
+      "accessLevel": "Write",
       "resourceTypes": {
         "ProfilingGroup": {
           "required": true
@@ -149,9 +179,19 @@ export class CodeguruProfiler extends PolicyStatement {
         }
       }
     },
+    "SubmitFeedback": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_SubmitFeedback.html",
+      "description": "Grants permission to submit user feedback for useful or non useful anomaly",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      }
+    },
     "UpdateProfilingGroup": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UpdateProfilingGroup.html",
-      "description": "Grants permissions to update a specific profiling group",
+      "description": "Grants permission to update a specific profiling group",
       "accessLevel": "Write",
       "resourceTypes": {
         "ProfilingGroup": {
@@ -176,6 +216,30 @@ export class CodeguruProfiler extends PolicyStatement {
    */
   constructor (props?: PolicyStatementProps) {
     super(props);
+  }
+
+  /**
+   * Grants permission to add up to 2 topic ARNs of existing AWS SNS topics to publish notifications
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AddNotificationChannels.html
+   */
+  public addNotificationChannels() {
+    this.add('codeguru-profiler:AddNotificationChannels');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the frame metric data for a Profiling Group
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_BatchGetFrameMetricData.html
+   */
+  public batchGetFrameMetricData() {
+    this.add('codeguru-profiler:BatchGetFrameMetricData');
+    return this;
   }
 
   /**
@@ -227,18 +291,6 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permission to get a recommendations report
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReport.html
-   */
-  public getFindingsReport() {
-    this.add('codeguru-profiler:GetFindingsReport');
-    return this;
-  }
-
-  /**
    * Grants permission to get a summary of recent recommendations for each profiling group in the account
    *
    * Access Level: Read
@@ -247,6 +299,18 @@ export class CodeguruProfiler extends PolicyStatement {
    */
   public getFindingsReportAccountSummary() {
     this.add('codeguru-profiler:GetFindingsReportAccountSummary');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the notification configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetNotificationConfiguration.html
+   */
+  public getNotificationConfiguration() {
+    this.add('codeguru-profiler:GetNotificationConfiguration');
     return this;
   }
 
@@ -287,7 +351,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the available recommendations reports for a specific profiling group
+   * Grants permission to list the available recommendations reports for a specific profiling group
    *
    * Access Level: List
    *
@@ -299,7 +363,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list the start times of the available aggregated profiles for a specific profiling group
+   * Grants permission to list the start times of the available aggregated profiles for a specific profiling group
    *
    * Access Level: List
    *
@@ -311,7 +375,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to list profiling groups in the account
+   * Grants permission to list profiling groups in the account
    *
    * Access Level: List
    *
@@ -323,7 +387,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to submit a profile collected by an agent belonging to a specific profiling group for aggregation
+   * Grants permission to submit a profile collected by an agent belonging to a specific profiling group for aggregation
    *
    * Access Level: Write
    *
@@ -335,7 +399,7 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group.
+   * Grants permission to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group.
    *
    * Access Level: Permissions management
    *
@@ -343,6 +407,18 @@ export class CodeguruProfiler extends PolicyStatement {
    */
   public putPermission() {
     this.add('codeguru-profiler:PutPermission');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an already configured SNStopic arn from the notification configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemoveNotificationChannel.html
+   */
+  public removeNotificationChannel() {
+    this.add('codeguru-profiler:RemoveNotificationChannel');
     return this;
   }
 
@@ -359,7 +435,19 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
-   * Grants permissions to update a specific profiling group
+   * Grants permission to submit user feedback for useful or non useful anomaly
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_SubmitFeedback.html
+   */
+  public submitFeedback() {
+    this.add('codeguru-profiler:SubmitFeedback');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a specific profiling group
    *
    * Access Level: Write
    *

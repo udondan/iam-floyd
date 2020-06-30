@@ -491,43 +491,43 @@ export class Route53 extends PolicyStatement {
     "change": {
       "name": "change",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:change/${Id}",
+      "arn": "arn:${Partition}:route53:::change/${Id}",
       "conditionKeys": []
     },
     "delegationset": {
       "name": "delegationset",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:delegationset/${Id}",
+      "arn": "arn:${Partition}:route53:::delegationset/${Id}",
       "conditionKeys": []
     },
     "healthcheck": {
       "name": "healthcheck",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:healthcheck/${Id}",
+      "arn": "arn:${Partition}:route53:::healthcheck/${Id}",
       "conditionKeys": []
     },
     "hostedzone": {
       "name": "hostedzone",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:hostedzone/${Id}",
+      "arn": "arn:${Partition}:route53:::hostedzone/${Id}",
       "conditionKeys": []
     },
     "trafficpolicy": {
       "name": "trafficpolicy",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:trafficpolicy/${Id}",
+      "arn": "arn:${Partition}:route53:::trafficpolicy/${Id}",
       "conditionKeys": []
     },
     "trafficpolicyinstance": {
       "name": "trafficpolicyinstance",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:trafficpolicyinstance/${Id}",
+      "arn": "arn:${Partition}:route53:::trafficpolicyinstance/${Id}",
       "conditionKeys": []
     },
     "queryloggingconfig": {
       "name": "queryloggingconfig",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html",
-      "arn": "arn:${Partition}:route53:${Region}:${Account}:queryloggingconfig/${Id}",
+      "arn": "arn:${Partition}:route53:::queryloggingconfig/${Id}",
       "conditionKeys": []
     }
   };
@@ -1219,15 +1219,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onChange(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:change/${Id}';
+  public onChange(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::change/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1238,15 +1234,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onDelegationset(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:delegationset/${Id}';
+  public onDelegationset(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::delegationset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1257,15 +1249,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onHealthcheck(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:healthcheck/${Id}';
+  public onHealthcheck(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::healthcheck/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1276,15 +1264,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onHostedzone(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:hostedzone/${Id}';
+  public onHostedzone(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::hostedzone/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1295,15 +1279,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onTrafficpolicy(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:trafficpolicy/${Id}';
+  public onTrafficpolicy(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::trafficpolicy/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1314,15 +1294,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onTrafficpolicyinstance(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:trafficpolicyinstance/${Id}';
+  public onTrafficpolicyinstance(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::trafficpolicyinstance/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1333,15 +1309,11 @@ export class Route53 extends PolicyStatement {
    * https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html
    *
    * @param id - Identifier for the id.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onQueryloggingconfig(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:route53:${Region}:${Account}:queryloggingconfig/${Id}';
+  public onQueryloggingconfig(id: string, partition?: string) {
+    var arn = 'arn:${Partition}:route53:::queryloggingconfig/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

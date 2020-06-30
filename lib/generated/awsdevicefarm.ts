@@ -896,7 +896,7 @@ export class Devicefarm extends PolicyStatement {
     "deviceinstance": {
       "name": "deviceinstance",
       "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html",
-      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:deviceinstance:${ResourceId}",
+      "arn": "arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -920,7 +920,7 @@ export class Devicefarm extends PolicyStatement {
     "device": {
       "name": "device",
       "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html",
-      "arn": "arn:${Partition}:devicefarm:${Region}:${Account}:device:${ResourceId}",
+      "arn": "arn:${Partition}:devicefarm:${Region}::device:${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -2078,17 +2078,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onDeviceinstance(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:deviceinstance:${ResourceId}';
+  public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -2144,17 +2142,15 @@ export class Devicefarm extends PolicyStatement {
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:device:${ResourceId}';
+  public onDevice(resourceId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:devicefarm:${Region}::device:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

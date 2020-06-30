@@ -409,7 +409,7 @@ export class Networkmanager extends PolicyStatement {
     "global-network": {
       "name": "global-network",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:global-network/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -417,7 +417,7 @@ export class Networkmanager extends PolicyStatement {
     "site": {
       "name": "site",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:site/${GlobalNetworkId}/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -425,7 +425,7 @@ export class Networkmanager extends PolicyStatement {
     "link": {
       "name": "link",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:link/${GlobalNetworkId}/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -433,7 +433,7 @@ export class Networkmanager extends PolicyStatement {
     "device": {
       "name": "device",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager:${Region}:${Account}:device/${GlobalNetworkId}/${ResourceId}",
+      "arn": "arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -792,17 +792,15 @@ export class Networkmanager extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onGlobalNetwork(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:global-network/${ResourceId}';
+  public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -815,18 +813,16 @@ export class Networkmanager extends PolicyStatement {
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onSite(globalNetworkId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:site/${GlobalNetworkId}/${ResourceId}';
+  public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -839,18 +835,16 @@ export class Networkmanager extends PolicyStatement {
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onLink(globalNetworkId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:link/${GlobalNetworkId}/${ResourceId}';
+  public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -863,18 +857,16 @@ export class Networkmanager extends PolicyStatement {
    * @param globalNetworkId - Identifier for the globalNetworkId.
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onDevice(globalNetworkId: string, resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:networkmanager:${Region}:${Account}:device/${GlobalNetworkId}/${ResourceId}';
+  public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

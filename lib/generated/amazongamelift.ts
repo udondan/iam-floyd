@@ -658,7 +658,7 @@ export class Gamelift extends PolicyStatement {
     "alias": {
       "name": "alias",
       "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
-      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:alias/${AliasId}",
+      "arn": "arn:${Partition}:gamelift:${Region}::alias/${AliasId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -666,7 +666,7 @@ export class Gamelift extends PolicyStatement {
     "build": {
       "name": "build",
       "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
-      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:build/${BuildId}",
+      "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -674,7 +674,7 @@ export class Gamelift extends PolicyStatement {
     "script": {
       "name": "script",
       "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
-      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:script/${ScriptId}",
+      "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -1640,17 +1640,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
    *
    * @param aliasId - Identifier for the aliasId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onAlias(aliasId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:alias/${AliasId}';
+  public onAlias(aliasId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:gamelift:${Region}::alias/${AliasId}';
     arn = arn.replace('${AliasId}', aliasId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -1661,18 +1659,18 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
    *
+   * @param accountId - Identifier for the accountId.
    * @param buildId - Identifier for the buildId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:build/${BuildId}';
+  public onBuild(accountId: string, buildId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}';
+    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${BuildId}', buildId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -1683,18 +1681,18 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
    *
+   * @param accountId - Identifier for the accountId.
    * @param scriptId - Identifier for the scriptId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onScript(scriptId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:script/${ScriptId}';
+  public onScript(accountId: string, scriptId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}';
+    arn = arn.replace('${AccountId}', accountId);
     arn = arn.replace('${ScriptId}', scriptId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

@@ -555,7 +555,7 @@ export class Swf extends PolicyStatement {
     "domain": {
       "name": "domain",
       "url": "https://docs.aws.amazon.com/swf/latest/developerguide/swf-dev-domains.html",
-      "arn": "arn:${Partition}:swf:${Region}:${Account}:domain/${DomainName}",
+      "arn": "arn:${Partition}:swf::${Account}:domain/${DomainName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -1130,17 +1130,15 @@ export class Swf extends PolicyStatement {
    *
    * @param domainName - Identifier for the domainName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:swf:${Region}:${Account}:domain/${DomainName}';
+  public onDomain(domainName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:swf::${Account}:domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

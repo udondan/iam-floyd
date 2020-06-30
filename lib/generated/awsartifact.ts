@@ -57,19 +57,19 @@ export class Artifact extends PolicyStatement {
     "report-package": {
       "name": "report-package",
       "url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html",
-      "arn": "arn:${Partition}:artifact:${Region}:${Account}:report-package/${ResourceName}",
+      "arn": "arn:${Partition}:artifact:::report-package/${ResourceName}",
       "conditionKeys": []
     },
     "customer-agreement": {
       "name": "customer-agreement",
       "url": "https://docs.aws.amazon.com/artifact/latest/ug/$managingagreements.html",
-      "arn": "arn:${Partition}:artifact:${Region}:${Account}:customer-agreement/${ResourceName}",
+      "arn": "arn:${Partition}:artifact::${Account}:customer-agreement/${ResourceName}",
       "conditionKeys": []
     },
     "agreement": {
       "name": "agreement",
       "url": "https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html",
-      "arn": "arn:${Partition}:artifact:${Region}:${Account}:agreement/${ResourceName}",
+      "arn": "arn:${Partition}:artifact:::agreement/${ResourceName}",
       "conditionKeys": []
     }
   };
@@ -137,15 +137,11 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onReportPackage(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:artifact:${Region}:${Account}:report-package/${ResourceName}';
+  public onReportPackage(resourceName: string, partition?: string) {
+    var arn = 'arn:${Partition}:artifact:::report-package/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -157,14 +153,12 @@ export class Artifact extends PolicyStatement {
    *
    * @param resourceName - Identifier for the resourceName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onCustomerAgreement(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:artifact:${Region}:${Account}:customer-agreement/${ResourceName}';
+  public onCustomerAgreement(resourceName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:artifact::${Account}:customer-agreement/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -175,15 +169,11 @@ export class Artifact extends PolicyStatement {
    * https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html
    *
    * @param resourceName - Identifier for the resourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAgreement(resourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:artifact:${Region}:${Account}:agreement/${ResourceName}';
+  public onAgreement(resourceName: string, partition?: string) {
+    var arn = 'arn:${Partition}:artifact:::agreement/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

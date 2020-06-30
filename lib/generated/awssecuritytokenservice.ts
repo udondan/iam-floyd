@@ -165,7 +165,7 @@ export class Sts extends PolicyStatement {
     "role": {
       "name": "role",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -173,7 +173,7 @@ export class Sts extends PolicyStatement {
     "user": {
       "name": "user",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
       "conditionKeys": []
     }
   };
@@ -314,17 +314,15 @@ export class Sts extends PolicyStatement {
    *
    * @param roleNameWithPath - Identifier for the roleNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onRole(roleNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}';
+  public onRole(roleNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
     arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -336,14 +334,12 @@ export class Sts extends PolicyStatement {
    *
    * @param userNameWithPath - Identifier for the userNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';
+  public onUser(userNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';
     arn = arn.replace('${UserNameWithPath}', userNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -199,7 +199,7 @@ export class Managedblockchain extends PolicyStatement {
     "network": {
       "name": "network",
       "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html",
-      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:networks/${NetworkId}",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}",
       "conditionKeys": []
     },
     "member": {
@@ -217,7 +217,7 @@ export class Managedblockchain extends PolicyStatement {
     "proposal": {
       "name": "proposal",
       "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html",
-      "arn": "arn:${Partition}:managedblockchain:${Region}:${Account}:proposals/${ProposalId}",
+      "arn": "arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}",
       "conditionKeys": []
     },
     "invitation": {
@@ -483,14 +483,12 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html
    *
    * @param networkId - Identifier for the networkId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onNetwork(networkId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:networks/${NetworkId}';
+  public onNetwork(networkId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}';
     arn = arn.replace('${NetworkId}', networkId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -540,14 +538,12 @@ export class Managedblockchain extends PolicyStatement {
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html
    *
    * @param proposalId - Identifier for the proposalId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onProposal(proposalId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:proposals/${ProposalId}';
+  public onProposal(proposalId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}';
     arn = arn.replace('${ProposalId}', proposalId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

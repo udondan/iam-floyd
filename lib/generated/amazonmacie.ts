@@ -385,7 +385,7 @@ export class Macie2 extends PolicyStatement {
     "ClassificationJob": {
       "name": "ClassificationJob",
       "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
-      "arn": "arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}",
+      "arn": "arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -393,7 +393,7 @@ export class Macie2 extends PolicyStatement {
     "CustomDataIdentifier": {
       "name": "CustomDataIdentifier",
       "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html.html",
-      "arn": "arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}",
+      "arn": "arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -401,7 +401,7 @@ export class Macie2 extends PolicyStatement {
     "Member": {
       "name": "Member",
       "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
-      "arn": "arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}",
+      "arn": "arn:${Partition}:macie2::${Account}:member/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -409,7 +409,7 @@ export class Macie2 extends PolicyStatement {
     "FindingsFilter": {
       "name": "FindingsFilter",
       "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
-      "arn": "arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}",
+      "arn": "arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -1068,17 +1068,15 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onClassificationJob(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:classification-job/${ResourceId}';
+  public onClassificationJob(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1090,17 +1088,15 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onCustomDataIdentifier(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:custom-data-identifier/${ResourceId}';
+  public onCustomDataIdentifier(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1112,17 +1108,15 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onMember(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:member/${ResourceId}';
+  public onMember(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2::${Account}:member/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1134,17 +1128,15 @@ export class Macie2 extends PolicyStatement {
    *
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onFindingsFilter(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:macie2:${Region}:${Account}:findings-filter/${ResourceId}';
+  public onFindingsFilter(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

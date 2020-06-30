@@ -100,7 +100,7 @@ export class Apigateway extends PolicyStatement {
     "apigateway-general": {
       "name": "apigateway-general",
       "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html",
-      "arn": "arn:${Partition}:apigateway:${Region}:${Account}:${ApiGatewayResourcePath}",
+      "arn": "arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -204,17 +204,15 @@ export class Apigateway extends PolicyStatement {
    * https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html
    *
    * @param apiGatewayResourcePath - Identifier for the apiGatewayResourcePath.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onApigatewayGeneral(apiGatewayResourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:apigateway:${Region}:${Account}:${ApiGatewayResourcePath}';
+  public onApigatewayGeneral(apiGatewayResourcePath: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}';
     arn = arn.replace('${ApiGatewayResourcePath}', apiGatewayResourcePath);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

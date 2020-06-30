@@ -10,87 +10,87 @@ export class Applicationinsights extends PolicyStatement {
   public servicePrefix = 'applicationinsights';
   public actions: Actions = {
     "CreateApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_CreateApplication.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateApplication.html",
       "description": "Creates an application from a resource group",
       "accessLevel": "Write"
     },
     "CreateComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_CreateComponent.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateComponent.html",
       "description": "Creates a component from a group of resources",
       "accessLevel": "Write"
     },
     "DeleteApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DeleteApplication.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteApplication.html",
       "description": "Deletes an application",
       "accessLevel": "Write"
     },
     "DeleteComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DeleteComponent.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteComponent.html",
       "description": "Deletes a component",
       "accessLevel": "Write"
     },
     "DescribeApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeApplication.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeApplication.html",
       "description": "Describes an application",
       "accessLevel": "Read"
     },
     "DescribeComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponent.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponent.html",
       "description": "Describes a component",
       "accessLevel": "Read"
     },
     "DescribeComponentConfiguration": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponentConfiguration.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfiguration.html",
       "description": "Describes a component configuration",
       "accessLevel": "Read"
     },
     "DescribeComponentConfigurationRecommendation": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponentConfigurationRecommendation.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html",
       "description": "Describe the recommended application component configuration",
       "accessLevel": "Read"
     },
     "DescribeObservation": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeObservation.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeObservation.html",
       "description": "Describes an observation",
       "accessLevel": "Read"
     },
     "DescribeProblem": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeProblem.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblem.html",
       "description": "Describes a problem",
       "accessLevel": "Read"
     },
     "DescribeProblemObservations": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeProblemObservations.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblemObservations.html",
       "description": "Describes the observation in a problem",
       "accessLevel": "Read"
     },
     "ListApplications": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListApplications.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListApplications.html",
       "description": "Lists all applications",
       "accessLevel": "List"
     },
     "ListComponents": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListComponents.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListComponents.html",
       "description": "List an application's components",
       "accessLevel": "List"
     },
     "ListProblems": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListProblems.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListProblems.html",
       "description": "Lists the problems in an application",
       "accessLevel": "List"
     },
     "UpdateApplication": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateApplication.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateApplication.html",
       "description": "Updates an application",
       "accessLevel": "Write"
     },
     "UpdateComponent": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateComponent.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponent.html",
       "description": "Updates a component",
       "accessLevel": "Write"
     },
     "UpdateComponentConfiguration": {
-      "url": "https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateComponentConfiguration.html",
+      "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponentConfiguration.html",
       "description": "Updates a component configuration",
       "accessLevel": "Write"
     }
@@ -111,7 +111,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_CreateApplication.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateApplication.html
    */
   public createApplication() {
     this.add('applicationinsights:CreateApplication');
@@ -123,7 +123,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_CreateComponent.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateComponent.html
    */
   public createComponent() {
     this.add('applicationinsights:CreateComponent');
@@ -135,7 +135,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DeleteApplication.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteApplication.html
    */
   public deleteApplication() {
     this.add('applicationinsights:DeleteApplication');
@@ -147,7 +147,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DeleteComponent.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteComponent.html
    */
   public deleteComponent() {
     this.add('applicationinsights:DeleteComponent');
@@ -159,7 +159,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeApplication.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeApplication.html
    */
   public describeApplication() {
     this.add('applicationinsights:DescribeApplication');
@@ -171,7 +171,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponent.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponent.html
    */
   public describeComponent() {
     this.add('applicationinsights:DescribeComponent');
@@ -183,7 +183,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponentConfiguration.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfiguration.html
    */
   public describeComponentConfiguration() {
     this.add('applicationinsights:DescribeComponentConfiguration');
@@ -195,7 +195,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponentConfigurationRecommendation.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html
    */
   public describeComponentConfigurationRecommendation() {
     this.add('applicationinsights:DescribeComponentConfigurationRecommendation');
@@ -207,7 +207,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeObservation.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeObservation.html
    */
   public describeObservation() {
     this.add('applicationinsights:DescribeObservation');
@@ -219,7 +219,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeProblem.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblem.html
    */
   public describeProblem() {
     this.add('applicationinsights:DescribeProblem');
@@ -231,7 +231,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeProblemObservations.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblemObservations.html
    */
   public describeProblemObservations() {
     this.add('applicationinsights:DescribeProblemObservations');
@@ -243,7 +243,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListApplications.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListApplications.html
    */
   public listApplications() {
     this.add('applicationinsights:ListApplications');
@@ -255,7 +255,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListComponents.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListComponents.html
    */
   public listComponents() {
     this.add('applicationinsights:ListComponents');
@@ -267,7 +267,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListProblems.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListProblems.html
    */
   public listProblems() {
     this.add('applicationinsights:ListProblems');
@@ -279,7 +279,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateApplication.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateApplication.html
    */
   public updateApplication() {
     this.add('applicationinsights:UpdateApplication');
@@ -291,7 +291,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateComponent.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponent.html
    */
   public updateComponent() {
     this.add('applicationinsights:UpdateComponent');
@@ -303,7 +303,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateComponentConfiguration.html
+   * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponentConfiguration.html
    */
   public updateComponentConfiguration() {
     this.add('applicationinsights:UpdateComponentConfiguration');

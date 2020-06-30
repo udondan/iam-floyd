@@ -495,43 +495,43 @@ export class Organizations extends PolicyStatement {
     "account": {
       "name": "account",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:account/o-${OrganizationId}/${AccountId}",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}",
       "conditionKeys": []
     },
     "handshake": {
       "name": "handshake",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}",
       "conditionKeys": []
     },
     "organization": {
       "name": "organization",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:organization/o-${OrganizationId}",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:organization/o-${OrganizationId}",
       "conditionKeys": []
     },
     "organizationalunit": {
       "name": "organizationalunit",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
       "conditionKeys": []
     },
     "policy": {
       "name": "policy",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
       "conditionKeys": []
     },
     "awspolicy": {
       "name": "awspolicy",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:policy/${PolicyType}/p-${PolicyId}",
+      "arn": "arn:${Partition}:organizations::aws:policy/${PolicyType}/p-${PolicyId}",
       "conditionKeys": []
     },
     "root": {
       "name": "root",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
-      "arn": "arn:${Partition}:organizations:${Region}:${Account}:root/o-${OrganizationId}/r-${RootId}",
+      "arn": "arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}",
       "conditionKeys": []
     }
   };
@@ -1162,18 +1162,16 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
    *
+   * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param accountId - Identifier for the accountId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAccount(organizationId: string, accountId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:account/o-${OrganizationId}/${AccountId}';
+  public onAccount(masterAccountId: string, organizationId: string, accountId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}';
+    arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
     arn = arn.replace('${AccountId}', accountId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1183,20 +1181,18 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
    *
+   * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param handshakeType - Identifier for the handshakeType.
    * @param handshakeId - Identifier for the handshakeId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onHandshake(organizationId: string, handshakeType: string, handshakeId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}';
+  public onHandshake(masterAccountId: string, organizationId: string, handshakeType: string, handshakeId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:handshake/o-${OrganizationId}/${HandshakeType}/h-${HandshakeId}';
+    arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
     arn = arn.replace('${HandshakeType}', handshakeType);
     arn = arn.replace('${HandshakeId}', handshakeId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1206,16 +1202,14 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
    *
+   * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onOrganization(organizationId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:organization/o-${OrganizationId}';
+  public onOrganization(masterAccountId: string, organizationId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:organization/o-${OrganizationId}';
+    arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1225,18 +1219,16 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
    *
+   * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param organizationalUnitId - Identifier for the organizationalUnitId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onOrganizationalunit(organizationId: string, organizationalUnitId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}';
+  public onOrganizationalunit(masterAccountId: string, organizationId: string, organizationalUnitId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}';
+    arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
     arn = arn.replace('${OrganizationalUnitId}', organizationalUnitId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1246,20 +1238,18 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
    *
+   * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param policyType - Identifier for the policyType.
    * @param policyId - Identifier for the policyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onPolicy(organizationId: string, policyType: string, policyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}';
+  public onPolicy(masterAccountId: string, organizationId: string, policyType: string, policyId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}';
+    arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
     arn = arn.replace('${PolicyType}', policyType);
     arn = arn.replace('${PolicyId}', policyId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1271,16 +1261,12 @@ export class Organizations extends PolicyStatement {
    *
    * @param policyType - Identifier for the policyType.
    * @param policyId - Identifier for the policyId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAwspolicy(policyType: string, policyId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:policy/${PolicyType}/p-${PolicyId}';
+  public onAwspolicy(policyType: string, policyId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::aws:policy/${PolicyType}/p-${PolicyId}';
     arn = arn.replace('${PolicyType}', policyType);
     arn = arn.replace('${PolicyId}', policyId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1290,18 +1276,16 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html
    *
+   * @param masterAccountId - Identifier for the masterAccountId.
    * @param organizationId - Identifier for the organizationId.
    * @param rootId - Identifier for the rootId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onRoot(organizationId: string, rootId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:organizations:${Region}:${Account}:root/o-${OrganizationId}/r-${RootId}';
+  public onRoot(masterAccountId: string, organizationId: string, rootId: string, partition?: string) {
+    var arn = 'arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}';
+    arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
     arn = arn.replace('${RootId}', rootId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

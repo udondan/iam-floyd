@@ -686,7 +686,7 @@ export class Directconnect extends PolicyStatement {
     "dx-gateway": {
       "name": "dx-gateway",
       "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html",
-      "arn": "arn:${Partition}:directconnect:${Region}:${Account}:dx-gateway/${DirectConnectGatewayId}",
+      "arn": "arn:${Partition}:directconnect::${Account}:dx-gateway/${DirectConnectGatewayId}",
       "conditionKeys": []
     }
   };
@@ -1445,14 +1445,12 @@ export class Directconnect extends PolicyStatement {
    *
    * @param directConnectGatewayId - Identifier for the directConnectGatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onDxGateway(directConnectGatewayId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dx-gateway/${DirectConnectGatewayId}';
+  public onDxGateway(directConnectGatewayId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:directconnect::${Account}:dx-gateway/${DirectConnectGatewayId}';
     arn = arn.replace('${DirectConnectGatewayId}', directConnectGatewayId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

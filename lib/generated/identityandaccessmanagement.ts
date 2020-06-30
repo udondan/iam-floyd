@@ -1371,55 +1371,55 @@ export class Iam extends PolicyStatement {
     "access-report": {
       "name": "access-report",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data-orgs.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:access-report/${EntityPath}",
+      "arn": "arn:${Partition}:iam::${Account}:access-report/${EntityPath}",
       "conditionKeys": []
     },
     "assumed-role": {
       "name": "assumed-role",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:assumed-role/${RoleName}/${RoleSessionName}",
+      "arn": "arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}",
       "conditionKeys": []
     },
     "federated-user": {
       "name": "federated-user",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:federated-user/${UserName}",
+      "arn": "arn:${Partition}:iam::${Account}:federated-user/${UserName}",
       "conditionKeys": []
     },
     "group": {
       "name": "group",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:group/${GroupNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}",
       "conditionKeys": []
     },
     "instance-profile": {
       "name": "instance-profile",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:instance-profile/${InstanceProfileNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}",
       "conditionKeys": []
     },
     "mfa": {
       "name": "mfa",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:mfa/${Path}/${MfaTokenId}",
+      "arn": "arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}",
       "conditionKeys": []
     },
     "oidc-provider": {
       "name": "oidc-provider",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:oidc-provider/${OidcProviderName}",
+      "arn": "arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}",
       "conditionKeys": []
     },
     "policy": {
       "name": "policy",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:policy/${PolicyNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}",
       "conditionKeys": []
     },
     "role": {
       "name": "role",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}",
       "conditionKeys": [
         "iam:ResourceTag/${TagKey}"
       ]
@@ -1427,25 +1427,25 @@ export class Iam extends PolicyStatement {
     "saml-provider": {
       "name": "saml-provider",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:saml-provider/${SamlProviderName}",
+      "arn": "arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}",
       "conditionKeys": []
     },
     "server-certificate": {
       "name": "server-certificate",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:server-certificate/${CertificateNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}",
       "conditionKeys": []
     },
     "sms-mfa": {
       "name": "sms-mfa",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:sms-mfa/${MfaTokenIdWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}",
       "conditionKeys": []
     },
     "user": {
       "name": "user",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html",
-      "arn": "arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}",
+      "arn": "arn:${Partition}:iam::${Account}:user/${UserNameWithPath}",
       "conditionKeys": [
         "iam:ResourceTag/${TagKey}"
       ]
@@ -3160,14 +3160,12 @@ export class Iam extends PolicyStatement {
    *
    * @param entityPath - Identifier for the entityPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAccessReport(entityPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:access-report/${EntityPath}';
+  public onAccessReport(entityPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:access-report/${EntityPath}';
     arn = arn.replace('${EntityPath}', entityPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3180,15 +3178,13 @@ export class Iam extends PolicyStatement {
    * @param roleName - Identifier for the roleName.
    * @param roleSessionName - Identifier for the roleSessionName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAssumedRole(roleName: string, roleSessionName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:assumed-role/${RoleName}/${RoleSessionName}';
+  public onAssumedRole(roleName: string, roleSessionName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}';
     arn = arn.replace('${RoleName}', roleName);
     arn = arn.replace('${RoleSessionName}', roleSessionName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3200,14 +3196,12 @@ export class Iam extends PolicyStatement {
    *
    * @param userName - Identifier for the userName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onFederatedUser(userName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:federated-user/${UserName}';
+  public onFederatedUser(userName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:federated-user/${UserName}';
     arn = arn.replace('${UserName}', userName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3219,14 +3213,12 @@ export class Iam extends PolicyStatement {
    *
    * @param groupNameWithPath - Identifier for the groupNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onGroup(groupNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:group/${GroupNameWithPath}';
+  public onGroup(groupNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}';
     arn = arn.replace('${GroupNameWithPath}', groupNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3238,14 +3230,12 @@ export class Iam extends PolicyStatement {
    *
    * @param instanceProfileNameWithPath - Identifier for the instanceProfileNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:instance-profile/${InstanceProfileNameWithPath}';
+  public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}';
     arn = arn.replace('${InstanceProfileNameWithPath}', instanceProfileNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3258,15 +3248,13 @@ export class Iam extends PolicyStatement {
    * @param path - Identifier for the path.
    * @param mfaTokenId - Identifier for the mfaTokenId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onMfa(path: string, mfaTokenId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:mfa/${Path}/${MfaTokenId}';
+  public onMfa(path: string, mfaTokenId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}';
     arn = arn.replace('${Path}', path);
     arn = arn.replace('${MfaTokenId}', mfaTokenId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3278,14 +3266,12 @@ export class Iam extends PolicyStatement {
    *
    * @param oidcProviderName - Identifier for the oidcProviderName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onOidcProvider(oidcProviderName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:oidc-provider/${OidcProviderName}';
+  public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}';
     arn = arn.replace('${OidcProviderName}', oidcProviderName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3297,14 +3283,12 @@ export class Iam extends PolicyStatement {
    *
    * @param policyNameWithPath - Identifier for the policyNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onPolicy(policyNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:policy/${PolicyNameWithPath}';
+  public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}';
     arn = arn.replace('${PolicyNameWithPath}', policyNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3316,17 +3300,15 @@ export class Iam extends PolicyStatement {
    *
    * @param roleNameWithPath - Identifier for the roleNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - iam:ResourceTag/${TagKey}
    */
-  public onRole(roleNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:role/${RoleNameWithPath}';
+  public onRole(roleNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
     arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3338,14 +3320,12 @@ export class Iam extends PolicyStatement {
    *
    * @param samlProviderName - Identifier for the samlProviderName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onSamlProvider(samlProviderName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:saml-provider/${SamlProviderName}';
+  public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}';
     arn = arn.replace('${SamlProviderName}', samlProviderName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3357,14 +3337,12 @@ export class Iam extends PolicyStatement {
    *
    * @param certificateNameWithPath - Identifier for the certificateNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onServerCertificate(certificateNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:server-certificate/${CertificateNameWithPath}';
+  public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}';
     arn = arn.replace('${CertificateNameWithPath}', certificateNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3376,14 +3354,12 @@ export class Iam extends PolicyStatement {
    *
    * @param mfaTokenIdWithPath - Identifier for the mfaTokenIdWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onSmsMfa(mfaTokenIdWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:sms-mfa/${MfaTokenIdWithPath}';
+  public onSmsMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}';
     arn = arn.replace('${MfaTokenIdWithPath}', mfaTokenIdWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3395,17 +3371,15 @@ export class Iam extends PolicyStatement {
    *
    * @param userNameWithPath - Identifier for the userNameWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - iam:ResourceTag/${TagKey}
    */
-  public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';
+  public onUser(userNameWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';
     arn = arn.replace('${UserNameWithPath}', userNameWithPath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -109,7 +109,7 @@ export class Synthetics extends PolicyStatement {
     "canary": {
       "name": "canary",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html",
-      "arn": "arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}",
+      "arn": "arn:${Partition}:synthetics::${Account}:canary:${CanaryName}",
       "conditionKeys": []
     }
   };
@@ -262,14 +262,12 @@ export class Synthetics extends PolicyStatement {
    *
    * @param canaryName - Identifier for the canaryName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onCanary(canaryName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:synthetics:${Region}:${Account}:canary:${CanaryName}';
+  public onCanary(canaryName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:synthetics::${Account}:canary:${CanaryName}';
     arn = arn.replace('${CanaryName}', canaryName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

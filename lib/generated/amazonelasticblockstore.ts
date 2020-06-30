@@ -44,7 +44,7 @@ export class Ebs extends PolicyStatement {
     "snapshot": {
       "name": "snapshot",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",
-      "arn": "arn:${Partition}:ec2:${Region}:${Account}:snapshot/${SnapshotId}",
+      "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -102,17 +102,15 @@ export class Ebs extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param snapshotId - Identifier for the snapshotId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onSnapshot(snapshotId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:snapshot/${SnapshotId}';
+  public onSnapshot(snapshotId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}';
     arn = arn.replace('${SnapshotId}', snapshotId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

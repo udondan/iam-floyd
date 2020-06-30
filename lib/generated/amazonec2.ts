@@ -4523,7 +4523,7 @@ export class Ec2 extends PolicyStatement {
     "fpga-image": {
       "name": "fpga-image",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",
-      "arn": "arn:${Partition}:ec2:${Region}:${Account}:fpga-image/${FpgaImageId}",
+      "arn": "arn:${Partition}:ec2:${Region}::fpga-image/${FpgaImageId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
@@ -4536,7 +4536,7 @@ export class Ec2 extends PolicyStatement {
     "image": {
       "name": "image",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html",
-      "arn": "arn:${Partition}:ec2:${Region}:${Account}:image/${ImageId}",
+      "arn": "arn:${Partition}:ec2:${Region}::image/${ImageId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
@@ -4739,7 +4739,7 @@ export class Ec2 extends PolicyStatement {
     "snapshot": {
       "name": "snapshot",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html",
-      "arn": "arn:${Partition}:ec2:${Region}:${Account}:snapshot/${SnapshotId}",
+      "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
@@ -9943,7 +9943,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
    *
    * @param fpgaImageId - Identifier for the fpgaImageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
@@ -9955,10 +9954,9 @@ export class Ec2 extends PolicyStatement {
    *  - ec2:Region
    *  - ec2:ResourceTag/${TagKey}
    */
-  public onFpgaImage(fpgaImageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:fpga-image/${FpgaImageId}';
+  public onFpgaImage(fpgaImageId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}::fpga-image/${FpgaImageId}';
     arn = arn.replace('${FpgaImageId}', fpgaImageId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -9970,7 +9968,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
    *
    * @param imageId - Identifier for the imageId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
@@ -9984,10 +9981,9 @@ export class Ec2 extends PolicyStatement {
    *  - ec2:ResourceTag/${TagKey}
    *  - ec2:RootDeviceType
    */
-  public onImage(imageId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:image/${ImageId}';
+  public onImage(imageId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}::image/${ImageId}';
     arn = arn.replace('${ImageId}', imageId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -10411,7 +10407,6 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html
    *
    * @param snapshotId - Identifier for the snapshotId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
@@ -10425,10 +10420,9 @@ export class Ec2 extends PolicyStatement {
    *  - ec2:SnapshotTime
    *  - ec2:VolumeSize
    */
-  public onSnapshot(snapshotId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:snapshot/${SnapshotId}';
+  public onSnapshot(snapshotId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}';
     arn = arn.replace('${SnapshotId}', snapshotId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

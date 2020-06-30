@@ -284,7 +284,7 @@ export class Cloudwatch extends PolicyStatement {
     "dashboard": {
       "name": "dashboard",
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html",
-      "arn": "arn:${Partition}:cloudwatch:${Region}:${Account}:dashboard/${DashboardName}",
+      "arn": "arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}",
       "conditionKeys": []
     },
     "insight-rule": {
@@ -683,14 +683,12 @@ export class Cloudwatch extends PolicyStatement {
    *
    * @param dashboardName - Identifier for the dashboardName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onDashboard(dashboardName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:dashboard/${DashboardName}';
+  public onDashboard(dashboardName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}';
     arn = arn.replace('${DashboardName}', dashboardName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

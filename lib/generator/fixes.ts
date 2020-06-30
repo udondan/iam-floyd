@@ -128,20 +128,10 @@ export function arnFixer(
 ): string {
   var fixed = 0;
 
-  // filling in blank region and account, as many doc pages leave them empty
-  const originalArn = arn;
-  const splits = arn.split(':');
-  splits[3] = '${Region}';
-  splits[4] = '${Account}';
-  arn = splits.join(':');
-  if (arn !== originalArn) {
-    fixed = 1;
-  }
-
   // fix ARNs that have wildcards instead of identifiers
   if (arn.match(/(:|\/)[a-zA-Z-]+(:|\/)\*$/)) {
     arn = arn.slice(0, -1) + '${ResourceName}';
-    var fixed = 2;
+    var fixed = 1;
   }
 
   // fix ARNs specified in the global fixes object above
@@ -151,7 +141,7 @@ export function arnFixer(
     resource in fixes[service].resourceTypes &&
     'arn' in fixes[service].resourceTypes[resource]
   ) {
-    fixed = 3;
+    fixed = 2;
     arn = fixes[service].resourceTypes[resource].arn;
   }
 
@@ -165,7 +155,7 @@ export function arnFixer(
   // arn:partition:service:region:account-id:resource-id
   // arn:partition:service:region:account-id:resource-type/resource-id
   // arn:partition:service:region:account-id:resource-type:resource-id
-  var r = `arn:\\$\\{Partition\\}:[a-z0-9_-]+:(\\$\\{Region\\})?:\\$\\{(Account)\\}(:[a-z0-9_-]*)?((\\/|:)(((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}|[a-z0-9_-]+))*(\\/|:)((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}$`;
+  var r = `arn:\\$\\{Partition\\}:[a-z0-9_-]+:(\\$\\{Region\\})?:(\\$\\{((Master)?Account(Id)?)\\})?(:[a-z0-9_-]*)?((\\/|:)(((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}|[a-z0-9_-]+))*(\\/|:)((o|h|ou|p|r)-)?\\$\\{[a-z0-9_-]+\\}$`;
   var re = new RegExp(r, 'i');
   const notMatchingButValid = [
     'glue:catalog', // has no identifier, there only is one catalog, identified by region & account

@@ -262,13 +262,13 @@ export class Deepracer extends PolicyStatement {
     "track": {
       "name": "track",
       "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html",
-      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:track/${ResourceId}",
+      "arn": "arn:${Partition}:deepracer:${Region}::track/${ResourceId}",
       "conditionKeys": []
     },
     "leaderboard": {
       "name": "leaderboard",
       "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html",
-      "arn": "arn:${Partition}:deepracer:${Region}:${Account}:leaderboard/${ResourceId}",
+      "arn": "arn:${Partition}:deepracer:${Region}::leaderboard/${ResourceId}",
       "conditionKeys": []
     }
   };
@@ -676,14 +676,12 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onTrack(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:track/${ResourceId}';
+  public onTrack(resourceId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}::track/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -695,14 +693,12 @@ export class Deepracer extends PolicyStatement {
    * https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-submit-model-to-leaderboard.html
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onLeaderboard(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:leaderboard/${ResourceId}';
+  public onLeaderboard(resourceId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:deepracer:${Region}::leaderboard/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

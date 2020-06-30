@@ -275,7 +275,7 @@ export class Forecast extends PolicyStatement {
     "algorithm": {
       "name": "algorithm",
       "url": "",
-      "arn": "arn:${Partition}:forecast:${Region}:${Account}:algorithm/${ResourceId}",
+      "arn": "arn:${Partition}:forecast:::algorithm/${ResourceId}",
       "conditionKeys": []
     },
     "predictor": {
@@ -686,15 +686,11 @@ export class Forecast extends PolicyStatement {
    * Adds a resource of type algorithm to the statement
    *
    * @param resourceId - Identifier for the resourceId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:forecast:${Region}:${Account}:algorithm/${ResourceId}';
+  public onAlgorithm(resourceId: string, partition?: string) {
+    var arn = 'arn:${Partition}:forecast:::algorithm/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

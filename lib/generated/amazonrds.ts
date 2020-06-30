@@ -1526,7 +1526,7 @@ export class Rds extends PolicyStatement {
     "global-cluster": {
       "name": "global-cluster",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html",
-      "arn": "arn:${Partition}:rds:${Region}:${Account}:${GlobalCluster}",
+      "arn": "arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}",
       "conditionKeys": []
     },
     "og": {
@@ -3254,14 +3254,12 @@ export class Rds extends PolicyStatement {
    *
    * @param globalCluster - Identifier for the globalCluster.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onGlobalCluster(globalCluster: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Region}:${Account}:${GlobalCluster}';
+  public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}';
     arn = arn.replace('${GlobalCluster}', globalCluster);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

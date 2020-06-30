@@ -353,7 +353,7 @@ export class Worklink extends PolicyStatement {
     "fleet": {
       "name": "fleet",
       "url": "https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet",
-      "arn": "arn:${Partition}:worklink:${Region}:${Account}:fleet/${fleetName}",
+      "arn": "arn:${Partition}:worklink::${Account}:fleet/${fleetName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -772,17 +772,15 @@ export class Worklink extends PolicyStatement {
    *
    * @param fleetName - Identifier for the fleetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:worklink:${Region}:${Account}:fleet/${fleetName}';
+  public onFleet(fleetName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:worklink::${Account}:fleet/${fleetName}';
     arn = arn.replace('${fleetName}', fleetName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

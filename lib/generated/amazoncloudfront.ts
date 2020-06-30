@@ -383,7 +383,7 @@ export class Cloudfront extends PolicyStatement {
     "distribution": {
       "name": "distribution",
       "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
-      "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:distribution/${DistributionId}",
+      "arn": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -391,7 +391,7 @@ export class Cloudfront extends PolicyStatement {
     "streaming-distribution": {
       "name": "streaming-distribution",
       "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
-      "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:streaming-distribution/${DistributionId}",
+      "arn": "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -399,7 +399,7 @@ export class Cloudfront extends PolicyStatement {
     "origin-access-identity": {
       "name": "origin-access-identity",
       "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview",
-      "arn": "arn:${Partition}:cloudfront:${Region}:${Account}:origin-access-identity/${Id}",
+      "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}",
       "conditionKeys": []
     }
   };
@@ -970,17 +970,15 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onDistribution(distributionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront:${Region}:${Account}:distribution/${DistributionId}';
+  public onDistribution(distributionId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}';
     arn = arn.replace('${DistributionId}', distributionId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -992,17 +990,15 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onStreamingDistribution(distributionId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront:${Region}:${Account}:streaming-distribution/${DistributionId}';
+  public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}';
     arn = arn.replace('${DistributionId}', distributionId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1014,14 +1010,12 @@ export class Cloudfront extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onOriginAccessIdentity(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:cloudfront:${Region}:${Account}:origin-access-identity/${Id}';
+  public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -311,7 +311,7 @@ export class Events extends PolicyStatement {
     "event-source": {
       "name": "event-source",
       "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format",
-      "arn": "arn:${Partition}:events:${Region}:${Account}:event-source/${EventSourceName}",
+      "arn": "arn:${Partition}:events:${Region}::event-source/${EventSourceName}",
       "conditionKeys": []
     },
     "event-bus": {
@@ -719,14 +719,12 @@ export class Events extends PolicyStatement {
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format
    *
    * @param eventSourceName - Identifier for the eventSourceName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onEventSource(eventSourceName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:events:${Region}:${Account}:event-source/${EventSourceName}';
+  public onEventSource(eventSourceName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:events:${Region}::event-source/${EventSourceName}';
     arn = arn.replace('${EventSourceName}', eventSourceName);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

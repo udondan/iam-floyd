@@ -280,7 +280,7 @@ export class Ram extends PolicyStatement {
     "permission": {
       "name": "permission",
       "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html",
-      "arn": "arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}",
+      "arn": "arn:${Partition}:ram::${Account}:permission/${ResourcePath}",
       "conditionKeys": [
         "ram:PermissionArn"
       ]
@@ -610,17 +610,15 @@ export class Ram extends PolicyStatement {
    *
    * @param resourcePath - Identifier for the resourcePath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - ram:PermissionArn
    */
-  public onPermission(resourcePath: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:ram:${Region}:${Account}:permission/${ResourcePath}';
+  public onPermission(resourcePath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ram::${Account}:permission/${ResourcePath}';
     arn = arn.replace('${ResourcePath}', resourcePath);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -702,13 +702,13 @@ export class Elasticbeanstalk extends PolicyStatement {
     "solutionstack": {
       "name": "solutionstack",
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
-      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:solutionstack/${SolutionStackName}",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}",
       "conditionKeys": []
     },
     "platform": {
       "name": "platform",
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",
-      "arn": "arn:${Partition}:elasticbeanstalk:${Region}:${Account}:platform/${PlatformNameWithVersion}",
+      "arn": "arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}",
       "conditionKeys": []
     }
   };
@@ -1377,14 +1377,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
    *
    * @param solutionStackName - Identifier for the solutionStackName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onSolutionstack(solutionStackName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:solutionstack/${SolutionStackName}';
+  public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}';
     arn = arn.replace('${SolutionStackName}', solutionStackName);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -1396,14 +1394,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html
    *
    * @param platformNameWithVersion - Identifier for the platformNameWithVersion.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onPlatform(platformNameWithVersion: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:platform/${PlatformNameWithVersion}';
+  public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}';
     arn = arn.replace('${PlatformNameWithVersion}', platformNameWithVersion);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

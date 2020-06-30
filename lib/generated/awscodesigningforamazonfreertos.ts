@@ -121,7 +121,7 @@ export class Signer extends PolicyStatement {
     "signing-profile": {
       "name": "signing-profile",
       "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",
-      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${profileName}",
+      "arn": "arn:${Partition}:signer:${Region}::/signing-profiles/${profileName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -129,7 +129,7 @@ export class Signer extends PolicyStatement {
     "signing-job": {
       "name": "signing-job",
       "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",
-      "arn": "arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${jobId}",
+      "arn": "arn:${Partition}:signer:${Region}::/signing-jobs/${jobId}",
       "conditionKeys": []
     }
   };
@@ -293,17 +293,15 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html
    *
    * @param profileName - Identifier for the profileName.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onSigningProfile(profileName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:signer:${Region}:${Account}:/signing-profiles/${profileName}';
+  public onSigningProfile(profileName: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:signer:${Region}::/signing-profiles/${profileName}';
     arn = arn.replace('${profileName}', profileName);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
@@ -315,14 +313,12 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html
    *
    * @param jobId - Identifier for the jobId.
-   * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onSigningJob(jobId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:signer:${Region}:${Account}:/signing-jobs/${jobId}';
+  public onSigningJob(jobId: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:signer:${Region}::/signing-jobs/${jobId}';
     arn = arn.replace('${jobId}', jobId);
-    arn = arn.replace('${Account}', account || '');
     arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);

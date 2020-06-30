@@ -240,7 +240,7 @@ export class Globalaccelerator extends PolicyStatement {
     "accelerator": {
       "name": "accelerator",
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html",
-      "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -248,7 +248,7 @@ export class Globalaccelerator extends PolicyStatement {
     "listener": {
       "name": "listener",
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html",
-      "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -256,7 +256,7 @@ export class Globalaccelerator extends PolicyStatement {
     "endpointgroup": {
       "name": "endpointgroup",
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_EndpointGroup.html",
-      "arn": "arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
+      "arn": "arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -579,17 +579,15 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * @param acceleratorId - Identifier for the acceleratorId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onAccelerator(acceleratorId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}';
+  public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}';
     arn = arn.replace('${AcceleratorId}', acceleratorId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -602,18 +600,16 @@ export class Globalaccelerator extends PolicyStatement {
    * @param acceleratorId - Identifier for the acceleratorId.
    * @param listenerId - Identifier for the listenerId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onListener(acceleratorId: string, listenerId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}';
+  public onListener(acceleratorId: string, listenerId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}';
     arn = arn.replace('${AcceleratorId}', acceleratorId);
     arn = arn.replace('${ListenerId}', listenerId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -627,19 +623,17 @@ export class Globalaccelerator extends PolicyStatement {
    * @param listenerId - Identifier for the listenerId.
    * @param endpointGroupId - Identifier for the endpointGroupId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
    *  - aws:ResourceTag/${TagKey}
    */
-  public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:globalaccelerator:${Region}:${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}';
+  public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}';
     arn = arn.replace('${AcceleratorId}', acceleratorId);
     arn = arn.replace('${ListenerId}', listenerId);
     arn = arn.replace('${EndpointGroupId}', endpointGroupId);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

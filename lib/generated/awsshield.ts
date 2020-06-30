@@ -124,13 +124,13 @@ export class Shield extends PolicyStatement {
     "attack": {
       "name": "attack",
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AttackDetail.html",
-      "arn": "arn:${Partition}:shield:${Region}:${Account}:attack/${Id}",
+      "arn": "arn:${Partition}:shield::${Account}:attack/${Id}",
       "conditionKeys": []
     },
     "protection": {
       "name": "protection",
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_Protection.html",
-      "arn": "arn:${Partition}:shield:${Region}:${Account}:protection/${Id}",
+      "arn": "arn:${Partition}:shield::${Account}:protection/${Id}",
       "conditionKeys": []
     }
   };
@@ -367,14 +367,12 @@ export class Shield extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onAttack(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:shield:${Region}:${Account}:attack/${Id}';
+  public onAttack(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:shield::${Account}:attack/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -386,14 +384,12 @@ export class Shield extends PolicyStatement {
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onProtection(id: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:shield:${Region}:${Account}:protection/${Id}';
+  public onProtection(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:shield::${Account}:protection/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

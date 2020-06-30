@@ -34,7 +34,7 @@ export class Budgets extends PolicyStatement {
     "budget": {
       "name": "budget",
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html",
-      "arn": "arn:${Partition}:budgets:${Region}:${Account}:budget/${BudgetName}",
+      "arn": "arn:${Partition}:budgets::${Account}:budget/${BudgetName}",
       "conditionKeys": []
     }
   };
@@ -79,14 +79,12 @@ export class Budgets extends PolicyStatement {
    *
    * @param budgetName - Identifier for the budgetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onBudget(budgetName: string, account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:budgets:${Region}:${Account}:budget/${BudgetName}';
+  public onBudget(budgetName: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:budgets::${Account}:budget/${BudgetName}';
     arn = arn.replace('${BudgetName}', budgetName);
     arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
