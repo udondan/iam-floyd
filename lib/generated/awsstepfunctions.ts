@@ -532,8 +532,8 @@ export class States extends PolicyStatement {
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}';
     arn = arn.replace('${ActivityName}', activityName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -553,8 +553,8 @@ export class States extends PolicyStatement {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:execution:${StateMachineName}:${ExecutionId}';
     arn = arn.replace('${StateMachineName}', stateMachineName);
     arn = arn.replace('${ExecutionId}', executionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -575,8 +575,8 @@ export class States extends PolicyStatement {
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}';
     arn = arn.replace('${StateMachineName}', stateMachineName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -394,8 +394,8 @@ export class Fms extends PolicyStatement {
   public onPolicy(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fms:${Region}:${Account}:policy/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

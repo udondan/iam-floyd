@@ -978,7 +978,7 @@ export class Cloudfront extends PolicyStatement {
   public onDistribution(distributionId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}';
     arn = arn.replace('${DistributionId}', distributionId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -998,7 +998,7 @@ export class Cloudfront extends PolicyStatement {
   public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}';
     arn = arn.replace('${DistributionId}', distributionId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1015,7 +1015,7 @@ export class Cloudfront extends PolicyStatement {
   public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

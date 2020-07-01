@@ -520,8 +520,8 @@ export class Iotevents extends PolicyStatement {
   public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}';
     arn = arn.replace('${DetectorModelName}', detectorModelName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -542,8 +542,8 @@ export class Iotevents extends PolicyStatement {
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:input/${InputName}';
     arn = arn.replace('${InputName}', inputName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

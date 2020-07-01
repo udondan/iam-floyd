@@ -1167,8 +1167,8 @@ export class Ecs extends PolicyStatement {
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}';
     arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1190,8 +1190,8 @@ export class Ecs extends PolicyStatement {
   public onContainerInstance(containerInstanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}';
     arn = arn.replace('${ContainerInstanceId}', containerInstanceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1213,8 +1213,8 @@ export class Ecs extends PolicyStatement {
   public onService(serviceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}';
     arn = arn.replace('${ServiceName}', serviceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1236,8 +1236,8 @@ export class Ecs extends PolicyStatement {
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
     arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1261,8 +1261,8 @@ export class Ecs extends PolicyStatement {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}';
     arn = arn.replace('${TaskDefinitionFamilyName}', taskDefinitionFamilyName);
     arn = arn.replace('${TaskDefinitionRevisionNumber}', taskDefinitionRevisionNumber);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1288,8 +1288,8 @@ export class Ecs extends PolicyStatement {
     arn = arn.replace('${ClusterName}', clusterName);
     arn = arn.replace('${ServiceName}', serviceName);
     arn = arn.replace('${TaskSetId}', taskSetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

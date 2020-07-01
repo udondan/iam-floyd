@@ -1612,8 +1612,8 @@ export class Opsworks extends PolicyStatement {
   public onStack(stackId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:opsworks:${Region}:${Account}:stack/${StackId}/';
     arn = arn.replace('${StackId}', stackId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

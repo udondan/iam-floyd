@@ -1086,8 +1086,8 @@ export class Dms extends PolicyStatement {
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1109,8 +1109,8 @@ export class Dms extends PolicyStatement {
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1132,8 +1132,8 @@ export class Dms extends PolicyStatement {
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:endpoint:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1155,8 +1155,8 @@ export class Dms extends PolicyStatement {
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1178,8 +1178,8 @@ export class Dms extends PolicyStatement {
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1201,8 +1201,8 @@ export class Dms extends PolicyStatement {
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:subgrp:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

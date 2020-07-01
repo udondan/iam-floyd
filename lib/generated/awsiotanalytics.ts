@@ -822,8 +822,8 @@ export class Iotanalytics extends PolicyStatement {
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}';
     arn = arn.replace('${ChannelName}', channelName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -846,8 +846,8 @@ export class Iotanalytics extends PolicyStatement {
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}';
     arn = arn.replace('${DatasetName}', datasetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -870,8 +870,8 @@ export class Iotanalytics extends PolicyStatement {
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}';
     arn = arn.replace('${DatastoreName}', datastoreName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -894,8 +894,8 @@ export class Iotanalytics extends PolicyStatement {
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}';
     arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

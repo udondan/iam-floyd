@@ -950,8 +950,8 @@ export class SesPinpoint extends PolicyStatement {
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}';
     arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -972,8 +972,8 @@ export class SesPinpoint extends PolicyStatement {
   public onDedicatedIpPool(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${CustomVerificationEmailTemplateName}';
     arn = arn.replace('${CustomVerificationEmailTemplateName}', customVerificationEmailTemplateName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -994,8 +994,8 @@ export class SesPinpoint extends PolicyStatement {
   public onDeliverabilityTestReport(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${CustomVerificationEmailTemplateName}';
     arn = arn.replace('${CustomVerificationEmailTemplateName}', customVerificationEmailTemplateName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1015,8 +1015,8 @@ export class SesPinpoint extends PolicyStatement {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}';
     arn = arn.replace('${ConfigurationSetName}', configurationSetName);
     arn = arn.replace('${EventDestinationName}', eventDestinationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1037,8 +1037,8 @@ export class SesPinpoint extends PolicyStatement {
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';
     arn = arn.replace('${IdentityName}', identityName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

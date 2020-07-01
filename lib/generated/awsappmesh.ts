@@ -795,8 +795,8 @@ export class Appmesh extends PolicyStatement {
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}';
     arn = arn.replace('${MeshName}', meshName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -819,8 +819,8 @@ export class Appmesh extends PolicyStatement {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}';
     arn = arn.replace('${MeshName}', meshName);
     arn = arn.replace('${VirtualServiceName}', virtualServiceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -843,8 +843,8 @@ export class Appmesh extends PolicyStatement {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}';
     arn = arn.replace('${MeshName}', meshName);
     arn = arn.replace('${VirtualNodeName}', virtualNodeName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -867,8 +867,8 @@ export class Appmesh extends PolicyStatement {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}';
     arn = arn.replace('${MeshName}', meshName);
     arn = arn.replace('${VirtualRouterName}', virtualRouterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -893,8 +893,8 @@ export class Appmesh extends PolicyStatement {
     arn = arn.replace('${MeshName}', meshName);
     arn = arn.replace('${VirtualRouterName}', virtualRouterName);
     arn = arn.replace('${RouteName}', routeName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

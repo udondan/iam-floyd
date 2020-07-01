@@ -1459,8 +1459,8 @@ export class Clouddirectory extends PolicyStatement {
     arn = arn.replace('${DirectoryId}', directoryId);
     arn = arn.replace('${SchemaName}', schemaName);
     arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1478,8 +1478,8 @@ export class Clouddirectory extends PolicyStatement {
   public onDevelopmentSchema(schemaName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:schema/development/${SchemaName}';
     arn = arn.replace('${SchemaName}', schemaName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1497,8 +1497,8 @@ export class Clouddirectory extends PolicyStatement {
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:directory/${DirectoryId}';
     arn = arn.replace('${DirectoryId}', directoryId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1518,8 +1518,8 @@ export class Clouddirectory extends PolicyStatement {
     var arn = 'arn:${Partition}:clouddirectory:${Region}:${Account}:schema/published/${SchemaName}/${Version}';
     arn = arn.replace('${SchemaName}', schemaName);
     arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

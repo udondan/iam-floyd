@@ -670,8 +670,8 @@ export class Cloudwatch extends PolicyStatement {
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}';
     arn = arn.replace('${AlarmName}', alarmName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -688,7 +688,7 @@ export class Cloudwatch extends PolicyStatement {
   public onDashboard(dashboardName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudwatch::${Account}:dashboard/${DashboardName}';
     arn = arn.replace('${DashboardName}', dashboardName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -709,8 +709,8 @@ export class Cloudwatch extends PolicyStatement {
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}';
     arn = arn.replace('${InsightRuleName}', insightRuleName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

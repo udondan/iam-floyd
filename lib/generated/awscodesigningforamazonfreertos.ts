@@ -302,7 +302,7 @@ export class Signer extends PolicyStatement {
   public onSigningProfile(profileName: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:signer:${Region}::/signing-profiles/${ProfileName}';
     arn = arn.replace('${ProfileName}', profileName);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -319,7 +319,7 @@ export class Signer extends PolicyStatement {
   public onSigningJob(jobId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:signer:${Region}::/signing-jobs/${JobId}';
     arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

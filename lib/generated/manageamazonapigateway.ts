@@ -213,7 +213,7 @@ export class Apigateway extends PolicyStatement {
   public onApigatewayGeneral(apiGatewayResourcePath: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}';
     arn = arn.replace('${ApiGatewayResourcePath}', apiGatewayResourcePath);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

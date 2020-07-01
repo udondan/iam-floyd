@@ -670,8 +670,8 @@ export class Elasticfilesystem extends PolicyStatement {
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}';
     arn = arn.replace('${FileSystemId}', fileSystemId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -692,8 +692,8 @@ export class Elasticfilesystem extends PolicyStatement {
   public onAccessPoint(accessPointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}';
     arn = arn.replace('${AccessPointId}', accessPointId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

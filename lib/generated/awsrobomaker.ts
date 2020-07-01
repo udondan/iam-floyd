@@ -996,8 +996,8 @@ export class Robomaker extends PolicyStatement {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}';
     arn = arn.replace('${ApplicationName}', applicationName);
     arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1020,8 +1020,8 @@ export class Robomaker extends PolicyStatement {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}';
     arn = arn.replace('${ApplicationName}', applicationName);
     arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1042,8 +1042,8 @@ export class Robomaker extends PolicyStatement {
   public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}';
     arn = arn.replace('${SimulationJobId}', simulationJobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1064,8 +1064,8 @@ export class Robomaker extends PolicyStatement {
   public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}';
     arn = arn.replace('${SimulationJobBatchId}', simulationJobBatchId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1086,8 +1086,8 @@ export class Robomaker extends PolicyStatement {
   public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}';
     arn = arn.replace('${DeploymentJobId}', deploymentJobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1110,8 +1110,8 @@ export class Robomaker extends PolicyStatement {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}';
     arn = arn.replace('${RobotName}', robotName);
     arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1134,8 +1134,8 @@ export class Robomaker extends PolicyStatement {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}';
     arn = arn.replace('${FleetName}', fleetName);
     arn = arn.replace('${CreatedOnEpoch}', createdOnEpoch);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

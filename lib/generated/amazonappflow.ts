@@ -345,7 +345,7 @@ export class Appflow extends PolicyStatement {
   public onFlow(flowName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:appflow::${Account}:flow/${FlowName}';
     arn = arn.replace('${FlowName}', flowName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -360,7 +360,7 @@ export class Appflow extends PolicyStatement {
   public onConnectorprofile(profileName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:appflow::${Account}:connectorprofile/${ProfileName}';
     arn = arn.replace('${ProfileName}', profileName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

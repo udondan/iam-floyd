@@ -1022,8 +1022,8 @@ export class Wafv2 extends PolicyStatement {
     arn = arn.replace('${Scope}', scope);
     arn = arn.replace('${Name}', name);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1048,8 +1048,8 @@ export class Wafv2 extends PolicyStatement {
     arn = arn.replace('${Scope}', scope);
     arn = arn.replace('${Name}', name);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1074,8 +1074,8 @@ export class Wafv2 extends PolicyStatement {
     arn = arn.replace('${Scope}', scope);
     arn = arn.replace('${Name}', name);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1100,8 +1100,8 @@ export class Wafv2 extends PolicyStatement {
     arn = arn.replace('${Scope}', scope);
     arn = arn.replace('${Name}', name);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1121,8 +1121,8 @@ export class Wafv2 extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1142,8 +1142,8 @@ export class Wafv2 extends PolicyStatement {
     var arn = 'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}';
     arn = arn.replace('${ApiId}', apiId);
     arn = arn.replace('${StageName}', stageName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

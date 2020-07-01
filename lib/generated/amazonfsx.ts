@@ -405,8 +405,8 @@ export class Fsx extends PolicyStatement {
   public onFileSystem(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -427,8 +427,8 @@ export class Fsx extends PolicyStatement {
   public onBackup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -449,8 +449,8 @@ export class Fsx extends PolicyStatement {
   public onTask(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -141,8 +141,8 @@ export class Wellarchitected extends PolicyStatement {
   public onWorkload(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

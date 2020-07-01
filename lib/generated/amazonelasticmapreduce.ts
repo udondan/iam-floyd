@@ -845,8 +845,8 @@ export class Elasticmapreduce extends PolicyStatement {
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}';
     arn = arn.replace('${ClusterId}', clusterId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -868,8 +868,8 @@ export class Elasticmapreduce extends PolicyStatement {
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:editor/${EditorId}';
     arn = arn.replace('${EditorId}', editorId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

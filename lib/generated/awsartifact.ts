@@ -158,7 +158,7 @@ export class Artifact extends PolicyStatement {
   public onCustomerAgreement(resourceName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:artifact::${Account}:customer-agreement/${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -65,8 +65,8 @@ export class NeptuneDb extends PolicyStatement {
     var arn = 'arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}';
     arn = arn.replace('${Cluster}', cluster);
     arn = arn.replace('${Database}', database);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

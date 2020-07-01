@@ -1192,8 +1192,8 @@ export class Lambda extends PolicyStatement {
   public onFunction(functionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}';
     arn = arn.replace('${FunctionName}', functionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1213,8 +1213,8 @@ export class Lambda extends PolicyStatement {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Version}';
     arn = arn.replace('${FunctionName}', functionName);
     arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1234,8 +1234,8 @@ export class Lambda extends PolicyStatement {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:function:${FunctionName}:${Alias}';
     arn = arn.replace('${FunctionName}', functionName);
     arn = arn.replace('${Alias}', alias);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1253,8 +1253,8 @@ export class Lambda extends PolicyStatement {
   public onLayer(layerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}';
     arn = arn.replace('${LayerName}', layerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1274,8 +1274,8 @@ export class Lambda extends PolicyStatement {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:layer:${LayerName}:${LayerVersion}';
     arn = arn.replace('${LayerName}', layerName);
     arn = arn.replace('${LayerVersion}', layerVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1293,8 +1293,8 @@ export class Lambda extends PolicyStatement {
   public onEventSourceMapping(uUID: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lambda:${Region}:${Account}:event-source-mapping:${UUID}';
     arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

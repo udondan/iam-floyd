@@ -483,8 +483,8 @@ export class Mediastore extends PolicyStatement {
   public onContainer(containerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediastore:${Region}:${Account}:container/${ContainerName}';
     arn = arn.replace('${ContainerName}', containerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

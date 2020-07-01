@@ -1582,8 +1582,8 @@ export class Config extends PolicyStatement {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}';
     arn = arn.replace('${AggregatorAccount}', aggregatorAccount);
     arn = arn.replace('${AggregatorRegion}', aggregatorRegion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1604,8 +1604,8 @@ export class Config extends PolicyStatement {
   public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}';
     arn = arn.replace('${AggregatorId}', aggregatorId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1626,8 +1626,8 @@ export class Config extends PolicyStatement {
   public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}';
     arn = arn.replace('${ConfigRuleId}', configRuleId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1650,8 +1650,8 @@ export class Config extends PolicyStatement {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}';
     arn = arn.replace('${ConformancePackName}', conformancePackName);
     arn = arn.replace('${ConformancePackId}', conformancePackId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1669,8 +1669,8 @@ export class Config extends PolicyStatement {
   public onOrganizationConfigRule(organizationConfigRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:organization-config-rule/${OrganizationConfigRuleId}';
     arn = arn.replace('${OrganizationConfigRuleId}', organizationConfigRuleId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1688,8 +1688,8 @@ export class Config extends PolicyStatement {
   public onOrganizationConformancePack(organizationConformancePackId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:organization-conformance-pack/${OrganizationConformancePackId}';
     arn = arn.replace('${OrganizationConformancePackId}', organizationConformancePackId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1707,8 +1707,8 @@ export class Config extends PolicyStatement {
   public onRemediationConfiguration(remediationConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}';
     arn = arn.replace('${RemediationConfigurationId}', remediationConfigurationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

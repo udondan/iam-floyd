@@ -352,8 +352,8 @@ export class LicenseManager extends PolicyStatement {
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}';
     arn = arn.replace('${LicenseConfigurationId}', licenseConfigurationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -3165,7 +3165,7 @@ export class Iam extends PolicyStatement {
   public onAccessReport(entityPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:access-report/${EntityPath}';
     arn = arn.replace('${EntityPath}', entityPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3184,7 +3184,7 @@ export class Iam extends PolicyStatement {
     var arn = 'arn:${Partition}:iam::${Account}:assumed-role/${RoleName}/${RoleSessionName}';
     arn = arn.replace('${RoleName}', roleName);
     arn = arn.replace('${RoleSessionName}', roleSessionName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3201,7 +3201,7 @@ export class Iam extends PolicyStatement {
   public onFederatedUser(userName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:federated-user/${UserName}';
     arn = arn.replace('${UserName}', userName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3218,7 +3218,7 @@ export class Iam extends PolicyStatement {
   public onGroup(groupNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:group/${GroupNameWithPath}';
     arn = arn.replace('${GroupNameWithPath}', groupNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3235,7 +3235,7 @@ export class Iam extends PolicyStatement {
   public onInstanceProfile(instanceProfileNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:instance-profile/${InstanceProfileNameWithPath}';
     arn = arn.replace('${InstanceProfileNameWithPath}', instanceProfileNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3254,7 +3254,7 @@ export class Iam extends PolicyStatement {
     var arn = 'arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}';
     arn = arn.replace('${Path}', path);
     arn = arn.replace('${MfaTokenId}', mfaTokenId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3271,7 +3271,7 @@ export class Iam extends PolicyStatement {
   public onOidcProvider(oidcProviderName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:oidc-provider/${OidcProviderName}';
     arn = arn.replace('${OidcProviderName}', oidcProviderName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3288,7 +3288,7 @@ export class Iam extends PolicyStatement {
   public onPolicy(policyNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:policy/${PolicyNameWithPath}';
     arn = arn.replace('${PolicyNameWithPath}', policyNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3308,7 +3308,7 @@ export class Iam extends PolicyStatement {
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
     arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3325,7 +3325,7 @@ export class Iam extends PolicyStatement {
   public onSamlProvider(samlProviderName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:saml-provider/${SamlProviderName}';
     arn = arn.replace('${SamlProviderName}', samlProviderName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3342,7 +3342,7 @@ export class Iam extends PolicyStatement {
   public onServerCertificate(certificateNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:server-certificate/${CertificateNameWithPath}';
     arn = arn.replace('${CertificateNameWithPath}', certificateNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3359,7 +3359,7 @@ export class Iam extends PolicyStatement {
   public onSmsMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:sms-mfa/${MfaTokenIdWithPath}';
     arn = arn.replace('${MfaTokenIdWithPath}', mfaTokenIdWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3379,7 +3379,7 @@ export class Iam extends PolicyStatement {
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';
     arn = arn.replace('${UserNameWithPath}', userNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

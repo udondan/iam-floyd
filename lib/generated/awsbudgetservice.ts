@@ -84,7 +84,7 @@ export class Budgets extends PolicyStatement {
   public onBudget(budgetName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:budgets::${Account}:budget/${BudgetName}';
     arn = arn.replace('${BudgetName}', budgetName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

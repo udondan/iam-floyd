@@ -1138,7 +1138,7 @@ export class Swf extends PolicyStatement {
   public onDomain(domainName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:swf::${Account}:domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

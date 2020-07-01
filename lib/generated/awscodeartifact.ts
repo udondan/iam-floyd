@@ -813,8 +813,8 @@ export class Codeartifact extends PolicyStatement {
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -834,8 +834,8 @@ export class Codeartifact extends PolicyStatement {
     var arn = 'arn:${Partition}:codeartifact:${Region}:${Account}:repository/${DomainName}/${RepositoryName}';
     arn = arn.replace('${DomainName}', domainName);
     arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -861,8 +861,8 @@ export class Codeartifact extends PolicyStatement {
     arn = arn.replace('${PackageFormat}', packageFormat);
     arn = arn.replace('${PackageNamespace}', packageNamespace);
     arn = arn.replace('${PackageName}', packageName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

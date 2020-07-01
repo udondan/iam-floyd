@@ -2198,8 +2198,8 @@ export class Greengrass extends PolicyStatement {
   public onConnectivityInfo(thingName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/things/${ThingName}/connectivityInfo';
     arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2219,8 +2219,8 @@ export class Greengrass extends PolicyStatement {
     arn = arn.replace('${GroupId}', groupId);
     arn = arn.replace('${DeploymentId}', deploymentId);
     arn = arn.replace('${ArtifactId}', artifactId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2240,8 +2240,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/certificateauthorities/${CertificateAuthorityId}';
     arn = arn.replace('${GroupId}', groupId);
     arn = arn.replace('${CertificateAuthorityId}', certificateAuthorityId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2261,8 +2261,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/deployments/${DeploymentId}';
     arn = arn.replace('${GroupId}', groupId);
     arn = arn.replace('${DeploymentId}', deploymentId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2283,8 +2283,8 @@ export class Greengrass extends PolicyStatement {
   public onBulkDeployment(bulkDeploymentId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/bulk/deployments/${BulkDeploymentId}';
     arn = arn.replace('${BulkDeploymentId}', bulkDeploymentId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2305,8 +2305,8 @@ export class Greengrass extends PolicyStatement {
   public onGroup(groupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}';
     arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2326,8 +2326,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}/versions/${VersionId}';
     arn = arn.replace('${GroupId}', groupId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2348,8 +2348,8 @@ export class Greengrass extends PolicyStatement {
   public onCoreDefinition(coreDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}';
     arn = arn.replace('${CoreDefinitionId}', coreDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2369,8 +2369,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${CoreDefinitionId}', coreDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2391,8 +2391,8 @@ export class Greengrass extends PolicyStatement {
   public onDeviceDefinition(deviceDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}';
     arn = arn.replace('${DeviceDefinitionId}', deviceDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2412,8 +2412,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${DeviceDefinitionId}', deviceDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2434,8 +2434,8 @@ export class Greengrass extends PolicyStatement {
   public onFunctionDefinition(functionDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}';
     arn = arn.replace('${FunctionDefinitionId}', functionDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2455,8 +2455,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${FunctionDefinitionId}', functionDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2477,8 +2477,8 @@ export class Greengrass extends PolicyStatement {
   public onSubscriptionDefinition(subscriptionDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}';
     arn = arn.replace('${SubscriptionDefinitionId}', subscriptionDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2498,8 +2498,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${SubscriptionDefinitionId}', subscriptionDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2520,8 +2520,8 @@ export class Greengrass extends PolicyStatement {
   public onLoggerDefinition(loggerDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}';
     arn = arn.replace('${LoggerDefinitionId}', loggerDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2541,8 +2541,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${LoggerDefinitionId}', loggerDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2563,8 +2563,8 @@ export class Greengrass extends PolicyStatement {
   public onResourceDefinition(resourceDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}';
     arn = arn.replace('${ResourceDefinitionId}', resourceDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2584,8 +2584,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${ResourceDefinitionId}', resourceDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2606,8 +2606,8 @@ export class Greengrass extends PolicyStatement {
   public onConnectorDefinition(connectorDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}';
     arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2627,8 +2627,8 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

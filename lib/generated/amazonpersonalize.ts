@@ -906,8 +906,8 @@ export class Personalize extends PolicyStatement {
   public onSchema(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:schema/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -923,8 +923,8 @@ export class Personalize extends PolicyStatement {
   public onFeatureTransformation(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:feature-transformation/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -940,8 +940,8 @@ export class Personalize extends PolicyStatement {
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -957,8 +957,8 @@ export class Personalize extends PolicyStatement {
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-group/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -974,8 +974,8 @@ export class Personalize extends PolicyStatement {
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:dataset-import-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -991,8 +991,8 @@ export class Personalize extends PolicyStatement {
   public onSolution(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:solution/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1008,8 +1008,8 @@ export class Personalize extends PolicyStatement {
   public onCampaign(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:campaign/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1025,8 +1025,8 @@ export class Personalize extends PolicyStatement {
   public onEventTracker(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:event-tracker/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1042,8 +1042,8 @@ export class Personalize extends PolicyStatement {
   public onRecipe(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:recipe/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1059,8 +1059,8 @@ export class Personalize extends PolicyStatement {
   public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:algorithm/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

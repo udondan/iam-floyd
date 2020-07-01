@@ -1154,8 +1154,8 @@ export class Dynamodb extends PolicyStatement {
     var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/index/${IndexName}';
     arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${IndexName}', indexName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1175,8 +1175,8 @@ export class Dynamodb extends PolicyStatement {
     var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/stream/${StreamLabel}';
     arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${StreamLabel}', streamLabel);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1194,8 +1194,8 @@ export class Dynamodb extends PolicyStatement {
   public onTable(tableName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}';
     arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1215,8 +1215,8 @@ export class Dynamodb extends PolicyStatement {
     var arn = 'arn:${Partition}:dynamodb:${Region}:${Account}:table/${TableName}/backup/${BackupName}';
     arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${BackupName}', backupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1233,7 +1233,7 @@ export class Dynamodb extends PolicyStatement {
   public onGlobalTable(globalTableName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:dynamodb::${Account}:global-table/${GlobalTableName}';
     arn = arn.replace('${GlobalTableName}', globalTableName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -587,7 +587,7 @@ export class Globalaccelerator extends PolicyStatement {
   public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}';
     arn = arn.replace('${AcceleratorId}', acceleratorId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -609,7 +609,7 @@ export class Globalaccelerator extends PolicyStatement {
     var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}';
     arn = arn.replace('${AcceleratorId}', acceleratorId);
     arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -633,7 +633,7 @@ export class Globalaccelerator extends PolicyStatement {
     arn = arn.replace('${AcceleratorId}', acceleratorId);
     arn = arn.replace('${ListenerId}', listenerId);
     arn = arn.replace('${EndpointGroupId}', endpointGroupId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -2894,7 +2894,7 @@ export class Chime extends PolicyStatement {
   public onMeeting(meetingId: string, accountId?: string, partition?: string) {
     var arn = 'arn:${Partition}:chime::${AccountId}:meeting/${MeetingId}';
     arn = arn.replace('${MeetingId}', meetingId);
-    arn = arn.replace('${AccountId}', accountId || '');
+    arn = arn.replace('${AccountId}', accountId || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

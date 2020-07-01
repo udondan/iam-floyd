@@ -607,8 +607,8 @@ export class Deepracer extends PolicyStatement {
   public onReinforcementLearningModel(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:model/reinforcement_learning/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -626,8 +626,8 @@ export class Deepracer extends PolicyStatement {
   public onTrainingJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:training_job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -645,8 +645,8 @@ export class Deepracer extends PolicyStatement {
   public onEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -664,8 +664,8 @@ export class Deepracer extends PolicyStatement {
   public onLeaderboardEvaluationJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepracer:${Region}:${Account}:leaderboard_evaluation_job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -682,7 +682,7 @@ export class Deepracer extends PolicyStatement {
   public onTrack(resourceId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepracer:${Region}::track/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -699,7 +699,7 @@ export class Deepracer extends PolicyStatement {
   public onLeaderboard(resourceId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepracer:${Region}::leaderboard/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

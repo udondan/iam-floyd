@@ -1290,8 +1290,8 @@ export class Elasticbeanstalk extends PolicyStatement {
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}';
     arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1315,8 +1315,8 @@ export class Elasticbeanstalk extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}';
     arn = arn.replace('${ApplicationName}', applicationName);
     arn = arn.replace('${VersionLabel}', versionLabel);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1340,8 +1340,8 @@ export class Elasticbeanstalk extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}';
     arn = arn.replace('${ApplicationName}', applicationName);
     arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1365,8 +1365,8 @@ export class Elasticbeanstalk extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}';
     arn = arn.replace('${ApplicationName}', applicationName);
     arn = arn.replace('${EnvironmentName}', environmentName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1383,7 +1383,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   public onSolutionstack(solutionStackName: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}::solutionstack/${SolutionStackName}';
     arn = arn.replace('${SolutionStackName}', solutionStackName);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1400,7 +1400,7 @@ export class Elasticbeanstalk extends PolicyStatement {
   public onPlatform(platformNameWithVersion: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}::platform/${PlatformNameWithVersion}';
     arn = arn.replace('${PlatformNameWithVersion}', platformNameWithVersion);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

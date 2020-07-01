@@ -322,7 +322,7 @@ export class Sts extends PolicyStatement {
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
     arn = arn.replace('${RoleNameWithPath}', roleNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -339,7 +339,7 @@ export class Sts extends PolicyStatement {
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';
     arn = arn.replace('${UserNameWithPath}', userNameWithPath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -1007,8 +1007,8 @@ export class Medialive extends PolicyStatement {
   public onChannel(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:channel:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1029,8 +1029,8 @@ export class Medialive extends PolicyStatement {
   public onInput(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:input:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1048,8 +1048,8 @@ export class Medialive extends PolicyStatement {
   public onInputDevice(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputDevice:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1070,8 +1070,8 @@ export class Medialive extends PolicyStatement {
   public onInputSecurityGroup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1092,8 +1092,8 @@ export class Medialive extends PolicyStatement {
   public onMultiplex(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:multiplex:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1114,8 +1114,8 @@ export class Medialive extends PolicyStatement {
   public onReservation(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:reservation:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1133,8 +1133,8 @@ export class Medialive extends PolicyStatement {
   public onOffering(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:offering:${ResourceName}';
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

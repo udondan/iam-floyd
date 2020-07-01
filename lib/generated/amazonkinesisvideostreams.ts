@@ -737,8 +737,8 @@ export class Kinesisvideo extends PolicyStatement {
     var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}';
     arn = arn.replace('${StreamName}', streamName);
     arn = arn.replace('${CreationTime}', creationTime);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -761,8 +761,8 @@ export class Kinesisvideo extends PolicyStatement {
     var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}';
     arn = arn.replace('${ChannelName}', channelName);
     arn = arn.replace('${CreationTime}', creationTime);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

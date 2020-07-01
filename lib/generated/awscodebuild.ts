@@ -920,8 +920,8 @@ export class Codebuild extends PolicyStatement {
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}';
     arn = arn.replace('${BuildId}', buildId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -942,8 +942,8 @@ export class Codebuild extends PolicyStatement {
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:project/${ProjectName}';
     arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -964,8 +964,8 @@ export class Codebuild extends PolicyStatement {
   public onReportGroup(reportGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:report-group/${ReportGroupName}';
     arn = arn.replace('${ReportGroupName}', reportGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -985,8 +985,8 @@ export class Codebuild extends PolicyStatement {
     var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:report/${ReportGroupName}:${ReportId}';
     arn = arn.replace('${ReportGroupName}', reportGroupName);
     arn = arn.replace('${ReportId}', reportId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

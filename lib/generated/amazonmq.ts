@@ -530,8 +530,8 @@ export class Mq extends PolicyStatement {
   public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mq:${Region}:${Account}:broker:${Broker-id}';
     arn = arn.replace('${Broker-id}', brokerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -550,8 +550,8 @@ export class Mq extends PolicyStatement {
   public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mq:${Region}:${Account}:configuration:${Configuration-id}';
     arn = arn.replace('${Configuration-id}', configurationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

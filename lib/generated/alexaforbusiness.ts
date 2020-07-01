@@ -1744,8 +1744,8 @@ export class A4b extends PolicyStatement {
   public onProfile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:profile/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1766,8 +1766,8 @@ export class A4b extends PolicyStatement {
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1788,8 +1788,8 @@ export class A4b extends PolicyStatement {
   public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1807,8 +1807,8 @@ export class A4b extends PolicyStatement {
   public onSkillgroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:skill-group/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1829,8 +1829,8 @@ export class A4b extends PolicyStatement {
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1848,8 +1848,8 @@ export class A4b extends PolicyStatement {
   public onAddressbook(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:address-book/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1867,8 +1867,8 @@ export class A4b extends PolicyStatement {
   public onConferenceprovider(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:conference-provider/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1886,8 +1886,8 @@ export class A4b extends PolicyStatement {
   public onContact(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:contact/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1905,8 +1905,8 @@ export class A4b extends PolicyStatement {
   public onSchedule(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:schedule/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1924,8 +1924,8 @@ export class A4b extends PolicyStatement {
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:network-profile/${Resource_id}';
     arn = arn.replace('${Resource_id}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

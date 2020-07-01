@@ -287,7 +287,7 @@ export class CodeguruReviewer extends PolicyStatement {
   public onAssociation(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeguru-reviewer::${Account}:association:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -303,8 +303,8 @@ export class CodeguruReviewer extends PolicyStatement {
   public onCodereview(codeReviewUuid: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}';
     arn = arn.replace('${CodeReviewUuid}', codeReviewUuid);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -325,8 +325,8 @@ export class CodeguruReviewer extends PolicyStatement {
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';
     arn = arn.replace('${RepositoryName}', repositoryName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

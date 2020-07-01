@@ -1874,8 +1874,8 @@ export class WafRegional extends PolicyStatement {
   public onBytematchset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:bytematchset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1893,8 +1893,8 @@ export class WafRegional extends PolicyStatement {
   public onIpset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:ipset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1914,8 +1914,8 @@ export class WafRegional extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1936,8 +1936,8 @@ export class WafRegional extends PolicyStatement {
   public onRatebasedrule(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:ratebasedrule/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1958,8 +1958,8 @@ export class WafRegional extends PolicyStatement {
   public onRule(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:rule/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1977,8 +1977,8 @@ export class WafRegional extends PolicyStatement {
   public onSizeconstraintset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:sizeconstraintset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1996,8 +1996,8 @@ export class WafRegional extends PolicyStatement {
   public onSqlinjectionmatchset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:sqlinjectionset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2018,8 +2018,8 @@ export class WafRegional extends PolicyStatement {
   public onWebacl(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:webacl/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2037,8 +2037,8 @@ export class WafRegional extends PolicyStatement {
   public onXssmatchset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:xssmatchset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2056,8 +2056,8 @@ export class WafRegional extends PolicyStatement {
   public onRegexmatchset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:regexmatch/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2075,8 +2075,8 @@ export class WafRegional extends PolicyStatement {
   public onRegexpatternset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:regexpatternset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2094,8 +2094,8 @@ export class WafRegional extends PolicyStatement {
   public onGeomatchset(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:geomatchset/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2116,8 +2116,8 @@ export class WafRegional extends PolicyStatement {
   public onRulegroup(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf-regional:${Region}:${Account}:rulegroup/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

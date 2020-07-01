@@ -4664,8 +4664,8 @@ export class Iot extends PolicyStatement {
   public onClient(clientId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:client/${ClientId}';
     arn = arn.replace('${ClientId}', clientId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4683,8 +4683,8 @@ export class Iot extends PolicyStatement {
   public onIndex(indexName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:index/${IndexName}';
     arn = arn.replace('${IndexName}', indexName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4705,8 +4705,8 @@ export class Iot extends PolicyStatement {
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:job/${JobId}';
     arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4727,8 +4727,8 @@ export class Iot extends PolicyStatement {
   public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:tunnel/${TunnelId}';
     arn = arn.replace('${TunnelId}', tunnelId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4746,8 +4746,8 @@ export class Iot extends PolicyStatement {
   public onThing(thingName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}';
     arn = arn.replace('${ThingName}', thingName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4768,8 +4768,8 @@ export class Iot extends PolicyStatement {
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
     arn = arn.replace('${ThingGroupName}', thingGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4790,8 +4790,8 @@ export class Iot extends PolicyStatement {
   public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:billinggroup/${BillingGroupName}';
     arn = arn.replace('${BillingGroupName}', billingGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4812,8 +4812,8 @@ export class Iot extends PolicyStatement {
   public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
     arn = arn.replace('${ThingGroupName}', thingGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4834,8 +4834,8 @@ export class Iot extends PolicyStatement {
   public onThingtype(thingTypeName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thingtype/${ThingTypeName}';
     arn = arn.replace('${ThingTypeName}', thingTypeName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4853,8 +4853,8 @@ export class Iot extends PolicyStatement {
   public onTopic(topicName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:topic/${TopicName}';
     arn = arn.replace('${TopicName}', topicName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4872,8 +4872,8 @@ export class Iot extends PolicyStatement {
   public onTopicfilter(topicFilter: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:topicfilter/${TopicFilter}';
     arn = arn.replace('${TopicFilter}', topicFilter);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4891,8 +4891,8 @@ export class Iot extends PolicyStatement {
   public onRolealias(roleAlias: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:rolealias/${RoleAlias}';
     arn = arn.replace('${RoleAlias}', roleAlias);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4910,8 +4910,8 @@ export class Iot extends PolicyStatement {
   public onAuthorizer(authorizerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:authorizer/${AuthorizerName}';
     arn = arn.replace('${AuthorizerName}', authorizerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4929,8 +4929,8 @@ export class Iot extends PolicyStatement {
   public onPolicy(policyName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:policy/${PolicyName}';
     arn = arn.replace('${PolicyName}', policyName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4948,8 +4948,8 @@ export class Iot extends PolicyStatement {
   public onCert(certificate: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:cert/${Certificate}';
     arn = arn.replace('${Certificate}', certificate);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4967,8 +4967,8 @@ export class Iot extends PolicyStatement {
   public onCacert(cACertificate: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:cacert/${CACertificate}';
     arn = arn.replace('${CACertificate}', cACertificate);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -4989,8 +4989,8 @@ export class Iot extends PolicyStatement {
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}';
     arn = arn.replace('${StreamId}', streamId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5011,8 +5011,8 @@ export class Iot extends PolicyStatement {
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}';
     arn = arn.replace('${OtaUpdateId}', otaUpdateId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5033,8 +5033,8 @@ export class Iot extends PolicyStatement {
   public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:scheduledaudit/${ScheduleName}';
     arn = arn.replace('${ScheduleName}', scheduleName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5055,8 +5055,8 @@ export class Iot extends PolicyStatement {
   public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:mitigationaction/${MitigationActionName}';
     arn = arn.replace('${MitigationActionName}', mitigationActionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5077,8 +5077,8 @@ export class Iot extends PolicyStatement {
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}';
     arn = arn.replace('${SecurityProfileName}', securityProfileName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5099,8 +5099,8 @@ export class Iot extends PolicyStatement {
   public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:dimension/${DimensionName}';
     arn = arn.replace('${DimensionName}', dimensionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5121,8 +5121,8 @@ export class Iot extends PolicyStatement {
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}';
     arn = arn.replace('${RuleName}', ruleName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -5140,8 +5140,8 @@ export class Iot extends PolicyStatement {
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}';
     arn = arn.replace('${ProvisioningTemplate}', provisioningTemplate);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -366,8 +366,8 @@ export class Mediapackage extends PolicyStatement {
   public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}';
     arn = arn.replace('${ChannelIdentifier}', channelIdentifier);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -388,8 +388,8 @@ export class Mediapackage extends PolicyStatement {
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}';
     arn = arn.replace('${OriginEndpointIdentifier}', originEndpointIdentifier);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

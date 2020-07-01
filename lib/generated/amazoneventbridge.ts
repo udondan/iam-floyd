@@ -725,7 +725,7 @@ export class Events extends PolicyStatement {
   public onEventSource(eventSourceName: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:events:${Region}::event-source/${EventSourceName}';
     arn = arn.replace('${EventSourceName}', eventSourceName);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -746,8 +746,8 @@ export class Events extends PolicyStatement {
   public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}';
     arn = arn.replace('${EventBusName}', eventBusName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -768,8 +768,8 @@ export class Events extends PolicyStatement {
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}';
     arn = arn.replace('${RuleName}', ruleName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

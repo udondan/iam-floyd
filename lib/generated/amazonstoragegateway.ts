@@ -1706,8 +1706,8 @@ export class Storagegateway extends PolicyStatement {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/device/${Vtldevice}';
     arn = arn.replace('${GatewayId}', gatewayId);
     arn = arn.replace('${Vtldevice}', vtldevice);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1728,8 +1728,8 @@ export class Storagegateway extends PolicyStatement {
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}';
     arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1750,8 +1750,8 @@ export class Storagegateway extends PolicyStatement {
   public onShare(shareId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}';
     arn = arn.replace('${ShareId}', shareId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1772,8 +1772,8 @@ export class Storagegateway extends PolicyStatement {
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}';
     arn = arn.replace('${TapeBarcode}', tapeBarcode);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1793,8 +1793,8 @@ export class Storagegateway extends PolicyStatement {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/target/${IscsiTarget}';
     arn = arn.replace('${GatewayId}', gatewayId);
     arn = arn.replace('${IscsiTarget}', iscsiTarget);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1817,8 +1817,8 @@ export class Storagegateway extends PolicyStatement {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}';
     arn = arn.replace('${GatewayId}', gatewayId);
     arn = arn.replace('${VolumeId}', volumeId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

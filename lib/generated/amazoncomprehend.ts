@@ -1039,8 +1039,8 @@ export class Comprehend extends PolicyStatement {
   public onDocumentClassifier(documentClassifierName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier/${DocumentClassifierName}';
     arn = arn.replace('${DocumentClassifierName}', documentClassifierName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1059,8 +1059,8 @@ export class Comprehend extends PolicyStatement {
   public onEntityRecognizer(entityRecognizerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer/${EntityRecognizerName}';
     arn = arn.replace('${EntityRecognizerName}', entityRecognizerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1079,8 +1079,8 @@ export class Comprehend extends PolicyStatement {
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}';
     arn = arn.replace('${DocumentClassifierEndpointName}', documentClassifierEndpointName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

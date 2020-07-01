@@ -760,8 +760,8 @@ export class Appsync extends PolicyStatement {
     var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}';
     arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
     arn = arn.replace('${DatasourceName}', datasourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -782,8 +782,8 @@ export class Appsync extends PolicyStatement {
   public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}';
     arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -805,8 +805,8 @@ export class Appsync extends PolicyStatement {
     arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
     arn = arn.replace('${TypeName}', typeName);
     arn = arn.replace('${FieldName}', fieldName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -826,8 +826,8 @@ export class Appsync extends PolicyStatement {
     var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}';
     arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
     arn = arn.replace('${TypeName}', typeName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -847,8 +847,8 @@ export class Appsync extends PolicyStatement {
     var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}';
     arn = arn.replace('${GraphQLAPIId}', graphQLAPIId);
     arn = arn.replace('${FunctionId}', functionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

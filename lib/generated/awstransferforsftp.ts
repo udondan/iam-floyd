@@ -466,8 +466,8 @@ export class Transfer extends PolicyStatement {
     var arn = 'arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${Username}';
     arn = arn.replace('${ServerId}', serverId);
     arn = arn.replace('${Username}', username);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -488,8 +488,8 @@ export class Transfer extends PolicyStatement {
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}';
     arn = arn.replace('${ServerId}', serverId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

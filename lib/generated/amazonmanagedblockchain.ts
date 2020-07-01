@@ -489,7 +489,7 @@ export class Managedblockchain extends PolicyStatement {
   public onNetwork(networkId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}::networks/${NetworkId}';
     arn = arn.replace('${NetworkId}', networkId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -507,8 +507,8 @@ export class Managedblockchain extends PolicyStatement {
   public onMember(memberId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:members/${MemberId}';
     arn = arn.replace('${MemberId}', memberId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -526,8 +526,8 @@ export class Managedblockchain extends PolicyStatement {
   public onNode(nodeId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:nodes/${NodeId}';
     arn = arn.replace('${NodeId}', nodeId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -544,7 +544,7 @@ export class Managedblockchain extends PolicyStatement {
   public onProposal(proposalId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}::proposals/${ProposalId}';
     arn = arn.replace('${ProposalId}', proposalId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -562,8 +562,8 @@ export class Managedblockchain extends PolicyStatement {
   public onInvitation(invitationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:managedblockchain:${Region}:${Account}:invitations/${InvitationId}';
     arn = arn.replace('${InvitationId}', invitationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

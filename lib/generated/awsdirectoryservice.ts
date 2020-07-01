@@ -1392,8 +1392,8 @@ export class Ds extends PolicyStatement {
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ds:${Region}:${Account}:directory/${DirectoryId}';
     arn = arn.replace('${DirectoryId}', directoryId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

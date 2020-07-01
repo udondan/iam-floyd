@@ -1340,8 +1340,8 @@ export class Iotsitewise extends PolicyStatement {
   public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}';
     arn = arn.replace('${AssetId}', assetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1362,8 +1362,8 @@ export class Iotsitewise extends PolicyStatement {
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}';
     arn = arn.replace('${AssetModelId}', assetModelId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1384,8 +1384,8 @@ export class Iotsitewise extends PolicyStatement {
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}';
     arn = arn.replace('${GatewayId}', gatewayId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1406,8 +1406,8 @@ export class Iotsitewise extends PolicyStatement {
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}';
     arn = arn.replace('${PortalId}', portalId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1428,8 +1428,8 @@ export class Iotsitewise extends PolicyStatement {
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}';
     arn = arn.replace('${ProjectId}', projectId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1450,8 +1450,8 @@ export class Iotsitewise extends PolicyStatement {
   public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}';
     arn = arn.replace('${DashboardId}', dashboardId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1472,8 +1472,8 @@ export class Iotsitewise extends PolicyStatement {
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}';
     arn = arn.replace('${AccessPolicyId}', accessPolicyId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

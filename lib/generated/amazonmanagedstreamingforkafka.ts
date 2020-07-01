@@ -429,8 +429,8 @@ export class Kafka extends PolicyStatement {
     var arn = 'arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${UUID}';
     arn = arn.replace('${ClusterName}', clusterName);
     arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

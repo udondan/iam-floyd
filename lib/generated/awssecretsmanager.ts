@@ -527,8 +527,8 @@ export class Secretsmanager extends PolicyStatement {
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}';
     arn = arn.replace('${SecretId}', secretId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

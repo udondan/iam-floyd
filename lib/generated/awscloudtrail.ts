@@ -412,8 +412,8 @@ export class Cloudtrail extends PolicyStatement {
   public onTrail(trailName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudtrail:${Region}:${Account}:trail/${TrailName}';
     arn = arn.replace('${TrailName}', trailName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

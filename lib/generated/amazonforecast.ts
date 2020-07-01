@@ -642,8 +642,8 @@ export class Forecast extends PolicyStatement {
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -659,8 +659,8 @@ export class Forecast extends PolicyStatement {
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -676,8 +676,8 @@ export class Forecast extends PolicyStatement {
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -706,8 +706,8 @@ export class Forecast extends PolicyStatement {
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -723,8 +723,8 @@ export class Forecast extends PolicyStatement {
   public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -740,8 +740,8 @@ export class Forecast extends PolicyStatement {
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

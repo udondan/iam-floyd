@@ -474,8 +474,8 @@ export class Deeplens extends PolicyStatement {
   public onDevice(deviceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:device/${DeviceName}';
     arn = arn.replace('${DeviceName}', deviceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -491,8 +491,8 @@ export class Deeplens extends PolicyStatement {
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:project/${ProjectName}';
     arn = arn.replace('${ProjectName}', projectName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -508,8 +508,8 @@ export class Deeplens extends PolicyStatement {
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deeplens:${Region}:${Account}:model/${ModelName}';
     arn = arn.replace('${ModelName}', modelName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

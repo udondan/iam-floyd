@@ -1057,8 +1057,8 @@ export class Lex extends PolicyStatement {
   public onBot(botName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}';
     arn = arn.replace('${BotName}', botName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1081,8 +1081,8 @@ export class Lex extends PolicyStatement {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}';
     arn = arn.replace('${BotName}', botName);
     arn = arn.replace('${BotVersion}', botVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1105,8 +1105,8 @@ export class Lex extends PolicyStatement {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}';
     arn = arn.replace('${BotName}', botName);
     arn = arn.replace('${BotAlias}', botAlias);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1131,8 +1131,8 @@ export class Lex extends PolicyStatement {
     arn = arn.replace('${BotName}', botName);
     arn = arn.replace('${BotAlias}', botAlias);
     arn = arn.replace('${ChannelName}', channelName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1152,8 +1152,8 @@ export class Lex extends PolicyStatement {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:intent:${IntentName}:${IntentVersion}';
     arn = arn.replace('${IntentName}', intentName);
     arn = arn.replace('${IntentVersion}', intentVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1173,8 +1173,8 @@ export class Lex extends PolicyStatement {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:slottype:${SlotName}:${SlotVersion}';
     arn = arn.replace('${SlotName}', slotName);
     arn = arn.replace('${SlotVersion}', slotVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

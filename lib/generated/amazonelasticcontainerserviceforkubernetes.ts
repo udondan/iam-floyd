@@ -557,8 +557,8 @@ export class Eks extends PolicyStatement {
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}';
     arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -583,8 +583,8 @@ export class Eks extends PolicyStatement {
     arn = arn.replace('${ClusterName}', clusterName);
     arn = arn.replace('${NodegroupName}', nodegroupName);
     arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -609,8 +609,8 @@ export class Eks extends PolicyStatement {
     arn = arn.replace('${ClusterName}', clusterName);
     arn = arn.replace('${FargateProfileName}', fargateProfileName);
     arn = arn.replace('${UUID}', uUID);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

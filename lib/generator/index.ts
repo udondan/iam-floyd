@@ -289,10 +289,10 @@ export function createModule(module: Module): Promise<void> {
         orDefault = " || 'aws'";
         paramDocs += `\n@param ${paramName} - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to \`aws\`.`;
       } else if (param == 'Region') {
-        orDefault = " || ''";
+        orDefault = " || '*'";
         paramDocs += `\n@param ${paramName} - Region of the resource; defaults to empty string: all regions.`;
       } else if (param.match(/^Account(Id)?$/)) {
-        orDefault = " || ''";
+        orDefault = " || '*'";
         paramDocs += `\n@param ${paramName} - Account of the resource; defaults to empty string: all accounts.`;
       } else {
         paramDocs += `\n@param ${paramName} - Identifier for the ${paramName}.`;

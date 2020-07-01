@@ -1076,7 +1076,7 @@ export class Macie2 extends PolicyStatement {
   public onClassificationJob(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1096,7 +1096,7 @@ export class Macie2 extends PolicyStatement {
   public onCustomDataIdentifier(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1116,7 +1116,7 @@ export class Macie2 extends PolicyStatement {
   public onMember(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:member/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1136,7 +1136,7 @@ export class Macie2 extends PolicyStatement {
   public onFindingsFilter(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

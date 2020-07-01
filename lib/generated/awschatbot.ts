@@ -220,7 +220,7 @@ export class Chatbot extends PolicyStatement {
     var arn = 'arn:${Partition}:chatbot::${Account}:${ResourceType}/${ResourceName}';
     arn = arn.replace('${ResourceType}', resourceType);
     arn = arn.replace('${ResourceName}', resourceName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

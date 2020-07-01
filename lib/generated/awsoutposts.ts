@@ -138,8 +138,8 @@ export class Outposts extends PolicyStatement {
   public onOutpost(outpostId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:outposts:${Region}:${Account}:outpost/${OutpostId}';
     arn = arn.replace('${OutpostId}', outpostId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -157,8 +157,8 @@ export class Outposts extends PolicyStatement {
   public onSite(siteId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:outposts:${Region}:${Account}:site/${SiteId}';
     arn = arn.replace('${SiteId}', siteId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -176,8 +176,8 @@ export class Outposts extends PolicyStatement {
   public onOrder(orderId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:outposts:${Region}:${Account}:order/${OrderId}';
     arn = arn.replace('${OrderId}', orderId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

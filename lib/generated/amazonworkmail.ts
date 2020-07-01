@@ -2133,8 +2133,8 @@ export class Workmail extends PolicyStatement {
   public onOrganization(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:workmail:${Region}:${Account}:organization/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -399,8 +399,8 @@ export class MediapackageVod extends PolicyStatement {
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}';
     arn = arn.replace('${AssetIdentifier}', assetIdentifier);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -421,8 +421,8 @@ export class MediapackageVod extends PolicyStatement {
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}';
     arn = arn.replace('${PackagingConfigurationIdentifier}', packagingConfigurationIdentifier);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -443,8 +443,8 @@ export class MediapackageVod extends PolicyStatement {
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}';
     arn = arn.replace('${PackagingGroupIdentifier}', packagingGroupIdentifier);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

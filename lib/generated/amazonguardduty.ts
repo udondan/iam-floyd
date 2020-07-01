@@ -1305,8 +1305,8 @@ export class Guardduty extends PolicyStatement {
   public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}';
     arn = arn.replace('${DetectorId}', detectorId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1329,8 +1329,8 @@ export class Guardduty extends PolicyStatement {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/filter/${FilterName}';
     arn = arn.replace('${DetectorId}', detectorId);
     arn = arn.replace('${FilterName}', filterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1353,8 +1353,8 @@ export class Guardduty extends PolicyStatement {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/ipset/${IPSetId}';
     arn = arn.replace('${DetectorId}', detectorId);
     arn = arn.replace('${IPSetId}', iPSetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1377,8 +1377,8 @@ export class Guardduty extends PolicyStatement {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${ThreatIntelSetId}';
     arn = arn.replace('${DetectorId}', detectorId);
     arn = arn.replace('${ThreatIntelSetId}', threatIntelSetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1398,8 +1398,8 @@ export class Guardduty extends PolicyStatement {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${PublishingDestinationId}';
     arn = arn.replace('${DetectorId}', detectorId);
     arn = arn.replace('${PublishingDestinationId}', publishingDestinationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

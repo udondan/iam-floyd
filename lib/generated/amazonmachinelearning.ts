@@ -697,8 +697,8 @@ export class Machinelearning extends PolicyStatement {
   public onBatchprediction(batchPredictionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:batchprediction/${BatchPredictionId}';
     arn = arn.replace('${BatchPredictionId}', batchPredictionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -716,8 +716,8 @@ export class Machinelearning extends PolicyStatement {
   public onDatasource(datasourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:datasource/${DatasourceId}';
     arn = arn.replace('${DatasourceId}', datasourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -735,8 +735,8 @@ export class Machinelearning extends PolicyStatement {
   public onEvaluation(evaluationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:evaluation/${EvaluationId}';
     arn = arn.replace('${EvaluationId}', evaluationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -754,8 +754,8 @@ export class Machinelearning extends PolicyStatement {
   public onMlmodel(mlModelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:machinelearning:${Region}:${Account}:mlmodel/${MlModelId}';
     arn = arn.replace('${MlModelId}', mlModelId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

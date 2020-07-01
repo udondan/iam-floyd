@@ -532,8 +532,8 @@ export class Servicediscovery extends PolicyStatement {
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}';
     arn = arn.replace('${NamespaceId}', namespaceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -554,8 +554,8 @@ export class Servicediscovery extends PolicyStatement {
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}';
     arn = arn.replace('${ServiceId}', serviceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

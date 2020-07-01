@@ -339,8 +339,8 @@ export class Deepcomposer extends PolicyStatement {
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}';
     arn = arn.replace('${ModelId}', modelId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -358,8 +358,8 @@ export class Deepcomposer extends PolicyStatement {
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}';
     arn = arn.replace('${CompositionId}', compositionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -377,8 +377,8 @@ export class Deepcomposer extends PolicyStatement {
   public onAudio(audioId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:audio/${AudioId}';
     arn = arn.replace('${AudioId}', audioId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

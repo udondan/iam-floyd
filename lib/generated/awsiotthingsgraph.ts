@@ -751,8 +751,8 @@ export class Iotthingsgraph extends PolicyStatement {
   public onWorkflow(namespacePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:Workflow/${NamespacePath}';
     arn = arn.replace('${NamespacePath}', namespacePath);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -770,8 +770,8 @@ export class Iotthingsgraph extends PolicyStatement {
   public onSystem(namespacePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:System/${NamespacePath}';
     arn = arn.replace('${NamespacePath}', namespacePath);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -792,8 +792,8 @@ export class Iotthingsgraph extends PolicyStatement {
   public onSystemInstance(namespacePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:Deployment/${NamespacePath}';
     arn = arn.replace('${NamespacePath}', namespacePath);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

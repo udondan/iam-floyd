@@ -1331,8 +1331,8 @@ export class Ses extends PolicyStatement {
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}';
     arn = arn.replace('${ConfigurationSetName}', configurationSetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1350,8 +1350,8 @@ export class Ses extends PolicyStatement {
   public onCustomVerificationEmailTemplate(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:custom-verification-email-template/${CustomVerificationEmailTemplateName}';
     arn = arn.replace('${CustomVerificationEmailTemplateName}', customVerificationEmailTemplateName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1371,8 +1371,8 @@ export class Ses extends PolicyStatement {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}';
     arn = arn.replace('${ConfigurationSetName}', configurationSetName);
     arn = arn.replace('${EventDestinationName}', eventDestinationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1388,8 +1388,8 @@ export class Ses extends PolicyStatement {
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';
     arn = arn.replace('${IdentityName}', identityName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1407,8 +1407,8 @@ export class Ses extends PolicyStatement {
   public onReceiptFilter(receiptFilterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:receipt-filter/${ReceiptFilterName}';
     arn = arn.replace('${ReceiptFilterName}', receiptFilterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1428,8 +1428,8 @@ export class Ses extends PolicyStatement {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:receipt-rule-set/${ReceiptRuleSetName}:receipt-rule/${ReceiptRuleName}';
     arn = arn.replace('${ReceiptRuleSetName}', receiptRuleSetName);
     arn = arn.replace('${ReceiptRuleName}', receiptRuleName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1447,8 +1447,8 @@ export class Ses extends PolicyStatement {
   public onReceiptRuleSet(receiptRuleSetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:receipt-rule-set/${ReceiptRuleSetName}';
     arn = arn.replace('${ReceiptRuleSetName}', receiptRuleSetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1466,8 +1466,8 @@ export class Ses extends PolicyStatement {
   public onTemplate(templateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:template/${TemplateName}';
     arn = arn.replace('${TemplateName}', templateName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

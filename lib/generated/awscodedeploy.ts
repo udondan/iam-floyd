@@ -1067,8 +1067,8 @@ export class Codedeploy extends PolicyStatement {
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:application:${ApplicationName}';
     arn = arn.replace('${ApplicationName}', applicationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1086,8 +1086,8 @@ export class Codedeploy extends PolicyStatement {
   public onDeploymentconfig(deploymentConfigurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:deploymentconfig:${DeploymentConfigurationName}';
     arn = arn.replace('${DeploymentConfigurationName}', deploymentConfigurationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1107,8 +1107,8 @@ export class Codedeploy extends PolicyStatement {
     var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:deploymentgroup:${ApplicationName}/${DeploymentGroupName}';
     arn = arn.replace('${ApplicationName}', applicationName);
     arn = arn.replace('${DeploymentGroupName}', deploymentGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1126,8 +1126,8 @@ export class Codedeploy extends PolicyStatement {
   public onInstance(instanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codedeploy:${Region}:${Account}:instance:${InstanceName}';
     arn = arn.replace('${InstanceName}', instanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

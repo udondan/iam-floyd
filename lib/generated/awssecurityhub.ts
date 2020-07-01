@@ -982,8 +982,8 @@ export class Securityhub extends PolicyStatement {
     var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}';
     arn = arn.replace('${Company}', company);
     arn = arn.replace('${ProductId}', productId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1002,8 +1002,8 @@ export class Securityhub extends PolicyStatement {
    */
   public onHub(account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:hub/default';
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

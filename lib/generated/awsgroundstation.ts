@@ -640,8 +640,8 @@ export class Groundstation extends PolicyStatement {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}';
     arn = arn.replace('${ConfigType}', configType);
     arn = arn.replace('${ConfigId}', configId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -663,8 +663,8 @@ export class Groundstation extends PolicyStatement {
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}';
     arn = arn.replace('${ContactId}', contactId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -686,8 +686,8 @@ export class Groundstation extends PolicyStatement {
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}';
     arn = arn.replace('${DataflowEndpointGroupId}', dataflowEndpointGroupId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -708,8 +708,8 @@ export class Groundstation extends PolicyStatement {
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}';
     arn = arn.replace('${GroundStationId}', groundStationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -731,8 +731,8 @@ export class Groundstation extends PolicyStatement {
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}';
     arn = arn.replace('${MissionProfileId}', missionProfileId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -753,8 +753,8 @@ export class Groundstation extends PolicyStatement {
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}';
     arn = arn.replace('${SatelliteId}', satelliteId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

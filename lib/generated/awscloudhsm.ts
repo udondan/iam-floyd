@@ -655,8 +655,8 @@ export class Cloudhsm extends PolicyStatement {
   public onBackup(cloudHsmBackupInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:backup/${CloudHsmBackupInstanceName}';
     arn = arn.replace('${CloudHsmBackupInstanceName}', cloudHsmBackupInstanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -677,8 +677,8 @@ export class Cloudhsm extends PolicyStatement {
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:cluster/${CloudHsmClusterInstanceName}';
     arn = arn.replace('${CloudHsmClusterInstanceName}', cloudHsmClusterInstanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

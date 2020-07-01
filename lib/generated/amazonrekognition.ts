@@ -984,8 +984,8 @@ export class Rekognition extends PolicyStatement {
   public onCollection(collectionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:collection/${CollectionId}';
     arn = arn.replace('${CollectionId}', collectionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1001,8 +1001,8 @@ export class Rekognition extends PolicyStatement {
   public onStreamprocessor(streamprocessorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:streamprocessor/${StreamprocessorId}';
     arn = arn.replace('${StreamprocessorId}', streamprocessorId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1020,8 +1020,8 @@ export class Rekognition extends PolicyStatement {
     var arn = 'arn:${Partition}:rekognition:${Region}:${Account}:project/${ProjectName}/${CreationTimestamp}';
     arn = arn.replace('${ProjectName}', projectName);
     arn = arn.replace('${CreationTimestamp}', creationTimestamp);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1041,8 +1041,8 @@ export class Rekognition extends PolicyStatement {
     arn = arn.replace('${ProjectName}', projectName);
     arn = arn.replace('${VersionName}', versionName);
     arn = arn.replace('${CreationTimestamp}', creationTimestamp);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

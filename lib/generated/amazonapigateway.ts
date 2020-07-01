@@ -111,8 +111,8 @@ export class ExecuteApi extends PolicyStatement {
     arn = arn.replace('${Stage}', stage);
     arn = arn.replace('${Method}', method);
     arn = arn.replace('${ApiSpecificResourcePath}', apiSpecificResourcePath);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

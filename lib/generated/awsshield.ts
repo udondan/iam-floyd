@@ -372,7 +372,7 @@ export class Shield extends PolicyStatement {
   public onAttack(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:shield::${Account}:attack/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -389,7 +389,7 @@ export class Shield extends PolicyStatement {
   public onProtection(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:shield::${Account}:protection/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

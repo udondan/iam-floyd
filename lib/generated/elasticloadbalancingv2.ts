@@ -858,8 +858,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
     arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -883,8 +883,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
     arn = arn.replace('${ListenerId}', listenerId);
     arn = arn.replace('${ListenerRuleId}', listenerRuleId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -906,8 +906,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
     arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -931,8 +931,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
     arn = arn.replace('${ListenerId}', listenerId);
     arn = arn.replace('${ListenerRuleId}', listenerRuleId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -957,8 +957,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -983,8 +983,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}';
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1009,8 +1009,8 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}';
     arn = arn.replace('${TargetGroupName}', targetGroupName);
     arn = arn.replace('${TargetGroupId}', targetGroupId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -331,8 +331,8 @@ export class Servicequotas extends PolicyStatement {
     var arn = 'arn:${Partition}:servicequotas:${Region}:${Account}:${ServiceCode}/${QuotaCode}';
     arn = arn.replace('${ServiceCode}', serviceCode);
     arn = arn.replace('${QuotaCode}', quotaCode);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

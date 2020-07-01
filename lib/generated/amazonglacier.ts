@@ -748,8 +748,8 @@ export class Glacier extends PolicyStatement {
   public onVault(vaultName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glacier:${Region}:${Account}:vaults/${VaultName}';
     arn = arn.replace('${VaultName}', vaultName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

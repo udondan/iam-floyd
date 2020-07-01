@@ -81,8 +81,8 @@ export class Pi extends PolicyStatement {
     var arn = 'arn:${Partition}:pi:${Region}:${Account}:metrics/${ServiceType}/${Identifier}';
     arn = arn.replace('${ServiceType}', serviceType);
     arn = arn.replace('${Identifier}', identifier);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

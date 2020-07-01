@@ -341,8 +341,8 @@ export class CodestarConnections extends PolicyStatement {
   public onConnection(connectionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}';
     arn = arn.replace('${ConnectionId}', connectionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

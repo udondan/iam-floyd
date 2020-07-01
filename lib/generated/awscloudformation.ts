@@ -1290,8 +1290,8 @@ export class Cloudformation extends PolicyStatement {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}';
     arn = arn.replace('${StackName}', stackName);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1314,8 +1314,8 @@ export class Cloudformation extends PolicyStatement {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}';
     arn = arn.replace('${StackSetName}', stackSetName);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1335,8 +1335,8 @@ export class Cloudformation extends PolicyStatement {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:changeSet/${ChangeSetName}:${Id}';
     arn = arn.replace('${ChangeSetName}', changeSetName);
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

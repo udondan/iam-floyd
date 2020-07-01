@@ -891,8 +891,8 @@ export class Codepipeline extends PolicyStatement {
     arn = arn.replace('${PipelineName}', pipelineName);
     arn = arn.replace('${StageName}', stageName);
     arn = arn.replace('${ActionName}', actionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -919,8 +919,8 @@ export class Codepipeline extends PolicyStatement {
     arn = arn.replace('${Category}', category);
     arn = arn.replace('${Provider}', provider);
     arn = arn.replace('${Version}', version);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -941,8 +941,8 @@ export class Codepipeline extends PolicyStatement {
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}';
     arn = arn.replace('${PipelineName}', pipelineName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -965,8 +965,8 @@ export class Codepipeline extends PolicyStatement {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}';
     arn = arn.replace('${PipelineName}', pipelineName);
     arn = arn.replace('${StageName}', stageName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -987,8 +987,8 @@ export class Codepipeline extends PolicyStatement {
   public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}';
     arn = arn.replace('${WebhookName}', webhookName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

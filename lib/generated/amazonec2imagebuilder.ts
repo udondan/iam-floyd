@@ -1056,8 +1056,8 @@ export class Imagebuilder extends PolicyStatement {
     arn = arn.replace('${ComponentName}', componentName);
     arn = arn.replace('${ComponentVersion}', componentVersion);
     arn = arn.replace('${ComponentBuildVersion}', componentBuildVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1080,8 +1080,8 @@ export class Imagebuilder extends PolicyStatement {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}';
     arn = arn.replace('${ComponentName}', componentName);
     arn = arn.replace('${ComponentVersion}', componentVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1102,8 +1102,8 @@ export class Imagebuilder extends PolicyStatement {
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:distribution-configuration/${DistributionConfigurationName}';
     arn = arn.replace('${DistributionConfigurationName}', distributionConfigurationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1128,8 +1128,8 @@ export class Imagebuilder extends PolicyStatement {
     arn = arn.replace('${ImageName}', imageName);
     arn = arn.replace('${ImageVersion}', imageVersion);
     arn = arn.replace('${ImageBuildVersion}', imageBuildVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1152,8 +1152,8 @@ export class Imagebuilder extends PolicyStatement {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}';
     arn = arn.replace('${ImageName}', imageName);
     arn = arn.replace('${ImageVersion}', imageVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1176,8 +1176,8 @@ export class Imagebuilder extends PolicyStatement {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}';
     arn = arn.replace('${ImageRecipeName}', imageRecipeName);
     arn = arn.replace('${ImageRecipeVersion}', imageRecipeVersion);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1198,8 +1198,8 @@ export class Imagebuilder extends PolicyStatement {
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-pipeline/${ImagePipelineName}';
     arn = arn.replace('${ImagePipelineName}', imagePipelineName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1220,8 +1220,8 @@ export class Imagebuilder extends PolicyStatement {
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:infrastructure-configuration/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1239,8 +1239,8 @@ export class Imagebuilder extends PolicyStatement {
   public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}';
     arn = arn.replace('${KeyId}', keyId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

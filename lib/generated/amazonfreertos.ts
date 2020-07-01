@@ -257,8 +257,8 @@ export class Freertos extends PolicyStatement {
   public onConfiguration(configurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:freertos:${Region}:${Account}:configuration/${ConfigurationName}';
     arn = arn.replace('${ConfigurationName}', configurationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

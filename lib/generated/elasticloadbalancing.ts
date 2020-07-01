@@ -641,8 +641,8 @@ export class Elasticloadbalancing extends PolicyStatement {
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
     arn = arn.replace('${LoadBalancerId}', loadBalancerId);
     arn = arn.replace('${ListenerId}', listenerId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -665,8 +665,8 @@ export class Elasticloadbalancing extends PolicyStatement {
   public onLoadbalancer(loadBalancerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}';
     arn = arn.replace('${LoadBalancerName}', loadBalancerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

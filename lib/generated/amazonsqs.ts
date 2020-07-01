@@ -476,8 +476,8 @@ export class Sqs extends PolicyStatement {
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sqs:${Region}:${Account}:${QueueName}';
     arn = arn.replace('${QueueName}', queueName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -1310,8 +1310,8 @@ export class Quicksight extends PolicyStatement {
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:user/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1329,8 +1329,8 @@ export class Quicksight extends PolicyStatement {
   public onGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:group/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1351,8 +1351,8 @@ export class Quicksight extends PolicyStatement {
   public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1373,8 +1373,8 @@ export class Quicksight extends PolicyStatement {
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1391,7 +1391,7 @@ export class Quicksight extends PolicyStatement {
   public onAssignment(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight::${Account}:assignment/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

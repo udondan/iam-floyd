@@ -67,8 +67,8 @@ export class Workmailmessageflow extends PolicyStatement {
     arn = arn.replace('${OrganizationId}', organizationId);
     arn = arn.replace('${Context}', context);
     arn = arn.replace('${MessageId}', messageId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

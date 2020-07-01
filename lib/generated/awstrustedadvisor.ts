@@ -253,8 +253,8 @@ export class Trustedadvisor extends PolicyStatement {
     var arn = 'arn:${Partition}:trustedadvisor:${Region}:${Account}:checks/${CategoryCode}/${CheckId}';
     arn = arn.replace('${CategoryCode}', categoryCode);
     arn = arn.replace('${CheckId}', checkId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

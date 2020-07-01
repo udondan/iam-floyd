@@ -340,8 +340,8 @@ export class Batch extends PolicyStatement {
   public onJobQueue(jobQueueName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-queue/${JobQueueName}';
     arn = arn.replace('${JobQueueName}', jobQueueName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -359,8 +359,8 @@ export class Batch extends PolicyStatement {
     var arn = 'arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}';
     arn = arn.replace('${JobDefinitionName}', jobDefinitionName);
     arn = arn.replace('${Revision}', revision);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

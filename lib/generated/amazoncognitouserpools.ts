@@ -2127,8 +2127,8 @@ export class CognitoIdp extends PolicyStatement {
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}';
     arn = arn.replace('${UserPoolId}', userPoolId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

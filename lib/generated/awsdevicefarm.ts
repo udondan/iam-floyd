@@ -1908,8 +1908,8 @@ export class Devicefarm extends PolicyStatement {
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1930,8 +1930,8 @@ export class Devicefarm extends PolicyStatement {
   public onRun(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1949,8 +1949,8 @@ export class Devicefarm extends PolicyStatement {
   public onJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:job:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1968,8 +1968,8 @@ export class Devicefarm extends PolicyStatement {
   public onSuite(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:suite:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1987,8 +1987,8 @@ export class Devicefarm extends PolicyStatement {
   public onTest(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:test:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2006,8 +2006,8 @@ export class Devicefarm extends PolicyStatement {
   public onUpload(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:upload:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2025,8 +2025,8 @@ export class Devicefarm extends PolicyStatement {
   public onArtifact(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:artifact:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2044,8 +2044,8 @@ export class Devicefarm extends PolicyStatement {
   public onSample(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:sample:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2066,8 +2066,8 @@ export class Devicefarm extends PolicyStatement {
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2087,7 +2087,7 @@ export class Devicefarm extends PolicyStatement {
   public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2108,8 +2108,8 @@ export class Devicefarm extends PolicyStatement {
   public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2130,8 +2130,8 @@ export class Devicefarm extends PolicyStatement {
   public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2151,7 +2151,7 @@ export class Devicefarm extends PolicyStatement {
   public onDevice(resourceId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}::device:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2172,8 +2172,8 @@ export class Devicefarm extends PolicyStatement {
   public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2194,8 +2194,8 @@ export class Devicefarm extends PolicyStatement {
   public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2216,8 +2216,8 @@ export class Devicefarm extends PolicyStatement {
   public onTestgridProject(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2238,8 +2238,8 @@ export class Devicefarm extends PolicyStatement {
   public onTestgridSession(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -462,8 +462,8 @@ export class Mobilehub extends PolicyStatement {
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobilehub:${Region}:${Account}:project/${ProjectId}';
     arn = arn.replace('${ProjectId}', projectId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

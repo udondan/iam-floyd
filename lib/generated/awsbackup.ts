@@ -1005,8 +1005,8 @@ export class Backup extends PolicyStatement {
   public onBackupVault(backupVaultName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}';
     arn = arn.replace('${BackupVaultName}', backupVaultName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1024,8 +1024,8 @@ export class Backup extends PolicyStatement {
   public onBackupPlan(backupPlanId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}';
     arn = arn.replace('${BackupPlanId}', backupPlanId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1043,8 +1043,8 @@ export class Backup extends PolicyStatement {
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}';
     arn = arn.replace('${RecoveryPointId}', recoveryPointId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

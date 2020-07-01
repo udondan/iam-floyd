@@ -658,8 +658,8 @@ export class Dax extends PolicyStatement {
   public onApplication(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dax:${Region}:${Account}:cache/${ClusterName}';
     arn = arn.replace('${ClusterName}', clusterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

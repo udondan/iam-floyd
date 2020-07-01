@@ -299,8 +299,8 @@ export class Mediaconnect extends PolicyStatement {
     var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:entitlement:${FlowId}:${EntitlementName}';
     arn = arn.replace('${FlowId}', flowId);
     arn = arn.replace('${EntitlementName}', entitlementName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -320,8 +320,8 @@ export class Mediaconnect extends PolicyStatement {
     var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}';
     arn = arn.replace('${FlowId}', flowId);
     arn = arn.replace('${FlowName}', flowName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -341,8 +341,8 @@ export class Mediaconnect extends PolicyStatement {
     var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:output:${OutputId}:${OutputName}';
     arn = arn.replace('${OutputId}', outputId);
     arn = arn.replace('${OutputName}', outputName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -362,8 +362,8 @@ export class Mediaconnect extends PolicyStatement {
     var arn = 'arn:${Partition}:mediaconnect:${Region}:${Account}:source:${SourceId}:${SourceName}';
     arn = arn.replace('${SourceId}', sourceId);
     arn = arn.replace('${SourceName}', sourceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

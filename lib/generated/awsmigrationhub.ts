@@ -430,8 +430,8 @@ export class Mgh extends PolicyStatement {
   public onProgressUpdateStream(stream: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}';
     arn = arn.replace('${Stream}', stream);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -451,8 +451,8 @@ export class Mgh extends PolicyStatement {
     var arn = 'arn:${Partition}:mgh:${Region}:${Account}:progressUpdateStream/${Stream}/migrationTask/${Task}';
     arn = arn.replace('${Stream}', stream);
     arn = arn.replace('${Task}', task);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

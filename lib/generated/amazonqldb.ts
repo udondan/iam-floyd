@@ -561,8 +561,8 @@ export class Qldb extends PolicyStatement {
   public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}';
     arn = arn.replace('${LedgerName}', ledgerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -585,8 +585,8 @@ export class Qldb extends PolicyStatement {
     var arn = 'arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}';
     arn = arn.replace('${LedgerName}', ledgerName);
     arn = arn.replace('${StreamId}', streamId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

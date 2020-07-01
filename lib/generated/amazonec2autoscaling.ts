@@ -1408,8 +1408,8 @@ export class Autoscaling extends PolicyStatement {
     var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}';
     arn = arn.replace('${GroupId}', groupId);
     arn = arn.replace('${GroupFriendlyName}', groupFriendlyName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1429,8 +1429,8 @@ export class Autoscaling extends PolicyStatement {
     var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:launchConfiguration:${Id}:launchConfigurationName/${LaunchConfigurationName}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${LaunchConfigurationName}', launchConfigurationName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

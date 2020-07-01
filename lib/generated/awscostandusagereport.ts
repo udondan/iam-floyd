@@ -124,8 +124,8 @@ export class Cur extends PolicyStatement {
   public onCur(reportName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cur:${Region}:${Account}:definition/${ReportName}';
     arn = arn.replace('${ReportName}', reportName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -214,8 +214,8 @@ export class Polly extends PolicyStatement {
   public onLexicon(lexiconName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:polly:${Region}:${Account}:lexicon/${LexiconName}';
     arn = arn.replace('${LexiconName}', lexiconName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

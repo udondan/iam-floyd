@@ -886,8 +886,8 @@ export class Amplify extends PolicyStatement {
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}';
     arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -910,8 +910,8 @@ export class Amplify extends PolicyStatement {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}';
     arn = arn.replace('${AppId}', appId);
     arn = arn.replace('${BranchName}', branchName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -933,8 +933,8 @@ export class Amplify extends PolicyStatement {
     arn = arn.replace('${AppId}', appId);
     arn = arn.replace('${BranchName}', branchName);
     arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -957,8 +957,8 @@ export class Amplify extends PolicyStatement {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}';
     arn = arn.replace('${AppId}', appId);
     arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

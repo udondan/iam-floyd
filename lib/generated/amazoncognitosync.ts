@@ -466,8 +466,8 @@ export class CognitoSync extends PolicyStatement {
     arn = arn.replace('${IdentityPoolId}', identityPoolId);
     arn = arn.replace('${IdentityId}', identityId);
     arn = arn.replace('${DatasetName}', datasetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -487,8 +487,8 @@ export class CognitoSync extends PolicyStatement {
     var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}/identity/${IdentityId}';
     arn = arn.replace('${IdentityPoolId}', identityPoolId);
     arn = arn.replace('${IdentityId}', identityId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -506,8 +506,8 @@ export class CognitoSync extends PolicyStatement {
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cognito-sync:${Region}:${Account}:identitypool/${IdentityPoolId}';
     arn = arn.replace('${IdentityPoolId}', identityPoolId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

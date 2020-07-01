@@ -633,8 +633,8 @@ export class Mediaconvert extends PolicyStatement {
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobs/${JobId}';
     arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -655,8 +655,8 @@ export class Mediaconvert extends PolicyStatement {
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}';
     arn = arn.replace('${QueueName}', queueName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -677,8 +677,8 @@ export class Mediaconvert extends PolicyStatement {
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}';
     arn = arn.replace('${PresetName}', presetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -699,8 +699,8 @@ export class Mediaconvert extends PolicyStatement {
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}';
     arn = arn.replace('${JobTemplateName}', jobTemplateName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -718,8 +718,8 @@ export class Mediaconvert extends PolicyStatement {
   public onCertificateAssociation(certificateArn: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:certificates/${CertificateArn}';
     arn = arn.replace('${CertificateArn}', certificateArn);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

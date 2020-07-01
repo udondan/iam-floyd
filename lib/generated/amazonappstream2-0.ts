@@ -1209,8 +1209,8 @@ export class Appstream extends PolicyStatement {
   public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:fleet/${FleetName}';
     arn = arn.replace('${FleetName}', fleetName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1231,8 +1231,8 @@ export class Appstream extends PolicyStatement {
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:image/${ImageName}';
     arn = arn.replace('${ImageName}', imageName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1253,8 +1253,8 @@ export class Appstream extends PolicyStatement {
   public onImageBuilder(imageBuilderName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:image-builder/${ImageBuilderName}';
     arn = arn.replace('${ImageBuilderName}', imageBuilderName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -1275,8 +1275,8 @@ export class Appstream extends PolicyStatement {
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:stack/${StackName}';
     arn = arn.replace('${StackName}', stackName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

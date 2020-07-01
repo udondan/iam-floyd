@@ -578,8 +578,8 @@ export class Ram extends PolicyStatement {
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}';
     arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -597,8 +597,8 @@ export class Ram extends PolicyStatement {
   public onResourceShareInvitation(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share-invitation/${ResourcePath}';
     arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -618,7 +618,7 @@ export class Ram extends PolicyStatement {
   public onPermission(resourcePath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram::${Account}:permission/${ResourcePath}';
     arn = arn.replace('${ResourcePath}', resourcePath);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

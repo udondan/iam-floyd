@@ -2764,8 +2764,8 @@ export class Glue extends PolicyStatement {
    */
   public onCatalog(account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:catalog';
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2783,8 +2783,8 @@ export class Glue extends PolicyStatement {
   public onDatabase(databaseName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:database/${DatabaseName}';
     arn = arn.replace('${DatabaseName}', databaseName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2804,8 +2804,8 @@ export class Glue extends PolicyStatement {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:table/${DatabaseName}/${TableName}';
     arn = arn.replace('${DatabaseName}', databaseName);
     arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2827,8 +2827,8 @@ export class Glue extends PolicyStatement {
     arn = arn.replace('${DatabaseName}', databaseName);
     arn = arn.replace('${TableName}', tableName);
     arn = arn.replace('${TableVersionName}', tableVersionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2846,8 +2846,8 @@ export class Glue extends PolicyStatement {
   public onConnection(connectionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:connection/${ConnectionName}';
     arn = arn.replace('${ConnectionName}', connectionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2867,8 +2867,8 @@ export class Glue extends PolicyStatement {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:userDefinedFunction/${DatabaseName}/${UserDefinedFunctionName}';
     arn = arn.replace('${DatabaseName}', databaseName);
     arn = arn.replace('${UserDefinedFunctionName}', userDefinedFunctionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2889,8 +2889,8 @@ export class Glue extends PolicyStatement {
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:devendpoint/${DevEndpointName}';
     arn = arn.replace('${DevEndpointName}', devEndpointName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2911,8 +2911,8 @@ export class Glue extends PolicyStatement {
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:job/${JobName}';
     arn = arn.replace('${JobName}', jobName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2933,8 +2933,8 @@ export class Glue extends PolicyStatement {
   public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:trigger/${TriggerName}';
     arn = arn.replace('${TriggerName}', triggerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2955,8 +2955,8 @@ export class Glue extends PolicyStatement {
   public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:crawler/${CrawlerName}';
     arn = arn.replace('${CrawlerName}', crawlerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2977,8 +2977,8 @@ export class Glue extends PolicyStatement {
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:workflow/${WorkflowName}';
     arn = arn.replace('${WorkflowName}', workflowName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2999,8 +2999,8 @@ export class Glue extends PolicyStatement {
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:mlTransform/${TransformId}';
     arn = arn.replace('${TransformId}', transformId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

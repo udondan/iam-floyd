@@ -2402,8 +2402,8 @@ export class Lightsail extends PolicyStatement {
   public onDomain(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2424,8 +2424,8 @@ export class Lightsail extends PolicyStatement {
   public onInstance(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2446,8 +2446,8 @@ export class Lightsail extends PolicyStatement {
   public onInstanceSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2468,8 +2468,8 @@ export class Lightsail extends PolicyStatement {
   public onKeyPair(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2490,8 +2490,8 @@ export class Lightsail extends PolicyStatement {
   public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2512,8 +2512,8 @@ export class Lightsail extends PolicyStatement {
   public onDisk(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2534,8 +2534,8 @@ export class Lightsail extends PolicyStatement {
   public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2556,8 +2556,8 @@ export class Lightsail extends PolicyStatement {
   public onLoadBalancer(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2575,8 +2575,8 @@ export class Lightsail extends PolicyStatement {
   public onPeeredVpc(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:PeeredVpc/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2594,8 +2594,8 @@ export class Lightsail extends PolicyStatement {
   public onLoadBalancerTlsCertificate(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancerTlsCertificate/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2613,8 +2613,8 @@ export class Lightsail extends PolicyStatement {
   public onExportSnapshotRecord(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:ExportSnapshotRecord/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2632,8 +2632,8 @@ export class Lightsail extends PolicyStatement {
   public onCloudFormationStackRecord(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:CloudFormationStackRecord/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2654,8 +2654,8 @@ export class Lightsail extends PolicyStatement {
   public onRelationalDatabase(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2676,8 +2676,8 @@ export class Lightsail extends PolicyStatement {
   public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}';
     arn = arn.replace('${Id}', id);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

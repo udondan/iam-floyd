@@ -225,8 +225,8 @@ export class Cassandra extends PolicyStatement {
   public onKeyspace(keyspaceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}';
     arn = arn.replace('${KeyspaceName}', keyspaceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -249,8 +249,8 @@ export class Cassandra extends PolicyStatement {
     var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}';
     arn = arn.replace('${KeyspaceName}', keyspaceName);
     arn = arn.replace('${TableName}', tableName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

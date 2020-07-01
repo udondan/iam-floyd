@@ -594,8 +594,8 @@ export class Kinesis extends PolicyStatement {
   public onStream(streamName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}';
     arn = arn.replace('${StreamName}', streamName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -617,8 +617,8 @@ export class Kinesis extends PolicyStatement {
     arn = arn.replace('${StreamName}', streamName);
     arn = arn.replace('${ConsumerName}', consumerName);
     arn = arn.replace('${ConsumerCreationTimpstamp}', consumerCreationTimpstamp);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

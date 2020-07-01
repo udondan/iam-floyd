@@ -800,7 +800,7 @@ export class Networkmanager extends PolicyStatement {
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -822,7 +822,7 @@ export class Networkmanager extends PolicyStatement {
     var arn = 'arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -844,7 +844,7 @@ export class Networkmanager extends PolicyStatement {
     var arn = 'arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -866,7 +866,7 @@ export class Networkmanager extends PolicyStatement {
     var arn = 'arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}';
     arn = arn.replace('${GlobalNetworkId}', globalNetworkId);
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

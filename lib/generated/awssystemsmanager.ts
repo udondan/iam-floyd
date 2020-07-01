@@ -2709,8 +2709,8 @@ export class Ssm extends PolicyStatement {
   public onAssociation(associationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:association/${AssociationId}';
     arn = arn.replace('${AssociationId}', associationId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2728,8 +2728,8 @@ export class Ssm extends PolicyStatement {
   public onAutomationExecution(automationExecutionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:automation-execution/${AutomationExecutionId}';
     arn = arn.replace('${AutomationExecutionId}', automationExecutionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2749,8 +2749,8 @@ export class Ssm extends PolicyStatement {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName}:${VersionId}';
     arn = arn.replace('${AutomationDefinitionName}', automationDefinitionName);
     arn = arn.replace('${VersionId}', versionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2772,8 +2772,8 @@ export class Ssm extends PolicyStatement {
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}';
     arn = arn.replace('${DocumentName}', documentName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2795,8 +2795,8 @@ export class Ssm extends PolicyStatement {
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
     arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2818,8 +2818,8 @@ export class Ssm extends PolicyStatement {
   public onMaintenancewindow(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:maintenancewindow/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2841,8 +2841,8 @@ export class Ssm extends PolicyStatement {
   public onManagedInstance(managedInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${ManagedInstanceName}';
     arn = arn.replace('${ManagedInstanceName}', managedInstanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2860,8 +2860,8 @@ export class Ssm extends PolicyStatement {
   public onManagedInstanceInventory(instanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance-inventory/${InstanceId}';
     arn = arn.replace('${InstanceId}', instanceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2879,8 +2879,8 @@ export class Ssm extends PolicyStatement {
   public onOpsitem(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:opsitem/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2902,8 +2902,8 @@ export class Ssm extends PolicyStatement {
   public onParameter(fullyQualifiedParameterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:parameter/${FullyQualifiedParameterName}';
     arn = arn.replace('${FullyQualifiedParameterName}', fullyQualifiedParameterName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2925,8 +2925,8 @@ export class Ssm extends PolicyStatement {
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:patchbaseline/${PatchBaselineIdResourceId}';
     arn = arn.replace('${PatchBaselineIdResourceId}', patchBaselineIdResourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2944,8 +2944,8 @@ export class Ssm extends PolicyStatement {
   public onSession(sessionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:session/${SessionId}';
     arn = arn.replace('${SessionId}', sessionId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2963,8 +2963,8 @@ export class Ssm extends PolicyStatement {
   public onResourcedatasync(syncName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:resource-data-sync/${SyncName}';
     arn = arn.replace('${SyncName}', syncName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2982,8 +2982,8 @@ export class Ssm extends PolicyStatement {
   public onServicesetting(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:servicesetting/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3001,8 +3001,8 @@ export class Ssm extends PolicyStatement {
   public onWindowtarget(windowTargetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:windowtarget/${WindowTargetId}';
     arn = arn.replace('${WindowTargetId}', windowTargetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3020,8 +3020,8 @@ export class Ssm extends PolicyStatement {
   public onWindowtask(windowTaskId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:windowtask/${WindowTaskId}';
     arn = arn.replace('${WindowTaskId}', windowTaskId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

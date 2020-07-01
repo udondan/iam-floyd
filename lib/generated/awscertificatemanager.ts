@@ -333,8 +333,8 @@ export class Acm extends PolicyStatement {
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}';
     arn = arn.replace('${CertificateId}', certificateId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

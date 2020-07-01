@@ -2760,8 +2760,8 @@ export class S3 extends PolicyStatement {
   public onAccesspoint(accessPointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:s3:${Region}:${Account}:accesspoint/${AccessPointName}';
     arn = arn.replace('${AccessPointName}', accessPointName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2811,8 +2811,8 @@ export class S3 extends PolicyStatement {
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:s3:${Region}:${Account}:job/${JobId}';
     arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

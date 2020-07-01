@@ -490,8 +490,8 @@ export class AcmPca extends PolicyStatement {
   public onCertificateAuthority(certificateAuthorityId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:acm-pca:${Region}:${Account}:certificate-authority/${CertificateAuthorityId}';
     arn = arn.replace('${CertificateAuthorityId}', certificateAuthorityId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

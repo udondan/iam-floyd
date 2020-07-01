@@ -686,8 +686,8 @@ export class Workspaces extends PolicyStatement {
   public onWorkspacebundle(bundleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspacebundle/${BundleId}';
     arn = arn.replace('${BundleId}', bundleId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -705,8 +705,8 @@ export class Workspaces extends PolicyStatement {
   public onWorkspaceipgroup(groupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspaceipgroup/${GroupId}';
     arn = arn.replace('${GroupId}', groupId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -724,8 +724,8 @@ export class Workspaces extends PolicyStatement {
   public onDirectoryid(directoryId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:directory/${DirectoryId}';
     arn = arn.replace('${DirectoryId}', directoryId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -743,8 +743,8 @@ export class Workspaces extends PolicyStatement {
   public onWorkspaceid(workspaceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:workspaces:${Region}:${Account}:workspace/${WorkspaceId}';
     arn = arn.replace('${WorkspaceId}', workspaceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

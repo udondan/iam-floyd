@@ -903,8 +903,8 @@ export class Logs extends PolicyStatement {
   public onLogGroup(logGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}';
     arn = arn.replace('${LogGroupName}', logGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -922,8 +922,8 @@ export class Logs extends PolicyStatement {
     var arn = 'arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}';
     arn = arn.replace('${LogGroupName}', logGroupName);
     arn = arn.replace('${LogStreamName}', logStreamName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

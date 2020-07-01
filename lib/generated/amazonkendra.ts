@@ -641,8 +641,8 @@ export class Kendra extends PolicyStatement {
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}';
     arn = arn.replace('${IndexId}', indexId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -665,8 +665,8 @@ export class Kendra extends PolicyStatement {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}';
     arn = arn.replace('${IndexId}', indexId);
     arn = arn.replace('${DataSourceId}', dataSourceId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -689,8 +689,8 @@ export class Kendra extends PolicyStatement {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}';
     arn = arn.replace('${IndexId}', indexId);
     arn = arn.replace('${FaqId}', faqId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

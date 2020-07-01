@@ -316,8 +316,8 @@ export class Firehose extends PolicyStatement {
   public onDeliverystream(deliveryStreamName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}';
     arn = arn.replace('${DeliveryStreamName}', deliveryStreamName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

@@ -3121,8 +3121,8 @@ export class Rds extends PolicyStatement {
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
     arn = arn.replace('${DbClusterInstanceName}', dbClusterInstanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3141,8 +3141,8 @@ export class Rds extends PolicyStatement {
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}';
     arn = arn.replace('${DbClusterEndpoint}', dbClusterEndpoint);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3164,8 +3164,8 @@ export class Rds extends PolicyStatement {
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}';
     arn = arn.replace('${ClusterParameterGroupName}', clusterParameterGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3187,8 +3187,8 @@ export class Rds extends PolicyStatement {
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}';
     arn = arn.replace('${ClusterSnapshotName}', clusterSnapshotName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3218,8 +3218,8 @@ export class Rds extends PolicyStatement {
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}';
     arn = arn.replace('${DbInstanceName}', dbInstanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3241,8 +3241,8 @@ export class Rds extends PolicyStatement {
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}';
     arn = arn.replace('${SubscriptionName}', subscriptionName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3259,7 +3259,7 @@ export class Rds extends PolicyStatement {
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}';
     arn = arn.replace('${GlobalCluster}', globalCluster);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3281,8 +3281,8 @@ export class Rds extends PolicyStatement {
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}';
     arn = arn.replace('${OptionGroupName}', optionGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3304,8 +3304,8 @@ export class Rds extends PolicyStatement {
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}';
     arn = arn.replace('${ParameterGroupName}', parameterGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3326,8 +3326,8 @@ export class Rds extends PolicyStatement {
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}';
     arn = arn.replace('${DbProxyId}', dbProxyId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3349,8 +3349,8 @@ export class Rds extends PolicyStatement {
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}';
     arn = arn.replace('${ReservedDbInstanceName}', reservedDbInstanceName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3372,8 +3372,8 @@ export class Rds extends PolicyStatement {
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}';
     arn = arn.replace('${SecurityGroupName}', securityGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3395,8 +3395,8 @@ export class Rds extends PolicyStatement {
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}';
     arn = arn.replace('${SnapshotName}', snapshotName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3418,8 +3418,8 @@ export class Rds extends PolicyStatement {
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}';
     arn = arn.replace('${SubnetGroupName}', subnetGroupName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3437,8 +3437,8 @@ export class Rds extends PolicyStatement {
   public onTarget(targetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:target:${TargetId}';
     arn = arn.replace('${TargetId}', targetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -3459,8 +3459,8 @@ export class Rds extends PolicyStatement {
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}';
     arn = arn.replace('${TargetGroupId}', targetGroupId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

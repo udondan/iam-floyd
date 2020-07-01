@@ -65,8 +65,8 @@ export class RdsDb extends PolicyStatement {
     var arn = 'arn:${Partition}:rds-db:${Region}:${Account}:dbuser:${DbiResourceId}/${DbUserName}';
     arn = arn.replace('${DbiResourceId}', dbiResourceId);
     arn = arn.replace('${DbUserName}', dbUserName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

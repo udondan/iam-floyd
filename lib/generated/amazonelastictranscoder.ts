@@ -410,8 +410,8 @@ export class Elastictranscoder extends PolicyStatement {
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:job/${JobId}';
     arn = arn.replace('${JobId}', jobId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -429,8 +429,8 @@ export class Elastictranscoder extends PolicyStatement {
   public onPipeline(pipelineId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:pipeline/${PipelineId}';
     arn = arn.replace('${PipelineId}', pipelineId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -448,8 +448,8 @@ export class Elastictranscoder extends PolicyStatement {
   public onPreset(presetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elastictranscoder:${Region}:${Account}:preset/${PresetId}';
     arn = arn.replace('${PresetId}', presetId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

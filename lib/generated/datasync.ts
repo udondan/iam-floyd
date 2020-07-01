@@ -661,8 +661,8 @@ export class Datasync extends PolicyStatement {
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}';
     arn = arn.replace('${AgentId}', agentId);
-    arn = arn.replace('${AccountId}', accountId || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -683,8 +683,8 @@ export class Datasync extends PolicyStatement {
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}';
     arn = arn.replace('${LocationId}', locationId);
-    arn = arn.replace('${AccountId}', accountId || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -705,8 +705,8 @@ export class Datasync extends PolicyStatement {
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}';
     arn = arn.replace('${TaskId}', taskId);
-    arn = arn.replace('${AccountId}', accountId || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -726,8 +726,8 @@ export class Datasync extends PolicyStatement {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}/execution/${ExecutionId}';
     arn = arn.replace('${TaskId}', taskId);
     arn = arn.replace('${ExecutionId}', executionId);
-    arn = arn.replace('${AccountId}', accountId || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

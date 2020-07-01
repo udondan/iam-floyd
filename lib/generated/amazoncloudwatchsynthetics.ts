@@ -267,7 +267,7 @@ export class Synthetics extends PolicyStatement {
   public onCanary(canaryName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:synthetics::${Account}:canary:${CanaryName}';
     arn = arn.replace('${CanaryName}', canaryName);
-    arn = arn.replace('${Account}', account || '');
+    arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

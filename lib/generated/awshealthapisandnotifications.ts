@@ -284,8 +284,8 @@ export class Health extends PolicyStatement {
     arn = arn.replace('${Service}', service);
     arn = arn.replace('${EventTypeCode}', eventTypeCode);
     arn = arn.replace('${EventTypePlusId}', eventTypePlusId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

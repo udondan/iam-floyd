@@ -256,8 +256,8 @@ export class Sdb extends PolicyStatement {
   public onDomain(domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sdb:${Region}:${Account}:domain/${DomainName}';
     arn = arn.replace('${DomainName}', domainName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

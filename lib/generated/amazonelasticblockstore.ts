@@ -111,7 +111,7 @@ export class Ebs extends PolicyStatement {
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}';
     arn = arn.replace('${SnapshotId}', snapshotId);
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

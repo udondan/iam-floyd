@@ -1171,7 +1171,7 @@ export class Organizations extends PolicyStatement {
     var arn = 'arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}';
     arn = arn.replace('${MasterAccountId}', masterAccountId);
     arn = arn.replace('${OrganizationId}', organizationId);
-    arn = arn.replace('${AccountId}', accountId || '');
+    arn = arn.replace('${AccountId}', accountId || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

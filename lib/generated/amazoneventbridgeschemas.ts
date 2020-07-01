@@ -742,8 +742,8 @@ export class Schemas extends PolicyStatement {
   public onDiscoverer(discovererId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}';
     arn = arn.replace('${DiscovererId}', discovererId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -764,8 +764,8 @@ export class Schemas extends PolicyStatement {
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}';
     arn = arn.replace('${RegistryName}', registryName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -788,8 +788,8 @@ export class Schemas extends PolicyStatement {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}';
     arn = arn.replace('${RegistryName}', registryName);
     arn = arn.replace('${SchemaName}', schemaName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

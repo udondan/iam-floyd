@@ -445,8 +445,8 @@ export class AccessAnalyzer extends PolicyStatement {
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}';
     arn = arn.replace('${AnalyzerName}', analyzerName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -466,8 +466,8 @@ export class AccessAnalyzer extends PolicyStatement {
     var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}/archive-rule/${RuleName}';
     arn = arn.replace('${AnalyzerName}', analyzerName);
     arn = arn.replace('${RuleName}', ruleName);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

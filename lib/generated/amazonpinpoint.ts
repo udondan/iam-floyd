@@ -2552,8 +2552,8 @@ export class Mobiletargeting extends PolicyStatement {
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}';
     arn = arn.replace('${AppId}', appId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2576,8 +2576,8 @@ export class Mobiletargeting extends PolicyStatement {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/campaigns/${CampaignId}';
     arn = arn.replace('${AppId}', appId);
     arn = arn.replace('${CampaignId}', campaignId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2600,8 +2600,8 @@ export class Mobiletargeting extends PolicyStatement {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}';
     arn = arn.replace('${AppId}', appId);
     arn = arn.replace('${JourneyId}', journeyId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2624,8 +2624,8 @@ export class Mobiletargeting extends PolicyStatement {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/segments/${SegmentId}';
     arn = arn.replace('${AppId}', appId);
     arn = arn.replace('${SegmentId}', segmentId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2648,8 +2648,8 @@ export class Mobiletargeting extends PolicyStatement {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:templates/${TemplateName}/${ChannelType}';
     arn = arn.replace('${TemplateName}', templateName);
     arn = arn.replace('${ChannelType}', channelType);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
@@ -2667,8 +2667,8 @@ export class Mobiletargeting extends PolicyStatement {
   public onRecommenders(recommenderId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:recommenders/${RecommenderId}';
     arn = arn.replace('${RecommenderId}', recommenderId);
-    arn = arn.replace('${Account}', account || '');
-    arn = arn.replace('${Region}', region || '');
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
