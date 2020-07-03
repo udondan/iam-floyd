@@ -413,6 +413,8 @@ If this statement annoys you, this package is not for you.
 * [cdk-iam-actions](https://github.com/spacerat/cdk-iam-actions)
 * [cdk-iam-generator](https://github.com/srihariph/cdk-iam-generator)
 * [iam-policy-generator](https://github.com/aletheia/iam-policy-generator)
+* [policyuniverse](https://github.com/Netflix-Skunkworks/policyuniverse)
+* [policy_sentry](https://github.com/salesforce/policy_sentry)
 
 ## <a name='Legal'></a>Legal
 
