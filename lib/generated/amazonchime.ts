@@ -263,6 +263,11 @@ export class Chime extends PolicyStatement {
       "description": "Grants permission to delete the specified Amazon Chime Voice Connector",
       "accessLevel": "Write"
     },
+    "DeleteVoiceConnectorEmergencyCallingConfiguration": {
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorEmergencyCallingConfiguration.html",
+      "description": "Grants permission to delete emergency calling configuration for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Write"
+    },
     "DeleteVoiceConnectorGroup": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorGroup.html",
       "description": "Grants permission to delete the specified Amazon Chime Voice Connector Group",
@@ -446,6 +451,11 @@ export class Chime extends PolicyStatement {
     "GetVoiceConnector": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnector.html",
       "description": "Grants permission to get details for the specified Amazon Chime Voice Connector",
+      "accessLevel": "Read"
+    },
+    "GetVoiceConnectorEmergencyCallingConfiguration": {
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorEmergencyCallingConfiguration.html",
+      "description": "Grants permission to get details of the emergency calling configuration for the specified Amazon Chime Voice Connector",
       "accessLevel": "Read"
     },
     "GetVoiceConnectorGroup": {
@@ -661,6 +671,11 @@ export class Chime extends PolicyStatement {
     "PutRetentionSettings": {
       "url": "",
       "description": "Puts retention settings for the specified Amazon Chime account",
+      "accessLevel": "Write"
+    },
+    "PutVoiceConnectorEmergencyCallingConfiguration": {
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorEmergencyCallingConfiguration.html",
+      "description": "Grants permission to add emergency calling configuration for the specified Amazon Chime Voice Connector",
       "accessLevel": "Write"
     },
     "PutVoiceConnectorLoggingConfiguration": {
@@ -1486,6 +1501,18 @@ export class Chime extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete emergency calling configuration for the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorEmergencyCallingConfiguration.html
+   */
+  public deleteVoiceConnectorEmergencyCallingConfiguration() {
+    this.add('chime:DeleteVoiceConnectorEmergencyCallingConfiguration');
+    return this;
+  }
+
+  /**
    * Grants permission to delete the specified Amazon Chime Voice Connector Group
    *
    * Access Level: Write
@@ -1894,6 +1921,18 @@ export class Chime extends PolicyStatement {
    */
   public getVoiceConnector() {
     this.add('chime:GetVoiceConnector');
+    return this;
+  }
+
+  /**
+   * Grants permission to get details of the emergency calling configuration for the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_GetVoiceConnectorEmergencyCallingConfiguration.html
+   */
+  public getVoiceConnectorEmergencyCallingConfiguration() {
+    this.add('chime:GetVoiceConnectorEmergencyCallingConfiguration');
     return this;
   }
 
@@ -2350,6 +2389,18 @@ export class Chime extends PolicyStatement {
    */
   public putRetentionSettings() {
     this.add('chime:PutRetentionSettings');
+    return this;
+  }
+
+  /**
+   * Grants permission to add emergency calling configuration for the specified Amazon Chime Voice Connector
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorEmergencyCallingConfiguration.html
+   */
+  public putVoiceConnectorEmergencyCallingConfiguration() {
+    this.add('chime:PutVoiceConnectorEmergencyCallingConfiguration');
     return this;
   }
 

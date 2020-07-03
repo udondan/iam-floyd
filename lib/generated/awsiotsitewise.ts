@@ -11,7 +11,7 @@ export class Iotsitewise extends PolicyStatement {
   public actions: Actions = {
     "AssociateAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateAssets.html",
-      "description": "Associate child assets to the parent via specified model hiearchy.",
+      "description": "Grants permission to associate a child asset to a parent asset by a hierarchy",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset": {
@@ -21,7 +21,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "BatchAssociateProjectAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchAssociateProjectAssets.html",
-      "description": "Grants permission to associate assets to a specified project.",
+      "description": "Grants permission to associate assets to a project",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -31,7 +31,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "BatchDisassociateProjectAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchDisassociateProjectAssets.html",
-      "description": "Grants permission to disassociate assets from a specified project.",
+      "description": "Grants permission to disassociate assets from a project",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -41,7 +41,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "BatchPutAssetPropertyValue": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html",
-      "description": "Puts batch of property values for the specified properties.",
+      "description": "Grants permission to put property values for asset properties",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset": {
@@ -51,7 +51,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreateAccessPolicy": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html",
-      "description": "Grants permission to create access policy for a specified portal or a project.",
+      "description": "Grants permission to create an access policy for a portal or a project",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "portal": {
@@ -68,7 +68,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreateAsset": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html",
-      "description": "Creates an asset.",
+      "description": "Grants permission to create an asset from an asset model",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset-model": {
@@ -82,7 +82,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreateAssetModel": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html",
-      "description": "Creates an asset model.",
+      "description": "Grants permission to create an asset model",
       "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
@@ -91,7 +91,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreateDashboard": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html",
-      "description": "Grants permission to create a dashboard within a specified project.",
+      "description": "Grants permission to create a dashboard in a project",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -105,7 +105,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreateGateway": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html",
-      "description": "Creates a gateway.",
+      "description": "Grants permission to create a gateway",
       "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
@@ -114,7 +114,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreatePortal": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html",
-      "description": "Grants permission to create a portal.",
+      "description": "Grants permission to create a portal",
       "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
@@ -123,7 +123,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "CreateProject": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html",
-      "description": "Grants permission to create a project within a specified portal.",
+      "description": "Grants permission to create a project in a portal",
       "accessLevel": "Write",
       "resourceTypes": {
         "portal": {
@@ -137,7 +137,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeleteAccessPolicy": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAccessPolicy.html",
-      "description": "Grants permission to delete a specified access policy.",
+      "description": "Grants permission to delete an access policy",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "access-policy": {
@@ -147,7 +147,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeleteAsset": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAsset.html",
-      "description": "Deletes the specified asset.",
+      "description": "Grants permission to delete an asset",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset": {
@@ -157,7 +157,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeleteAssetModel": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteAssetModel.html",
-      "description": "Deletes the specified asset model.",
+      "description": "Grants permission to delete an asset model",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset-model": {
@@ -167,7 +167,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeleteDashboard": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteDashboard.html",
-      "description": "Grants permission to delete a specified dashboard.",
+      "description": "Grants permission to delete a dashboard",
       "accessLevel": "Write",
       "resourceTypes": {
         "dashboard": {
@@ -177,7 +177,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeleteGateway": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteGateway.html",
-      "description": "Deletes the specified gateway.",
+      "description": "Grants permission to delete a gateway",
       "accessLevel": "Write",
       "resourceTypes": {
         "gateway": {
@@ -187,7 +187,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeletePortal": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html",
-      "description": "Grants permission to delete a specified portal.",
+      "description": "Grants permission to delete a portal",
       "accessLevel": "Write",
       "resourceTypes": {
         "portal": {
@@ -197,7 +197,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DeleteProject": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeleteProject.html",
-      "description": "Grants permission to delete a specified project.",
+      "description": "Grants permission to delete a project",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -207,7 +207,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeAccessPolicy": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAccessPolicy.html",
-      "description": "Grants permission to describe a specified access policy.",
+      "description": "Grants permission to describe an access policy",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "access-policy": {
@@ -217,7 +217,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeAsset": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html",
-      "description": "Describes the specified asset.",
+      "description": "Grants permission to describe an asset",
       "accessLevel": "Read",
       "resourceTypes": {
         "asset": {
@@ -227,7 +227,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeAssetModel": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html",
-      "description": "Describes the specified asset model.",
+      "description": "Grants permission to describe an asset model",
       "accessLevel": "Read",
       "resourceTypes": {
         "asset-model": {
@@ -237,7 +237,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeAssetProperty": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html",
-      "description": "Describes the specified asset property.",
+      "description": "Grants permission to describe an asset property",
       "accessLevel": "Read",
       "resourceTypes": {
         "asset": {
@@ -247,7 +247,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeDashboard": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeDashboard.html",
-      "description": "Grants permission to describe a specified dashboard.",
+      "description": "Grants permission to describe a dashboard",
       "accessLevel": "Read",
       "resourceTypes": {
         "dashboard": {
@@ -257,7 +257,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeGateway": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html",
-      "description": "Describes the gateway for the account.",
+      "description": "Grants permission to describe a gateway",
       "accessLevel": "Read",
       "resourceTypes": {
         "gateway": {
@@ -267,7 +267,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeGatewayCapabilityConfiguration": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html",
-      "description": "Describes the specified gateway capability configuration.",
+      "description": "Grants permission to describe a capability configuration for a gateway",
       "accessLevel": "Read",
       "resourceTypes": {
         "gateway": {
@@ -277,12 +277,12 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeLoggingOptions": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeLoggingOptions.html",
-      "description": "Describes the logging options for the account.",
+      "description": "Grants permission to describe logging options for the AWS account",
       "accessLevel": "Read"
     },
     "DescribePortal": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribePortal.html",
-      "description": "Grants permission to describe a specified portal.",
+      "description": "Grants permission to describe a portal",
       "accessLevel": "Read",
       "resourceTypes": {
         "portal": {
@@ -292,7 +292,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DescribeProject": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeProject.html",
-      "description": "Grants permission to describe a specified project.",
+      "description": "Grants permission to describe a project",
       "accessLevel": "Read",
       "resourceTypes": {
         "project": {
@@ -302,7 +302,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "DisassociateAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html",
-      "description": "Disassociate child assets from the parent for specified model hiearchy.",
+      "description": "Grants permission to disassociate a child asset from a parent asset by a hierarchy",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset": {
@@ -312,7 +312,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "GetAssetPropertyAggregates": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyAggregates.html",
-      "description": "Fetches the aggregated property values for the specified property.",
+      "description": "Grants permission to retrieve computed aggregates for an asset property",
       "accessLevel": "Read",
       "resourceTypes": {
         "asset": {
@@ -322,7 +322,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "GetAssetPropertyValue": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html",
-      "description": "Fetches the latest property value for the specified property.",
+      "description": "Grants permission to retrieve the latest value for an asset property",
       "accessLevel": "Read",
       "resourceTypes": {
         "asset": {
@@ -332,7 +332,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "GetAssetPropertyValueHistory": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValueHistory.html",
-      "description": "Fetches the property value history for the specified property.",
+      "description": "Grants permission to retrieve the value history for an asset property",
       "accessLevel": "Read",
       "resourceTypes": {
         "asset": {
@@ -342,7 +342,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListAccessPolicies": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAccessPolicies.html",
-      "description": "Grants permission to list access policies for a specified portal or a project.",
+      "description": "Grants permission to list all access policies for an identity or a resource",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "portal": {
@@ -355,12 +355,12 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListAssetModels": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html",
-      "description": "Lists the asset models for the account.",
+      "description": "Grants permission to list all asset models",
       "accessLevel": "List"
     },
     "ListAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssets.html",
-      "description": "Lists the assets for the account.",
+      "description": "Grants permission to list all assets",
       "accessLevel": "List",
       "resourceTypes": {
         "asset-model": {
@@ -370,7 +370,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListAssociatedAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssociatedAssets.html",
-      "description": "Lists the assets associated to the parent via specified model hiearchy.",
+      "description": "Grants permission to list all assets associated to an asset by a hierarchy",
       "accessLevel": "List",
       "resourceTypes": {
         "asset": {
@@ -380,7 +380,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListDashboards": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListDashboards.html",
-      "description": "Grants permission to list dashboards within a specified project.",
+      "description": "Grants permission to list all dashboards in a project",
       "accessLevel": "List",
       "resourceTypes": {
         "project": {
@@ -390,17 +390,17 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListGateways": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListGateways.html",
-      "description": "Lists the gateways for the account.",
+      "description": "Grants permission to list all gateways",
       "accessLevel": "List"
     },
     "ListPortals": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListPortals.html",
-      "description": "Grants permission to list portals in the account.",
+      "description": "Grants permission to list all portals",
       "accessLevel": "List"
     },
     "ListProjectAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjectAssets.html",
-      "description": "Grants permission to list assets associated with a specified project.",
+      "description": "Grants permission to list all assets associated with a project",
       "accessLevel": "List",
       "resourceTypes": {
         "project": {
@@ -410,7 +410,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListProjects": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListProjects.html",
-      "description": "Grants permission to list projects within a specified portal.",
+      "description": "Grants permission to list all projects in a portal",
       "accessLevel": "List",
       "resourceTypes": {
         "portal": {
@@ -420,7 +420,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to lists tag for a resource.",
+      "description": "Grants permission to list all tags for a resource",
       "accessLevel": "Read",
       "resourceTypes": {
         "access-policy": {
@@ -451,12 +451,12 @@ export class Iotsitewise extends PolicyStatement {
     },
     "PutLoggingOptions": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutLoggingOptions.html",
-      "description": "Sets the logging options.",
+      "description": "Grants permission to set logging options for the AWS account",
       "accessLevel": "Write"
     },
     "TagResource": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to tag a resource.",
+      "description": "Grants permission to tag a resource",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "access-policy": {
@@ -488,7 +488,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UntagResource": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to untag a resource.",
+      "description": "Grants permission to untag a resource",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "access-policy": {
@@ -519,7 +519,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateAccessPolicy": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAccessPolicy.html",
-      "description": "Grants permission to update a specified access policy.",
+      "description": "Grants permission to update an access policy",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "access-policy": {
@@ -529,7 +529,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateAsset": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAsset.html",
-      "description": "Updates the specified asset.",
+      "description": "Grants permission to update an asset",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset": {
@@ -539,7 +539,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateAssetModel": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html",
-      "description": "Updates the specified asset model.",
+      "description": "Grants permission to update an asset model",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset-model": {
@@ -549,7 +549,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateAssetProperty": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html",
-      "description": "Updates the specified asset property.",
+      "description": "Grants permission to update an asset property",
       "accessLevel": "Write",
       "resourceTypes": {
         "asset": {
@@ -559,7 +559,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateDashboard": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateDashboard.html",
-      "description": "Grants permission to update a specified dashboard.",
+      "description": "Grants permission to update a dashboard",
       "accessLevel": "Write",
       "resourceTypes": {
         "dashboard": {
@@ -569,7 +569,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateGateway": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGateway.html",
-      "description": "Updates the specified gateway.",
+      "description": "Grants permission to update a gateway",
       "accessLevel": "Write",
       "resourceTypes": {
         "gateway": {
@@ -579,7 +579,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateGatewayCapabilityConfiguration": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateGatewayCapabilityConfiguration.html",
-      "description": "Updates the specified gateway capability configuration.",
+      "description": "Grants permission to update a capability configuration for a gateway",
       "accessLevel": "Write",
       "resourceTypes": {
         "gateway": {
@@ -589,7 +589,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdatePortal": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdatePortal.html",
-      "description": "Grants permission to update a specified portal.",
+      "description": "Grants permission to update a portal",
       "accessLevel": "Write",
       "resourceTypes": {
         "portal": {
@@ -599,7 +599,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "UpdateProject": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateProject.html",
-      "description": "Grants permission to update a specified project.",
+      "description": "Grants permission to update a project",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -611,7 +611,7 @@ export class Iotsitewise extends PolicyStatement {
   public resourceTypes: ResourceTypes = {
     "asset": {
       "name": "asset",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Asset.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -619,7 +619,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "asset-model": {
       "name": "asset-model",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetModel.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -627,7 +627,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "gateway": {
       "name": "gateway",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Gateway.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -635,7 +635,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "portal": {
       "name": "portal",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Portal.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -643,7 +643,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "project": {
       "name": "project",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Project.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -651,7 +651,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "dashboard": {
       "name": "dashboard",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Dashboard.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -659,7 +659,7 @@ export class Iotsitewise extends PolicyStatement {
     },
     "access-policy": {
       "name": "access-policy",
-      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AccessPolicy.html",
+      "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html",
       "arn": "arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -677,7 +677,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Associate child assets to the parent via specified model hiearchy.
+   * Grants permission to associate a child asset to a parent asset by a hierarchy
    *
    * Access Level: Write
    *
@@ -689,7 +689,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to associate assets to a specified project.
+   * Grants permission to associate assets to a project
    *
    * Access Level: Write
    *
@@ -701,7 +701,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to disassociate assets from a specified project.
+   * Grants permission to disassociate assets from a project
    *
    * Access Level: Write
    *
@@ -713,7 +713,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Puts batch of property values for the specified properties.
+   * Grants permission to put property values for asset properties
    *
    * Access Level: Write
    *
@@ -725,7 +725,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create access policy for a specified portal or a project.
+   * Grants permission to create an access policy for a portal or a project
    *
    * Access Level: Permissions management
    *
@@ -737,7 +737,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Creates an asset.
+   * Grants permission to create an asset from an asset model
    *
    * Access Level: Write
    *
@@ -749,7 +749,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Creates an asset model.
+   * Grants permission to create an asset model
    *
    * Access Level: Write
    *
@@ -761,7 +761,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a dashboard within a specified project.
+   * Grants permission to create a dashboard in a project
    *
    * Access Level: Write
    *
@@ -773,7 +773,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Creates a gateway.
+   * Grants permission to create a gateway
    *
    * Access Level: Write
    *
@@ -785,7 +785,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a portal.
+   * Grants permission to create a portal
    *
    * Access Level: Write
    *
@@ -797,7 +797,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a project within a specified portal.
+   * Grants permission to create a project in a portal
    *
    * Access Level: Write
    *
@@ -809,7 +809,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a specified access policy.
+   * Grants permission to delete an access policy
    *
    * Access Level: Permissions management
    *
@@ -821,7 +821,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified asset.
+   * Grants permission to delete an asset
    *
    * Access Level: Write
    *
@@ -833,7 +833,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified asset model.
+   * Grants permission to delete an asset model
    *
    * Access Level: Write
    *
@@ -845,7 +845,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a specified dashboard.
+   * Grants permission to delete a dashboard
    *
    * Access Level: Write
    *
@@ -857,7 +857,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified gateway.
+   * Grants permission to delete a gateway
    *
    * Access Level: Write
    *
@@ -869,7 +869,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a specified portal.
+   * Grants permission to delete a portal
    *
    * Access Level: Write
    *
@@ -881,7 +881,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a specified project.
+   * Grants permission to delete a project
    *
    * Access Level: Write
    *
@@ -893,7 +893,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a specified access policy.
+   * Grants permission to describe an access policy
    *
    * Access Level: Permissions management
    *
@@ -905,7 +905,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Describes the specified asset.
+   * Grants permission to describe an asset
    *
    * Access Level: Read
    *
@@ -917,7 +917,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Describes the specified asset model.
+   * Grants permission to describe an asset model
    *
    * Access Level: Read
    *
@@ -929,7 +929,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Describes the specified asset property.
+   * Grants permission to describe an asset property
    *
    * Access Level: Read
    *
@@ -941,7 +941,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a specified dashboard.
+   * Grants permission to describe a dashboard
    *
    * Access Level: Read
    *
@@ -953,7 +953,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Describes the gateway for the account.
+   * Grants permission to describe a gateway
    *
    * Access Level: Read
    *
@@ -965,7 +965,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Describes the specified gateway capability configuration.
+   * Grants permission to describe a capability configuration for a gateway
    *
    * Access Level: Read
    *
@@ -977,7 +977,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Describes the logging options for the account.
+   * Grants permission to describe logging options for the AWS account
    *
    * Access Level: Read
    *
@@ -989,7 +989,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a specified portal.
+   * Grants permission to describe a portal
    *
    * Access Level: Read
    *
@@ -1001,7 +1001,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe a specified project.
+   * Grants permission to describe a project
    *
    * Access Level: Read
    *
@@ -1013,7 +1013,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Disassociate child assets from the parent for specified model hiearchy.
+   * Grants permission to disassociate a child asset from a parent asset by a hierarchy
    *
    * Access Level: Write
    *
@@ -1025,7 +1025,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Fetches the aggregated property values for the specified property.
+   * Grants permission to retrieve computed aggregates for an asset property
    *
    * Access Level: Read
    *
@@ -1037,7 +1037,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Fetches the latest property value for the specified property.
+   * Grants permission to retrieve the latest value for an asset property
    *
    * Access Level: Read
    *
@@ -1049,7 +1049,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Fetches the property value history for the specified property.
+   * Grants permission to retrieve the value history for an asset property
    *
    * Access Level: Read
    *
@@ -1061,7 +1061,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list access policies for a specified portal or a project.
+   * Grants permission to list all access policies for an identity or a resource
    *
    * Access Level: Permissions management
    *
@@ -1073,7 +1073,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Lists the asset models for the account.
+   * Grants permission to list all asset models
    *
    * Access Level: List
    *
@@ -1085,7 +1085,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Lists the assets for the account.
+   * Grants permission to list all assets
    *
    * Access Level: List
    *
@@ -1097,7 +1097,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Lists the assets associated to the parent via specified model hiearchy.
+   * Grants permission to list all assets associated to an asset by a hierarchy
    *
    * Access Level: List
    *
@@ -1109,7 +1109,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list dashboards within a specified project.
+   * Grants permission to list all dashboards in a project
    *
    * Access Level: List
    *
@@ -1121,7 +1121,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Lists the gateways for the account.
+   * Grants permission to list all gateways
    *
    * Access Level: List
    *
@@ -1133,7 +1133,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list portals in the account.
+   * Grants permission to list all portals
    *
    * Access Level: List
    *
@@ -1145,7 +1145,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list assets associated with a specified project.
+   * Grants permission to list all assets associated with a project
    *
    * Access Level: List
    *
@@ -1157,7 +1157,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list projects within a specified portal.
+   * Grants permission to list all projects in a portal
    *
    * Access Level: List
    *
@@ -1169,7 +1169,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to lists tag for a resource.
+   * Grants permission to list all tags for a resource
    *
    * Access Level: Read
    *
@@ -1181,7 +1181,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Sets the logging options.
+   * Grants permission to set logging options for the AWS account
    *
    * Access Level: Write
    *
@@ -1193,7 +1193,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to tag a resource.
+   * Grants permission to tag a resource
    *
    * Access Level: Tagging
    *
@@ -1205,7 +1205,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to untag a resource.
+   * Grants permission to untag a resource
    *
    * Access Level: Tagging
    *
@@ -1217,7 +1217,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a specified access policy.
+   * Grants permission to update an access policy
    *
    * Access Level: Permissions management
    *
@@ -1229,7 +1229,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Updates the specified asset.
+   * Grants permission to update an asset
    *
    * Access Level: Write
    *
@@ -1241,7 +1241,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Updates the specified asset model.
+   * Grants permission to update an asset model
    *
    * Access Level: Write
    *
@@ -1253,7 +1253,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Updates the specified asset property.
+   * Grants permission to update an asset property
    *
    * Access Level: Write
    *
@@ -1265,7 +1265,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a specified dashboard.
+   * Grants permission to update a dashboard
    *
    * Access Level: Write
    *
@@ -1277,7 +1277,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Updates the specified gateway.
+   * Grants permission to update a gateway
    *
    * Access Level: Write
    *
@@ -1289,7 +1289,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Updates the specified gateway capability configuration.
+   * Grants permission to update a capability configuration for a gateway
    *
    * Access Level: Write
    *
@@ -1301,7 +1301,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a specified portal.
+   * Grants permission to update a portal
    *
    * Access Level: Write
    *
@@ -1313,7 +1313,7 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update a specified project.
+   * Grants permission to update a project
    *
    * Access Level: Write
    *
@@ -1327,7 +1327,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type asset to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Asset.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html
    *
    * @param assetId - Identifier for the assetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1349,7 +1349,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type asset-model to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetModel.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html
    *
    * @param assetModelId - Identifier for the assetModelId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1371,7 +1371,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type gateway to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Gateway.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html
    *
    * @param gatewayId - Identifier for the gatewayId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1393,7 +1393,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type portal to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Portal.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html
    *
    * @param portalId - Identifier for the portalId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1415,7 +1415,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type project to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Project.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html
    *
    * @param projectId - Identifier for the projectId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1437,7 +1437,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type dashboard to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Dashboard.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
    *
    * @param dashboardId - Identifier for the dashboardId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1459,7 +1459,7 @@ export class Iotsitewise extends PolicyStatement {
   /**
    * Adds a resource of type access-policy to the statement
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AccessPolicy.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
    *
    * @param accessPolicyId - Identifier for the accessPolicyId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1479,9 +1479,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * String of asset IDs in the asset hierarchy separated by forward slash.
+   * Filters access by an asset hierarchy path, which is the string of asset IDs in the asset's hierarchy, each separated by a forward slash
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_assetHierarchyPath.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1491,9 +1491,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * ID of an asset being associated as a child to another asset.
+   * Filters access by the ID of a child asset being associated to a parent asset
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_childAssetId.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1503,9 +1503,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Group ID.
+   * Filters access by the ID of an AWS Single Sign-On group
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GroupId.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1515,9 +1515,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Portal ID.
+   * Filters access by the ID of a portal
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PortalId.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1527,9 +1527,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Project ID.
+   * Filters access by the ID of a project
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ProjectId.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1539,9 +1539,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Property ID.
+   * Filters access by the ID of an asset property
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PropertyId.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1551,9 +1551,9 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * User ID.
+   * Filters access by the ID of an AWS Single Sign-On user
    *
-   * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UserId.html
+   * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

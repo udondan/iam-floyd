@@ -11,7 +11,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   public actions: Actions = {
     "AddListenerCertificates": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddListenerCertificates.html",
-      "description": "Adds the specified certificates to the specified secure listener.",
+      "description": "Adds the specified certificates to the specified secure listener",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener/app": {
@@ -24,7 +24,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "AddTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddTags.html",
-      "description": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.",
+      "description": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -40,7 +40,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "CreateListener": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateListener.html",
-      "description": "Creates a listener for the specified Application Load Balancer.",
+      "description": "Creates a listener for the specified Application Load Balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -53,7 +53,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "CreateLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateLoadBalancer.html",
-      "description": "Creates a load balancer.",
+      "description": "Creates a load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -66,7 +66,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "CreateRule": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_CreateRule.html",
-      "description": "Creates a rule for the specified listener.",
+      "description": "Creates a rule for the specified listener",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener/app": {
@@ -89,7 +89,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "DeleteListener": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteListener.html",
-      "description": "Deletes the specified listener.",
+      "description": "Deletes the specified listener",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener/app": {
@@ -102,7 +102,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "DeleteLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteLoadBalancer.html",
-      "description": "Deletes the specified load balancer.",
+      "description": "Deletes the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -115,7 +115,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "DeleteRule": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteRule.html",
-      "description": "Deletes the specified rule.",
+      "description": "Deletes the specified rule",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener-rule/app": {
@@ -128,7 +128,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "DeleteTargetGroup": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeleteTargetGroup.html",
-      "description": "Deletes the specified target group.",
+      "description": "Deletes the specified target group",
       "accessLevel": "Write",
       "resourceTypes": {
         "targetgroup": {
@@ -138,7 +138,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "DeregisterTargets": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DeregisterTargets.html",
-      "description": "Deregisters the specified targets from the specified target group.",
+      "description": "Deregisters the specified targets from the specified target group",
       "accessLevel": "Write",
       "resourceTypes": {
         "targetgroup": {
@@ -148,62 +148,62 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "DescribeAccountLimits": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeAccountLimits.html",
-      "description": "Describes the Elastic Load Balancing resource limits for the AWS account.",
+      "description": "Describes the Elastic Load Balancing resource limits for the AWS account",
       "accessLevel": "Read"
     },
     "DescribeListenerCertificates": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListenerCertificates.html",
-      "description": "Describes the certificates for the specified secure listener.",
+      "description": "Describes the certificates for the specified secure listener",
       "accessLevel": "Read"
     },
     "DescribeListeners": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeListeners.html",
-      "description": "Describes the specified listeners or the listeners for the specified Application Load Balancer.",
+      "description": "Describes the specified listeners or the listeners for the specified Application Load Balancer",
       "accessLevel": "Read"
     },
     "DescribeLoadBalancerAttributes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancerAttributes.html",
-      "description": "Describes the attributes for the specified load balancer.",
+      "description": "Describes the attributes for the specified load balancer",
       "accessLevel": "Read"
     },
     "DescribeLoadBalancers": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html",
-      "description": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.",
+      "description": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers",
       "accessLevel": "Read"
     },
     "DescribeRules": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeRules.html",
-      "description": "Describes the specified rules or the rules for the specified listener.",
+      "description": "Describes the specified rules or the rules for the specified listener",
       "accessLevel": "Read"
     },
     "DescribeSSLPolicies": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeSSLPolicies.html",
-      "description": "Describes the specified policies or all policies used for SSL negotiation.",
+      "description": "Describes the specified policies or all policies used for SSL negotiation",
       "accessLevel": "Read"
     },
     "DescribeTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTags.html",
-      "description": "Describes the tags associated with the specified load balancers.",
+      "description": "Describes the tags associated with the specified load balancers",
       "accessLevel": "Read"
     },
     "DescribeTargetGroupAttributes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroupAttributes.html",
-      "description": "Describes the attributes for the specified target group.",
+      "description": "Describes the attributes for the specified target group",
       "accessLevel": "Read"
     },
     "DescribeTargetGroups": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html",
-      "description": "Describes the specified target groups or all of your target groups.",
+      "description": "Describes the specified target groups or all of your target groups",
       "accessLevel": "Read"
     },
     "DescribeTargetHealth": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetHealth.html",
-      "description": "Describes the health of the specified targets or all of your targets.",
+      "description": "Describes the health of the specified targets or all of your targets",
       "accessLevel": "Read"
     },
     "ModifyListener": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyListener.html",
-      "description": "Modifies the specified properties of the specified listener.",
+      "description": "Modifies the specified properties of the specified listener",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener/app": {
@@ -216,7 +216,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "ModifyLoadBalancerAttributes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyLoadBalancerAttributes.html",
-      "description": "Modifies the attributes of the specified load balancer.",
+      "description": "Modifies the attributes of the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -229,7 +229,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "ModifyRule": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyRule.html",
-      "description": "Modifies the specified rule.",
+      "description": "Modifies the specified rule",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener-rule/app": {
@@ -242,7 +242,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "ModifyTargetGroup": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroup.html",
-      "description": "Modifies the health checks used when evaluating the health state of the targets in the specified target group.",
+      "description": "Modifies the health checks used when evaluating the health state of the targets in the specified target group",
       "accessLevel": "Write",
       "resourceTypes": {
         "targetgroup": {
@@ -252,7 +252,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "ModifyTargetGroupAttributes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_ModifyTargetGroupAttributes.html",
-      "description": "Modifies the specified attributes of the specified target group.",
+      "description": "Modifies the specified attributes of the specified target group",
       "accessLevel": "Write",
       "resourceTypes": {
         "targetgroup": {
@@ -262,7 +262,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "RegisterTargets": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RegisterTargets.html",
-      "description": "Registers the specified targets with the specified target group.",
+      "description": "Registers the specified targets with the specified target group",
       "accessLevel": "Write",
       "resourceTypes": {
         "targetgroup": {
@@ -272,7 +272,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "RemoveListenerCertificates": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveListenerCertificates.html",
-      "description": "Removes the specified certificates of the specified secure listener.",
+      "description": "Removes the specified certificates of the specified secure listener",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener/app": {
@@ -285,7 +285,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "RemoveTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_RemoveTags.html",
-      "description": "Removes one or more tags from the specified load balancer.",
+      "description": "Removes one or more tags from the specified load balancer",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -314,7 +314,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "SetRulePriorities": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetRulePriorities.html",
-      "description": "Sets the priorities of the specified rules.",
+      "description": "Sets the priorities of the specified rules",
       "accessLevel": "Write",
       "resourceTypes": {
         "listener-rule/app": {
@@ -327,7 +327,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "SetSecurityGroups": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSecurityGroups.html",
-      "description": "Associates the specified security groups with the specified load balancer.",
+      "description": "Associates the specified security groups with the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -340,7 +340,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
     },
     "SetSubnets": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_SetSubnets.html",
-      "description": "Enables the Availability Zone for the specified subnets for the specified load balancer.",
+      "description": "Enables the Availability Zone for the specified subnets for the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer/app/": {
@@ -387,9 +387,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}",
       "conditionKeys": [
-        "aws:RequestTag/tag-key",
+        "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
-        "elasticloadbalancing:ResourceTag/tag-key"
+        "elasticloadbalancing:ResourceTag/${TagKey}"
       ]
     },
     "loadbalancer/net/": {
@@ -397,9 +397,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}",
       "conditionKeys": [
-        "aws:RequestTag/tag-key",
+        "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
-        "elasticloadbalancing:ResourceTag/tag-key"
+        "elasticloadbalancing:ResourceTag/${TagKey}"
       ]
     },
     "targetgroup": {
@@ -407,9 +407,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html",
       "arn": "arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}",
       "conditionKeys": [
-        "aws:RequestTag/tag-key",
+        "aws:RequestTag/${TagKey}",
         "aws:TagKeys",
-        "elasticloadbalancing:ResourceTag/tag-key"
+        "elasticloadbalancing:ResourceTag/${TagKey}"
       ]
     }
   };
@@ -424,7 +424,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Adds the specified certificates to the specified secure listener.
+   * Adds the specified certificates to the specified secure listener
    *
    * Access Level: Write
    *
@@ -436,7 +436,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.
+   * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags
    *
    * Access Level: Tagging
    *
@@ -448,7 +448,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a listener for the specified Application Load Balancer.
+   * Creates a listener for the specified Application Load Balancer
    *
    * Access Level: Write
    *
@@ -460,7 +460,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer.
+   * Creates a load balancer
    *
    * Access Level: Write
    *
@@ -472,7 +472,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Creates a rule for the specified listener.
+   * Creates a rule for the specified listener
    *
    * Access Level: Write
    *
@@ -496,7 +496,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified listener.
+   * Deletes the specified listener
    *
    * Access Level: Write
    *
@@ -508,7 +508,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified load balancer.
+   * Deletes the specified load balancer
    *
    * Access Level: Write
    *
@@ -520,7 +520,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified rule.
+   * Deletes the specified rule
    *
    * Access Level: Write
    *
@@ -532,7 +532,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified target group.
+   * Deletes the specified target group
    *
    * Access Level: Write
    *
@@ -544,7 +544,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Deregisters the specified targets from the specified target group.
+   * Deregisters the specified targets from the specified target group
    *
    * Access Level: Write
    *
@@ -556,7 +556,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the Elastic Load Balancing resource limits for the AWS account.
+   * Describes the Elastic Load Balancing resource limits for the AWS account
    *
    * Access Level: Read
    *
@@ -568,7 +568,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the certificates for the specified secure listener.
+   * Describes the certificates for the specified secure listener
    *
    * Access Level: Read
    *
@@ -580,7 +580,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified listeners or the listeners for the specified Application Load Balancer.
+   * Describes the specified listeners or the listeners for the specified Application Load Balancer
    *
    * Access Level: Read
    *
@@ -592,7 +592,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the attributes for the specified load balancer.
+   * Describes the attributes for the specified load balancer
    *
    * Access Level: Read
    *
@@ -604,7 +604,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.
+   * Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
    *
    * Access Level: Read
    *
@@ -616,7 +616,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified rules or the rules for the specified listener.
+   * Describes the specified rules or the rules for the specified listener
    *
    * Access Level: Read
    *
@@ -628,7 +628,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified policies or all policies used for SSL negotiation.
+   * Describes the specified policies or all policies used for SSL negotiation
    *
    * Access Level: Read
    *
@@ -640,7 +640,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the tags associated with the specified load balancers.
+   * Describes the tags associated with the specified load balancers
    *
    * Access Level: Read
    *
@@ -652,7 +652,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the attributes for the specified target group.
+   * Describes the attributes for the specified target group
    *
    * Access Level: Read
    *
@@ -664,7 +664,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the specified target groups or all of your target groups.
+   * Describes the specified target groups or all of your target groups
    *
    * Access Level: Read
    *
@@ -676,7 +676,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Describes the health of the specified targets or all of your targets.
+   * Describes the health of the specified targets or all of your targets
    *
    * Access Level: Read
    *
@@ -688,7 +688,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified properties of the specified listener.
+   * Modifies the specified properties of the specified listener
    *
    * Access Level: Write
    *
@@ -700,7 +700,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the attributes of the specified load balancer.
+   * Modifies the attributes of the specified load balancer
    *
    * Access Level: Write
    *
@@ -712,7 +712,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified rule.
+   * Modifies the specified rule
    *
    * Access Level: Write
    *
@@ -724,7 +724,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
+   * Modifies the health checks used when evaluating the health state of the targets in the specified target group
    *
    * Access Level: Write
    *
@@ -736,7 +736,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Modifies the specified attributes of the specified target group.
+   * Modifies the specified attributes of the specified target group
    *
    * Access Level: Write
    *
@@ -748,7 +748,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Registers the specified targets with the specified target group.
+   * Registers the specified targets with the specified target group
    *
    * Access Level: Write
    *
@@ -760,7 +760,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Removes the specified certificates of the specified secure listener.
+   * Removes the specified certificates of the specified secure listener
    *
    * Access Level: Write
    *
@@ -772,7 +772,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the specified load balancer.
+   * Removes one or more tags from the specified load balancer
    *
    * Access Level: Tagging
    *
@@ -796,7 +796,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Sets the priorities of the specified rules.
+   * Sets the priorities of the specified rules
    *
    * Access Level: Write
    *
@@ -808,7 +808,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Associates the specified security groups with the specified load balancer.
+   * Associates the specified security groups with the specified load balancer
    *
    * Access Level: Write
    *
@@ -820,7 +820,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   }
 
   /**
-   * Enables the Availability Zone for the specified subnets for the specified load balancer.
+   * Enables the Availability Zone for the specified subnets for the specified load balancer
    *
    * Access Level: Write
    *
@@ -949,9 +949,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/tag-key
+   *  - aws:RequestTag/${TagKey}
    *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/tag-key
+   *  - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
@@ -975,9 +975,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/tag-key
+   *  - aws:RequestTag/${TagKey}
    *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/tag-key
+   *  - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}';
@@ -1001,9 +1001,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/tag-key
+   *  - aws:RequestTag/${TagKey}
    *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/tag-key
+   *  - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}';
@@ -1018,11 +1018,11 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   /**
    * A tag key and value pair.
    *
-   * @param tagkey The tag key to check
+   * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
-    return this.if(`elasticloadbalancing:ResourceTag/${ tagkey }`, value, operator || 'StringLike');
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`elasticloadbalancing:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

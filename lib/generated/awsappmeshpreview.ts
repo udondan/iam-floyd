@@ -9,6 +9,19 @@ import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 export class AppmeshPreview extends PolicyStatement {
   public servicePrefix = 'appmesh-preview';
   public actions: Actions = {
+    "CreateGatewayRoute": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateGatewayRoute.html",
+      "description": "Creates a gateway route that is associated with a virtual gateway.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gatewayRoute": {
+          "required": true
+        },
+        "virtualService": {
+          "required": false
+        }
+      }
+    },
     "CreateMesh": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html",
       "description": "Creates a service mesh.",
@@ -29,6 +42,16 @@ export class AppmeshPreview extends PolicyStatement {
         },
         "virtualNode": {
           "required": false
+        }
+      }
+    },
+    "CreateVirtualGateway": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualGateway.html",
+      "description": "Creates a virtual gateway within a service mesh.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "virtualGateway": {
+          "required": true
         }
       }
     },
@@ -71,6 +94,16 @@ export class AppmeshPreview extends PolicyStatement {
         }
       }
     },
+    "DeleteGatewayRoute": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteGatewayRoute.html",
+      "description": "Deletes an existing gateway route.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gatewayRoute": {
+          "required": true
+        }
+      }
+    },
     "DeleteMesh": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteMesh.html",
       "description": "Deletes an existing service mesh.",
@@ -87,6 +120,16 @@ export class AppmeshPreview extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "route": {
+          "required": true
+        }
+      }
+    },
+    "DeleteVirtualGateway": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualGateway.html",
+      "description": "Deletes an existing virtual gateway.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "virtualGateway": {
           "required": true
         }
       }
@@ -121,6 +164,16 @@ export class AppmeshPreview extends PolicyStatement {
         }
       }
     },
+    "DescribeGatewayRoute": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeGatewayRoute.html",
+      "description": "Describes an existing gateway route.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "gatewayRoute": {
+          "required": true
+        }
+      }
+    },
     "DescribeMesh": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeMesh.html",
       "description": "Describes an existing service mesh.",
@@ -137,6 +190,16 @@ export class AppmeshPreview extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "route": {
+          "required": true
+        }
+      }
+    },
+    "DescribeVirtualGateway": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualGateway.html",
+      "description": "Describes an existing virtual gateway.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "virtualGateway": {
           "required": true
         }
       }
@@ -171,6 +234,16 @@ export class AppmeshPreview extends PolicyStatement {
         }
       }
     },
+    "ListGatewayRoutes": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListGatewayRoutes.html",
+      "description": "Returns a list of existing gateway routes in a service mesh.",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "virtualGateway": {
+          "required": true
+        }
+      }
+    },
     "ListMeshes": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListMeshes.html",
       "description": "Returns a list of existing service meshes.",
@@ -182,6 +255,16 @@ export class AppmeshPreview extends PolicyStatement {
       "accessLevel": "List",
       "resourceTypes": {
         "virtualRouter": {
+          "required": true
+        }
+      }
+    },
+    "ListVirtualGateways": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualGateways.html",
+      "description": "Returns a list of existing virtual gateways in a service mesh.",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "mesh": {
           "required": true
         }
       }
@@ -201,7 +284,7 @@ export class AppmeshPreview extends PolicyStatement {
       "description": "Returns a list of existing virtual routers in a service mesh.",
       "accessLevel": "List",
       "resourceTypes": {
-        "virtualRouter": {
+        "mesh": {
           "required": true
         }
       }
@@ -211,18 +294,34 @@ export class AppmeshPreview extends PolicyStatement {
       "description": "Returns a list of existing virtual services in a service mesh.",
       "accessLevel": "List",
       "resourceTypes": {
-        "virtualService": {
+        "mesh": {
           "required": true
         }
       }
     },
     "StreamAggregatedResources": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html",
-      "description": "Allows an Envoy Proxy to receive streamed resources for a VirtualNode.",
+      "description": "Allows an Envoy Proxy to receive streamed resources for an App Mesh endpoint (VirtualNode/VirtualGateway).",
       "accessLevel": "Read",
       "resourceTypes": {
+        "virtualGateway": {
+          "required": false
+        },
         "virtualNode": {
+          "required": false
+        }
+      }
+    },
+    "UpdateGatewayRoute": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateGatewayRoute.html",
+      "description": "Updates an existing gateway route for a specified service mesh and virtual gateway.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gatewayRoute": {
           "required": true
+        },
+        "virtualService": {
+          "required": false
         }
       }
     },
@@ -246,6 +345,16 @@ export class AppmeshPreview extends PolicyStatement {
         },
         "virtualNode": {
           "required": false
+        }
+      }
+    },
+    "UpdateVirtualGateway": {
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualGateway.html",
+      "description": "Updates an existing virtual gateway in a specified service mesh.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "virtualGateway": {
+          "required": true
         }
       }
     },
@@ -316,6 +425,18 @@ export class AppmeshPreview extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html",
       "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}",
       "conditionKeys": []
+    },
+    "virtualGateway": {
+      "name": "virtualGateway",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}",
+      "conditionKeys": []
+    },
+    "gatewayRoute": {
+      "name": "gatewayRoute",
+      "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html",
+      "arn": "arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}/gatewayRoute/${GatewayRouteName}",
+      "conditionKeys": []
     }
   };
 
@@ -326,6 +447,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   constructor (props?: PolicyStatementProps) {
     super(props);
+  }
+
+  /**
+   * Creates a gateway route that is associated with a virtual gateway.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateGatewayRoute.html
+   */
+  public createGatewayRoute() {
+    this.add('appmesh-preview:CreateGatewayRoute');
+    return this;
   }
 
   /**
@@ -349,6 +482,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public createRoute() {
     this.add('appmesh-preview:CreateRoute');
+    return this;
+  }
+
+  /**
+   * Creates a virtual gateway within a service mesh.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualGateway.html
+   */
+  public createVirtualGateway() {
+    this.add('appmesh-preview:CreateVirtualGateway');
     return this;
   }
 
@@ -389,6 +534,18 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   /**
+   * Deletes an existing gateway route.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteGatewayRoute.html
+   */
+  public deleteGatewayRoute() {
+    this.add('appmesh-preview:DeleteGatewayRoute');
+    return this;
+  }
+
+  /**
    * Deletes an existing service mesh.
    *
    * Access Level: Write
@@ -409,6 +566,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public deleteRoute() {
     this.add('appmesh-preview:DeleteRoute');
+    return this;
+  }
+
+  /**
+   * Deletes an existing virtual gateway.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DeleteVirtualGateway.html
+   */
+  public deleteVirtualGateway() {
+    this.add('appmesh-preview:DeleteVirtualGateway');
     return this;
   }
 
@@ -449,6 +618,18 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   /**
+   * Describes an existing gateway route.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeGatewayRoute.html
+   */
+  public describeGatewayRoute() {
+    this.add('appmesh-preview:DescribeGatewayRoute');
+    return this;
+  }
+
+  /**
    * Describes an existing service mesh.
    *
    * Access Level: Read
@@ -469,6 +650,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public describeRoute() {
     this.add('appmesh-preview:DescribeRoute');
+    return this;
+  }
+
+  /**
+   * Describes an existing virtual gateway.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_DescribeVirtualGateway.html
+   */
+  public describeVirtualGateway() {
+    this.add('appmesh-preview:DescribeVirtualGateway');
     return this;
   }
 
@@ -509,6 +702,18 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   /**
+   * Returns a list of existing gateway routes in a service mesh.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListGatewayRoutes.html
+   */
+  public listGatewayRoutes() {
+    this.add('appmesh-preview:ListGatewayRoutes');
+    return this;
+  }
+
+  /**
    * Returns a list of existing service meshes.
    *
    * Access Level: List
@@ -529,6 +734,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public listRoutes() {
     this.add('appmesh-preview:ListRoutes');
+    return this;
+  }
+
+  /**
+   * Returns a list of existing virtual gateways in a service mesh.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_ListVirtualGateways.html
+   */
+  public listVirtualGateways() {
+    this.add('appmesh-preview:ListVirtualGateways');
     return this;
   }
 
@@ -569,7 +786,7 @@ export class AppmeshPreview extends PolicyStatement {
   }
 
   /**
-   * Allows an Envoy Proxy to receive streamed resources for a VirtualNode.
+   * Allows an Envoy Proxy to receive streamed resources for an App Mesh endpoint (VirtualNode/VirtualGateway).
    *
    * Access Level: Read
    *
@@ -577,6 +794,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public streamAggregatedResources() {
     this.add('appmesh-preview:StreamAggregatedResources');
+    return this;
+  }
+
+  /**
+   * Updates an existing gateway route for a specified service mesh and virtual gateway.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateGatewayRoute.html
+   */
+  public updateGatewayRoute() {
+    this.add('appmesh-preview:UpdateGatewayRoute');
     return this;
   }
 
@@ -601,6 +830,18 @@ export class AppmeshPreview extends PolicyStatement {
    */
   public updateRoute() {
     this.add('appmesh-preview:UpdateRoute');
+    return this;
+  }
+
+  /**
+   * Updates an existing virtual gateway in a specified service mesh.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UpdateVirtualGateway.html
+   */
+  public updateVirtualGateway() {
+    this.add('appmesh-preview:UpdateVirtualGateway');
     return this;
   }
 
@@ -739,6 +980,50 @@ export class AppmeshPreview extends PolicyStatement {
     arn = arn.replace('${MeshName}', meshName);
     arn = arn.replace('${VirtualRouterName}', virtualRouterName);
     arn = arn.replace('${RouteName}', routeName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type virtualGateway to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualGatewayName - Identifier for the virtualGatewayName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onVirtualGateway(meshName: string, virtualGatewayName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${VirtualGatewayName}', virtualGatewayName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type gatewayRoute to the statement
+   *
+   * https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html
+   *
+   * @param meshName - Identifier for the meshName.
+   * @param virtualGatewayName - Identifier for the virtualGatewayName.
+   * @param gatewayRouteName - Identifier for the gatewayRouteName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appmesh-preview:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}/gatewayRoute/${GatewayRouteName}';
+    arn = arn.replace('${MeshName}', meshName);
+    arn = arn.replace('${VirtualGatewayName}', virtualGatewayName);
+    arn = arn.replace('${GatewayRouteName}', gatewayRouteName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

@@ -184,6 +184,11 @@ export class Sns extends PolicyStatement {
       "description": "Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM.",
       "accessLevel": "Write"
     },
+    "SetSMSAttributes": {
+      "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html",
+      "description": "Set the default settings for sending SMS messages and receiving daily SMS usage reports.",
+      "accessLevel": "Write"
+    },
     "SetSubscriptionAttributes": {
       "url": "https://docs.aws.amazon.com/sns/latest/api/API_SetSubscriptionAttributes.html",
       "description": "Allows a subscription owner to set an attribute of the topic to a new value.",
@@ -574,6 +579,18 @@ export class Sns extends PolicyStatement {
    */
   public setPlatformApplicationAttributes() {
     this.add('sns:SetPlatformApplicationAttributes');
+    return this;
+  }
+
+  /**
+   * Set the default settings for sending SMS messages and receiving daily SMS usage reports.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html
+   */
+  public setSMSAttributes() {
+    this.add('sns:SetSMSAttributes');
     return this;
   }
 

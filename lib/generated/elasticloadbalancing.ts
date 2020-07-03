@@ -11,7 +11,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   public actions: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html",
-      "description": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.",
+      "description": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "loadbalancer": {
@@ -21,7 +21,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "ApplySecurityGroupsToLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ApplySecurityGroupsToLoadBalancer.html",
-      "description": "Associates one or more security groups with your load balancer in a virtual private cloud (VPC).",
+      "description": "Associates one or more security groups with your load balancer in a virtual private cloud (VPC)",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -31,7 +31,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "AttachLoadBalancerToSubnets": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AttachLoadBalancerToSubnets.html",
-      "description": "Adds one or more subnets to the set of configured subnets for the specified load balancer.",
+      "description": "Adds one or more subnets to the set of configured subnets for the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -41,7 +41,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "ConfigureHealthCheck": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ConfigureHealthCheck.html",
-      "description": "Specifies the health check settings to use when evaluating the health state of your back-end instances.",
+      "description": "Specifies the health check settings to use when evaluating the health state of your back-end instances",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -51,7 +51,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "CreateAppCookieStickinessPolicy": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateAppCookieStickinessPolicy.html",
-      "description": "Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie.",
+      "description": "Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -61,7 +61,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "CreateLBCookieStickinessPolicy": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLBCookieStickinessPolicy.html",
-      "description": "Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period.",
+      "description": "Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -71,7 +71,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "CreateLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancer.html",
-      "description": "Creates a load balancer.",
+      "description": "Creates a load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -81,7 +81,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "CreateLoadBalancerListeners": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerListeners.html",
-      "description": "Creates one or more listeners for the specified load balancer.",
+      "description": "Creates one or more listeners for the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -91,7 +91,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "CreateLoadBalancerPolicy": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_CreateLoadBalancerPolicy.html",
-      "description": "Creates a policy with the specified attributes for the specified load balancer.",
+      "description": "Creates a policy with the specified attributes for the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -101,7 +101,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "DeleteLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancer.html",
-      "description": "Deletes the specified load balancer.",
+      "description": "Deletes the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -111,7 +111,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "DeleteLoadBalancerListeners": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerListeners.html",
-      "description": "Deletes the specified listeners from the specified load balancer.",
+      "description": "Deletes the specified listeners from the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -121,7 +121,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "DeleteLoadBalancerPolicy": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeleteLoadBalancerPolicy.html",
-      "description": "Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.",
+      "description": "Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -131,7 +131,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "DeregisterInstancesFromLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DeregisterInstancesFromLoadBalancer.html",
-      "description": "Deregisters the specified instances from the specified load balancer.",
+      "description": "Deregisters the specified instances from the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -141,37 +141,37 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "DescribeInstanceHealth": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeInstanceHealth.html",
-      "description": "Describes the state of the specified instances with respect to the specified load balancer.",
+      "description": "Describes the state of the specified instances with respect to the specified load balancer",
       "accessLevel": "Read"
     },
     "DescribeLoadBalancerAttributes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerAttributes.html",
-      "description": "Describes the attributes for the specified load balancer.",
+      "description": "Describes the attributes for the specified load balancer",
       "accessLevel": "Read"
     },
     "DescribeLoadBalancerPolicies": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerPolicies.html",
-      "description": "Describes the specified policies.",
+      "description": "Describes the specified policies",
       "accessLevel": "Read"
     },
     "DescribeLoadBalancerPolicyTypes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancerPolicyTypes.html",
-      "description": "Describes the specified load balancer policy types.",
+      "description": "Describes the specified load balancer policy types",
       "accessLevel": "Read"
     },
     "DescribeLoadBalancers": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html",
-      "description": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.",
+      "description": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers",
       "accessLevel": "List"
     },
     "DescribeTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeTags.html",
-      "description": "Describes the tags associated with the specified load balancers.",
+      "description": "Describes the tags associated with the specified load balancers",
       "accessLevel": "Read"
     },
     "DetachLoadBalancerFromSubnets": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DetachLoadBalancerFromSubnets.html",
-      "description": "Removes the specified subnets from the set of configured subnets for the load balancer.",
+      "description": "Removes the specified subnets from the set of configured subnets for the load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -181,7 +181,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "DisableAvailabilityZonesForLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DisableAvailabilityZonesForLoadBalancer.html",
-      "description": "Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.",
+      "description": "Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -191,7 +191,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "EnableAvailabilityZonesForLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_EnableAvailabilityZonesForLoadBalancer.html",
-      "description": "Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.",
+      "description": "Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -201,7 +201,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "ModifyLoadBalancerAttributes": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ModifyLoadBalancerAttributes.html",
-      "description": "Modifies the attributes of the specified load balancer.",
+      "description": "Modifies the attributes of the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -211,7 +211,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "RegisterInstancesWithLoadBalancer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RegisterInstancesWithLoadBalancer.html",
-      "description": "Adds the specified instances to the specified load balancer.",
+      "description": "Adds the specified instances to the specified load balancer",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -221,7 +221,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "RemoveTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_RemoveTags.html",
-      "description": "Removes one or more tags from the specified load balancer.",
+      "description": "Removes one or more tags from the specified load balancer",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "loadbalancer": {
@@ -231,7 +231,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "SetLoadBalancerListenerSSLCertificate": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerListenerSSLCertificate.html",
-      "description": "Sets the certificate that terminates the specified listener's SSL connections.",
+      "description": "Sets the certificate that terminates the specified listener's SSL connections",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -241,7 +241,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "SetLoadBalancerPoliciesForBackendServer": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesForBackendServer.html",
-      "description": "Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies.",
+      "description": "Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -251,7 +251,7 @@ export class Elasticloadbalancing extends PolicyStatement {
     },
     "SetLoadBalancerPoliciesOfListener": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesOfListener.html",
-      "description": "Replaces the current set of policies for the specified load balancer port with the specified set of policies.",
+      "description": "Replaces the current set of policies for the specified load balancer port with the specified set of policies",
       "accessLevel": "Write",
       "resourceTypes": {
         "loadbalancer": {
@@ -289,7 +289,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.
+   * Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags
    *
    * Access Level: Tagging
    *
@@ -301,7 +301,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Associates one or more security groups with your load balancer in a virtual private cloud (VPC).
+   * Associates one or more security groups with your load balancer in a virtual private cloud (VPC)
    *
    * Access Level: Write
    *
@@ -313,7 +313,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds one or more subnets to the set of configured subnets for the specified load balancer.
+   * Adds one or more subnets to the set of configured subnets for the specified load balancer
    *
    * Access Level: Write
    *
@@ -325,7 +325,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Specifies the health check settings to use when evaluating the health state of your back-end instances.
+   * Specifies the health check settings to use when evaluating the health state of your back-end instances
    *
    * Access Level: Write
    *
@@ -337,7 +337,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie.
+   * Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie
    *
    * Access Level: Write
    *
@@ -349,7 +349,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period.
+   * Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period
    *
    * Access Level: Write
    *
@@ -361,7 +361,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Creates a load balancer.
+   * Creates a load balancer
    *
    * Access Level: Write
    *
@@ -373,7 +373,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Creates one or more listeners for the specified load balancer.
+   * Creates one or more listeners for the specified load balancer
    *
    * Access Level: Write
    *
@@ -385,7 +385,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Creates a policy with the specified attributes for the specified load balancer.
+   * Creates a policy with the specified attributes for the specified load balancer
    *
    * Access Level: Write
    *
@@ -397,7 +397,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified load balancer.
+   * Deletes the specified load balancer
    *
    * Access Level: Write
    *
@@ -409,7 +409,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified listeners from the specified load balancer.
+   * Deletes the specified listeners from the specified load balancer
    *
    * Access Level: Write
    *
@@ -421,7 +421,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.
+   * Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners
    *
    * Access Level: Write
    *
@@ -433,7 +433,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Deregisters the specified instances from the specified load balancer.
+   * Deregisters the specified instances from the specified load balancer
    *
    * Access Level: Write
    *
@@ -445,7 +445,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the state of the specified instances with respect to the specified load balancer.
+   * Describes the state of the specified instances with respect to the specified load balancer
    *
    * Access Level: Read
    *
@@ -457,7 +457,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the attributes for the specified load balancer.
+   * Describes the attributes for the specified load balancer
    *
    * Access Level: Read
    *
@@ -469,7 +469,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the specified policies.
+   * Describes the specified policies
    *
    * Access Level: Read
    *
@@ -481,7 +481,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the specified load balancer policy types.
+   * Describes the specified load balancer policy types
    *
    * Access Level: Read
    *
@@ -493,7 +493,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.
+   * Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers
    *
    * Access Level: List
    *
@@ -505,7 +505,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Describes the tags associated with the specified load balancers.
+   * Describes the tags associated with the specified load balancers
    *
    * Access Level: Read
    *
@@ -517,7 +517,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Removes the specified subnets from the set of configured subnets for the load balancer.
+   * Removes the specified subnets from the set of configured subnets for the load balancer
    *
    * Access Level: Write
    *
@@ -529,7 +529,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.
+   * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer
    *
    * Access Level: Write
    *
@@ -541,7 +541,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.
+   * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer
    *
    * Access Level: Write
    *
@@ -553,7 +553,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Modifies the attributes of the specified load balancer.
+   * Modifies the attributes of the specified load balancer
    *
    * Access Level: Write
    *
@@ -565,7 +565,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Adds the specified instances to the specified load balancer.
+   * Adds the specified instances to the specified load balancer
    *
    * Access Level: Write
    *
@@ -577,7 +577,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Removes one or more tags from the specified load balancer.
+   * Removes one or more tags from the specified load balancer
    *
    * Access Level: Tagging
    *
@@ -589,7 +589,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Sets the certificate that terminates the specified listener's SSL connections.
+   * Sets the certificate that terminates the specified listener's SSL connections
    *
    * Access Level: Write
    *
@@ -601,7 +601,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies.
+   * Replaces the set of policies associated with the specified port on which the back-end server is listening with a new set of policies
    *
    * Access Level: Write
    *
@@ -613,7 +613,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * Replaces the current set of policies for the specified load balancer port with the specified set of policies.
+   * Replaces the current set of policies for the specified load balancer port with the specified set of policies
    *
    * Access Level: Write
    *
@@ -672,7 +672,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * The preface string for a tag key and value pair attached to a resource.
+   * The preface string for a tag key and value pair attached to a resource
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -682,7 +682,7 @@ export class Elasticloadbalancing extends PolicyStatement {
   }
 
   /**
-   * A tag key and value pair.
+   * A tag key and value pair
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

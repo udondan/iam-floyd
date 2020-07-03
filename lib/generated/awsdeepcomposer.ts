@@ -27,12 +27,20 @@ export class Deepcomposer extends PolicyStatement {
     "CreateComposition": {
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
       "description": "Creates a multi-track midi composition.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateModel": {
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html",
       "description": "Starts creating/training a generative-model that is able to perform inference against the user-provided piano-melody to create a multi-track midi composition.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "DeleteComposition": {
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
@@ -62,7 +70,10 @@ export class Deepcomposer extends PolicyStatement {
         "composition": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "GetModel": {
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html",
@@ -72,7 +83,10 @@ export class Deepcomposer extends PolicyStatement {
         "model": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "GetSampleModel": {
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
@@ -94,10 +108,62 @@ export class Deepcomposer extends PolicyStatement {
       "description": "Returns a list of all the sample/pre-trained models provided by the DeepComposer service.",
       "accessLevel": "List"
     },
+    "ListTagsForResource": {
+      "url": "",
+      "description": "Grants permission to lists tag for a resource.",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "composition": {
+          "required": false
+        },
+        "model": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
     "ListTrainingTopics": {
       "url": "",
       "description": "Returns a list of all the training options or topic for creating/training a model.",
       "accessLevel": "List"
+    },
+    "TagResource": {
+      "url": "",
+      "description": "Grants permission to tag a resource.",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "composition": {
+          "required": false
+        },
+        "model": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "UntagResource": {
+      "url": "",
+      "description": "Grants permission to untag a resource.",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "composition": {
+          "required": false
+        },
+        "model": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "UpdateComposition": {
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
@@ -125,13 +191,17 @@ export class Deepcomposer extends PolicyStatement {
       "name": "model",
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html",
       "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "composition": {
       "name": "composition",
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html",
       "arn": "arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "audio": {
       "name": "audio",
@@ -293,12 +363,42 @@ export class Deepcomposer extends PolicyStatement {
   }
 
   /**
+   * Grants permission to lists tag for a resource.
+   *
+   * Access Level: List
+   */
+  public listTagsForResource() {
+    this.add('deepcomposer:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Returns a list of all the training options or topic for creating/training a model.
    *
    * Access Level: List
    */
   public listTrainingTopics() {
     this.add('deepcomposer:ListTrainingTopics');
+    return this;
+  }
+
+  /**
+   * Grants permission to tag a resource.
+   *
+   * Access Level: Tagging
+   */
+  public tagResource() {
+    this.add('deepcomposer:TagResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to untag a resource.
+   *
+   * Access Level: Tagging
+   */
+  public untagResource() {
+    this.add('deepcomposer:UntagResource');
     return this;
   }
 
@@ -335,6 +435,9 @@ export class Deepcomposer extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}';
@@ -354,6 +457,9 @@ export class Deepcomposer extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}';
