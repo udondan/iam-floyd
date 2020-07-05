@@ -13,6 +13,12 @@ interface Fixes {
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
 export const fixes: Fixes = {
+  amazonkinesisanalyticsv2: {
+    id: 'kinesisanalytics-v2',
+  },
+  amazonpinpointemailservice: {
+    id: 'ses-pinpoint',
+  },
   awsmarketplacecatalog: {
     id: 'aws-marketplace-catalog',
   },
@@ -28,17 +34,8 @@ export const fixes: Fixes = {
   awsmarketplaceprocurementsystemsintegration: {
     id: 'aws-marketplace-procurement-systems-integration',
   },
-  amazonkinesisanalyticsv2: {
-    id: 'kinesisanalytics-v2',
-  },
-  amazonpinpointemailservice: {
-    id: 'ses-pinpoint',
-  },
   awsprivatemarketplace: {
     id: 'aws-marketplace-private',
-  },
-  elasticloadbalancingv2: {
-    id: 'elasticloadbalancing-v2',
   },
   backup: {
     resourceTypes: {
@@ -72,26 +69,21 @@ export const fixes: Fixes = {
       },
     },
   },
-  events: {
-    resourceTypes: {
-      rule: {
-        arn: 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}',
-      },
-    },
-  },
-  'neptune-db': {
-    resourceTypes: {
-      database: {
-        arn:
-          'arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}',
-      },
-    },
-  },
   deepracer: {
     resourceTypes: {
       evaluation_job: {
         arn:
           'arn:${Partition}:deepracer:${Region}:${Account}:evaluation_job/${ResourceId}',
+      },
+    },
+  },
+  elasticloadbalancingv2: {
+    id: 'elasticloadbalancing-v2',
+  },
+  events: {
+    resourceTypes: {
+      rule: {
+        arn: 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}',
       },
     },
   },
@@ -103,11 +95,11 @@ export const fixes: Fixes = {
       },
     },
   },
-  wafv2: {
+  'neptune-db': {
     resourceTypes: {
-      apigateway: {
+      database: {
         arn:
-          'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}',
+          'arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}',
       },
     },
   },
@@ -116,6 +108,14 @@ export const fixes: Fixes = {
       'automation-definition': {
         arn:
           'arn:${Partition}:ssm:${Region}:${Account}:automation-definition/${AutomationDefinitionName}:${VersionId}',
+      },
+    },
+  },
+  wafv2: {
+    resourceTypes: {
+      apigateway: {
+        arn:
+          'arn:${Partition}:apigateway:${Region}:${Account}:/restapis/${ApiId}/stages/${StageName}',
       },
     },
   },
