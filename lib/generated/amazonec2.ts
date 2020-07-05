@@ -11536,10 +11536,10 @@ export class Ec2 extends PolicyStatement {
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
    * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifSnapshotTime(value: string | string[], operator?: string) {
-    return this.if(`ec2:SnapshotTime`, value, operator || 'StringLike');
+  public ifSnapshotTime(value: Date | string | (Date | string)[], operator?: string) {
+    return this.if(`ec2:SnapshotTime`, value, operator || 'DateEquals');
   }
 
   /**

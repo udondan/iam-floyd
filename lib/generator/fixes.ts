@@ -1,3 +1,5 @@
+import { Condition } from '../shared/policy-statement';
+
 interface Fixes {
   [key: string]: any;
 }
@@ -13,6 +15,15 @@ interface Fixes {
  * resourceTypes.$name.arn: Fixes ARN of the given resource type
  */
 export const fixes: Fixes = {
+  amazonec2: {
+    conditions: {
+      SnapshotTime: {
+        operator: {
+          type: 'date',
+        },
+      },
+    },
+  },
   amazonkinesisanalyticsv2: {
     id: 'kinesisanalytics-v2',
   },
@@ -120,6 +131,39 @@ export const fixes: Fixes = {
     },
   },
 };
+
+export function conditionFixer(
+  service: string,
+  condition: Condition
+): Condition {
+  var fixed = 0;
+
+  const type = condition.type.toLowerCase();
+  if (type == 'arrayofstring') {
+    fixed = 1;
+    condition.type = 'string';
+  } else if (type == 'long') {
+    fixed = 1;
+    condition.type = 'numeric';
+  }
+
+  const key = condition.key.split(':')[1];
+  if (
+    service in fixes &&
+    'conditions' in fixes[service] &&
+    key in fixes[service].conditions &&
+    'operator' in fixes[service].conditions[key] &&
+    'type' in fixes[service].conditions[key].operator
+  ) {
+    fixed = 2;
+    condition.type = fixes[service].conditions[key].operator.type;
+  }
+
+  if (fixed > 0) {
+    process.stdout.write(`[L${fixed} fix for condition ${key}] `.yellow);
+  }
+  return condition;
+}
 
 export function arnFixer(
   service: string,

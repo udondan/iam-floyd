@@ -8,7 +8,7 @@ import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
 import { Conditions, ResourceTypes } from '../shared';
-import { arnFixer, fixes } from './fixes';
+import { arnFixer, conditionFixer, fixes } from './fixes';
 
 const project = new Project();
 const modules: Module[] = [];
@@ -336,7 +336,9 @@ export function createModule(module: Module): Promise<void> {
     method.setBodyText(methodBody.join('\n'));
   }
 
-  for (const [key, condition] of Object.entries(module.conditions!)) {
+  for (let [key, condition] of Object.entries(module.conditions!)) {
+    condition = conditionFixer(module.filename, condition);
+
     if (!condition.isGlobal) {
       const name = key.split(/[:/]/);
       var desc = '';
@@ -349,13 +351,8 @@ export function createModule(module: Module): Promise<void> {
         desc += `\n${condition.url}\n`;
       }
 
-      var type = condition.type.toLowerCase();
-      // @TODO: this should go into fixes.ts - and should be reported to AWS
-      if (type == 'arrayofstring') {
-        type = 'string';
-      } else if (type == 'long') {
-        type = 'numeric';
-      }
+      const type = condition.type.toLowerCase();
+
       const methodBody: string[] = [];
 
       var methodName = createConditionName(key);
