@@ -22,24 +22,36 @@ if (typeof thresholdOverride !== 'undefined' && thresholdOverride.length) {
 
 timeThreshold.setHours(timeThreshold.getHours() - threshold);
 
-const conditionTypeDefaults = {
+const conditionTypeDefaults: {
+  [key: string]: {
+    url: string;
+    default: string;
+    type: string[];
+  };
+} = {
   string: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String',
     default: 'StringLike',
-    type: 'string',
+    type: ['string'],
   },
   arn: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN',
     default: 'ArnEquals',
-    type: 'string',
+    type: ['string'],
   },
   numeric: {
     url:
       'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric',
     default: 'NumericEquals',
-    type: 'number',
+    type: ['number'],
+  },
+  date: {
+    url:
+      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date',
+    default: 'DateEquals',
+    type: ['Date', 'string'],
   },
 };
 
@@ -338,6 +350,7 @@ export function createModule(module: Module): Promise<void> {
       }
 
       var type = condition.type.toLowerCase();
+      // @TODO: this should go into fixes.ts - and should be reported to AWS
       if (type == 'arrayofstring') {
         type = 'string';
       } else if (type == 'long') {
@@ -372,10 +385,15 @@ export function createModule(module: Module): Promise<void> {
       }
 
       if (type in conditionTypeDefaults) {
+        const types = [...conditionTypeDefaults[type].type];
+        conditionTypeDefaults[type].type.forEach((conditionType) => {
+          types.push(`${conditionType}[]`);
+        });
+
         desc += `\n@param value The value(s) to check`;
         method.addParameter({
           name: 'value',
-          type: `${conditionTypeDefaults[type].type} | ${conditionTypeDefaults[type].type}[]`,
+          type: types.join(' | '),
         });
 
         desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
