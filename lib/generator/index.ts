@@ -401,6 +401,22 @@ export function createModule(module: Module): Promise<void> {
           type: 'string',
           hasQuestionToken: true,
         });
+
+        if (type == 'date') {
+          methodBody.push(
+            'if (typeof (value as Date).getMonth === "function") {',
+            '  value = (value as Date).toISOString();',
+            '} else if (Array.isArray(value)) {',
+            '  value = value.map((item) => {',
+            '    if (typeof (item as Date).getMonth === "function") {',
+            '      item = (item as Date).toISOString();',
+            '    }',
+            '    return item;',
+            '  });',
+            '}'
+          );
+        }
+
         methodBody.push(
           `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
         );
