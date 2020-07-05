@@ -386,9 +386,11 @@ export function createModule(module: Module): Promise<void> {
 
       if (type in conditionTypeDefaults) {
         const types = [...conditionTypeDefaults[type].type];
-        conditionTypeDefaults[type].type.forEach((conditionType) => {
-          types.push(`${conditionType}[]`);
-        });
+        if (types.length > 1) {
+          types.push(`(${types.join('|')})[]`);
+        } else {
+          types.push(`${types}[]`);
+        }
 
         desc += `\n@param value The value(s) to check`;
         method.addParameter({
