@@ -95,7 +95,11 @@ export class Redshift extends PolicyStatement {
         "cluster": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterParameterGroup.html",
@@ -105,7 +109,11 @@ export class Redshift extends PolicyStatement {
         "parametergroup": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateClusterSecurityGroup": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSecurityGroup.html",
@@ -115,7 +123,11 @@ export class Redshift extends PolicyStatement {
         "securitygroup": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html",
@@ -125,7 +137,11 @@ export class Redshift extends PolicyStatement {
         "snapshot": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateClusterSubnetGroup": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSubnetGroup.html",
@@ -135,7 +151,11 @@ export class Redshift extends PolicyStatement {
         "subnetgroup": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateClusterUser": {
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/generating-iam-credentials-role-permissions.html",
@@ -158,7 +178,11 @@ export class Redshift extends PolicyStatement {
         "eventsubscription": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateHsmClientCertificate": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmClientCertificate.html",
@@ -168,7 +192,11 @@ export class Redshift extends PolicyStatement {
         "hsmclientcertificate": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateHsmConfiguration": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html",
@@ -178,7 +206,11 @@ export class Redshift extends PolicyStatement {
         "hsmconfiguration": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateSavedQuery": {
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-policy-resources.resource-permissions.html",
@@ -198,7 +230,11 @@ export class Redshift extends PolicyStatement {
         "snapshotcopygrant": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateSnapshotSchedule": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotSchedule.html",
@@ -208,12 +244,67 @@ export class Redshift extends PolicyStatement {
         "snapshotschedule": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateTags": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateTags.html",
       "description": "Grants permission to add one or more tags to a specified resource",
-      "accessLevel": "Tagging"
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "cluster": {
+          "required": false
+        },
+        "dbgroup": {
+          "required": false
+        },
+        "dbname": {
+          "required": false
+        },
+        "dbuser": {
+          "required": false
+        },
+        "eventsubscription": {
+          "required": false
+        },
+        "hsmclientcertificate": {
+          "required": false
+        },
+        "hsmconfiguration": {
+          "required": false
+        },
+        "parametergroup": {
+          "required": false
+        },
+        "securitygroup": {
+          "required": false
+        },
+        "securitygroupingress-cidr": {
+          "required": false
+        },
+        "securitygroupingress-ec2securitygroup": {
+          "required": false
+        },
+        "snapshot": {
+          "required": false
+        },
+        "snapshotcopygrant": {
+          "required": false
+        },
+        "snapshotschedule": {
+          "required": false
+        },
+        "subnetgroup": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "DeleteCluster": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteCluster.html",
@@ -328,7 +419,57 @@ export class Redshift extends PolicyStatement {
     "DeleteTags": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteTags.html",
       "description": "Grants permission to delete a tag or tags from a resource",
-      "accessLevel": "Tagging"
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "cluster": {
+          "required": false
+        },
+        "dbgroup": {
+          "required": false
+        },
+        "dbname": {
+          "required": false
+        },
+        "dbuser": {
+          "required": false
+        },
+        "eventsubscription": {
+          "required": false
+        },
+        "hsmclientcertificate": {
+          "required": false
+        },
+        "hsmconfiguration": {
+          "required": false
+        },
+        "parametergroup": {
+          "required": false
+        },
+        "securitygroup": {
+          "required": false
+        },
+        "securitygroupingress-cidr": {
+          "required": false
+        },
+        "securitygroupingress-ec2securitygroup": {
+          "required": false
+        },
+        "snapshot": {
+          "required": false
+        },
+        "snapshotcopygrant": {
+          "required": false
+        },
+        "snapshotschedule": {
+          "required": false
+        },
+        "subnetgroup": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:TagKeys"
+      ]
     },
     "DescribeAccountAttributes": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeAccountAttributes.html",
@@ -503,7 +644,54 @@ export class Redshift extends PolicyStatement {
     "DescribeTags": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTags.html",
       "description": "Grants permission to describe tags",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "cluster": {
+          "required": false
+        },
+        "dbgroup": {
+          "required": false
+        },
+        "dbname": {
+          "required": false
+        },
+        "dbuser": {
+          "required": false
+        },
+        "eventsubscription": {
+          "required": false
+        },
+        "hsmclientcertificate": {
+          "required": false
+        },
+        "hsmconfiguration": {
+          "required": false
+        },
+        "parametergroup": {
+          "required": false
+        },
+        "securitygroup": {
+          "required": false
+        },
+        "securitygroupingress-cidr": {
+          "required": false
+        },
+        "securitygroupingress-ec2securitygroup": {
+          "required": false
+        },
+        "snapshot": {
+          "required": false
+        },
+        "snapshotcopygrant": {
+          "required": false
+        },
+        "snapshotschedule": {
+          "required": false
+        },
+        "subnetgroup": {
+          "required": false
+        }
+      }
     },
     "DisableLogging": {
       "url": "https://docs.aws.amazon.com/redshift/latest/APIReference/API_DisableLogging.html",
@@ -776,6 +964,9 @@ export class Redshift extends PolicyStatement {
       "description": "Grants permission to create a cluster from a snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
+        "cluster": {
+          "required": true
+        },
         "snapshot": {
           "required": true
         }
@@ -853,91 +1044,121 @@ export class Redshift extends PolicyStatement {
       "name": "cluster",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "dbgroup": {
       "name": "dbgroup",
       "url": "https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_GROUP.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "dbname": {
       "name": "dbname",
       "url": "https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "dbuser": {
       "name": "dbuser",
       "url": "https://docs.aws.amazon.com/redshift/latest/dg/r_Users.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "eventsubscription": {
       "name": "eventsubscription",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-events.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "hsmclientcertificate": {
       "name": "hsmclientcertificate",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "hsmconfiguration": {
       "name": "hsmconfiguration",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "parametergroup": {
       "name": "parametergroup",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "securitygroup": {
       "name": "securitygroup",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "securitygroupingress-cidr": {
       "name": "securitygroupingress-cidr",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "securitygroupingress-ec2securitygroup": {
       "name": "securitygroupingress-ec2securitygroup",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "snapshot": {
       "name": "snapshot",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "snapshotcopygrant": {
       "name": "snapshotcopygrant",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#configure-snapshot-copy-grant",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "snapshotschedule": {
       "name": "snapshotschedule",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ParameterGroupName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "subnetgroup": {
       "name": "subnetgroup",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html",
       "arn": "arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -2227,6 +2448,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}';
@@ -2247,6 +2471,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}';
@@ -2268,6 +2495,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}';
@@ -2289,6 +2519,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}';
@@ -2309,6 +2542,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onEventsubscription(eventSubscriptionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}';
@@ -2328,6 +2564,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onHsmclientcertificate(hSMClientCertificateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}';
@@ -2347,6 +2586,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onHsmconfiguration(hSMConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}';
@@ -2366,6 +2608,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}';
@@ -2387,6 +2632,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSecuritygroup(securityGroupName: string, owner: string, ec2SecurityGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}';
@@ -2409,6 +2657,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSecuritygroupingressCidr(securityGroupName: string, ipRange: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}';
@@ -2431,6 +2682,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSecuritygroupingressEc2securitygroup(securityGroupName: string, owner: string, ece2SecuritygroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}';
@@ -2453,6 +2707,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSnapshot(clusterName: string, snapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}';
@@ -2473,6 +2730,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSnapshotcopygrant(snapshotCopyGrantName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}';
@@ -2492,6 +2752,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ParameterGroupName}';
@@ -2511,6 +2774,9 @@ export class Redshift extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}';
