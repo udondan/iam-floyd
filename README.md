@@ -7,7 +7,7 @@
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
 [![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.21.0-brightgreen)][Maven]
+[![Maven package](https://img.shields.io/badge/maven-v0.22.0-brightgreen)][Maven]
 
 ![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
 [![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
@@ -425,7 +425,7 @@ AWS and their services are trademarks, registered trademarks or trade dress of A
 This project is not affiliated, funded, or in any way associated with AWS.
 
    [source]: https://github.com/udondan/iam-floyd
-   [docs]: https://awscdk.io/packages/iam-floyd@0.21.0
+   [docs]: https://awscdk.io/packages/iam-floyd@0.22.0
    [npm]: https://www.npmjs.com/package/iam-floyd
    [PyPI]: https://pypi.org/project/iam-floyd/
    [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
