@@ -17,7 +17,11 @@ export class Forecast extends PolicyStatement {
         "dataset": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateDatasetGroup": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html",
@@ -27,7 +31,11 @@ export class Forecast extends PolicyStatement {
         "datasetGroup": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateDatasetImportJob": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html",
@@ -37,7 +45,11 @@ export class Forecast extends PolicyStatement {
         "datasetImportJob": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateForecast": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html",
@@ -47,7 +59,11 @@ export class Forecast extends PolicyStatement {
         "predictor": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateForecastExportJob": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html",
@@ -57,7 +73,11 @@ export class Forecast extends PolicyStatement {
         "forecast": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreatePredictor": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html",
@@ -67,7 +87,11 @@ export class Forecast extends PolicyStatement {
         "datasetGroup": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "DeleteDataset": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html",
@@ -229,6 +253,31 @@ export class Forecast extends PolicyStatement {
       "description": "Lists predictors",
       "accessLevel": "List"
     },
+    "ListTagsForResource": {
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListTagsForResource.html",
+      "description": "Lists the tags for an Amazon Forecast resource",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "dataset": {
+          "required": false
+        },
+        "datasetGroup": {
+          "required": false
+        },
+        "datasetImportJob": {
+          "required": false
+        },
+        "forecast": {
+          "required": false
+        },
+        "forecastExport": {
+          "required": false
+        },
+        "predictor": {
+          "required": false
+        }
+      }
+    },
     "QueryForecast": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html",
       "description": "Retrieves a forecast for a single item",
@@ -238,6 +287,63 @@ export class Forecast extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "TagResource": {
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_TagResource.html",
+      "description": "Associates the specified tags to a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "dataset": {
+          "required": false
+        },
+        "datasetGroup": {
+          "required": false
+        },
+        "datasetImportJob": {
+          "required": false
+        },
+        "forecast": {
+          "required": false
+        },
+        "forecastExport": {
+          "required": false
+        },
+        "predictor": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "UntagResource": {
+      "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UntagResource.html",
+      "description": "Deletes the specified tags for a resource",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "dataset": {
+          "required": false
+        },
+        "datasetGroup": {
+          "required": false
+        },
+        "datasetImportJob": {
+          "required": false
+        },
+        "forecast": {
+          "required": false
+        },
+        "forecastExport": {
+          "required": false
+        },
+        "predictor": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:TagKeys"
+      ]
     },
     "UpdateDatasetGroup": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html",
@@ -258,19 +364,25 @@ export class Forecast extends PolicyStatement {
       "name": "dataset",
       "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "datasetGroup": {
       "name": "datasetGroup",
       "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "datasetImportJob": {
       "name": "datasetImportJob",
       "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "algorithm": {
       "name": "algorithm",
@@ -282,19 +394,25 @@ export class Forecast extends PolicyStatement {
       "name": "predictor",
       "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "forecast": {
       "name": "forecast",
       "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "forecastExport": {
       "name": "forecastExport",
       "url": "",
       "arn": "arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -608,6 +726,18 @@ export class Forecast extends PolicyStatement {
   }
 
   /**
+   * Lists the tags for an Amazon Forecast resource
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListTagsForResource.html
+   */
+  public listTagsForResource() {
+    this.add('forecast:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Retrieves a forecast for a single item
    *
    * Access Level: Read
@@ -616,6 +746,30 @@ export class Forecast extends PolicyStatement {
    */
   public queryForecast() {
     this.add('forecast:QueryForecast');
+    return this;
+  }
+
+  /**
+   * Associates the specified tags to a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_TagResource.html
+   */
+  public tagResource() {
+    this.add('forecast:TagResource');
+    return this;
+  }
+
+  /**
+   * Deletes the specified tags for a resource
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UntagResource.html
+   */
+  public untagResource() {
+    this.add('forecast:UntagResource');
     return this;
   }
 
@@ -638,6 +792,9 @@ export class Forecast extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}';
@@ -655,6 +812,9 @@ export class Forecast extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}';
@@ -672,6 +832,9 @@ export class Forecast extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}';
@@ -702,6 +865,9 @@ export class Forecast extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}';
@@ -719,6 +885,9 @@ export class Forecast extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}';
@@ -736,6 +905,9 @@ export class Forecast extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
    */
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}';

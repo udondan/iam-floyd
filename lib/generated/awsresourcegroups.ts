@@ -12,12 +12,7 @@ export class ResourceGroups extends PolicyStatement {
     "CreateGroup": {
       "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html",
       "description": "Creates a group with a specified name, description, and resource query.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      },
+      "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -76,12 +71,7 @@ export class ResourceGroups extends PolicyStatement {
     "ListGroups": {
       "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html",
       "description": "Lists all resource groups",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "group": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "SearchResources": {
       "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html",
@@ -159,7 +149,7 @@ export class ResourceGroups extends PolicyStatement {
   /**
    * Creates a group with a specified name, description, and resource query.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html
    */
