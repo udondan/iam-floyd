@@ -61,7 +61,7 @@ export { Machinelearning } from "./generated/amazonmachinelearning";
 export { Macie2 } from "./generated/amazonmacie";
 export { Macie } from "./generated/amazonmacieclassic";
 export { Managedblockchain } from "./generated/amazonmanagedblockchain";
-export { Kafka } from "./generated/amazonmanagedstreamingforkafka";
+export { Kafka } from "./generated/amazonmanagedstreamingforapachekafka";
 export { Mechanicalturk } from "./generated/amazonmechanicalturk";
 export { Ec2messages } from "./generated/amazonmessagedeliveryservice";
 export { Mobileanalytics } from "./generated/amazonmobileanalytics";
