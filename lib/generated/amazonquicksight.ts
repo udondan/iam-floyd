@@ -100,6 +100,30 @@ export class Quicksight extends PolicyStatement {
         }
       }
     },
+    "CreateTheme": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTheme.html",
+      "description": "Creates a QuickSight theme",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateThemeAlias": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateThemeAlias.html",
+      "description": "Creates a theme alias for a theme",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
     "CreateUser": {
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
       "description": "CreateUser enables the user to provision Amazon QuickSight authors and readers.",
@@ -169,6 +193,26 @@ export class Quicksight extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "template": {
+          "required": true
+        }
+      }
+    },
+    "DeleteTheme": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTheme.html",
+      "description": "Deletes a theme",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "DeleteThemeAlias": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteThemeAlias.html",
+      "description": "Deletes the item that the specified theme alias points to",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
           "required": true
         }
       }
@@ -259,6 +303,36 @@ export class Quicksight extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "template": {
+          "required": true
+        }
+      }
+    },
+    "DescribeTheme": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTheme.html",
+      "description": "Describes a theme's metadata",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "DescribeThemeAlias": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemeAlias.html",
+      "description": "Describes the theme alias for a theme",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "DescribeThemePermissions": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html",
+      "description": "Describes read and write permissions on a theme",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "theme": {
           "required": true
         }
       }
@@ -368,6 +442,9 @@ export class Quicksight extends PolicyStatement {
         },
         "template": {
           "required": false
+        },
+        "theme": {
+          "required": false
         }
       }
     },
@@ -397,6 +474,36 @@ export class Quicksight extends PolicyStatement {
       "accessLevel": "List",
       "resourceTypes": {
         "template": {
+          "required": true
+        }
+      }
+    },
+    "ListThemeAliases": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeAliases.html",
+      "description": "Lists all the aliases of a theme",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "ListThemeVersions": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeVersions.html",
+      "description": "Lists all the versions of a theme",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "ListThemes": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemes.html",
+      "description": "Lists all the themes in the current Amazon QuickSight account",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "theme": {
           "required": true
         }
       }
@@ -460,6 +567,9 @@ export class Quicksight extends PolicyStatement {
         },
         "template": {
           "required": false
+        },
+        "theme": {
+          "required": false
         }
       },
       "conditions": [
@@ -481,6 +591,9 @@ export class Quicksight extends PolicyStatement {
           "required": false
         },
         "template": {
+          "required": false
+        },
+        "theme": {
           "required": false
         }
       },
@@ -568,6 +681,36 @@ export class Quicksight extends PolicyStatement {
         }
       }
     },
+    "UpdateTheme": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTheme.html",
+      "description": "Updates a theme",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "UpdateThemeAlias": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemeAlias.html",
+      "description": "Updates the theme alias of a theme",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
+    "UpdateThemePermissions": {
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html",
+      "description": "Updates the resource permissions for a theme",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "theme": {
+          "required": true
+        }
+      }
+    },
     "UpdateUser": {
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html",
       "description": "Updates an Amazon QuickSight user.",
@@ -604,6 +747,14 @@ export class Quicksight extends PolicyStatement {
       "name": "template",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html",
       "arn": "arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "theme": {
+      "name": "theme",
+      "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html",
+      "arn": "arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -722,6 +873,30 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Creates a QuickSight theme
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTheme.html
+   */
+  public createTheme() {
+    this.add('quicksight:CreateTheme');
+    return this;
+  }
+
+  /**
+   * Creates a theme alias for a theme
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateThemeAlias.html
+   */
+  public createThemeAlias() {
+    this.add('quicksight:CreateThemeAlias');
+    return this;
+  }
+
+  /**
    * CreateUser enables the user to provision Amazon QuickSight authors and readers.
    *
    * Access Level: Write
@@ -802,6 +977,30 @@ export class Quicksight extends PolicyStatement {
    */
   public deleteTemplateAlias() {
     this.add('quicksight:DeleteTemplateAlias');
+    return this;
+  }
+
+  /**
+   * Deletes a theme
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteTheme.html
+   */
+  public deleteTheme() {
+    this.add('quicksight:DeleteTheme');
+    return this;
+  }
+
+  /**
+   * Deletes the item that the specified theme alias points to
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DeleteThemeAlias.html
+   */
+  public deleteThemeAlias() {
+    this.add('quicksight:DeleteThemeAlias');
     return this;
   }
 
@@ -910,6 +1109,42 @@ export class Quicksight extends PolicyStatement {
    */
   public describeTemplatePermissions() {
     this.add('quicksight:DescribeTemplatePermissions');
+    return this;
+  }
+
+  /**
+   * Describes a theme's metadata
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTheme.html
+   */
+  public describeTheme() {
+    this.add('quicksight:DescribeTheme');
+    return this;
+  }
+
+  /**
+   * Describes the theme alias for a theme
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemeAlias.html
+   */
+  public describeThemeAlias() {
+    this.add('quicksight:DescribeThemeAlias');
+    return this;
+  }
+
+  /**
+   * Describes read and write permissions on a theme
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html
+   */
+  public describeThemePermissions() {
+    this.add('quicksight:DescribeThemePermissions');
     return this;
   }
 
@@ -1078,6 +1313,42 @@ export class Quicksight extends PolicyStatement {
    */
   public listTemplates() {
     this.add('quicksight:ListTemplates');
+    return this;
+  }
+
+  /**
+   * Lists all the aliases of a theme
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeAliases.html
+   */
+  public listThemeAliases() {
+    this.add('quicksight:ListThemeAliases');
+    return this;
+  }
+
+  /**
+   * Lists all the versions of a theme
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemeVersions.html
+   */
+  public listThemeVersions() {
+    this.add('quicksight:ListThemeVersions');
+    return this;
+  }
+
+  /**
+   * Lists all the themes in the current Amazon QuickSight account
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ListThemes.html
+   */
+  public listThemes() {
+    this.add('quicksight:ListThemes');
     return this;
   }
 
@@ -1286,6 +1557,42 @@ export class Quicksight extends PolicyStatement {
   }
 
   /**
+   * Updates a theme
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateTheme.html
+   */
+  public updateTheme() {
+    this.add('quicksight:UpdateTheme');
+    return this;
+  }
+
+  /**
+   * Updates the theme alias of a theme
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemeAlias.html
+   */
+  public updateThemeAlias() {
+    this.add('quicksight:UpdateThemeAlias');
+    return this;
+  }
+
+  /**
+   * Updates the resource permissions for a theme
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html
+   */
+  public updateThemePermissions() {
+    this.add('quicksight:UpdateThemePermissions');
+    return this;
+  }
+
+  /**
    * Updates an Amazon QuickSight user.
    *
    * Access Level: Write
@@ -1372,6 +1679,28 @@ export class Quicksight extends PolicyStatement {
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type theme to the statement
+   *
+   * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
