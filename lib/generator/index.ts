@@ -8,7 +8,7 @@ import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
 import { Conditions, ResourceTypes } from '../shared';
-import { arnFixer, conditionFixer, fixes } from './fixes';
+import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
 
 const project = new Project();
 const modules: Module[] = [];
@@ -119,6 +119,7 @@ export function getAwsServices(): Promise<string[]> {
 }
 
 export function getContent(service: string): Promise<Module> {
+  service = serviceFixer(service);
   process.stdout.write(`${service}: `.white);
   process.stdout.write('Fetching '.grey);
 
@@ -445,8 +446,9 @@ export function createModule(module: Module): Promise<void> {
   }
 
   formatCode(sourceFile);
+  const done = sourceFile.save();
   console.log('Done'.green);
-  return sourceFile.save();
+  return done;
 }
 
 export function createIndex() {
@@ -483,8 +485,9 @@ export function createIndex() {
   });
 
   formatCode(sourceFile);
+  const done = sourceFile.save();
   console.log('Done'.green);
-  return sourceFile.save();
+  return done;
 }
 
 function cleanDescription(description: string): string {
