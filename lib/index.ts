@@ -47,6 +47,7 @@ export { Gamelift } from "./generated/amazongamelift";
 export { Glacier } from "./generated/amazonglacier";
 export { Groundtruthlabeling } from "./generated/amazongroundtruthlabeling";
 export { Guardduty } from "./generated/amazonguardduty";
+export { Honeycode } from "./generated/amazonhoneycode";
 export { Inspector } from "./generated/amazoninspector";
 export { Kendra } from "./generated/amazonkendra";
 export { Cassandra } from "./generated/amazonkeyspacesforapachecassandra";
