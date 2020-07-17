@@ -49,6 +49,7 @@ export { Groundtruthlabeling } from "./generated/amazongroundtruthlabeling";
 export { Guardduty } from "./generated/amazonguardduty";
 export { Honeycode } from "./generated/amazonhoneycode";
 export { Inspector } from "./generated/amazoninspector";
+export { Ivs } from "./generated/amazoninteractivevideoservice";
 export { Kendra } from "./generated/amazonkendra";
 export { Cassandra } from "./generated/amazonkeyspacesforapachecassandra";
 export { Kinesis } from "./generated/amazonkinesis";

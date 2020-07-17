@@ -261,12 +261,32 @@ export class Connect extends PolicyStatement {
         }
       }
     },
+    "ResumeContactRecording": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html",
+      "description": "Grants permissions to resume recording for the specified contact.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact": {
+          "required": true
+        }
+      }
+    },
     "StartChatContact": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html",
       "description": "Grants permissions to initiate a chat using the Amazon Connect API.",
       "accessLevel": "Write",
       "resourceTypes": {
         "contact-flow": {
+          "required": true
+        }
+      }
+    },
+    "StartContactRecording": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactRecording.html",
+      "description": "Grants permissions to start recording for the specified contact.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact": {
           "required": true
         }
       }
@@ -284,6 +304,26 @@ export class Connect extends PolicyStatement {
     "StopContact": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContact.html",
       "description": "Grants permissions to stop contacts that were initiated using the Amazon Connect API. If you use this operation on an active contact the contact ends, even if the agent is active on a call with a customer.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact": {
+          "required": true
+        }
+      }
+    },
+    "StopContactRecording": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactRecording.html",
+      "description": "Grants permissions to stop recording for the specified contact.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact": {
+          "required": true
+        }
+      }
+    },
+    "SuspendContactRecording": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_SuspendContactRecording.html",
+      "description": "Grants permissions to suspend recording for the specified contact.",
       "accessLevel": "Write",
       "resourceTypes": {
         "contact": {
@@ -768,6 +808,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to resume recording for the specified contact.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ResumeContactRecording.html
+   */
+  public resumeContactRecording() {
+    this.add('connect:ResumeContactRecording');
+    return this;
+  }
+
+  /**
    * Grants permissions to initiate a chat using the Amazon Connect API.
    *
    * Access Level: Write
@@ -776,6 +828,18 @@ export class Connect extends PolicyStatement {
    */
   public startChatContact() {
     this.add('connect:StartChatContact');
+    return this;
+  }
+
+  /**
+   * Grants permissions to start recording for the specified contact.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactRecording.html
+   */
+  public startContactRecording() {
+    this.add('connect:StartContactRecording');
     return this;
   }
 
@@ -800,6 +864,30 @@ export class Connect extends PolicyStatement {
    */
   public stopContact() {
     this.add('connect:StopContact');
+    return this;
+  }
+
+  /**
+   * Grants permissions to stop recording for the specified contact.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactRecording.html
+   */
+  public stopContactRecording() {
+    this.add('connect:StopContactRecording');
+    return this;
+  }
+
+  /**
+   * Grants permissions to suspend recording for the specified contact.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_SuspendContactRecording.html
+   */
+  public suspendContactRecording() {
+    this.add('connect:SuspendContactRecording');
     return this;
   }
 
