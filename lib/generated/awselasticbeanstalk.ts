@@ -61,6 +61,16 @@ export class Elasticbeanstalk extends PolicyStatement {
         }
       }
     },
+    "AssociateEnvironmentOperationsRole": {
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AssociateEnvironmentOperationsRole.html",
+      "description": "Grants permission to associate an operations role with an environment.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "environment": {
+          "required": true
+        }
+      }
+    },
     "CheckDNSAvailability": {
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CheckDNSAvailability.html",
       "description": "Grants permission to check CNAME availability.",
@@ -417,6 +427,16 @@ export class Elasticbeanstalk extends PolicyStatement {
         }
       }
     },
+    "DisassociateEnvironmentOperationsRole": {
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DisassociateEnvironmentOperationsRole.html",
+      "description": "Grants permission to disassociate an operations role with an environment.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "environment": {
+          "required": true
+        }
+      }
+    },
     "ListAvailableSolutionStacks": {
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html",
       "description": "Grants permission to retrieve a list of the available solution stack names.",
@@ -759,6 +779,18 @@ export class Elasticbeanstalk extends PolicyStatement {
   }
 
   /**
+   * Grants permission to associate an operations role with an environment.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AssociateEnvironmentOperationsRole.html
+   */
+  public associateEnvironmentOperationsRole() {
+    this.add('elasticbeanstalk:AssociateEnvironmentOperationsRole');
+    return this;
+  }
+
+  /**
    * Grants permission to check CNAME availability.
    *
    * Access Level: Read
@@ -1067,6 +1099,18 @@ export class Elasticbeanstalk extends PolicyStatement {
    */
   public describePlatformVersion() {
     this.add('elasticbeanstalk:DescribePlatformVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to disassociate an operations role with an environment.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DisassociateEnvironmentOperationsRole.html
+   */
+  public disassociateEnvironmentOperationsRole() {
+    this.add('elasticbeanstalk:DisassociateEnvironmentOperationsRole');
     return this;
   }
 

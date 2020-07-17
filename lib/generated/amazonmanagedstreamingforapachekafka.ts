@@ -4,7 +4,7 @@ import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 /**
  * Action provider for service kafka
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmanagedstreamingforkafka.html
+ * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmanagedstreamingforapachekafka.html
  */
 export class Kafka extends PolicyStatement {
   public servicePrefix = 'kafka';
@@ -155,7 +155,7 @@ export class Kafka extends PolicyStatement {
   /**
    * Action provider for service kafka
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmanagedstreamingforkafka.html
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmanagedstreamingforapachekafka.html
    */
   constructor (props?: PolicyStatementProps) {
     super(props);

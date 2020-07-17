@@ -59,7 +59,10 @@ export class Comprehend extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "document-classifier": {
-          "required": false
+          "required": true
+        },
+        "entity-recognizer": {
+          "required": true
         }
       },
       "conditions": [
@@ -92,6 +95,9 @@ export class Comprehend extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "document-classifier-endpoint": {
+          "required": true
+        },
+        "entity-recognizer-endpoint": {
           "required": true
         }
       }
@@ -132,6 +138,9 @@ export class Comprehend extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "document-classifier-endpoint": {
+          "required": true
+        },
+        "entity-recognizer-endpoint": {
           "required": true
         }
       }
@@ -174,7 +183,12 @@ export class Comprehend extends PolicyStatement {
     "DetectEntities": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html",
       "description": "Detects the named entities (\"People\", \"Places\", \"Locations\", etc) within the given text document.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "entity-recognizer-endpoint": {
+          "required": false
+        }
+      }
     },
     "DetectKeyPhrases": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html",
@@ -244,6 +258,9 @@ export class Comprehend extends PolicyStatement {
         },
         "entity-recognizer": {
           "required": false
+        },
+        "entity-recognizer-endpoint": {
+          "required": false
         }
       }
     },
@@ -270,7 +287,12 @@ export class Comprehend extends PolicyStatement {
     "StartEntitiesDetectionJob": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html",
       "description": "Starts an asynchronous entity detection job for a collection of documents.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "entity-recognizer": {
+          "required": false
+        }
+      }
     },
     "StartKeyPhrasesDetectionJob": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html",
@@ -340,6 +362,9 @@ export class Comprehend extends PolicyStatement {
         },
         "entity-recognizer": {
           "required": false
+        },
+        "entity-recognizer-endpoint": {
+          "required": false
         }
       },
       "conditions": [
@@ -360,6 +385,9 @@ export class Comprehend extends PolicyStatement {
         },
         "entity-recognizer": {
           "required": false
+        },
+        "entity-recognizer-endpoint": {
+          "required": false
         }
       },
       "conditions": [
@@ -372,6 +400,9 @@ export class Comprehend extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "document-classifier-endpoint": {
+          "required": true
+        },
+        "entity-recognizer-endpoint": {
           "required": true
         }
       }
@@ -398,6 +429,14 @@ export class Comprehend extends PolicyStatement {
       "name": "document-classifier-endpoint",
       "url": "",
       "arn": "arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "entity-recognizer-endpoint": {
+      "name": "entity-recognizer-endpoint",
+      "url": "",
+      "arn": "arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer-endpoint/${EntityRecognizerEndpointName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -1079,6 +1118,26 @@ export class Comprehend extends PolicyStatement {
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}';
     arn = arn.replace('${DocumentClassifierEndpointName}', documentClassifierEndpointName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type entity-recognizer-endpoint to the statement
+   *
+   * @param entityRecognizerEndpointName - Identifier for the entityRecognizerEndpointName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   *  - aws:ResourceTag/${TagKey}
+   */
+  public onEntityRecognizerEndpoint(entityRecognizerEndpointName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer-endpoint/${EntityRecognizerEndpointName}';
+    arn = arn.replace('${EntityRecognizerEndpointName}', entityRecognizerEndpointName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

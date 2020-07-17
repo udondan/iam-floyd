@@ -11,7 +11,7 @@ export class Budgets extends PolicyStatement {
   public actions: Actions = {
     "ModifyBudget": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Modify budgets and budget details",
+      "description": "Grants permissions to modify budgets and budget details",
       "accessLevel": "Write",
       "resourceTypes": {
         "budget": {
@@ -21,7 +21,7 @@ export class Budgets extends PolicyStatement {
     },
     "ViewBudget": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "View budgets and budget details",
+      "description": "Grants permissions to view budgets and budget details",
       "accessLevel": "Read",
       "resourceTypes": {
         "budget": {
@@ -49,7 +49,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * Modify budgets and budget details
+   * Grants permissions to modify budgets and budget details
    *
    * Access Level: Write
    *
@@ -61,7 +61,7 @@ export class Budgets extends PolicyStatement {
   }
 
   /**
-   * View budgets and budget details
+   * Grants permissions to view budgets and budget details
    *
    * Access Level: Read
    *

@@ -66,6 +66,20 @@ export class Cassandra extends PolicyStatement {
         }
       }
     },
+    "Restore": {
+      "url": "",
+      "description": "Grants permission to restore table from a backup",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "table": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "Select": {
       "url": "",
       "description": "Grants permission to SELECT data from a table",
@@ -176,6 +190,16 @@ export class Cassandra extends PolicyStatement {
    */
   public modify() {
     this.add('cassandra:Modify');
+    return this;
+  }
+
+  /**
+   * Grants permission to restore table from a backup
+   *
+   * Access Level: Write
+   */
+  public restore() {
+    this.add('cassandra:Restore');
     return this;
   }
 
