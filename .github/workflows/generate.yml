@@ -27,8 +27,9 @@ jobs:
           test -e lib/index.ts || exit 1
           git diff --quiet || (
             perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
+            make stats &&
             make changelog &&
-            git add CHANGELOG/*
+            git add CHANGELOG/* &&
             git config --local user.email "deemes79@googlemail.com" &&
             git config --local user.name "udondan" &&
             rm -rf node_modules tsconfig.json &&

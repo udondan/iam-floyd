@@ -8,7 +8,7 @@
     "test": "npx ts-node test/main.ts"
   },
   "name": "iam-floyd",
-  "description": "AWS IAM policy statement generator",
+  "description": "AWS IAM policy statement generator with fluent interface",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "author": {

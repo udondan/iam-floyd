@@ -23,6 +23,9 @@ test:
 changelog:
 	@bin/mkchangelog
 
+stats:
+	@bin/mkstats
+
 tag:
 	@git tag -a "v$(VERSION)" -m 'Creates tag "v$(VERSION)"'
 	@git push --tags

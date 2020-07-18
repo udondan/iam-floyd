@@ -14,13 +14,21 @@
 [![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)][PyPI]
 [![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
 
-**AWS [IAM policy statement][statement] generator.**
+**AWS [IAM policy statement][statement] generator with fluent interface.**
+
+<!-- stats -->
+**Services:** 234<br>
+**Resource Types:** 1464<br>
+**Conditions:** 861
+<!-- /stats -->
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
 
 > This is an early version of the package. The signature of methods will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.
 >
 > If you see something off, think something could be done better or have any other suggestion, speak up. :-)
+
+---
 
 <!-- vscode-markdown-toc -->
 * [Usage](#Usage)
