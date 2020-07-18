@@ -364,12 +364,4 @@ export class Appflow extends PolicyStatement {
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
-
-  public onBlaTest(profileName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow::${Account}:connectorprofile/${ProfileName}';
-    arn = arn.replace('${ProfileName}', profileName);
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
-  }
 }
