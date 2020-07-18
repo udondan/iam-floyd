@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 VERSION := $(shell cat VERSION)
 
-.PHONY: build generate package test tag untag release re-release
+.PHONY: build generate package test tag untag release re-release changelog
 
 build:
 	@npm run build
@@ -19,6 +19,9 @@ package: build
 
 test:
 	@npm run test
+
+changelog:
+	@bin/mkchangelog
 
 tag:
 	@git tag -a "v$(VERSION)" -m 'Creates tag "v$(VERSION)"'

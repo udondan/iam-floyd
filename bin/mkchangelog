@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+# These are only used for creating a changelog file manually. by default the version is taken form the VERSION file
+VERSION=$1
+BEFORE=$2
+
+function getLastTag() {
+  git describe --tags --abbrev=0
+}
+
+# Get diff since last tag
+function getDiff() {
+  if [[ -n "${VERSION}" && -n "${BEFORE}" ]]; then
+    git diff -U10 "${BEFORE}..${VERSION}" "$1"
+  else
+    git diff -U10 "$(getLastTag)" "$1"
+  fi
+}
+
+function gitDiffModules() {
+  getDiff lib/generated
+}
+
+function gitDiffIndex() {
+  getDiff lib/index.ts
+}
+
+function getVersion() {
+  if [[ -n "${VERSION}" ]]; then
+    echo "${VERSION}"
+  else
+    echo "v$(cat VERSION)"
+  fi
+}
+
+function getNewServices() {
+  gitDiffIndex | grep "^+export {" | sed 's/^.*{ /- /g' | sed 's/ }.*$//g'
+}
+
+function getNewActions() {
+  gitDiffModules | grep "^+.*this.add(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
+}
+
+function getNewResourceTypes() {
+  gitDiffModules | grep "^+.*var arn =" | sed 's|\${[[:alpha:]]\{1,\}}||g'  | sed 's/.*arn::/- /g' | sed 's/:\{2,\}/:/g' | tr -cd '[[:space:]][:alnum:]:-\r\n\'
+}
+
+function getNewConditions() {
+  gitDiffModules | grep "^+.*return this.if"| sed 's/.*(`/- /g' | sed 's/`.*$//g'
+}
+
+function getUpdatedAccessLevels() {
+  gitDiffModules |\
+    pcregrep -Mi "^-   \* Access Level: .*\n^\+   \* Access Level: .*\n(.*\n)*?^     this.add\('(.*)'" |\
+    perl -0777 -pe "s/-   \* Access Level: (.*?)\n\+   \* Access Level: (.*)[\s\n\w*:\/.(){}]+this\.add\('(.*)'\);/- \3: \1 -> \2/gm"
+}
+
+file="CHANGELOG/$(getVersion).md"
+hasContent=false
+
+[[ -f "$file" ]] && printf "\r\n---\r\n" >> "$file" && hasContent=true
+
+newServices=$(getNewServices)
+if [ "${newServices}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf "**New services:**\r\n\r\n" >> "$file"
+  echo "${newServices}" >> "$file"
+  hasContent=true
+fi
+
+newActions=$(getNewActions)
+if [ -n "${newActions}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf "**New actions:**\r\n\r\n" >> "$file"
+  echo "${newActions}" >> "$file"
+  hasContent=true
+fi
+
+updatedAccessLevels=$(getUpdatedAccessLevels)
+if [ -n "${updatedAccessLevels}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf "**Updated action access level:**\r\n\r\n" >> "$file"
+  echo "${updatedAccessLevels}" >> "$file"
+  hasContent=true
+fi
+
+newResourceTypes=$(getNewResourceTypes)
+if [ -n "${newResourceTypes}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf "**New resource types:**\r\n\r\n" >> "$file"
+  echo "${newResourceTypes}" >> "$file"
+  hasContent=true
+fi
+
+newConditions=$(getNewConditions)
+if [ -n "${newConditions}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf "**New conditions:**\r\n\r\n" >> "$file"
+  echo "${newConditions}" >> "$file"
+  hasContent=true
+fi
