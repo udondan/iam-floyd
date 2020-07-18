@@ -18,6 +18,7 @@
 
 <!-- stats -->
 **Services:** 234<br>
+**Actions:** 15321<br>
 **Resource Types:** 1464<br>
 **Conditions:** 861
 <!-- /stats -->

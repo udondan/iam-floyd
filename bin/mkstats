@@ -4,6 +4,10 @@ function getNoServices() {
   find lib/generated/*.ts | wc -l | xargs
 }
 
+function getNoActions() {
+  grep -R --include="*.ts" "this.add" lib/generated | wc -l | xargs
+}
+
 function getNoResourceTypes() {
   grep -R --include="*.ts" "public on" lib/generated | wc -l | xargs
 }
@@ -13,13 +17,15 @@ function getNoConditions() {
 }
 
 services="$(getNoServices)"
+actions="$(getNoActions)"
 resourceTypes="$(getNoResourceTypes)"
 conditions="$(getNoConditions)"
 
 read -r -d '' stats << EOF
 **Services:** ${services}<br>
+**Actions:** ${actions}<br>
 **Resource Types:** ${resourceTypes}<br>
 **Conditions:** ${conditions}
 EOF
 
-perl -0777 -pi -e "s/^(<!-- stats -->)[\s\n\w*-:\d]+(<!-- \/stats -->)/\\1\\n${stats}\\n\\2/gm" README.md
+perl -0777 -pi -e "s/^(<!-- stats -->)[\s\n\w*-:\d<>]+(<!-- \/stats -->)/\\1\\n${stats}\\n\\2/gm" README.md
