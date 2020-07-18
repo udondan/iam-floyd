@@ -56,6 +56,7 @@ function getUpdatedAccessLevels() {
 }
 
 file="CHANGELOG/$(getVersion).md"
+touch "${file}"
 hasContent=false
 
 [[ -f "$file" ]] && printf "\r\n---\r\n" >> "$file" && hasContent=true
