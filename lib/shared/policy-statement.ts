@@ -89,7 +89,7 @@ export class PolicyStatement extends iam.PolicyStatement {
   }
 
   /**
-   * Changes all subsequent additions to be set as notAction
+   * Change the behavior of all subsequent called action methods to use `notAction`.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    */
