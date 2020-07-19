@@ -1,6 +1,6 @@
 # IAM Floyd
 
-[![Source](https://img.shields.io/badge/Source-GitHub-blue?logo=github)][source]
+[![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
 [![Docs](https://img.shields.io/badge/awscdk.io-iam--floyd-orange)][docs]
 
