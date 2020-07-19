@@ -93,7 +93,7 @@ export class PolicyStatement extends iam.PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    */
-  public not() {
+  public notActions() {
     this.add = this.addNotActions;
     return this;
   }

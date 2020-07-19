@@ -40,7 +40,7 @@
 	* [allActions](#allActions)
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
-	* [not](#not)
+	* [notActions](#notActions)
 * [But I don't use CDK. Can I still use this package?](#ButIdontuseCDK.CanIstillusethispackage)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
@@ -177,12 +177,12 @@ new statement.S3()
   );
 ```
 
-What about [notAction]? Yes, simply add a `not()` to the chain. Though it is important that you add it **before** you add actions.
+What about [notAction]? Yes, simply add `notActions()` to the chain. Though it is important that you add it **before** you add actions.
 
 ```typescript
 new statement.S3()
   .allow()
-  .not()
+  .notActions()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
@@ -362,7 +362,7 @@ new statement.S3()
   .on('*');
 ```
 
-### <a name='not'></a>not
+### <a name='notActions'></a>notActions
 
 Switches the policy provider to use [notAction]. Calling this method will change the behavior of all successive called action methods. It will not modify actions that have been added before the call.
 
@@ -371,7 +371,7 @@ Switches the policy provider to use [notAction]. Calling this method will change
 ```typescript
 new statement.S3()
   .allow()
-  .not()
+  .notActions()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
@@ -382,7 +382,7 @@ new statement.S3()
 new statement.S3()
   .allow()
   .deleteBucket()
-  .not()
+  .notActions()
   .onBucket('some-bucket');
 ```
 
