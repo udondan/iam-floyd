@@ -18,9 +18,9 @@
 
 <!-- stats -->
 **Services:** 234<br>
-**Actions:** 15321<br>
-**Resource Types:** 1464<br>
-**Conditions:** 861
+**Actions:** 7674<br>
+**Resource Types:** 734<br>
+**Conditions:** 446
 <!-- /stats -->
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
