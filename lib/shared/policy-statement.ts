@@ -49,7 +49,11 @@ export class PolicyStatement extends iam.PolicyStatement {
   public actions: Actions = {};
 
   /**
-   * Adds actions by name. Depending on the "mode", actions will be either added to the list of `Actions` or `NotActions`.
+   * Adds actions by name.
+   *
+   * Depending on the "mode", actions will be either added to the list of [`Actions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) or [`NotActions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
+   *
+   * The mode can be switch by calling `notActions()`.
    *
    * @param actions Actions that will be added to the statement.
    */
