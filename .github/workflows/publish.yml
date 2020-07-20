@@ -22,7 +22,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: v${{ steps.get_version.outputs.VERSION }}
-          body_path: CHANGELOG/${{ github.ref }}.md
+          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
       - name: Checkout code
         uses: actions/checkout@v1
