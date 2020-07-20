@@ -19,7 +19,7 @@ jobs:
         id: release_notes
         uses: juliangruber/read-file-action@v1
         with:
-          path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+          path: ./CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
       - name: Create release
         uses: actions/create-release@v1
