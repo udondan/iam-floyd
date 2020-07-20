@@ -15,15 +15,20 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
 
+      - name: Read Release Notes
+        id: release_notes
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+
       - name: Create release
-        #uses: actions/create-release@v1
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: v${{ steps.get_version.outputs.VERSION }}
-          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-        run: pwd
+          body_path: ./CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
       - name: Checkout code
         uses: actions/checkout@v1
