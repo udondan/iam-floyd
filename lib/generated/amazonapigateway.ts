@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service execute-api
+ * Statement provider for service [execute-api](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ExecuteApi extends PolicyStatement {
   public servicePrefix = 'execute-api';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "InvalidateCache": {
       "url": "https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html",
       "description": "Used to invalidate API cache upon a client request",
@@ -50,12 +49,12 @@ export class ExecuteApi extends PolicyStatement {
   };
 
   /**
-   * Action provider for service execute-api
+   * Statement provider for service [execute-api](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonapigateway.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

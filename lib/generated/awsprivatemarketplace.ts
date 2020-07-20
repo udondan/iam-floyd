@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-private
+ * Statement provider for service [aws-marketplace-private](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsprivatemarketplace.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsprivatemarketplace.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplacePrivate extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-private';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateProductsWithPrivateMarketplace": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html",
       "description": "Adds new approved products to the Private Marketplace. Also allows to approve a request for a product to be associated with the Private Marketplace. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it.",
@@ -93,12 +92,12 @@ export class AwsMarketplacePrivate extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace-private
+   * Statement provider for service [aws-marketplace-private](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsprivatemarketplace.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsprivatemarketplace.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

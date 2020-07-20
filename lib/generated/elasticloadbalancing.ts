@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service elasticloadbalancing
+ * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Elasticloadbalancing extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_AddTags.html",
       "description": "Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags",
@@ -280,12 +279,12 @@ export class Elasticloadbalancing extends PolicyStatement {
   };
 
   /**
-   * Action provider for service elasticloadbalancing
+   * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

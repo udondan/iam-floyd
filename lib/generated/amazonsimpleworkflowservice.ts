@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service swf
+ * Statement provider for service [swf](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpleworkflowservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpleworkflowservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Swf extends PolicyStatement {
   public servicePrefix = 'swf';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelTimer": {
       "url": "https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelTimer.html",
       "description": "Description for CancelTimer",
@@ -563,12 +562,12 @@ export class Swf extends PolicyStatement {
   };
 
   /**
-   * Action provider for service swf
+   * Statement provider for service [swf](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpleworkflowservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpleworkflowservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

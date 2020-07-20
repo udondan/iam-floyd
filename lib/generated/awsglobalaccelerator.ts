@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service globalaccelerator
+ * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglobalaccelerator.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglobalaccelerator.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Globalaccelerator extends PolicyStatement {
   public servicePrefix = 'globalaccelerator';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AdvertiseByoipCidr": {
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_AdvertiseByoipCidr.html",
       "description": "Advertises an IPv4 address range that is provisioned for use with your accelerator through bring your own IP addresses (BYOIP).",
@@ -264,12 +263,12 @@ export class Globalaccelerator extends PolicyStatement {
   };
 
   /**
-   * Action provider for service globalaccelerator
+   * Statement provider for service [globalaccelerator](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglobalaccelerator.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglobalaccelerator.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

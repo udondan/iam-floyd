@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ecs
+ * Statement provider for service [ecs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ecs extends PolicyStatement {
   public servicePrefix = 'ecs';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateCluster": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html",
       "description": "Creates a new Amazon ECS cluster.",
@@ -590,12 +589,12 @@ export class Ecs extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ecs
+   * Statement provider for service [ecs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service lakeformation
+ * Statement provider for service [lakeformation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslakeformation.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslakeformation.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Lakeformation extends PolicyStatement {
   public servicePrefix = 'lakeformation';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchGrantPermissions": {
       "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/aws-lake-formation-api.html",
       "description": "Grants data lake permissions to one or more principals in a batch.",
@@ -83,12 +82,12 @@ export class Lakeformation extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service lakeformation
+   * Statement provider for service [lakeformation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslakeformation.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslakeformation.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

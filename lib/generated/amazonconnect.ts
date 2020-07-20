@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service connect
+ * Statement provider for service [connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnect.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnect.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Connect extends PolicyStatement {
   public servicePrefix = 'connect';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateInstance": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to create a new Amazon Connect instance. The associated required actions grant permissions to configure instance settings.",
@@ -511,12 +510,12 @@ export class Connect extends PolicyStatement {
   };
 
   /**
-   * Action provider for service connect
+   * Statement provider for service [connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnect.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonconnect.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

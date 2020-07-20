@@ -2,7 +2,6 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
-[![Docs](https://img.shields.io/badge/awscdk.io-iam--floyd-orange)][docs]
 
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
@@ -41,7 +40,7 @@
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
 	* [notActions](#notActions)
-* [But I don't use CDK. Can I still use this package?](#ButIdontuseCDK.CanIstillusethispackage)
+	* [notResource](#notResource)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -52,16 +51,11 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-While [method chaining] is not seen a lot in CDK-land, this library's goal is to provide a way to generate policy statements in a single chain. Code completion FTW!
-
 ## <a name='Usage'></a>Usage
 
-The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is an extension of the original `PolicyStatement` of the `@aws-cdk/aws-iam` package, so you can use it as drop-in replacement.
-
-A statement provider has methods for every single action of a service. Calling such method will add the related action to the list of actions of the statement:
+The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
 ```typescript
-import * as iam from '@aws-cdk/aws-iam';
 import * as statement from 'iam-floyd';
 
 new statement.Ec2().startInstances();
@@ -143,6 +137,8 @@ new statement.Ec2()
   .if('aws:RequestTag/Owner', 'John');
 ```
 
+The default operator for conditions of type [String](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String) is `StringLike`.
+
 Most of the `if*()` methods allow an optional operator as last argument:
 
 ```typescript
@@ -150,7 +146,7 @@ new statement.Ec2()
   .allow()
   .startInstances()
   .ifInstanceType('*.nano', 'StringLike')
-  .if('aws:RequestTag/Owner', 'John*', 'StringLike');
+  .if('aws:RequestTag/Owner', '*John*', 'StringEquals');
 ```
 
 By default the statement applies to all resources. To limit to specific resources, add them via `on*()`.
@@ -177,12 +173,13 @@ new statement.S3()
   );
 ```
 
-What about [notAction]? Yes, simply add `notActions()` to the chain. Though it is important that you add it **before** you add actions.
+To invert the policy you can use `notActions()` and `notResource()` to the chain.
 
 ```typescript
 new statement.S3()
   .allow()
   .notActions()
+  .notResource()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
@@ -190,8 +187,9 @@ new statement.S3()
 ## <a name='Examples'></a>Examples
 
 ```typescript
-new iam.PolicyDocument({
-  statements: [
+const policy = {
+  Version: '2012-10-17',
+  Statement: [
     new statement.Ec2()
       .allow()
       .startInstances()
@@ -206,13 +204,14 @@ new iam.PolicyDocument({
         statement.AccessLevel.LIST,
         statement.AccessLevel.READ
     ),
-  ],
-});
+  ]
+}
 ```
 
 ```typescript
-new iam.PolicyDocument({
-  statements: [
+const policy = {
+  Version: '2012-10-17',
+  Statement: [
     new statement.Cloudformation() // allow all CFN actions
       .allow()
       .allActions(),
@@ -236,8 +235,8 @@ new iam.PolicyDocument({
         statement.AccessLevel.PERMISSION_MANAGEMENT,
         statement.AccessLevel.WRITE
       ),
-  ],
-});
+  ]
+}
 ```
 
 ## <a name='Methods'></a>Methods
@@ -364,9 +363,7 @@ new statement.S3()
 
 ### <a name='notActions'></a>notActions
 
-Switches the policy provider to use [notAction]. Calling this method will change the behavior of all successive called action methods. It will not modify actions that have been added before the call.
-
-**Correct:** `s3:DeleteBucket` will be added to the list of `NotAction`
+Switches the policy provider to use [NotAction].
 
 ```typescript
 new statement.S3()
@@ -376,37 +373,16 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
-**Wrong:** `s3:DeleteBucket` will be added to the list of `Action`
+### <a name='notResource'></a>notResource
+
+Switches the policy provider to use [NotResource].
 
 ```typescript
 new statement.S3()
   .allow()
+  .notResource()
   .deleteBucket()
-  .notActions()
   .onBucket('some-bucket');
-```
-
-## <a name='ButIdontuseCDK.CanIstillusethispackage'></a>But I don't use CDK. Can I still use this package?
-
-Yes. While the package is designed to be used within CDK you can also just use it to generate policy statements in JSON format:
-
-```typescript
-new statement.Ec2()
-  .allow()
-  .startInstances()
-  .stopInstances()
-  .on('*')
-  .toJSON();
-
-new iam.PolicyDocument({
-  statements: [
-    new statement.Ec2()
-      .allow()
-      .startInstances()
-      .stopInstances()
-      .on('*'),
-  ],
-}).toJSON();
 ```
 
 ## <a name='Floyd'></a>Floyd?
@@ -434,14 +410,12 @@ AWS and their services are trademarks, registered trademarks or trade dress of A
 This project is not affiliated, funded, or in any way associated with AWS.
 
    [source]: https://github.com/udondan/iam-floyd
-   [docs]: https://awscdk.io/packages/iam-floyd@0.25.0
    [npm]: https://www.npmjs.com/package/iam-floyd
    [PyPI]: https://pypi.org/project/iam-floyd/
    [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/master/LICENSE
-   [CDK]: https://aws.amazon.com/cdk/
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
-   [method chaining]: https://en.wikipedia.org/wiki/Method_chaining
-   [notAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
+   [NotAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
+   [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mobiletargeting
+ * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpoint.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpoint.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mobiletargeting extends PolicyStatement {
   public servicePrefix = 'mobiletargeting';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateApp": {
       "url": "https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-app.html#rest-api-app-methods",
       "description": "Create an app.",
@@ -1244,12 +1243,12 @@ export class Mobiletargeting extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mobiletargeting
+   * Statement provider for service [mobiletargeting](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpoint.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpoint.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

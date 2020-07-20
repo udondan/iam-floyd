@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service lex
+ * Statement provider for service [lex](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlex.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlex.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Lex extends PolicyStatement {
   public servicePrefix = 'lex';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateBotVersion": {
       "url": "https://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html",
       "description": "Creates a new version based on the $LATEST version of the specified bot.",
@@ -505,12 +504,12 @@ export class Lex extends PolicyStatement {
   };
 
   /**
-   * Action provider for service lex
+   * Statement provider for service [lex](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlex.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlex.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

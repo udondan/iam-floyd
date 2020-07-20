@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service neptune-db
+ * Statement provider for service [neptune-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class NeptuneDb extends PolicyStatement {
   public servicePrefix = 'neptune-db';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "connect": {
       "url": "https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html",
       "description": "Connect to database",
@@ -30,12 +29,12 @@ export class NeptuneDb extends PolicyStatement {
   };
 
   /**
-   * Action provider for service neptune-db
+   * Statement provider for service [neptune-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

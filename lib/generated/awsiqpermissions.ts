@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service iq-permission
+ * Statement provider for service [iq-permission](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class IqPermission extends PolicyStatement {
   public servicePrefix = 'iq-permission';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ApproveAccessGrant": {
       "url": "https://aws.amazon.com/iq/",
       "description": "Grants permission to approve an access grant",
@@ -18,12 +17,12 @@ export class IqPermission extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service iq-permission
+   * Statement provider for service [iq-permission](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiqpermissions.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

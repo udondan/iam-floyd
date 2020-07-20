@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service machinelearning
+ * Statement provider for service [machinelearning](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Machinelearning extends PolicyStatement {
   public servicePrefix = 'machinelearning';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/machine-learning/latest/APIReference/API_AddTags.html",
       "description": "Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key and an optional value",
@@ -340,12 +339,12 @@ export class Machinelearning extends PolicyStatement {
   };
 
   /**
-   * Action provider for service machinelearning
+   * Statement provider for service [machinelearning](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmachinelearning.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

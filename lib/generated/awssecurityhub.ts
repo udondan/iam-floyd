@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service securityhub
+ * Statement provider for service [securityhub](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Securityhub extends PolicyStatement {
   public servicePrefix = 'securityhub';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html",
       "description": "Grants permission to accept Security Hub invitations to become a member account",
@@ -455,12 +454,12 @@ export class Securityhub extends PolicyStatement {
   };
 
   /**
-   * Action provider for service securityhub
+   * Statement provider for service [securityhub](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

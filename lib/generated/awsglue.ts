@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service glue
+ * Statement provider for service [glue](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglue.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglue.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Glue extends PolicyStatement {
   public servicePrefix = 'glue';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchCreatePartition": {
       "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-BatchCreatePartition",
       "description": "Grants permission to create one or more partitions",
@@ -1245,12 +1244,12 @@ export class Glue extends PolicyStatement {
   };
 
   /**
-   * Action provider for service glue
+   * Statement provider for service [glue](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglue.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsglue.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

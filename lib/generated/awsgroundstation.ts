@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service groundstation
+ * Statement provider for service [groundstation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsgroundstation.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsgroundstation.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Groundstation extends PolicyStatement {
   public servicePrefix = 'groundstation';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelContact": {
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CancelContact.html",
       "description": "Grants permission to cancel a contact",
@@ -312,12 +311,12 @@ export class Groundstation extends PolicyStatement {
   };
 
   /**
-   * Action provider for service groundstation
+   * Statement provider for service [groundstation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsgroundstation.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsgroundstation.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service sumerian
+ * Statement provider for service [sumerian](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Sumerian extends PolicyStatement {
   public servicePrefix = 'sumerian';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "Login": {
       "url": "https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html",
       "description": "Grant login access to the Sumerian console.",
@@ -35,12 +34,12 @@ export class Sumerian extends PolicyStatement {
   };
 
   /**
-   * Action provider for service sumerian
+   * Statement provider for service [sumerian](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsumerian.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

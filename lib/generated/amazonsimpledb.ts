@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service sdb
+ * Statement provider for service [sdb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Sdb extends PolicyStatement {
   public servicePrefix = 'sdb';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchDeleteAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html",
       "description": "Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies.",
@@ -115,12 +114,12 @@ export class Sdb extends PolicyStatement {
   };
 
   /**
-   * Action provider for service sdb
+   * Statement provider for service [sdb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpledb.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

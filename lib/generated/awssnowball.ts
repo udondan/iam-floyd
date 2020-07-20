@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service snowball
+ * Statement provider for service [snowball](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssnowball.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssnowball.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Snowball extends PolicyStatement {
   public servicePrefix = 'snowball';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelCluster": {
       "url": "https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelCluster.html",
       "description": "Cancels a cluster job.",
@@ -98,12 +97,12 @@ export class Snowball extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service snowball
+   * Statement provider for service [snowball](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssnowball.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssnowball.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service purchase-orders
+ * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class PurchaseOrders extends PolicyStatement {
   public servicePrefix = 'purchase-orders';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ModifyPurchaseOrders": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Modify purchase orders and details",
@@ -23,12 +22,12 @@ export class PurchaseOrders extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service purchase-orders
+   * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

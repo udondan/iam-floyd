@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service inspector
+ * Statement provider for service [inspector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninspector.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninspector.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Inspector extends PolicyStatement {
   public servicePrefix = 'inspector';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddAttributesToFindings": {
       "url": "https://docs.aws.amazon.com/inspector/latest/APIReference/API_AddAttributesToFindings.html",
       "description": "Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.",
@@ -173,12 +172,12 @@ export class Inspector extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service inspector
+   * Statement provider for service [inspector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninspector.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninspector.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

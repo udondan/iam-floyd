@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codeguru
+ * Statement provider for service [codeguru](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Codeguru extends PolicyStatement {
   public servicePrefix = 'codeguru';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "GetCodeGuruFreeTrialSummary": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html",
       "description": "Gets free trial summary for the CodeGuru service which includes expiration date.",
@@ -18,12 +17,12 @@ export class Codeguru extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service codeguru
+   * Statement provider for service [codeguru](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

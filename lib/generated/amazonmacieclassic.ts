@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service macie
+ * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Macie extends PolicyStatement {
   public servicePrefix = 'macie';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateMemberAccount": {
       "url": "https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html",
       "description": "Enables the user to associate a specified AWS account with Amazon Macie as a member account.",
@@ -57,12 +56,12 @@ export class Macie extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service macie
+   * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

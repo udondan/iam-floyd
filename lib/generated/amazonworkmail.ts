@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service workmail
+ * Statement provider for service [workmail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Workmail extends PolicyStatement {
   public servicePrefix = 'workmail';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddMembersToGroup": {
       "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html",
       "description": "Adds a list of members (users or groups) to a group.",
@@ -957,12 +956,12 @@ export class Workmail extends PolicyStatement {
   };
 
   /**
-   * Action provider for service workmail
+   * Statement provider for service [workmail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmail.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

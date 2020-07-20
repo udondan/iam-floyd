@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ram
+ * Statement provider for service [ram](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourceaccessmanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourceaccessmanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ram extends PolicyStatement {
   public servicePrefix = 'ram';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptResourceShareInvitation": {
       "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html",
       "description": "Accept the specified resource share invitation",
@@ -288,12 +287,12 @@ export class Ram extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ram
+   * Statement provider for service [ram](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourceaccessmanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourceaccessmanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

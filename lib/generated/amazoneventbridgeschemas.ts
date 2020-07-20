@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service schemas
+ * Statement provider for service [schemas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Schemas extends PolicyStatement {
   public servicePrefix = 'schemas';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateDiscoverer": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer",
       "description": "Creates an event schema discoverer. Once created, your events will be automatically map into corresponding schema documents",
@@ -358,12 +357,12 @@ export class Schemas extends PolicyStatement {
   };
 
   /**
-   * Action provider for service schemas
+   * Statement provider for service [schemas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mediaconvert
+ * Statement provider for service [mediaconvert](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconvert.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconvert.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mediaconvert extends PolicyStatement {
   public servicePrefix = 'mediaconvert';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateCertificate": {
       "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/certificates.html",
       "description": "Grants permission to associate an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.",
@@ -312,12 +311,12 @@ export class Mediaconvert extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mediaconvert
+   * Statement provider for service [mediaconvert](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconvert.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconvert.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service directconnect
+ * Statement provider for service [directconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Directconnect extends PolicyStatement {
   public servicePrefix = 'directconnect';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptDirectConnectGatewayAssociationProposal": {
       "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AcceptDirectConnectGatewayAssociationProposal.html",
       "description": "Accepts a proposal request to attach a virtual private gateway to a Direct Connect gateway.",
@@ -692,12 +691,12 @@ export class Directconnect extends PolicyStatement {
   };
 
   /**
-   * Action provider for service directconnect
+   * Statement provider for service [directconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectconnect.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

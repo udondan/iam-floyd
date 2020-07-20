@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service iotthingsgraph
+ * Statement provider for service [iotthingsgraph](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotthingsgraph.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotthingsgraph.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Iotthingsgraph extends PolicyStatement {
   public servicePrefix = 'iotthingsgraph';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateEntityToThing": {
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_AssociateEntityToThing.html",
       "description": "Associates a device with a concrete thing that is in the user's registry. A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.",
@@ -310,12 +309,12 @@ export class Iotthingsgraph extends PolicyStatement {
   };
 
   /**
-   * Action provider for service iotthingsgraph
+   * Statement provider for service [iotthingsgraph](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotthingsgraph.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotthingsgraph.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

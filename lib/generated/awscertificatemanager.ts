@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service acm
+ * Statement provider for service [acm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Acm extends PolicyStatement {
   public servicePrefix = 'acm';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTagsToCertificate": {
       "url": "https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html",
       "description": "Adds one or more tags to a certificate.",
@@ -153,12 +152,12 @@ export class Acm extends PolicyStatement {
   };
 
   /**
-   * Action provider for service acm
+   * Statement provider for service [acm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service gamelift
+ * Statement provider for service [gamelift](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongamelift.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongamelift.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Gamelift extends PolicyStatement {
   public servicePrefix = 'gamelift';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptMatch": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_AcceptMatch.html",
       "description": "Registers player acceptance or rejection of a proposed FlexMatch match.",
@@ -714,12 +713,12 @@ export class Gamelift extends PolicyStatement {
   };
 
   /**
-   * Action provider for service gamelift
+   * Statement provider for service [gamelift](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongamelift.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongamelift.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

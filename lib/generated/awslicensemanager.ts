@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service license-manager
+ * Statement provider for service [license-manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class LicenseManager extends PolicyStatement {
   public servicePrefix = 'license-manager';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateLicenseConfiguration": {
       "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html",
       "description": "Creates a new license configuration",
@@ -150,12 +149,12 @@ export class LicenseManager extends PolicyStatement {
   };
 
   /**
-   * Action provider for service license-manager
+   * Statement provider for service [license-manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

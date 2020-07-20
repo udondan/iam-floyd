@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service importexport
+ * Statement provider for service [importexport](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsimportexportdiskservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsimportexportdiskservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Importexport extends PolicyStatement {
   public servicePrefix = 'importexport';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html",
       "description": "This action cancels a specified job. Only the job owner can cancel it. The action fails if the job has already started or is complete.",
@@ -43,12 +42,12 @@ export class Importexport extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service importexport
+   * Statement provider for service [importexport](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsimportexportdiskservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsimportexportdiskservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

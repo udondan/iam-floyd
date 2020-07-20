@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service resource-groups
+ * Statement provider for service [resource-groups](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourcegroups.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourcegroups.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ResourceGroups extends PolicyStatement {
   public servicePrefix = 'resource-groups';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateGroup": {
       "url": "https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html",
       "description": "Creates a group with a specified name, description, and resource query.",
@@ -138,12 +137,12 @@ export class ResourceGroups extends PolicyStatement {
   };
 
   /**
-   * Action provider for service resource-groups
+   * Statement provider for service [resource-groups](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourcegroups.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourcegroups.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

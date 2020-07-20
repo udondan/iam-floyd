@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-procurement-systems-integration
+ * Statement provider for service [aws-marketplace-procurement-systems-integration](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceprocurementsystemsintegration.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceprocurementsystemsintegration.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-procurement-systems-integration';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeProcurementSystemConfiguration": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html",
       "description": "Describes the Procurement System integration configuration (e.g. Coupa) for the individual account, or for the entire AWS Organization if one exists. This action can only be performed by the master account if using an AWS Organization.",
@@ -23,12 +22,12 @@ export class AwsMarketplaceProcurementSystemsIntegration extends PolicyStatement
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace-procurement-systems-integration
+   * Statement provider for service [aws-marketplace-procurement-systems-integration](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceprocurementsystemsintegration.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceprocurementsystemsintegration.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service workmailmessageflow
+ * Statement provider for service [workmailmessageflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmailmessageflow.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmailmessageflow.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Workmailmessageflow extends PolicyStatement {
   public servicePrefix = 'workmailmessageflow';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "GetRawMessageContent": {
       "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html",
       "description": "Grants permission to read the content of email messages with the specified message ID",
@@ -30,12 +29,12 @@ export class Workmailmessageflow extends PolicyStatement {
   };
 
   /**
-   * Action provider for service workmailmessageflow
+   * Statement provider for service [workmailmessageflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmailmessageflow.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmailmessageflow.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

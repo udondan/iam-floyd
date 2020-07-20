@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service deeplens
+ * Statement provider for service [deeplens](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeeplens.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeeplens.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Deeplens extends PolicyStatement {
   public servicePrefix = 'deeplens';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateServiceRoleToAccount": {
       "url": "",
       "description": "Associates the user's account with IAM roles controlling various permissions needed by AWS DeepLens for proper functionality.",
@@ -215,12 +214,12 @@ export class Deeplens extends PolicyStatement {
   };
 
   /**
-   * Action provider for service deeplens
+   * Statement provider for service [deeplens](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeeplens.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeeplens.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

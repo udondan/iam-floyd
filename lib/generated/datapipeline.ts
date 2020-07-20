@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service datapipeline
+ * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Datapipeline extends PolicyStatement {
   public servicePrefix = 'datapipeline';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ActivatePipeline": {
       "url": "https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html",
       "description": "Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.",
@@ -181,12 +180,12 @@ export class Datapipeline extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service datapipeline
+   * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

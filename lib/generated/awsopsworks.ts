@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service opsworks
+ * Statement provider for service [opsworks](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworks.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworks.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Opsworks extends PolicyStatement {
   public servicePrefix = 'opsworks';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssignInstance": {
       "url": "https://docs.aws.amazon.com/opsworks/latest/APIReference/API_AssignInstance.html",
       "description": "Assign a registered instance to a layer",
@@ -715,12 +714,12 @@ export class Opsworks extends PolicyStatement {
   };
 
   /**
-   * Action provider for service opsworks
+   * Statement provider for service [opsworks](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworks.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworks.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

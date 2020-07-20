@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service lightsail
+ * Statement provider for service [lightsail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlightsail.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlightsail.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Lightsail extends PolicyStatement {
   public servicePrefix = 'lightsail';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AllocateStaticIp": {
       "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_AllocateStaticIp.html",
       "description": "Creates a static IP address that can be attached to an instance.",
@@ -1166,12 +1165,12 @@ export class Lightsail extends PolicyStatement {
   };
 
   /**
-   * Action provider for service lightsail
+   * Statement provider for service [lightsail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlightsail.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlightsail.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

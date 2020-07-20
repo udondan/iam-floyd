@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mediapackage
+ * Statement provider for service [mediapackage](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mediapackage extends PolicyStatement {
   public servicePrefix = 'mediapackage';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateChannel": {
       "url": "https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost",
       "description": "Grants permission to create a channel in AWS Elemental MediaPackage.",
@@ -174,12 +173,12 @@ export class Mediapackage extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mediapackage
+   * Statement provider for service [mediapackage](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

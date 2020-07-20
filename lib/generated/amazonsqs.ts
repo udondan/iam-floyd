@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service sqs
+ * Statement provider for service [sqs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsqs.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsqs.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Sqs extends PolicyStatement {
   public servicePrefix = 'sqs';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddPermission": {
       "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html",
       "description": "Adds a permission to a queue for a specific principal.",
@@ -215,12 +214,12 @@ export class Sqs extends PolicyStatement {
   };
 
   /**
-   * Action provider for service sqs
+   * Statement provider for service [sqs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsqs.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsqs.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service macie2
+ * Statement provider for service [macie2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Macie2 extends PolicyStatement {
   public servicePrefix = 'macie2';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/macie/latest/APIReference/invitations-accept.html",
       "description": "Grants permission to accept an Amazon Macie membership invitation",
@@ -417,12 +416,12 @@ export class Macie2 extends PolicyStatement {
   };
 
   /**
-   * Action provider for service macie2
+   * Statement provider for service [macie2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

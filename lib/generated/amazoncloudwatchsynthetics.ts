@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service synthetics
+ * Statement provider for service [synthetics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchsynthetics.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchsynthetics.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Synthetics extends PolicyStatement {
   public servicePrefix = 'synthetics';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateCanary": {
       "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html",
       "description": "Create a canary.",
@@ -115,12 +114,12 @@ export class Synthetics extends PolicyStatement {
   };
 
   /**
-   * Action provider for service synthetics
+   * Statement provider for service [synthetics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchsynthetics.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchsynthetics.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

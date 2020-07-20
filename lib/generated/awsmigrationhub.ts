@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mgh
+ * Statement provider for service [mgh](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmigrationhub.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmigrationhub.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mgh extends PolicyStatement {
   public servicePrefix = 'mgh';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateCreatedArtifact": {
       "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html",
       "description": "Associate a given AWS artifact to a MigrationTask",
@@ -181,12 +180,12 @@ export class Mgh extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mgh
+   * Statement provider for service [mgh](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmigrationhub.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmigrationhub.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service networkmanager
+ * Statement provider for service [networkmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateCustomerGateway": {
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html",
       "description": "Grants permission to associate a customer gateway to a device",
@@ -441,12 +440,12 @@ export class Networkmanager extends PolicyStatement {
   };
 
   /**
-   * Action provider for service networkmanager
+   * Statement provider for service [networkmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

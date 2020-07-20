@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-entitlement-service
+ * Statement provider for service [aws-marketplace-entitlement-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceEntitlementService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-entitlement-service';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "GetEntitlements": {
       "url": "",
       "description": "Retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions",
@@ -18,12 +17,12 @@ export class AwsMarketplaceEntitlementService extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace-entitlement-service
+   * Statement provider for service [aws-marketplace-entitlement-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceentitlementservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

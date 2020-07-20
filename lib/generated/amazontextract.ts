@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service textract
+ * Statement provider for service [textract](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontextract.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontextract.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Textract extends PolicyStatement {
   public servicePrefix = 'textract';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AnalyzeDocument": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html",
       "description": "Detects instances of real-world document entities within an image provided as input.",
@@ -43,12 +42,12 @@ export class Textract extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service textract
+   * Statement provider for service [textract](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontextract.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontextract.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

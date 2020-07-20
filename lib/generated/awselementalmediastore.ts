@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mediastore
+ * Statement provider for service [mediastore](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediastore.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediastore.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mediastore extends PolicyStatement {
   public servicePrefix = 'mediastore';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateContainer": {
       "url": "https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html",
       "description": "Grants permission to create containers.",
@@ -150,12 +149,12 @@ export class Mediastore extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mediastore
+   * Statement provider for service [mediastore](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediastore.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediastore.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

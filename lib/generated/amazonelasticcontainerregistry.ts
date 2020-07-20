@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ecr
+ * Statement provider for service [ecr](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ecr extends PolicyStatement {
   public servicePrefix = 'ecr';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchCheckLayerAvailability": {
       "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html",
       "description": "Grants permission to check the availability of multiple image layers in a specified registry and repository",
@@ -316,12 +315,12 @@ export class Ecr extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ecr
+   * Statement provider for service [ecr](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

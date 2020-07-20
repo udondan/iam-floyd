@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service waf
+ * Statement provider for service [waf](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswaf.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswaf.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Waf extends PolicyStatement {
   public servicePrefix = 'waf';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateByteMatchSet": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateByteMatchSet.html",
       "description": "Creates a ByteMatchSet.",
@@ -832,12 +831,12 @@ export class Waf extends PolicyStatement {
   };
 
   /**
-   * Action provider for service waf
+   * Statement provider for service [waf](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswaf.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswaf.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

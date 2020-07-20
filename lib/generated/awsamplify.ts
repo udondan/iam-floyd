@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service amplify
+ * Statement provider for service [amplify](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Amplify extends PolicyStatement {
   public servicePrefix = 'amplify';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateApp": {
       "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
       "description": "Creates a new Amplify App.",
@@ -430,12 +429,12 @@ export class Amplify extends PolicyStatement {
   };
 
   /**
-   * Action provider for service amplify
+   * Statement provider for service [amplify](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

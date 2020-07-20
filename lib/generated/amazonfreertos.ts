@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service freertos
+ * Statement provider for service [freertos](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Freertos extends PolicyStatement {
   public servicePrefix = 'freertos';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateSoftwareConfiguration": {
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",
       "description": "Creates a software configuration.",
@@ -101,12 +100,12 @@ export class Freertos extends PolicyStatement {
   };
 
   /**
-   * Action provider for service freertos
+   * Statement provider for service [freertos](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

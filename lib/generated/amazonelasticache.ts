@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service elasticache
+ * Statement provider for service [elasticache](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Elasticache extends PolicyStatement {
   public servicePrefix = 'elasticache';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTagsToResource": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AddTagsToResource.html",
       "description": "The AddTagsToResource action adds up to 10 cost allocation tags to the named resource.",
@@ -223,12 +222,12 @@ export class Elasticache extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service elasticache
+   * Statement provider for service [elasticache](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

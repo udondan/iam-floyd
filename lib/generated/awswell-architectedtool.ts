@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service wellarchitected
+ * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Wellarchitected extends PolicyStatement {
   public servicePrefix = 'wellarchitected';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateWorkload": {
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html",
       "description": "Creates a new workload.",
@@ -60,12 +59,12 @@ export class Wellarchitected extends PolicyStatement {
   };
 
   /**
-   * Action provider for service wellarchitected
+   * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

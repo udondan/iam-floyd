@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service dax
+ * Statement provider for service [dax](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodbacceleratordax.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodbacceleratordax.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Dax extends PolicyStatement {
   public servicePrefix = 'dax';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchGetItem": {
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html",
       "description": "The BatchGetItem action returns the attributes of one or more items from one or more tables.",
@@ -277,12 +276,12 @@ export class Dax extends PolicyStatement {
   };
 
   /**
-   * Action provider for service dax
+   * Statement provider for service [dax](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodbacceleratordax.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondynamodbacceleratordax.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

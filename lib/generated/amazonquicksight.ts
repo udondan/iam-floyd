@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service quicksight
+ * Statement provider for service [quicksight](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Quicksight extends PolicyStatement {
   public servicePrefix = 'quicksight';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateAdmin": {
       "url": "https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html",
       "description": "CreateAdmin enables the user to provision Amazon QuickSight administrators, authors, and readers.",
@@ -768,12 +767,12 @@ export class Quicksight extends PolicyStatement {
   };
 
   /**
-   * Action provider for service quicksight
+   * Statement provider for service [quicksight](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonquicksight.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service trustedadvisor
+ * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Trustedadvisor extends PolicyStatement {
   public servicePrefix = 'trustedadvisor';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeAccount": {
       "url": "",
       "description": "View support plan and various TA preferences.",
@@ -110,12 +109,12 @@ export class Trustedadvisor extends PolicyStatement {
   };
 
   /**
-   * Action provider for service trustedadvisor
+   * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

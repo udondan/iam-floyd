@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ssm
+ * Statement provider for service [ssm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ssm extends PolicyStatement {
   public servicePrefix = 'ssm';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTagsToResource": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html",
       "description": "Grants permission to add or overwrite one or more tags for a specified AWS resource",
@@ -1158,12 +1157,12 @@ export class Ssm extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ssm
+   * Statement provider for service [ssm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

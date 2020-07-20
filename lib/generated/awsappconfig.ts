@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service appconfig
+ * Statement provider for service [appconfig](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Appconfig extends PolicyStatement {
   public servicePrefix = 'appconfig';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateApplication": {
       "url": "https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html",
       "description": "Grants permission to create an application",
@@ -554,12 +553,12 @@ export class Appconfig extends PolicyStatement {
   };
 
   /**
-   * Action provider for service appconfig
+   * Statement provider for service [appconfig](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

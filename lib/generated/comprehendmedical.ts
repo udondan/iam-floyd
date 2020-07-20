@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service comprehendmedical
+ * Statement provider for service [comprehendmedical](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Comprehendmedical extends PolicyStatement {
   public servicePrefix = 'comprehendmedical';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DetectEntities": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html",
       "description": "Inspects the specified text for the specified type of entities and returns information about them.",
@@ -23,12 +22,12 @@ export class Comprehendmedical extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service comprehendmedical
+   * Statement provider for service [comprehendmedical](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codedeploy
+ * Statement provider for service [codedeploy](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Codedeploy extends PolicyStatement {
   public servicePrefix = 'codedeploy';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTagsToOnPremisesInstances": {
       "url": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.html",
       "description": "Add tags to one or more on-premises instances.",
@@ -472,12 +471,12 @@ export class Codedeploy extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codedeploy
+   * Statement provider for service [codedeploy](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodedeploy.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

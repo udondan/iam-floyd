@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service support
+ * Statement provider for service [support](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssupport.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssupport.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Support extends PolicyStatement {
   public servicePrefix = 'support';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddAttachmentsToSet": {
       "url": "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddAttachmentsToSet.html",
       "description": "Adds one or more attachments to an AWS Support case.",
@@ -123,12 +122,12 @@ export class Support extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service support
+   * Statement provider for service [support](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssupport.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssupport.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

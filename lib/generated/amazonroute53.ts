@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service route53
+ * Statement provider for service [route53](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Route53 extends PolicyStatement {
   public servicePrefix = 'route53';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateVPCWithHostedZone": {
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html",
       "description": "Grants permission to associate an additional Amazon VPC with a private hosted zone",
@@ -533,12 +532,12 @@ export class Route53 extends PolicyStatement {
   };
 
   /**
-   * Action provider for service route53
+   * Statement provider for service [route53](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

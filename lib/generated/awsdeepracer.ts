@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service deepracer
+ * Statement provider for service [deepracer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepracer.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepracer.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Deepracer extends PolicyStatement {
   public servicePrefix = 'deepracer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CloneReinforcementLearningModel": {
       "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-console-train-evaluate-models.html#deepracer-clone-trained-model",
       "description": "Grants permission to clone existing DeepRacer models",
@@ -274,12 +273,12 @@ export class Deepracer extends PolicyStatement {
   };
 
   /**
-   * Action provider for service deepracer
+   * Statement provider for service [deepracer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepracer.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepracer.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

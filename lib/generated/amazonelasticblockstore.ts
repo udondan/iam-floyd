@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ebs
+ * Statement provider for service [ebs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ebs extends PolicyStatement {
   public servicePrefix = 'ebs';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "GetSnapshotBlock": {
       "url": "https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html",
       "description": "Grants permission to return the data of a block in an Amazon Elastic Block Store (EBS) snapshot",
@@ -52,12 +51,12 @@ export class Ebs extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ebs
+   * Statement provider for service [ebs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

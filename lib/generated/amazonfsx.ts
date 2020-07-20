@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service fsx
+ * Statement provider for service [fsx](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfsx.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfsx.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Fsx extends PolicyStatement {
   public servicePrefix = 'fsx';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelDataRepositoryTask": {
       "url": "https://docs.aws.amazon.com/fsx/latest/APIReference/API_CancelDataRepositoryTask.html",
       "description": "This action cancels a data repository task",
@@ -213,12 +212,12 @@ export class Fsx extends PolicyStatement {
   };
 
   /**
-   * Action provider for service fsx
+   * Statement provider for service [fsx](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfsx.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfsx.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

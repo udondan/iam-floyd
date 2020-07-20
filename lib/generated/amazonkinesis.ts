@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service kinesis
+ * Statement provider for service [kinesis](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Kinesis extends PolicyStatement {
   public servicePrefix = 'kinesis';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTagsToStream": {
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html",
       "description": "Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have up to 10 tags.",
@@ -263,12 +262,12 @@ export class Kinesis extends PolicyStatement {
   };
 
   /**
-   * Action provider for service kinesis
+   * Statement provider for service [kinesis](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesis.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service medialive
+ * Statement provider for service [medialive](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Medialive extends PolicyStatement {
   public servicePrefix = 'medialive';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchUpdateSchedule": {
       "url": "https://docs.aws.amazon.com/medialive/latest/ug/batching-actions.html",
       "description": "Grants permission to add and remove actions from a channel's schedule.",
@@ -503,12 +502,12 @@ export class Medialive extends PolicyStatement {
   };
 
   /**
-   * Action provider for service medialive
+   * Statement provider for service [medialive](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

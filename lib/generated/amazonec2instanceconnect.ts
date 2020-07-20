@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ec2-instance-connect
+ * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ec2InstanceConnect extends PolicyStatement {
   public servicePrefix = 'ec2-instance-connect';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "SendSSHPublicKey": {
       "url": "https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html",
       "description": "Grants permission to push the SSH public key to the instance metadata where it remains for 60 seconds.",
@@ -36,12 +35,12 @@ export class Ec2InstanceConnect extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ec2-instance-connect
+   * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

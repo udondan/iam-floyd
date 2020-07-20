@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service application-autoscaling
+ * Statement provider for service [application-autoscaling](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationautoscaling.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationautoscaling.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ApplicationAutoscaling extends PolicyStatement {
   public servicePrefix = 'application-autoscaling';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DeleteScalingPolicy": {
       "url": "https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DeleteScalingPolicy.html",
       "description": "Deletes an Application Auto Scaling scaling policy that was previously created.",
@@ -63,12 +62,12 @@ export class ApplicationAutoscaling extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service application-autoscaling
+   * Statement provider for service [application-autoscaling](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationautoscaling.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationautoscaling.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mq
+ * Statement provider for service [mq](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmq.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmq.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mq extends PolicyStatement {
   public servicePrefix = 'mq';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateBroker": {
       "url": "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post",
       "description": "Grants permission to create a broker.",
@@ -244,12 +243,12 @@ export class Mq extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mq
+   * Statement provider for service [mq](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmq.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmq.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

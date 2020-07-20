@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service elastictranscoder
+ * Statement provider for service [elastictranscoder](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelastictranscoder.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelastictranscoder.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Elastictranscoder extends PolicyStatement {
   public servicePrefix = 'elastictranscoder';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html",
       "description": "Cancel a job that Elastic Transcoder has not begun to process",
@@ -185,12 +184,12 @@ export class Elastictranscoder extends PolicyStatement {
   };
 
   /**
-   * Action provider for service elastictranscoder
+   * Statement provider for service [elastictranscoder](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelastictranscoder.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelastictranscoder.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

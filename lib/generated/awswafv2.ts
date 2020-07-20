@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service wafv2
+ * Statement provider for service [wafv2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafv2.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafv2.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Wafv2 extends PolicyStatement {
   public servicePrefix = 'wafv2';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateWebACL": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html",
       "description": "Grants permission to associate a WebACL with a resource.",
@@ -514,12 +513,12 @@ export class Wafv2 extends PolicyStatement {
   };
 
   /**
-   * Action provider for service wafv2
+   * Statement provider for service [wafv2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafv2.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafv2.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

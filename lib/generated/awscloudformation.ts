@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cloudformation
+ * Statement provider for service [cloudformation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cloudformation extends PolicyStatement {
   public servicePrefix = 'cloudformation';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelUpdateStack": {
       "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html",
       "description": "Cancels an update on the specified stack.",
@@ -586,12 +585,12 @@ export class Cloudformation extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cloudformation
+   * Statement provider for service [cloudformation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

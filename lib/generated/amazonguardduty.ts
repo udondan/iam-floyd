@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service guardduty
+ * Statement provider for service [guardduty](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonguardduty.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonguardduty.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Guardduty extends PolicyStatement {
   public servicePrefix = 'guardduty';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_AcceptInvitation.html",
       "description": "Grants permission to accept invitations to become a GuardDuty member account.",
@@ -633,12 +632,12 @@ export class Guardduty extends PolicyStatement {
   };
 
   /**
-   * Action provider for service guardduty
+   * Statement provider for service [guardduty](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonguardduty.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonguardduty.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

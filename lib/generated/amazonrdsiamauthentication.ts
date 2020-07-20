@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service rds-db
+ * Statement provider for service [rds-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class RdsDb extends PolicyStatement {
   public servicePrefix = 'rds-db';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "connect": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html",
       "description": "Allows IAM role or user to connect to RDS database",
@@ -30,12 +29,12 @@ export class RdsDb extends PolicyStatement {
   };
 
   /**
-   * Action provider for service rds-db
+   * Statement provider for service [rds-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsiamauthentication.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

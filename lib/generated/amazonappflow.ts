@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service appflow
+ * Statement provider for service [appflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappflow.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappflow.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Appflow extends PolicyStatement {
   public servicePrefix = 'appflow';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateConnectorProfile": {
       "url": "https://docs.aws.amazon.com/",
       "description": "Grants permission to create a login profile to be used with AppFlow flows",
@@ -168,12 +167,12 @@ export class Appflow extends PolicyStatement {
   };
 
   /**
-   * Action provider for service appflow
+   * Statement provider for service [appflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappflow.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappflow.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

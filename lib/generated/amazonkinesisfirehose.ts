@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service firehose
+ * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Firehose extends PolicyStatement {
   public servicePrefix = 'firehose';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateDeliveryStream": {
       "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html",
       "description": "Creates a delivery stream.",
@@ -148,12 +147,12 @@ export class Firehose extends PolicyStatement {
   };
 
   /**
-   * Action provider for service firehose
+   * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

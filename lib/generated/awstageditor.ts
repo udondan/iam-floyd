@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service resource-explorer
+ * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ResourceExplorer extends PolicyStatement {
   public servicePrefix = 'resource-explorer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ListResourceTypes": {
       "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te",
       "description": "Grants permission to retrieve the resource types currently supported by Tag Editor",
@@ -28,12 +27,12 @@ export class ResourceExplorer extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service resource-explorer
+   * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

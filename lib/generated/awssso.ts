@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service sso
+ * Statement provider for service [sso](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssso.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssso.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Sso extends PolicyStatement {
   public servicePrefix = 'sso';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateDirectory": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Connect a directory to be used by AWS Single Sign-On",
@@ -283,12 +282,12 @@ export class Sso extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service sso
+   * Statement provider for service [sso](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssso.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssso.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

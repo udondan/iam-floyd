@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service dbqms
+ * Statement provider for service [dbqms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_databasequerymetadataservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_databasequerymetadataservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Dbqms extends PolicyStatement {
   public servicePrefix = 'dbqms';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateFavoriteQuery": {
       "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html#CreateFavoriteQuery",
       "description": "Creates a new favorite query",
@@ -58,12 +57,12 @@ export class Dbqms extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service dbqms
+   * Statement provider for service [dbqms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_databasequerymetadataservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_databasequerymetadataservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

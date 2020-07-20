@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service storagegateway
+ * Statement provider for service [storagegateway](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonstoragegateway.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonstoragegateway.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Storagegateway extends PolicyStatement {
   public servicePrefix = 'storagegateway';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ActivateGateway": {
       "url": "https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ActivateGateway.html",
       "description": "This operation activates the gateway you previously deployed on your host.",
@@ -831,12 +830,12 @@ export class Storagegateway extends PolicyStatement {
   };
 
   /**
-   * Action provider for service storagegateway
+   * Statement provider for service [storagegateway](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonstoragegateway.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonstoragegateway.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

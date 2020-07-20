@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service rds-data
+ * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class RdsData extends PolicyStatement {
   public servicePrefix = 'rds-data';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchExecuteStatement": {
       "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html",
       "description": "Runs a batch SQL statement over an array of data.",
@@ -43,12 +42,12 @@ export class RdsData extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service rds-data
+   * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service backup
+ * Statement provider for service [backup](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackup.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackup.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Backup extends PolicyStatement {
   public servicePrefix = 'backup';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CopyIntoBackupVault": {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CopyIntoBackupVault.html",
       "description": "Copy into a backup vault",
@@ -420,12 +419,12 @@ export class Backup extends PolicyStatement {
   };
 
   /**
-   * Action provider for service backup
+   * Statement provider for service [backup](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackup.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackup.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

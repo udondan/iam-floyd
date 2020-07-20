@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codestar
+ * Statement provider for service [codestar](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestar.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestar.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Codestar extends PolicyStatement {
   public servicePrefix = 'codestar';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateTeamMember": {
       "url": "https://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html",
       "description": "Adds a user to the team for an AWS CodeStar project.",
@@ -231,12 +230,12 @@ export class Codestar extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codestar
+   * Statement provider for service [codestar](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestar.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestar.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

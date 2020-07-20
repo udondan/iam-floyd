@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cloudwatch
+ * Statement provider for service [cloudwatch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cloudwatch extends PolicyStatement {
   public servicePrefix = 'cloudwatch';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DeleteAlarms": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html",
       "description": "Deletes all specified alarms. In the event of an error, no alarms are deleted",
@@ -298,12 +297,12 @@ export class Cloudwatch extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cloudwatch
+   * Statement provider for service [cloudwatch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service outposts
+ * Statement provider for service [outposts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Outposts extends PolicyStatement {
   public servicePrefix = 'outposts';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateOutpost": {
       "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html",
       "description": "Creates an Outpost",
@@ -57,12 +56,12 @@ export class Outposts extends PolicyStatement {
   };
 
   /**
-   * Action provider for service outposts
+   * Statement provider for service [outposts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsoutposts.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

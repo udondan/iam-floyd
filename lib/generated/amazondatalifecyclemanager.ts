@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service dlm
+ * Statement provider for service [dlm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Dlm extends PolicyStatement {
   public servicePrefix = 'dlm';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateLifecyclePolicy": {
       "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html",
       "description": "Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies.",
@@ -96,12 +95,12 @@ export class Dlm extends PolicyStatement {
   };
 
   /**
-   * Action provider for service dlm
+   * Statement provider for service [dlm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

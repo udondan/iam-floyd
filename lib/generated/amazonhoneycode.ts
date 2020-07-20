@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service honeycode
+ * Statement provider for service [honeycode](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonhoneycode.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonhoneycode.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Honeycode extends PolicyStatement {
   public servicePrefix = 'honeycode';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ApproveTeamAssociation": {
       "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association",
       "description": "Grants permission to approve a team association request for your AWS Account",
@@ -61,12 +60,12 @@ export class Honeycode extends PolicyStatement {
   };
 
   /**
-   * Action provider for service honeycode
+   * Statement provider for service [honeycode](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonhoneycode.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonhoneycode.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

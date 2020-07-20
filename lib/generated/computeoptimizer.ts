@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service compute-optimizer
+ * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_computeoptimizer.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_computeoptimizer.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ComputeOptimizer extends PolicyStatement {
   public servicePrefix = 'compute-optimizer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeRecommendationExportJobs": {
       "url": "https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html",
       "description": "Grants permission to view the status of recommendation export jobs.",
@@ -58,12 +57,12 @@ export class ComputeOptimizer extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service compute-optimizer
+   * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_computeoptimizer.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_computeoptimizer.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service iotsitewise
+ * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotsitewise.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotsitewise.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Iotsitewise extends PolicyStatement {
   public servicePrefix = 'iotsitewise';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateAssets": {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssociateAssets.html",
       "description": "Grants permission to associate a child asset to a parent asset by a hierarchy",
@@ -668,12 +667,12 @@ export class Iotsitewise extends PolicyStatement {
   };
 
   /**
-   * Action provider for service iotsitewise
+   * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotsitewise.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotsitewise.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

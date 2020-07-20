@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service logs
+ * Statement provider for service [logs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Logs extends PolicyStatement {
   public servicePrefix = 'logs';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateKmsKey": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateKmsKey.html",
       "description": "Associates the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group.",
@@ -366,12 +365,12 @@ export class Logs extends PolicyStatement {
   };
 
   /**
-   * Action provider for service logs
+   * Statement provider for service [logs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

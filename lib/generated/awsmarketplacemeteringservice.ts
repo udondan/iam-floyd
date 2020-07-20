@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-metering-service
+ * Statement provider for service [aws-marketplace-metering-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemeteringservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemeteringservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceMeteringService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-metering-service';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchMeterUsage": {
       "url": "https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html",
       "description": "Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.",
@@ -33,12 +32,12 @@ export class AwsMarketplaceMeteringService extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace-metering-service
+   * Statement provider for service [aws-marketplace-metering-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemeteringservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemeteringservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

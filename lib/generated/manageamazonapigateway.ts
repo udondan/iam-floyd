@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service apigateway
+ * Statement provider for service [apigateway](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Apigateway extends PolicyStatement {
   public servicePrefix = 'apigateway';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DELETE": {
       "url": "https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html",
       "description": "Used to delete resources",
@@ -108,12 +107,12 @@ export class Apigateway extends PolicyStatement {
   };
 
   /**
-   * Action provider for service apigateway
+   * Statement provider for service [apigateway](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

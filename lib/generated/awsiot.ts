@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service iot
+ * Statement provider for service [iot](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiot.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiot.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Iot extends PolicyStatement {
   public servicePrefix = 'iot';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptCertificateTransfer": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html",
       "description": "Accepts a pending certificate transfer.",
@@ -2143,12 +2142,12 @@ export class Iot extends PolicyStatement {
   };
 
   /**
-   * Action provider for service iot
+   * Statement provider for service [iot](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiot.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiot.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

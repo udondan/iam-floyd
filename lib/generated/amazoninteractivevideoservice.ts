@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ivs
+ * Statement provider for service [ivs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninteractivevideoservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninteractivevideoservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ivs extends PolicyStatement {
   public servicePrefix = 'ivs';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchGetChannel": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html",
       "description": "Grants permission to get multiple channels simultaneously by channel ARN.",
@@ -309,12 +308,12 @@ export class Ivs extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ivs
+   * Statement provider for service [ivs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninteractivevideoservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninteractivevideoservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

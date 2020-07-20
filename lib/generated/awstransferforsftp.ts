@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service transfer
+ * Statement provider for service [transfer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstransferforsftp.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstransferforsftp.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Transfer extends PolicyStatement {
   public servicePrefix = 'transfer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateServer": {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html",
       "description": "Enables the caller to create a server.",
@@ -224,12 +223,12 @@ export class Transfer extends PolicyStatement {
   };
 
   /**
-   * Action provider for service transfer
+   * Statement provider for service [transfer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstransferforsftp.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstransferforsftp.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service qldb
+ * Statement provider for service [qldb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Qldb extends PolicyStatement {
   public servicePrefix = 'qldb';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelJournalKinesisStream": {
       "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/API_CancelJournalKinesisStream.html",
       "description": "Grants permission to cancel a journal kinesis stream",
@@ -261,12 +260,12 @@ export class Qldb extends PolicyStatement {
   };
 
   /**
-   * Action provider for service qldb
+   * Statement provider for service [qldb](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonqldb.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

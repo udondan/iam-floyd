@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service detective
+ * Statement provider for service [detective](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondetective.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondetective.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Detective extends PolicyStatement {
   public servicePrefix = 'detective';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptInvitation": {
       "url": "https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html",
       "description": "Grants permission to accept an invitation to become a member of a behavior graph",
@@ -170,12 +169,12 @@ export class Detective extends PolicyStatement {
   };
 
   /**
-   * Action provider for service detective
+   * Statement provider for service [detective](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondetective.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondetective.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**
