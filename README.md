@@ -145,7 +145,6 @@ Most of the `if*()` methods allow an optional operator as last argument:
 new statement.Ec2()
   .allow()
   .startInstances()
-  .ifInstanceType('*.nano', 'StringLike')
   .if('aws:RequestTag/Owner', '*John*', 'StringEquals');
 ```
 
