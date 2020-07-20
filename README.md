@@ -172,7 +172,7 @@ new statement.S3()
   );
 ```
 
-To invert the policy you can use `notActions()` and `notResource()` to the chain.
+To invert the policy you can use `notActions()` and `notResource()`:
 
 ```typescript
 new statement.S3()
