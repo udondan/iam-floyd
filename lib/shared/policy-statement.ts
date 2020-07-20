@@ -43,8 +43,8 @@ export class PolicyStatement {
   protected actionList: Actions = {};
   protected useNotActions = false;
   protected useNotResource = false;
-  protected sid = '';
-  protected effect = Effect.ALLOW;
+  public sid = '';
+  public effect = Effect.ALLOW;
   protected actions: string[] = [];
   protected resources: string[] = [];
   protected conditions: Conditions = {};
@@ -113,7 +113,7 @@ export class PolicyStatement {
   /**
    * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
    */
-  public notResource() {
+  public notResources() {
     this.useNotResource = true;
     return this;
   }
@@ -121,21 +121,21 @@ export class PolicyStatement {
   /**
    * Checks weather actions have been applied to the policy.
    */
-  public hasAction(): boolean {
+  public hasActions(): boolean {
     return this.actions.length > 0;
   }
 
   /**
    * Checks weather any resource was applied to the policy.
    */
-  public hasResource(): boolean {
+  public hasResources(): boolean {
     return this.resources.length > 0;
   }
 
   /**
    * Checks weather a condition was applied to the policy.
    */
-  public hasCondition(): boolean {
+  public hasConditions(): boolean {
     return Object.keys(this.conditions).length > 0;
   }
 
@@ -704,7 +704,7 @@ export class PolicyStatement {
    */
 
   public toJSON(): any {
-    if (!this.hasResource()) {
+    if (!this.hasResources()) {
       // a statement requires resources. if none was added, we assume the user wants all resources
       this.resources.push('*');
     }
@@ -717,7 +717,7 @@ export class PolicyStatement {
 
     statement.Effect = this.effect;
 
-    if (this.hasAction()) {
+    if (this.hasActions()) {
       if (this.useNotActions) {
         statement.NotActions = this.actions;
       } else {
@@ -731,7 +731,7 @@ export class PolicyStatement {
       statement.Resource = this.resources;
     }
 
-    if (this.hasCondition()) {
+    if (this.hasConditions()) {
       statement.Condition = this.conditions;
     }
 
