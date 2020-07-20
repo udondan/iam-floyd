@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service kinesisvideo
+ * Statement provider for service [kinesisvideo](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisvideostreams.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisvideostreams.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Kinesisvideo extends PolicyStatement {
   public servicePrefix = 'kinesisvideo';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ConnectAsMaster": {
       "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ConnectAsMaster.html",
       "description": "Grants permission to connect as a master to the signaling channel specified by the endpoint",
@@ -351,12 +350,12 @@ export class Kinesisvideo extends PolicyStatement {
   };
 
   /**
-   * Action provider for service kinesisvideo
+   * Statement provider for service [kinesisvideo](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisvideostreams.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisvideostreams.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service worklink
+ * Statement provider for service [worklink](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworklink.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworklink.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Worklink extends PolicyStatement {
   public servicePrefix = 'worklink';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateDomain": {
       "url": "https://docs.aws.amazon.com/worklink/latest/api/API_AssociateDomain.html",
       "description": "Grants permission to associate a domain with an Amazon WorkLink fleet",
@@ -361,12 +360,12 @@ export class Worklink extends PolicyStatement {
   };
 
   /**
-   * Action provider for service worklink
+   * Statement provider for service [worklink](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworklink.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworklink.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service kendra
+ * Statement provider for service [kendra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkendra.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkendra.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Kendra extends PolicyStatement {
   public servicePrefix = 'kendra';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchDeleteDocument": {
       "url": "https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html",
       "description": "Batch Delete document",
@@ -329,12 +328,12 @@ export class Kendra extends PolicyStatement {
   };
 
   /**
-   * Action provider for service kendra
+   * Statement provider for service [kendra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkendra.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkendra.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

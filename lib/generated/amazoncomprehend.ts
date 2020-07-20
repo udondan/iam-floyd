@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service comprehend
+ * Statement provider for service [comprehend](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Comprehend extends PolicyStatement {
   public servicePrefix = 'comprehend';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchDetectDominantLanguage": {
       "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html",
       "description": "Detects the language or languages present in the list of text documents.",
@@ -444,12 +443,12 @@ export class Comprehend extends PolicyStatement {
   };
 
   /**
-   * Action provider for service comprehend
+   * Statement provider for service [comprehend](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

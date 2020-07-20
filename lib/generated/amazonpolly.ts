@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service polly
+ * Statement provider for service [polly](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Polly extends PolicyStatement {
   public servicePrefix = 'polly';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DeleteLexicon": {
       "url": "https://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html",
       "description": "Deletes the specified pronunciation lexicon stored in an AWS Region",
@@ -85,12 +84,12 @@ export class Polly extends PolicyStatement {
   };
 
   /**
-   * Action provider for service polly
+   * Statement provider for service [polly](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpolly.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

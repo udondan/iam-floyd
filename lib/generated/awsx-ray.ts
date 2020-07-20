@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service xray
+ * Statement provider for service [xray](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsx-ray.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsx-ray.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Xray extends PolicyStatement {
   public servicePrefix = 'xray';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchGetTraces": {
       "url": "https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html",
       "description": "Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use GetTraceSummaries to get a list of trace IDs.",
@@ -161,12 +160,12 @@ export class Xray extends PolicyStatement {
   };
 
   /**
-   * Action provider for service xray
+   * Statement provider for service [xray](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsx-ray.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsx-ray.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

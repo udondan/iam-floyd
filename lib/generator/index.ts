@@ -7,7 +7,7 @@ import glob = require('glob');
 import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
-import { Conditions, ResourceTypes } from '../shared';
+import { ResourceTypes } from '../shared';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
 
 const project = new Project();
@@ -59,7 +59,7 @@ export interface Module {
   name?: string;
   filename: string;
   url?: string;
-  actions?: Actions;
+  actionList?: Actions;
   resourceTypes?: ResourceTypes;
   fixes?: {
     [key: string]: any;
@@ -163,7 +163,7 @@ export function getContent(service: string): Promise<Module> {
           module.fixes = fixes[service];
         }
 
-        module.actions = parseActionTable($);
+        module.actionList = parseActionTable($);
         module.resourceTypes = parseResourceTypeTable($, module.name);
         module.conditions = parseConditionTable($);
 
@@ -207,16 +207,11 @@ export function createModule(module: Module): Promise<void> {
   const sourceFile = project.createSourceFile(
     `./lib/generated/${module.filename}.ts`
   );
-  const description = `\nAction provider for service ${module.name}\n\n${module.url}`;
+  const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
   sourceFile.addImportDeclaration({
     namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
     moduleSpecifier: '../shared',
-  });
-
-  sourceFile.addImportDeclaration({
-    namedImports: ['PolicyStatementProps'],
-    moduleSpecifier: '@aws-cdk/aws-iam',
   });
 
   const classDeclaration = sourceFile.addClass({
@@ -236,10 +231,10 @@ export function createModule(module: Module): Promise<void> {
   });
 
   classDeclaration.addProperty({
-    name: 'actions',
-    scope: Scope.Public,
+    name: 'actionList',
+    scope: Scope.Protected,
     type: 'Actions',
-    initializer: JSON.stringify(module.actions, null, 2),
+    initializer: JSON.stringify(module.actionList, null, 2),
   });
 
   classDeclaration.addProperty({
@@ -251,16 +246,16 @@ export function createModule(module: Module): Promise<void> {
 
   const constructor = classDeclaration.addConstructor({});
   constructor.addParameter({
-    name: 'props',
-    type: 'PolicyStatementProps',
+    name: 'sid',
+    type: 'string',
     hasQuestionToken: true,
   });
-  constructor.setBodyText('super(props);');
+  constructor.setBodyText('super(sid);');
   constructor.addJsDoc({
     description: description,
   });
 
-  for (const [name, action] of Object.entries(module.actions!)) {
+  for (const [name, action] of Object.entries(module.actionList!)) {
     const method = classDeclaration.addMethod({
       name: lowerFirst(name),
       scope: Scope.Public,

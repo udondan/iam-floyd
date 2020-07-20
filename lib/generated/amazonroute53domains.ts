@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service route53domains
+ * Statement provider for service [route53domains](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53domains.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53domains.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Route53domains extends PolicyStatement {
   public servicePrefix = 'route53domains';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CheckDomainAvailability": {
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CheckDomainAvailability.html",
       "description": "Grants permission to check the availability of one domain name",
@@ -128,12 +127,12 @@ export class Route53domains extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service route53domains
+   * Statement provider for service [route53domains](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53domains.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53domains.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

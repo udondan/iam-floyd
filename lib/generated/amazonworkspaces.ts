@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service workspaces
+ * Statement provider for service [workspaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkspaces.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkspaces.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Workspaces extends PolicyStatement {
   public servicePrefix = 'workspaces';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateIpGroups": {
       "url": "https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html",
       "description": "Associates the specified IP access control group with the specified directory.",
@@ -281,12 +280,12 @@ export class Workspaces extends PolicyStatement {
   };
 
   /**
-   * Action provider for service workspaces
+   * Statement provider for service [workspaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkspaces.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkspaces.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

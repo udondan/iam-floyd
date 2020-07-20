@@ -1,5 +1,3 @@
-import * as iam from '@aws-cdk/aws-iam';
-
 import { AccessLevel } from './access-level';
 
 export interface Action {
@@ -25,40 +23,56 @@ export interface ResourceType {
   conditionKeys: string[];
 }
 
-export interface Condition {
-  key: string;
-  description: string;
-  url: string;
-  type: string;
-  isGlobal: boolean;
+enum Effect {
+  ALLOW = 'Allow',
+  DENY = 'Deny',
 }
 
-export interface Conditions {
+interface Condition {
+  [key: string]: String;
+}
+
+interface Conditions {
   [key: string]: Condition;
 }
 
 /**
  * Represents a statement in an IAM policy document.
  */
-export class PolicyStatement extends iam.PolicyStatement {
-  /**
-   * Contains a map of all actions of the service.
-   *
-   * @deprecated This map will be removed when reaching v1.0.0. It only is here as a hint of what elements are available.
-   */
-  public actions: Actions = {};
+export class PolicyStatement {
+  protected actionList: Actions = {};
+  protected useNotActions = false;
+  protected useNotResource = false;
+  protected sid = '';
+  protected effect = Effect.ALLOW;
+  protected actions: string[] = [];
+  protected resources: string[] = [];
+  protected conditions: Conditions = {};
 
   /**
-   * Adds actions by name. Depending on the "mode", actions will be either added to the list of `Actions` or `NotActions`.
+   * Adds actions by name.
+   *
+   * Depending on the "mode", actions will be either added to the list of [`Actions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) or [`NotActions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
+   *
+   * The mode can be switched by calling `notActions()`.
    *
    * @param actions Actions that will be added to the statement.
    */
-  public add = this.addActions;
+  protected add(action: string) {
+    this.actions.push(action);
+    return this;
+  }
 
   /**
    * Holds the prefix of the service actions, e.g. `ec2`
    */
   public servicePrefix = '';
+
+  constructor(sid?: string) {
+    if (typeof sid !== 'undefined') {
+      this.sid = sid;
+    }
+  }
 
   /**
    * Adds actions to the statement, matching an `AccessLevel` or regular expression.
@@ -68,7 +82,7 @@ export class PolicyStatement extends iam.PolicyStatement {
   public allActions(...rules: (AccessLevel | RegExp)[]) {
     if (rules.length) {
       rules.forEach((rule) => {
-        for (const [name, action] of Object.entries(this.actions)) {
+        for (const [name, action] of Object.entries(this.actionList)) {
           if (typeof rule === 'object') {
             //assume it's a regex
             if ((rule as RegExp).test(name)) {
@@ -89,20 +103,47 @@ export class PolicyStatement extends iam.PolicyStatement {
   }
 
   /**
-   * Changes all subsequent additions to be set as notAction
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
+   * Switches the statement to use [`NotAction`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
    */
   public notActions() {
-    this.add = this.addNotActions;
+    this.useNotActions = true;
     return this;
+  }
+
+  /**
+   * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
+   */
+  public notResource() {
+    this.useNotResource = true;
+    return this;
+  }
+
+  /**
+   * Checks weather actions have been applied to the policy.
+   */
+  public hasAction(): boolean {
+    return this.actions.length > 0;
+  }
+
+  /**
+   * Checks weather any resource was applied to the policy.
+   */
+  public hasResource(): boolean {
+    return this.resources.length > 0;
+  }
+
+  /**
+   * Checks weather a condition was applied to the policy.
+   */
+  public hasCondition(): boolean {
+    return Object.keys(this.conditions).length > 0;
   }
 
   /**
    * Allow the actions in this statement
    */
   public allow() {
-    this.effect = iam.Effect.ALLOW;
+    this.effect = Effect.ALLOW;
     return this;
   }
 
@@ -110,7 +151,7 @@ export class PolicyStatement extends iam.PolicyStatement {
    * Deny the actions in this statement
    */
   public deny() {
-    this.effect = iam.Effect.DENY;
+    this.effect = Effect.DENY;
     return this;
   }
 
@@ -120,17 +161,27 @@ export class PolicyStatement extends iam.PolicyStatement {
    * To allow all resources, pass `*`
    */
   public on(...arns: string[]) {
-    this.addResources(...arns);
+    this.resources.push(...arns);
     return this;
   }
 
   /**
    * Adds a condition to the statement
+   *
+   * @param key The key of the condition
+   * @param value The value(s) to check for
+   * @param operator [Operator](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) of the condition. **Default:** `StringLike`
    */
   public if(key: string, value: any, operator?: string) {
-    const props: any = {};
-    props[key] = value;
-    this.addCondition(operator || 'StringLike', props);
+    if (typeof operator === 'undefined') {
+      operator = 'StringLike';
+    }
+
+    if (!(operator in this.conditions)) {
+      this.conditions[operator] = {};
+    }
+    this.conditions[operator][key] = value;
+
     return this;
   }
 
@@ -651,10 +702,41 @@ export class PolicyStatement extends iam.PolicyStatement {
    *
    * Used when JSON.stringify() is called
    */
-  public toStatementJson(): any {
-    if (!this.hasResource) {
-      this.addResources('*');
+
+  public toJSON(): any {
+    if (!this.hasResource()) {
+      // a statement requires resources. if none was added, we assume the user wants all resources
+      this.resources.push('*');
     }
-    return super.toStatementJson();
+
+    const statement: any = {};
+
+    if (this.sid.length) {
+      statement.Sid = this.sid;
+    }
+
+    statement.Effect = this.effect;
+
+    if (this.hasAction()) {
+      if (this.useNotActions) {
+        statement.NotActions = this.actions;
+      } else {
+        statement.Action = this.actions;
+      }
+    }
+
+    if (this.useNotResource) {
+      statement.NotResource = this.resources;
+    } else {
+      statement.Resource = this.resources;
+    }
+
+    if (this.hasCondition()) {
+      statement.Condition = this.conditions;
+    }
+
+    //TODO: principal
+
+    return statement;
   }
 }

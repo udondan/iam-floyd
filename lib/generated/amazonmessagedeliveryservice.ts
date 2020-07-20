@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ec2messages
+ * Statement provider for service [ec2messages](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmessagedeliveryservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmessagedeliveryservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ec2messages extends PolicyStatement {
   public servicePrefix = 'ec2messages';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcknowledgeMessage": {
       "url": "",
       "description": "Acknowledges a message, ensuring it will not be delivered again",
@@ -43,12 +42,12 @@ export class Ec2messages extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service ec2messages
+   * Statement provider for service [ec2messages](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmessagedeliveryservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmessagedeliveryservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-image-building-service
+ * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceImageBuildingService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-image-building-service';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeBuilds": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
       "description": "Describes Image Builds identified by a build Id",
@@ -28,12 +27,12 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace-image-building-service
+   * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

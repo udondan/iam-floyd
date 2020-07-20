@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codeguru-reviewer
+ * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class CodeguruReviewer extends PolicyStatement {
   public servicePrefix = 'codeguru-reviewer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateRepository": {
       "url": "",
       "description": "Grants permission to associates a repository with Amazon CodeGuru Reviewer.",
@@ -139,12 +138,12 @@ export class CodeguruReviewer extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codeguru-reviewer
+   * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codecommit
+ * Statement provider for service [codecommit](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodecommit.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodecommit.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Codecommit extends PolicyStatement {
   public servicePrefix = 'codecommit';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateApprovalRuleTemplateWithRepository": {
       "url": "https://docs.aws.amazon.com/codecommit/latest/APIReference/API_AssociateApprovalRuleTemplateWithRepository.html",
       "description": "Grants permission to associate an approval rule template with a repository",
@@ -911,12 +910,12 @@ export class Codecommit extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codecommit
+   * Statement provider for service [codecommit](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodecommit.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodecommit.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

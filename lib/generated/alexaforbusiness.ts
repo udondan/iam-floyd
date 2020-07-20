@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service a4b
+ * Statement provider for service [a4b](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class A4b extends PolicyStatement {
   public servicePrefix = 'a4b';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ApproveSkill": {
       "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_ApproveSkill.html",
       "description": "Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.",
@@ -763,12 +762,12 @@ export class A4b extends PolicyStatement {
   };
 
   /**
-   * Action provider for service a4b
+   * Statement provider for service [a4b](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_alexaforbusiness.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

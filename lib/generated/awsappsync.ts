@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service appsync
+ * Statement provider for service [appsync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Appsync extends PolicyStatement {
   public servicePrefix = 'appsync';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateApiKey": {
       "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiKey.html",
       "description": "Creates a unique key that you can distribute to clients who are executing your API.",
@@ -293,12 +292,12 @@ export class Appsync extends PolicyStatement {
   };
 
   /**
-   * Action provider for service appsync
+   * Statement provider for service [appsync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

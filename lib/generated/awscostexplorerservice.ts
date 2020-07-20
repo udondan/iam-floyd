@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ce
+ * Statement provider for service [ce](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostexplorerservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostexplorerservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ce extends PolicyStatement {
   public servicePrefix = 'ce';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateCostCategoryDefinition": {
       "url": "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html",
       "description": "Grants permission to create a new Cost Category with the requested name and rules.",
@@ -108,12 +107,12 @@ export class Ce extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service ce
+   * Statement provider for service [ce](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostexplorerservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscostexplorerservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

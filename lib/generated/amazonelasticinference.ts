@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service elastic-inference
+ * Statement provider for service [elastic-inference](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticinference.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticinference.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ElasticInference extends PolicyStatement {
   public servicePrefix = 'elastic-inference';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "Connect": {
       "url": "",
       "description": "Connects customer to Elastic Inference accelerator",
@@ -30,12 +29,12 @@ export class ElasticInference extends PolicyStatement {
   };
 
   /**
-   * Action provider for service elastic-inference
+   * Statement provider for service [elastic-inference](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticinference.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticinference.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

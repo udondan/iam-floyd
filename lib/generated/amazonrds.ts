@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service rds
+ * Statement provider for service [rds](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Rds extends PolicyStatement {
   public servicePrefix = 'rds';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddRoleToDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html",
       "description": "Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.",
@@ -1608,12 +1607,12 @@ export class Rds extends PolicyStatement {
   };
 
   /**
-   * Action provider for service rds
+   * Statement provider for service [rds](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

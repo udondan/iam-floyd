@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service batch
+ * Statement provider for service [batch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Batch extends PolicyStatement {
   public servicePrefix = 'batch';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html",
       "description": "Cancels jobs in an AWS Batch job queue.",
@@ -129,12 +128,12 @@ export class Batch extends PolicyStatement {
   };
 
   /**
-   * Action provider for service batch
+   * Statement provider for service [batch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cloudsearch
+ * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudsearch.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudsearch.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cloudsearch extends PolicyStatement {
   public servicePrefix = 'cloudsearch';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_AddTags.html",
       "description": "Attaches resource tags to an Amazon CloudSearch domain.",
@@ -340,12 +339,12 @@ export class Cloudsearch extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cloudsearch
+   * Statement provider for service [cloudsearch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudsearch.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudsearch.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

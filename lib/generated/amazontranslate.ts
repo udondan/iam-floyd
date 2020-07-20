@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service translate
+ * Statement provider for service [translate](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranslate.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranslate.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Translate extends PolicyStatement {
   public servicePrefix = 'translate';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DeleteTerminology": {
       "url": "https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html",
       "description": "A synchronous action that deletes a custom terminology.",
@@ -58,12 +57,12 @@ export class Translate extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service translate
+   * Statement provider for service [translate](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranslate.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranslate.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

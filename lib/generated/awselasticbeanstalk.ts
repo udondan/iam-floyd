@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service elasticbeanstalk
+ * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselasticbeanstalk.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselasticbeanstalk.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Elasticbeanstalk extends PolicyStatement {
   public servicePrefix = 'elasticbeanstalk';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AbortEnvironmentUpdate": {
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html",
       "description": "Grants permission to cancel in-progress environment configuration update or application version deployment.",
@@ -734,12 +733,12 @@ export class Elasticbeanstalk extends PolicyStatement {
   };
 
   /**
-   * Action provider for service elasticbeanstalk
+   * Statement provider for service [elasticbeanstalk](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselasticbeanstalk.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselasticbeanstalk.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

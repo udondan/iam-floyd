@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cloudfront
+ * Statement provider for service [cloudfront](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cloudfront extends PolicyStatement {
   public servicePrefix = 'cloudfront';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateCloudFrontOriginAccessIdentity": {
       "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateCloudFrontOriginAccessIdentity.html",
       "description": "This action creates a new CloudFront origin access identity (POST /2019-03-26/origin-access-identity/cloudfront).",
@@ -405,12 +404,12 @@ export class Cloudfront extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cloudfront
+   * Statement provider for service [cloudfront](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudfront.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

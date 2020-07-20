@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service sts
+ * Statement provider for service [sts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecuritytokenservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecuritytokenservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Sts extends PolicyStatement {
   public servicePrefix = 'sts';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssumeRole": {
       "url": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html",
       "description": "Returns a set of temporary security credentials that you can use to access AWS resources that you might not normally have access to",
@@ -179,12 +178,12 @@ export class Sts extends PolicyStatement {
   };
 
   /**
-   * Action provider for service sts
+   * Statement provider for service [sts](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecuritytokenservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecuritytokenservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

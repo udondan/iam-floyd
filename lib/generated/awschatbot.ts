@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service chatbot
+ * Statement provider for service [chatbot](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awschatbot.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awschatbot.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Chatbot extends PolicyStatement {
   public servicePrefix = 'chatbot';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateChimeWebhookConfiguration": {
       "url": "",
       "description": "Creates an AWS Chatbot Chime Webhook Configuration.",
@@ -80,12 +79,12 @@ export class Chatbot extends PolicyStatement {
   };
 
   /**
-   * Action provider for service chatbot
+   * Statement provider for service [chatbot](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awschatbot.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awschatbot.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

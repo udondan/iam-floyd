@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service dms
+ * Statement provider for service [dms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Dms extends PolicyStatement {
   public servicePrefix = 'dms';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTagsToResource": {
       "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html",
       "description": "Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task",
@@ -521,12 +520,12 @@ export class Dms extends PolicyStatement {
   };
 
   /**
-   * Action provider for service dms
+   * Statement provider for service [dms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

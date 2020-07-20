@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service sagemaker
+ * Statement provider for service [sagemaker](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Sagemaker extends PolicyStatement {
   public servicePrefix = 'sagemaker';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddTags.html",
       "description": "Adds or overwrites one or more tags for the specified Amazon SageMaker resource.",
@@ -1874,12 +1873,12 @@ export class Sagemaker extends PolicyStatement {
   };
 
   /**
-   * Action provider for service sagemaker
+   * Statement provider for service [sagemaker](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

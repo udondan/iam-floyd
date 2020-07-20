@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service appstream
+ * Statement provider for service [appstream](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappstream2.0.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappstream2.0.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Appstream extends PolicyStatement {
   public servicePrefix = 'appstream';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateFleet": {
       "url": "https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateFleet.html",
       "description": "Grants permission to associate the specified fleet with the specified stack",
@@ -585,12 +584,12 @@ export class Appstream extends PolicyStatement {
   };
 
   /**
-   * Action provider for service appstream
+   * Statement provider for service [appstream](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappstream2.0.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappstream2.0.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

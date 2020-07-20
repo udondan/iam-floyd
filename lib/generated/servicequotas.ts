@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service servicequotas
+ * Statement provider for service [servicequotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_servicequotas.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_servicequotas.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Servicequotas extends PolicyStatement {
   public servicePrefix = 'servicequotas';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateServiceQuotaTemplate": {
       "url": "https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_AssociateServiceQuotaTemplate.html",
       "description": "Grants permission to associate the Service Quotas template with your organization",
@@ -116,12 +115,12 @@ export class Servicequotas extends PolicyStatement {
   };
 
   /**
-   * Action provider for service servicequotas
+   * Statement provider for service [servicequotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_servicequotas.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_servicequotas.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

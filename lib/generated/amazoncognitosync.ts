@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cognito-sync
+ * Statement provider for service [cognito-sync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitosync.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitosync.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class CognitoSync extends PolicyStatement {
   public servicePrefix = 'cognito-sync';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BulkPublish": {
       "url": "https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html",
       "description": "Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream.",
@@ -217,12 +216,12 @@ export class CognitoSync extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cognito-sync
+   * Statement provider for service [cognito-sync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitosync.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitosync.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

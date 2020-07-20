@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service serverlessrepo
+ * Statement provider for service [serverlessrepo](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Serverlessrepo extends PolicyStatement {
   public servicePrefix = 'serverlessrepo';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateApplication": {
       "url": "",
       "description": "Creates an application, optionally including an AWS SAM file to create the first application version in the same call.",
@@ -173,12 +172,12 @@ export class Serverlessrepo extends PolicyStatement {
   };
 
   /**
-   * Action provider for service serverlessrepo
+   * Statement provider for service [serverlessrepo](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

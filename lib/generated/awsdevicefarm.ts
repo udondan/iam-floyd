@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service devicefarm
+ * Statement provider for service [devicefarm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdevicefarm.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdevicefarm.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Devicefarm extends PolicyStatement {
   public servicePrefix = 'devicefarm';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateDevicePool": {
       "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html",
       "description": "Grants permission to create a device pool within a project",
@@ -960,12 +959,12 @@ export class Devicefarm extends PolicyStatement {
   };
 
   /**
-   * Action provider for service devicefarm
+   * Statement provider for service [devicefarm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdevicefarm.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdevicefarm.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

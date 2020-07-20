@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service discovery
+ * Statement provider for service [discovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscovery.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscovery.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Discovery extends PolicyStatement {
   public servicePrefix = 'discovery';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateConfigurationItemsToApplication": {
       "url": "https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_AssociateConfigurationItemsToApplication.html",
       "description": "Associates one or more configuration items with an application.",
@@ -138,12 +137,12 @@ export class Discovery extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service discovery
+   * Statement provider for service [discovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscovery.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscovery.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codeguru-profiler
+ * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class CodeguruProfiler extends PolicyStatement {
   public servicePrefix = 'codeguru-profiler';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddNotificationChannels": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AddNotificationChannels.html",
       "description": "Grants permission to add up to 2 topic ARNs of existing AWS SNS topics to publish notifications",
@@ -210,12 +209,12 @@ export class CodeguruProfiler extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codeguru-profiler
+   * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

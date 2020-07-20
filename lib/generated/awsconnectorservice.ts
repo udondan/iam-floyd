@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service awsconnector
+ * Statement provider for service [awsconnector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Awsconnector extends PolicyStatement {
   public servicePrefix = 'awsconnector';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "GetConnectorHealth": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/userguide/prereqs.html#connector-permissions",
       "description": "Retrieves all health metrics that were published from the Server Migration Connector.",
@@ -28,12 +27,12 @@ export class Awsconnector extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service awsconnector
+   * Statement provider for service [awsconnector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

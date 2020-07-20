@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service access-analyzer
+ * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_iamaccessanalyzer.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_iamaccessanalyzer.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AccessAnalyzer extends PolicyStatement {
   public servicePrefix = 'access-analyzer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateAnalyzer": {
       "url": "https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html",
       "description": "Grants permission to create an analyzer.",
@@ -205,12 +204,12 @@ export class AccessAnalyzer extends PolicyStatement {
   };
 
   /**
-   * Action provider for service access-analyzer
+   * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_iamaccessanalyzer.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_iamaccessanalyzer.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

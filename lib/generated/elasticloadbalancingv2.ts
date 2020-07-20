@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service elasticloadbalancing-v2
+ * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class ElasticloadbalancingV2 extends PolicyStatement {
   public servicePrefix = 'elasticloadbalancing-v2';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddListenerCertificates": {
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_AddListenerCertificates.html",
       "description": "Adds the specified certificates to the specified secure listener",
@@ -415,12 +414,12 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
   };
 
   /**
-   * Action provider for service elasticloadbalancing-v2
+   * Statement provider for service [elasticloadbalancing-v2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancingv2.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

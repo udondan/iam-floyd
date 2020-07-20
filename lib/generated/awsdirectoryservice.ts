@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ds
+ * Statement provider for service [ds](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectoryservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectoryservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ds extends PolicyStatement {
   public servicePrefix = 'ds';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptSharedDirectory": {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AcceptSharedDirectory.html",
       "description": "Accepts a directory sharing request that was sent from the directory owner account.",
@@ -626,12 +625,12 @@ export class Ds extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ds
+   * Statement provider for service [ds](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectoryservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdirectoryservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

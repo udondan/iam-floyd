@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service robomaker
+ * Statement provider for service [robomaker](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Robomaker extends PolicyStatement {
   public servicePrefix = 'robomaker';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchDescribeSimulationJob": {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_BatchDescribeSimulationJob.html",
       "description": "Describe multiple simulation jobs",
@@ -490,12 +489,12 @@ export class Robomaker extends PolicyStatement {
   };
 
   /**
-   * Action provider for service robomaker
+   * Statement provider for service [robomaker](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsrobomaker.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

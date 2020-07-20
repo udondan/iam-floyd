@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service secretsmanager
+ * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Secretsmanager extends PolicyStatement {
   public servicePrefix = 'secretsmanager';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelRotateSecret": {
       "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions",
       "description": "Enables the user to cancel an in-progress secret rotation.",
@@ -284,12 +283,12 @@ export class Secretsmanager extends PolicyStatement {
   };
 
   /**
-   * Action provider for service secretsmanager
+   * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

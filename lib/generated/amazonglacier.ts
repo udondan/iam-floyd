@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service glacier
+ * Statement provider for service [glacier](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Glacier extends PolicyStatement {
   public servicePrefix = 'glacier';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AbortMultipartUpload": {
       "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html",
       "description": "Aborts a multipart upload identified by the upload ID",
@@ -331,12 +330,12 @@ export class Glacier extends PolicyStatement {
   };
 
   /**
-   * Action provider for service glacier
+   * Statement provider for service [glacier](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

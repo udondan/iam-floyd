@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codestar-connections
+ * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class CodestarConnections extends PolicyStatement {
   public servicePrefix = 'codestar-connections';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateConnection": {
       "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html",
       "description": "Grants permission to create a Connection resource",
@@ -166,12 +165,12 @@ export class CodestarConnections extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codestar-connections
+   * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

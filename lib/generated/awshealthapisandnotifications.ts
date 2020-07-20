@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service health
+ * Statement provider for service [health](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Health extends PolicyStatement {
   public servicePrefix = 'health';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeAffectedAccountsForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html",
       "description": "Gets a list of accounts that have been affected by the specified events in organization.",
@@ -103,12 +102,12 @@ export class Health extends PolicyStatement {
   };
 
   /**
-   * Action provider for service health
+   * Statement provider for service [health](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

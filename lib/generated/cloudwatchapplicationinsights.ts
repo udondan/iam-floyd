@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service applicationinsights
+ * Statement provider for service [applicationinsights](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Applicationinsights extends PolicyStatement {
   public servicePrefix = 'applicationinsights';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateApplication": {
       "url": "https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateApplication.html",
       "description": "Creates an application from a resource group",
@@ -98,12 +97,12 @@ export class Applicationinsights extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service applicationinsights
+   * Statement provider for service [applicationinsights](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

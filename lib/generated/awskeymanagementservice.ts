@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service kms
+ * Statement provider for service [kms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Kms extends PolicyStatement {
   public servicePrefix = 'kms';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelKeyDeletion": {
       "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html",
       "description": "Controls permission to cancel the scheduled deletion of a customer master key.",
@@ -634,12 +633,12 @@ export class Kms extends PolicyStatement {
   };
 
   /**
-   * Action provider for service kms
+   * Statement provider for service [kms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

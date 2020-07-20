@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service athena
+ * Statement provider for service [athena](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Athena extends PolicyStatement {
   public servicePrefix = 'athena';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchGetNamedQuery": {
       "url": "https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html",
       "description": "Grants permissions to get information about one or more named queries.",
@@ -334,12 +333,12 @@ export class Athena extends PolicyStatement {
   };
 
   /**
-   * Action provider for service athena
+   * Statement provider for service [athena](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

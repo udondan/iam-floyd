@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service forecast
+ * Statement provider for service [forecast](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonforecast.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonforecast.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Forecast extends PolicyStatement {
   public servicePrefix = 'forecast';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateDataset": {
       "url": "https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html",
       "description": "Creates a dataset",
@@ -417,12 +416,12 @@ export class Forecast extends PolicyStatement {
   };
 
   /**
-   * Action provider for service forecast
+   * Statement provider for service [forecast](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonforecast.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonforecast.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

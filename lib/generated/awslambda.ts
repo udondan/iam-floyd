@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service lambda
+ * Statement provider for service [lambda](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Lambda extends PolicyStatement {
   public servicePrefix = 'lambda';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddLayerVersionPermission": {
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html",
       "description": "Grants permission to add permissions to the resource-based policy of a version of an AWS Lambda layer",
@@ -563,12 +562,12 @@ export class Lambda extends PolicyStatement {
   };
 
   /**
-   * Action provider for service lambda
+   * Statement provider for service [lambda](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,5 +1,3 @@
-import { Condition } from '../shared/policy-statement';
-
 interface Fixes {
   [key: string]: any;
 }

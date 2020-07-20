@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service transcribe
+ * Statement provider for service [transcribe](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Transcribe extends PolicyStatement {
   public servicePrefix = 'transcribe';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateMedicalVocabulary": {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html",
       "description": "Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.",
@@ -148,12 +147,12 @@ export class Transcribe extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service transcribe
+   * Statement provider for service [transcribe](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

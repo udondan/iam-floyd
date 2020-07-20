@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service deepcomposer
+ * Statement provider for service [deepcomposer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Deepcomposer extends PolicyStatement {
   public servicePrefix = 'deepcomposer';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateCoupon": {
       "url": "",
       "description": "Associates a DeepComposer coupon (or DSN) with the account associated with the sender of the request.",
@@ -212,12 +211,12 @@ export class Deepcomposer extends PolicyStatement {
   };
 
   /**
-   * Action provider for service deepcomposer
+   * Statement provider for service [deepcomposer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service route53resolver
+ * Statement provider for service [route53resolver](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53resolver.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53resolver.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Route53resolver extends PolicyStatement {
   public servicePrefix = 'route53resolver';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateResolverEndpointIpAddress": {
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html",
       "description": "Grants permission to associate a specified IP address with a resolver endpoint. This is an IP address that DNS queries pass through on the way to your network (outbound) or your VPCs (inbound).",
@@ -259,12 +258,12 @@ export class Route53resolver extends PolicyStatement {
   };
 
   /**
-   * Action provider for service route53resolver
+   * Statement provider for service [route53resolver](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53resolver.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53resolver.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

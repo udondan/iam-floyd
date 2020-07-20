@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service opsworks-cm
+ * Statement provider for service [opsworks-cm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworksconfigurationmanagement.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworksconfigurationmanagement.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class OpsworksCm extends PolicyStatement {
   public servicePrefix = 'opsworks-cm';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateNode": {
       "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html",
       "description": "Associate a node to a configuration management server.",
@@ -88,12 +87,12 @@ export class OpsworksCm extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service opsworks-cm
+   * Statement provider for service [opsworks-cm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworksconfigurationmanagement.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworksconfigurationmanagement.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

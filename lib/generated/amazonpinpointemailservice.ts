@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ses-pinpoint
+ * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class SesPinpoint extends PolicyStatement {
   public servicePrefix = 'ses-pinpoint';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateConfigurationSet": {
       "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html",
       "description": "Create a configuration set. Configuration sets are groups of rules that you can apply to the emails you send using Amazon Pinpoint",
@@ -448,12 +447,12 @@ export class SesPinpoint extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ses-pinpoint
+   * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

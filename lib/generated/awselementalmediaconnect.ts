@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mediaconnect
+ * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconnect.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconnect.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mediaconnect extends PolicyStatement {
   public servicePrefix = 'mediaconnect';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddFlowOutputs": {
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs.html",
       "description": "Grants permission to add outputs to any flow.",
@@ -108,12 +107,12 @@ export class Mediaconnect extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mediaconnect
+   * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconnect.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconnect.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

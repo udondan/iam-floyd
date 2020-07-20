@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service imagebuilder
+ * Statement provider for service [imagebuilder](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Imagebuilder extends PolicyStatement {
   public servicePrefix = 'imagebuilder';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelImageCreation": {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CancelImageCreation.html",
       "description": "Cancel an image creation",
@@ -548,12 +547,12 @@ export class Imagebuilder extends PolicyStatement {
   };
 
   /**
-   * Action provider for service imagebuilder
+   * Statement provider for service [imagebuilder](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

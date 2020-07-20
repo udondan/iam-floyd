@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service iotanalytics
+ * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Iotanalytics extends PolicyStatement {
   public servicePrefix = 'iotanalytics';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchPutMessage": {
       "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html",
       "description": "Puts a batch of messages into the specified channel.",
@@ -400,12 +399,12 @@ export class Iotanalytics extends PolicyStatement {
   };
 
   /**
-   * Action provider for service iotanalytics
+   * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

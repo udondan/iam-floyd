@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service budgets
+ * Statement provider for service [budgets](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbudgetservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbudgetservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Budgets extends PolicyStatement {
   public servicePrefix = 'budgets';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ModifyBudget": {
       "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
       "description": "Grants permissions to modify budgets and budget details",
@@ -40,12 +39,12 @@ export class Budgets extends PolicyStatement {
   };
 
   /**
-   * Action provider for service budgets
+   * Statement provider for service [budgets](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbudgetservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbudgetservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

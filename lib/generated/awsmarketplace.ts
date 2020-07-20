@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace
+ * Statement provider for service [aws-marketplace](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplace.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplace.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplace extends PolicyStatement {
   public servicePrefix = 'aws-marketplace';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptAgreementApprovalRequest": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions",
       "description": "Allows users to approve an incoming subscription request (for providers who provide products that require subscription verification).",
@@ -83,12 +82,12 @@ export class AwsMarketplace extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace
+   * Statement provider for service [aws-marketplace](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplace.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplace.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

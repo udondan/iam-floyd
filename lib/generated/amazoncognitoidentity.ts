@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cognito-identity
+ * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitoidentity.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitoidentity.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class CognitoIdentity extends PolicyStatement {
   public servicePrefix = 'cognito-identity';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateIdentityPool": {
       "url": "https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html",
       "description": "Creates a new identity pool.",
@@ -204,12 +203,12 @@ export class CognitoIdentity extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cognito-identity
+   * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitoidentity.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitoidentity.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -26,6 +26,12 @@ changelog:
 stats:
 	@bin/mkstats
 
+clean:
+	@rm -rf node_modules package-lock.json
+
+install: clean
+	@npm i
+
 tag:
 	@git tag -a "v$(VERSION)" -m 'Creates tag "v$(VERSION)"'
 	@git push --tags

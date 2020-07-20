@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service events
+ * Statement provider for service [events](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridge.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridge.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Events extends PolicyStatement {
   public servicePrefix = 'events';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "ActivateEventSource": {
       "url": "https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html",
       "description": "Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.",
@@ -333,12 +332,12 @@ export class Events extends PolicyStatement {
   };
 
   /**
-   * Action provider for service events
+   * Statement provider for service [events](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridge.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridge.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cloud9
+ * Statement provider for service [cloud9](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cloud9 extends PolicyStatement {
   public servicePrefix = 'cloud9';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateEnvironmentEC2": {
       "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html",
       "description": "Grants permission to create an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance.",
@@ -179,12 +178,12 @@ export class Cloud9 extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cloud9
+   * Statement provider for service [cloud9](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

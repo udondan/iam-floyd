@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service states
+ * Statement provider for service [states](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class States extends PolicyStatement {
   public servicePrefix = 'states';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateActivity": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html",
       "description": "Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.",
@@ -244,12 +243,12 @@ export class States extends PolicyStatement {
   };
 
   /**
-   * Action provider for service states
+   * Statement provider for service [states](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

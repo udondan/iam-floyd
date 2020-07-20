@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service appmesh
+ * Statement provider for service [appmesh](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappmesh.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappmesh.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Appmesh extends PolicyStatement {
   public servicePrefix = 'appmesh';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateGatewayRoute": {
       "url": "https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateGatewayRoute.html",
       "description": "Creates a gateway route that is associated with a virtual gateway.",
@@ -574,12 +573,12 @@ export class Appmesh extends PolicyStatement {
   };
 
   /**
-   * Action provider for service appmesh
+   * Statement provider for service [appmesh](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappmesh.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappmesh.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

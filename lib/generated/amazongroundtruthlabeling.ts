@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service groundtruthlabeling
+ * Statement provider for service [groundtruthlabeling](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongroundtruthlabeling.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongroundtruthlabeling.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Groundtruthlabeling extends PolicyStatement {
   public servicePrefix = 'groundtruthlabeling';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeConsoleJob": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file",
       "description": "Get status of GroundTruthLabeling Jobs.",
@@ -33,12 +32,12 @@ export class Groundtruthlabeling extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service groundtruthlabeling
+   * Statement provider for service [groundtruthlabeling](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongroundtruthlabeling.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazongroundtruthlabeling.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

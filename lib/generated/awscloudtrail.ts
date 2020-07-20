@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cloudtrail
+ * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudtrail.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudtrail.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cloudtrail extends PolicyStatement {
   public servicePrefix = 'cloudtrail';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddTags": {
       "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html",
       "description": "Grants permission to add one or more tags to a trail, up to a limit of 10",
@@ -175,12 +174,12 @@ export class Cloudtrail extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cloudtrail
+   * Statement provider for service [cloudtrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudtrail.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudtrail.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

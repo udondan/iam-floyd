@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service rekognition
+ * Statement provider for service [rekognition](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Rekognition extends PolicyStatement {
   public servicePrefix = 'rekognition';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CompareFaces": {
       "url": "https://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html",
       "description": "Compares a face in source input image with each face detected in the target input image.",
@@ -399,12 +398,12 @@ export class Rekognition extends PolicyStatement {
   };
 
   /**
-   * Action provider for service rekognition
+   * Statement provider for service [rekognition](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrekognition.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

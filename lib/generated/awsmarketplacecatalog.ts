@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-catalog
+ * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceCatalog extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-catalog';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CancelChangeSet": {
       "url": "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html",
       "description": "Cancels a running change set.",
@@ -79,12 +78,12 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
   };
 
   /**
-   * Action provider for service aws-marketplace-catalog
+   * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service iot-device-tester
+ * Statement provider for service [iot-device-tester](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotdevicetester.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotdevicetester.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class IotDeviceTester extends PolicyStatement {
   public servicePrefix = 'iot-device-tester';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CheckVersion": {
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html",
       "description": "Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible",
@@ -38,12 +37,12 @@ export class IotDeviceTester extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service iot-device-tester
+   * Statement provider for service [iot-device-tester](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotdevicetester.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotdevicetester.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

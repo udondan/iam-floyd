@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mediapackage-vod
+ * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class MediapackageVod extends PolicyStatement {
   public servicePrefix = 'mediapackage-vod';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateAsset": {
       "url": "https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost",
       "description": "Grants permission to create an asset in AWS Elemental MediaPackage",
@@ -195,12 +194,12 @@ export class MediapackageVod extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mediapackage-vod
+   * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

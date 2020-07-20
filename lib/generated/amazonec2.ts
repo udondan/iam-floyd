@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service ec2
+ * Statement provider for service [ec2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Ec2 extends PolicyStatement {
   public servicePrefix = 'ec2';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptReservedInstancesExchangeQuote": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptReservedInstancesExchangeQuote.html",
       "description": "Grants permission to accept a Convertible Reserved Instance exchange quote",
@@ -4973,12 +4972,12 @@ export class Ec2 extends PolicyStatement {
   };
 
   /**
-   * Action provider for service ec2
+   * Statement provider for service [ec2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

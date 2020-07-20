@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service config
+ * Statement provider for service [config](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Config extends PolicyStatement {
   public servicePrefix = 'config';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "BatchGetAggregateResourceConfig": {
       "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetAggregateResourceConfig.html",
       "description": "Returns the current configuration items for resources that are present in your AWS Config aggregator",
@@ -632,12 +631,12 @@ export class Config extends PolicyStatement {
   };
 
   /**
-   * Action provider for service config
+   * Statement provider for service [config](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

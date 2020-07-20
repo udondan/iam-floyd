@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service kinesisanalytics
+ * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalytics.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalytics.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Kinesisanalytics extends PolicyStatement {
   public servicePrefix = 'kinesisanalytics';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AddApplicationInput": {
       "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html",
       "description": "Adds input to the application.",
@@ -188,12 +187,12 @@ export class Kinesisanalytics extends PolicyStatement {
   };
 
   /**
-   * Action provider for service kinesisanalytics
+   * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalytics.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalytics.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

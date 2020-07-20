@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service account
+ * Statement provider for service [account](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Account extends PolicyStatement {
   public servicePrefix = 'account';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DisableRegion": {
       "url": "",
       "description": "Grants permission to disable a region",
@@ -34,12 +33,12 @@ export class Account extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service account
+   * Statement provider for service [account](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mobilehub
+ * Statement provider for service [mobilehub](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmobilehub.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmobilehub.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mobilehub extends PolicyStatement {
   public servicePrefix = 'mobilehub';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateProject": {
       "url": "https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html",
       "description": "Create a project",
@@ -165,12 +164,12 @@ export class Mobilehub extends PolicyStatement {
   };
 
   /**
-   * Action provider for service mobilehub
+   * Statement provider for service [mobilehub](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmobilehub.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmobilehub.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

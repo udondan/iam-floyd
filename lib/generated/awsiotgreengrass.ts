@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service greengrass
+ * Statement provider for service [greengrass](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotgreengrass.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotgreengrass.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Greengrass extends PolicyStatement {
   public servicePrefix = 'greengrass';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateRoleToGroup": {
       "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/associateroletogroup-put.html",
       "description": "Grants permission to associate a role with a group. The role's permissions must allow Greengrass core Lambda functions and connectors to perform actions in other AWS services.",
@@ -1097,12 +1096,12 @@ export class Greengrass extends PolicyStatement {
   };
 
   /**
-   * Action provider for service greengrass
+   * Statement provider for service [greengrass](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotgreengrass.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotgreengrass.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

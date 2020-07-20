@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service cassandra
+ * Statement provider for service [cassandra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Cassandra extends PolicyStatement {
   public servicePrefix = 'cassandra';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "Alter": {
       "url": "",
       "description": "Grants permission to alter a keyspace or table",
@@ -145,12 +144,12 @@ export class Cassandra extends PolicyStatement {
   };
 
   /**
-   * Action provider for service cassandra
+   * Statement provider for service [cassandra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service codestar-notifications
+ * Statement provider for service [codestar-notifications](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class CodestarNotifications extends PolicyStatement {
   public servicePrefix = 'codestar-notifications';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateNotificationRule": {
       "url": "https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html",
       "description": "Grants permission to create a notification rule for a resource",
@@ -188,12 +187,12 @@ export class CodestarNotifications extends PolicyStatement {
   };
 
   /**
-   * Action provider for service codestar-notifications
+   * Statement provider for service [codestar-notifications](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

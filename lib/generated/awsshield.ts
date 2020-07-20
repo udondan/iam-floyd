@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service shield
+ * Statement provider for service [shield](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsshield.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsshield.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Shield extends PolicyStatement {
   public servicePrefix = 'shield';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateDRTLogBucket": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html",
       "description": "Authorizes the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs",
@@ -136,12 +135,12 @@ export class Shield extends PolicyStatement {
   };
 
   /**
-   * Action provider for service shield
+   * Statement provider for service [shield](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsshield.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsshield.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

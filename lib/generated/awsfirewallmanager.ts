@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service fms
+ * Statement provider for service [fms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Fms extends PolicyStatement {
   public servicePrefix = 'fms';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AssociateAdminAccount": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html",
       "description": "Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts",
@@ -166,12 +165,12 @@ export class Fms extends PolicyStatement {
   };
 
   /**
-   * Action provider for service fms
+   * Statement provider for service [fms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

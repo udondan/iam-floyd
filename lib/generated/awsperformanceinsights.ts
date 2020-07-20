@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service pi
+ * Statement provider for service [pi](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Pi extends PolicyStatement {
   public servicePrefix = 'pi';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "DescribeDimensionKeys": {
       "url": "",
       "description": "For a specific time period, retrieve the top N dimension keys for a metric.",
@@ -40,12 +39,12 @@ export class Pi extends PolicyStatement {
   };
 
   /**
-   * Action provider for service pi
+   * Statement provider for service [pi](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

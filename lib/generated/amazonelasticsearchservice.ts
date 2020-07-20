@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service es
+ * Statement provider for service [es](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Es extends PolicyStatement {
   public servicePrefix = 'es';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptInboundCrossClusterSearchConnection": {
       "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundcrossclustersearchconnection",
       "description": "Allows the destination domain owner to accept an inbound cross-cluster search connection request",
@@ -310,12 +309,12 @@ export class Es extends PolicyStatement {
   };
 
   /**
-   * Action provider for service es
+   * Statement provider for service [es](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

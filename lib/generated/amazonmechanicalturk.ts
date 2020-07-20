@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service mechanicalturk
+ * Statement provider for service [mechanicalturk](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmechanicalturk.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmechanicalturk.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Mechanicalturk extends PolicyStatement {
   public servicePrefix = 'mechanicalturk';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptQualificationRequest": {
       "url": "https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_AcceptQualificationRequestOperation.html",
       "description": "The AcceptQualificationRequest operation grants a Worker's request for a Qualification",
@@ -208,12 +207,12 @@ export class Mechanicalturk extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service mechanicalturk
+   * Statement provider for service [mechanicalturk](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmechanicalturk.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmechanicalturk.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

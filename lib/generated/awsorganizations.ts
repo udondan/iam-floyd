@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service organizations
+ * Statement provider for service [organizations](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsorganizations.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsorganizations.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Organizations extends PolicyStatement {
   public servicePrefix = 'organizations';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptHandshake": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_AcceptHandshake.html",
       "description": "Grants permission to send a response to the originator of a handshake agreeing to the action proposed by the handshake request.",
@@ -537,12 +536,12 @@ export class Organizations extends PolicyStatement {
   };
 
   /**
-   * Action provider for service organizations
+   * Statement provider for service [organizations](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsorganizations.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsorganizations.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

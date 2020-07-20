@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service servicecatalog
+ * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Servicecatalog extends PolicyStatement {
   public servicePrefix = 'servicecatalog';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptPortfolioShare": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AcceptPortfolioShare.html",
       "description": "Accepts a portfolio that has been shared with you",
@@ -657,12 +656,12 @@ export class Servicecatalog extends PolicyStatement {
   };
 
   /**
-   * Action provider for service servicecatalog
+   * Statement provider for service [servicecatalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservicecatalog.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

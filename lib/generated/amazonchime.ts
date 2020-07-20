@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service chime
+ * Statement provider for service [chime](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonchime.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonchime.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Chime extends PolicyStatement {
   public servicePrefix = 'chime';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "AcceptDelegate": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
       "description": "Grants permission to accept the delegate invitation to share management of an Amazon Chime account with another AWS Account",
@@ -956,12 +955,12 @@ export class Chime extends PolicyStatement {
   };
 
   /**
-   * Action provider for service chime
+   * Statement provider for service [chime](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonchime.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonchime.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

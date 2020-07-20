@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service servicediscovery
+ * Statement provider for service [servicediscovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class Servicediscovery extends PolicyStatement {
   public servicePrefix = 'servicediscovery';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "CreateHttpNamespace": {
       "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html",
       "description": "Creates an HTTP namespace.",
@@ -232,12 +231,12 @@ export class Servicediscovery extends PolicyStatement {
   };
 
   /**
-   * Action provider for service servicediscovery
+   * Statement provider for service [servicediscovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**

@@ -1,14 +1,13 @@
 import { Actions, PolicyStatement, ResourceTypes } from "../shared";
-import { PolicyStatementProps } from "@aws-cdk/aws-iam";
 
 /**
- * Action provider for service aws-marketplace-management
+ * Statement provider for service [aws-marketplace-management](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html).
  *
- * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html
+ * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
  */
 export class AwsMarketplaceManagement extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-management';
-  public actions: Actions = {
+  protected actionList: Actions = {
     "uploadFiles": {
       "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
       "description": "Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.",
@@ -38,12 +37,12 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   public resourceTypes: ResourceTypes = {};
 
   /**
-   * Action provider for service aws-marketplace-management
+   * Statement provider for service [aws-marketplace-management](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html).
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html
+   * @param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement
    */
-  constructor (props?: PolicyStatementProps) {
-    super(props);
+  constructor (sid?: string) {
+    super(sid);
   }
 
   /**
