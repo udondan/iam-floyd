@@ -40,7 +40,7 @@
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
 	* [notActions](#notActions)
-	* [notResource](#notResource)
+	* [notResources](#notResources)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -177,13 +177,13 @@ new statement.S3()
   );
 ```
 
-To invert the policy you can use `notActions()` and `notResource()`:
+To invert the policy you can use `notActions()` and `notResources()`:
 
 ```typescript
 new statement.S3()
   .allow()
   .notActions()
-  .notResource()
+  .notResources()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
@@ -377,14 +377,14 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
-### <a name='notResource'></a>notResource
+### <a name='notResources'></a>notResources
 
 Switches the policy provider to use [NotResource].
 
 ```typescript
 new statement.S3()
   .allow()
-  .notResource()
+  .notResources()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
