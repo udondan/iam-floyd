@@ -2,7 +2,7 @@ SHELL := /bin/bash
 VERSION := $(shell cat VERSION)
 CDK_BRANCH := cdk-port
 
-.PHONY: build generate package test tag untag release re-release changelog cdk-build cdk-package
+.PHONY: build generate package test tag untag release re-release changelog cdk
 
 build:
 	@npm run build
