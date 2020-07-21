@@ -77,27 +77,33 @@ jobs:
       - name: Build CDK variant
         run: make cdk
 
-      - name: Build CDK packages
+      - name: Build source
+        uses: udondan/jsii-publish@v0.10.0
+        with:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          BUILD_SOURCE: true
+
+      - name: Build packages
         uses: udondan/jsii-publish@v0.10.0
         with:
           BUILD_PACKAGES: true
 
-      - name: Publish CDK to npm
+      - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
         with:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish CDK to PyPI
+      - name: Publish to PyPI
         uses: udondan/jsii-publish@v0.10.0
         with:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
 
-      - name: Publish CDK to NuGet
+      - name: Publish to NuGet
         uses: udondan/jsii-publish@v0.10.0
         with:
           NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
-      - name: Publish CDK to Maven GitHub
+      - name: Publish to Maven GitHub
         uses: udondan/jsii-publish@v0.10.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
