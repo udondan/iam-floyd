@@ -20,11 +20,12 @@ package: build
 cdk-build:
 	@git rev-parse --verify cdk-port && git branch -d cdk-port
 	@git checkout -b cdk-port
-	$(MAKE) build
+
 	@npm i @aws-cdk/aws-iam
 #	@ITEM=lib        && rm -rf "cdk/$${ITEM}" && cp -R "$${ITEM}" "cdk/$${ITEM}"
 #	@ITEM=.npmignore && rm -rf "cdk/$${ITEM}" && cp -R "$${ITEM}" "cdk/$${ITEM}"
 	@rm -f bin/mkcdk.js && npx ts-node bin/mkcdk.ts
+	$(MAKE) build
 
 #	@sed -i'.mac' "s/\(\"iam-floyd\": \"\).*\(\".*\)/\1$(VERSION)\2/g" cdk/package.json
 #	@rm -f cdk/package.json.mac
