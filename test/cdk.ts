@@ -40,3 +40,11 @@ export class TestStack extends cdk.Stack {
     });
   }
 }
+
+const app = new cdk.App();
+new TestStack(app, 'IAM-Floyd-Test', {
+  env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.CDK_DEFAULT_REGION,
+  },
+});

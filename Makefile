@@ -35,7 +35,7 @@ cdk-package:
 cdk: cdk-build cdk-package
 
 test:
-	@[[ "$$(git branch --show-current)" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && cd test && cdk diff || true
+	@[[ "$$(git branch --show-current)" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && cd test && npm i && cdk diff || true
 #rm -f test/cdk.js && npx ts-node test/cdk.ts
 	@[[ "$$(git branch --show-current)" != "${CDK_BRANCH}" ]] && echo "Running main test" && rm -f test/main.js && npx ts-node test/main.ts || true
 
