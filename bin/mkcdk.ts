@@ -148,6 +148,13 @@ function preparePackageJson() {
       namespace: 'CDK.IAM.Floyd',
       packageId: 'CDK.IAM.Floyd',
     },
+    java: {
+      package: 'com.udondan.iamFloyd.cdk',
+      maven: {
+        groupId: 'com.udondan',
+        artifactId: 'cdk-iam-floyd',
+      },
+    },
   };
 
   fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));
