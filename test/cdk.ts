@@ -7,7 +7,7 @@ export class TestStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const policy = new iam.ManagedPolicy(this, 'SSM-Document-Manager-Policy', {
+    const policy = new iam.ManagedPolicy(this, 'Policy', {
       managedPolicyName: `${this.stackName}-testpolicy`,
       description: `test policy`,
       statements: [
