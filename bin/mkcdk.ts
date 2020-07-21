@@ -134,5 +134,10 @@ function fixModule(project: Project, file: string) {
 function preparePackageJson() {
   const file = path.join(__dirname, '../package.json');
   const jsonData = require(file);
+
+  jsonData.name = 'cdk-iam-floyd';
+  jsonData.description += ' for AWS CDK';
+  (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
+
   console.log(jsonData);
 }
