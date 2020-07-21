@@ -60,3 +60,35 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Clean the dist directory
+        run: rm -rf dist
+
+      - name: Build CDK variant
+        run: make cdk
+
+      - name: Build CDK packages
+        uses: udondan/jsii-publish@v0.9.0
+        with:
+          BUILD_PACKAGES: true
+
+      - name: Publish CDK to npm
+        uses: udondan/jsii-publish@v0.9.0
+        with:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish CDK to PyPI
+        uses: udondan/jsii-publish@v0.9.0
+        with:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+
+      - name: Publish CDK to NuGet
+        uses: udondan/jsii-publish@v0.9.0
+        with:
+          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+
+      - name: Publish CDK to Maven GitHub
+        uses: udondan/jsii-publish@v0.9.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}

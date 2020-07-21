@@ -55,7 +55,7 @@
 
 There are two different package variants available:
 
-* **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need a statement for.
+* **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need a IAM policy statement for
 * **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)
 
 The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:

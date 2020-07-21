@@ -18,21 +18,11 @@ generate-force:
 package: build
 	@npm run package
 
-cdk-build:
+cdk:
 	@git rev-parse --verify ${CDK_BRANCH} && git branch -d ${CDK_BRANCH}
 	@git checkout -b cdk-port
 	@npm i @aws-cdk/aws-iam
 	@rm -f bin/mkcdk.js && npx ts-node bin/mkcdk.ts
-	$(MAKE) build
-
-#	@sed -i'.mac' "s/\(\"iam-floyd\": \"\).*\(\".*\)/\1$(VERSION)\2/g" cdk/package.json
-#	@rm -f cdk/package.json.mac
-#	cd cdk && npm i && npm run build
-
-cdk-package:
-	@echo TODO
-
-cdk: cdk-build cdk-package
 
 test:
 	@[[ "$$(git branch --show-current)" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && cd test && npm i && cdk diff && cdk deploy --require-approval never && cdk destroy --force || true
