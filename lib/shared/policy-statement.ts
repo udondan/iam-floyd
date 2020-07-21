@@ -42,7 +42,7 @@ interface Conditions {
 export class PolicyStatement {
   protected actionList: Actions = {};
   protected useNotActions = false;
-  protected useNotResource = false;
+  protected useNotResources = false;
   public sid = '';
   public effect = Effect.ALLOW;
   protected actions: string[] = [];
@@ -114,7 +114,7 @@ export class PolicyStatement {
    * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
    */
   public notResources() {
-    this.useNotResource = true;
+    this.useNotResources = true;
     return this;
   }
 
@@ -725,7 +725,7 @@ export class PolicyStatement {
       }
     }
 
-    if (this.useNotResource) {
+    if (this.useNotResources) {
       statement.NotResource = this.resources;
     } else {
       statement.Resource = this.resources;
