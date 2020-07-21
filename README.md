@@ -53,6 +53,11 @@
 
 ## <a name='Usage'></a>Usage
 
+There are two different package variants available:
+
+* **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need a statement for.
+* **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)
+
 The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
 ```typescript
@@ -418,3 +423,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
+   [AWS CDK]: https://aws.amazon.com/cdk/
