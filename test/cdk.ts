@@ -31,5 +31,12 @@ export class TestStack extends cdk.Stack {
           .ifResourceTag('CreatedBy', 'hello'),
       ],
     });
+
+    new iam.Role(this, 'Role', {
+      roleName: `${this.stackName}-testrole`,
+      description: 'Test Role',
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+      managedPolicies: [policy],
+    });
   }
 }
