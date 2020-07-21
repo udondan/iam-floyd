@@ -19,10 +19,10 @@ package: build
 	@npm run package
 
 cdk:
-	@git rev-parse --verify ${CDK_BRANCH} && git branch -d ${CDK_BRANCH}
-	@git checkout -b cdk-port
-	@npm i @aws-cdk/aws-iam
-	@rm -f bin/mkcdk.js && npx ts-node bin/mkcdk.ts
+	git rev-parse --verify ${CDK_BRANCH} && git branch -d ${CDK_BRANCH}
+	git checkout -b cdk-port
+	npm i @aws-cdk/aws-iam
+	rm -f bin/mkcdk.js && npx ts-node bin/mkcdk.ts
 
 test:
 	@[[ "$$(git branch --show-current)" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && cd test && npm i && cdk diff && cdk deploy --require-approval never && cdk destroy --force || true
