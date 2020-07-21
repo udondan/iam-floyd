@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "bin": {
+    "test": "bin/cdk.js"
+  },
+  "devDependencies": {
+    "@types/node": "14.0.24",
+    "ts-node": "^8.10.2",
+    "typescript": "~3.9.7",
+    "cdk-ssm-document": "file:.."
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "cdk-ssm-document": "file:.."
+  }
+}

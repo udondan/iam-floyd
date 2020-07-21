@@ -16,6 +16,9 @@
     "url": "https://www.udondan.com/",
     "twitter": "udondan"
   },
+  "awscdkio": {
+    "twitter": "udondan"
+  },
   "homepage": "https://github.com/udondan/iam-floyd",
   "repository": {
     "type": "git",

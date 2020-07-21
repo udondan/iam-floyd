@@ -40,7 +40,7 @@
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
 	* [notActions](#notActions)
-	* [notResource](#notResource)
+	* [notResources](#notResources)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -52,6 +52,11 @@
 <!-- /vscode-markdown-toc -->
 
 ## <a name='Usage'></a>Usage
+
+There are two different package variants available:
+
+* **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for
+* **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)
 
 The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
@@ -172,13 +177,13 @@ new statement.S3()
   );
 ```
 
-To invert the policy you can use `notActions()` and `notResource()`:
+To invert the policy you can use `notActions()` and `notResources()`:
 
 ```typescript
 new statement.S3()
   .allow()
   .notActions()
-  .notResource()
+  .notResources()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
@@ -372,14 +377,14 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
-### <a name='notResource'></a>notResource
+### <a name='notResources'></a>notResources
 
 Switches the policy provider to use [NotResource].
 
 ```typescript
 new statement.S3()
   .allow()
-  .notResource()
+  .notResources()
   .deleteBucket()
   .onBucket('some-bucket');
 ```
@@ -418,3 +423,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
+   [AWS CDK]: https://aws.amazon.com/cdk/

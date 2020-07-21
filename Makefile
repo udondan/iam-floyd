@@ -1,7 +1,8 @@
 SHELL := /bin/bash
 VERSION := $(shell cat VERSION)
+CDK_BRANCH := cdk-port
 
-.PHONY: build generate package test tag untag release re-release changelog
+.PHONY: build generate package test tag untag release re-release changelog cdk
 
 build:
 	@npm run build
@@ -17,8 +18,15 @@ generate-force:
 package: build
 	@npm run package
 
+cdk:
+	@git rev-parse --verify ${CDK_BRANCH} && git branch -d ${CDK_BRANCH}
+	@git checkout -b cdk-port
+	@npm i @aws-cdk/aws-iam
+	@rm -f bin/mkcdk.js && npx ts-node bin/mkcdk.ts
+
 test:
-	@npm run test
+	@[[ "$$(git branch --show-current)" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && cd test && npm i && cdk diff && cdk deploy --require-approval never && cdk destroy --force || true
+	@[[ "$$(git branch --show-current)" != "${CDK_BRANCH}" ]] && echo "Running main test" && rm -f test/main.js && npx ts-node test/main.ts || true
 
 changelog:
 	@bin/mkchangelog

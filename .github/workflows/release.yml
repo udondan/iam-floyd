@@ -25,6 +25,7 @@ jobs:
           FILE: README.md
           PATTERN: (iam-floyd\@|maven-v)[0-9.]+
           REPLACE: \${1}${VERSION}
+
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
