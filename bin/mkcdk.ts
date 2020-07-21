@@ -138,7 +138,17 @@ function preparePackageJson() {
   jsonData.name = 'cdk-iam-floyd';
   jsonData.description += ' for AWS CDK';
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
-  delete jsonData.jsii.targets.java;
 
-  console.log(jsonData);
+  jsonData.jsii.targets = {
+    python: {
+      distName: 'cdk-iam-floyd',
+      module: 'cdk_iam_floyd',
+    },
+    dotnet: {
+      namespace: 'CDK.IAM.Floyd',
+      packageId: 'CDK.IAM.Floyd',
+    },
+  };
+
+  fs.writeFileSync(file, JSON.stringify(jsonData));
 }
