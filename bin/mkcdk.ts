@@ -31,7 +31,7 @@ async function run() {
   });
   toStatementJson.setBodyText(
     [
-      'if (!this.hasResources) {',
+      'if (!this.hasResources()) {',
       "  this.resources.push('*');",
       '}',
       '', // TODO: Principals
