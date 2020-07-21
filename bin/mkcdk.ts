@@ -7,6 +7,7 @@ import { Project, Scope, SourceFile } from 'ts-morph';
 const lib = path.join(__dirname, '../lib');
 
 async function run() {
+  preparePackageJson();
   const project = new Project();
 
   const files = fs.readdirSync(`${lib}/generated`);
@@ -128,4 +129,10 @@ function fixModule(project: Project, file: string) {
   } catch (e) {
     throw e;
   }
+}
+
+function preparePackageJson() {
+  const file = path.join(__dirname, '../package.json');
+  const jsonData = require(file);
+  console.log(jsonData);
 }
