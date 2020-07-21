@@ -6,7 +6,7 @@
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
 [![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.27.4-brightgreen)][Maven]
+[![Maven package](https://img.shields.io/badge/maven-v0.27.5-brightgreen)][Maven]
 
 ![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
 [![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
