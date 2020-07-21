@@ -34,12 +34,15 @@ async function run() {
       'if (!this.hasResources()) {',
       "  this.resources.push('*');",
       '}',
+      'if(!this.cdkApplied) {',
       '', // TODO: Principals
-      'this.useNotActions && super.addNotActions(...this.actions);',
-      'this.useNotActions || super.addActions(...this.actions);',
-      'this.useNotResources && super.addNotResources(...this.resources);',
-      'this.useNotResources || super.addResources(...this.resources);',
-      'super.addConditions(this.conditions);',
+      ' this.useNotActions && super.addNotActions(...this.actions);',
+      '  this.useNotActions || super.addActions(...this.actions);',
+      '  this.useNotResources && super.addNotResources(...this.resources);',
+      '  this.useNotResources || super.addResources(...this.resources);',
+      '  super.addConditions(this.conditions);',
+      '}',
+      'this.cdkApplied = true;',
       'return super.toStatementJson();',
     ].join('\n')
   );

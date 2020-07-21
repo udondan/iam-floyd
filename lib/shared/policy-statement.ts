@@ -48,6 +48,7 @@ export class PolicyStatement {
   protected actions: string[] = [];
   protected resources: string[] = [];
   protected conditions: Conditions = {};
+  protected cdkApplied = false; // internally used to check if resources, actions and conditions have already been applied to the policy
 
   /**
    * Adds actions by name.
