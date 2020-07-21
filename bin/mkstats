@@ -16,16 +16,13 @@ function getNoConditions() {
   grep -R --include="*.ts" --exclude-dir=".cache" "public if" lib | wc -l | xargs
 }
 
-services="$(getNoServices)"
-actions="$(getNoActions)"
-resourceTypes="$(getNoResourceTypes)"
-conditions="$(getNoConditions)"
-
 read -r -d '' stats << EOF
-**Services:** ${services}<br>
-**Actions:** ${actions}<br>
-**Resource Types:** ${resourceTypes}<br>
-**Conditions:** ${conditions}
+Support for:
+
+- $(getNoServices) Services<br>
+- $(getNoActions) Actions<br>
+- $(getNoResourceTypes) Resource Types<br>
+- $(getNoConditions) Conditions
 EOF
 
 perl -0777 -pi -e "s/^(<!-- stats -->)[\s\n\w*-:\d<>]+(<!-- \/stats -->)/\\1\\n${stats}\\n\\2/gm" README.md

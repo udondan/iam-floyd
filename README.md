@@ -16,10 +16,12 @@
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
 <!-- stats -->
-**Services:** 234<br>
-**Actions:** 7674<br>
-**Resource Types:** 734<br>
-**Conditions:** 446
+Support for:
+
+- 468 Services<br>
+- 7674 Actions<br>
+- 734 Resource Types<br>
+- 446 Conditions
 <!-- /stats -->
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
