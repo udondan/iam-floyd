@@ -138,6 +138,7 @@ function preparePackageJson() {
   jsonData.name = 'cdk-iam-floyd';
   jsonData.description += ' for AWS CDK';
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
+  delete jsonData.jsii.targets.java;
 
   console.log(jsonData);
 }
