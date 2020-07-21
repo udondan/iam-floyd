@@ -1,5 +1,7 @@
 SHELL := /bin/bash
 VERSION := $(shell cat VERSION)
+BRANCH := $(shell git branch --show-current)
+CDK_BRANCH := cdk-port
 
 .PHONY: build generate package test tag untag release re-release changelog cdk-build cdk-package
 
@@ -18,12 +20,9 @@ package: build
 	@npm run package
 
 cdk-build:
-	@git rev-parse --verify cdk-port && git branch -d cdk-port
+	@git rev-parse --verify ${CDK_BRANCH} && git branch -d ${CDK_BRANCH}
 	@git checkout -b cdk-port
-
 	@npm i @aws-cdk/aws-iam
-#	@ITEM=lib        && rm -rf "cdk/$${ITEM}" && cp -R "$${ITEM}" "cdk/$${ITEM}"
-#	@ITEM=.npmignore && rm -rf "cdk/$${ITEM}" && cp -R "$${ITEM}" "cdk/$${ITEM}"
 	@rm -f bin/mkcdk.js && npx ts-node bin/mkcdk.ts
 	$(MAKE) build
 
@@ -37,7 +36,8 @@ cdk-package:
 cdk: cdk-build cdk-package
 
 test:
-	@npm run test
+	@[[ "${BRANCH}" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && rm -f test/cdk.js && npx ts-node test/cdk.ts || true
+	@[[ "${BRANCH}" != "${CDK_BRANCH}" ]] && echo "Running main test" && rm -f test/main.js && npx ts-node test/main.ts || true
 
 changelog:
 	@bin/mkchangelog
