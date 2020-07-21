@@ -150,5 +150,5 @@ function preparePackageJson() {
     },
   };
 
-  fs.writeFileSync(file, JSON.stringify(jsonData));
+  fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));
 }
