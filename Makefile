@@ -35,7 +35,7 @@ stats:
 	@bin/mkstats
 
 clean:
-	@rm -rf node_modules package-lock.json cdk/node_modules cdk/package-lock.json
+	@rm -rf node_modules package-lock.json
 
 install: clean
 	@npm i
