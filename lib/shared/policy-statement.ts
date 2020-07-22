@@ -247,10 +247,11 @@ export class PolicyStatement {
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateLessThanEquals`
    */
   public ifCurrentTime(value: Date | string, operator?: string) {
-    if (typeof (value as Date).getMonth === 'function') {
-      value = (value as Date).toISOString();
-    }
-    return this.if('aws:CurrentTime', value, operator || 'DateLessThanEquals');
+    return this.if(
+      'aws:CurrentTime',
+      dateToString(value),
+      operator || 'DateLessThanEquals'
+    );
   }
 
   /**
@@ -264,10 +265,11 @@ export class PolicyStatement {
    * @param operator Works with [date](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date) and [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `DateLessThanEquals`
    */
   public ifEpochTime(value: number | Date | string, operator?: string) {
-    if (typeof (value as Date).getMonth === 'function') {
-      value = (value as Date).toISOString();
-    }
-    return this.if('aws:EpochTime', value, operator || 'DateLessThanEquals');
+    return this.if(
+      'aws:EpochTime',
+      dateToString(value),
+      operator || 'DateLessThanEquals'
+    );
   }
 
   /**
@@ -604,12 +606,9 @@ export class PolicyStatement {
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateGreaterThanEquals`
    */
   public ifTokenIssueTime(value: string | Date, operator?: string) {
-    if (typeof (value as Date).getMonth === 'function') {
-      value = (value as Date).toISOString();
-    }
     return this.if(
       'aws:TokenIssueTime',
-      value,
+      dateToString(value),
       operator || 'DateGreaterThanEquals'
     );
   }
@@ -741,4 +740,11 @@ export class PolicyStatement {
 
     return statement;
   }
+}
+
+function dateToString(value: Date | string | number): string | number {
+  if (typeof (value as Date).getMonth === 'function') {
+    value = (value as Date).toISOString();
+  }
+  return value as string;
 }
