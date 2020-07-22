@@ -1,5 +1,10 @@
+import { get } from 'lodash';
+
 import { Condition } from './condition';
 
+var colors = require('colors/safe');
+
+colors.enable();
 interface Fixes {
   [key: string]: any;
 }
@@ -151,19 +156,16 @@ export function conditionFixer(
   }
 
   const key = condition.key.split(':')[1];
-  if (
-    service in fixes &&
-    'conditions' in fixes[service] &&
-    key in fixes[service].conditions &&
-    'operator' in fixes[service].conditions[key] &&
-    'type' in fixes[service].conditions[key].operator
-  ) {
+  const operatorType = get(fixes, `${service}.conditions.${key}.operator.type`);
+  if (typeof operatorType !== 'undefined') {
     fixed = 2;
-    condition.type = fixes[service].conditions[key].operator.type;
+    condition.type = operatorType;
   }
 
   if (fixed > 0) {
-    process.stdout.write(`[L${fixed} fix for condition ${key}] `.yellow);
+    process.stdout.write(
+      colors.yellow(`[L${fixed} fix for condition ${key}] `)
+    );
   }
   return condition;
 }
@@ -188,19 +190,15 @@ export function arnFixer(
   }
 
   // fix ARNs specified in the global fixes object above
-  if (
-    service in fixes &&
-    'resourceTypes' in fixes[service] &&
-    resource in fixes[service].resourceTypes &&
-    'arn' in fixes[service].resourceTypes[resource]
-  ) {
+  const value = get(fixes, `${service}.resourceTypes.${resource}.arn`);
+  if (typeof value !== 'undefined') {
     fixed = 3;
-    arn = fixes[service].resourceTypes[resource].arn;
+    arn = value;
   }
 
   if (fixed > 0) {
     process.stdout.write(
-      `[L${fixed} fix for resource type ${resource}] `.yellow
+      colors.yellow(`[L${fixed} fix for resource type ${resource}] `)
     );
   }
 
@@ -221,7 +219,7 @@ export function arnFixer(
     !arn.match(re)
   ) {
     const message = `\nARN for ${service}:${resource} did not match allowed pattern, possibly error in documentation: ${arn}`;
-    console.warn(message.bgYellow.black);
+    console.warn(colors.bgYellow.black(message));
   }
   return arn;
 }
