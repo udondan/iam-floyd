@@ -16,17 +16,33 @@ export class Elasticache extends PolicyStatement {
     "AuthorizeCacheSecurityGroupIngress": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html",
       "description": "The AuthorizeCacheSecurityGroupIngress action allows network ingress to a cache security group.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupIngress"
+      ]
     },
     "CopySnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopySnapshot.html",
       "description": "The CopySnapshot action makes a copy of an existing snapshot.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:DeleteObject",
+        "s3:GetBucketAcl",
+        "s3:PutObject"
+      ]
     },
     "CreateCacheCluster": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html",
       "description": "The CreateCacheCluster action creates a cache cluster.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "s3:GetObject"
+      ]
     },
     "CreateCacheParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheParameterGroup.html",
@@ -46,7 +62,15 @@ export class Elasticache extends PolicyStatement {
     "CreateReplicationGroup": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html",
       "description": "The CreateReplicationGroup action creates a replication group.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "s3:GetObject"
+      ]
     },
     "CreateSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateSnapshot.html",
@@ -56,7 +80,14 @@ export class Elasticache extends PolicyStatement {
     "DecreaseReplicaCount": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseReplicaCount.html",
       "description": "The DecreaseReplicaCount action decreases the number of replicas in a Redis replication group.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ]
     },
     "DeleteCacheCluster": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheCluster.html",
@@ -151,7 +182,14 @@ export class Elasticache extends PolicyStatement {
     "IncreaseReplicaCount": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseReplicaCount.html",
       "description": "The IncreaseReplicaCount action increases the number of replicas in a Redis replication group.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ]
     },
     "ListAllowedNodeTypeModifications": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListAllowedNodeTypeModifications.html",
@@ -186,7 +224,14 @@ export class Elasticache extends PolicyStatement {
     "ModifyReplicationGroupShardConfiguration": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html",
       "description": "The ModifyReplicationGroupShardConfiguration action allows you to add shards, remove shards, or rebalance the keyspaces among exisiting shards.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ]
     },
     "PurchaseReservedCacheNodesOffering": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_PurchaseReservedCacheNodesOffering.html",
@@ -216,7 +261,14 @@ export class Elasticache extends PolicyStatement {
     "TestFailover": {
       "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestFailover.html",
       "description": "The TestFailover action allows you to test automatic failover on a specified node group in a replication group",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ]
     }
   };
   public resourceTypes: ResourceTypes = {};
@@ -247,6 +299,9 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ec2:AuthorizeSecurityGroupIngress
+   *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html
    */
   public authorizeCacheSecurityGroupIngress() {
@@ -259,6 +314,11 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - s3:DeleteObject
+   * - s3:GetBucketAcl
+   * - s3:PutObject
+   *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopySnapshot.html
    */
   public copySnapshot() {
@@ -270,6 +330,14 @@ export class Elasticache extends PolicyStatement {
    * The CreateCacheCluster action creates a cache cluster.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html
    */
@@ -319,6 +387,14 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html
    */
   public createReplicationGroup() {
@@ -342,6 +418,13 @@ export class Elasticache extends PolicyStatement {
    * The DecreaseReplicaCount action decreases the number of replicas in a Redis replication group.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseReplicaCount.html
    */
@@ -571,6 +654,13 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseReplicaCount.html
    */
   public increaseReplicaCount() {
@@ -655,6 +745,13 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html
    */
   public modifyReplicationGroupShardConfiguration() {
@@ -726,6 +823,13 @@ export class Elasticache extends PolicyStatement {
    * The TestFailover action allows you to test automatic failover on a specified node group in a replication group
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestFailover.html
    */

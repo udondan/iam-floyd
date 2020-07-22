@@ -22,6 +22,9 @@ export class Cloudtrail extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html",
       "description": "Grants permission to create a trail that specifies the settings for delivery of log data to an Amazon S3 bucket",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:PutObject"
+      ],
       "resourceTypes": {
         "trail": {
           "required": true
@@ -198,6 +201,9 @@ export class Cloudtrail extends PolicyStatement {
    * Grants permission to create a trail that specifies the settings for delivery of log data to an Amazon S3 bucket
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:PutObject
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html
    */

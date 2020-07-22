@@ -11,7 +11,23 @@ export class Connect extends PolicyStatement {
     "CreateInstance": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to create a new Amazon Connect instance. The associated required actions grant permissions to configure instance settings.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ds:CreateAlias",
+        "ds:DeleteDirectory",
+        "ds:DescribeDirectories",
+        "firehose:DescribeDeliveryStream",
+        "firehose:ListDeliveryStreams",
+        "iam:CreateServiceLinkedRole",
+        "kinesis:DescribeStream",
+        "kinesis:ListStreams",
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:RetireGrant",
+        "s3:CreateBucket",
+        "s3:ListAllMyBuckets"
+      ]
     },
     "CreateUser": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html",
@@ -53,6 +69,15 @@ export class Connect extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to view details of an Amazon Connect instance. This is required to create an instance.",
       "accessLevel": "Read",
+      "dependentActions": [
+        "firehose:DescribeDeliveryStream",
+        "firehose:ListDeliveryStreams",
+        "kinesis:DescribeStream",
+        "kinesis:ListStreams",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "s3:ListAllMyBuckets"
+      ],
       "resourceTypes": {
         "instance": {
           "required": true
@@ -136,6 +161,11 @@ export class Connect extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to federate in to an Amazon Connect instance (Log in as administrator functionality in the AWS console).",
       "accessLevel": "Write",
+      "dependentActions": [
+        "connect:DescribeInstance",
+        "connect:ListInstances",
+        "ds:DescribeDirectories"
+      ],
       "resourceTypes": {
         "instance": {
           "required": true
@@ -254,6 +284,18 @@ export class Connect extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission modify the settings for the instance.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "firehose:DescribeDeliveryStream",
+        "firehose:ListDeliveryStreams",
+        "kinesis:DescribeStream",
+        "kinesis:ListStreams",
+        "kms:CreateGrant",
+        "kms:DescribeKey",
+        "kms:ListAliases",
+        "kms:RetireGrant",
+        "s3:CreateBucket",
+        "s3:ListAllMyBuckets"
+      ],
       "resourceTypes": {
         "instance": {
           "required": true
@@ -523,6 +565,22 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ds:CreateAlias
+   * - ds:DeleteDirectory
+   * - ds:DescribeDirectories
+   * - firehose:DescribeDeliveryStream
+   * - firehose:ListDeliveryStreams
+   * - iam:CreateServiceLinkedRole
+   * - kinesis:DescribeStream
+   * - kinesis:ListStreams
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   * - kms:ListAliases
+   * - kms:RetireGrant
+   * - s3:CreateBucket
+   * - s3:ListAllMyBuckets
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
   public createInstance() {
@@ -558,6 +616,15 @@ export class Connect extends PolicyStatement {
    * Grants permissions to view details of an Amazon Connect instance. This is required to create an instance.
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - firehose:DescribeDeliveryStream
+   * - firehose:ListDeliveryStreams
+   * - kinesis:DescribeStream
+   * - kinesis:ListStreams
+   * - kms:DescribeKey
+   * - kms:ListAliases
+   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
@@ -654,6 +721,11 @@ export class Connect extends PolicyStatement {
    * Grants permissions to federate in to an Amazon Connect instance (Log in as administrator functionality in the AWS console).
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - connect:DescribeInstance
+   * - connect:ListInstances
+   * - ds:DescribeDirectories
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */
@@ -798,6 +870,18 @@ export class Connect extends PolicyStatement {
    * Grants permissions to modify configuration settings for an existing Amazon Connect instance. The associated required actions grant permission modify the settings for the instance.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - firehose:DescribeDeliveryStream
+   * - firehose:ListDeliveryStreams
+   * - kinesis:DescribeStream
+   * - kinesis:ListStreams
+   * - kms:CreateGrant
+   * - kms:DescribeKey
+   * - kms:ListAliases
+   * - kms:RetireGrant
+   * - s3:CreateBucket
+   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
    */

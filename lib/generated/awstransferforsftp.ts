@@ -21,6 +21,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html",
       "description": "Enables the caller to add a user associated with a server.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "server": {
           "required": true
@@ -247,6 +250,9 @@ export class Transfer extends PolicyStatement {
    * Enables the caller to add a user associated with a server.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html
    */

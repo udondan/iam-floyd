@@ -12,6 +12,16 @@ export class Kafka extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster",
       "description": "Grants permission to create a cluster.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "iam:AttachRolePolicy",
+        "iam:CreateServiceLinkedRole",
+        "iam:PutRolePolicy",
+        "kms:CreateGrant",
+        "kms:DescribeKey"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -164,6 +174,16 @@ export class Kafka extends PolicyStatement {
    * Grants permission to create a cluster.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - iam:AttachRolePolicy
+   * - iam:CreateServiceLinkedRole
+   * - iam:PutRolePolicy
+   * - kms:CreateGrant
+   * - kms:DescribeKey
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster
    */

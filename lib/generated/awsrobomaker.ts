@@ -47,6 +47,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html",
       "description": "Create a deployment job",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -65,6 +68,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html",
       "description": "Create a robot that can be registered to a fleet",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -83,6 +89,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html",
       "description": "Create a snapshot of a robot application",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject"
+      ],
       "resourceTypes": {
         "robotApplication": {
           "required": true
@@ -102,6 +111,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html",
       "description": "Create a snapshot of a simulation application",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject"
+      ],
       "resourceTypes": {
         "simulationApplication": {
           "required": true
@@ -112,6 +124,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html",
       "description": "Create a simulation job",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -330,6 +345,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html",
       "description": "Create a simulation job batch",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -339,6 +357,9 @@ export class Robomaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html",
       "description": "Ensures the most recently deployed robot application is deployed to all robots in the fleet",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "deploymentFleet": {
           "required": true
@@ -550,6 +571,9 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html
    */
   public createDeploymentJob() {
@@ -573,6 +597,9 @@ export class Robomaker extends PolicyStatement {
    * Create a robot that can be registered to a fleet
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html
    */
@@ -598,6 +625,9 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html
    */
   public createRobotApplicationVersion() {
@@ -622,6 +652,9 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html
    */
   public createSimulationApplicationVersion() {
@@ -633,6 +666,9 @@ export class Robomaker extends PolicyStatement {
    * Create a simulation job
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html
    */
@@ -910,6 +946,9 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html
    */
   public startSimulationJobBatch() {
@@ -921,6 +960,9 @@ export class Robomaker extends PolicyStatement {
    * Ensures the most recently deployed robot application is deployed to all robots in the fleet
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html
    */

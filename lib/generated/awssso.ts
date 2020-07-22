@@ -126,7 +126,10 @@ export class Sso extends PolicyStatement {
     "GetPermissionsPolicy": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all permission policies associated with a permission set",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "sso:DescribePermissionsPolicies"
+      ]
     },
     "GetProfile": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -166,12 +169,18 @@ export class Sso extends PolicyStatement {
     "ListApplicationInstances": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all application instances",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "dependentActions": [
+        "sso:GetApplicationInstance"
+      ]
     },
     "ListApplicationTemplates": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all supported application templates",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "sso:GetApplicationTemplate"
+      ]
     },
     "ListApplications": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -196,7 +205,10 @@ export class Sso extends PolicyStatement {
     "ListProfiles": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all profiles for an application instance",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "sso:GetProfile"
+      ]
     },
     "PutMfaDeviceManagementForDirectory": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -571,6 +583,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent Actions:
+   * - sso:DescribePermissionsPolicies
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public getPermissionsPolicy() {
@@ -667,6 +682,9 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent Actions:
+   * - sso:GetApplicationInstance
+   *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
   public listApplicationInstances() {
@@ -678,6 +696,9 @@ export class Sso extends PolicyStatement {
    * Retrieve all supported application templates
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - sso:GetApplicationTemplate
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */
@@ -738,6 +759,9 @@ export class Sso extends PolicyStatement {
    * Retrieve all profiles for an application instance
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - sso:GetProfile
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
    */

@@ -12,6 +12,11 @@ export class Cloud9 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html",
       "description": "Grants permission to create an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "cloud9:EnvironmentName",
         "cloud9:InstanceType",
@@ -38,6 +43,9 @@ export class Cloud9 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html",
       "description": "Grants permission to delete an AWS Cloud9 development environment. If the environment is hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "environment": {
           "required": true
@@ -191,6 +199,11 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html
    */
   public createEnvironmentEC2() {
@@ -214,6 +227,9 @@ export class Cloud9 extends PolicyStatement {
    * Grants permission to delete an AWS Cloud9 development environment. If the environment is hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html
    */

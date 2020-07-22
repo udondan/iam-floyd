@@ -57,6 +57,9 @@ export class Polly extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html",
       "description": "Enables the user to synthesize long inputs to provided S3 location.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:PutObject"
+      ],
       "resourceTypes": {
         "lexicon": {
           "required": false
@@ -180,6 +183,9 @@ export class Polly extends PolicyStatement {
    * Enables the user to synthesize long inputs to provided S3 location.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:PutObject
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html
    */

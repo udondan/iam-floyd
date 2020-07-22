@@ -31,6 +31,9 @@ export class Backup extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupSelection.html",
       "description": "Creates a new resource assignment in a backup plan.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "backupPlan": {
           "required": true
@@ -324,6 +327,9 @@ export class Backup extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartBackupJob.html",
       "description": "Starts a new backup job.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "backupVault": {
           "required": true
@@ -334,6 +340,9 @@ export class Backup extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html",
       "description": "Copy a backup from a source region to a destination region.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "recoveryPoint": {
           "required": true
@@ -348,6 +357,9 @@ export class Backup extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartRestoreJob.html",
       "description": "Starts a new restore job.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "recoveryPoint": {
           "required": true
@@ -455,6 +467,9 @@ export class Backup extends PolicyStatement {
    * Creates a new resource assignment in a backup plan.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupSelection.html
    */
@@ -900,6 +915,9 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartBackupJob.html
    */
   public startBackupJob() {
@@ -912,6 +930,9 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html
    */
   public startCopyJob() {
@@ -923,6 +944,9 @@ export class Backup extends PolicyStatement {
    * Starts a new restore job.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartRestoreJob.html
    */

@@ -12,6 +12,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html",
       "description": "Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -22,6 +25,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html",
       "description": "Associates an AWS Identity and Access Management (IAM) role with a DB instance.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -169,6 +175,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html",
       "description": "Creates a new Amazon Aurora DB cluster.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -247,6 +256,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html",
       "description": "Creates a new DB instance.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -274,6 +286,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html",
       "description": "Creates a DB instance that acts as a Read Replica of a source DB instance.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -310,6 +325,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html",
       "description": "Grants permission to create a database proxy",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -951,6 +969,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html",
       "description": "Modify a setting for an Amazon Aurora DB cluster.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -997,6 +1018,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html",
       "description": "Modify settings for a DB instance.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -1026,6 +1050,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxy.html",
       "description": "Grants permission to modify database proxy",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "proxy": {
           "required": true
@@ -1096,6 +1123,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html",
       "description": "Modifies an existing option group.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "og": {
           "required": true
@@ -1173,6 +1203,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html",
       "description": "Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -1183,6 +1216,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html",
       "description": "Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -1265,6 +1301,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html",
       "description": "Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -1283,6 +1322,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html",
       "description": "Creates a new DB cluster from a DB cluster snapshot.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -1304,6 +1346,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html",
       "description": "Restores a DB cluster to an arbitrary point in time.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -1325,6 +1370,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html",
       "description": "Creates a new DB instance from a DB snapshot.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -1349,6 +1397,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html",
       "description": "Creates a new DB instance from an Amazon S3 bucket.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -1364,6 +1415,9 @@ export class Rds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html",
       "description": "Restores a DB instance to an arbitrary point in time.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "db": {
           "required": true
@@ -1427,7 +1481,10 @@ export class Rds extends PolicyStatement {
     "StartExportTask": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html",
       "description": "Starts a new Export task for a DB snapshot.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     },
     "StopActivityStream": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopActivityStream.html",
@@ -1620,6 +1677,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html
    */
   public addRoleToDBCluster() {
@@ -1631,6 +1691,9 @@ export class Rds extends PolicyStatement {
    * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html
    */
@@ -1776,6 +1839,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
    */
   public createDBCluster() {
@@ -1824,6 +1890,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
    */
   public createDBInstance() {
@@ -1835,6 +1904,9 @@ export class Rds extends PolicyStatement {
    * Creates a DB instance that acts as a Read Replica of a source DB instance.
    *
    * Access Level: Tagging
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html
    */
@@ -1859,6 +1931,9 @@ export class Rds extends PolicyStatement {
    * Grants permission to create a database proxy
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html
    */
@@ -2628,6 +2703,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html
    */
   public modifyDBCluster() {
@@ -2676,6 +2754,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html
    */
   public modifyDBInstance() {
@@ -2699,6 +2780,9 @@ export class Rds extends PolicyStatement {
    * Grants permission to modify database proxy
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxy.html
    */
@@ -2784,6 +2868,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html
    */
   public modifyOptionGroup() {
@@ -2868,6 +2955,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html
    */
   public removeRoleFromDBCluster() {
@@ -2879,6 +2969,9 @@ export class Rds extends PolicyStatement {
    * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html
    */
@@ -2940,6 +3033,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html
    */
   public restoreDBClusterFromS3() {
@@ -2951,6 +3047,9 @@ export class Rds extends PolicyStatement {
    * Creates a new DB cluster from a DB cluster snapshot.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html
    */
@@ -2964,6 +3063,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html
    */
   public restoreDBClusterToPointInTime() {
@@ -2975,6 +3077,9 @@ export class Rds extends PolicyStatement {
    * Creates a new DB instance from a DB snapshot.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html
    */
@@ -2988,6 +3093,9 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html
    */
   public restoreDBInstanceFromS3() {
@@ -2999,6 +3107,9 @@ export class Rds extends PolicyStatement {
    * Restores a DB instance to an arbitrary point in time.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html
    */
@@ -3059,6 +3170,9 @@ export class Rds extends PolicyStatement {
    * Starts a new Export task for a DB snapshot.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html
    */

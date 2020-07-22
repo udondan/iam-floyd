@@ -69,6 +69,9 @@ export class Ssm extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html",
       "description": "Grants permission to create a Systems Manager SSM document",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "document": {
           "required": true
@@ -1241,6 +1244,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to create a Systems Manager SSM document
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html
    */

@@ -141,6 +141,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAutoMLJob.html",
       "description": "Creates automl job.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "automl-job": {
           "required": true
@@ -170,6 +173,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCompilationJob.html",
       "description": "Create a compilation job.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "compilation-job": {
           "required": true
@@ -180,6 +186,10 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDomain.html",
       "description": "Grants permission to create a Domain for SageMaker Studio",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole",
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "domain": {
           "required": true
@@ -246,6 +256,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html",
       "description": "Creates a flow definition, which defines settings for a human workflow.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "flow-definition": {
           "required": true
@@ -276,6 +289,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHyperParameterTuningJob.html",
       "description": "Creates hyper parameter tuning job that can be deployed using Amazon SageMaker.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "hyper-parameter-tuning-job": {
           "required": true
@@ -302,6 +318,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLabelingJob.html",
       "description": "Starts a labeling job. A labeling job takes unlabeled data in and produces labeled data as output, which can be used for training SageMaker models.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "labeling-job": {
           "required": true
@@ -320,6 +339,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html",
       "description": "Creates a model in Amazon SageMaker. In the request, you specify a name for the model and describe one or more containers.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "model": {
           "required": true
@@ -347,6 +369,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateMonitoringSchedule.html",
       "description": "Creates a monitoring schedule.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "monitoring-schedule": {
           "required": true
@@ -368,6 +393,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstance.html",
       "description": "Creates an Amazon SageMaker notebook instance. A notebook instance is an Amazon EC2 instance running on a Jupyter Notebook.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "notebook-instance": {
           "required": true
@@ -419,6 +447,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProcessingJob.html",
       "description": "Starts a processing job. After processing completes, Amazon SageMaker saves the resulting artifacts and other optional output to an Amazon S3 location that you specify.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "processing-job": {
           "required": true
@@ -441,6 +472,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html",
       "description": "Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "training-job": {
           "required": true
@@ -513,6 +547,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateUserProfile.html",
       "description": "Grants permission to create a UserProfile for a SageMaker Studio Domain",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "user-profile": {
           "required": true
@@ -1344,7 +1381,10 @@ export class Sagemaker extends PolicyStatement {
     "RenderUiTemplate": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_RenderUiTemplate.html",
       "description": "Render a UI template used for a human annotation task.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     },
     "Search": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_Search.html",
@@ -1545,6 +1585,9 @@ export class Sagemaker extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateMonitoringSchedule.html",
       "description": "Updates a monitoring schedule.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "monitoring-schedule": {
           "required": true
@@ -1954,6 +1997,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAutoMLJob.html
    */
   public createAutoMLJob() {
@@ -1978,6 +2024,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCompilationJob.html
    */
   public createCompilationJob() {
@@ -1989,6 +2038,10 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a Domain for SageMaker Studio
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateDomain.html
    */
@@ -2038,6 +2091,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html
    */
   public createFlowDefinition() {
@@ -2062,6 +2118,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHyperParameterTuningJob.html
    */
   public createHyperParameterTuningJob() {
@@ -2074,6 +2133,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLabelingJob.html
    */
   public createLabelingJob() {
@@ -2085,6 +2147,9 @@ export class Sagemaker extends PolicyStatement {
    * Creates a model in Amazon SageMaker. In the request, you specify a name for the model and describe one or more containers.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html
    */
@@ -2110,6 +2175,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateMonitoringSchedule.html
    */
   public createMonitoringSchedule() {
@@ -2121,6 +2189,9 @@ export class Sagemaker extends PolicyStatement {
    * Creates an Amazon SageMaker notebook instance. A notebook instance is an Amazon EC2 instance running on a Jupyter Notebook.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstance.html
    */
@@ -2170,6 +2241,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProcessingJob.html
    */
   public createProcessingJob() {
@@ -2181,6 +2255,9 @@ export class Sagemaker extends PolicyStatement {
    * Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts and other optional output to an Amazon S3 location that you specify.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html
    */
@@ -2229,6 +2306,9 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to create a UserProfile for a SageMaker Studio Domain
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateUserProfile.html
    */
@@ -3238,6 +3318,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RenderUiTemplate.html
    */
   public renderUiTemplate() {
@@ -3477,6 +3560,9 @@ export class Sagemaker extends PolicyStatement {
    * Updates a monitoring schedule.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateMonitoringSchedule.html
    */

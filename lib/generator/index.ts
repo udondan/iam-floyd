@@ -80,6 +80,7 @@ export interface Action {
     [key: string]: ResourceTypeOnAction;
   };
   conditions?: string[];
+  dependentActions?: string[];
 }
 
 export interface ResourceTypeOnAction {
@@ -266,6 +267,13 @@ export function createModule(module: Module): Promise<void> {
     );
 
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
+
+    if ('dependentActions' in action) {
+      desc += '\n\nDependent Actions:';
+      action.dependentActions.forEach((dependentAction) => {
+        desc += `\n- ${dependentAction}`;
+      });
+    }
     if (action.url.length && action.url != 'https://docs.aws.amazon.com/') {
       desc += `\n\n${action.url}`;
     }
@@ -626,12 +634,24 @@ function parseActionTable($: CheerioStatic): Actions {
     var resourceType = first.text().trim();
     var required = false;
     var conditionKeys = first.next().find('p');
+    const dependentActions = first.next().next().find('p');
+
     const conditions: string[] = [];
     if (conditionKeys.length) {
       conditionKeys.each((_, conditionKey) => {
         conditions.push(cleanDescription($(conditionKey).text()));
       });
     }
+
+    if (dependentActions.length) {
+      actions[action].dependentActions = [];
+      dependentActions.each((_, dependentAction) => {
+        actions[action].dependentActions.push(
+          cleanDescription($(dependentAction).text())
+        );
+      });
+    }
+
     if (resourceType.length) {
       if (typeof actions[action].resourceTypes == 'undefined') {
         actions[action].resourceTypes = {};

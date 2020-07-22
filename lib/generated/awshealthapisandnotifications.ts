@@ -11,7 +11,10 @@ export class Health extends PolicyStatement {
     "DescribeAffectedAccountsForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html",
       "description": "Gets a list of accounts that have been affected by the specified events in organization.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "organizations:ListAccounts"
+      ]
     },
     "DescribeAffectedEntities": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html",
@@ -30,7 +33,10 @@ export class Health extends PolicyStatement {
     "DescribeAffectedEntitiesForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html",
       "description": "Gets a list of entities that have been affected by the specified events and accounts in organization.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "organizations:ListAccounts"
+      ]
     },
     "DescribeEntityAggregates": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html",
@@ -59,7 +65,10 @@ export class Health extends PolicyStatement {
     "DescribeEventDetailsForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html",
       "description": "Returns detailed information about one or more specified events for provided accounts in organization.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "organizations:ListAccounts"
+      ]
     },
     "DescribeEventTypes": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html",
@@ -74,22 +83,37 @@ export class Health extends PolicyStatement {
     "DescribeEventsForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html",
       "description": "Returns information about events that meet the specified filter criteria in organization.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "organizations:ListAccounts"
+      ]
     },
     "DescribeHealthServiceStatusForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html",
       "description": "Returns the status of enabling or disabling the Organizational View feature",
-      "accessLevel": "Permissions management"
+      "accessLevel": "Permissions management",
+      "dependentActions": [
+        "organizations:ListAccounts"
+      ]
     },
     "DisableHealthServiceAccessForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DisableHealthServiceAccessForOrganization.html",
       "description": "Disables the Organizational View feature.",
-      "accessLevel": "Permissions management"
+      "accessLevel": "Permissions management",
+      "dependentActions": [
+        "organizations:DisableAWSServiceAccess",
+        "organizations:ListAccounts"
+      ]
     },
     "EnableHealthServiceAccessForOrganization": {
       "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html",
       "description": "Enables the Organizational View feature.",
-      "accessLevel": "Permissions management"
+      "accessLevel": "Permissions management",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole",
+        "organizations:EnableAWSServiceAccess",
+        "organizations:ListAccounts"
+      ]
     }
   };
   public resourceTypes: ResourceTypes = {
@@ -115,6 +139,9 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent Actions:
+   * - organizations:ListAccounts
+   *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html
    */
   public describeAffectedAccountsForOrganization() {
@@ -138,6 +165,9 @@ export class Health extends PolicyStatement {
    * Gets a list of entities that have been affected by the specified events and accounts in organization.
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html
    */
@@ -187,6 +217,9 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent Actions:
+   * - organizations:ListAccounts
+   *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html
    */
   public describeEventDetailsForOrganization() {
@@ -223,6 +256,9 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent Actions:
+   * - organizations:ListAccounts
+   *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html
    */
   public describeEventsForOrganization() {
@@ -234,6 +270,9 @@ export class Health extends PolicyStatement {
    * Returns the status of enabling or disabling the Organizational View feature
    *
    * Access Level: Permissions management
+   *
+   * Dependent Actions:
+   * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html
    */
@@ -247,6 +286,10 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Dependent Actions:
+   * - organizations:DisableAWSServiceAccess
+   * - organizations:ListAccounts
+   *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DisableHealthServiceAccessForOrganization.html
    */
   public disableHealthServiceAccessForOrganization() {
@@ -258,6 +301,11 @@ export class Health extends PolicyStatement {
    * Enables the Organizational View feature.
    *
    * Access Level: Permissions management
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
+   * - organizations:EnableAWSServiceAccess
+   * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html
    */

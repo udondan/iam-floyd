@@ -350,6 +350,9 @@ export class Wafv2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html",
       "description": "Grants permission to enables the specified LoggingConfiguration, to start logging from a web ACL.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "webacl": {
           "required": true
@@ -909,6 +912,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to enables the specified LoggingConfiguration, to start logging from a web ACL.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html
    */

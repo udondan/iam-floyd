@@ -172,6 +172,9 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html",
       "description": "Grants permission to associate an IAM instance profile with a running or stopped instance",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "instance": {
           "required": true,
@@ -542,6 +545,9 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html",
       "description": "Grants permission to create one or more flow logs to capture IP traffic for a network interface",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "vpc-flow-log": {
           "required": true,
@@ -1398,6 +1404,9 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html",
       "description": "Grants permission to create a VPC endpoint for an AWS service",
       "accessLevel": "Write",
+      "dependentActions": [
+        "route53:AssociateVPCWithHostedZone"
+      ],
       "resourceTypes": {
         "vpc": {
           "required": true,
@@ -3956,6 +3965,9 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html",
       "description": "Grants permission to replace an IAM instance profile for an instance",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "instance": {
           "required": true,
@@ -5153,6 +5165,9 @@ export class Ec2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html
    */
   public associateIamInstanceProfile() {
@@ -5584,6 +5599,9 @@ export class Ec2 extends PolicyStatement {
    * Grants permission to create one or more flow logs to capture IP traffic for a network interface
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html
    */
@@ -6028,6 +6046,9 @@ export class Ec2 extends PolicyStatement {
    * Grants permission to create a VPC endpoint for an AWS service
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - route53:AssociateVPCWithHostedZone
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html
    */
@@ -9340,6 +9361,9 @@ export class Ec2 extends PolicyStatement {
    * Grants permission to replace an IAM instance profile for an instance
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html
    */

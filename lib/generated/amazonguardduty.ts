@@ -79,6 +79,10 @@ export class Guardduty extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreatePublishingDestination.html",
       "description": "Grants permission to create a publishing destination.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
       "resourceTypes": {
         "detector": {
           "required": true
@@ -567,6 +571,10 @@ export class Guardduty extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdatePublishingDestination.html",
       "description": "Grants permission to update a publishing destination.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
       "resourceTypes": {
         "detector": {
           "required": true
@@ -716,6 +724,10 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to create a publishing destination.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:GetObject
+   * - s3:ListBucket
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreatePublishingDestination.html
    */
@@ -1268,6 +1280,10 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to update a publishing destination.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:GetObject
+   * - s3:ListBucket
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UpdatePublishingDestination.html
    */

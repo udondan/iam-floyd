@@ -138,6 +138,9 @@ export class Waf extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACLMigrationStack.html",
       "description": "Create and store a CloudFormation tempalte that creates an equivalent WAF v2 WebACL from the given WAF Classic WebACL in the given S3 bucket.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "s3:PutObject"
+      ],
       "resourceTypes": {
         "webacl": {
           "required": true
@@ -565,6 +568,9 @@ export class Waf extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutLoggingConfiguration.html",
       "description": "Associates a LoggingConfiguration with a specified web ACL.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "webacl": {
           "required": true
@@ -975,6 +981,9 @@ export class Waf extends PolicyStatement {
    * Create and store a CloudFormation tempalte that creates an equivalent WAF v2 WebACL from the given WAF Classic WebACL in the given S3 bucket.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:PutObject
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACLMigrationStack.html
    */
@@ -1575,6 +1584,9 @@ export class Waf extends PolicyStatement {
    * Associates a LoggingConfiguration with a specified web ACL.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutLoggingConfiguration.html
    */

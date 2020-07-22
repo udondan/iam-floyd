@@ -12,6 +12,13 @@ export class CodeguruReviewer extends PolicyStatement {
       "url": "",
       "description": "Grants permission to associates a repository with Amazon CodeGuru Reviewer.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "codecommit:ListRepositories",
+        "codecommit:TagResource",
+        "events:PutRule",
+        "events:PutTargets",
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "repository": {
           "required": false
@@ -57,6 +64,11 @@ export class CodeguruReviewer extends PolicyStatement {
       "url": "",
       "description": "Grants permission to disassociate a repository with Amazon CodeGuru Reviewer.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "codecommit:UntagResource",
+        "events:DeleteRule",
+        "events:RemoveTargets"
+      ],
       "resourceTypes": {
         "association": {
           "required": true
@@ -150,6 +162,13 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to associates a repository with Amazon CodeGuru Reviewer.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - codecommit:ListRepositories
+   * - codecommit:TagResource
+   * - events:PutRule
+   * - events:PutTargets
+   * - iam:CreateServiceLinkedRole
    */
   public associateRepository() {
     this.add('codeguru-reviewer:AssociateRepository');
@@ -200,6 +219,11 @@ export class CodeguruReviewer extends PolicyStatement {
    * Grants permission to disassociate a repository with Amazon CodeGuru Reviewer.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - codecommit:UntagResource
+   * - events:DeleteRule
+   * - events:RemoveTargets
    */
   public disassociateRepository() {
     this.add('codeguru-reviewer:DisassociateRepository');

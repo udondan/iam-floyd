@@ -47,7 +47,10 @@ export class Kms extends PolicyStatement {
     "CreateCustomKeyStore": {
       "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html",
       "description": "Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "cloudhsm:DescribeClusters"
+      ]
     },
     "CreateGrant": {
       "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html",
@@ -681,6 +684,9 @@ export class Kms extends PolicyStatement {
    * Controls permission to create a custom key store that is associated with an AWS CloudHSM cluster that you own and manage.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - cloudhsm:DescribeClusters
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html
    */

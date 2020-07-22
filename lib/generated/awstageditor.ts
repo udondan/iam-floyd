@@ -21,7 +21,10 @@ export class ResourceExplorer extends PolicyStatement {
     "ListTags": {
       "url": "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te",
       "description": "Grants permission to retrieve the tags attached to the specified resource identifiers",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "tag:GetResources"
+      ]
     }
   };
   public resourceTypes: ResourceTypes = {};
@@ -63,6 +66,9 @@ export class ResourceExplorer extends PolicyStatement {
    * Grants permission to retrieve the tags attached to the specified resource identifiers
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - tag:GetResources
    *
    * https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions-te
    */

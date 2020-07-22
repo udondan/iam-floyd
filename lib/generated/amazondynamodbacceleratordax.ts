@@ -42,6 +42,18 @@ export class Dax extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateCluster.html",
       "description": "The CreateCluster action creates a DAX cluster.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "dax:CreateParameterGroup",
+        "dax:CreateSubnetGroup",
+        "ec2:CreateNetworkInterface",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs",
+        "iam:GetRole",
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "application": {
           "required": true
@@ -324,6 +336,18 @@ export class Dax extends PolicyStatement {
    * The CreateCluster action creates a DAX cluster.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - dax:CreateParameterGroup
+   * - dax:CreateSubnetGroup
+   * - ec2:CreateNetworkInterface
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSecurityGroups
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   * - iam:GetRole
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_dax_CreateCluster.html
    */

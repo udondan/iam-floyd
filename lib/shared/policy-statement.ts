@@ -6,6 +6,7 @@ export interface Action {
   accessLevel: string;
   resourceTypes?: any;
   conditions?: string[];
+  dependentActions?: string[];
 }
 
 export interface Actions {

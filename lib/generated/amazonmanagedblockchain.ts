@@ -167,6 +167,9 @@ export class Managedblockchain extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html",
       "description": "Grants permission to update a member of an Amazon Managed Blockchain network.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "member": {
           "required": true
@@ -177,6 +180,9 @@ export class Managedblockchain extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html",
       "description": "Grants permission to update a node from a member of an Amazon Managed Blockchain network.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "node": {
           "required": true
@@ -445,6 +451,9 @@ export class Managedblockchain extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
+   *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html
    */
   public updateMember() {
@@ -456,6 +465,9 @@ export class Managedblockchain extends PolicyStatement {
    * Grants permission to update a node from a member of an Amazon Managed Blockchain network.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html
    */

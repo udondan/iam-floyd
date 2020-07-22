@@ -16,7 +16,10 @@ export class SmsVoice extends PolicyStatement {
     "CreateConfigurationSetEventDestination": {
       "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html",
       "description": "Create a new event destination in a configuration set.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     },
     "DeleteConfigurationSet": {
       "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname.html",
@@ -46,7 +49,10 @@ export class SmsVoice extends PolicyStatement {
     "UpdateConfigurationSetEventDestination": {
       "url": "https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html",
       "description": "Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     }
   };
   public resourceTypes: ResourceTypes = {};
@@ -76,6 +82,9 @@ export class SmsVoice extends PolicyStatement {
    * Create a new event destination in a configuration set.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
    */
@@ -148,6 +157,9 @@ export class SmsVoice extends PolicyStatement {
    * Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html
    */

@@ -61,6 +61,9 @@ export class Networkmanager extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html",
       "description": "Grants permission to create a new global network",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -488,6 +491,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a new global network
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
    */

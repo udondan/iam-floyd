@@ -42,6 +42,9 @@ export class CodestarConnections extends PolicyStatement {
       "url": "",
       "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
       "accessLevel": "Read",
+      "dependentActions": [
+        "codestar-connections:StartOAuthHandshake"
+      ],
       "conditions": [
         "codestar-connections:ProviderType"
       ]
@@ -65,7 +68,11 @@ export class CodestarConnections extends PolicyStatement {
     "ListInstallationTargets": {
       "url": "",
       "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "dependentActions": [
+        "codestar-connections:GetIndividualAccessToken",
+        "codestar-connections:StartOAuthHandshake"
+      ]
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html",
@@ -130,6 +137,12 @@ export class CodestarConnections extends PolicyStatement {
       "url": "",
       "description": "Grants permission to update a Connection resource with an installation of the CodeStar Connections App",
       "accessLevel": "Write",
+      "dependentActions": [
+        "codestar-connections:GetIndividualAccessToken",
+        "codestar-connections:GetInstallationUrl",
+        "codestar-connections:ListInstallationTargets",
+        "codestar-connections:StartOAuthHandshake"
+      ],
       "resourceTypes": {
         "Connection": {
           "required": true
@@ -213,6 +226,9 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - codestar-connections:StartOAuthHandshake
    */
   public getIndividualAccessToken() {
     this.add('codestar-connections:GetIndividualAccessToken');
@@ -245,6 +261,10 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: List
+   *
+   * Dependent Actions:
+   * - codestar-connections:GetIndividualAccessToken
+   * - codestar-connections:StartOAuthHandshake
    */
   public listInstallationTargets() {
     this.add('codestar-connections:ListInstallationTargets');
@@ -311,6 +331,12 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to update a Connection resource with an installation of the CodeStar Connections App
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - codestar-connections:GetIndividualAccessToken
+   * - codestar-connections:GetInstallationUrl
+   * - codestar-connections:ListInstallationTargets
+   * - codestar-connections:StartOAuthHandshake
    */
   public updateConnectionInstallation() {
     this.add('codestar-connections:UpdateConnectionInstallation');

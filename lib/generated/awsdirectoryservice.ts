@@ -22,6 +22,11 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html",
       "description": "Adds a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services",
       "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DescribeSecurityGroups"
+      ],
       "resourceTypes": {
         "directory": {
           "required": true
@@ -32,6 +37,9 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html",
       "description": "Adds or overwrites one or more tags for the specified Amazon Directory Services directory.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "ec2:CreateTags"
+      ],
       "resourceTypes": {
         "directory": {
           "required": true
@@ -71,6 +79,16 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ConnectDirectory.html",
       "description": "Creates an AD Connector to connect to an on-premises directory.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -110,6 +128,16 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html",
       "description": "Creates a Simple AD directory.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -138,6 +166,16 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html",
       "description": "Creates a Microsoft AD in the AWS cloud.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVpcs"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -177,6 +215,13 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html",
       "description": "Deletes an AWS Directory Service directory.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress"
+      ],
       "resourceTypes": {
         "directory": {
           "required": true
@@ -462,6 +507,9 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html",
       "description": "Associates a directory with an SNS topic.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "sns:GetTopicAttributes"
+      ],
       "resourceTypes": {
         "directory": {
           "required": true
@@ -492,6 +540,9 @@ export class Ds extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html",
       "description": "Removes tags from an Amazon Directory Services directory.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "ec2:DeleteTags"
+      ],
       "resourceTypes": {
         "directory": {
           "required": true
@@ -650,6 +701,11 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:DescribeSecurityGroups
+   *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html
    */
   public addIpRoutes() {
@@ -661,6 +717,9 @@ export class Ds extends PolicyStatement {
    * Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
    *
    * Access Level: Tagging
+   *
+   * Dependent Actions:
+   * - ec2:CreateTags
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html
    */
@@ -705,6 +764,16 @@ export class Ds extends PolicyStatement {
    * Creates an AD Connector to connect to an on-premises directory.
    *
    * Access Level: Tagging
+   *
+   * Dependent Actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ConnectDirectory.html
    */
@@ -754,6 +823,16 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Dependent Actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
+   *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html
    */
   public createDirectory() {
@@ -787,6 +866,16 @@ export class Ds extends PolicyStatement {
    * Creates a Microsoft AD in the AWS cloud.
    *
    * Access Level: Tagging
+   *
+   * Dependent Actions:
+   * - ec2:AuthorizeSecurityGroupEgress
+   * - ec2:AuthorizeSecurityGroupIngress
+   * - ec2:CreateNetworkInterface
+   * - ec2:CreateSecurityGroup
+   * - ec2:CreateTags
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:DescribeSubnets
+   * - ec2:DescribeVpcs
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html
    */
@@ -835,6 +924,13 @@ export class Ds extends PolicyStatement {
    * Deletes an AWS Directory Service directory.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - ec2:DeleteNetworkInterface
+   * - ec2:DeleteSecurityGroup
+   * - ec2:DescribeNetworkInterfaces
+   * - ec2:RevokeSecurityGroupEgress
+   * - ec2:RevokeSecurityGroupIngress
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html
    */
@@ -1204,6 +1300,9 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - sns:GetTopicAttributes
+   *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html
    */
   public registerEventTopic() {
@@ -1239,6 +1338,9 @@ export class Ds extends PolicyStatement {
    * Removes tags from an Amazon Directory Services directory.
    *
    * Access Level: Tagging
+   *
+   * Dependent Actions:
+   * - ec2:DeleteTags
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html
    */

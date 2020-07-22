@@ -11,7 +11,11 @@ export class Iotthingsgraph extends PolicyStatement {
     "AssociateEntityToThing": {
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_AssociateEntityToThing.html",
       "description": "Associates a device with a concrete thing that is in the user's registry. A thing can be associated with only one device at a time. If you associate a thing with a new device id, its previous association will be removed.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iot:DescribeThing",
+        "iot:DescribeThingGroup"
+      ]
     },
     "CreateFlowTemplate": {
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_CreateFlowTemplate.html",
@@ -105,7 +109,11 @@ export class Iotthingsgraph extends PolicyStatement {
     "DissociateEntityFromThing": {
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DissociateEntityFromThing.html",
       "description": "Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iot:DescribeThing",
+        "iot:DescribeThingGroup"
+      ]
     },
     "GetEntities": {
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_GetEntities.html",
@@ -322,6 +330,10 @@ export class Iotthingsgraph extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - iot:DescribeThing
+   * - iot:DescribeThingGroup
+   *
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_AssociateEntityToThing.html
    */
   public associateEntityToThing() {
@@ -465,6 +477,10 @@ export class Iotthingsgraph extends PolicyStatement {
    * Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iot:DescribeThing
+   * - iot:DescribeThingGroup
    *
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_DissociateEntityFromThing.html
    */

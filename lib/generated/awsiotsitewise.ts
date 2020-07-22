@@ -115,6 +115,10 @@ export class Iotsitewise extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html",
       "description": "Grants permission to create a portal",
       "accessLevel": "Write",
+      "dependentActions": [
+        "sso:CreateManagedApplicationInstance",
+        "sso:DescribeRegisteredRegions"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -188,6 +192,9 @@ export class Iotsitewise extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html",
       "description": "Grants permission to delete a portal",
       "accessLevel": "Write",
+      "dependentActions": [
+        "sso:DeleteManagedApplicationInstance"
+      ],
       "resourceTypes": {
         "portal": {
           "required": true
@@ -788,6 +795,10 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - sso:CreateManagedApplicationInstance
+   * - sso:DescribeRegisteredRegions
+   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html
    */
   public createPortal() {
@@ -871,6 +882,9 @@ export class Iotsitewise extends PolicyStatement {
    * Grants permission to delete a portal
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - sso:DeleteManagedApplicationInstance
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html
    */

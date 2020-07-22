@@ -53,6 +53,10 @@ export class Imagebuilder extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html",
       "description": "Create a new image",
       "accessLevel": "Write",
+      "dependentActions": [
+        "imagebuilder:GetImageRecipe",
+        "imagebuilder:GetInfrastructureConfiguration"
+      ],
       "resourceTypes": {
         "image": {
           "required": true
@@ -67,6 +71,9 @@ export class Imagebuilder extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html",
       "description": "Create a new image pipeline",
       "accessLevel": "Write",
+      "dependentActions": [
+        "imagebuilder:GetImageRecipe"
+      ],
       "resourceTypes": {
         "imagePipeline": {
           "required": true
@@ -81,6 +88,9 @@ export class Imagebuilder extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html",
       "description": "Create a new Image Recipe",
       "accessLevel": "Write",
+      "dependentActions": [
+        "imagebuilder:GetComponent"
+      ],
       "resourceTypes": {
         "imageRecipe": {
           "required": true
@@ -95,6 +105,9 @@ export class Imagebuilder extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html",
       "description": "Create a new infrastructure configuration",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "infrastructureConfiguration": {
           "required": true
@@ -372,6 +385,9 @@ export class Imagebuilder extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html",
       "description": "Create a new image from a pipeline",
       "accessLevel": "Write",
+      "dependentActions": [
+        "imagebuilder:GetImagePipeline"
+      ],
       "resourceTypes": {
         "imagePipeline": {
           "required": true
@@ -461,6 +477,9 @@ export class Imagebuilder extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html",
       "description": "Update an existing infrastructure configuration",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "infrastructureConfiguration": {
           "required": true
@@ -596,6 +615,10 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - imagebuilder:GetImageRecipe
+   * - imagebuilder:GetInfrastructureConfiguration
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html
    */
   public createImage() {
@@ -607,6 +630,9 @@ export class Imagebuilder extends PolicyStatement {
    * Create a new image pipeline
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - imagebuilder:GetImageRecipe
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html
    */
@@ -620,6 +646,9 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - imagebuilder:GetComponent
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html
    */
   public createImageRecipe() {
@@ -631,6 +660,9 @@ export class Imagebuilder extends PolicyStatement {
    * Create a new infrastructure configuration
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html
    */
@@ -968,6 +1000,9 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - imagebuilder:GetImagePipeline
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html
    */
   public startImagePipelineExecution() {
@@ -1027,6 +1062,9 @@ export class Imagebuilder extends PolicyStatement {
    * Update an existing infrastructure configuration
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html
    */

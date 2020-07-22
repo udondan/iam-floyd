@@ -11,12 +11,18 @@ export class Textract extends PolicyStatement {
     "AnalyzeDocument": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html",
       "description": "Detects instances of real-world document entities within an image provided as input.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "s3:GetObject"
+      ]
     },
     "DetectDocumentText": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_DetectDocumentText.html",
       "description": "Detects text in document images.",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "s3:GetObject"
+      ]
     },
     "GetDocumentAnalysis": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_GetDocumentAnalysis.html",
@@ -31,12 +37,18 @@ export class Textract extends PolicyStatement {
     "StartDocumentAnalysis": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html",
       "description": "Starts an asynchronous job to detect instances of real-world document entities within an image or pdf provided as input.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject"
+      ]
     },
     "StartDocumentTextDetection": {
       "url": "https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html",
       "description": "Starts an asynchronous job to detect text in document images or pdfs.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject"
+      ]
     }
   };
   public resourceTypes: ResourceTypes = {};
@@ -55,6 +67,9 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Dependent Actions:
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html
    */
   public analyzeDocument() {
@@ -66,6 +81,9 @@ export class Textract extends PolicyStatement {
    * Detects text in document images.
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_DetectDocumentText.html
    */
@@ -103,6 +121,9 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - s3:GetObject
+   *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html
    */
   public startDocumentAnalysis() {
@@ -114,6 +135,9 @@ export class Textract extends PolicyStatement {
    * Starts an asynchronous job to detect text in document images or pdfs.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html
    */

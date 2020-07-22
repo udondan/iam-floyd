@@ -96,7 +96,10 @@ export class Chime extends PolicyStatement {
     "ConnectDirectory": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/active_directory.html",
       "description": "Grants permission to connect an Active Directory to your Amazon Chime Enterprise account",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "ds:ConnectDirectory"
+      ]
     },
     "CreateAccount": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAccount.html",
@@ -131,7 +134,11 @@ export class Chime extends PolicyStatement {
     "CreateCDRBucket": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/manage-access.html",
       "description": "Grants permission to create a new Call Detail Record S3 bucket",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:CreateBucket",
+        "s3:ListAllMyBuckets"
+      ]
     },
     "CreateMeeting": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeeting.html",
@@ -205,7 +212,10 @@ export class Chime extends PolicyStatement {
     "DeleteCDRBucket": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
       "description": "Grants permission to delete a Call Detail Record S3 bucket from your Amazon Chime account",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:DeleteBucket"
+      ]
     },
     "DeleteDelegate": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
@@ -360,7 +370,14 @@ export class Chime extends PolicyStatement {
     "GetCDRBucket": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
       "description": "Grants permission to get details of a Call Detail Record S3 bucket associated with your Amazon Chime account",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "dependentActions": [
+        "s3:GetBucketAcl",
+        "s3:GetBucketLocation",
+        "s3:GetBucketLogging",
+        "s3:GetBucketVersioning",
+        "s3:GetBucketWebsite"
+      ]
     },
     "GetDomain": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html",
@@ -550,7 +567,11 @@ export class Chime extends PolicyStatement {
     "ListCDRBucket": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
       "description": "Grants permission to list Call Detail Record S3 buckets",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "dependentActions": [
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket"
+      ]
     },
     "ListCallingRegions": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html",
@@ -680,7 +701,15 @@ export class Chime extends PolicyStatement {
     "PutVoiceConnectorLoggingConfiguration": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorLoggingConfiguration.html",
       "description": "Grants permission to add logging configuration for the specified Amazon Chime Voice Connector",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "logs:CreateLogDelivery",
+        "logs:CreateLogGroup",
+        "logs:DeleteLogDelivery",
+        "logs:DescribeLogGroups",
+        "logs:GetLogDelivery",
+        "logs:ListLogDeliveries"
+      ]
     },
     "PutVoiceConnectorOrigination": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorOrigination.html",
@@ -875,7 +904,12 @@ export class Chime extends PolicyStatement {
     "UpdateCDRSettings": {
       "url": "https://docs.aws.amazon.com/chime/latest/ag/control-access.html",
       "description": "Grants permission to update your Call Detail Record S3 bucket",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:ListAllMyBuckets"
+      ]
     },
     "UpdateGlobalSettings": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateGlobalSettings.html",
@@ -1158,6 +1192,9 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - ds:ConnectDirectory
+   *
    * https://docs.aws.amazon.com/chime/latest/ag/active_directory.html
    */
   public connectDirectory() {
@@ -1225,6 +1262,10 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a new Call Detail Record S3 bucket
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:CreateBucket
+   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/chime/latest/ag/manage-access.html
    */
@@ -1377,6 +1418,9 @@ export class Chime extends PolicyStatement {
    * Grants permission to delete a Call Detail Record S3 bucket from your Amazon Chime account
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:DeleteBucket
    *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
@@ -1717,6 +1761,13 @@ export class Chime extends PolicyStatement {
    * Grants permission to get details of a Call Detail Record S3 bucket associated with your Amazon Chime account
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - s3:GetBucketAcl
+   * - s3:GetBucketLocation
+   * - s3:GetBucketLogging
+   * - s3:GetBucketVersioning
+   * - s3:GetBucketWebsite
    *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
@@ -2128,6 +2179,10 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Dependent Actions:
+   * - s3:ListAllMyBuckets
+   * - s3:ListBucket
+   *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */
   public listCDRBucket() {
@@ -2407,6 +2462,14 @@ export class Chime extends PolicyStatement {
    * Grants permission to add logging configuration for the specified Amazon Chime Voice Connector
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - logs:CreateLogDelivery
+   * - logs:CreateLogGroup
+   * - logs:DeleteLogDelivery
+   * - logs:DescribeLogGroups
+   * - logs:GetLogDelivery
+   * - logs:ListLogDeliveries
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_PutVoiceConnectorLoggingConfiguration.html
    */
@@ -2771,6 +2834,11 @@ export class Chime extends PolicyStatement {
    * Grants permission to update your Call Detail Record S3 bucket
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:CreateBucket
+   * - s3:DeleteBucket
+   * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
    */

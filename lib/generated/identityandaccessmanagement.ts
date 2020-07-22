@@ -538,6 +538,14 @@ export class Iam extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html",
       "description": "Grants permission to generate an access report for an AWS Organizations entity",
       "accessLevel": "Read",
+      "dependentActions": [
+        "organizations:DescribePolicy",
+        "organizations:ListChildren",
+        "organizations:ListParents",
+        "organizations:ListPoliciesForTarget",
+        "organizations:ListRoots",
+        "organizations:ListTargetsForPolicy"
+      ],
       "resourceTypes": {
         "access-report": {
           "required": true
@@ -2064,6 +2072,14 @@ export class Iam extends PolicyStatement {
    * Grants permission to generate an access report for an AWS Organizations entity
    *
    * Access Level: Read
+   *
+   * Dependent Actions:
+   * - organizations:DescribePolicy
+   * - organizations:ListChildren
+   * - organizations:ListParents
+   * - organizations:ListPoliciesForTarget
+   * - organizations:ListRoots
+   * - organizations:ListTargetsForPolicy
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html
    */

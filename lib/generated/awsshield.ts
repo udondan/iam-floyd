@@ -11,12 +11,21 @@ export class Shield extends PolicyStatement {
     "AssociateDRTLogBucket": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html",
       "description": "Authorizes the DDoS Response team to access the specified Amazon S3 bucket containing your flow logs",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
+      ]
     },
     "AssociateDRTRole": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTRole.html",
       "description": "Authorizes the DDoS Response team using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iam:GetRole",
+        "iam:ListAttachedRolePolicies",
+        "iam:PassRole"
+      ]
     },
     "CreateProtection": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html",
@@ -86,7 +95,12 @@ export class Shield extends PolicyStatement {
     "DisassociateDRTLogBucket": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTLogBucket.html",
       "description": "Removes the DDoS Response team's access to the specified Amazon S3 bucket containing your flow logs",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:DeleteBucketPolicy",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy"
+      ]
     },
     "DisassociateDRTRole": {
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTRole.html",
@@ -148,6 +162,10 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - s3:GetBucketPolicy
+   * - s3:PutBucketPolicy
+   *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTLogBucket.html
    */
   public associateDRTLogBucket() {
@@ -159,6 +177,11 @@ export class Shield extends PolicyStatement {
    * Authorizes the DDoS Response team using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - iam:GetRole
+   * - iam:ListAttachedRolePolicies
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AssociateDRTRole.html
    */
@@ -279,6 +302,11 @@ export class Shield extends PolicyStatement {
    * Removes the DDoS Response team's access to the specified Amazon S3 bucket containing your flow logs
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - s3:DeleteBucketPolicy
+   * - s3:GetBucketPolicy
+   * - s3:PutBucketPolicy
    *
    * https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DisassociateDRTLogBucket.html
    */

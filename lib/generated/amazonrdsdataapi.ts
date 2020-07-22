@@ -21,7 +21,10 @@ export class RdsData extends PolicyStatement {
     "CommitTransaction": {
       "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html",
       "description": "Ends a SQL transaction started with the BeginTransaction operation and commits the changes.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "rds-data:BeginTransaction"
+      ]
     },
     "ExecuteSql": {
       "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html",
@@ -36,7 +39,10 @@ export class RdsData extends PolicyStatement {
     "RollbackTransaction": {
       "url": "https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html",
       "description": "Performs a rollback of a transaction. Rolling back a transaction cancels its changes.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "rds-data:BeginTransaction"
+      ]
     }
   };
   public resourceTypes: ResourceTypes = {};
@@ -79,6 +85,9 @@ export class RdsData extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent Actions:
+   * - rds-data:BeginTransaction
+   *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html
    */
   public commitTransaction() {
@@ -114,6 +123,9 @@ export class RdsData extends PolicyStatement {
    * Performs a rollback of a transaction. Rolling back a transaction cancels its changes.
    *
    * Access Level: Write
+   *
+   * Dependent Actions:
+   * - rds-data:BeginTransaction
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html
    */
