@@ -13,6 +13,9 @@
 [![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)][PyPI]
 [![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/maintainability)](https://codeclimate.com/github/udondan/iam-floyd/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
+
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
 <!-- stats -->
