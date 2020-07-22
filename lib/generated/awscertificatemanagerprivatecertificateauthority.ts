@@ -213,7 +213,7 @@ export class AcmPca extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "certificate-authority": {
       "name": "certificate-authority",
       "url": "https://docs.aws.amazon.com/acm-pca/latest/userguide/authen-overview.html#acm-pca-resources-operations",

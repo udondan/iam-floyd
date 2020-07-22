@@ -753,7 +753,7 @@ export class Waf extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "bytematchset": {
       "name": "bytematchset",
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_ByteMatchSet.html",

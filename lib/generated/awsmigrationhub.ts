@@ -164,7 +164,7 @@ export class Mgh extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "progressUpdateStream": {
       "name": "progressUpdateStream",
       "url": "https://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html",

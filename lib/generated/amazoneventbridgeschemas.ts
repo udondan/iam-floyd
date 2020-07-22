@@ -329,7 +329,7 @@ export class Schemas extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "discoverer": {
       "name": "discoverer",
       "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html",

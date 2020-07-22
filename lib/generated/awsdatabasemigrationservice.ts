@@ -462,7 +462,7 @@ export class Dms extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "ReplicationInstance": {
       "name": "ReplicationInstance",
       "url": "https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html",

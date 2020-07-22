@@ -162,7 +162,7 @@ export class Elastictranscoder extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "job": {
       "name": "job",
       "url": "https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html",

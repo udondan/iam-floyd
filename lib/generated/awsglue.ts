@@ -1156,7 +1156,7 @@ export class Glue extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "catalog": {
       "name": "catalog",
       "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html",

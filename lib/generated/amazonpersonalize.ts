@@ -354,7 +354,7 @@ export class Personalize extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "schema": {
       "name": "schema",
       "url": "",

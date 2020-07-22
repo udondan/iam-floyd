@@ -49,7 +49,7 @@ export class Tag extends PolicyStatement {
       "accessLevel": "Tagging"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [tag](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonresourcegrouptaggingapi.html).

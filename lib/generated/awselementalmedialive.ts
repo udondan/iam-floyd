@@ -446,7 +446,7 @@ export class Medialive extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "channel": {
       "name": "channel",
       "url": "https://docs.aws.amazon.com/medialive/latest/ug/channels.html",

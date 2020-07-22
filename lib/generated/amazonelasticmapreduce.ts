@@ -359,7 +359,7 @@ export class Elasticmapreduce extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
       "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html",

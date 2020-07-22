@@ -259,7 +259,7 @@ export class Elasticloadbalancing extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "listener": {
       "name": "listener",
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html",

@@ -27,7 +27,7 @@ export class ResourceExplorer extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [resource-explorer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstageditor.html).

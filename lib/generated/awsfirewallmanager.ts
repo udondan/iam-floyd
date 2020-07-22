@@ -153,7 +153,7 @@ export class Fms extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "policy": {
       "name": "policy",
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html",

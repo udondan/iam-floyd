@@ -55,7 +55,7 @@ export class SmsVoice extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [sms-voice](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointsmsandvoiceservice.html).

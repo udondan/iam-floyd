@@ -614,7 +614,7 @@ export class Iotsitewise extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "asset": {
       "name": "asset",
       "url": "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html",

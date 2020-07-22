@@ -124,7 +124,7 @@ export class Cassandra extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "keyspace": {
       "name": "keyspace",
       "url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is.html",

@@ -330,7 +330,7 @@ export class Kinesisvideo extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "stream": {
       "name": "stream",
       "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html",

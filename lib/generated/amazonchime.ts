@@ -977,7 +977,7 @@ export class Chime extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "meeting": {
       "name": "meeting",
       "url": "",

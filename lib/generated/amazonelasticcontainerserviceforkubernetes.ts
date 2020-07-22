@@ -252,7 +252,7 @@ export class Eks extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
       "url": "https://docs.aws.amazon.com/eks/latest/userguide/clusters.html",

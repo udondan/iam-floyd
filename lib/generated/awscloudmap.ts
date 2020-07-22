@@ -211,7 +211,7 @@ export class Servicediscovery extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "namespace": {
       "name": "namespace",
       "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html",

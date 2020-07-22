@@ -49,7 +49,7 @@ export class Launchwizard extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [launchwizard](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_launchwizard.html).

@@ -199,7 +199,7 @@ export class CodeguruProfiler extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "ProfilingGroup": {
       "name": "ProfilingGroup",
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html",

@@ -200,7 +200,7 @@ export class Managedblockchain extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "network": {
       "name": "network",
       "url": "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html",

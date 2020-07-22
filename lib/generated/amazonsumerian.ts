@@ -24,7 +24,7 @@ export class Sumerian extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
       "url": "",

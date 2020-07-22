@@ -124,7 +124,7 @@ export class Route53domains extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [route53domains](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonroute53domains.html).

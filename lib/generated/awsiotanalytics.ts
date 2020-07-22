@@ -355,7 +355,7 @@ export class Iotanalytics extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "channel": {
       "name": "channel",
       "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",

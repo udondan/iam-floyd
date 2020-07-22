@@ -54,7 +54,7 @@ export class Dbqms extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [dbqms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_databasequerymetadataservice.html).

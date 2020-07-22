@@ -251,7 +251,7 @@ export class Sns extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "topic": {
       "name": "topic",
       "url": "https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html",

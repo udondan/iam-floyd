@@ -1687,7 +1687,7 @@ export class Sagemaker extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "human-loop": {
       "name": "human-loop",
       "url": "",

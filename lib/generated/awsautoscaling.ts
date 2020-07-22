@@ -39,7 +39,7 @@ export class AutoscalingPlans extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [autoscaling-plans](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsautoscaling.html).

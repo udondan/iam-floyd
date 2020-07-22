@@ -135,7 +135,7 @@ export class Firehose extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "deliverystream": {
       "name": "deliverystream",
       "url": "https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html",

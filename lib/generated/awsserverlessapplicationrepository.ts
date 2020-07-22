@@ -162,7 +162,7 @@ export class Serverlessrepo extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "applications": {
       "name": "applications",
       "url": "",

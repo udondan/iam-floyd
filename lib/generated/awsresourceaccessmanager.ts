@@ -259,7 +259,7 @@ export class Ram extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "resource-share": {
       "name": "resource-share",
       "url": "https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html",

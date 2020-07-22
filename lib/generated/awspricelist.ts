@@ -24,7 +24,7 @@ export class Pricing extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [pricing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspricelist.html).

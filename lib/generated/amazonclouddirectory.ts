@@ -661,7 +661,7 @@ export class Clouddirectory extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "appliedSchema": {
       "name": "appliedSchema",
       "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory",

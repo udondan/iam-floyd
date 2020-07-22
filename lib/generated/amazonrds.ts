@@ -1517,7 +1517,7 @@ export class Rds extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html",

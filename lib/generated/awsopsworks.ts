@@ -704,7 +704,7 @@ export class Opsworks extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "stack": {
       "name": "stack",
       "url": "https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks.html",

@@ -79,7 +79,7 @@ export class Mediaconnect extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Entitlement": {
       "name": "Entitlement",
       "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/entitlements.html",

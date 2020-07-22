@@ -233,7 +233,7 @@ export class Deepracer extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "reinforcement_learning_model": {
       "name": "reinforcement_learning_model",
       "url": "https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-get-started-training-model.html",

@@ -19,7 +19,7 @@ export class PurchaseOrders extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [purchase-orders](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awspurchaseordersconsole.html).

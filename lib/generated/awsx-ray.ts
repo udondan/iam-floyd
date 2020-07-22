@@ -144,7 +144,7 @@ export class Xray extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "group": {
       "name": "group",
       "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-groups",

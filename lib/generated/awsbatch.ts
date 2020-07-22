@@ -112,7 +112,7 @@ export class Batch extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "job-queue": {
       "name": "job-queue",
       "url": "",

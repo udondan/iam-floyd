@@ -349,7 +349,7 @@ export class Logs extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "log-group": {
       "name": "log-group",
       "url": "",

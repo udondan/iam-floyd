@@ -522,7 +522,7 @@ export class Lambda extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "function": {
       "name": "function",
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html",

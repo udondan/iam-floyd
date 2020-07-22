@@ -1,33 +1,4 @@
-import { AccessLevel } from './access-level';
-
-export interface Action {
-  url: string;
-  description: string;
-  accessLevel: string;
-  resourceTypes?: any;
-  conditions?: string[];
-  dependentActions?: string[];
-}
-
-export interface Actions {
-  [key: string]: Action;
-}
-
-export interface ResourceTypes {
-  [key: string]: ResourceType;
-}
-
-export interface ResourceType {
-  name: string;
-  url: string;
-  arn: string;
-  conditionKeys: string[];
-}
-
-enum Effect {
-  ALLOW = 'Allow',
-  DENY = 'Deny',
-}
+import { PolicyStatementBase } from './1-base';
 
 interface Condition {
   [key: string]: String;
@@ -37,111 +8,26 @@ interface Conditions {
   [key: string]: Condition;
 }
 
-interface Principal {
-  [key: string]: String;
-}
-
-interface Principals {
-  [key: string]: Principal;
-}
-
 /**
- * Represents a statement in an IAM policy document.
+ * Adds "condition" functionality to the Policy Statement
  */
-export class PolicyStatement {
-  protected actionList: Actions = {};
-  protected useNotPrincipals = false;
-  protected useNotActions = false;
-  protected useNotResources = false;
-  public sid = '';
-  public effect = Effect.ALLOW;
-  protected principals: Principals = {};
-  protected actions: string[] = [];
-  protected resources: string[] = [];
+export class PolicyStatementWithCondition extends PolicyStatementBase {
   protected conditions: Conditions = {};
-  protected cdkApplied = false; // internally used to check if resources, actions and conditions have already been applied to the policy
 
   /**
-   * Adds actions by name.
+   * JSON-ify the policy statement
    *
-   * Depending on the "mode", actions will be either added to the list of [`Actions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) or [`NotActions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
-   *
-   * The mode can be switched by calling `notActions()`.
-   *
-   * @param actions Actions that will be added to the statement.
+   * Used when JSON.stringify() is called
    */
-  protected add(action: string) {
-    this.actions.push(action);
-    return this;
-  }
 
-  /**
-   * Holds the prefix of the service actions, e.g. `ec2`
-   */
-  public servicePrefix = '';
+  public toJSON(): any {
+    const statement = super.toJSON();
 
-  constructor(sid?: string) {
-    if (typeof sid !== 'undefined') {
-      this.sid = sid;
+    if (this.hasConditions()) {
+      statement.Condition = this.conditions;
     }
-  }
 
-  /**
-   * Adds actions to the statement, matching an `AccessLevel` or regular expression.
-   *
-   * When no value is passed, all actions of the service will be added.
-   */
-  public allActions(...rules: (AccessLevel | RegExp)[]) {
-    if (rules.length) {
-      rules.forEach((rule) => {
-        for (const [name, action] of Object.entries(this.actionList)) {
-          if (typeof rule === 'object') {
-            //assume it's a regex
-            if ((rule as RegExp).test(name)) {
-              this.add(`${this.servicePrefix}:${name}`);
-            }
-          } else {
-            // assume it's an AccessLevel
-            if ((rule as AccessLevel) == action.accessLevel) {
-              this.add(`${this.servicePrefix}:${name}`);
-            }
-          }
-        }
-      });
-    } else {
-      this.add(`${this.servicePrefix}:*`);
-    }
-    return this;
-  }
-
-  /**
-   * Switches the statement to use [`NotAction`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
-   */
-  public notActions() {
-    this.useNotActions = true;
-    return this;
-  }
-
-  /**
-   * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
-   */
-  public notResources() {
-    this.useNotResources = true;
-    return this;
-  }
-
-  /**
-   * Checks weather actions have been applied to the policy.
-   */
-  public hasActions(): boolean {
-    return this.actions.length > 0;
-  }
-
-  /**
-   * Checks weather any resource was applied to the policy.
-   */
-  public hasResources(): boolean {
-    return this.resources.length > 0;
+    return statement;
   }
 
   /**
@@ -149,39 +35,6 @@ export class PolicyStatement {
    */
   public hasConditions(): boolean {
     return Object.keys(this.conditions).length > 0;
-  }
-
-  /**
-   * Checks weather a principal was applied to the policy.
-   */
-  public hasPrincipals(): boolean {
-    return Object.keys(this.principals).length > 0;
-  }
-
-  /**
-   * Allow the actions in this statement
-   */
-  public allow() {
-    this.effect = Effect.ALLOW;
-    return this;
-  }
-
-  /**
-   * Deny the actions in this statement
-   */
-  public deny() {
-    this.effect = Effect.DENY;
-    return this;
-  }
-
-  /**
-   * Limit statement to specified resources.
-   *
-   * To allow all resources, pass `*`
-   */
-  public on(...arns: string[]) {
-    this.resources.push(...arns);
-    return this;
   }
 
   /**
@@ -711,48 +564,6 @@ export class PolicyStatement {
    */
   public ifVpcSourceIp(value: string | string[], operator?: string) {
     return this.if('aws:VpcSourceIp', value, operator || 'IpAddress');
-  }
-
-  /**
-   * JSON-ify the policy statement
-   *
-   * Also adds `*` to the list of resources, if not was manually added
-   *
-   * Used when JSON.stringify() is called
-   */
-
-  public toJSON(): any {
-    const principalMode = this.useNotPrincipals ? 'NotPrincipal' : 'Principal';
-    const actionMode = this.useNotActions ? 'NotAction' : 'Action';
-    const resourceMode = this.useNotActions ? 'NotResource' : 'Resource';
-
-    if (!this.hasResources()) {
-      // a statement requires resources. if none was added, we assume the user wants all resources
-      this.resources.push('*');
-    }
-
-    const statement: any = {};
-
-    if (this.sid.length) {
-      statement.Sid = this.sid;
-    }
-
-    statement.Effect = this.effect;
-    statement[resourceMode] = this.resources;
-
-    if (this.hasPrincipals()) {
-      statement[principalMode] = this.principals;
-    }
-
-    if (this.hasActions()) {
-      statement[actionMode] = this.actions;
-    }
-
-    if (this.hasConditions()) {
-      statement.Condition = this.conditions;
-    }
-
-    return statement;
   }
 }
 

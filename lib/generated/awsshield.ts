@@ -133,7 +133,7 @@ export class Shield extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "attack": {
       "name": "attack",
       "url": "https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_AttackDetail.html",

@@ -252,7 +252,7 @@ export class Workspaces extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "workspacebundle": {
       "name": "workspacebundle",
       "url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html",

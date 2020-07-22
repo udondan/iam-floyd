@@ -271,7 +271,7 @@ export class Elasticache extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [elasticache](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html).

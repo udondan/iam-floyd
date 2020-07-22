@@ -83,7 +83,7 @@ export class Dlm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "policy": {
       "name": "policy",
       "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_LifecyclePolicy.html",
