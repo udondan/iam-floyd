@@ -10,152 +10,182 @@ export class Sms extends PolicyStatement {
   protected actionList: Actions = {
     "CreateApp": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateApp.html",
-      "description": "Create an application configuration to migrate on-premise application onto AWS..",
+      "description": "Grants permission to create an application configuration to migrate on-premise application onto AWS",
       "accessLevel": "Write"
     },
     "CreateReplicationJob": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_CreateReplicationJob.html",
-      "description": "Create a job to migrate on-premise server onto AWS.",
+      "description": "Grants permission to create a job to migrate on-premise server onto AWS",
       "accessLevel": "Write"
     },
     "DeleteApp": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteApp.html",
-      "description": "Delete an existing application configuration.",
+      "description": "Grants permission to delete an existing application configuration",
       "accessLevel": "Write"
     },
     "DeleteAppLaunchConfiguration": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppLaunchConfiguration.html",
-      "description": "Delete launch configuration for an existing application.",
+      "description": "Grants permission to delete launch configuration for an existing application",
       "accessLevel": "Write"
     },
     "DeleteAppReplicationConfiguration": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppReplicationConfiguration.html",
-      "description": "Delete replication configuration for an existing application..",
+      "description": "Grants permission to delete replication configuration for an existing application",
+      "accessLevel": "Write"
+    },
+    "DeleteAppValidationConfiguration": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppValidationConfiguration.html",
+      "description": "Grants permission to delete validation configuration for an existing application",
       "accessLevel": "Write"
     },
     "DeleteReplicationJob": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteReplicationJob.html",
-      "description": "Delete an existing job to migrate on-premise server onto AWS.",
+      "description": "Grants permission to delete an existing job to migrate on-premise server onto AWS",
       "accessLevel": "Write"
     },
     "DeleteServerCatalog": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteServerCatalog.html",
-      "description": "Delete the complete list of on-premise servers gathered into AWS.",
+      "description": "Grants permission to delete the complete list of on-premise servers gathered into AWS",
       "accessLevel": "Write"
     },
     "DisassociateConnector": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DisassociateConnector.html",
-      "description": "Disassociate a connector that has been associated.",
+      "description": "Grants permission to disassociate a connector that has been associated",
       "accessLevel": "Write"
     },
     "GenerateChangeSet": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateChangeSet.html",
-      "description": "Generate a changeSet for the CloudFormation stack of an application.",
+      "description": "Grants permission to generate a changeSet for the CloudFormation stack of an application",
       "accessLevel": "Write"
     },
     "GenerateTemplate": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GenerateTemplate.html",
-      "description": "Generate a CloudFormation template for an existing application.",
+      "description": "Grants permission to generate a CloudFormation template for an existing application",
       "accessLevel": "Write"
     },
     "GetApp": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetApp.html",
-      "description": "Get the configuration and statuses for an existing application.",
+      "description": "Grants permission to get the configuration and statuses for an existing application",
       "accessLevel": "Read"
     },
     "GetAppLaunchConfiguration": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppLaunchConfiguration.html",
-      "description": "Get launch configuration for an existing application.",
+      "description": "Grants permission to get launch configuration for an existing application",
       "accessLevel": "Read"
     },
     "GetAppReplicationConfiguration": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppReplicationConfiguration.html",
-      "description": "Get replication configuration for an existing application.",
+      "description": "Grants permission to get replication configuration for an existing application",
+      "accessLevel": "Read"
+    },
+    "GetAppValidationConfiguration": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationConfiguration.html",
+      "description": "Grants permission to get validation configuration for an existing application",
+      "accessLevel": "Read"
+    },
+    "GetAppValidationOutput": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationOutput.html",
+      "description": "Grants permission to get notification sent from application validation script.",
       "accessLevel": "Read"
     },
     "GetConnectors": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetConnectors.html",
-      "description": "Get all connectors that have been associated.",
+      "description": "Grants permission to get all connectors that have been associated",
       "accessLevel": "Read"
     },
     "GetMessages": {
       "url": "",
-      "description": "Gets messages from AWS Server Migration Service to Server Migration Connector.",
+      "description": "Grants permission to gets messages from AWS Server Migration Service to Server Migration Connector",
       "accessLevel": "Read"
     },
     "GetReplicationJobs": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationJobs.html",
-      "description": "Get all existing jobs to migrate on-premise servers onto AWS.",
+      "description": "Grants permission to get all existing jobs to migrate on-premise servers onto AWS",
       "accessLevel": "Read"
     },
     "GetReplicationRuns": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetReplicationRuns.html",
-      "description": "Get all runs for an existing job.",
+      "description": "Grants permission to get all runs for an existing job",
       "accessLevel": "Read"
     },
     "GetServers": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetServers.html",
-      "description": "Get all servers that have been imported.",
+      "description": "Grants permission to get all servers that have been imported",
       "accessLevel": "Read"
     },
     "ImportServerCatalog": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportServerCatalog.html",
-      "description": "Gathers a complete list of on-premise servers.",
+      "description": "Grants permission to gather a complete list of on-premise servers",
       "accessLevel": "Write"
     },
     "LaunchApp": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_LaunchApp.html",
-      "description": "Create and launch a CloudFormation stack for an existing application.",
+      "description": "Grants permission to create and launch a CloudFormation stack for an existing application",
       "accessLevel": "Write"
     },
     "ListApps": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ListAppss.html",
-      "description": "Get a list of summaries for existing applications.",
+      "description": "Grants permission to get a list of summaries for existing applications",
       "accessLevel": "List"
+    },
+    "NotifyAppValidationOutput": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_NotifyAppValidationOutput.html",
+      "description": "Grants permission to send notification for application validation script",
+      "accessLevel": "Write"
     },
     "PutAppLaunchConfiguration": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppLaunchConfiguration.html",
-      "description": "Create or update launch configuration for an existing application.",
+      "description": "Grants permission to create or update launch configuration for an existing application",
       "accessLevel": "Write"
     },
     "PutAppReplicationConfiguration": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppReplicationConfiguration.html",
-      "description": "Create or update replication configuration for an existing application.",
+      "description": "Grants permission to create or update replication configuration for an existing application",
+      "accessLevel": "Write"
+    },
+    "PutAppValidationConfiguration": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppValidationConfiguration.html",
+      "description": "Grants permission to put validation configuration for an existing application",
       "accessLevel": "Write"
     },
     "SendMessage": {
       "url": "",
-      "description": "Send message from Server Migration Connector to AWS Server Migration Service.",
+      "description": "Grants permission to send message from Server Migration Connector to AWS Server Migration Service",
       "accessLevel": "Write"
     },
     "StartAppReplication": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartAppReplication.html",
-      "description": "Create and start replication jobs for an existing application.",
+      "description": "Grants permission to create and start replication jobs for an existing application",
+      "accessLevel": "Write"
+    },
+    "StartOnDemandAppReplication": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandAppReplication.html",
+      "description": "Grants permission to start a replication run for an existing application",
       "accessLevel": "Write"
     },
     "StartOnDemandReplicationRun": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandReplicationRun.html",
-      "description": "Start a replication run for an existing replication job.",
+      "description": "Grants permission to start a replication run for an existing replication job",
       "accessLevel": "Write"
     },
     "StopAppReplication": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StopAppReplication.html",
-      "description": "Stop and delete replication jobs for an existing application.",
+      "description": "Grants permission to stop and delete replication jobs for an existing application",
       "accessLevel": "Write"
     },
     "TerminateApp": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_TerminateApp.html",
-      "description": "Terminate the CloudFormation stack for an existing application.",
+      "description": "Grants permission to terminate the CloudFormation stack for an existing application",
       "accessLevel": "Write"
     },
     "UpdateApp": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateApp.html",
-      "description": "Update an existing application configuration",
+      "description": "Grants permission to update an existing application configuration",
       "accessLevel": "Write"
     },
     "UpdateReplicationJob": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_UpdateReplicationJob.html",
-      "description": "Update an existing job to migrate on-premise server onto AWS.",
+      "description": "Grants permission to update an existing job to migrate on-premise server onto AWS",
       "accessLevel": "Write"
     }
   };
@@ -171,7 +201,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Create an application configuration to migrate on-premise application onto AWS..
+   * Grants permission to create an application configuration to migrate on-premise application onto AWS
    *
    * Access Level: Write
    *
@@ -183,7 +213,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Create a job to migrate on-premise server onto AWS.
+   * Grants permission to create a job to migrate on-premise server onto AWS
    *
    * Access Level: Write
    *
@@ -195,7 +225,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Delete an existing application configuration.
+   * Grants permission to delete an existing application configuration
    *
    * Access Level: Write
    *
@@ -207,7 +237,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Delete launch configuration for an existing application.
+   * Grants permission to delete launch configuration for an existing application
    *
    * Access Level: Write
    *
@@ -219,7 +249,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Delete replication configuration for an existing application..
+   * Grants permission to delete replication configuration for an existing application
    *
    * Access Level: Write
    *
@@ -231,7 +261,19 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Delete an existing job to migrate on-premise server onto AWS.
+   * Grants permission to delete validation configuration for an existing application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_DeleteAppValidationConfiguration.html
+   */
+  public deleteAppValidationConfiguration() {
+    this.add('sms:DeleteAppValidationConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete an existing job to migrate on-premise server onto AWS
    *
    * Access Level: Write
    *
@@ -243,7 +285,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Delete the complete list of on-premise servers gathered into AWS.
+   * Grants permission to delete the complete list of on-premise servers gathered into AWS
    *
    * Access Level: Write
    *
@@ -255,7 +297,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Disassociate a connector that has been associated.
+   * Grants permission to disassociate a connector that has been associated
    *
    * Access Level: Write
    *
@@ -267,7 +309,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Generate a changeSet for the CloudFormation stack of an application.
+   * Grants permission to generate a changeSet for the CloudFormation stack of an application
    *
    * Access Level: Write
    *
@@ -279,7 +321,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Generate a CloudFormation template for an existing application.
+   * Grants permission to generate a CloudFormation template for an existing application
    *
    * Access Level: Write
    *
@@ -291,7 +333,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get the configuration and statuses for an existing application.
+   * Grants permission to get the configuration and statuses for an existing application
    *
    * Access Level: Read
    *
@@ -303,7 +345,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get launch configuration for an existing application.
+   * Grants permission to get launch configuration for an existing application
    *
    * Access Level: Read
    *
@@ -315,7 +357,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get replication configuration for an existing application.
+   * Grants permission to get replication configuration for an existing application
    *
    * Access Level: Read
    *
@@ -327,7 +369,31 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get all connectors that have been associated.
+   * Grants permission to get validation configuration for an existing application
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationConfiguration.html
+   */
+  public getAppValidationConfiguration() {
+    this.add('sms:GetAppValidationConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to get notification sent from application validation script.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_GetAppValidationOutput.html
+   */
+  public getAppValidationOutput() {
+    this.add('sms:GetAppValidationOutput');
+    return this;
+  }
+
+  /**
+   * Grants permission to get all connectors that have been associated
    *
    * Access Level: Read
    *
@@ -339,7 +405,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Gets messages from AWS Server Migration Service to Server Migration Connector.
+   * Grants permission to gets messages from AWS Server Migration Service to Server Migration Connector
    *
    * Access Level: Read
    */
@@ -349,7 +415,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get all existing jobs to migrate on-premise servers onto AWS.
+   * Grants permission to get all existing jobs to migrate on-premise servers onto AWS
    *
    * Access Level: Read
    *
@@ -361,7 +427,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get all runs for an existing job.
+   * Grants permission to get all runs for an existing job
    *
    * Access Level: Read
    *
@@ -373,7 +439,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get all servers that have been imported.
+   * Grants permission to get all servers that have been imported
    *
    * Access Level: Read
    *
@@ -385,7 +451,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Gathers a complete list of on-premise servers.
+   * Grants permission to gather a complete list of on-premise servers
    *
    * Access Level: Write
    *
@@ -397,7 +463,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Create and launch a CloudFormation stack for an existing application.
+   * Grants permission to create and launch a CloudFormation stack for an existing application
    *
    * Access Level: Write
    *
@@ -409,7 +475,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Get a list of summaries for existing applications.
+   * Grants permission to get a list of summaries for existing applications
    *
    * Access Level: List
    *
@@ -421,7 +487,19 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Create or update launch configuration for an existing application.
+   * Grants permission to send notification for application validation script
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_NotifyAppValidationOutput.html
+   */
+  public notifyAppValidationOutput() {
+    this.add('sms:NotifyAppValidationOutput');
+    return this;
+  }
+
+  /**
+   * Grants permission to create or update launch configuration for an existing application
    *
    * Access Level: Write
    *
@@ -433,7 +511,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Create or update replication configuration for an existing application.
+   * Grants permission to create or update replication configuration for an existing application
    *
    * Access Level: Write
    *
@@ -445,7 +523,19 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Send message from Server Migration Connector to AWS Server Migration Service.
+   * Grants permission to put validation configuration for an existing application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_PutAppValidationConfiguration.html
+   */
+  public putAppValidationConfiguration() {
+    this.add('sms:PutAppValidationConfiguration');
+    return this;
+  }
+
+  /**
+   * Grants permission to send message from Server Migration Connector to AWS Server Migration Service
    *
    * Access Level: Write
    */
@@ -455,7 +545,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Create and start replication jobs for an existing application.
+   * Grants permission to create and start replication jobs for an existing application
    *
    * Access Level: Write
    *
@@ -467,7 +557,19 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Start a replication run for an existing replication job.
+   * Grants permission to start a replication run for an existing application
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_StartOnDemandAppReplication.html
+   */
+  public startOnDemandAppReplication() {
+    this.add('sms:StartOnDemandAppReplication');
+    return this;
+  }
+
+  /**
+   * Grants permission to start a replication run for an existing replication job
    *
    * Access Level: Write
    *
@@ -479,7 +581,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Stop and delete replication jobs for an existing application.
+   * Grants permission to stop and delete replication jobs for an existing application
    *
    * Access Level: Write
    *
@@ -491,7 +593,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Terminate the CloudFormation stack for an existing application.
+   * Grants permission to terminate the CloudFormation stack for an existing application
    *
    * Access Level: Write
    *
@@ -503,7 +605,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Update an existing application configuration
+   * Grants permission to update an existing application configuration
    *
    * Access Level: Write
    *
@@ -515,7 +617,7 @@ export class Sms extends PolicyStatement {
   }
 
   /**
-   * Update an existing job to migrate on-premise server onto AWS.
+   * Grants permission to update an existing job to migrate on-premise server onto AWS
    *
    * Access Level: Write
    *
