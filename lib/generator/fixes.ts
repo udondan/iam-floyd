@@ -1,3 +1,5 @@
+import { Condition } from './condition';
+
 interface Fixes {
   [key: string]: any;
 }

@@ -1,4 +1,4 @@
-interface Condition {
+export interface Condition {
   key: string;
   description: string;
   url: string;
@@ -6,6 +6,6 @@ interface Condition {
   isGlobal: boolean;
 }
 
-interface Conditions {
+export interface Conditions {
   [key: string]: Condition;
 }

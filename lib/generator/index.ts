@@ -8,6 +8,7 @@ import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
 import { ResourceTypes } from '../shared';
+import { Conditions } from './condition';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
 
 const project = new Project();
