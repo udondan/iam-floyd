@@ -37,15 +37,25 @@ interface Conditions {
   [key: string]: Condition;
 }
 
+interface Principal {
+  [key: string]: String;
+}
+
+interface Principals {
+  [key: string]: Principal;
+}
+
 /**
  * Represents a statement in an IAM policy document.
  */
 export class PolicyStatement {
   protected actionList: Actions = {};
+  protected useNotPrincipals = false;
   protected useNotActions = false;
   protected useNotResources = false;
   public sid = '';
   public effect = Effect.ALLOW;
+  protected principals: Principals = {};
   protected actions: string[] = [];
   protected resources: string[] = [];
   protected conditions: Conditions = {};
@@ -139,6 +149,13 @@ export class PolicyStatement {
    */
   public hasConditions(): boolean {
     return Object.keys(this.conditions).length > 0;
+  }
+
+  /**
+   * Checks weather a principal was applied to the policy.
+   */
+  public hasPrincipals(): boolean {
+    return Object.keys(this.principals).length > 0;
   }
 
   /**
@@ -705,6 +722,10 @@ export class PolicyStatement {
    */
 
   public toJSON(): any {
+    const principalMode = this.useNotPrincipals ? 'NotPrincipal' : 'Principal';
+    const actionMode = this.useNotActions ? 'NotAction' : 'Action';
+    const resourceMode = this.useNotActions ? 'NotResource' : 'Resource';
+
     if (!this.hasResources()) {
       // a statement requires resources. if none was added, we assume the user wants all resources
       this.resources.push('*');
@@ -717,26 +738,19 @@ export class PolicyStatement {
     }
 
     statement.Effect = this.effect;
+    statement[resourceMode] = this.resources;
 
-    if (this.hasActions()) {
-      if (this.useNotActions) {
-        statement.NotActions = this.actions;
-      } else {
-        statement.Action = this.actions;
-      }
+    if (this.hasPrincipals()) {
+      statement[principalMode] = this.principals;
     }
 
-    if (this.useNotResources) {
-      statement.NotResource = this.resources;
-    } else {
-      statement.Resource = this.resources;
+    if (this.hasActions()) {
+      statement[actionMode] = this.actions;
     }
 
     if (this.hasConditions()) {
       statement.Condition = this.conditions;
     }
-
-    //TODO: principal
 
     return statement;
   }
