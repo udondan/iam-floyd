@@ -256,6 +256,10 @@ export class Mq extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
    */
   public createBroker() {
@@ -268,6 +272,10 @@ export class Mq extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post
    */
   public createConfiguration() {
@@ -279,6 +287,10 @@ export class Mq extends PolicyStatement {
    * Grants permission to create tags.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-post
    */
@@ -315,6 +327,9 @@ export class Mq extends PolicyStatement {
    * Grants permission to delete tags.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-delete
    */
@@ -524,7 +539,7 @@ export class Mq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBrokers(brokerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mq:${Region}:${Account}:broker:${Broker-id}';
@@ -544,7 +559,7 @@ export class Mq extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConfigurations(configurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mq:${Region}:${Account}:configuration:${Configuration-id}';

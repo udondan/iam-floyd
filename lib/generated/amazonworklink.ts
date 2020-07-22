@@ -409,6 +409,10 @@ export class Worklink extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/worklink/latest/api/API_CreateFleet.html
    */
   public createFleet() {
@@ -420,6 +424,10 @@ export class Worklink extends PolicyStatement {
    * Grants permission to delete an Amazon WorkLink fleet
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DeleteFleet.html
    */
@@ -492,6 +500,10 @@ export class Worklink extends PolicyStatement {
    * Grants permission to describe metadata of an Amazon WorkLink fleet
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_DescribeFleetMetadata.html
    */
@@ -673,6 +685,10 @@ export class Worklink extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/worklink/latest/api/API_TagResource.html
    */
   public tagResource() {
@@ -684,6 +700,9 @@ export class Worklink extends PolicyStatement {
    * Grants permission to remove one or more tags from a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/worklink/latest/api/API_UntagResource.html
    */
@@ -774,7 +793,7 @@ export class Worklink extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFleet(fleetName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:worklink::${Account}:fleet/${FleetName}';

@@ -181,6 +181,9 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - catalog:ChangeType
+   *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html
    */
   public startChangeSet() {

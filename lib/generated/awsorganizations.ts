@@ -561,6 +561,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_AttachPolicy.html
    */
   public attachPolicy() {
@@ -633,6 +636,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html
    */
   public createPolicy() {
@@ -681,6 +687,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeletePolicy.html
    */
   public deletePolicy() {
@@ -692,6 +701,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - organizations:ServicePrincipal
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeregisterDelegatedAdministrator.html
    */
@@ -728,6 +740,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to retrieve the effective policy for an account.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - organizations:PolicyType
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeEffectivePolicy.html
    */
@@ -777,6 +792,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribePolicy.html
    */
   public describePolicy() {
@@ -788,6 +806,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to detach a policy from a target root, organizational unit, or account.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - organizations:PolicyType
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DetachPolicy.html
    */
@@ -801,6 +822,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - organizations:ServicePrincipal
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html
    */
   public disableAWSServiceAccess() {
@@ -813,6 +837,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisablePolicyType.html
    */
   public disablePolicyType() {
@@ -824,6 +851,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to enable integration of an AWS service (the service that is specified by ServicePrincipal) with AWS Organizations.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - organizations:ServicePrincipal
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html
    */
@@ -848,6 +878,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to enable a policy type in a root.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - organizations:PolicyType
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html
    */
@@ -945,6 +978,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - organizations:ServicePrincipal
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedAdministrators.html
    */
   public listDelegatedAdministrators() {
@@ -1017,6 +1053,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPolicies.html
    */
   public listPolicies() {
@@ -1028,6 +1067,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to list all of the policies that are directly attached to a root, organizational unit (OU), or account.
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - organizations:PolicyType
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPoliciesForTarget.html
    */
@@ -1065,6 +1107,9 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - organizations:PolicyType
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTargetsForPolicy.html
    */
   public listTargetsForPolicy() {
@@ -1088,6 +1133,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - organizations:ServicePrincipal
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html
    */
@@ -1148,6 +1196,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to update an existing policy with a new name, description, or content.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - organizations:PolicyType
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdatePolicy.html
    */

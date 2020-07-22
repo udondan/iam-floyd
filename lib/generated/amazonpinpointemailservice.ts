@@ -460,6 +460,10 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html
    */
   public createConfigurationSet() {
@@ -484,6 +488,10 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDedicatedIpPool.html
    */
   public createDedicatedIpPool() {
@@ -496,6 +504,10 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDeliverabilityTestReport.html
    */
   public createDeliverabilityTestReport() {
@@ -507,6 +519,10 @@ export class SesPinpoint extends PolicyStatement {
    * Verifies an email identity for use with Amazon Pinpoint
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateEmailIdentity.html
    */
@@ -892,6 +908,12 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ses:FeedbackAddress
+   * - ses:FromAddress
+   * - ses:FromDisplayName
+   * - ses:Recipients
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_SendEmail.html
    */
   public sendEmail() {
@@ -904,6 +926,10 @@ export class SesPinpoint extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -915,6 +941,9 @@ export class SesPinpoint extends PolicyStatement {
    * Remove one or more tags (keys and values) from a specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UntagResource.html
    */
@@ -944,7 +973,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConfigurationSet(configurationSetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}';
@@ -966,7 +995,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDedicatedIpPool(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${CustomVerificationEmailTemplateName}';
@@ -988,7 +1017,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeliverabilityTestReport(customVerificationEmailTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${CustomVerificationEmailTemplateName}';
@@ -1031,7 +1060,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onIdentity(identityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}';

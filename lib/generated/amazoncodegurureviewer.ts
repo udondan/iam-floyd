@@ -163,7 +163,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - codecommit:ListRepositories
    * - codecommit:TagResource
    * - events:PutRule
@@ -220,7 +220,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - codecommit:UntagResource
    * - events:DeleteRule
    * - events:RemoveTargets
@@ -343,7 +343,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';

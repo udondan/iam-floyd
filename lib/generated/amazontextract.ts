@@ -67,7 +67,7 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_AnalyzeDocument.html
@@ -82,7 +82,7 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_DetectDocumentText.html
@@ -121,7 +121,7 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html
@@ -136,7 +136,7 @@ export class Textract extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html

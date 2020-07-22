@@ -144,6 +144,10 @@ export class Mediatailor extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html
    */
   public putPlaybackConfiguration() {
@@ -156,6 +160,10 @@ export class Mediatailor extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
   public tagResource() {
@@ -167,6 +175,10 @@ export class Mediatailor extends PolicyStatement {
    * Removes tags from the specified playback configuration resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediatailor/latest/apireference/tags-resourcearn.html
    */
@@ -186,7 +198,7 @@ export class Mediatailor extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPlaybackConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediatailor:${Region}:${Account}:playbackConfiguration/${ResourceId}';

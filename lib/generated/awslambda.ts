@@ -587,6 +587,9 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - lambda:Principal
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
   public addPermission() {
@@ -611,6 +614,9 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - lambda:FunctionArn
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html
    */
   public createEventSourceMapping() {
@@ -622,6 +628,9 @@ export class Lambda extends PolicyStatement {
    * Grants permission to create an AWS Lambda function
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - lambda:Layer
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
@@ -646,6 +655,9 @@ export class Lambda extends PolicyStatement {
    * Grants permission to delete an AWS Lambda event source mapping
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - lambda:FunctionArn
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html
    */
@@ -762,6 +774,9 @@ export class Lambda extends PolicyStatement {
    * Grants permission to view details about an AWS Lambda event source mapping
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - lambda:FunctionArn
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html
    */
@@ -1087,6 +1102,9 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - lambda:Principal
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html
    */
   public removePermission() {
@@ -1135,6 +1153,9 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - lambda:FunctionArn
+   *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html
    */
   public updateEventSourceMapping() {
@@ -1158,6 +1179,9 @@ export class Lambda extends PolicyStatement {
    * Grants permission to modify the version-specific settings of an AWS Lambda function
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - lambda:Layer
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html
    */

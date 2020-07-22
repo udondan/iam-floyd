@@ -237,6 +237,10 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
   public createBackup() {
@@ -248,6 +252,10 @@ export class Fsx extends PolicyStatement {
    * This action creates a new task.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
@@ -261,6 +269,10 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
   public createFileSystem() {
@@ -272,6 +284,10 @@ export class Fsx extends PolicyStatement {
    * This action creates a new Amazon FSx file system from an existing backup.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
@@ -357,6 +373,10 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -368,6 +388,9 @@ export class Fsx extends PolicyStatement {
    * This action removes a tag from an Amazon FSx resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html
    */
@@ -399,7 +422,7 @@ export class Fsx extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFileSystem(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${ResourceName}';
@@ -421,7 +444,7 @@ export class Fsx extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBackup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${ResourceName}';
@@ -443,7 +466,7 @@ export class Fsx extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTask(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${ResourceName}';

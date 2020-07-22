@@ -456,6 +456,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - networkmanager:cgwArn
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html
    */
   public associateCustomerGateway() {
@@ -480,6 +483,10 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html
    */
   public createDevice() {
@@ -492,7 +499,11 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
@@ -507,6 +518,10 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html
    */
   public createLink() {
@@ -518,6 +533,10 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to create a new site
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html
    */
@@ -579,6 +598,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - networkmanager:tgwArn
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html
    */
   public deregisterTransitGateway() {
@@ -602,6 +624,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to disassociate a customer gateway from a device
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - networkmanager:cgwArn
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html
    */
@@ -699,6 +724,9 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -710,6 +738,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to register a transit gateway to a global network
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - networkmanager:tgwArn
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html
    */
@@ -723,6 +754,11 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -734,6 +770,9 @@ export class Networkmanager extends PolicyStatement {
    * Grants permission to untag a Network Manager resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html
    */
@@ -800,7 +839,7 @@ export class Networkmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}';
@@ -821,7 +860,7 @@ export class Networkmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}';
@@ -843,7 +882,7 @@ export class Networkmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}';
@@ -865,7 +904,7 @@ export class Networkmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}';

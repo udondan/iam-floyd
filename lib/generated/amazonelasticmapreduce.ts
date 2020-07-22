@@ -430,6 +430,11 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticmapreduce:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_AddTags.html
    */
   public addTags() {
@@ -453,6 +458,11 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to create an EMR notebook.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticmapreduce:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-create.html
    */
@@ -750,6 +760,9 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveTags.html
    */
   public removeTags() {
@@ -761,6 +774,11 @@ export class Elasticmapreduce extends PolicyStatement {
    * Grants permission to create and launch a cluster (job flow).
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticmapreduce:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html
    */
@@ -838,8 +856,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - elasticmapreduce:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - elasticmapreduce:ResourceTag/${TagKey}
    */
   public onCluster(clusterId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:cluster/${ClusterId}';
@@ -861,8 +879,8 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - elasticmapreduce:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - elasticmapreduce:ResourceTag/${TagKey}
    */
   public onEditor(editorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticmapreduce:${Region}:${Account}:editor/${EditorId}';

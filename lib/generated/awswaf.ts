@@ -886,6 +886,10 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRateBasedRule.html
    */
   public createRateBasedRule() {
@@ -922,6 +926,10 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRule.html
    */
   public createRule() {
@@ -933,6 +941,10 @@ export class Waf extends PolicyStatement {
    * Creates a RuleGroup. A rule group is a collection of predefined rules that you add to a WebACL.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateRuleGroup.html
    */
@@ -970,6 +982,10 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACL.html
    */
   public createWebACL() {
@@ -982,7 +998,7 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:PutObject
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_CreateWebACLMigrationStack.html
@@ -1585,7 +1601,7 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_PutLoggingConfiguration.html
@@ -1612,6 +1628,10 @@ export class Waf extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_TagResource.html
    */
   public tagResource() {
@@ -1623,6 +1643,9 @@ export class Waf extends PolicyStatement {
    * Removes a Tag from a given resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_UntagResource.html
    */
@@ -1819,7 +1842,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRatebasedrule(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf::${Account}:ratebasedrule/${Id}';
@@ -1839,7 +1862,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRule(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf::${Account}:rule/${Id}';
@@ -1893,7 +1916,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onWebacl(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf::${Account}:webacl/${Id}';
@@ -1981,7 +2004,7 @@ export class Waf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRulegroup(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:waf::${Account}:rulegroup/${Id}';

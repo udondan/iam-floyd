@@ -1274,6 +1274,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDisk.html
    */
   public createDisk() {
@@ -1285,6 +1289,10 @@ export class Lightsail extends PolicyStatement {
    * Creates a disk from snapshot.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskFromSnapshot.html
    */
@@ -1298,6 +1306,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDiskSnapshot.html
    */
   public createDiskSnapshot() {
@@ -1309,6 +1321,10 @@ export class Lightsail extends PolicyStatement {
    * Creates a domain resource for the specified domain name.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html
    */
@@ -1334,6 +1350,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html
    */
   public createInstanceSnapshot() {
@@ -1345,6 +1365,10 @@ export class Lightsail extends PolicyStatement {
    * Creates one or more instances.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html
    */
@@ -1358,6 +1382,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstancesFromSnapshot.html
    */
   public createInstancesFromSnapshot() {
@@ -1370,6 +1398,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html
    */
   public createKeyPair() {
@@ -1381,6 +1413,10 @@ export class Lightsail extends PolicyStatement {
    * Creates a load balancer.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateLoadBalancer.html
    */
@@ -1406,6 +1442,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabase.html
    */
   public createRelationalDatabase() {
@@ -1418,6 +1458,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseFromSnapshot.html
    */
   public createRelationalDatabaseFromSnapshot() {
@@ -1429,6 +1473,10 @@ export class Lightsail extends PolicyStatement {
    * Creates a relational database snapshot.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateRelationalDatabaseSnapshot.html
    */
@@ -2306,6 +2354,10 @@ export class Lightsail extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html
    */
   public tagResource() {
@@ -2329,6 +2381,10 @@ export class Lightsail extends PolicyStatement {
    * Untags a resource.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UntagResource.html
    */
@@ -2396,7 +2452,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDomain(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Domain/${Id}';
@@ -2418,7 +2474,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInstance(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Instance/${Id}';
@@ -2440,7 +2496,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInstanceSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:InstanceSnapshot/${Id}';
@@ -2462,7 +2518,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onKeyPair(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:KeyPair/${Id}';
@@ -2484,7 +2540,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStaticIp(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:StaticIp/${Id}';
@@ -2506,7 +2562,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDisk(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:Disk/${Id}';
@@ -2528,7 +2584,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDiskSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:DiskSnapshot/${Id}';
@@ -2550,7 +2606,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onLoadBalancer(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:LoadBalancer/${Id}';
@@ -2648,7 +2704,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRelationalDatabase(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabase/${Id}';
@@ -2670,7 +2726,7 @@ export class Lightsail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRelationalDatabaseSnapshot(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lightsail:${Region}:${Account}:RelationalDatabaseSnapshot/${Id}';

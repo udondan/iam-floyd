@@ -465,6 +465,10 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs.html
    */
   public createClassificationJob() {
@@ -477,6 +481,10 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers.html
    */
   public createCustomDataIdentifier() {
@@ -488,6 +496,10 @@ export class Macie2 extends PolicyStatement {
    * Grants permission to create and define the settings for a findings filter
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
@@ -512,6 +524,10 @@ export class Macie2 extends PolicyStatement {
    * Grants permission to associate an account with an Amazon Macie master account
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
@@ -957,6 +973,10 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
   public tagResource() {
@@ -993,6 +1013,9 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
   public untagResource() {
@@ -1005,6 +1028,10 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
   public updateClassificationJob() {
@@ -1016,6 +1043,10 @@ export class Macie2 extends PolicyStatement {
    * Grants permission to update the settings for a findings filter
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
@@ -1070,7 +1101,7 @@ export class Macie2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onClassificationJob(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}';
@@ -1090,7 +1121,7 @@ export class Macie2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCustomDataIdentifier(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}';
@@ -1110,7 +1141,7 @@ export class Macie2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMember(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:member/${ResourceId}';
@@ -1130,7 +1161,7 @@ export class Macie2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFindingsFilter(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}';

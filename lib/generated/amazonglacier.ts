@@ -415,6 +415,9 @@ export class Glacier extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - glacier:ArchiveAgeInDays
+   *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html
    */
   public deleteArchive() {
@@ -546,6 +549,9 @@ export class Glacier extends PolicyStatement {
    * Initiates a job of the specified type
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - glacier:ArchiveAgeInDays
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html
    */

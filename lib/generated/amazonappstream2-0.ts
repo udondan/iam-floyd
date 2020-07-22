@@ -597,6 +597,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_AssociateFleet.html
    */
   public associateFleet() {
@@ -608,6 +611,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to associate the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchAssociateUserStack.html
    */
@@ -621,6 +627,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_BatchDisassociateUserStack.html
    */
   public batchDisassociateUserStack() {
@@ -632,6 +641,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to copy the specified image within the same Region or to a new Region within the same AWS account
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CopyImage.html
    */
@@ -657,6 +669,10 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html
    */
   public createFleet() {
@@ -668,6 +684,10 @@ export class Appstream extends PolicyStatement {
    * Grants permission to create an image builder. An image builder is a virtual machine that is used to create an image
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html
    */
@@ -681,6 +701,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilderStreamingURL.html
    */
   public createImageBuilderStreamingURL() {
@@ -693,6 +716,10 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html
    */
   public createStack() {
@@ -704,6 +731,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to create a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html
    */
@@ -753,6 +783,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteFleet.html
    */
   public deleteFleet() {
@@ -764,6 +797,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to delete the specified image. An image cannot be deleted when it is in use
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImage.html
    */
@@ -777,6 +813,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImageBuilder.html
    */
   public deleteImageBuilder() {
@@ -789,6 +828,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteImagePermissions.html
    */
   public deleteImagePermissions() {
@@ -800,6 +842,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to delete the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteStack.html
    */
@@ -969,6 +1014,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DisassociateFleet.html
    */
   public disassociateFleet() {
@@ -1065,6 +1113,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartFleet.html
    */
   public startFleet() {
@@ -1076,6 +1127,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to start the specified image builder
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StartImageBuilder.html
    */
@@ -1089,6 +1143,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopFleet.html
    */
   public stopFleet() {
@@ -1100,6 +1157,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to stop the specified image builder
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_StopImageBuilder.html
    */
@@ -1113,6 +1173,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - appstream:userId
+   *
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role
    */
   public stream() {
@@ -1125,6 +1188,11 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1136,6 +1204,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to disassociate one or more tags from the specified AppStream 2.0 resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html
    */
@@ -1161,6 +1232,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html
    */
   public updateFleet() {
@@ -1173,6 +1247,9 @@ export class Appstream extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateImagePermissions.html
    */
   public updateImagePermissions() {
@@ -1184,6 +1261,9 @@ export class Appstream extends PolicyStatement {
    * Grants permission to update the specified fields for the specified stack
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateStack.html
    */
@@ -1203,7 +1283,7 @@ export class Appstream extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFleet(fleetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:fleet/${FleetName}';
@@ -1225,7 +1305,7 @@ export class Appstream extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onImage(imageName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:image/${ImageName}';
@@ -1247,7 +1327,7 @@ export class Appstream extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onImageBuilder(imageBuilderName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:image-builder/${ImageBuilderName}';
@@ -1269,7 +1349,7 @@ export class Appstream extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStack(stackName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appstream:${Region}:${Account}:stack/${StackName}';

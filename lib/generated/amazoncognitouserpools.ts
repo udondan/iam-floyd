@@ -1347,6 +1347,11 @@ export class CognitoIdp extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html
    */
   public createUserPool() {
@@ -1959,6 +1964,10 @@ export class CognitoIdp extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1970,6 +1979,9 @@ export class CognitoIdp extends PolicyStatement {
    * Removes the specified tags from an Amazon Cognito user pool.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UntagResource.html
    */
@@ -2055,6 +2067,10 @@ export class CognitoIdp extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html
    */
   public updateUserPool() {
@@ -2121,7 +2137,7 @@ export class CognitoIdp extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onUserpool(userPoolId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cognito-idp:${Region}:${Account}:userpool/${UserPoolId}';

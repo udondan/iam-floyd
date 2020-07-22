@@ -528,6 +528,10 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateDocumentClassifier.html
    */
   public createDocumentClassifier() {
@@ -540,6 +544,10 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEndpoint.html
    */
   public createEndpoint() {
@@ -551,6 +559,10 @@ export class Comprehend extends PolicyStatement {
    * Creates an entity recognizer using submitted files.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEntityRecognizer.html
    */
@@ -1032,6 +1044,10 @@ export class Comprehend extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_TagResource.html
    */
   public tagResource() {
@@ -1043,6 +1059,9 @@ export class Comprehend extends PolicyStatement {
    * Untags a resource with given key
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_UntagResource.html
    */
@@ -1072,7 +1091,7 @@ export class Comprehend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDocumentClassifier(documentClassifierName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier/${DocumentClassifierName}';
@@ -1092,7 +1111,7 @@ export class Comprehend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEntityRecognizer(entityRecognizerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer/${EntityRecognizerName}';
@@ -1112,7 +1131,7 @@ export class Comprehend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDocumentClassifierEndpoint(documentClassifierEndpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:document-classifier-endpoint/${DocumentClassifierEndpointName}';
@@ -1132,7 +1151,7 @@ export class Comprehend extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEntityRecognizerEndpoint(entityRecognizerEndpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:comprehend:${Region}:${Account}:entity-recognizer-endpoint/${EntityRecognizerEndpointName}';

@@ -657,9 +657,9 @@ export class Elasticloadbalancing extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onLoadbalancer(loadBalancerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/${LoadBalancerName}';

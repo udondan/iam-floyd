@@ -451,7 +451,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateMember.html
@@ -466,7 +466,7 @@ export class Managedblockchain extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_UpdateNode.html

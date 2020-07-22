@@ -175,7 +175,11 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - ec2:DescribeSecurityGroups
    * - ec2:DescribeSubnets
    * - ec2:DescribeVpcs
@@ -353,6 +357,10 @@ export class Kafka extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource
    */
   public tagResource() {
@@ -364,6 +372,9 @@ export class Kafka extends PolicyStatement {
    * Grants permission to remove tags from a MSK resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource
    */
@@ -442,7 +453,7 @@ export class Kafka extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCluster(clusterName: string, uUID: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kafka:${Region}:${Account}:cluster/${ClusterName}/${UUID}';

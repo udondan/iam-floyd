@@ -583,7 +583,7 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - sso:DescribePermissionsPolicies
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
@@ -682,7 +682,7 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - sso:GetApplicationInstance
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
@@ -697,7 +697,7 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - sso:GetApplicationTemplate
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
@@ -760,7 +760,7 @@ export class Sso extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - sso:GetProfile
    *
    * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample

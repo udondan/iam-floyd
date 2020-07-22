@@ -586,6 +586,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutInsightRule.html
    */
   public putInsightRule() {
@@ -598,6 +602,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html
    */
   public putMetricAlarm() {
@@ -609,6 +617,9 @@ export class Cloudwatch extends PolicyStatement {
    * Publishes metric data points to Amazon CloudWatch
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cloudwatch:namespace
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html
    */
@@ -634,6 +645,10 @@ export class Cloudwatch extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -645,6 +660,9 @@ export class Cloudwatch extends PolicyStatement {
    * This action removes a tag from an Amazon CloudWatch resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html
    */
@@ -664,7 +682,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAlarm(alarmName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:alarm:${AlarmName}';
@@ -703,7 +721,7 @@ export class Cloudwatch extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInsightRule(insightRuleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudwatch:${Region}:${Account}:insight-rule/${InsightRuleName}';

@@ -789,6 +789,10 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolio.html
    */
   public createPortfolio() {
@@ -812,6 +816,10 @@ export class Servicecatalog extends PolicyStatement {
    * Creates a product and that product's first provisioning artifact
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html
    */
@@ -1100,6 +1108,11 @@ export class Servicecatalog extends PolicyStatement {
    * Describes a record and lists any outputs
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - servicecatalog:accountLevel
+   * - servicecatalog:roleLevel
+   * - servicecatalog:userLevel
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html
    */
@@ -1413,6 +1426,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - servicecatalog:accountLevel
+   * - servicecatalog:roleLevel
+   * - servicecatalog:userLevel
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListRecordHistory.html
    */
   public listRecordHistory() {
@@ -1509,6 +1527,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - servicecatalog:accountLevel
+   * - servicecatalog:roleLevel
+   * - servicecatalog:userLevel
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ScanProvisionedProducts.html
    */
   public scanProvisionedProducts() {
@@ -1545,6 +1568,11 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - servicecatalog:accountLevel
+   * - servicecatalog:roleLevel
+   * - servicecatalog:userLevel
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProvisionedProducts.html
    */
   public searchProvisionedProducts() {
@@ -1556,6 +1584,11 @@ export class Servicecatalog extends PolicyStatement {
    * Terminates an existing provisioned product
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - servicecatalog:accountLevel
+   * - servicecatalog:roleLevel
+   * - servicecatalog:userLevel
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html
    */
@@ -1581,6 +1614,10 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdatePortfolio.html
    */
   public updatePortfolio() {
@@ -1593,6 +1630,10 @@ export class Servicecatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProduct.html
    */
   public updateProduct() {
@@ -1604,6 +1645,11 @@ export class Servicecatalog extends PolicyStatement {
    * Updates an existing provisioned product
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - servicecatalog:accountLevel
+   * - servicecatalog:roleLevel
+   * - servicecatalog:userLevel
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProduct.html
    */
@@ -1671,7 +1717,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPortfolio(portfolioId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:catalog:${Region}:${Account}:portfolio/${PortfolioId}';
@@ -1693,7 +1739,7 @@ export class Servicecatalog extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onProduct(productId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:catalog:${Region}:${Account}:product/${ProductId}';

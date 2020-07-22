@@ -1192,7 +1192,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ds:ConnectDirectory
    *
    * https://docs.aws.amazon.com/chime/latest/ag/active_directory.html
@@ -1263,7 +1263,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:CreateBucket
    * - s3:ListAllMyBuckets
    *
@@ -1278,6 +1278,10 @@ export class Chime extends PolicyStatement {
    * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with no initial attendees
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeeting.html
    */
@@ -1419,7 +1423,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:DeleteBucket
    *
    * https://docs.aws.amazon.com/chime/latest/ag/control-access.html
@@ -1762,7 +1766,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetBucketAcl
    * - s3:GetBucketLocation
    * - s3:GetBucketLogging
@@ -2179,7 +2183,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:ListAllMyBuckets
    * - s3:ListBucket
    *
@@ -2463,7 +2467,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - logs:CreateLogDelivery
    * - logs:CreateLogGroup
    * - logs:DeleteLogDelivery
@@ -2705,6 +2709,11 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagMeeting.html
    */
   public tagMeeting() {
@@ -2716,6 +2725,11 @@ export class Chime extends PolicyStatement {
    * Grants permission to apply the specified tags to the specified Amazon Chime SDK meeting resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/chime/latest/APIReference/API_TagResource.html
    */
@@ -2835,7 +2849,7 @@ export class Chime extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:CreateBucket
    * - s3:DeleteBucket
    * - s3:ListAllMyBuckets
@@ -3007,7 +3021,7 @@ export class Chime extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMeeting(meetingId: string, accountId?: string, partition?: string) {
     var arn = 'arn:${Partition}:chime::${AccountId}:meeting/${MeetingId}';

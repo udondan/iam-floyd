@@ -357,6 +357,10 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html
    */
   public createEventBus() {
@@ -633,6 +637,15 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - events:detail.userIdentity.principalId
+   * - events:detail-type
+   * - events:source
+   * - events:detail.service
+   * - events:detail.eventTypeCode
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutRule.html
    */
   public putRule() {
@@ -644,6 +657,9 @@ export class Events extends PolicyStatement {
    * Adds target(s) to a rule. Targets are the resources that can be invoked when a rule is triggered.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - events:TargetArn
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html
    */
@@ -681,6 +697,10 @@ export class Events extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -704,6 +724,9 @@ export class Events extends PolicyStatement {
    * This action removes a tag from an Amazon EventBridge resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html
    */
@@ -740,7 +763,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEventBus(eventBusName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:events:${Region}:${Account}:event-bus/${EventBusName}';
@@ -762,7 +785,7 @@ export class Events extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:events:${Region}:${Account}:rule/${RuleName}';

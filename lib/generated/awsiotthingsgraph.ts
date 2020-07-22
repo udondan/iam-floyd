@@ -330,7 +330,7 @@ export class Iotthingsgraph extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iot:DescribeThing
    * - iot:DescribeThingGroup
    *
@@ -357,6 +357,10 @@ export class Iotthingsgraph extends PolicyStatement {
    * Creates an instance of a system with specified configurations and Things.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_CreateSystemInstance.html
    */
@@ -478,7 +482,7 @@ export class Iotthingsgraph extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iot:DescribeThing
    * - iot:DescribeThingGroup
    *
@@ -686,6 +690,10 @@ export class Iotthingsgraph extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_TagResource.html
    */
   public tagResource() {
@@ -709,6 +717,9 @@ export class Iotthingsgraph extends PolicyStatement {
    * Untag a specified resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/thingsgraph/latest/APIReference/{APIReferenceDocPage}API_UntagResource.html
    */
@@ -802,7 +813,7 @@ export class Iotthingsgraph extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSystemInstance(namespacePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotthingsgraph:${Region}:${Account}:Deployment/${NamespacePath}';

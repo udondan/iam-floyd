@@ -165,6 +165,10 @@ export class Acm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html
    */
   public addTagsToCertificate() {
@@ -225,6 +229,10 @@ export class Acm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html
    */
   public importCertificate() {
@@ -261,6 +269,10 @@ export class Acm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html
    */
   public removeTagsFromCertificate() {
@@ -284,6 +296,10 @@ export class Acm extends PolicyStatement {
    * Requests a public or private certificate.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html
    */
@@ -327,7 +343,7 @@ export class Acm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCertificate(certificateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:acm:${Region}:${Account}:certificate/${CertificateId}';

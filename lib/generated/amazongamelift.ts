@@ -738,6 +738,10 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html
    */
   public createAlias() {
@@ -750,6 +754,10 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html
    */
   public createBuild() {
@@ -761,6 +769,10 @@ export class Gamelift extends PolicyStatement {
    * Creates a new fleet of computing resources to run your game servers.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html
    */
@@ -786,6 +798,10 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html
    */
   public createGameSessionQueue() {
@@ -798,6 +814,10 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingConfiguration.html
    */
   public createMatchmakingConfiguration() {
@@ -809,6 +829,10 @@ export class Gamelift extends PolicyStatement {
    * Creates a new matchmaking rule set for FlexMatch.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingRuleSet.html
    */
@@ -845,6 +869,10 @@ export class Gamelift extends PolicyStatement {
    * Creates a new Realtime Servers script.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateScript.html
    */
@@ -1482,6 +1510,10 @@ export class Gamelift extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html
    */
   public tagResource() {
@@ -1493,6 +1525,9 @@ export class Gamelift extends PolicyStatement {
    * Untagging GameLift Resources
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html
    */
@@ -1643,7 +1678,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAlias(aliasId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}::alias/${AliasId}';
@@ -1664,7 +1699,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBuild(buildId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}';
@@ -1686,7 +1721,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onScript(scriptId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}';
@@ -1708,7 +1743,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:fleet/${FleetId}';
@@ -1730,7 +1765,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGameSessionQueue(gameSessionQueueName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:gamesessionqueue/${GameSessionQueueName}';
@@ -1752,7 +1787,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMatchmakingConfiguration(matchmakingConfigurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:matchmakingconfiguration/${MatchmakingConfigurationName}';
@@ -1774,7 +1809,7 @@ export class Gamelift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMatchmakingRuleSet(matchmakingRuleSetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:matchmakingruleset/${MatchmakingRuleSetName}';

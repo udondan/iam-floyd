@@ -120,6 +120,10 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html
    */
   public dELETE() {
@@ -144,6 +148,10 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html
    */
   public pATCH() {
@@ -156,6 +164,10 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html
    */
   public pOST() {
@@ -167,6 +179,10 @@ export class Apigateway extends PolicyStatement {
    * Used to update resources (and, although not recommended, can be used to create child resources)
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html
    */
@@ -207,7 +223,7 @@ export class Apigateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onApigatewayGeneral(apiGatewayResourcePath: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}';

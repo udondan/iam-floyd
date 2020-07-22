@@ -337,7 +337,7 @@ export class Dax extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - dax:CreateParameterGroup
    * - dax:CreateSubnetGroup
    * - ec2:CreateNetworkInterface
@@ -408,6 +408,9 @@ export class Dax extends PolicyStatement {
    * The DeleteItem action deletes a single item in a table by primary key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - dax:EnclosingOperation
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
@@ -517,6 +520,9 @@ export class Dax extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - dax:EnclosingOperation
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
   public getItem() {
@@ -552,6 +558,9 @@ export class Dax extends PolicyStatement {
    * The PutItem action creates a new item, or replaces an old item with a new item.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - dax:EnclosingOperation
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
@@ -636,6 +645,9 @@ export class Dax extends PolicyStatement {
    * The UpdateItem action edits an existing item's attributes, or adds a new item to the table if it does not already exist.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - dax:EnclosingOperation
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */

@@ -191,6 +191,11 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-connections:ProviderType
+   *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
    */
   public createConnection() {
@@ -227,7 +232,10 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - codestar-connections:ProviderType
+   *
+   * Dependent actions:
    * - codestar-connections:StartOAuthHandshake
    */
   public getIndividualAccessToken() {
@@ -239,6 +247,9 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - codestar-connections:ProviderType
    */
   public getInstallationUrl() {
     this.add('codestar-connections:GetInstallationUrl');
@@ -249,6 +260,9 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to list Connection resources
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - codestar-connections:ProviderTypeFilter
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
    */
@@ -262,7 +276,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - codestar-connections:GetIndividualAccessToken
    * - codestar-connections:StartOAuthHandshake
    */
@@ -287,6 +301,9 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to pass a Connection resource to an AWS service that accepts a Connection ARN as input, such as codepipeline:CreatePipeline
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - codestar-connections:PassedToService
    */
   public passConnection() {
     this.add('codestar-connections:PassConnection');
@@ -297,6 +314,9 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - codestar-connections:ProviderType
    */
   public startOAuthHandshake() {
     this.add('codestar-connections:StartOAuthHandshake');
@@ -307,6 +327,10 @@ export class CodestarConnections extends PolicyStatement {
    * Adds to or modifies the tags of the given resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
    */
@@ -320,6 +344,10 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
    */
   public untagResource() {
@@ -332,7 +360,10 @@ export class CodestarConnections extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - codestar-connections:InstallationId
+   *
+   * Dependent actions:
    * - codestar-connections:GetIndividualAccessToken
    * - codestar-connections:GetInstallationUrl
    * - codestar-connections:ListInstallationTargets
@@ -347,6 +378,11 @@ export class CodestarConnections extends PolicyStatement {
    * Grants permission to use a Connection resource to call provider actions
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - codestar-connections:FullRepositoryId
+   * - codestar-connections:ProviderAction
+   * - codestar-connections:ProviderPermissionsRequired
    */
   public useConnection() {
     this.add('codestar-connections:UseConnection');

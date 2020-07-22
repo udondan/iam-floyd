@@ -527,6 +527,10 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-channel-scratch.html
    */
   public createChannel() {
@@ -538,6 +542,10 @@ export class Medialive extends PolicyStatement {
    * Grants permission to create an input
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-input.html
    */
@@ -551,6 +559,10 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/medialive/latest/ug/working-with-input-security-groups.html
    */
   public createInputSecurityGroup() {
@@ -563,6 +575,10 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/medialive/latest/ug/creating-multiplex.html
    */
   public createMultiplex() {
@@ -574,6 +590,10 @@ export class Medialive extends PolicyStatement {
    * Grants permission to create tags for channels, inputs, input security groups, multiplexes, and reservations.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
@@ -646,6 +666,9 @@ export class Medialive extends PolicyStatement {
    * Grants permission to delete tags from channels, inputs, input security groups, multiplexes, and reservations.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    */
@@ -851,6 +874,10 @@ export class Medialive extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/medialive/latest/ug/purchasing-reservations.html
    */
   public purchaseOffering() {
@@ -1001,7 +1028,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onChannel(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:channel:${ResourceName}';
@@ -1023,7 +1050,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInput(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:input:${ResourceName}';
@@ -1064,7 +1091,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInputSecurityGroup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:inputSecurityGroup:${ResourceName}';
@@ -1086,7 +1113,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMultiplex(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:multiplex:${ResourceName}';
@@ -1108,7 +1135,7 @@ export class Medialive extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onReservation(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:medialive:${Region}:${Account}:reservation:${ResourceName}';

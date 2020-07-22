@@ -216,6 +216,11 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html
    */
   public createIdentityPool() {
@@ -360,6 +365,9 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -408,6 +416,11 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -444,6 +457,10 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UntagResource.html
    */
   public untagResource() {
@@ -474,7 +491,7 @@ export class CognitoIdentity extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cognito-identity:${Region}:${Account}:identitypool/${IdentityPoolId}';

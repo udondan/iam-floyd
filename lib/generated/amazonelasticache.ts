@@ -299,7 +299,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:AuthorizeSecurityGroupIngress
    *
    * https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html
@@ -314,7 +314,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:DeleteObject
    * - s3:GetBucketAcl
    * - s3:PutObject
@@ -331,7 +331,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:DeleteNetworkInterface
    * - ec2:DescribeNetworkInterfaces
@@ -387,7 +387,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:DeleteNetworkInterface
    * - ec2:DescribeNetworkInterfaces
@@ -419,7 +419,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:DeleteNetworkInterface
    * - ec2:DescribeNetworkInterfaces
@@ -654,7 +654,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:DeleteNetworkInterface
    * - ec2:DescribeNetworkInterfaces
@@ -745,7 +745,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:DeleteNetworkInterface
    * - ec2:DescribeNetworkInterfaces
@@ -824,7 +824,7 @@ export class Elasticache extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:CreateNetworkInterface
    * - ec2:DeleteNetworkInterface
    * - ec2:DescribeNetworkInterfaces

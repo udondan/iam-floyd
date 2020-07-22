@@ -1727,6 +1727,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointArn
+   * - s3:DataAccessPointAccount
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_AbortMultipartUpload.html
    */
   public abortMultipartUpload() {
@@ -1738,6 +1747,33 @@ export class S3 extends PolicyStatement {
    * Grants permission to allow circumvention of governance-mode object retention settings
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:RequestObjectTag/<key>
+   * - s3:RequestObjectTagKeys
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-copy-source
+   * - s3:x-amz-grant-full-control
+   * - s3:x-amz-grant-read
+   * - s3:x-amz-grant-read-acp
+   * - s3:x-amz-grant-write
+   * - s3:x-amz-grant-write-acp
+   * - s3:x-amz-metadata-directive
+   * - s3:x-amz-server-side-encryption
+   * - s3:x-amz-server-side-encryption-aws-kms-key-id
+   * - s3:x-amz-storage-class
+   * - s3:x-amz-website-redirect-location
+   * - s3:object-lock-mode
+   * - s3:object-lock-retain-until-date
+   * - s3:object-lock-remaining-retention-days
+   * - s3:object-lock-legal-hold
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-bypass
    */
@@ -1751,6 +1787,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:locationconstraint
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html
    */
   public createAccessPoint() {
@@ -1762,6 +1809,19 @@ export class S3 extends PolicyStatement {
    * Grants permission to create a new bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:locationconstraint
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-grant-full-control
+   * - s3:x-amz-grant-read
+   * - s3:x-amz-grant-read-acp
+   * - s3:x-amz-grant-write
+   * - s3:x-amz-grant-write-acp
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
    */
@@ -1775,6 +1835,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:RequestJobPriority
+   * - s3:RequestJobOperation
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html
    */
   public createJob() {
@@ -1786,6 +1856,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to delete the access point named in the URI
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointArn
+   * - s3:DataAccessPointAccount
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html
    */
@@ -1799,6 +1878,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointArn
+   * - s3:DataAccessPointAccount
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html
    */
   public deleteAccessPointPolicy() {
@@ -1810,6 +1898,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to delete the bucket named in the URI
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html
    */
@@ -1823,6 +1917,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html
    */
   public deleteBucketPolicy() {
@@ -1834,6 +1934,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to remove the website configuration for a bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html
    */
@@ -1847,6 +1953,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:ExistingJobPriority
+   * - s3:ExistingJobOperation
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html
    */
   public deleteJobTagging() {
@@ -1858,6 +1972,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to remove the null version of an object and insert a delete marker, which becomes the current version of the object
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
@@ -1871,6 +1994,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
   public deleteObjectTagging() {
@@ -1882,6 +2015,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to remove a specific version of an object
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html
    */
@@ -1895,6 +2038,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html
    */
   public deleteObjectVersionTagging() {
@@ -1906,6 +2060,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve the configuration parameters and status for a batch operations job.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html
    */
@@ -1919,6 +2079,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAccelerateConfiguration.html
    */
   public getAccelerateConfiguration() {
@@ -1930,6 +2096,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to return configuration information about the specified access point
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html
    */
@@ -1943,6 +2118,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html
    */
   public getAccessPointPolicy() {
@@ -1954,6 +2138,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the policy status for a specific access point policy
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyStatus.html
    */
@@ -1967,6 +2160,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html
    */
   public getAccountPublicAccessBlock() {
@@ -1978,6 +2177,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to get an analytics configuration from an Amazon S3 bucket, identified by the analytics configuration ID
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html
    */
@@ -1991,6 +2196,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html
    */
   public getBucketAcl() {
@@ -2002,6 +2213,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the CORS configuration information set for an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html
    */
@@ -2027,6 +2244,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLogging.html
    */
   public getBucketLogging() {
@@ -2038,6 +2261,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to get the notification configuration of an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotification.html
    */
@@ -2051,6 +2280,11 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html
    */
   public getBucketObjectLockConfiguration() {
@@ -2062,6 +2296,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the policy of the specified bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html
    */
@@ -2075,6 +2315,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicyStatus.html
    */
   public getBucketPolicyStatus() {
@@ -2086,6 +2332,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve the PublicAccessBlock configuration for an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html
    */
@@ -2099,6 +2351,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketRequestPayment.html
    */
   public getBucketRequestPayment() {
@@ -2110,6 +2368,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the tag set associated with an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html
    */
@@ -2123,6 +2387,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html
    */
   public getBucketVersioning() {
@@ -2134,6 +2404,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the website configuration for an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketWebsite.html
    */
@@ -2147,6 +2423,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html
    */
   public getEncryptionConfiguration() {
@@ -2158,6 +2440,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to return an inventory configuration from an Amazon S3 bucket, identified by the inventory configuration ID
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html
    */
@@ -2171,6 +2459,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html
    */
   public getJobTagging() {
@@ -2182,6 +2476,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the lifecycle configuration information set on an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html
    */
@@ -2195,6 +2495,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetricsConfiguration.html
    */
   public getMetricsConfiguration() {
@@ -2206,6 +2512,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve objects from Amazon S3
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
@@ -2219,6 +2535,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
    */
   public getObjectAcl() {
@@ -2230,6 +2556,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to get an object's current Legal Hold status
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html
    */
@@ -2243,6 +2578,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html
    */
   public getObjectRetention() {
@@ -2254,6 +2598,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the tag set of an object
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html
    */
@@ -2267,6 +2621,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
    */
   public getObjectTorrent() {
@@ -2278,6 +2638,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to retrieve a specific version of an object
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html
    */
@@ -2291,6 +2662,17 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html
    */
   public getObjectVersionAcl() {
@@ -2302,6 +2684,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to replicate both unencrypted objects and objects encrypted with SSE-S3 or SSE-KMS
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    */
   public getObjectVersionForReplication() {
     this.add('s3:GetObjectVersionForReplication');
@@ -2312,6 +2700,17 @@ export class S3 extends PolicyStatement {
    * Grants permission to return the tag set for a specific version of the object
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
    */
   public getObjectVersionTagging() {
     this.add('s3:GetObjectVersionTagging');
@@ -2322,6 +2721,13 @@ export class S3 extends PolicyStatement {
    * Grants permission to get Torrent files about a different version using the versionId subresource
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTorrent.html
    */
@@ -2335,6 +2741,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html
    */
   public getReplicationConfiguration() {
@@ -2346,6 +2758,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to list access points
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html
    */
@@ -2359,6 +2777,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html
    */
   public listAllMyBuckets() {
@@ -2370,6 +2794,18 @@ export class S3 extends PolicyStatement {
    * Grants permission to list some or all of the objects in an Amazon S3 bucket (up to 1000)
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:delimiter
+   * - s3:max-keys
+   * - s3:prefix
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
    */
@@ -2383,6 +2819,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListMultipartUploads.html
    */
   public listBucketMultipartUploads() {
@@ -2394,6 +2839,18 @@ export class S3 extends PolicyStatement {
    * Grants permission to list metadata about all the versions of objects in an Amazon S3 bucket
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:delimiter
+   * - s3:max-keys
+   * - s3:prefix
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectVersions.html
    */
@@ -2407,6 +2864,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html
    */
   public listJobs() {
@@ -2418,6 +2881,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to list the parts that have been uploaded for a specific multipart upload
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
    */
@@ -2431,6 +2903,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html#repl-ownership-add-role-permission
    */
   public objectOwnerOverrideToBucketOwner() {
@@ -2442,6 +2920,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to use the accelerate subresource to set the Transfer Acceleration state of an existing S3 bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html
    */
@@ -2455,6 +2939,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html
    */
   public putAccessPointPolicy() {
@@ -2466,6 +2959,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to create or modify the PublicAccessBlock configuration for an AWS account
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html
    */
@@ -2479,6 +2978,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAnalyticsConfiguration.html
    */
   public putAnalyticsConfiguration() {
@@ -2490,6 +2995,18 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the permissions on an existing bucket using access control lists (ACLs)
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-grant-full-control
+   * - s3:x-amz-grant-read
+   * - s3:x-amz-grant-read-acp
+   * - s3:x-amz-grant-write
+   * - s3:x-amz-grant-write-acp
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html
    */
@@ -2503,6 +3020,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html
    */
   public putBucketCORS() {
@@ -2514,6 +3037,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the logging parameters for an Amazon S3 bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html
    */
@@ -2527,6 +3056,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html
    */
   public putBucketNotification() {
@@ -2538,6 +3073,11 @@ export class S3 extends PolicyStatement {
    * Grants permission to put Object Lock configuration on a specific bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html
    */
@@ -2551,6 +3091,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
    */
   public putBucketPolicy() {
@@ -2562,6 +3108,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to create or modify the PublicAccessBlock configuration for a specific Amazon S3 bucket
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutPublicAccessBlock.html
    */
@@ -2575,6 +3127,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketRequestPayment.html
    */
   public putBucketRequestPayment() {
@@ -2586,6 +3144,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to add a set of tags to an existing Amazon S3 bucket
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html
    */
@@ -2599,6 +3163,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html
    */
   public putBucketVersioning() {
@@ -2610,6 +3180,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the configuration of the website that is specified in the website subresource
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html
    */
@@ -2623,6 +3199,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html
    */
   public putEncryptionConfiguration() {
@@ -2634,6 +3216,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to add an inventory configuration to the bucket, identified by the inventory ID
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketInventoryConfiguration.html
    */
@@ -2647,6 +3235,16 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:ExistingJobPriority
+   * - s3:ExistingJobOperation
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html
    */
   public putJobTagging() {
@@ -2658,6 +3256,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to create a new lifecycle configuration for the bucket or replace an existing lifecycle configuration
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html
    */
@@ -2671,6 +3275,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html
    */
   public putMetricsConfiguration() {
@@ -2682,6 +3292,33 @@ export class S3 extends PolicyStatement {
    * Grants permission to add an object to a bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:RequestObjectTag/<key>
+   * - s3:RequestObjectTagKeys
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-copy-source
+   * - s3:x-amz-grant-full-control
+   * - s3:x-amz-grant-read
+   * - s3:x-amz-grant-read-acp
+   * - s3:x-amz-grant-write
+   * - s3:x-amz-grant-write-acp
+   * - s3:x-amz-metadata-directive
+   * - s3:x-amz-server-side-encryption
+   * - s3:x-amz-server-side-encryption-aws-kms-key-id
+   * - s3:x-amz-storage-class
+   * - s3:x-amz-website-redirect-location
+   * - s3:object-lock-mode
+   * - s3:object-lock-retain-until-date
+   * - s3:object-lock-remaining-retention-days
+   * - s3:object-lock-legal-hold
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
    */
@@ -2695,6 +3332,23 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-grant-full-control
+   * - s3:x-amz-grant-read
+   * - s3:x-amz-grant-read-acp
+   * - s3:x-amz-grant-write
+   * - s3:x-amz-grant-write-acp
+   * - s3:x-amz-storage-class
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
   public putObjectAcl() {
@@ -2706,6 +3360,16 @@ export class S3 extends PolicyStatement {
    * Grants permission to apply a Legal Hold configuration to the specified object
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:object-lock-legal-hold
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html
    */
@@ -2719,6 +3383,18 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:object-lock-mode
+   * - s3:object-lock-retain-until-date
+   * - s3:object-lock-remaining-retention-days
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html
    */
   public putObjectRetention() {
@@ -2730,6 +3406,18 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the supplied tag-set to an object that already exists in a bucket
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:RequestObjectTag/<key>
+   * - s3:RequestObjectTagKeys
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
@@ -2743,6 +3431,24 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-acl
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-grant-full-control
+   * - s3:x-amz-grant-read
+   * - s3:x-amz-grant-read-acp
+   * - s3:x-amz-grant-write
+   * - s3:x-amz-grant-write-acp
+   * - s3:x-amz-storage-class
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html
    */
   public putObjectVersionAcl() {
@@ -2754,6 +3460,19 @@ export class S3 extends PolicyStatement {
    * Grants permission to set the supplied tag-set for a specific version of an object
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:ExistingObjectTag/<key>
+   * - s3:RequestObjectTag/<key>
+   * - s3:RequestObjectTagKeys
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:versionid
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html
    */
@@ -2767,6 +3486,12 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html
    */
   public putReplicationConfiguration() {
@@ -2778,6 +3503,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to replicate delete markers to the destination bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
@@ -2791,6 +3522,14 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:x-amz-server-side-encryption
+   * - s3:x-amz-server-side-encryption-aws-kms-key-id
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
   public replicateObject() {
@@ -2802,6 +3541,12 @@ export class S3 extends PolicyStatement {
    * Grants permission to replicate object tags to the destination bucket
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/setting-repl-config-perm-overview.html
    */
@@ -2815,6 +3560,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:DataAccessPointAccount
+   * - s3:DataAccessPointArn
+   * - s3:AccessPointNetworkOrigin
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html
    */
   public restoreObject() {
@@ -2827,6 +3581,15 @@ export class S3 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:RequestJobPriority
+   * - s3:ExistingJobPriority
+   * - s3:ExistingJobOperation
+   *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html
    */
   public updateJobPriority() {
@@ -2838,6 +3601,15 @@ export class S3 extends PolicyStatement {
    * Grants permission to update the status for the specified job
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - s3:authType
+   * - s3:signatureAge
+   * - s3:signatureversion
+   * - s3:x-amz-content-sha256
+   * - s3:ExistingJobPriority
+   * - s3:ExistingJobOperation
+   * - s3:JobSuspendedCause
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html
    */

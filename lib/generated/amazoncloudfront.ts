@@ -441,6 +441,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistributionWithTags.html
    */
   public createDistributionWithTags() {
@@ -512,6 +516,10 @@ export class Cloudfront extends PolicyStatement {
    * This action creates a new RTMP distribution with tags (POST /2019-03-26/streaming-distribution?WithTags).
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistributionWithTags.html
    */
@@ -871,6 +879,10 @@ export class Cloudfront extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_TagResource.html
    */
   public tagResource() {
@@ -882,6 +894,9 @@ export class Cloudfront extends PolicyStatement {
    * Remove tags from a CloudFront resource (POST /2019-03-26/tagging?Operation=Untag?Resource=<RESOURCE>).
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UntagResource.html
    */
@@ -972,7 +987,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDistribution(distributionId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}';
@@ -992,7 +1007,7 @@ export class Cloudfront extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStreamingDistribution(distributionId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}';

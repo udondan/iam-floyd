@@ -108,6 +108,10 @@ export class Dlm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html
    */
   public createLifecyclePolicy() {
@@ -210,7 +214,7 @@ export class Dlm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPolicy(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}';

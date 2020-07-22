@@ -688,6 +688,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_BatchCreateVariable
    */
   public batchCreateVariable() {
@@ -712,6 +716,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateDetectorVersion
    */
   public createDetectorVersion() {
@@ -723,6 +731,10 @@ export class Frauddetector extends PolicyStatement {
    * Creates a model using the specified model type.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModel
    */
@@ -736,6 +748,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion
    */
   public createModelVersion() {
@@ -748,6 +764,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateRule.html
    */
   public createRule() {
@@ -759,6 +779,10 @@ export class Frauddetector extends PolicyStatement {
    * Creates a variable.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateVariable.html
    */
@@ -1024,6 +1048,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutDetector.html
    */
   public putDetector() {
@@ -1035,6 +1063,10 @@ export class Frauddetector extends PolicyStatement {
    * Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutEntityType.html
    */
@@ -1048,6 +1080,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutEventType.html
    */
   public putEventType() {
@@ -1059,6 +1095,10 @@ export class Frauddetector extends PolicyStatement {
    * Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutExternalModel.html
    */
@@ -1084,6 +1124,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutLabel.html
    */
   public putLabel() {
@@ -1095,6 +1139,10 @@ export class Frauddetector extends PolicyStatement {
    * Creates or updates an outcome.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_PutOutcome.html
    */
@@ -1108,6 +1156,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_TagResource.html
    */
   public tagResource() {
@@ -1119,6 +1171,10 @@ export class Frauddetector extends PolicyStatement {
    * Removes tags from a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UntagResource.html
    */
@@ -1180,6 +1236,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateModelVersion
    */
   public updateModelVersion() {
@@ -1216,6 +1276,10 @@ export class Frauddetector extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/frauddetector/latest/api/API_UpdateRuleVersion.html
    */
   public updateRuleVersion() {
@@ -1244,7 +1308,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDetector(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:detector/${ResourcePath}';
@@ -1264,7 +1328,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDetectorVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:detector-version/${ResourcePath}';
@@ -1284,7 +1348,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEntityType(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:entity-type/${ResourcePath}';
@@ -1304,7 +1368,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onExternalModel(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:external-model/${ResourcePath}';
@@ -1324,7 +1388,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEventType(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:event-type/${ResourcePath}';
@@ -1344,7 +1408,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onLabel(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:label/${ResourcePath}';
@@ -1364,7 +1428,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onModel(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:model/${ResourcePath}';
@@ -1384,7 +1448,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onModelVersion(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:model-version/${ResourcePath}';
@@ -1404,7 +1468,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onOutcome(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:outcome/${ResourcePath}';
@@ -1424,7 +1488,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRule(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:rule/${ResourcePath}';
@@ -1444,7 +1508,7 @@ export class Frauddetector extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVariable(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:frauddetector:${Region}:${Account}:variable/${ResourcePath}';

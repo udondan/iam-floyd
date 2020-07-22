@@ -360,6 +360,10 @@ export class Mediaconvert extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs-id.html
    */
   public createJobTemplate() {
@@ -372,6 +376,10 @@ export class Mediaconvert extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/presets.html
    */
   public createPreset() {
@@ -383,6 +391,10 @@ export class Mediaconvert extends PolicyStatement {
    * Grants permission to create an AWS Elemental MediaConvert job queue
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/queues.html
    */
@@ -564,6 +576,10 @@ export class Mediaconvert extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
    */
   public tagResource() {
@@ -575,6 +591,9 @@ export class Mediaconvert extends PolicyStatement {
    * Grants permission to remove tags from a MediaConvert queue, preset, or job template
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags-arn.html
    */
@@ -649,7 +668,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onQueue(queueName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:queues/${QueueName}';
@@ -671,7 +690,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPreset(presetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:presets/${PresetName}';
@@ -693,7 +712,7 @@ export class Mediaconvert extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onJobTemplate(jobTemplateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediaconvert:${Region}:${Account}:jobTemplates/${JobTemplateName}';

@@ -207,6 +207,10 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost
    */
   public createAsset() {
@@ -219,6 +223,10 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationspost
    */
   public createPackagingConfiguration() {
@@ -230,6 +238,10 @@ export class MediapackageVod extends PolicyStatement {
    * Grants permission to create a packaging group in AWS Elemental MediaPackage
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupspost
    */
@@ -363,6 +375,10 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
   public tagResource() {
@@ -374,6 +390,9 @@ export class MediapackageVod extends PolicyStatement {
    * Grants permission to delete tags from a PackagingGroup, PackagingConfiguration, or Asset.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
@@ -393,7 +412,7 @@ export class MediapackageVod extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}';
@@ -415,7 +434,7 @@ export class MediapackageVod extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}';
@@ -437,7 +456,7 @@ export class MediapackageVod extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}';

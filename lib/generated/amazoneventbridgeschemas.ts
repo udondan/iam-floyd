@@ -670,6 +670,10 @@ export class Schemas extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#TagResource
    */
   public tagResource() {
@@ -681,6 +685,9 @@ export class Schemas extends PolicyStatement {
    * This action removes a tag from on a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#UntagResource
    */
@@ -736,7 +743,7 @@ export class Schemas extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDiscoverer(discovererId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}';
@@ -758,7 +765,7 @@ export class Schemas extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}';
@@ -781,7 +788,7 @@ export class Schemas extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSchema(registryName: string, schemaName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}';

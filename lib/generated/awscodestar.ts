@@ -255,6 +255,10 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html
    */
   public createProject() {
@@ -429,6 +433,10 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_TagProject.html
    */
   public tagProject() {
@@ -440,6 +448,9 @@ export class Codestar extends PolicyStatement {
    * Removes tags from a project in CodeStar.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UntagProject.html
    */
@@ -495,7 +506,7 @@ export class Codestar extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codestar:${Region}:${Account}:project/${ProjectId}';
@@ -515,7 +526,7 @@ export class Codestar extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - iam:ResourceTag/${TagKey}
+   * - iam:ResourceTag/${TagKey}
    */
   public onUser(userNameWithPath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam:${Region}:${Account}:user/${UserNameWithPath}';

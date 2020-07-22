@@ -728,6 +728,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateHostedConnection.html
    */
   public allocateHostedConnection() {
@@ -739,6 +743,10 @@ export class Directconnect extends PolicyStatement {
    * Provisions a private virtual interface to be owned by a different customer.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html
    */
@@ -752,6 +760,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html
    */
   public allocatePublicVirtualInterface() {
@@ -763,6 +775,10 @@ export class Directconnect extends PolicyStatement {
    * Provisions a transit virtual interface to be owned by a different customer.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateTransitVirtualInterface.html
    */
@@ -872,6 +888,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html
    */
   public createConnection() {
@@ -920,6 +940,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateInterconnect.html
    */
   public createInterconnect() {
@@ -931,6 +955,10 @@ export class Directconnect extends PolicyStatement {
    * Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the customer network and a specific AWS Direct Connect location.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateLag.html
    */
@@ -944,6 +972,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html
    */
   public createPrivateVirtualInterface() {
@@ -956,6 +988,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePublicVirtualInterface.html
    */
   public createPublicVirtualInterface() {
@@ -967,6 +1003,10 @@ export class Directconnect extends PolicyStatement {
    * Creates a new transit virtual interface.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateTransitVirtualInterface.html
    */
@@ -1316,6 +1356,10 @@ export class Directconnect extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1327,6 +1371,9 @@ export class Directconnect extends PolicyStatement {
    * Removes one or more tags from the specified AWS Direct Connect resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UntagResource.html
    */
@@ -1382,7 +1429,7 @@ export class Directconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDxcon(connectionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dxcon/${ConnectionId}';
@@ -1404,7 +1451,7 @@ export class Directconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDxlag(lagId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dxlag/${LagId}';
@@ -1426,7 +1473,7 @@ export class Directconnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDxvif(virtualInterfaceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:directconnect:${Region}:${Account}:dxvif/${VirtualInterfaceId}';

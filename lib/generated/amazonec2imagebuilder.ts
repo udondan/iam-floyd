@@ -591,6 +591,10 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html
    */
   public createComponent() {
@@ -602,6 +606,10 @@ export class Imagebuilder extends PolicyStatement {
    * Create a new distribution configuration
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html
    */
@@ -615,7 +623,11 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - imagebuilder:GetImageRecipe
    * - imagebuilder:GetInfrastructureConfiguration
    *
@@ -631,7 +643,11 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - imagebuilder:GetImageRecipe
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html
@@ -646,7 +662,11 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - imagebuilder:GetComponent
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html
@@ -661,7 +681,13 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - imagebuilder:CreatedResourceTagKeys
+   * - imagebuilder:CreatedResourceTag/<key>
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html
@@ -783,6 +809,9 @@ export class Imagebuilder extends PolicyStatement {
    * View details about an image
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html
    */
@@ -952,6 +981,9 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -1000,7 +1032,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - imagebuilder:GetImagePipeline
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html
@@ -1015,6 +1047,11 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1026,6 +1063,10 @@ export class Imagebuilder extends PolicyStatement {
    * Untag an Image Builder resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UntagResource.html
    */
@@ -1063,7 +1104,12 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - imagebuilder:CreatedResourceTagKeys
+   * - imagebuilder:CreatedResourceTag/<key>
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html
@@ -1086,7 +1132,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onComponent(componentName: string, componentVersion: string, componentBuildVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}/${ComponentBuildVersion}';
@@ -1111,7 +1157,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}';
@@ -1134,7 +1180,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:distribution-configuration/${DistributionConfigurationName}';
@@ -1158,7 +1204,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onImage(imageName: string, imageVersion: string, imageBuildVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}/${ImageBuildVersion}';
@@ -1183,7 +1229,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onImageVersion(imageName: string, imageVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}';
@@ -1207,7 +1253,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onImageRecipe(imageRecipeName: string, imageRecipeVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}';
@@ -1230,7 +1276,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-pipeline/${ImagePipelineName}';
@@ -1252,7 +1298,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:infrastructure-configuration/${ResourceId}';

@@ -334,6 +334,9 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - elasticfilesystem:AccessPointArn
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
   public clientMount() {
@@ -346,6 +349,9 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - elasticfilesystem:AccessPointArn
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
   public clientRootAccess() {
@@ -357,6 +363,9 @@ export class Elasticfilesystem extends PolicyStatement {
    * Permission for allowing write-access to a file system.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - elasticfilesystem:AccessPointArn
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
@@ -382,6 +391,10 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html
    */
   public createFileSystem() {
@@ -405,6 +418,10 @@ export class Elasticfilesystem extends PolicyStatement {
    * Creates or overwrites tags associated with a file system.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html
    */
@@ -465,6 +482,9 @@ export class Elasticfilesystem extends PolicyStatement {
    * Deletes the specified tags from a file system.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html
    */
@@ -664,7 +684,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFileSystem(fileSystemId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticfilesystem:${Region}:${Account}:file-system/${FileSystemId}';
@@ -686,7 +706,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAccessPoint(accessPointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticfilesystem:${Region}:${Account}:access-point/${AccessPointId}';

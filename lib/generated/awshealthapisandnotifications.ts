@@ -139,7 +139,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html
@@ -154,6 +154,10 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - health:eventTypeCode
+   * - health:service
+   *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html
    */
   public describeAffectedEntities() {
@@ -166,7 +170,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html
@@ -205,6 +209,10 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - health:eventTypeCode
+   * - health:service
+   *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html
    */
   public describeEventDetails() {
@@ -217,7 +225,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html
@@ -256,7 +264,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html
@@ -271,7 +279,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - organizations:ListAccounts
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html
@@ -286,7 +294,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - organizations:DisableAWSServiceAccess
    * - organizations:ListAccounts
    *
@@ -302,7 +310,7 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - organizations:EnableAWSServiceAccess
    * - organizations:ListAccounts

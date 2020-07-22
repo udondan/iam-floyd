@@ -202,6 +202,9 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html
    */
   public deletePolicy() {
@@ -346,6 +349,10 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html
    */
   public putPolicy() {
@@ -358,6 +365,10 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -369,6 +380,9 @@ export class Fms extends PolicyStatement {
    * Removes a Tag from a given resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_UntagResource.html
    */
@@ -388,7 +402,7 @@ export class Fms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPolicy(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fms:${Region}:${Account}:policy/${Id}';

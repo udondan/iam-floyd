@@ -243,6 +243,10 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html
    */
   public putSigningProfile() {
@@ -267,6 +271,10 @@ export class Signer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html
    */
   public tagResource() {
@@ -278,6 +286,10 @@ export class Signer extends PolicyStatement {
    * Removes one or more tags from an Signing Profile resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html
    */
@@ -296,7 +308,7 @@ export class Signer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSigningProfile(profileName: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:signer:${Region}::/signing-profiles/${ProfileName}';

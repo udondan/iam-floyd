@@ -321,6 +321,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html
    */
   public batchGetChannel() {
@@ -332,6 +337,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get multiple stream keys simultaneously by stream key ARN.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html
    */
@@ -345,6 +355,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html
    */
   public createChannel() {
@@ -356,6 +371,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to create a stream key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html
    */
@@ -369,6 +389,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteChannel.html
    */
   public deleteChannel() {
@@ -380,6 +405,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to delete the stream key for a specified ARN
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html
    */
@@ -393,6 +423,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html
    */
   public getChannel() {
@@ -404,6 +439,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get information about the active (live) stream on a specified channel
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html
    */
@@ -417,6 +457,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html
    */
   public getStreamKey() {
@@ -428,6 +473,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get summary information about channels
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html
    */
@@ -441,6 +491,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html
    */
   public listStreamKeys() {
@@ -452,6 +507,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get summary information about live streams
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html
    */
@@ -465,6 +525,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -476,6 +541,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to insert metadata into an RTMP stream for a specified channel
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PutMetadata.html
    */
@@ -489,6 +559,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html
    */
   public stopStream() {
@@ -500,6 +575,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to add or update tags for a resource with a specified ARN
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html
    */
@@ -513,6 +593,11 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UntagResource.html
    */
   public untagResource() {
@@ -524,6 +609,11 @@ export class Ivs extends PolicyStatement {
    * Grants permission to update a channel's configuration
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UpdateChannel.html
    */

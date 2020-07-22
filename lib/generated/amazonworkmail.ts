@@ -2127,7 +2127,7 @@ export class Workmail extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onOrganization(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:workmail:${Region}:${Account}:organization/${ResourceId}';

@@ -455,6 +455,10 @@ export class Codepipeline extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreateCustomActionType.html
    */
   public createCustomActionType() {
@@ -466,6 +470,10 @@ export class Codepipeline extends PolicyStatement {
    * Grants permission to create a uniquely named pipeline
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreatePipeline.html
    */
@@ -779,6 +787,10 @@ export class Codepipeline extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutWebhook.html
    */
   public putWebhook() {
@@ -839,6 +851,10 @@ export class Codepipeline extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -850,6 +866,9 @@ export class Codepipeline extends PolicyStatement {
    * Grants permission to remove a tag from a CodePipeline resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_UntagResource.html
    */
@@ -883,7 +902,7 @@ export class Codepipeline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAction(pipelineName: string, stageName: string, actionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}/${ActionName}';
@@ -910,7 +929,7 @@ export class Codepipeline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onActiontype(owner: string, category: string, provider: string, version: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:actiontype:${Owner}/${Category}/${Provider}/${Version}';
@@ -935,7 +954,7 @@ export class Codepipeline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}';
@@ -958,7 +977,7 @@ export class Codepipeline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStage(pipelineName: string, stageName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:${PipelineName}/${StageName}';
@@ -981,7 +1000,7 @@ export class Codepipeline extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onWebhook(webhookName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codepipeline:${Region}:${Account}:webhook:${WebhookName}';

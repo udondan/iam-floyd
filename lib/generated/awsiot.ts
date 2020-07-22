@@ -2323,6 +2323,9 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - iot:Delete
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CloseTunnel.html
    */
   public closeTunnel() {
@@ -2359,6 +2362,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateBillingGroup.html
    */
   public createBillingGroup() {
@@ -2383,6 +2390,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDimension.html
    */
   public createDimension() {
@@ -2395,6 +2406,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDynamicThingGroup.html
    */
   public createDynamicThingGroup() {
@@ -2406,6 +2421,10 @@ export class Iot extends PolicyStatement {
    * Creates a job.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateJob.html
    */
@@ -2431,6 +2450,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateMitigationAction.html
    */
   public createMitigationAction() {
@@ -2442,6 +2465,10 @@ export class Iot extends PolicyStatement {
    * Creates an OTA update job.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdate.html
    */
@@ -2527,6 +2554,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateScheduledAudit.html
    */
   public createScheduledAudit() {
@@ -2539,6 +2570,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateSecurityProfile.html
    */
   public createSecurityProfile() {
@@ -2550,6 +2585,10 @@ export class Iot extends PolicyStatement {
    * Creates a new AWS IoT stream
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateStream.html
    */
@@ -2575,6 +2614,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingGroup.html
    */
   public createThingGroup() {
@@ -2587,6 +2630,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingType.html
    */
   public createThingType() {
@@ -2598,6 +2645,10 @@ export class Iot extends PolicyStatement {
    * Creates a rule.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html
    */
@@ -4075,6 +4126,12 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - iot:ThingGroupArn
+   * - iot:TunnelDestinationService
+   *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_OpenTunnel.html
    */
   public openTunnel() {
@@ -4350,6 +4407,10 @@ export class Iot extends PolicyStatement {
    * Tag a specified resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public tagResource() {
     this.add('iot:TagResource');
@@ -4396,6 +4457,9 @@ export class Iot extends PolicyStatement {
    * Untag a specified resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    */
   public untagResource() {
     this.add('iot:UntagResource');
@@ -4699,7 +4763,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:job/${JobId}';
@@ -4721,7 +4785,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:tunnel/${TunnelId}';
@@ -4762,7 +4826,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
@@ -4784,7 +4848,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:billinggroup/${BillingGroupName}';
@@ -4806,7 +4870,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
@@ -4828,7 +4892,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onThingtype(thingTypeName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thingtype/${ThingTypeName}';
@@ -4983,7 +5047,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}';
@@ -5005,7 +5069,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}';
@@ -5027,7 +5091,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:scheduledaudit/${ScheduleName}';
@@ -5049,7 +5113,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:mitigationaction/${MitigationActionName}';
@@ -5071,7 +5135,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}';
@@ -5093,7 +5157,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:dimension/${DimensionName}';
@@ -5115,7 +5179,7 @@ export class Iot extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}';

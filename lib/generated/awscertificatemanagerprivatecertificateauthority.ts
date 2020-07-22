@@ -238,6 +238,10 @@ export class AcmPca extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html
    */
   public createCertificateAuthority() {
@@ -370,6 +374,9 @@ export class AcmPca extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - acm-pca:TemplateArn
+   *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html
    */
   public issueCertificate() {
@@ -442,6 +449,10 @@ export class AcmPca extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html
    */
   public tagCertificateAuthority() {
@@ -453,6 +464,9 @@ export class AcmPca extends PolicyStatement {
    * Remove one or more tags from an ACM Private CA.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html
    */
@@ -484,7 +498,7 @@ export class AcmPca extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCertificateAuthority(certificateAuthorityId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:acm-pca:${Region}:${Account}:certificate-authority/${CertificateAuthorityId}';

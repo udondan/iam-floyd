@@ -541,7 +541,7 @@ export class Route53resolver extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onResolverRule(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-rule/${ResourceId}';
@@ -563,7 +563,7 @@ export class Route53resolver extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onResolverEndpoint(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:route53resolver:${Region}:${Account}:resolver-endpoint/${ResourceId}';

@@ -283,6 +283,10 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CopyBackupToRegion.html
    */
   public copyBackupToRegion() {
@@ -294,6 +298,10 @@ export class Cloudhsm extends PolicyStatement {
    * Creates a new AWS CloudHSM cluster
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html
    */
@@ -619,6 +627,10 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -630,6 +642,9 @@ export class Cloudhsm extends PolicyStatement {
    * Removes the specified tag or tags from the specified AWS CloudHSM cluster
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html
    */
@@ -649,7 +664,7 @@ export class Cloudhsm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBackup(cloudHsmBackupInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:backup/${CloudHsmBackupInstanceName}';
@@ -671,7 +686,7 @@ export class Cloudhsm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:cluster/${CloudHsmClusterInstanceName}';

@@ -202,7 +202,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:PutObject
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html

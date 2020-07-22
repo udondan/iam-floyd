@@ -442,6 +442,10 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public createApp() {
@@ -466,6 +470,10 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public createBranch() {
@@ -489,6 +497,10 @@ export class Amplify extends PolicyStatement {
    * Create a new DomainAssociation on an App
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
@@ -802,6 +814,10 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
   public tagResource() {
@@ -813,6 +829,9 @@ export class Amplify extends PolicyStatement {
    * This action removes a tag from an AWS Amplify Console resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
@@ -880,7 +899,7 @@ export class Amplify extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}';
@@ -903,7 +922,7 @@ export class Amplify extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}';
@@ -950,7 +969,7 @@ export class Amplify extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}';

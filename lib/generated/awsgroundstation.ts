@@ -336,6 +336,10 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html
    */
   public createConfig() {
@@ -348,6 +352,10 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html
    */
   public createDataflowEndpointGroup() {
@@ -359,6 +367,10 @@ export class Groundstation extends PolicyStatement {
    * Grants permission to create a mission profile
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html
    */
@@ -564,6 +576,10 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html
    */
   public reserveContact() {
@@ -576,6 +592,10 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -587,6 +607,9 @@ export class Groundstation extends PolicyStatement {
    * Grants permission to deassign a resource tag
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UntagResource.html
    */
@@ -631,9 +654,9 @@ export class Groundstation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - groundstation:configId
-   *  - groundstation:configType
+   * - aws:ResourceTag/${TagKey}
+   * - groundstation:configId
+   * - groundstation:configType
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}';
@@ -656,8 +679,8 @@ export class Groundstation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - groundstation:contactId
+   * - aws:ResourceTag/${TagKey}
+   * - groundstation:contactId
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}';
@@ -679,8 +702,8 @@ export class Groundstation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - groundstation:dataflowEndpointGroupId
+   * - aws:ResourceTag/${TagKey}
+   * - groundstation:dataflowEndpointGroupId
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}';
@@ -702,7 +725,7 @@ export class Groundstation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - groundstation:groundStationId
+   * - groundstation:groundStationId
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}';
@@ -724,8 +747,8 @@ export class Groundstation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - groundstation:missionProfileId
+   * - aws:ResourceTag/${TagKey}
+   * - groundstation:missionProfileId
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}';
@@ -747,7 +770,7 @@ export class Groundstation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - groundstation:satelliteId
+   * - groundstation:satelliteId
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}';

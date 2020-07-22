@@ -677,6 +677,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateDetector.html
    */
   public createDetector() {
@@ -689,6 +693,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateFilter.html
    */
   public createFilter() {
@@ -700,6 +708,10 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to create an IPSet.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateIPSet.html
    */
@@ -725,7 +737,7 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    * - s3:ListBucket
    *
@@ -752,6 +764,10 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to create GuardDuty ThreatIntelSets. A ThreatIntelSet consists of known malicious IP addresses used by GuardDuty to generate findings.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateThreatIntelSet.html
    */
@@ -1185,6 +1201,10 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1208,6 +1228,9 @@ export class Guardduty extends PolicyStatement {
    * Grants permission to remove tags from a GuardDuty resource.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/guardduty/latest/APIReference/API_UntagResource.html
    */
@@ -1281,7 +1304,7 @@ export class Guardduty extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    * - s3:ListBucket
    *
@@ -1315,7 +1338,7 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDetector(detectorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}';
@@ -1338,7 +1361,7 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFilter(detectorId: string, filterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/filter/${FilterName}';
@@ -1362,7 +1385,7 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onIpset(detectorId: string, iPSetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/ipset/${IPSetId}';
@@ -1386,7 +1409,7 @@ export class Guardduty extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onThreatintelset(detectorId: string, threatIntelSetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:guardduty:${Region}:${Account}:detector/${DetectorId}/threatintelset/${ThreatIntelSetId}';

@@ -83,7 +83,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations.html
@@ -158,7 +158,7 @@ export class SmsVoice extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html

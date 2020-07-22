@@ -1245,7 +1245,11 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html
@@ -1259,6 +1263,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to create a maintenance window
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html
    */
@@ -1284,6 +1292,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html
    */
   public createPatchBaseline() {
@@ -1295,6 +1307,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to create a resource data sync configuration, which regularly collects inventory data from managed instances and updates the data in an Amazon S3 bucket
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ssm:SyncType
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateResourceDataSync.html
    */
@@ -1403,6 +1418,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to delete a specified resource data sync
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ssm:SyncType
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourceDataSync.html
    */
@@ -2290,6 +2308,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - ssm:SyncType
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceDataSync.html
    */
   public listResourceDataSync() {
@@ -2359,6 +2380,10 @@ export class Ssm extends PolicyStatement {
    * Grants permission to create an SSM parameter
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html
    */
@@ -2468,6 +2493,10 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendCommand.html
    */
   public sendCommand() {
@@ -2503,6 +2532,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to initiate a connection to a specified target for a Session Manager session
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ssm:SessionDocumentAccessCheck
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
@@ -2682,6 +2714,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ssm:SyncType
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html
    */
   public updateResourceDataSync() {
@@ -2771,8 +2806,8 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ssm:resourceTag/tag-key
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
    */
   public onDocument(documentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:document/${DocumentName}';
@@ -2794,8 +2829,8 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ssm:resourceTag/tag-key
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
@@ -2817,8 +2852,8 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ssm:resourceTag/tag-key
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
    */
   public onMaintenancewindow(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:maintenancewindow/${ResourceId}';
@@ -2840,8 +2875,8 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ssm:resourceTag/tag-key
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
    */
   public onManagedInstance(managedInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:managed-instance/${ManagedInstanceName}';
@@ -2901,8 +2936,8 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ssm:resourceTag/tag-key
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
    */
   public onParameter(fullyQualifiedParameterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:parameter/${FullyQualifiedParameterName}';
@@ -2924,8 +2959,8 @@ export class Ssm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ssm:resourceTag/tag-key
+   * - aws:ResourceTag/${TagKey}
+   * - ssm:resourceTag/tag-key
    */
   public onPatchbaseline(patchBaselineIdResourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ssm:${Region}:${Account}:patchbaseline/${PatchBaselineIdResourceId}';

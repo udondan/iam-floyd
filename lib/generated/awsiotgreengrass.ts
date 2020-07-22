@@ -1133,6 +1133,10 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createconnectordefinition-post.html
    */
   public createConnectorDefinition() {
@@ -1156,6 +1160,10 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to create a core definition.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinition-post.html
    */
@@ -1193,6 +1201,10 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html
    */
   public createDeviceDefinition() {
@@ -1217,6 +1229,10 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html
    */
   public createFunctionDefinition() {
@@ -1240,6 +1256,10 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to create a group.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/creategroup-post.html
    */
@@ -1277,6 +1297,10 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createloggerdefinition-post.html
    */
   public createLoggerDefinition() {
@@ -1300,6 +1324,10 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to create a resource definition that contains a list of resources to be used in a group.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createresourcedefinition-post.html
    */
@@ -1336,6 +1364,10 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to create a subscription definition.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html
    */
@@ -1997,6 +2029,10 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/listtagsforresource-get.html
    */
   public listTagsForResource() {
@@ -2020,6 +2056,10 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to deploy multiple groups in one operation.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/startbulkdeployment-post.html
    */
@@ -2045,6 +2085,10 @@ export class Greengrass extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/tagresource-post.html
    */
   public tagResource() {
@@ -2056,6 +2100,9 @@ export class Greengrass extends PolicyStatement {
    * Grants permission to remove tags from a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/greengrass/latest/apireference/untagresource-delete.html
    */
@@ -2277,7 +2324,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBulkDeployment(bulkDeploymentId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/bulk/deployments/${BulkDeploymentId}';
@@ -2299,7 +2346,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGroup(groupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/groups/${GroupId}';
@@ -2342,7 +2389,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCoreDefinition(coreDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/cores/${CoreDefinitionId}';
@@ -2385,7 +2432,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeviceDefinition(deviceDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/devices/${DeviceDefinitionId}';
@@ -2428,7 +2475,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFunctionDefinition(functionDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/functions/${FunctionDefinitionId}';
@@ -2471,7 +2518,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSubscriptionDefinition(subscriptionDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/subscriptions/${SubscriptionDefinitionId}';
@@ -2514,7 +2561,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onLoggerDefinition(loggerDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/loggers/${LoggerDefinitionId}';
@@ -2557,7 +2604,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onResourceDefinition(resourceDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/resources/${ResourceDefinitionId}';
@@ -2600,7 +2647,7 @@ export class Greengrass extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConnectorDefinition(connectorDefinitionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}';

@@ -586,6 +586,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateGatewayRoute.html
    */
   public createGatewayRoute() {
@@ -597,6 +601,10 @@ export class Appmesh extends PolicyStatement {
    * Creates a service mesh.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateMesh.html
    */
@@ -610,6 +618,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html
    */
   public createRoute() {
@@ -621,6 +633,10 @@ export class Appmesh extends PolicyStatement {
    * Creates a virtual gateway within a service mesh.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualGateway.html
    */
@@ -634,6 +650,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html
    */
   public createVirtualNode() {
@@ -646,6 +666,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html
    */
   public createVirtualRouter() {
@@ -657,6 +681,10 @@ export class Appmesh extends PolicyStatement {
    * Creates a virtual service within a service mesh.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualService.html
    */
@@ -946,6 +974,10 @@ export class Appmesh extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -957,6 +989,9 @@ export class Appmesh extends PolicyStatement {
    * Deletes specified tags from a resource.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_UntagResource.html
    */
@@ -1060,7 +1095,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMesh(meshName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}';
@@ -1083,7 +1118,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVirtualService(meshName: string, virtualServiceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualService/${VirtualServiceName}';
@@ -1107,7 +1142,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVirtualNode(meshName: string, virtualNodeName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualNode/${VirtualNodeName}';
@@ -1131,7 +1166,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVirtualRouter(meshName: string, virtualRouterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}';
@@ -1156,7 +1191,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRoute(meshName: string, virtualRouterName: string, routeName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualRouter/${VirtualRouterName}/route/${RouteName}';
@@ -1181,7 +1216,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVirtualGateway(meshName: string, virtualGatewayName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}';
@@ -1206,7 +1241,7 @@ export class Appmesh extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGatewayRoute(meshName: string, virtualGatewayName: string, gatewayRouteName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appmesh:${Region}:${Account}:mesh/${MeshName}/virtualGateway/${VirtualGatewayName}/gatewayRoute/${GatewayRouteName}';

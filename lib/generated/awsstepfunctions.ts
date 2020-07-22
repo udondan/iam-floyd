@@ -256,6 +256,10 @@ export class States extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html
    */
   public createActivity() {
@@ -267,6 +271,10 @@ export class States extends PolicyStatement {
    * Creates a state machine.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html
    */
@@ -484,6 +492,10 @@ export class States extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html
    */
   public tagResource() {
@@ -496,6 +508,9 @@ export class States extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html
    */
   public untagResource() {
@@ -507,6 +522,10 @@ export class States extends PolicyStatement {
    * Updates a state machine.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html
    */
@@ -526,7 +545,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}';
@@ -569,7 +588,7 @@ export class States extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}';

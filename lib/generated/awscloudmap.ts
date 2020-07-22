@@ -244,6 +244,10 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html
    */
   public createHttpNamespace() {
@@ -255,6 +259,10 @@ export class Servicediscovery extends PolicyStatement {
    * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html
    */
@@ -268,6 +276,10 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html
    */
   public createPublicDnsNamespace() {
@@ -279,6 +291,11 @@ export class Servicediscovery extends PolicyStatement {
    * Creates a service.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - servicediscovery:NamespaceArn
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html
    */
@@ -316,6 +333,9 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - servicediscovery:ServiceArn
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html
    */
   public deregisterInstance() {
@@ -327,6 +347,10 @@ export class Servicediscovery extends PolicyStatement {
    * Discovers registered instances for a specified namespace and service.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - servicediscovery:NamespaceName
+   * - servicediscovery:ServiceName
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html
    */
@@ -340,6 +364,9 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - servicediscovery:ServiceArn
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstance.html
    */
   public getInstance() {
@@ -351,6 +378,9 @@ export class Servicediscovery extends PolicyStatement {
    * Gets the current health status (Healthy, Unhealthy, or Unknown) of one or more instances.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - servicediscovery:ServiceArn
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstancesHealthStatus.html
    */
@@ -399,6 +429,9 @@ export class Servicediscovery extends PolicyStatement {
    * Gets summary information about the instances that were registered with a specified service.
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - servicediscovery:ServiceArn
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html
    */
@@ -460,6 +493,9 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - servicediscovery:ServiceArn
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html
    */
   public registerInstance() {
@@ -471,6 +507,10 @@ export class Servicediscovery extends PolicyStatement {
    * Adds one or more tags to the specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html
    */
@@ -484,6 +524,10 @@ export class Servicediscovery extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html
    */
   public untagResource() {
@@ -495,6 +539,9 @@ export class Servicediscovery extends PolicyStatement {
    * Updates the current health status for an instance that has a custom health check.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - servicediscovery:ServiceArn
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html
    */
@@ -526,7 +573,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onNamespace(namespaceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}';
@@ -548,7 +595,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onService(serviceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}';

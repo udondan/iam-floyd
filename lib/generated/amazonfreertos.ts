@@ -113,6 +113,10 @@ export class Freertos extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
   public createSoftwareConfiguration() {
@@ -251,7 +255,7 @@ export class Freertos extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConfiguration(configurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:freertos:${Region}:${Account}:configuration/${ConfigurationName}';

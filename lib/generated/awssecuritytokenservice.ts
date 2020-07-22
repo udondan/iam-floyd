@@ -191,6 +191,14 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:PrincipalTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - sts:TransitiveTagKeys
+   * - sts:ExternalId
+   * - sts:RoleSessionName
+   *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
   public assumeRole() {
@@ -203,6 +211,44 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - saml:namequalifier
+   * - saml:sub
+   * - saml:sub_type
+   * - saml:aud
+   * - saml:iss
+   * - saml:doc
+   * - saml:cn
+   * - saml:commonName
+   * - saml:eduorghomepageuri
+   * - saml:eduorgidentityauthnpolicyuri
+   * - saml:eduorglegalname
+   * - saml:eduorgsuperioruri
+   * - saml:eduorgwhitepagesuri
+   * - saml:edupersonaffiliation
+   * - saml:edupersonassurance
+   * - saml:edupersonentitlement
+   * - saml:edupersonnickname
+   * - saml:edupersonorgdn
+   * - saml:edupersonorgunitdn
+   * - saml:edupersonprimaryaffiliation
+   * - saml:edupersonprimaryorgunitdn
+   * - saml:edupersonprincipalname
+   * - saml:edupersonscopedaffiliation
+   * - saml:edupersontargetedid
+   * - saml:givenName
+   * - saml:mail
+   * - saml:name
+   * - saml:organizationStatus
+   * - saml:primaryGroupSID
+   * - saml:surname
+   * - saml:uid
+   * - saml:x500UniqueIdentifier
+   * - aws:TagKeys
+   * - aws:PrincipalTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - sts:TransitiveTagKeys
+   *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
   public assumeRoleWithSAML() {
@@ -214,6 +260,22 @@ export class Sts extends PolicyStatement {
    * Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cognito-identity.amazonaws.com:amr
+   * - cognito-identity.amazonaws.com:aud
+   * - cognito-identity.amazonaws.com:sub
+   * - www.amazon.com:app_id
+   * - www.amazon.com:user_id
+   * - graph.facebook.com:app_id
+   * - graph.facebook.com:id
+   * - accounts.google.com:aud
+   * - accounts.google.com:oaud
+   * - accounts.google.com:sub
+   * - aws:TagKeys
+   * - aws:PrincipalTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - sts:TransitiveTagKeys
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
@@ -263,6 +325,11 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:PrincipalTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
    */
   public getFederationToken() {
@@ -299,6 +366,12 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:PrincipalTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - sts:TransitiveTagKeys
+   *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
   public tagSession() {
@@ -316,7 +389,7 @@ export class Sts extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';

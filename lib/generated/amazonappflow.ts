@@ -189,6 +189,10 @@ export class Appflow extends PolicyStatement {
    * Grants permission to create an AppFlow flow
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public createFlow() {
     this.add('appflow:CreateFlow');
@@ -209,6 +213,10 @@ export class Appflow extends PolicyStatement {
    * Grants permission to delete an AppFlow flow
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public deleteFlow() {
     this.add('appflow:DeleteFlow');
@@ -302,6 +310,10 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -313,6 +325,9 @@ export class Appflow extends PolicyStatement {
    * Grants permission to untag a flow
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_UntagResource.html
    */
@@ -339,7 +354,7 @@ export class Appflow extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFlow(flowName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:appflow::${Account}:flow/${FlowName}';

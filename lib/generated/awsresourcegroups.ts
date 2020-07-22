@@ -150,6 +150,10 @@ export class ResourceGroups extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html
    */
   public createGroup() {
@@ -246,6 +250,10 @@ export class ResourceGroups extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html
    */
   public tag() {
@@ -257,6 +265,9 @@ export class ResourceGroups extends PolicyStatement {
    * Removes tags associated with a specified resource group
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html
    */
@@ -300,7 +311,7 @@ export class ResourceGroups extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGroup(groupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:resource-groups:${Region}:${Account}:group/${GroupName}';

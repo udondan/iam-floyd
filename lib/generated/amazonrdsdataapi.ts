@@ -85,7 +85,7 @@ export class RdsData extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - rds-data:BeginTransaction
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html
@@ -124,7 +124,7 @@ export class RdsData extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - rds-data:BeginTransaction
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html

@@ -1328,6 +1328,10 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutAggregationAuthorization.html
    */
   public putAggregationAuthorization() {
@@ -1340,6 +1344,10 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html
    */
   public putConfigRule() {
@@ -1351,6 +1359,10 @@ export class Config extends PolicyStatement {
    * Creates and updates the configuration aggregator with the selected source accounts and regions
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationAggregator.html
    */
@@ -1544,6 +1556,10 @@ export class Config extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1555,6 +1571,9 @@ export class Config extends PolicyStatement {
    * Deletes specified tags from a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html
    */
@@ -1575,7 +1594,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAggregationAuthorization(aggregatorAccount: string, aggregatorRegion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}';
@@ -1598,7 +1617,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConfigurationAggregator(aggregatorId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}';
@@ -1620,7 +1639,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConfigRule(configRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}';
@@ -1643,7 +1662,7 @@ export class Config extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConformancePack(conformancePackName: string, conformancePackId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}';

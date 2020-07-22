@@ -623,6 +623,11 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - swf:tagFilter.tag
+   * - swf:typeFilter.name
+   * - swf:typeFilter.version
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountClosedWorkflowExecutions.html
    */
   public countClosedWorkflowExecutions() {
@@ -634,6 +639,11 @@ export class Swf extends PolicyStatement {
    * Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - swf:tagFilter.tag
+   * - swf:typeFilter.name
+   * - swf:typeFilter.version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountOpenWorkflowExecutions.html
    */
@@ -647,6 +657,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - swf:taskList.name
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingActivityTasks.html
    */
   public countPendingActivityTasks() {
@@ -659,6 +672,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - swf:taskList.name
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingDecisionTasks.html
    */
   public countPendingDecisionTasks() {
@@ -670,6 +686,10 @@ export class Swf extends PolicyStatement {
    * Deprecates the specified activity type.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - swf:activityType.name
+   * - swf:activityType.version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html
    */
@@ -695,6 +715,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - swf:workflowType.name
+   * - swf:workflowType.version
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateWorkflowType.html
    */
   public deprecateWorkflowType() {
@@ -706,6 +730,10 @@ export class Swf extends PolicyStatement {
    * Returns information about the specified activity type.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - swf:activityType.name
+   * - swf:activityType.version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeActivityType.html
    */
@@ -742,6 +770,10 @@ export class Swf extends PolicyStatement {
    * Returns information about the specified workflow type.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - swf:workflowType.name
+   * - swf:workflowType.version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html
    */
@@ -791,6 +823,11 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - swf:tagFilter.tag
+   * - swf:typeFilter.name
+   * - swf:typeFilter.version
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListClosedWorkflowExecutions.html
    */
   public listClosedWorkflowExecutions() {
@@ -814,6 +851,11 @@ export class Swf extends PolicyStatement {
    * Returns a list of open workflow executions in the specified domain that meet the filtering criteria.
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - swf:tagFilter.tag
+   * - swf:typeFilter.name
+   * - swf:typeFilter.version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListOpenWorkflowExecutions.html
    */
@@ -851,6 +893,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - swf:taskList.name
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html
    */
   public pollForActivityTask() {
@@ -862,6 +907,9 @@ export class Swf extends PolicyStatement {
    * Used by deciders to get a DecisionTask from the specified decision taskList.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - swf:taskList.name
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html
    */
@@ -899,6 +947,11 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - swf:defaultTaskList.name
+   * - swf:name
+   * - swf:version
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html
    */
   public registerActivityType() {
@@ -911,6 +964,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterDomain.html
    */
   public registerDomain() {
@@ -922,6 +979,11 @@ export class Swf extends PolicyStatement {
    * Registers a new workflow type and its configuration settings in the specified domain.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - swf:defaultTaskList.name
+   * - swf:name
+   * - swf:version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterWorkflowType.html
    */
@@ -982,6 +1044,18 @@ export class Swf extends PolicyStatement {
    * Used by workers to tell the service that the ActivityTask identified by the taskToken completed successfully with a result (if provided).
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - swf:activityType.name
+   * - swf:activityType.version
+   * - swf:tagList.member.0
+   * - swf:tagList.member.1
+   * - swf:tagList.member.2
+   * - swf:tagList.member.3
+   * - swf:tagList.member.4
+   * - swf:taskList.name
+   * - swf:workflowType.name
+   * - swf:workflowType.version
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCompleted.html
    */
@@ -1079,6 +1153,16 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - swf:tagList.member.0
+   * - swf:tagList.member.1
+   * - swf:tagList.member.2
+   * - swf:tagList.member.3
+   * - swf:tagList.member.4
+   * - swf:taskList.name
+   * - swf:workflowType.name
+   * - swf:workflowType.version
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html
    */
   public startWorkflowExecution() {
@@ -1090,6 +1174,10 @@ export class Swf extends PolicyStatement {
    * This action tags an AWS SWF resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TagResource.html
    */
@@ -1115,6 +1203,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UntagResource.html
    */
   public untagResource() {
@@ -1132,7 +1223,7 @@ export class Swf extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDomain(domainName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:swf::${Account}:domain/${DomainName}';

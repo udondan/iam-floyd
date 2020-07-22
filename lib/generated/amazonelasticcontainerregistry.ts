@@ -376,6 +376,10 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html
    */
   public createRepository() {
@@ -640,6 +644,10 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -682,8 +690,8 @@ export class Ecr extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecr:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecr:ResourceTag/${TagKey}
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}';

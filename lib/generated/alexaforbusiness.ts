@@ -1760,7 +1760,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRoom(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:room/${Resource_id}';
@@ -1782,7 +1782,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDevice(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:device/${Resource_id}';
@@ -1823,7 +1823,7 @@ export class A4b extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onUser(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:a4b:${Region}:${Account}:user/${Resource_id}';

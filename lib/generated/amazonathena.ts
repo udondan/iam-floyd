@@ -370,6 +370,10 @@ export class Athena extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateDataCatalog.html
    */
   public createDataCatalog() {
@@ -393,6 +397,10 @@ export class Athena extends PolicyStatement {
    * Grants permissions to create a workgroup.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html
    */
@@ -646,6 +654,10 @@ export class Athena extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -657,6 +669,9 @@ export class Athena extends PolicyStatement {
    * Grants permissions to remove a tag from a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/athena/latest/APIReference/API_UntagResource.html
    */
@@ -700,7 +715,7 @@ export class Athena extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDatacatalog(dataCatalogName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:athena:${Region}:${Account}:datacatalog/${DataCatalogName}';
@@ -722,7 +737,7 @@ export class Athena extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onWorkgroup(workGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:athena:${Region}:${Account}:workgroup/${WorkGroupName}';

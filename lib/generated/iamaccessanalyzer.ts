@@ -217,6 +217,10 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html
    */
   public createAnalyzer() {
@@ -240,6 +244,10 @@ export class AccessAnalyzer extends PolicyStatement {
    * Grants permission to delete the specified analyzer.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html
    */
@@ -276,6 +284,10 @@ export class AccessAnalyzer extends PolicyStatement {
    * Grants permission to retrieve information about analyzers.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html
    */
@@ -385,6 +397,10 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -396,6 +412,10 @@ export class AccessAnalyzer extends PolicyStatement {
    * Grants permission to remove a tag from a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html
    */
@@ -439,7 +459,7 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}';

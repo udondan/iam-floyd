@@ -602,6 +602,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html
    */
   public createCluster() {
@@ -614,6 +618,12 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:task-definition
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
   public createService() {
@@ -625,6 +635,11 @@ export class Ecs extends PolicyStatement {
    * Creates a new Amazon ECS task set.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:service
+   * - ecs:task-definition
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html
    */
@@ -650,6 +665,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html
    */
   public deleteAttributes() {
@@ -674,6 +692,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html
    */
   public deleteService() {
@@ -685,6 +706,10 @@ export class Ecs extends PolicyStatement {
    * Deletes the specified task set.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:service
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskSet.html
    */
@@ -734,6 +759,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html
    */
   public describeContainerInstances() {
@@ -745,6 +773,9 @@ export class Ecs extends PolicyStatement {
    * Describes the specified services running in your cluster.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - ecs:cluster
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html
    */
@@ -770,6 +801,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:service
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html
    */
   public describeTaskSets() {
@@ -781,6 +816,9 @@ export class Ecs extends PolicyStatement {
    * Describes a specified task or tasks.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - ecs:cluster
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html
    */
@@ -854,6 +892,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
    */
   public listServices() {
@@ -902,6 +943,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html
    */
   public listTasks() {
@@ -913,6 +957,9 @@ export class Ecs extends PolicyStatement {
    * Grants permission to an agent to connect with the Amazon ECS service to report status and get commands.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html
    */
@@ -950,6 +997,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html
    */
   public putAttributes() {
@@ -961,6 +1011,10 @@ export class Ecs extends PolicyStatement {
    * Registers an EC2 instance into the specified cluster.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html
    */
@@ -974,6 +1028,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterTaskDefinition.html
    */
   public registerTaskDefinition() {
@@ -985,6 +1043,11 @@ export class Ecs extends PolicyStatement {
    * Start a task using random placement and the default Amazon ECS scheduler.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html
    */
@@ -998,6 +1061,12 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:container-instances
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html
    */
   public startTask() {
@@ -1010,6 +1079,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#enable_cloudwatch
    */
   public startTelemetrySession() {
@@ -1021,6 +1093,9 @@ export class Ecs extends PolicyStatement {
    * Stops a running task.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopTask.html
    */
@@ -1070,6 +1145,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1081,6 +1160,9 @@ export class Ecs extends PolicyStatement {
    * Untags the specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UntagResource.html
    */
@@ -1094,6 +1176,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html
    */
   public updateContainerAgent() {
@@ -1105,6 +1190,9 @@ export class Ecs extends PolicyStatement {
    * Enables the user to modify the status of an Amazon ECS container instance.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html
    */
@@ -1118,6 +1206,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:task-definition
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
    */
   public updateService() {
@@ -1130,6 +1222,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ecs:cluster
+   *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateServicePrimaryTaskSet.html
    */
   public updateServicePrimaryTaskSet() {
@@ -1141,6 +1236,10 @@ export class Ecs extends PolicyStatement {
    * Updates the specified task set.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:cluster
+   * - ecs:service
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskSet.html
    */
@@ -1160,8 +1259,8 @@ export class Ecs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecs:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}';
@@ -1183,8 +1282,8 @@ export class Ecs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecs:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
    */
   public onContainerInstance(containerInstanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}';
@@ -1206,8 +1305,8 @@ export class Ecs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecs:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
    */
   public onService(serviceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}';
@@ -1229,8 +1328,8 @@ export class Ecs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecs:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
@@ -1253,8 +1352,8 @@ export class Ecs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecs:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}';
@@ -1279,8 +1378,8 @@ export class Ecs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ecs:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
    */
   public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}';

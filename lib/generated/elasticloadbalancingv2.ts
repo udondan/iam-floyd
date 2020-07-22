@@ -948,9 +948,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onLoadbalancerApp(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/app/${LoadBalancerName}/${LoadBalancerId}';
@@ -974,9 +974,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onLoadbalancerNet(loadBalancerName: string, loadBalancerId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:loadbalancer/net/${LoadBalancerName}/${LoadBalancerId}';
@@ -1000,9 +1000,9 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - elasticloadbalancing:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - elasticloadbalancing:ResourceTag/${TagKey}
    */
   public onTargetgroup(targetGroupName: string, targetGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticloadbalancing:${Region}:${Account}:targetgroup/${TargetGroupName}/${TargetGroupId}';

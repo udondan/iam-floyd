@@ -592,6 +592,10 @@ export class Codedeploy extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateApplication.html
    */
   public createApplication() {
@@ -637,6 +641,10 @@ export class Codedeploy extends PolicyStatement {
    * Create a deployment group for an application associated with the IAM user.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html
    */
@@ -1010,6 +1018,10 @@ export class Codedeploy extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1021,6 +1033,9 @@ export class Codedeploy extends PolicyStatement {
    * Disassociates a resource from a list of tags. The resource is identified by the ResourceArn input parameter. The tags are identfied by the list of keys in the TagKeys input parameter.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UntagResource.html
    */

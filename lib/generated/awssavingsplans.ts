@@ -116,6 +116,10 @@ export class Savingsplans extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html
    */
   public createSavingsPlan() {
@@ -128,6 +132,9 @@ export class Savingsplans extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html
    */
   public describeSavingsPlanRates() {
@@ -139,6 +146,9 @@ export class Savingsplans extends PolicyStatement {
    * Grants permission to describe the savings plans associated with customers account
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html
    */
@@ -188,6 +198,10 @@ export class Savingsplans extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -199,6 +213,9 @@ export class Savingsplans extends PolicyStatement {
    * Grants permission to untag a savings plan
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html
    */
@@ -217,7 +234,7 @@ export class Savingsplans extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSavingsplan(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:savingsplans::${Account}:savingsplan/${ResourceId}';

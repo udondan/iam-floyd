@@ -296,6 +296,9 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - servicequotas:service
+   *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html
    */
   public putServiceQuotaIncreaseRequestIntoTemplate() {
@@ -307,6 +310,9 @@ export class Servicequotas extends PolicyStatement {
    * Grants permission to submit the request for a service quota increase
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - servicequotas:service
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html
    */

@@ -1677,7 +1677,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html
@@ -1692,7 +1692,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html
@@ -1718,6 +1718,11 @@ export class Rds extends PolicyStatement {
    * Adds metadata tags to an Amazon RDS resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html
    */
@@ -1839,7 +1844,15 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   * - rds:DatabaseEngine
+   * - rds:DatabaseName
+   * - rds:StorageEncrypted
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
@@ -1854,6 +1867,11 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - rds:EndpointType
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html
    */
   public createDBClusterEndpoint() {
@@ -1865,6 +1883,11 @@ export class Rds extends PolicyStatement {
    * Create a new DB cluster parameter group.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html
    */
@@ -1878,6 +1901,11 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html
    */
   public createDBClusterSnapshot() {
@@ -1890,7 +1918,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
@@ -1905,7 +1938,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html
@@ -1920,6 +1958,11 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html
    */
   public createDBParameterGroup() {
@@ -1932,7 +1975,11 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html
@@ -1947,6 +1994,11 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html
    */
   public createDBSecurityGroup() {
@@ -1958,6 +2010,11 @@ export class Rds extends PolicyStatement {
    * Creates a DBSnapshot.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html
    */
@@ -1971,6 +2028,11 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html
    */
   public createDBSubnetGroup() {
@@ -1982,6 +2044,11 @@ export class Rds extends PolicyStatement {
    * Creates an RDS event notification subscription.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html
    */
@@ -2006,6 +2073,11 @@ export class Rds extends PolicyStatement {
    * Creates a new option group.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html
    */
@@ -2703,7 +2775,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html
@@ -2754,7 +2826,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html
@@ -2781,7 +2853,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxy.html
@@ -2868,7 +2940,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html
@@ -2906,6 +2978,10 @@ export class Rds extends PolicyStatement {
    * Purchases a reserved DB instance offering.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html
    */
@@ -2955,7 +3031,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html
@@ -2970,7 +3046,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html
@@ -2996,6 +3072,11 @@ export class Rds extends PolicyStatement {
    * Removes metadata tags from an Amazon RDS resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveTagsFromResource.html
    */
@@ -3033,7 +3114,15 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   * - rds:DatabaseEngine
+   * - rds:DatabaseName
+   * - rds:StorageEncrypted
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html
@@ -3048,7 +3137,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html
@@ -3063,7 +3157,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html
@@ -3078,7 +3177,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html
@@ -3093,7 +3197,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html
@@ -3108,7 +3217,12 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - rds:req-tag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html
@@ -3171,7 +3285,7 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html
@@ -3228,8 +3342,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:cluster-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:cluster-tag/${TagKey}
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
@@ -3249,7 +3363,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}';
@@ -3271,8 +3385,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:cluster-pg-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:cluster-pg-tag/${TagKey}
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}';
@@ -3294,8 +3408,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:cluster-snapshot-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:cluster-snapshot-tag/${TagKey}
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}';
@@ -3317,16 +3431,16 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:DatabaseClass
-   *  - rds:DatabaseEngine
-   *  - rds:DatabaseName
-   *  - rds:MultiAz
-   *  - rds:Piops
-   *  - rds:StorageEncrypted
-   *  - rds:StorageSize
-   *  - rds:Vpc
-   *  - rds:db-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:DatabaseClass
+   * - rds:DatabaseEngine
+   * - rds:DatabaseName
+   * - rds:MultiAz
+   * - rds:Piops
+   * - rds:StorageEncrypted
+   * - rds:StorageSize
+   * - rds:Vpc
+   * - rds:db-tag/${TagKey}
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}';
@@ -3348,8 +3462,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:es-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:es-tag/${TagKey}
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}';
@@ -3388,8 +3502,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:og-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:og-tag/${TagKey}
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}';
@@ -3411,8 +3525,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:pg-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:pg-tag/${TagKey}
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}';
@@ -3434,7 +3548,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}';
@@ -3456,8 +3570,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:ri-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:ri-tag/${TagKey}
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}';
@@ -3479,8 +3593,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:secgrp-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:secgrp-tag/${TagKey}
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}';
@@ -3502,8 +3616,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:snapshot-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:snapshot-tag/${TagKey}
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}';
@@ -3525,8 +3639,8 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - rds:subgrp-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - rds:subgrp-tag/${TagKey}
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}';
@@ -3567,7 +3681,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}';

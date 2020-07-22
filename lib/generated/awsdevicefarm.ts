@@ -1008,6 +1008,10 @@ export class Devicefarm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html
    */
   public createProject() {
@@ -1776,6 +1780,10 @@ export class Devicefarm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1787,6 +1795,9 @@ export class Devicefarm extends PolicyStatement {
    * Grants permission to remove tags from a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UntagResource.html
    */
@@ -1902,7 +1913,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onProject(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:project:${ResourceId}';
@@ -1924,7 +1935,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRun(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:run:${ResourceId}';
@@ -2060,7 +2071,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onNetworkprofile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:networkprofile:${ResourceId}';
@@ -2081,7 +2092,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeviceinstance(resourceId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}::deviceinstance:${ResourceId}';
@@ -2102,7 +2113,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSession(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:session:${ResourceId}';
@@ -2124,7 +2135,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDevicepool(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:devicepool:${ResourceId}';
@@ -2145,7 +2156,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDevice(resourceId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}::device:${ResourceId}';
@@ -2166,7 +2177,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInstanceprofile(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:instanceprofile:${ResourceId}';
@@ -2188,7 +2199,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVpceconfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:vpceconfiguration:${ResourceId}';
@@ -2210,7 +2221,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTestgridProject(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-project:${ResourceId}';
@@ -2232,7 +2243,7 @@ export class Devicefarm extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTestgridSession(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:devicefarm:${Region}:${Account}:testgrid-session:${ResourceId}';

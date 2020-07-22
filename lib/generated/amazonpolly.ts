@@ -184,7 +184,7 @@ export class Polly extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:PutObject
    *
    * https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html

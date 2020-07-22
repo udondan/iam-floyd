@@ -503,6 +503,9 @@ export class Securityhub extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - securityhub:TargetAccount
+   *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html
    */
   public batchImportFindings() {
@@ -742,6 +745,10 @@ export class Securityhub extends PolicyStatement {
    * Grants permission to enable Security Hub
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html
    */
@@ -997,7 +1004,7 @@ export class Securityhub extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onHub(account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:hub/default';

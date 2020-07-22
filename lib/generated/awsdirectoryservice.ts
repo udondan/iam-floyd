@@ -701,7 +701,7 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:AuthorizeSecurityGroupEgress
    * - ec2:AuthorizeSecurityGroupIngress
    * - ec2:DescribeSecurityGroups
@@ -718,7 +718,11 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - ec2:CreateTags
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html
@@ -765,7 +769,11 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - ec2:AuthorizeSecurityGroupEgress
    * - ec2:AuthorizeSecurityGroupIngress
    * - ec2:CreateNetworkInterface
@@ -823,7 +831,11 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - ec2:AuthorizeSecurityGroupEgress
    * - ec2:AuthorizeSecurityGroupIngress
    * - ec2:CreateNetworkInterface
@@ -844,6 +856,10 @@ export class Ds extends PolicyStatement {
    * Creates a IdentityPool Directory in the AWS cloud.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public createIdentityPoolDirectory() {
     this.add('ds:CreateIdentityPoolDirectory');
@@ -867,7 +883,11 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - ec2:AuthorizeSecurityGroupEgress
    * - ec2:AuthorizeSecurityGroupIngress
    * - ec2:CreateNetworkInterface
@@ -925,7 +945,7 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ec2:DeleteNetworkInterface
    * - ec2:DeleteSecurityGroup
    * - ec2:DescribeNetworkInterfaces
@@ -1300,7 +1320,7 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - sns:GetTopicAttributes
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html
@@ -1339,7 +1359,11 @@ export class Ds extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - ec2:DeleteTags
    *
    * https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html
@@ -1488,7 +1512,7 @@ export class Ds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDirectory(directoryId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ds:${Region}:${Account}:directory/${DirectoryId}';

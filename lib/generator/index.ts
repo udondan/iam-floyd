@@ -268,8 +268,14 @@ export function createModule(module: Module): Promise<void> {
 
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
 
+    if ('conditions' in action) {
+      desc += '\n\nPossible condition keys:';
+      action.conditions.forEach((condition) => {
+        desc += `\n- ${condition}`;
+      });
+    }
     if ('dependentActions' in action) {
-      desc += '\n\nDependent Actions:';
+      desc += '\n\nDependent actions:';
       action.dependentActions.forEach((dependentAction) => {
         desc += `\n- ${dependentAction}`;
       });
@@ -330,7 +336,7 @@ export function createModule(module: Module): Promise<void> {
     if (resourceType.conditionKeys.length) {
       desc += '\n\nPossible condition keys:';
       resourceType.conditionKeys.forEach((key) => {
-        desc += `\n - ${key}`;
+        desc += `\n- ${key}`;
       });
     }
     method.addJsDoc({

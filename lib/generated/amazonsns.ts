@@ -622,6 +622,10 @@ export class Sns extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - sns:Endpoint
+   * - sns:Protocol
+   *
    * https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html
    */
   public subscribe() {
@@ -633,6 +637,10 @@ export class Sns extends PolicyStatement {
    * Add tags to the specified Amazon SNS topic.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_TagResource.html
    */
@@ -657,6 +665,10 @@ export class Sns extends PolicyStatement {
    * Remove tags from the specified Amazon SNS topic.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/sns/latest/api/API_UntagResource.html
    */

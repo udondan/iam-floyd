@@ -649,6 +649,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html
    */
   public cancelKeyDeletion() {
@@ -673,6 +677,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateAlias.html
    */
   public createAlias() {
@@ -685,7 +693,7 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - cloudhsm:DescribeClusters
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html
@@ -700,6 +708,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:GrantConstraintType
+   * - kms:GrantIsForAWSResource
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
    */
   public createGrant() {
@@ -711,6 +725,12 @@ export class Kms extends PolicyStatement {
    * Controls permission to create a customer master key that can be used to protect data keys and other sensitive information.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:BypassPolicyLockoutSafetyCheck
+   * - kms:CustomerMasterKeySpec
+   * - kms:CustomerMasterKeyUsage
+   * - kms:KeyOrigin
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
    */
@@ -724,6 +744,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html
    */
   public decrypt() {
@@ -735,6 +761,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to delete an alias. Aliases are optional friendly names that you can associate with customer master keys.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html
    */
@@ -760,6 +790,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteImportedKeyMaterial.html
    */
   public deleteImportedKeyMaterial() {
@@ -784,6 +818,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html
    */
   public describeKey() {
@@ -796,6 +834,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html
    */
   public disableKey() {
@@ -807,6 +849,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to disable automatic rotation of a customer managed customer master key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKeyRotation.html
    */
@@ -832,6 +878,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKey.html
    */
   public enableKey() {
@@ -843,6 +893,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to enable automatic rotation of the cryptographic material in a customer master key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html
    */
@@ -856,6 +910,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html
    */
   public encrypt() {
@@ -867,6 +927,12 @@ export class Kms extends PolicyStatement {
    * Controls permission to use the customer master key to generate data keys. You can use the data keys to encrypt data outside of AWS KMS.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html
    */
@@ -880,6 +946,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:DataKeyPairSpec
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html
    */
   public generateDataKeyPair() {
@@ -892,6 +965,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:DataKeyPairSpec
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html
    */
   public generateDataKeyPairWithoutPlaintext() {
@@ -903,6 +983,12 @@ export class Kms extends PolicyStatement {
    * Controls permission to use the customer master key to generate a data key. Unlike the GenerateDataKey operation, this operation returns an encrypted data key without a plaintext version of the data key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyWithoutPlaintext.html
    */
@@ -928,6 +1014,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html
    */
   public getKeyPolicy() {
@@ -939,6 +1029,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to determine whether automatic key rotation is enabled on the customer master key.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyRotationStatus.html
    */
@@ -952,6 +1046,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   * - kms:WrappingAlgorithm
+   * - kms:WrappingKeySpec
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetParametersForImport.html
    */
   public getParametersForImport() {
@@ -964,6 +1064,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html
    */
   public getPublicKey() {
@@ -975,6 +1079,12 @@ export class Kms extends PolicyStatement {
    * Controls permission to import cryptographic material into a customer master key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ExpirationModel
+   * - kms:ValidTo
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ImportKeyMaterial.html
    */
@@ -1000,6 +1110,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:GrantIsForAWSResource
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListGrants.html
    */
   public listGrants() {
@@ -1011,6 +1126,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to view the names of key policies for a customer master key.
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyPolicies.html
    */
@@ -1036,6 +1155,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html
    */
   public listResourceTags() {
@@ -1060,6 +1183,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - kms:BypassPolicyLockoutSafetyCheck
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html
    */
   public putKeyPolicy() {
@@ -1072,6 +1200,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ReEncryptOnSameKey
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
   public reEncryptFrom() {
@@ -1083,6 +1218,13 @@ export class Kms extends PolicyStatement {
    * Controls permission to encrypt data as part of the process that decrypts and reencrypts the data within AWS KMS.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:EncryptionAlgorithm
+   * - kms:EncryptionContextKeys
+   * - kms:ReEncryptOnSameKey
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
@@ -1108,6 +1250,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:GrantIsForAWSResource
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html
    */
   public revokeGrant() {
@@ -1119,6 +1266,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to schedule deletion of a customer master key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
    */
@@ -1132,6 +1283,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:MessageType
+   * - kms:SigningAlgorithm
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html
    */
   public sign() {
@@ -1143,6 +1300,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to create or update tags that are attached to a customer master key.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html
    */
@@ -1156,6 +1317,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UntagResource.html
    */
   public untagResource() {
@@ -1167,6 +1332,10 @@ export class Kms extends PolicyStatement {
    * Controls permission to associate an alias with a different customer master key. An alias is an optional friendly name that you can associate with a customer master key.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateAlias.html
    */
@@ -1192,6 +1361,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:ViaService
+   *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateKeyDescription.html
    */
   public updateKeyDescription() {
@@ -1203,6 +1376,12 @@ export class Kms extends PolicyStatement {
    * Controls permission to use the specified customer master key to verify digital signatures.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - kms:CallerAccount
+   * - kms:MessageType
+   * - kms:SigningAlgorithm
+   * - kms:ViaService
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Verify.html
    */

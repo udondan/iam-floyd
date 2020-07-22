@@ -296,6 +296,11 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public cancelRotateSecret() {
@@ -307,6 +312,14 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to create a secret that stores encrypted data that can be queried and rotated.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - secretsmanager:Name
+   * - secretsmanager:Description
+   * - secretsmanager:KmsKeyId
+   * - aws:RequestTag/tag-key
+   * - aws:TagKeys
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -320,6 +333,11 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public deleteResourcePolicy() {
@@ -332,6 +350,13 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:RecoveryWindowInDays
+   * - secretsmanager:ForceDeleteWithoutRecovery
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public deleteSecret() {
@@ -343,6 +368,11 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to retrieve the metadata about a secret, but not the encrypted data.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -368,6 +398,11 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public getResourcePolicy() {
@@ -380,6 +415,13 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:VersionId
+   * - secretsmanager:VersionStage
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public getSecretValue() {
@@ -391,6 +433,11 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to list the available versions of a secret.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -416,6 +463,11 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public putResourcePolicy() {
@@ -427,6 +479,11 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to create a new version of the secret with new encrypted data.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -440,6 +497,11 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public restoreSecret() {
@@ -451,6 +513,12 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to start rotation of a secret.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:RotationLambdaARN
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -464,6 +532,13 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - aws:RequestTag/tag-key
+   * - aws:TagKeys
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public tagResource() {
@@ -475,6 +550,12 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to remove tags from a secret.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - aws:TagKeys
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -488,6 +569,13 @@ export class Secretsmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:Description
+   * - secretsmanager:KmsKeyId
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
+   *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
   public updateSecret() {
@@ -499,6 +587,12 @@ export class Secretsmanager extends PolicyStatement {
    * Enables the user to move a stage from one secret to another.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - secretsmanager:SecretId
+   * - secretsmanager:VersionStage
+   * - secretsmanager:resource/AllowRotationLambdaArn
+   * - secretsmanager:ResourceTag/tag-key
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -518,10 +612,10 @@ export class Secretsmanager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/tag-key
-   *  - aws:TagKeys
-   *  - secretsmanager:ResourceTag/tag-key
-   *  - secretsmanager:resource/AllowRotationLambdaArn
+   * - aws:RequestTag/tag-key
+   * - aws:TagKeys
+   * - secretsmanager:ResourceTag/tag-key
+   * - secretsmanager:resource/AllowRotationLambdaArn
    */
   public onSecret(secretId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}';

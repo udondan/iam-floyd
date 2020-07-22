@@ -81,6 +81,9 @@ export class Macie extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:SourceArn
+   *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html
    */
   public associateS3Resources() {
@@ -104,6 +107,9 @@ export class Macie extends PolicyStatement {
    * Enables the user to remove specified S3 resources from being monitored by Amazon Macie.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:SourceArn
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html
    */
@@ -140,6 +146,9 @@ export class Macie extends PolicyStatement {
    * Enables the user to update the classification types for the specified S3 resources.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:SourceArn
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html
    */

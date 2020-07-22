@@ -735,6 +735,10 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html
    */
   public createAccessPolicy() {
@@ -746,6 +750,10 @@ export class Iotsitewise extends PolicyStatement {
    * Grants permission to create an asset from an asset model
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html
    */
@@ -759,6 +767,10 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html
    */
   public createAssetModel() {
@@ -770,6 +782,10 @@ export class Iotsitewise extends PolicyStatement {
    * Grants permission to create a dashboard in a project
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html
    */
@@ -783,6 +799,10 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html
    */
   public createGateway() {
@@ -795,7 +815,11 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - sso:CreateManagedApplicationInstance
    * - sso:DescribeRegisteredRegions
    *
@@ -810,6 +834,10 @@ export class Iotsitewise extends PolicyStatement {
    * Grants permission to create a project in a portal
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html
    */
@@ -883,7 +911,7 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - sso:DeleteManagedApplicationInstance
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DeletePortal.html
@@ -1186,6 +1214,9 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -1210,6 +1241,10 @@ export class Iotsitewise extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1221,6 +1256,9 @@ export class Iotsitewise extends PolicyStatement {
    * Grants permission to untag a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UntagResource.html
    */
@@ -1348,7 +1386,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAsset(assetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}';
@@ -1370,7 +1408,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAssetModel(assetModelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}';
@@ -1392,7 +1430,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}';
@@ -1414,7 +1452,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPortal(portalId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}';
@@ -1436,7 +1474,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onProject(projectId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}';
@@ -1458,7 +1496,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDashboard(dashboardId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}';
@@ -1480,7 +1518,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAccessPolicy(accessPolicyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}';

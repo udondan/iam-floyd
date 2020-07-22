@@ -293,6 +293,10 @@ export class Eks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
   public createCluster() {
@@ -305,6 +309,10 @@ export class Eks extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateFargateProfile.html
    */
   public createFargateProfile() {
@@ -316,6 +324,10 @@ export class Eks extends PolicyStatement {
    * Creates an Amazon EKS Nodegroup.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateNodegroup.html
    */
@@ -473,6 +485,10 @@ export class Eks extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -484,6 +500,9 @@ export class Eks extends PolicyStatement {
    * Untags the specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UntagResource.html
    */
@@ -551,7 +570,7 @@ export class Eks extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:eks:${Region}:${Account}:cluster/${ClusterName}';
@@ -575,7 +594,7 @@ export class Eks extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onNodegroup(clusterName: string, nodegroupName: string, uUID: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:eks:${Region}:${Account}:nodegroup/${ClusterName}/${NodegroupName}/${UUID}';
@@ -601,7 +620,7 @@ export class Eks extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFargateprofile(clusterName: string, fargateProfileName: string, uUID: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:eks:${Region}:${Account}:fargateprofile/${ClusterName}/${FargateProfileName}/${UUID}';

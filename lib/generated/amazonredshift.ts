@@ -1283,6 +1283,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateCluster.html
    */
   public createCluster() {
@@ -1294,6 +1298,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create an Amazon Redshift parameter group
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterParameterGroup.html
    */
@@ -1307,6 +1315,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSecurityGroup.html
    */
   public createClusterSecurityGroup() {
@@ -1318,6 +1330,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create a manual snapshot of the specified cluster
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html
    */
@@ -1331,6 +1347,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSubnetGroup.html
    */
   public createClusterSubnetGroup() {
@@ -1342,6 +1362,9 @@ export class Redshift extends PolicyStatement {
    * Grants permission to automatically create the specified Amazon Redshift user if it does not exist
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - redshift:DbUser
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/generating-iam-credentials-role-permissions.html
    */
@@ -1355,6 +1378,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateEventSubscription.html
    */
   public createEventSubscription() {
@@ -1367,6 +1394,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmClientCertificate.html
    */
   public createHsmClientCertificate() {
@@ -1378,6 +1409,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to create an HSM configuration that contains information required by a cluster to store and use database encryption keys in a hardware security module (HSM)
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html
    */
@@ -1415,6 +1450,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotCopyGrant.html
    */
   public createSnapshotCopyGrant() {
@@ -1427,6 +1466,10 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateSnapshotSchedule.html
    */
   public createSnapshotSchedule() {
@@ -1438,6 +1481,10 @@ export class Redshift extends PolicyStatement {
    * Grants permission to add one or more tags to a specified resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateTags.html
    */
@@ -1592,6 +1639,9 @@ export class Redshift extends PolicyStatement {
    * Grants permission to delete a tag or tags from a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteTags.html
    */
@@ -2047,6 +2097,11 @@ export class Redshift extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - redshift:DbName
+   * - redshift:DbUser
+   * - redshift:DurationSeconds
+   *
    * https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html
    */
   public getClusterCredentials() {
@@ -2449,7 +2504,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:cluster:${ClusterName}';
@@ -2472,7 +2527,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDbgroup(clusterName: string, dbGroup: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbgroup:${ClusterName}/${DbGroup}';
@@ -2496,7 +2551,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDbname(clusterName: string, dbName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbname:${ClusterName}/${DbName}';
@@ -2520,7 +2575,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDbuser(clusterName: string, dbUser: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:dbuser:${ClusterName}/${DbUser}';
@@ -2543,7 +2598,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEventsubscription(eventSubscriptionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:eventsubscription:${EventSubscriptionName}';
@@ -2565,7 +2620,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onHsmclientcertificate(hSMClientCertificateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:hsmclientcertificate:${HSMClientCertificateId}';
@@ -2587,7 +2642,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onHsmconfiguration(hSMConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:hsmconfiguration:${HSMConfigurationId}';
@@ -2609,7 +2664,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onParametergroup(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:parametergroup:${ParameterGroupName}';
@@ -2633,7 +2688,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSecuritygroup(securityGroupName: string, owner: string, ec2SecurityGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroup:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ec2SecurityGroupId}';
@@ -2658,7 +2713,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSecuritygroupingressCidr(securityGroupName: string, ipRange: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/cidrip/${IpRange}';
@@ -2683,7 +2738,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSecuritygroupingressEc2securitygroup(securityGroupName: string, owner: string, ece2SecuritygroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:securitygroupingress:${SecurityGroupName}/ec2securitygroup/${Owner}/${Ece2SecuritygroupId}';
@@ -2708,7 +2763,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSnapshot(clusterName: string, snapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshot:${ClusterName}/${SnapshotName}';
@@ -2731,7 +2786,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSnapshotcopygrant(snapshotCopyGrantName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshotcopygrant:${SnapshotCopyGrantName}';
@@ -2753,7 +2808,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSnapshotschedule(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:snapshotschedule:${ParameterGroupName}';
@@ -2775,7 +2830,7 @@ export class Redshift extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSubnetgroup(subnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:redshift:${Region}:${Account}:subnetgroup:${SubnetGroupName}';

@@ -456,6 +456,10 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupPlan.html
    */
   public createBackupPlan() {
@@ -468,7 +472,7 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupSelection.html
@@ -482,6 +486,10 @@ export class Backup extends PolicyStatement {
    * Creates a new backup vault.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html
    */
@@ -590,6 +598,10 @@ export class Backup extends PolicyStatement {
    * Describes a copy job
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeCopyJob.html
    */
@@ -915,7 +927,7 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartBackupJob.html
@@ -930,7 +942,11 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html
@@ -945,7 +961,7 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartRestoreJob.html
@@ -972,6 +988,10 @@ export class Backup extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html
    */
   public tagResource() {
@@ -983,6 +1003,9 @@ export class Backup extends PolicyStatement {
    * Untags a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html
    */

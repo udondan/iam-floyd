@@ -792,6 +792,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateDashboard.html
    */
   public createDashboard() {
@@ -852,6 +856,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html
    */
   public createTemplate() {
@@ -875,6 +883,10 @@ export class Quicksight extends PolicyStatement {
    * Creates a QuickSight theme
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTheme.html
    */
@@ -1428,6 +1440,10 @@ export class Quicksight extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1451,6 +1467,9 @@ export class Quicksight extends PolicyStatement {
    * Remove tags from a QuickSight resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UntagResource.html
    */
@@ -1652,7 +1671,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDashboard(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:dashboard/${ResourceId}';
@@ -1674,7 +1693,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTemplate(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:template/${ResourceId}';
@@ -1696,7 +1715,7 @@ export class Quicksight extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTheme(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:quicksight:${Region}:${Account}:theme/${ResourceId}';

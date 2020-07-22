@@ -156,6 +156,10 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to alter a keyspace or table
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public alter() {
     this.add('cassandra:Alter');
@@ -166,6 +170,10 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to create a keyspace or table
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public create() {
     this.add('cassandra:Create');
@@ -196,6 +204,10 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to restore table from a backup
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public restore() {
     this.add('cassandra:Restore');
@@ -216,6 +228,10 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to tag a keyspace or table
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public tagResource() {
     this.add('cassandra:TagResource');
@@ -226,6 +242,10 @@ export class Cassandra extends PolicyStatement {
    * Grants permission to untag a keyspace or table
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public untagResource() {
     this.add('cassandra:UntagResource');
@@ -243,7 +263,7 @@ export class Cassandra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onKeyspace(keyspaceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}';
@@ -266,7 +286,7 @@ export class Cassandra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTable(keyspaceName: string, tableName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cassandra:${Region}:${Account}:/keyspace/${KeyspaceName}/table/${TableName}';

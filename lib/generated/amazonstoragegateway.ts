@@ -843,6 +843,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ActivateGateway.html
    */
   public activateGateway() {
@@ -866,6 +870,10 @@ export class Storagegateway extends PolicyStatement {
    * This operation adds one or more tags to the specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddTagsToResource.html
    */
@@ -939,6 +947,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateCachediSCSIVolume.html
    */
   public createCachediSCSIVolume() {
@@ -951,6 +963,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateNFSFileShare.html
    */
   public createNFSFileShare() {
@@ -962,6 +978,10 @@ export class Storagegateway extends PolicyStatement {
    * This operation creates a SMB file share on an existing file gateway.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSMBFileShare.html
    */
@@ -999,6 +1019,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateStorediSCSIVolume.html
    */
   public createStorediSCSIVolume() {
@@ -1011,6 +1035,10 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapeWithBarcode.html
    */
   public createTapeWithBarcode() {
@@ -1022,6 +1050,10 @@ export class Storagegateway extends PolicyStatement {
    * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapes.html
    */
@@ -1491,6 +1523,9 @@ export class Storagegateway extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RemoveTagsFromResource.html
    */
   public removeTagsFromResource() {
@@ -1722,7 +1757,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGateway(gatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}';
@@ -1744,7 +1779,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onShare(shareId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:share/${ShareId}';
@@ -1766,7 +1801,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTape(tapeBarcode: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:tape/${TapeBarcode}';
@@ -1810,7 +1845,7 @@ export class Storagegateway extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onVolume(gatewayId: string, volumeId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:storagegateway:${Region}:${Account}:gateway/${GatewayId}/volume/${VolumeId}';

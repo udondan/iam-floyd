@@ -285,6 +285,10 @@ export class Qldb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_CreateLedger.html
    */
   public createLedger() {
@@ -513,6 +517,10 @@ export class Qldb extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_TagResource.html
    */
   public tagResource() {
@@ -524,6 +532,9 @@ export class Qldb extends PolicyStatement {
    * Grants permission to remove one or more tags to a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/qldb/latest/developerguide/API_UntagResource.html
    */
@@ -555,7 +566,7 @@ export class Qldb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onLedger(ledgerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:qldb:${Region}:${Account}:ledger/${LedgerName}';
@@ -578,7 +589,7 @@ export class Qldb extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStream(ledgerName: string, streamId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:qldb:${Region}:${Account}:stream/${LedgerName}/${StreamId}';

@@ -553,6 +553,10 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html
    */
   public createIPSet() {
@@ -564,6 +568,10 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to create a RegexPatternSet.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html
    */
@@ -577,6 +585,10 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html
    */
   public createRuleGroup() {
@@ -588,6 +600,10 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to create a WebACL.
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html
    */
@@ -709,6 +725,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html
    */
   public getIPSet() {
@@ -720,6 +739,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to view LoggingConfiguration about the specified WebACL.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html
    */
@@ -745,6 +767,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html
    */
   public getRateBasedStatementManagedKeys() {
@@ -757,6 +782,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html
    */
   public getRegexPatternSet() {
@@ -768,6 +796,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to view details about the specified RuleGroup.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRuleGroup.html
    */
@@ -792,6 +823,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to view details about the specified GetWebACL.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html
    */
@@ -889,6 +923,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -913,7 +950,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html
@@ -940,6 +977,11 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -951,6 +993,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to disassociates tags from an AWS resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UntagResource.html
    */
@@ -964,6 +1009,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html
    */
   public updateIPSet() {
@@ -975,6 +1023,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to update the specified RegexPatternSet.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html
    */
@@ -988,6 +1039,9 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRuleGroup.html
    */
   public updateRuleGroup() {
@@ -999,6 +1053,9 @@ export class Wafv2 extends PolicyStatement {
    * Grants permission to update the specified WebACL.
    *
    * Access Level: Permissions management
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
    */
@@ -1020,7 +1077,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}';
@@ -1046,7 +1103,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}';
@@ -1072,7 +1129,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}';
@@ -1098,7 +1155,7 @@ export class Wafv2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}';

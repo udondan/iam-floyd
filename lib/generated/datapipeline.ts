@@ -193,6 +193,11 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   * - datapipeline:workerGroup
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html
    */
   public activatePipeline() {
@@ -204,6 +209,10 @@ export class Datapipeline extends PolicyStatement {
    * Adds or modifies tags for the specified pipeline.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
@@ -217,6 +226,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - datapipeline:Tag
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
   public createPipeline() {
@@ -228,6 +240,11 @@ export class Datapipeline extends PolicyStatement {
    * Deactivates the specified running pipeline.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   * - datapipeline:workerGroup
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html
    */
@@ -241,6 +258,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html
    */
   public deletePipeline() {
@@ -252,6 +273,10 @@ export class Datapipeline extends PolicyStatement {
    * Gets the object definitions for a set of objects associated with the pipeline.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html
    */
@@ -265,6 +290,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html
    */
   public describePipelines() {
@@ -276,6 +305,10 @@ export class Datapipeline extends PolicyStatement {
    * Task runners call EvaluateExpression to evaluate a string in the context of the specified object.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html
    */
@@ -301,6 +334,11 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   * - datapipeline:workerGroup
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html
    */
   public getPipelineDefinition() {
@@ -324,6 +362,9 @@ export class Datapipeline extends PolicyStatement {
    * Task runners call PollForTask to receive a task to perform from AWS Data Pipeline.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - datapipeline:workerGroup
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html
    */
@@ -349,6 +390,11 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   * - datapipeline:workerGroup
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html
    */
   public putPipelineDefinition() {
@@ -361,6 +407,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html
    */
   public queryObjects() {
@@ -372,6 +422,10 @@ export class Datapipeline extends PolicyStatement {
    * Removes existing tags from the specified pipeline.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
@@ -409,6 +463,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html
    */
   public setStatus() {
@@ -432,6 +490,11 @@ export class Datapipeline extends PolicyStatement {
    * Validates the specified pipeline definition to ensure that it is well formed and can be run without error.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - datapipeline:PipelineCreator
+   * - datapipeline:Tag
+   * - datapipeline:workerGroup
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html
    */

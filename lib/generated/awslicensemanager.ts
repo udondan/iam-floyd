@@ -162,6 +162,10 @@ export class LicenseManager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html
    */
   public createLicenseConfiguration() {
@@ -282,6 +286,10 @@ export class LicenseManager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -346,7 +354,7 @@ export class LicenseManager extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - license-manager:ResourceTag/${TagKey}
+   * - license-manager:ResourceTag/${TagKey}
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}';

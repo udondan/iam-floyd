@@ -347,6 +347,10 @@ export class Iot1click extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreateProject.html
    */
   public createProject() {
@@ -430,6 +434,10 @@ export class Iot1click extends PolicyStatement {
    * Finalize a device claim
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/devices-deviceid-finalize-claim.html
    */
@@ -551,6 +559,10 @@ export class Iot1click extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_TagResource.html
    */
   public tagResource() {
@@ -574,6 +586,9 @@ export class Iot1click extends PolicyStatement {
    * Removes the given tags (metadata) from the resource.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_UntagResource.html
    */
@@ -629,7 +644,7 @@ export class Iot1click extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDevice(deviceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot1click:${Region}:${Account}:devices/${DeviceId}';
@@ -651,7 +666,7 @@ export class Iot1click extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onProject(projectName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot1click:${Region}:${Account}:projects/${ProjectName}';

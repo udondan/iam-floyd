@@ -105,7 +105,7 @@ export class Ebs extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}';

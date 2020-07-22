@@ -246,6 +246,10 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public createComposition() {
@@ -257,6 +261,10 @@ export class Deepcomposer extends PolicyStatement {
    * Starts creating/training a generative-model that is able to perform inference against the user-provided piano-melody to create a multi-track midi composition.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
@@ -294,6 +302,9 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
   public getComposition() {
@@ -305,6 +316,9 @@ export class Deepcomposer extends PolicyStatement {
    * Returns information about the model.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
@@ -365,6 +379,9 @@ export class Deepcomposer extends PolicyStatement {
    * Grants permission to lists tag for a resource.
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    */
   public listTagsForResource() {
     this.add('deepcomposer:ListTagsForResource');
@@ -385,6 +402,11 @@ export class Deepcomposer extends PolicyStatement {
    * Grants permission to tag a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public tagResource() {
     this.add('deepcomposer:TagResource');
@@ -395,6 +417,11 @@ export class Deepcomposer extends PolicyStatement {
    * Grants permission to untag a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public untagResource() {
     this.add('deepcomposer:UntagResource');
@@ -436,7 +463,7 @@ export class Deepcomposer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}';
@@ -458,7 +485,7 @@ export class Deepcomposer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}';

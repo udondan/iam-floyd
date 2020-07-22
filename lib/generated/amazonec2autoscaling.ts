@@ -721,6 +721,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - autoscaling:TargetGroupARNs
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancerTargetGroups.html
    */
   public attachLoadBalancerTargetGroups() {
@@ -732,6 +735,9 @@ export class Autoscaling extends PolicyStatement {
    * Attaches one or more load balancers to the specified Auto Scaling group.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - autoscaling:LoadBalancerNames
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancers.html
    */
@@ -793,6 +799,18 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - autoscaling:InstanceTypes
+   * - autoscaling:LaunchConfigurationName
+   * - autoscaling:LaunchTemplateVersionSpecified
+   * - autoscaling:LoadBalancerNames
+   * - autoscaling:MaxSize
+   * - autoscaling:MinSize
+   * - autoscaling:TargetGroupARNs
+   * - autoscaling:VPCZoneIdentifiers
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateAutoScalingGroup.html
    */
   public createAutoScalingGroup() {
@@ -805,6 +823,11 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - autoscaling:ImageId
+   * - autoscaling:InstanceType
+   * - autoscaling:SpotPrice
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html
    */
   public createLaunchConfiguration() {
@@ -816,6 +839,10 @@ export class Autoscaling extends PolicyStatement {
    * Creates or updates tags for the specified Auto Scaling group.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateOrUpdateTags.html
    */
@@ -900,6 +927,10 @@ export class Autoscaling extends PolicyStatement {
    * Deletes the specified tags.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteTags.html
    */
@@ -1153,6 +1184,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - autoscaling:TargetGroupARNs
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancerTargetGroups.html
    */
   public detachLoadBalancerTargetGroups() {
@@ -1164,6 +1198,9 @@ export class Autoscaling extends PolicyStatement {
    * Removes one or more load balancers from the specified Auto Scaling group.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - autoscaling:LoadBalancerNames
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancers.html
    */
@@ -1273,6 +1310,10 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - autoscaling:MaxSize
+   * - autoscaling:MinSize
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScheduledUpdateGroupAction.html
    */
   public putScheduledUpdateGroupAction() {
@@ -1381,6 +1422,14 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - autoscaling:InstanceTypes
+   * - autoscaling:LaunchConfigurationName
+   * - autoscaling:LaunchTemplateVersionSpecified
+   * - autoscaling:MaxSize
+   * - autoscaling:MinSize
+   * - autoscaling:VPCZoneIdentifiers
+   *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_UpdateAutoScalingGroup.html
    */
   public updateAutoScalingGroup() {
@@ -1400,8 +1449,8 @@ export class Autoscaling extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - autoscaling:ResourceTag/${TagKey}
-   *  - aws:ResourceTag/${TagKey}
+   * - autoscaling:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}';

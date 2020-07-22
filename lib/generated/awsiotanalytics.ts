@@ -436,6 +436,10 @@ export class Iotanalytics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateChannel.html
    */
   public createChannel() {
@@ -447,6 +451,10 @@ export class Iotanalytics extends PolicyStatement {
    * Creates a dataset.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDataset.html
    */
@@ -472,6 +480,10 @@ export class Iotanalytics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatastore.html
    */
   public createDatastore() {
@@ -483,6 +495,10 @@ export class Iotanalytics extends PolicyStatement {
    * Creates a pipeline.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreatePipeline.html
    */
@@ -736,6 +752,10 @@ export class Iotanalytics extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -747,6 +767,10 @@ export class Iotanalytics extends PolicyStatement {
    * Removes the given tags (metadata) from the resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UntagResource.html
    */
@@ -814,9 +838,9 @@ export class Iotanalytics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - iotanalytics:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - iotanalytics:ResourceTag/${TagKey}
    */
   public onChannel(channelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}';
@@ -838,9 +862,9 @@ export class Iotanalytics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - iotanalytics:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - iotanalytics:ResourceTag/${TagKey}
    */
   public onDataset(datasetName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}';
@@ -862,9 +886,9 @@ export class Iotanalytics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - iotanalytics:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - iotanalytics:ResourceTag/${TagKey}
    */
   public onDatastore(datastoreName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}';
@@ -886,9 +910,9 @@ export class Iotanalytics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - iotanalytics:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - iotanalytics:ResourceTag/${TagKey}
    */
   public onPipeline(pipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}';

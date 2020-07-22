@@ -1437,6 +1437,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-CreateCrawler
    */
   public createCrawler() {
@@ -1461,6 +1465,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-CreateDevEndpoint
    */
   public createDevEndpoint() {
@@ -1472,6 +1480,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a job
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob
    */
@@ -1545,6 +1557,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-CreateTrigger
    */
   public createTrigger() {
@@ -1568,6 +1584,10 @@ export class Glue extends PolicyStatement {
    * Grants permission to create a workflow
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-CreateWorkflow
    */
@@ -2565,6 +2585,10 @@ export class Glue extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-TagResource
    */
   public tagResource() {
@@ -2576,6 +2600,9 @@ export class Glue extends PolicyStatement {
    * Grants permission to remove tags associated with a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-tags.html#aws-glue-api-tags-UntagResource
    */
@@ -2883,7 +2910,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDevendpoint(devEndpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:devendpoint/${DevEndpointName}';
@@ -2905,7 +2932,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onJob(jobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:job/${JobName}';
@@ -2927,7 +2954,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTrigger(triggerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:trigger/${TriggerName}';
@@ -2949,7 +2976,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCrawler(crawlerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:crawler/${CrawlerName}';
@@ -2971,7 +2998,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onWorkflow(workflowName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:workflow/${WorkflowName}';
@@ -2993,7 +3020,7 @@ export class Glue extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onMlTransform(transformId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:glue:${Region}:${Account}:mlTransform/${TransformId}';

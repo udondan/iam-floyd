@@ -429,6 +429,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html
    */
   public createDataset() {
@@ -440,6 +444,10 @@ export class Forecast extends PolicyStatement {
    * Creates a dataset group
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
    */
@@ -453,6 +461,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
    */
   public createDatasetImportJob() {
@@ -464,6 +476,10 @@ export class Forecast extends PolicyStatement {
    * Creates a forecast
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html
    */
@@ -477,6 +493,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html
    */
   public createForecastExportJob() {
@@ -488,6 +508,10 @@ export class Forecast extends PolicyStatement {
    * Creates a predictor
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html
    */
@@ -753,6 +777,10 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_TagResource.html
    */
   public tagResource() {
@@ -764,6 +792,9 @@ export class Forecast extends PolicyStatement {
    * Deletes the specified tags for a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UntagResource.html
    */
@@ -793,7 +824,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}';
@@ -813,7 +844,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}';
@@ -833,7 +864,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}';
@@ -866,7 +897,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}';
@@ -886,7 +917,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}';
@@ -906,7 +937,7 @@ export class Forecast extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}';

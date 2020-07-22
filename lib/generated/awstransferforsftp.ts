@@ -239,6 +239,10 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html
    */
   public createServer() {
@@ -251,7 +255,11 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html
@@ -398,6 +406,10 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html
    */
   public tagResource() {
@@ -421,6 +433,9 @@ export class Transfer extends PolicyStatement {
    * Enables the caller to untag a server or a user.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html
    */
@@ -465,7 +480,7 @@ export class Transfer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onUser(serverId: string, username: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${Username}';
@@ -488,7 +503,7 @@ export class Transfer extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}';

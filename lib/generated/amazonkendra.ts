@@ -365,6 +365,10 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateDataSource.html
    */
   public createDataSource() {
@@ -377,6 +381,10 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFaq.html
    */
   public createFaq() {
@@ -388,6 +396,10 @@ export class Kendra extends PolicyStatement {
    * Create an Index
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html
    */
@@ -581,6 +593,10 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_TagResource.html
    */
   public tagResource() {
@@ -592,6 +608,9 @@ export class Kendra extends PolicyStatement {
    * Removes the tag with the given key from a resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UntagResource.html
    */
@@ -635,7 +654,7 @@ export class Kendra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}';
@@ -658,7 +677,7 @@ export class Kendra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}';
@@ -682,7 +701,7 @@ export class Kendra extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}';

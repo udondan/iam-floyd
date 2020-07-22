@@ -288,6 +288,10 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateAccelerator.html
    */
   public createAccelerator() {
@@ -492,6 +496,10 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_TagResource.html
    */
   public tagResource() {
@@ -503,6 +511,9 @@ export class Globalaccelerator extends PolicyStatement {
    * Remove tags from globalaccelerator resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UntagResource.html
    */
@@ -581,7 +592,7 @@ export class Globalaccelerator extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAccelerator(acceleratorId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}';
@@ -602,7 +613,7 @@ export class Globalaccelerator extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onListener(acceleratorId: string, listenerId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}';
@@ -625,7 +636,7 @@ export class Globalaccelerator extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEndpointgroup(acceleratorId: string, listenerId: string, endpointGroupId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:globalaccelerator::${Account}:accelerator/${AcceleratorId}/listener/${ListenerId}/endpoint-group/${EndpointGroupId}';

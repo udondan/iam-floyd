@@ -273,6 +273,11 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - batch:User
+   * - batch:Privileged
+   * - batch:Image
+   *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
   public registerJobDefinition() {

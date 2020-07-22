@@ -300,6 +300,9 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ram:ShareOwnerAccountId
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html
    */
   public acceptResourceShareInvitation() {
@@ -311,6 +314,14 @@ export class Ram extends PolicyStatement {
    * Associates resource(s) and/or principal(s) to a resource share
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:ResourceShareName
+   * - ram:AllowsExternalPrincipals
+   * - ram:Principal
+   * - ram:RequestedResourceType
+   * - ram:ResourceArn
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html
    */
@@ -324,6 +335,12 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:AllowsExternalPrincipals
+   * - ram:ResourceShareName
+   * - ram:PermissionArn
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html
    */
   public associateResourceSharePermission() {
@@ -335,6 +352,14 @@ export class Ram extends PolicyStatement {
    * Create resource share with provided resource(s) and/or principal(s)
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ram:RequestedResourceType
+   * - ram:ResourceArn
+   * - ram:RequestedAllowsExternalPrincipals
+   * - ram:Principal
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
@@ -348,6 +373,11 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:ResourceShareName
+   * - ram:AllowsExternalPrincipals
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html
    */
   public deleteResourceShare() {
@@ -360,6 +390,14 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:ResourceShareName
+   * - ram:AllowsExternalPrincipals
+   * - ram:Principal
+   * - ram:RequestedResourceType
+   * - ram:ResourceArn
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html
    */
   public disassociateResourceShare() {
@@ -371,6 +409,12 @@ export class Ram extends PolicyStatement {
    * Disassociate a Permission from a Resource Share
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:AllowsExternalPrincipals
+   * - ram:ResourceShareName
+   * - ram:PermissionArn
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html
    */
@@ -395,6 +439,9 @@ export class Ram extends PolicyStatement {
    * Gets the contents of an AWS RAM permission
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - ram:PermissionArn
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetPermission.html
    */
@@ -492,6 +539,11 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:ResourceShareName
+   * - ram:AllowsExternalPrincipals
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html
    */
   public listResourceSharePermissions() {
@@ -516,6 +568,9 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ram:ShareOwnerAccountId
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html
    */
   public rejectResourceShareInvitation() {
@@ -527,6 +582,10 @@ export class Ram extends PolicyStatement {
    * Tag the specified resources share
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html
    */
@@ -540,6 +599,10 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html
    */
   public untagResource() {
@@ -551,6 +614,12 @@ export class Ram extends PolicyStatement {
    * Update attributes of the resource share
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ram:ResourceShareName
+   * - ram:AllowsExternalPrincipals
+   * - ram:RequestedAllowsExternalPrincipals
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html
    */
@@ -570,9 +639,9 @@ export class Ram extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ram:AllowsExternalPrincipals
-   *  - ram:ResourceShareName
+   * - aws:ResourceTag/${TagKey}
+   * - ram:AllowsExternalPrincipals
+   * - ram:ResourceShareName
    */
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}';
@@ -612,7 +681,7 @@ export class Ram extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ram:PermissionArn
+   * - ram:PermissionArn
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram::${Account}:permission/${ResourcePath}';

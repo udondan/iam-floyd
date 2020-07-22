@@ -566,6 +566,10 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html
    */
   public createApplication() {
@@ -577,6 +581,10 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to create a configuration profile
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html
    */
@@ -590,6 +598,10 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateDeploymentStrategy.html
    */
   public createDeploymentStrategy() {
@@ -601,6 +613,10 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to create an environment
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html
    */
@@ -686,6 +702,9 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html
    */
   public getApplication() {
@@ -697,6 +716,9 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about a configuration
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html
    */
@@ -710,6 +732,9 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html
    */
   public getConfigurationProfile() {
@@ -721,6 +746,9 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about a deployment
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html
    */
@@ -734,6 +762,9 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html
    */
   public getDeploymentStrategy() {
@@ -745,6 +776,9 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to view details about an environment
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html
    */
@@ -842,6 +876,9 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -878,6 +915,11 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -889,6 +931,9 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to untag an appconfig resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html
    */
@@ -902,6 +947,9 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html
    */
   public updateApplication() {
@@ -913,6 +961,9 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to modify a configuration profile
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html
    */
@@ -926,6 +977,9 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html
    */
   public updateDeploymentStrategy() {
@@ -937,6 +991,9 @@ export class Appconfig extends PolicyStatement {
    * Grants permission to modify an environment
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html
    */
@@ -968,7 +1025,7 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}';
@@ -991,7 +1048,7 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}';
@@ -1015,7 +1072,7 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}';
@@ -1038,7 +1095,7 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}';
@@ -1062,7 +1119,7 @@ export class Appconfig extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeployment(applicationId: string, environmentId: string, deploymentNumber: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}';

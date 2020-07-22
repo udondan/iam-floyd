@@ -565,7 +565,7 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - ds:CreateAlias
    * - ds:DeleteDirectory
    * - ds:DescribeDirectories
@@ -593,6 +593,10 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateUser.html
    */
   public createUser() {
@@ -604,6 +608,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to delete a user in an Amazon Connect instance.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html
    */
@@ -617,7 +624,7 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - firehose:DescribeDeliveryStream
    * - firehose:ListDeliveryStreams
    * - kinesis:DescribeStream
@@ -637,6 +644,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to describe a user in an Amazon Connect instance.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html
    */
@@ -722,7 +732,7 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - connect:DescribeInstance
    * - connect:ListInstances
    * - ds:DescribeDirectories
@@ -835,6 +845,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -871,7 +884,7 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - firehose:DescribeDeliveryStream
    * - firehose:ListDeliveryStreams
    * - kinesis:DescribeStream
@@ -979,6 +992,11 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -990,6 +1008,10 @@ export class Connect extends PolicyStatement {
    * Grants permissions to untag an Amazon Connect resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UntagResource.html
    */
@@ -1015,6 +1037,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html
    */
   public updateUserHierarchy() {
@@ -1026,6 +1051,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to update identity information for a user in an Amazon Connect instance.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserIdentityInfo.html
    */
@@ -1039,6 +1067,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserPhoneConfig.html
    */
   public updateUserPhoneConfig() {
@@ -1051,6 +1082,9 @@ export class Connect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserRoutingProfile.html
    */
   public updateUserRoutingProfile() {
@@ -1062,6 +1096,9 @@ export class Connect extends PolicyStatement {
    * Grants permissions to update security profiles for a user in an Amazon Connect instance.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserSecurityProfiles.html
    */
@@ -1122,7 +1159,7 @@ export class Connect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onUser(instanceId: string, userId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/agent/${UserId}';

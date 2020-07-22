@@ -610,6 +610,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - cloudformation:RoleArn
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html
    */
   public continueUpdateRollback() {
@@ -622,6 +625,16 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - cloudformation:ChangeSetName
+   * - cloudformation:ResourceTypes
+   * - cloudformation:ImportResourceTypes
+   * - cloudformation:RoleArn
+   * - cloudformation:StackPolicyUrl
+   * - cloudformation:TemplateUrl
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html
    */
   public createChangeSet() {
@@ -633,6 +646,14 @@ export class Cloudformation extends PolicyStatement {
    * Creates a stack as specified in the template.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cloudformation:ResourceTypes
+   * - cloudformation:RoleArn
+   * - cloudformation:StackPolicyUrl
+   * - cloudformation:TemplateUrl
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html
    */
@@ -658,6 +679,12 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - cloudformation:RoleArn
+   * - cloudformation:TemplateUrl
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html
    */
   public createStackSet() {
@@ -680,6 +707,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - cloudformation:ChangeSetName
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html
    */
   public deleteChangeSet() {
@@ -691,6 +721,9 @@ export class Cloudformation extends PolicyStatement {
    * Deletes a specified stack.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cloudformation:RoleArn
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html
    */
@@ -751,6 +784,9 @@ export class Cloudformation extends PolicyStatement {
    * Returns the description for the specified change set.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - cloudformation:ChangeSetName
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html
    */
@@ -943,6 +979,9 @@ export class Cloudformation extends PolicyStatement {
    * Updates a stack using the input information that was provided when the specified change set was created.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cloudformation:ChangeSetName
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html
    */
@@ -1148,6 +1187,9 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
+   * Possible condition keys:
+   * - cloudformation:StackPolicyUrl
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html
    */
   public setStackPolicy() {
@@ -1216,6 +1258,14 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - cloudformation:ResourceTypes
+   * - cloudformation:RoleArn
+   * - cloudformation:StackPolicyUrl
+   * - cloudformation:TemplateUrl
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html
    */
   public updateStack() {
@@ -1239,6 +1289,12 @@ export class Cloudformation extends PolicyStatement {
    * Updates a stackset as specified in the template.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cloudformation:RoleArn
+   * - cloudformation:TemplateUrl
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html
    */
@@ -1283,7 +1339,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStack(stackName: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}';
@@ -1307,7 +1363,7 @@ export class Cloudformation extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}';

@@ -184,7 +184,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html
@@ -199,7 +199,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabulary.html
@@ -214,7 +214,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabularyFilter.html
@@ -433,7 +433,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartMedicalTranscriptionJob.html
@@ -472,7 +472,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html
@@ -487,7 +487,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateMedicalVocabulary.html
@@ -502,7 +502,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html
@@ -517,7 +517,7 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabularyFilter.html

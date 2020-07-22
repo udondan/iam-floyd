@@ -573,6 +573,12 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:Select
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html
    */
   public batchGetItem() {
@@ -585,6 +591,11 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
    */
   public batchWriteItem() {
@@ -596,6 +607,12 @@ export class Dynamodb extends PolicyStatement {
    * The ConditionCheckItem operation checks the existence of a set of attributes for the item with the given primary key
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:ReturnValues
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html
    */
@@ -668,6 +685,13 @@ export class Dynamodb extends PolicyStatement {
    * Deletes a single item in a table by primary key
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:EnclosingOperation
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:ReturnValues
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
@@ -845,6 +869,13 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:EnclosingOperation
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:Select
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
   public getItem() {
@@ -963,6 +994,13 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:EnclosingOperation
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:ReturnValues
+   *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
   public putItem() {
@@ -974,6 +1012,13 @@ export class Dynamodb extends PolicyStatement {
    * Uses the primary key of a table or a secondary index to directly access items from that table or index
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:ReturnValues
+   * - dynamodb:Select
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
    */
@@ -1010,6 +1055,12 @@ export class Dynamodb extends PolicyStatement {
    * Returns one or more items and item attributes by accessing every item in a table or a secondary index
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:ReturnValues
+   * - dynamodb:Select
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
    */
@@ -1094,6 +1145,13 @@ export class Dynamodb extends PolicyStatement {
    * Edits an existing item's attributes, or adds a new item to the table if it does not already exist
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - dynamodb:Attributes
+   * - dynamodb:EnclosingOperation
+   * - dynamodb:LeadingKeys
+   * - dynamodb:ReturnConsumedCapacity
+   * - dynamodb:ReturnValues
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */

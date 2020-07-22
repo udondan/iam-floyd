@@ -387,6 +387,10 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateSignalingChannel.html
    */
   public createSignalingChannel() {
@@ -398,6 +402,10 @@ export class Kinesisvideo extends PolicyStatement {
    * Grants permission to create a Kinesis video stream
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html
    */
@@ -639,6 +647,10 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagResource.html
    */
   public tagResource() {
@@ -650,6 +662,10 @@ export class Kinesisvideo extends PolicyStatement {
    * Grants permission to attach set of tags to your Kinesis video streams
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html
    */
@@ -663,6 +679,9 @@ export class Kinesisvideo extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagResource.html
    */
   public untagResource() {
@@ -674,6 +693,9 @@ export class Kinesisvideo extends PolicyStatement {
    * Grants permission to remove one or more tags from your Kinesis video streams
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html
    */
@@ -730,7 +752,7 @@ export class Kinesisvideo extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onStream(streamName: string, creationTime: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:stream/${StreamName}/${CreationTime}';
@@ -754,7 +776,7 @@ export class Kinesisvideo extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onChannel(channelName: string, creationTime: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kinesisvideo:${Region}:${Account}:channel/${ChannelName}/${CreationTime}';

@@ -571,7 +571,11 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateDeploymentJob.html
@@ -586,6 +590,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateFleet.html
    */
   public createFleet() {
@@ -598,7 +606,11 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobot.html
@@ -613,6 +625,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplication.html
    */
   public createRobotApplication() {
@@ -625,7 +641,7 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateRobotApplicationVersion.html
@@ -640,6 +656,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplication.html
    */
   public createSimulationApplication() {
@@ -652,7 +672,7 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetObject
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationApplicationVersion.html
@@ -667,7 +687,11 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_CreateSimulationJob.html
@@ -946,7 +970,11 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_StartSimulationJobBatch.html
@@ -961,7 +989,7 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_SyncDeploymentJob.html
@@ -976,6 +1004,10 @@ export class Robomaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html
    */
   public tagResource() {
@@ -987,6 +1019,9 @@ export class Robomaker extends PolicyStatement {
    * Remove tags from a RoboMaker resource
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/robomaker/latest/dg/API_UntagResource.html
    */
@@ -1031,7 +1066,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRobotApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot-application/${ApplicationName}/${CreatedOnEpoch}';
@@ -1055,7 +1090,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSimulationApplication(applicationName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-application/${ApplicationName}/${CreatedOnEpoch}';
@@ -1078,7 +1113,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSimulationJob(simulationJobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job/${SimulationJobId}';
@@ -1100,7 +1135,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSimulationJobBatch(simulationJobBatchId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:simulation-job-batch/${SimulationJobBatchId}';
@@ -1122,7 +1157,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeploymentJob(deploymentJobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-job/${DeploymentJobId}';
@@ -1145,7 +1180,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRobot(robotName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:robot/${RobotName}/${CreatedOnEpoch}';
@@ -1169,7 +1204,7 @@ export class Robomaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDeploymentFleet(fleetName: string, createdOnEpoch: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:robomaker:${Region}:${Account}:deployment-fleet/${FleetName}/${CreatedOnEpoch}';

@@ -1256,6 +1256,11 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-app.html#rest-api-app-methods
    */
   public createApp() {
@@ -1268,6 +1273,11 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html#rest-api-campaigns-methods
    */
   public createCampaign() {
@@ -1279,6 +1289,11 @@ export class Mobiletargeting extends PolicyStatement {
    * Create an email template.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-http-methods
    */
@@ -1316,6 +1331,11 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#apps-application-id-journeys-journey-id-http-methods
    */
   public createJourney() {
@@ -1327,6 +1347,11 @@ export class Mobiletargeting extends PolicyStatement {
    * Create a push notification template.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#templates-template-name-push-http-methods
    */
@@ -1352,6 +1377,11 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html#rest-api-segments-methods
    */
   public createSegment() {
@@ -1364,6 +1394,11 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#templates-template-name-sms-http-methods
    */
   public createSmsTemplate() {
@@ -1375,6 +1410,11 @@ export class Mobiletargeting extends PolicyStatement {
    * Create a voice message template.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#templates-template-name-voice-http-methods
    */
@@ -2240,6 +2280,10 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-tags.html#rest-api-tags-methods-post
    */
   public tagResource() {
@@ -2251,6 +2295,10 @@ export class Mobiletargeting extends PolicyStatement {
    * Removes tags from a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-tags.html#rest-api-tags-methods-delete
    */
@@ -2348,6 +2396,10 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaign.html#rest-api-campaign-methods
    */
   public updateCampaign() {
@@ -2371,6 +2423,10 @@ export class Mobiletargeting extends PolicyStatement {
    * Update a specific email template under the same version or generate a new version.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-email.html#templates-template-name-email-http-methods
    */
@@ -2420,6 +2476,10 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id.html#apps-application-id-journeys-journey-id-http-methods
    */
   public updateJourney() {
@@ -2432,6 +2492,10 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys-journey-id-state.html#apps-application-id-journeys-journey-id-state-http-methods
    */
   public updateJourneyState() {
@@ -2443,6 +2507,10 @@ export class Mobiletargeting extends PolicyStatement {
    * Update a specific push notification template under the same version or generate a new version.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-push.html#templates-template-name-push-http-methods
    */
@@ -2468,6 +2536,10 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segment.html#rest-api-segment-methods
    */
   public updateSegment() {
@@ -2491,6 +2563,10 @@ export class Mobiletargeting extends PolicyStatement {
    * Update a specific sms message template under the same version or generate a new version.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-sms.html#templates-template-name-sms-http-methods
    */
@@ -2528,6 +2604,10 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/pinpoint/latest/apireference/templates-template-name-voice.html#templates-template-name-voice-http-methods
    */
   public updateVoiceTemplate() {
@@ -2546,7 +2626,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}';
@@ -2569,7 +2649,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onCampaigns(appId: string, campaignId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/campaigns/${CampaignId}';
@@ -2593,7 +2673,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onJourneys(appId: string, journeyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/journeys/${JourneyId}';
@@ -2617,7 +2697,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onSegments(appId: string, segmentId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:apps/${AppId}/segments/${SegmentId}';
@@ -2641,7 +2721,7 @@ export class Mobiletargeting extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTemplates(templateName: string, channelType: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mobiletargeting:${Region}:${Account}:templates/${TemplateName}/${ChannelType}';

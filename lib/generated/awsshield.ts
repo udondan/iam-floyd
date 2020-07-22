@@ -162,7 +162,7 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:GetBucketPolicy
    * - s3:PutBucketPolicy
    *
@@ -178,7 +178,7 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:GetRole
    * - iam:ListAttachedRolePolicies
    * - iam:PassRole
@@ -303,7 +303,7 @@ export class Shield extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - s3:DeleteBucketPolicy
    * - s3:GetBucketPolicy
    * - s3:PutBucketPolicy

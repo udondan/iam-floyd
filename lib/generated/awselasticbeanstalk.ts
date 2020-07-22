@@ -758,6 +758,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
   public addTags() {
@@ -818,6 +822,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html
    */
   public createApplication() {
@@ -829,6 +837,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Grants permission to create an application version for an application.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplicationVersion.html
    */
@@ -842,6 +854,16 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - elasticbeanstalk:FromApplication
+   * - elasticbeanstalk:FromApplicationVersion
+   * - elasticbeanstalk:FromConfigurationTemplate
+   * - elasticbeanstalk:FromEnvironment
+   * - elasticbeanstalk:FromSolutionStack
+   * - elasticbeanstalk:FromPlatform
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateConfigurationTemplate.html
    */
   public createConfigurationTemplate() {
@@ -854,6 +876,14 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - elasticbeanstalk:FromApplicationVersion
+   * - elasticbeanstalk:FromConfigurationTemplate
+   * - elasticbeanstalk:FromSolutionStack
+   * - elasticbeanstalk:FromPlatform
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html
    */
   public createEnvironment() {
@@ -865,6 +895,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Grants permission to create a new version of a custom platform.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreatePlatformVersion.html
    */
@@ -1178,6 +1212,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
   public removeTags() {
@@ -1225,6 +1262,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Grants permission to swap the CNAMEs of two environments.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - elasticbeanstalk:FromEnvironment
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_SwapEnvironmentCNAMEs.html
    */
@@ -1286,6 +1326,14 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - elasticbeanstalk:FromApplication
+   * - elasticbeanstalk:FromApplicationVersion
+   * - elasticbeanstalk:FromConfigurationTemplate
+   * - elasticbeanstalk:FromEnvironment
+   * - elasticbeanstalk:FromSolutionStack
+   * - elasticbeanstalk:FromPlatform
+   *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateConfigurationTemplate.html
    */
   public updateConfigurationTemplate() {
@@ -1297,6 +1345,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Grants permission to update an environment.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - elasticbeanstalk:FromApplicationVersion
+   * - elasticbeanstalk:FromConfigurationTemplate
+   * - elasticbeanstalk:FromSolutionStack
+   * - elasticbeanstalk:FromPlatform
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateEnvironment.html
    */
@@ -1328,7 +1382,7 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}';
@@ -1351,8 +1405,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - elasticbeanstalk:InApplication
+   * - aws:ResourceTag/${TagKey}
+   * - elasticbeanstalk:InApplication
    */
   public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}';
@@ -1376,8 +1430,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - elasticbeanstalk:InApplication
+   * - aws:ResourceTag/${TagKey}
+   * - elasticbeanstalk:InApplication
    */
   public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}';
@@ -1401,8 +1455,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - elasticbeanstalk:InApplication
+   * - aws:ResourceTag/${TagKey}
+   * - elasticbeanstalk:InApplication
    */
   public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}';

@@ -1010,6 +1010,9 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ses:FromAddress
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html
    */
   public sendBounce() {
@@ -1021,6 +1024,12 @@ export class Ses extends PolicyStatement {
    * Composes an email message to multiple destinations
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ses:FeedbackAddress
+   * - ses:FromAddress
+   * - ses:FromDisplayName
+   * - ses:Recipients
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html
    */
@@ -1034,6 +1043,12 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ses:FeedbackAddress
+   * - ses:FromAddress
+   * - ses:FromDisplayName
+   * - ses:Recipients
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendCustomVerificationEmail.html
    */
   public sendCustomVerificationEmail() {
@@ -1045,6 +1060,12 @@ export class Ses extends PolicyStatement {
    * Composes an email message based on input data, and then immediately queues the message for sending
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ses:FeedbackAddress
+   * - ses:FromAddress
+   * - ses:FromDisplayName
+   * - ses:Recipients
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html
    */
@@ -1058,6 +1079,12 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ses:FeedbackAddress
+   * - ses:FromAddress
+   * - ses:FromDisplayName
+   * - ses:Recipients
+   *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html
    */
   public sendRawEmail() {
@@ -1069,6 +1096,12 @@ export class Ses extends PolicyStatement {
    * Composes an email message using an email template and immediately queues it for sending
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ses:FeedbackAddress
+   * - ses:FromAddress
+   * - ses:FromDisplayName
+   * - ses:Recipients
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html
    */

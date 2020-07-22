@@ -48,6 +48,9 @@ export class Ec2InstanceConnect extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - ec2:osuser
+   *
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    */
   public sendSSHPublicKey() {
@@ -66,8 +69,8 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - ec2:ResourceTag/${TagKey}
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';

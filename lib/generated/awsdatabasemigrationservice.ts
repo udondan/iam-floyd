@@ -533,6 +533,11 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - dms:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html
    */
   public addTagsToResource() {
@@ -557,6 +562,11 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - dms:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html
    */
   public createEndpoint() {
@@ -568,6 +578,11 @@ export class Dms extends PolicyStatement {
    * Creates an AWS DMS event notification subscription.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - dms:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEventSubscription.html
    */
@@ -581,6 +596,11 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - dms:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html
    */
   public createReplicationInstance() {
@@ -593,6 +613,11 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - dms:req-tag/${TagKey}
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html
    */
   public createReplicationSubnetGroup() {
@@ -604,6 +629,11 @@ export class Dms extends PolicyStatement {
    * Creates a replication task using the specified parameters
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - dms:req-tag/${TagKey}
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html
    */
@@ -809,6 +839,10 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstanceTaskLogs.html
    */
   public describeReplicationInstanceTaskLogs() {
@@ -892,6 +926,10 @@ export class Dms extends PolicyStatement {
    * Uploads the specified certificate.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ImportCertificate.html
    */
@@ -1013,6 +1051,9 @@ export class Dms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html
    */
   public removeTagsFromResource() {
@@ -1079,8 +1120,8 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - dms:rep-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - dms:rep-tag/${TagKey}
    */
   public onReplicationInstance(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:rep:${ResourceName}';
@@ -1102,8 +1143,8 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - dms:task-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - dms:task-tag/${TagKey}
    */
   public onReplicationTask(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:task:${ResourceName}';
@@ -1125,8 +1166,8 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - dms:endpoint-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - dms:endpoint-tag/${TagKey}
    */
   public onEndpoint(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:endpoint:${ResourceName}';
@@ -1148,8 +1189,8 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - dms:cert-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - dms:cert-tag/${TagKey}
    */
   public onCertificate(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:cert:${ResourceName}';
@@ -1171,8 +1212,8 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - dms:es-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - dms:es-tag/${TagKey}
    */
   public onEventSubscription(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:es:${ResourceName}';
@@ -1194,8 +1235,8 @@ export class Dms extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - dms:subgrp-tag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - dms:subgrp-tag/${TagKey}
    */
   public onReplicationSubnetGroup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dms:${Region}:${Account}:subgrp:${ResourceName}';

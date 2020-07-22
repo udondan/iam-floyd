@@ -236,6 +236,10 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html
    */
   public createApplication() {
@@ -368,6 +372,10 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html
    */
   public tagResource() {
@@ -379,6 +387,9 @@ export class Kinesisanalytics extends PolicyStatement {
    * Remove the specified tags from the application.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html
    */
@@ -410,7 +421,7 @@ export class Kinesisanalytics extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kinesisanalytics:${Region}:${Account}:application/${ApplicationName}';

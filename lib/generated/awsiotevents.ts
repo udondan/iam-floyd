@@ -280,6 +280,10 @@ export class Iotevents extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html
    */
   public createDetectorModel() {
@@ -291,6 +295,10 @@ export class Iotevents extends PolicyStatement {
    * Creates an input.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateInput.html
    */
@@ -448,6 +456,10 @@ export class Iotevents extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_TagResource.html
    */
   public tagResource() {
@@ -459,6 +471,9 @@ export class Iotevents extends PolicyStatement {
    * Removes the given tags (metadata) from the resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UntagResource.html
    */
@@ -514,7 +529,7 @@ export class Iotevents extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onDetectorModel(detectorModelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:detectorModel/${DetectorModelName}';
@@ -536,7 +551,7 @@ export class Iotevents extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onInput(inputName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iotevents:${Region}:${Account}:input/${InputName}';

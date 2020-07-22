@@ -204,6 +204,9 @@ export class Serverlessrepo extends PolicyStatement {
    * Creates an AWS CloudFormation ChangeSet for the given application.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - serverlessrepo:applicationType
    */
   public createCloudFormationChangeSet() {
     this.add('serverlessrepo:CreateCloudFormationChangeSet');
@@ -214,6 +217,9 @@ export class Serverlessrepo extends PolicyStatement {
    * Creates an AWS CloudFormation template
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - serverlessrepo:applicationType
    */
   public createCloudFormationTemplate() {
     this.add('serverlessrepo:CreateCloudFormationTemplate');
@@ -234,6 +240,9 @@ export class Serverlessrepo extends PolicyStatement {
    * Gets the specified application.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - serverlessrepo:applicationType
    */
   public getApplication() {
     this.add('serverlessrepo:GetApplication');
@@ -264,6 +273,9 @@ export class Serverlessrepo extends PolicyStatement {
    * Retrieves the list of applications nested in the containing application
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - serverlessrepo:applicationType
    */
   public listApplicationDependencies() {
     this.add('serverlessrepo:ListApplicationDependencies');
@@ -274,6 +286,9 @@ export class Serverlessrepo extends PolicyStatement {
    * Lists versions for the specified application owned by the requester.
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - serverlessrepo:applicationType
    */
   public listApplicationVersions() {
     this.add('serverlessrepo:ListApplicationVersions');
@@ -304,6 +319,9 @@ export class Serverlessrepo extends PolicyStatement {
    * Gets all applications authorized for this user
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - serverlessrepo:applicationType
    */
   public searchApplications() {
     this.add('serverlessrepo:SearchApplications');

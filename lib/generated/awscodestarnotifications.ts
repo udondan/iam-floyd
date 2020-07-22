@@ -200,6 +200,11 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-notifications:NotificationsForResource
+   *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html
    */
   public createNotificationRule() {
@@ -211,6 +216,12 @@ export class CodestarNotifications extends PolicyStatement {
    * Grants permission to delete a notification rule for a resource
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-notifications:NotificationsForResource
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteNotificationRule.html
    */
@@ -224,6 +235,10 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteTarget.html
    */
   public deleteTarget() {
@@ -235,6 +250,12 @@ export class CodestarNotifications extends PolicyStatement {
    * Grants permission to get information about a notification rule
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-notifications:NotificationsForResource
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DescribeNotificationRule.html
    */
@@ -272,6 +293,10 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: List
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -283,6 +308,10 @@ export class CodestarNotifications extends PolicyStatement {
    * Grants permission to list the notification rule targets for an AWS account
    *
    * Access Level: List
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTargets.html
    */
@@ -296,6 +325,12 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-notifications:NotificationsForResource
+   *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Subscribe.html
    */
   public subscribe() {
@@ -307,6 +342,11 @@ export class CodestarNotifications extends PolicyStatement {
    * Grants permission to attach resource tags to a notification rule resource ARN
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_TagResource.html
    */
@@ -320,6 +360,12 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-notifications:NotificationsForResource
+   *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Unsubscribe.html
    */
   public unsubscribe() {
@@ -332,6 +378,10 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html
    */
   public untagResource() {
@@ -343,6 +393,12 @@ export class CodestarNotifications extends PolicyStatement {
    * Grants permission to change a notification rule for a resource
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - codestar-notifications:NotificationsForResource
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UpdateNotificationRule.html
    */
@@ -362,7 +418,7 @@ export class CodestarNotifications extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onNotificationrule(notificationRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}';

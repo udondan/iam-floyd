@@ -1929,6 +1929,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_AddTags.html
    */
   public addTags() {
@@ -1985,6 +1989,11 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:InstanceTypes
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateApp.html
    */
   public createApp() {
@@ -1997,7 +2006,16 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:InterContainerTrafficEncryption
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateAutoMLJob.html
@@ -2024,7 +2042,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateCompilationJob.html
@@ -2039,7 +2057,17 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:AppNetworkAccess
+   * - sagemaker:InstanceTypes
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   * - sagemaker:DomainSharingOutputKmsKey
+   * - sagemaker:HomeEfsFileSystemKmsKey
+   *
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    * - iam:PassRole
    *
@@ -2055,6 +2083,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html
    */
   public createEndpoint() {
@@ -2066,6 +2098,14 @@ export class Sagemaker extends PolicyStatement {
    * Creates an endpoint configuration that can be deployed using Amazon SageMaker hosting services.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:AcceleratorTypes
+   * - sagemaker:InstanceTypes
+   * - sagemaker:ModelArn
+   * - sagemaker:VolumeKmsKey
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html
    */
@@ -2079,6 +2119,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateExperiment.html
    */
   public createExperiment() {
@@ -2091,7 +2135,13 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - sagemaker:WorkteamArn
+   * - sagemaker:WorkteamType
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateFlowDefinition.html
@@ -2106,6 +2156,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHumanTaskUi.html
    */
   public createHumanTaskUi() {
@@ -2118,7 +2172,23 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:FileSystemAccessMode
+   * - sagemaker:FileSystemDirectoryPath
+   * - sagemaker:FileSystemId
+   * - sagemaker:FileSystemType
+   * - sagemaker:InstanceTypes
+   * - sagemaker:InterContainerTrafficEncryption
+   * - sagemaker:MaxRuntimeInSeconds
+   * - sagemaker:NetworkIsolation
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateHyperParameterTuningJob.html
@@ -2133,7 +2203,15 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - sagemaker:WorkteamArn
+   * - sagemaker:WorkteamType
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:OutputKmsKey
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateLabelingJob.html
@@ -2148,7 +2226,14 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:NetworkIsolation
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html
@@ -2175,7 +2260,18 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:InstanceTypes
+   * - sagemaker:MaxRuntimeInSeconds
+   * - sagemaker:NetworkIsolation
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateMonitoringSchedule.html
@@ -2190,7 +2286,18 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:AcceleratorTypes
+   * - sagemaker:DirectInternetAccess
+   * - sagemaker:InstanceTypes
+   * - sagemaker:RootAccess
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateNotebookInstance.html
@@ -2241,7 +2348,19 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:InstanceTypes
+   * - sagemaker:MaxRuntimeInSeconds
+   * - sagemaker:NetworkIsolation
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   * - sagemaker:InterContainerTrafficEncryption
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateProcessingJob.html
@@ -2256,7 +2375,23 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:FileSystemAccessMode
+   * - sagemaker:FileSystemDirectoryPath
+   * - sagemaker:FileSystemId
+   * - sagemaker:FileSystemType
+   * - sagemaker:InstanceTypes
+   * - sagemaker:InterContainerTrafficEncryption
+   * - sagemaker:MaxRuntimeInSeconds
+   * - sagemaker:NetworkIsolation
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html
@@ -2271,6 +2406,14 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:InstanceTypes
+   * - sagemaker:ModelArn
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTransformJob.html
    */
   public createTransformJob() {
@@ -2282,6 +2425,10 @@ export class Sagemaker extends PolicyStatement {
    * Create a trial.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrial.html
    */
@@ -2295,6 +2442,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrialComponent.html
    */
   public createTrialComponent() {
@@ -2307,7 +2458,14 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:InstanceTypes
+   * - sagemaker:DomainSharingOutputKmsKey
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateUserProfile.html
@@ -2321,6 +2479,10 @@ export class Sagemaker extends PolicyStatement {
    * Create a workteam.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkteam.html
    */
@@ -2501,6 +2663,9 @@ export class Sagemaker extends PolicyStatement {
    * Deletes the specified set of tags from an Amazon SageMaker resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteTags.html
    */
@@ -2922,6 +3087,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - sagemaker:TargetModel
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_InvokeEndpoint.html
    */
   public invokeEndpoint() {
@@ -3318,7 +3486,7 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_RenderUiTemplate.html
@@ -3513,6 +3681,11 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:InstanceTypes
+   * - sagemaker:DomainSharingOutputKmsKey
+   *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateDomain.html
    */
   public updateDomain() {
@@ -3561,7 +3734,18 @@ export class Sagemaker extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - sagemaker:InstanceTypes
+   * - sagemaker:MaxRuntimeInSeconds
+   * - sagemaker:NetworkIsolation
+   * - sagemaker:OutputKmsKey
+   * - sagemaker:VolumeKmsKey
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:VpcSubnets
+   *
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateMonitoringSchedule.html
@@ -3575,6 +3759,11 @@ export class Sagemaker extends PolicyStatement {
    * Updates a notebook instance. Notebook instance updates include upgrading or downgrading the EC2 instance used for your notebook instance to accommodate changes in your workload requirements. You can also update the VPC security groups.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - sagemaker:AcceleratorTypes
+   * - sagemaker:InstanceTypes
+   * - sagemaker:RootAccess
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateNotebookInstance.html
    */
@@ -3623,6 +3812,12 @@ export class Sagemaker extends PolicyStatement {
    * Grants permission to update a UserProfile
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - sagemaker:InstanceTypes
+   * - sagemaker:VpcSecurityGroupIds
+   * - sagemaker:InstanceTypes
+   * - sagemaker:DomainSharingOutputKmsKey
    *
    * https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateUserProfile.html
    */
@@ -3681,8 +3876,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onFlowDefinition(flowDefinitionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:flow-definition/${FlowDefinitionName}';
@@ -3702,8 +3897,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onHumanTaskUi(humanTaskUiName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:human-task-ui/${HumanTaskUiName}';
@@ -3723,8 +3918,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onLabelingJob(labelingJobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:labeling-job/${LabelingJobName}';
@@ -3744,8 +3939,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onWorkteam(workteamName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:workteam/${WorkteamName}';
@@ -3765,8 +3960,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onWorkforce(workforceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:workforce/${WorkforceName}';
@@ -3786,8 +3981,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onDomain(domainId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:domain/${DomainId}';
@@ -3808,8 +4003,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onUserProfile(domainId: string, userProfileName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:user-profile/${DomainId}/${UserProfileName}';
@@ -3833,8 +4028,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onApp(domainId: string, userProfileName: string, appType: string, appName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:app/${DomainId}/${UserProfileName}/${AppType}/${AppName}';
@@ -3857,8 +4052,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onNotebookInstance(notebookInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:notebook-instance/${NotebookInstanceName}';
@@ -3929,8 +4124,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onTrainingJob(trainingJobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:training-job/${TrainingJobName}';
@@ -3950,8 +4145,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onProcessingJob(processingJobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:processing-job/${ProcessingJobName}';
@@ -3971,8 +4166,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onHyperParameterTuningJob(hyperParameterTuningJobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:hyper-parameter-tuning-job/${HyperParameterTuningJobName}';
@@ -4009,8 +4204,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onModel(modelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:model/${ModelName}';
@@ -4030,8 +4225,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onEndpointConfig(endpointConfigName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:endpoint-config/${EndpointConfigName}';
@@ -4051,8 +4246,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onEndpoint(endpointName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:endpoint/${EndpointName}';
@@ -4072,8 +4267,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onTransformJob(transformJobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:transform-job/${TransformJobName}';
@@ -4110,8 +4305,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onAutomlJob(autoMLJobJobName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:automl-job/${AutoMLJobJobName}';
@@ -4131,8 +4326,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onMonitoringSchedule(monitoringScheduleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:monitoring-schedule/${MonitoringScheduleName}';
@@ -4152,8 +4347,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onExperiment(experimentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment/${ExperimentName}';
@@ -4173,8 +4368,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onExperimentTrial(trialName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial/${TrialName}';
@@ -4194,8 +4389,8 @@ export class Sagemaker extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
-   *  - sagemaker:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - sagemaker:ResourceTag/${TagKey}
    */
   public onExperimentTrialComponent(trialComponentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:sagemaker:${Region}:${Account}:experiment-trial-component/${TrialComponentName}';

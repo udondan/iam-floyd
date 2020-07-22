@@ -5165,7 +5165,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html
@@ -5600,7 +5600,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html
@@ -5891,6 +5891,9 @@ export class Ec2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - ec2:CreateAction
+   *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html
    */
   public createTags() {
@@ -6047,7 +6050,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - route53:AssociateVPCWithHostedZone
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html
@@ -9362,7 +9365,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html
@@ -9803,10 +9806,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onCapacityReservation(capacityReservationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation/${CapacityReservationId}';
@@ -9828,10 +9831,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onClientVpnEndpoint(clientVpnEndpointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:client-vpn-endpoint/${ClientVpnEndpointId}';
@@ -9853,8 +9856,8 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onCustomerGateway(customerGatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:customer-gateway/${CustomerGatewayId}';
@@ -9876,14 +9879,14 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AutoPlacement
-   *  - ec2:AvailabilityZone
-   *  - ec2:HostRecovery
-   *  - ec2:InstanceType
-   *  - ec2:Quantity
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AutoPlacement
+   * - ec2:AvailabilityZone
+   * - ec2:HostRecovery
+   * - ec2:InstanceType
+   * - ec2:Quantity
+   * - ec2:ResourceTag/${TagKey}
    */
   public onDedicatedHost(hostId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:dedicated-host/${HostId}';
@@ -9905,10 +9908,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onDhcpOptions(dhcpOptionsId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}';
@@ -9930,7 +9933,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:ElasticGpuType
+   * - ec2:ElasticGpuType
    */
   public onElasticGpu(elasticGpuId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:elastic-gpu/${ElasticGpuId}';
@@ -9970,12 +9973,12 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Owner
-   *  - ec2:Public
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Owner
+   * - ec2:Public
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onFpgaImage(fpgaImageId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}::fpga-image/${FpgaImageId}';
@@ -9995,14 +9998,14 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:ImageType
-   *  - ec2:Owner
-   *  - ec2:Public
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:RootDeviceType
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:ImageType
+   * - ec2:Owner
+   * - ec2:Public
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:RootDeviceType
    */
   public onImage(imageId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}::image/${ImageId}';
@@ -10023,17 +10026,17 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AvailabilityZone
-   *  - ec2:EbsOptimized
-   *  - ec2:InstanceProfile
-   *  - ec2:InstanceType
-   *  - ec2:PlacementGroup
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:RootDeviceType
-   *  - ec2:Tenancy
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AvailabilityZone
+   * - ec2:EbsOptimized
+   * - ec2:InstanceProfile
+   * - ec2:InstanceType
+   * - ec2:PlacementGroup
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:RootDeviceType
+   * - ec2:Tenancy
    */
   public onInstance(instanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}';
@@ -10055,10 +10058,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onInternetGateway(internetGatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:internet-gateway/${InternetGatewayId}';
@@ -10080,7 +10083,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:Region
+   * - ec2:Region
    */
   public onKeyPair(keyPairName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:key-pair/${KeyPairName}';
@@ -10102,8 +10105,8 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLaunchTemplate(launchTemplateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:launch-template/${LaunchTemplateId}';
@@ -10125,10 +10128,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLocalGateway(localGatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway/${LocalGatewayId}';
@@ -10150,10 +10153,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLocalGatewayRouteTable(localGatewayRouteTableId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table/${LocalGatewayRouteTableId}';
@@ -10175,10 +10178,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLocalGatewayRouteTableVirtualInterfaceGroupAssociation(localGatewayRouteTableVirtualInterfaceGroupAssociationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-virtual-interface-group-association/${LocalGatewayRouteTableVirtualInterfaceGroupAssociationId}';
@@ -10200,10 +10203,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLocalGatewayRouteTableVpcAssociation(localGatewayRouteTableVpcAssociationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-vpc-association/${LocalGatewayRouteTableVpcAssociationId}';
@@ -10225,10 +10228,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLocalGatewayVirtualInterface(localGatewayVirtualInterfaceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface/${LocalGatewayVirtualInterfaceId}';
@@ -10250,10 +10253,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onLocalGatewayVirtualInterfaceGroup(localGatewayVirtualInterfaceGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface-group/${LocalGatewayVirtualInterfaceGroupId}';
@@ -10275,11 +10278,11 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Vpc
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Vpc
    */
   public onNetworkAcl(naclId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:network-acl/${NaclId}';
@@ -10301,15 +10304,15 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AssociatePublicIpAddress
-   *  - ec2:AuthorizedService
-   *  - ec2:AvailabilityZone
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Subnet
-   *  - ec2:Vpc
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AssociatePublicIpAddress
+   * - ec2:AuthorizedService
+   * - ec2:AvailabilityZone
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Subnet
+   * - ec2:Vpc
    */
   public onNetworkInterface(networkInterfaceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:network-interface/${NetworkInterfaceId}';
@@ -10331,8 +10334,8 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:PlacementGroupStrategy
-   *  - ec2:Region
+   * - ec2:PlacementGroupStrategy
+   * - ec2:Region
    */
   public onPlacementGroup(placementGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:placement-group/${PlacementGroupName}';
@@ -10354,14 +10357,14 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AvailabilityZone
-   *  - ec2:InstanceType
-   *  - ec2:Region
-   *  - ec2:ReservedInstancesOfferingType
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Tenancy
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AvailabilityZone
+   * - ec2:InstanceType
+   * - ec2:Region
+   * - ec2:ReservedInstancesOfferingType
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Tenancy
    */
   public onReservedInstances(reservationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:reserved-instances/${ReservationId}';
@@ -10383,11 +10386,11 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Vpc
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Vpc
    */
   public onRouteTable(routeTableId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:route-table/${RouteTableId}';
@@ -10409,11 +10412,11 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Vpc
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Vpc
    */
   public onSecurityGroup(securityGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}';
@@ -10434,14 +10437,14 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Owner
-   *  - ec2:ParentVolume
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:SnapshotTime
-   *  - ec2:VolumeSize
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Owner
+   * - ec2:ParentVolume
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:SnapshotTime
+   * - ec2:VolumeSize
    */
   public onSnapshot(snapshotId: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}';
@@ -10462,10 +10465,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onSpotInstanceRequest(spotInstanceRequestId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:spot-instances-request/${SpotInstanceRequestId}';
@@ -10487,12 +10490,12 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AvailabilityZone
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Vpc
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AvailabilityZone
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Vpc
    */
   public onSubnet(subnetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:subnet/${SubnetId}';
@@ -10514,10 +10517,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTrafficMirrorSession(trafficMirrorSessionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-session/${TrafficMirrorSessionId}';
@@ -10539,10 +10542,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTrafficMirrorTarget(trafficMirrorTargetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-target/${TrafficMirrorTargetId}';
@@ -10564,10 +10567,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTrafficMirrorFilter(trafficMirrorFilterId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter/${TrafficMirrorFilterId}';
@@ -10589,7 +10592,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:Region
+   * - ec2:Region
    */
   public onTrafficMirrorFilterRule(trafficMirrorFilterRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter-rule/${TrafficMirrorFilterRuleId}';
@@ -10611,10 +10614,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTransitGatewayAttachment(transitGatewayAttachmentId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-attachment/${TransitGatewayAttachmentId}';
@@ -10636,10 +10639,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTransitGatewayMulticastDomain(transitGatewayMulticastDomainId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-multicast-domain/${TransitGatewayMulticastDomainId}';
@@ -10661,10 +10664,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTransitGatewayRouteTable(transitGatewayRouteTableId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-route-table/${TransitGatewayRouteTableId}';
@@ -10686,10 +10689,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onTransitGateway(transitGatewayId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:transit-gateway/${TransitGatewayId}';
@@ -10711,16 +10714,16 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AvailabilityZone
-   *  - ec2:Encrypted
-   *  - ec2:ParentSnapshot
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:VolumeIops
-   *  - ec2:VolumeSize
-   *  - ec2:VolumeType
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AvailabilityZone
+   * - ec2:Encrypted
+   * - ec2:ParentSnapshot
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:VolumeIops
+   * - ec2:VolumeSize
+   * - ec2:VolumeType
    */
   public onVolume(volumeId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:volume/${VolumeId}';
@@ -10742,11 +10745,11 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:Tenancy
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:Tenancy
    */
   public onVpc(vpcId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}';
@@ -10768,12 +10771,12 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:VpceServiceName
-   *  - ec2:VpceServiceOwner
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:VpceServiceName
+   * - ec2:VpceServiceOwner
    */
   public onVpcEndpoint(vpceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpceId}';
@@ -10795,11 +10798,11 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:VpceServicePrivateDnsName
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:VpceServicePrivateDnsName
    */
   public onVpcEndpointService(vpceServiceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${VpceServiceId}';
@@ -10821,10 +10824,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:Region
-   *  - ec2:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:Region
+   * - ec2:ResourceTag/${TagKey}
    */
   public onVpcFlowLog(vpcFlowLogId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-flow-log/${VpcFlowLogId}';
@@ -10846,10 +10849,10 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - ec2:AccepterVpc
-   *  - ec2:Region
-   *  - ec2:RequesterVpc
-   *  - ec2:ResourceTag/${TagKey}
+   * - ec2:AccepterVpc
+   * - ec2:Region
+   * - ec2:RequesterVpc
+   * - ec2:ResourceTag/${TagKey}
    */
   public onVpcPeeringConnection(vpcPeeringConnectionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpc-peering-connection/${VpcPeeringConnectionId}';
@@ -10871,27 +10874,27 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:RequestTag/${TagKey}
-   *  - aws:TagKeys
-   *  - ec2:AuthenticationType
-   *  - ec2:DPDTimeoutSeconds
-   *  - ec2:GatewayType
-   *  - ec2:IKEVersions
-   *  - ec2:InsideTunnelCidr
-   *  - ec2:Phase1DHGroupNumbers
-   *  - ec2:Phase1EncryptionAlgorithms
-   *  - ec2:Phase1IntegrityAlgorithms
-   *  - ec2:Phase1LifetimeSeconds
-   *  - ec2:Phase2DHGroupNumbers
-   *  - ec2:Phase2EncryptionAlgorithms
-   *  - ec2:Phase2IntegrityAlgorithms
-   *  - ec2:Phase2LifetimeSeconds
-   *  - ec2:PresharedKeys
-   *  - ec2:Region
-   *  - ec2:RekeyFuzzPercentage
-   *  - ec2:RekeyMarginTimeSeconds
-   *  - ec2:ResourceTag/${TagKey}
-   *  - ec2:RoutingType
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   * - ec2:AuthenticationType
+   * - ec2:DPDTimeoutSeconds
+   * - ec2:GatewayType
+   * - ec2:IKEVersions
+   * - ec2:InsideTunnelCidr
+   * - ec2:Phase1DHGroupNumbers
+   * - ec2:Phase1EncryptionAlgorithms
+   * - ec2:Phase1IntegrityAlgorithms
+   * - ec2:Phase1LifetimeSeconds
+   * - ec2:Phase2DHGroupNumbers
+   * - ec2:Phase2EncryptionAlgorithms
+   * - ec2:Phase2IntegrityAlgorithms
+   * - ec2:Phase2LifetimeSeconds
+   * - ec2:PresharedKeys
+   * - ec2:Region
+   * - ec2:RekeyFuzzPercentage
+   * - ec2:RekeyMarginTimeSeconds
+   * - ec2:ResourceTag/${TagKey}
+   * - ec2:RoutingType
    */
   public onVpnConnection(vpnConnectionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:vpn-connection/${VpnConnectionId}';

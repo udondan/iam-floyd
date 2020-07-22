@@ -307,6 +307,11 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create an asset (for example, in a Job).
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - aws:TagKeys
    */
   public createAsset() {
     this.add('dataexchange:CreateAsset');
@@ -317,6 +322,11 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create a data set.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - aws:TagKeys
    */
   public createDataSet() {
     this.add('dataexchange:CreateDataSet');
@@ -337,6 +347,11 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to create a revision.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - aws:TagKeys
    */
   public createRevision() {
     this.add('dataexchange:CreateRevision');
@@ -477,6 +492,10 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to add one or more tags to a specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    */
   public tagResource() {
     this.add('dataexchange:TagResource');
@@ -487,6 +506,9 @@ export class Dataexchange extends PolicyStatement {
    * Grants permission to remove one or more tags from a specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    */
   public untagResource() {
     this.add('dataexchange:UntagResource');
@@ -534,7 +556,7 @@ export class Dataexchange extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - dataexchange:JobType
+   * - dataexchange:JobType
    */
   public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}';

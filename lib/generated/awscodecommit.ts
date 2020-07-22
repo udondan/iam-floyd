@@ -1031,6 +1031,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateBranch.html
    */
   public createBranch() {
@@ -1042,6 +1045,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to add, copy, move or update single or multiple files in a branch in an AWS CodeCommit repository, and generate a commit for the changes in the specified branch.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - codecommit:References
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateCommit.html
    */
@@ -1079,6 +1085,10 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateRepository.html
    */
   public createRepository() {
@@ -1090,6 +1100,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to create an unreferenced commit that contains the result of merging two commits using either the three-way or the squash merge option; does not control Git merge actions
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - codecommit:References
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateUnreferencedMergeCommit.html
    */
@@ -1115,6 +1128,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteBranch.html
    */
   public deleteBranch() {
@@ -1138,6 +1154,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to delete a specified file from a specified branch
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - codecommit:References
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteFile.html
    */
@@ -1379,6 +1398,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetMergeCommit.html
    */
   public getMergeCommit() {
@@ -1535,6 +1557,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
    */
   public gitPush() {
@@ -1631,6 +1656,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByFastForward.html
    */
   public mergeBranchesByFastForward() {
@@ -1642,6 +1670,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to merge two commits into the specified destination branch using the squash merge option
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - codecommit:References
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesBySquash.html
    */
@@ -1655,6 +1686,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByThreeWay.html
    */
   public mergeBranchesByThreeWay() {
@@ -1666,6 +1700,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to close a pull request and attempt to merge it into the specified destination branch for that pull request at the specified commit using the fast-forward merge option
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - codecommit:References
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByFastForward.html
    */
@@ -1679,6 +1716,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestBySquash.html
    */
   public mergePullRequestBySquash() {
@@ -1690,6 +1730,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to close a pull request and attempt to merge it into the specified destination branch for that pull request at the specified commit using the three-way merge option
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - codecommit:References
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByThreeWay.html
    */
@@ -1763,6 +1806,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - codecommit:References
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutFile.html
    */
   public putFile() {
@@ -1787,6 +1833,11 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -1810,6 +1861,9 @@ export class Codecommit extends PolicyStatement {
    * Grants permission to disassociate resource tags from a CodeCommit resource ARN
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UntagResource.html
    */
@@ -1985,7 +2039,7 @@ export class Codecommit extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';

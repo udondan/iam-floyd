@@ -199,7 +199,13 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Possible condition keys:
+   * - cloud9:EnvironmentName
+   * - cloud9:InstanceType
+   * - cloud9:SubnetId
+   * - cloud9:UserArn
+   *
+   * Dependent actions:
    * - ec2:DescribeSubnets
    * - ec2:DescribeVpcs
    * - iam:CreateServiceLinkedRole
@@ -216,6 +222,11 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - cloud9:UserArn
+   * - cloud9:EnvironmentId
+   * - cloud9:Permissions
+   *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentMembership.html
    */
   public createEnvironmentMembership() {
@@ -228,7 +239,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Dependent Actions:
+   * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html
@@ -254,6 +265,10 @@ export class Cloud9 extends PolicyStatement {
    * Grants permission to get information about environment members for an AWS Cloud9 development environment.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - cloud9:UserArn
+   * - cloud9:EnvironmentId
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentMemberships.html
    */
@@ -327,6 +342,10 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -338,6 +357,9 @@ export class Cloud9 extends PolicyStatement {
    * Removes tags from a cloud9 environment
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html
    */
@@ -362,6 +384,11 @@ export class Cloud9 extends PolicyStatement {
    * Grants permission to change the settings of an existing environment member for an AWS Cloud9 development environment.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - cloud9:UserArn
+   * - cloud9:EnvironmentId
+   * - cloud9:Permissions
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironmentMembership.html
    */
@@ -393,7 +420,7 @@ export class Cloud9 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}';

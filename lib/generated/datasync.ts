@@ -337,6 +337,10 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html
    */
   public createAgent() {
@@ -348,6 +352,10 @@ export class Datasync extends PolicyStatement {
    * Creates an endpoint for an Amazon EFS file system.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationEfs.html
    */
@@ -361,6 +369,10 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html
    */
   public createLocationNfs() {
@@ -372,6 +384,10 @@ export class Datasync extends PolicyStatement {
    * Creates an endpoint for an Amazon S3 bucket.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html
    */
@@ -385,6 +401,10 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html
    */
   public createLocationSmb() {
@@ -396,6 +416,10 @@ export class Datasync extends PolicyStatement {
    * Creates a sync task.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html
    */
@@ -601,6 +625,10 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_TagResource.html
    */
   public tagResource() {
@@ -612,6 +640,9 @@ export class Datasync extends PolicyStatement {
    * This operation removes one or more tags from the specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UntagResource.html
    */
@@ -655,7 +686,7 @@ export class Datasync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}';
@@ -677,7 +708,7 @@ export class Datasync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}';
@@ -699,7 +730,7 @@ export class Datasync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}';

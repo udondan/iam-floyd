@@ -341,6 +341,10 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html
    */
   public createGraphqlApi() {
@@ -413,6 +417,9 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteGraphqlApi.html
    */
   public deleteGraphqlApi() {
@@ -472,6 +479,9 @@ export class Appsync extends PolicyStatement {
    * Retrieves a GraphqlApi object.
    *
    * Access Level: Read
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApi.html
    */
@@ -617,6 +627,9 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTagsForResource.html
    */
   public listTagsForResource() {
@@ -653,6 +666,11 @@ export class Appsync extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_TagResource.html
    */
   public tagResource() {
@@ -664,6 +682,9 @@ export class Appsync extends PolicyStatement {
    * Untag a resource.
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html
    */
@@ -712,6 +733,9 @@ export class Appsync extends PolicyStatement {
    * Updates a GraphqlApi object.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html
    */
@@ -776,7 +800,7 @@ export class Appsync extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onGraphqlapi(graphQLAPIId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}';

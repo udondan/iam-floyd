@@ -186,6 +186,10 @@ export class Mediapackage extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost
    */
   public createChannel() {
@@ -197,6 +201,10 @@ export class Mediapackage extends PolicyStatement {
    * Grants permission to create an endpoint in AWS Elemental MediaPackage.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost
    */
@@ -306,6 +314,10 @@ export class Mediapackage extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
   public tagResource() {
@@ -317,6 +329,9 @@ export class Mediapackage extends PolicyStatement {
    * Grants permission to delete tags to a Channel or OriginEndpoint.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
@@ -360,7 +375,7 @@ export class Mediapackage extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onChannels(channelIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:channels/${ChannelIdentifier}';
@@ -382,7 +397,7 @@ export class Mediapackage extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onOriginEndpoints(originEndpointIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage:${Region}:${Account}:origin_endpoints/${OriginEndpointIdentifier}';

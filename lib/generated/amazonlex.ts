@@ -949,6 +949,10 @@ export class Lex extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html
    */
   public putBot() {
@@ -960,6 +964,10 @@ export class Lex extends PolicyStatement {
    * Creates or updates an alias for the specific bot.
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBotAlias.html
    */
@@ -1021,6 +1029,10 @@ export class Lex extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
    * https://docs.aws.amazon.com/lex/latest/dg/API_TagResource.html
    */
   public tagResource() {
@@ -1032,6 +1044,10 @@ export class Lex extends PolicyStatement {
    * Removes tags from a Lex resource
    *
    * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_UntagResource.html
    */
@@ -1051,7 +1067,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBot(botName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}';
@@ -1074,7 +1090,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBotVersion(botName: string, botVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotVersion}';
@@ -1098,7 +1114,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onBotAlias(botName: string, botAlias: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot:${BotName}:${BotAlias}';
@@ -1123,7 +1139,7 @@ export class Lex extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible condition keys:
-   *  - aws:ResourceTag/${TagKey}
+   * - aws:ResourceTag/${TagKey}
    */
   public onChannel(botName: string, botAlias: string, channelName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:lex:${Region}:${Account}:bot-channel:${BotName}:${BotAlias}:${ChannelName}';
