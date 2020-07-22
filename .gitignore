@@ -5,3 +5,4 @@ dist
 **/*.js
 **/*.d.ts
 lib/generated/.cache
+test/package-lock.json
