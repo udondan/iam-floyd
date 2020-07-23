@@ -29,6 +29,8 @@ cdk-test:
 	@echo "Running CDK test"
 	@cd test && npm i && cdk diff && cdk deploy --require-approval never && cdk destroy --force
 
+cdk-all: cdk install build cdk-test
+
 changelog:
 	@bin/mkchangelog
 
