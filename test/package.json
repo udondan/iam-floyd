@@ -7,7 +7,8 @@
   "devDependencies": {
     "@types/node": "14.0.24",
     "ts-node": "^8.10.2",
-    "typescript": "~3.9.7"
+    "typescript": "~3.9.7",
+    "cdk-iam-floyd": ".."
   },
   "dependencies": {}
 }
