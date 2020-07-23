@@ -2,7 +2,7 @@
   "name": "test",
   "version": "0.0.0",
   "bin": {
-    "test": "bin/cdk.js"
+    "test": "cdk.js"
   },
   "devDependencies": {
     "@types/node": "14.0.24",
