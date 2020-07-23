@@ -4,6 +4,10 @@
   "bin": {
     "test": "cdk.js"
   },
+  "scripts": {
+    "build": "tsc",
+    "cdk": "cdk"
+  },
   "devDependencies": {
     "@types/node": "14.0.24",
     "ts-node": "^8.10.2",
