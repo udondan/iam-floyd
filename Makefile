@@ -27,7 +27,7 @@ test:
 
 cdk-test:
 	@echo "Running CDK test"
-	@find test -type f \( -iname \*.js -o -iname \*.d.ts \)
+	@find test -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 	@cd test && npm i
 	@cd test && npm run build
 	@cdk diff && cdk deploy --require-approval never && cdk destroy --force
@@ -41,7 +41,7 @@ stats:
 	@bin/mkstats
 
 clean:
-	@find . -type f \( -iname \*.js -o -iname \*.d.ts \)
+	@find . -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 	@rm -rf node_modules package-lock.json
 
 install: clean
