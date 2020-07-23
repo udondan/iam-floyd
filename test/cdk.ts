@@ -1,6 +1,7 @@
 import iam = require('@aws-cdk/aws-iam');
 import * as cdk from '@aws-cdk/core';
-import * as statement from 'cdk-iam-floyd';
+
+import * as statement from '../lib';
 
 export class TestStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {

@@ -12,10 +12,6 @@
     "@types/node": "14.0.24",
     "ts-node": "^8.10.2",
     "typescript": "~3.9.7",
-    "@aws-cdk/core": "^1.54.0",
-    "cdk-iam-floyd": "file:../lib"
-  },
-  "peerDependencies": {
-    "cdk-iam-floyd": "file:../lib"
+    "@aws-cdk/core": "^1.54.0"
   }
 }
