@@ -27,13 +27,16 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   public toJSON(): any {
     const mode = this.useNotActions ? 'NotResource' : 'Resource';
     const statement = super.toJSON();
+    const self = this;
 
     if (!this.hasResources()) {
       // a statement requires resources. if none was added, we assume the user wants all resources
       this.resources.push('*');
     }
 
-    statement[mode] = this.resources;
+    statement[mode] = this.resources.filter((elem, pos) => {
+      return self.resources.indexOf(elem) == pos;
+    });
 
     return statement;
   }

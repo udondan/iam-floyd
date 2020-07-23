@@ -31,9 +31,12 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   public toJSON(): any {
     const mode = this.useNotActions ? 'NotAction' : 'Action';
     const statement = super.toJSON();
+    const self = this;
 
     if (this.hasActions()) {
-      statement[mode] = this.actions;
+      statement[mode] = this.actions.filter((elem, pos) => {
+        return self.actions.indexOf(elem) == pos;
+      });
     }
 
     return statement;
