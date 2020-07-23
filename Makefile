@@ -23,13 +23,14 @@ cdk:
 
 test:
 	@echo "Running main test"
-	@rm -f test/main.js && npx ts-node test/main.ts
+	@rm -f test/main.js
+	@npx ts-node test/main.ts
 
 cdk-test:
 	@echo "Running CDK test"
 	@find test -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 	@cd test && npm i
-	@cd test && npm run build
+#	@cd test && npm run build
 	@cdk diff && cdk deploy --require-approval never && cdk destroy --force
 
 cdk-all: cdk install build cdk-test
