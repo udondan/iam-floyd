@@ -7,11 +7,7 @@
   "devDependencies": {
     "@types/node": "14.0.24",
     "ts-node": "^8.10.2",
-    "typescript": "~3.9.7",
-    "cdk-ssm-document": "file:.."
+    "typescript": "~3.9.7"
   },
-  "dependencies": {},
-  "peerDependencies": {
-    "cdk-ssm-document": "file:.."
-  }
+  "dependencies": {}
 }
