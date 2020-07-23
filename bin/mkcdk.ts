@@ -2,57 +2,16 @@
 import { ts } from '@ts-morph/common';
 import fs = require('fs');
 import path = require('path');
-import { Project, Scope, SourceFile } from 'ts-morph';
+import { Project, SourceFile } from 'ts-morph';
 
 const lib = path.join(__dirname, '../lib');
 
 async function run() {
+  swapFiles();
   preparePackageJson();
+
   const project = new Project();
-
   const files = fs.readdirSync(`${lib}/generated`);
-
-  const policyStatementFile = project.addSourceFileAtPath(
-    `${lib}/shared/policy-statement.ts`
-  );
-
-  policyStatementFile.addImportDeclaration({
-    namespaceImport: 'iam',
-    moduleSpecifier: '@aws-cdk/aws-iam',
-  });
-
-  const policyStatementClass = policyStatementFile!.getClasses()[0];
-  policyStatementClass.setExtends('iam.PolicyStatement');
-  policyStatementClass.getConstructors()[0].remove();
-  policyStatementClass.getMethod('toJSON')?.remove();
-
-  const toStatementJson = policyStatementClass.addMethod({
-    name: 'toStatementJson',
-    scope: Scope.Public,
-  });
-  toStatementJson.setBodyText(
-    [
-      'if (!this.hasResources()) {',
-      "  this.resources.push('*');",
-      '}',
-      'if(!this.cdkApplied) {',
-      '', // TODO: Principals
-      ' this.useNotActions && super.addNotActions(...this.actions);',
-      '  this.useNotActions || super.addActions(...this.actions);',
-      '  this.useNotResources && super.addNotResources(...this.resources);',
-      '  this.useNotResources || super.addResources(...this.resources);',
-      '  super.addConditions(this.conditions);',
-      '}',
-      'this.cdkApplied = true;',
-      'return super.toStatementJson();',
-    ].join('\n')
-  );
-
-  toStatementJson.addJsDoc({
-    description: '\nUsed when JSON.stringify() is called',
-  });
-  formatCode(policyStatementFile);
-
   files.forEach(async (file) => {
     if (file == '.cache') return;
     if (!file.endsWith('.ts')) return;
@@ -158,4 +117,42 @@ function preparePackageJson() {
   };
 
   fs.writeFileSync(file, JSON.stringify(jsonData, null, 2));
+}
+
+function swapFiles() {
+  const dir = `${lib}/shared/policy-statement`;
+  const files = fs.readdirSync(dir);
+  files.forEach(async (file) => {
+    if (!file.endsWith('.CDK.ts')) return;
+    const parts = file.split('.');
+    parts.splice(1, 1);
+    swapFile(`${dir}/${file}`, `${dir}/${parts.join('.')}`);
+  });
+}
+
+function swapFile(src: string, dest: string) {
+  console.log(`Going to replace ${dest} with ${src}`);
+  deleteFile(dest);
+  renameFile(src, dest);
+}
+
+function deleteFile(path: string) {
+  try {
+    fs.unlinkSync(path);
+  } catch (err) {
+    exit(err);
+  }
+}
+
+function renameFile(src: string, dest: string) {
+  try {
+    fs.renameSync(src, dest);
+  } catch (err) {
+    exit(err);
+  }
+}
+
+function exit(err: Error) {
+  console.error(err);
+  process.exit(1);
 }
