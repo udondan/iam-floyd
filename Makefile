@@ -1,6 +1,5 @@
 SHELL := /bin/bash
 VERSION := $(shell cat VERSION)
-CDK_BRANCH := cdk
 
 .PHONY: build generate package test tag untag release re-release changelog cdk
 
@@ -23,8 +22,12 @@ cdk:
 	@npx ts-node bin/mkcdk.ts
 
 test:
-	@[[ "$$(git branch --show-current)" == "${CDK_BRANCH}" ]] && echo "Running CDK test" && cd test && npm i && cdk diff && cdk deploy --require-approval never && cdk destroy --force || true
-	@[[ "$$(git branch --show-current)" != "${CDK_BRANCH}" ]] && echo "Running main test" && rm -f test/main.js && npx ts-node test/main.ts || true
+	@echo "Running main test"
+	@rm -f test/main.js && npx ts-node test/main.ts
+
+cdk-test:
+	@echo "Running CDK test"
+	@cd test && npm i && cdk diff && cdk deploy --require-approval never && cdk destroy --force
 
 changelog:
 	@bin/mkchangelog
