@@ -4,7 +4,7 @@ interface Principals {
   [key: string]: string[];
 }
 
-enum PrincipalType {
+export enum PrincipalType {
   AWS = 'AWS',
   FEDERATED = 'Federated',
   CANONICAL_USER = 'CanonicalUser',
