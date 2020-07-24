@@ -42,7 +42,7 @@ export class PolicyStatement extends PolicyStatementWithCDKPrincipal {
     const self = this;
     const addResources = this.useNotResources
       ? // @ts-ignore only available after swapping 1-base
-        this.addBotResources
+        this.addNotResources
       : // @ts-ignore only available after swapping 1-base
         this.addResources;
     addResources(
