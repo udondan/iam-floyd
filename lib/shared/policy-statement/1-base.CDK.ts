@@ -11,15 +11,4 @@ export class PolicyStatementBase extends iam.PolicyStatement {
    * Holds the prefix of the service actions, e.g. `ec2`
    */
   protected servicePrefix = '';
-
-  /**
-   * JSON-ify the policy statement
-   *
-   * Used when JSON.stringify() is called
-   */
-
-  public toJSON(): any {
-    const statement: any = {};
-    return statement;
-  }
 }
