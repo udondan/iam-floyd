@@ -66,7 +66,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * @param actions Actions that will be added to the statement.
    */
-  protected add(action: string) {
+  public add(action: string) {
     this.actions.push(action);
     return this;
   }
