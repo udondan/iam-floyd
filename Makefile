@@ -33,7 +33,7 @@ cdk-test:
 	@cd test && npm run build
 	@cdk diff && cdk deploy --require-approval never && cdk destroy --force
 
-cdk-all: install cdk build cdk-test
+cdk-all: cdk install build cdk-test
 
 changelog:
 	@bin/mkchangelog
