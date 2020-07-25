@@ -36,6 +36,7 @@ test:
 
 cdk-test:
 	@echo -e "$(TARGET_COLOR)Running CDK test$(NO_COLOR)"
+	@rm -rf test/node_modules test/package-lock.json
 	@find test -type f \( -iname \*.js -o -iname \*.d.ts \) -delete
 	@cd test && npm i
 	@cd test && npm run build
