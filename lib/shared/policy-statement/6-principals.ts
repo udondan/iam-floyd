@@ -16,7 +16,7 @@ export enum PrincipalType {
  * Adds "principal" functionality to the Policy Statement
  */
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
-  protected useNotPrincipals = false;
+  private useNotPrincipals = false;
   protected principals: Principals = {};
   private cdkPrincipalsApplied = false;
   protected cdkPrincipals: any[] = [];

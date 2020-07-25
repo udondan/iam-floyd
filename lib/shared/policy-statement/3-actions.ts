@@ -19,7 +19,7 @@ export interface Actions {
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   protected actionList: Actions = {};
-  protected useNotActions = false;
+  private useNotActions = false;
   protected actions: string[] = [];
   private cdkActionsApplied = false;
 

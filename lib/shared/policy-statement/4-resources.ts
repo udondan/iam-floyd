@@ -15,7 +15,7 @@ export interface ResourceType {
  * Adds "resource" functionality to the Policy Statement
  */
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
-  protected useNotResources = false;
+  private useNotResources = false;
   protected resources: string[] = [];
   private cdkResourcesApplied = false;
 
@@ -30,7 +30,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
       this.cdkApplyResources();
       return super.toJSON();
     }
-    const mode = this.useNotActions ? 'NotResource' : 'Resource';
+    const mode = this.useNotResources ? 'NotResource' : 'Resource';
     const statement = super.toJSON();
     const self = this;
 
