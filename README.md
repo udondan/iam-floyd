@@ -22,7 +22,7 @@
 Support for:
 
 - 234 Services<br>
-- 7705 Actions<br>
+- 7710 Actions<br>
 - 746 Resource Types<br>
 - 447 Conditions
 <!-- /stats -->

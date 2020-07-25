@@ -42,11 +42,10 @@ export class CodeguruProfiler extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_CreateProfilingGroup.html",
       "description": "Grants permission to create a profiling group",
       "accessLevel": "Write",
-      "resourceTypes": {
-        "ProfilingGroup": {
-          "required": true
-        }
-      }
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "DeleteProfilingGroup": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DeleteProfilingGroup.html",
@@ -138,6 +137,16 @@ export class CodeguruProfiler extends PolicyStatement {
       "description": "Grants permission to list profiling groups in the account",
       "accessLevel": "List"
     },
+    "ListTagsForResource": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListTagsForResource.html",
+      "description": "Grants permission to list tags for a Profiling Group",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      }
+    },
     "PostAgentProfile": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html",
       "description": "Grants permission to submit a profile collected by an agent belonging to a specific profiling group for aggregation",
@@ -188,6 +197,34 @@ export class CodeguruProfiler extends PolicyStatement {
         }
       }
     },
+    "TagResource": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_TagResource.html",
+      "description": "Grants permission to add or overwrite tags to a Profiling Group",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ]
+    },
+    "UntagResource": {
+      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UntagResource.html",
+      "description": "Grants permission to remove tags from a Profiling Group",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "ProfilingGroup": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ]
+    },
     "UpdateProfilingGroup": {
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UpdateProfilingGroup.html",
       "description": "Grants permission to update a specific profiling group",
@@ -204,7 +241,9 @@ export class CodeguruProfiler extends PolicyStatement {
       "name": "ProfilingGroup",
       "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html",
       "arn": "arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -257,6 +296,10 @@ export class CodeguruProfiler extends PolicyStatement {
    * Grants permission to create a profiling group
    *
    * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_CreateProfilingGroup.html
    */
@@ -386,6 +429,18 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
+   * Grants permission to list tags for a Profiling Group
+   *
+   * Access Level: Tagging
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListTagsForResource.html
+   */
+  public listTagsForResource() {
+    this.add('codeguru-profiler:ListTagsForResource');
+    return this;
+  }
+
+  /**
    * Grants permission to submit a profile collected by an agent belonging to a specific profiling group for aggregation
    *
    * Access Level: Write
@@ -446,6 +501,38 @@ export class CodeguruProfiler extends PolicyStatement {
   }
 
   /**
+   * Grants permission to add or overwrite tags to a Profiling Group
+   *
+   * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_TagResource.html
+   */
+  public tagResource() {
+    this.add('codeguru-profiler:TagResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove tags from a Profiling Group
+   *
+   * Access Level: Tagging
+   *
+   * Possible condition keys:
+   * - aws:TagKeys
+   * - aws:RequestTag/${TagKey}
+   *
+   * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UntagResource.html
+   */
+  public untagResource() {
+    this.add('codeguru-profiler:UntagResource');
+    return this;
+  }
+
+  /**
    * Grants permission to update a specific profiling group
    *
    * Access Level: Write
@@ -466,6 +553,9 @@ export class CodeguruProfiler extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    */
   public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}';
