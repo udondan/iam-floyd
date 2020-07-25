@@ -1,5 +1,10 @@
 import { PolicyStatementWithResources } from './4-resources';
 
+try {
+  var iam = require('@aws-cdk/aws-iam');
+  console.log(typeof iam);
+} catch (e) {}
+
 enum Effect {
   ALLOW = 'Allow',
   DENY = 'Deny',
@@ -12,12 +17,15 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
   public effect = Effect.ALLOW;
 
   /**
-   * JSON-ify the policy statement
+   * Injects effect into the statement.
    *
-   * Used when JSON.stringify() is called
+   * Only relevant for the main package. In CDK mode this only calls super.
    */
-
   public toJSON(): any {
+    // @ts-ignore only available after swapping 1-base
+    if (typeof this.addResources == 'function') {
+      return super.toJSON();
+    }
     const statement = super.toJSON();
 
     if (this.effect != Effect.ALLOW) {

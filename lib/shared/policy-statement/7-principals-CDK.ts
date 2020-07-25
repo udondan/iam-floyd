@@ -1,3 +1,4 @@
+// @ts-ignore only available after swapping 1-base
 import iam = require('@aws-cdk/aws-iam');
 
 import { PolicyStatementWithPrincipal } from './6-principals';

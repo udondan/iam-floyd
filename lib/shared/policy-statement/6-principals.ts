@@ -1,3 +1,4 @@
+import iam from '../iam';
 import { PolicyStatementWithEffect } from './5-effect';
 
 interface Principals {
@@ -17,13 +18,20 @@ export enum PrincipalType {
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   protected useNotPrincipals = false;
   protected principals: Principals = {};
+  private cdkPrincipalsApplied = false;
+  protected cdkPrincipals: any[] = [];
 
   /**
-   * JSON-ify the policy statement
+   * Injects principals into the statement.
    *
-   * Used when JSON.stringify() is called
+   * Only relevant for the main package. In CDK mode this only calls super.
    */
   public toJSON(): any {
+    // @ts-ignore only available after swapping 1-base
+    if (typeof this.addResources == 'function') {
+      this.cdkApplyPrincipals();
+      return super.toJSON();
+    }
     const mode = this.useNotPrincipals ? 'NotPrincipal' : 'Principal';
     const statement = super.toJSON();
 
@@ -32,6 +40,57 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
     }
 
     return statement;
+  }
+
+  public toStatementJson(): any {
+    this.cdkApplyPrincipals();
+
+    // @ts-ignore only available after swapping 1-base
+    return super.toStatementJson();
+  }
+
+  private cdkApplyPrincipals() {
+    if (!this.cdkPrincipalsApplied) {
+      const addPrincipals = this.useNotPrincipals
+        ? // @ts-ignore only available after swapping 1-base
+          this.addNotPrincipals
+        : // @ts-ignore only available after swapping 1-base
+          this.addPrincipals;
+      addPrincipals(...this.cdkPrincipals);
+      if (this.hasPrincipals()) {
+        Object.keys(this.principals).forEach((prefix) => {
+          switch (prefix) {
+            case PrincipalType.AWS:
+              this.principals[prefix].forEach((arn) => {
+                // @ts-ignore only available after swapping 1-base
+                addPrincipals(new iam.ArnPrincipal(arn));
+              });
+              break;
+            case PrincipalType.CANONICAL_USER:
+              this.principals[prefix].forEach((userId) => {
+                // @ts-ignore only available after swapping 1-base
+                addPrincipals(new iam.CanonicalUserPrincipal(userId));
+              });
+              break;
+            case PrincipalType.FEDERATED:
+              this.principals[prefix].forEach((provider) => {
+                // @ts-ignore only available after swapping 1-base
+                addPrincipals(new iam.FederatedPrincipal(provider, {}));
+              });
+              break;
+            case PrincipalType.SERVICE:
+              this.principals[prefix].forEach((service) => {
+                // @ts-ignore only available after swapping 1-base
+                addPrincipals(new iam.ServicePrincipal(service));
+              });
+              break;
+            default:
+              throw Error(`Unhandled principal type: ${prefix}`);
+          }
+        });
+      }
+      this.cdkPrincipalsApplied = true;
+    }
   }
 
   /**

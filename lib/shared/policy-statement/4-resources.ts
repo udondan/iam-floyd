@@ -17,14 +17,19 @@ export interface ResourceType {
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
   protected useNotResources = false;
   protected resources: string[] = [];
+  private cdkResourcesApplied = false;
 
   /**
-   * JSON-ify the policy statement
+   * Injects resources into the statement.
    *
-   * Used when JSON.stringify() is called
+   * Only relevant for the main package. In CDK mode this only calls super.
    */
-
   public toJSON(): any {
+    // @ts-ignore only available after swapping 1-base
+    if (typeof this.addResources == 'function') {
+      this.cdkApplyResources();
+      return super.toJSON();
+    }
     const mode = this.useNotActions ? 'NotResource' : 'Resource';
     const statement = super.toJSON();
     const self = this;
@@ -39,6 +44,30 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     });
 
     return statement;
+  }
+
+  public toStatementJson(): any {
+    this.cdkApplyResources();
+
+    // @ts-ignore only available after swapping 1-base
+    return super.toStatementJson();
+  }
+
+  private cdkApplyResources() {
+    if (!this.cdkResourcesApplied) {
+      const self = this;
+      const addResources = this.useNotResources
+        ? // @ts-ignore only available after swapping 1-base
+          this.addNotResources
+        : // @ts-ignore only available after swapping 1-base
+          this.addResources;
+      addResources(
+        ...this.resources.filter((elem, pos) => {
+          return self.resources.indexOf(elem) == pos;
+        })
+      );
+      this.cdkResourcesApplied = true;
+    }
   }
 
   /**

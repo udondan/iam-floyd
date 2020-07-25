@@ -13,14 +13,19 @@ interface Conditions {
  */
 export class PolicyStatementWithCondition extends PolicyStatementBase {
   protected conditions: Conditions = {};
+  private cdkConditionsApplied = false;
 
   /**
-   * JSON-ify the policy statement
+   * Injects conditions into the statement.
    *
-   * Used when JSON.stringify() is called
+   * Only relevant for the main package. In CDK mode this only calls super.
    */
-
   public toJSON(): any {
+    // @ts-ignore only available after swapping 1-base
+    if (typeof this.addResources == 'function') {
+      this.cdkApplyConditions();
+      return super.toJSON();
+    }
     const statement = super.toJSON();
 
     if (this.hasConditions()) {
@@ -28,6 +33,27 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
     }
 
     return statement;
+  }
+
+  public toStatementJson(): any {
+    this.cdkApplyConditions();
+
+    // @ts-ignore only available after swapping 1-base
+    return super.toStatementJson();
+  }
+
+  private cdkApplyConditions() {
+    if (this.hasConditions() && !this.cdkConditionsApplied) {
+      Object.keys(this.conditions).forEach((operator) => {
+        Object.keys(this.conditions[operator]).forEach((key) => {
+          const condition: any = {};
+          condition[key] = this.conditions[operator][key];
+          // @ts-ignore only available after swapping 1-base
+          this.addCondition(operator, condition);
+        });
+      });
+      this.cdkConditionsApplied = true;
+    }
   }
 
   /**

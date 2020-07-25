@@ -21,14 +21,19 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   protected actionList: Actions = {};
   protected useNotActions = false;
   protected actions: string[] = [];
+  private cdkActionsApplied = false;
 
   /**
-   * JSON-ify the policy statement
+   * Injects actions into the statement.
    *
-   * Used when JSON.stringify() is called
+   * Only relevant for the main package. In CDK mode this only calls super.
    */
-
   public toJSON(): any {
+    // @ts-ignore only available after swapping 1-base
+    if (typeof this.addResources == 'function') {
+      this.cdkApplyActions();
+      return super.toJSON();
+    }
     const mode = this.useNotActions ? 'NotAction' : 'Action';
     const statement = super.toJSON();
     const self = this;
@@ -40,6 +45,30 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     }
 
     return statement;
+  }
+
+  public toStatementJson(): any {
+    this.cdkApplyActions();
+
+    // @ts-ignore only available after swapping 1-base
+    return super.toStatementJson();
+  }
+
+  private cdkApplyActions() {
+    if (!this.cdkActionsApplied) {
+      const self = this;
+      const addActions = this.useNotActions
+        ? // @ts-ignore only available after swapping 1-base
+          this.addNotActions
+        : // @ts-ignore only available after swapping 1-base
+          this.addActions;
+      addActions(
+        ...this.actions.filter((elem, pos) => {
+          return self.actions.indexOf(elem) == pos;
+        })
+      );
+    }
+    this.cdkActionsApplied = true;
   }
 
   /**
