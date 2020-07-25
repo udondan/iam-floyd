@@ -1,10 +1,5 @@
 import { PolicyStatementWithResources } from './4-resources';
 
-try {
-  var iam = require('@aws-cdk/aws-iam');
-  console.log(typeof iam);
-} catch (e) {}
-
 enum Effect {
   ALLOW = 'Allow',
   DENY = 'Deny',
