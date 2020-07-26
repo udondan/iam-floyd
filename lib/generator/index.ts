@@ -92,31 +92,31 @@ export function getAwsServices(): Promise<string[]> {
   return new Promise((resolve, reject) => {
     const url =
       'https://github.com/awsdocs/iam-user-guide/tree/master/doc_source';
-    request(url, function (err: any, _: request.Response, body: any) {
-      if (err) {
-        return reject(err);
-      }
-
-      const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
-      var match: RegExpExecArray;
-      const services: string[] = [];
-      do {
-        match = re.exec(body);
-        if (match) {
-          services.push(match[1]);
+    requestWithRetry(url)
+      .then((body) => {
+        const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
+        var match: RegExpExecArray;
+        const services: string[] = [];
+        do {
+          match = re.exec(body);
+          if (match) {
+            services.push(match[1]);
+          }
+        } while (match);
+        if (!services.length) {
+          return reject(`Unable to find services on ${url}`);
         }
-      } while (match);
-      if (!services.length) {
-        return reject(`Unable to find services on ${url}`);
-      }
 
-      // set env `SERVICE` to generate only a single service for testing purpose
-      const testOverride = process.env.SERVICE;
-      if (typeof testOverride !== 'undefined' && testOverride.length) {
-        return resolve([testOverride]);
-      }
-      resolve(services.sort());
-    });
+        // set env `SERVICE` to generate only a single service for testing purpose
+        const testOverride = process.env.SERVICE;
+        if (typeof testOverride !== 'undefined' && testOverride.length) {
+          return resolve([testOverride]);
+        }
+        resolve(services.sort());
+      })
+      .catch((err) => {
+        reject(err);
+      });
   });
 }
 
@@ -143,34 +143,33 @@ export function getContent(service: string): Promise<Module> {
           return resolve(module);
         }
       }
+      requestWithRetry(url)
+        .then((body) => {
+          process.stdout.write('Parsing '.blue);
 
-      request(url, function (err: any, _: request.Response, body: any) {
-        if (err) {
-          return reject(err);
-        }
+          const $ = cheerio.load(body);
+          const servicePrefix = $('code').first().text().trim();
 
-        process.stdout.write('Parsing '.blue);
+          if (servicePrefix == '') {
+            console.error(`PREFIX NOT FOUND FOR ${service}`.red.bold);
+          }
 
-        const $ = cheerio.load(body);
-        const servicePrefix = $('code').first().text().trim();
+          module.name = servicePrefix;
+          module.url = url;
 
-        if (servicePrefix == '') {
-          console.error(`PREFIX NOT FOUND FOR ${service}`.red.bold);
-        }
+          if (service in fixes) {
+            module.fixes = fixes[service];
+          }
 
-        module.name = servicePrefix;
-        module.url = url;
+          module.actionList = parseActionTable($);
+          module.resourceTypes = parseResourceTypeTable($, module.name);
+          module.conditions = parseConditionTable($);
 
-        if (service in fixes) {
-          module.fixes = fixes[service];
-        }
-
-        module.actionList = parseActionTable($);
-        module.resourceTypes = parseResourceTypeTable($, module.name);
-        module.conditions = parseConditionTable($);
-
-        resolve(module);
-      });
+          resolve(module);
+        })
+        .catch((err) => {
+          reject(err);
+        });
     } catch (e) {
       reject(e);
     }
@@ -583,16 +582,17 @@ function createCache() {
 
 function getLastModified(url: string): Promise<Date> {
   return new Promise((resolve, reject) => {
-    request(url, { method: 'HEAD' }, function (err, response, _) {
-      if (err) {
-        return reject(err);
-      }
-      var lastModified = new Date();
-      if ('last-modified' in response.headers) {
-        lastModified = new Date(response.headers['last-modified']);
-      }
-      resolve(lastModified);
-    });
+    requestWithRetry(url, { method: 'HEAD' })
+      .then((lastModified: string) => {
+        var mod = new Date();
+        if (lastModified !== '') {
+          mod = new Date(lastModified);
+        }
+        resolve(mod);
+      })
+      .catch((err) => {
+        reject(err);
+      });
   });
 }
 
@@ -772,4 +772,39 @@ function validateUrl(url: string) {
   }
 
   return url;
+}
+
+function requestWithRetry(
+  url: string,
+  options = {},
+  retries = 3,
+  backoff = 300
+): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const retry = (retries: number, backoff: number) => {
+      request(url, options, (err, response, body) => {
+        if (err) {
+          const failDetails =
+            retries > 0 ? `Retry in ${backoff * 2}` : 'Giving up';
+          console.log(`Failed to fetch ${url} - ${failDetails}`);
+          if (retries > 0) {
+            setTimeout(() => {
+              retry(--retries, backoff * 2);
+            }, backoff);
+          } else {
+            reject(err);
+          }
+        } else {
+          if ('method' in options && options['method'] == 'HEAD') {
+            if ('last-modified' in response.headers) {
+              resolve(response.headers['last-modified']);
+            } else resolve('');
+          } else {
+            resolve(body);
+          }
+        }
+      });
+    };
+    retry(retries, backoff);
+  });
 }
