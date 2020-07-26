@@ -2,6 +2,7 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
+[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
 
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
@@ -14,7 +15,10 @@
 [![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/maintainability)](https://codeclimate.com/github/udondan/iam-floyd/maintainability)
+
+<!-- put back - when we actually have tests
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
+-->
 
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
@@ -429,3 +433,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.31.0
