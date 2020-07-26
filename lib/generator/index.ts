@@ -462,7 +462,7 @@ export function createModule(module: Module): Promise<void> {
 }
 
 export function createIndex() {
-  const filePath = './lib/index.ts';
+  const filePath = './lib/generated/index.ts';
   process.stdout.write('index: '.white);
   process.stdout.write('Generating '.cyan);
 
@@ -470,11 +470,6 @@ export function createIndex() {
     fs.unlinkSync(filePath);
   }
   const sourceFile = project.createSourceFile(filePath);
-
-  sourceFile.addExportDeclaration({
-    namedExports: ['AccessLevel', 'All', 'Operator', 'OperatorModifier'],
-    moduleSpecifier: './shared',
-  });
 
   modules.sort().forEach((module) => {
     const source = project.addSourceFileAtPath(
@@ -490,7 +485,7 @@ export function createIndex() {
 
     sourceFile.addExportDeclaration({
       namedExports: exports,
-      moduleSpecifier: `./generated/${module.filename}`,
+      moduleSpecifier: `./${module.filename}`,
     });
   });
 

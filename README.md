@@ -394,6 +394,27 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
+## Collections
+
+The package provides commonly used statement collections. These can be called  via `new statement.Collection().allowEc2InstanceDeleteByOwner()`. Collections return a list of statements, which then can be used in a policy like this:
+
+```typescript
+const policy = {
+  Version: '2012-10-17',
+  Statement: [
+    ...new statement.Collection().allowEc2InstanceDeleteByOwner(),
+  ],
+}
+```
+
+Available collections are:
+
+- **allowEc2TagBasedAuthorization**: Allows stopping EC2 instance only for the user who started them
+
+### ec2TagBasedAuthorization
+
+Allows stopping EC2 instance only for the user who started them.
+
 ## <a name='Floyd'></a>Floyd?
 
 George Floyd has been murdered by racist police officers on May 25th, 2020.
