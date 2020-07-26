@@ -153,6 +153,11 @@ export class Backup extends PolicyStatement {
         }
       }
     },
+    "DescribeRegionSettings": {
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRegionSettings.html",
+      "description": "Describes region settings",
+      "accessLevel": "Read"
+    },
     "DescribeRestoreJob": {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRestoreJob.html",
       "description": "Describes a restore job.",
@@ -301,7 +306,18 @@ export class Backup extends PolicyStatement {
     "ListTags": {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTags.html",
       "description": "Lists tags for a resource.",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "backupPlan": {
+          "required": false
+        },
+        "backupVault": {
+          "required": false
+        },
+        "recoveryPoint": {
+          "required": false
+        }
+      }
     },
     "PutBackupVaultAccessPolicy": {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultAccessPolicy.html",
@@ -375,6 +391,17 @@ export class Backup extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html",
       "description": "Tags a resource.",
       "accessLevel": "Tagging",
+      "resourceTypes": {
+        "backupPlan": {
+          "required": false
+        },
+        "backupVault": {
+          "required": false
+        },
+        "recoveryPoint": {
+          "required": false
+        }
+      },
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -384,6 +411,17 @@ export class Backup extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html",
       "description": "Untags a resource.",
       "accessLevel": "Tagging",
+      "resourceTypes": {
+        "backupPlan": {
+          "required": false
+        },
+        "backupVault": {
+          "required": false
+        },
+        "recoveryPoint": {
+          "required": false
+        }
+      },
       "conditions": [
         "aws:TagKeys"
       ]
@@ -407,6 +445,11 @@ export class Backup extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "UpdateRegionSettings": {
+      "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html",
+      "description": "Describes region settings",
+      "accessLevel": "Write"
     }
   };
   public resourceTypes: ResourceTypes = {
@@ -414,19 +457,25 @@ export class Backup extends PolicyStatement {
       "name": "backupVault",
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html",
       "arn": "arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "backupPlan": {
       "name": "backupPlan",
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/about-backup-plans.html",
       "arn": "arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "recoveryPoint": {
       "name": "recoveryPoint",
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/recovery-points.html",
       "arn": "arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -631,6 +680,18 @@ export class Backup extends PolicyStatement {
    */
   public describeRecoveryPoint() {
     this.add('backup:DescribeRecoveryPoint');
+    return this;
+  }
+
+  /**
+   * Describes region settings
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRegionSettings.html
+   */
+  public describeRegionSettings() {
+    this.add('backup:DescribeRegionSettings');
     return this;
   }
 
@@ -1039,6 +1100,18 @@ export class Backup extends PolicyStatement {
   }
 
   /**
+   * Describes region settings
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html
+   */
+  public updateRegionSettings() {
+    this.add('backup:UpdateRegionSettings');
+    return this;
+  }
+
+  /**
    * Adds a resource of type backupVault to the statement
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html
@@ -1047,6 +1120,9 @@ export class Backup extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    */
   public onBackupVault(backupVaultName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:backup-vault:${BackupVaultName}';
@@ -1066,6 +1142,9 @@ export class Backup extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    */
   public onBackupPlan(backupPlanId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:backup-plan:${BackupPlanId}';
@@ -1085,6 +1164,9 @@ export class Backup extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
    */
   public onRecoveryPoint(recoveryPointId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:backup:${Region}:${Account}:recovery-point:${RecoveryPointId}';
