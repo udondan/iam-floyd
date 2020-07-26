@@ -28,8 +28,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * Only relevant for the main package. In CDK mode this only calls super.
    */
-  public XtoJSON(): any {
-    console.log('PolicyStatementWithActions:toJSON');
+  public toJSON(): any {
     // @ts-ignore only available after swapping 1-base
     if (typeof this.addResources == 'function') {
       this.cdkApplyActions();
@@ -48,28 +47,21 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     return statement;
   }
 
-  public XtoStatementJson(): any {
-    console.log('PolicyStatementWithActions:toStatementJson');
+  public toStatementJson(): any {
     this.cdkApplyActions();
-
     // @ts-ignore only available after swapping 1-base
     return super.toStatementJson();
   }
 
   private cdkApplyActions() {
-    console.log('PolicyStatementWithActions:cdkApplyActions');
     if (!this.cdkActionsApplied) {
+      const mode = this.useNotActions ? 'addNotActions' : 'addActions';
       const self = this;
-      const addActions = this.useNotActions
-        ? // @ts-ignore only available after swapping 1-base
-          this.addNotActions
-        : // @ts-ignore only available after swapping 1-base
-          this.addActions;
-      addActions(
-        ...this.actions.filter((elem, pos) => {
-          return self.actions.indexOf(elem) == pos;
-        })
-      );
+      const uniqueActions = this.actions.filter((elem, pos) => {
+        return self.actions.indexOf(elem) == pos;
+      });
+      // @ts-ignore only available after swapping 1-base
+      this[mode](...uniqueActions);
     }
     this.cdkActionsApplied = true;
   }

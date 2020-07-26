@@ -1,7 +1,7 @@
 import { PolicyStatementWithPrincipal } from './6-principals';
 
 /**
- * Represents a statement in an IAM policy document.
+ * Represents a statement in an IAM policy document
  */
 export class PolicyStatement extends PolicyStatementWithPrincipal {
   protected cdkApplied = false; // internally used to check if resources, actions and conditions have already been applied to the policy
@@ -11,7 +11,6 @@ export class PolicyStatement extends PolicyStatementWithPrincipal {
    * JSON-ify the policy statement
    */
   public toJSON(): any {
-    console.log('PolicyStatement:toJSON');
     return super.toJSON();
   }
 }

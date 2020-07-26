@@ -25,7 +25,6 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
    * Only relevant for the main package. In CDK mode this only calls super.
    */
   public toJSON(): any {
-    console.log('PolicyStatementWithResources:toJSON');
     // @ts-ignore only available after swapping 1-base
     if (typeof this.addResources == 'function') {
       this.cdkApplyResources();
@@ -48,30 +47,20 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   }
 
   public toStatementJson(): any {
-    console.log('PolicyStatementWithResources:toStatementJson');
     this.cdkApplyResources();
-
     // @ts-ignore only available after swapping 1-base
     return super.toStatementJson();
   }
 
   private cdkApplyResources() {
-    console.log('PolicyStatementWithResources:cdkApplyResources');
     if (!this.cdkResourcesApplied) {
-      const self = this;
       const mode = this.useNotResources ? 'addNotResources' : 'addResources';
-      console.log(`mode is ${mode}`);
-
+      const self = this;
       const uniqueResources = this.resources.filter((elem, pos) => {
-        console.log(`adding resource ${elem}`);
         return self.resources.indexOf(elem) == pos;
       });
-
-      console.log('resources', uniqueResources);
-
       // @ts-ignore only available after swapping 1-base
       this[mode](...uniqueResources);
-
       this.cdkResourcesApplied = true;
     }
   }
