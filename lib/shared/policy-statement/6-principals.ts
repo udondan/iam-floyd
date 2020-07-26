@@ -49,6 +49,14 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   protected cdkApplyPrincipals() {}
 
   /**
+   * Switches the statement to use [`notPrincipal`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html).
+   */
+  public notPrincipals() {
+    this.useNotPrincipals = true;
+    return this;
+  }
+
+  /**
    * Checks weather a principal was applied to the policy
    */
   public hasPrincipals(): boolean {
