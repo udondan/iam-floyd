@@ -11,6 +11,7 @@ export class PolicyStatement extends PolicyStatementWithPrincipal {
    * JSON-ify the policy statement
    */
   public toJSON(): any {
+    console.log('PolicyStatement:toJSON');
     return super.toJSON();
   }
 }

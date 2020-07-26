@@ -27,6 +27,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    * Only relevant for the main package. In CDK mode this only calls super.
    */
   public toJSON(): any {
+    console.log('PolicyStatementWithPrincipal:toJSON');
     // @ts-ignore only available after swapping 1-base
     if (typeof this.addResources == 'function') {
       this.cdkApplyPrincipals();
@@ -43,6 +44,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   }
 
   public toStatementJson(): any {
+    console.log('PolicyStatementWithPrincipal:toStatementJson');
     this.cdkApplyPrincipals();
 
     // @ts-ignore only available after swapping 1-base
@@ -50,6 +52,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   }
 
   private cdkApplyPrincipals() {
+    console.log('PolicyStatementWithPrincipal:cdkApplyPrincipals');
     if (!this.cdkPrincipalsApplied) {
       const addPrincipals = this.useNotPrincipals
         ? // @ts-ignore only available after swapping 1-base
