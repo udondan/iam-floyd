@@ -11,7 +11,11 @@ export class TestStack extends cdk.Stack {
       managedPolicyName: `${this.stackName}-testpolicy`,
       description: `test policy`,
       statements: [
-        new statement.Ssm({}).allow().listDocuments().listTagsForResource(),
+        new statement.Ssm({})
+          .allow()
+          .listDocuments()
+          .listTagsForResource()
+          .onInstance('asdf'),
         new statement.Ssm({})
           .allow()
           .createDocument()
