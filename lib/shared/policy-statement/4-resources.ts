@@ -47,6 +47,10 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   }
 
   public toStatementJson(): any {
+    if (!this.hasResources()) {
+      // a statement requires resources. if none was added, we assume the user wants all resources
+      this.resources.push('*');
+    }
     this.cdkApplyResources();
     // @ts-ignore only available after swapping 1-base
     return super.toStatementJson();
