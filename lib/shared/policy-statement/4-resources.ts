@@ -34,10 +34,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     const statement = super.toJSON();
     const self = this;
 
-    if (!this.hasResources()) {
-      // a statement requires resources. if none was added, we assume the user wants all resources
-      this.resources.push('*');
-    }
+    this.ensureResource();
 
     statement[mode] = this.resources.filter((elem, pos) => {
       return self.resources.indexOf(elem) == pos;
@@ -47,10 +44,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   }
 
   public toStatementJson(): any {
-    if (!this.hasResources()) {
-      // a statement requires resources. if none was added, we assume the user wants all resources
-      this.resources.push('*');
-    }
+    this.ensureResource();
     this.cdkApplyResources();
     // @ts-ignore only available after swapping 1-base
     return super.toStatementJson();
@@ -92,5 +86,25 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
   public on(...arns: string[]) {
     this.resources.push(...arns);
     return this;
+  }
+
+  private ensureResource() {
+    if (this.hasResources()) return;
+    // @ts-ignore only available after swapping 1-base
+    if (this.hasResource) return;
+    // @ts-ignore only available after swapping 1-base
+    if (this.hasPrincipal) return; //assume policies may not have resources
+
+    // a statement requires resources. if none was added, we assume the user wants all resources
+    this.resources.push('*');
+  }
+
+  /**
+   * Dummy method. Will be overridden by 6-principal.ts
+   *
+   * We just need it here so we can reference it in method `ensureResource`
+   */
+  public hasPrincipals(): boolean {
+    return false;
   }
 }
