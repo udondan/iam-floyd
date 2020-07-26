@@ -141,7 +141,7 @@ new statement.Ec2()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
-  .ifRequestTag('Owner', 'John');
+  .ifAwsRequestTag('Owner', 'John');
 ```
 
 If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
@@ -208,7 +208,7 @@ const policy = {
     new statement.Ec2()
       .allow()
       .startInstances()
-      .ifRequestTag('Owner', '${aws:username}'),
+      .ifAwsRequestTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
       .stopInstances()
@@ -233,7 +233,7 @@ const policy = {
     new statement.All() // allow absolutely everything that is triggered via CFN
       .allow()
       .allActions()
-      .ifCalledVia('cloudformation.amazonaws.com'),
+      .ifAwsCalledVia('cloudformation.amazonaws.com'),
     new statement.S3() // allow access to the CDK staging bucket
       .allow()
       .allActions()
@@ -322,7 +322,7 @@ new statement.Ec2()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
-  .ifRequestTag('Owner', 'John')
+  .ifAwsRequestTag('Owner', 'John')
 ```
 
 Most of them allow an optional operator as last argument:
@@ -334,15 +334,19 @@ new statement.Ec2()
   .ifInstanceType('*.nano', 'StringLike')
 ```
 
+[Global conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) are prefixed with `ifAws`, e.g. `ifAwsRequestedRegion()`
+
 If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
 
 ```typescript
 new statement.Ec2()
   .allow()
   .startInstances()
-  .if('StringEquals', {
-    'aws:RequestTag/Owner': '${aws:username}',
-  });
+  .if(
+    'aws:RequestTag/Owner',
+    '${aws:username}',
+    'StringEquals' //optional
+  );
 ```
 
 ### <a name='onon'></a>on*, on
