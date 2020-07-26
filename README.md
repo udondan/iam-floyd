@@ -47,7 +47,7 @@ Support for:
 	* [notActions](#notActions)
 	* [notResources](#notResources)
 * [Collections](#Collections)
-	* [ec2TagBasedAuthorization](#ec2TagBasedAuthorization)
+	* [allowEc2InstanceDeleteByOwner](#allowEc2InstanceDeleteByOwner)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -413,7 +413,7 @@ Available collections are:
 
 - **allowEc2InstanceDeleteByOwner**: Allows stopping EC2 instance only for the user who started them
 
-### <a name='ec2TagBasedAuthorization'></a>ec2TagBasedAuthorization
+### <a name='allowEc2InstanceDeleteByOwner'></a>allowEc2InstanceDeleteByOwner
 
 Allows stopping EC2 instance only for the user who started them.
 
