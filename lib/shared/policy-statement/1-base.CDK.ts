@@ -1,5 +1,5 @@
 // This file is used in the CDK variant of the package: cdk-iam-floyd
-// @ts-ignore only available after swapping 1-base
+// @ts-ignore only available running bin/mkcdk
 import iam = require('@aws-cdk/aws-iam');
 
 /**
