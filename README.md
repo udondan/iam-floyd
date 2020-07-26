@@ -409,7 +409,7 @@ const policy = {
 
 Available collections are:
 
-- **allowEc2TagBasedAuthorization**: Allows stopping EC2 instance only for the user who started them
+- **allowEc2InstanceDeleteByOwner**: Allows stopping EC2 instance only for the user who started them
 
 ### ec2TagBasedAuthorization
 
