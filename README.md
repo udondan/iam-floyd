@@ -6,7 +6,7 @@
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
 [![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.29.0-brightgreen)][Maven]
+[![Maven package](https://img.shields.io/badge/maven-v0.31.0-brightgreen)][Maven]
 
 ![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
 [![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
@@ -22,9 +22,9 @@
 Support for:
 
 - 234 Services<br>
-- 7700 Actions<br>
-- 745 Resource Types<br>
-- 446 Conditions
+- 7710 Actions<br>
+- 746 Resource Types<br>
+- 447 Conditions
 <!-- /stats -->
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")

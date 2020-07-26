@@ -8,11 +8,21 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 export class Ecs extends PolicyStatement {
   public servicePrefix = 'ecs';
   protected actionList: Actions = {
+    "CreateCapacityProvider": {
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html",
+      "description": "Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling.",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "CreateCluster": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html",
       "description": "Creates a new Amazon ECS cluster.",
       "accessLevel": "Write",
       "conditions": [
+        "ecs:capacity-provider",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ]
@@ -28,6 +38,7 @@ export class Ecs extends PolicyStatement {
       },
       "conditions": [
         "ecs:cluster",
+        "ecs:capacity-provider",
         "ecs:task-definition",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -60,6 +71,16 @@ export class Ecs extends PolicyStatement {
       "conditions": [
         "ecs:cluster"
       ]
+    },
+    "DeleteCapacityProvider": {
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCapacityProvider.html",
+      "description": "Deletes the specified capacity provider.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "capacity-provider": {
+          "required": true
+        }
+      }
     },
     "DeleteCluster": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCluster.html",
@@ -112,6 +133,16 @@ export class Ecs extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html",
       "description": "Deregisters the specified task definition by family and revision.",
       "accessLevel": "Write"
+    },
+    "DescribeCapacityProviders": {
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeCapacityProviders.html",
+      "description": "Describes one or more Amazon ECS capacity providers.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "capacity-provider": {
+          "required": true
+        }
+      }
     },
     "DescribeClusters": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html",
@@ -302,6 +333,19 @@ export class Ecs extends PolicyStatement {
         "ecs:cluster"
       ]
     },
+    "PutClusterCapacityProviders": {
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html",
+      "description": "Modifies the available capacity providers and the default capacity provider strategy for a cluster.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "capacity-provider": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "ecs:capacity-provider"
+      ]
+    },
     "RegisterContainerInstance": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html",
       "description": "Registers an EC2 instance into the specified cluster.",
@@ -336,6 +380,7 @@ export class Ecs extends PolicyStatement {
       },
       "conditions": [
         "ecs:cluster",
+        "ecs:capacity-provider",
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
       ]
@@ -463,6 +508,16 @@ export class Ecs extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "UpdateClusterSettings": {
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateClusterSettings.html",
+      "description": "Modifies the settings to use for a cluster.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "cluster": {
+          "required": true
+        }
+      }
+    },
     "UpdateContainerAgent": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html",
       "description": "Updates the Amazon ECS container agent on a specified container instance.",
@@ -491,7 +546,7 @@ export class Ecs extends PolicyStatement {
     },
     "UpdateService": {
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html",
-      "description": "Modifies the desired count, deployment configuration, or task definition used in a service.",
+      "description": "Modifies the parameters of a service.",
       "accessLevel": "Write",
       "resourceTypes": {
         "service": {
@@ -500,6 +555,7 @@ export class Ecs extends PolicyStatement {
       },
       "conditions": [
         "ecs:cluster",
+        "ecs:capacity-provider",
         "ecs:task-definition"
       ]
     },
@@ -577,6 +633,15 @@ export class Ecs extends PolicyStatement {
         "ecs:ResourceTag/${TagKey}"
       ]
     },
+    "capacity-provider": {
+      "name": "capacity-provider",
+      "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity_provider_definitions.html",
+      "arn": "arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
+        "ecs:ResourceTag/${TagKey}"
+      ]
+    },
     "task-set": {
       "name": "task-set",
       "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html",
@@ -598,11 +663,28 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider strategies to facilitate cluster auto scaling.
+   *
+   * Access Level: Write
+   *
+   * Possible condition keys:
+   * - aws:RequestTag/${TagKey}
+   * - aws:TagKeys
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html
+   */
+  public createCapacityProvider() {
+    this.add('ecs:CreateCapacityProvider');
+    return this;
+  }
+
+  /**
    * Creates a new Amazon ECS cluster.
    *
    * Access Level: Write
    *
    * Possible condition keys:
+   * - ecs:capacity-provider
    * - aws:RequestTag/${TagKey}
    * - aws:TagKeys
    *
@@ -620,6 +702,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible condition keys:
    * - ecs:cluster
+   * - ecs:capacity-provider
    * - ecs:task-definition
    * - aws:RequestTag/${TagKey}
    * - aws:TagKeys
@@ -672,6 +755,18 @@ export class Ecs extends PolicyStatement {
    */
   public deleteAttributes() {
     this.add('ecs:DeleteAttributes');
+    return this;
+  }
+
+  /**
+   * Deletes the specified capacity provider.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCapacityProvider.html
+   */
+  public deleteCapacityProvider() {
+    this.add('ecs:DeleteCapacityProvider');
     return this;
   }
 
@@ -739,6 +834,18 @@ export class Ecs extends PolicyStatement {
    */
   public deregisterTaskDefinition() {
     this.add('ecs:DeregisterTaskDefinition');
+    return this;
+  }
+
+  /**
+   * Describes one or more Amazon ECS capacity providers.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeCapacityProviders.html
+   */
+  public describeCapacityProviders() {
+    this.add('ecs:DescribeCapacityProviders');
     return this;
   }
 
@@ -1008,6 +1115,21 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Modifies the available capacity providers and the default capacity provider strategy for a cluster.
+   *
+   * Access Level: Write
+   *
+   * Possible condition keys:
+   * - ecs:capacity-provider
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html
+   */
+  public putClusterCapacityProviders() {
+    this.add('ecs:PutClusterCapacityProviders');
+    return this;
+  }
+
+  /**
    * Registers an EC2 instance into the specified cluster.
    *
    * Access Level: Write
@@ -1046,6 +1168,7 @@ export class Ecs extends PolicyStatement {
    *
    * Possible condition keys:
    * - ecs:cluster
+   * - ecs:capacity-provider
    * - aws:RequestTag/${TagKey}
    * - aws:TagKeys
    *
@@ -1172,6 +1295,18 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Modifies the settings to use for a cluster.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateClusterSettings.html
+   */
+  public updateClusterSettings() {
+    this.add('ecs:UpdateClusterSettings');
+    return this;
+  }
+
+  /**
    * Updates the Amazon ECS container agent on a specified container instance.
    *
    * Access Level: Write
@@ -1202,12 +1337,13 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * Modifies the desired count, deployment configuration, or task definition used in a service.
+   * Modifies the parameters of a service.
    *
    * Access Level: Write
    *
    * Possible condition keys:
    * - ecs:cluster
+   * - ecs:capacity-provider
    * - ecs:task-definition
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
@@ -1366,6 +1502,29 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type capacity-provider to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity_provider_definitions.html
+   *
+   * @param capacityProviderName - Identifier for the capacityProviderName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible condition keys:
+   * - aws:ResourceTag/${TagKey}
+   * - ecs:ResourceTag/${TagKey}
+   */
+  public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}';
+    arn = arn.replace('${CapacityProviderName}', capacityProviderName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type task-set to the statement
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html
@@ -1393,6 +1552,8 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
+   * Filters actions based on tag key-value pairs attached to the resource.
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1402,7 +1563,19 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an ECS cluster.
+   * The ARN of an Amazon ECS capacity provider.
+   *
+   * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifCapacityProvider(value: string | string[], operator?: string) {
+    return this.if(`ecs:capacity-provider`, value, operator || 'ArnEquals');
+  }
+
+  /**
+   * The ARN of an Amazon ECS cluster.
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
@@ -1414,7 +1587,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an ECS container instance.
+   * The ARN of an Amazon ECS container instance.
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
@@ -1426,7 +1599,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an ECS service.
+   * The ARN of an Amazon ECS service.
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
@@ -1438,7 +1611,7 @@ export class Ecs extends PolicyStatement {
   }
 
   /**
-   * The ARN of an ECS task definition.
+   * The ARN of an Amazon ECS task definition.
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
