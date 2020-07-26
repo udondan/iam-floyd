@@ -598,7 +598,7 @@ export class Guardduty extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "detector": {
       "name": "detector",
       "url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources",

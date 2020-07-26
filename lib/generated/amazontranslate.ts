@@ -54,7 +54,7 @@ export class Translate extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [translate](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranslate.html).

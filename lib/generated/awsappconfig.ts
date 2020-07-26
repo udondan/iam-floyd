@@ -503,7 +503,7 @@ export class Appconfig extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
       "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-application.html",

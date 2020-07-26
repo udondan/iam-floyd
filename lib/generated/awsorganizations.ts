@@ -490,7 +490,7 @@ export class Organizations extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "account": {
       "name": "account",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",

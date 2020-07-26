@@ -51,7 +51,7 @@ export class Textract extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [textract](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontextract.html).

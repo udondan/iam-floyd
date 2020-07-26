@@ -1686,7 +1686,7 @@ export class S3 extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "accesspoint": {
       "name": "accesspoint",
       "url": "https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html",

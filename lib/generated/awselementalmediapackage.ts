@@ -153,7 +153,7 @@ export class Mediapackage extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "channels": {
       "name": "channels",
       "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html",

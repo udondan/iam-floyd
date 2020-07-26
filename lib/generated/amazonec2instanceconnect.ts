@@ -22,7 +22,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "instance": {
       "name": "instance",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",

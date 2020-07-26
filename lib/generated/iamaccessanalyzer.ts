@@ -186,7 +186,7 @@ export class AccessAnalyzer extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Analyzer": {
       "name": "Analyzer",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources",

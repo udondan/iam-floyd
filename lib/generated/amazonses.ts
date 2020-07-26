@@ -417,7 +417,7 @@ export class Ses extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "configuration-set": {
       "name": "configuration-set",
       "url": "https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html",

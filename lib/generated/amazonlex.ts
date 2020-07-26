@@ -456,7 +456,7 @@ export class Lex extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "bot": {
       "name": "bot",
       "url": "https://docs.aws.amazon.com/lex/latest/dg/API_BotMetadata.html",

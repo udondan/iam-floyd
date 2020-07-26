@@ -24,7 +24,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html).

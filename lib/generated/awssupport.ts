@@ -119,7 +119,7 @@ export class Support extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [support](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssupport.html).

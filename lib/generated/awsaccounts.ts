@@ -30,7 +30,7 @@ export class Account extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [account](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html).

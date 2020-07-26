@@ -77,7 +77,7 @@ export class Polly extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "lexicon": {
       "name": "lexicon",
       "url": "https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html",

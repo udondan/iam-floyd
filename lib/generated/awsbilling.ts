@@ -44,7 +44,7 @@ export class AwsPortal extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-portal](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbilling.html).

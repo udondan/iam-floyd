@@ -125,7 +125,7 @@ export class ResourceGroups extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "group": {
       "name": "group",
       "url": "https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html",

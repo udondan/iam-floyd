@@ -664,7 +664,7 @@ export class Ds extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "directory": {
       "name": "directory",
       "url": "",

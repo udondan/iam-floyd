@@ -235,7 +235,7 @@ export class Globalaccelerator extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "accelerator": {
       "name": "accelerator",
       "url": "https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html",

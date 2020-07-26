@@ -405,7 +405,7 @@ export class SesPinpoint extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "configuration-set": {
       "name": "configuration-set",
       "url": "",

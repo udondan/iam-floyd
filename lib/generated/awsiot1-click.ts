@@ -278,7 +278,7 @@ export class Iot1click extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "device": {
       "name": "device",
       "url": "https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/resources.html",

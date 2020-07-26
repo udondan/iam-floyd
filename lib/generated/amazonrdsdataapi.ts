@@ -45,7 +45,7 @@ export class RdsData extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [rds-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrdsdataapi.html).

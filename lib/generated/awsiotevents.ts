@@ -223,7 +223,7 @@ export class Iotevents extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "detectorModel": {
       "name": "detectorModel",
       "url": "https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html",

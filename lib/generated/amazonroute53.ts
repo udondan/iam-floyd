@@ -486,7 +486,7 @@ export class Route53 extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "change": {
       "name": "change",
       "url": "https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html",

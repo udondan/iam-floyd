@@ -137,7 +137,7 @@ export class LicenseManager extends PolicyStatement {
       "accessLevel": "Permissions management"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "license-configuration": {
       "name": "license-configuration",
       "url": "",

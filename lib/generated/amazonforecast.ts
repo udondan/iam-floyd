@@ -358,7 +358,7 @@ export class Forecast extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "dataset": {
       "name": "dataset",
       "url": "",

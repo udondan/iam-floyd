@@ -91,7 +91,7 @@ export class Savingsplans extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "savingsplan": {
       "name": "savingsplan",
       "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/API_SavingsPlan.html",

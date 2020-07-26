@@ -486,7 +486,7 @@ export class Connect extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "instance": {
       "name": "instance",
       "url": "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html",

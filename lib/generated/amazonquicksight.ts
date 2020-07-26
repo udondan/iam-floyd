@@ -721,7 +721,7 @@ export class Quicksight extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "user": {
       "name": "user",
       "url": "https://docs.aws.amazon.com/quicksight/latest/APIReference/API_User.html",

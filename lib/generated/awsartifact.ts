@@ -52,7 +52,7 @@ export class Artifact extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "report-package": {
       "name": "report-package",
       "url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html",

@@ -49,7 +49,7 @@ export class Wellarchitected extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "workload": {
       "name": "workload",
       "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/iam-auth-access.html",

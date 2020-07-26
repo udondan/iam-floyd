@@ -34,7 +34,7 @@ export class IotDeviceTester extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [iot-device-tester](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotdevicetester.html).

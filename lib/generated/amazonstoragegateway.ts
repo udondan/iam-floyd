@@ -782,7 +782,7 @@ export class Storagegateway extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "device": {
       "name": "device",
       "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html",

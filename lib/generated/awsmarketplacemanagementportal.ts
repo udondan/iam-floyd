@@ -34,7 +34,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-marketplace-management](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacemanagementportal.html).

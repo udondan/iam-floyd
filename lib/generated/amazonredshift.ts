@@ -1038,7 +1038,7 @@ export class Redshift extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
       "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html",

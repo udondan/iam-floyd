@@ -206,7 +206,7 @@ export class Transfer extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "user": {
       "name": "user",
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/users.html",

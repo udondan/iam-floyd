@@ -44,7 +44,7 @@ export class Honeycode extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "screen": {
       "name": "screen",
       "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-screen.html",

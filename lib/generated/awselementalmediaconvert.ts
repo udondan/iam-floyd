@@ -271,7 +271,7 @@ export class Mediaconvert extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Job": {
       "name": "Job",
       "url": "https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html",

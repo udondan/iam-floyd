@@ -54,7 +54,7 @@ export class ComputeOptimizer extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [compute-optimizer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_computeoptimizer.html).

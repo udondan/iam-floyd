@@ -682,7 +682,7 @@ export class Elasticbeanstalk extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html",

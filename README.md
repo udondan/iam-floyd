@@ -2,11 +2,12 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
+[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
 
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
 [![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.31.0-brightgreen)][Maven]
+[![Maven package](https://img.shields.io/badge/maven-v0.32.0-brightgreen)][Maven]
 
 ![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
 [![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
@@ -14,7 +15,10 @@
 [![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/maintainability)](https://codeclimate.com/github/udondan/iam-floyd/maintainability)
+
+<!-- put back - when we actually have tests
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
+-->
 
 **AWS [IAM policy statement][statement] generator with fluent interface.**
 
@@ -46,6 +50,8 @@ Support for:
 	* [on*, on](#onon)
 	* [notActions](#notActions)
 	* [notResources](#notResources)
+	* [notPrincipals](#notPrincipals)
+	* [for*](#for)
 * [Collections](#Collections)
 	* [allowEc2InstanceDeleteByOwner](#allowEc2InstanceDeleteByOwner)
 * [Floyd?](#Floyd)
@@ -137,7 +143,7 @@ new statement.Ec2()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
-  .ifRequestTag('Owner', 'John');
+  .ifAwsRequestTag('Owner', 'John');
 ```
 
 If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
@@ -204,7 +210,7 @@ const policy = {
     new statement.Ec2()
       .allow()
       .startInstances()
-      .ifRequestTag('Owner', '${aws:username}'),
+      .ifAwsRequestTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
       .stopInstances()
@@ -229,7 +235,7 @@ const policy = {
     new statement.All() // allow absolutely everything that is triggered via CFN
       .allow()
       .allActions()
-      .ifCalledVia('cloudformation.amazonaws.com'),
+      .ifAwsCalledVia('cloudformation.amazonaws.com'),
     new statement.S3() // allow access to the CDK staging bucket
       .allow()
       .allActions()
@@ -318,7 +324,7 @@ new statement.Ec2()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
-  .ifRequestTag('Owner', 'John')
+  .ifAwsRequestTag('Owner', 'John')
 ```
 
 Most of them allow an optional operator as last argument:
@@ -330,15 +336,19 @@ new statement.Ec2()
   .ifInstanceType('*.nano', 'StringLike')
 ```
 
+[Global conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) are prefixed with `ifAws`, e.g. `ifAwsRequestedRegion()`
+
 If you want to add a condition not covered by the available methods, you can define just any condition yourself via `if()`:
 
 ```typescript
 new statement.Ec2()
   .allow()
   .startInstances()
-  .if('StringEquals', {
-    'aws:RequestTag/Owner': '${aws:username}',
-  });
+  .if(
+    'aws:RequestTag/Owner',
+    '${aws:username}',
+    'StringEquals' //optional
+  );
 ```
 
 ### <a name='onon'></a>on*, on
@@ -396,6 +406,111 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
+### <a name='notPrincipals'></a>notPrincipals
+
+Switches the policy provider to use [NotPrincipal].
+
+```typescript
+new statement.Sts()
+  .deny()
+  .notPrincipals()
+  .assumeRole()
+  .forUser('1234567890', 'Bob');
+```
+
+### <a name='for'></a>for*
+
+To create assume policies, use the `for*()` methods. There are methods available for any type of principal:
+
+```typescript
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forAccount('1234567890');
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forService('lambda.amazonaws.com');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forUser('1234567890', 'Bob');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forRole('1234567890', 'role-name');
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedCognito();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedAmazon();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedGoogle();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedFacebook();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forSaml('1234567890', 'saml-provider');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forPublic();
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forAssumedRoleSession('123456789', 'role-name', 'session-name');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forCanonicalUser('userID');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .for('arn:foo:bar')
+```
+
+To reverse the assume policy you can call the `notPrincipals()` method:
+
+```typescript
+new statement.Sts()
+  .deny()
+  .notPrincipals()
+  .assumeRole()
+  .forUser('1234567890', 'Bob');
+```
+
+If you use the cdk variant of the package you should not have the need to manually create assume policies. But if you do, there is an additional method `forCdkPrincipal()` which takes any number of [`iam.IPrincipal`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.IPrincipal.html) objects:
+
+```typescript
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forCdkPrincipal(
+    new iam.ServicePrincipal('sns.amazonaws.com')
+    new iam.ServicePrincipal('lambda.amazonaws.com')
+  )
+```
+
 ## <a name='Collections'></a>Collections
 
 The package provides commonly used statement collections. These can be called  via `new statement.Collection().allowEc2InstanceDeleteByOwner()`. Collections return a list of statements, which then can be used in a policy like this:
@@ -450,5 +565,7 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [NotAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html
+   [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.32.0

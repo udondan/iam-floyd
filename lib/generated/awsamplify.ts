@@ -395,7 +395,7 @@ export class Amplify extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "apps": {
       "name": "apps",
       "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",

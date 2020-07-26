@@ -71,7 +71,7 @@ export class Mediatailor extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "playbackConfiguration": {
       "name": "playbackConfiguration",
       "url": "https://docs.aws.amazon.com/mediatailor/latest/apireference/playbackconfiguration.html",

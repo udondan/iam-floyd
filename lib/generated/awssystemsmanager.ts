@@ -1042,7 +1042,7 @@ export class Ssm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "association": {
       "name": "association",
       "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-associations.html",

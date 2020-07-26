@@ -653,7 +653,7 @@ export class Gamelift extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "alias": {
       "name": "alias",
       "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",

@@ -407,7 +407,7 @@ export class Networkmanager extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "global-network": {
       "name": "global-network",
       "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",

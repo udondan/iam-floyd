@@ -292,7 +292,7 @@ export class Ivs extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Channel": {
       "name": "Channel",
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_Channel.html",

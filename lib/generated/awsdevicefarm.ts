@@ -831,7 +831,7 @@ export class Devicefarm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
       "url": "https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html",

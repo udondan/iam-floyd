@@ -268,7 +268,7 @@ export class Secretsmanager extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Secret": {
       "name": "Secret",
       "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources",

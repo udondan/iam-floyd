@@ -620,7 +620,7 @@ export class Kms extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "alias": {
       "name": "alias",
       "url": "https://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html",

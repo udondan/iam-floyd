@@ -256,7 +256,7 @@ export class Appsync extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "datasource": {
       "name": "datasource",
       "url": "https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html",

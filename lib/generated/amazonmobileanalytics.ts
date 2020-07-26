@@ -24,7 +24,7 @@ export class Mobileanalytics extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [mobileanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmobileanalytics.html).

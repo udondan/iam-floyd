@@ -69,7 +69,7 @@ export class Chatbot extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "ChatbotConfiguration": {
       "name": "ChatbotConfiguration",
       "url": "",

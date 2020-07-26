@@ -29,7 +29,7 @@ export class Pi extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "metric-resource": {
       "name": "metric-resource",
       "url": "",

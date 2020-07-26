@@ -14,7 +14,7 @@ export class Iq extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [iq](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiq.html).

@@ -320,7 +320,7 @@ export class Glacier extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "vault": {
       "name": "vault",
       "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html",

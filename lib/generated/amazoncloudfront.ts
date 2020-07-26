@@ -378,7 +378,7 @@ export class Cloudfront extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "distribution": {
       "name": "distribution",
       "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",

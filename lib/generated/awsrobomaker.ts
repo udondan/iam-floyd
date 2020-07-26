@@ -450,7 +450,7 @@ export class Robomaker extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "robotApplication": {
       "name": "robotApplication",
       "url": "https://docs.aws.amazon.com/robomaker/latest/dg/managing-robot-applications.html",

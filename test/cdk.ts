@@ -1,7 +1,7 @@
 import iam = require('@aws-cdk/aws-iam');
 import * as cdk from '@aws-cdk/core';
 
-import * as statement from '..';
+import * as statement from '../lib';
 
 export class TestStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -11,7 +11,11 @@ export class TestStack extends cdk.Stack {
       managedPolicyName: `${this.stackName}-testpolicy`,
       description: `test policy`,
       statements: [
-        new statement.Ssm({}).allow().listDocuments().listTagsForResource(),
+        new statement.Ssm({})
+          .allow()
+          .listDocuments()
+          .listTagsForResource()
+          .onInstance('asdf'),
         new statement.Ssm({})
           .allow()
           .createDocument()

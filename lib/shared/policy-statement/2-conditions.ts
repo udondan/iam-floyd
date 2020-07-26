@@ -1,33 +1,4 @@
-import { AccessLevel } from './access-level';
-
-export interface Action {
-  url: string;
-  description: string;
-  accessLevel: string;
-  resourceTypes?: any;
-  conditions?: string[];
-  dependentActions?: string[];
-}
-
-export interface Actions {
-  [key: string]: Action;
-}
-
-export interface ResourceTypes {
-  [key: string]: ResourceType;
-}
-
-export interface ResourceType {
-  name: string;
-  url: string;
-  arn: string;
-  conditionKeys: string[];
-}
-
-enum Effect {
-  ALLOW = 'Allow',
-  DENY = 'Deny',
-}
+import { PolicyStatementBase } from './1-base';
 
 interface Condition {
   [key: string]: String;
@@ -38,100 +9,50 @@ interface Conditions {
 }
 
 /**
- * Represents a statement in an IAM policy document.
+ * Adds "condition" functionality to the Policy Statement
  */
-export class PolicyStatement {
-  protected actionList: Actions = {};
-  protected useNotActions = false;
-  protected useNotResources = false;
-  public sid = '';
-  public effect = Effect.ALLOW;
-  protected actions: string[] = [];
-  protected resources: string[] = [];
+export class PolicyStatementWithCondition extends PolicyStatementBase {
   protected conditions: Conditions = {};
-  protected cdkApplied = false; // internally used to check if resources, actions and conditions have already been applied to the policy
+  private cdkConditionsApplied = false;
 
   /**
-   * Adds actions by name.
+   * Injects conditions into the statement.
    *
-   * Depending on the "mode", actions will be either added to the list of [`Actions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) or [`NotActions`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
-   *
-   * The mode can be switched by calling `notActions()`.
-   *
-   * @param actions Actions that will be added to the statement.
+   * Only relevant for the main package. In CDK mode this only calls super.
    */
-  protected add(action: string) {
-    this.actions.push(action);
-    return this;
-  }
-
-  /**
-   * Holds the prefix of the service actions, e.g. `ec2`
-   */
-  public servicePrefix = '';
-
-  constructor(sid?: string) {
-    if (typeof sid !== 'undefined') {
-      this.sid = sid;
+  public toJSON(): any {
+    // @ts-ignore only available after swapping 1-base
+    if (typeof this.addResources == 'function') {
+      this.cdkApplyConditions();
+      return super.toJSON();
     }
+    const statement = super.toJSON();
+
+    if (this.hasConditions()) {
+      statement.Condition = this.conditions;
+    }
+
+    return statement;
   }
 
-  /**
-   * Adds actions to the statement, matching an `AccessLevel` or regular expression.
-   *
-   * When no value is passed, all actions of the service will be added.
-   */
-  public allActions(...rules: (AccessLevel | RegExp)[]) {
-    if (rules.length) {
-      rules.forEach((rule) => {
-        for (const [name, action] of Object.entries(this.actionList)) {
-          if (typeof rule === 'object') {
-            //assume it's a regex
-            if ((rule as RegExp).test(name)) {
-              this.add(`${this.servicePrefix}:${name}`);
-            }
-          } else {
-            // assume it's an AccessLevel
-            if ((rule as AccessLevel) == action.accessLevel) {
-              this.add(`${this.servicePrefix}:${name}`);
-            }
-          }
-        }
+  public toStatementJson(): any {
+    this.cdkApplyConditions();
+    // @ts-ignore only available after swapping 1-base
+    return super.toStatementJson();
+  }
+
+  private cdkApplyConditions() {
+    if (this.hasConditions() && !this.cdkConditionsApplied) {
+      Object.keys(this.conditions).forEach((operator) => {
+        Object.keys(this.conditions[operator]).forEach((key) => {
+          const condition: any = {};
+          condition[key] = this.conditions[operator][key];
+          // @ts-ignore only available after swapping 1-base
+          this.addCondition(operator, condition);
+        });
       });
-    } else {
-      this.add(`${this.servicePrefix}:*`);
+      this.cdkConditionsApplied = true;
     }
-    return this;
-  }
-
-  /**
-   * Switches the statement to use [`NotAction`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html).
-   */
-  public notActions() {
-    this.useNotActions = true;
-    return this;
-  }
-
-  /**
-   * Switches the statement to use [`NotResource`](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html).
-   */
-  public notResources() {
-    this.useNotResources = true;
-    return this;
-  }
-
-  /**
-   * Checks weather actions have been applied to the policy.
-   */
-  public hasActions(): boolean {
-    return this.actions.length > 0;
-  }
-
-  /**
-   * Checks weather any resource was applied to the policy.
-   */
-  public hasResources(): boolean {
-    return this.resources.length > 0;
   }
 
   /**
@@ -139,32 +60,6 @@ export class PolicyStatement {
    */
   public hasConditions(): boolean {
     return Object.keys(this.conditions).length > 0;
-  }
-
-  /**
-   * Allow the actions in this statement
-   */
-  public allow() {
-    this.effect = Effect.ALLOW;
-    return this;
-  }
-
-  /**
-   * Deny the actions in this statement
-   */
-  public deny() {
-    this.effect = Effect.DENY;
-    return this;
-  }
-
-  /**
-   * Limit statement to specified resources.
-   *
-   * To allow all resources, pass `*`
-   */
-  public on(...arns: string[]) {
-    this.resources.push(...arns);
-    return this;
   }
 
   /**
@@ -200,7 +95,7 @@ export class PolicyStatement {
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ForAnyValue:StringEquals`
    */
 
-  public ifCalledVia(value: string | string[], operator?: string) {
+  public ifAwsCalledVia(value: string | string[], operator?: string) {
     return this.if(
       'aws:CalledVia',
       value,
@@ -218,7 +113,7 @@ export class PolicyStatement {
    * @param value The service(s) to check for
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifCalledViaFirst(value: string | string[], operator?: string) {
+  public ifAwsCalledViaFirst(value: string | string[], operator?: string) {
     return this.if('aws:CalledViaFirst', value, operator);
   }
 
@@ -232,7 +127,7 @@ export class PolicyStatement {
    * @param value The service(s) to check for
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifCalledViaLast(value: string | string[], operator?: string) {
+  public ifAwsCalledViaLast(value: string | string[], operator?: string) {
     return this.if('aws:CalledViaLast', value, operator);
   }
 
@@ -246,7 +141,7 @@ export class PolicyStatement {
    * @param value The date and time to check for. Can be a string in one of the [W3C implementations of the ISO 8601 date](https://www.w3.org/TR/NOTE-datetime) (e.g. `2020-04-01T00:00:00Z`) or in epoch (UNIX) time or a `Date()` object (JavaScript only)
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateLessThanEquals`
    */
-  public ifCurrentTime(value: Date | string, operator?: string) {
+  public ifAwsCurrentTime(value: Date | string, operator?: string) {
     return this.if(
       'aws:CurrentTime',
       dateToString(value),
@@ -264,7 +159,7 @@ export class PolicyStatement {
    * @param value The date and time to check for. Can be a string in one of the [W3C implementations of the ISO 8601 date](https://www.w3.org/TR/NOTE-datetime) (e.g. `2020-04-01T00:00:00Z`) or in epoch (UNIX) time or a `Date()` object (JavaScript only)
    * @param operator Works with [date](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date) and [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `DateLessThanEquals`
    */
-  public ifEpochTime(value: number | Date | string, operator?: string) {
+  public ifAwsEpochTime(value: number | Date | string, operator?: string) {
     return this.if(
       'aws:EpochTime',
       dateToString(value),
@@ -282,7 +177,7 @@ export class PolicyStatement {
    * @param value Number of seconds
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericLessThan`
    */
-  public ifMultiFactorAuthAge(value: number, operator?: string) {
+  public ifAwsMultiFactorAuthAge(value: number, operator?: string) {
     return this.if(
       'aws:MultiFactorAuthAge',
       value,
@@ -303,7 +198,7 @@ export class PolicyStatement {
    *
    * @param value Weather the MFA should be present or absent. **Default:** `true`
    */
-  public ifMultiFactorAuthPresent(value?: boolean) {
+  public ifAwsMultiFactorAuthPresent(value?: boolean) {
     return this.if('aws:MultiFactorAuthPresent', value, 'Bool');
   }
 
@@ -317,7 +212,7 @@ export class PolicyStatement {
    * @param value Account identifier(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifPrincipalAccount(value: string | string[], operator?: string) {
+  public ifAwsPrincipalAccount(value: string | string[], operator?: string) {
     return this.if('aws:PrincipalAccount', value, operator);
   }
 
@@ -333,7 +228,7 @@ export class PolicyStatement {
    * @param value Principle ARN(s)
    * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnEquals`
    */
-  public ifPrincipalArn(value: string | string[], operator?: string) {
+  public ifAwsPrincipalArn(value: string | string[], operator?: string) {
     return this.if('aws:PrincipalArn', value, operator || 'ArnEquals');
   }
 
@@ -349,7 +244,7 @@ export class PolicyStatement {
    * @param value Organization ID(s) in format `o-xxxxxxxxxxx`
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifPrincipalOrgID(value: string | string[], operator?: string) {
+  public ifAwsPrincipalOrgID(value: string | string[], operator?: string) {
     return this.if('aws:PrincipalOrgID', value, operator);
   }
 
@@ -369,7 +264,7 @@ export class PolicyStatement {
    * @param value Organization path(s) in the format of `o-xxxxxxxxxxx/r-xxxxxxxxxx/ou-xxxx-xxxxxxxx/ou-xxxx-xxxxxxxx/`
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifPrincipalOrgPaths(value: string | string[], operator?: string) {
+  public ifAwsPrincipalOrgPaths(value: string | string[], operator?: string) {
     return this.if('aws:PrincipalOrgPaths', value, operator);
   }
 
@@ -386,7 +281,7 @@ export class PolicyStatement {
    * @param value The tag value(s) to check against
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifPrincipalTag(
+  public ifAwsPrincipalTag(
     key: string,
     value: string | string[],
     operator?: string
@@ -404,7 +299,7 @@ export class PolicyStatement {
    * @param value The principal type(s). Any of `Account`, `User`, `FederatedUser`, `AssumedRole`, `Anonymous`
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifPrincipalType(value: string | string[], operator?: string) {
+  public ifAwsPrincipalType(value: string | string[], operator?: string) {
     return this.if('aws:PrincipalType', value, operator);
   }
 
@@ -422,7 +317,7 @@ export class PolicyStatement {
    * @param value The referer url(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifReferer(value: string | string[], operator?: string) {
+  public ifAwsReferer(value: string | string[], operator?: string) {
     return this.if('aws:Referer', value, operator);
   }
 
@@ -440,7 +335,7 @@ export class PolicyStatement {
    * @param value The region(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifRequestedRegion(value: string | string[], operator?: string) {
+  public ifAwsRequestedRegion(value: string | string[], operator?: string) {
     return this.if('aws:RequestedRegion', value, operator);
   }
 
@@ -457,7 +352,7 @@ export class PolicyStatement {
    * @param value The tag value(s) to check against
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifRequestTag(
+  public ifAwsRequestTag(
     key: string,
     value: string | string[],
     operator?: string
@@ -476,7 +371,7 @@ export class PolicyStatement {
    * @param value The tag value(s) to check against
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifResourceTag(
+  public ifAwsResourceTag(
     key: string,
     value: string | string[],
     operator?: string
@@ -493,7 +388,7 @@ export class PolicyStatement {
    *
    * @param value Weather request was sent using SSL. **Default:** `true`
    */
-  public ifSecureTransport(value?: boolean) {
+  public ifAwsSecureTransport(value?: boolean) {
     return this.if('aws:SecureTransport', value, 'Bool');
   }
 
@@ -509,7 +404,7 @@ export class PolicyStatement {
    * @param value The account ID(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifSourceAccount(value: string | string[], operator?: string) {
+  public ifAwsSourceAccount(value: string | string[], operator?: string) {
     return this.if('aws:SourceAccount', value, operator);
   }
 
@@ -527,7 +422,7 @@ export class PolicyStatement {
    * @param value The source ARN(s)
    * @param operator Works with [ARN operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN) and [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `ArnEquals`
    */
-  public ifSourceArn(value: string | string[], operator?: string) {
+  public ifAwsSourceArn(value: string | string[], operator?: string) {
     return this.if('aws:SourceArn', value, operator || 'ArnEquals');
   }
 
@@ -543,7 +438,7 @@ export class PolicyStatement {
    * @param value The source IP(s)
    * @param operator Works with IP [address operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
    */
-  public ifSourceIp(value: string | string[], operator?: string) {
+  public ifAwsSourceIp(value: string | string[], operator?: string) {
     return this.if('aws:SourceIp', value, operator || 'IpAddress');
   }
 
@@ -557,7 +452,7 @@ export class PolicyStatement {
    * @param value The VPS ID(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifSourceVpc(value: string | string[], operator?: string) {
+  public ifAwsSourceVpc(value: string | string[], operator?: string) {
     return this.if('aws:SourceVpc', value, operator);
   }
 
@@ -571,7 +466,7 @@ export class PolicyStatement {
    * @param value The VPC Endpoint ID(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifSourceVpce(value: string | string[], operator?: string) {
+  public ifAwsSourceVpce(value: string | string[], operator?: string) {
     return this.if('aws:SourceVpce', value, operator);
   }
 
@@ -589,7 +484,7 @@ export class PolicyStatement {
    * @param value The tag key(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
     return this.if('aws:TagKeys', value, operator);
   }
 
@@ -605,7 +500,7 @@ export class PolicyStatement {
    * @param value The date and time to check for. Can be a string in one of the [W3C implementations of the ISO 8601 date](https://www.w3.org/TR/NOTE-datetime) (e.g. `2020-04-01T00:00:00Z`) or in epoch (UNIX) time or a `Date()` object (JavaScript only)
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateGreaterThanEquals`
    */
-  public ifTokenIssueTime(value: string | Date, operator?: string) {
+  public ifAwsTokenIssueTime(value: string | Date, operator?: string) {
     return this.if(
       'aws:TokenIssueTime',
       dateToString(value),
@@ -625,7 +520,7 @@ export class PolicyStatement {
    * @param value The User Agent string(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifUserAgent(value: string | string[], operator?: string) {
+  public ifAwsUserAgent(value: string | string[], operator?: string) {
     return this.if('aws:UserAgent', value, operator);
   }
 
@@ -639,7 +534,7 @@ export class PolicyStatement {
    * @param value The principal identifier(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifUserid(value: string | string[], operator?: string) {
+  public ifAwsUserid(value: string | string[], operator?: string) {
     return this.if('aws:userid', value, operator);
   }
 
@@ -653,7 +548,7 @@ export class PolicyStatement {
    * @param value The user name(s)
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringEquals`
    */
-  public ifUsername(value: string | string[], operator?: string) {
+  public ifAwsUsername(value: string | string[], operator?: string) {
     return this.if('aws:username', value, operator);
   }
 
@@ -676,7 +571,7 @@ export class PolicyStatement {
    *
    * @param value Whether a request was made by a service. **Default:** `true`
    */
-  public ifViaAWSService(value?: boolean) {
+  public ifAwsViaAWSService(value?: boolean) {
     return this.if('aws:ViaAWSService', value, 'Bool');
   }
 
@@ -692,53 +587,8 @@ export class PolicyStatement {
    * @param value The VPC source IP(s)
    * @param operator Works with IP [address operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress). **Default:** `IpAddress`
    */
-  public ifVpcSourceIp(value: string | string[], operator?: string) {
+  public ifAwsVpcSourceIp(value: string | string[], operator?: string) {
     return this.if('aws:VpcSourceIp', value, operator || 'IpAddress');
-  }
-
-  /**
-   * JSON-ify the policy statement
-   *
-   * Also adds `*` to the list of resources, if not was manually added
-   *
-   * Used when JSON.stringify() is called
-   */
-
-  public toJSON(): any {
-    if (!this.hasResources()) {
-      // a statement requires resources. if none was added, we assume the user wants all resources
-      this.resources.push('*');
-    }
-
-    const statement: any = {};
-
-    if (this.sid.length) {
-      statement.Sid = this.sid;
-    }
-
-    statement.Effect = this.effect;
-
-    if (this.hasActions()) {
-      if (this.useNotActions) {
-        statement.NotActions = this.actions;
-      } else {
-        statement.Action = this.actions;
-      }
-    }
-
-    if (this.useNotResources) {
-      statement.NotResource = this.resources;
-    } else {
-      statement.Resource = this.resources;
-    }
-
-    if (this.hasConditions()) {
-      statement.Condition = this.conditions;
-    }
-
-    //TODO: principal
-
-    return statement;
   }
 }
 

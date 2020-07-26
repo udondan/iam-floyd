@@ -160,7 +160,7 @@ export class Sts extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "role": {
       "name": "role",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",

@@ -105,7 +105,7 @@ export class Servicequotas extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "quota": {
       "name": "quota",
       "url": "https://docs.aws.amazon.com/servicequotas/latest/userguide/quota-as-resource.html",

@@ -175,7 +175,7 @@ export class CodestarNotifications extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "notificationrule": {
       "name": "notificationrule",
       "url": "https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_service-with-iam.html",

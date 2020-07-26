@@ -184,7 +184,7 @@ export class Fsx extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "file-system": {
       "name": "file-system",
       "url": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources",

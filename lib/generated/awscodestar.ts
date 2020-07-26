@@ -210,7 +210,7 @@ export class Codestar extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "project": {
       "name": "project",
       "url": "https://docs.aws.amazon.com/codestar/latest/userguide/working-with-projects.html",

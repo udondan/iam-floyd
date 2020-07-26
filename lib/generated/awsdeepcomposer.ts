@@ -185,7 +185,7 @@ export class Deepcomposer extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "model": {
       "name": "model",
       "url": "https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html",

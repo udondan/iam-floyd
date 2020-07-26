@@ -223,7 +223,7 @@ export class Mq extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "brokers": {
       "name": "brokers",
       "url": "",

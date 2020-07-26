@@ -177,7 +177,7 @@ export class Datapipeline extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).

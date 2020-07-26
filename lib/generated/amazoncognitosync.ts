@@ -194,7 +194,7 @@ export class CognitoSync extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "dataset": {
       "name": "dataset",
       "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets",

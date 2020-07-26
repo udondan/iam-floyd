@@ -168,7 +168,7 @@ export class CodestarConnections extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Connection": {
       "name": "Connection",
       "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Connection.html",

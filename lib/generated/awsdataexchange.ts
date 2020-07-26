@@ -255,7 +255,7 @@ export class Dataexchange extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "jobs": {
       "name": "jobs",
       "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html",

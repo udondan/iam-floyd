@@ -356,7 +356,7 @@ export class ElasticloadbalancingV2 extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "listener/app": {
       "name": "listener/app",
       "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html",

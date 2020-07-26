@@ -104,7 +104,7 @@ export class Sdb extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "domain": {
       "name": "domain",
       "url": "https://docs.aws.amazon.com/sdb/latest/APIReference/DataModel.html",

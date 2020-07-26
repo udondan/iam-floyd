@@ -548,7 +548,7 @@ export class Appstream extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "fleet": {
       "name": "fleet",
       "url": "https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts",

@@ -944,7 +944,7 @@ export class Workmail extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "organization": {
       "name": "organization",
       "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html",

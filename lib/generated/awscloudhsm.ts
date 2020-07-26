@@ -238,7 +238,7 @@ export class Cloudhsm extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "backup": {
       "name": "backup",
       "url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/backups.html",

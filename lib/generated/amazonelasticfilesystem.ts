@@ -289,7 +289,7 @@ export class Elasticfilesystem extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "file-system": {
       "name": "file-system",
       "url": "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources",

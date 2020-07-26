@@ -191,7 +191,7 @@ export class CognitoIdentity extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "identitypool": {
       "name": "identitypool",
       "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html",

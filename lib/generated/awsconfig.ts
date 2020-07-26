@@ -577,7 +577,7 @@ export class Config extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "AggregationAuthorization": {
       "name": "AggregationAuthorization",
       "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html",

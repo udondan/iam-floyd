@@ -443,7 +443,7 @@ export class Codedeploy extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
       "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/auth-and-access-control-permissions-reference.html",

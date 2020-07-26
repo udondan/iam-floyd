@@ -192,7 +192,7 @@ export class Deeplens extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "device": {
       "name": "device",
       "url": "",

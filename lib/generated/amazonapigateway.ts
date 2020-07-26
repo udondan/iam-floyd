@@ -39,7 +39,7 @@ export class ExecuteApi extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "execute-api-general": {
       "name": "execute-api-general",
       "url": "",

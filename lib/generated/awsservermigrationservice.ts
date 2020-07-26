@@ -189,7 +189,7 @@ export class Sms extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [sms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsservermigrationservice.html).

@@ -194,7 +194,7 @@ export class SsoDirectory extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [sso-directory](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsssodirectory.html).

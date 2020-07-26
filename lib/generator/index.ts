@@ -241,7 +241,7 @@ export function createModule(module: Module): Promise<void> {
 
   classDeclaration.addProperty({
     name: 'resourceTypes',
-    scope: Scope.Public,
+    scope: Scope.Protected,
     type: 'ResourceTypes',
     initializer: JSON.stringify(module.resourceTypes, null, 2),
   });

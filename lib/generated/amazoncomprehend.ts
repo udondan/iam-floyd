@@ -407,7 +407,7 @@ export class Comprehend extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "document-classifier": {
       "name": "document-classifier",
       "url": "",

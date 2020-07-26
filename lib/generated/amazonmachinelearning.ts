@@ -311,7 +311,7 @@ export class Machinelearning extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "batchprediction": {
       "name": "batchprediction",
       "url": "https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions",
