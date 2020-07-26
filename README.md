@@ -46,6 +46,8 @@ Support for:
 	* [on*, on](#onon)
 	* [notActions](#notActions)
 	* [notResources](#notResources)
+* [Collections](#Collections)
+	* [ec2TagBasedAuthorization](#ec2TagBasedAuthorization)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -394,7 +396,7 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
-## Collections
+## <a name='Collections'></a>Collections
 
 The package provides commonly used statement collections. These can be called  via `new statement.Collection().allowEc2InstanceDeleteByOwner()`. Collections return a list of statements, which then can be used in a policy like this:
 
@@ -411,7 +413,7 @@ Available collections are:
 
 - **allowEc2InstanceDeleteByOwner**: Allows stopping EC2 instance only for the user who started them
 
-### ec2TagBasedAuthorization
+### <a name='ec2TagBasedAuthorization'></a>ec2TagBasedAuthorization
 
 Allows stopping EC2 instance only for the user who started them.
 
