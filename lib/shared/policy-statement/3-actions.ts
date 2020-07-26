@@ -28,7 +28,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * Only relevant for the main package. In CDK mode this only calls super.
    */
-  public XtoJSON(): any {
+  public toJSON(): any {
     console.log('PolicyStatementWithActions:toJSON');
     // @ts-ignore only available after swapping 1-base
     if (typeof this.addResources == 'function') {
@@ -48,7 +48,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
     return statement;
   }
 
-  public XtoStatementJson(): any {
+  public toStatementJson(): any {
     console.log('PolicyStatementWithActions:toStatementJson');
     this.cdkApplyActions();
 
