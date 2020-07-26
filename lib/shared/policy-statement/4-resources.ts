@@ -59,21 +59,19 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     console.log('PolicyStatementWithResources:cdkApplyResources');
     if (!this.cdkResourcesApplied) {
       const self = this;
-      const addResources = this.useNotResources
-        ? // @ts-ignore only available after swapping 1-base
-          this.addNotResources
-        : // @ts-ignore only available after swapping 1-base
-          this.addResources;
-      console.log(`mode is ${addResources}`);
+      const mode = this.useNotResources ? 'addNotResources' : 'addResources';
+      console.log(`mode is ${mode}`);
 
-      const resources = this.resources.filter((elem, pos) => {
+      const uniqueResources = this.resources.filter((elem, pos) => {
         console.log(`adding resource ${elem}`);
         return self.resources.indexOf(elem) == pos;
       });
 
-      console.log('resources', resources);
+      console.log('resources', uniqueResources);
 
-      addResources(...resources);
+      // @ts-ignore only available after swapping 1-base
+      this[mode](...uniqueResources);
+
       this.cdkResourcesApplied = true;
     }
   }
