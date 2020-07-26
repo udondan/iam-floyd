@@ -278,7 +278,7 @@ export class Dax extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
       "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.access-control.html",

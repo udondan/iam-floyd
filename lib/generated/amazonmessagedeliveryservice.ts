@@ -39,7 +39,7 @@ export class Ec2messages extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [ec2messages](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmessagedeliveryservice.html).

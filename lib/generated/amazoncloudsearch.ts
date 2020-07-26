@@ -329,7 +329,7 @@ export class Cloudsearch extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "domain": {
       "name": "domain",
       "url": "https://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html",

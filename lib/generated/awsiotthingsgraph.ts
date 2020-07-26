@@ -293,7 +293,7 @@ export class Iotthingsgraph extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Workflow": {
       "name": "Workflow",
       "url": "https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-models-tdm-iot-workflow.html",

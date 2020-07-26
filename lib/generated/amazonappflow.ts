@@ -149,7 +149,7 @@ export class Appflow extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "flow": {
       "name": "flow",
       "url": "https://docs.aws.amazon.com/",

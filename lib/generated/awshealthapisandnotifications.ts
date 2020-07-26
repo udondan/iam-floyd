@@ -116,7 +116,7 @@ export class Health extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "event": {
       "name": "event",
       "url": "https://docs.aws.amazon.com/health/latest/ug/supported-operations.html",

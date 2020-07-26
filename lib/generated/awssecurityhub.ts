@@ -436,7 +436,7 @@ export class Securityhub extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "product": {
       "name": "product",
       "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",

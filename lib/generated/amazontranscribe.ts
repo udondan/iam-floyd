@@ -168,7 +168,7 @@ export class Transcribe extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [transcribe](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazontranscribe.html).

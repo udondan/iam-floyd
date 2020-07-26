@@ -140,7 +140,7 @@ export class Acm extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "certificate": {
       "name": "certificate",
       "url": "https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations",

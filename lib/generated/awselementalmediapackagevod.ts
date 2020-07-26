@@ -166,7 +166,7 @@ export class MediapackageVod extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "assets": {
       "name": "assets",
       "url": "https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html",

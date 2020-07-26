@@ -313,7 +313,7 @@ export class Athena extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "datacatalog": {
       "name": "datacatalog",
       "url": "https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html",

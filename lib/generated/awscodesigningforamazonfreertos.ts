@@ -116,7 +116,7 @@ export class Signer extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "signing-profile": {
       "name": "signing-profile",
       "url": "https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html",

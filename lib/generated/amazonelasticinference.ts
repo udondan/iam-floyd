@@ -19,7 +19,7 @@ export class ElasticInference extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "accelerator": {
       "name": "accelerator",
       "url": "",

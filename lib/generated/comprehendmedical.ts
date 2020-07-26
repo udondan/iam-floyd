@@ -19,7 +19,7 @@ export class Comprehendmedical extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [comprehendmedical](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html).

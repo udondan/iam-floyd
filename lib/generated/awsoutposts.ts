@@ -34,7 +34,7 @@ export class Outposts extends PolicyStatement {
       "accessLevel": "List"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Outpost": {
       "name": "Outpost",
       "url": "https://docs.aws.amazon.com/outposts/latest/APIReference/API_Outpost.html",

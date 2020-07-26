@@ -452,7 +452,7 @@ export class Backup extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "backupVault": {
       "name": "backupVault",
       "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/vaults.html",

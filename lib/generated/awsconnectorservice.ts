@@ -24,7 +24,7 @@ export class Awsconnector extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [awsconnector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconnectorservice.html).

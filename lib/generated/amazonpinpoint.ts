@@ -1193,7 +1193,7 @@ export class Mobiletargeting extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "apps": {
       "name": "apps",
       "url": "https://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp",

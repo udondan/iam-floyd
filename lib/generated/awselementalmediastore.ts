@@ -139,7 +139,7 @@ export class Mediastore extends PolicyStatement {
       "accessLevel": "Tagging"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "container": {
       "name": "container",
       "url": "https://docs.aws.amazon.com/mediastore/latest/ug/containers.html",

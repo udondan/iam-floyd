@@ -583,7 +583,7 @@ export class Frauddetector extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "detector": {
       "name": "detector",
       "url": "",

@@ -217,7 +217,7 @@ export class States extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "activity": {
       "name": "activity",
       "url": "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html",

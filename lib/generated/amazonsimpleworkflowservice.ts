@@ -550,7 +550,7 @@ export class Swf extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "domain": {
       "name": "domain",
       "url": "https://docs.aws.amazon.com/swf/latest/developerguide/swf-dev-domains.html",

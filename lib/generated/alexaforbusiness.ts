@@ -692,7 +692,7 @@ export class A4b extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "profile": {
       "name": "profile",
       "url": "https://docs.aws.amazon.com/a4b/latest/APIReference/API_Profile.html",

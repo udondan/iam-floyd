@@ -19,7 +19,7 @@ export class Workmailmessageflow extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "RawMessage": {
       "name": "RawMessage",
       "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/lambda-content.html",

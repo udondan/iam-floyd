@@ -636,7 +636,7 @@ export class Servicecatalog extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Portfolio": {
       "name": "Portfolio",
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_PortfolioDetail.html",

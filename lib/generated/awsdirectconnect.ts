@@ -657,7 +657,7 @@ export class Directconnect extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "dxcon": {
       "name": "dxcon",
       "url": "https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html",

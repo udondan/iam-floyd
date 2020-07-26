@@ -134,7 +134,7 @@ export class Discovery extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [discovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscovery.html).

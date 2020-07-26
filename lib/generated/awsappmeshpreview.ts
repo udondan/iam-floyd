@@ -394,7 +394,7 @@ export class AppmeshPreview extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "mesh": {
       "name": "mesh",
       "url": "https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html",

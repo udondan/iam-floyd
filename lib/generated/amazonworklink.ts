@@ -348,7 +348,7 @@ export class Worklink extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "fleet": {
       "name": "fleet",
       "url": "https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet",

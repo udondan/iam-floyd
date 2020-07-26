@@ -254,7 +254,7 @@ export class Groundstation extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Config": {
       "name": "Config",
       "url": "https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ConfigListItem.html",

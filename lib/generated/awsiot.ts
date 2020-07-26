@@ -1968,7 +1968,7 @@ export class Iot extends PolicyStatement {
       "accessLevel": "Read"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "client": {
       "name": "client",
       "url": "https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html",

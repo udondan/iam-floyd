@@ -19,7 +19,7 @@ export class NeptuneDb extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "database": {
       "name": "database",
       "url": "https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html",

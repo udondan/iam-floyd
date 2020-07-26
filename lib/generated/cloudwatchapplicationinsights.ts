@@ -94,7 +94,7 @@ export class Applicationinsights extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [applicationinsights](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_cloudwatchapplicationinsights.html).

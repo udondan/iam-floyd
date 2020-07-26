@@ -88,7 +88,7 @@ export class Freertos extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "configuration": {
       "name": "configuration",
       "url": "https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html",

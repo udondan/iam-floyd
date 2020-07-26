@@ -492,7 +492,7 @@ export class Imagebuilder extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "component": {
       "name": "component",
       "url": "https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_Component.html",

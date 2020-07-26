@@ -380,7 +380,7 @@ export class Macie2 extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "ClassificationJob": {
       "name": "ClassificationJob",
       "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",

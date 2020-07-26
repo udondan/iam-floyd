@@ -677,7 +677,7 @@ export class Autoscaling extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "autoScalingGroup": {
       "name": "autoScalingGroup",
       "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources",

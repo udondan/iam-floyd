@@ -95,7 +95,7 @@ export class Apigateway extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "apigateway-general": {
       "name": "apigateway-general",
       "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html",

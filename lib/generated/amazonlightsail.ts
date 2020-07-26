@@ -1057,7 +1057,7 @@ export class Lightsail extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "Domain": {
       "name": "Domain",
       "url": "https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html",

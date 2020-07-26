@@ -94,7 +94,7 @@ export class Snowball extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [snowball](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssnowball.html).

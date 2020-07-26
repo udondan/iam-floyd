@@ -468,7 +468,7 @@ export class Wafv2 extends PolicyStatement {
       ]
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "webacl": {
       "name": "webacl",
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html",

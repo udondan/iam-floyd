@@ -299,7 +299,7 @@ export class Es extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "domain": {
       "name": "domain",
       "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html",

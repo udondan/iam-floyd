@@ -150,7 +150,7 @@ export class Kafka extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "cluster": {
       "name": "cluster",
       "url": "",

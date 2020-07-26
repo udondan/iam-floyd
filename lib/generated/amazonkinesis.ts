@@ -246,7 +246,7 @@ export class Kinesis extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "stream": {
       "name": "stream",
       "url": "",

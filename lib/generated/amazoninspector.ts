@@ -169,7 +169,7 @@ export class Inspector extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  public resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [inspector](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoninspector.html).

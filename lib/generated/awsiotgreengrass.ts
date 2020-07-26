@@ -948,7 +948,7 @@ export class Greengrass extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "connectivityInfo": {
       "name": "connectivityInfo",
       "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectivityinfo.html",

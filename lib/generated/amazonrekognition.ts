@@ -370,7 +370,7 @@ export class Rekognition extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "collection": {
       "name": "collection",
       "url": "https://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html",

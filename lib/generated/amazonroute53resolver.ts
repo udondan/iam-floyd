@@ -238,7 +238,7 @@ export class Route53resolver extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "resolver-rule": {
       "name": "resolver-rule",
       "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources",

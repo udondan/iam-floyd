@@ -265,7 +265,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "application": {
       "name": "application",
       "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/how-it-works.html",

@@ -240,7 +240,7 @@ export class Qldb extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "ledger": {
       "name": "ledger",
       "url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html",

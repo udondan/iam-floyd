@@ -126,7 +126,7 @@ export class CodeguruReviewer extends PolicyStatement {
       }
     }
   };
-  public resourceTypes: ResourceTypes = {
+  protected resourceTypes: ResourceTypes = {
     "association": {
       "name": "association",
       "url": "",
