@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function getNoServices() {
-  find lib/generated/*.ts | wc -l | xargs
+  cat lib/generated/index.ts | wc -l | xargs
 }
 
 function getNoActions() {
