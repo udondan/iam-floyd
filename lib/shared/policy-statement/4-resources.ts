@@ -65,12 +65,15 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
         : // @ts-ignore only available after swapping 1-base
           this.addResources;
       console.log(`mode is ${addResources}`);
-      addResources(
-        ...this.resources.filter((elem, pos) => {
-          console.log(`adding resource ${elem}`);
-          return self.resources.indexOf(elem) == pos;
-        })
-      );
+
+      const resources = this.resources.filter((elem, pos) => {
+        console.log(`adding resource ${elem}`);
+        return self.resources.indexOf(elem) == pos;
+      });
+
+      console.log('resources', resources);
+
+      addResources(...resources);
       this.cdkResourcesApplied = true;
     }
   }
