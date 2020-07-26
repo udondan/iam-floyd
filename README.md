@@ -50,6 +50,8 @@ Support for:
 	* [on*, on](#onon)
 	* [notActions](#notActions)
 	* [notResources](#notResources)
+	* [notPrincipals](#notPrincipals)
+	* [for*](#for)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -398,6 +400,111 @@ new statement.S3()
   .onBucket('some-bucket');
 ```
 
+### <a name='notPrincipals'></a>notPrincipals
+
+Switches the policy provider to use [NotPrincipal].
+
+```typescript
+new statement.Sts()
+  .deny()
+  .notPrincipals()
+  .assumeRole()
+  .forUser('1234567890', 'Bob');
+```
+
+### <a name='for'></a>for*
+
+To create assume policies, use the `for*()` methods. There are methods available for any type of principal:
+
+```typescript
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forAccount('1234567890');
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forService('lambda.amazonaws.com');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forUser('1234567890', 'Bob');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forRole('1234567890', 'role-name');
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedCognito();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedAmazon();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedGoogle();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forFederatedFacebook();
+
+new statement.Sts()
+  .allow()
+  .assumeRoleWithSAML()
+  .forSaml('1234567890', 'saml-provider');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forPublic();
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forAssumedRoleSession('123456789', 'role-name', 'session-name');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forCanonicalUser('userID');
+
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .for('arn:foo:bar')
+```
+
+To reverse the assume policy you can call the `notPrincipals()` method:
+
+```typescript
+new statement.Sts()
+  .deny()
+  .notPrincipals()
+  .assumeRole()
+  .forUser('1234567890', 'Bob');
+```
+
+If you use the cdk variant of the package you should not have the need to manually create assume policies. But if you do, there is an additional method `forCdkPrincipal()` which takes any number of [`iam.IPrincipal`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.IPrincipal.html) objects:
+
+```typescript
+new statement.Sts()
+  .allow()
+  .assumeRole()
+  .forCdkPrincipal(
+    new iam.ServicePrincipal('sns.amazonaws.com')
+    new iam.ServicePrincipal('lambda.amazonaws.com')
+  )
+```
+
 ## <a name='Floyd'></a>Floyd?
 
 George Floyd has been murdered by racist police officers on May 25th, 2020.
@@ -431,6 +538,7 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [NotAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html
+   [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
    [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.31.0
