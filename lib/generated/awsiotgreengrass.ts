@@ -2709,7 +2709,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifAwsEpochTime(value: Date | string | (Date | string)[], operator?: string) {
+  public ifAwsEpochTime(value: number | Date | string | (number | Date | string)[], operator?: string) {
     if (typeof (value as Date).getMonth === "function") {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {

@@ -41,6 +41,16 @@ export const fixes: Fixes = {
   awsmarketplacecatalog: {
     id: 'aws-marketplace-catalog',
   },
+  awsiotgreengrass: {
+    conditions: {
+      EpochTime: {
+        operator: {
+          type: 'date',
+          override: ['number', 'Date', 'string'],
+        },
+      },
+    },
+  },
   awsmarketplaceentitlementservice: {
     id: 'aws-marketplace-entitlement-service',
   },
@@ -160,6 +170,15 @@ export function conditionFixer(
   if (typeof operatorType !== 'undefined') {
     fixed = 2;
     condition.type = operatorType;
+  }
+
+  const operatorTypeOverride = get(
+    fixes,
+    `${service}.conditions.${key}.operator.override`
+  );
+  if (typeof operatorTypeOverride !== 'undefined') {
+    fixed = 2;
+    condition.typeOverride = operatorTypeOverride;
   }
 
   if (fixed > 0) {

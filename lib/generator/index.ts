@@ -439,7 +439,10 @@ export function createModule(module: Module): Promise<void> {
     }
 
     if (type in conditionTypeDefaults) {
-      const types = [...conditionTypeDefaults[type].type];
+      var types = [...conditionTypeDefaults[type].type];
+      if ('typeOverride' in condition) {
+        types = condition.typeOverride;
+      }
       if (types.length > 1) {
         types.push(`(${types.join('|')})[]`);
       } else {

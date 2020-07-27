@@ -3,6 +3,7 @@ export interface Condition {
   description: string;
   url: string;
   type: string;
+  typeOverride?: string[];
   isGlobal: boolean;
 }
 
