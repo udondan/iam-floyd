@@ -92,14 +92,10 @@ export function getAwsServices(): Promise<string[]> {
   return new Promise((resolve, reject) => {
     Promise.all([getAwsServicesFromGithub(), getAwsServicesFromIamDocs()])
       .then((values) => {
-        console.log(values[0].length);
-        console.log(values[1].length);
         const merged = values[0].concat(values[0]);
-        console.log(merged.length);
         const unique = merged.filter((elem, pos) => {
           return merged.indexOf(elem) == pos;
         });
-        console.log(unique.length);
         resolve(unique.sort());
       })
       .catch((err) => {
