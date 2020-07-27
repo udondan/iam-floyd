@@ -31,7 +31,7 @@ jobs:
       - name: Generate code
         uses: udondan/cdk-nodejs@v0.2.0
         with:
-          args: make ${{ github.event.inputs.logLevel }}
+          args: make ${{ github.event.inputs.command }}
         if: ${{ github.event_name == 'workflow_dispatch' }}
 
       - name: Commit and push changes
