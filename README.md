@@ -7,7 +7,7 @@
 [![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
 [![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
 [![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.32.0-brightgreen)][Maven]
+[![Maven package](https://img.shields.io/badge/maven-v0.33.0-brightgreen)][Maven]
 
 ![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
 [![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
@@ -545,4 +545,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.32.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.33.0
