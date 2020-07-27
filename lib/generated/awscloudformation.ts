@@ -610,8 +610,8 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:RoleArn
+   * Possible conditions:
+   * - .ifRoleArn()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html
    */
@@ -625,15 +625,15 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:ChangeSetName
-   * - cloudformation:ResourceTypes
-   * - cloudformation:ImportResourceTypes
-   * - cloudformation:RoleArn
-   * - cloudformation:StackPolicyUrl
-   * - cloudformation:TemplateUrl
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifChangeSetName()
+   * - .ifResourceTypes()
+   * - .ifImportResourceTypes()
+   * - .ifRoleArn()
+   * - .ifStackPolicyUrl()
+   * - .ifTemplateUrl()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html
    */
@@ -647,13 +647,13 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:ResourceTypes
-   * - cloudformation:RoleArn
-   * - cloudformation:StackPolicyUrl
-   * - cloudformation:TemplateUrl
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifResourceTypes()
+   * - .ifRoleArn()
+   * - .ifStackPolicyUrl()
+   * - .ifTemplateUrl()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html
    */
@@ -679,11 +679,11 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:RoleArn
-   * - cloudformation:TemplateUrl
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifRoleArn()
+   * - .ifTemplateUrl()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html
    */
@@ -707,8 +707,8 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:ChangeSetName
+   * Possible conditions:
+   * - .ifChangeSetName()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html
    */
@@ -722,8 +722,8 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:RoleArn
+   * Possible conditions:
+   * - .ifRoleArn()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html
    */
@@ -785,8 +785,8 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - cloudformation:ChangeSetName
+   * Possible conditions:
+   * - .ifChangeSetName()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html
    */
@@ -980,8 +980,8 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:ChangeSetName
+   * Possible conditions:
+   * - .ifChangeSetName()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html
    */
@@ -1187,8 +1187,8 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - cloudformation:StackPolicyUrl
+   * Possible conditions:
+   * - .ifStackPolicyUrl()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html
    */
@@ -1258,13 +1258,13 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:ResourceTypes
-   * - cloudformation:RoleArn
-   * - cloudformation:StackPolicyUrl
-   * - cloudformation:TemplateUrl
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifResourceTypes()
+   * - .ifRoleArn()
+   * - .ifStackPolicyUrl()
+   * - .ifTemplateUrl()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html
    */
@@ -1290,11 +1290,11 @@ export class Cloudformation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloudformation:RoleArn
-   * - cloudformation:TemplateUrl
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifRoleArn()
+   * - .ifTemplateUrl()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html
    */
@@ -1338,8 +1338,8 @@ export class Cloudformation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStack(stackName: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stack/${StackName}/${Id}';
@@ -1362,8 +1362,8 @@ export class Cloudformation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStackset(stackSetName: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudformation:${Region}:${Account}:stackset/${StackSetName}:${Id}';
@@ -1394,6 +1394,32 @@ export class Cloudformation extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

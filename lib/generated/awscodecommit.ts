@@ -1031,8 +1031,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateBranch.html
    */
@@ -1046,8 +1046,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateCommit.html
    */
@@ -1085,9 +1085,9 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateRepository.html
    */
@@ -1101,8 +1101,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateUnreferencedMergeCommit.html
    */
@@ -1128,8 +1128,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteBranch.html
    */
@@ -1155,8 +1155,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteFile.html
    */
@@ -1398,8 +1398,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetMergeCommit.html
    */
@@ -1557,8 +1557,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html#aa-git
    */
@@ -1656,8 +1656,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByFastForward.html
    */
@@ -1671,8 +1671,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesBySquash.html
    */
@@ -1686,8 +1686,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergeBranchesByThreeWay.html
    */
@@ -1701,8 +1701,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByFastForward.html
    */
@@ -1716,8 +1716,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestBySquash.html
    */
@@ -1731,8 +1731,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_MergePullRequestByThreeWay.html
    */
@@ -1806,8 +1806,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - codecommit:References
+   * Possible conditions:
+   * - .ifReferences()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutFile.html
    */
@@ -1833,10 +1833,10 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_TagResource.html
    */
@@ -1862,8 +1862,8 @@ export class Codecommit extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codecommit/latest/APIReference/API_UntagResource.html
    */
@@ -2038,8 +2038,8 @@ export class Codecommit extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';
@@ -2048,6 +2048,44 @@ export class Codecommit extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

@@ -561,8 +561,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_AttachPolicy.html
    */
@@ -636,8 +636,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html
    */
@@ -687,8 +687,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeletePolicy.html
    */
@@ -702,8 +702,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:ServicePrincipal
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeregisterDelegatedAdministrator.html
    */
@@ -741,8 +741,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribeEffectivePolicy.html
    */
@@ -792,8 +792,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DescribePolicy.html
    */
@@ -807,8 +807,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DetachPolicy.html
    */
@@ -822,8 +822,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:ServicePrincipal
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html
    */
@@ -837,8 +837,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisablePolicyType.html
    */
@@ -852,8 +852,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:ServicePrincipal
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html
    */
@@ -879,8 +879,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html
    */
@@ -978,8 +978,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - organizations:ServicePrincipal
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedAdministrators.html
    */
@@ -1053,8 +1053,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPolicies.html
    */
@@ -1068,8 +1068,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListPoliciesForTarget.html
    */
@@ -1107,8 +1107,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTargetsForPolicy.html
    */
@@ -1134,8 +1134,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:ServicePrincipal
+   * Possible conditions:
+   * - .ifServicePrincipal()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html
    */
@@ -1197,8 +1197,8 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - organizations:PolicyType
+   * Possible conditions:
+   * - .ifPolicyType()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdatePolicy.html
    */

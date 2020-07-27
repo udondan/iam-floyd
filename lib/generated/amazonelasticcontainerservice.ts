@@ -667,9 +667,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html
    */
@@ -683,10 +683,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:capacity-provider
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifCapacityProvider()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html
    */
@@ -700,12 +700,12 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:capacity-provider
-   * - ecs:task-definition
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifCapacityProvider()
+   * - .ifTaskDefinition()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
@@ -719,10 +719,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:service
-   * - ecs:task-definition
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifService()
+   * - .ifTaskDefinition()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html
    */
@@ -748,8 +748,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html
    */
@@ -787,8 +787,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html
    */
@@ -802,9 +802,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:service
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskSet.html
    */
@@ -866,8 +866,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html
    */
@@ -881,8 +881,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html
    */
@@ -908,9 +908,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:service
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html
    */
@@ -924,8 +924,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html
    */
@@ -999,8 +999,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
    */
@@ -1050,8 +1050,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html
    */
@@ -1065,8 +1065,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html
    */
@@ -1104,8 +1104,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html
    */
@@ -1119,8 +1119,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:capacity-provider
+   * Possible conditions:
+   * - .ifCapacityProvider()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html
    */
@@ -1134,9 +1134,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html
    */
@@ -1150,9 +1150,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterTaskDefinition.html
    */
@@ -1166,11 +1166,11 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:capacity-provider
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifCapacityProvider()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html
    */
@@ -1184,11 +1184,11 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:container-instances
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifContainerInstances()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html
    */
@@ -1202,8 +1202,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#enable_cloudwatch
    */
@@ -1217,8 +1217,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopTask.html
    */
@@ -1268,9 +1268,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html
    */
@@ -1284,8 +1284,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UntagResource.html
    */
@@ -1311,8 +1311,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html
    */
@@ -1326,8 +1326,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html
    */
@@ -1341,10 +1341,10 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:capacity-provider
-   * - ecs:task-definition
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifCapacityProvider()
+   * - .ifTaskDefinition()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
    */
@@ -1358,8 +1358,8 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
+   * Possible conditions:
+   * - .ifCluster()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateServicePrimaryTaskSet.html
    */
@@ -1373,9 +1373,9 @@ export class Ecs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ecs:cluster
-   * - ecs:service
+   * Possible conditions:
+   * - .ifCluster()
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskSet.html
    */
@@ -1394,9 +1394,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onCluster(clusterName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:cluster/${ClusterName}';
@@ -1417,9 +1417,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onContainerInstance(containerInstanceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:container-instance/${ContainerInstanceId}';
@@ -1440,9 +1440,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onService(serviceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:service/${ServiceName}';
@@ -1463,9 +1463,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onTask(taskId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task/${TaskId}';
@@ -1487,9 +1487,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onTaskDefinition(taskDefinitionFamilyName: string, taskDefinitionRevisionNumber: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-definition/${TaskDefinitionFamilyName}:${TaskDefinitionRevisionNumber}';
@@ -1511,9 +1511,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onCapacityProvider(capacityProviderName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:capacity-provider/${CapacityProviderName}';
@@ -1536,9 +1536,9 @@ export class Ecs extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecs:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onTaskSet(clusterName: string, serviceName: string, taskSetId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecs:${Region}:${Account}:task-set/${ClusterName}/${ServiceName}/${TaskSetId}';
@@ -1549,6 +1549,38 @@ export class Ecs extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request.
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource.
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

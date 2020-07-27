@@ -296,8 +296,8 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - servicequotas:service
+   * Possible conditions:
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_PutServiceQuotaIncreaseRequestIntoTemplate.html
    */
@@ -311,8 +311,8 @@ export class Servicequotas extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - servicequotas:service
+   * Possible conditions:
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html
    */

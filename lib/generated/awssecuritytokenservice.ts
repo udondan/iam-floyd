@@ -191,13 +191,13 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:PrincipalTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - sts:TransitiveTagKeys
-   * - sts:ExternalId
-   * - sts:RoleSessionName
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsPrincipalTag()
+   * - .ifAwsRequestTag()
+   * - .ifTransitiveTagKeys()
+   * - .ifExternalId()
+   * - .ifRoleSessionName()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
@@ -211,43 +211,43 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - saml:namequalifier
-   * - saml:sub
-   * - saml:sub_type
-   * - saml:aud
-   * - saml:iss
-   * - saml:doc
-   * - saml:cn
-   * - saml:commonName
-   * - saml:eduorghomepageuri
-   * - saml:eduorgidentityauthnpolicyuri
-   * - saml:eduorglegalname
-   * - saml:eduorgsuperioruri
-   * - saml:eduorgwhitepagesuri
-   * - saml:edupersonaffiliation
-   * - saml:edupersonassurance
-   * - saml:edupersonentitlement
-   * - saml:edupersonnickname
-   * - saml:edupersonorgdn
-   * - saml:edupersonorgunitdn
-   * - saml:edupersonprimaryaffiliation
-   * - saml:edupersonprimaryorgunitdn
-   * - saml:edupersonprincipalname
-   * - saml:edupersonscopedaffiliation
-   * - saml:edupersontargetedid
-   * - saml:givenName
-   * - saml:mail
-   * - saml:name
-   * - saml:organizationStatus
-   * - saml:primaryGroupSID
-   * - saml:surname
-   * - saml:uid
-   * - saml:x500UniqueIdentifier
-   * - aws:TagKeys
-   * - aws:PrincipalTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - sts:TransitiveTagKeys
+   * Possible conditions:
+   * - .ifNamequalifier()
+   * - .ifSub()
+   * - .ifSubType()
+   * - .ifAud()
+   * - .ifIss()
+   * - .ifDoc()
+   * - .ifCn()
+   * - .ifCommonName()
+   * - .ifEduorghomepageuri()
+   * - .ifEduorgidentityauthnpolicyuri()
+   * - .ifEduorglegalname()
+   * - .ifEduorgsuperioruri()
+   * - .ifEduorgwhitepagesuri()
+   * - .ifEdupersonaffiliation()
+   * - .ifEdupersonassurance()
+   * - .ifEdupersonentitlement()
+   * - .ifEdupersonnickname()
+   * - .ifEdupersonorgdn()
+   * - .ifEdupersonorgunitdn()
+   * - .ifEdupersonprimaryaffiliation()
+   * - .ifEdupersonprimaryorgunitdn()
+   * - .ifEdupersonprincipalname()
+   * - .ifEdupersonscopedaffiliation()
+   * - .ifEdupersontargetedid()
+   * - .ifGivenName()
+   * - .ifMail()
+   * - .ifName()
+   * - .ifOrganizationStatus()
+   * - .ifPrimaryGroupSID()
+   * - .ifSurname()
+   * - .ifUid()
+   * - .ifX500UniqueIdentifier()
+   * - .ifAwsTagKeys()
+   * - .ifAwsPrincipalTag()
+   * - .ifAwsRequestTag()
+   * - .ifTransitiveTagKeys()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
@@ -261,21 +261,21 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cognito-identity.amazonaws.com:amr
-   * - cognito-identity.amazonaws.com:aud
-   * - cognito-identity.amazonaws.com:sub
-   * - www.amazon.com:app_id
-   * - www.amazon.com:user_id
-   * - graph.facebook.com:app_id
-   * - graph.facebook.com:id
-   * - accounts.google.com:aud
-   * - accounts.google.com:oaud
-   * - accounts.google.com:sub
-   * - aws:TagKeys
-   * - aws:PrincipalTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - sts:TransitiveTagKeys
+   * Possible conditions:
+   * - .ifCognitoAmr()
+   * - .ifCognitoAud()
+   * - .ifCognitoSub()
+   * - .ifAmazonAppId()
+   * - .ifAmazonUserId()
+   * - .ifFacebookAppId()
+   * - .ifFacebookId()
+   * - .ifGoogleAud()
+   * - .ifGoogleOaud()
+   * - .ifGoogleSub()
+   * - .ifAwsTagKeys()
+   * - .ifAwsPrincipalTag()
+   * - .ifAwsRequestTag()
+   * - .ifTransitiveTagKeys()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
@@ -325,10 +325,10 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:PrincipalTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsPrincipalTag()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
    */
@@ -366,11 +366,11 @@ export class Sts extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:PrincipalTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - sts:TransitiveTagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsPrincipalTag()
+   * - .ifAwsRequestTag()
+   * - .ifTransitiveTagKeys()
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
@@ -388,8 +388,8 @@ export class Sts extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
@@ -450,6 +450,69 @@ export class Sts extends PolicyStatement {
    */
   public ifGoogleSub(value: string | string[], operator?: string) {
     return this.if(`accounts.google.com:sub`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the IdP that was used to authenticate the user
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_federatedprovider
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsFederatedProvider(value: string | string[], operator?: string) {
+    return this.if(`aws:FederatedProvider`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag associated with the principal that is making the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principaltag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsPrincipalTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:PrincipalTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

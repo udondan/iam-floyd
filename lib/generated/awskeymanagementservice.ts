@@ -649,9 +649,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html
    */
@@ -677,9 +677,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateAlias.html
    */
@@ -708,11 +708,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:GrantConstraintType
-   * - kms:GrantIsForAWSResource
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifGrantConstraintType()
+   * - .ifGrantIsForAWSResource()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
    */
@@ -726,11 +726,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:BypassPolicyLockoutSafetyCheck
-   * - kms:CustomerMasterKeySpec
-   * - kms:CustomerMasterKeyUsage
-   * - kms:KeyOrigin
+   * Possible conditions:
+   * - .ifBypassPolicyLockoutSafetyCheck()
+   * - .ifCustomerMasterKeySpec()
+   * - .ifCustomerMasterKeyUsage()
+   * - .ifKeyOrigin()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
    */
@@ -744,11 +744,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html
    */
@@ -762,9 +762,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html
    */
@@ -790,9 +790,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteImportedKeyMaterial.html
    */
@@ -818,9 +818,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html
    */
@@ -834,9 +834,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html
    */
@@ -850,9 +850,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKeyRotation.html
    */
@@ -878,9 +878,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKey.html
    */
@@ -894,9 +894,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html
    */
@@ -910,11 +910,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html
    */
@@ -928,11 +928,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html
    */
@@ -946,12 +946,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:DataKeyPairSpec
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifDataKeyPairSpec()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html
    */
@@ -965,12 +965,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:DataKeyPairSpec
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifDataKeyPairSpec()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html
    */
@@ -984,11 +984,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyWithoutPlaintext.html
    */
@@ -1014,9 +1014,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html
    */
@@ -1030,9 +1030,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyRotationStatus.html
    */
@@ -1046,11 +1046,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
-   * - kms:WrappingAlgorithm
-   * - kms:WrappingKeySpec
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
+   * - .ifWrappingAlgorithm()
+   * - .ifWrappingKeySpec()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetParametersForImport.html
    */
@@ -1064,9 +1064,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html
    */
@@ -1080,11 +1080,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ExpirationModel
-   * - kms:ValidTo
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifExpirationModel()
+   * - .ifValidTo()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ImportKeyMaterial.html
    */
@@ -1110,10 +1110,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:GrantIsForAWSResource
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifGrantIsForAWSResource()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListGrants.html
    */
@@ -1127,9 +1127,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyPolicies.html
    */
@@ -1155,9 +1155,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html
    */
@@ -1183,10 +1183,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - kms:BypassPolicyLockoutSafetyCheck
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifBypassPolicyLockoutSafetyCheck()
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html
    */
@@ -1200,12 +1200,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ReEncryptOnSameKey
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifReEncryptOnSameKey()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
@@ -1219,12 +1219,12 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ReEncryptOnSameKey
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifReEncryptOnSameKey()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
@@ -1250,10 +1250,10 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:GrantIsForAWSResource
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifGrantIsForAWSResource()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html
    */
@@ -1267,9 +1267,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
    */
@@ -1283,11 +1283,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:MessageType
-   * - kms:SigningAlgorithm
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifMessageType()
+   * - .ifSigningAlgorithm()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html
    */
@@ -1301,9 +1301,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html
    */
@@ -1317,9 +1317,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UntagResource.html
    */
@@ -1333,9 +1333,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateAlias.html
    */
@@ -1361,9 +1361,9 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateKeyDescription.html
    */
@@ -1377,11 +1377,11 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:MessageType
-   * - kms:SigningAlgorithm
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifMessageType()
+   * - .ifSigningAlgorithm()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Verify.html
    */

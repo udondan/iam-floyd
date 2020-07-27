@@ -1509,8 +1509,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PolicyARN
+   * Possible conditions:
+   * - .ifPolicyARN()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html
    */
@@ -1524,9 +1524,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PolicyARN
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPolicyARN()
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html
    */
@@ -1540,9 +1540,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PolicyARN
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPolicyARN()
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html
    */
@@ -1664,8 +1664,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html
    */
@@ -1691,8 +1691,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - iam:AWSServiceName
+   * Possible conditions:
+   * - .ifAWSServiceName()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceLinkedRole.html
    */
@@ -1718,8 +1718,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html
    */
@@ -1889,8 +1889,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePermissionsBoundary.html
    */
@@ -1904,8 +1904,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html
    */
@@ -2003,8 +2003,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPermissionsBoundary.html
    */
@@ -2018,8 +2018,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html
    */
@@ -2045,8 +2045,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PolicyARN
+   * Possible conditions:
+   * - .ifPolicyARN()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html
    */
@@ -2060,9 +2060,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PolicyARN
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPolicyARN()
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html
    */
@@ -2076,9 +2076,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PolicyARN
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPolicyARN()
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html
    */
@@ -2116,8 +2116,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - iam:OrganizationsPolicyId
+   * Possible conditions:
+   * - .ifOrganizationsPolicyId()
    *
    * Dependent actions:
    * - organizations:DescribePolicy
@@ -2787,9 +2787,9 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - iam:AssociatedResourceArn
-   * - iam:PassedToService
+   * Possible conditions:
+   * - .ifAssociatedResourceArn()
+   * - .ifPassedToService()
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html
    */
@@ -2815,8 +2815,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html
    */
@@ -2830,8 +2830,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html
    */
@@ -2845,8 +2845,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPermissionsBoundary.html
    */
@@ -2860,8 +2860,8 @@ export class Iam extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - iam:PermissionsBoundary
+   * Possible conditions:
+   * - .ifPermissionsBoundary()
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html
    */
@@ -3379,8 +3379,8 @@ export class Iam extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - iam:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifResourceTag()
    */
   public onRole(roleNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:role/${RoleNameWithPath}';
@@ -3450,8 +3450,8 @@ export class Iam extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - iam:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifResourceTag()
    */
   public onUser(userNameWithPath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:iam::${Account}:user/${UserNameWithPath}';

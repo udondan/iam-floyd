@@ -758,9 +758,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
@@ -822,9 +822,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html
    */
@@ -838,9 +838,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplicationVersion.html
    */
@@ -854,15 +854,15 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - elasticbeanstalk:FromApplication
-   * - elasticbeanstalk:FromApplicationVersion
-   * - elasticbeanstalk:FromConfigurationTemplate
-   * - elasticbeanstalk:FromEnvironment
-   * - elasticbeanstalk:FromSolutionStack
-   * - elasticbeanstalk:FromPlatform
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifFromApplication()
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromEnvironment()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateConfigurationTemplate.html
    */
@@ -876,13 +876,13 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - elasticbeanstalk:FromApplicationVersion
-   * - elasticbeanstalk:FromConfigurationTemplate
-   * - elasticbeanstalk:FromSolutionStack
-   * - elasticbeanstalk:FromPlatform
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html
    */
@@ -896,9 +896,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreatePlatformVersion.html
    */
@@ -1212,8 +1212,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html
    */
@@ -1263,8 +1263,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - elasticbeanstalk:FromEnvironment
+   * Possible conditions:
+   * - .ifFromEnvironment()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_SwapEnvironmentCNAMEs.html
    */
@@ -1326,13 +1326,13 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - elasticbeanstalk:FromApplication
-   * - elasticbeanstalk:FromApplicationVersion
-   * - elasticbeanstalk:FromConfigurationTemplate
-   * - elasticbeanstalk:FromEnvironment
-   * - elasticbeanstalk:FromSolutionStack
-   * - elasticbeanstalk:FromPlatform
+   * Possible conditions:
+   * - .ifFromApplication()
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromEnvironment()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateConfigurationTemplate.html
    */
@@ -1346,11 +1346,11 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - elasticbeanstalk:FromApplicationVersion
-   * - elasticbeanstalk:FromConfigurationTemplate
-   * - elasticbeanstalk:FromSolutionStack
-   * - elasticbeanstalk:FromPlatform
+   * Possible conditions:
+   * - .ifFromApplicationVersion()
+   * - .ifFromConfigurationTemplate()
+   * - .ifFromSolutionStack()
+   * - .ifFromPlatform()
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateEnvironment.html
    */
@@ -1381,8 +1381,8 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:application/${ApplicationName}';
@@ -1404,9 +1404,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - elasticbeanstalk:InApplication
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInApplication()
    */
   public onApplicationversion(applicationName: string, versionLabel: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:applicationversion/${ApplicationName}/${VersionLabel}';
@@ -1429,9 +1429,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - elasticbeanstalk:InApplication
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInApplication()
    */
   public onConfigurationtemplate(applicationName: string, templateName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:configurationtemplate/${ApplicationName}/${TemplateName}';
@@ -1454,9 +1454,9 @@ export class Elasticbeanstalk extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - elasticbeanstalk:InApplication
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifInApplication()
    */
   public onEnvironment(applicationName: string, environmentName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:elasticbeanstalk:${Region}:${Account}:environment/${ApplicationName}/${EnvironmentName}';
@@ -1500,6 +1500,44 @@ export class Elasticbeanstalk extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request.
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

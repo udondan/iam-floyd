@@ -316,9 +316,9 @@ export function createModule(module: Module): Promise<void> {
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
 
     if ('conditions' in action) {
-      desc += '\n\nPossible condition keys:';
+      desc += '\n\nPossible conditions:';
       action.conditions.forEach((condition) => {
-        desc += `\n- ${condition}`;
+        desc += `\n- .${createConditionName(condition)}()`;
       });
     }
     if ('dependentActions' in action) {
@@ -381,9 +381,9 @@ export function createModule(module: Module): Promise<void> {
     }
     desc += `\n${paramDocs}`;
     if (resourceType.conditionKeys.length) {
-      desc += '\n\nPossible condition keys:';
+      desc += '\n\nPossible conditions:';
       resourceType.conditionKeys.forEach((key) => {
-        desc += `\n- ${key}`;
+        desc += `\n- .${createConditionName(key)}()`;
       });
     }
     method.addJsDoc({
@@ -397,109 +397,107 @@ export function createModule(module: Module): Promise<void> {
   for (let [key, condition] of Object.entries(module.conditions!)) {
     condition = conditionFixer(module.filename, condition);
 
-    if (!condition.isGlobal) {
-      const name = key.split(/[:/]/);
-      var desc = '';
+    const name = key.split(/[:/]/);
+    var desc = '';
 
-      if (condition.description.length) {
-        desc += `\n${condition.description}\n`;
-      }
-
-      if (condition.url.length) {
-        desc += `\n${condition.url}\n`;
-      }
-
-      const type = condition.type.toLowerCase();
-
-      const methodBody: string[] = [];
-
-      var methodName = createConditionName(key);
-      if (name.length > 2 && !name[2].length) {
-        // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
-        methodName += 'Exists';
-      }
-      const method = classDeclaration.addMethod({
-        name: methodName,
-        scope: Scope.Public,
-      });
-
-      var propsKey = `${name[0]}:${name[1]}`;
-
-      if (name.length > 2) {
-        // it is one of those tag keys
-        propsKey += '/';
-        if (name[2].length) {
-          const paramName = name[2].replace(/[^a-zA-Z0-9]/g, '');
-          desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
-          method.addParameter({
-            name: lowerFirst(paramName),
-            type: 'string',
-          });
-          propsKey += `\${${lowerFirst(paramName)}}`;
-        }
-      }
-
-      if (type in conditionTypeDefaults) {
-        const types = [...conditionTypeDefaults[type].type];
-        if (types.length > 1) {
-          types.push(`(${types.join('|')})[]`);
-        } else {
-          types.push(`${types}[]`);
-        }
-
-        desc += `\n@param value The value(s) to check`;
-        method.addParameter({
-          name: 'value',
-          type: types.join(' | '),
-        });
-
-        desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
-        method.addParameter({
-          name: 'operator',
-          type: 'string',
-          hasQuestionToken: true,
-        });
-
-        if (type == 'date') {
-          methodBody.push(
-            'if (typeof (value as Date).getMonth === "function") {',
-            '  value = (value as Date).toISOString();',
-            '} else if (Array.isArray(value)) {',
-            '  value = value.map((item) => {',
-            '    if (typeof (item as Date).getMonth === "function") {',
-            '      item = (item as Date).toISOString();',
-            '    }',
-            '    return item;',
-            '  });',
-            '}'
-          );
-        }
-
-        methodBody.push(
-          `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
-        );
-      } else if (type == 'bool' || type == 'boolean') {
-        desc += '\n@param value `true` or `false`. **Default:** `true`';
-
-        method.addParameter({
-          name: 'value',
-          type: 'boolean',
-          hasQuestionToken: true,
-        });
-
-        methodBody.push(
-          `return this.if(\`${key}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
-        );
-      } else {
-        throw new Error(`Unexpected condition type: ${type}`);
-      }
-
-      method.addJsDoc({
-        description: desc,
-      });
-
-      method.setBodyText(methodBody.join('\n'));
+    if (condition.description.length) {
+      desc += `\n${condition.description}\n`;
     }
+
+    if (condition.url.length) {
+      desc += `\n${condition.url}\n`;
+    }
+
+    const type = condition.type.toLowerCase();
+
+    const methodBody: string[] = [];
+
+    var methodName = createConditionName(key);
+    if (name.length > 2 && !name[2].length) {
+      // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
+      methodName += 'Exists';
+    }
+    const method = classDeclaration.addMethod({
+      name: methodName,
+      scope: Scope.Public,
+    });
+
+    var propsKey = `${name[0]}:${name[1]}`;
+
+    if (name.length > 2) {
+      // it is one of those tag keys
+      propsKey += '/';
+      if (name[2].length) {
+        const paramName = name[2].replace(/[^a-zA-Z0-9]/g, '');
+        desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
+        method.addParameter({
+          name: lowerFirst(paramName),
+          type: 'string',
+        });
+        propsKey += `\${${lowerFirst(paramName)}}`;
+      }
+    }
+
+    if (type in conditionTypeDefaults) {
+      const types = [...conditionTypeDefaults[type].type];
+      if (types.length > 1) {
+        types.push(`(${types.join('|')})[]`);
+      } else {
+        types.push(`${types}[]`);
+      }
+
+      desc += `\n@param value The value(s) to check`;
+      method.addParameter({
+        name: 'value',
+        type: types.join(' | '),
+      });
+
+      desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
+      method.addParameter({
+        name: 'operator',
+        type: 'string',
+        hasQuestionToken: true,
+      });
+
+      if (type == 'date') {
+        methodBody.push(
+          'if (typeof (value as Date).getMonth === "function") {',
+          '  value = (value as Date).toISOString();',
+          '} else if (Array.isArray(value)) {',
+          '  value = value.map((item) => {',
+          '    if (typeof (item as Date).getMonth === "function") {',
+          '      item = (item as Date).toISOString();',
+          '    }',
+          '    return item;',
+          '  });',
+          '}'
+        );
+      }
+
+      methodBody.push(
+        `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
+      );
+    } else if (type == 'bool' || type == 'boolean') {
+      desc += '\n@param value `true` or `false`. **Default:** `true`';
+
+      method.addParameter({
+        name: 'value',
+        type: 'boolean',
+        hasQuestionToken: true,
+      });
+
+      methodBody.push(
+        `return this.if(\`${key}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
+      );
+    } else {
+      throw new Error(`Unexpected condition type: ${type}`);
+    }
+
+    method.addJsDoc({
+      description: desc,
+    });
+
+    method.setBodyText(methodBody.join('\n'));
   }
 
   formatCode(sourceFile);
@@ -791,6 +789,10 @@ function parseConditionTable($: CheerioStatic): Conditions {
 function createConditionName(key: string): string {
   var methodName = 'if';
   const split = key.split(/[:/]/);
+  // for global conditions
+  if (split[0] == 'aws') {
+    methodName += 'Aws';
+  }
   // these are exceptions for the Security Token Service to:
   // - make it clear to which provider the condition is for
   // - avoid duplicate method names

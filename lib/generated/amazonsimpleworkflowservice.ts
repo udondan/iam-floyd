@@ -623,10 +623,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountClosedWorkflowExecutions.html
    */
@@ -640,10 +640,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountOpenWorkflowExecutions.html
    */
@@ -657,8 +657,8 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingActivityTasks.html
    */
@@ -672,8 +672,8 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingDecisionTasks.html
    */
@@ -687,9 +687,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:activityType.name
-   * - swf:activityType.version
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html
    */
@@ -715,9 +715,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateWorkflowType.html
    */
@@ -731,9 +731,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:activityType.name
-   * - swf:activityType.version
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeActivityType.html
    */
@@ -771,9 +771,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html
    */
@@ -823,10 +823,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListClosedWorkflowExecutions.html
    */
@@ -852,10 +852,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListOpenWorkflowExecutions.html
    */
@@ -893,8 +893,8 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html
    */
@@ -908,8 +908,8 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html
    */
@@ -947,10 +947,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:defaultTaskList.name
-   * - swf:name
-   * - swf:version
+   * Possible conditions:
+   * - .ifDefaultTaskListName()
+   * - .ifName()
+   * - .ifVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html
    */
@@ -964,9 +964,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterDomain.html
    */
@@ -980,10 +980,10 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:defaultTaskList.name
-   * - swf:name
-   * - swf:version
+   * Possible conditions:
+   * - .ifDefaultTaskListName()
+   * - .ifName()
+   * - .ifVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterWorkflowType.html
    */
@@ -1045,17 +1045,17 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:activityType.name
-   * - swf:activityType.version
-   * - swf:tagList.member.0
-   * - swf:tagList.member.1
-   * - swf:tagList.member.2
-   * - swf:tagList.member.3
-   * - swf:tagList.member.4
-   * - swf:taskList.name
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
+   * - .ifTagListMember0()
+   * - .ifTagListMember1()
+   * - .ifTagListMember2()
+   * - .ifTagListMember3()
+   * - .ifTagListMember4()
+   * - .ifTaskListName()
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCompleted.html
    */
@@ -1153,15 +1153,15 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:tagList.member.0
-   * - swf:tagList.member.1
-   * - swf:tagList.member.2
-   * - swf:tagList.member.3
-   * - swf:tagList.member.4
-   * - swf:taskList.name
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifTagListMember0()
+   * - .ifTagListMember1()
+   * - .ifTagListMember2()
+   * - .ifTagListMember3()
+   * - .ifTagListMember4()
+   * - .ifTaskListName()
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html
    */
@@ -1175,9 +1175,9 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TagResource.html
    */
@@ -1203,8 +1203,8 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UntagResource.html
    */
@@ -1222,8 +1222,8 @@ export class Swf extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:swf::${Account}:domain/${DomainName}';
@@ -1231,6 +1231,44 @@ export class Swf extends PolicyStatement {
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Tag for request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Tag for resource.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Tag for key.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

@@ -46,8 +46,8 @@ export class Account extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - account:TargetRegion
+   * Possible conditions:
+   * - .ifTargetRegion()
    */
   public disableRegion() {
     this.add('account:DisableRegion');
@@ -59,8 +59,8 @@ export class Account extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - account:TargetRegion
+   * Possible conditions:
+   * - .ifTargetRegion()
    */
   public enableRegion() {
     this.add('account:EnableRegion');

@@ -205,8 +205,8 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - serverlessrepo:applicationType
+   * Possible conditions:
+   * - .ifApplicationType()
    */
   public createCloudFormationChangeSet() {
     this.add('serverlessrepo:CreateCloudFormationChangeSet');
@@ -218,8 +218,8 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - serverlessrepo:applicationType
+   * Possible conditions:
+   * - .ifApplicationType()
    */
   public createCloudFormationTemplate() {
     this.add('serverlessrepo:CreateCloudFormationTemplate');
@@ -241,8 +241,8 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - serverlessrepo:applicationType
+   * Possible conditions:
+   * - .ifApplicationType()
    */
   public getApplication() {
     this.add('serverlessrepo:GetApplication');
@@ -274,8 +274,8 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - serverlessrepo:applicationType
+   * Possible conditions:
+   * - .ifApplicationType()
    */
   public listApplicationDependencies() {
     this.add('serverlessrepo:ListApplicationDependencies');
@@ -287,8 +287,8 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - serverlessrepo:applicationType
+   * Possible conditions:
+   * - .ifApplicationType()
    */
   public listApplicationVersions() {
     this.add('serverlessrepo:ListApplicationVersions');
@@ -320,8 +320,8 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - serverlessrepo:applicationType
+   * Possible conditions:
+   * - .ifApplicationType()
    */
   public searchApplications() {
     this.add('serverlessrepo:SearchApplications');

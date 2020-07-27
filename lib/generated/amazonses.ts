@@ -1010,8 +1010,8 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ses:FromAddress
+   * Possible conditions:
+   * - .ifFromAddress()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html
    */
@@ -1025,11 +1025,11 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ses:FeedbackAddress
-   * - ses:FromAddress
-   * - ses:FromDisplayName
-   * - ses:Recipients
+   * Possible conditions:
+   * - .ifFeedbackAddress()
+   * - .ifFromAddress()
+   * - .ifFromDisplayName()
+   * - .ifRecipients()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html
    */
@@ -1043,11 +1043,11 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ses:FeedbackAddress
-   * - ses:FromAddress
-   * - ses:FromDisplayName
-   * - ses:Recipients
+   * Possible conditions:
+   * - .ifFeedbackAddress()
+   * - .ifFromAddress()
+   * - .ifFromDisplayName()
+   * - .ifRecipients()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendCustomVerificationEmail.html
    */
@@ -1061,11 +1061,11 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ses:FeedbackAddress
-   * - ses:FromAddress
-   * - ses:FromDisplayName
-   * - ses:Recipients
+   * Possible conditions:
+   * - .ifFeedbackAddress()
+   * - .ifFromAddress()
+   * - .ifFromDisplayName()
+   * - .ifRecipients()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html
    */
@@ -1079,11 +1079,11 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ses:FeedbackAddress
-   * - ses:FromAddress
-   * - ses:FromDisplayName
-   * - ses:Recipients
+   * Possible conditions:
+   * - .ifFeedbackAddress()
+   * - .ifFromAddress()
+   * - .ifFromDisplayName()
+   * - .ifRecipients()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html
    */
@@ -1097,11 +1097,11 @@ export class Ses extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ses:FeedbackAddress
-   * - ses:FromAddress
-   * - ses:FromDisplayName
-   * - ses:Recipients
+   * Possible conditions:
+   * - .ifFeedbackAddress()
+   * - .ifFromAddress()
+   * - .ifFromDisplayName()
+   * - .ifRecipients()
    *
    * https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html
    */

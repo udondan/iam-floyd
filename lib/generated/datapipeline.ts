@@ -193,10 +193,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
-   * - datapipeline:workerGroup
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html
    */
@@ -210,9 +210,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
@@ -226,8 +226,8 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
@@ -241,10 +241,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
-   * - datapipeline:workerGroup
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html
    */
@@ -258,9 +258,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html
    */
@@ -274,9 +274,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html
    */
@@ -290,9 +290,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html
    */
@@ -306,9 +306,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html
    */
@@ -334,10 +334,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
-   * - datapipeline:workerGroup
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html
    */
@@ -363,8 +363,8 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:workerGroup
+   * Possible conditions:
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html
    */
@@ -390,10 +390,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
-   * - datapipeline:workerGroup
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html
    */
@@ -407,9 +407,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html
    */
@@ -423,9 +423,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
@@ -463,9 +463,9 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html
    */
@@ -491,10 +491,10 @@ export class Datapipeline extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - datapipeline:PipelineCreator
-   * - datapipeline:Tag
-   * - datapipeline:workerGroup
+   * Possible conditions:
+   * - .ifPipelineCreator()
+   * - .ifTag()
+   * - .ifWorkerGroup()
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html
    */

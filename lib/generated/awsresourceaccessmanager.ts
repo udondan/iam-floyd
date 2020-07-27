@@ -300,8 +300,8 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ram:ShareOwnerAccountId
+   * Possible conditions:
+   * - .ifShareOwnerAccountId()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html
    */
@@ -315,13 +315,13 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:ResourceShareName
-   * - ram:AllowsExternalPrincipals
-   * - ram:Principal
-   * - ram:RequestedResourceType
-   * - ram:ResourceArn
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceShareName()
+   * - .ifAllowsExternalPrincipals()
+   * - .ifPrincipal()
+   * - .ifRequestedResourceType()
+   * - .ifResourceArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceShare.html
    */
@@ -335,11 +335,11 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:AllowsExternalPrincipals
-   * - ram:ResourceShareName
-   * - ram:PermissionArn
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAllowsExternalPrincipals()
+   * - .ifResourceShareName()
+   * - .ifPermissionArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_AssociateResourceSharePermission.html
    */
@@ -353,13 +353,13 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - ram:RequestedResourceType
-   * - ram:ResourceArn
-   * - ram:RequestedAllowsExternalPrincipals
-   * - ram:Principal
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifRequestedResourceType()
+   * - .ifResourceArn()
+   * - .ifRequestedAllowsExternalPrincipals()
+   * - .ifPrincipal()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html
    */
@@ -373,10 +373,10 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:ResourceShareName
-   * - ram:AllowsExternalPrincipals
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceShareName()
+   * - .ifAllowsExternalPrincipals()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DeleteResourceShare.html
    */
@@ -390,13 +390,13 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:ResourceShareName
-   * - ram:AllowsExternalPrincipals
-   * - ram:Principal
-   * - ram:RequestedResourceType
-   * - ram:ResourceArn
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceShareName()
+   * - .ifAllowsExternalPrincipals()
+   * - .ifPrincipal()
+   * - .ifRequestedResourceType()
+   * - .ifResourceArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceShare.html
    */
@@ -410,11 +410,11 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:AllowsExternalPrincipals
-   * - ram:ResourceShareName
-   * - ram:PermissionArn
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAllowsExternalPrincipals()
+   * - .ifResourceShareName()
+   * - .ifPermissionArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_DisassociateResourceSharePermission.html
    */
@@ -440,8 +440,8 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - ram:PermissionArn
+   * Possible conditions:
+   * - .ifPermissionArn()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_GetPermission.html
    */
@@ -539,10 +539,10 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:ResourceShareName
-   * - ram:AllowsExternalPrincipals
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceShareName()
+   * - .ifAllowsExternalPrincipals()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_ListResourceSharePermissions.html
    */
@@ -568,8 +568,8 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - ram:ShareOwnerAccountId
+   * Possible conditions:
+   * - .ifShareOwnerAccountId()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_RejectResourceShareInvitation.html
    */
@@ -583,9 +583,9 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_TagResource.html
    */
@@ -599,9 +599,9 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UntagResource.html
    */
@@ -615,11 +615,11 @@ export class Ram extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:ResourceShareName
-   * - ram:AllowsExternalPrincipals
-   * - ram:RequestedAllowsExternalPrincipals
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceShareName()
+   * - .ifAllowsExternalPrincipals()
+   * - .ifRequestedAllowsExternalPrincipals()
    *
    * https://docs.aws.amazon.com/ram/latest/APIReference/API_UpdateResourceShare.html
    */
@@ -638,10 +638,10 @@ export class Ram extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ram:AllowsExternalPrincipals
-   * - ram:ResourceShareName
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAllowsExternalPrincipals()
+   * - .ifResourceShareName()
    */
   public onResourceShare(resourcePath: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram:${Region}:${Account}:resource-share/${ResourcePath}';
@@ -680,8 +680,8 @@ export class Ram extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - ram:PermissionArn
+   * Possible conditions:
+   * - .ifPermissionArn()
    */
   public onPermission(resourcePath: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ram::${Account}:permission/${ResourcePath}';
@@ -689,6 +689,44 @@ export class Ram extends PolicyStatement {
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Specifies a tag key and value pair that must be used when creating or tagging a resource share. If users don't pass these specific tags, or if they don't specify tags at all, the request fails.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Indicates that the action can only be performed on resources that have the specified tag key and value pair.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Specifies the tag keys that can be used when creating or tagging a resource share
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

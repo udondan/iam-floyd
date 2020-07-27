@@ -587,8 +587,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - lambda:Principal
+   * Possible conditions:
+   * - .ifPrincipal()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html
    */
@@ -614,8 +614,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - lambda:FunctionArn
+   * Possible conditions:
+   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html
    */
@@ -629,8 +629,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - lambda:Layer
+   * Possible conditions:
+   * - .ifLayer()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
@@ -656,8 +656,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - lambda:FunctionArn
+   * Possible conditions:
+   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html
    */
@@ -775,8 +775,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - lambda:FunctionArn
+   * Possible conditions:
+   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html
    */
@@ -1102,8 +1102,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - lambda:Principal
+   * Possible conditions:
+   * - .ifPrincipal()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html
    */
@@ -1153,8 +1153,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - lambda:FunctionArn
+   * Possible conditions:
+   * - .ifFunctionArn()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html
    */
@@ -1180,8 +1180,8 @@ export class Lambda extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - lambda:Layer
+   * Possible conditions:
+   * - .ifLayer()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html
    */

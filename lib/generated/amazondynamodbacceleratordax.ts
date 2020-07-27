@@ -409,8 +409,8 @@ export class Dax extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dax:EnclosingOperation
+   * Possible conditions:
+   * - .ifEnclosingOperation()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
@@ -520,8 +520,8 @@ export class Dax extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - dax:EnclosingOperation
+   * Possible conditions:
+   * - .ifEnclosingOperation()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
@@ -559,8 +559,8 @@ export class Dax extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dax:EnclosingOperation
+   * Possible conditions:
+   * - .ifEnclosingOperation()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
@@ -646,8 +646,8 @@ export class Dax extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dax:EnclosingOperation
+   * Possible conditions:
+   * - .ifEnclosingOperation()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */

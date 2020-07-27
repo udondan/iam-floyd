@@ -154,9 +154,9 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - health:eventTypeCode
-   * - health:service
+   * Possible conditions:
+   * - .ifEventTypeCode()
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html
    */
@@ -209,9 +209,9 @@ export class Health extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - health:eventTypeCode
-   * - health:service
+   * Possible conditions:
+   * - .ifEventTypeCode()
+   * - .ifService()
    *
    * https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html
    */

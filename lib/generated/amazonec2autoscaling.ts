@@ -721,8 +721,8 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:TargetGroupARNs
+   * Possible conditions:
+   * - .ifTargetGroupARNs()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancerTargetGroups.html
    */
@@ -736,8 +736,8 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:LoadBalancerNames
+   * Possible conditions:
+   * - .ifLoadBalancerNames()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancers.html
    */
@@ -799,17 +799,17 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - autoscaling:InstanceTypes
-   * - autoscaling:LaunchConfigurationName
-   * - autoscaling:LaunchTemplateVersionSpecified
-   * - autoscaling:LoadBalancerNames
-   * - autoscaling:MaxSize
-   * - autoscaling:MinSize
-   * - autoscaling:TargetGroupARNs
-   * - autoscaling:VPCZoneIdentifiers
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   * - .ifLaunchConfigurationName()
+   * - .ifLaunchTemplateVersionSpecified()
+   * - .ifLoadBalancerNames()
+   * - .ifMaxSize()
+   * - .ifMinSize()
+   * - .ifTargetGroupARNs()
+   * - .ifVPCZoneIdentifiers()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateAutoScalingGroup.html
    */
@@ -823,10 +823,10 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:ImageId
-   * - autoscaling:InstanceType
-   * - autoscaling:SpotPrice
+   * Possible conditions:
+   * - .ifImageId()
+   * - .ifInstanceType()
+   * - .ifSpotPrice()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html
    */
@@ -840,9 +840,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateOrUpdateTags.html
    */
@@ -928,9 +928,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteTags.html
    */
@@ -1184,8 +1184,8 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:TargetGroupARNs
+   * Possible conditions:
+   * - .ifTargetGroupARNs()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancerTargetGroups.html
    */
@@ -1199,8 +1199,8 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:LoadBalancerNames
+   * Possible conditions:
+   * - .ifLoadBalancerNames()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancers.html
    */
@@ -1310,9 +1310,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:MaxSize
-   * - autoscaling:MinSize
+   * Possible conditions:
+   * - .ifMaxSize()
+   * - .ifMinSize()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScheduledUpdateGroupAction.html
    */
@@ -1422,13 +1422,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:InstanceTypes
-   * - autoscaling:LaunchConfigurationName
-   * - autoscaling:LaunchTemplateVersionSpecified
-   * - autoscaling:MaxSize
-   * - autoscaling:MinSize
-   * - autoscaling:VPCZoneIdentifiers
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   * - .ifLaunchConfigurationName()
+   * - .ifLaunchTemplateVersionSpecified()
+   * - .ifMaxSize()
+   * - .ifMinSize()
+   * - .ifVPCZoneIdentifiers()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_UpdateAutoScalingGroup.html
    */
@@ -1448,9 +1448,9 @@ export class Autoscaling extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - autoscaling:ResourceTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifResourceTag()
+   * - .ifAwsResourceTag()
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}';
@@ -1625,5 +1625,39 @@ export class Autoscaling extends PolicyStatement {
    */
   public ifVPCZoneIdentifiers(value: string | string[], operator?: string) {
     return this.if(`autoscaling:VPCZoneIdentifiers`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The value of a tag associated with the request.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string) {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

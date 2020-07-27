@@ -573,11 +573,11 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:Select
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifSelect()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html
    */
@@ -591,10 +591,10 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html
    */
@@ -608,11 +608,11 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:ReturnValues
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ConditionCheckItem.html
    */
@@ -686,12 +686,12 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:EnclosingOperation
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:ReturnValues
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
    */
@@ -869,12 +869,12 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:EnclosingOperation
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:Select
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifSelect()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html
    */
@@ -994,12 +994,12 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:EnclosingOperation
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:ReturnValues
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
    */
@@ -1013,12 +1013,12 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:ReturnValues
-   * - dynamodb:Select
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifReturnValues()
+   * - .ifSelect()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
    */
@@ -1056,11 +1056,11 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:ReturnValues
-   * - dynamodb:Select
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifReturnConsumedCapacity()
+   * - .ifReturnValues()
+   * - .ifSelect()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
    */
@@ -1146,12 +1146,12 @@ export class Dynamodb extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - dynamodb:Attributes
-   * - dynamodb:EnclosingOperation
-   * - dynamodb:LeadingKeys
-   * - dynamodb:ReturnConsumedCapacity
-   * - dynamodb:ReturnValues
+   * Possible conditions:
+   * - .ifAttributes()
+   * - .ifEnclosingOperation()
+   * - .ifLeadingKeys()
+   * - .ifReturnConsumedCapacity()
+   * - .ifReturnValues()
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
    */
