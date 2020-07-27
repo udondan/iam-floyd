@@ -90,11 +90,63 @@ export interface ResourceTypeOnAction {
 
 export function getAwsServices(): Promise<string[]> {
   return new Promise((resolve, reject) => {
+    Promise.all([getAwsServicesFromGithub(), getAwsServicesFromIamDocs()])
+      .then((values) => {
+        console.log(values[0].length);
+        console.log(values[1].length);
+        const merged = values[0].concat(values[0]);
+        console.log(merged.length);
+        const unique = merged.filter((elem, pos) => {
+          return merged.indexOf(elem) == pos;
+        });
+        console.log(unique.length);
+        resolve(unique.sort());
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
+function getAwsServicesFromGithub(): Promise<string[]> {
+  return new Promise((resolve, reject) => {
     const url =
       'https://github.com/awsdocs/iam-user-guide/tree/master/doc_source';
     requestWithRetry(url)
       .then((body) => {
-        const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
+        const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?)\.md"/g;
+        var match: RegExpExecArray;
+        const services: string[] = [];
+        do {
+          match = re.exec(body);
+          if (match) {
+            services.push(match[1]);
+          }
+        } while (match);
+        if (!services.length) {
+          return reject(`Unable to find services on ${url}`);
+        }
+
+        // set env `SERVICE` to generate only a single service for testing purpose
+        const testOverride = process.env.SERVICE;
+        if (typeof testOverride !== 'undefined' && testOverride.length) {
+          return resolve([testOverride]);
+        }
+        resolve(services.sort());
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
+function getAwsServicesFromIamDocs(): Promise<string[]> {
+  return new Promise((resolve, reject) => {
+    const url =
+      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html';
+    requestWithRetry(url)
+      .then((body) => {
+        const re = /href=".\/list_(.*?)\.html"/g;
         var match: RegExpExecArray;
         const services: string[] = [];
         do {
