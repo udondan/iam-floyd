@@ -12,8 +12,18 @@ function getNoResourceTypes() {
   grep -R --include="*.ts" --exclude-dir=".cache" "public on" lib/generated | wc -l | xargs
 }
 
+function getNoGlobalConditions() {
+  grep -R --include="*.ts" "public ifAws" lib/shared | wc -l | xargs
+}
+
+function getNoServiceConditions() {
+  grep -R --include="*.ts" --exclude-dir=".cache" "public if" lib/generated | grep -cv "public ifAws"
+}
+
 function getNoConditions() {
-  grep -R --include="*.ts" --exclude-dir=".cache" "public if" lib | wc -l | xargs
+  global="$(getNoGlobalConditions)"
+  service="$(getNoServiceConditions)"
+  echo "$((global + service))"
 }
 
 read -r -d '' stats << EOF
