@@ -4,6 +4,12 @@ name: Generate Code from AWS documentation
 on:
   schedule:
     - cron: "42 * * * *"
+  workflow_dispatch:
+    inputs:
+      command:
+        description: make command to run
+        required: true
+        default: generate
 
 jobs:
   generate:
@@ -19,7 +25,7 @@ jobs:
       - name: Generate code
         uses: udondan/cdk-nodejs@v0.2.0
         with:
-          args: make generate
+          args: make $([[ "${{ github.event.inputs.logLevel }}" != "" ]] && echo "${{ github.event.inputs.logLevel }}" || echo "generate")
 
       - name: Commit and push changes
         run: |
