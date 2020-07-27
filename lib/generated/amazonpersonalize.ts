@@ -8,6 +8,16 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 export class Personalize extends PolicyStatement {
   public servicePrefix = 'personalize';
   protected actionList: Actions = {
+    "CreateBatchInferenceJob": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateBatchInferenceJob.html",
+      "description": "Creates a batch inference job",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "batchInferenceJob": {
+          "required": true
+        }
+      }
+    },
     "CreateCampaign": {
       "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateCampaign.html",
       "description": "Creates a campaign",
@@ -54,6 +64,16 @@ export class Personalize extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "eventTracker": {
+          "required": true
+        }
+      }
+    },
+    "CreateFilter": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateFilter.html",
+      "description": "Creates a filter",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "filter": {
           "required": true
         }
       }
@@ -128,6 +148,16 @@ export class Personalize extends PolicyStatement {
         }
       }
     },
+    "DeleteFilter": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteFilter.html",
+      "description": "Deletes a filter",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "filter": {
+          "required": true
+        }
+      }
+    },
     "DeleteSchema": {
       "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteSchema.html",
       "description": "Deletes a schema",
@@ -154,6 +184,16 @@ export class Personalize extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "algorithm": {
+          "required": true
+        }
+      }
+    },
+    "DescribeBatchInferenceJob": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeBatchInferenceJob.html",
+      "description": "Describes a batch inference job",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "batchInferenceJob": {
           "required": true
         }
       }
@@ -214,6 +254,16 @@ export class Personalize extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "featureTransformation": {
+          "required": true
+        }
+      }
+    },
+    "DescribeFilter": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeFilter.html",
+      "description": "Describes a filter",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "filter": {
           "required": true
         }
       }
@@ -288,6 +338,11 @@ export class Personalize extends PolicyStatement {
         }
       }
     },
+    "ListBatchInferenceJobs": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListBatchInferenceJobs.html",
+      "description": "Lists batch inference jobs",
+      "accessLevel": "List"
+    },
     "ListCampaigns": {
       "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListCampaigns.html",
       "description": "Lists campaigns",
@@ -311,6 +366,11 @@ export class Personalize extends PolicyStatement {
     "ListEventTrackers": {
       "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListEventTrackers.html",
       "description": "Lists event trackers",
+      "accessLevel": "List"
+    },
+    "ListFilters": {
+      "url": "https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListFilters.html",
+      "description": "Lists filters",
       "accessLevel": "List"
     },
     "ListRecipes": {
@@ -414,6 +474,18 @@ export class Personalize extends PolicyStatement {
       "url": "",
       "arn": "arn:${Partition}:personalize:${Region}:${Account}:algorithm/${ResourceId}",
       "conditionKeys": []
+    },
+    "batchInferenceJob": {
+      "name": "batchInferenceJob",
+      "url": "",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:batch-inference-job/${ResourceId}",
+      "conditionKeys": []
+    },
+    "filter": {
+      "name": "filter",
+      "url": "",
+      "arn": "arn:${Partition}:personalize:${Region}:${Account}:filter/${ResourceId}",
+      "conditionKeys": []
     }
   };
 
@@ -424,6 +496,18 @@ export class Personalize extends PolicyStatement {
    */
   constructor (sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Creates a batch inference job
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateBatchInferenceJob.html
+   */
+  public createBatchInferenceJob() {
+    this.add('personalize:CreateBatchInferenceJob');
+    return this;
   }
 
   /**
@@ -483,6 +567,18 @@ export class Personalize extends PolicyStatement {
    */
   public createEventTracker() {
     this.add('personalize:CreateEventTracker');
+    return this;
+  }
+
+  /**
+   * Creates a filter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateFilter.html
+   */
+  public createFilter() {
+    this.add('personalize:CreateFilter');
     return this;
   }
 
@@ -571,6 +667,18 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Deletes a filter
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteFilter.html
+   */
+  public deleteFilter() {
+    this.add('personalize:DeleteFilter');
+    return this;
+  }
+
+  /**
    * Deletes a schema
    *
    * Access Level: Write
@@ -603,6 +711,18 @@ export class Personalize extends PolicyStatement {
    */
   public describeAlgorithm() {
     this.add('personalize:DescribeAlgorithm');
+    return this;
+  }
+
+  /**
+   * Describes a batch inference job
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeBatchInferenceJob.html
+   */
+  public describeBatchInferenceJob() {
+    this.add('personalize:DescribeBatchInferenceJob');
     return this;
   }
 
@@ -675,6 +795,18 @@ export class Personalize extends PolicyStatement {
    */
   public describeFeatureTransformation() {
     this.add('personalize:DescribeFeatureTransformation');
+    return this;
+  }
+
+  /**
+   * Describes a filter
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeFilter.html
+   */
+  public describeFilter() {
+    this.add('personalize:DescribeFilter');
     return this;
   }
 
@@ -763,6 +895,18 @@ export class Personalize extends PolicyStatement {
   }
 
   /**
+   * Lists batch inference jobs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListBatchInferenceJobs.html
+   */
+  public listBatchInferenceJobs() {
+    this.add('personalize:ListBatchInferenceJobs');
+    return this;
+  }
+
+  /**
    * Lists campaigns
    *
    * Access Level: List
@@ -819,6 +963,18 @@ export class Personalize extends PolicyStatement {
    */
   public listEventTrackers() {
     this.add('personalize:ListEventTrackers');
+    return this;
+  }
+
+  /**
+   * Lists filters
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListFilters.html
+   */
+  public listFilters() {
+    this.add('personalize:ListFilters');
     return this;
   }
 
@@ -1057,6 +1213,40 @@ export class Personalize extends PolicyStatement {
    */
   public onAlgorithm(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:personalize:${Region}:${Account}:algorithm/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type batchInferenceJob to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBatchInferenceJob(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:batch-inference-job/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type filter to the statement
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFilter(resourceId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:personalize:${Region}:${Account}:filter/${ResourceId}';
     arn = arn.replace('${ResourceId}', resourceId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');

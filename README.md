@@ -26,9 +26,9 @@
 Support for:
 
 - 234 Services<br>
-- 7710 Actions<br>
-- 746 Resource Types<br>
-- 447 Conditions
+- 7719 Actions<br>
+- 748 Resource Types<br>
+- 446 Conditions
 <!-- /stats -->
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")

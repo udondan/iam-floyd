@@ -158,6 +158,16 @@ export class Elasticfilesystem extends PolicyStatement {
         }
       }
     },
+    "DescribeBackupPolicy": {
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeBackupPolicy.html",
+      "description": "Returns the current BackupPolicy object for the specified Amazon EFS file system.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "file-system": {
+          "required": true
+        }
+      }
+    },
     "DescribeFileSystemPolicy": {
       "url": "https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystemPolicy.html",
       "description": "Returns the current resource-level policy for a given file system.",
@@ -231,6 +241,16 @@ export class Elasticfilesystem extends PolicyStatement {
     "ModifyMountTargetSecurityGroups": {
       "url": "https://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html",
       "description": "Modifies the set of security groups in effect for a mount target.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "file-system": {
+          "required": true
+        }
+      }
+    },
+    "PutBackupPolicy": {
+      "url": "https://docs.aws.amazon.com/efs/latest/ug/API_PutBackupPolicy.html",
+      "description": "Enables automatic backups with AWS Backup by creating a new BackupPolicy object.",
       "accessLevel": "Write",
       "resourceTypes": {
         "file-system": {
@@ -506,6 +526,18 @@ export class Elasticfilesystem extends PolicyStatement {
   }
 
   /**
+   * Returns the current BackupPolicy object for the specified Amazon EFS file system.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeBackupPolicy.html
+   */
+  public describeBackupPolicy() {
+    this.add('elasticfilesystem:DescribeBackupPolicy');
+    return this;
+  }
+
+  /**
    * Returns the current resource-level policy for a given file system.
    *
    * Access Level: Read
@@ -598,6 +630,18 @@ export class Elasticfilesystem extends PolicyStatement {
    */
   public modifyMountTargetSecurityGroups() {
     this.add('elasticfilesystem:ModifyMountTargetSecurityGroups');
+    return this;
+  }
+
+  /**
+   * Enables automatic backups with AWS Backup by creating a new BackupPolicy object.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/efs/latest/ug/API_PutBackupPolicy.html
+   */
+  public putBackupPolicy() {
+    this.add('elasticfilesystem:PutBackupPolicy');
     return this;
   }
 

@@ -22,6 +22,9 @@ export class Iam extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html",
       "description": "Grants permission to add an IAM role to the specified instance profile",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "instance-profile": {
           "required": true
@@ -1484,6 +1487,9 @@ export class Iam extends PolicyStatement {
    * Grants permission to add an IAM role to the specified instance profile
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html
    */
