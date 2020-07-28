@@ -3069,6 +3069,12 @@ export class Ssm extends PolicyStatement {
   /**
    * Filters 'Create' requests based on the allowed set of values for a specified tags
    *
+   * Applies to actions:
+   * - .createDocument()
+   * - .createMaintenanceWindow()
+   * - .createPatchBaseline()
+   * - .putParameter()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3082,6 +3088,17 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
+   * Applies to actions:
+   * - .sendCommand()
+   *
+   * Applies to resource types:
+   * - document
+   * - instance
+   * - maintenancewindow
+   * - managed-instance
+   * - parameter
+   * - patchbaseline
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3094,6 +3111,12 @@ export class Ssm extends PolicyStatement {
    * Filters 'Create' requests based on whether mandatory tags are included in the request
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .createDocument()
+   * - .createMaintenanceWindow()
+   * - .createPatchBaseline()
+   * - .putParameter()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3131,6 +3154,9 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
    *
+   * Applies to actions:
+   * - .startSession()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifSessionDocumentAccessCheck(value?: boolean) {
@@ -3139,6 +3165,12 @@ export class Ssm extends PolicyStatement {
 
   /**
    * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
+   *
+   * Applies to actions:
+   * - .createResourceDataSync()
+   * - .deleteResourceDataSync()
+   * - .listResourceDataSync()
+   * - .updateResourceDataSync()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3151,6 +3183,17 @@ export class Ssm extends PolicyStatement {
    * Filters access based on a tag key-value pair assigned to the Systems Manager resource
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .sendCommand()
+   *
+   * Applies to resource types:
+   * - document
+   * - instance
+   * - maintenancewindow
+   * - managed-instance
+   * - parameter
+   * - patchbaseline
    *
    * @param tagkey The tag key to check
    * @param value The value(s) to check

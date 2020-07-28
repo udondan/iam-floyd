@@ -635,6 +635,12 @@ export class Dataexchange extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
+   * Applies to actions:
+   * - .createAsset()
+   * - .createDataSet()
+   * - .createRevision()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -647,6 +653,11 @@ export class Dataexchange extends PolicyStatement {
    * Filters actions based on the tag value associated with the resource.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .createAsset()
+   * - .createDataSet()
+   * - .createRevision()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -661,6 +672,13 @@ export class Dataexchange extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
+   * Applies to actions:
+   * - .createAsset()
+   * - .createDataSet()
+   * - .createRevision()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -672,6 +690,9 @@ export class Dataexchange extends PolicyStatement {
    * Indicates that the action can only be performed on the specified job type.
    *
    * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
+   *
+   * Applies to resource types:
+   * - jobs
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

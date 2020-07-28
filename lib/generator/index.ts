@@ -177,7 +177,7 @@ export function getContent(service: string): Promise<Module> {
     'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
   return new Promise(async (resolve, reject) => {
     try {
-      const module: Module = {
+      var module: Module = {
         filename: service.replace(/[^a-z0-9-]/i, '-'),
       };
 
@@ -209,9 +209,9 @@ export function getContent(service: string): Promise<Module> {
             module.fixes = fixes[service];
           }
 
-          module.actionList = parseActionTable($);
-          module.resourceTypes = parseResourceTypeTable($, module.name);
-          module.conditions = parseConditionTable($);
+          module = addConditions($, module);
+          module = addActions($, module);
+          module = addResourceTypes($, module);
 
           resolve(module);
         })
@@ -406,6 +406,31 @@ export function createModule(module: Module): Promise<void> {
 
     if (condition.url.length) {
       desc += `\n${condition.url}\n`;
+    }
+
+    if ('relatedActions' in condition && condition.relatedActions.length) {
+      desc += '\nApplies to actions:\n';
+      condition.relatedActions
+        .filter((elem, pos) => {
+          return condition.relatedActions.indexOf(elem) == pos;
+        })
+        .forEach((relatedAction) => {
+          desc += `- .${lowerFirst(camelCase(relatedAction))}()\n`;
+        });
+    }
+
+    if (
+      'relatedResourceTypes' in condition &&
+      condition.relatedResourceTypes.length
+    ) {
+      desc += '\nApplies to resource types:\n';
+      condition.relatedResourceTypes
+        .filter((elem, pos) => {
+          return condition.relatedResourceTypes.indexOf(elem) == pos;
+        })
+        .forEach((resourceType) => {
+          desc += `- ${resourceType}\n`;
+        });
     }
 
     const type = condition.type.toLowerCase();
@@ -654,7 +679,7 @@ function getTable($: CheerioStatic, title: string) {
   return $(table[0]);
 }
 
-function parseActionTable($: CheerioStatic): Actions {
+function addActions($: CheerioStatic, module: Module): Module {
   const actions: Actions = {};
   const tableActions = getTable($, 'Actions');
 
@@ -694,7 +719,12 @@ function parseActionTable($: CheerioStatic): Actions {
     const conditions: string[] = [];
     if (conditionKeys.length) {
       conditionKeys.each((_, conditionKey) => {
-        conditions.push(cleanDescription($(conditionKey).text()));
+        const condition = cleanDescription($(conditionKey).text());
+        conditions.push(condition);
+        if (!('relatedActions' in module.conditions[condition])) {
+          module.conditions[condition].relatedActions = [];
+        }
+        module.conditions[condition].relatedActions.push(action);
       });
     }
 
@@ -727,13 +757,12 @@ function parseActionTable($: CheerioStatic): Actions {
       actions[action].conditions = conditions;
     }
   });
-  return actions;
+  module.actionList = actions;
+  return module;
 }
 
-function parseResourceTypeTable(
-  $: CheerioStatic,
-  service: string
-): ResourceTypes {
+function addResourceTypes($: CheerioStatic, module: Module): Module {
+  const service = module.name;
   const resourceTypes: ResourceTypes = {};
   const tableResourceTypes = getTable($, 'Resource Types');
   tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
@@ -754,6 +783,14 @@ function parseResourceTypeTable(
       .map((element) => {
         return $(element).text().trim();
       });
+
+    conditionKeys.forEach((condition) => {
+      if (!('relatedResourceTypes' in module.conditions[condition])) {
+        module.conditions[condition].relatedResourceTypes = [];
+      }
+      module.conditions[condition].relatedResourceTypes.push(name);
+    });
+
     if (name.length) {
       resourceTypes[name] = {
         name: name,
@@ -763,10 +800,11 @@ function parseResourceTypeTable(
       };
     }
   });
-  return resourceTypes;
+  module.resourceTypes = resourceTypes;
+  return module;
 }
 
-function parseConditionTable($: CheerioStatic): Conditions {
+function addConditions($: CheerioStatic, module: Module): Module {
   const conditions: Conditions = {};
   const table = getTable($, 'Condition Keys');
   table.find('tr').each((_: number, element: CheerioElement) => {
@@ -786,7 +824,8 @@ function parseConditionTable($: CheerioStatic): Conditions {
       };
     }
   });
-  return conditions;
+  module.conditions = conditions;
+  return module;
 }
 
 function createConditionName(key: string): string {

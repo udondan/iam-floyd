@@ -345,6 +345,10 @@ export class Servicequotas extends PolicyStatement {
   /**
    * Filters or restricts access to a specified AWS service
    *
+   * Applies to actions:
+   * - .putServiceQuotaIncreaseRequestIntoTemplate()
+   * - .requestServiceQuotaIncrease()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */

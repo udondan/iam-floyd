@@ -160,6 +160,11 @@ export class Macie extends PolicyStatement {
   /**
    * Allow access to the specified actions only when the request operates on the specified aws resource
    *
+   * Applies to actions:
+   * - .associateS3Resources()
+   * - .disassociateS3Resources()
+   * - .updateS3Resources()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */

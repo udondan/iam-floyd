@@ -920,6 +920,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createDevice()
+   * - .createGlobalNetwork()
+   * - .createLink()
+   * - .createSite()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -932,6 +939,16 @@ export class Networkmanager extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .listTagsForResource()
+   * - .tagResource()
+   *
+   * Applies to resource types:
+   * - global-network
+   * - site
+   * - link
+   * - device
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -946,6 +963,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createDevice()
+   * - .createGlobalNetwork()
+   * - .createLink()
+   * - .createSite()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -958,6 +983,10 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
+   * Applies to actions:
+   * - .associateCustomerGateway()
+   * - .disassociateCustomerGateway()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -969,6 +998,10 @@ export class Networkmanager extends PolicyStatement {
    * Controls which transit gateways can be registered or deregistered
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .deregisterTransitGateway()
+   * - .registerTransitGateway()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

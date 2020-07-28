@@ -1217,6 +1217,16 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createDeploymentJob()
+   * - .createFleet()
+   * - .createRobot()
+   * - .createRobotApplication()
+   * - .createSimulationApplication()
+   * - .createSimulationJob()
+   * - .startSimulationJobBatch()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1226,6 +1236,15 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Applies to resource types:
+   * - robotApplication
+   * - simulationApplication
+   * - simulationJob
+   * - simulationJobBatch
+   * - deploymentJob
+   * - robot
+   * - deploymentFleet
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1235,6 +1254,17 @@ export class Robomaker extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createDeploymentJob()
+   * - .createFleet()
+   * - .createRobot()
+   * - .createRobotApplication()
+   * - .createSimulationApplication()
+   * - .createSimulationJob()
+   * - .startSimulationJobBatch()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */

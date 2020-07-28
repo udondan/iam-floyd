@@ -2751,6 +2751,19 @@ export class Greengrass extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
+   * Applies to actions:
+   * - .createConnectorDefinition()
+   * - .createCoreDefinition()
+   * - .createDeviceDefinition()
+   * - .createFunctionDefinition()
+   * - .createGroup()
+   * - .createLoggerDefinition()
+   * - .createResourceDefinition()
+   * - .createSubscriptionDefinition()
+   * - .listTagsForResource()
+   * - .startBulkDeployment()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2763,6 +2776,17 @@ export class Greengrass extends PolicyStatement {
    * Filters actions based on the tag value associated with the resource.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to resource types:
+   * - bulkDeployment
+   * - group
+   * - coreDefinition
+   * - deviceDefinition
+   * - functionDefinition
+   * - subscriptionDefinition
+   * - loggerDefinition
+   * - resourceDefinition
+   * - connectorDefinition
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2787,6 +2811,20 @@ export class Greengrass extends PolicyStatement {
    * Filters create requests based on the presence of mandatory tags in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .createConnectorDefinition()
+   * - .createCoreDefinition()
+   * - .createDeviceDefinition()
+   * - .createFunctionDefinition()
+   * - .createGroup()
+   * - .createLoggerDefinition()
+   * - .createResourceDefinition()
+   * - .createSubscriptionDefinition()
+   * - .listTagsForResource()
+   * - .startBulkDeployment()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

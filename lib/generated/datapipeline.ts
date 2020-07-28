@@ -508,6 +508,21 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-example-tag-policies.html#ex3
    *
+   * Applies to actions:
+   * - .activatePipeline()
+   * - .addTags()
+   * - .deactivatePipeline()
+   * - .deletePipeline()
+   * - .describeObjects()
+   * - .describePipelines()
+   * - .evaluateExpression()
+   * - .getPipelineDefinition()
+   * - .putPipelineDefinition()
+   * - .queryObjects()
+   * - .removeTags()
+   * - .setStatus()
+   * - .validatePipelineDefinition()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -520,6 +535,22 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-tags
    *
+   * Applies to actions:
+   * - .activatePipeline()
+   * - .addTags()
+   * - .createPipeline()
+   * - .deactivatePipeline()
+   * - .deletePipeline()
+   * - .describeObjects()
+   * - .describePipelines()
+   * - .evaluateExpression()
+   * - .getPipelineDefinition()
+   * - .putPipelineDefinition()
+   * - .queryObjects()
+   * - .removeTags()
+   * - .setStatus()
+   * - .validatePipelineDefinition()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -531,6 +562,14 @@ export class Datapipeline extends PolicyStatement {
    * The name of a worker group for which a Task Runner retrieves work.
    *
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-workergroup
+   *
+   * Applies to actions:
+   * - .activatePipeline()
+   * - .deactivatePipeline()
+   * - .getPipelineDefinition()
+   * - .pollForTask()
+   * - .putPipelineDefinition()
+   * - .validatePipelineDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

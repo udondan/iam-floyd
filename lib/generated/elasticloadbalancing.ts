@@ -673,6 +673,9 @@ export class Elasticloadbalancing extends PolicyStatement {
   /**
    * A key that is present in the request the user makes to the ELB service
    *
+   * Applies to resource types:
+   * - loadbalancer
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -683,6 +686,9 @@ export class Elasticloadbalancing extends PolicyStatement {
 
   /**
    * The list of all the tag key names associated with the resource in the request
+   *
+   * Applies to resource types:
+   * - loadbalancer
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -703,6 +709,9 @@ export class Elasticloadbalancing extends PolicyStatement {
 
   /**
    * A tag key and value pair
+   *
+   * Applies to resource types:
+   * - loadbalancer
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

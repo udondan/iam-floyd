@@ -766,6 +766,10 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createFileSystem()
+   * - .createTags()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -778,6 +782,10 @@ export class Elasticfilesystem extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - file-system
+   * - access-point
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -792,6 +800,11 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createFileSystem()
+   * - .createTags()
+   * - .deleteTags()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -801,6 +814,11 @@ export class Elasticfilesystem extends PolicyStatement {
 
   /**
    * The ARN of the access point used to mount the file system
+   *
+   * Applies to actions:
+   * - .clientMount()
+   * - .clientRootAccess()
+   * - .clientWrite()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

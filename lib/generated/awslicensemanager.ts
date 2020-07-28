@@ -368,6 +368,10 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Filters create requests based on allowed set of values for each of the mandatory tags
    *
+   * Applies to actions:
+   * - .createLicenseConfiguration()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -379,6 +383,10 @@ export class LicenseManager extends PolicyStatement {
   /**
    * Enforce tag keys that are used in the request
    *
+   * Applies to actions:
+   * - .createLicenseConfiguration()
+   * - .tagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -388,6 +396,9 @@ export class LicenseManager extends PolicyStatement {
 
   /**
    * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - license-configuration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

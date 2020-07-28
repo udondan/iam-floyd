@@ -1333,6 +1333,15 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createComponent()
+   * - .createDistributionConfiguration()
+   * - .createImage()
+   * - .createImagePipeline()
+   * - .createImageRecipe()
+   * - .createInfrastructureConfiguration()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1345,6 +1354,23 @@ export class Imagebuilder extends PolicyStatement {
    * Filters actions by tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .getImage()
+   * - .listTagsForResource()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateInfrastructureConfiguration()
+   *
+   * Applies to resource types:
+   * - component
+   * - componentVersion
+   * - distributionConfiguration
+   * - image
+   * - imageVersion
+   * - imageRecipe
+   * - imagePipeline
+   * - infrastructureConfiguration
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1359,6 +1385,16 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createComponent()
+   * - .createDistributionConfiguration()
+   * - .createImage()
+   * - .createImagePipeline()
+   * - .createImageRecipe()
+   * - .createInfrastructureConfiguration()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1370,6 +1406,10 @@ export class Imagebuilder extends PolicyStatement {
    * Filters access by the tag key-value pairs attached to the resource created by Image Builder
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetag
+   *
+   * Applies to actions:
+   * - .createInfrastructureConfiguration()
+   * - .updateInfrastructureConfiguration()
    *
    * @param key The tag key to check
    * @param value The value(s) to check
@@ -1383,6 +1423,10 @@ export class Imagebuilder extends PolicyStatement {
    * Filters access by the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetagkeys
+   *
+   * Applies to actions:
+   * - .createInfrastructureConfiguration()
+   * - .updateInfrastructureConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

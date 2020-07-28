@@ -372,6 +372,9 @@ export class Batch extends PolicyStatement {
   /**
    * The image used to start a container.
    *
+   * Applies to actions:
+   * - .registerJobDefinition()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -382,6 +385,9 @@ export class Batch extends PolicyStatement {
   /**
    * When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).
    *
+   * Applies to actions:
+   * - .registerJobDefinition()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPrivileged(value?: boolean) {
@@ -390,6 +396,9 @@ export class Batch extends PolicyStatement {
 
   /**
    * The user name or numeric uid to use inside the container.
+   *
+   * Applies to actions:
+   * - .registerJobDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

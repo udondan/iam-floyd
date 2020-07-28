@@ -896,6 +896,11 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
    *
+   * Applies to actions:
+   * - .addTags()
+   * - .createEditor()
+   * - .runJobFlow()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -908,6 +913,10 @@ export class Elasticmapreduce extends PolicyStatement {
    * Filters access based on the tag and value pair associated with an Amazon EMR resource
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * Applies to resource types:
+   * - cluster
+   * - editor
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -922,6 +931,12 @@ export class Elasticmapreduce extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
    *
+   * Applies to actions:
+   * - .addTags()
+   * - .createEditor()
+   * - .removeTags()
+   * - .runJobFlow()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -933,6 +948,11 @@ export class Elasticmapreduce extends PolicyStatement {
    * Filters actions based on whether the tag and value pair is provided with the action
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * Applies to actions:
+   * - .addTags()
+   * - .createEditor()
+   * - .runJobFlow()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -946,6 +966,10 @@ export class Elasticmapreduce extends PolicyStatement {
    * Filters actions based on the tag and value pair associated with an Amazon EMR resource
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
+   *
+   * Applies to resource types:
+   * - cluster
+   * - editor
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

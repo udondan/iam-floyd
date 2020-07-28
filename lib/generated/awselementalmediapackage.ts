@@ -409,6 +409,11 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createChannel()
+   * - .createOriginEndpoint()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -418,6 +423,10 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Applies to resource types:
+   * - channels
+   * - origin_endpoints
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -427,6 +436,12 @@ export class Mediapackage extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createChannel()
+   * - .createOriginEndpoint()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */

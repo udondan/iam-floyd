@@ -926,6 +926,20 @@ export class Iotanalytics extends PolicyStatement {
   /**
    * A tag key that is present in the request that the user makes to IoT Analytics.
    *
+   * Applies to actions:
+   * - .createChannel()
+   * - .createDataset()
+   * - .createDatastore()
+   * - .createPipeline()
+   * - .tagResource()
+   * - .untagResource()
+   *
+   * Applies to resource types:
+   * - channel
+   * - dataset
+   * - datastore
+   * - pipeline
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -937,6 +951,20 @@ export class Iotanalytics extends PolicyStatement {
   /**
    * The list of all the tag key names associated with the IoT Analytics resource in the request.
    *
+   * Applies to actions:
+   * - .createChannel()
+   * - .createDataset()
+   * - .createDatastore()
+   * - .createPipeline()
+   * - .tagResource()
+   * - .untagResource()
+   *
+   * Applies to resource types:
+   * - channel
+   * - dataset
+   * - datastore
+   * - pipeline
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -946,6 +974,12 @@ export class Iotanalytics extends PolicyStatement {
 
   /**
    * The preface string for a tag key and value pair attached to an IoT Analytics resource.
+   *
+   * Applies to resource types:
+   * - channel
+   * - dataset
+   * - datastore
+   * - pipeline
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

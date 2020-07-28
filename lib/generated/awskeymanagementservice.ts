@@ -1433,6 +1433,10 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check
    *
+   * Applies to actions:
+   * - .createKey()
+   * - .putKeyPolicy()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifBypassPolicyLockoutSafetyCheck(value?: boolean) {
@@ -1443,6 +1447,43 @@ export class Kms extends PolicyStatement {
    * Controls access to specified AWS KMS operations based on the AWS account ID of the caller. You can use this condition key to allow or deny access to all IAM users and roles in an AWS account in a single policy statement.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
+   *
+   * Applies to actions:
+   * - .cancelKeyDeletion()
+   * - .createAlias()
+   * - .createGrant()
+   * - .decrypt()
+   * - .deleteAlias()
+   * - .deleteImportedKeyMaterial()
+   * - .describeKey()
+   * - .disableKey()
+   * - .disableKeyRotation()
+   * - .enableKey()
+   * - .enableKeyRotation()
+   * - .encrypt()
+   * - .generateDataKey()
+   * - .generateDataKeyPair()
+   * - .generateDataKeyPairWithoutPlaintext()
+   * - .generateDataKeyWithoutPlaintext()
+   * - .getKeyPolicy()
+   * - .getKeyRotationStatus()
+   * - .getParametersForImport()
+   * - .getPublicKey()
+   * - .importKeyMaterial()
+   * - .listGrants()
+   * - .listKeyPolicies()
+   * - .listResourceTags()
+   * - .putKeyPolicy()
+   * - .reEncryptFrom()
+   * - .reEncryptTo()
+   * - .revokeGrant()
+   * - .scheduleKeyDeletion()
+   * - .sign()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateAlias()
+   * - .updateKeyDescription()
+   * - .verify()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1456,6 +1497,9 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-spec
    *
+   * Applies to actions:
+   * - .createKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1467,6 +1511,9 @@ export class Kms extends PolicyStatement {
    * Controls access to an API operation based on the KeyUsage property of the CMK created by or used in the operation. Use it to qualify authorization of the CreateKey operation or any operation that is authorized for a CMK resource.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-usage
+   *
+   * Applies to actions:
+   * - .createKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1480,6 +1527,10 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-data-key-pair-spec
    *
+   * Applies to actions:
+   * - .generateDataKeyPair()
+   * - .generateDataKeyPairWithoutPlaintext()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1491,6 +1542,16 @@ export class Kms extends PolicyStatement {
    * Controls access to encryption operations based on the value of the encryption algorithm in the request.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm
+   *
+   * Applies to actions:
+   * - .decrypt()
+   * - .encrypt()
+   * - .generateDataKey()
+   * - .generateDataKeyPair()
+   * - .generateDataKeyPairWithoutPlaintext()
+   * - .generateDataKeyWithoutPlaintext()
+   * - .reEncryptFrom()
+   * - .reEncryptTo()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1504,6 +1565,16 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
    *
+   * Applies to actions:
+   * - .decrypt()
+   * - .encrypt()
+   * - .generateDataKey()
+   * - .generateDataKeyPair()
+   * - .generateDataKeyPairWithoutPlaintext()
+   * - .generateDataKeyWithoutPlaintext()
+   * - .reEncryptFrom()
+   * - .reEncryptTo()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1515,6 +1586,9 @@ export class Kms extends PolicyStatement {
    * Controls access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model
+   *
+   * Applies to actions:
+   * - .importKeyMaterial()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1528,6 +1602,9 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type
    *
+   * Applies to actions:
+   * - .createGrant()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1539,6 +1616,11 @@ export class Kms extends PolicyStatement {
    * Controls access to the CreateGrant operation when the request comes from a specified AWS service.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource
+   *
+   * Applies to actions:
+   * - .createGrant()
+   * - .listGrants()
+   * - .revokeGrant()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -1575,6 +1657,9 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
    *
+   * Applies to actions:
+   * - .createKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1587,6 +1672,10 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
    *
+   * Applies to actions:
+   * - .sign()
+   * - .verify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1598,6 +1687,10 @@ export class Kms extends PolicyStatement {
    * Controls access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
+   *
+   * Applies to actions:
+   * - .reEncryptFrom()
+   * - .reEncryptTo()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -1622,6 +1715,10 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm
    *
+   * Applies to actions:
+   * - .sign()
+   * - .verify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1633,6 +1730,9 @@ export class Kms extends PolicyStatement {
    * Controls access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request. You can use this condition key to allow users to import key material only when it expires by the specified date.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to
+   *
+   * Applies to actions:
+   * - .importKeyMaterial()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -1646,6 +1746,43 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service
    *
+   * Applies to actions:
+   * - .cancelKeyDeletion()
+   * - .createAlias()
+   * - .createGrant()
+   * - .decrypt()
+   * - .deleteAlias()
+   * - .deleteImportedKeyMaterial()
+   * - .describeKey()
+   * - .disableKey()
+   * - .disableKeyRotation()
+   * - .enableKey()
+   * - .enableKeyRotation()
+   * - .encrypt()
+   * - .generateDataKey()
+   * - .generateDataKeyPair()
+   * - .generateDataKeyPairWithoutPlaintext()
+   * - .generateDataKeyWithoutPlaintext()
+   * - .getKeyPolicy()
+   * - .getKeyRotationStatus()
+   * - .getParametersForImport()
+   * - .getPublicKey()
+   * - .importKeyMaterial()
+   * - .listGrants()
+   * - .listKeyPolicies()
+   * - .listResourceTags()
+   * - .putKeyPolicy()
+   * - .reEncryptFrom()
+   * - .reEncryptTo()
+   * - .revokeGrant()
+   * - .scheduleKeyDeletion()
+   * - .sign()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateAlias()
+   * - .updateKeyDescription()
+   * - .verify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1658,6 +1795,9 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm
    *
+   * Applies to actions:
+   * - .getParametersForImport()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1669,6 +1809,9 @@ export class Kms extends PolicyStatement {
    * Controls access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request.
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec
+   *
+   * Applies to actions:
+   * - .getParametersForImport()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

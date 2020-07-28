@@ -565,6 +565,11 @@ export class Iotevents extends PolicyStatement {
   /**
    * A tag key that is present in the request that the user makes to IoT Events.
    *
+   * Applies to actions:
+   * - .createDetectorModel()
+   * - .createInput()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -576,6 +581,10 @@ export class Iotevents extends PolicyStatement {
   /**
    * The tag key by which a tag value is attached to an IoT Events resource.
    *
+   * Applies to resource types:
+   * - detectorModel
+   * - input
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -586,6 +595,12 @@ export class Iotevents extends PolicyStatement {
 
   /**
    * The list of all the tag key names associated with the IoT Events resource in the request.
+   *
+   * Applies to actions:
+   * - .createDetectorModel()
+   * - .createInput()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

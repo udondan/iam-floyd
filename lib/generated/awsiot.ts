@@ -5212,6 +5212,22 @@ export class Iot extends PolicyStatement {
   /**
    * A tag key that is present in the request that the user makes to IoT.
    *
+   * Applies to actions:
+   * - .createBillingGroup()
+   * - .createDimension()
+   * - .createDynamicThingGroup()
+   * - .createJob()
+   * - .createMitigationAction()
+   * - .createOTAUpdate()
+   * - .createScheduledAudit()
+   * - .createSecurityProfile()
+   * - .createStream()
+   * - .createThingGroup()
+   * - .createThingType()
+   * - .createTopicRule()
+   * - .openTunnel()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -5222,6 +5238,21 @@ export class Iot extends PolicyStatement {
 
   /**
    * The tag key component of a tag attached to an IoT resource.
+   *
+   * Applies to resource types:
+   * - job
+   * - tunnel
+   * - thinggroup
+   * - billinggroup
+   * - dynamicthinggroup
+   * - thingtype
+   * - stream
+   * - otaupdate
+   * - scheduledaudit
+   * - mitigationaction
+   * - securityprofile
+   * - dimension
+   * - rule
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -5234,6 +5265,23 @@ export class Iot extends PolicyStatement {
   /**
    * The list of all the tag key names associated with the resource in the request.
    *
+   * Applies to actions:
+   * - .createBillingGroup()
+   * - .createDimension()
+   * - .createDynamicThingGroup()
+   * - .createJob()
+   * - .createMitigationAction()
+   * - .createOTAUpdate()
+   * - .createScheduledAudit()
+   * - .createSecurityProfile()
+   * - .createStream()
+   * - .createThingGroup()
+   * - .createThingType()
+   * - .createTopicRule()
+   * - .openTunnel()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -5244,6 +5292,9 @@ export class Iot extends PolicyStatement {
   /**
    * The flag indicating whether or not to also delete an IoT Tunnel immediately
    *
+   * Applies to actions:
+   * - .closeTunnel()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifDelete(value?: boolean) {
@@ -5252,6 +5303,9 @@ export class Iot extends PolicyStatement {
 
   /**
    * The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel
+   *
+   * Applies to actions:
+   * - .openTunnel()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -5262,6 +5316,9 @@ export class Iot extends PolicyStatement {
 
   /**
    * The list of all destination services for an IoT Tunnel
+   *
+   * Applies to actions:
+   * - .openTunnel()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -747,6 +747,12 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
    *
+   * Applies to actions:
+   * - .createJobTemplate()
+   * - .createPreset()
+   * - .createQueue()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -760,6 +766,11 @@ export class Mediaconvert extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
    *
+   * Applies to resource types:
+   * - Queue
+   * - Preset
+   * - JobTemplate
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -772,6 +783,13 @@ export class Mediaconvert extends PolicyStatement {
    * Filters actions based on the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/mediaconvert/latest/apireference/tags.html
+   *
+   * Applies to actions:
+   * - .createJobTemplate()
+   * - .createPreset()
+   * - .createQueue()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

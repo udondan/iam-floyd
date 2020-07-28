@@ -1238,6 +1238,10 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .registerDomain()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1250,6 +1254,9 @@ export class Swf extends PolicyStatement {
    * Tag for resource.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - domain
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1264,6 +1271,11 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .registerDomain()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1275,6 +1287,11 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only an activity type of the specified name.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .deprecateActivityType()
+   * - .describeActivityType()
+   * - .respondActivityTaskCompleted()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1288,6 +1305,11 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .deprecateActivityType()
+   * - .describeActivityType()
+   * - .respondActivityTaskCompleted()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1299,6 +1321,10 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that specify a matching defaultTaskList name.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .registerActivityType()
+   * - .registerWorkflowType()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1312,6 +1338,10 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .registerActivityType()
+   * - .registerWorkflowType()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1323,6 +1353,12 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that specify a matching tagFilter.tag value.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .countClosedWorkflowExecutions()
+   * - .countOpenWorkflowExecutions()
+   * - .listClosedWorkflowExecutions()
+   * - .listOpenWorkflowExecutions()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1336,6 +1372,10 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1347,6 +1387,10 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that contain the specified tag.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1360,6 +1404,10 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1371,6 +1419,10 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that contain the specified tag.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1384,6 +1436,10 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1395,6 +1451,14 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that specify a tasklist with the specified name.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .countPendingActivityTasks()
+   * - .countPendingDecisionTasks()
+   * - .pollForActivityTask()
+   * - .pollForDecisionTask()
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1408,6 +1472,12 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .countClosedWorkflowExecutions()
+   * - .countOpenWorkflowExecutions()
+   * - .listClosedWorkflowExecutions()
+   * - .listOpenWorkflowExecutions()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1419,6 +1489,12 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that specify a type filter with the specified version.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .countClosedWorkflowExecutions()
+   * - .countOpenWorkflowExecutions()
+   * - .listClosedWorkflowExecutions()
+   * - .listOpenWorkflowExecutions()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1432,6 +1508,10 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .registerActivityType()
+   * - .registerWorkflowType()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1444,6 +1524,12 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .deprecateWorkflowType()
+   * - .describeWorkflowType()
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1455,6 +1541,12 @@ export class Swf extends PolicyStatement {
    * Constrains the policy statement to only requests that specify a workflow type of the specified version.
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .deprecateWorkflowType()
+   * - .describeWorkflowType()
+   * - .respondActivityTaskCompleted()
+   * - .startWorkflowExecution()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

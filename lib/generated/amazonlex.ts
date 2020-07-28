@@ -1197,6 +1197,12 @@ export class Lex extends PolicyStatement {
   /**
    * Filters access based on the tags in the request.
    *
+   * Applies to actions:
+   * - .putBot()
+   * - .putBotAlias()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1208,6 +1214,12 @@ export class Lex extends PolicyStatement {
   /**
    * Filters access by the tags attached to a Lex resource.
    *
+   * Applies to resource types:
+   * - bot
+   * - bot version
+   * - bot alias
+   * - channel
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1218,6 +1230,12 @@ export class Lex extends PolicyStatement {
 
   /**
    * Filters access based on the set of tag keys in the request.
+   *
+   * Applies to actions:
+   * - .putBot()
+   * - .putBotAlias()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -10929,6 +10929,64 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html#control-tagging
    *
+   * Applies to actions:
+   * - .copySnapshot()
+   * - .createClientVpnEndpoint()
+   * - .createFlowLogs()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createTrafficMirrorFilter()
+   * - .createTrafficMirrorSession()
+   * - .createTrafficMirrorTarget()
+   * - .createTransitGateway()
+   * - .createTransitGatewayMulticastDomain()
+   * - .createTransitGatewayPeeringAttachment()
+   * - .createTransitGatewayRouteTable()
+   * - .createTransitGatewayVpcAttachment()
+   * - .createVolume()
+   * - .createVpcEndpoint()
+   * - .createVpcEndpointServiceConfiguration()
+   * - .deleteTags()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - client-vpn-endpoint
+   * - dedicated-host
+   * - dhcp-options
+   * - fpga-image
+   * - image
+   * - instance
+   * - internet-gateway
+   * - local-gateway
+   * - local-gateway-route-table
+   * - local-gateway-route-table-virtual-interface-group-association
+   * - local-gateway-route-table-vpc-association
+   * - local-gateway-virtual-interface
+   * - local-gateway-virtual-interface-group
+   * - network-acl
+   * - network-interface
+   * - reserved-instances
+   * - route-table
+   * - security-group
+   * - snapshot
+   * - spot-instance-request
+   * - subnet
+   * - traffic-mirror-session
+   * - traffic-mirror-target
+   * - traffic-mirror-filter
+   * - transit-gateway-attachment
+   * - transit-gateway-multicast-domain
+   * - transit-gateway-route-table
+   * - transit-gateway
+   * - volume
+   * - vpc
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   * - vpc-flow-log
+   * - vpn-connection
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -10942,6 +11000,64 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html#control-tagging
    *
+   * Applies to actions:
+   * - .copySnapshot()
+   * - .createClientVpnEndpoint()
+   * - .createFlowLogs()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createTrafficMirrorFilter()
+   * - .createTrafficMirrorSession()
+   * - .createTrafficMirrorTarget()
+   * - .createTransitGateway()
+   * - .createTransitGatewayMulticastDomain()
+   * - .createTransitGatewayPeeringAttachment()
+   * - .createTransitGatewayRouteTable()
+   * - .createTransitGatewayVpcAttachment()
+   * - .createVolume()
+   * - .createVpcEndpoint()
+   * - .createVpcEndpointServiceConfiguration()
+   * - .deleteTags()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - client-vpn-endpoint
+   * - dedicated-host
+   * - dhcp-options
+   * - fpga-image
+   * - image
+   * - instance
+   * - internet-gateway
+   * - local-gateway
+   * - local-gateway-route-table
+   * - local-gateway-route-table-virtual-interface-group-association
+   * - local-gateway-route-table-vpc-association
+   * - local-gateway-virtual-interface
+   * - local-gateway-virtual-interface-group
+   * - network-acl
+   * - network-interface
+   * - reserved-instances
+   * - route-table
+   * - security-group
+   * - snapshot
+   * - spot-instance-request
+   * - subnet
+   * - traffic-mirror-session
+   * - traffic-mirror-target
+   * - traffic-mirror-filter
+   * - transit-gateway-attachment
+   * - transit-gateway-multicast-domain
+   * - transit-gateway-route-table
+   * - transit-gateway
+   * - volume
+   * - vpc
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   * - vpc-flow-log
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -10953,6 +11069,15 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of an accepter VPC in a VPC peering connection
    *
    * https://docs.aws.amazon.com/vpc/latest/peering/security-iam.html
+   *
+   * Applies to actions:
+   * - .acceptVpcPeeringConnection()
+   * - .createVpcPeeringConnection()
+   * - .deleteVpcPeeringConnection()
+   * - .rejectVpcPeeringConnection()
+   *
+   * Applies to resource types:
+   * - vpc-peering-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -10966,6 +11091,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .createTags()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - network-interface
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAssociatePublicIpAddress(value?: boolean) {
@@ -10976,6 +11108,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the authentication type for the VPN tunnel endpoints
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -10989,6 +11128,12 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .createNetworkInterfacePermission()
+   *
+   * Applies to resource types:
+   * - network-interface
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11000,6 +11145,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by an IAM principal that has permission to use a resource
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .createNetworkInterfacePermission()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11013,6 +11161,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to resource types:
+   * - dedicated-host
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11024,6 +11175,37 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the name of an Availability Zone in an AWS Region
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createNetworkInterfacePermission()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createVolume()
+   * - .deleteVolume()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disableFastSnapshotRestores()
+   * - .disassociateIamInstanceProfile()
+   * - .enableFastSnapshotRestores()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - dedicated-host
+   * - instance
+   * - network-interface
+   * - reserved-instances
+   * - subnet
+   * - volume
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11037,6 +11219,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html
    *
+   * Applies to actions:
+   * - .createTags()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11048,6 +11233,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the duration after which DPD timeout occurs on a VPN tunnel
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11061,6 +11253,27 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disassociateIamInstanceProfile()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - instance
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEbsOptimized(value?: boolean) {
@@ -11071,6 +11284,12 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the type of Elastic Graphics accelerator
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - elastic-gpu
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11084,6 +11303,21 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .attachVolume()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createVolume()
+   * - .deleteVolume()
+   * - .detachVolume()
+   * - .disableFastSnapshotRestores()
+   * - .enableFastSnapshotRestores()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - volume
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifEncrypted(value?: boolean) {
@@ -11094,6 +11328,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the gateway type for a VPN endpoint on the AWS side of a VPN connection
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnConnection()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11107,6 +11348,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to resource types:
+   * - dedicated-host
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11118,6 +11362,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the internet key exchange (IKE) versions that are permitted for a VPN tunnel
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11131,6 +11382,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .createTags()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - image
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11142,6 +11400,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the range of inside IP addresses for a VPN tunnel
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11167,6 +11432,27 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disassociateIamInstanceProfile()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - instance
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -11178,6 +11464,29 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the type of instance
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disassociateIamInstanceProfile()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - dedicated-host
+   * - instance
+   * - reserved-instances
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11191,6 +11500,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .runInstances()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifIsLaunchTemplateResource(value?: boolean) {
@@ -11201,6 +11513,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of a launch template
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .runInstances()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -11214,6 +11529,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .runInstances()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11225,6 +11543,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the allowed number of hops when calling the instance metadata service
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .runInstances()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11238,6 +11559,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .runInstances()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11249,6 +11573,19 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the owner of the resource (amazon, aws-marketplace, or an AWS account ID)
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .createTags()
+   * - .deleteSnapshot()
+   * - .disableFastSnapshotRestores()
+   * - .enableFastSnapshotRestores()
+   * - .modifySnapshotAttribute()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - fpga-image
+   * - image
+   * - snapshot
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11262,6 +11599,17 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .attachVolume()
+   * - .createTags()
+   * - .createVolume()
+   * - .deleteVolume()
+   * - .detachVolume()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - volume
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -11273,6 +11621,19 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of the parent volume from which the snapshot was created
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .deleteSnapshot()
+   * - .disableFastSnapshotRestores()
+   * - .enableFastSnapshotRestores()
+   * - .modifySnapshotAttribute()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - snapshot
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -11286,6 +11647,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .createNetworkInterfacePermission()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11297,6 +11661,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the Diffie-Hellman group numbers that are permitted for a VPN tunnel for the phase 1 IKE negotiations
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11310,6 +11681,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.htmls
    *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11321,6 +11699,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the integrity algorithms that are permitted for a VPN tunnel for the phase 1 IKE negotiations
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11334,6 +11719,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -11345,6 +11737,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the Diffie-Hellman group numbers that are permitted for a VPN tunnel for the phase 2 IKE negotiations
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11358,6 +11757,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11369,6 +11775,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the integrity algorithms that are permitted for a VPN tunnel for the phase 2 IKE negotiations
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11382,6 +11795,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -11393,6 +11813,27 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of the placement group
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disassociateIamInstanceProfile()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - instance
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -11406,6 +11847,12 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - placement-group
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11417,6 +11864,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the pre-shared key (PSK) used to establish the initial IKE security association between a virtual private gateway and a customer gateway
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11442,6 +11896,14 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .createTags()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - fpga-image
+   * - image
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifPublic(value?: boolean) {
@@ -11452,6 +11914,9 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the number of Dedicated Hosts in a request
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to resource types:
+   * - dedicated-host
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11465,6 +11930,174 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .acceptTransitGatewayPeeringAttachment()
+   * - .acceptTransitGatewayVpcAttachment()
+   * - .acceptVpcEndpointConnections()
+   * - .acceptVpcPeeringConnection()
+   * - .applySecurityGroupsToClientVpnTargetNetwork()
+   * - .associateClientVpnTargetNetwork()
+   * - .associateIamInstanceProfile()
+   * - .associateTransitGatewayMulticastDomain()
+   * - .associateTransitGatewayRouteTable()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .authorizeClientVpnIngress()
+   * - .authorizeSecurityGroupEgress()
+   * - .authorizeSecurityGroupIngress()
+   * - .cancelCapacityReservation()
+   * - .copySnapshot()
+   * - .createClientVpnEndpoint()
+   * - .createClientVpnRoute()
+   * - .createFlowLogs()
+   * - .createLaunchTemplateVersion()
+   * - .createLocalGatewayRoute()
+   * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createNetworkInterfacePermission()
+   * - .createRoute()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createTrafficMirrorFilter()
+   * - .createTrafficMirrorFilterRule()
+   * - .createTrafficMirrorSession()
+   * - .createTrafficMirrorTarget()
+   * - .createTransitGateway()
+   * - .createTransitGatewayMulticastDomain()
+   * - .createTransitGatewayPeeringAttachment()
+   * - .createTransitGatewayRoute()
+   * - .createTransitGatewayRouteTable()
+   * - .createTransitGatewayVpcAttachment()
+   * - .createVolume()
+   * - .createVpcEndpoint()
+   * - .createVpcEndpointServiceConfiguration()
+   * - .createVpcPeeringConnection()
+   * - .createVpnConnection()
+   * - .deleteClientVpnEndpoint()
+   * - .deleteClientVpnRoute()
+   * - .deleteCustomerGateway()
+   * - .deleteDhcpOptions()
+   * - .deleteInternetGateway()
+   * - .deleteLaunchTemplate()
+   * - .deleteLaunchTemplateVersions()
+   * - .deleteLocalGatewayRoute()
+   * - .deleteLocalGatewayRouteTableVpcAssociation()
+   * - .deleteNetworkAcl()
+   * - .deleteNetworkAclEntry()
+   * - .deleteRoute()
+   * - .deleteRouteTable()
+   * - .deleteSecurityGroup()
+   * - .deleteSnapshot()
+   * - .deleteTags()
+   * - .deleteTrafficMirrorFilter()
+   * - .deleteTrafficMirrorFilterRule()
+   * - .deleteTrafficMirrorSession()
+   * - .deleteTrafficMirrorTarget()
+   * - .deleteTransitGateway()
+   * - .deleteTransitGatewayMulticastDomain()
+   * - .deleteTransitGatewayPeeringAttachment()
+   * - .deleteTransitGatewayRoute()
+   * - .deleteTransitGatewayRouteTable()
+   * - .deleteTransitGatewayVpcAttachment()
+   * - .deleteVolume()
+   * - .deleteVpcEndpointServiceConfigurations()
+   * - .deleteVpcEndpoints()
+   * - .deleteVpcPeeringConnection()
+   * - .deregisterTransitGatewayMulticastGroupMembers()
+   * - .deregisterTransitGatewayMulticastGroupSources()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disableFastSnapshotRestores()
+   * - .disableTransitGatewayRouteTablePropagation()
+   * - .disableVpcClassicLink()
+   * - .disassociateClientVpnTargetNetwork()
+   * - .disassociateIamInstanceProfile()
+   * - .disassociateTransitGatewayMulticastDomain()
+   * - .disassociateTransitGatewayRouteTable()
+   * - .enableFastSnapshotRestores()
+   * - .enableTransitGatewayRouteTablePropagation()
+   * - .enableVpcClassicLink()
+   * - .getConsoleScreenshot()
+   * - .importClientVpnClientCertificateRevocationList()
+   * - .modifyCapacityReservation()
+   * - .modifyClientVpnEndpoint()
+   * - .modifyInstanceEventStartTime()
+   * - .modifyLaunchTemplate()
+   * - .modifySnapshotAttribute()
+   * - .modifyTrafficMirrorFilterNetworkServices()
+   * - .modifyTrafficMirrorFilterRule()
+   * - .modifyTrafficMirrorSession()
+   * - .modifyTransitGatewayVpcAttachment()
+   * - .modifyVpcEndpoint()
+   * - .modifyVpcEndpointServiceConfiguration()
+   * - .modifyVpcEndpointServicePermissions()
+   * - .modifyVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   * - .rebootInstances()
+   * - .registerTransitGatewayMulticastGroupMembers()
+   * - .registerTransitGatewayMulticastGroupSources()
+   * - .rejectTransitGatewayPeeringAttachment()
+   * - .rejectTransitGatewayVpcAttachment()
+   * - .rejectVpcEndpointConnections()
+   * - .rejectVpcPeeringConnection()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .replaceRoute()
+   * - .replaceTransitGatewayRoute()
+   * - .revokeClientVpnIngress()
+   * - .revokeSecurityGroupEgress()
+   * - .revokeSecurityGroupIngress()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .startVpcEndpointServicePrivateDnsVerification()
+   * - .stopInstances()
+   * - .terminateClientVpnConnections()
+   * - .terminateInstances()
+   * - .updateSecurityGroupRuleDescriptionsEgress()
+   * - .updateSecurityGroupRuleDescriptionsIngress()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - client-vpn-endpoint
+   * - customer-gateway
+   * - dhcp-options
+   * - fpga-image
+   * - image
+   * - instance
+   * - internet-gateway
+   * - key-pair
+   * - launch-template
+   * - local-gateway
+   * - local-gateway-route-table
+   * - local-gateway-route-table-virtual-interface-group-association
+   * - local-gateway-route-table-vpc-association
+   * - local-gateway-virtual-interface
+   * - local-gateway-virtual-interface-group
+   * - network-acl
+   * - network-interface
+   * - placement-group
+   * - reserved-instances
+   * - route-table
+   * - security-group
+   * - snapshot
+   * - spot-instance-request
+   * - subnet
+   * - traffic-mirror-session
+   * - traffic-mirror-target
+   * - traffic-mirror-filter
+   * - traffic-mirror-filter-rule
+   * - transit-gateway-attachment
+   * - transit-gateway-multicast-domain
+   * - transit-gateway-route-table
+   * - transit-gateway
+   * - volume
+   * - vpc
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   * - vpc-flow-log
+   * - vpc-peering-connection
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11476,6 +12109,13 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the percentage of increase of the rekey window (determined by the rekey margin time) within which the rekey time is randomly selected for a VPN tunnel
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
+   *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11489,6 +12129,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -11500,6 +12147,15 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the ARN of a requester VPC in a VPC peering connection
    *
    * https://docs.aws.amazon.com/vpc/latest/peering/security-iam.html
+   *
+   * Applies to actions:
+   * - .acceptVpcPeeringConnection()
+   * - .createVpcPeeringConnection()
+   * - .deleteVpcPeeringConnection()
+   * - .rejectVpcPeeringConnection()
+   *
+   * Applies to resource types:
+   * - vpc-peering-connection
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -11513,6 +12169,12 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html#ri-payment-options
    *
+   * Applies to actions:
+   * - .createTags()
+   *
+   * Applies to resource types:
+   * - reserved-instances
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11525,6 +12187,9 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
    *
+   * Applies to actions:
+   * - .runInstances()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11536,6 +12201,163 @@ export class Ec2 extends PolicyStatement {
    * Filters access by a tag key and value pair of a resource
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
+   *
+   * Applies to actions:
+   * - .acceptTransitGatewayPeeringAttachment()
+   * - .acceptTransitGatewayVpcAttachment()
+   * - .acceptVpcEndpointConnections()
+   * - .acceptVpcPeeringConnection()
+   * - .applySecurityGroupsToClientVpnTargetNetwork()
+   * - .associateClientVpnTargetNetwork()
+   * - .associateIamInstanceProfile()
+   * - .associateTransitGatewayMulticastDomain()
+   * - .associateTransitGatewayRouteTable()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .authorizeClientVpnIngress()
+   * - .authorizeSecurityGroupEgress()
+   * - .authorizeSecurityGroupIngress()
+   * - .cancelCapacityReservation()
+   * - .createClientVpnRoute()
+   * - .createLaunchTemplateVersion()
+   * - .createLocalGatewayRoute()
+   * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createNetworkInterfacePermission()
+   * - .createRoute()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createTrafficMirrorFilterRule()
+   * - .createTrafficMirrorSession()
+   * - .createTrafficMirrorTarget()
+   * - .createTransitGatewayMulticastDomain()
+   * - .createTransitGatewayPeeringAttachment()
+   * - .createTransitGatewayRoute()
+   * - .createTransitGatewayRouteTable()
+   * - .createTransitGatewayVpcAttachment()
+   * - .createVpcEndpoint()
+   * - .createVpcPeeringConnection()
+   * - .deleteClientVpnEndpoint()
+   * - .deleteClientVpnRoute()
+   * - .deleteCustomerGateway()
+   * - .deleteDhcpOptions()
+   * - .deleteInternetGateway()
+   * - .deleteLaunchTemplate()
+   * - .deleteLaunchTemplateVersions()
+   * - .deleteLocalGatewayRoute()
+   * - .deleteLocalGatewayRouteTableVpcAssociation()
+   * - .deleteNetworkAcl()
+   * - .deleteNetworkAclEntry()
+   * - .deleteRoute()
+   * - .deleteRouteTable()
+   * - .deleteSecurityGroup()
+   * - .deleteSnapshot()
+   * - .deleteTags()
+   * - .deleteTrafficMirrorFilter()
+   * - .deleteTrafficMirrorFilterRule()
+   * - .deleteTrafficMirrorSession()
+   * - .deleteTrafficMirrorTarget()
+   * - .deleteTransitGateway()
+   * - .deleteTransitGatewayMulticastDomain()
+   * - .deleteTransitGatewayPeeringAttachment()
+   * - .deleteTransitGatewayRoute()
+   * - .deleteTransitGatewayRouteTable()
+   * - .deleteTransitGatewayVpcAttachment()
+   * - .deleteVolume()
+   * - .deleteVpcEndpointServiceConfigurations()
+   * - .deleteVpcEndpoints()
+   * - .deleteVpcPeeringConnection()
+   * - .deregisterTransitGatewayMulticastGroupMembers()
+   * - .deregisterTransitGatewayMulticastGroupSources()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disableFastSnapshotRestores()
+   * - .disableTransitGatewayRouteTablePropagation()
+   * - .disableVpcClassicLink()
+   * - .disassociateClientVpnTargetNetwork()
+   * - .disassociateIamInstanceProfile()
+   * - .disassociateTransitGatewayMulticastDomain()
+   * - .disassociateTransitGatewayRouteTable()
+   * - .enableFastSnapshotRestores()
+   * - .enableTransitGatewayRouteTablePropagation()
+   * - .enableVpcClassicLink()
+   * - .getConsoleScreenshot()
+   * - .importClientVpnClientCertificateRevocationList()
+   * - .modifyCapacityReservation()
+   * - .modifyClientVpnEndpoint()
+   * - .modifyLaunchTemplate()
+   * - .modifySnapshotAttribute()
+   * - .modifyTrafficMirrorFilterNetworkServices()
+   * - .modifyTrafficMirrorFilterRule()
+   * - .modifyTrafficMirrorSession()
+   * - .modifyTransitGatewayVpcAttachment()
+   * - .modifyVpcEndpoint()
+   * - .modifyVpcEndpointServiceConfiguration()
+   * - .modifyVpcEndpointServicePermissions()
+   * - .modifyVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   * - .rebootInstances()
+   * - .registerTransitGatewayMulticastGroupMembers()
+   * - .registerTransitGatewayMulticastGroupSources()
+   * - .rejectTransitGatewayPeeringAttachment()
+   * - .rejectTransitGatewayVpcAttachment()
+   * - .rejectVpcEndpointConnections()
+   * - .rejectVpcPeeringConnection()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .replaceRoute()
+   * - .replaceTransitGatewayRoute()
+   * - .revokeClientVpnIngress()
+   * - .revokeSecurityGroupEgress()
+   * - .revokeSecurityGroupIngress()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .startVpcEndpointServicePrivateDnsVerification()
+   * - .stopInstances()
+   * - .terminateClientVpnConnections()
+   * - .terminateInstances()
+   * - .updateSecurityGroupRuleDescriptionsEgress()
+   * - .updateSecurityGroupRuleDescriptionsIngress()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - client-vpn-endpoint
+   * - customer-gateway
+   * - dedicated-host
+   * - dhcp-options
+   * - fpga-image
+   * - image
+   * - instance
+   * - internet-gateway
+   * - launch-template
+   * - local-gateway
+   * - local-gateway-route-table
+   * - local-gateway-route-table-virtual-interface-group-association
+   * - local-gateway-route-table-vpc-association
+   * - local-gateway-virtual-interface
+   * - local-gateway-virtual-interface-group
+   * - network-acl
+   * - network-interface
+   * - reserved-instances
+   * - route-table
+   * - security-group
+   * - snapshot
+   * - spot-instance-request
+   * - subnet
+   * - traffic-mirror-session
+   * - traffic-mirror-target
+   * - traffic-mirror-filter
+   * - transit-gateway-attachment
+   * - transit-gateway-multicast-domain
+   * - transit-gateway-route-table
+   * - transit-gateway
+   * - volume
+   * - vpc
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   * - vpc-flow-log
+   * - vpc-peering-connection
+   * - vpn-connection
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -11562,6 +12384,28 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disassociateIamInstanceProfile()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - image
+   * - instance
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11574,6 +12418,13 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-authentication-access-control.html
    *
+   * Applies to actions:
+   * - .createVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   *
+   * Applies to resource types:
+   * - vpn-connection
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11585,6 +12436,17 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the initiation time of a snapshot
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .createTags()
+   * - .deleteSnapshot()
+   * - .disableFastSnapshotRestores()
+   * - .enableFastSnapshotRestores()
+   * - .modifySnapshotAttribute()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - snapshot
    *
    * @param value The value(s) to check
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
@@ -11620,6 +12482,15 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .createFlowLogs()
+   * - .createNetworkInterfacePermission()
+   * - .createTags()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - network-interface
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -11631,6 +12502,34 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the tenancy of the VPC or instance (default, dedicated, or host)
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .acceptVpcPeeringConnection()
+   * - .associateIamInstanceProfile()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createVpcPeeringConnection()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disableVpcClassicLink()
+   * - .disassociateIamInstanceProfile()
+   * - .enableVpcClassicLink()
+   * - .getConsoleScreenshot()
+   * - .rebootInstances()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .stopInstances()
+   * - .terminateInstances()
+   *
+   * Applies to resource types:
+   * - instance
+   * - reserved-instances
+   * - vpc
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11644,6 +12543,19 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .attachVolume()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createVolume()
+   * - .deleteVolume()
+   * - .detachVolume()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - volume
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -11655,6 +12567,24 @@ export class Ec2 extends PolicyStatement {
    * Filters access by the size of the volume, in GiB.
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
+   *
+   * Applies to actions:
+   * - .attachVolume()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createVolume()
+   * - .deleteSnapshot()
+   * - .deleteVolume()
+   * - .detachVolume()
+   * - .disableFastSnapshotRestores()
+   * - .enableFastSnapshotRestores()
+   * - .modifySnapshotAttribute()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - snapshot
+   * - volume
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -11668,6 +12598,19 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .attachVolume()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createVolume()
+   * - .deleteVolume()
+   * - .detachVolume()
+   * - .runInstances()
+   *
+   * Applies to resource types:
+   * - volume
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11680,6 +12623,33 @@ export class Ec2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *
+   * Applies to actions:
+   * - .attachClassicLinkVpc()
+   * - .authorizeSecurityGroupEgress()
+   * - .authorizeSecurityGroupIngress()
+   * - .createFlowLogs()
+   * - .createNetworkInterfacePermission()
+   * - .createRoute()
+   * - .createTags()
+   * - .deleteNetworkAcl()
+   * - .deleteNetworkAclEntry()
+   * - .deleteRoute()
+   * - .deleteRouteTable()
+   * - .deleteSecurityGroup()
+   * - .replaceRoute()
+   * - .revokeSecurityGroupEgress()
+   * - .revokeSecurityGroupIngress()
+   * - .runInstances()
+   * - .updateSecurityGroupRuleDescriptionsEgress()
+   * - .updateSecurityGroupRuleDescriptionsIngress()
+   *
+   * Applies to resource types:
+   * - network-acl
+   * - network-interface
+   * - route-table
+   * - security-group
+   * - subnet
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -11689,6 +12659,12 @@ export class Ec2 extends PolicyStatement {
 
   /**
    * Filters access by the name of the VPC endpoint service
+   *
+   * Applies to actions:
+   * - .createVpcEndpoint()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -11700,6 +12676,12 @@ export class Ec2 extends PolicyStatement {
   /**
    * Filters access by the service owner of the VPC endpoint service (amazon, aws-marketplace, or an AWS account ID)
    *
+   * Applies to actions:
+   * - .createVpcEndpoint()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -11709,6 +12691,13 @@ export class Ec2 extends PolicyStatement {
 
   /**
    * Filters access by the private DNS name of the VPC endpoint service
+   *
+   * Applies to actions:
+   * - .createVpcEndpointServiceConfiguration()
+   * - .modifyVpcEndpointServiceConfiguration()
+   *
+   * Applies to resource types:
+   * - vpc-endpoint-service
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

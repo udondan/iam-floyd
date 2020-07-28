@@ -540,6 +540,10 @@ export class Codestar extends PolicyStatement {
   /**
    * Filters create requests based on the allowed set of values for each of the tags.
    *
+   * Applies to actions:
+   * - .createProject()
+   * - .tagProject()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -550,6 +554,9 @@ export class Codestar extends PolicyStatement {
 
   /**
    * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - project
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -562,6 +569,11 @@ export class Codestar extends PolicyStatement {
   /**
    * Filters create requests based on the presence of mandatory tags in the request.
    *
+   * Applies to actions:
+   * - .createProject()
+   * - .tagProject()
+   * - .untagProject()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -570,6 +582,9 @@ export class Codestar extends PolicyStatement {
   }
 
   /**
+   * Applies to resource types:
+   * - user
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

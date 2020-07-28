@@ -436,6 +436,9 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -448,6 +451,9 @@ export class Cloud9 extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - environment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -462,6 +468,10 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -473,6 +483,11 @@ export class Cloud9 extends PolicyStatement {
    * Filters access by the AWS Cloud9 environment ID
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_EnvironmentId
+   *
+   * Applies to actions:
+   * - .createEnvironmentMembership()
+   * - .describeEnvironmentMemberships()
+   * - .updateEnvironmentMembership()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -486,6 +501,9 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_EnvironmentName
    *
+   * Applies to actions:
+   * - .createEnvironmentEC2()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -497,6 +515,9 @@ export class Cloud9 extends PolicyStatement {
    * Filters access by the instance type of the AWS Cloud9 environment's Amazon EC2 instance
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_InstanceType
+   *
+   * Applies to actions:
+   * - .createEnvironmentEC2()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -510,6 +531,10 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_Permissions
    *
+   * Applies to actions:
+   * - .createEnvironmentMembership()
+   * - .updateEnvironmentMembership()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -522,6 +547,9 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_SubnetId
    *
+   * Applies to actions:
+   * - .createEnvironmentEC2()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -533,6 +561,12 @@ export class Cloud9 extends PolicyStatement {
    * Filters access by the user ARN specified
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_UserArn
+   *
+   * Applies to actions:
+   * - .createEnvironmentEC2()
+   * - .createEnvironmentMembership()
+   * - .describeEnvironmentMemberships()
+   * - .updateEnvironmentMembership()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

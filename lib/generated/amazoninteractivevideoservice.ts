@@ -661,6 +661,26 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .batchGetChannel()
+   * - .batchGetStreamKey()
+   * - .createChannel()
+   * - .createStreamKey()
+   * - .deleteChannel()
+   * - .deleteStreamKey()
+   * - .getChannel()
+   * - .getStream()
+   * - .getStreamKey()
+   * - .listChannels()
+   * - .listStreamKeys()
+   * - .listStreams()
+   * - .listTagsForResource()
+   * - .putMetadata()
+   * - .stopStream()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateChannel()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -674,6 +694,26 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .batchGetChannel()
+   * - .batchGetStreamKey()
+   * - .createChannel()
+   * - .createStreamKey()
+   * - .deleteChannel()
+   * - .deleteStreamKey()
+   * - .getChannel()
+   * - .getStream()
+   * - .getStreamKey()
+   * - .listChannels()
+   * - .listStreamKeys()
+   * - .listStreams()
+   * - .listTagsForResource()
+   * - .putMetadata()
+   * - .stopStream()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateChannel()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -686,6 +726,26 @@ export class Ivs extends PolicyStatement {
    * Filters actions based on the tag keys that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .batchGetChannel()
+   * - .batchGetStreamKey()
+   * - .createChannel()
+   * - .createStreamKey()
+   * - .deleteChannel()
+   * - .deleteStreamKey()
+   * - .getChannel()
+   * - .getStream()
+   * - .getStreamKey()
+   * - .listChannels()
+   * - .listStreamKeys()
+   * - .listStreams()
+   * - .listTagsForResource()
+   * - .putMetadata()
+   * - .stopStream()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateChannel()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -468,6 +468,10 @@ export class Kafka extends PolicyStatement {
   /**
    * Filter requests based on the allowed set of values for each of the tags
    *
+   * Applies to actions:
+   * - .createCluster()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -479,6 +483,9 @@ export class Kafka extends PolicyStatement {
   /**
    * Filter actions based on tag-value associated with a MSK resource.
    *
+   * Applies to resource types:
+   * - cluster
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -489,6 +496,11 @@ export class Kafka extends PolicyStatement {
 
   /**
    * Filter requests based on the presence of mandatory tag keys in the request
+   *
+   * Applies to actions:
+   * - .createCluster()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

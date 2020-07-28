@@ -1507,6 +1507,14 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
+   * Applies to actions:
+   * - .addTags()
+   * - .createApplication()
+   * - .createApplicationVersion()
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .createPlatformVersion()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1519,6 +1527,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource.
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * Applies to resource types:
+   * - application
+   * - applicationversion
+   * - configurationtemplate
+   * - environment
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1533,6 +1547,15 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
+   * Applies to actions:
+   * - .addTags()
+   * - .createApplication()
+   * - .createApplicationVersion()
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .createPlatformVersion()
+   * - .removeTags()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1544,6 +1567,10 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Filters access by an application as a dependency or a constraint on an input parameter.
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * Applies to actions:
+   * - .createConfigurationTemplate()
+   * - .updateConfigurationTemplate()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1557,6 +1584,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
+   * Applies to actions:
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .updateConfigurationTemplate()
+   * - .updateEnvironment()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1568,6 +1601,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Filters access by a configuration template as a dependency or a constraint on an input parameter.
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * Applies to actions:
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .updateConfigurationTemplate()
+   * - .updateEnvironment()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1581,6 +1620,11 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
+   * Applies to actions:
+   * - .createConfigurationTemplate()
+   * - .swapEnvironmentCNAMEs()
+   * - .updateConfigurationTemplate()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1592,6 +1636,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Filters access by a platform as a dependency or a constraint on an input parameter.
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * Applies to actions:
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .updateConfigurationTemplate()
+   * - .updateEnvironment()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1605,6 +1655,12 @@ export class Elasticbeanstalk extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
    *
+   * Applies to actions:
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .updateConfigurationTemplate()
+   * - .updateEnvironment()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1616,6 +1672,40 @@ export class Elasticbeanstalk extends PolicyStatement {
    * Filters access by the application that contains the resource that the action operates on.
    *
    * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions
+   *
+   * Applies to actions:
+   * - .abortEnvironmentUpdate()
+   * - .applyEnvironmentManagedAction()
+   * - .composeEnvironments()
+   * - .createApplicationVersion()
+   * - .createConfigurationTemplate()
+   * - .createEnvironment()
+   * - .deleteApplicationVersion()
+   * - .deleteConfigurationTemplate()
+   * - .deleteEnvironmentConfiguration()
+   * - .describeApplicationVersions()
+   * - .describeConfigurationOptions()
+   * - .describeConfigurationSettings()
+   * - .describeEnvironmentManagedActionHistory()
+   * - .describeEnvironmentManagedActions()
+   * - .describeEnvironmentResources()
+   * - .describeEnvironments()
+   * - .describeEvents()
+   * - .rebuildEnvironment()
+   * - .requestEnvironmentInfo()
+   * - .restartAppServer()
+   * - .retrieveEnvironmentInfo()
+   * - .swapEnvironmentCNAMEs()
+   * - .terminateEnvironment()
+   * - .updateApplicationVersion()
+   * - .updateConfigurationTemplate()
+   * - .updateEnvironment()
+   * - .validateConfigurationSettings()
+   *
+   * Applies to resource types:
+   * - applicationversion
+   * - configurationtemplate
+   * - environment
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

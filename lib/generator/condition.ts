@@ -5,6 +5,8 @@ export interface Condition {
   type: string;
   typeOverride?: string[];
   isGlobal: boolean;
+  relatedActions?: string[];
+  relatedResourceTypes?: string[];
 }
 
 export interface Conditions {

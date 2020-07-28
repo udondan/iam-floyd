@@ -571,6 +571,11 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createBroker()
+   * - .createConfiguration()
+   * - .createTags()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -580,6 +585,10 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Applies to resource types:
+   * - brokers
+   * - configurations
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -589,6 +598,12 @@ export class Mq extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createBroker()
+   * - .createConfiguration()
+   * - .createTags()
+   * - .deleteTags()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */

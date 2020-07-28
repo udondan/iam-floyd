@@ -80,6 +80,10 @@ export class Account extends PolicyStatement {
   /**
    * Filters access by a list of regions
    *
+   * Applies to actions:
+   * - .disableRegion()
+   * - .enableRegion()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */

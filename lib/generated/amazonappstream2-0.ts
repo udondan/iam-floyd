@@ -1365,6 +1365,9 @@ export class Appstream extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role
    *
+   * Applies to actions:
+   * - .stream()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1376,6 +1379,12 @@ export class Appstream extends PolicyStatement {
    * Filters actions based on the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .createFleet()
+   * - .createImageBuilder()
+   * - .createStack()
+   * - .tagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1390,6 +1399,34 @@ export class Appstream extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .associateFleet()
+   * - .batchAssociateUserStack()
+   * - .batchDisassociateUserStack()
+   * - .copyImage()
+   * - .createImageBuilderStreamingURL()
+   * - .createStreamingURL()
+   * - .deleteFleet()
+   * - .deleteImage()
+   * - .deleteImageBuilder()
+   * - .deleteImagePermissions()
+   * - .deleteStack()
+   * - .disassociateFleet()
+   * - .startFleet()
+   * - .startImageBuilder()
+   * - .stopFleet()
+   * - .stopImageBuilder()
+   * - .tagResource()
+   * - .updateFleet()
+   * - .updateImagePermissions()
+   * - .updateStack()
+   *
+   * Applies to resource types:
+   * - fleet
+   * - image
+   * - image-builder
+   * - stack
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1402,6 +1439,13 @@ export class Appstream extends PolicyStatement {
    * Filters actions based on the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .createFleet()
+   * - .createImageBuilder()
+   * - .createStack()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

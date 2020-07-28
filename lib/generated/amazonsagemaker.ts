@@ -4406,6 +4406,30 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .addTags()
+   * - .createApp()
+   * - .createAutoMLJob()
+   * - .createDomain()
+   * - .createEndpoint()
+   * - .createEndpointConfig()
+   * - .createExperiment()
+   * - .createFlowDefinition()
+   * - .createHumanTaskUi()
+   * - .createHyperParameterTuningJob()
+   * - .createLabelingJob()
+   * - .createModel()
+   * - .createMonitoringSchedule()
+   * - .createNotebookInstance()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .createTransformJob()
+   * - .createTrial()
+   * - .createTrialComponent()
+   * - .createUserProfile()
+   * - .createWorkteam()
+   * - .updateMonitoringSchedule()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4418,6 +4442,29 @@ export class Sagemaker extends PolicyStatement {
    * A tag key and value pair.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to resource types:
+   * - flow-definition
+   * - human-task-ui
+   * - labeling-job
+   * - workteam
+   * - workforce
+   * - domain
+   * - user-profile
+   * - app
+   * - notebook-instance
+   * - training-job
+   * - processing-job
+   * - hyper-parameter-tuning-job
+   * - model
+   * - endpoint-config
+   * - endpoint
+   * - transform-job
+   * - automl-job
+   * - monitoring-schedule
+   * - experiment
+   * - experiment-trial
+   * - experiment-trial-component
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -4432,6 +4479,31 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .addTags()
+   * - .createApp()
+   * - .createAutoMLJob()
+   * - .createDomain()
+   * - .createEndpoint()
+   * - .createEndpointConfig()
+   * - .createExperiment()
+   * - .createFlowDefinition()
+   * - .createHumanTaskUi()
+   * - .createHyperParameterTuningJob()
+   * - .createLabelingJob()
+   * - .createModel()
+   * - .createMonitoringSchedule()
+   * - .createNotebookInstance()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .createTransformJob()
+   * - .createTrial()
+   * - .createTrialComponent()
+   * - .createUserProfile()
+   * - .createWorkteam()
+   * - .deleteTags()
+   * - .updateMonitoringSchedule()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4443,6 +4515,11 @@ export class Sagemaker extends PolicyStatement {
    * The list of all accelerator types associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createEndpointConfig()
+   * - .createNotebookInstance()
+   * - .updateNotebookInstance()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4456,6 +4533,9 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createDomain()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4467,6 +4547,9 @@ export class Sagemaker extends PolicyStatement {
    * The direct internet access associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createNotebookInstance()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4480,6 +4563,12 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createDomain()
+   * - .createUserProfile()
+   * - .updateDomain()
+   * - .updateUserProfile()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -4491,6 +4580,10 @@ export class Sagemaker extends PolicyStatement {
    * File system access mode associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createHyperParameterTuningJob()
+   * - .createTrainingJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4504,6 +4597,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createHyperParameterTuningJob()
+   * - .createTrainingJob()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4515,6 +4612,10 @@ export class Sagemaker extends PolicyStatement {
    * A file system ID associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createHyperParameterTuningJob()
+   * - .createTrainingJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4528,6 +4629,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createHyperParameterTuningJob()
+   * - .createTrainingJob()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4539,6 +4644,9 @@ export class Sagemaker extends PolicyStatement {
    * The KMS Key Id of the EFS File System used for UserProfile home directories, which is associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createDomain()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -4552,6 +4660,22 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createApp()
+   * - .createDomain()
+   * - .createEndpointConfig()
+   * - .createHyperParameterTuningJob()
+   * - .createMonitoringSchedule()
+   * - .createNotebookInstance()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .createTransformJob()
+   * - .createUserProfile()
+   * - .updateDomain()
+   * - .updateMonitoringSchedule()
+   * - .updateNotebookInstance()
+   * - .updateUserProfile()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4564,6 +4688,12 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createAutoMLJob()
+   * - .createHyperParameterTuningJob()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifInterContainerTrafficEncryption(value?: boolean) {
@@ -4574,6 +4704,13 @@ export class Sagemaker extends PolicyStatement {
    * The max runtime in seconds associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createHyperParameterTuningJob()
+   * - .createMonitoringSchedule()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4587,6 +4724,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createEndpointConfig()
+   * - .createTransformJob()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -4599,6 +4740,14 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createHyperParameterTuningJob()
+   * - .createModel()
+   * - .createMonitoringSchedule()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .updateMonitoringSchedule()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifNetworkIsolation(value?: boolean) {
@@ -4609,6 +4758,16 @@ export class Sagemaker extends PolicyStatement {
    * The output kms key associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createAutoMLJob()
+   * - .createHyperParameterTuningJob()
+   * - .createLabelingJob()
+   * - .createMonitoringSchedule()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .createTransformJob()
+   * - .updateMonitoringSchedule()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -4634,6 +4793,29 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to resource types:
+   * - flow-definition
+   * - human-task-ui
+   * - labeling-job
+   * - workteam
+   * - workforce
+   * - domain
+   * - user-profile
+   * - app
+   * - notebook-instance
+   * - training-job
+   * - processing-job
+   * - hyper-parameter-tuning-job
+   * - model
+   * - endpoint-config
+   * - endpoint
+   * - transform-job
+   * - automl-job
+   * - monitoring-schedule
+   * - experiment
+   * - experiment-trial
+   * - experiment-trial-component
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4647,6 +4829,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createNotebookInstance()
+   * - .updateNotebookInstance()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4658,6 +4844,9 @@ export class Sagemaker extends PolicyStatement {
    * The target model associated with the Multi-Model Endpoint in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .invokeEndpoint()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4671,6 +4860,18 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createAutoMLJob()
+   * - .createEndpointConfig()
+   * - .createHyperParameterTuningJob()
+   * - .createLabelingJob()
+   * - .createMonitoringSchedule()
+   * - .createNotebookInstance()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .createTransformJob()
+   * - .updateMonitoringSchedule()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -4682,6 +4883,20 @@ export class Sagemaker extends PolicyStatement {
    * The list of all vpc security group ids associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createAutoMLJob()
+   * - .createDomain()
+   * - .createHyperParameterTuningJob()
+   * - .createModel()
+   * - .createMonitoringSchedule()
+   * - .createNotebookInstance()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .createUserProfile()
+   * - .updateDomain()
+   * - .updateMonitoringSchedule()
+   * - .updateUserProfile()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4695,6 +4910,17 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createAutoMLJob()
+   * - .createDomain()
+   * - .createHyperParameterTuningJob()
+   * - .createModel()
+   * - .createMonitoringSchedule()
+   * - .createNotebookInstance()
+   * - .createProcessingJob()
+   * - .createTrainingJob()
+   * - .updateMonitoringSchedule()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4707,6 +4933,10 @@ export class Sagemaker extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
    *
+   * Applies to actions:
+   * - .createFlowDefinition()
+   * - .createLabelingJob()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -4718,6 +4948,10 @@ export class Sagemaker extends PolicyStatement {
    * The workteam type associated to the request. This can be public-crowd, private-crowd or vendor-crowd.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys
+   *
+   * Applies to actions:
+   * - .createFlowDefinition()
+   * - .createLabelingJob()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

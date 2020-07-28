@@ -784,6 +784,13 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by a key that is present in the request the user makes to the Ground Station service.
    *
+   * Applies to actions:
+   * - .createConfig()
+   * - .createDataflowEndpointGroup()
+   * - .createMissionProfile()
+   * - .reserveContact()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -794,6 +801,12 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by a tag key and value pair.
+   *
+   * Applies to resource types:
+   * - Config
+   * - Contact
+   * - DataflowEndpointGroup
+   * - MissionProfile
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -806,6 +819,14 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the list of all the tag key names present in the request the user makes to the Ground Station service.
    *
+   * Applies to actions:
+   * - .createConfig()
+   * - .createDataflowEndpointGroup()
+   * - .createMissionProfile()
+   * - .reserveContact()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -815,6 +836,9 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the ID of a config
+   *
+   * Applies to resource types:
+   * - Config
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -826,6 +850,9 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the type of a config
    *
+   * Applies to resource types:
+   * - Config
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -835,6 +862,9 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the ID of a contact
+   *
+   * Applies to resource types:
+   * - Contact
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -846,6 +876,9 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the ID of a dataflow endpoint group
    *
+   * Applies to resource types:
+   * - DataflowEndpointGroup
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -855,6 +888,9 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the ID of a ground station
+   *
+   * Applies to resource types:
+   * - GroundStationResource
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -866,6 +902,9 @@ export class Groundstation extends PolicyStatement {
   /**
    * Filters access by the ID of a mission profile
    *
+   * Applies to resource types:
+   * - MissionProfile
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -875,6 +914,9 @@ export class Groundstation extends PolicyStatement {
 
   /**
    * Filters access by the ID of a satellite
+   *
+   * Applies to resource types:
+   * - Satellite
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

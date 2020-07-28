@@ -1160,6 +1160,13 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
+   * Applies to actions:
+   * - .createApplication()
+   * - .createConfigurationProfile()
+   * - .createDeploymentStrategy()
+   * - .createEnvironment()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1173,6 +1180,27 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
+   * Applies to actions:
+   * - .getApplication()
+   * - .getConfiguration()
+   * - .getConfigurationProfile()
+   * - .getDeployment()
+   * - .getDeploymentStrategy()
+   * - .getEnvironment()
+   * - .listTagsForResource()
+   * - .tagResource()
+   * - .updateApplication()
+   * - .updateConfigurationProfile()
+   * - .updateDeploymentStrategy()
+   * - .updateEnvironment()
+   *
+   * Applies to resource types:
+   * - application
+   * - environment
+   * - configurationprofile
+   * - deploymentstrategy
+   * - deployment
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1185,6 +1213,14 @@ export class Appconfig extends PolicyStatement {
    * Filters 'Create' requests based on whether mandatory tags are included in the request
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .createApplication()
+   * - .createConfigurationProfile()
+   * - .createDeploymentStrategy()
+   * - .createEnvironment()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

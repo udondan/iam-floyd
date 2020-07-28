@@ -1509,6 +1509,13 @@ export class Ses extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
    *
+   * Applies to actions:
+   * - .sendBulkTemplatedEmail()
+   * - .sendCustomVerificationEmail()
+   * - .sendEmail()
+   * - .sendRawEmail()
+   * - .sendTemplatedEmail()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1520,6 +1527,14 @@ export class Ses extends PolicyStatement {
    * The "From" address of a message.
    *
    * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
+   *
+   * Applies to actions:
+   * - .sendBounce()
+   * - .sendBulkTemplatedEmail()
+   * - .sendCustomVerificationEmail()
+   * - .sendEmail()
+   * - .sendRawEmail()
+   * - .sendTemplatedEmail()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1533,6 +1548,13 @@ export class Ses extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
    *
+   * Applies to actions:
+   * - .sendBulkTemplatedEmail()
+   * - .sendCustomVerificationEmail()
+   * - .sendEmail()
+   * - .sendRawEmail()
+   * - .sendTemplatedEmail()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1544,6 +1566,13 @@ export class Ses extends PolicyStatement {
    * The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses.
    *
    * https://docs.aws.amazon.com/ses/latest/DeveloperGuide/email-format.html#email-header
+   *
+   * Applies to actions:
+   * - .sendBulkTemplatedEmail()
+   * - .sendCustomVerificationEmail()
+   * - .sendEmail()
+   * - .sendRawEmail()
+   * - .sendTemplatedEmail()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

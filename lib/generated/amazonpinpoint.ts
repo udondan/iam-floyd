@@ -2757,6 +2757,26 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .createApp()
+   * - .createCampaign()
+   * - .createEmailTemplate()
+   * - .createJourney()
+   * - .createPushTemplate()
+   * - .createSegment()
+   * - .createSmsTemplate()
+   * - .createVoiceTemplate()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateCampaign()
+   * - .updateEmailTemplate()
+   * - .updateJourney()
+   * - .updateJourneyState()
+   * - .updatePushTemplate()
+   * - .updateSegment()
+   * - .updateSmsTemplate()
+   * - .updateVoiceTemplate()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2770,6 +2790,23 @@ export class Mobiletargeting extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .createApp()
+   * - .createCampaign()
+   * - .createEmailTemplate()
+   * - .createJourney()
+   * - .createPushTemplate()
+   * - .createSegment()
+   * - .createSmsTemplate()
+   * - .createVoiceTemplate()
+   *
+   * Applies to resource types:
+   * - apps
+   * - campaigns
+   * - journeys
+   * - segments
+   * - templates
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2782,6 +2819,26 @@ export class Mobiletargeting extends PolicyStatement {
    * Filters access by the list of all the tag key names present in the request the user makes to the pinpoint service.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .createApp()
+   * - .createCampaign()
+   * - .createEmailTemplate()
+   * - .createJourney()
+   * - .createPushTemplate()
+   * - .createSegment()
+   * - .createSmsTemplate()
+   * - .createVoiceTemplate()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateCampaign()
+   * - .updateEmailTemplate()
+   * - .updateJourney()
+   * - .updateJourneyState()
+   * - .updatePushTemplate()
+   * - .updateSegment()
+   * - .updateSmsTemplate()
+   * - .updateVoiceTemplate()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

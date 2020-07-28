@@ -3697,6 +3697,30 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .addTagsToResource()
+   * - .createDBCluster()
+   * - .createDBClusterEndpoint()
+   * - .createDBClusterParameterGroup()
+   * - .createDBClusterSnapshot()
+   * - .createDBInstance()
+   * - .createDBInstanceReadReplica()
+   * - .createDBParameterGroup()
+   * - .createDBProxy()
+   * - .createDBSecurityGroup()
+   * - .createDBSnapshot()
+   * - .createDBSubnetGroup()
+   * - .createEventSubscription()
+   * - .createOptionGroup()
+   * - .purchaseReservedDBInstancesOffering()
+   * - .removeTagsFromResource()
+   * - .restoreDBClusterFromS3()
+   * - .restoreDBClusterFromSnapshot()
+   * - .restoreDBClusterToPointInTime()
+   * - .restoreDBInstanceFromDBSnapshot()
+   * - .restoreDBInstanceFromS3()
+   * - .restoreDBInstanceToPointInTime()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3709,6 +3733,22 @@ export class Rds extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - cluster
+   * - cluster-endpoint
+   * - cluster-pg
+   * - cluster-snapshot
+   * - db
+   * - es
+   * - og
+   * - pg
+   * - proxy
+   * - ri
+   * - secgrp
+   * - snapshot
+   * - subgrp
+   * - target-group
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3723,6 +3763,30 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .addTagsToResource()
+   * - .createDBCluster()
+   * - .createDBClusterEndpoint()
+   * - .createDBClusterParameterGroup()
+   * - .createDBClusterSnapshot()
+   * - .createDBInstance()
+   * - .createDBInstanceReadReplica()
+   * - .createDBParameterGroup()
+   * - .createDBProxy()
+   * - .createDBSecurityGroup()
+   * - .createDBSnapshot()
+   * - .createDBSubnetGroup()
+   * - .createEventSubscription()
+   * - .createOptionGroup()
+   * - .purchaseReservedDBInstancesOffering()
+   * - .removeTagsFromResource()
+   * - .restoreDBClusterFromS3()
+   * - .restoreDBClusterFromSnapshot()
+   * - .restoreDBClusterToPointInTime()
+   * - .restoreDBInstanceFromDBSnapshot()
+   * - .restoreDBInstanceFromS3()
+   * - .restoreDBInstanceToPointInTime()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3734,6 +3798,9 @@ export class Rds extends PolicyStatement {
    * A type of DB instance class.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3747,6 +3814,13 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .createDBCluster()
+   * - .restoreDBClusterFromS3()
+   *
+   * Applies to resource types:
+   * - db
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3758,6 +3832,13 @@ export class Rds extends PolicyStatement {
    * The user-defined name of the database on the DB instance.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .createDBCluster()
+   * - .restoreDBClusterFromS3()
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3771,6 +3852,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .createDBClusterEndpoint()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3783,6 +3867,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - db
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifMultiAz(value?: boolean) {
@@ -3793,6 +3880,9 @@ export class Rds extends PolicyStatement {
    * A value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -3806,6 +3896,13 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .createDBCluster()
+   * - .restoreDBClusterFromS3()
+   *
+   * Applies to resource types:
+   * - db
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifStorageEncrypted(value?: boolean) {
@@ -3816,6 +3913,9 @@ export class Rds extends PolicyStatement {
    * The storage volume size (in GB).
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -3829,6 +3929,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - db
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifVpc(value?: boolean) {
@@ -3839,6 +3942,9 @@ export class Rds extends PolicyStatement {
    * A tag attached to a DB cluster parameter group.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - cluster-pg
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3853,6 +3959,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - cluster-snapshot
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3865,6 +3974,9 @@ export class Rds extends PolicyStatement {
    * A tag attached to a DB cluster.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - cluster
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3879,6 +3991,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - db
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3891,6 +4006,9 @@ export class Rds extends PolicyStatement {
    * A tag attached to an event subscription.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - es
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3905,6 +4023,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - og
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3917,6 +4038,9 @@ export class Rds extends PolicyStatement {
    * A tag attached to a DB parameter group.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - pg
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3931,6 +4055,27 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .addTagsToResource()
+   * - .createDBCluster()
+   * - .createDBClusterParameterGroup()
+   * - .createDBClusterSnapshot()
+   * - .createDBInstance()
+   * - .createDBInstanceReadReplica()
+   * - .createDBParameterGroup()
+   * - .createDBSecurityGroup()
+   * - .createDBSnapshot()
+   * - .createDBSubnetGroup()
+   * - .createEventSubscription()
+   * - .createOptionGroup()
+   * - .removeTagsFromResource()
+   * - .restoreDBClusterFromS3()
+   * - .restoreDBClusterFromSnapshot()
+   * - .restoreDBClusterToPointInTime()
+   * - .restoreDBInstanceFromDBSnapshot()
+   * - .restoreDBInstanceFromS3()
+   * - .restoreDBInstanceToPointInTime()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3943,6 +4088,9 @@ export class Rds extends PolicyStatement {
    * A tag attached to a reserved DB instance.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - ri
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3957,6 +4105,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - secgrp
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3970,6 +4121,9 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - snapshot
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3982,6 +4136,9 @@ export class Rds extends PolicyStatement {
    * A tag attached to a DB subnet group.
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - subgrp
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

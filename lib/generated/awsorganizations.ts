@@ -1345,6 +1345,20 @@ export class Organizations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *
+   * Applies to actions:
+   * - .attachPolicy()
+   * - .createPolicy()
+   * - .deletePolicy()
+   * - .describeEffectivePolicy()
+   * - .describePolicy()
+   * - .detachPolicy()
+   * - .disablePolicyType()
+   * - .enablePolicyType()
+   * - .listPolicies()
+   * - .listPoliciesForTarget()
+   * - .listTargetsForPolicy()
+   * - .updatePolicy()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1356,6 +1370,13 @@ export class Organizations extends PolicyStatement {
    * Enables you to filter the request to only the specified service principal names.
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   *
+   * Applies to actions:
+   * - .deregisterDelegatedAdministrator()
+   * - .disableAWSServiceAccess()
+   * - .enableAWSServiceAccess()
+   * - .listDelegatedAdministrators()
+   * - .registerDelegatedAdministrator()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

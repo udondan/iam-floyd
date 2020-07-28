@@ -1488,6 +1488,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createLaunchConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1499,6 +1502,9 @@ export class Autoscaling extends PolicyStatement {
    * The type of instance, in terms of the hardware resources available.
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .createLaunchConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1512,6 +1518,10 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .updateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1523,6 +1533,10 @@ export class Autoscaling extends PolicyStatement {
    * The name of a launch configuration.
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .updateAutoScalingGroup()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1536,6 +1550,10 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .updateAutoScalingGroup()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifLaunchTemplateVersionSpecified(value?: boolean) {
@@ -1546,6 +1564,11 @@ export class Autoscaling extends PolicyStatement {
    * The name of the load balancer.
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .attachLoadBalancers()
+   * - .createAutoScalingGroup()
+   * - .detachLoadBalancers()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1559,6 +1582,11 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .putScheduledUpdateGroupAction()
+   * - .updateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -1571,6 +1599,11 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .putScheduledUpdateGroupAction()
+   * - .updateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -1582,6 +1615,47 @@ export class Autoscaling extends PolicyStatement {
    * The value of a tag attached to a resource.
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .attachInstances()
+   * - .attachLoadBalancerTargetGroups()
+   * - .attachLoadBalancers()
+   * - .batchDeleteScheduledAction()
+   * - .batchPutScheduledUpdateGroupAction()
+   * - .cancelInstanceRefresh()
+   * - .completeLifecycleAction()
+   * - .createAutoScalingGroup()
+   * - .createOrUpdateTags()
+   * - .deleteAutoScalingGroup()
+   * - .deleteLifecycleHook()
+   * - .deleteNotificationConfiguration()
+   * - .deletePolicy()
+   * - .deleteScheduledAction()
+   * - .deleteTags()
+   * - .detachInstances()
+   * - .detachLoadBalancerTargetGroups()
+   * - .detachLoadBalancers()
+   * - .disableMetricsCollection()
+   * - .enableMetricsCollection()
+   * - .enterStandby()
+   * - .executePolicy()
+   * - .exitStandby()
+   * - .putLifecycleHook()
+   * - .putNotificationConfiguration()
+   * - .putScalingPolicy()
+   * - .putScheduledUpdateGroupAction()
+   * - .recordLifecycleActionHeartbeat()
+   * - .resumeProcesses()
+   * - .setDesiredCapacity()
+   * - .setInstanceHealth()
+   * - .setInstanceProtection()
+   * - .startInstanceRefresh()
+   * - .suspendProcesses()
+   * - .terminateInstanceInAutoScalingGroup()
+   * - .updateAutoScalingGroup()
+   *
+   * Applies to resource types:
+   * - autoScalingGroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1596,6 +1670,9 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createLaunchConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -1607,6 +1684,11 @@ export class Autoscaling extends PolicyStatement {
    * The ARN of a target group.
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .attachLoadBalancerTargetGroups()
+   * - .createAutoScalingGroup()
+   * - .detachLoadBalancerTargetGroups()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1620,6 +1702,10 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .updateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1632,6 +1718,11 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .createOrUpdateTags()
+   * - .deleteTags()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1643,6 +1734,47 @@ export class Autoscaling extends PolicyStatement {
   /**
    * Filters actions based on tag-value associated with the resource.
    *
+   * Applies to actions:
+   * - .attachInstances()
+   * - .attachLoadBalancerTargetGroups()
+   * - .attachLoadBalancers()
+   * - .batchDeleteScheduledAction()
+   * - .batchPutScheduledUpdateGroupAction()
+   * - .cancelInstanceRefresh()
+   * - .completeLifecycleAction()
+   * - .createAutoScalingGroup()
+   * - .createOrUpdateTags()
+   * - .deleteAutoScalingGroup()
+   * - .deleteLifecycleHook()
+   * - .deleteNotificationConfiguration()
+   * - .deletePolicy()
+   * - .deleteScheduledAction()
+   * - .deleteTags()
+   * - .detachInstances()
+   * - .detachLoadBalancerTargetGroups()
+   * - .detachLoadBalancers()
+   * - .disableMetricsCollection()
+   * - .enableMetricsCollection()
+   * - .enterStandby()
+   * - .executePolicy()
+   * - .exitStandby()
+   * - .putLifecycleHook()
+   * - .putNotificationConfiguration()
+   * - .putScalingPolicy()
+   * - .putScheduledUpdateGroupAction()
+   * - .recordLifecycleActionHeartbeat()
+   * - .resumeProcesses()
+   * - .setDesiredCapacity()
+   * - .setInstanceHealth()
+   * - .setInstanceProtection()
+   * - .startInstanceRefresh()
+   * - .suspendProcesses()
+   * - .terminateInstanceInAutoScalingGroup()
+   * - .updateAutoScalingGroup()
+   *
+   * Applies to resource types:
+   * - autoScalingGroup
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1653,6 +1785,11 @@ export class Autoscaling extends PolicyStatement {
 
   /**
    * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * Applies to actions:
+   * - .createAutoScalingGroup()
+   * - .createOrUpdateTags()
+   * - .deleteTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

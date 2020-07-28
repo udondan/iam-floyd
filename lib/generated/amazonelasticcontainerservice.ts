@@ -1554,6 +1554,16 @@ export class Ecs extends PolicyStatement {
   /**
    * Filters actions based on the presence of tag key-value pairs in the request.
    *
+   * Applies to actions:
+   * - .createCapacityProvider()
+   * - .createCluster()
+   * - .createService()
+   * - .registerContainerInstance()
+   * - .registerTaskDefinition()
+   * - .runTask()
+   * - .startTask()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1564,6 +1574,15 @@ export class Ecs extends PolicyStatement {
 
   /**
    * Filters actions based on tag key-value pairs attached to the resource.
+   *
+   * Applies to resource types:
+   * - cluster
+   * - container-instance
+   * - service
+   * - task
+   * - task-definition
+   * - capacity-provider
+   * - task-set
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1576,6 +1595,17 @@ export class Ecs extends PolicyStatement {
   /**
    * Filters actions based on the presence of tag keys in the request.
    *
+   * Applies to actions:
+   * - .createCapacityProvider()
+   * - .createCluster()
+   * - .createService()
+   * - .registerContainerInstance()
+   * - .registerTaskDefinition()
+   * - .runTask()
+   * - .startTask()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1585,6 +1615,15 @@ export class Ecs extends PolicyStatement {
 
   /**
    * Filters actions based on tag key-value pairs attached to the resource.
+   *
+   * Applies to resource types:
+   * - cluster
+   * - container-instance
+   * - service
+   * - task
+   * - task-definition
+   * - capacity-provider
+   * - task-set
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1599,6 +1638,13 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
+   * Applies to actions:
+   * - .createCluster()
+   * - .createService()
+   * - .putClusterCapacityProviders()
+   * - .runTask()
+   * - .updateService()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1610,6 +1656,30 @@ export class Ecs extends PolicyStatement {
    * The ARN of an Amazon ECS cluster.
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to actions:
+   * - .createService()
+   * - .createTaskSet()
+   * - .deleteAttributes()
+   * - .deleteService()
+   * - .deleteTaskSet()
+   * - .describeContainerInstances()
+   * - .describeServices()
+   * - .describeTaskSets()
+   * - .describeTasks()
+   * - .listServices()
+   * - .listTasks()
+   * - .poll()
+   * - .putAttributes()
+   * - .runTask()
+   * - .startTask()
+   * - .startTelemetrySession()
+   * - .stopTask()
+   * - .updateContainerAgent()
+   * - .updateContainerInstancesState()
+   * - .updateService()
+   * - .updateServicePrimaryTaskSet()
+   * - .updateTaskSet()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1623,6 +1693,9 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
+   * Applies to actions:
+   * - .startTask()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1635,6 +1708,12 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
+   * Applies to actions:
+   * - .createTaskSet()
+   * - .deleteTaskSet()
+   * - .describeTaskSets()
+   * - .updateTaskSet()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1646,6 +1725,11 @@ export class Ecs extends PolicyStatement {
    * The ARN of an Amazon ECS task definition.
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
+   *
+   * Applies to actions:
+   * - .createService()
+   * - .createTaskSet()
+   * - .updateService()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

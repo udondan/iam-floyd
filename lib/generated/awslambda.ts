@@ -1325,6 +1325,12 @@ export class Lambda extends PolicyStatement {
   /**
    * Filters access by the ARN of an AWS Lambda function
    *
+   * Applies to actions:
+   * - .createEventSourceMapping()
+   * - .deleteEventSourceMapping()
+   * - .getEventSourceMapping()
+   * - .updateEventSourceMapping()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1335,6 +1341,10 @@ export class Lambda extends PolicyStatement {
   /**
    * Filters access by the ARN of an AWS Lambda layer
    *
+   * Applies to actions:
+   * - .createFunction()
+   * - .updateFunctionConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1344,6 +1354,10 @@ export class Lambda extends PolicyStatement {
 
   /**
    * Filters access by restricting the AWS service or account that can invoke a function
+   *
+   * Applies to actions:
+   * - .addPermission()
+   * - .removePermission()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -2055,6 +2055,10 @@ export class Codecommit extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createRepository()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2067,6 +2071,12 @@ export class Codecommit extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .tagResource()
+   *
+   * Applies to resource types:
+   * - repository
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2081,6 +2091,11 @@ export class Codecommit extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createRepository()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -2092,6 +2107,22 @@ export class Codecommit extends PolicyStatement {
    * Filters access by Git reference to specified AWS CodeCommit actions
    *
    * https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-conditional-branch.html
+   *
+   * Applies to actions:
+   * - .createBranch()
+   * - .createCommit()
+   * - .createUnreferencedMergeCommit()
+   * - .deleteBranch()
+   * - .deleteFile()
+   * - .getMergeCommit()
+   * - .gitPush()
+   * - .mergeBranchesByFastForward()
+   * - .mergeBranchesBySquash()
+   * - .mergeBranchesByThreeWay()
+   * - .mergePullRequestByFastForward()
+   * - .mergePullRequestBySquash()
+   * - .mergePullRequestByThreeWay()
+   * - .putFile()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

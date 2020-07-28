@@ -2846,6 +2846,19 @@ export class Redshift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
    *
+   * Applies to actions:
+   * - .createCluster()
+   * - .createClusterParameterGroup()
+   * - .createClusterSecurityGroup()
+   * - .createClusterSnapshot()
+   * - .createClusterSubnetGroup()
+   * - .createEventSubscription()
+   * - .createHsmClientCertificate()
+   * - .createHsmConfiguration()
+   * - .createSnapshotCopyGrant()
+   * - .createSnapshotSchedule()
+   * - .createTags()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2858,6 +2871,23 @@ export class Redshift extends PolicyStatement {
    * Filters actions based on tag-value associated with the resource
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to resource types:
+   * - cluster
+   * - dbgroup
+   * - dbname
+   * - dbuser
+   * - eventsubscription
+   * - hsmclientcertificate
+   * - hsmconfiguration
+   * - parametergroup
+   * - securitygroup
+   * - securitygroupingress-cidr
+   * - securitygroupingress-ec2securitygroup
+   * - snapshot
+   * - snapshotcopygrant
+   * - snapshotschedule
+   * - subnetgroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -2872,6 +2902,20 @@ export class Redshift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
    *
+   * Applies to actions:
+   * - .createCluster()
+   * - .createClusterParameterGroup()
+   * - .createClusterSecurityGroup()
+   * - .createClusterSnapshot()
+   * - .createClusterSubnetGroup()
+   * - .createEventSubscription()
+   * - .createHsmClientCertificate()
+   * - .createHsmConfiguration()
+   * - .createSnapshotCopyGrant()
+   * - .createSnapshotSchedule()
+   * - .createTags()
+   * - .deleteTags()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -2883,6 +2927,9 @@ export class Redshift extends PolicyStatement {
    * Filters access by the database name
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .getClusterCredentials()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -2896,6 +2943,10 @@ export class Redshift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
    *
+   * Applies to actions:
+   * - .createClusterUser()
+   * - .getClusterCredentials()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -2907,6 +2958,9 @@ export class Redshift extends PolicyStatement {
    * Filters access by the number of seconds until a temporary credential set expires
    *
    * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
+   *
+   * Applies to actions:
+   * - .getClusterCredentials()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

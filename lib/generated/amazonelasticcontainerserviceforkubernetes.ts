@@ -638,6 +638,12 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
+   * Applies to actions:
+   * - .createCluster()
+   * - .createFargateProfile()
+   * - .createNodegroup()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -651,6 +657,11 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
+   * Applies to resource types:
+   * - cluster
+   * - nodegroup
+   * - fargateprofile
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -663,6 +674,13 @@ export class Eks extends PolicyStatement {
    * Filters access by the list of all the tag key names present in the request the user makes to the EKS service.
    *
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
+   *
+   * Applies to actions:
+   * - .createCluster()
+   * - .createFargateProfile()
+   * - .createNodegroup()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

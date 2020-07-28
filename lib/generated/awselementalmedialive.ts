@@ -1170,6 +1170,14 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    *
+   * Applies to actions:
+   * - .createChannel()
+   * - .createInput()
+   * - .createInputSecurityGroup()
+   * - .createMultiplex()
+   * - .createTags()
+   * - .purchaseOffering()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1183,6 +1191,13 @@ export class Medialive extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
    *
+   * Applies to resource types:
+   * - channel
+   * - input
+   * - input-security-group
+   * - multiplex
+   * - reservation
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1195,6 +1210,15 @@ export class Medialive extends PolicyStatement {
    * The tag keys for a MediaLive resource or request.
    *
    * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
+   *
+   * Applies to actions:
+   * - .createChannel()
+   * - .createInput()
+   * - .createInputSecurityGroup()
+   * - .createMultiplex()
+   * - .createTags()
+   * - .deleteTags()
+   * - .purchaseOffering()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

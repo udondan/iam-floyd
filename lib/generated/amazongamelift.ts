@@ -1825,6 +1825,16 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createAlias()
+   * - .createBuild()
+   * - .createFleet()
+   * - .createGameSessionQueue()
+   * - .createMatchmakingConfiguration()
+   * - .createMatchmakingRuleSet()
+   * - .createScript()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1838,6 +1848,15 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to resource types:
+   * - alias
+   * - build
+   * - script
+   * - fleet
+   * - gameSessionQueue
+   * - matchmakingConfiguration
+   * - matchmakingRuleSet
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1850,6 +1869,17 @@ export class Gamelift extends PolicyStatement {
    * Filters actions based on the tag keys that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .createAlias()
+   * - .createBuild()
+   * - .createFleet()
+   * - .createGameSessionQueue()
+   * - .createMatchmakingConfiguration()
+   * - .createMatchmakingRuleSet()
+   * - .createScript()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

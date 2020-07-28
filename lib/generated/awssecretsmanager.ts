@@ -631,6 +631,13 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .createSecret()
+   * - .tagResource()
+   *
+   * Applies to resource types:
+   * - Secret
+   *
    * @param tagkey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -644,6 +651,14 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .createSecret()
+   * - .tagResource()
+   * - .untagResource()
+   *
+   * Applies to resource types:
+   * - Secret
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -655,6 +670,10 @@ export class Secretsmanager extends PolicyStatement {
    * Filters access by the description text in the request.
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .createSecret()
+   * - .updateSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -668,6 +687,9 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .deleteSecret()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifForceDeleteWithoutRecovery(value?: boolean) {
@@ -678,6 +700,10 @@ export class Secretsmanager extends PolicyStatement {
    * Filters access by the ARN of the KMS key in the request.
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .createSecret()
+   * - .updateSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -691,6 +717,9 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .createSecret()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -703,6 +732,9 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .deleteSecret()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
@@ -714,6 +746,27 @@ export class Secretsmanager extends PolicyStatement {
    * Filters access by a tag key and value pair.
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .cancelRotateSecret()
+   * - .createSecret()
+   * - .deleteResourcePolicy()
+   * - .deleteSecret()
+   * - .describeSecret()
+   * - .getResourcePolicy()
+   * - .getSecretValue()
+   * - .listSecretVersionIds()
+   * - .putResourcePolicy()
+   * - .putSecretValue()
+   * - .restoreSecret()
+   * - .rotateSecret()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateSecret()
+   * - .updateSecretVersionStage()
+   *
+   * Applies to resource types:
+   * - Secret
    *
    * @param tagkey The tag key to check
    * @param value The value(s) to check
@@ -728,6 +781,9 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .rotateSecret()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -739,6 +795,23 @@ export class Secretsmanager extends PolicyStatement {
    * Filters access by the SecretID value in the request.
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .cancelRotateSecret()
+   * - .deleteResourcePolicy()
+   * - .deleteSecret()
+   * - .describeSecret()
+   * - .getResourcePolicy()
+   * - .getSecretValue()
+   * - .listSecretVersionIds()
+   * - .putResourcePolicy()
+   * - .putSecretValue()
+   * - .restoreSecret()
+   * - .rotateSecret()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateSecret()
+   * - .updateSecretVersionStage()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -752,6 +825,9 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .getSecretValue()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -764,6 +840,10 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
+   * Applies to actions:
+   * - .getSecretValue()
+   * - .updateSecretVersionStage()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -775,6 +855,26 @@ export class Secretsmanager extends PolicyStatement {
    * Filters access by the ARN of the rotation Lambda function associated with the secret.
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .cancelRotateSecret()
+   * - .deleteResourcePolicy()
+   * - .deleteSecret()
+   * - .describeSecret()
+   * - .getResourcePolicy()
+   * - .getSecretValue()
+   * - .listSecretVersionIds()
+   * - .putResourcePolicy()
+   * - .putSecretValue()
+   * - .restoreSecret()
+   * - .rotateSecret()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateSecret()
+   * - .updateSecretVersionStage()
+   *
+   * Applies to resource types:
+   * - Secret
    *
    * @param allowRotationLambdaArn The tag key to check
    * @param value The value(s) to check

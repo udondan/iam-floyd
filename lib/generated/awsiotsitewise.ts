@@ -1534,6 +1534,16 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createAccessPolicy()
+   * - .createAsset()
+   * - .createAssetModel()
+   * - .createDashboard()
+   * - .createGateway()
+   * - .createPortal()
+   * - .createProject()
+   * - .tagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1547,6 +1557,18 @@ export class Iotsitewise extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
+   * Applies to actions:
+   * - .listTagsForResource()
+   *
+   * Applies to resource types:
+   * - asset
+   * - asset-model
+   * - gateway
+   * - portal
+   * - project
+   * - dashboard
+   * - access-policy
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1559,6 +1581,17 @@ export class Iotsitewise extends PolicyStatement {
    * Filters actions by the tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .createAccessPolicy()
+   * - .createAsset()
+   * - .createAssetModel()
+   * - .createDashboard()
+   * - .createGateway()
+   * - .createPortal()
+   * - .createProject()
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

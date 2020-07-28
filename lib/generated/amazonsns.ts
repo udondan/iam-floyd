@@ -699,6 +699,10 @@ export class Sns extends PolicyStatement {
   /**
    * Tags from request
    *
+   * Applies to actions:
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -709,6 +713,10 @@ export class Sns extends PolicyStatement {
 
   /**
    * Tag keys from request
+   *
+   * Applies to actions:
+   * - .tagResource()
+   * - .untagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -722,6 +730,9 @@ export class Sns extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
    *
+   * Applies to actions:
+   * - .subscribe()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -733,6 +744,9 @@ export class Sns extends PolicyStatement {
    * The protocol value from a Subscribe request or a previously confirmed subscription.
    *
    * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
+   *
+   * Applies to actions:
+   * - .subscribe()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

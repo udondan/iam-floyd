@@ -1252,6 +1252,15 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .addTagsToResource()
+   * - .createEndpoint()
+   * - .createEventSubscription()
+   * - .createReplicationInstance()
+   * - .createReplicationSubnetGroup()
+   * - .createReplicationTask()
+   * - .importCertificate()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1264,6 +1273,17 @@ export class Dms extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .describeReplicationInstanceTaskLogs()
+   *
+   * Applies to resource types:
+   * - ReplicationInstance
+   * - ReplicationTask
+   * - Endpoint
+   * - Certificate
+   * - EventSubscription
+   * - ReplicationSubnetGroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1278,6 +1298,17 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .addTagsToResource()
+   * - .createEndpoint()
+   * - .createEventSubscription()
+   * - .createReplicationInstance()
+   * - .createReplicationSubnetGroup()
+   * - .createReplicationTask()
+   * - .describeReplicationInstanceTaskLogs()
+   * - .importCertificate()
+   * - .removeTagsFromResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1287,6 +1318,9 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters actions based on the presence of tag keys in the request for Certificate
+   *
+   * Applies to resource types:
+   * - Certificate
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1299,6 +1333,9 @@ export class Dms extends PolicyStatement {
   /**
    * Filters actions based on the presence of tag keys in the request for Endpoint
    *
+   * Applies to resource types:
+   * - Endpoint
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1309,6 +1346,9 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters actions based on the presence of tag keys in the request for EventSubscription
+   *
+   * Applies to resource types:
+   * - EventSubscription
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1321,6 +1361,9 @@ export class Dms extends PolicyStatement {
   /**
    * Filters actions based on the presence of tag keys in the request for ReplicationInstance
    *
+   * Applies to resource types:
+   * - ReplicationInstance
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1331,6 +1374,14 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * Applies to actions:
+   * - .addTagsToResource()
+   * - .createEndpoint()
+   * - .createEventSubscription()
+   * - .createReplicationInstance()
+   * - .createReplicationSubnetGroup()
+   * - .createReplicationTask()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1343,6 +1394,9 @@ export class Dms extends PolicyStatement {
   /**
    * Filters actions based on the presence of tag keys in the request for ReplicationSubnetGroup
    *
+   * Applies to resource types:
+   * - ReplicationSubnetGroup
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1353,6 +1407,9 @@ export class Dms extends PolicyStatement {
 
   /**
    * Filters actions based on the presence of tag keys in the request for ReplicationTask
+   *
+   * Applies to resource types:
+   * - ReplicationTask
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

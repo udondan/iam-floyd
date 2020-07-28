@@ -3693,6 +3693,10 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createJob()
+   * - .putJobTagging()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3719,6 +3723,10 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createJob()
+   * - .putJobTagging()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3730,6 +3738,41 @@ export class S3 extends PolicyStatement {
    * Filters access by the network origin (Internet or VPC)
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
+   *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionTagging()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listMultipartUploadParts()
+   * - .putAccessPointPolicy()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .restoreObject()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3743,6 +3786,41 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
    *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionTagging()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listMultipartUploadParts()
+   * - .putAccessPointPolicy()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .restoreObject()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3752,6 +3830,41 @@ export class S3 extends PolicyStatement {
 
   /**
    * Filters access by an access point Amazon Resource Name (ARN)
+   *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionTagging()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listMultipartUploadParts()
+   * - .putAccessPointPolicy()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .restoreObject()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3765,6 +3878,12 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
+   * Applies to actions:
+   * - .deleteJobTagging()
+   * - .putJobTagging()
+   * - .updateJobPriority()
+   * - .updateJobStatus()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3776,6 +3895,12 @@ export class S3 extends PolicyStatement {
    * Filters access to cancelling existing jobs by priority range
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   *
+   * Applies to actions:
+   * - .deleteJobTagging()
+   * - .putJobTagging()
+   * - .updateJobPriority()
+   * - .updateJobStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -3789,6 +3914,20 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
    *
+   * Applies to actions:
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersionTagging()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectTagging()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionTagging()
+   * - .putObjectAcl()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   *
    * @param key The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3801,6 +3940,9 @@ export class S3 extends PolicyStatement {
    * Filters access to cancelling suspended jobs by a specific job suspended cause (for example, AWAITING_CONFIRMATION)
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   *
+   * Applies to actions:
+   * - .updateJobStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3826,6 +3968,9 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
    *
+   * Applies to actions:
+   * - .createJob()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3837,6 +3982,10 @@ export class S3 extends PolicyStatement {
    * Filters access to creating new jobs by priority range
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html
+   *
+   * Applies to actions:
+   * - .createJob()
+   * - .updateJobPriority()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -3850,6 +3999,12 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectTagging()
+   * - .putObjectVersionTagging()
+   *
    * @param key The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3862,6 +4017,12 @@ export class S3 extends PolicyStatement {
    * Restricts the tag keys allowed on objects
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectTagging()
+   * - .putObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3887,6 +4048,101 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .createBucket()
+   * - .createJob()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteBucket()
+   * - .deleteBucketPolicy()
+   * - .deleteBucketWebsite()
+   * - .deleteJobTagging()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .describeJob()
+   * - .getAccelerateConfiguration()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getAccountPublicAccessBlock()
+   * - .getAnalyticsConfiguration()
+   * - .getBucketAcl()
+   * - .getBucketCORS()
+   * - .getBucketLogging()
+   * - .getBucketNotification()
+   * - .getBucketObjectLockConfiguration()
+   * - .getBucketPolicy()
+   * - .getBucketPolicyStatus()
+   * - .getBucketPublicAccessBlock()
+   * - .getBucketRequestPayment()
+   * - .getBucketTagging()
+   * - .getBucketVersioning()
+   * - .getBucketWebsite()
+   * - .getEncryptionConfiguration()
+   * - .getInventoryConfiguration()
+   * - .getJobTagging()
+   * - .getLifecycleConfiguration()
+   * - .getMetricsConfiguration()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectTorrent()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionForReplication()
+   * - .getObjectVersionTagging()
+   * - .getObjectVersionTorrent()
+   * - .getReplicationConfiguration()
+   * - .listAccessPoints()
+   * - .listAllMyBuckets()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listJobs()
+   * - .listMultipartUploadParts()
+   * - .objectOwnerOverrideToBucketOwner()
+   * - .putAccelerateConfiguration()
+   * - .putAccessPointPolicy()
+   * - .putAccountPublicAccessBlock()
+   * - .putAnalyticsConfiguration()
+   * - .putBucketAcl()
+   * - .putBucketCORS()
+   * - .putBucketLogging()
+   * - .putBucketNotification()
+   * - .putBucketObjectLockConfiguration()
+   * - .putBucketPolicy()
+   * - .putBucketPublicAccessBlock()
+   * - .putBucketRequestPayment()
+   * - .putBucketTagging()
+   * - .putBucketVersioning()
+   * - .putBucketWebsite()
+   * - .putEncryptionConfiguration()
+   * - .putInventoryConfiguration()
+   * - .putJobTagging()
+   * - .putLifecycleConfiguration()
+   * - .putMetricsConfiguration()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .putReplicationConfiguration()
+   * - .replicateDelete()
+   * - .replicateObject()
+   * - .replicateTags()
+   * - .restoreObject()
+   * - .updateJobPriority()
+   * - .updateJobStatus()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3898,6 +4154,10 @@ export class S3 extends PolicyStatement {
    * Requires the delimiter parameter
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html
+   *
+   * Applies to actions:
+   * - .listBucket()
+   * - .listBucketVersions()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3911,6 +4171,10 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-1
    *
+   * Applies to actions:
+   * - .createAccessPoint()
+   * - .createBucket()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3922,6 +4186,10 @@ export class S3 extends PolicyStatement {
    * Limits the maximum number of keys returned in a ListBucket request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-numeric-condition-operators
+   *
+   * Applies to actions:
+   * - .listBucket()
+   * - .listBucketVersions()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -3935,6 +4203,11 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectLegalHold()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3944,6 +4217,11 @@ export class S3 extends PolicyStatement {
 
   /**
    * Enables enforcement of the specified object retention mode (COMPLIANCE or GOVERNANCE)
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectRetention()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3957,6 +4235,11 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-retention-limits
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectRetention()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3968,6 +4251,11 @@ export class S3 extends PolicyStatement {
    * Enables enforcement of a specific retain-until-date
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectRetention()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3981,6 +4269,10 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2
    *
+   * Applies to actions:
+   * - .listBucket()
+   * - .listBucketVersions()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3992,6 +4284,101 @@ export class S3 extends PolicyStatement {
    * Identifies the length of time, in milliseconds, that a signature is valid in an authenticated request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
+   *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .createBucket()
+   * - .createJob()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteBucket()
+   * - .deleteBucketPolicy()
+   * - .deleteBucketWebsite()
+   * - .deleteJobTagging()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .describeJob()
+   * - .getAccelerateConfiguration()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getAccountPublicAccessBlock()
+   * - .getAnalyticsConfiguration()
+   * - .getBucketAcl()
+   * - .getBucketCORS()
+   * - .getBucketLogging()
+   * - .getBucketNotification()
+   * - .getBucketObjectLockConfiguration()
+   * - .getBucketPolicy()
+   * - .getBucketPolicyStatus()
+   * - .getBucketPublicAccessBlock()
+   * - .getBucketRequestPayment()
+   * - .getBucketTagging()
+   * - .getBucketVersioning()
+   * - .getBucketWebsite()
+   * - .getEncryptionConfiguration()
+   * - .getInventoryConfiguration()
+   * - .getJobTagging()
+   * - .getLifecycleConfiguration()
+   * - .getMetricsConfiguration()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectTorrent()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionForReplication()
+   * - .getObjectVersionTagging()
+   * - .getObjectVersionTorrent()
+   * - .getReplicationConfiguration()
+   * - .listAccessPoints()
+   * - .listAllMyBuckets()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listJobs()
+   * - .listMultipartUploadParts()
+   * - .objectOwnerOverrideToBucketOwner()
+   * - .putAccelerateConfiguration()
+   * - .putAccessPointPolicy()
+   * - .putAccountPublicAccessBlock()
+   * - .putAnalyticsConfiguration()
+   * - .putBucketAcl()
+   * - .putBucketCORS()
+   * - .putBucketLogging()
+   * - .putBucketNotification()
+   * - .putBucketObjectLockConfiguration()
+   * - .putBucketPolicy()
+   * - .putBucketPublicAccessBlock()
+   * - .putBucketRequestPayment()
+   * - .putBucketTagging()
+   * - .putBucketVersioning()
+   * - .putBucketWebsite()
+   * - .putEncryptionConfiguration()
+   * - .putInventoryConfiguration()
+   * - .putJobTagging()
+   * - .putLifecycleConfiguration()
+   * - .putMetricsConfiguration()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .putReplicationConfiguration()
+   * - .replicateDelete()
+   * - .replicateObject()
+   * - .replicateTags()
+   * - .restoreObject()
+   * - .updateJobPriority()
+   * - .updateJobStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
@@ -4005,6 +4392,101 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
    *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .createBucket()
+   * - .createJob()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteBucket()
+   * - .deleteBucketPolicy()
+   * - .deleteBucketWebsite()
+   * - .deleteJobTagging()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .describeJob()
+   * - .getAccelerateConfiguration()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getAccountPublicAccessBlock()
+   * - .getAnalyticsConfiguration()
+   * - .getBucketAcl()
+   * - .getBucketCORS()
+   * - .getBucketLogging()
+   * - .getBucketNotification()
+   * - .getBucketObjectLockConfiguration()
+   * - .getBucketPolicy()
+   * - .getBucketPolicyStatus()
+   * - .getBucketPublicAccessBlock()
+   * - .getBucketRequestPayment()
+   * - .getBucketTagging()
+   * - .getBucketVersioning()
+   * - .getBucketWebsite()
+   * - .getEncryptionConfiguration()
+   * - .getInventoryConfiguration()
+   * - .getJobTagging()
+   * - .getLifecycleConfiguration()
+   * - .getMetricsConfiguration()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectTorrent()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionForReplication()
+   * - .getObjectVersionTagging()
+   * - .getObjectVersionTorrent()
+   * - .getReplicationConfiguration()
+   * - .listAccessPoints()
+   * - .listAllMyBuckets()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listJobs()
+   * - .listMultipartUploadParts()
+   * - .objectOwnerOverrideToBucketOwner()
+   * - .putAccelerateConfiguration()
+   * - .putAccessPointPolicy()
+   * - .putAccountPublicAccessBlock()
+   * - .putAnalyticsConfiguration()
+   * - .putBucketAcl()
+   * - .putBucketCORS()
+   * - .putBucketLogging()
+   * - .putBucketNotification()
+   * - .putBucketObjectLockConfiguration()
+   * - .putBucketPolicy()
+   * - .putBucketPublicAccessBlock()
+   * - .putBucketRequestPayment()
+   * - .putBucketTagging()
+   * - .putBucketVersioning()
+   * - .putBucketWebsite()
+   * - .putEncryptionConfiguration()
+   * - .putInventoryConfiguration()
+   * - .putJobTagging()
+   * - .putLifecycleConfiguration()
+   * - .putMetricsConfiguration()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .putReplicationConfiguration()
+   * - .replicateDelete()
+   * - .replicateObject()
+   * - .replicateTags()
+   * - .restoreObject()
+   * - .updateJobPriority()
+   * - .updateJobStatus()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4016,6 +4498,16 @@ export class S3 extends PolicyStatement {
    * Filters access by a specific object version
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3
+   *
+   * Applies to actions:
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionTagging()
+   * - .getObjectVersionTorrent()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4029,6 +4521,15 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .createBucket()
+   * - .putBucketAcl()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4040,6 +4541,99 @@ export class S3 extends PolicyStatement {
    * Disallows unsigned content in your bucket
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html
+   *
+   * Applies to actions:
+   * - .abortMultipartUpload()
+   * - .bypassGovernanceRetention()
+   * - .createAccessPoint()
+   * - .createBucket()
+   * - .createJob()
+   * - .deleteAccessPoint()
+   * - .deleteAccessPointPolicy()
+   * - .deleteBucket()
+   * - .deleteBucketPolicy()
+   * - .deleteBucketWebsite()
+   * - .deleteJobTagging()
+   * - .deleteObject()
+   * - .deleteObjectTagging()
+   * - .deleteObjectVersion()
+   * - .deleteObjectVersionTagging()
+   * - .describeJob()
+   * - .getAccelerateConfiguration()
+   * - .getAccessPoint()
+   * - .getAccessPointPolicy()
+   * - .getAccessPointPolicyStatus()
+   * - .getAccountPublicAccessBlock()
+   * - .getAnalyticsConfiguration()
+   * - .getBucketAcl()
+   * - .getBucketCORS()
+   * - .getBucketLogging()
+   * - .getBucketNotification()
+   * - .getBucketPolicy()
+   * - .getBucketPolicyStatus()
+   * - .getBucketPublicAccessBlock()
+   * - .getBucketRequestPayment()
+   * - .getBucketTagging()
+   * - .getBucketVersioning()
+   * - .getBucketWebsite()
+   * - .getEncryptionConfiguration()
+   * - .getInventoryConfiguration()
+   * - .getJobTagging()
+   * - .getLifecycleConfiguration()
+   * - .getMetricsConfiguration()
+   * - .getObject()
+   * - .getObjectAcl()
+   * - .getObjectLegalHold()
+   * - .getObjectRetention()
+   * - .getObjectTagging()
+   * - .getObjectTorrent()
+   * - .getObjectVersion()
+   * - .getObjectVersionAcl()
+   * - .getObjectVersionForReplication()
+   * - .getObjectVersionTagging()
+   * - .getObjectVersionTorrent()
+   * - .getReplicationConfiguration()
+   * - .listAccessPoints()
+   * - .listAllMyBuckets()
+   * - .listBucket()
+   * - .listBucketMultipartUploads()
+   * - .listBucketVersions()
+   * - .listJobs()
+   * - .listMultipartUploadParts()
+   * - .objectOwnerOverrideToBucketOwner()
+   * - .putAccelerateConfiguration()
+   * - .putAccessPointPolicy()
+   * - .putAccountPublicAccessBlock()
+   * - .putAnalyticsConfiguration()
+   * - .putBucketAcl()
+   * - .putBucketCORS()
+   * - .putBucketLogging()
+   * - .putBucketNotification()
+   * - .putBucketPolicy()
+   * - .putBucketPublicAccessBlock()
+   * - .putBucketRequestPayment()
+   * - .putBucketTagging()
+   * - .putBucketVersioning()
+   * - .putBucketWebsite()
+   * - .putEncryptionConfiguration()
+   * - .putInventoryConfiguration()
+   * - .putJobTagging()
+   * - .putLifecycleConfiguration()
+   * - .putMetricsConfiguration()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectLegalHold()
+   * - .putObjectRetention()
+   * - .putObjectTagging()
+   * - .putObjectVersionAcl()
+   * - .putObjectVersionTagging()
+   * - .putReplicationConfiguration()
+   * - .replicateDelete()
+   * - .replicateObject()
+   * - .replicateTags()
+   * - .restoreObject()
+   * - .updateJobPriority()
+   * - .updateJobStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4053,6 +4647,10 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4064,6 +4662,14 @@ export class S3 extends PolicyStatement {
    * Requires the x-amz-grant-full-control (full control) header in a request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .createBucket()
+   * - .putBucketAcl()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4077,6 +4683,14 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .createBucket()
+   * - .putBucketAcl()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4088,6 +4702,14 @@ export class S3 extends PolicyStatement {
    * Requires the x-amz-grant-read-acp (read permissions for the ACL) header in a request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .createBucket()
+   * - .putBucketAcl()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4101,6 +4723,14 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .createBucket()
+   * - .putBucketAcl()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4112,6 +4742,14 @@ export class S3 extends PolicyStatement {
    * Requires the x-amz-grant-write-acp (write permissions for the ACL) header in a request
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .createBucket()
+   * - .putBucketAcl()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4125,6 +4763,10 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4136,6 +4778,11 @@ export class S3 extends PolicyStatement {
    * Requires server-side encryption
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .replicateObject()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -4149,6 +4796,11 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html#require-sse-kms
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .replicateObject()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4161,6 +4813,12 @@ export class S3 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-howtoset
    *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
+   * - .putObjectAcl()
+   * - .putObjectVersionAcl()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -4172,6 +4830,10 @@ export class S3 extends PolicyStatement {
    * Filters access by a specific website redirect location for buckets that are configured as static websites
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#page-redirect-using-rest-api
+   *
+   * Applies to actions:
+   * - .bypassGovernanceRetention()
+   * - .putObject()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

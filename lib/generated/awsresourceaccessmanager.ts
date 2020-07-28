@@ -696,6 +696,11 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createResourceShare()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -708,6 +713,18 @@ export class Ram extends PolicyStatement {
    * Indicates that the action can only be performed on resources that have the specified tag key and value pair.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .associateResourceShare()
+   * - .associateResourceSharePermission()
+   * - .deleteResourceShare()
+   * - .disassociateResourceShare()
+   * - .disassociateResourceSharePermission()
+   * - .listResourceSharePermissions()
+   * - .updateResourceShare()
+   *
+   * Applies to resource types:
+   * - resource-share
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -722,6 +739,11 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createResourceShare()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -734,6 +756,18 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
+   * Applies to actions:
+   * - .associateResourceShare()
+   * - .associateResourceSharePermission()
+   * - .deleteResourceShare()
+   * - .disassociateResourceShare()
+   * - .disassociateResourceSharePermission()
+   * - .listResourceSharePermissions()
+   * - .updateResourceShare()
+   *
+   * Applies to resource types:
+   * - resource-share
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifAllowsExternalPrincipals(value?: boolean) {
@@ -744,6 +778,14 @@ export class Ram extends PolicyStatement {
    * Indicates that the action can only be performed on a resource using the specified Permission ARN.
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * Applies to actions:
+   * - .associateResourceSharePermission()
+   * - .disassociateResourceSharePermission()
+   * - .getPermission()
+   *
+   * Applies to resource types:
+   * - permission
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -757,6 +799,11 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
+   * Applies to actions:
+   * - .associateResourceShare()
+   * - .createResourceShare()
+   * - .disassociateResourceShare()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -769,6 +816,10 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
+   * Applies to actions:
+   * - .createResourceShare()
+   * - .updateResourceShare()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
   public ifRequestedAllowsExternalPrincipals(value?: boolean) {
@@ -779,6 +830,11 @@ export class Ram extends PolicyStatement {
    * Indicates that the action can only be performed on the specified resource type
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * Applies to actions:
+   * - .associateResourceShare()
+   * - .createResourceShare()
+   * - .disassociateResourceShare()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -792,6 +848,11 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
+   * Applies to actions:
+   * - .associateResourceShare()
+   * - .createResourceShare()
+   * - .disassociateResourceShare()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -804,6 +865,18 @@ export class Ram extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
    *
+   * Applies to actions:
+   * - .associateResourceShare()
+   * - .associateResourceSharePermission()
+   * - .deleteResourceShare()
+   * - .disassociateResourceShare()
+   * - .disassociateResourceSharePermission()
+   * - .listResourceSharePermissions()
+   * - .updateResourceShare()
+   *
+   * Applies to resource types:
+   * - resource-share
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -815,6 +888,10 @@ export class Ram extends PolicyStatement {
    * Indicates that the action can only be performed on resource shares owned by a specific account. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID.
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
+   *
+   * Applies to actions:
+   * - .acceptResourceShareInvitation()
+   * - .rejectResourceShareInvitation()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

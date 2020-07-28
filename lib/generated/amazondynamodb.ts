@@ -1300,6 +1300,17 @@ export class Dynamodb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
+   * Applies to actions:
+   * - .batchGetItem()
+   * - .batchWriteItem()
+   * - .conditionCheckItem()
+   * - .deleteItem()
+   * - .getItem()
+   * - .putItem()
+   * - .query()
+   * - .scan()
+   * - .updateItem()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1311,6 +1322,12 @@ export class Dynamodb extends PolicyStatement {
    * Used to block Transactions APIs calls and allow the non-Transaction APIs calls and vice-versa.
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * Applies to actions:
+   * - .deleteItem()
+   * - .getItem()
+   * - .putItem()
+   * - .updateItem()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1324,6 +1341,16 @@ export class Dynamodb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
+   * Applies to actions:
+   * - .batchGetItem()
+   * - .batchWriteItem()
+   * - .conditionCheckItem()
+   * - .deleteItem()
+   * - .getItem()
+   * - .putItem()
+   * - .query()
+   * - .updateItem()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1335,6 +1362,17 @@ export class Dynamodb extends PolicyStatement {
    * Filter based on the ReturnConsumedCapacity parameter of a request. Contains either "TOTAL" or "NONE".
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * Applies to actions:
+   * - .batchGetItem()
+   * - .batchWriteItem()
+   * - .conditionCheckItem()
+   * - .deleteItem()
+   * - .getItem()
+   * - .putItem()
+   * - .query()
+   * - .scan()
+   * - .updateItem()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1348,6 +1386,14 @@ export class Dynamodb extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
    *
+   * Applies to actions:
+   * - .conditionCheckItem()
+   * - .deleteItem()
+   * - .putItem()
+   * - .query()
+   * - .scan()
+   * - .updateItem()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1359,6 +1405,12 @@ export class Dynamodb extends PolicyStatement {
    * Filter based on the Select parameter of a Query or Scan request.
    *
    * https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys
+   *
+   * Applies to actions:
+   * - .batchGetItem()
+   * - .getItem()
+   * - .query()
+   * - .scan()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -1397,6 +1397,13 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createChangeSet()
+   * - .createStack()
+   * - .createStackSet()
+   * - .updateStack()
+   * - .updateStackSet()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1406,6 +1413,10 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Applies to resource types:
+   * - stack
+   * - stackset
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1415,6 +1426,13 @@ export class Cloudformation extends PolicyStatement {
   }
 
   /**
+   * Applies to actions:
+   * - .createChangeSet()
+   * - .createStack()
+   * - .createStackSet()
+   * - .updateStack()
+   * - .updateStackSet()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1424,6 +1442,12 @@ export class Cloudformation extends PolicyStatement {
 
   /**
    * An AWS CloudFormation change set name. Use to control which change sets IAM users can execute or delete.
+   *
+   * Applies to actions:
+   * - .createChangeSet()
+   * - .deleteChangeSet()
+   * - .describeChangeSet()
+   * - .executeChangeSet()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1435,6 +1459,9 @@ export class Cloudformation extends PolicyStatement {
   /**
    * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they want to import a resource into a stack.
    *
+   * Applies to actions:
+   * - .createChangeSet()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1444,6 +1471,11 @@ export class Cloudformation extends PolicyStatement {
 
   /**
    * The template resource types, such as `AWS::EC2::Instance`. Use to control which resource types IAM users can work with when they create or update a stack.
+   *
+   * Applies to actions:
+   * - .createChangeSet()
+   * - .createStack()
+   * - .updateStack()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1455,6 +1487,15 @@ export class Cloudformation extends PolicyStatement {
   /**
    * The ARN of an IAM service role. Use to control which service role IAM users can use to work with stacks or change sets.
    *
+   * Applies to actions:
+   * - .continueUpdateRollback()
+   * - .createChangeSet()
+   * - .createStack()
+   * - .createStackSet()
+   * - .deleteStack()
+   * - .updateStack()
+   * - .updateStackSet()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -1465,6 +1506,12 @@ export class Cloudformation extends PolicyStatement {
   /**
    * An Amazon S3 stack policy URL. Use to control which stack policies IAM users can associate with a stack during a create or update stack action.
    *
+   * Applies to actions:
+   * - .createChangeSet()
+   * - .createStack()
+   * - .setStackPolicy()
+   * - .updateStack()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -1474,6 +1521,13 @@ export class Cloudformation extends PolicyStatement {
 
   /**
    * An Amazon S3 template URL. Use to control which templates IAM users can use when they create or update stacks.
+   *
+   * Applies to actions:
+   * - .createChangeSet()
+   * - .createStack()
+   * - .createStackSet()
+   * - .updateStack()
+   * - .updateStackSet()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

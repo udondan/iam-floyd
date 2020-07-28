@@ -764,6 +764,10 @@ export class Glacier extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions
    *
+   * Applies to actions:
+   * - .deleteArchive()
+   * - .initiateJob()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */

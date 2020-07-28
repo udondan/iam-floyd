@@ -434,6 +434,19 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createNotificationRule()
+   * - .deleteNotificationRule()
+   * - .deleteTarget()
+   * - .describeNotificationRule()
+   * - .listTagsForResource()
+   * - .listTargets()
+   * - .subscribe()
+   * - .tagResource()
+   * - .unsubscribe()
+   * - .untagResource()
+   * - .updateNotificationRule()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -446,6 +459,17 @@ export class CodestarNotifications extends PolicyStatement {
    * Filters actions based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .deleteNotificationRule()
+   * - .describeNotificationRule()
+   * - .subscribe()
+   * - .tagResource()
+   * - .unsubscribe()
+   * - .updateNotificationRule()
+   *
+   * Applies to resource types:
+   * - notificationrule
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -460,6 +484,19 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createNotificationRule()
+   * - .deleteNotificationRule()
+   * - .deleteTarget()
+   * - .describeNotificationRule()
+   * - .listTagsForResource()
+   * - .listTargets()
+   * - .subscribe()
+   * - .tagResource()
+   * - .unsubscribe()
+   * - .untagResource()
+   * - .updateNotificationRule()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -471,6 +508,14 @@ export class CodestarNotifications extends PolicyStatement {
    * Filters access based on the ARN of the resource for which notifications are configured
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_id-based-policy-examples.html
+   *
+   * Applies to actions:
+   * - .createNotificationRule()
+   * - .deleteNotificationRule()
+   * - .describeNotificationRule()
+   * - .subscribe()
+   * - .unsubscribe()
+   * - .updateNotificationRule()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

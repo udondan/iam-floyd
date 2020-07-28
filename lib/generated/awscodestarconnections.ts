@@ -413,6 +413,11 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createConnection()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -439,6 +444,11 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createConnection()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -463,6 +473,9 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
    *
+   * Applies to actions:
+   * - .useConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -474,6 +487,9 @@ export class CodestarConnections extends PolicyStatement {
    * Filters access by the third-party ID (such as the Bitbucket App installation ID for CodeStar Connections) that is used to update a Connection. Allows you to restrict which third-party App installations can be used to make a Connection
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions-handshake
+   *
+   * Applies to actions:
+   * - .updateConnectionInstallation()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -499,6 +515,9 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-passconnection
    *
+   * Applies to actions:
+   * - .passConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -510,6 +529,9 @@ export class CodestarConnections extends PolicyStatement {
    * Filters access by the provider action in a UseConnection request such as ListRepositories. See documentation for all valid values
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use-provider
+   *
+   * Applies to actions:
+   * - .useConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -523,6 +545,9 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
    *
+   * Applies to actions:
+   * - .useConnection()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -535,6 +560,12 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
    *
+   * Applies to actions:
+   * - .createConnection()
+   * - .getIndividualAccessToken()
+   * - .getInstallationUrl()
+   * - .startOAuthHandshake()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -546,6 +577,9 @@ export class CodestarConnections extends PolicyStatement {
    * Filters access by the type of third-party provider used to filter results
    *
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
+   *
+   * Applies to actions:
+   * - .listConnections()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

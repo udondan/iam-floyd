@@ -611,6 +611,14 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
+   * Applies to actions:
+   * - .createHttpNamespace()
+   * - .createPrivateDnsNamespace()
+   * - .createPublicDnsNamespace()
+   * - .createService()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -623,6 +631,10 @@ export class Servicediscovery extends PolicyStatement {
    * Filters actions based on the tags associated with the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - namespace
+   * - service
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -637,6 +649,14 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
+   * Applies to actions:
+   * - .createHttpNamespace()
+   * - .createPrivateDnsNamespace()
+   * - .createPublicDnsNamespace()
+   * - .createService()
+   * - .tagResource()
+   * - .untagResource()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -648,6 +668,9 @@ export class Servicediscovery extends PolicyStatement {
    * A filter that lets you get objects by specifying the Amazon Resource Name (ARN) for the related namespace.
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * Applies to actions:
+   * - .createService()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -661,6 +684,9 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
+   * Applies to actions:
+   * - .discoverInstances()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -673,6 +699,14 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
+   * Applies to actions:
+   * - .deregisterInstance()
+   * - .getInstance()
+   * - .getInstancesHealthStatus()
+   * - .listInstances()
+   * - .registerInstance()
+   * - .updateInstanceCustomHealthStatus()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -684,6 +718,9 @@ export class Servicediscovery extends PolicyStatement {
    * A filter that lets you get objects by specifying the name of the related service.
    *
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
+   *
+   * Applies to actions:
+   * - .discoverInstances()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -3472,6 +3472,9 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName
    *
+   * Applies to actions:
+   * - .createServiceLinkedRole()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3483,6 +3486,9 @@ export class Iam extends PolicyStatement {
    * Filters by the resource that the role will be used on behalf of
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AssociatedResourceArn
+   *
+   * Applies to actions:
+   * - .passRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -3496,6 +3502,9 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId
    *
+   * Applies to actions:
+   * - .generateOrganizationsAccessReport()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3507,6 +3516,9 @@ export class Iam extends PolicyStatement {
    * Filters access by the AWS service to which this role is passed
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService
+   *
+   * Applies to actions:
+   * - .passRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3520,6 +3532,22 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary
    *
+   * Applies to actions:
+   * - .attachRolePolicy()
+   * - .attachUserPolicy()
+   * - .createRole()
+   * - .createUser()
+   * - .deleteRolePermissionsBoundary()
+   * - .deleteRolePolicy()
+   * - .deleteUserPermissionsBoundary()
+   * - .deleteUserPolicy()
+   * - .detachRolePolicy()
+   * - .detachUserPolicy()
+   * - .putRolePermissionsBoundary()
+   * - .putRolePolicy()
+   * - .putUserPermissionsBoundary()
+   * - .putUserPolicy()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -3532,6 +3560,14 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PolicyARN
    *
+   * Applies to actions:
+   * - .attachGroupPolicy()
+   * - .attachRolePolicy()
+   * - .attachUserPolicy()
+   * - .detachGroupPolicy()
+   * - .detachRolePolicy()
+   * - .detachUserPolicy()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
@@ -3543,6 +3579,10 @@ export class Iam extends PolicyStatement {
    * Filters access by the tags attached to an IAM entity (user or role).
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag
+   *
+   * Applies to resource types:
+   * - role
+   * - user
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check

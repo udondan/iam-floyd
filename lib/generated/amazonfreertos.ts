@@ -271,6 +271,9 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
    *
+   * Applies to actions:
+   * - .createSoftwareConfiguration()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -284,6 +287,9 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
    *
+   * Applies to resource types:
+   * - configuration
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -296,6 +302,9 @@ export class Freertos extends PolicyStatement {
    * The list of all the tag key names associated with the resource in the request.
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
+   *
+   * Applies to actions:
+   * - .createSoftwareConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

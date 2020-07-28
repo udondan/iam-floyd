@@ -350,6 +350,10 @@ export class Health extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
    *
+   * Applies to actions:
+   * - .describeAffectedEntities()
+   * - .describeEventDetails()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
@@ -361,6 +365,10 @@ export class Health extends PolicyStatement {
    * The service of the event.
    *
    * https://docs.aws.amazon.com/health/latest/ug/controlling-access.html
+   *
+   * Applies to actions:
+   * - .describeAffectedEntities()
+   * - .describeEventDetails()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

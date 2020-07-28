@@ -602,6 +602,12 @@ export class States extends PolicyStatement {
   /**
    * Tag for request
    *
+   * Applies to actions:
+   * - .createActivity()
+   * - .createStateMachine()
+   * - .tagResource()
+   * - .updateStateMachine()
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -613,6 +619,10 @@ export class States extends PolicyStatement {
   /**
    * Tag for resource
    *
+   * Applies to resource types:
+   * - activity
+   * - statemachine
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -623,6 +633,13 @@ export class States extends PolicyStatement {
 
   /**
    * Tag for key
+   *
+   * Applies to actions:
+   * - .createActivity()
+   * - .createStateMachine()
+   * - .tagResource()
+   * - .untagResource()
+   * - .updateStateMachine()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
