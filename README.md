@@ -1,21 +1,10 @@
 # IAM Floyd
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
+[![iam-floyd](https://img.shields.io/github/v/release/udondan/iam-floyd)][source]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
-[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
-
-[![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
-[![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
-[![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.33.0-brightgreen)][Maven]
-
-![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
-[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
-[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)][PyPI]
-[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/maintainability)](https://codeclimate.com/github/udondan/iam-floyd/maintainability)
-
+[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
 <!-- put back - when we actually have tests
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
 -->
@@ -31,15 +20,25 @@ Support for:
 - 446 Conditions
 <!-- /stats -->
 
+![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
+
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
 
-> This is an early version of the package. The signature of methods will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.
->
-> If you see something off, think something could be done better or have any other suggestion, speak up. :-)
+## <a name='Packages'></a>Packages
+
+There are two different package variants available:
+
+- **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for <br>[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)](https://www.npmjs.com/package/iam-floyd)
+[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)](https://pypi.org/project/iam-floyd/)
+[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)](https://www.nuget.org/packages/IAM.Floyd/)
+- **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
+[![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
+[![NuGet](https://img.shields.io/nuget/dt/CDK.IAM.Floyd?label=nuget&color=orange)](https://www.nuget.org/packages/CDK.IAM.Floyd/)
 
 ---
 
 <!-- vscode-markdown-toc -->
+* [Packages](#Packages)
 * [Usage](#Usage)
 * [Examples](#Examples)
 * [Methods](#Methods)
@@ -63,11 +62,6 @@ Support for:
 <!-- /vscode-markdown-toc -->
 
 ## <a name='Usage'></a>Usage
-
-There are two different package variants available:
-
-* **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for
-* **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)
 
 The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
@@ -535,8 +529,6 @@ This project is not affiliated, funded, or in any way associated with AWS.
 
    [source]: https://github.com/udondan/iam-floyd
    [npm]: https://www.npmjs.com/package/iam-floyd
-   [PyPI]: https://pypi.org/project/iam-floyd/
-   [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/master/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
