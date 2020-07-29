@@ -15,7 +15,10 @@ dist
 
 bin/*
 lib/generator/*
-
 .github/*
-test
+test/*
 VERSION
+CHANGELOG/*
+docs/*
+README.md
+Makefile
