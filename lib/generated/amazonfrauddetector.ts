@@ -247,11 +247,6 @@ export class Frauddetector extends PolicyStatement {
         }
       }
     },
-    "GetPrediction": {
-      "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetPrediction",
-      "description": "Evaluates an event against a detector version. If a version ID is not provided, the detector’s (ACTIVE) version is used.",
-      "accessLevel": "Read"
-    },
     "GetRules": {
       "url": "https://docs.aws.amazon.com/frauddetector/latest/api/API_GetRules.html",
       "description": "Get all rules for a detector (paginated) if ruleId and ruleVersion are not specified. Gets all rules for the detector and the ruleId if present (paginated). Gets a specific rule if both the ruleId and the ruleVersion are specified.",
@@ -992,18 +987,6 @@ export class Frauddetector extends PolicyStatement {
    */
   public getOutcomes() {
     this.add('frauddetector:GetOutcomes');
-    return this;
-  }
-
-  /**
-   * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (ACTIVE) version is used.
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/frauddetector/latest/api/API_GetPrediction
-   */
-  public getPrediction() {
-    this.add('frauddetector:GetPrediction');
     return this;
   }
 

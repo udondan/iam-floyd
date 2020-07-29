@@ -563,6 +563,20 @@ export class Sagemaker extends PolicyStatement {
         "sagemaker:DomainSharingOutputKmsKey"
       ]
     },
+    "CreateWorkforce": {
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkforce.html",
+      "description": "Create a workforce.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "workforce": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "CreateWorkteam": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkteam.html",
       "description": "Create a workteam.",
@@ -816,6 +830,16 @@ export class Sagemaker extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "user-profile": {
+          "required": true
+        }
+      }
+    },
+    "DeleteWorkforce": {
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteWorkforce.html",
+      "description": "Deletes a workforce.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "workforce": {
           "required": true
         }
       }
@@ -1371,6 +1395,11 @@ export class Sagemaker extends PolicyStatement {
     "ListUserProfiles": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListUserProfiles.html",
       "description": "Grants permission to list the UserProfiles in your account",
+      "accessLevel": "List"
+    },
+    "ListWorkforces": {
+      "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListWorkforces.html",
+      "description": "Lists workforces.",
       "accessLevel": "List"
     },
     "ListWorkteams": {
@@ -2476,6 +2505,22 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
+   * Create a workforce.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateWorkforce.html
+   */
+  public createWorkforce() {
+    this.add('sagemaker:CreateWorkforce');
+    return this;
+  }
+
+  /**
    * Create a workteam.
    *
    * Access Level: Write
@@ -2707,6 +2752,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public deleteUserProfile() {
     this.add('sagemaker:DeleteUserProfile');
+    return this;
+  }
+
+  /**
+   * Deletes a workforce.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_DeleteWorkforce.html
+   */
+  public deleteWorkforce() {
+    this.add('sagemaker:DeleteWorkforce');
     return this;
   }
 
@@ -3466,6 +3523,18 @@ export class Sagemaker extends PolicyStatement {
    */
   public listUserProfiles() {
     this.add('sagemaker:ListUserProfiles');
+    return this;
+  }
+
+  /**
+   * Lists workforces.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/sagemaker/latest/dg/API_ListWorkforces.html
+   */
+  public listWorkforces() {
+    this.add('sagemaker:ListWorkforces');
     return this;
   }
 
@@ -4427,6 +4496,7 @@ export class Sagemaker extends PolicyStatement {
    * - .createTrial()
    * - .createTrialComponent()
    * - .createUserProfile()
+   * - .createWorkforce()
    * - .createWorkteam()
    * - .updateMonitoringSchedule()
    *
@@ -4500,6 +4570,7 @@ export class Sagemaker extends PolicyStatement {
    * - .createTrial()
    * - .createTrialComponent()
    * - .createUserProfile()
+   * - .createWorkforce()
    * - .createWorkteam()
    * - .deleteTags()
    * - .updateMonitoringSchedule()
