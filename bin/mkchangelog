@@ -41,6 +41,10 @@ function getNewActions() {
   gitDiffModules | grep "^+.*this.add(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
 }
 
+function getRemovedActions() {
+  gitDiffModules | grep "^-.*this.add(" | sed "s/.*('/- /g" | sed "s/'.*$//g"
+}
+
 function getNewResourceTypes() {
   gitDiffModules | grep "^+.*var arn =" | sed 's|\${[[:alpha:]]\{1,\}}||g'  | sed 's/.*arn::/- /g' | sed 's/:\{2,\}/:/g' | tr -cd '[[:space:]][:alnum:]:-\r\n\'
 }
@@ -60,6 +64,14 @@ touch "${file}"
 hasContent=false
 
 [[ -f "$file" ]] && printf "\r\n---\r\n" >> "$file" && hasContent=true
+
+removedActions=$(getRemovedActions)
+if [ -n "${removedActions}" ]; then
+  [[ "${hasContent}" = true ]] && echo "" >> "$file"
+  printf ":warning: **Removed actions:**\r\n\r\n" >> "$file"
+  echo "${removedActions}" >> "$file"
+  hasContent=true
+fi
 
 newServices=$(getNewServices)
 if [ "${newServices}" ]; then
