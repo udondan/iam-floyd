@@ -150,7 +150,10 @@ export class Autoscaling extends PolicyStatement {
       "conditions": [
         "autoscaling:ImageId",
         "autoscaling:InstanceType",
-        "autoscaling:SpotPrice"
+        "autoscaling:SpotPrice",
+        "autoscaling:MetadataHttpTokens",
+        "autoscaling:MetadataHttpPutResponseHopLimit",
+        "autoscaling:MetadataHttpEndpoint"
       ]
     },
     "CreateOrUpdateTags": {
@@ -827,6 +830,9 @@ export class Autoscaling extends PolicyStatement {
    * - .ifImageId()
    * - .ifInstanceType()
    * - .ifSpotPrice()
+   * - .ifMetadataHttpTokens()
+   * - .ifMetadataHttpPutResponseHopLimit()
+   * - .ifMetadataHttpEndpoint()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html
    */
@@ -1592,6 +1598,51 @@ export class Autoscaling extends PolicyStatement {
    */
   public ifMaxSize(value: number | number[], operator?: string) {
     return this.if(`autoscaling:MaxSize`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by whether the HTTP endpoint is enabled for the instance metadata service.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .createLaunchConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMetadataHttpEndpoint(value: string | string[], operator?: string) {
+    return this.if(`autoscaling:MetadataHttpEndpoint`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the allowed number of hops when calling the instance metadata service.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .createLaunchConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string) {
+    return this.if(`autoscaling:MetadataHttpPutResponseHopLimit`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by whether tokens are required when calling the instance metadata service (optional or required)
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .createLaunchConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMetadataHttpTokens(value: string | string[], operator?: string) {
+    return this.if(`autoscaling:MetadataHttpTokens`, value, operator || 'StringLike');
   }
 
   /**

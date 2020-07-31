@@ -10,7 +10,7 @@ export class Rds extends PolicyStatement {
   protected actionList: Actions = {
     "AddRoleToDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html",
-      "description": "Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.",
+      "description": "Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -23,7 +23,7 @@ export class Rds extends PolicyStatement {
     },
     "AddRoleToDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html",
-      "description": "Associates an AWS Identity and Access Management (IAM) role with a DB instance.",
+      "description": "Grants permission to associate an AWS Identity and Access Management (IAM) role with a DB instance",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -36,7 +36,7 @@ export class Rds extends PolicyStatement {
     },
     "AddSourceIdentifierToSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddSourceIdentifierToSubscription.html",
-      "description": "Adds a source identifier to an existing RDS event notification subscription.",
+      "description": "Grants permission to add a source identifier to an existing RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -46,7 +46,7 @@ export class Rds extends PolicyStatement {
     },
     "AddTagsToResource": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html",
-      "description": "Adds metadata tags to an Amazon RDS resource.",
+      "description": "Grants permission to add metadata tags to an Amazon RDS resource",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "db": {
@@ -88,7 +88,7 @@ export class Rds extends PolicyStatement {
     },
     "ApplyPendingMaintenanceAction": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ApplyPendingMaintenanceAction.html",
-      "description": "Applies a pending maintenance action to a resource.",
+      "description": "Grants permission to apply a pending maintenance action to a resource",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -98,7 +98,7 @@ export class Rds extends PolicyStatement {
     },
     "AuthorizeDBSecurityGroupIngress": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html",
-      "description": "Enables ingress to a DBSecurityGroup using one of two forms of authorization.",
+      "description": "Grants permission to enable ingress to a DBSecurityGroup using one of two forms of authorization",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "secgrp": {
@@ -108,7 +108,7 @@ export class Rds extends PolicyStatement {
     },
     "BacktrackDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BacktrackDBCluster.html",
-      "description": "Backtracks a DB cluster to a specific time, without creating a new DB cluster.",
+      "description": "Grants permission to backtrack a DB cluster to a specific time, without creating a new DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -118,12 +118,12 @@ export class Rds extends PolicyStatement {
     },
     "CancelExportTask": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CancelExportTask.html",
-      "description": "Cancels an export task in progress.",
+      "description": "Grants permission to cancel an export task in progress",
       "accessLevel": "Write"
     },
     "CopyDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html",
-      "description": "Copies the specified DB cluster parameter group.",
+      "description": "Grants permission to copy the specified DB cluster parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -133,7 +133,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html",
-      "description": "Creates a snapshot of a DB cluster.",
+      "description": "Grants permission to create a snapshot of a DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -143,7 +143,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html",
-      "description": "Copies the specified DB parameter group.",
+      "description": "Grants permission to copy the specified DB parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -153,7 +153,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html",
-      "description": "Copies the specified DB snapshot.",
+      "description": "Grants permission to copy the specified DB snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -163,7 +163,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html",
-      "description": "Copies the specified option group.",
+      "description": "Grants permission to copy the specified option group",
       "accessLevel": "Write",
       "resourceTypes": {
         "og": {
@@ -173,8 +173,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html",
-      "description": "Creates a new Amazon Aurora DB cluster.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new Amazon Aurora DB cluster",
+      "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
       ],
@@ -203,7 +203,7 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBClusterEndpoint": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html",
-      "description": "Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.",
+      "description": "Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -221,8 +221,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html",
-      "description": "Create a new DB cluster parameter group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB cluster parameter group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
           "required": true
@@ -236,8 +236,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html",
-      "description": "Creates a snapshot of a DB cluster.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a snapshot of a DB cluster",
+      "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -254,8 +254,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html",
-      "description": "Creates a new DB instance.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB instance",
+      "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
       ],
@@ -284,8 +284,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBInstanceReadReplica": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html",
-      "description": "Creates a DB instance that acts as a Read Replica of a source DB instance.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a DB instance that acts as a Read Replica of a source DB instance",
+      "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
       ],
@@ -308,8 +308,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html",
-      "description": "Creates a new DB parameter group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB parameter group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
           "required": true
@@ -335,8 +335,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBSecurityGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html",
-      "description": "Creates a new DB security group. DB security groups control access to a DB instance.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB security group. DB security groups control access to a DB instance",
+      "accessLevel": "Write",
       "resourceTypes": {
         "secgrp": {
           "required": true
@@ -350,8 +350,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html",
-      "description": "Creates a DBSnapshot.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a DBSnapshot",
+      "accessLevel": "Write",
       "resourceTypes": {
         "db": {
           "required": true
@@ -368,8 +368,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBSubnetGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html",
-      "description": "Creates a new DB subnet group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB subnet group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "subgrp": {
           "required": true
@@ -383,8 +383,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateEventSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html",
-      "description": "Creates an RDS event notification subscription.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create an RDS event notification subscription",
+      "accessLevel": "Write",
       "resourceTypes": {
         "es": {
           "required": true
@@ -398,7 +398,7 @@ export class Rds extends PolicyStatement {
     },
     "CreateGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateGlobalCluster.html",
-      "description": "Creates an Aurora global database spread across multiple regions.",
+      "description": "Grants permission to create an Aurora global database spread across multiple regions",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -411,8 +411,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html",
-      "description": "Creates a new option group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new option group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "og": {
           "required": true
@@ -426,7 +426,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html",
-      "description": "The DeleteDBCluster action deletes a previously provisioned DB cluster.",
+      "description": "Grants permission to delete a previously provisioned DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -439,7 +439,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBClusterEndpoint": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterEndpoint.html",
-      "description": "Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.",
+      "description": "Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-endpoint": {
@@ -449,7 +449,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterParameterGroup.html",
-      "description": "Deletes a specified DB cluster parameter group.",
+      "description": "Grants permission to delete a specified DB cluster parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -459,7 +459,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterSnapshot.html",
-      "description": "Deletes a DB cluster snapshot.",
+      "description": "Grants permission to delete a DB cluster snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -469,7 +469,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html",
-      "description": "The DeleteDBInstance action deletes a previously provisioned DB instance.",
+      "description": "Grants permission to delete a previously provisioned DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -479,12 +479,12 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBInstanceAutomatedBackup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstanceAutomatedBackup.html",
-      "description": "Deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID.",
+      "description": "Grants permission to deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID",
       "accessLevel": "Write"
     },
     "DeleteDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html",
-      "description": "Deletes a specified DBParameterGroup.",
+      "description": "Grants permission to delete a specified DBParameterGroup",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -504,7 +504,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBSecurityGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSecurityGroup.html",
-      "description": "Deletes a DB security group.",
+      "description": "Grants permission to delete a DB security group.",
       "accessLevel": "Write",
       "resourceTypes": {
         "secgrp": {
@@ -514,7 +514,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSnapshot.html",
-      "description": "Deletes a DBSnapshot.",
+      "description": "Grants permission to delete a DBSnapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -524,7 +524,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBSubnetGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSubnetGroup.html",
-      "description": "Deletes a DB subnet group.",
+      "description": "Grants permission to delete a DB subnet group",
       "accessLevel": "Write",
       "resourceTypes": {
         "subgrp": {
@@ -534,7 +534,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteEventSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteEventSubscription.html",
-      "description": "Deletes an RDS event notification subscription.",
+      "description": "Grants permission to delete an RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -544,7 +544,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteGlobalCluster.html",
-      "description": "Deletes a global database cluster.",
+      "description": "Grants permission to delete a global database cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "global-cluster": {
@@ -554,7 +554,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteOptionGroup.html",
-      "description": "Deletes an existing option group.",
+      "description": "Grants permission to delete an existing option group",
       "accessLevel": "Write",
       "resourceTypes": {
         "og": {
@@ -583,17 +583,17 @@ export class Rds extends PolicyStatement {
     },
     "DescribeAccountAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeAccountAttributes.html",
-      "description": "Lists all of the attributes for a customer account.",
+      "description": "Grants permission to list all of the attributes for a customer account",
       "accessLevel": "List"
     },
     "DescribeCertificates": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html",
-      "description": "Lists the set of CA certificates provided by Amazon RDS for this AWS account.",
+      "description": "Lists the set of CA certificates provided by Amazon RDS for this AWS account",
       "accessLevel": "List"
     },
     "DescribeDBClusterBacktracks": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterBacktracks.html",
-      "description": "Returns information about backtracks for a DB cluster.",
+      "description": "Grants permission to return information about backtracks for a DB cluster",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster": {
@@ -603,12 +603,12 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterEndpoints": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterEndpoints.html",
-      "description": "Returns information about endpoints for an Amazon Aurora DB cluster.",
+      "description": "Grants permission to return information about endpoints for an Amazon Aurora DB cluster",
       "accessLevel": "List"
     },
     "DescribeDBClusterParameterGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html",
-      "description": "Returns a list of DBClusterParameterGroup descriptions.",
+      "description": "Grants permission to return a list of DBClusterParameterGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster-pg": {
@@ -618,7 +618,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html",
-      "description": "Returns the detailed parameter list for a particular DB cluster parameter group.",
+      "description": "Grants permission to return the detailed parameter list for a particular DB cluster parameter group",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster-pg": {
@@ -628,7 +628,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterSnapshotAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshotAttributes.html",
-      "description": "Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.",
+      "description": "Grants permission to return a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -638,12 +638,12 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterSnapshots": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html",
-      "description": "Returns information about DB cluster snapshots.",
-      "accessLevel": "Read"
+      "description": "Grants permission to return information about DB cluster snapshots",
+      "accessLevel": "List"
     },
     "DescribeDBClusters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html",
-      "description": "Returns information about provisioned Aurora DB clusters.",
+      "description": "Grants permission to return information about provisioned Aurora DB clusters",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster": {
@@ -653,7 +653,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBEngineVersions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html",
-      "description": "Returns a list of the available DB engines.",
+      "description": "Grants permission to return a list of the available DB engines",
       "accessLevel": "List",
       "resourceTypes": {
         "pg": {
@@ -663,17 +663,17 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBInstanceAutomatedBackups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstanceAutomatedBackups.html",
-      "description": "Returns a list of automated backups for both current and deleted instances.",
+      "description": "Grants permission to return a list of automated backups for both current and deleted instances",
       "accessLevel": "List"
     },
     "DescribeDBInstances": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html",
-      "description": "Returns information about provisioned RDS instances.",
+      "description": "Grants permission to return information about provisioned RDS instances",
       "accessLevel": "List"
     },
     "DescribeDBLogFiles": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html",
-      "description": "Returns a list of DB log files for the DB instance.",
+      "description": "Grants permission to return a list of DB log files for the DB instance",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -683,7 +683,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBParameterGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html",
-      "description": "Returns a list of DBParameterGroup descriptions.",
+      "description": "Grants permission to return a list of DBParameterGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "pg": {
@@ -693,7 +693,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameters.html",
-      "description": "Returns the detailed parameter list for a particular DB parameter group.",
+      "description": "Grants permission to return the detailed parameter list for a particular DB parameter group",
       "accessLevel": "List",
       "resourceTypes": {
         "pg": {
@@ -742,7 +742,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSecurityGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSecurityGroups.html",
-      "description": "Returns a list of DBSecurityGroup descriptions.",
+      "description": "Grants permission to return a list of DBSecurityGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "secgrp": {
@@ -752,7 +752,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSnapshotAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotAttributes.html",
-      "description": "Returns a list of DB snapshot attribute names and values for a manual DB snapshot.",
+      "description": "Grants permission to return a list of DB snapshot attribute names and values for a manual DB snapshot",
       "accessLevel": "List",
       "resourceTypes": {
         "snapshot": {
@@ -762,7 +762,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSnapshots": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html",
-      "description": "Returns information about DB snapshots.",
+      "description": "Grants permission to return information about DB snapshots",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -775,7 +775,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSubnetGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSubnetGroups.html",
-      "description": "Returns a list of DBSubnetGroup descriptions.",
+      "description": "Grants permission to return a list of DBSubnetGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "subgrp": {
@@ -785,22 +785,22 @@ export class Rds extends PolicyStatement {
     },
     "DescribeEngineDefaultClusterParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultClusterParameters.html",
-      "description": "Returns the default engine and system parameter information for the cluster database engine.",
+      "description": "Grants permission to return the default engine and system parameter information for the cluster database engine",
       "accessLevel": "List"
     },
     "DescribeEngineDefaultParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html",
-      "description": "Returns the default engine and system parameter information for the specified database engine.",
+      "description": "Grants permission to return the default engine and system parameter information for the specified database engine",
       "accessLevel": "List"
     },
     "DescribeEventCategories": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html",
-      "description": "Displays a list of categories for all event source types, or, if specified, for a specified source type.",
+      "description": "Grants permission to display a list of categories for all event source types, or, if specified, for a specified source type",
       "accessLevel": "List"
     },
     "DescribeEventSubscriptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventSubscriptions.html",
-      "description": "Lists all the subscription descriptions for a customer account.",
+      "description": "Grants permission to list all the subscription descriptions for a customer account",
       "accessLevel": "List",
       "resourceTypes": {
         "es": {
@@ -810,27 +810,22 @@ export class Rds extends PolicyStatement {
     },
     "DescribeEvents": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html",
-      "description": "Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "es": {
-          "required": true
-        }
-      }
+      "description": "Grants permission to return events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days",
+      "accessLevel": "List"
     },
     "DescribeExportTasks": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeExportTasks.html",
-      "description": "Returns information about the export tasks.",
+      "description": "Grants permission to return information about the export tasks",
       "accessLevel": "List"
     },
     "DescribeGlobalClusters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeGlobalClusters.html",
-      "description": "Returns information about Aurora global database clusters.",
+      "description": "Grants permission to return information about Aurora global database clusters",
       "accessLevel": "List"
     },
     "DescribeOptionGroupOptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html",
-      "description": "Describes all available options.",
+      "description": "Grants permission to describe all available options",
       "accessLevel": "List",
       "resourceTypes": {
         "og": {
@@ -840,7 +835,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeOptionGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroups.html",
-      "description": "Describes the available option groups.",
+      "description": "Grants permission to describe the available option groups",
       "accessLevel": "List",
       "resourceTypes": {
         "og": {
@@ -850,12 +845,12 @@ export class Rds extends PolicyStatement {
     },
     "DescribeOrderableDBInstanceOptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOrderableDBInstanceOptions.html",
-      "description": "Returns a list of orderable DB instance options for the specified engine.",
+      "description": "Grants permission to return a list of orderable DB instance options for the specified engine",
       "accessLevel": "List"
     },
     "DescribePendingMaintenanceActions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribePendingMaintenanceActions.html",
-      "description": "Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.",
+      "description": "Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -865,7 +860,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeReservedDBInstances": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstances.html",
-      "description": "Returns information about reserved DB instances for this account, or about a specified reserved DB instance.",
+      "description": "Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance",
       "accessLevel": "List",
       "resourceTypes": {
         "ri": {
@@ -875,17 +870,17 @@ export class Rds extends PolicyStatement {
     },
     "DescribeReservedDBInstancesOfferings": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstancesOfferings.html",
-      "description": "Lists available reserved DB instance offerings.",
+      "description": "Grants permission to list available reserved DB instance offerings",
       "accessLevel": "List"
     },
     "DescribeSourceRegions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeSourceRegions.html",
-      "description": "Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from.",
+      "description": "Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from",
       "accessLevel": "List"
     },
     "DescribeValidDBInstanceModifications": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeValidDBInstanceModifications.html",
-      "description": "Lists available modifications you can make to your DB instance",
+      "description": "Grants permission to list available modifications you can make to your DB instance",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -893,14 +888,9 @@ export class Rds extends PolicyStatement {
         }
       }
     },
-    "DownloadCompleteDBLogFile": {
-      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/RESTReference.html#RESTReference.DownloadCompleteDBLogFile",
-      "description": "Downloads the contents of the specified database log file.",
-      "accessLevel": "Read"
-    },
     "DownloadDBLogFilePortion": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DownloadDBLogFilePortion.html",
-      "description": "Downloads all or a portion of the specified log file, up to 1 MB in size.",
+      "description": "Grants permission to download all or a portion of the specified log file, up to 1 MB in size",
       "accessLevel": "Read",
       "resourceTypes": {
         "db": {
@@ -910,7 +900,7 @@ export class Rds extends PolicyStatement {
     },
     "FailoverDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverDBCluster.html",
-      "description": "Forces a failover for a DB cluster.",
+      "description": "Grants permission to force a failover for a DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -920,7 +910,7 @@ export class Rds extends PolicyStatement {
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Lists all tags on an Amazon RDS resource.",
+      "description": "Grants permission to list all tags on an Amazon RDS resource",
       "accessLevel": "Read",
       "resourceTypes": {
         "db": {
@@ -957,7 +947,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyCurrentDBClusterCapacity": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCurrentDBClusterCapacity.html",
-      "description": "Modify current cluster capacity for an Amazon Aurora Severless DB cluster.",
+      "description": "Grants permission to modify current cluster capacity for an Amazon Aurora Severless DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -967,7 +957,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html",
-      "description": "Modify a setting for an Amazon Aurora DB cluster.",
+      "description": "Grants permission to modify a setting for an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -986,7 +976,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBClusterEndpoint": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterEndpoint.html",
-      "description": "Modifies the properties of an endpoint in an Amazon Aurora DB cluster.",
+      "description": "Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-endpoint": {
@@ -996,7 +986,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterParameterGroup.html",
-      "description": "Modifies the parameters of a DB cluster parameter group.",
+      "description": "Grants permission to modify the parameters of a DB cluster parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -1006,7 +996,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBClusterSnapshotAttribute": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html",
-      "description": "Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.",
+      "description": "Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -1016,7 +1006,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html",
-      "description": "Modify settings for a DB instance.",
+      "description": "Grants permission to modify settings for a DB instance",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1038,7 +1028,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html",
-      "description": "Modifies the parameters of a DB parameter group.",
+      "description": "Grants permission to modify the parameters of a DB parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -1071,7 +1061,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshot.html",
-      "description": "Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.",
+      "description": "Grants permission to update a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -1081,7 +1071,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBSnapshotAttribute": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html",
-      "description": "Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.",
+      "description": "Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -1091,7 +1081,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBSubnetGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSubnetGroup.html",
-      "description": "Modifies an existing DB subnet group.",
+      "description": "Grants permission to modify an existing DB subnet group",
       "accessLevel": "Write",
       "resourceTypes": {
         "subgrp": {
@@ -1101,7 +1091,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyEventSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyEventSubscription.html",
-      "description": "Modifies an existing RDS event notification subscription.",
+      "description": "Grants permission to modify an existing RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -1111,7 +1101,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyGlobalCluster.html",
-      "description": "Modify a setting for an Amazon Aurora global cluster.",
+      "description": "Grants permission to modify a setting for an Amazon Aurora global cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "global-cluster": {
@@ -1121,7 +1111,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html",
-      "description": "Modifies an existing option group.",
+      "description": "Grants permission to modify an existing option group",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1134,7 +1124,7 @@ export class Rds extends PolicyStatement {
     },
     "PromoteReadReplica": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html",
-      "description": "Promotes a Read Replica DB instance to a standalone DB instance.",
+      "description": "Grants permission to promote a Read Replica DB instance to a standalone DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1144,7 +1134,7 @@ export class Rds extends PolicyStatement {
     },
     "PromoteReadReplicaDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplicaDBCluster.html",
-      "description": "Promotes a Read Replica DB cluster to a standalone DB cluster.",
+      "description": "Grants permission to promote a Read Replica DB cluster to a standalone DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1154,7 +1144,7 @@ export class Rds extends PolicyStatement {
     },
     "PurchaseReservedDBInstancesOffering": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html",
-      "description": "Purchases a reserved DB instance offering.",
+      "description": "Grants permission to purchase a reserved DB instance offering",
       "accessLevel": "Write",
       "resourceTypes": {
         "ri": {
@@ -1168,7 +1158,7 @@ export class Rds extends PolicyStatement {
     },
     "RebootDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBInstance.html",
-      "description": "Rebooting a DB instance restarts the database engine service.",
+      "description": "Grants permission to restart the database engine service",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1188,7 +1178,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveFromGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveFromGlobalCluster.html",
-      "description": "Detaches an Aurora secondary cluster from an Aurora global database cluster.",
+      "description": "Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1201,7 +1191,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveRoleFromDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html",
-      "description": "Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1214,7 +1204,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveRoleFromDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html",
-      "description": "Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) role from a DB instance",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1227,7 +1217,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveSourceIdentifierFromSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveSourceIdentifierFromSubscription.html",
-      "description": "Removes a source identifier from an existing RDS event notification subscription.",
+      "description": "Grants permission to remove a source identifier from an existing RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -1237,7 +1227,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveTagsFromResource": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveTagsFromResource.html",
-      "description": "Removes metadata tags from an Amazon RDS resource.",
+      "description": "Grants permission to remove metadata tags from an Amazon RDS resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "db": {
@@ -1279,7 +1269,7 @@ export class Rds extends PolicyStatement {
     },
     "ResetDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBClusterParameterGroup.html",
-      "description": "Modifies the parameters of a DB cluster parameter group to the default value.",
+      "description": "Grants permission to modify the parameters of a DB cluster parameter group to the default value",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -1289,7 +1279,7 @@ export class Rds extends PolicyStatement {
     },
     "ResetDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBParameterGroup.html",
-      "description": "Modifies the parameters of a DB parameter group to the engine/system default value.",
+      "description": "Grants permission to modify the parameters of a DB parameter group to the engine/system default value",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -1299,7 +1289,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBClusterFromS3": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html",
-      "description": "Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.",
+      "description": "Grants permission to create an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1320,7 +1310,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBClusterFromSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html",
-      "description": "Creates a new DB cluster from a DB cluster snapshot.",
+      "description": "Grants permission to create a new DB cluster from a DB cluster snapshot",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1344,7 +1334,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBClusterToPointInTime": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html",
-      "description": "Restores a DB cluster to an arbitrary point in time.",
+      "description": "Grants permission to restore a DB cluster to an arbitrary point in time",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1368,7 +1358,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBInstanceFromDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html",
-      "description": "Creates a new DB instance from a DB snapshot.",
+      "description": "Grants permission to create a new DB instance from a DB snapshot",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1395,7 +1385,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBInstanceFromS3": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html",
-      "description": "Creates a new DB instance from an Amazon S3 bucket.",
+      "description": "Grants permission to create a new DB instance from an Amazon S3 bucket",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1413,7 +1403,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBInstanceToPointInTime": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html",
-      "description": "Restores a DB instance to an arbitrary point in time.",
+      "description": "Grants permission to restore a DB instance to an arbitrary point in time",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1423,9 +1413,6 @@ export class Rds extends PolicyStatement {
           "required": true
         },
         "og": {
-          "required": true
-        },
-        "snapshot": {
           "required": true
         },
         "subgrp": {
@@ -1440,7 +1427,7 @@ export class Rds extends PolicyStatement {
     },
     "RevokeDBSecurityGroupIngress": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RevokeDBSecurityGroupIngress.html",
-      "description": "Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.",
+      "description": "Grants permission to revoke ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups",
       "accessLevel": "Write",
       "resourceTypes": {
         "secgrp": {
@@ -1450,7 +1437,7 @@ export class Rds extends PolicyStatement {
     },
     "StartActivityStream": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartActivityStream.html",
-      "description": "Enables the user to start Activity Stream.",
+      "description": "Grants permission to start Activity Stream",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1460,7 +1447,7 @@ export class Rds extends PolicyStatement {
     },
     "StartDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBCluster.html",
-      "description": "Starts the DB cluster.",
+      "description": "Starts the DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1470,7 +1457,7 @@ export class Rds extends PolicyStatement {
     },
     "StartDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstance.html",
-      "description": "Starts the DB instance.",
+      "description": "Grants permission to start the DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1480,7 +1467,7 @@ export class Rds extends PolicyStatement {
     },
     "StartExportTask": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html",
-      "description": "Starts a new Export task for a DB snapshot.",
+      "description": "Grants permission to start a new Export task for a DB snapshot",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1488,7 +1475,7 @@ export class Rds extends PolicyStatement {
     },
     "StopActivityStream": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopActivityStream.html",
-      "description": "Enables the user to stop Activity Stream.",
+      "description": "Grants permission to stop Activity Stream",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1498,7 +1485,7 @@ export class Rds extends PolicyStatement {
     },
     "StopDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBCluster.html",
-      "description": "Stops the DB cluster.",
+      "description": "Grants permission to stop the DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1508,7 +1495,7 @@ export class Rds extends PolicyStatement {
     },
     "StopDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstance.html",
-      "description": "Stops the DB instance.",
+      "description": "Grants permission to stop the DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1673,7 +1660,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+   * Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -1688,7 +1675,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+   * Grants permission to associate an AWS Identity and Access Management (IAM) role with a DB instance
    *
    * Access Level: Write
    *
@@ -1703,7 +1690,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Adds a source identifier to an existing RDS event notification subscription.
+   * Grants permission to add a source identifier to an existing RDS event notification subscription
    *
    * Access Level: Write
    *
@@ -1715,7 +1702,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Adds metadata tags to an Amazon RDS resource.
+   * Grants permission to add metadata tags to an Amazon RDS resource
    *
    * Access Level: Tagging
    *
@@ -1732,7 +1719,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Applies a pending maintenance action to a resource.
+   * Grants permission to apply a pending maintenance action to a resource
    *
    * Access Level: Write
    *
@@ -1744,7 +1731,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Enables ingress to a DBSecurityGroup using one of two forms of authorization.
+   * Grants permission to enable ingress to a DBSecurityGroup using one of two forms of authorization
    *
    * Access Level: Permissions management
    *
@@ -1756,7 +1743,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Backtracks a DB cluster to a specific time, without creating a new DB cluster.
+   * Grants permission to backtrack a DB cluster to a specific time, without creating a new DB cluster
    *
    * Access Level: Write
    *
@@ -1768,7 +1755,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Cancels an export task in progress.
+   * Grants permission to cancel an export task in progress
    *
    * Access Level: Write
    *
@@ -1780,7 +1767,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Copies the specified DB cluster parameter group.
+   * Grants permission to copy the specified DB cluster parameter group
    *
    * Access Level: Write
    *
@@ -1792,7 +1779,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a snapshot of a DB cluster.
+   * Grants permission to create a snapshot of a DB cluster
    *
    * Access Level: Write
    *
@@ -1804,7 +1791,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Copies the specified DB parameter group.
+   * Grants permission to copy the specified DB parameter group
    *
    * Access Level: Write
    *
@@ -1816,7 +1803,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Copies the specified DB snapshot.
+   * Grants permission to copy the specified DB snapshot
    *
    * Access Level: Write
    *
@@ -1828,7 +1815,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Copies the specified option group.
+   * Grants permission to copy the specified option group
    *
    * Access Level: Write
    *
@@ -1840,9 +1827,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new Amazon Aurora DB cluster.
+   * Grants permission to create a new Amazon Aurora DB cluster
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1863,7 +1850,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
+   * Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -1880,9 +1867,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Create a new DB cluster parameter group.
+   * Grants permission to create a new DB cluster parameter group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1897,9 +1884,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a snapshot of a DB cluster.
+   * Grants permission to create a snapshot of a DB cluster
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1914,9 +1901,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB instance.
+   * Grants permission to create a new DB instance
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1934,9 +1921,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a DB instance that acts as a Read Replica of a source DB instance.
+   * Grants permission to create a DB instance that acts as a Read Replica of a source DB instance
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1954,9 +1941,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB parameter group.
+   * Grants permission to create a new DB parameter group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -1990,9 +1977,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB security group. DB security groups control access to a DB instance.
+   * Grants permission to create a new DB security group. DB security groups control access to a DB instance
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -2007,9 +1994,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a DBSnapshot.
+   * Grants permission to create a DBSnapshot
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -2024,9 +2011,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB subnet group.
+   * Grants permission to create a new DB subnet group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -2041,9 +2028,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates an RDS event notification subscription.
+   * Grants permission to create an RDS event notification subscription
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -2058,7 +2045,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates an Aurora global database spread across multiple regions.
+   * Grants permission to create an Aurora global database spread across multiple regions
    *
    * Access Level: Write
    *
@@ -2070,9 +2057,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new option group.
+   * Grants permission to create a new option group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -2087,7 +2074,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * The DeleteDBCluster action deletes a previously provisioned DB cluster.
+   * Grants permission to delete a previously provisioned DB cluster
    *
    * Access Level: Write
    *
@@ -2099,7 +2086,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
+   * Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -2111,7 +2098,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified DB cluster parameter group.
+   * Grants permission to delete a specified DB cluster parameter group
    *
    * Access Level: Write
    *
@@ -2123,7 +2110,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a DB cluster snapshot.
+   * Grants permission to delete a DB cluster snapshot
    *
    * Access Level: Write
    *
@@ -2135,7 +2122,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * The DeleteDBInstance action deletes a previously provisioned DB instance.
+   * Grants permission to delete a previously provisioned DB instance
    *
    * Access Level: Write
    *
@@ -2147,7 +2134,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID.
+   * Grants permission to deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID
    *
    * Access Level: Write
    *
@@ -2159,7 +2146,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a specified DBParameterGroup.
+   * Grants permission to delete a specified DBParameterGroup
    *
    * Access Level: Write
    *
@@ -2183,7 +2170,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a DB security group.
+   * Grants permission to delete a DB security group.
    *
    * Access Level: Write
    *
@@ -2195,7 +2182,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a DBSnapshot.
+   * Grants permission to delete a DBSnapshot
    *
    * Access Level: Write
    *
@@ -2207,7 +2194,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a DB subnet group.
+   * Grants permission to delete a DB subnet group
    *
    * Access Level: Write
    *
@@ -2219,7 +2206,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes an RDS event notification subscription.
+   * Grants permission to delete an RDS event notification subscription
    *
    * Access Level: Write
    *
@@ -2231,7 +2218,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes a global database cluster.
+   * Grants permission to delete a global database cluster
    *
    * Access Level: Write
    *
@@ -2243,7 +2230,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Deletes an existing option group.
+   * Grants permission to delete an existing option group
    *
    * Access Level: Write
    *
@@ -2267,7 +2254,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists all of the attributes for a customer account.
+   * Grants permission to list all of the attributes for a customer account
    *
    * Access Level: List
    *
@@ -2279,7 +2266,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists the set of CA certificates provided by Amazon RDS for this AWS account.
+   * Lists the set of CA certificates provided by Amazon RDS for this AWS account
    *
    * Access Level: List
    *
@@ -2291,7 +2278,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about backtracks for a DB cluster.
+   * Grants permission to return information about backtracks for a DB cluster
    *
    * Access Level: List
    *
@@ -2303,7 +2290,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about endpoints for an Amazon Aurora DB cluster.
+   * Grants permission to return information about endpoints for an Amazon Aurora DB cluster
    *
    * Access Level: List
    *
@@ -2315,7 +2302,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DBClusterParameterGroup descriptions.
+   * Grants permission to return a list of DBClusterParameterGroup descriptions
    *
    * Access Level: List
    *
@@ -2327,7 +2314,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns the detailed parameter list for a particular DB cluster parameter group.
+   * Grants permission to return the detailed parameter list for a particular DB cluster parameter group
    *
    * Access Level: List
    *
@@ -2339,7 +2326,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.
+   * Grants permission to return a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot
    *
    * Access Level: List
    *
@@ -2351,9 +2338,9 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about DB cluster snapshots.
+   * Grants permission to return information about DB cluster snapshots
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html
    */
@@ -2363,7 +2350,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about provisioned Aurora DB clusters.
+   * Grants permission to return information about provisioned Aurora DB clusters
    *
    * Access Level: List
    *
@@ -2375,7 +2362,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the available DB engines.
+   * Grants permission to return a list of the available DB engines
    *
    * Access Level: List
    *
@@ -2387,7 +2374,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of automated backups for both current and deleted instances.
+   * Grants permission to return a list of automated backups for both current and deleted instances
    *
    * Access Level: List
    *
@@ -2399,7 +2386,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about provisioned RDS instances.
+   * Grants permission to return information about provisioned RDS instances
    *
    * Access Level: List
    *
@@ -2411,7 +2398,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DB log files for the DB instance.
+   * Grants permission to return a list of DB log files for the DB instance
    *
    * Access Level: List
    *
@@ -2423,7 +2410,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DBParameterGroup descriptions.
+   * Grants permission to return a list of DBParameterGroup descriptions
    *
    * Access Level: List
    *
@@ -2435,7 +2422,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns the detailed parameter list for a particular DB parameter group.
+   * Grants permission to return the detailed parameter list for a particular DB parameter group
    *
    * Access Level: List
    *
@@ -2483,7 +2470,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DBSecurityGroup descriptions.
+   * Grants permission to return a list of DBSecurityGroup descriptions
    *
    * Access Level: List
    *
@@ -2495,7 +2482,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DB snapshot attribute names and values for a manual DB snapshot.
+   * Grants permission to return a list of DB snapshot attribute names and values for a manual DB snapshot
    *
    * Access Level: List
    *
@@ -2507,7 +2494,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about DB snapshots.
+   * Grants permission to return information about DB snapshots
    *
    * Access Level: List
    *
@@ -2519,7 +2506,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of DBSubnetGroup descriptions.
+   * Grants permission to return a list of DBSubnetGroup descriptions
    *
    * Access Level: List
    *
@@ -2531,7 +2518,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns the default engine and system parameter information for the cluster database engine.
+   * Grants permission to return the default engine and system parameter information for the cluster database engine
    *
    * Access Level: List
    *
@@ -2543,7 +2530,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns the default engine and system parameter information for the specified database engine.
+   * Grants permission to return the default engine and system parameter information for the specified database engine
    *
    * Access Level: List
    *
@@ -2555,7 +2542,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Displays a list of categories for all event source types, or, if specified, for a specified source type.
+   * Grants permission to display a list of categories for all event source types, or, if specified, for a specified source type
    *
    * Access Level: List
    *
@@ -2567,7 +2554,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists all the subscription descriptions for a customer account.
+   * Grants permission to list all the subscription descriptions for a customer account
    *
    * Access Level: List
    *
@@ -2579,7 +2566,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days.
+   * Grants permission to return events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days
    *
    * Access Level: List
    *
@@ -2591,7 +2578,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about the export tasks.
+   * Grants permission to return information about the export tasks
    *
    * Access Level: List
    *
@@ -2603,7 +2590,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about Aurora global database clusters.
+   * Grants permission to return information about Aurora global database clusters
    *
    * Access Level: List
    *
@@ -2615,7 +2602,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Describes all available options.
+   * Grants permission to describe all available options
    *
    * Access Level: List
    *
@@ -2627,7 +2614,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Describes the available option groups.
+   * Grants permission to describe the available option groups
    *
    * Access Level: List
    *
@@ -2639,7 +2626,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of orderable DB instance options for the specified engine.
+   * Grants permission to return a list of orderable DB instance options for the specified engine
    *
    * Access Level: List
    *
@@ -2651,7 +2638,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.
+   * Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action
    *
    * Access Level: List
    *
@@ -2663,7 +2650,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns information about reserved DB instances for this account, or about a specified reserved DB instance.
+   * Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance
    *
    * Access Level: List
    *
@@ -2675,7 +2662,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists available reserved DB instance offerings.
+   * Grants permission to list available reserved DB instance offerings
    *
    * Access Level: List
    *
@@ -2687,7 +2674,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from.
+   * Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from
    *
    * Access Level: List
    *
@@ -2699,7 +2686,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists available modifications you can make to your DB instance
+   * Grants permission to list available modifications you can make to your DB instance
    *
    * Access Level: List
    *
@@ -2711,19 +2698,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Downloads the contents of the specified database log file.
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/RESTReference.html#RESTReference.DownloadCompleteDBLogFile
-   */
-  public downloadCompleteDBLogFile() {
-    this.add('rds:DownloadCompleteDBLogFile');
-    return this;
-  }
-
-  /**
-   * Downloads all or a portion of the specified log file, up to 1 MB in size.
+   * Grants permission to download all or a portion of the specified log file, up to 1 MB in size
    *
    * Access Level: Read
    *
@@ -2735,7 +2710,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Forces a failover for a DB cluster.
+   * Grants permission to force a failover for a DB cluster
    *
    * Access Level: Write
    *
@@ -2747,7 +2722,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Lists all tags on an Amazon RDS resource.
+   * Grants permission to list all tags on an Amazon RDS resource
    *
    * Access Level: Read
    *
@@ -2759,7 +2734,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modify current cluster capacity for an Amazon Aurora Severless DB cluster.
+   * Grants permission to modify current cluster capacity for an Amazon Aurora Severless DB cluster
    *
    * Access Level: Write
    *
@@ -2771,7 +2746,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modify a setting for an Amazon Aurora DB cluster.
+   * Grants permission to modify a setting for an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -2786,7 +2761,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
+   * Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -2798,7 +2773,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies the parameters of a DB cluster parameter group.
+   * Grants permission to modify the parameters of a DB cluster parameter group
    *
    * Access Level: Write
    *
@@ -2810,7 +2785,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
+   * Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot
    *
    * Access Level: Write
    *
@@ -2822,7 +2797,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modify settings for a DB instance.
+   * Grants permission to modify settings for a DB instance
    *
    * Access Level: Write
    *
@@ -2837,7 +2812,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies the parameters of a DB parameter group.
+   * Grants permission to modify the parameters of a DB parameter group
    *
    * Access Level: Write
    *
@@ -2876,7 +2851,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
+   * Grants permission to update a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version
    *
    * Access Level: Write
    *
@@ -2888,7 +2863,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.
+   * Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB snapshot
    *
    * Access Level: Write
    *
@@ -2900,7 +2875,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies an existing DB subnet group.
+   * Grants permission to modify an existing DB subnet group
    *
    * Access Level: Write
    *
@@ -2912,7 +2887,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies an existing RDS event notification subscription.
+   * Grants permission to modify an existing RDS event notification subscription
    *
    * Access Level: Write
    *
@@ -2924,7 +2899,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modify a setting for an Amazon Aurora global cluster.
+   * Grants permission to modify a setting for an Amazon Aurora global cluster
    *
    * Access Level: Write
    *
@@ -2936,7 +2911,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies an existing option group.
+   * Grants permission to modify an existing option group
    *
    * Access Level: Write
    *
@@ -2951,7 +2926,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Promotes a Read Replica DB instance to a standalone DB instance.
+   * Grants permission to promote a Read Replica DB instance to a standalone DB instance
    *
    * Access Level: Write
    *
@@ -2963,7 +2938,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Promotes a Read Replica DB cluster to a standalone DB cluster.
+   * Grants permission to promote a Read Replica DB cluster to a standalone DB cluster
    *
    * Access Level: Write
    *
@@ -2975,7 +2950,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Purchases a reserved DB instance offering.
+   * Grants permission to purchase a reserved DB instance offering
    *
    * Access Level: Write
    *
@@ -2991,7 +2966,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Rebooting a DB instance restarts the database engine service.
+   * Grants permission to restart the database engine service
    *
    * Access Level: Write
    *
@@ -3015,7 +2990,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Detaches an Aurora secondary cluster from an Aurora global database cluster.
+   * Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster
    *
    * Access Level: Write
    *
@@ -3027,7 +3002,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.
+   * Grants permission to disassociate an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -3042,7 +3017,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+   * Grants permission to disassociate an AWS Identity and Access Management (IAM) role from a DB instance
    *
    * Access Level: Write
    *
@@ -3057,7 +3032,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Removes a source identifier from an existing RDS event notification subscription.
+   * Grants permission to remove a source identifier from an existing RDS event notification subscription
    *
    * Access Level: Write
    *
@@ -3069,7 +3044,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Removes metadata tags from an Amazon RDS resource.
+   * Grants permission to remove metadata tags from an Amazon RDS resource.
    *
    * Access Level: Tagging
    *
@@ -3086,7 +3061,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies the parameters of a DB cluster parameter group to the default value.
+   * Grants permission to modify the parameters of a DB cluster parameter group to the default value
    *
    * Access Level: Write
    *
@@ -3098,7 +3073,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Modifies the parameters of a DB parameter group to the engine/system default value.
+   * Grants permission to modify the parameters of a DB parameter group to the engine/system default value
    *
    * Access Level: Write
    *
@@ -3110,7 +3085,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
+   * Grants permission to create an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket
    *
    * Access Level: Write
    *
@@ -3133,7 +3108,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB cluster from a DB cluster snapshot.
+   * Grants permission to create a new DB cluster from a DB cluster snapshot
    *
    * Access Level: Write
    *
@@ -3153,7 +3128,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Restores a DB cluster to an arbitrary point in time.
+   * Grants permission to restore a DB cluster to an arbitrary point in time
    *
    * Access Level: Write
    *
@@ -3173,7 +3148,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB instance from a DB snapshot.
+   * Grants permission to create a new DB instance from a DB snapshot
    *
    * Access Level: Write
    *
@@ -3193,7 +3168,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Creates a new DB instance from an Amazon S3 bucket.
+   * Grants permission to create a new DB instance from an Amazon S3 bucket
    *
    * Access Level: Write
    *
@@ -3213,7 +3188,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Restores a DB instance to an arbitrary point in time.
+   * Grants permission to restore a DB instance to an arbitrary point in time
    *
    * Access Level: Write
    *
@@ -3233,7 +3208,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.
+   * Grants permission to revoke ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups
    *
    * Access Level: Write
    *
@@ -3245,7 +3220,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Enables the user to start Activity Stream.
+   * Grants permission to start Activity Stream
    *
    * Access Level: Write
    *
@@ -3257,7 +3232,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Starts the DB cluster.
+   * Starts the DB cluster
    *
    * Access Level: Write
    *
@@ -3269,7 +3244,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Starts the DB instance.
+   * Grants permission to start the DB instance
    *
    * Access Level: Write
    *
@@ -3281,7 +3256,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Starts a new Export task for a DB snapshot.
+   * Grants permission to start a new Export task for a DB snapshot
    *
    * Access Level: Write
    *
@@ -3296,7 +3271,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Enables the user to stop Activity Stream.
+   * Grants permission to stop Activity Stream
    *
    * Access Level: Write
    *
@@ -3308,7 +3283,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Stops the DB cluster.
+   * Grants permission to stop the DB cluster
    *
    * Access Level: Write
    *
@@ -3320,7 +3295,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Stops the DB instance.
+   * Grants permission to stop the DB instance
    *
    * Access Level: Write
    *
@@ -3693,7 +3668,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag key-value pairs in the request
+   * Filters access based on the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -3730,7 +3705,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag key-value pairs attached to the resource
+   * Filters access based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -3759,7 +3734,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request
+   * Filters access based on the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
@@ -3795,7 +3770,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A type of DB instance class.
+   * Filters access by the type of DB instance class
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3810,7 +3785,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A database engine. For possible values refer to engine parameter in https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
+   * Filters access by the database engine. For possible values refer to the engine parameter in CreateDBInstance API
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3829,7 +3804,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * The user-defined name of the database on the DB instance.
+   * Filters access by the user-defined name of the database on the DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3848,7 +3823,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * The type of the endpoint. One of: READER, WRITER, CUSTOM.
+   * Filters access by the type of the endpoint. One of: READER, WRITER, CUSTOM
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3863,7 +3838,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A value that specifies whether the DB instance runs in multiple Availability Zones. To indicate that the DB instance is using Multi-AZ, specify true.
+   * Filters access by the value that specifies whether the DB instance runs in multiple Availability Zones. To indicate that the DB instance is using Multi-AZ, specify true
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3877,7 +3852,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0.
+   * Filters access by the value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3892,7 +3867,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A value that specifies whether the DB instance storage should be encrypted. To enforce storage encryption, specify true.
+   * Filters access by the value that specifies whether the DB instance storage should be encrypted. To enforce storage encryption, specify true
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3910,7 +3885,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * The storage volume size (in GB).
+   * Filters access by the storage volume size (in GB)
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3925,7 +3900,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud (Amazon VPC). To indicate that the DB instance runs in an Amazon VPC, specify true.
+   * Filters access by the value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud (Amazon VPC). To indicate that the DB instance runs in an Amazon VPC, specify true
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3939,7 +3914,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB cluster parameter group.
+   * Filters access by the tag attached to a DB cluster parameter group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3955,7 +3930,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB cluster snapshot.
+   * Filters access by the tag attached to a DB cluster snapshot
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3971,7 +3946,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB cluster.
+   * Filters access by the tag attached to a DB cluster
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -3987,7 +3962,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB instance.
+   * Filters access by the tag attached to a DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4003,7 +3978,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to an event subscription.
+   * Filters access by the tag attached to an event subscription
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4019,7 +3994,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB option group.
+   * Filters access by the tag attached to a DB option group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4035,7 +4010,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB parameter group.
+   * Filters access by the tag attached to a DB parameter group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4051,7 +4026,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Limits the set of tag keys and values that can be used to tag a resource.
+   * Filters access by the set of tag keys and values that can be used to tag a resource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4085,7 +4060,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a reserved DB instance.
+   * Filters access by the tag attached to a reserved DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4101,7 +4076,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB security group.
+   * Filters access by the tag attached to a DB security group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4117,7 +4092,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB snapshot.
+   * Filters access by the tag attached to a DB snapshot
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
@@ -4133,7 +4108,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A tag attached to a DB subnet group.
+   * Filters access by the tag attached to a DB subnet group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *

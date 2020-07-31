@@ -10,28 +10,51 @@ export class Batch extends PolicyStatement {
   protected actionList: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html",
-      "description": "Cancels jobs in an AWS Batch job queue.",
+      "description": "Cancels a job in an AWS Batch job queue.",
       "accessLevel": "Write"
     },
     "CreateComputeEnvironment": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html",
       "description": "Creates an AWS Batch compute environment.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        }
+      }
     },
     "CreateJobQueue": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html",
       "description": "Creates an AWS Batch job queue.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        },
+        "job-queue": {
+          "required": true
+        }
+      }
     },
     "DeleteComputeEnvironment": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html",
       "description": "Deletes an AWS Batch compute environment.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        }
+      }
     },
     "DeleteJobQueue": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html",
       "description": "Deletes the specified job queue.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "job-queue": {
+          "required": true
+        }
+      }
     },
     "DeregisterJobDefinition": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html",
@@ -104,15 +127,31 @@ export class Batch extends PolicyStatement {
     "UpdateComputeEnvironment": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html",
       "description": "Updates an AWS Batch compute environment.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        }
+      }
     },
     "UpdateJobQueue": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html",
       "description": "Updates a job queue.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "job-queue": {
+          "required": true
+        }
+      }
     }
   };
   protected resourceTypes: ResourceTypes = {
+    "compute-environment": {
+      "name": "compute-environment",
+      "url": "",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}",
+      "conditionKeys": []
+    },
     "job-queue": {
       "name": "job-queue",
       "url": "",
@@ -137,7 +176,7 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Cancels jobs in an AWS Batch job queue.
+   * Cancels a job in an AWS Batch job queue.
    *
    * Access Level: Write
    *
@@ -334,6 +373,23 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type compute-environment to the statement
+   *
+   * @param computeEnvironmentName - Identifier for the computeEnvironmentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}';
+    arn = arn.replace('${ComputeEnvironmentName}', computeEnvironmentName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type job-queue to the statement
    *
    * @param jobQueueName - Identifier for the jobQueueName.
@@ -372,6 +428,8 @@ export class Batch extends PolicyStatement {
   /**
    * The image used to start a container.
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
    * Applies to actions:
    * - .registerJobDefinition()
    *
@@ -385,6 +443,8 @@ export class Batch extends PolicyStatement {
   /**
    * When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
    * Applies to actions:
    * - .registerJobDefinition()
    *
@@ -396,6 +456,8 @@ export class Batch extends PolicyStatement {
 
   /**
    * The user name or numeric uid to use inside the container.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
    * - .registerJobDefinition()

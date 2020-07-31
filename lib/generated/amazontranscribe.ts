@@ -141,6 +141,10 @@ export class Transcribe extends PolicyStatement {
       "accessLevel": "Write",
       "dependentActions": [
         "s3:GetObject"
+      ],
+      "conditions": [
+        "transcribe:OutputBucketName",
+        "transcribe:OutputEncryptionKMSKeyId"
       ]
     },
     "UpdateMedicalVocabulary": {
@@ -472,6 +476,10 @@ export class Transcribe extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifOutputBucketName()
+   * - .ifOutputEncryptionKMSKeyId()
+   *
    * Dependent actions:
    * - s3:GetObject
    *
@@ -525,5 +533,31 @@ export class Transcribe extends PolicyStatement {
   public updateVocabularyFilter() {
     this.add('transcribe:UpdateVocabularyFilter');
     return this;
+  }
+
+  /**
+   * Enables you to control access based on the output bucket name included in the request
+   *
+   * Applies to actions:
+   * - .startTranscriptionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOutputBucketName(value: string | string[], operator?: string) {
+    return this.if(`transcribe:OutputBucketName`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Enables you to control access based on the KMS key id included in the request
+   *
+   * Applies to actions:
+   * - .startTranscriptionJob()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifOutputEncryptionKMSKeyId(value: string | string[], operator?: string) {
+    return this.if(`transcribe:OutputEncryptionKMSKeyId`, value, operator || 'StringLike');
   }
 }
