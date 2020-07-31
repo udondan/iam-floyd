@@ -150,6 +150,7 @@ export { Devicefarm } from "./generated/awsdevicefarm";
 export { Directconnect } from "./generated/awsdirectconnect";
 export { Ds } from "./generated/awsdirectoryservice";
 export { Elasticbeanstalk } from "./generated/awselasticbeanstalk";
+export { ElementalAppliancesSoftware } from "./generated/awselementalappliancesandsoftware";
 export { Mediaconnect } from "./generated/awselementalmediaconnect";
 export { Mediaconvert } from "./generated/awselementalmediaconvert";
 export { Medialive } from "./generated/awselementalmedialive";

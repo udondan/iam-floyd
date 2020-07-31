@@ -14,9 +14,9 @@
 <!-- stats -->
 Support for:
 
-- 234 Services<br>
-- 7720 Actions<br>
-- 749 Resource Types<br>
+- 235 Services<br>
+- 7727 Actions<br>
+- 750 Resource Types<br>
 - 451 Conditions
 <!-- /stats -->
 
