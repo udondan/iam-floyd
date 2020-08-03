@@ -425,6 +425,16 @@ export class Securityhub extends PolicyStatement {
         }
       }
     },
+    "UpdateSecurityHubConfiguration": {
+      "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityHubConfiguration.html",
+      "description": "Grants permission to update Security Hub configuration",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "hub": {
+          "required": false
+        }
+      }
+    },
     "UpdateStandardsControl": {
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html",
       "description": "Grants permission to update Security Hub standards controls",
@@ -958,6 +968,18 @@ export class Securityhub extends PolicyStatement {
    */
   public updateInsight() {
     this.add('securityhub:UpdateInsight');
+    return this;
+  }
+
+  /**
+   * Grants permission to update Security Hub configuration
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateSecurityHubConfiguration.html
+   */
+  public updateSecurityHubConfiguration() {
+    this.add('securityhub:UpdateSecurityHubConfiguration');
     return this;
   }
 

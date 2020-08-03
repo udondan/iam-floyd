@@ -18,6 +18,16 @@ export class Codebuild extends PolicyStatement {
         }
       }
     },
+    "BatchGetBuildBatches": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuildBatches.html",
+      "description": "Gets information about one or more build batches.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
     "BatchGetBuilds": {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html",
       "description": "Gets information about one or more builds.",
@@ -52,6 +62,16 @@ export class Codebuild extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetReports.html",
       "description": "Returns an array of the Report objects specified by the input reportArns parameter.",
       "accessLevel": "Read",
+      "resourceTypes": {
+        "report-group": {
+          "required": true
+        }
+      }
+    },
+    "BatchPutCodeCoverages": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies",
+      "description": "Adds or updates information about a report.",
+      "accessLevel": "Write",
       "resourceTypes": {
         "report-group": {
           "required": true
@@ -109,6 +129,16 @@ export class Codebuild extends PolicyStatement {
     "CreateWebhook": {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateWebhook.html",
       "description": "For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
+    "DeleteBuildBatch": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteBuildBatch.html",
+      "description": "Deletes a build batch.",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -179,6 +209,16 @@ export class Codebuild extends PolicyStatement {
         }
       }
     },
+    "DescribeCodeCoverages": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeCodeCoverages.html",
+      "description": "Returns an array of CodeCoverage objects.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "report-group": {
+          "required": true
+        }
+      }
+    },
     "DescribeTestCases": {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeTestCases.html",
       "description": "Returns an array of TestCase objects.",
@@ -211,6 +251,21 @@ export class Codebuild extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_InvalidateProjectCache.html",
       "description": "Resets the cache for a project.",
       "accessLevel": "Write",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
+    "ListBuildBatches": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatches.html",
+      "description": "Gets a list of build batch IDs, with each build batch ID representing a single build batch.",
+      "accessLevel": "List"
+    },
+    "ListBuildBatchesForProject": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatchesForProject.html",
+      "description": "Gets a list of build batch IDs for the specified build project, with each build batch ID representing a single build batch.",
+      "accessLevel": "List",
       "resourceTypes": {
         "project": {
           "required": true
@@ -305,6 +360,26 @@ export class Codebuild extends PolicyStatement {
         }
       }
     },
+    "RetryBuild": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuild.html",
+      "description": "Retries a build.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
+    "RetryBuildBatch": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuildBatch.html",
+      "description": "Retries a build batch.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
     "StartBuild": {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html",
       "description": "Starts running a build.",
@@ -315,9 +390,29 @@ export class Codebuild extends PolicyStatement {
         }
       }
     },
+    "StartBuildBatch": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html",
+      "description": "Starts running a build batch.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
     "StopBuild": {
       "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html",
       "description": "Attempts to stop running a build.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "project": {
+          "required": true
+        }
+      }
+    },
+    "StopBuildBatch": {
+      "url": "https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuildBatch.html",
+      "description": "Attempts to stop running a build batch.",
       "accessLevel": "Write",
       "resourceTypes": {
         "project": {
@@ -381,6 +476,12 @@ export class Codebuild extends PolicyStatement {
       "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}",
       "conditionKeys": []
     },
+    "build-batch": {
+      "name": "build-batch",
+      "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
+      "arn": "arn:${Partition}:codebuild:${Region}:${Account}:build-batch/${BuildBatchId}",
+      "conditionKeys": []
+    },
     "project": {
       "name": "project",
       "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
@@ -423,6 +524,18 @@ export class Codebuild extends PolicyStatement {
    */
   public batchDeleteBuilds() {
     this.add('codebuild:BatchDeleteBuilds');
+    return this;
+  }
+
+  /**
+   * Gets information about one or more build batches.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuildBatches.html
+   */
+  public batchGetBuildBatches() {
+    this.add('codebuild:BatchGetBuildBatches');
     return this;
   }
 
@@ -471,6 +584,18 @@ export class Codebuild extends PolicyStatement {
    */
   public batchGetReports() {
     this.add('codebuild:BatchGetReports');
+    return this;
+  }
+
+  /**
+   * Adds or updates information about a report.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies
+   */
+  public batchPutCodeCoverages() {
+    this.add('codebuild:BatchPutCodeCoverages');
     return this;
   }
 
@@ -539,6 +664,18 @@ export class Codebuild extends PolicyStatement {
    */
   public createWebhook() {
     this.add('codebuild:CreateWebhook');
+    return this;
+  }
+
+  /**
+   * Deletes a build batch.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteBuildBatch.html
+   */
+  public deleteBuildBatch() {
+    this.add('codebuild:DeleteBuildBatch');
     return this;
   }
 
@@ -627,6 +764,18 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Returns an array of CodeCoverage objects.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DescribeCodeCoverages.html
+   */
+  public describeCodeCoverages() {
+    this.add('codebuild:DescribeCodeCoverages');
+    return this;
+  }
+
+  /**
    * Returns an array of TestCase objects.
    *
    * Access Level: Read
@@ -671,6 +820,30 @@ export class Codebuild extends PolicyStatement {
    */
   public invalidateProjectCache() {
     this.add('codebuild:InvalidateProjectCache');
+    return this;
+  }
+
+  /**
+   * Gets a list of build batch IDs, with each build batch ID representing a single build batch.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatches.html
+   */
+  public listBuildBatches() {
+    this.add('codebuild:ListBuildBatches');
+    return this;
+  }
+
+  /**
+   * Gets a list of build batch IDs for the specified build project, with each build batch ID representing a single build batch.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildBatchesForProject.html
+   */
+  public listBuildBatchesForProject() {
+    this.add('codebuild:ListBuildBatchesForProject');
     return this;
   }
 
@@ -843,6 +1016,30 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Retries a build.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuild.html
+   */
+  public retryBuild() {
+    this.add('codebuild:RetryBuild');
+    return this;
+  }
+
+  /**
+   * Retries a build batch.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_RetryBuildBatch.html
+   */
+  public retryBuildBatch() {
+    this.add('codebuild:RetryBuildBatch');
+    return this;
+  }
+
+  /**
    * Starts running a build.
    *
    * Access Level: Write
@@ -855,6 +1052,18 @@ export class Codebuild extends PolicyStatement {
   }
 
   /**
+   * Starts running a build batch.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuildBatch.html
+   */
+  public startBuildBatch() {
+    this.add('codebuild:StartBuildBatch');
+    return this;
+  }
+
+  /**
    * Attempts to stop running a build.
    *
    * Access Level: Write
@@ -863,6 +1072,18 @@ export class Codebuild extends PolicyStatement {
    */
   public stopBuild() {
     this.add('codebuild:StopBuild');
+    return this;
+  }
+
+  /**
+   * Attempts to stop running a build batch.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuildBatch.html
+   */
+  public stopBuildBatch() {
+    this.add('codebuild:StopBuildBatch');
     return this;
   }
 
@@ -935,6 +1156,25 @@ export class Codebuild extends PolicyStatement {
   public onBuild(buildId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:build/${BuildId}';
     arn = arn.replace('${BuildId}', buildId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type build-batch to the statement
+   *
+   * https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats
+   *
+   * @param buildBatchId - Identifier for the buildBatchId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onBuildBatch(buildBatchId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:codebuild:${Region}:${Account}:build-batch/${BuildBatchId}';
+    arn = arn.replace('${BuildBatchId}', buildBatchId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
