@@ -27,6 +27,11 @@ export class Secretsmanager extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions",
       "description": "Enables the user to create a secret that stores encrypted data that can be queried and rotated.",
       "accessLevel": "Write",
+      "resourceTypes": {
+        "Secret": {
+          "required": true
+        }
+      },
       "conditions": [
         "secretsmanager:Name",
         "secretsmanager:Description",
@@ -152,7 +157,8 @@ export class Secretsmanager extends PolicyStatement {
       "conditions": [
         "secretsmanager:SecretId",
         "secretsmanager:resource/AllowRotationLambdaArn",
-        "secretsmanager:ResourceTag/tag-key"
+        "secretsmanager:ResourceTag/tag-key",
+        "secretsmanager:BlockPublicPolicy"
       ]
     },
     "PutSecretValue": {
@@ -263,6 +269,21 @@ export class Secretsmanager extends PolicyStatement {
       "conditions": [
         "secretsmanager:SecretId",
         "secretsmanager:VersionStage",
+        "secretsmanager:resource/AllowRotationLambdaArn",
+        "secretsmanager:ResourceTag/tag-key"
+      ]
+    },
+    "ValidateResourcePolicy": {
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions",
+      "description": "Enables the user to validate a resource policy before attaching policy.",
+      "accessLevel": "Permissions management",
+      "resourceTypes": {
+        "Secret": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "secretsmanager:SecretId",
         "secretsmanager:resource/AllowRotationLambdaArn",
         "secretsmanager:ResourceTag/tag-key"
       ]
@@ -467,6 +488,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .ifSecretId()
    * - .ifResource()
    * - .ifResourceTag()
+   * - .ifBlockPublicPolicy()
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
@@ -602,6 +624,23 @@ export class Secretsmanager extends PolicyStatement {
   }
 
   /**
+   * Enables the user to validate a resource policy before attaching policy.
+   *
+   * Access Level: Permissions management
+   *
+   * Possible conditions:
+   * - .ifSecretId()
+   * - .ifResource()
+   * - .ifResourceTag()
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
+   */
+  public validateResourcePolicy() {
+    this.add('secretsmanager:ValidateResourcePolicy');
+    return this;
+  }
+
+  /**
    * Adds a resource of type Secret to the statement
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources
@@ -664,6 +703,20 @@ export class Secretsmanager extends PolicyStatement {
    */
   public ifAwsTagKeys(value: string | string[], operator?: string) {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by whether the resource policy blocks broad AWS account access.
+   *
+   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
+   *
+   * Applies to actions:
+   * - .putResourcePolicy()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifBlockPublicPolicy(value?: boolean) {
+    return this.if(`secretsmanager:BlockPublicPolicy`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
@@ -764,6 +817,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .untagResource()
    * - .updateSecret()
    * - .updateSecretVersionStage()
+   * - .validateResourcePolicy()
    *
    * Applies to resource types:
    * - Secret
@@ -812,6 +866,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .untagResource()
    * - .updateSecret()
    * - .updateSecretVersionStage()
+   * - .validateResourcePolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -872,6 +927,7 @@ export class Secretsmanager extends PolicyStatement {
    * - .untagResource()
    * - .updateSecret()
    * - .updateSecretVersionStage()
+   * - .validateResourcePolicy()
    *
    * Applies to resource types:
    * - Secret

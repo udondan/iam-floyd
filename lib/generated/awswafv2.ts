@@ -160,6 +160,16 @@ export class Wafv2 extends PolicyStatement {
       "description": "Grants permission to view high-level information for a managed rule group.",
       "accessLevel": "List"
     },
+    "DisassociateFirewallManager": {
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html",
+      "description": "Grants permission to disassociate Firewall Manager from the specified WebACL.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "webacl": {
+          "required": true
+        }
+      }
+    },
     "DisassociateWebACL": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html",
       "description": "Grants permission disassociate a WebACL from an application resource.",
@@ -345,6 +355,16 @@ export class Wafv2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_ListWebACLs.html",
       "description": "Grants permission to view an array of WebACLSummary objects for the web ACLs that you manage.",
       "accessLevel": "List"
+    },
+    "PutFirewallManagerRuleGroups": {
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html",
+      "description": "Grants permission to create FirewallManagedRulesGroups in the specified WebACL.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "webacl": {
+          "required": true
+        }
+      }
     },
     "PutLoggingConfiguration": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html",
@@ -709,6 +729,18 @@ export class Wafv2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to disassociate Firewall Manager from the specified WebACL.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html
+   */
+  public disassociateFirewallManager() {
+    this.add('wafv2:DisassociateFirewallManager');
+    return this;
+  }
+
+  /**
    * Grants permission disassociate a WebACL from an application resource.
    *
    * Access Level: Write
@@ -942,6 +974,18 @@ export class Wafv2 extends PolicyStatement {
    */
   public listWebACLs() {
     this.add('wafv2:ListWebACLs');
+    return this;
+  }
+
+  /**
+   * Grants permission to create FirewallManagedRulesGroups in the specified WebACL.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html
+   */
+  public putFirewallManagerRuleGroups() {
+    this.add('wafv2:PutFirewallManagerRuleGroups');
     return this;
   }
 

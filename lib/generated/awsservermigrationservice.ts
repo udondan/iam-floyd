@@ -113,6 +113,11 @@ export class Sms extends PolicyStatement {
       "description": "Grants permission to get all servers that have been imported",
       "accessLevel": "Read"
     },
+    "ImportAppCatalog": {
+      "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportAppCatalog.html",
+      "description": "Grants permission to import application catalog from AWS Application Discovery Service",
+      "accessLevel": "Write"
+    },
     "ImportServerCatalog": {
       "url": "https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportServerCatalog.html",
       "description": "Grants permission to gather a complete list of on-premise servers",
@@ -447,6 +452,18 @@ export class Sms extends PolicyStatement {
    */
   public getServers() {
     this.add('sms:GetServers');
+    return this;
+  }
+
+  /**
+   * Grants permission to import application catalog from AWS Application Discovery Service
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/server-migration-service/latest/APIReference/API_ImportAppCatalog.html
+   */
+  public importAppCatalog() {
+    this.add('sms:ImportAppCatalog');
     return this;
   }
 
