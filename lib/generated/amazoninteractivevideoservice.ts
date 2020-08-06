@@ -16,12 +16,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "BatchGetStreamKey": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html",
@@ -31,12 +26,7 @@ export class Ivs extends PolicyStatement {
         "Stream-Key": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "CreateChannel": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html",
@@ -52,18 +42,21 @@ export class Ivs extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
+        "aws:RequestTag/${TagKey}"
       ]
     },
     "CreateStreamKey": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html",
       "description": "Grants permission to create a stream key.",
       "accessLevel": "Write",
+      "resourceTypes": {
+        "Stream-Key": {
+          "required": true
+        }
+      },
       "conditions": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
+        "aws:RequestTag/${TagKey}"
       ]
     },
     "DeleteChannel": {
@@ -77,12 +70,7 @@ export class Ivs extends PolicyStatement {
         "Stream-Key": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "DeleteStreamKey": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html",
@@ -92,12 +80,7 @@ export class Ivs extends PolicyStatement {
         "Stream-Key": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "GetChannel": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html",
@@ -107,12 +90,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "GetStream": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html",
@@ -122,12 +100,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "GetStreamKey": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html",
@@ -137,12 +110,7 @@ export class Ivs extends PolicyStatement {
         "Stream-Key": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "ListChannels": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html",
@@ -152,12 +120,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "ListStreamKeys": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html",
@@ -170,12 +133,7 @@ export class Ivs extends PolicyStatement {
         "Stream-Key": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "ListStreams": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html",
@@ -185,12 +143,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html",
@@ -206,8 +159,7 @@ export class Ivs extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
+        "aws:RequestTag/${TagKey}"
       ]
     },
     "PutMetadata": {
@@ -218,12 +170,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "StopStream": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html",
@@ -233,12 +180,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     },
     "TagResource": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html",
@@ -254,8 +196,7 @@ export class Ivs extends PolicyStatement {
       },
       "conditions": [
         "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
+        "aws:RequestTag/${TagKey}"
       ]
     },
     "UntagResource": {
@@ -271,9 +212,7 @@ export class Ivs extends PolicyStatement {
         }
       },
       "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
+        "aws:TagKeys"
       ]
     },
     "UpdateChannel": {
@@ -284,12 +223,7 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": true
         }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
+      }
     }
   };
   protected resourceTypes: ResourceTypes = {
@@ -297,13 +231,17 @@ export class Ivs extends PolicyStatement {
       "name": "Channel",
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_Channel.html",
       "arn": "arn:${Partition}:ivs::${Account}:channel/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "Stream-Key": {
       "name": "Stream-Key",
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_StreamKey.html",
       "arn": "arn:${Partition}:ivs::${Account}:stream-key/${ResourceId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -321,11 +259,6 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html
    */
   public batchGetChannel() {
@@ -337,11 +270,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get multiple stream keys simultaneously by stream key ARN.
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html
    */
@@ -358,7 +286,6 @@ export class Ivs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html
    */
@@ -375,7 +302,6 @@ export class Ivs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html
    */
@@ -389,11 +315,6 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteChannel.html
    */
   public deleteChannel() {
@@ -405,11 +326,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to delete the stream key for a specified ARN
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html
    */
@@ -423,11 +339,6 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html
    */
   public getChannel() {
@@ -439,11 +350,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get information about the active (live) stream on a specified channel
    *
    * Access Level: Read
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html
    */
@@ -457,11 +363,6 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html
    */
   public getStreamKey() {
@@ -473,11 +374,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get summary information about channels
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html
    */
@@ -491,11 +387,6 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html
    */
   public listStreamKeys() {
@@ -507,11 +398,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to get summary information about live streams
    *
    * Access Level: List
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html
    */
@@ -528,7 +414,6 @@ export class Ivs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html
    */
@@ -542,11 +427,6 @@ export class Ivs extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
-   *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PutMetadata.html
    */
   public putMetadata() {
@@ -558,11 +438,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to disconnect a streamer on a specified channel
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html
    */
@@ -579,7 +454,6 @@ export class Ivs extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html
    */
@@ -595,8 +469,6 @@ export class Ivs extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UntagResource.html
    */
@@ -609,11 +481,6 @@ export class Ivs extends PolicyStatement {
    * Grants permission to update a channel's configuration
    *
    * Access Level: Write
-   *
-   * Possible conditions:
-   * - .ifAwsTagKeys()
-   * - .ifAwsRequestTag()
-   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UpdateChannel.html
    */
@@ -630,6 +497,9 @@ export class Ivs extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onChannel(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ivs::${Account}:channel/${ResourceId}';
@@ -647,6 +517,9 @@ export class Ivs extends PolicyStatement {
    * @param resourceId - Identifier for the resourceId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStreamKey(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:ivs::${Account}:stream-key/${ResourceId}';
@@ -662,24 +535,10 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .batchGetChannel()
-   * - .batchGetStreamKey()
    * - .createChannel()
    * - .createStreamKey()
-   * - .deleteChannel()
-   * - .deleteStreamKey()
-   * - .getChannel()
-   * - .getStream()
-   * - .getStreamKey()
-   * - .listChannels()
-   * - .listStreamKeys()
-   * - .listStreams()
    * - .listTagsForResource()
-   * - .putMetadata()
-   * - .stopStream()
    * - .tagResource()
-   * - .untagResource()
-   * - .updateChannel()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -694,25 +553,9 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
-   * Applies to actions:
-   * - .batchGetChannel()
-   * - .batchGetStreamKey()
-   * - .createChannel()
-   * - .createStreamKey()
-   * - .deleteChannel()
-   * - .deleteStreamKey()
-   * - .getChannel()
-   * - .getStream()
-   * - .getStreamKey()
-   * - .listChannels()
-   * - .listStreamKeys()
-   * - .listStreams()
-   * - .listTagsForResource()
-   * - .putMetadata()
-   * - .stopStream()
-   * - .tagResource()
-   * - .untagResource()
-   * - .updateChannel()
+   * Applies to resource types:
+   * - Channel
+   * - Stream-Key
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -728,24 +571,11 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .batchGetChannel()
-   * - .batchGetStreamKey()
    * - .createChannel()
    * - .createStreamKey()
-   * - .deleteChannel()
-   * - .deleteStreamKey()
-   * - .getChannel()
-   * - .getStream()
-   * - .getStreamKey()
-   * - .listChannels()
-   * - .listStreamKeys()
-   * - .listStreams()
    * - .listTagsForResource()
-   * - .putMetadata()
-   * - .stopStream()
    * - .tagResource()
    * - .untagResource()
-   * - .updateChannel()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
