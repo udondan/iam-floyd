@@ -13,6 +13,8 @@ export interface ResourceType {
 
 /**
  * Adds "resource" functionality to the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
   private useNotResources = false;

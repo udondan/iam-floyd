@@ -5,6 +5,8 @@ import { PolicyStatementWithPrincipal, PrincipalType } from './6-principals';
 
 /**
  * Adds CDK specific "principal" functionality to the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementWithCDKPrincipal extends PolicyStatementWithPrincipal {
   protected cdkPrincipals: iam.IPrincipal[] = [];

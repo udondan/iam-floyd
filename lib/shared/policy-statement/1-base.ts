@@ -2,6 +2,8 @@
 
 /**
  * Base class for the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementBase {
   public sid = '';

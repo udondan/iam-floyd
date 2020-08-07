@@ -1,15 +1,27 @@
 import { PolicyStatementBase } from './1-base';
 
-interface Condition {
+/**
+ * A Condition
+ *
+ * @internal
+ */
+export interface Condition {
   [key: string]: String;
 }
 
-interface Conditions {
+/**
+ * A collection of Condition's
+ *
+ * @internal
+ */
+export interface Conditions {
   [key: string]: Condition;
 }
 
 /**
  * Adds "condition" functionality to the Policy Statement
+ *
+ * @internal
  */
 export class PolicyStatementWithCondition extends PolicyStatementBase {
   protected conditions: Conditions = {};
