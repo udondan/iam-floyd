@@ -90,7 +90,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * The mode can be switched by calling `notActions()`.
    *
-   * @param actions Actions that will be added to the statement.
+   * @param action Actions that will be added to the statement.
    */
   public add(action: string) {
     this.actions.push(action);
