@@ -40,7 +40,7 @@ export class Mobileanalytics extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getFinancialReports() {
+  public toGetFinancialReports() {
     this.add('mobileanalytics:GetFinancialReports');
     return this;
   }
@@ -50,7 +50,7 @@ export class Mobileanalytics extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getReports() {
+  public toGetReports() {
     this.add('mobileanalytics:GetReports');
     return this;
   }
@@ -62,7 +62,7 @@ export class Mobileanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html
    */
-  public putEvents() {
+  public toPutEvents() {
     this.add('mobileanalytics:PutEvents');
     return this;
   }

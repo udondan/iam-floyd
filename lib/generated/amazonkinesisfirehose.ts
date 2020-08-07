@@ -166,7 +166,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html
    */
-  public createDeliveryStream() {
+  public toCreateDeliveryStream() {
     this.add('firehose:CreateDeliveryStream');
     return this;
   }
@@ -178,7 +178,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html
    */
-  public deleteDeliveryStream() {
+  public toDeleteDeliveryStream() {
     this.add('firehose:DeleteDeliveryStream');
     return this;
   }
@@ -190,7 +190,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html
    */
-  public describeDeliveryStream() {
+  public toDescribeDeliveryStream() {
     this.add('firehose:DescribeDeliveryStream');
     return this;
   }
@@ -202,7 +202,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html
    */
-  public listDeliveryStreams() {
+  public toListDeliveryStreams() {
     this.add('firehose:ListDeliveryStreams');
     return this;
   }
@@ -214,7 +214,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListTagsForDeliveryStream.html
    */
-  public listTagsForDeliveryStream() {
+  public toListTagsForDeliveryStream() {
     this.add('firehose:ListTagsForDeliveryStream');
     return this;
   }
@@ -226,7 +226,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html
    */
-  public putRecord() {
+  public toPutRecord() {
     this.add('firehose:PutRecord');
     return this;
   }
@@ -238,7 +238,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html
    */
-  public putRecordBatch() {
+  public toPutRecordBatch() {
     this.add('firehose:PutRecordBatch');
     return this;
   }
@@ -250,7 +250,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html
    */
-  public startDeliveryStreamEncryption() {
+  public toStartDeliveryStreamEncryption() {
     this.add('firehose:StartDeliveryStreamEncryption');
     return this;
   }
@@ -262,7 +262,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StopDeliveryStreamEncryption.html
    */
-  public stopDeliveryStreamEncryption() {
+  public toStopDeliveryStreamEncryption() {
     this.add('firehose:StopDeliveryStreamEncryption');
     return this;
   }
@@ -278,7 +278,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_TagDeliveryStream.html
    */
-  public tagDeliveryStream() {
+  public toTagDeliveryStream() {
     this.add('firehose:TagDeliveryStream');
     return this;
   }
@@ -293,7 +293,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UntagDeliveryStream.html
    */
-  public untagDeliveryStream() {
+  public toUntagDeliveryStream() {
     this.add('firehose:UntagDeliveryStream');
     return this;
   }
@@ -305,7 +305,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html
    */
-  public updateDestination() {
+  public toUpdateDestination() {
     this.add('firehose:UpdateDestination');
     return this;
   }
@@ -336,8 +336,8 @@ export class Firehose extends PolicyStatement {
    * Filters create requests based on the allowed set of values for each of the tags
    *
    * Applies to actions:
-   * - .createDeliveryStream()
-   * - .tagDeliveryStream()
+   * - .toCreateDeliveryStream()
+   * - .toTagDeliveryStream()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -365,9 +365,9 @@ export class Firehose extends PolicyStatement {
    * Filters create requests based on the presence of mandatory tags in the request
    *
    * Applies to actions:
-   * - .createDeliveryStream()
-   * - .tagDeliveryStream()
-   * - .untagDeliveryStream()
+   * - .toCreateDeliveryStream()
+   * - .toTagDeliveryStream()
+   * - .toUntagDeliveryStream()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

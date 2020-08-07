@@ -1175,7 +1175,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource() {
+  public toAddTagsToResource() {
     this.add('ssm:AddTagsToResource');
     return this;
   }
@@ -1187,7 +1187,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelCommand.html
    */
-  public cancelCommand() {
+  public toCancelCommand() {
     this.add('ssm:CancelCommand');
     return this;
   }
@@ -1199,7 +1199,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CancelMaintenanceWindowExecution.html
    */
-  public cancelMaintenanceWindowExecution() {
+  public toCancelMaintenanceWindowExecution() {
     this.add('ssm:CancelMaintenanceWindowExecution');
     return this;
   }
@@ -1211,7 +1211,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateActivation.html
    */
-  public createActivation() {
+  public toCreateActivation() {
     this.add('ssm:CreateActivation');
     return this;
   }
@@ -1223,7 +1223,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html
    */
-  public createAssociation() {
+  public toCreateAssociation() {
     this.add('ssm:CreateAssociation');
     return this;
   }
@@ -1235,7 +1235,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatch.html
    */
-  public createAssociationBatch() {
+  public toCreateAssociationBatch() {
     this.add('ssm:CreateAssociationBatch');
     return this;
   }
@@ -1254,7 +1254,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateDocument.html
    */
-  public createDocument() {
+  public toCreateDocument() {
     this.add('ssm:CreateDocument');
     return this;
   }
@@ -1270,7 +1270,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html
    */
-  public createMaintenanceWindow() {
+  public toCreateMaintenanceWindow() {
     this.add('ssm:CreateMaintenanceWindow');
     return this;
   }
@@ -1282,7 +1282,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateOpsItem.html
    */
-  public createOpsItem() {
+  public toCreateOpsItem() {
     this.add('ssm:CreateOpsItem');
     return this;
   }
@@ -1298,7 +1298,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreatePatchBaseline.html
    */
-  public createPatchBaseline() {
+  public toCreatePatchBaseline() {
     this.add('ssm:CreatePatchBaseline');
     return this;
   }
@@ -1313,7 +1313,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateResourceDataSync.html
    */
-  public createResourceDataSync() {
+  public toCreateResourceDataSync() {
     this.add('ssm:CreateResourceDataSync');
     return this;
   }
@@ -1325,7 +1325,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteActivation.html
    */
-  public deleteActivation() {
+  public toDeleteActivation() {
     this.add('ssm:DeleteActivation');
     return this;
   }
@@ -1337,7 +1337,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteAssociation.html
    */
-  public deleteAssociation() {
+  public toDeleteAssociation() {
     this.add('ssm:DeleteAssociation');
     return this;
   }
@@ -1349,7 +1349,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteDocument.html
    */
-  public deleteDocument() {
+  public toDeleteDocument() {
     this.add('ssm:DeleteDocument');
     return this;
   }
@@ -1361,7 +1361,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteInventory.html
    */
-  public deleteInventory() {
+  public toDeleteInventory() {
     this.add('ssm:DeleteInventory');
     return this;
   }
@@ -1373,7 +1373,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteMaintenanceWindow.html
    */
-  public deleteMaintenanceWindow() {
+  public toDeleteMaintenanceWindow() {
     this.add('ssm:DeleteMaintenanceWindow');
     return this;
   }
@@ -1385,7 +1385,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html
    */
-  public deleteParameter() {
+  public toDeleteParameter() {
     this.add('ssm:DeleteParameter');
     return this;
   }
@@ -1397,7 +1397,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html
    */
-  public deleteParameters() {
+  public toDeleteParameters() {
     this.add('ssm:DeleteParameters');
     return this;
   }
@@ -1409,7 +1409,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeletePatchBaseline.html
    */
-  public deletePatchBaseline() {
+  public toDeletePatchBaseline() {
     this.add('ssm:DeletePatchBaseline');
     return this;
   }
@@ -1424,7 +1424,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteResourceDataSync.html
    */
-  public deleteResourceDataSync() {
+  public toDeleteResourceDataSync() {
     this.add('ssm:DeleteResourceDataSync');
     return this;
   }
@@ -1436,7 +1436,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterManagedInstance.html
    */
-  public deregisterManagedInstance() {
+  public toDeregisterManagedInstance() {
     this.add('ssm:DeregisterManagedInstance');
     return this;
   }
@@ -1448,7 +1448,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterPatchBaselineForPatchGroup.html
    */
-  public deregisterPatchBaselineForPatchGroup() {
+  public toDeregisterPatchBaselineForPatchGroup() {
     this.add('ssm:DeregisterPatchBaselineForPatchGroup');
     return this;
   }
@@ -1460,7 +1460,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTargetFromMaintenanceWindow.html
    */
-  public deregisterTargetFromMaintenanceWindow() {
+  public toDeregisterTargetFromMaintenanceWindow() {
     this.add('ssm:DeregisterTargetFromMaintenanceWindow');
     return this;
   }
@@ -1472,7 +1472,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeregisterTaskFromMaintenanceWindow.html
    */
-  public deregisterTaskFromMaintenanceWindow() {
+  public toDeregisterTaskFromMaintenanceWindow() {
     this.add('ssm:DeregisterTaskFromMaintenanceWindow');
     return this;
   }
@@ -1484,7 +1484,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeActivations.html
    */
-  public describeActivations() {
+  public toDescribeActivations() {
     this.add('ssm:DescribeActivations');
     return this;
   }
@@ -1496,7 +1496,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociation.html
    */
-  public describeAssociation() {
+  public toDescribeAssociation() {
     this.add('ssm:DescribeAssociation');
     return this;
   }
@@ -1508,7 +1508,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutionTargets.html
    */
-  public describeAssociationExecutionTargets() {
+  public toDescribeAssociationExecutionTargets() {
     this.add('ssm:DescribeAssociationExecutionTargets');
     return this;
   }
@@ -1520,7 +1520,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAssociationExecutions.html
    */
-  public describeAssociationExecutions() {
+  public toDescribeAssociationExecutions() {
     this.add('ssm:DescribeAssociationExecutions');
     return this;
   }
@@ -1532,7 +1532,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationExecutions.html
    */
-  public describeAutomationExecutions() {
+  public toDescribeAutomationExecutions() {
     this.add('ssm:DescribeAutomationExecutions');
     return this;
   }
@@ -1544,7 +1544,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAutomationStepExecutions.html
    */
-  public describeAutomationStepExecutions() {
+  public toDescribeAutomationStepExecutions() {
     this.add('ssm:DescribeAutomationStepExecutions');
     return this;
   }
@@ -1556,7 +1556,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeAvailablePatches.html
    */
-  public describeAvailablePatches() {
+  public toDescribeAvailablePatches() {
     this.add('ssm:DescribeAvailablePatches');
     return this;
   }
@@ -1568,7 +1568,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocument.html
    */
-  public describeDocument() {
+  public toDescribeDocument() {
     this.add('ssm:DescribeDocument');
     return this;
   }
@@ -1580,7 +1580,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
-  public describeDocumentParameters() {
+  public toDescribeDocumentParameters() {
     this.add('ssm:DescribeDocumentParameters');
     return this;
   }
@@ -1592,7 +1592,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeDocumentPermission.html
    */
-  public describeDocumentPermission() {
+  public toDescribeDocumentPermission() {
     this.add('ssm:DescribeDocumentPermission');
     return this;
   }
@@ -1604,7 +1604,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html
    */
-  public describeEffectiveInstanceAssociations() {
+  public toDescribeEffectiveInstanceAssociations() {
     this.add('ssm:DescribeEffectiveInstanceAssociations');
     return this;
   }
@@ -1616,7 +1616,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectivePatchesForPatchBaseline.html
    */
-  public describeEffectivePatchesForPatchBaseline() {
+  public toDescribeEffectivePatchesForPatchBaseline() {
     this.add('ssm:DescribeEffectivePatchesForPatchBaseline');
     return this;
   }
@@ -1628,7 +1628,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html
    */
-  public describeInstanceAssociationsStatus() {
+  public toDescribeInstanceAssociationsStatus() {
     this.add('ssm:DescribeInstanceAssociationsStatus');
     return this;
   }
@@ -1640,7 +1640,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceInformation.html
    */
-  public describeInstanceInformation() {
+  public toDescribeInstanceInformation() {
     this.add('ssm:DescribeInstanceInformation');
     return this;
   }
@@ -1652,7 +1652,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStates.html
    */
-  public describeInstancePatchStates() {
+  public toDescribeInstancePatchStates() {
     this.add('ssm:DescribeInstancePatchStates');
     return this;
   }
@@ -1664,7 +1664,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatchStatesForPatchGroup.html
    */
-  public describeInstancePatchStatesForPatchGroup() {
+  public toDescribeInstancePatchStatesForPatchGroup() {
     this.add('ssm:DescribeInstancePatchStatesForPatchGroup');
     return this;
   }
@@ -1676,7 +1676,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstancePatches.html
    */
-  public describeInstancePatches() {
+  public toDescribeInstancePatches() {
     this.add('ssm:DescribeInstancePatches');
     return this;
   }
@@ -1688,7 +1688,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
-  public describeInstanceProperties() {
+  public toDescribeInstanceProperties() {
     this.add('ssm:DescribeInstanceProperties');
     return this;
   }
@@ -1700,7 +1700,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInventoryDeletions.html
    */
-  public describeInventoryDeletions() {
+  public toDescribeInventoryDeletions() {
     this.add('ssm:DescribeInventoryDeletions');
     return this;
   }
@@ -1712,7 +1712,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTaskInvocations.html
    */
-  public describeMaintenanceWindowExecutionTaskInvocations() {
+  public toDescribeMaintenanceWindowExecutionTaskInvocations() {
     this.add('ssm:DescribeMaintenanceWindowExecutionTaskInvocations');
     return this;
   }
@@ -1724,7 +1724,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutionTasks.html
    */
-  public describeMaintenanceWindowExecutionTasks() {
+  public toDescribeMaintenanceWindowExecutionTasks() {
     this.add('ssm:DescribeMaintenanceWindowExecutionTasks');
     return this;
   }
@@ -1736,7 +1736,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowExecutions.html
    */
-  public describeMaintenanceWindowExecutions() {
+  public toDescribeMaintenanceWindowExecutions() {
     this.add('ssm:DescribeMaintenanceWindowExecutions');
     return this;
   }
@@ -1748,7 +1748,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowSchedule.html
    */
-  public describeMaintenanceWindowSchedule() {
+  public toDescribeMaintenanceWindowSchedule() {
     this.add('ssm:DescribeMaintenanceWindowSchedule');
     return this;
   }
@@ -1760,7 +1760,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTargets.html
    */
-  public describeMaintenanceWindowTargets() {
+  public toDescribeMaintenanceWindowTargets() {
     this.add('ssm:DescribeMaintenanceWindowTargets');
     return this;
   }
@@ -1772,7 +1772,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowTasks.html
    */
-  public describeMaintenanceWindowTasks() {
+  public toDescribeMaintenanceWindowTasks() {
     this.add('ssm:DescribeMaintenanceWindowTasks');
     return this;
   }
@@ -1784,7 +1784,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindows.html
    */
-  public describeMaintenanceWindows() {
+  public toDescribeMaintenanceWindows() {
     this.add('ssm:DescribeMaintenanceWindows');
     return this;
   }
@@ -1796,7 +1796,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeMaintenanceWindowsForTarget.html
    */
-  public describeMaintenanceWindowsForTarget() {
+  public toDescribeMaintenanceWindowsForTarget() {
     this.add('ssm:DescribeMaintenanceWindowsForTarget');
     return this;
   }
@@ -1808,7 +1808,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeOpsItems.html
    */
-  public describeOpsItems() {
+  public toDescribeOpsItems() {
     this.add('ssm:DescribeOpsItems');
     return this;
   }
@@ -1820,7 +1820,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html
    */
-  public describeParameters() {
+  public toDescribeParameters() {
     this.add('ssm:DescribeParameters');
     return this;
   }
@@ -1832,7 +1832,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchBaselines.html
    */
-  public describePatchBaselines() {
+  public toDescribePatchBaselines() {
     this.add('ssm:DescribePatchBaselines');
     return this;
   }
@@ -1844,7 +1844,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroupState.html
    */
-  public describePatchGroupState() {
+  public toDescribePatchGroupState() {
     this.add('ssm:DescribePatchGroupState');
     return this;
   }
@@ -1856,7 +1856,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchGroups.html
    */
-  public describePatchGroups() {
+  public toDescribePatchGroups() {
     this.add('ssm:DescribePatchGroups');
     return this;
   }
@@ -1868,7 +1868,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html
    */
-  public describePatchProperties() {
+  public toDescribePatchProperties() {
     this.add('ssm:DescribePatchProperties');
     return this;
   }
@@ -1880,7 +1880,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeSessions.html
    */
-  public describeSessions() {
+  public toDescribeSessions() {
     this.add('ssm:DescribeSessions');
     return this;
   }
@@ -1892,7 +1892,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_AutomationExecution.html
    */
-  public getAutomationExecution() {
+  public toGetAutomationExecution() {
     this.add('ssm:GetAutomationExecution');
     return this;
   }
@@ -1904,7 +1904,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCommandInvocation.html
    */
-  public getCommandInvocation() {
+  public toGetCommandInvocation() {
     this.add('ssm:GetCommandInvocation');
     return this;
   }
@@ -1916,7 +1916,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetConnectionStatus.html
    */
-  public getConnectionStatus() {
+  public toGetConnectionStatus() {
     this.add('ssm:GetConnectionStatus');
     return this;
   }
@@ -1928,7 +1928,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDefaultPatchBaseline.html
    */
-  public getDefaultPatchBaseline() {
+  public toGetDefaultPatchBaseline() {
     this.add('ssm:GetDefaultPatchBaseline');
     return this;
   }
@@ -1940,7 +1940,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDeployablePatchSnapshotForInstance.html
    */
-  public getDeployablePatchSnapshotForInstance() {
+  public toGetDeployablePatchSnapshotForInstance() {
     this.add('ssm:GetDeployablePatchSnapshotForInstance');
     return this;
   }
@@ -1952,7 +1952,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetDocument.html
    */
-  public getDocument() {
+  public toGetDocument() {
     this.add('ssm:GetDocument');
     return this;
   }
@@ -1964,7 +1964,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventory.html
    */
-  public getInventory() {
+  public toGetInventory() {
     this.add('ssm:GetInventory');
     return this;
   }
@@ -1976,7 +1976,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetInventorySchema.html
    */
-  public getInventorySchema() {
+  public toGetInventorySchema() {
     this.add('ssm:GetInventorySchema');
     return this;
   }
@@ -1988,7 +1988,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindow.html
    */
-  public getMaintenanceWindow() {
+  public toGetMaintenanceWindow() {
     this.add('ssm:GetMaintenanceWindow');
     return this;
   }
@@ -2000,7 +2000,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecution.html
    */
-  public getMaintenanceWindowExecution() {
+  public toGetMaintenanceWindowExecution() {
     this.add('ssm:GetMaintenanceWindowExecution');
     return this;
   }
@@ -2012,7 +2012,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTask.html
    */
-  public getMaintenanceWindowExecutionTask() {
+  public toGetMaintenanceWindowExecutionTask() {
     this.add('ssm:GetMaintenanceWindowExecutionTask');
     return this;
   }
@@ -2024,7 +2024,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowExecutionTaskInvocation.html
    */
-  public getMaintenanceWindowExecutionTaskInvocation() {
+  public toGetMaintenanceWindowExecutionTaskInvocation() {
     this.add('ssm:GetMaintenanceWindowExecutionTaskInvocation');
     return this;
   }
@@ -2036,7 +2036,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetMaintenanceWindowTask.html
    */
-  public getMaintenanceWindowTask() {
+  public toGetMaintenanceWindowTask() {
     this.add('ssm:GetMaintenanceWindowTask');
     return this;
   }
@@ -2046,7 +2046,7 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getManifest() {
+  public toGetManifest() {
     this.add('ssm:GetManifest');
     return this;
   }
@@ -2058,7 +2058,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsItem.html
    */
-  public getOpsItem() {
+  public toGetOpsItem() {
     this.add('ssm:GetOpsItem');
     return this;
   }
@@ -2070,7 +2070,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetOpsSummary.html
    */
-  public getOpsSummary() {
+  public toGetOpsSummary() {
     this.add('ssm:GetOpsSummary');
     return this;
   }
@@ -2082,7 +2082,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html
    */
-  public getParameter() {
+  public toGetParameter() {
     this.add('ssm:GetParameter');
     return this;
   }
@@ -2094,7 +2094,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html
    */
-  public getParameterHistory() {
+  public toGetParameterHistory() {
     this.add('ssm:GetParameterHistory');
     return this;
   }
@@ -2106,7 +2106,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html
    */
-  public getParameters() {
+  public toGetParameters() {
     this.add('ssm:GetParameters');
     return this;
   }
@@ -2118,7 +2118,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html
    */
-  public getParametersByPath() {
+  public toGetParametersByPath() {
     this.add('ssm:GetParametersByPath');
     return this;
   }
@@ -2130,7 +2130,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaseline.html
    */
-  public getPatchBaseline() {
+  public toGetPatchBaseline() {
     this.add('ssm:GetPatchBaseline');
     return this;
   }
@@ -2142,7 +2142,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetPatchBaselineForPatchGroup.html
    */
-  public getPatchBaselineForPatchGroup() {
+  public toGetPatchBaselineForPatchGroup() {
     this.add('ssm:GetPatchBaselineForPatchGroup');
     return this;
   }
@@ -2154,7 +2154,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetServiceSetting.html
    */
-  public getServiceSetting() {
+  public toGetServiceSetting() {
     this.add('ssm:GetServiceSetting');
     return this;
   }
@@ -2166,7 +2166,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_LabelParameterVersion.html
    */
-  public labelParameterVersion() {
+  public toLabelParameterVersion() {
     this.add('ssm:LabelParameterVersion');
     return this;
   }
@@ -2178,7 +2178,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociationVersions.html
    */
-  public listAssociationVersions() {
+  public toListAssociationVersions() {
     this.add('ssm:ListAssociationVersions');
     return this;
   }
@@ -2190,7 +2190,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListAssociations.html
    */
-  public listAssociations() {
+  public toListAssociations() {
     this.add('ssm:ListAssociations');
     return this;
   }
@@ -2202,7 +2202,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommandInvocations.html
    */
-  public listCommandInvocations() {
+  public toListCommandInvocations() {
     this.add('ssm:ListCommandInvocations');
     return this;
   }
@@ -2214,7 +2214,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListCommands.html
    */
-  public listCommands() {
+  public toListCommands() {
     this.add('ssm:ListCommands');
     return this;
   }
@@ -2226,7 +2226,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceItems.html
    */
-  public listComplianceItems() {
+  public toListComplianceItems() {
     this.add('ssm:ListComplianceItems');
     return this;
   }
@@ -2238,7 +2238,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListComplianceSummaries.html
    */
-  public listComplianceSummaries() {
+  public toListComplianceSummaries() {
     this.add('ssm:ListComplianceSummaries');
     return this;
   }
@@ -2250,7 +2250,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocumentVersions.html
    */
-  public listDocumentVersions() {
+  public toListDocumentVersions() {
     this.add('ssm:ListDocumentVersions');
     return this;
   }
@@ -2262,7 +2262,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html
    */
-  public listDocuments() {
+  public toListDocuments() {
     this.add('ssm:ListDocuments');
     return this;
   }
@@ -2274,7 +2274,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
-  public listInstanceAssociations() {
+  public toListInstanceAssociations() {
     this.add('ssm:ListInstanceAssociations');
     return this;
   }
@@ -2286,7 +2286,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListInventoryEntries.html
    */
-  public listInventoryEntries() {
+  public toListInventoryEntries() {
     this.add('ssm:ListInventoryEntries');
     return this;
   }
@@ -2298,7 +2298,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceComplianceSummaries.html
    */
-  public listResourceComplianceSummaries() {
+  public toListResourceComplianceSummaries() {
     this.add('ssm:ListResourceComplianceSummaries');
     return this;
   }
@@ -2313,7 +2313,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListResourceDataSync.html
    */
-  public listResourceDataSync() {
+  public toListResourceDataSync() {
     this.add('ssm:ListResourceDataSync');
     return this;
   }
@@ -2325,7 +2325,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('ssm:ListTagsForResource');
     return this;
   }
@@ -2337,7 +2337,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ModifyDocumentPermission.html
    */
-  public modifyDocumentPermission() {
+  public toModifyDocumentPermission() {
     this.add('ssm:ModifyDocumentPermission');
     return this;
   }
@@ -2349,7 +2349,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html
    */
-  public putComplianceItems() {
+  public toPutComplianceItems() {
     this.add('ssm:PutComplianceItems');
     return this;
   }
@@ -2359,7 +2359,7 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public putConfigurePackageResult() {
+  public toPutConfigurePackageResult() {
     this.add('ssm:PutConfigurePackageResult');
     return this;
   }
@@ -2371,7 +2371,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutInventory.html
    */
-  public putInventory() {
+  public toPutInventory() {
     this.add('ssm:PutInventory');
     return this;
   }
@@ -2387,7 +2387,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html
    */
-  public putParameter() {
+  public toPutParameter() {
     this.add('ssm:PutParameter');
     return this;
   }
@@ -2399,7 +2399,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterDefaultPatchBaseline.html
    */
-  public registerDefaultPatchBaseline() {
+  public toRegisterDefaultPatchBaseline() {
     this.add('ssm:RegisterDefaultPatchBaseline');
     return this;
   }
@@ -2411,7 +2411,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterPatchBaselineForPatchGroup.html
    */
-  public registerPatchBaselineForPatchGroup() {
+  public toRegisterPatchBaselineForPatchGroup() {
     this.add('ssm:RegisterPatchBaselineForPatchGroup');
     return this;
   }
@@ -2423,7 +2423,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTargetWithMaintenanceWindow.html
    */
-  public registerTargetWithMaintenanceWindow() {
+  public toRegisterTargetWithMaintenanceWindow() {
     this.add('ssm:RegisterTargetWithMaintenanceWindow');
     return this;
   }
@@ -2435,7 +2435,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html
    */
-  public registerTaskWithMaintenanceWindow() {
+  public toRegisterTaskWithMaintenanceWindow() {
     this.add('ssm:RegisterTaskWithMaintenanceWindow');
     return this;
   }
@@ -2447,7 +2447,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource() {
+  public toRemoveTagsFromResource() {
     this.add('ssm:RemoveTagsFromResource');
     return this;
   }
@@ -2459,7 +2459,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResetServiceSetting.html
    */
-  public resetServiceSetting() {
+  public toResetServiceSetting() {
     this.add('ssm:ResetServiceSetting');
     return this;
   }
@@ -2471,7 +2471,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ResumeSession.html
    */
-  public resumeSession() {
+  public toResumeSession() {
     this.add('ssm:ResumeSession');
     return this;
   }
@@ -2483,7 +2483,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendAutomationSignal.html
    */
-  public sendAutomationSignal() {
+  public toSendAutomationSignal() {
     this.add('ssm:SendAutomationSignal');
     return this;
   }
@@ -2499,7 +2499,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_SendCommand.html
    */
-  public sendCommand() {
+  public toSendCommand() {
     this.add('ssm:SendCommand');
     return this;
   }
@@ -2511,7 +2511,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html
    */
-  public startAssociationsOnce() {
+  public toStartAssociationsOnce() {
     this.add('ssm:StartAssociationsOnce');
     return this;
   }
@@ -2523,7 +2523,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html
    */
-  public startAutomationExecution() {
+  public toStartAutomationExecution() {
     this.add('ssm:StartAutomationExecution');
     return this;
   }
@@ -2538,7 +2538,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartSession.html
    */
-  public startSession() {
+  public toStartSession() {
     this.add('ssm:StartSession');
     return this;
   }
@@ -2550,7 +2550,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StopAutomationExecution.html
    */
-  public stopAutomationExecution() {
+  public toStopAutomationExecution() {
     this.add('ssm:StopAutomationExecution');
     return this;
   }
@@ -2562,7 +2562,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_TerminateSession.html
    */
-  public terminateSession() {
+  public toTerminateSession() {
     this.add('ssm:TerminateSession');
     return this;
   }
@@ -2574,7 +2574,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html
    */
-  public updateAssociation() {
+  public toUpdateAssociation() {
     this.add('ssm:UpdateAssociation');
     return this;
   }
@@ -2586,7 +2586,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html
    */
-  public updateAssociationStatus() {
+  public toUpdateAssociationStatus() {
     this.add('ssm:UpdateAssociationStatus');
     return this;
   }
@@ -2598,7 +2598,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocument.html
    */
-  public updateDocument() {
+  public toUpdateDocument() {
     this.add('ssm:UpdateDocument');
     return this;
   }
@@ -2610,7 +2610,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateDocumentDefaultVersion.html
    */
-  public updateDocumentDefaultVersion() {
+  public toUpdateDocumentDefaultVersion() {
     this.add('ssm:UpdateDocumentDefaultVersion');
     return this;
   }
@@ -2620,7 +2620,7 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateInstanceAssociationStatus() {
+  public toUpdateInstanceAssociationStatus() {
     this.add('ssm:UpdateInstanceAssociationStatus');
     return this;
   }
@@ -2632,7 +2632,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html
    */
-  public updateInstanceInformation() {
+  public toUpdateInstanceInformation() {
     this.add('ssm:UpdateInstanceInformation');
     return this;
   }
@@ -2644,7 +2644,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindow.html
    */
-  public updateMaintenanceWindow() {
+  public toUpdateMaintenanceWindow() {
     this.add('ssm:UpdateMaintenanceWindow');
     return this;
   }
@@ -2656,7 +2656,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTarget.html
    */
-  public updateMaintenanceWindowTarget() {
+  public toUpdateMaintenanceWindowTarget() {
     this.add('ssm:UpdateMaintenanceWindowTarget');
     return this;
   }
@@ -2668,7 +2668,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateMaintenanceWindowTask.html
    */
-  public updateMaintenanceWindowTask() {
+  public toUpdateMaintenanceWindowTask() {
     this.add('ssm:UpdateMaintenanceWindowTask');
     return this;
   }
@@ -2680,7 +2680,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateManagedInstanceRole.html
    */
-  public updateManagedInstanceRole() {
+  public toUpdateManagedInstanceRole() {
     this.add('ssm:UpdateManagedInstanceRole');
     return this;
   }
@@ -2692,7 +2692,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateOpsItem.html
    */
-  public updateOpsItem() {
+  public toUpdateOpsItem() {
     this.add('ssm:UpdateOpsItem');
     return this;
   }
@@ -2704,7 +2704,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdatePatchBaseline.html
    */
-  public updatePatchBaseline() {
+  public toUpdatePatchBaseline() {
     this.add('ssm:UpdatePatchBaseline');
     return this;
   }
@@ -2719,7 +2719,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateResourceDataSync.html
    */
-  public updateResourceDataSync() {
+  public toUpdateResourceDataSync() {
     this.add('ssm:UpdateResourceDataSync');
     return this;
   }
@@ -2731,7 +2731,7 @@ export class Ssm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateServiceSetting.html
    */
-  public updateServiceSetting() {
+  public toUpdateServiceSetting() {
     this.add('ssm:UpdateServiceSetting');
     return this;
   }
@@ -3070,10 +3070,10 @@ export class Ssm extends PolicyStatement {
    * Filters 'Create' requests based on the allowed set of values for a specified tags
    *
    * Applies to actions:
-   * - .createDocument()
-   * - .createMaintenanceWindow()
-   * - .createPatchBaseline()
-   * - .putParameter()
+   * - .toCreateDocument()
+   * - .toCreateMaintenanceWindow()
+   * - .toCreatePatchBaseline()
+   * - .toPutParameter()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -3089,7 +3089,7 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
-   * - .sendCommand()
+   * - .toSendCommand()
    *
    * Applies to resource types:
    * - document
@@ -3113,10 +3113,10 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
-   * - .createDocument()
-   * - .createMaintenanceWindow()
-   * - .createPatchBaseline()
-   * - .putParameter()
+   * - .toCreateDocument()
+   * - .toCreateMaintenanceWindow()
+   * - .toCreatePatchBaseline()
+   * - .toPutParameter()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3155,7 +3155,7 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
    *
    * Applies to actions:
-   * - .startSession()
+   * - .toStartSession()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
@@ -3167,10 +3167,10 @@ export class Ssm extends PolicyStatement {
    * Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request
    *
    * Applies to actions:
-   * - .createResourceDataSync()
-   * - .deleteResourceDataSync()
-   * - .listResourceDataSync()
-   * - .updateResourceDataSync()
+   * - .toCreateResourceDataSync()
+   * - .toDeleteResourceDataSync()
+   * - .toListResourceDataSync()
+   * - .toUpdateResourceDataSync()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3185,7 +3185,7 @@ export class Ssm extends PolicyStatement {
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
    *
    * Applies to actions:
-   * - .sendCommand()
+   * - .toSendCommand()
    *
    * Applies to resource types:
    * - document

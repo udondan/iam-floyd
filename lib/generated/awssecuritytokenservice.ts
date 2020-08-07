@@ -201,7 +201,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
-  public assumeRole() {
+  public toAssumeRole() {
     this.add('sts:AssumeRole');
     return this;
   }
@@ -251,7 +251,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html
    */
-  public assumeRoleWithSAML() {
+  public toAssumeRoleWithSAML() {
     this.add('sts:AssumeRoleWithSAML');
     return this;
   }
@@ -279,7 +279,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
    */
-  public assumeRoleWithWebIdentity() {
+  public toAssumeRoleWithWebIdentity() {
     this.add('sts:AssumeRoleWithWebIdentity');
     return this;
   }
@@ -291,7 +291,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html
    */
-  public decodeAuthorizationMessage() {
+  public toDecodeAuthorizationMessage() {
     this.add('sts:DecodeAuthorizationMessage');
     return this;
   }
@@ -303,7 +303,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html
    */
-  public getAccessKeyInfo() {
+  public toGetAccessKeyInfo() {
     this.add('sts:GetAccessKeyInfo');
     return this;
   }
@@ -315,7 +315,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html
    */
-  public getCallerIdentity() {
+  public toGetCallerIdentity() {
     this.add('sts:GetCallerIdentity');
     return this;
   }
@@ -332,7 +332,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html
    */
-  public getFederationToken() {
+  public toGetFederationToken() {
     this.add('sts:GetFederationToken');
     return this;
   }
@@ -344,7 +344,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_bearer.html
    */
-  public getServiceBearerToken() {
+  public toGetServiceBearerToken() {
     this.add('sts:GetServiceBearerToken');
     return this;
   }
@@ -356,7 +356,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
    */
-  public getSessionToken() {
+  public toGetSessionToken() {
     this.add('sts:GetSessionToken');
     return this;
   }
@@ -374,7 +374,7 @@ export class Sts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html
    */
-  public tagSession() {
+  public toTagSession() {
     this.add('sts:TagSession');
     return this;
   }
@@ -422,7 +422,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -437,7 +437,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_oaud
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -452,7 +452,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -479,11 +479,11 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principaltag
    *
    * Applies to actions:
-   * - .assumeRole()
-   * - .assumeRoleWithSAML()
-   * - .assumeRoleWithWebIdentity()
-   * - .getFederationToken()
-   * - .tagSession()
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toGetFederationToken()
+   * - .toTagSession()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -499,11 +499,11 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .assumeRole()
-   * - .assumeRoleWithSAML()
-   * - .assumeRoleWithWebIdentity()
-   * - .getFederationToken()
-   * - .tagSession()
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toGetFederationToken()
+   * - .toTagSession()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -535,11 +535,11 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .assumeRole()
-   * - .assumeRoleWithSAML()
-   * - .assumeRoleWithWebIdentity()
-   * - .getFederationToken()
-   * - .tagSession()
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toGetFederationToken()
+   * - .toTagSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -554,7 +554,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -569,7 +569,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -584,7 +584,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -599,7 +599,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -614,7 +614,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -629,7 +629,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -644,7 +644,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_cn
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -659,7 +659,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_commonname
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -674,7 +674,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_doc
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -689,7 +689,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorghomepageuri
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -704,7 +704,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -719,7 +719,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorglegalname
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -734,7 +734,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgsuperioruri
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -749,7 +749,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgwhitepagesuri
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -764,7 +764,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonaffiliation
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -779,7 +779,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonassurance
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -794,7 +794,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonentitlement
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -809,7 +809,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonnickname
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -824,7 +824,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgdn
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -839,7 +839,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgunitdn
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -854,7 +854,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryaffiliation
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -869,7 +869,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryorgunitdn
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -884,7 +884,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprincipalname
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -899,7 +899,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonscopedaffiliation
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -914,7 +914,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersontargetedid
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -929,7 +929,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_givenname
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -944,7 +944,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_iss
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -959,7 +959,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_mail
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -974,7 +974,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_name
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -989,7 +989,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_namequalifier
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1004,7 +1004,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_organizationstatus
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1019,7 +1019,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_primarygroupsid
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1034,7 +1034,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1049,7 +1049,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_subtype
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1064,7 +1064,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_surname
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1079,7 +1079,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_uid
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1094,7 +1094,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_x500uniqueidentifier
    *
    * Applies to actions:
-   * - .assumeRoleWithSAML()
+   * - .toAssumeRoleWithSAML()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1109,7 +1109,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_externalid
    *
    * Applies to actions:
-   * - .assumeRole()
+   * - .toAssumeRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1124,7 +1124,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname
    *
    * Applies to actions:
-   * - .assumeRole()
+   * - .toAssumeRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1139,10 +1139,10 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TransitiveTagKeys
    *
    * Applies to actions:
-   * - .assumeRole()
-   * - .assumeRoleWithSAML()
-   * - .assumeRoleWithWebIdentity()
-   * - .tagSession()
+   * - .toAssumeRole()
+   * - .toAssumeRoleWithSAML()
+   * - .toAssumeRoleWithWebIdentity()
+   * - .toTagSession()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1157,7 +1157,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1172,7 +1172,7 @@ export class Sts extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id
    *
    * Applies to actions:
-   * - .assumeRoleWithWebIdentity()
+   * - .toAssumeRoleWithWebIdentity()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

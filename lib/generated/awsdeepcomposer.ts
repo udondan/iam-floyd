@@ -224,7 +224,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public associateCoupon() {
+  public toAssociateCoupon() {
     this.add('deepcomposer:AssociateCoupon');
     return this;
   }
@@ -236,7 +236,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public createAudio() {
+  public toCreateAudio() {
     this.add('deepcomposer:CreateAudio');
     return this;
   }
@@ -252,7 +252,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public createComposition() {
+  public toCreateComposition() {
     this.add('deepcomposer:CreateComposition');
     return this;
   }
@@ -268,7 +268,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public createModel() {
+  public toCreateModel() {
     this.add('deepcomposer:CreateModel');
     return this;
   }
@@ -280,7 +280,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public deleteComposition() {
+  public toDeleteComposition() {
     this.add('deepcomposer:DeleteComposition');
     return this;
   }
@@ -292,7 +292,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public deleteModel() {
+  public toDeleteModel() {
     this.add('deepcomposer:DeleteModel');
     return this;
   }
@@ -307,7 +307,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public getComposition() {
+  public toGetComposition() {
     this.add('deepcomposer:GetComposition');
     return this;
   }
@@ -322,7 +322,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public getModel() {
+  public toGetModel() {
     this.add('deepcomposer:GetModel');
     return this;
   }
@@ -334,7 +334,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public getSampleModel() {
+  public toGetSampleModel() {
     this.add('deepcomposer:GetSampleModel');
     return this;
   }
@@ -346,7 +346,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public listCompositions() {
+  public toListCompositions() {
     this.add('deepcomposer:ListCompositions');
     return this;
   }
@@ -358,7 +358,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public listModels() {
+  public toListModels() {
     this.add('deepcomposer:ListModels');
     return this;
   }
@@ -370,7 +370,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public listSampleModels() {
+  public toListSampleModels() {
     this.add('deepcomposer:ListSampleModels');
     return this;
   }
@@ -383,7 +383,7 @@ export class Deepcomposer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsResourceTag()
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('deepcomposer:ListTagsForResource');
     return this;
   }
@@ -393,7 +393,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listTrainingTopics() {
+  public toListTrainingTopics() {
     this.add('deepcomposer:ListTrainingTopics');
     return this;
   }
@@ -408,7 +408,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('deepcomposer:TagResource');
     return this;
   }
@@ -423,7 +423,7 @@ export class Deepcomposer extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsResourceTag()
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('deepcomposer:UntagResource');
     return this;
   }
@@ -435,7 +435,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public updateComposition() {
+  public toUpdateComposition() {
     this.add('deepcomposer:UpdateComposition');
     return this;
   }
@@ -447,7 +447,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public updateModel() {
+  public toUpdateModel() {
     this.add('deepcomposer:UpdateModel');
     return this;
   }
@@ -521,10 +521,10 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createComposition()
-   * - .createModel()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateComposition()
+   * - .toCreateModel()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -540,11 +540,11 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .getComposition()
-   * - .getModel()
-   * - .listTagsForResource()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toGetComposition()
+   * - .toGetModel()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - model
@@ -564,10 +564,10 @@ export class Deepcomposer extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createComposition()
-   * - .createModel()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateComposition()
+   * - .toCreateModel()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

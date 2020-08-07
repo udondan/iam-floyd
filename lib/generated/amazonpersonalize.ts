@@ -505,7 +505,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateBatchInferenceJob.html
    */
-  public createBatchInferenceJob() {
+  public toCreateBatchInferenceJob() {
     this.add('personalize:CreateBatchInferenceJob');
     return this;
   }
@@ -517,7 +517,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateCampaign.html
    */
-  public createCampaign() {
+  public toCreateCampaign() {
     this.add('personalize:CreateCampaign');
     return this;
   }
@@ -529,7 +529,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateDataset.html
    */
-  public createDataset() {
+  public toCreateDataset() {
     this.add('personalize:CreateDataset');
     return this;
   }
@@ -541,7 +541,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
    */
-  public createDatasetGroup() {
+  public toCreateDatasetGroup() {
     this.add('personalize:CreateDatasetGroup');
     return this;
   }
@@ -553,7 +553,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
    */
-  public createDatasetImportJob() {
+  public toCreateDatasetImportJob() {
     this.add('personalize:CreateDatasetImportJob');
     return this;
   }
@@ -565,7 +565,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateEventTracker.html
    */
-  public createEventTracker() {
+  public toCreateEventTracker() {
     this.add('personalize:CreateEventTracker');
     return this;
   }
@@ -577,7 +577,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateFilter.html
    */
-  public createFilter() {
+  public toCreateFilter() {
     this.add('personalize:CreateFilter');
     return this;
   }
@@ -589,7 +589,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateSchema.html
    */
-  public createSchema() {
+  public toCreateSchema() {
     this.add('personalize:CreateSchema');
     return this;
   }
@@ -601,7 +601,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateSolution.html
    */
-  public createSolution() {
+  public toCreateSolution() {
     this.add('personalize:CreateSolution');
     return this;
   }
@@ -613,7 +613,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_CreateSolutionVersion.html
    */
-  public createSolutionVersion() {
+  public toCreateSolutionVersion() {
     this.add('personalize:CreateSolutionVersion');
     return this;
   }
@@ -625,7 +625,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteCampaign.html
    */
-  public deleteCampaign() {
+  public toDeleteCampaign() {
     this.add('personalize:DeleteCampaign');
     return this;
   }
@@ -637,7 +637,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteDataset.html
    */
-  public deleteDataset() {
+  public toDeleteDataset() {
     this.add('personalize:DeleteDataset');
     return this;
   }
@@ -649,7 +649,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html
    */
-  public deleteDatasetGroup() {
+  public toDeleteDatasetGroup() {
     this.add('personalize:DeleteDatasetGroup');
     return this;
   }
@@ -661,7 +661,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteEventTracker.html
    */
-  public deleteEventTracker() {
+  public toDeleteEventTracker() {
     this.add('personalize:DeleteEventTracker');
     return this;
   }
@@ -673,7 +673,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteFilter.html
    */
-  public deleteFilter() {
+  public toDeleteFilter() {
     this.add('personalize:DeleteFilter');
     return this;
   }
@@ -685,7 +685,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteSchema.html
    */
-  public deleteSchema() {
+  public toDeleteSchema() {
     this.add('personalize:DeleteSchema');
     return this;
   }
@@ -697,7 +697,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DeleteSolution.html
    */
-  public deleteSolution() {
+  public toDeleteSolution() {
     this.add('personalize:DeleteSolution');
     return this;
   }
@@ -709,7 +709,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeAlgorithm.html
    */
-  public describeAlgorithm() {
+  public toDescribeAlgorithm() {
     this.add('personalize:DescribeAlgorithm');
     return this;
   }
@@ -721,7 +721,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeBatchInferenceJob.html
    */
-  public describeBatchInferenceJob() {
+  public toDescribeBatchInferenceJob() {
     this.add('personalize:DescribeBatchInferenceJob');
     return this;
   }
@@ -733,7 +733,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeCampaign.html
    */
-  public describeCampaign() {
+  public toDescribeCampaign() {
     this.add('personalize:DescribeCampaign');
     return this;
   }
@@ -745,7 +745,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeDataset.html
    */
-  public describeDataset() {
+  public toDescribeDataset() {
     this.add('personalize:DescribeDataset');
     return this;
   }
@@ -757,7 +757,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html
    */
-  public describeDatasetGroup() {
+  public toDescribeDatasetGroup() {
     this.add('personalize:DescribeDatasetGroup');
     return this;
   }
@@ -769,7 +769,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html
    */
-  public describeDatasetImportJob() {
+  public toDescribeDatasetImportJob() {
     this.add('personalize:DescribeDatasetImportJob');
     return this;
   }
@@ -781,7 +781,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeEventTracker.html
    */
-  public describeEventTracker() {
+  public toDescribeEventTracker() {
     this.add('personalize:DescribeEventTracker');
     return this;
   }
@@ -793,7 +793,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeFeatureTransformation.html
    */
-  public describeFeatureTransformation() {
+  public toDescribeFeatureTransformation() {
     this.add('personalize:DescribeFeatureTransformation');
     return this;
   }
@@ -805,7 +805,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeFilter.html
    */
-  public describeFilter() {
+  public toDescribeFilter() {
     this.add('personalize:DescribeFilter');
     return this;
   }
@@ -817,7 +817,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeRecipe.html
    */
-  public describeRecipe() {
+  public toDescribeRecipe() {
     this.add('personalize:DescribeRecipe');
     return this;
   }
@@ -829,7 +829,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSchema.html
    */
-  public describeSchema() {
+  public toDescribeSchema() {
     this.add('personalize:DescribeSchema');
     return this;
   }
@@ -841,7 +841,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSolution.html
    */
-  public describeSolution() {
+  public toDescribeSolution() {
     this.add('personalize:DescribeSolution');
     return this;
   }
@@ -853,7 +853,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSolutionVersion.html
    */
-  public describeSolutionVersion() {
+  public toDescribeSolutionVersion() {
     this.add('personalize:DescribeSolutionVersion');
     return this;
   }
@@ -865,7 +865,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetPersonalizedRanking.html
    */
-  public getPersonalizedRanking() {
+  public toGetPersonalizedRanking() {
     this.add('personalize:GetPersonalizedRanking');
     return this;
   }
@@ -877,7 +877,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetRecommendations.html
    */
-  public getRecommendations() {
+  public toGetRecommendations() {
     this.add('personalize:GetRecommendations');
     return this;
   }
@@ -889,7 +889,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_GetSolutionMetrics.html
    */
-  public getSolutionMetrics() {
+  public toGetSolutionMetrics() {
     this.add('personalize:GetSolutionMetrics');
     return this;
   }
@@ -901,7 +901,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListBatchInferenceJobs.html
    */
-  public listBatchInferenceJobs() {
+  public toListBatchInferenceJobs() {
     this.add('personalize:ListBatchInferenceJobs');
     return this;
   }
@@ -913,7 +913,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListCampaigns.html
    */
-  public listCampaigns() {
+  public toListCampaigns() {
     this.add('personalize:ListCampaigns');
     return this;
   }
@@ -925,7 +925,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html
    */
-  public listDatasetGroups() {
+  public toListDatasetGroups() {
     this.add('personalize:ListDatasetGroups');
     return this;
   }
@@ -937,7 +937,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html
    */
-  public listDatasetImportJobs() {
+  public toListDatasetImportJobs() {
     this.add('personalize:ListDatasetImportJobs');
     return this;
   }
@@ -949,7 +949,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListDatasets.html
    */
-  public listDatasets() {
+  public toListDatasets() {
     this.add('personalize:ListDatasets');
     return this;
   }
@@ -961,7 +961,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListEventTrackers.html
    */
-  public listEventTrackers() {
+  public toListEventTrackers() {
     this.add('personalize:ListEventTrackers');
     return this;
   }
@@ -973,7 +973,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListFilters.html
    */
-  public listFilters() {
+  public toListFilters() {
     this.add('personalize:ListFilters');
     return this;
   }
@@ -985,7 +985,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListRecipes.html
    */
-  public listRecipes() {
+  public toListRecipes() {
     this.add('personalize:ListRecipes');
     return this;
   }
@@ -997,7 +997,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSchemas.html
    */
-  public listSchemas() {
+  public toListSchemas() {
     this.add('personalize:ListSchemas');
     return this;
   }
@@ -1009,7 +1009,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutionVersions.html
    */
-  public listSolutionVersions() {
+  public toListSolutionVersions() {
     this.add('personalize:ListSolutionVersions');
     return this;
   }
@@ -1021,7 +1021,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutions.html
    */
-  public listSolutions() {
+  public toListSolutions() {
     this.add('personalize:ListSolutions');
     return this;
   }
@@ -1033,7 +1033,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutEvents.html
    */
-  public putEvents() {
+  public toPutEvents() {
     this.add('personalize:PutEvents');
     return this;
   }
@@ -1045,7 +1045,7 @@ export class Personalize extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UpdateCampaign.html
    */
-  public updateCampaign() {
+  public toUpdateCampaign() {
     this.add('personalize:UpdateCampaign');
     return this;
   }

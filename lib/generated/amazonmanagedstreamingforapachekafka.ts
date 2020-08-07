@@ -191,7 +191,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster
    */
-  public createCluster() {
+  public toCreateCluster() {
     this.add('kafka:CreateCluster');
     return this;
   }
@@ -203,7 +203,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
-  public createConfiguration() {
+  public toCreateConfiguration() {
     this.add('kafka:CreateConfiguration');
     return this;
   }
@@ -215,7 +215,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DeleteCluster
    */
-  public deleteCluster() {
+  public toDeleteCluster() {
     this.add('kafka:DeleteCluster');
     return this;
   }
@@ -227,7 +227,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster
    */
-  public describeCluster() {
+  public toDescribeCluster() {
     this.add('kafka:DescribeCluster');
     return this;
   }
@@ -239,7 +239,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/operations-clusteroperationarn.html#DescribeClusterOperation
    */
-  public describeClusterOperation() {
+  public toDescribeClusterOperation() {
     this.add('kafka:DescribeClusterOperation');
     return this;
   }
@@ -251,7 +251,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn.html#DescribeConfiguration
    */
-  public describeConfiguration() {
+  public toDescribeConfiguration() {
     this.add('kafka:DescribeConfiguration');
     return this;
   }
@@ -263,7 +263,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-configurationarn-revision.html#DescribeConfigurationRevision
    */
-  public describeConfigurationRevision() {
+  public toDescribeConfigurationRevision() {
     this.add('kafka:DescribeConfigurationRevision');
     return this;
   }
@@ -275,7 +275,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-bootstrap-brokers.html#GetBootstrapBrokers
    */
-  public getBootstrapBrokers() {
+  public toGetBootstrapBrokers() {
     this.add('kafka:GetBootstrapBrokers');
     return this;
   }
@@ -287,7 +287,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/compatible-kafka-versions.html#GetCompatibleKafkaVersions
    */
-  public getCompatibleKafkaVersions() {
+  public toGetCompatibleKafkaVersions() {
     this.add('kafka:GetCompatibleKafkaVersions');
     return this;
   }
@@ -299,7 +299,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations
    */
-  public listClusterOperations() {
+  public toListClusterOperations() {
     this.add('kafka:ListClusterOperations');
     return this;
   }
@@ -311,7 +311,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters
    */
-  public listClusters() {
+  public toListClusters() {
     this.add('kafka:ListClusters');
     return this;
   }
@@ -323,7 +323,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/configurations.html#CreateConfiguration
    */
-  public listConfigurations() {
+  public toListConfigurations() {
     this.add('kafka:ListConfigurations');
     return this;
   }
@@ -335,7 +335,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes.html#ListNodes
    */
-  public listNodes() {
+  public toListNodes() {
     this.add('kafka:ListNodes');
     return this;
   }
@@ -347,7 +347,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('kafka:ListTagsForResource');
     return this;
   }
@@ -363,7 +363,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#TagResource
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('kafka:TagResource');
     return this;
   }
@@ -378,7 +378,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#UntagResource
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('kafka:UntagResource');
     return this;
   }
@@ -390,7 +390,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-count.html#UpdateBrokerCount
    */
-  public updateBrokerCount() {
+  public toUpdateBrokerCount() {
     this.add('kafka:UpdateBrokerCount');
     return this;
   }
@@ -402,7 +402,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-nodes-storage.html#UpdateBrokerStorage
    */
-  public updateBrokerStorage() {
+  public toUpdateBrokerStorage() {
     this.add('kafka:UpdateBrokerStorage');
     return this;
   }
@@ -414,7 +414,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-configuration.html#UpdateClusterConfiguration
    */
-  public updateClusterConfiguration() {
+  public toUpdateClusterConfiguration() {
     this.add('kafka:UpdateClusterConfiguration');
     return this;
   }
@@ -426,7 +426,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-version.html#UpdateClusterKafkaVersion
    */
-  public updateClusterKafkaVersion() {
+  public toUpdateClusterKafkaVersion() {
     this.add('kafka:UpdateClusterKafkaVersion');
     return this;
   }
@@ -438,7 +438,7 @@ export class Kafka extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring
    */
-  public updateMonitoring() {
+  public toUpdateMonitoring() {
     this.add('kafka:UpdateMonitoring');
     return this;
   }
@@ -469,8 +469,8 @@ export class Kafka extends PolicyStatement {
    * Filter requests based on the allowed set of values for each of the tags
    *
    * Applies to actions:
-   * - .createCluster()
-   * - .tagResource()
+   * - .toCreateCluster()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -498,9 +498,9 @@ export class Kafka extends PolicyStatement {
    * Filter requests based on the presence of mandatory tag keys in the request
    *
    * Applies to actions:
-   * - .createCluster()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateCluster()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

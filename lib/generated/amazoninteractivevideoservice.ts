@@ -261,7 +261,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetChannel.html
    */
-  public batchGetChannel() {
+  public toBatchGetChannel() {
     this.add('ivs:BatchGetChannel');
     return this;
   }
@@ -273,7 +273,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_BatchGetStreamKey.html
    */
-  public batchGetStreamKey() {
+  public toBatchGetStreamKey() {
     this.add('ivs:BatchGetStreamKey');
     return this;
   }
@@ -289,7 +289,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateChannel.html
    */
-  public createChannel() {
+  public toCreateChannel() {
     this.add('ivs:CreateChannel');
     return this;
   }
@@ -305,7 +305,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_CreateStreamKey.html
    */
-  public createStreamKey() {
+  public toCreateStreamKey() {
     this.add('ivs:CreateStreamKey');
     return this;
   }
@@ -317,7 +317,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteChannel.html
    */
-  public deleteChannel() {
+  public toDeleteChannel() {
     this.add('ivs:DeleteChannel');
     return this;
   }
@@ -329,7 +329,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html
    */
-  public deleteStreamKey() {
+  public toDeleteStreamKey() {
     this.add('ivs:DeleteStreamKey');
     return this;
   }
@@ -341,7 +341,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetChannel.html
    */
-  public getChannel() {
+  public toGetChannel() {
     this.add('ivs:GetChannel');
     return this;
   }
@@ -353,7 +353,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStream.html
    */
-  public getStream() {
+  public toGetStream() {
     this.add('ivs:GetStream');
     return this;
   }
@@ -365,7 +365,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetStreamKey.html
    */
-  public getStreamKey() {
+  public toGetStreamKey() {
     this.add('ivs:GetStreamKey');
     return this;
   }
@@ -377,7 +377,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html
    */
-  public listChannels() {
+  public toListChannels() {
     this.add('ivs:ListChannels');
     return this;
   }
@@ -389,7 +389,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreamKeys.html
    */
-  public listStreamKeys() {
+  public toListStreamKeys() {
     this.add('ivs:ListStreamKeys');
     return this;
   }
@@ -401,7 +401,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListStreams.html
    */
-  public listStreams() {
+  public toListStreams() {
     this.add('ivs:ListStreams');
     return this;
   }
@@ -417,7 +417,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('ivs:ListTagsForResource');
     return this;
   }
@@ -429,7 +429,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PutMetadata.html
    */
-  public putMetadata() {
+  public toPutMetadata() {
     this.add('ivs:PutMetadata');
     return this;
   }
@@ -441,7 +441,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_StopStream.html
    */
-  public stopStream() {
+  public toStopStream() {
     this.add('ivs:StopStream');
     return this;
   }
@@ -457,7 +457,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('ivs:TagResource');
     return this;
   }
@@ -472,7 +472,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('ivs:UntagResource');
     return this;
   }
@@ -484,7 +484,7 @@ export class Ivs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ivs/latest/APIReference/API_UpdateChannel.html
    */
-  public updateChannel() {
+  public toUpdateChannel() {
     this.add('ivs:UpdateChannel');
     return this;
   }
@@ -535,10 +535,10 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createChannel()
-   * - .createStreamKey()
-   * - .listTagsForResource()
-   * - .tagResource()
+   * - .toCreateChannel()
+   * - .toCreateStreamKey()
+   * - .toListTagsForResource()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -571,11 +571,11 @@ export class Ivs extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createChannel()
-   * - .createStreamKey()
-   * - .listTagsForResource()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateChannel()
+   * - .toCreateStreamKey()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -299,7 +299,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html
    */
-  public createCluster() {
+  public toCreateCluster() {
     this.add('eks:CreateCluster');
     return this;
   }
@@ -315,7 +315,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateFargateProfile.html
    */
-  public createFargateProfile() {
+  public toCreateFargateProfile() {
     this.add('eks:CreateFargateProfile');
     return this;
   }
@@ -331,7 +331,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateNodegroup.html
    */
-  public createNodegroup() {
+  public toCreateNodegroup() {
     this.add('eks:CreateNodegroup');
     return this;
   }
@@ -343,7 +343,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html
    */
-  public deleteCluster() {
+  public toDeleteCluster() {
     this.add('eks:DeleteCluster');
     return this;
   }
@@ -355,7 +355,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteFargateProfile.html
    */
-  public deleteFargateProfile() {
+  public toDeleteFargateProfile() {
     this.add('eks:DeleteFargateProfile');
     return this;
   }
@@ -367,7 +367,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteNodegroup.html
    */
-  public deleteNodegroup() {
+  public toDeleteNodegroup() {
     this.add('eks:DeleteNodegroup');
     return this;
   }
@@ -379,7 +379,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html
    */
-  public describeCluster() {
+  public toDescribeCluster() {
     this.add('eks:DescribeCluster');
     return this;
   }
@@ -391,7 +391,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeFargateProfile.html
    */
-  public describeFargateProfile() {
+  public toDescribeFargateProfile() {
     this.add('eks:DescribeFargateProfile');
     return this;
   }
@@ -403,7 +403,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeNodegroup.html
    */
-  public describeNodegroup() {
+  public toDescribeNodegroup() {
     this.add('eks:DescribeNodegroup');
     return this;
   }
@@ -415,7 +415,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html
    */
-  public describeUpdate() {
+  public toDescribeUpdate() {
     this.add('eks:DescribeUpdate');
     return this;
   }
@@ -427,7 +427,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html
    */
-  public listClusters() {
+  public toListClusters() {
     this.add('eks:ListClusters');
     return this;
   }
@@ -439,7 +439,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListFargateProfiles.html
    */
-  public listFargateProfiles() {
+  public toListFargateProfiles() {
     this.add('eks:ListFargateProfiles');
     return this;
   }
@@ -451,7 +451,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListNodegroups.html
    */
-  public listNodegroups() {
+  public toListNodegroups() {
     this.add('eks:ListNodegroups');
     return this;
   }
@@ -463,7 +463,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('eks:ListTagsForResource');
     return this;
   }
@@ -475,7 +475,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_ListUpdates.html
    */
-  public listUpdates() {
+  public toListUpdates() {
     this.add('eks:ListUpdates');
     return this;
   }
@@ -491,7 +491,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('eks:TagResource');
     return this;
   }
@@ -506,7 +506,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('eks:UntagResource');
     return this;
   }
@@ -518,7 +518,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html
    */
-  public updateClusterConfig() {
+  public toUpdateClusterConfig() {
     this.add('eks:UpdateClusterConfig');
     return this;
   }
@@ -530,7 +530,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html
    */
-  public updateClusterVersion() {
+  public toUpdateClusterVersion() {
     this.add('eks:UpdateClusterVersion');
     return this;
   }
@@ -542,7 +542,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupConfig.html
    */
-  public updateNodegroupConfig() {
+  public toUpdateNodegroupConfig() {
     this.add('eks:UpdateNodegroupConfig');
     return this;
   }
@@ -554,7 +554,7 @@ export class Eks extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html
    */
-  public updateNodegroupVersion() {
+  public toUpdateNodegroupVersion() {
     this.add('eks:UpdateNodegroupVersion');
     return this;
   }
@@ -639,10 +639,10 @@ export class Eks extends PolicyStatement {
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
    * Applies to actions:
-   * - .createCluster()
-   * - .createFargateProfile()
-   * - .createNodegroup()
-   * - .tagResource()
+   * - .toCreateCluster()
+   * - .toCreateFargateProfile()
+   * - .toCreateNodegroup()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -676,11 +676,11 @@ export class Eks extends PolicyStatement {
    * https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags
    *
    * Applies to actions:
-   * - .createCluster()
-   * - .createFargateProfile()
-   * - .createNodegroup()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateCluster()
+   * - .toCreateFargateProfile()
+   * - .toCreateNodegroup()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

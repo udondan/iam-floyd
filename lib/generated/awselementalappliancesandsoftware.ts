@@ -116,7 +116,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public createQuote() {
+  public toCreateQuote() {
     this.add('elemental-appliances-software:CreateQuote');
     return this;
   }
@@ -128,7 +128,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public getQuote() {
+  public toGetQuote() {
     this.add('elemental-appliances-software:GetQuote');
     return this;
   }
@@ -140,7 +140,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public listQuotes() {
+  public toListQuotes() {
     this.add('elemental-appliances-software:ListQuotes');
     return this;
   }
@@ -152,7 +152,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('elemental-appliances-software:ListTagsForResource');
     return this;
   }
@@ -168,7 +168,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('elemental-appliances-software:TagResource');
     return this;
   }
@@ -183,7 +183,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('elemental-appliances-software:UntagResource');
     return this;
   }
@@ -195,7 +195,7 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software
    */
-  public updateQuote() {
+  public toUpdateQuote() {
     this.add('elemental-appliances-software:UpdateQuote');
     return this;
   }
@@ -228,8 +228,8 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    *
    * Applies to actions:
-   * - .createQuote()
-   * - .tagResource()
+   * - .toCreateQuote()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -261,9 +261,9 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
    * https://docs.aws.amazon.com/elemental-appliances-software
    *
    * Applies to actions:
-   * - .createQuote()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateQuote()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

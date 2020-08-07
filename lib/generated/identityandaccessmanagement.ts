@@ -1478,7 +1478,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html
    */
-  public addClientIDToOpenIDConnectProvider() {
+  public toAddClientIDToOpenIDConnectProvider() {
     this.add('iam:AddClientIDToOpenIDConnectProvider');
     return this;
   }
@@ -1493,7 +1493,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html
    */
-  public addRoleToInstanceProfile() {
+  public toAddRoleToInstanceProfile() {
     this.add('iam:AddRoleToInstanceProfile');
     return this;
   }
@@ -1505,7 +1505,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html
    */
-  public addUserToGroup() {
+  public toAddUserToGroup() {
     this.add('iam:AddUserToGroup');
     return this;
   }
@@ -1520,7 +1520,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html
    */
-  public attachGroupPolicy() {
+  public toAttachGroupPolicy() {
     this.add('iam:AttachGroupPolicy');
     return this;
   }
@@ -1536,7 +1536,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html
    */
-  public attachRolePolicy() {
+  public toAttachRolePolicy() {
     this.add('iam:AttachRolePolicy');
     return this;
   }
@@ -1552,7 +1552,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html
    */
-  public attachUserPolicy() {
+  public toAttachUserPolicy() {
     this.add('iam:AttachUserPolicy');
     return this;
   }
@@ -1564,7 +1564,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html
    */
-  public changePassword() {
+  public toChangePassword() {
     this.add('iam:ChangePassword');
     return this;
   }
@@ -1576,7 +1576,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html
    */
-  public createAccessKey() {
+  public toCreateAccessKey() {
     this.add('iam:CreateAccessKey');
     return this;
   }
@@ -1588,7 +1588,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html
    */
-  public createAccountAlias() {
+  public toCreateAccountAlias() {
     this.add('iam:CreateAccountAlias');
     return this;
   }
@@ -1600,7 +1600,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html
    */
-  public createGroup() {
+  public toCreateGroup() {
     this.add('iam:CreateGroup');
     return this;
   }
@@ -1612,7 +1612,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html
    */
-  public createInstanceProfile() {
+  public toCreateInstanceProfile() {
     this.add('iam:CreateInstanceProfile');
     return this;
   }
@@ -1624,7 +1624,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html
    */
-  public createLoginProfile() {
+  public toCreateLoginProfile() {
     this.add('iam:CreateLoginProfile');
     return this;
   }
@@ -1636,7 +1636,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html
    */
-  public createOpenIDConnectProvider() {
+  public toCreateOpenIDConnectProvider() {
     this.add('iam:CreateOpenIDConnectProvider');
     return this;
   }
@@ -1648,7 +1648,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html
    */
-  public createPolicy() {
+  public toCreatePolicy() {
     this.add('iam:CreatePolicy');
     return this;
   }
@@ -1660,7 +1660,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html
    */
-  public createPolicyVersion() {
+  public toCreatePolicyVersion() {
     this.add('iam:CreatePolicyVersion');
     return this;
   }
@@ -1675,7 +1675,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html
    */
-  public createRole() {
+  public toCreateRole() {
     this.add('iam:CreateRole');
     return this;
   }
@@ -1687,7 +1687,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html
    */
-  public createSAMLProvider() {
+  public toCreateSAMLProvider() {
     this.add('iam:CreateSAMLProvider');
     return this;
   }
@@ -1702,7 +1702,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceLinkedRole.html
    */
-  public createServiceLinkedRole() {
+  public toCreateServiceLinkedRole() {
     this.add('iam:CreateServiceLinkedRole');
     return this;
   }
@@ -1714,7 +1714,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceSpecificCredential.html
    */
-  public createServiceSpecificCredential() {
+  public toCreateServiceSpecificCredential() {
     this.add('iam:CreateServiceSpecificCredential');
     return this;
   }
@@ -1729,7 +1729,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html
    */
-  public createUser() {
+  public toCreateUser() {
     this.add('iam:CreateUser');
     return this;
   }
@@ -1741,7 +1741,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateVirtualMFADevice.html
    */
-  public createVirtualMFADevice() {
+  public toCreateVirtualMFADevice() {
     this.add('iam:CreateVirtualMFADevice');
     return this;
   }
@@ -1753,7 +1753,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html
    */
-  public deactivateMFADevice() {
+  public toDeactivateMFADevice() {
     this.add('iam:DeactivateMFADevice');
     return this;
   }
@@ -1765,7 +1765,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html
    */
-  public deleteAccessKey() {
+  public toDeleteAccessKey() {
     this.add('iam:DeleteAccessKey');
     return this;
   }
@@ -1777,7 +1777,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html
    */
-  public deleteAccountAlias() {
+  public toDeleteAccountAlias() {
     this.add('iam:DeleteAccountAlias');
     return this;
   }
@@ -1789,7 +1789,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html
    */
-  public deleteAccountPasswordPolicy() {
+  public toDeleteAccountPasswordPolicy() {
     this.add('iam:DeleteAccountPasswordPolicy');
     return this;
   }
@@ -1801,7 +1801,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroup.html
    */
-  public deleteGroup() {
+  public toDeleteGroup() {
     this.add('iam:DeleteGroup');
     return this;
   }
@@ -1813,7 +1813,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html
    */
-  public deleteGroupPolicy() {
+  public toDeleteGroupPolicy() {
     this.add('iam:DeleteGroupPolicy');
     return this;
   }
@@ -1825,7 +1825,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteInstanceProfile.html
    */
-  public deleteInstanceProfile() {
+  public toDeleteInstanceProfile() {
     this.add('iam:DeleteInstanceProfile');
     return this;
   }
@@ -1837,7 +1837,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html
    */
-  public deleteLoginProfile() {
+  public toDeleteLoginProfile() {
     this.add('iam:DeleteLoginProfile');
     return this;
   }
@@ -1849,7 +1849,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html
    */
-  public deleteOpenIDConnectProvider() {
+  public toDeleteOpenIDConnectProvider() {
     this.add('iam:DeleteOpenIDConnectProvider');
     return this;
   }
@@ -1861,7 +1861,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html
    */
-  public deletePolicy() {
+  public toDeletePolicy() {
     this.add('iam:DeletePolicy');
     return this;
   }
@@ -1873,7 +1873,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html
    */
-  public deletePolicyVersion() {
+  public toDeletePolicyVersion() {
     this.add('iam:DeletePolicyVersion');
     return this;
   }
@@ -1885,7 +1885,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRole.html
    */
-  public deleteRole() {
+  public toDeleteRole() {
     this.add('iam:DeleteRole');
     return this;
   }
@@ -1900,7 +1900,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePermissionsBoundary.html
    */
-  public deleteRolePermissionsBoundary() {
+  public toDeleteRolePermissionsBoundary() {
     this.add('iam:DeleteRolePermissionsBoundary');
     return this;
   }
@@ -1915,7 +1915,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html
    */
-  public deleteRolePolicy() {
+  public toDeleteRolePolicy() {
     this.add('iam:DeleteRolePolicy');
     return this;
   }
@@ -1927,7 +1927,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html
    */
-  public deleteSAMLProvider() {
+  public toDeleteSAMLProvider() {
     this.add('iam:DeleteSAMLProvider');
     return this;
   }
@@ -1939,7 +1939,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html
    */
-  public deleteSSHPublicKey() {
+  public toDeleteSSHPublicKey() {
     this.add('iam:DeleteSSHPublicKey');
     return this;
   }
@@ -1951,7 +1951,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServerCertificate.html
    */
-  public deleteServerCertificate() {
+  public toDeleteServerCertificate() {
     this.add('iam:DeleteServerCertificate');
     return this;
   }
@@ -1963,7 +1963,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html
    */
-  public deleteServiceLinkedRole() {
+  public toDeleteServiceLinkedRole() {
     this.add('iam:DeleteServiceLinkedRole');
     return this;
   }
@@ -1975,7 +1975,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceSpecificCredential.html
    */
-  public deleteServiceSpecificCredential() {
+  public toDeleteServiceSpecificCredential() {
     this.add('iam:DeleteServiceSpecificCredential');
     return this;
   }
@@ -1987,7 +1987,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSigningCertificate.html
    */
-  public deleteSigningCertificate() {
+  public toDeleteSigningCertificate() {
     this.add('iam:DeleteSigningCertificate');
     return this;
   }
@@ -1999,7 +1999,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUser.html
    */
-  public deleteUser() {
+  public toDeleteUser() {
     this.add('iam:DeleteUser');
     return this;
   }
@@ -2014,7 +2014,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPermissionsBoundary.html
    */
-  public deleteUserPermissionsBoundary() {
+  public toDeleteUserPermissionsBoundary() {
     this.add('iam:DeleteUserPermissionsBoundary');
     return this;
   }
@@ -2029,7 +2029,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html
    */
-  public deleteUserPolicy() {
+  public toDeleteUserPolicy() {
     this.add('iam:DeleteUserPolicy');
     return this;
   }
@@ -2041,7 +2041,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html
    */
-  public deleteVirtualMFADevice() {
+  public toDeleteVirtualMFADevice() {
     this.add('iam:DeleteVirtualMFADevice');
     return this;
   }
@@ -2056,7 +2056,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html
    */
-  public detachGroupPolicy() {
+  public toDetachGroupPolicy() {
     this.add('iam:DetachGroupPolicy');
     return this;
   }
@@ -2072,7 +2072,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html
    */
-  public detachRolePolicy() {
+  public toDetachRolePolicy() {
     this.add('iam:DetachRolePolicy');
     return this;
   }
@@ -2088,7 +2088,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html
    */
-  public detachUserPolicy() {
+  public toDetachUserPolicy() {
     this.add('iam:DetachUserPolicy');
     return this;
   }
@@ -2100,7 +2100,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html
    */
-  public enableMFADevice() {
+  public toEnableMFADevice() {
     this.add('iam:EnableMFADevice');
     return this;
   }
@@ -2112,7 +2112,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html
    */
-  public generateCredentialReport() {
+  public toGenerateCredentialReport() {
     this.add('iam:GenerateCredentialReport');
     return this;
   }
@@ -2135,7 +2135,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html
    */
-  public generateOrganizationsAccessReport() {
+  public toGenerateOrganizationsAccessReport() {
     this.add('iam:GenerateOrganizationsAccessReport');
     return this;
   }
@@ -2147,7 +2147,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateServiceLastAccessedDetails.html
    */
-  public generateServiceLastAccessedDetails() {
+  public toGenerateServiceLastAccessedDetails() {
     this.add('iam:GenerateServiceLastAccessedDetails');
     return this;
   }
@@ -2159,7 +2159,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html
    */
-  public getAccessKeyLastUsed() {
+  public toGetAccessKeyLastUsed() {
     this.add('iam:GetAccessKeyLastUsed');
     return this;
   }
@@ -2171,7 +2171,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html
    */
-  public getAccountAuthorizationDetails() {
+  public toGetAccountAuthorizationDetails() {
     this.add('iam:GetAccountAuthorizationDetails');
     return this;
   }
@@ -2183,7 +2183,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html
    */
-  public getAccountPasswordPolicy() {
+  public toGetAccountPasswordPolicy() {
     this.add('iam:GetAccountPasswordPolicy');
     return this;
   }
@@ -2195,7 +2195,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html
    */
-  public getAccountSummary() {
+  public toGetAccountSummary() {
     this.add('iam:GetAccountSummary');
     return this;
   }
@@ -2207,7 +2207,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html
    */
-  public getContextKeysForCustomPolicy() {
+  public toGetContextKeysForCustomPolicy() {
     this.add('iam:GetContextKeysForCustomPolicy');
     return this;
   }
@@ -2219,7 +2219,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html
    */
-  public getContextKeysForPrincipalPolicy() {
+  public toGetContextKeysForPrincipalPolicy() {
     this.add('iam:GetContextKeysForPrincipalPolicy');
     return this;
   }
@@ -2231,7 +2231,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCredentialReport.html
    */
-  public getCredentialReport() {
+  public toGetCredentialReport() {
     this.add('iam:GetCredentialReport');
     return this;
   }
@@ -2243,7 +2243,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html
    */
-  public getGroup() {
+  public toGetGroup() {
     this.add('iam:GetGroup');
     return this;
   }
@@ -2255,7 +2255,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html
    */
-  public getGroupPolicy() {
+  public toGetGroupPolicy() {
     this.add('iam:GetGroupPolicy');
     return this;
   }
@@ -2267,7 +2267,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html
    */
-  public getInstanceProfile() {
+  public toGetInstanceProfile() {
     this.add('iam:GetInstanceProfile');
     return this;
   }
@@ -2279,7 +2279,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html
    */
-  public getLoginProfile() {
+  public toGetLoginProfile() {
     this.add('iam:GetLoginProfile');
     return this;
   }
@@ -2291,7 +2291,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html
    */
-  public getOpenIDConnectProvider() {
+  public toGetOpenIDConnectProvider() {
     this.add('iam:GetOpenIDConnectProvider');
     return this;
   }
@@ -2303,7 +2303,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOrganizationsAccessReport.html
    */
-  public getOrganizationsAccessReport() {
+  public toGetOrganizationsAccessReport() {
     this.add('iam:GetOrganizationsAccessReport');
     return this;
   }
@@ -2315,7 +2315,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html
    */
-  public getPolicy() {
+  public toGetPolicy() {
     this.add('iam:GetPolicy');
     return this;
   }
@@ -2327,7 +2327,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html
    */
-  public getPolicyVersion() {
+  public toGetPolicyVersion() {
     this.add('iam:GetPolicyVersion');
     return this;
   }
@@ -2339,7 +2339,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html
    */
-  public getRole() {
+  public toGetRole() {
     this.add('iam:GetRole');
     return this;
   }
@@ -2351,7 +2351,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html
    */
-  public getRolePolicy() {
+  public toGetRolePolicy() {
     this.add('iam:GetRolePolicy');
     return this;
   }
@@ -2363,7 +2363,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html
    */
-  public getSAMLProvider() {
+  public toGetSAMLProvider() {
     this.add('iam:GetSAMLProvider');
     return this;
   }
@@ -2375,7 +2375,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html
    */
-  public getSSHPublicKey() {
+  public toGetSSHPublicKey() {
     this.add('iam:GetSSHPublicKey');
     return this;
   }
@@ -2387,7 +2387,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html
    */
-  public getServerCertificate() {
+  public toGetServerCertificate() {
     this.add('iam:GetServerCertificate');
     return this;
   }
@@ -2399,7 +2399,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetails.html
    */
-  public getServiceLastAccessedDetails() {
+  public toGetServiceLastAccessedDetails() {
     this.add('iam:GetServiceLastAccessedDetails');
     return this;
   }
@@ -2411,7 +2411,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html
    */
-  public getServiceLastAccessedDetailsWithEntities() {
+  public toGetServiceLastAccessedDetailsWithEntities() {
     this.add('iam:GetServiceLastAccessedDetailsWithEntities');
     return this;
   }
@@ -2423,7 +2423,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html
    */
-  public getServiceLinkedRoleDeletionStatus() {
+  public toGetServiceLinkedRoleDeletionStatus() {
     this.add('iam:GetServiceLinkedRoleDeletionStatus');
     return this;
   }
@@ -2435,7 +2435,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html
    */
-  public getUser() {
+  public toGetUser() {
     this.add('iam:GetUser');
     return this;
   }
@@ -2447,7 +2447,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html
    */
-  public getUserPolicy() {
+  public toGetUserPolicy() {
     this.add('iam:GetUserPolicy');
     return this;
   }
@@ -2459,7 +2459,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html
    */
-  public listAccessKeys() {
+  public toListAccessKeys() {
     this.add('iam:ListAccessKeys');
     return this;
   }
@@ -2471,7 +2471,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html
    */
-  public listAccountAliases() {
+  public toListAccountAliases() {
     this.add('iam:ListAccountAliases');
     return this;
   }
@@ -2483,7 +2483,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html
    */
-  public listAttachedGroupPolicies() {
+  public toListAttachedGroupPolicies() {
     this.add('iam:ListAttachedGroupPolicies');
     return this;
   }
@@ -2495,7 +2495,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html
    */
-  public listAttachedRolePolicies() {
+  public toListAttachedRolePolicies() {
     this.add('iam:ListAttachedRolePolicies');
     return this;
   }
@@ -2507,7 +2507,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html
    */
-  public listAttachedUserPolicies() {
+  public toListAttachedUserPolicies() {
     this.add('iam:ListAttachedUserPolicies');
     return this;
   }
@@ -2519,7 +2519,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html
    */
-  public listEntitiesForPolicy() {
+  public toListEntitiesForPolicy() {
     this.add('iam:ListEntitiesForPolicy');
     return this;
   }
@@ -2531,7 +2531,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html
    */
-  public listGroupPolicies() {
+  public toListGroupPolicies() {
     this.add('iam:ListGroupPolicies');
     return this;
   }
@@ -2543,7 +2543,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html
    */
-  public listGroups() {
+  public toListGroups() {
     this.add('iam:ListGroups');
     return this;
   }
@@ -2555,7 +2555,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html
    */
-  public listGroupsForUser() {
+  public toListGroupsForUser() {
     this.add('iam:ListGroupsForUser');
     return this;
   }
@@ -2567,7 +2567,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html
    */
-  public listInstanceProfiles() {
+  public toListInstanceProfiles() {
     this.add('iam:ListInstanceProfiles');
     return this;
   }
@@ -2579,7 +2579,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html
    */
-  public listInstanceProfilesForRole() {
+  public toListInstanceProfilesForRole() {
     this.add('iam:ListInstanceProfilesForRole');
     return this;
   }
@@ -2591,7 +2591,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADevices.html
    */
-  public listMFADevices() {
+  public toListMFADevices() {
     this.add('iam:ListMFADevices');
     return this;
   }
@@ -2603,7 +2603,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html
    */
-  public listOpenIDConnectProviders() {
+  public toListOpenIDConnectProviders() {
     this.add('iam:ListOpenIDConnectProviders');
     return this;
   }
@@ -2615,7 +2615,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html
    */
-  public listPolicies() {
+  public toListPolicies() {
     this.add('iam:ListPolicies');
     return this;
   }
@@ -2627,7 +2627,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccess.html
    */
-  public listPoliciesGrantingServiceAccess() {
+  public toListPoliciesGrantingServiceAccess() {
     this.add('iam:ListPoliciesGrantingServiceAccess');
     return this;
   }
@@ -2639,7 +2639,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html
    */
-  public listPolicyVersions() {
+  public toListPolicyVersions() {
     this.add('iam:ListPolicyVersions');
     return this;
   }
@@ -2651,7 +2651,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html
    */
-  public listRolePolicies() {
+  public toListRolePolicies() {
     this.add('iam:ListRolePolicies');
     return this;
   }
@@ -2663,7 +2663,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoleTags.html
    */
-  public listRoleTags() {
+  public toListRoleTags() {
     this.add('iam:ListRoleTags');
     return this;
   }
@@ -2675,7 +2675,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html
    */
-  public listRoles() {
+  public toListRoles() {
     this.add('iam:ListRoles');
     return this;
   }
@@ -2687,7 +2687,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html
    */
-  public listSAMLProviders() {
+  public toListSAMLProviders() {
     this.add('iam:ListSAMLProviders');
     return this;
   }
@@ -2699,7 +2699,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSSHPublicKeys.html
    */
-  public listSSHPublicKeys() {
+  public toListSSHPublicKeys() {
     this.add('iam:ListSSHPublicKeys');
     return this;
   }
@@ -2711,7 +2711,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html
    */
-  public listServerCertificates() {
+  public toListServerCertificates() {
     this.add('iam:ListServerCertificates');
     return this;
   }
@@ -2723,7 +2723,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServiceSpecificCredentials.html
    */
-  public listServiceSpecificCredentials() {
+  public toListServiceSpecificCredentials() {
     this.add('iam:ListServiceSpecificCredentials');
     return this;
   }
@@ -2735,7 +2735,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSigningCertificates.html
    */
-  public listSigningCertificates() {
+  public toListSigningCertificates() {
     this.add('iam:ListSigningCertificates');
     return this;
   }
@@ -2747,7 +2747,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html
    */
-  public listUserPolicies() {
+  public toListUserPolicies() {
     this.add('iam:ListUserPolicies');
     return this;
   }
@@ -2759,7 +2759,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserTags.html
    */
-  public listUserTags() {
+  public toListUserTags() {
     this.add('iam:ListUserTags');
     return this;
   }
@@ -2771,7 +2771,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html
    */
-  public listUsers() {
+  public toListUsers() {
     this.add('iam:ListUsers');
     return this;
   }
@@ -2783,7 +2783,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListVirtualMFADevices.html
    */
-  public listVirtualMFADevices() {
+  public toListVirtualMFADevices() {
     this.add('iam:ListVirtualMFADevices');
     return this;
   }
@@ -2799,7 +2799,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html
    */
-  public passRole() {
+  public toPassRole() {
     this.add('iam:PassRole');
     return this;
   }
@@ -2811,7 +2811,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html
    */
-  public putGroupPolicy() {
+  public toPutGroupPolicy() {
     this.add('iam:PutGroupPolicy');
     return this;
   }
@@ -2826,7 +2826,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html
    */
-  public putRolePermissionsBoundary() {
+  public toPutRolePermissionsBoundary() {
     this.add('iam:PutRolePermissionsBoundary');
     return this;
   }
@@ -2841,7 +2841,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html
    */
-  public putRolePolicy() {
+  public toPutRolePolicy() {
     this.add('iam:PutRolePolicy');
     return this;
   }
@@ -2856,7 +2856,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPermissionsBoundary.html
    */
-  public putUserPermissionsBoundary() {
+  public toPutUserPermissionsBoundary() {
     this.add('iam:PutUserPermissionsBoundary');
     return this;
   }
@@ -2871,7 +2871,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html
    */
-  public putUserPolicy() {
+  public toPutUserPolicy() {
     this.add('iam:PutUserPolicy');
     return this;
   }
@@ -2883,7 +2883,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html
    */
-  public removeClientIDFromOpenIDConnectProvider() {
+  public toRemoveClientIDFromOpenIDConnectProvider() {
     this.add('iam:RemoveClientIDFromOpenIDConnectProvider');
     return this;
   }
@@ -2895,7 +2895,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveRoleFromInstanceProfile.html
    */
-  public removeRoleFromInstanceProfile() {
+  public toRemoveRoleFromInstanceProfile() {
     this.add('iam:RemoveRoleFromInstanceProfile');
     return this;
   }
@@ -2907,7 +2907,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html
    */
-  public removeUserFromGroup() {
+  public toRemoveUserFromGroup() {
     this.add('iam:RemoveUserFromGroup');
     return this;
   }
@@ -2919,7 +2919,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResetServiceSpecificCredential.html
    */
-  public resetServiceSpecificCredential() {
+  public toResetServiceSpecificCredential() {
     this.add('iam:ResetServiceSpecificCredential');
     return this;
   }
@@ -2931,7 +2931,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html
    */
-  public resyncMFADevice() {
+  public toResyncMFADevice() {
     this.add('iam:ResyncMFADevice');
     return this;
   }
@@ -2943,7 +2943,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html
    */
-  public setDefaultPolicyVersion() {
+  public toSetDefaultPolicyVersion() {
     this.add('iam:SetDefaultPolicyVersion');
     return this;
   }
@@ -2955,7 +2955,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetSecurityTokenServicePreferences.html
    */
-  public setSecurityTokenServicePreferences() {
+  public toSetSecurityTokenServicePreferences() {
     this.add('iam:SetSecurityTokenServicePreferences');
     return this;
   }
@@ -2967,7 +2967,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html
    */
-  public simulateCustomPolicy() {
+  public toSimulateCustomPolicy() {
     this.add('iam:SimulateCustomPolicy');
     return this;
   }
@@ -2979,7 +2979,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html
    */
-  public simulatePrincipalPolicy() {
+  public toSimulatePrincipalPolicy() {
     this.add('iam:SimulatePrincipalPolicy');
     return this;
   }
@@ -2991,7 +2991,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html
    */
-  public tagRole() {
+  public toTagRole() {
     this.add('iam:TagRole');
     return this;
   }
@@ -3003,7 +3003,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagUser.html
    */
-  public tagUser() {
+  public toTagUser() {
     this.add('iam:TagUser');
     return this;
   }
@@ -3015,7 +3015,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagRole.html
    */
-  public untagRole() {
+  public toUntagRole() {
     this.add('iam:UntagRole');
     return this;
   }
@@ -3027,7 +3027,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagUser.html
    */
-  public untagUser() {
+  public toUntagUser() {
     this.add('iam:UntagUser');
     return this;
   }
@@ -3039,7 +3039,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html
    */
-  public updateAccessKey() {
+  public toUpdateAccessKey() {
     this.add('iam:UpdateAccessKey');
     return this;
   }
@@ -3051,7 +3051,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html
    */
-  public updateAccountPasswordPolicy() {
+  public toUpdateAccountPasswordPolicy() {
     this.add('iam:UpdateAccountPasswordPolicy');
     return this;
   }
@@ -3063,7 +3063,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html
    */
-  public updateAssumeRolePolicy() {
+  public toUpdateAssumeRolePolicy() {
     this.add('iam:UpdateAssumeRolePolicy');
     return this;
   }
@@ -3075,7 +3075,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html
    */
-  public updateGroup() {
+  public toUpdateGroup() {
     this.add('iam:UpdateGroup');
     return this;
   }
@@ -3087,7 +3087,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html
    */
-  public updateLoginProfile() {
+  public toUpdateLoginProfile() {
     this.add('iam:UpdateLoginProfile');
     return this;
   }
@@ -3099,7 +3099,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html
    */
-  public updateOpenIDConnectProviderThumbprint() {
+  public toUpdateOpenIDConnectProviderThumbprint() {
     this.add('iam:UpdateOpenIDConnectProviderThumbprint');
     return this;
   }
@@ -3111,7 +3111,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html
    */
-  public updateRole() {
+  public toUpdateRole() {
     this.add('iam:UpdateRole');
     return this;
   }
@@ -3123,7 +3123,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html
    */
-  public updateRoleDescription() {
+  public toUpdateRoleDescription() {
     this.add('iam:UpdateRoleDescription');
     return this;
   }
@@ -3135,7 +3135,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html
    */
-  public updateSAMLProvider() {
+  public toUpdateSAMLProvider() {
     this.add('iam:UpdateSAMLProvider');
     return this;
   }
@@ -3147,7 +3147,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSSHPublicKey.html
    */
-  public updateSSHPublicKey() {
+  public toUpdateSSHPublicKey() {
     this.add('iam:UpdateSSHPublicKey');
     return this;
   }
@@ -3159,7 +3159,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServerCertificate.html
    */
-  public updateServerCertificate() {
+  public toUpdateServerCertificate() {
     this.add('iam:UpdateServerCertificate');
     return this;
   }
@@ -3171,7 +3171,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServiceSpecificCredential.html
    */
-  public updateServiceSpecificCredential() {
+  public toUpdateServiceSpecificCredential() {
     this.add('iam:UpdateServiceSpecificCredential');
     return this;
   }
@@ -3183,7 +3183,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSigningCertificate.html
    */
-  public updateSigningCertificate() {
+  public toUpdateSigningCertificate() {
     this.add('iam:UpdateSigningCertificate');
     return this;
   }
@@ -3195,7 +3195,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html
    */
-  public updateUser() {
+  public toUpdateUser() {
     this.add('iam:UpdateUser');
     return this;
   }
@@ -3207,7 +3207,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html
    */
-  public uploadSSHPublicKey() {
+  public toUploadSSHPublicKey() {
     this.add('iam:UploadSSHPublicKey');
     return this;
   }
@@ -3219,7 +3219,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html
    */
-  public uploadServerCertificate() {
+  public toUploadServerCertificate() {
     this.add('iam:UploadServerCertificate');
     return this;
   }
@@ -3231,7 +3231,7 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSigningCertificate.html
    */
-  public uploadSigningCertificate() {
+  public toUploadSigningCertificate() {
     this.add('iam:UploadSigningCertificate');
     return this;
   }
@@ -3473,7 +3473,7 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName
    *
    * Applies to actions:
-   * - .createServiceLinkedRole()
+   * - .toCreateServiceLinkedRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3488,7 +3488,7 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AssociatedResourceArn
    *
    * Applies to actions:
-   * - .passRole()
+   * - .toPassRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -3503,7 +3503,7 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId
    *
    * Applies to actions:
-   * - .generateOrganizationsAccessReport()
+   * - .toGenerateOrganizationsAccessReport()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3518,7 +3518,7 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService
    *
    * Applies to actions:
-   * - .passRole()
+   * - .toPassRole()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3533,20 +3533,20 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary
    *
    * Applies to actions:
-   * - .attachRolePolicy()
-   * - .attachUserPolicy()
-   * - .createRole()
-   * - .createUser()
-   * - .deleteRolePermissionsBoundary()
-   * - .deleteRolePolicy()
-   * - .deleteUserPermissionsBoundary()
-   * - .deleteUserPolicy()
-   * - .detachRolePolicy()
-   * - .detachUserPolicy()
-   * - .putRolePermissionsBoundary()
-   * - .putRolePolicy()
-   * - .putUserPermissionsBoundary()
-   * - .putUserPolicy()
+   * - .toAttachRolePolicy()
+   * - .toAttachUserPolicy()
+   * - .toCreateRole()
+   * - .toCreateUser()
+   * - .toDeleteRolePermissionsBoundary()
+   * - .toDeleteRolePolicy()
+   * - .toDeleteUserPermissionsBoundary()
+   * - .toDeleteUserPolicy()
+   * - .toDetachRolePolicy()
+   * - .toDetachUserPolicy()
+   * - .toPutRolePermissionsBoundary()
+   * - .toPutRolePolicy()
+   * - .toPutUserPermissionsBoundary()
+   * - .toPutUserPolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -3561,12 +3561,12 @@ export class Iam extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PolicyARN
    *
    * Applies to actions:
-   * - .attachGroupPolicy()
-   * - .attachRolePolicy()
-   * - .attachUserPolicy()
-   * - .detachGroupPolicy()
-   * - .detachRolePolicy()
-   * - .detachUserPolicy()
+   * - .toAttachGroupPolicy()
+   * - .toAttachRolePolicy()
+   * - .toAttachUserPolicy()
+   * - .toDetachGroupPolicy()
+   * - .toDetachRolePolicy()
+   * - .toDetachUserPolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

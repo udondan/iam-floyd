@@ -728,7 +728,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_AcceptMatch.html
    */
-  public acceptMatch() {
+  public toAcceptMatch() {
     this.add('gamelift:AcceptMatch');
     return this;
   }
@@ -744,7 +744,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html
    */
-  public createAlias() {
+  public toCreateAlias() {
     this.add('gamelift:CreateAlias');
     return this;
   }
@@ -760,7 +760,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html
    */
-  public createBuild() {
+  public toCreateBuild() {
     this.add('gamelift:CreateBuild');
     return this;
   }
@@ -776,7 +776,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html
    */
-  public createFleet() {
+  public toCreateFleet() {
     this.add('gamelift:CreateFleet');
     return this;
   }
@@ -788,7 +788,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSession.html
    */
-  public createGameSession() {
+  public toCreateGameSession() {
     this.add('gamelift:CreateGameSession');
     return this;
   }
@@ -804,7 +804,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html
    */
-  public createGameSessionQueue() {
+  public toCreateGameSessionQueue() {
     this.add('gamelift:CreateGameSessionQueue');
     return this;
   }
@@ -820,7 +820,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingConfiguration.html
    */
-  public createMatchmakingConfiguration() {
+  public toCreateMatchmakingConfiguration() {
     this.add('gamelift:CreateMatchmakingConfiguration');
     return this;
   }
@@ -836,7 +836,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingRuleSet.html
    */
-  public createMatchmakingRuleSet() {
+  public toCreateMatchmakingRuleSet() {
     this.add('gamelift:CreateMatchmakingRuleSet');
     return this;
   }
@@ -848,7 +848,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html
    */
-  public createPlayerSession() {
+  public toCreatePlayerSession() {
     this.add('gamelift:CreatePlayerSession');
     return this;
   }
@@ -860,7 +860,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html
    */
-  public createPlayerSessions() {
+  public toCreatePlayerSessions() {
     this.add('gamelift:CreatePlayerSessions');
     return this;
   }
@@ -876,7 +876,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateScript.html
    */
-  public createScript() {
+  public toCreateScript() {
     this.add('gamelift:CreateScript');
     return this;
   }
@@ -888,7 +888,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringAuthorization.html
    */
-  public createVpcPeeringAuthorization() {
+  public toCreateVpcPeeringAuthorization() {
     this.add('gamelift:CreateVpcPeeringAuthorization');
     return this;
   }
@@ -900,7 +900,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html
    */
-  public createVpcPeeringConnection() {
+  public toCreateVpcPeeringConnection() {
     this.add('gamelift:CreateVpcPeeringConnection');
     return this;
   }
@@ -912,7 +912,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteAlias.html
    */
-  public deleteAlias() {
+  public toDeleteAlias() {
     this.add('gamelift:DeleteAlias');
     return this;
   }
@@ -924,7 +924,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteBuild.html
    */
-  public deleteBuild() {
+  public toDeleteBuild() {
     this.add('gamelift:DeleteBuild');
     return this;
   }
@@ -936,7 +936,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleet.html
    */
-  public deleteFleet() {
+  public toDeleteFleet() {
     this.add('gamelift:DeleteFleet');
     return this;
   }
@@ -948,7 +948,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html
    */
-  public deleteGameSessionQueue() {
+  public toDeleteGameSessionQueue() {
     this.add('gamelift:DeleteGameSessionQueue');
     return this;
   }
@@ -960,7 +960,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingConfiguration.html
    */
-  public deleteMatchmakingConfiguration() {
+  public toDeleteMatchmakingConfiguration() {
     this.add('gamelift:DeleteMatchmakingConfiguration');
     return this;
   }
@@ -972,7 +972,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingRuleSet.html
    */
-  public deleteMatchmakingRuleSet() {
+  public toDeleteMatchmakingRuleSet() {
     this.add('gamelift:DeleteMatchmakingRuleSet');
     return this;
   }
@@ -984,7 +984,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScalingPolicy.html
    */
-  public deleteScalingPolicy() {
+  public toDeleteScalingPolicy() {
     this.add('gamelift:DeleteScalingPolicy');
     return this;
   }
@@ -996,7 +996,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScript.html
    */
-  public deleteScript() {
+  public toDeleteScript() {
     this.add('gamelift:DeleteScript');
     return this;
   }
@@ -1008,7 +1008,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringAuthorization.html
    */
-  public deleteVpcPeeringAuthorization() {
+  public toDeleteVpcPeeringAuthorization() {
     this.add('gamelift:DeleteVpcPeeringAuthorization');
     return this;
   }
@@ -1020,7 +1020,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringConnection.html
    */
-  public deleteVpcPeeringConnection() {
+  public toDeleteVpcPeeringConnection() {
     this.add('gamelift:DeleteVpcPeeringConnection');
     return this;
   }
@@ -1032,7 +1032,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeAlias.html
    */
-  public describeAlias() {
+  public toDescribeAlias() {
     this.add('gamelift:DescribeAlias');
     return this;
   }
@@ -1044,7 +1044,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeBuild.html
    */
-  public describeBuild() {
+  public toDescribeBuild() {
     this.add('gamelift:DescribeBuild');
     return this;
   }
@@ -1056,7 +1056,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html
    */
-  public describeEC2InstanceLimits() {
+  public toDescribeEC2InstanceLimits() {
     this.add('gamelift:DescribeEC2InstanceLimits');
     return this;
   }
@@ -1068,7 +1068,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes.html
    */
-  public describeFleetAttributes() {
+  public toDescribeFleetAttributes() {
     this.add('gamelift:DescribeFleetAttributes');
     return this;
   }
@@ -1080,7 +1080,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html
    */
-  public describeFleetCapacity() {
+  public toDescribeFleetCapacity() {
     this.add('gamelift:DescribeFleetCapacity');
     return this;
   }
@@ -1092,7 +1092,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html
    */
-  public describeFleetEvents() {
+  public toDescribeFleetEvents() {
     this.add('gamelift:DescribeFleetEvents');
     return this;
   }
@@ -1104,7 +1104,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetPortSettings.html
    */
-  public describeFleetPortSettings() {
+  public toDescribeFleetPortSettings() {
     this.add('gamelift:DescribeFleetPortSettings');
     return this;
   }
@@ -1116,7 +1116,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html
    */
-  public describeFleetUtilization() {
+  public toDescribeFleetUtilization() {
     this.add('gamelift:DescribeFleetUtilization');
     return this;
   }
@@ -1128,7 +1128,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html
    */
-  public describeGameSessionDetails() {
+  public toDescribeGameSessionDetails() {
     this.add('gamelift:DescribeGameSessionDetails');
     return this;
   }
@@ -1140,7 +1140,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html
    */
-  public describeGameSessionPlacement() {
+  public toDescribeGameSessionPlacement() {
     this.add('gamelift:DescribeGameSessionPlacement');
     return this;
   }
@@ -1152,7 +1152,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html
    */
-  public describeGameSessionQueues() {
+  public toDescribeGameSessionQueues() {
     this.add('gamelift:DescribeGameSessionQueues');
     return this;
   }
@@ -1164,7 +1164,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html
    */
-  public describeGameSessions() {
+  public toDescribeGameSessions() {
     this.add('gamelift:DescribeGameSessions');
     return this;
   }
@@ -1176,7 +1176,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html
    */
-  public describeInstances() {
+  public toDescribeInstances() {
     this.add('gamelift:DescribeInstances');
     return this;
   }
@@ -1188,7 +1188,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html
    */
-  public describeMatchmaking() {
+  public toDescribeMatchmaking() {
     this.add('gamelift:DescribeMatchmaking');
     return this;
   }
@@ -1200,7 +1200,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingConfigurations.html
    */
-  public describeMatchmakingConfigurations() {
+  public toDescribeMatchmakingConfigurations() {
     this.add('gamelift:DescribeMatchmakingConfigurations');
     return this;
   }
@@ -1212,7 +1212,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingRuleSets.html
    */
-  public describeMatchmakingRuleSets() {
+  public toDescribeMatchmakingRuleSets() {
     this.add('gamelift:DescribeMatchmakingRuleSets');
     return this;
   }
@@ -1224,7 +1224,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html
    */
-  public describePlayerSessions() {
+  public toDescribePlayerSessions() {
     this.add('gamelift:DescribePlayerSessions');
     return this;
   }
@@ -1236,7 +1236,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeRuntimeConfiguration.html
    */
-  public describeRuntimeConfiguration() {
+  public toDescribeRuntimeConfiguration() {
     this.add('gamelift:DescribeRuntimeConfiguration');
     return this;
   }
@@ -1248,7 +1248,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScalingPolicies.html
    */
-  public describeScalingPolicies() {
+  public toDescribeScalingPolicies() {
     this.add('gamelift:DescribeScalingPolicies');
     return this;
   }
@@ -1260,7 +1260,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScript.html
    */
-  public describeScript() {
+  public toDescribeScript() {
     this.add('gamelift:DescribeScript');
     return this;
   }
@@ -1272,7 +1272,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringAuthorizations.html
    */
-  public describeVpcPeeringAuthorizations() {
+  public toDescribeVpcPeeringAuthorizations() {
     this.add('gamelift:DescribeVpcPeeringAuthorizations');
     return this;
   }
@@ -1284,7 +1284,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html
    */
-  public describeVpcPeeringConnections() {
+  public toDescribeVpcPeeringConnections() {
     this.add('gamelift:DescribeVpcPeeringConnections');
     return this;
   }
@@ -1296,7 +1296,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html
    */
-  public getGameSessionLogUrl() {
+  public toGetGameSessionLogUrl() {
     this.add('gamelift:GetGameSessionLogUrl');
     return this;
   }
@@ -1308,7 +1308,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html
    */
-  public getInstanceAccess() {
+  public toGetInstanceAccess() {
     this.add('gamelift:GetInstanceAccess');
     return this;
   }
@@ -1320,7 +1320,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListAliases.html
    */
-  public listAliases() {
+  public toListAliases() {
     this.add('gamelift:ListAliases');
     return this;
   }
@@ -1332,7 +1332,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListBuilds.html
    */
-  public listBuilds() {
+  public toListBuilds() {
     this.add('gamelift:ListBuilds');
     return this;
   }
@@ -1344,7 +1344,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleets.html
    */
-  public listFleets() {
+  public toListFleets() {
     this.add('gamelift:ListFleets');
     return this;
   }
@@ -1356,7 +1356,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListScripts.html
    */
-  public listScripts() {
+  public toListScripts() {
     this.add('gamelift:ListScripts');
     return this;
   }
@@ -1368,7 +1368,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('gamelift:ListTagsForResource');
     return this;
   }
@@ -1380,7 +1380,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_PutScalingPolicy.html
    */
-  public putScalingPolicy() {
+  public toPutScalingPolicy() {
     this.add('gamelift:PutScalingPolicy');
     return this;
   }
@@ -1392,7 +1392,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html
    */
-  public requestUploadCredentials() {
+  public toRequestUploadCredentials() {
     this.add('gamelift:RequestUploadCredentials');
     return this;
   }
@@ -1404,7 +1404,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResolveAlias.html
    */
-  public resolveAlias() {
+  public toResolveAlias() {
     this.add('gamelift:ResolveAlias');
     return this;
   }
@@ -1416,7 +1416,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_SearchGameSessions.html
    */
-  public searchGameSessions() {
+  public toSearchGameSessions() {
     this.add('gamelift:SearchGameSessions');
     return this;
   }
@@ -1428,7 +1428,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartFleetActions.html
    */
-  public startFleetActions() {
+  public toStartFleetActions() {
     this.add('gamelift:StartFleetActions');
     return this;
   }
@@ -1440,7 +1440,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html
    */
-  public startGameSessionPlacement() {
+  public toStartGameSessionPlacement() {
     this.add('gamelift:StartGameSessionPlacement');
     return this;
   }
@@ -1452,7 +1452,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html
    */
-  public startMatchBackfill() {
+  public toStartMatchBackfill() {
     this.add('gamelift:StartMatchBackfill');
     return this;
   }
@@ -1464,7 +1464,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html
    */
-  public startMatchmaking() {
+  public toStartMatchmaking() {
     this.add('gamelift:StartMatchmaking');
     return this;
   }
@@ -1476,7 +1476,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html
    */
-  public stopFleetActions() {
+  public toStopFleetActions() {
     this.add('gamelift:StopFleetActions');
     return this;
   }
@@ -1488,7 +1488,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopGameSessionPlacement.html
    */
-  public stopGameSessionPlacement() {
+  public toStopGameSessionPlacement() {
     this.add('gamelift:StopGameSessionPlacement');
     return this;
   }
@@ -1500,7 +1500,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopMatchmaking.html
    */
-  public stopMatchmaking() {
+  public toStopMatchmaking() {
     this.add('gamelift:StopMatchmaking');
     return this;
   }
@@ -1516,7 +1516,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('gamelift:TagResource');
     return this;
   }
@@ -1531,7 +1531,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('gamelift:UntagResource');
     return this;
   }
@@ -1543,7 +1543,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateAlias.html
    */
-  public updateAlias() {
+  public toUpdateAlias() {
     this.add('gamelift:UpdateAlias');
     return this;
   }
@@ -1555,7 +1555,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateBuild.html
    */
-  public updateBuild() {
+  public toUpdateBuild() {
     this.add('gamelift:UpdateBuild');
     return this;
   }
@@ -1567,7 +1567,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetAttributes.html
    */
-  public updateFleetAttributes() {
+  public toUpdateFleetAttributes() {
     this.add('gamelift:UpdateFleetAttributes');
     return this;
   }
@@ -1579,7 +1579,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html
    */
-  public updateFleetCapacity() {
+  public toUpdateFleetCapacity() {
     this.add('gamelift:UpdateFleetCapacity');
     return this;
   }
@@ -1591,7 +1591,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings.html
    */
-  public updateFleetPortSettings() {
+  public toUpdateFleetPortSettings() {
     this.add('gamelift:UpdateFleetPortSettings');
     return this;
   }
@@ -1603,7 +1603,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html
    */
-  public updateGameSession() {
+  public toUpdateGameSession() {
     this.add('gamelift:UpdateGameSession');
     return this;
   }
@@ -1615,7 +1615,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html
    */
-  public updateGameSessionQueue() {
+  public toUpdateGameSessionQueue() {
     this.add('gamelift:UpdateGameSessionQueue');
     return this;
   }
@@ -1627,7 +1627,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateMatchmakingConfiguration.html
    */
-  public updateMatchmakingConfiguration() {
+  public toUpdateMatchmakingConfiguration() {
     this.add('gamelift:UpdateMatchmakingConfiguration');
     return this;
   }
@@ -1639,7 +1639,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html
    */
-  public updateRuntimeConfiguration() {
+  public toUpdateRuntimeConfiguration() {
     this.add('gamelift:UpdateRuntimeConfiguration');
     return this;
   }
@@ -1651,7 +1651,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html
    */
-  public updateScript() {
+  public toUpdateScript() {
     this.add('gamelift:UpdateScript');
     return this;
   }
@@ -1663,7 +1663,7 @@ export class Gamelift extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ValidateMatchmakingRuleSet.html
    */
-  public validateMatchmakingRuleSet() {
+  public toValidateMatchmakingRuleSet() {
     this.add('gamelift:ValidateMatchmakingRuleSet');
     return this;
   }
@@ -1826,14 +1826,14 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createAlias()
-   * - .createBuild()
-   * - .createFleet()
-   * - .createGameSessionQueue()
-   * - .createMatchmakingConfiguration()
-   * - .createMatchmakingRuleSet()
-   * - .createScript()
-   * - .tagResource()
+   * - .toCreateAlias()
+   * - .toCreateBuild()
+   * - .toCreateFleet()
+   * - .toCreateGameSessionQueue()
+   * - .toCreateMatchmakingConfiguration()
+   * - .toCreateMatchmakingRuleSet()
+   * - .toCreateScript()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1871,15 +1871,15 @@ export class Gamelift extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createAlias()
-   * - .createBuild()
-   * - .createFleet()
-   * - .createGameSessionQueue()
-   * - .createMatchmakingConfiguration()
-   * - .createMatchmakingRuleSet()
-   * - .createScript()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateAlias()
+   * - .toCreateBuild()
+   * - .toCreateFleet()
+   * - .toCreateGameSessionQueue()
+   * - .toCreateMatchmakingConfiguration()
+   * - .toCreateMatchmakingRuleSet()
+   * - .toCreateScript()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

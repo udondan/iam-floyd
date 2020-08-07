@@ -551,7 +551,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
    */
-  public associateWebACL() {
+  public toAssociateWebACL() {
     this.add('wafv2:AssociateWebACL');
     return this;
   }
@@ -563,7 +563,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CheckCapacity.html
    */
-  public checkCapacity() {
+  public toCheckCapacity() {
     this.add('wafv2:CheckCapacity');
     return this;
   }
@@ -579,7 +579,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html
    */
-  public createIPSet() {
+  public toCreateIPSet() {
     this.add('wafv2:CreateIPSet');
     return this;
   }
@@ -595,7 +595,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html
    */
-  public createRegexPatternSet() {
+  public toCreateRegexPatternSet() {
     this.add('wafv2:CreateRegexPatternSet');
     return this;
   }
@@ -611,7 +611,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html
    */
-  public createRuleGroup() {
+  public toCreateRuleGroup() {
     this.add('wafv2:CreateRuleGroup');
     return this;
   }
@@ -627,7 +627,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html
    */
-  public createWebACL() {
+  public toCreateWebACL() {
     this.add('wafv2:CreateWebACL');
     return this;
   }
@@ -639,7 +639,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html
    */
-  public deleteFirewallManagerRuleGroups() {
+  public toDeleteFirewallManagerRuleGroups() {
     this.add('wafv2:DeleteFirewallManagerRuleGroups');
     return this;
   }
@@ -651,7 +651,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html
    */
-  public deleteIPSet() {
+  public toDeleteIPSet() {
     this.add('wafv2:DeleteIPSet');
     return this;
   }
@@ -663,7 +663,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html
    */
-  public deleteLoggingConfiguration() {
+  public toDeleteLoggingConfiguration() {
     this.add('wafv2:DeleteLoggingConfiguration');
     return this;
   }
@@ -675,7 +675,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html
    */
-  public deletePermissionPolicy() {
+  public toDeletePermissionPolicy() {
     this.add('wafv2:DeletePermissionPolicy');
     return this;
   }
@@ -687,7 +687,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRegexPatternSet.html
    */
-  public deleteRegexPatternSet() {
+  public toDeleteRegexPatternSet() {
     this.add('wafv2:DeleteRegexPatternSet');
     return this;
   }
@@ -699,7 +699,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRuleGroup.html
    */
-  public deleteRuleGroup() {
+  public toDeleteRuleGroup() {
     this.add('wafv2:DeleteRuleGroup');
     return this;
   }
@@ -711,7 +711,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html
    */
-  public deleteWebACL() {
+  public toDeleteWebACL() {
     this.add('wafv2:DeleteWebACL');
     return this;
   }
@@ -723,7 +723,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedRuleGroup.html
    */
-  public describeManagedRuleGroup() {
+  public toDescribeManagedRuleGroup() {
     this.add('wafv2:DescribeManagedRuleGroup');
     return this;
   }
@@ -735,7 +735,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html
    */
-  public disassociateFirewallManager() {
+  public toDisassociateFirewallManager() {
     this.add('wafv2:DisassociateFirewallManager');
     return this;
   }
@@ -747,7 +747,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html
    */
-  public disassociateWebACL() {
+  public toDisassociateWebACL() {
     this.add('wafv2:DisassociateWebACL');
     return this;
   }
@@ -762,7 +762,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html
    */
-  public getIPSet() {
+  public toGetIPSet() {
     this.add('wafv2:GetIPSet');
     return this;
   }
@@ -777,7 +777,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html
    */
-  public getLoggingConfiguration() {
+  public toGetLoggingConfiguration() {
     this.add('wafv2:GetLoggingConfiguration');
     return this;
   }
@@ -789,7 +789,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetPermissionPolicy.html
    */
-  public getPermissionPolicy() {
+  public toGetPermissionPolicy() {
     this.add('wafv2:GetPermissionPolicy');
     return this;
   }
@@ -804,7 +804,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html
    */
-  public getRateBasedStatementManagedKeys() {
+  public toGetRateBasedStatementManagedKeys() {
     this.add('wafv2:GetRateBasedStatementManagedKeys');
     return this;
   }
@@ -819,7 +819,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html
    */
-  public getRegexPatternSet() {
+  public toGetRegexPatternSet() {
     this.add('wafv2:GetRegexPatternSet');
     return this;
   }
@@ -834,7 +834,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRuleGroup.html
    */
-  public getRuleGroup() {
+  public toGetRuleGroup() {
     this.add('wafv2:GetRuleGroup');
     return this;
   }
@@ -846,7 +846,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetSampledRequests.html
    */
-  public getSampledRequests() {
+  public toGetSampledRequests() {
     this.add('wafv2:GetSampledRequests');
     return this;
   }
@@ -861,7 +861,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html
    */
-  public getWebACL() {
+  public toGetWebACL() {
     this.add('wafv2:GetWebACL');
     return this;
   }
@@ -873,7 +873,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html
    */
-  public getWebACLForResource() {
+  public toGetWebACLForResource() {
     this.add('wafv2:GetWebACLForResource');
     return this;
   }
@@ -885,7 +885,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroups.html
    */
-  public listAvailableManagedRuleGroups() {
+  public toListAvailableManagedRuleGroups() {
     this.add('wafv2:ListAvailableManagedRuleGroups');
     return this;
   }
@@ -897,7 +897,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListIPSets.html
    */
-  public listIPSets() {
+  public toListIPSets() {
     this.add('wafv2:ListIPSets');
     return this;
   }
@@ -909,7 +909,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListLoggingConfigurations.html
    */
-  public listLoggingConfigurations() {
+  public toListLoggingConfigurations() {
     this.add('wafv2:ListLoggingConfigurations');
     return this;
   }
@@ -921,7 +921,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRegexPatternSets.html
    */
-  public listRegexPatternSets() {
+  public toListRegexPatternSets() {
     this.add('wafv2:ListRegexPatternSets');
     return this;
   }
@@ -933,7 +933,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html
    */
-  public listResourcesForWebACL() {
+  public toListResourcesForWebACL() {
     this.add('wafv2:ListResourcesForWebACL');
     return this;
   }
@@ -945,7 +945,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRuleGroups.html
    */
-  public listRuleGroups() {
+  public toListRuleGroups() {
     this.add('wafv2:ListRuleGroups');
     return this;
   }
@@ -960,7 +960,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('wafv2:ListTagsForResource');
     return this;
   }
@@ -972,7 +972,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListWebACLs.html
    */
-  public listWebACLs() {
+  public toListWebACLs() {
     this.add('wafv2:ListWebACLs');
     return this;
   }
@@ -984,7 +984,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html
    */
-  public putFirewallManagerRuleGroups() {
+  public toPutFirewallManagerRuleGroups() {
     this.add('wafv2:PutFirewallManagerRuleGroups');
     return this;
   }
@@ -999,7 +999,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html
    */
-  public putLoggingConfiguration() {
+  public toPutLoggingConfiguration() {
     this.add('wafv2:PutLoggingConfiguration');
     return this;
   }
@@ -1011,7 +1011,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html
    */
-  public putPermissionPolicy() {
+  public toPutPermissionPolicy() {
     this.add('wafv2:PutPermissionPolicy');
     return this;
   }
@@ -1028,7 +1028,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('wafv2:TagResource');
     return this;
   }
@@ -1043,7 +1043,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('wafv2:UntagResource');
     return this;
   }
@@ -1058,7 +1058,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html
    */
-  public updateIPSet() {
+  public toUpdateIPSet() {
     this.add('wafv2:UpdateIPSet');
     return this;
   }
@@ -1073,7 +1073,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html
    */
-  public updateRegexPatternSet() {
+  public toUpdateRegexPatternSet() {
     this.add('wafv2:UpdateRegexPatternSet');
     return this;
   }
@@ -1088,7 +1088,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRuleGroup.html
    */
-  public updateRuleGroup() {
+  public toUpdateRuleGroup() {
     this.add('wafv2:UpdateRuleGroup');
     return this;
   }
@@ -1103,7 +1103,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
    */
-  public updateWebACL() {
+  public toUpdateWebACL() {
     this.add('wafv2:UpdateWebACL');
     return this;
   }
@@ -1260,11 +1260,11 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createIPSet()
-   * - .createRegexPatternSet()
-   * - .createRuleGroup()
-   * - .createWebACL()
-   * - .tagResource()
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1280,18 +1280,18 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .getIPSet()
-   * - .getLoggingConfiguration()
-   * - .getRateBasedStatementManagedKeys()
-   * - .getRegexPatternSet()
-   * - .getRuleGroup()
-   * - .getWebACL()
-   * - .listTagsForResource()
-   * - .tagResource()
-   * - .updateIPSet()
-   * - .updateRegexPatternSet()
-   * - .updateRuleGroup()
-   * - .updateWebACL()
+   * - .toGetIPSet()
+   * - .toGetLoggingConfiguration()
+   * - .toGetRateBasedStatementManagedKeys()
+   * - .toGetRegexPatternSet()
+   * - .toGetRuleGroup()
+   * - .toGetWebACL()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUpdateIPSet()
+   * - .toUpdateRegexPatternSet()
+   * - .toUpdateRuleGroup()
+   * - .toUpdateWebACL()
    *
    * Applies to resource types:
    * - webacl
@@ -1313,12 +1313,12 @@ export class Wafv2 extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createIPSet()
-   * - .createRegexPatternSet()
-   * - .createRuleGroup()
-   * - .createWebACL()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

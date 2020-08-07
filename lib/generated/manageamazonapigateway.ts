@@ -126,7 +126,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html
    */
-  public dELETE() {
+  public toDELETE() {
     this.add('apigateway:DELETE');
     return this;
   }
@@ -138,7 +138,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html
    */
-  public gET() {
+  public toGET() {
     this.add('apigateway:GET');
     return this;
   }
@@ -154,7 +154,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html
    */
-  public pATCH() {
+  public toPATCH() {
     this.add('apigateway:PATCH');
     return this;
   }
@@ -170,7 +170,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html
    */
-  public pOST() {
+  public toPOST() {
     this.add('apigateway:POST');
     return this;
   }
@@ -186,7 +186,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html
    */
-  public pUT() {
+  public toPUT() {
     this.add('apigateway:PUT');
     return this;
   }
@@ -198,7 +198,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html
    */
-  public setWebACL() {
+  public toSetWebACL() {
     this.add('apigateway:SetWebACL');
     return this;
   }
@@ -208,7 +208,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateRestApiPolicy() {
+  public toUpdateRestApiPolicy() {
     this.add('apigateway:UpdateRestApiPolicy');
     return this;
   }
@@ -235,10 +235,10 @@ export class Apigateway extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .dELETE()
-   * - .pATCH()
-   * - .pOST()
-   * - .pUT()
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -262,10 +262,10 @@ export class Apigateway extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .dELETE()
-   * - .pATCH()
-   * - .pOST()
-   * - .pUT()
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -278,7 +278,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_AdvertiseByoipCidr.html
    */
-  public advertiseByoipCidr() {
+  public toAdvertiseByoipCidr() {
     this.add('globalaccelerator:AdvertiseByoipCidr');
     return this;
   }
@@ -294,7 +294,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateAccelerator.html
    */
-  public createAccelerator() {
+  public toCreateAccelerator() {
     this.add('globalaccelerator:CreateAccelerator');
     return this;
   }
@@ -306,7 +306,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html
    */
-  public createEndpointGroup() {
+  public toCreateEndpointGroup() {
     this.add('globalaccelerator:CreateEndpointGroup');
     return this;
   }
@@ -318,7 +318,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateListener.html
    */
-  public createListener() {
+  public toCreateListener() {
     this.add('globalaccelerator:CreateListener');
     return this;
   }
@@ -330,7 +330,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteAccelerator.html
    */
-  public deleteAccelerator() {
+  public toDeleteAccelerator() {
     this.add('globalaccelerator:DeleteAccelerator');
     return this;
   }
@@ -342,7 +342,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteEndpointGroup.html
    */
-  public deleteEndpointGroup() {
+  public toDeleteEndpointGroup() {
     this.add('globalaccelerator:DeleteEndpointGroup');
     return this;
   }
@@ -354,7 +354,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteListener.html
    */
-  public deleteListener() {
+  public toDeleteListener() {
     this.add('globalaccelerator:DeleteListener');
     return this;
   }
@@ -366,7 +366,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeprovisionByoipCidr.html
    */
-  public deprovisionByoipCidr() {
+  public toDeprovisionByoipCidr() {
     this.add('globalaccelerator:DeprovisionByoipCidr');
     return this;
   }
@@ -378,7 +378,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html
    */
-  public describeAccelerator() {
+  public toDescribeAccelerator() {
     this.add('globalaccelerator:DescribeAccelerator');
     return this;
   }
@@ -390,7 +390,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAcceleratorAttributes.html
    */
-  public describeAcceleratorAttributes() {
+  public toDescribeAcceleratorAttributes() {
     this.add('globalaccelerator:DescribeAcceleratorAttributes');
     return this;
   }
@@ -402,7 +402,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeEndpointGroup.html
    */
-  public describeEndpointGroup() {
+  public toDescribeEndpointGroup() {
     this.add('globalaccelerator:DescribeEndpointGroup');
     return this;
   }
@@ -414,7 +414,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeListener.html
    */
-  public describeListener() {
+  public toDescribeListener() {
     this.add('globalaccelerator:DescribeListener');
     return this;
   }
@@ -426,7 +426,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListAccelerators.html
    */
-  public listAccelerators() {
+  public toListAccelerators() {
     this.add('globalaccelerator:ListAccelerators');
     return this;
   }
@@ -438,7 +438,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListByoipCidrs.html
    */
-  public listByoipCidrs() {
+  public toListByoipCidrs() {
     this.add('globalaccelerator:ListByoipCidrs');
     return this;
   }
@@ -450,7 +450,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListEndpointGroups.html
    */
-  public listEndpointGroups() {
+  public toListEndpointGroups() {
     this.add('globalaccelerator:ListEndpointGroups');
     return this;
   }
@@ -462,7 +462,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListListeners.html
    */
-  public listListeners() {
+  public toListListeners() {
     this.add('globalaccelerator:ListListeners');
     return this;
   }
@@ -474,7 +474,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('globalaccelerator:ListTagsForResource');
     return this;
   }
@@ -486,7 +486,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_ProvisionByoipCidr.html
    */
-  public provisionByoipCidr() {
+  public toProvisionByoipCidr() {
     this.add('globalaccelerator:ProvisionByoipCidr');
     return this;
   }
@@ -502,7 +502,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('globalaccelerator:TagResource');
     return this;
   }
@@ -517,7 +517,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('globalaccelerator:UntagResource');
     return this;
   }
@@ -529,7 +529,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAccelerator.html
    */
-  public updateAccelerator() {
+  public toUpdateAccelerator() {
     this.add('globalaccelerator:UpdateAccelerator');
     return this;
   }
@@ -541,7 +541,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAcceleratorAttributes.html
    */
-  public updateAcceleratorAttributes() {
+  public toUpdateAcceleratorAttributes() {
     this.add('globalaccelerator:UpdateAcceleratorAttributes');
     return this;
   }
@@ -553,7 +553,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html
    */
-  public updateEndpointGroup() {
+  public toUpdateEndpointGroup() {
     this.add('globalaccelerator:UpdateEndpointGroup');
     return this;
   }
@@ -565,7 +565,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateListener.html
    */
-  public updateListener() {
+  public toUpdateListener() {
     this.add('globalaccelerator:UpdateListener');
     return this;
   }
@@ -577,7 +577,7 @@ export class Globalaccelerator extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/global-accelerator/latest/api/API_WithdrawByoipCidr.html
    */
-  public withdrawByoipCidr() {
+  public toWithdrawByoipCidr() {
     this.add('globalaccelerator:WithdrawByoipCidr');
     return this;
   }
@@ -654,8 +654,8 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createAccelerator()
-   * - .tagResource()
+   * - .toCreateAccelerator()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -689,9 +689,9 @@ export class Globalaccelerator extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createAccelerator()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateAccelerator()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

@@ -45,7 +45,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createControlChannel() {
+  public toCreateControlChannel() {
     this.add('ssmmessages:CreateControlChannel');
     return this;
   }
@@ -55,7 +55,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createDataChannel() {
+  public toCreateDataChannel() {
     this.add('ssmmessages:CreateDataChannel');
     return this;
   }
@@ -65,7 +65,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public openControlChannel() {
+  public toOpenControlChannel() {
     this.add('ssmmessages:OpenControlChannel');
     return this;
   }
@@ -75,7 +75,7 @@ export class Ssmmessages extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public openDataChannel() {
+  public toOpenDataChannel() {
     this.add('ssmmessages:OpenDataChannel');
     return this;
   }

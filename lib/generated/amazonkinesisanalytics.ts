@@ -202,7 +202,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html
    */
-  public addApplicationInput() {
+  public toAddApplicationInput() {
     this.add('kinesisanalytics:AddApplicationInput');
     return this;
   }
@@ -214,7 +214,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html
    */
-  public addApplicationOutput() {
+  public toAddApplicationOutput() {
     this.add('kinesisanalytics:AddApplicationOutput');
     return this;
   }
@@ -226,7 +226,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html
    */
-  public addApplicationReferenceDataSource() {
+  public toAddApplicationReferenceDataSource() {
     this.add('kinesisanalytics:AddApplicationReferenceDataSource');
     return this;
   }
@@ -242,7 +242,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html
    */
-  public createApplication() {
+  public toCreateApplication() {
     this.add('kinesisanalytics:CreateApplication');
     return this;
   }
@@ -254,7 +254,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html
    */
-  public deleteApplication() {
+  public toDeleteApplication() {
     this.add('kinesisanalytics:DeleteApplication');
     return this;
   }
@@ -266,7 +266,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html
    */
-  public deleteApplicationOutput() {
+  public toDeleteApplicationOutput() {
     this.add('kinesisanalytics:DeleteApplicationOutput');
     return this;
   }
@@ -278,7 +278,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html
    */
-  public deleteApplicationReferenceDataSource() {
+  public toDeleteApplicationReferenceDataSource() {
     this.add('kinesisanalytics:DeleteApplicationReferenceDataSource');
     return this;
   }
@@ -290,7 +290,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html
    */
-  public describeApplication() {
+  public toDescribeApplication() {
     this.add('kinesisanalytics:DescribeApplication');
     return this;
   }
@@ -302,7 +302,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html
    */
-  public discoverInputSchema() {
+  public toDiscoverInputSchema() {
     this.add('kinesisanalytics:DiscoverInputSchema');
     return this;
   }
@@ -314,7 +314,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas
    */
-  public getApplicationState() {
+  public toGetApplicationState() {
     this.add('kinesisanalytics:GetApplicationState');
     return this;
   }
@@ -326,7 +326,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html
    */
-  public listApplications() {
+  public toListApplications() {
     this.add('kinesisanalytics:ListApplications');
     return this;
   }
@@ -338,7 +338,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('kinesisanalytics:ListTagsForResource');
     return this;
   }
@@ -350,7 +350,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html
    */
-  public startApplication() {
+  public toStartApplication() {
     this.add('kinesisanalytics:StartApplication');
     return this;
   }
@@ -362,7 +362,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html
    */
-  public stopApplication() {
+  public toStopApplication() {
     this.add('kinesisanalytics:StopApplication');
     return this;
   }
@@ -378,7 +378,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('kinesisanalytics:TagResource');
     return this;
   }
@@ -393,7 +393,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('kinesisanalytics:UntagResource');
     return this;
   }
@@ -405,7 +405,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html
    */
-  public updateApplication() {
+  public toUpdateApplication() {
     this.add('kinesisanalytics:UpdateApplication');
     return this;
   }
@@ -438,8 +438,8 @@ export class Kinesisanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createApplication()
-   * - .tagResource()
+   * - .toCreateApplication()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -471,9 +471,9 @@ export class Kinesisanalytics extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createApplication()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

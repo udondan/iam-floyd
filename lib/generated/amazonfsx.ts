@@ -227,7 +227,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CancelDataRepositoryTask.html
    */
-  public cancelDataRepositoryTask() {
+  public toCancelDataRepositoryTask() {
     this.add('fsx:CancelDataRepositoryTask');
     return this;
   }
@@ -243,7 +243,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
-  public createBackup() {
+  public toCreateBackup() {
     this.add('fsx:CreateBackup');
     return this;
   }
@@ -259,7 +259,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
-  public createDataRepositoryTask() {
+  public toCreateDataRepositoryTask() {
     this.add('fsx:CreateDataRepositoryTask');
     return this;
   }
@@ -275,7 +275,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
-  public createFileSystem() {
+  public toCreateFileSystem() {
     this.add('fsx:CreateFileSystem');
     return this;
   }
@@ -291,7 +291,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
-  public createFileSystemFromBackup() {
+  public toCreateFileSystemFromBackup() {
     this.add('fsx:CreateFileSystemFromBackup');
     return this;
   }
@@ -303,7 +303,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteBackup.html
    */
-  public deleteBackup() {
+  public toDeleteBackup() {
     this.add('fsx:DeleteBackup');
     return this;
   }
@@ -315,7 +315,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html
    */
-  public deleteFileSystem() {
+  public toDeleteFileSystem() {
     this.add('fsx:DeleteFileSystem');
     return this;
   }
@@ -327,7 +327,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html
    */
-  public describeBackups() {
+  public toDescribeBackups() {
     this.add('fsx:DescribeBackups');
     return this;
   }
@@ -339,7 +339,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeDataRepositoryTasks.html
    */
-  public describeDataRepositoryTasks() {
+  public toDescribeDataRepositoryTasks() {
     this.add('fsx:DescribeDataRepositoryTasks');
     return this;
   }
@@ -351,7 +351,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html
    */
-  public describeFileSystems() {
+  public toDescribeFileSystems() {
     this.add('fsx:DescribeFileSystems');
     return this;
   }
@@ -363,7 +363,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('fsx:ListTagsForResource');
     return this;
   }
@@ -379,7 +379,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('fsx:TagResource');
     return this;
   }
@@ -394,7 +394,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('fsx:UntagResource');
     return this;
   }
@@ -406,7 +406,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateFileSystem.html
    */
-  public updateFileSystem() {
+  public toUpdateFileSystem() {
     this.add('fsx:UpdateFileSystem');
     return this;
   }
@@ -479,11 +479,11 @@ export class Fsx extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .createBackup()
-   * - .createDataRepositoryTask()
-   * - .createFileSystem()
-   * - .createFileSystemFromBackup()
-   * - .tagResource()
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -509,12 +509,12 @@ export class Fsx extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .createBackup()
-   * - .createDataRepositoryTask()
-   * - .createFileSystem()
-   * - .createFileSystemFromBackup()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

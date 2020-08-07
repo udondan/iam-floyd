@@ -62,7 +62,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyAccount() {
+  public toModifyAccount() {
     this.add('aws-portal:ModifyAccount');
     return this;
   }
@@ -74,7 +74,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyBilling() {
+  public toModifyBilling() {
     this.add('aws-portal:ModifyBilling');
     return this;
   }
@@ -86,7 +86,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyPaymentMethods() {
+  public toModifyPaymentMethods() {
     this.add('aws-portal:ModifyPaymentMethods');
     return this;
   }
@@ -98,7 +98,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewAccount() {
+  public toViewAccount() {
     this.add('aws-portal:ViewAccount');
     return this;
   }
@@ -110,7 +110,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewBilling() {
+  public toViewBilling() {
     this.add('aws-portal:ViewBilling');
     return this;
   }
@@ -122,7 +122,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewPaymentMethods() {
+  public toViewPaymentMethods() {
     this.add('aws-portal:ViewPaymentMethods');
     return this;
   }
@@ -134,7 +134,7 @@ export class AwsPortal extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewUsage() {
+  public toViewUsage() {
     this.add('aws-portal:ViewUsage');
     return this;
   }

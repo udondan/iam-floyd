@@ -207,7 +207,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html
    */
-  public createNotificationRule() {
+  public toCreateNotificationRule() {
     this.add('codestar-notifications:CreateNotificationRule');
     return this;
   }
@@ -225,7 +225,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteNotificationRule.html
    */
-  public deleteNotificationRule() {
+  public toDeleteNotificationRule() {
     this.add('codestar-notifications:DeleteNotificationRule');
     return this;
   }
@@ -241,7 +241,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteTarget.html
    */
-  public deleteTarget() {
+  public toDeleteTarget() {
     this.add('codestar-notifications:DeleteTarget');
     return this;
   }
@@ -259,7 +259,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DescribeNotificationRule.html
    */
-  public describeNotificationRule() {
+  public toDescribeNotificationRule() {
     this.add('codestar-notifications:DescribeNotificationRule');
     return this;
   }
@@ -271,7 +271,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListEventTypes.html
    */
-  public listEventTypes() {
+  public toListEventTypes() {
     this.add('codestar-notifications:ListEventTypes');
     return this;
   }
@@ -283,7 +283,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListNotificationRules.html
    */
-  public listNotificationRules() {
+  public toListNotificationRules() {
     this.add('codestar-notifications:ListNotificationRules');
     return this;
   }
@@ -299,7 +299,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('codestar-notifications:ListTagsForResource');
     return this;
   }
@@ -315,7 +315,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTargets.html
    */
-  public listTargets() {
+  public toListTargets() {
     this.add('codestar-notifications:ListTargets');
     return this;
   }
@@ -333,7 +333,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Subscribe.html
    */
-  public subscribe() {
+  public toSubscribe() {
     this.add('codestar-notifications:Subscribe');
     return this;
   }
@@ -350,7 +350,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('codestar-notifications:TagResource');
     return this;
   }
@@ -368,7 +368,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Unsubscribe.html
    */
-  public unsubscribe() {
+  public toUnsubscribe() {
     this.add('codestar-notifications:Unsubscribe');
     return this;
   }
@@ -384,7 +384,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('codestar-notifications:UntagResource');
     return this;
   }
@@ -402,7 +402,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UpdateNotificationRule.html
    */
-  public updateNotificationRule() {
+  public toUpdateNotificationRule() {
     this.add('codestar-notifications:UpdateNotificationRule');
     return this;
   }
@@ -435,17 +435,17 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createNotificationRule()
-   * - .deleteNotificationRule()
-   * - .deleteTarget()
-   * - .describeNotificationRule()
-   * - .listTagsForResource()
-   * - .listTargets()
-   * - .subscribe()
-   * - .tagResource()
-   * - .unsubscribe()
-   * - .untagResource()
-   * - .updateNotificationRule()
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDeleteTarget()
+   * - .toDescribeNotificationRule()
+   * - .toListTagsForResource()
+   * - .toListTargets()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
+   * - .toUpdateNotificationRule()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -461,12 +461,12 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .deleteNotificationRule()
-   * - .describeNotificationRule()
-   * - .subscribe()
-   * - .tagResource()
-   * - .unsubscribe()
-   * - .updateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDescribeNotificationRule()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUpdateNotificationRule()
    *
    * Applies to resource types:
    * - notificationrule
@@ -485,17 +485,17 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createNotificationRule()
-   * - .deleteNotificationRule()
-   * - .deleteTarget()
-   * - .describeNotificationRule()
-   * - .listTagsForResource()
-   * - .listTargets()
-   * - .subscribe()
-   * - .tagResource()
-   * - .unsubscribe()
-   * - .untagResource()
-   * - .updateNotificationRule()
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDeleteTarget()
+   * - .toDescribeNotificationRule()
+   * - .toListTagsForResource()
+   * - .toListTargets()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
+   * - .toUpdateNotificationRule()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -510,12 +510,12 @@ export class CodestarNotifications extends PolicyStatement {
    * https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_id-based-policy-examples.html
    *
    * Applies to actions:
-   * - .createNotificationRule()
-   * - .deleteNotificationRule()
-   * - .describeNotificationRule()
-   * - .subscribe()
-   * - .unsubscribe()
-   * - .updateNotificationRule()
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDescribeNotificationRule()
+   * - .toSubscribe()
+   * - .toUnsubscribe()
+   * - .toUpdateNotificationRule()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

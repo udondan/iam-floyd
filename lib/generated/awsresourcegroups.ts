@@ -156,7 +156,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html
    */
-  public createGroup() {
+  public toCreateGroup() {
     this.add('resource-groups:CreateGroup');
     return this;
   }
@@ -168,7 +168,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html
    */
-  public deleteGroup() {
+  public toDeleteGroup() {
     this.add('resource-groups:DeleteGroup');
     return this;
   }
@@ -180,7 +180,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html
    */
-  public getGroup() {
+  public toGetGroup() {
     this.add('resource-groups:GetGroup');
     return this;
   }
@@ -192,7 +192,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html
    */
-  public getGroupQuery() {
+  public toGetGroupQuery() {
     this.add('resource-groups:GetGroupQuery');
     return this;
   }
@@ -204,7 +204,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html
    */
-  public getTags() {
+  public toGetTags() {
     this.add('resource-groups:GetTags');
     return this;
   }
@@ -216,7 +216,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html
    */
-  public listGroupResources() {
+  public toListGroupResources() {
     this.add('resource-groups:ListGroupResources');
     return this;
   }
@@ -228,7 +228,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html
    */
-  public listGroups() {
+  public toListGroups() {
     this.add('resource-groups:ListGroups');
     return this;
   }
@@ -240,7 +240,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html
    */
-  public searchResources() {
+  public toSearchResources() {
     this.add('resource-groups:SearchResources');
     return this;
   }
@@ -256,7 +256,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html
    */
-  public tag() {
+  public toTag() {
     this.add('resource-groups:Tag');
     return this;
   }
@@ -271,7 +271,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html
    */
-  public untag() {
+  public toUntag() {
     this.add('resource-groups:Untag');
     return this;
   }
@@ -283,7 +283,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html
    */
-  public updateGroup() {
+  public toUpdateGroup() {
     this.add('resource-groups:UpdateGroup');
     return this;
   }
@@ -295,7 +295,7 @@ export class ResourceGroups extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html
    */
-  public updateGroupQuery() {
+  public toUpdateGroupQuery() {
     this.add('resource-groups:UpdateGroupQuery');
     return this;
   }
@@ -328,8 +328,8 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createGroup()
-   * - .tag()
+   * - .toCreateGroup()
+   * - .toTag()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -361,9 +361,9 @@ export class ResourceGroups extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createGroup()
-   * - .tag()
-   * - .untag()
+   * - .toCreateGroup()
+   * - .toTag()
+   * - .toUntag()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

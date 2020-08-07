@@ -198,7 +198,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html
    */
-  public createConnection() {
+  public toCreateConnection() {
     this.add('codestar-connections:CreateConnection');
     return this;
   }
@@ -210,7 +210,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html
    */
-  public deleteConnection() {
+  public toDeleteConnection() {
     this.add('codestar-connections:DeleteConnection');
     return this;
   }
@@ -222,7 +222,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html
    */
-  public getConnection() {
+  public toGetConnection() {
     this.add('codestar-connections:GetConnection');
     return this;
   }
@@ -238,7 +238,7 @@ export class CodestarConnections extends PolicyStatement {
    * Dependent actions:
    * - codestar-connections:StartOAuthHandshake
    */
-  public getIndividualAccessToken() {
+  public toGetIndividualAccessToken() {
     this.add('codestar-connections:GetIndividualAccessToken');
     return this;
   }
@@ -251,7 +251,7 @@ export class CodestarConnections extends PolicyStatement {
    * Possible conditions:
    * - .ifProviderType()
    */
-  public getInstallationUrl() {
+  public toGetInstallationUrl() {
     this.add('codestar-connections:GetInstallationUrl');
     return this;
   }
@@ -266,7 +266,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html
    */
-  public listConnections() {
+  public toListConnections() {
     this.add('codestar-connections:ListConnections');
     return this;
   }
@@ -280,7 +280,7 @@ export class CodestarConnections extends PolicyStatement {
    * - codestar-connections:GetIndividualAccessToken
    * - codestar-connections:StartOAuthHandshake
    */
-  public listInstallationTargets() {
+  public toListInstallationTargets() {
     this.add('codestar-connections:ListInstallationTargets');
     return this;
   }
@@ -292,7 +292,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('codestar-connections:ListTagsForResource');
     return this;
   }
@@ -305,7 +305,7 @@ export class CodestarConnections extends PolicyStatement {
    * Possible conditions:
    * - .ifPassedToService()
    */
-  public passConnection() {
+  public toPassConnection() {
     this.add('codestar-connections:PassConnection');
     return this;
   }
@@ -318,7 +318,7 @@ export class CodestarConnections extends PolicyStatement {
    * Possible conditions:
    * - .ifProviderType()
    */
-  public startOAuthHandshake() {
+  public toStartOAuthHandshake() {
     this.add('codestar-connections:StartOAuthHandshake');
     return this;
   }
@@ -334,7 +334,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('codestar-connections:TagResource');
     return this;
   }
@@ -350,7 +350,7 @@ export class CodestarConnections extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('codestar-connections:UntagResource');
     return this;
   }
@@ -369,7 +369,7 @@ export class CodestarConnections extends PolicyStatement {
    * - codestar-connections:ListInstallationTargets
    * - codestar-connections:StartOAuthHandshake
    */
-  public updateConnectionInstallation() {
+  public toUpdateConnectionInstallation() {
     this.add('codestar-connections:UpdateConnectionInstallation');
     return this;
   }
@@ -384,7 +384,7 @@ export class CodestarConnections extends PolicyStatement {
    * - .ifProviderAction()
    * - .ifProviderPermissionsRequired()
    */
-  public useConnection() {
+  public toUseConnection() {
     this.add('codestar-connections:UseConnection');
     return this;
   }
@@ -414,9 +414,9 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createConnection()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateConnection()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -445,9 +445,9 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createConnection()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateConnection()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -474,7 +474,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
    *
    * Applies to actions:
-   * - .useConnection()
+   * - .toUseConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -489,7 +489,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions-handshake
    *
    * Applies to actions:
-   * - .updateConnectionInstallation()
+   * - .toUpdateConnectionInstallation()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -516,7 +516,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-passconnection
    *
    * Applies to actions:
-   * - .passConnection()
+   * - .toPassConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -531,7 +531,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use-provider
    *
    * Applies to actions:
-   * - .useConnection()
+   * - .toUseConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -546,7 +546,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use
    *
    * Applies to actions:
-   * - .useConnection()
+   * - .toUseConnection()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -561,10 +561,10 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
    *
    * Applies to actions:
-   * - .createConnection()
-   * - .getIndividualAccessToken()
-   * - .getInstallationUrl()
-   * - .startOAuthHandshake()
+   * - .toCreateConnection()
+   * - .toGetIndividualAccessToken()
+   * - .toGetInstallationUrl()
+   * - .toStartOAuthHandshake()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -579,7 +579,7 @@ export class CodestarConnections extends PolicyStatement {
    * https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions
    *
    * Applies to actions:
-   * - .listConnections()
+   * - .toListConnections()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

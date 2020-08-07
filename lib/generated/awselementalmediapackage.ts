@@ -192,7 +192,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost
    */
-  public createChannel() {
+  public toCreateChannel() {
     this.add('mediapackage:CreateChannel');
     return this;
   }
@@ -208,7 +208,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost
    */
-  public createOriginEndpoint() {
+  public toCreateOriginEndpoint() {
     this.add('mediapackage:CreateOriginEndpoint');
     return this;
   }
@@ -220,7 +220,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete
    */
-  public deleteChannel() {
+  public toDeleteChannel() {
     this.add('mediapackage:DeleteChannel');
     return this;
   }
@@ -232,7 +232,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete
    */
-  public deleteOriginEndpoint() {
+  public toDeleteOriginEndpoint() {
     this.add('mediapackage:DeleteOriginEndpoint');
     return this;
   }
@@ -244,7 +244,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget
    */
-  public describeChannel() {
+  public toDescribeChannel() {
     this.add('mediapackage:DescribeChannel');
     return this;
   }
@@ -256,7 +256,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget
    */
-  public describeOriginEndpoint() {
+  public toDescribeOriginEndpoint() {
     this.add('mediapackage:DescribeOriginEndpoint');
     return this;
   }
@@ -268,7 +268,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget
    */
-  public listChannels() {
+  public toListChannels() {
     this.add('mediapackage:ListChannels');
     return this;
   }
@@ -280,7 +280,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget
    */
-  public listOriginEndpoints() {
+  public toListOriginEndpoints() {
     this.add('mediapackage:ListOriginEndpoints');
     return this;
   }
@@ -292,7 +292,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnget
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('mediapackage:ListTagsForResource');
     return this;
   }
@@ -304,7 +304,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id-ingest_endpoints-ingest_endpoint_id-credentials.html#channels-id-ingest_endpoints-ingest_endpoint_id-credentialsput
    */
-  public rotateIngestEndpointCredentials() {
+  public toRotateIngestEndpointCredentials() {
     this.add('mediapackage:RotateIngestEndpointCredentials');
     return this;
   }
@@ -320,7 +320,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('mediapackage:TagResource');
     return this;
   }
@@ -335,7 +335,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('mediapackage:UntagResource');
     return this;
   }
@@ -347,7 +347,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput
    */
-  public updateChannel() {
+  public toUpdateChannel() {
     this.add('mediapackage:UpdateChannel');
     return this;
   }
@@ -359,7 +359,7 @@ export class Mediapackage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput
    */
-  public updateOriginEndpoint() {
+  public toUpdateOriginEndpoint() {
     this.add('mediapackage:UpdateOriginEndpoint');
     return this;
   }
@@ -410,9 +410,9 @@ export class Mediapackage extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .createChannel()
-   * - .createOriginEndpoint()
-   * - .tagResource()
+   * - .toCreateChannel()
+   * - .toCreateOriginEndpoint()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -437,10 +437,10 @@ export class Mediapackage extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .createChannel()
-   * - .createOriginEndpoint()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateChannel()
+   * - .toCreateOriginEndpoint()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

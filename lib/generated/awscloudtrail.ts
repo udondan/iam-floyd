@@ -192,7 +192,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html
    */
-  public addTags() {
+  public toAddTags() {
     this.add('cloudtrail:AddTags');
     return this;
   }
@@ -207,7 +207,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html
    */
-  public createTrail() {
+  public toCreateTrail() {
     this.add('cloudtrail:CreateTrail');
     return this;
   }
@@ -219,7 +219,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html
    */
-  public deleteTrail() {
+  public toDeleteTrail() {
     this.add('cloudtrail:DeleteTrail');
     return this;
   }
@@ -231,7 +231,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html
    */
-  public describeTrails() {
+  public toDescribeTrails() {
     this.add('cloudtrail:DescribeTrails');
     return this;
   }
@@ -243,7 +243,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventSelectors.html
    */
-  public getEventSelectors() {
+  public toGetEventSelectors() {
     this.add('cloudtrail:GetEventSelectors');
     return this;
   }
@@ -255,7 +255,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetInsightSelectors.html
    */
-  public getInsightSelectors() {
+  public toGetInsightSelectors() {
     this.add('cloudtrail:GetInsightSelectors');
     return this;
   }
@@ -267,7 +267,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrail.html
    */
-  public getTrail() {
+  public toGetTrail() {
     this.add('cloudtrail:GetTrail');
     return this;
   }
@@ -279,7 +279,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html
    */
-  public getTrailStatus() {
+  public toGetTrailStatus() {
     this.add('cloudtrail:GetTrailStatus');
     return this;
   }
@@ -291,7 +291,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html
    */
-  public listPublicKeys() {
+  public toListPublicKeys() {
     this.add('cloudtrail:ListPublicKeys');
     return this;
   }
@@ -303,7 +303,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html
    */
-  public listTags() {
+  public toListTags() {
     this.add('cloudtrail:ListTags');
     return this;
   }
@@ -315,7 +315,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTrails.html
    */
-  public listTrails() {
+  public toListTrails() {
     this.add('cloudtrail:ListTrails');
     return this;
   }
@@ -327,7 +327,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html
    */
-  public lookupEvents() {
+  public toLookupEvents() {
     this.add('cloudtrail:LookupEvents');
     return this;
   }
@@ -339,7 +339,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventSelectors.html
    */
-  public putEventSelectors() {
+  public toPutEventSelectors() {
     this.add('cloudtrail:PutEventSelectors');
     return this;
   }
@@ -351,7 +351,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutInsightSelectors.html
    */
-  public putInsightSelectors() {
+  public toPutInsightSelectors() {
     this.add('cloudtrail:PutInsightSelectors');
     return this;
   }
@@ -363,7 +363,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html
    */
-  public removeTags() {
+  public toRemoveTags() {
     this.add('cloudtrail:RemoveTags');
     return this;
   }
@@ -375,7 +375,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html
    */
-  public startLogging() {
+  public toStartLogging() {
     this.add('cloudtrail:StartLogging');
     return this;
   }
@@ -387,7 +387,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html
    */
-  public stopLogging() {
+  public toStopLogging() {
     this.add('cloudtrail:StopLogging');
     return this;
   }
@@ -399,7 +399,7 @@ export class Cloudtrail extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html
    */
-  public updateTrail() {
+  public toUpdateTrail() {
     this.add('cloudtrail:UpdateTrail');
     return this;
   }

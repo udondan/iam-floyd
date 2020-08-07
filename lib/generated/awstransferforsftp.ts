@@ -245,7 +245,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html
    */
-  public createServer() {
+  public toCreateServer() {
     this.add('transfer:CreateServer');
     return this;
   }
@@ -264,7 +264,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html
    */
-  public createUser() {
+  public toCreateUser() {
     this.add('transfer:CreateUser');
     return this;
   }
@@ -276,7 +276,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html
    */
-  public deleteServer() {
+  public toDeleteServer() {
     this.add('transfer:DeleteServer');
     return this;
   }
@@ -288,7 +288,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html
    */
-  public deleteSshPublicKey() {
+  public toDeleteSshPublicKey() {
     this.add('transfer:DeleteSshPublicKey');
     return this;
   }
@@ -300,7 +300,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html
    */
-  public deleteUser() {
+  public toDeleteUser() {
     this.add('transfer:DeleteUser');
     return this;
   }
@@ -312,7 +312,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html
    */
-  public describeServer() {
+  public toDescribeServer() {
     this.add('transfer:DescribeServer');
     return this;
   }
@@ -324,7 +324,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html
    */
-  public describeUser() {
+  public toDescribeUser() {
     this.add('transfer:DescribeUser');
     return this;
   }
@@ -336,7 +336,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html
    */
-  public importSshPublicKey() {
+  public toImportSshPublicKey() {
     this.add('transfer:ImportSshPublicKey');
     return this;
   }
@@ -348,7 +348,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html
    */
-  public listServers() {
+  public toListServers() {
     this.add('transfer:ListServers');
     return this;
   }
@@ -360,7 +360,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('transfer:ListTagsForResource');
     return this;
   }
@@ -372,7 +372,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html
    */
-  public listUsers() {
+  public toListUsers() {
     this.add('transfer:ListUsers');
     return this;
   }
@@ -384,7 +384,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html
    */
-  public startServer() {
+  public toStartServer() {
     this.add('transfer:StartServer');
     return this;
   }
@@ -396,7 +396,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html
    */
-  public stopServer() {
+  public toStopServer() {
     this.add('transfer:StopServer');
     return this;
   }
@@ -412,7 +412,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('transfer:TagResource');
     return this;
   }
@@ -424,7 +424,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html
    */
-  public testIdentityProvider() {
+  public toTestIdentityProvider() {
     this.add('transfer:TestIdentityProvider');
     return this;
   }
@@ -439,7 +439,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('transfer:UntagResource');
     return this;
   }
@@ -451,7 +451,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html
    */
-  public updateServer() {
+  public toUpdateServer() {
     this.add('transfer:UpdateServer');
     return this;
   }
@@ -463,7 +463,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html
    */
-  public updateUser() {
+  public toUpdateUser() {
     this.add('transfer:UpdateUser');
     return this;
   }
@@ -518,9 +518,9 @@ export class Transfer extends PolicyStatement {
    * A key that is present in the request the user makes.
    *
    * Applies to actions:
-   * - .createServer()
-   * - .createUser()
-   * - .tagResource()
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -549,10 +549,10 @@ export class Transfer extends PolicyStatement {
    * The list of all the tag key names associated with the resource in the request.
    *
    * Applies to actions:
-   * - .createServer()
-   * - .createUser()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

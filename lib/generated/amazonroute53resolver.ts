@@ -273,7 +273,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html
    */
-  public associateResolverEndpointIpAddress() {
+  public toAssociateResolverEndpointIpAddress() {
     this.add('route53resolver:AssociateResolverEndpointIpAddress');
     return this;
   }
@@ -285,7 +285,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html
    */
-  public associateResolverRule() {
+  public toAssociateResolverRule() {
     this.add('route53resolver:AssociateResolverRule');
     return this;
   }
@@ -297,7 +297,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html
    */
-  public createResolverEndpoint() {
+  public toCreateResolverEndpoint() {
     this.add('route53resolver:CreateResolverEndpoint');
     return this;
   }
@@ -309,7 +309,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html
    */
-  public createResolverRule() {
+  public toCreateResolverRule() {
     this.add('route53resolver:CreateResolverRule');
     return this;
   }
@@ -321,7 +321,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html
    */
-  public deleteResolverEndpoint() {
+  public toDeleteResolverEndpoint() {
     this.add('route53resolver:DeleteResolverEndpoint');
     return this;
   }
@@ -333,7 +333,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html
    */
-  public deleteResolverRule() {
+  public toDeleteResolverRule() {
     this.add('route53resolver:DeleteResolverRule');
     return this;
   }
@@ -345,7 +345,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html
    */
-  public disassociateResolverEndpointIpAddress() {
+  public toDisassociateResolverEndpointIpAddress() {
     this.add('route53resolver:DisassociateResolverEndpointIpAddress');
     return this;
   }
@@ -357,7 +357,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html
    */
-  public disassociateResolverRule() {
+  public toDisassociateResolverRule() {
     this.add('route53resolver:DisassociateResolverRule');
     return this;
   }
@@ -369,7 +369,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html
    */
-  public getResolverEndpoint() {
+  public toGetResolverEndpoint() {
     this.add('route53resolver:GetResolverEndpoint');
     return this;
   }
@@ -381,7 +381,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html
    */
-  public getResolverRule() {
+  public toGetResolverRule() {
     this.add('route53resolver:GetResolverRule');
     return this;
   }
@@ -393,7 +393,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html
    */
-  public getResolverRuleAssociation() {
+  public toGetResolverRuleAssociation() {
     this.add('route53resolver:GetResolverRuleAssociation');
     return this;
   }
@@ -405,7 +405,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRulePolicy.html
    */
-  public getResolverRulePolicy() {
+  public toGetResolverRulePolicy() {
     this.add('route53resolver:GetResolverRulePolicy');
     return this;
   }
@@ -417,7 +417,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpointIpAddresses.html
    */
-  public listResolverEndpointIpAddresses() {
+  public toListResolverEndpointIpAddresses() {
     this.add('route53resolver:ListResolverEndpointIpAddresses');
     return this;
   }
@@ -429,7 +429,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html
    */
-  public listResolverEndpoints() {
+  public toListResolverEndpoints() {
     this.add('route53resolver:ListResolverEndpoints');
     return this;
   }
@@ -441,7 +441,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html
    */
-  public listResolverRuleAssociations() {
+  public toListResolverRuleAssociations() {
     this.add('route53resolver:ListResolverRuleAssociations');
     return this;
   }
@@ -453,7 +453,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html
    */
-  public listResolverRules() {
+  public toListResolverRules() {
     this.add('route53resolver:ListResolverRules');
     return this;
   }
@@ -465,7 +465,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('route53resolver:ListTagsForResource');
     return this;
   }
@@ -477,7 +477,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_PutResolverRulePolicy.html
    */
-  public putResolverRulePolicy() {
+  public toPutResolverRulePolicy() {
     this.add('route53resolver:PutResolverRulePolicy');
     return this;
   }
@@ -489,7 +489,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('route53resolver:TagResource');
     return this;
   }
@@ -501,7 +501,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('route53resolver:UntagResource');
     return this;
   }
@@ -513,7 +513,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html
    */
-  public updateResolverEndpoint() {
+  public toUpdateResolverEndpoint() {
     this.add('route53resolver:UpdateResolverEndpoint');
     return this;
   }
@@ -525,7 +525,7 @@ export class Route53resolver extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html
    */
-  public updateResolverRule() {
+  public toUpdateResolverRule() {
     this.add('route53resolver:UpdateResolverRule');
     return this;
   }

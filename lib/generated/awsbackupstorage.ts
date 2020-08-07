@@ -32,7 +32,7 @@ export class BackupStorage extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html
    */
-  public mountCapsule() {
+  public toMountCapsule() {
     this.add('backup-storage:MountCapsule');
     return this;
   }

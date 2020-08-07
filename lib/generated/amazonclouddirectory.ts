@@ -704,7 +704,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AddFacetToObject.html
    */
-  public addFacetToObject() {
+  public toAddFacetToObject() {
     this.add('clouddirectory:AddFacetToObject');
     return this;
   }
@@ -716,7 +716,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ApplySchema.html
    */
-  public applySchema() {
+  public toApplySchema() {
     this.add('clouddirectory:ApplySchema');
     return this;
   }
@@ -728,7 +728,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachObject.html
    */
-  public attachObject() {
+  public toAttachObject() {
     this.add('clouddirectory:AttachObject');
     return this;
   }
@@ -740,7 +740,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachPolicy.html
    */
-  public attachPolicy() {
+  public toAttachPolicy() {
     this.add('clouddirectory:AttachPolicy');
     return this;
   }
@@ -752,7 +752,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachToIndex.html
    */
-  public attachToIndex() {
+  public toAttachToIndex() {
     this.add('clouddirectory:AttachToIndex');
     return this;
   }
@@ -764,7 +764,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html
    */
-  public attachTypedLink() {
+  public toAttachTypedLink() {
     this.add('clouddirectory:AttachTypedLink');
     return this;
   }
@@ -776,7 +776,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_BatchRead.html
    */
-  public batchRead() {
+  public toBatchRead() {
     this.add('clouddirectory:BatchRead');
     return this;
   }
@@ -788,7 +788,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_BatchWrite.html
    */
-  public batchWrite() {
+  public toBatchWrite() {
     this.add('clouddirectory:BatchWrite');
     return this;
   }
@@ -800,7 +800,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateDirectory.html
    */
-  public createDirectory() {
+  public toCreateDirectory() {
     this.add('clouddirectory:CreateDirectory');
     return this;
   }
@@ -812,7 +812,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateFacet.html
    */
-  public createFacet() {
+  public toCreateFacet() {
     this.add('clouddirectory:CreateFacet');
     return this;
   }
@@ -824,7 +824,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateIndex.html
    */
-  public createIndex() {
+  public toCreateIndex() {
     this.add('clouddirectory:CreateIndex');
     return this;
   }
@@ -836,7 +836,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateObject.html
    */
-  public createObject() {
+  public toCreateObject() {
     this.add('clouddirectory:CreateObject');
     return this;
   }
@@ -848,7 +848,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateSchema.html
    */
-  public createSchema() {
+  public toCreateSchema() {
     this.add('clouddirectory:CreateSchema');
     return this;
   }
@@ -860,7 +860,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html
    */
-  public createTypedLinkFacet() {
+  public toCreateTypedLinkFacet() {
     this.add('clouddirectory:CreateTypedLinkFacet');
     return this;
   }
@@ -872,7 +872,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteDirectory.html
    */
-  public deleteDirectory() {
+  public toDeleteDirectory() {
     this.add('clouddirectory:DeleteDirectory');
     return this;
   }
@@ -884,7 +884,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteFacet.html
    */
-  public deleteFacet() {
+  public toDeleteFacet() {
     this.add('clouddirectory:DeleteFacet');
     return this;
   }
@@ -896,7 +896,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteObject.html
    */
-  public deleteObject() {
+  public toDeleteObject() {
     this.add('clouddirectory:DeleteObject');
     return this;
   }
@@ -908,7 +908,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteSchema.html
    */
-  public deleteSchema() {
+  public toDeleteSchema() {
     this.add('clouddirectory:DeleteSchema');
     return this;
   }
@@ -920,7 +920,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteTypedLinkFacet.html
    */
-  public deleteTypedLinkFacet() {
+  public toDeleteTypedLinkFacet() {
     this.add('clouddirectory:DeleteTypedLinkFacet');
     return this;
   }
@@ -932,7 +932,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachFromIndex.html
    */
-  public detachFromIndex() {
+  public toDetachFromIndex() {
     this.add('clouddirectory:DetachFromIndex');
     return this;
   }
@@ -944,7 +944,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachObject.html
    */
-  public detachObject() {
+  public toDetachObject() {
     this.add('clouddirectory:DetachObject');
     return this;
   }
@@ -956,7 +956,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachPolicy.html
    */
-  public detachPolicy() {
+  public toDetachPolicy() {
     this.add('clouddirectory:DetachPolicy');
     return this;
   }
@@ -968,7 +968,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html
    */
-  public detachTypedLink() {
+  public toDetachTypedLink() {
     this.add('clouddirectory:DetachTypedLink');
     return this;
   }
@@ -980,7 +980,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DisableDirectory.html
    */
-  public disableDirectory() {
+  public toDisableDirectory() {
     this.add('clouddirectory:DisableDirectory');
     return this;
   }
@@ -992,7 +992,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_EnableDirectory.html
    */
-  public enableDirectory() {
+  public toEnableDirectory() {
     this.add('clouddirectory:EnableDirectory');
     return this;
   }
@@ -1004,7 +1004,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetDirectory.html
    */
-  public getDirectory() {
+  public toGetDirectory() {
     this.add('clouddirectory:GetDirectory');
     return this;
   }
@@ -1016,7 +1016,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetFacet.html
    */
-  public getFacet() {
+  public toGetFacet() {
     this.add('clouddirectory:GetFacet');
     return this;
   }
@@ -1028,7 +1028,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetLinkAttributes.html
    */
-  public getLinkAttributes() {
+  public toGetLinkAttributes() {
     this.add('clouddirectory:GetLinkAttributes');
     return this;
   }
@@ -1040,7 +1040,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetObjectAttributes.html
    */
-  public getObjectAttributes() {
+  public toGetObjectAttributes() {
     this.add('clouddirectory:GetObjectAttributes');
     return this;
   }
@@ -1052,7 +1052,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetObjectInformation.html
    */
-  public getObjectInformation() {
+  public toGetObjectInformation() {
     this.add('clouddirectory:GetObjectInformation');
     return this;
   }
@@ -1064,7 +1064,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetSchemaAsJson.html
    */
-  public getSchemaAsJson() {
+  public toGetSchemaAsJson() {
     this.add('clouddirectory:GetSchemaAsJson');
     return this;
   }
@@ -1076,7 +1076,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetTypedLinkFacetInformation.html
    */
-  public getTypedLinkFacetInformation() {
+  public toGetTypedLinkFacetInformation() {
     this.add('clouddirectory:GetTypedLinkFacetInformation');
     return this;
   }
@@ -1088,7 +1088,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAppliedSchemaArns.html
    */
-  public listAppliedSchemaArns() {
+  public toListAppliedSchemaArns() {
     this.add('clouddirectory:ListAppliedSchemaArns');
     return this;
   }
@@ -1100,7 +1100,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAttachedIndices.html
    */
-  public listAttachedIndices() {
+  public toListAttachedIndices() {
     this.add('clouddirectory:ListAttachedIndices');
     return this;
   }
@@ -1112,7 +1112,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListDevelopmentSchemaArns.html
    */
-  public listDevelopmentSchemaArns() {
+  public toListDevelopmentSchemaArns() {
     this.add('clouddirectory:ListDevelopmentSchemaArns');
     return this;
   }
@@ -1124,7 +1124,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListDirectories.html
    */
-  public listDirectories() {
+  public toListDirectories() {
     this.add('clouddirectory:ListDirectories');
     return this;
   }
@@ -1136,7 +1136,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListFacetAttributes.html
    */
-  public listFacetAttributes() {
+  public toListFacetAttributes() {
     this.add('clouddirectory:ListFacetAttributes');
     return this;
   }
@@ -1148,7 +1148,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListFacetNames.html
    */
-  public listFacetNames() {
+  public toListFacetNames() {
     this.add('clouddirectory:ListFacetNames');
     return this;
   }
@@ -1160,7 +1160,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html
    */
-  public listIncomingTypedLinks() {
+  public toListIncomingTypedLinks() {
     this.add('clouddirectory:ListIncomingTypedLinks');
     return this;
   }
@@ -1172,7 +1172,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIndex.html
    */
-  public listIndex() {
+  public toListIndex() {
     this.add('clouddirectory:ListIndex');
     return this;
   }
@@ -1184,7 +1184,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectAttributes.html
    */
-  public listObjectAttributes() {
+  public toListObjectAttributes() {
     this.add('clouddirectory:ListObjectAttributes');
     return this;
   }
@@ -1196,7 +1196,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectChildren.html
    */
-  public listObjectChildren() {
+  public toListObjectChildren() {
     this.add('clouddirectory:ListObjectChildren');
     return this;
   }
@@ -1208,7 +1208,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParentPaths.html
    */
-  public listObjectParentPaths() {
+  public toListObjectParentPaths() {
     this.add('clouddirectory:ListObjectParentPaths');
     return this;
   }
@@ -1220,7 +1220,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParents.html
    */
-  public listObjectParents() {
+  public toListObjectParents() {
     this.add('clouddirectory:ListObjectParents');
     return this;
   }
@@ -1232,7 +1232,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectPolicies.html
    */
-  public listObjectPolicies() {
+  public toListObjectPolicies() {
     this.add('clouddirectory:ListObjectPolicies');
     return this;
   }
@@ -1244,7 +1244,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html
    */
-  public listOutgoingTypedLinks() {
+  public toListOutgoingTypedLinks() {
     this.add('clouddirectory:ListOutgoingTypedLinks');
     return this;
   }
@@ -1256,7 +1256,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListPolicyAttachments.html
    */
-  public listPolicyAttachments() {
+  public toListPolicyAttachments() {
     this.add('clouddirectory:ListPolicyAttachments');
     return this;
   }
@@ -1268,7 +1268,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListPublishedSchemaArns.html
    */
-  public listPublishedSchemaArns() {
+  public toListPublishedSchemaArns() {
     this.add('clouddirectory:ListPublishedSchemaArns');
     return this;
   }
@@ -1280,7 +1280,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('clouddirectory:ListTagsForResource');
     return this;
   }
@@ -1292,7 +1292,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetAttributes.html
    */
-  public listTypedLinkFacetAttributes() {
+  public toListTypedLinkFacetAttributes() {
     this.add('clouddirectory:ListTypedLinkFacetAttributes');
     return this;
   }
@@ -1304,7 +1304,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetNames.html
    */
-  public listTypedLinkFacetNames() {
+  public toListTypedLinkFacetNames() {
     this.add('clouddirectory:ListTypedLinkFacetNames');
     return this;
   }
@@ -1316,7 +1316,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_LookupPolicy.html
    */
-  public lookupPolicy() {
+  public toLookupPolicy() {
     this.add('clouddirectory:LookupPolicy');
     return this;
   }
@@ -1328,7 +1328,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PublishSchema.html
    */
-  public publishSchema() {
+  public toPublishSchema() {
     this.add('clouddirectory:PublishSchema');
     return this;
   }
@@ -1340,7 +1340,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PutSchemaFromJson.html
    */
-  public putSchemaFromJson() {
+  public toPutSchemaFromJson() {
     this.add('clouddirectory:PutSchemaFromJson');
     return this;
   }
@@ -1352,7 +1352,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_RemoveFacetFromObject.html
    */
-  public removeFacetFromObject() {
+  public toRemoveFacetFromObject() {
     this.add('clouddirectory:RemoveFacetFromObject');
     return this;
   }
@@ -1364,7 +1364,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('clouddirectory:TagResource');
     return this;
   }
@@ -1376,7 +1376,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('clouddirectory:UntagResource');
     return this;
   }
@@ -1388,7 +1388,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateFacet.html
    */
-  public updateFacet() {
+  public toUpdateFacet() {
     this.add('clouddirectory:UpdateFacet');
     return this;
   }
@@ -1400,7 +1400,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateLinkAttributes.html
    */
-  public updateLinkAttributes() {
+  public toUpdateLinkAttributes() {
     this.add('clouddirectory:UpdateLinkAttributes');
     return this;
   }
@@ -1412,7 +1412,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateObjectAttributes.html
    */
-  public updateObjectAttributes() {
+  public toUpdateObjectAttributes() {
     this.add('clouddirectory:UpdateObjectAttributes');
     return this;
   }
@@ -1424,7 +1424,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateSchema.html
    */
-  public updateSchema() {
+  public toUpdateSchema() {
     this.add('clouddirectory:UpdateSchema');
     return this;
   }
@@ -1436,7 +1436,7 @@ export class Clouddirectory extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateTypedLinkFacet.html
    */
-  public updateTypedLinkFacet() {
+  public toUpdateTypedLinkFacet() {
     this.add('clouddirectory:UpdateTypedLinkFacet');
     return this;
   }

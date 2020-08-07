@@ -53,7 +53,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    */
-  public sendSSHPublicKey() {
+  public toSendSSHPublicKey() {
     this.add('ec2-instance-connect:SendSSHPublicKey');
     return this;
   }
@@ -119,7 +119,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    *
    * Applies to actions:
-   * - .sendSSHPublicKey()
+   * - .toSendSSHPublicKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

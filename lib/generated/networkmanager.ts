@@ -461,7 +461,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html
    */
-  public associateCustomerGateway() {
+  public toAssociateCustomerGateway() {
     this.add('networkmanager:AssociateCustomerGateway');
     return this;
   }
@@ -473,7 +473,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateLink.html
    */
-  public associateLink() {
+  public toAssociateLink() {
     this.add('networkmanager:AssociateLink');
     return this;
   }
@@ -489,7 +489,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html
    */
-  public createDevice() {
+  public toCreateDevice() {
     this.add('networkmanager:CreateDevice');
     return this;
   }
@@ -508,7 +508,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
    */
-  public createGlobalNetwork() {
+  public toCreateGlobalNetwork() {
     this.add('networkmanager:CreateGlobalNetwork');
     return this;
   }
@@ -524,7 +524,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html
    */
-  public createLink() {
+  public toCreateLink() {
     this.add('networkmanager:CreateLink');
     return this;
   }
@@ -540,7 +540,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html
    */
-  public createSite() {
+  public toCreateSite() {
     this.add('networkmanager:CreateSite');
     return this;
   }
@@ -552,7 +552,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteDevice.html
    */
-  public deleteDevice() {
+  public toDeleteDevice() {
     this.add('networkmanager:DeleteDevice');
     return this;
   }
@@ -564,7 +564,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteGlobalNetwork.html
    */
-  public deleteGlobalNetwork() {
+  public toDeleteGlobalNetwork() {
     this.add('networkmanager:DeleteGlobalNetwork');
     return this;
   }
@@ -576,7 +576,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteLink.html
    */
-  public deleteLink() {
+  public toDeleteLink() {
     this.add('networkmanager:DeleteLink');
     return this;
   }
@@ -588,7 +588,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteSite.html
    */
-  public deleteSite() {
+  public toDeleteSite() {
     this.add('networkmanager:DeleteSite');
     return this;
   }
@@ -603,7 +603,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html
    */
-  public deregisterTransitGateway() {
+  public toDeregisterTransitGateway() {
     this.add('networkmanager:DeregisterTransitGateway');
     return this;
   }
@@ -615,7 +615,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DescribeGlobalNetworks.html
    */
-  public describeGlobalNetworks() {
+  public toDescribeGlobalNetworks() {
     this.add('networkmanager:DescribeGlobalNetworks');
     return this;
   }
@@ -630,7 +630,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html
    */
-  public disassociateCustomerGateway() {
+  public toDisassociateCustomerGateway() {
     this.add('networkmanager:DisassociateCustomerGateway');
     return this;
   }
@@ -642,7 +642,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateLink.html
    */
-  public disassociateLink() {
+  public toDisassociateLink() {
     this.add('networkmanager:DisassociateLink');
     return this;
   }
@@ -654,7 +654,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCustomerGatewayAssociations.html
    */
-  public getCustomerGatewayAssociations() {
+  public toGetCustomerGatewayAssociations() {
     this.add('networkmanager:GetCustomerGatewayAssociations');
     return this;
   }
@@ -666,7 +666,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDevices.html
    */
-  public getDevices() {
+  public toGetDevices() {
     this.add('networkmanager:GetDevices');
     return this;
   }
@@ -678,7 +678,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinkAssociations.html
    */
-  public getLinkAssociations() {
+  public toGetLinkAssociations() {
     this.add('networkmanager:GetLinkAssociations');
     return this;
   }
@@ -690,7 +690,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinks.html
    */
-  public getLinks() {
+  public toGetLinks() {
     this.add('networkmanager:GetLinks');
     return this;
   }
@@ -702,7 +702,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSites.html
    */
-  public getSites() {
+  public toGetSites() {
     this.add('networkmanager:GetSites');
     return this;
   }
@@ -714,7 +714,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRegistrations.html
    */
-  public getTransitGatewayRegistrations() {
+  public toGetTransitGatewayRegistrations() {
     this.add('networkmanager:GetTransitGatewayRegistrations');
     return this;
   }
@@ -729,7 +729,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('networkmanager:ListTagsForResource');
     return this;
   }
@@ -744,7 +744,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html
    */
-  public registerTransitGateway() {
+  public toRegisterTransitGateway() {
     this.add('networkmanager:RegisterTransitGateway');
     return this;
   }
@@ -761,7 +761,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('networkmanager:TagResource');
     return this;
   }
@@ -776,7 +776,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('networkmanager:UntagResource');
     return this;
   }
@@ -788,7 +788,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDevice.html
    */
-  public updateDevice() {
+  public toUpdateDevice() {
     this.add('networkmanager:UpdateDevice');
     return this;
   }
@@ -800,7 +800,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateGlobalNetwork.html
    */
-  public updateGlobalNetwork() {
+  public toUpdateGlobalNetwork() {
     this.add('networkmanager:UpdateGlobalNetwork');
     return this;
   }
@@ -812,7 +812,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateLink.html
    */
-  public updateLink() {
+  public toUpdateLink() {
     this.add('networkmanager:UpdateLink');
     return this;
   }
@@ -824,7 +824,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateSite.html
    */
-  public updateSite() {
+  public toUpdateSite() {
     this.add('networkmanager:UpdateSite');
     return this;
   }
@@ -921,11 +921,11 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createDevice()
-   * - .createGlobalNetwork()
-   * - .createLink()
-   * - .createSite()
-   * - .tagResource()
+   * - .toCreateDevice()
+   * - .toCreateGlobalNetwork()
+   * - .toCreateLink()
+   * - .toCreateSite()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -941,8 +941,8 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .listTagsForResource()
-   * - .tagResource()
+   * - .toListTagsForResource()
+   * - .toTagResource()
    *
    * Applies to resource types:
    * - global-network
@@ -964,12 +964,12 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createDevice()
-   * - .createGlobalNetwork()
-   * - .createLink()
-   * - .createSite()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateDevice()
+   * - .toCreateGlobalNetwork()
+   * - .toCreateLink()
+   * - .toCreateSite()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -984,8 +984,8 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
    * Applies to actions:
-   * - .associateCustomerGateway()
-   * - .disassociateCustomerGateway()
+   * - .toAssociateCustomerGateway()
+   * - .toDisassociateCustomerGateway()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1000,8 +1000,8 @@ export class Networkmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
    * Applies to actions:
-   * - .deregisterTransitGateway()
-   * - .registerTransitGateway()
+   * - .toDeregisterTransitGateway()
+   * - .toRegisterTransitGateway()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

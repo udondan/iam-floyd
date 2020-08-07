@@ -306,7 +306,7 @@ export function createModule(module: Module): Promise<void> {
 
   for (const [name, action] of Object.entries(module.actionList!)) {
     const method = classDeclaration.addMethod({
-      name: lowerFirst(name),
+      name: `to${name}`,
       scope: Scope.Public,
     });
     method.setBodyText(
@@ -415,7 +415,7 @@ export function createModule(module: Module): Promise<void> {
           return condition.relatedActions.indexOf(elem) == pos;
         })
         .forEach((relatedAction) => {
-          desc += `- .${lowerFirst(camelCase(relatedAction))}()\n`;
+          desc += `- .to${camelCase(relatedAction)}()\n`;
         });
     }
 

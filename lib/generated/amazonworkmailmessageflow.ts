@@ -44,7 +44,7 @@ export class Workmailmessageflow extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html
    */
-  public getRawMessageContent() {
+  public toGetRawMessageContent() {
     this.add('workmailmessageflow:GetRawMessageContent');
     return this;
   }

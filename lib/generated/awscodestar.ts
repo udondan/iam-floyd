@@ -245,7 +245,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html
    */
-  public associateTeamMember() {
+  public toAssociateTeamMember() {
     this.add('codestar:AssociateTeamMember');
     return this;
   }
@@ -261,7 +261,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html
    */
-  public createProject() {
+  public toCreateProject() {
     this.add('codestar:CreateProject');
     return this;
   }
@@ -273,7 +273,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateUserProfile.html
    */
-  public createUserProfile() {
+  public toCreateUserProfile() {
     this.add('codestar:CreateUserProfile');
     return this;
   }
@@ -283,7 +283,7 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteExtendedAccess() {
+  public toDeleteExtendedAccess() {
     this.add('codestar:DeleteExtendedAccess');
     return this;
   }
@@ -295,7 +295,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteProject.html
    */
-  public deleteProject() {
+  public toDeleteProject() {
     this.add('codestar:DeleteProject');
     return this;
   }
@@ -307,7 +307,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html
    */
-  public deleteUserProfile() {
+  public toDeleteUserProfile() {
     this.add('codestar:DeleteUserProfile');
     return this;
   }
@@ -319,7 +319,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeProject.html
    */
-  public describeProject() {
+  public toDescribeProject() {
     this.add('codestar:DescribeProject');
     return this;
   }
@@ -331,7 +331,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeUserProfile.html
    */
-  public describeUserProfile() {
+  public toDescribeUserProfile() {
     this.add('codestar:DescribeUserProfile');
     return this;
   }
@@ -343,7 +343,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_DisassociateTeamMember.html
    */
-  public disassociateTeamMember() {
+  public toDisassociateTeamMember() {
     this.add('codestar:DisassociateTeamMember');
     return this;
   }
@@ -353,7 +353,7 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getExtendedAccess() {
+  public toGetExtendedAccess() {
     this.add('codestar:GetExtendedAccess');
     return this;
   }
@@ -365,7 +365,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListProjects.html
    */
-  public listProjects() {
+  public toListProjects() {
     this.add('codestar:ListProjects');
     return this;
   }
@@ -377,7 +377,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListResources.html
    */
-  public listResources() {
+  public toListResources() {
     this.add('codestar:ListResources');
     return this;
   }
@@ -389,7 +389,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTagsForProject.html
    */
-  public listTagsForProject() {
+  public toListTagsForProject() {
     this.add('codestar:ListTagsForProject');
     return this;
   }
@@ -401,7 +401,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTeamMembers.html
    */
-  public listTeamMembers() {
+  public toListTeamMembers() {
     this.add('codestar:ListTeamMembers');
     return this;
   }
@@ -413,7 +413,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_ListUserProfiles.html
    */
-  public listUserProfiles() {
+  public toListUserProfiles() {
     this.add('codestar:ListUserProfiles');
     return this;
   }
@@ -423,7 +423,7 @@ export class Codestar extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public putExtendedAccess() {
+  public toPutExtendedAccess() {
     this.add('codestar:PutExtendedAccess');
     return this;
   }
@@ -439,7 +439,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_TagProject.html
    */
-  public tagProject() {
+  public toTagProject() {
     this.add('codestar:TagProject');
     return this;
   }
@@ -454,7 +454,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UntagProject.html
    */
-  public untagProject() {
+  public toUntagProject() {
     this.add('codestar:UntagProject');
     return this;
   }
@@ -466,7 +466,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateProject.html
    */
-  public updateProject() {
+  public toUpdateProject() {
     this.add('codestar:UpdateProject');
     return this;
   }
@@ -478,7 +478,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateTeamMember.html
    */
-  public updateTeamMember() {
+  public toUpdateTeamMember() {
     this.add('codestar:UpdateTeamMember');
     return this;
   }
@@ -490,7 +490,7 @@ export class Codestar extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateUserProfile.html
    */
-  public updateUserProfile() {
+  public toUpdateUserProfile() {
     this.add('codestar:UpdateUserProfile');
     return this;
   }
@@ -541,8 +541,8 @@ export class Codestar extends PolicyStatement {
    * Filters create requests based on the allowed set of values for each of the tags.
    *
    * Applies to actions:
-   * - .createProject()
-   * - .tagProject()
+   * - .toCreateProject()
+   * - .toTagProject()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -570,9 +570,9 @@ export class Codestar extends PolicyStatement {
    * Filters create requests based on the presence of mandatory tags in the request.
    *
    * Applies to actions:
-   * - .createProject()
-   * - .tagProject()
-   * - .untagProject()
+   * - .toCreateProject()
+   * - .toTagProject()
+   * - .toUntagProject()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

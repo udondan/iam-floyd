@@ -44,6 +44,7 @@ There are two different package variants available:
 * [Methods](#Methods)
 	* [allow](#allow)
 	* [deny](#deny)
+	* [to*, to](#toto)
 	* [allActions](#allActions)
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
@@ -68,15 +69,15 @@ The package contains a statement provider for each AWS service, e.g. `Ec2`. A st
 ```typescript
 import * as statement from 'iam-floyd';
 
-new statement.Ec2().startInstances();
+new statement.Ec2().toStartInstances();
 ```
 
 Every method returns the statement provider, so you can chain method calls:
 
 ```typescript
 new statement.Ec2()
-  .startInstances()
-  .stopInstances();
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 The default effect of any statement is `Allow`. To add some linguistic sugar you can explicitly call the `allow()` method:
@@ -84,8 +85,8 @@ The default effect of any statement is `Allow`. To add some linguistic sugar you
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
-  .stopInstances();
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 And of course `deny()`:
@@ -93,8 +94,8 @@ And of course `deny()`:
 ```typescript
 new statement.Ec2()
   .deny()
-  .startInstances()
-  .stopInstances();
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 If you don't want to be verbose and add every single action manually to the statement, you discovered the reason why this package was created. You can work with [access levels]!
@@ -131,7 +132,7 @@ For every available condition key, there are `if*()` methods available.
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
@@ -143,7 +144,7 @@ If you want to add a condition not covered by the available methods, you can def
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .if('aws:RequestTag/Owner', 'John');
 ```
 
@@ -154,7 +155,7 @@ Most of the `if*()` methods allow an optional operator as last argument:
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .if('aws:RequestTag/Owner', '*John*', 'StringEquals');
 ```
 
@@ -189,7 +190,7 @@ new statement.S3()
   .allow()
   .notActions()
   .notResources()
-  .deleteBucket()
+  .toDeleteBucket()
   .onBucket('some-bucket');
 ```
 
@@ -201,11 +202,11 @@ const policy = {
   Statement: [
     new statement.Ec2()
       .allow()
-      .startInstances()
+      .toStartInstances()
       .ifAwsRequestTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
-      .stopInstances()
+      .toStopInstances()
       .ifResourceTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
@@ -257,7 +258,7 @@ Sets the `Effect` of the statement to `Allow`.
 ```typescript
 new statement.Ec2()
   .allow()
-  .stopInstances();
+  .toStopInstances();
 ```
 
 ### <a name='deny'></a>deny
@@ -267,7 +268,18 @@ Sets the `Effect` of the statement to `Deny`.
 ```typescript
 new statement.Ec2()
   .deny()
-  .stopInstances();
+  .toStopInstances();
+```
+
+### <a name='toto'></a>to*, to
+
+For every available action, there are `to*()` methods available.
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 ### <a name='allActions'></a>allActions
@@ -312,7 +324,7 @@ For every available condition key, there are `if*()` methods available.
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
@@ -324,7 +336,7 @@ Most of them allow an optional operator as last argument:
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .ifInstanceType('*.nano', 'StringLike')
 ```
 
@@ -335,7 +347,7 @@ If you want to add a condition not covered by the available methods, you can def
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .if(
     'aws:RequestTag/Owner',
     '${aws:username}',
@@ -382,7 +394,7 @@ Switches the policy provider to use [NotAction].
 new statement.S3()
   .allow()
   .notActions()
-  .deleteBucket()
+  .toDeleteBucket()
   .onBucket('some-bucket');
 ```
 
@@ -394,7 +406,7 @@ Switches the policy provider to use [NotResource].
 new statement.S3()
   .allow()
   .notResources()
-  .deleteBucket()
+  .toDeleteBucket()
   .onBucket('some-bucket');
 ```
 
@@ -406,7 +418,7 @@ Switches the policy provider to use [NotPrincipal].
 new statement.Sts()
   .deny()
   .notPrincipals()
-  .assumeRole()
+  .toAssumeRole()
   .forUser('1234567890', 'Bob');
 ```
 
@@ -417,67 +429,67 @@ To create assume policies, use the `for*()` methods. There are methods available
 ```typescript
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forAccount('1234567890');
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forService('lambda.amazonaws.com');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forUser('1234567890', 'Bob');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forRole('1234567890', 'role-name');
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedCognito();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedAmazon();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedGoogle();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedFacebook();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forSaml('1234567890', 'saml-provider');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forPublic();
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forAssumedRoleSession('123456789', 'role-name', 'session-name');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forCanonicalUser('userID');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .for('arn:foo:bar')
 ```
 
@@ -487,7 +499,7 @@ To reverse the assume policy you can call the `notPrincipals()` method:
 new statement.Sts()
   .deny()
   .notPrincipals()
-  .assumeRole()
+  .toAssumeRole()
   .forUser('1234567890', 'Bob');
 ```
 
@@ -496,7 +508,7 @@ If you use the cdk variant of the package you should not have the need to manual
 ```typescript
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forCdkPrincipal(
     new iam.ServicePrincipal('sns.amazonaws.com')
     new iam.ServicePrincipal('lambda.amazonaws.com')

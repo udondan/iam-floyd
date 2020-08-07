@@ -112,7 +112,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateApplication.html
    */
-  public createApplication() {
+  public toCreateApplication() {
     this.add('applicationinsights:CreateApplication');
     return this;
   }
@@ -124,7 +124,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_CreateComponent.html
    */
-  public createComponent() {
+  public toCreateComponent() {
     this.add('applicationinsights:CreateComponent');
     return this;
   }
@@ -136,7 +136,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteApplication.html
    */
-  public deleteApplication() {
+  public toDeleteApplication() {
     this.add('applicationinsights:DeleteApplication');
     return this;
   }
@@ -148,7 +148,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DeleteComponent.html
    */
-  public deleteComponent() {
+  public toDeleteComponent() {
     this.add('applicationinsights:DeleteComponent');
     return this;
   }
@@ -160,7 +160,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeApplication.html
    */
-  public describeApplication() {
+  public toDescribeApplication() {
     this.add('applicationinsights:DescribeApplication');
     return this;
   }
@@ -172,7 +172,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponent.html
    */
-  public describeComponent() {
+  public toDescribeComponent() {
     this.add('applicationinsights:DescribeComponent');
     return this;
   }
@@ -184,7 +184,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfiguration.html
    */
-  public describeComponentConfiguration() {
+  public toDescribeComponentConfiguration() {
     this.add('applicationinsights:DescribeComponentConfiguration');
     return this;
   }
@@ -196,7 +196,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html
    */
-  public describeComponentConfigurationRecommendation() {
+  public toDescribeComponentConfigurationRecommendation() {
     this.add('applicationinsights:DescribeComponentConfigurationRecommendation');
     return this;
   }
@@ -208,7 +208,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeObservation.html
    */
-  public describeObservation() {
+  public toDescribeObservation() {
     this.add('applicationinsights:DescribeObservation');
     return this;
   }
@@ -220,7 +220,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblem.html
    */
-  public describeProblem() {
+  public toDescribeProblem() {
     this.add('applicationinsights:DescribeProblem');
     return this;
   }
@@ -232,7 +232,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_DescribeProblemObservations.html
    */
-  public describeProblemObservations() {
+  public toDescribeProblemObservations() {
     this.add('applicationinsights:DescribeProblemObservations');
     return this;
   }
@@ -244,7 +244,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListApplications.html
    */
-  public listApplications() {
+  public toListApplications() {
     this.add('applicationinsights:ListApplications');
     return this;
   }
@@ -256,7 +256,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListComponents.html
    */
-  public listComponents() {
+  public toListComponents() {
     this.add('applicationinsights:ListComponents');
     return this;
   }
@@ -268,7 +268,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_ListProblems.html
    */
-  public listProblems() {
+  public toListProblems() {
     this.add('applicationinsights:ListProblems');
     return this;
   }
@@ -280,7 +280,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateApplication.html
    */
-  public updateApplication() {
+  public toUpdateApplication() {
     this.add('applicationinsights:UpdateApplication');
     return this;
   }
@@ -292,7 +292,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponent.html
    */
-  public updateComponent() {
+  public toUpdateComponent() {
     this.add('applicationinsights:UpdateComponent');
     return this;
   }
@@ -304,7 +304,7 @@ export class Applicationinsights extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appinsights/latest/APIReference/API_UpdateComponentConfiguration.html
    */
-  public updateComponentConfiguration() {
+  public toUpdateComponentConfiguration() {
     this.add('applicationinsights:UpdateComponentConfiguration');
     return this;
   }

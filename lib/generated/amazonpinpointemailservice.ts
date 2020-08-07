@@ -466,7 +466,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html
    */
-  public createConfigurationSet() {
+  public toCreateConfigurationSet() {
     this.add('ses-pinpoint:CreateConfigurationSet');
     return this;
   }
@@ -478,7 +478,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSetEventDestination.html
    */
-  public createConfigurationSetEventDestination() {
+  public toCreateConfigurationSetEventDestination() {
     this.add('ses-pinpoint:CreateConfigurationSetEventDestination');
     return this;
   }
@@ -494,7 +494,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDedicatedIpPool.html
    */
-  public createDedicatedIpPool() {
+  public toCreateDedicatedIpPool() {
     this.add('ses-pinpoint:CreateDedicatedIpPool');
     return this;
   }
@@ -510,7 +510,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDeliverabilityTestReport.html
    */
-  public createDeliverabilityTestReport() {
+  public toCreateDeliverabilityTestReport() {
     this.add('ses-pinpoint:CreateDeliverabilityTestReport');
     return this;
   }
@@ -526,7 +526,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateEmailIdentity.html
    */
-  public createEmailIdentity() {
+  public toCreateEmailIdentity() {
     this.add('ses-pinpoint:CreateEmailIdentity');
     return this;
   }
@@ -538,7 +538,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSet.html
    */
-  public deleteConfigurationSet() {
+  public toDeleteConfigurationSet() {
     this.add('ses-pinpoint:DeleteConfigurationSet');
     return this;
   }
@@ -550,7 +550,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSetEventDestination.html
    */
-  public deleteConfigurationSetEventDestination() {
+  public toDeleteConfigurationSetEventDestination() {
     this.add('ses-pinpoint:DeleteConfigurationSetEventDestination');
     return this;
   }
@@ -562,7 +562,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteDedicatedIpPool.html
    */
-  public deleteDedicatedIpPool() {
+  public toDeleteDedicatedIpPool() {
     this.add('ses-pinpoint:DeleteDedicatedIpPool');
     return this;
   }
@@ -574,7 +574,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteEmailIdentity.html
    */
-  public deleteEmailIdentity() {
+  public toDeleteEmailIdentity() {
     this.add('ses-pinpoint:DeleteEmailIdentity');
     return this;
   }
@@ -586,7 +586,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetAccount.html
    */
-  public getAccount() {
+  public toGetAccount() {
     this.add('ses-pinpoint:GetAccount');
     return this;
   }
@@ -598,7 +598,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetBlacklistReports.html
    */
-  public getBlacklistReports() {
+  public toGetBlacklistReports() {
     this.add('ses-pinpoint:GetBlacklistReports');
     return this;
   }
@@ -610,7 +610,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSet.html
    */
-  public getConfigurationSet() {
+  public toGetConfigurationSet() {
     this.add('ses-pinpoint:GetConfigurationSet');
     return this;
   }
@@ -622,7 +622,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSetEventDestinations.html
    */
-  public getConfigurationSetEventDestinations() {
+  public toGetConfigurationSetEventDestinations() {
     this.add('ses-pinpoint:GetConfigurationSetEventDestinations');
     return this;
   }
@@ -634,7 +634,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIp.html
    */
-  public getDedicatedIp() {
+  public toGetDedicatedIp() {
     this.add('ses-pinpoint:GetDedicatedIp');
     return this;
   }
@@ -646,7 +646,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIps.html
    */
-  public getDedicatedIps() {
+  public toGetDedicatedIps() {
     this.add('ses-pinpoint:GetDedicatedIps');
     return this;
   }
@@ -658,7 +658,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityDashboardOptions.html
    */
-  public getDeliverabilityDashboardOptions() {
+  public toGetDeliverabilityDashboardOptions() {
     this.add('ses-pinpoint:GetDeliverabilityDashboardOptions');
     return this;
   }
@@ -670,7 +670,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityTestReport.html
    */
-  public getDeliverabilityTestReport() {
+  public toGetDeliverabilityTestReport() {
     this.add('ses-pinpoint:GetDeliverabilityTestReport');
     return this;
   }
@@ -682,7 +682,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainStatisticsReport.html
    */
-  public getDomainStatisticsReport() {
+  public toGetDomainStatisticsReport() {
     this.add('ses-pinpoint:GetDomainStatisticsReport');
     return this;
   }
@@ -694,7 +694,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetEmailIdentity.html
    */
-  public getEmailIdentity() {
+  public toGetEmailIdentity() {
     this.add('ses-pinpoint:GetEmailIdentity');
     return this;
   }
@@ -706,7 +706,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListConfigurationSets.html
    */
-  public listConfigurationSets() {
+  public toListConfigurationSets() {
     this.add('ses-pinpoint:ListConfigurationSets');
     return this;
   }
@@ -718,7 +718,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDedicatedIpPools.html
    */
-  public listDedicatedIpPools() {
+  public toListDedicatedIpPools() {
     this.add('ses-pinpoint:ListDedicatedIpPools');
     return this;
   }
@@ -730,7 +730,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDeliverabilityTestReports.html
    */
-  public listDeliverabilityTestReports() {
+  public toListDeliverabilityTestReports() {
     this.add('ses-pinpoint:ListDeliverabilityTestReports');
     return this;
   }
@@ -742,7 +742,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListEmailIdentities.html
    */
-  public listEmailIdentities() {
+  public toListEmailIdentities() {
     this.add('ses-pinpoint:ListEmailIdentities');
     return this;
   }
@@ -754,7 +754,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('ses-pinpoint:ListTagsForResource');
     return this;
   }
@@ -766,7 +766,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountDedicatedIpWarmupAttributes.html
    */
-  public putAccountDedicatedIpWarmupAttributes() {
+  public toPutAccountDedicatedIpWarmupAttributes() {
     this.add('ses-pinpoint:PutAccountDedicatedIpWarmupAttributes');
     return this;
   }
@@ -778,7 +778,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountSendingAttributes.html
    */
-  public putAccountSendingAttributes() {
+  public toPutAccountSendingAttributes() {
     this.add('ses-pinpoint:PutAccountSendingAttributes');
     return this;
   }
@@ -790,7 +790,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html
    */
-  public putConfigurationSetDeliveryOptions() {
+  public toPutConfigurationSetDeliveryOptions() {
     this.add('ses-pinpoint:PutConfigurationSetDeliveryOptions');
     return this;
   }
@@ -802,7 +802,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetReputationOptions.html
    */
-  public putConfigurationSetReputationOptions() {
+  public toPutConfigurationSetReputationOptions() {
     this.add('ses-pinpoint:PutConfigurationSetReputationOptions');
     return this;
   }
@@ -814,7 +814,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetSendingOptions.html
    */
-  public putConfigurationSetSendingOptions() {
+  public toPutConfigurationSetSendingOptions() {
     this.add('ses-pinpoint:PutConfigurationSetSendingOptions');
     return this;
   }
@@ -826,7 +826,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetTrackingOptions.html
    */
-  public putConfigurationSetTrackingOptions() {
+  public toPutConfigurationSetTrackingOptions() {
     this.add('ses-pinpoint:PutConfigurationSetTrackingOptions');
     return this;
   }
@@ -838,7 +838,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpInPool.html
    */
-  public putDedicatedIpInPool() {
+  public toPutDedicatedIpInPool() {
     this.add('ses-pinpoint:PutDedicatedIpInPool');
     return this;
   }
@@ -850,7 +850,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpWarmupAttributes.html
    */
-  public putDedicatedIpWarmupAttributes() {
+  public toPutDedicatedIpWarmupAttributes() {
     this.add('ses-pinpoint:PutDedicatedIpWarmupAttributes');
     return this;
   }
@@ -862,7 +862,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDeliverabilityDashboardOption.html
    */
-  public putDeliverabilityDashboardOption() {
+  public toPutDeliverabilityDashboardOption() {
     this.add('ses-pinpoint:PutDeliverabilityDashboardOption');
     return this;
   }
@@ -874,7 +874,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityDkimAttributes.html
    */
-  public putEmailIdentityDkimAttributes() {
+  public toPutEmailIdentityDkimAttributes() {
     this.add('ses-pinpoint:PutEmailIdentityDkimAttributes');
     return this;
   }
@@ -886,7 +886,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityFeedbackAttributes.html
    */
-  public putEmailIdentityFeedbackAttributes() {
+  public toPutEmailIdentityFeedbackAttributes() {
     this.add('ses-pinpoint:PutEmailIdentityFeedbackAttributes');
     return this;
   }
@@ -898,7 +898,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityMailFromAttributes.html
    */
-  public putEmailIdentityMailFromAttributes() {
+  public toPutEmailIdentityMailFromAttributes() {
     this.add('ses-pinpoint:PutEmailIdentityMailFromAttributes');
     return this;
   }
@@ -916,7 +916,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_SendEmail.html
    */
-  public sendEmail() {
+  public toSendEmail() {
     this.add('ses-pinpoint:SendEmail');
     return this;
   }
@@ -932,7 +932,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('ses-pinpoint:TagResource');
     return this;
   }
@@ -947,7 +947,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('ses-pinpoint:UntagResource');
     return this;
   }
@@ -959,7 +959,7 @@ export class SesPinpoint extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UpdateConfigurationSetEventDestination.html
    */
-  public updateConfigurationSetEventDestination() {
+  public toUpdateConfigurationSetEventDestination() {
     this.add('ses-pinpoint:UpdateConfigurationSetEventDestination');
     return this;
   }
@@ -1077,11 +1077,11 @@ export class SesPinpoint extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createConfigurationSet()
-   * - .createDedicatedIpPool()
-   * - .createDeliverabilityTestReport()
-   * - .createEmailIdentity()
-   * - .tagResource()
+   * - .toCreateConfigurationSet()
+   * - .toCreateDedicatedIpPool()
+   * - .toCreateDeliverabilityTestReport()
+   * - .toCreateEmailIdentity()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1116,12 +1116,12 @@ export class SesPinpoint extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createConfigurationSet()
-   * - .createDedicatedIpPool()
-   * - .createDeliverabilityTestReport()
-   * - .createEmailIdentity()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateConfigurationSet()
+   * - .toCreateDedicatedIpPool()
+   * - .toCreateDeliverabilityTestReport()
+   * - .toCreateEmailIdentity()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1134,7 +1134,7 @@ export class SesPinpoint extends PolicyStatement {
    * The "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding.
    *
    * Applies to actions:
-   * - .sendEmail()
+   * - .toSendEmail()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1147,7 +1147,7 @@ export class SesPinpoint extends PolicyStatement {
    * The "From" address of a message.
    *
    * Applies to actions:
-   * - .sendEmail()
+   * - .toSendEmail()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1160,7 +1160,7 @@ export class SesPinpoint extends PolicyStatement {
    * The "From" address that is used as the display name of a message.
    *
    * Applies to actions:
-   * - .sendEmail()
+   * - .toSendEmail()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1173,7 +1173,7 @@ export class SesPinpoint extends PolicyStatement {
    * The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses.
    *
    * Applies to actions:
-   * - .sendEmail()
+   * - .toSendEmail()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`

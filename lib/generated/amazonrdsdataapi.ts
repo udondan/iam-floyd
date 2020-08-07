@@ -63,7 +63,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html
    */
-  public batchExecuteStatement() {
+  public toBatchExecuteStatement() {
     this.add('rds-data:BatchExecuteStatement');
     return this;
   }
@@ -75,7 +75,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html
    */
-  public beginTransaction() {
+  public toBeginTransaction() {
     this.add('rds-data:BeginTransaction');
     return this;
   }
@@ -90,7 +90,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html
    */
-  public commitTransaction() {
+  public toCommitTransaction() {
     this.add('rds-data:CommitTransaction');
     return this;
   }
@@ -102,7 +102,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html
    */
-  public executeSql() {
+  public toExecuteSql() {
     this.add('rds-data:ExecuteSql');
     return this;
   }
@@ -114,7 +114,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html
    */
-  public executeStatement() {
+  public toExecuteStatement() {
     this.add('rds-data:ExecuteStatement');
     return this;
   }
@@ -129,7 +129,7 @@ export class RdsData extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html
    */
-  public rollbackTransaction() {
+  public toRollbackTransaction() {
     this.add('rds-data:RollbackTransaction');
     return this;
   }

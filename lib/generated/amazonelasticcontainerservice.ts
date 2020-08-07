@@ -673,7 +673,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html
    */
-  public createCapacityProvider() {
+  public toCreateCapacityProvider() {
     this.add('ecs:CreateCapacityProvider');
     return this;
   }
@@ -690,7 +690,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html
    */
-  public createCluster() {
+  public toCreateCluster() {
     this.add('ecs:CreateCluster');
     return this;
   }
@@ -709,7 +709,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html
    */
-  public createService() {
+  public toCreateService() {
     this.add('ecs:CreateService');
     return this;
   }
@@ -726,7 +726,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateTaskSet.html
    */
-  public createTaskSet() {
+  public toCreateTaskSet() {
     this.add('ecs:CreateTaskSet');
     return this;
   }
@@ -738,7 +738,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAccountSetting.html
    */
-  public deleteAccountSetting() {
+  public toDeleteAccountSetting() {
     this.add('ecs:DeleteAccountSetting');
     return this;
   }
@@ -753,7 +753,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html
    */
-  public deleteAttributes() {
+  public toDeleteAttributes() {
     this.add('ecs:DeleteAttributes');
     return this;
   }
@@ -765,7 +765,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCapacityProvider.html
    */
-  public deleteCapacityProvider() {
+  public toDeleteCapacityProvider() {
     this.add('ecs:DeleteCapacityProvider');
     return this;
   }
@@ -777,7 +777,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteCluster.html
    */
-  public deleteCluster() {
+  public toDeleteCluster() {
     this.add('ecs:DeleteCluster');
     return this;
   }
@@ -792,7 +792,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html
    */
-  public deleteService() {
+  public toDeleteService() {
     this.add('ecs:DeleteService');
     return this;
   }
@@ -808,7 +808,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskSet.html
    */
-  public deleteTaskSet() {
+  public toDeleteTaskSet() {
     this.add('ecs:DeleteTaskSet');
     return this;
   }
@@ -820,7 +820,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterContainerInstance.html
    */
-  public deregisterContainerInstance() {
+  public toDeregisterContainerInstance() {
     this.add('ecs:DeregisterContainerInstance');
     return this;
   }
@@ -832,7 +832,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeregisterTaskDefinition.html
    */
-  public deregisterTaskDefinition() {
+  public toDeregisterTaskDefinition() {
     this.add('ecs:DeregisterTaskDefinition');
     return this;
   }
@@ -844,7 +844,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeCapacityProviders.html
    */
-  public describeCapacityProviders() {
+  public toDescribeCapacityProviders() {
     this.add('ecs:DescribeCapacityProviders');
     return this;
   }
@@ -856,7 +856,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html
    */
-  public describeClusters() {
+  public toDescribeClusters() {
     this.add('ecs:DescribeClusters');
     return this;
   }
@@ -871,7 +871,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html
    */
-  public describeContainerInstances() {
+  public toDescribeContainerInstances() {
     this.add('ecs:DescribeContainerInstances');
     return this;
   }
@@ -886,7 +886,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html
    */
-  public describeServices() {
+  public toDescribeServices() {
     this.add('ecs:DescribeServices');
     return this;
   }
@@ -898,7 +898,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskDefinition.html
    */
-  public describeTaskDefinition() {
+  public toDescribeTaskDefinition() {
     this.add('ecs:DescribeTaskDefinition');
     return this;
   }
@@ -914,7 +914,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskSets.html
    */
-  public describeTaskSets() {
+  public toDescribeTaskSets() {
     this.add('ecs:DescribeTaskSets');
     return this;
   }
@@ -929,7 +929,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html
    */
-  public describeTasks() {
+  public toDescribeTasks() {
     this.add('ecs:DescribeTasks');
     return this;
   }
@@ -941,7 +941,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DiscoverPollEndpoint.html
    */
-  public discoverPollEndpoint() {
+  public toDiscoverPollEndpoint() {
     this.add('ecs:DiscoverPollEndpoint');
     return this;
   }
@@ -953,7 +953,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAccountSettings.html
    */
-  public listAccountSettings() {
+  public toListAccountSettings() {
     this.add('ecs:ListAccountSettings');
     return this;
   }
@@ -965,7 +965,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html
    */
-  public listAttributes() {
+  public toListAttributes() {
     this.add('ecs:ListAttributes');
     return this;
   }
@@ -977,7 +977,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html
    */
-  public listClusters() {
+  public toListClusters() {
     this.add('ecs:ListClusters');
     return this;
   }
@@ -989,7 +989,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html
    */
-  public listContainerInstances() {
+  public toListContainerInstances() {
     this.add('ecs:ListContainerInstances');
     return this;
   }
@@ -1004,7 +1004,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
    */
-  public listServices() {
+  public toListServices() {
     this.add('ecs:ListServices');
     return this;
   }
@@ -1016,7 +1016,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('ecs:ListTagsForResource');
     return this;
   }
@@ -1028,7 +1028,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html
    */
-  public listTaskDefinitionFamilies() {
+  public toListTaskDefinitionFamilies() {
     this.add('ecs:ListTaskDefinitionFamilies');
     return this;
   }
@@ -1040,7 +1040,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTaskDefinitions.html
    */
-  public listTaskDefinitions() {
+  public toListTaskDefinitions() {
     this.add('ecs:ListTaskDefinitions');
     return this;
   }
@@ -1055,7 +1055,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html
    */
-  public listTasks() {
+  public toListTasks() {
     this.add('ecs:ListTasks');
     return this;
   }
@@ -1070,7 +1070,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/instance_IAM_role.html
    */
-  public poll() {
+  public toPoll() {
     this.add('ecs:Poll');
     return this;
   }
@@ -1082,7 +1082,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html
    */
-  public putAccountSetting() {
+  public toPutAccountSetting() {
     this.add('ecs:PutAccountSetting');
     return this;
   }
@@ -1094,7 +1094,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html
    */
-  public putAccountSettingDefault() {
+  public toPutAccountSettingDefault() {
     this.add('ecs:PutAccountSettingDefault');
     return this;
   }
@@ -1109,7 +1109,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAttributes.html
    */
-  public putAttributes() {
+  public toPutAttributes() {
     this.add('ecs:PutAttributes');
     return this;
   }
@@ -1124,7 +1124,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html
    */
-  public putClusterCapacityProviders() {
+  public toPutClusterCapacityProviders() {
     this.add('ecs:PutClusterCapacityProviders');
     return this;
   }
@@ -1140,7 +1140,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterContainerInstance.html
    */
-  public registerContainerInstance() {
+  public toRegisterContainerInstance() {
     this.add('ecs:RegisterContainerInstance');
     return this;
   }
@@ -1156,7 +1156,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterTaskDefinition.html
    */
-  public registerTaskDefinition() {
+  public toRegisterTaskDefinition() {
     this.add('ecs:RegisterTaskDefinition');
     return this;
   }
@@ -1174,7 +1174,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html
    */
-  public runTask() {
+  public toRunTask() {
     this.add('ecs:RunTask');
     return this;
   }
@@ -1192,7 +1192,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html
    */
-  public startTask() {
+  public toStartTask() {
     this.add('ecs:StartTask');
     return this;
   }
@@ -1207,7 +1207,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#enable_cloudwatch
    */
-  public startTelemetrySession() {
+  public toStartTelemetrySession() {
     this.add('ecs:StartTelemetrySession');
     return this;
   }
@@ -1222,7 +1222,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopTask.html
    */
-  public stopTask() {
+  public toStopTask() {
     this.add('ecs:StopTask');
     return this;
   }
@@ -1234,7 +1234,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitAttachmentStateChanges.html
    */
-  public submitAttachmentStateChanges() {
+  public toSubmitAttachmentStateChanges() {
     this.add('ecs:SubmitAttachmentStateChanges');
     return this;
   }
@@ -1246,7 +1246,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitContainerStateChange.html
    */
-  public submitContainerStateChange() {
+  public toSubmitContainerStateChange() {
     this.add('ecs:SubmitContainerStateChange');
     return this;
   }
@@ -1258,7 +1258,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_SubmitTaskStateChange.html
    */
-  public submitTaskStateChange() {
+  public toSubmitTaskStateChange() {
     this.add('ecs:SubmitTaskStateChange');
     return this;
   }
@@ -1274,7 +1274,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('ecs:TagResource');
     return this;
   }
@@ -1289,7 +1289,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('ecs:UntagResource');
     return this;
   }
@@ -1301,7 +1301,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateClusterSettings.html
    */
-  public updateClusterSettings() {
+  public toUpdateClusterSettings() {
     this.add('ecs:UpdateClusterSettings');
     return this;
   }
@@ -1316,7 +1316,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html
    */
-  public updateContainerAgent() {
+  public toUpdateContainerAgent() {
     this.add('ecs:UpdateContainerAgent');
     return this;
   }
@@ -1331,7 +1331,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html
    */
-  public updateContainerInstancesState() {
+  public toUpdateContainerInstancesState() {
     this.add('ecs:UpdateContainerInstancesState');
     return this;
   }
@@ -1348,7 +1348,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html
    */
-  public updateService() {
+  public toUpdateService() {
     this.add('ecs:UpdateService');
     return this;
   }
@@ -1363,7 +1363,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateServicePrimaryTaskSet.html
    */
-  public updateServicePrimaryTaskSet() {
+  public toUpdateServicePrimaryTaskSet() {
     this.add('ecs:UpdateServicePrimaryTaskSet');
     return this;
   }
@@ -1379,7 +1379,7 @@ export class Ecs extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateTaskSet.html
    */
-  public updateTaskSet() {
+  public toUpdateTaskSet() {
     this.add('ecs:UpdateTaskSet');
     return this;
   }
@@ -1555,14 +1555,14 @@ export class Ecs extends PolicyStatement {
    * Filters actions based on the presence of tag key-value pairs in the request.
    *
    * Applies to actions:
-   * - .createCapacityProvider()
-   * - .createCluster()
-   * - .createService()
-   * - .registerContainerInstance()
-   * - .registerTaskDefinition()
-   * - .runTask()
-   * - .startTask()
-   * - .tagResource()
+   * - .toCreateCapacityProvider()
+   * - .toCreateCluster()
+   * - .toCreateService()
+   * - .toRegisterContainerInstance()
+   * - .toRegisterTaskDefinition()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1596,15 +1596,15 @@ export class Ecs extends PolicyStatement {
    * Filters actions based on the presence of tag keys in the request.
    *
    * Applies to actions:
-   * - .createCapacityProvider()
-   * - .createCluster()
-   * - .createService()
-   * - .registerContainerInstance()
-   * - .registerTaskDefinition()
-   * - .runTask()
-   * - .startTask()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateCapacityProvider()
+   * - .toCreateCluster()
+   * - .toCreateService()
+   * - .toRegisterContainerInstance()
+   * - .toRegisterTaskDefinition()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
@@ -1639,11 +1639,11 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to actions:
-   * - .createCluster()
-   * - .createService()
-   * - .putClusterCapacityProviders()
-   * - .runTask()
-   * - .updateService()
+   * - .toCreateCluster()
+   * - .toCreateService()
+   * - .toPutClusterCapacityProviders()
+   * - .toRunTask()
+   * - .toUpdateService()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1658,28 +1658,28 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to actions:
-   * - .createService()
-   * - .createTaskSet()
-   * - .deleteAttributes()
-   * - .deleteService()
-   * - .deleteTaskSet()
-   * - .describeContainerInstances()
-   * - .describeServices()
-   * - .describeTaskSets()
-   * - .describeTasks()
-   * - .listServices()
-   * - .listTasks()
-   * - .poll()
-   * - .putAttributes()
-   * - .runTask()
-   * - .startTask()
-   * - .startTelemetrySession()
-   * - .stopTask()
-   * - .updateContainerAgent()
-   * - .updateContainerInstancesState()
-   * - .updateService()
-   * - .updateServicePrimaryTaskSet()
-   * - .updateTaskSet()
+   * - .toCreateService()
+   * - .toCreateTaskSet()
+   * - .toDeleteAttributes()
+   * - .toDeleteService()
+   * - .toDeleteTaskSet()
+   * - .toDescribeContainerInstances()
+   * - .toDescribeServices()
+   * - .toDescribeTaskSets()
+   * - .toDescribeTasks()
+   * - .toListServices()
+   * - .toListTasks()
+   * - .toPoll()
+   * - .toPutAttributes()
+   * - .toRunTask()
+   * - .toStartTask()
+   * - .toStartTelemetrySession()
+   * - .toStopTask()
+   * - .toUpdateContainerAgent()
+   * - .toUpdateContainerInstancesState()
+   * - .toUpdateService()
+   * - .toUpdateServicePrimaryTaskSet()
+   * - .toUpdateTaskSet()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1694,7 +1694,7 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to actions:
-   * - .startTask()
+   * - .toStartTask()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1709,10 +1709,10 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to actions:
-   * - .createTaskSet()
-   * - .deleteTaskSet()
-   * - .describeTaskSets()
-   * - .updateTaskSet()
+   * - .toCreateTaskSet()
+   * - .toDeleteTaskSet()
+   * - .toDescribeTaskSets()
+   * - .toUpdateTaskSet()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
@@ -1727,9 +1727,9 @@ export class Ecs extends PolicyStatement {
    * https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys
    *
    * Applies to actions:
-   * - .createService()
-   * - .createTaskSet()
-   * - .updateService()
+   * - .toCreateService()
+   * - .toCreateTaskSet()
+   * - .toUpdateService()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`

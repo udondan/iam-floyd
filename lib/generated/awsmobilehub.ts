@@ -179,7 +179,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public createProject() {
+  public toCreateProject() {
     this.add('mobilehub:CreateProject');
     return this;
   }
@@ -191,7 +191,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public createServiceRole() {
+  public toCreateServiceRole() {
     this.add('mobilehub:CreateServiceRole');
     return this;
   }
@@ -203,7 +203,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public deleteProject() {
+  public toDeleteProject() {
     this.add('mobilehub:DeleteProject');
     return this;
   }
@@ -215,7 +215,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public deleteProjectSnapshot() {
+  public toDeleteProjectSnapshot() {
     this.add('mobilehub:DeleteProjectSnapshot');
     return this;
   }
@@ -227,7 +227,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public deployToStage() {
+  public toDeployToStage() {
     this.add('mobilehub:DeployToStage');
     return this;
   }
@@ -239,7 +239,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public describeBundle() {
+  public toDescribeBundle() {
     this.add('mobilehub:DescribeBundle');
     return this;
   }
@@ -251,7 +251,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public exportBundle() {
+  public toExportBundle() {
     this.add('mobilehub:ExportBundle');
     return this;
   }
@@ -263,7 +263,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public exportProject() {
+  public toExportProject() {
     this.add('mobilehub:ExportProject');
     return this;
   }
@@ -275,7 +275,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public generateProjectParameters() {
+  public toGenerateProjectParameters() {
     this.add('mobilehub:GenerateProjectParameters');
     return this;
   }
@@ -287,7 +287,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public getProject() {
+  public toGetProject() {
     this.add('mobilehub:GetProject');
     return this;
   }
@@ -299,7 +299,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public getProjectSnapshot() {
+  public toGetProjectSnapshot() {
     this.add('mobilehub:GetProjectSnapshot');
     return this;
   }
@@ -311,7 +311,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public importProject() {
+  public toImportProject() {
     this.add('mobilehub:ImportProject');
     return this;
   }
@@ -323,7 +323,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public installBundle() {
+  public toInstallBundle() {
     this.add('mobilehub:InstallBundle');
     return this;
   }
@@ -335,7 +335,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listAvailableConnectors() {
+  public toListAvailableConnectors() {
     this.add('mobilehub:ListAvailableConnectors');
     return this;
   }
@@ -347,7 +347,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listAvailableFeatures() {
+  public toListAvailableFeatures() {
     this.add('mobilehub:ListAvailableFeatures');
     return this;
   }
@@ -359,7 +359,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listAvailableRegions() {
+  public toListAvailableRegions() {
     this.add('mobilehub:ListAvailableRegions');
     return this;
   }
@@ -371,7 +371,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listBundles() {
+  public toListBundles() {
     this.add('mobilehub:ListBundles');
     return this;
   }
@@ -383,7 +383,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listProjectSnapshots() {
+  public toListProjectSnapshots() {
     this.add('mobilehub:ListProjectSnapshots');
     return this;
   }
@@ -395,7 +395,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public listProjects() {
+  public toListProjects() {
     this.add('mobilehub:ListProjects');
     return this;
   }
@@ -407,7 +407,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public synchronizeProject() {
+  public toSynchronizeProject() {
     this.add('mobilehub:SynchronizeProject');
     return this;
   }
@@ -419,7 +419,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public updateProject() {
+  public toUpdateProject() {
     this.add('mobilehub:UpdateProject');
     return this;
   }
@@ -431,7 +431,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public validateProject() {
+  public toValidateProject() {
     this.add('mobilehub:ValidateProject');
     return this;
   }
@@ -443,7 +443,7 @@ export class Mobilehub extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html
    */
-  public verifyServiceRole() {
+  public toVerifyServiceRole() {
     this.add('mobilehub:VerifyServiceRole');
     return this;
   }
