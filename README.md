@@ -110,12 +110,12 @@ new statement.Ec2()
   );
 ```
 
-The `allActions()` method also accepts regular expressions which test against the action name:
+The `allActions()` method also accepts regular expressions (as a string) which test against the action name:
 
 ```typescript
 new statement.Ec2()
   .deny()
-  .allActions(/vpn/i);
+  .allActions('/vpn/i');
 ```
 
 If no value is passed, all actions (`ec2:*`) will be added:
@@ -280,12 +280,12 @@ new statement.Ec2()
   .allActions();
 ```
 
-The method can take regular expressions and [access levels] as options and will add only the matching actions:
+The method can take regular expressions (as a string) and [access levels] as options and will add only the matching actions:
 
 ```typescript
 new statement.Ec2()
   .allow()
-  .allActions(/vpn/i);
+  .allActions('/vpn/i');
 ```
 
 ```typescript

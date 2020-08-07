@@ -1,3 +1,5 @@
+import RegexParser = require('regex-parser');
+
 import { AccessLevel } from '../access-level';
 import { PolicyStatementWithCondition } from './2-conditions';
 
@@ -102,18 +104,17 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * When no value is passed, all actions of the service will be added.
    */
-  public allActions(...rules: (AccessLevel | RegExp)[]) {
+  public allActions(...rules: (AccessLevel | string)[]) {
     if (rules.length) {
       rules.forEach((rule) => {
         for (const [name, action] of Object.entries(this.actionList)) {
-          if (typeof rule === 'object') {
-            //assume it's a regex
-            if ((rule as RegExp).test(name)) {
+          if (Object.values(AccessLevel).includes(rule as AccessLevel)) {
+            if ((rule as AccessLevel) == action.accessLevel) {
               this.add(`${this.servicePrefix}:${name}`);
             }
           } else {
-            // assume it's an AccessLevel
-            if ((rule as AccessLevel) == action.accessLevel) {
+            // assume it's a RegEx
+            if (name.match(RegexParser(rule))) {
               this.add(`${this.servicePrefix}:${name}`);
             }
           }
