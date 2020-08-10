@@ -8,6 +8,15 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 export class Transcribe extends PolicyStatement {
   public servicePrefix = 'transcribe';
   protected actionList: Actions = {
+    "CreateLanguageModel": {
+      "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateLanguageModel.html",
+      "description": "Grants permission to create a new custom language model.",
+      "accessLevel": "Write",
+      "dependentActions": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ]
+    },
     "CreateMedicalVocabulary": {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html",
       "description": "Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.",
@@ -31,6 +40,11 @@ export class Transcribe extends PolicyStatement {
       "dependentActions": [
         "s3:GetObject"
       ]
+    },
+    "DeleteLanguageModel": {
+      "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteLanguageModel.html",
+      "description": "Grants permission to delete a previously created custom language model.",
+      "accessLevel": "Write"
     },
     "DeleteMedicalTranscriptionJob": {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteMedicalTranscriptionJob.html",
@@ -57,6 +71,11 @@ export class Transcribe extends PolicyStatement {
       "description": "Grants permission to delete a vocabulary filter from Amazon Transcribe.",
       "accessLevel": "Write"
     },
+    "DescribeLanguageModel": {
+      "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_DescribeLanguageModel.html",
+      "description": "Grants permission to return information about a custom language model.",
+      "accessLevel": "Read"
+    },
     "GetMedicalTranscriptionJob": {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_GetMedicalTranscriptionJob.html",
       "description": "Grants permission to return information about a medical transcription job.",
@@ -81,6 +100,11 @@ export class Transcribe extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_GetVocabularyFilter.html",
       "description": "Grants permission to get information about a vocabulary filter.",
       "accessLevel": "Read"
+    },
+    "ListLanguageModels": {
+      "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_ListLanguageModels.html",
+      "description": "Grants permission to list custom language models.",
+      "accessLevel": "List"
     },
     "ListMedicalTranscriptionJobs": {
       "url": "https://docs.aws.amazon.com/transcribe/latest/dg/API_ListMedicalTranscriptionJobs.html",
@@ -184,6 +208,22 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a new custom language model.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - s3:GetObject
+   * - s3:ListBucket
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateLanguageModel.html
+   */
+  public createLanguageModel() {
+    this.add('transcribe:CreateLanguageModel');
+    return this;
+  }
+
+  /**
    * Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file.
    *
    * Access Level: Write
@@ -225,6 +265,18 @@ export class Transcribe extends PolicyStatement {
    */
   public createVocabularyFilter() {
     this.add('transcribe:CreateVocabularyFilter');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a previously created custom language model.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteLanguageModel.html
+   */
+  public deleteLanguageModel() {
+    this.add('transcribe:DeleteLanguageModel');
     return this;
   }
 
@@ -289,6 +341,18 @@ export class Transcribe extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return information about a custom language model.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_DescribeLanguageModel.html
+   */
+  public describeLanguageModel() {
+    this.add('transcribe:DescribeLanguageModel');
+    return this;
+  }
+
+  /**
    * Grants permission to return information about a medical transcription job.
    *
    * Access Level: Read
@@ -345,6 +409,18 @@ export class Transcribe extends PolicyStatement {
    */
   public getVocabularyFilter() {
     this.add('transcribe:GetVocabularyFilter');
+    return this;
+  }
+
+  /**
+   * Grants permission to list custom language models.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/transcribe/latest/dg/API_ListLanguageModels.html
+   */
+  public listLanguageModels() {
+    this.add('transcribe:ListLanguageModels');
     return this;
   }
 

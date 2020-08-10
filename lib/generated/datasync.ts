@@ -36,6 +36,15 @@ export class Datasync extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "CreateLocationFsxWindows": {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxWindows.html",
+      "description": "Creates an endpoint for an Amazon FSx Windows File Server file system.",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "CreateLocationNfs": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html",
       "description": "Creates an endpoint for a NFS file system.",
@@ -115,6 +124,16 @@ export class Datasync extends PolicyStatement {
     "DescribeLocationEfs": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationEfs.html",
       "description": "Returns metadata, such as the path information about an Amazon EFS sync location.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "location": {
+          "required": true
+        }
+      }
+    },
+    "DescribeLocationFsxWindows": {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxWindows.html",
+      "description": "Returns metadata, such as the path information about an Amazon FSx Windows sync location.",
       "accessLevel": "Read",
       "resourceTypes": {
         "location": {
@@ -365,6 +384,22 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Creates an endpoint for an Amazon FSx Windows File Server file system.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxWindows.html
+   */
+  public createLocationFsxWindows() {
+    this.add('datasync:CreateLocationFsxWindows');
+    return this;
+  }
+
+  /**
    * Creates an endpoint for a NFS file system.
    *
    * Access Level: Write
@@ -485,6 +520,18 @@ export class Datasync extends PolicyStatement {
    */
   public describeLocationEfs() {
     this.add('datasync:DescribeLocationEfs');
+    return this;
+  }
+
+  /**
+   * Returns metadata, such as the path information about an Amazon FSx Windows sync location.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxWindows.html
+   */
+  public describeLocationFsxWindows() {
+    this.add('datasync:DescribeLocationFsxWindows');
     return this;
   }
 
@@ -768,6 +815,7 @@ export class Datasync extends PolicyStatement {
    * Applies to actions:
    * - .createAgent()
    * - .createLocationEfs()
+   * - .createLocationFsxWindows()
    * - .createLocationNfs()
    * - .createLocationS3()
    * - .createLocationSmb()
@@ -804,6 +852,7 @@ export class Datasync extends PolicyStatement {
    * Applies to actions:
    * - .createAgent()
    * - .createLocationEfs()
+   * - .createLocationFsxWindows()
    * - .createLocationNfs()
    * - .createLocationS3()
    * - .createLocationSmb()
