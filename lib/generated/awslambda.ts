@@ -59,7 +59,10 @@ export class Lambda extends PolicyStatement {
         }
       },
       "conditions": [
-        "lambda:Layer"
+        "lambda:Layer",
+        "lambda:VpcIds",
+        "lambda:SubnetIds",
+        "lambda:SecurityGroupIds"
       ]
     },
     "DeleteAlias": {
@@ -508,7 +511,10 @@ export class Lambda extends PolicyStatement {
         }
       },
       "conditions": [
-        "lambda:Layer"
+        "lambda:Layer",
+        "lambda:VpcIds",
+        "lambda:SubnetIds",
+        "lambda:SecurityGroupIds"
       ]
     },
     "UpdateFunctionEventInvokeConfig": {
@@ -631,6 +637,9 @@ export class Lambda extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLayer()
+   * - .ifVpcIds()
+   * - .ifSubnetIds()
+   * - .ifSecurityGroupIds()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
    */
@@ -1182,6 +1191,9 @@ export class Lambda extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifLayer()
+   * - .ifVpcIds()
+   * - .ifSubnetIds()
+   * - .ifSecurityGroupIds()
    *
    * https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html
    */
@@ -1364,5 +1376,47 @@ export class Lambda extends PolicyStatement {
    */
   public ifPrincipal(value: string | string[], operator?: string) {
     return this.if(`lambda:Principal`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of security groups configured for the AWS Lambda function
+   *
+   * Applies to actions:
+   * - .createFunction()
+   * - .updateFunctionConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSecurityGroupIds(value: string | string[], operator?: string) {
+    return this.if(`lambda:SecurityGroupIds`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of subnets configured for the AWS Lambda function
+   *
+   * Applies to actions:
+   * - .createFunction()
+   * - .updateFunctionConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifSubnetIds(value: string | string[], operator?: string) {
+    return this.if(`lambda:SubnetIds`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of the VPC configured for the AWS Lambda function
+   *
+   * Applies to actions:
+   * - .createFunction()
+   * - .updateFunctionConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifVpcIds(value: string | string[], operator?: string) {
+    return this.if(`lambda:VpcIds`, value, operator || 'StringLike');
   }
 }
