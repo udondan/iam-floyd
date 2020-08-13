@@ -231,17 +231,7 @@ export class Lambda extends PolicyStatement {
     },
     "GetLayerVersion": {
       "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersion.html",
-      "description": "Grants permission to view details about a version of an AWS Lambda layer",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "layerVersion": {
-          "required": true
-        }
-      }
-    },
-    "GetLayerVersionByArn": {
-      "url": "https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionByArn.html",
-      "description": "Grants permission to view details about a version of an AWS Lambda layer",
+      "description": "Grants permission to view details about a version of an AWS Lambda layer. Note this action also supports GetLayerVersionByArn API",
       "accessLevel": "Read",
       "resourceTypes": {
         "layerVersion": {
@@ -843,7 +833,7 @@ export class Lambda extends PolicyStatement {
   }
 
   /**
-   * Grants permission to view details about a version of an AWS Lambda layer
+   * Grants permission to view details about a version of an AWS Lambda layer. Note this action also supports GetLayerVersionByArn API
    *
    * Access Level: Read
    *
@@ -851,18 +841,6 @@ export class Lambda extends PolicyStatement {
    */
   public getLayerVersion() {
     this.add('lambda:GetLayerVersion');
-    return this;
-  }
-
-  /**
-   * Grants permission to view details about a version of an AWS Lambda layer
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/lambda/latest/dg/API_GetLayerVersionByArn.html
-   */
-  public getLayerVersionByArn() {
-    this.add('lambda:GetLayerVersionByArn');
     return this;
   }
 

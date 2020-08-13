@@ -21,6 +21,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -35,6 +36,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -49,6 +51,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -63,6 +66,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -71,6 +75,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-peering-connection": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AccepterVpc",
             "ec2:Region",
             "ec2:RequesterVpc",
@@ -107,6 +112,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -114,6 +120,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -121,6 +128,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -150,6 +158,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -157,6 +166,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -179,6 +189,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -210,6 +221,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -217,6 +229,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -224,6 +237,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -238,6 +252,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -245,6 +260,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -264,6 +280,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -278,6 +295,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -286,6 +304,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -311,6 +330,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -325,6 +345,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:Encrypted",
             "ec2:ParentSnapshot",
@@ -350,6 +371,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -364,6 +386,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -379,6 +402,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -404,6 +428,7 @@ export class Ec2 extends PolicyStatement {
         "capacity-reservation": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -473,7 +498,17 @@ export class Ec2 extends PolicyStatement {
     "CreateCapacityReservation": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCapacityReservation.html",
       "description": "Grants permission to create a Capacity Reservation",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "capacity-reservation": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateClientVpnEndpoint": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnEndpoint.html",
@@ -498,6 +533,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -505,6 +541,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -529,17 +566,47 @@ export class Ec2 extends PolicyStatement {
     "CreateDhcpOptions": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDhcpOptions.html",
       "description": "Grants permission to create a set of DHCP options for a VPC",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "dhcp-options": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateEgressOnlyInternetGateway": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateEgressOnlyInternetGateway.html",
       "description": "Grants permission to create an egress-only internet gateway for a VPC",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "egress-only-internet-gateway": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateFleet": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html",
       "description": "Grants permission to launch an EC2 Fleet",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "fleet": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateFlowLogs": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html",
@@ -560,7 +627,10 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:AvailabilityZone",
             "ec2:Region",
+            "ec2:ResourceTag/${TagKey}",
             "ec2:Subnet",
             "ec2:Vpc"
           ]
@@ -568,14 +638,20 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:AvailabilityZone",
             "ec2:Region",
+            "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
           ]
         },
         "vpc": {
           "required": false,
           "conditions": [
-            "ec2:Region"
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}",
+            "ec2:Tenancy"
           ]
         }
       }
@@ -583,7 +659,17 @@ export class Ec2 extends PolicyStatement {
     "CreateFpgaImage": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html",
       "description": "Grants permission to create an Amazon FPGA Image (AFI) from a design checkpoint (DCP)",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "fpga-image": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateImage": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html",
@@ -593,22 +679,62 @@ export class Ec2 extends PolicyStatement {
     "CreateInstanceExportTask": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInstanceExportTask.html",
       "description": "Grants permission to export a running or stopped instance to an Amazon S3 bucket",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "export-instance-task": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateInternetGateway": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInternetGateway.html",
       "description": "Grants permission to create an internet gateway for a VPC",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "internet-gateway": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateKeyPair": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html",
       "description": "Grants permission to create a 2048-bit RSA key pair",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "key-pair": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateLaunchTemplate": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html",
       "description": "Grants permission to create a launch template",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "launch-template": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateLaunchTemplateVersion": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html",
@@ -618,6 +744,7 @@ export class Ec2 extends PolicyStatement {
         "launch-template": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -632,6 +759,7 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -639,6 +767,7 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-virtual-interface-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -653,13 +782,23 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
+          ]
+        },
+        "local-gateway-route-table-vpc-association": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
           ]
         },
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -667,15 +806,50 @@ export class Ec2 extends PolicyStatement {
         }
       }
     },
+    "CreateManagedPrefixList": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateManagedPrefixList.html",
+      "description": "Grants permission to create a managed prefix list",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
+    },
     "CreateNatGateway": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNatGateway.html",
       "description": "Grants permission to create a NAT gateway in a subnet",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "natgateway": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateNetworkAcl": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAcl.html",
       "description": "Grants permission to create a network ACL in a VPC",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "network-acl": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateNetworkAclEntry": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAclEntry.html",
@@ -685,7 +859,17 @@ export class Ec2 extends PolicyStatement {
     "CreateNetworkInterface": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html",
       "description": "Grants permission to create a network interface in a subnet",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "network-interface": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateNetworkInterfacePermission": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html",
@@ -695,6 +879,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AuthorizedUser",
             "ec2:AvailabilityZone",
             "ec2:Permission",
@@ -710,7 +895,17 @@ export class Ec2 extends PolicyStatement {
     "CreatePlacementGroup": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreatePlacementGroup.html",
       "description": "Grants permission to create a placement group",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "placement-group": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateReservedInstancesListing": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateReservedInstancesListing.html",
@@ -725,6 +920,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -740,7 +936,17 @@ export class Ec2 extends PolicyStatement {
     "CreateSecurityGroup": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html",
       "description": "Grants permission to create a security group",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "security-group": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateSnapshot": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshot.html",
@@ -759,6 +965,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Encrypted",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
@@ -777,6 +984,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -800,6 +1008,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Encrypted",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
@@ -818,7 +1027,17 @@ export class Ec2 extends PolicyStatement {
     "CreateSubnet": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnet.html",
       "description": "Grants permission to create a subnet in a VPC",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "subnet": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateTags": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html",
@@ -828,6 +1047,7 @@ export class Ec2 extends PolicyStatement {
         "capacity-reservation": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -837,6 +1057,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -849,15 +1070,26 @@ export class Ec2 extends PolicyStatement {
         "dhcp-options": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
         },
+        "egress-only-internet-gateway": {
+          "required": false
+        },
+        "export-instance-task": {
+          "required": false
+        },
+        "fleet": {
+          "required": false
+        },
         "fpga-image": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Owner",
@@ -869,6 +1101,7 @@ export class Ec2 extends PolicyStatement {
         "image": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:ImageType",
@@ -882,6 +1115,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:AvailabilityZone",
@@ -898,6 +1132,7 @@ export class Ec2 extends PolicyStatement {
         "internet-gateway": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -922,9 +1157,13 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-virtual-interface-group": {
           "required": false
         },
+        "natgateway": {
+          "required": false
+        },
         "network-acl": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -935,6 +1174,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:AvailabilityZone",
@@ -948,6 +1188,7 @@ export class Ec2 extends PolicyStatement {
         "reserved-instances": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:AvailabilityZone",
@@ -961,6 +1202,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -971,6 +1213,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -981,6 +1224,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Owner",
@@ -994,6 +1238,7 @@ export class Ec2 extends PolicyStatement {
         "spot-instance-request": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1003,6 +1248,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:AvailabilityZone",
@@ -1014,6 +1260,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1023,6 +1270,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-session": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1032,6 +1280,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-target": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1041,6 +1290,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1050,6 +1300,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1059,6 +1310,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1068,6 +1320,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1077,6 +1330,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:AvailabilityZone",
@@ -1092,6 +1346,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1102,6 +1357,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1111,6 +1367,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1118,11 +1375,19 @@ export class Ec2 extends PolicyStatement {
           ]
         },
         "vpc-flow-log": {
-          "required": false
+          "required": false,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
         },
         "vpn-connection": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1132,6 +1397,7 @@ export class Ec2 extends PolicyStatement {
         "vpn-gateway": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1166,6 +1432,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1186,6 +1453,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1193,6 +1461,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1208,6 +1477,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-target": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1230,6 +1500,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1259,6 +1530,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1281,6 +1553,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1303,6 +1576,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1310,6 +1584,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1324,6 +1599,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1346,6 +1622,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1361,6 +1638,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1368,6 +1646,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1398,7 +1677,17 @@ export class Ec2 extends PolicyStatement {
     "CreateVpc": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpc.html",
       "description": "Grants permission to create a VPC with a specified CIDR block",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "vpc": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
     },
     "CreateVpcEndpoint": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpoint.html",
@@ -1411,6 +1700,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1428,6 +1718,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1435,6 +1726,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1442,6 +1734,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1477,6 +1770,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -1540,6 +1834,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1554,6 +1849,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1561,6 +1857,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1575,6 +1872,7 @@ export class Ec2 extends PolicyStatement {
         "customer-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1589,6 +1887,7 @@ export class Ec2 extends PolicyStatement {
         "dhcp-options": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1608,7 +1907,17 @@ export class Ec2 extends PolicyStatement {
     "DeleteFlowLogs": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html",
       "description": "Grants permission to delete one or more flow logs",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "vpc-flow-log": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
     },
     "DeleteFpgaImage": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFpgaImage.html",
@@ -1623,6 +1932,7 @@ export class Ec2 extends PolicyStatement {
         "internet-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1642,6 +1952,7 @@ export class Ec2 extends PolicyStatement {
         "launch-template": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1656,6 +1967,7 @@ export class Ec2 extends PolicyStatement {
         "launch-template": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1670,6 +1982,7 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1684,6 +1997,22 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-route-table-vpc-association": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
+    "DeleteManagedPrefixList": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteManagedPrefixList.html",
+      "description": "Grants permission to delete a managed prefix list",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -1703,6 +2032,7 @@ export class Ec2 extends PolicyStatement {
         "network-acl": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -1718,6 +2048,7 @@ export class Ec2 extends PolicyStatement {
         "network-acl": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -1748,6 +2079,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -1763,6 +2095,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -1778,6 +2111,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -1793,6 +2127,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Owner",
             "ec2:ParentVolume",
             "ec2:Region",
@@ -1821,6 +2156,7 @@ export class Ec2 extends PolicyStatement {
         "capacity-reservation": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1830,6 +2166,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1842,15 +2179,26 @@ export class Ec2 extends PolicyStatement {
         "dhcp-options": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
         },
+        "egress-only-internet-gateway": {
+          "required": false
+        },
+        "export-instance-task": {
+          "required": false
+        },
+        "fleet": {
+          "required": false
+        },
         "fpga-image": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1860,6 +2208,7 @@ export class Ec2 extends PolicyStatement {
         "image": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1869,6 +2218,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1878,6 +2228,7 @@ export class Ec2 extends PolicyStatement {
         "internet-gateway": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1902,9 +2253,13 @@ export class Ec2 extends PolicyStatement {
         "local-gateway-virtual-interface-group": {
           "required": false
         },
+        "natgateway": {
+          "required": false
+        },
         "network-acl": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1914,6 +2269,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1923,6 +2279,7 @@ export class Ec2 extends PolicyStatement {
         "reserved-instances": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1932,6 +2289,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1941,6 +2299,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1950,6 +2309,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1959,6 +2319,7 @@ export class Ec2 extends PolicyStatement {
         "spot-instance-request": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1968,6 +2329,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1977,6 +2339,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1986,6 +2349,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -1995,6 +2359,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2004,6 +2369,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2013,6 +2379,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2022,6 +2389,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2031,6 +2399,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2040,6 +2409,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2047,11 +2417,19 @@ export class Ec2 extends PolicyStatement {
           ]
         },
         "vpc-flow-log": {
-          "required": false
+          "required": false,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
         },
         "vpn-connection": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2061,6 +2439,7 @@ export class Ec2 extends PolicyStatement {
         "vpn-gateway": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -2077,6 +2456,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2091,6 +2471,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2111,6 +2492,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-session": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2125,6 +2507,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-target": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2139,6 +2522,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2153,6 +2537,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2167,6 +2552,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2181,6 +2567,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2195,6 +2582,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2209,6 +2597,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2223,6 +2612,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:Encrypted",
             "ec2:ParentSnapshot",
@@ -2253,6 +2643,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2267,6 +2658,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2281,6 +2673,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-peering-connection": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AccepterVpc",
             "ec2:Region",
             "ec2:RequesterVpc",
@@ -2327,6 +2720,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2334,6 +2728,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2348,6 +2743,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2355,6 +2751,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -2634,6 +3031,11 @@ export class Ec2 extends PolicyStatement {
     "DescribeLocalGateways": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGateways.html",
       "description": "Grants permission to describe one or more local gateways",
+      "accessLevel": "List"
+    },
+    "DescribeManagedPrefixLists": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeManagedPrefixLists.html",
+      "description": "Grants permission to describe your managed prefix lists and any AWS-managed prefix lists",
       "accessLevel": "List"
     },
     "DescribeMovingAddresses": {
@@ -2929,6 +3331,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -2943,6 +3346,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -2968,6 +3372,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -2982,6 +3387,7 @@ export class Ec2 extends PolicyStatement {
         "volume": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:Encrypted",
             "ec2:ParentSnapshot",
@@ -3012,6 +3418,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Owner",
             "ec2:ParentVolume",
             "ec2:Region",
@@ -3032,6 +3439,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3039,6 +3447,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3058,6 +3467,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -3083,6 +3493,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3097,6 +3508,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -3128,6 +3540,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3135,6 +3548,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3142,6 +3556,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3156,6 +3571,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3163,6 +3579,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3187,6 +3604,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Owner",
             "ec2:ParentVolume",
             "ec2:Region",
@@ -3207,6 +3625,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3214,6 +3633,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3238,6 +3658,7 @@ export class Ec2 extends PolicyStatement {
         "vpc": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Tenancy"
@@ -3293,6 +3714,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -3329,6 +3751,16 @@ export class Ec2 extends PolicyStatement {
     "GetLaunchTemplateData": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetLaunchTemplateData.html",
       "description": "Grants permission to get the configuration data of the specified instance for use with a new launch template or launch template version",
+      "accessLevel": "Read"
+    },
+    "GetManagedPrefixListAssociations": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetManagedPrefixListAssociations.html",
+      "description": "Grants permission to get information about the resources that are associated with the specified managed prefix list",
+      "accessLevel": "Read"
+    },
+    "GetManagedPrefixListEntries": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetManagedPrefixListEntries.html",
+      "description": "Grants permission to get information about the entries for a specified managed prefix list",
       "accessLevel": "Read"
     },
     "GetPasswordData": {
@@ -3369,6 +3801,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3408,6 +3841,7 @@ export class Ec2 extends PolicyStatement {
         "capacity-reservation": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3422,6 +3856,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3519,6 +3954,22 @@ export class Ec2 extends PolicyStatement {
         "launch-template": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
+    "ModifyManagedPrefixList": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyManagedPrefixList.html",
+      "description": "Grants permission to modify a managed prefix list",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3543,6 +3994,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Owner",
             "ec2:ParentVolume",
             "ec2:Region",
@@ -3571,6 +4023,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3585,6 +4038,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3605,6 +4059,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-session": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3612,6 +4067,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-filter": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3619,6 +4075,7 @@ export class Ec2 extends PolicyStatement {
         "traffic-mirror-target": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3633,6 +4090,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3640,6 +4098,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3669,6 +4128,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3676,6 +4136,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3683,6 +4144,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3690,6 +4152,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3709,6 +4172,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:VpceServicePrivateDnsName",
             "ec2:ResourceTag/${TagKey}"
@@ -3724,6 +4188,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3748,6 +4213,7 @@ export class Ec2 extends PolicyStatement {
         "vpn-connection": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:GatewayType"
@@ -3768,6 +4234,7 @@ export class Ec2 extends PolicyStatement {
         "vpn-connection": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:AuthenticationType",
@@ -3828,6 +4295,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -3859,6 +4327,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3866,6 +4335,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3880,6 +4350,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3887,6 +4358,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-multicast-domain": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3901,6 +4373,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3915,6 +4388,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3929,6 +4403,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -3943,6 +4418,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-peering-connection": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AccepterVpc",
             "ec2:Region",
             "ec2:RequesterVpc",
@@ -3972,6 +4448,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -4003,6 +4480,7 @@ export class Ec2 extends PolicyStatement {
         "route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -4023,6 +4501,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-route-table": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -4030,6 +4509,7 @@ export class Ec2 extends PolicyStatement {
         "transit-gateway-attachment": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -4086,6 +4566,21 @@ export class Ec2 extends PolicyStatement {
       "description": "Grants permission to restore an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic platform",
       "accessLevel": "Write"
     },
+    "RestoreManagedPrefixListVersion": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreManagedPrefixListVersion.html",
+      "description": "Grants permission to restore the entries from a previous version of a managed prefix list to a new version of the prefix list",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
     "RevokeClientVpnIngress": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeClientVpnIngress.html",
       "description": "Grants permission to remove an inbound authorization rule from a Client VPN endpoint",
@@ -4094,6 +4589,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -4108,6 +4604,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -4123,6 +4620,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -4138,6 +4636,7 @@ export class Ec2 extends PolicyStatement {
         "image": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:ImageType",
             "ec2:IsLaunchTemplateResource",
             "ec2:LaunchTemplate",
@@ -4171,6 +4670,7 @@ export class Ec2 extends PolicyStatement {
         "network-interface": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/",
             "ec2:AvailabilityZone",
             "ec2:IsLaunchTemplateResource",
             "ec2:LaunchTemplate",
@@ -4184,6 +4684,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:IsLaunchTemplateResource",
             "ec2:LaunchTemplate",
             "ec2:Region",
@@ -4194,6 +4695,7 @@ export class Ec2 extends PolicyStatement {
         "subnet": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:IsLaunchTemplateResource",
             "ec2:LaunchTemplate",
@@ -4221,6 +4723,7 @@ export class Ec2 extends PolicyStatement {
         "capacity-reservation": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "aws:RequestTag/${TagKey}",
             "aws:TagKeys",
             "ec2:Region",
@@ -4264,6 +4767,7 @@ export class Ec2 extends PolicyStatement {
         "snapshot": {
           "required": false,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:IsLaunchTemplateResource",
             "ec2:LaunchTemplate",
             "ec2:Owner",
@@ -4304,6 +4808,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -4325,6 +4830,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -4346,6 +4852,7 @@ export class Ec2 extends PolicyStatement {
         "vpc-endpoint-service": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -4360,6 +4867,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -4381,6 +4889,7 @@ export class Ec2 extends PolicyStatement {
         "client-vpn-endpoint": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}"
           ]
@@ -4395,6 +4904,7 @@ export class Ec2 extends PolicyStatement {
         "instance": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:AvailabilityZone",
             "ec2:EbsOptimized",
             "ec2:InstanceProfile",
@@ -4431,6 +4941,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -4446,6 +4957,7 @@ export class Ec2 extends PolicyStatement {
         "security-group": {
           "required": true,
           "conditions": [
+            "aws:ResourceTag/${TagKey}",
             "ec2:Region",
             "ec2:ResourceTag/${TagKey}",
             "ec2:Vpc"
@@ -4466,6 +4978,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:capacity-reservation/${CapacityReservationId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4477,6 +4990,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:client-vpn-endpoint/${ClientVpnEndpointId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4487,6 +5001,7 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:customer-gateway/${CustomerGatewayId}",
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
       ]
@@ -4497,6 +5012,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:dedicated-host/${HostId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AutoPlacement",
         "ec2:AvailabilityZone",
@@ -4512,6 +5028,19 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
+      ]
+    },
+    "egress-only-internet-gateway": {
+      "name": "egress-only-internet-gateway",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:egress-only-internet-gateway/${EgressOnlyInternetGatewayId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4531,12 +5060,37 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:elastic-inference:${Region}:${Account}:elastic-inference-accelerator/${ElasticInferenceAcceleratorId}",
       "conditionKeys": []
     },
+    "export-instance-task": {
+      "name": "export-instance-task",
+      "url": "https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:export-instance-task/${ExportTaskId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
+      ]
+    },
+    "fleet": {
+      "name": "fleet",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:fleet/${FleetId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
+      ]
+    },
     "fpga-image": {
       "name": "fpga-image",
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",
       "arn": "arn:${Partition}:ec2:${Region}::fpga-image/${FpgaImageId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Owner",
         "ec2:Public",
@@ -4550,6 +5104,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}::image/${ImageId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:ImageType",
         "ec2:Owner",
@@ -4565,6 +5120,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
         "ec2:EbsOptimized",
@@ -4583,6 +5139,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:internet-gateway/${InternetGatewayId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4593,7 +5150,11 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html",
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:key-pair/${KeyPairName}",
       "conditionKeys": [
-        "ec2:Region"
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
       ]
     },
     "launch-template": {
@@ -4601,6 +5162,9 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html",
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:launch-template/${LaunchTemplateId}",
       "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
       ]
@@ -4611,6 +5175,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:local-gateway/${LocalGatewayId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4622,6 +5187,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table/${LocalGatewayRouteTableId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4633,6 +5199,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-virtual-interface-group-association/${LocalGatewayRouteTableVirtualInterfaceGroupAssociationId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4644,6 +5211,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-route-table-vpc-association/${LocalGatewayRouteTableVpcAssociationId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4655,6 +5223,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface/${LocalGatewayVirtualInterfaceId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4666,6 +5235,19 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface-group/${LocalGatewayVirtualInterfaceGroupId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
+      ]
+    },
+    "natgateway": {
+      "name": "natgateway",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:natgateway/${NatGatewayId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4677,6 +5259,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:network-acl/${NaclId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}",
@@ -4689,6 +5272,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:network-interface/${NetworkInterfaceId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AssociatePublicIpAddress",
         "ec2:AuthorizedService",
@@ -4704,8 +5288,24 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html",
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:placement-group/${PlacementGroupName}",
       "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
         "ec2:PlacementGroupStrategy",
-        "ec2:Region"
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
+      ]
+    },
+    "prefix-list": {
+      "name": "prefix-list",
+      "url": "",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:prefix-list/${PrefixListId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
       ]
     },
     "reserved-instances": {
@@ -4714,6 +5314,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:reserved-instances/${ReservationId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
         "ec2:InstanceType",
@@ -4729,6 +5330,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:route-table/${RouteTableId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}",
@@ -4741,6 +5343,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:security-group/${SecurityGroupId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}",
@@ -4753,6 +5356,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}::snapshot/${SnapshotId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Owner",
         "ec2:ParentVolume",
@@ -4768,6 +5372,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:spot-instances-request/${SpotInstanceRequestId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4779,6 +5384,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:subnet/${SubnetId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
         "ec2:Region",
@@ -4792,6 +5398,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-session/${TrafficMirrorSessionId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4803,6 +5410,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-target/${TrafficMirrorTargetId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4814,6 +5422,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:traffic-mirror-filter/${TrafficMirrorFilterId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4833,6 +5442,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-attachment/${TransitGatewayAttachmentId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4844,6 +5454,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-multicast-domain/${TransitGatewayMulticastDomainId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4855,6 +5466,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway-route-table/${TransitGatewayRouteTableId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4866,6 +5478,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:transit-gateway/${TransitGatewayId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4877,6 +5490,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:volume/${VolumeId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AvailabilityZone",
         "ec2:Encrypted",
@@ -4894,6 +5508,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc/${VpcId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}",
@@ -4906,6 +5521,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint/${VpceId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}",
@@ -4919,6 +5535,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-endpoint-service/${VpceServiceId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}",
@@ -4931,6 +5548,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-flow-log/${VpcFlowLogId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:Region",
         "ec2:ResourceTag/${TagKey}"
@@ -4941,6 +5559,7 @@ export class Ec2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html",
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpc-peering-connection/${VpcPeeringConnectionId}",
       "conditionKeys": [
+        "aws:ResourceTag/${TagKey}",
         "ec2:AccepterVpc",
         "ec2:Region",
         "ec2:RequesterVpc",
@@ -4953,6 +5572,7 @@ export class Ec2 extends PolicyStatement {
       "arn": "arn:${Partition}:ec2:${Region}:${Account}:vpn-connection/${VpnConnectionId}",
       "conditionKeys": [
         "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
         "aws:TagKeys",
         "ec2:AuthenticationType",
         "ec2:DPDTimeoutSeconds",
@@ -5719,6 +6339,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a managed prefix list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateManagedPrefixList.html
+   */
+  public createManagedPrefixList() {
+    this.add('ec2:CreateManagedPrefixList');
+    return this;
+  }
+
+  /**
    * Grants permission to create a NAT gateway in a subnet
    *
    * Access Level: Write
@@ -6297,6 +6929,18 @@ export class Ec2 extends PolicyStatement {
    */
   public deleteLocalGatewayRouteTableVpcAssociation() {
     this.add('ec2:DeleteLocalGatewayRouteTableVpcAssociation');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a managed prefix list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteManagedPrefixList.html
+   */
+  public deleteManagedPrefixList() {
+    this.add('ec2:DeleteManagedPrefixList');
     return this;
   }
 
@@ -7401,6 +8045,18 @@ export class Ec2 extends PolicyStatement {
    */
   public describeLocalGateways() {
     this.add('ec2:DescribeLocalGateways');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe your managed prefix lists and any AWS-managed prefix lists
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeManagedPrefixLists.html
+   */
+  public describeManagedPrefixLists() {
+    this.add('ec2:DescribeManagedPrefixLists');
     return this;
   }
 
@@ -8557,6 +9213,30 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about the resources that are associated with the specified managed prefix list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetManagedPrefixListAssociations.html
+   */
+  public getManagedPrefixListAssociations() {
+    this.add('ec2:GetManagedPrefixListAssociations');
+    return this;
+  }
+
+  /**
+   * Grants permission to get information about the entries for a specified managed prefix list
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetManagedPrefixListEntries.html
+   */
+  public getManagedPrefixListEntries() {
+    this.add('ec2:GetManagedPrefixListEntries');
+    return this;
+  }
+
+  /**
    * Grants permission to retrieve the encrypted administrator password for a running Windows instance
    *
    * Access Level: Read
@@ -8901,6 +9581,18 @@ export class Ec2 extends PolicyStatement {
    */
   public modifyLaunchTemplate() {
     this.add('ec2:ModifyLaunchTemplate');
+    return this;
+  }
+
+  /**
+   * Grants permission to modify a managed prefix list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyManagedPrefixList.html
+   */
+  public modifyManagedPrefixList() {
+    this.add('ec2:ModifyManagedPrefixList');
     return this;
   }
 
@@ -9556,6 +10248,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to restore the entries from a previous version of a managed prefix list to a new version of the prefix list
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreManagedPrefixListVersion.html
+   */
+  public restoreManagedPrefixListVersion() {
+    this.add('ec2:RestoreManagedPrefixListVersion');
+    return this;
+  }
+
+  /**
    * Grants permission to remove an inbound authorization rule from a Client VPN endpoint
    *
    * Access Level: Write
@@ -9807,6 +10511,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -9832,6 +10537,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -9856,6 +10562,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -9880,6 +10587,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAutoPlacement()
    * - .ifAvailabilityZone()
@@ -9909,6 +10617,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -9916,6 +10625,32 @@ export class Ec2 extends PolicyStatement {
   public onDhcpOptions(dhcpOptionsId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:dhcp-options/${DhcpOptionsId}';
     arn = arn.replace('${DhcpOptionsId}', dhcpOptionsId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type egress-only-internet-gateway to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html
+   *
+   * @param egressOnlyInternetGatewayId - Identifier for the egressOnlyInternetGatewayId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onEgressOnlyInternetGateway(egressOnlyInternetGatewayId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:egress-only-internet-gateway/${EgressOnlyInternetGatewayId}';
+    arn = arn.replace('${EgressOnlyInternetGatewayId}', egressOnlyInternetGatewayId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -9964,6 +10699,58 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type export-instance-task to the statement
+   *
+   * https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html
+   *
+   * @param exportTaskId - Identifier for the exportTaskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onExportInstanceTask(exportTaskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:export-instance-task/${ExportTaskId}';
+    arn = arn.replace('${ExportTaskId}', exportTaskId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type fleet to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html
+   *
+   * @param fleetId - Identifier for the fleetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:fleet/${FleetId}';
+    arn = arn.replace('${FleetId}', fleetId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type fpga-image to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format
@@ -9974,6 +10761,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifOwner()
    * - .ifPublic()
@@ -9999,6 +10787,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifImageType()
    * - .ifOwner()
@@ -10027,6 +10816,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAvailabilityZone()
    * - .ifEbsOptimized()
@@ -10059,6 +10849,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10083,7 +10874,11 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
+   * - .ifResourceTag()
    */
   public onKeyPair(keyPairName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:key-pair/${KeyPairName}';
@@ -10105,6 +10900,9 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
    */
@@ -10129,6 +10927,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10154,6 +10953,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10179,6 +10979,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10204,6 +11005,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10229,6 +11031,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10254,6 +11057,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10261,6 +11065,32 @@ export class Ec2 extends PolicyStatement {
   public onLocalGatewayVirtualInterfaceGroup(localGatewayVirtualInterfaceGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:local-gateway-virtual-interface-group/${LocalGatewayVirtualInterfaceGroupId}';
     arn = arn.replace('${LocalGatewayVirtualInterfaceGroupId}', localGatewayVirtualInterfaceGroupId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type natgateway to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
+   *
+   * @param natGatewayId - Identifier for the natGatewayId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onNatgateway(natGatewayId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:natgateway/${NatGatewayId}';
+    arn = arn.replace('${NatGatewayId}', natGatewayId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -10279,6 +11109,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10305,6 +11136,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAssociatePublicIpAddress()
    * - .ifAuthorizedService()
@@ -10334,12 +11166,40 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    * - .ifPlacementGroupStrategy()
    * - .ifRegion()
+   * - .ifResourceTag()
    */
   public onPlacementGroup(placementGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ec2:${Region}:${Account}:placement-group/${PlacementGroupName}';
     arn = arn.replace('${PlacementGroupName}', placementGroupName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type prefix-list to the statement
+   *
+   * @param prefixListId - Identifier for the prefixListId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onPrefixList(prefixListId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:prefix-list/${PrefixListId}';
+    arn = arn.replace('${PrefixListId}', prefixListId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
@@ -10358,6 +11218,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAvailabilityZone()
    * - .ifInstanceType()
@@ -10387,6 +11248,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10413,6 +11275,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10438,6 +11301,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifOwner()
    * - .ifParentVolume()
@@ -10466,6 +11330,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10491,6 +11356,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAvailabilityZone()
    * - .ifRegion()
@@ -10518,6 +11384,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10543,6 +11410,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10568,6 +11436,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10615,6 +11484,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10640,6 +11510,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10665,6 +11536,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10690,6 +11562,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10715,6 +11588,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAvailabilityZone()
    * - .ifEncrypted()
@@ -10746,6 +11620,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10772,6 +11647,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10799,6 +11675,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10825,6 +11702,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifRegion()
    * - .ifResourceTag()
@@ -10849,6 +11727,7 @@ export class Ec2 extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
    * Possible conditions:
+   * - .ifAwsResourceTag()
    * - .ifAccepterVpc()
    * - .ifRegion()
    * - .ifRequesterVpc()
@@ -10875,6 +11754,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    * - .ifAwsTagKeys()
    * - .ifAuthenticationType()
    * - .ifDPDTimeoutSeconds()
@@ -10931,10 +11811,27 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to actions:
    * - .copySnapshot()
+   * - .createCapacityReservation()
    * - .createClientVpnEndpoint()
+   * - .createDhcpOptions()
+   * - .createEgressOnlyInternetGateway()
+   * - .createFleet()
    * - .createFlowLogs()
+   * - .createFpgaImage()
+   * - .createInstanceExportTask()
+   * - .createInternetGateway()
+   * - .createKeyPair()
+   * - .createLaunchTemplate()
+   * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createManagedPrefixList()
+   * - .createNatGateway()
+   * - .createNetworkAcl()
+   * - .createNetworkInterface()
+   * - .createPlacementGroup()
+   * - .createSecurityGroup()
    * - .createSnapshot()
    * - .createSnapshots()
+   * - .createSubnet()
    * - .createTags()
    * - .createTrafficMirrorFilter()
    * - .createTrafficMirrorSession()
@@ -10945,6 +11842,7 @@ export class Ec2 extends PolicyStatement {
    * - .createTransitGatewayRouteTable()
    * - .createTransitGatewayVpcAttachment()
    * - .createVolume()
+   * - .createVpc()
    * - .createVpcEndpoint()
    * - .createVpcEndpointServiceConfiguration()
    * - .deleteTags()
@@ -10955,18 +11853,26 @@ export class Ec2 extends PolicyStatement {
    * - client-vpn-endpoint
    * - dedicated-host
    * - dhcp-options
+   * - egress-only-internet-gateway
+   * - export-instance-task
+   * - fleet
    * - fpga-image
    * - image
    * - instance
    * - internet-gateway
+   * - key-pair
+   * - launch-template
    * - local-gateway
    * - local-gateway-route-table
    * - local-gateway-route-table-virtual-interface-group-association
    * - local-gateway-route-table-vpc-association
    * - local-gateway-virtual-interface
    * - local-gateway-virtual-interface-group
+   * - natgateway
    * - network-acl
    * - network-interface
+   * - placement-group
+   * - prefix-list
    * - reserved-instances
    * - route-table
    * - security-group
@@ -10996,16 +11902,230 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Filters access by the preface string for a tag key and value pair that are attached to a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
+   *
+   * Applies to actions:
+   * - .runInstances()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTagExists(value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair of a resource
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
+   *
+   * Applies to actions:
+   * - .acceptTransitGatewayPeeringAttachment()
+   * - .acceptTransitGatewayVpcAttachment()
+   * - .acceptVpcEndpointConnections()
+   * - .acceptVpcPeeringConnection()
+   * - .applySecurityGroupsToClientVpnTargetNetwork()
+   * - .associateClientVpnTargetNetwork()
+   * - .associateIamInstanceProfile()
+   * - .associateTransitGatewayMulticastDomain()
+   * - .associateTransitGatewayRouteTable()
+   * - .attachClassicLinkVpc()
+   * - .attachVolume()
+   * - .authorizeClientVpnIngress()
+   * - .authorizeSecurityGroupEgress()
+   * - .authorizeSecurityGroupIngress()
+   * - .cancelCapacityReservation()
+   * - .createClientVpnRoute()
+   * - .createFlowLogs()
+   * - .createLaunchTemplateVersion()
+   * - .createLocalGatewayRoute()
+   * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createNetworkInterfacePermission()
+   * - .createRoute()
+   * - .createSnapshot()
+   * - .createSnapshots()
+   * - .createTags()
+   * - .createTrafficMirrorFilterRule()
+   * - .createTrafficMirrorSession()
+   * - .createTrafficMirrorTarget()
+   * - .createTransitGatewayMulticastDomain()
+   * - .createTransitGatewayPeeringAttachment()
+   * - .createTransitGatewayRoute()
+   * - .createTransitGatewayRouteTable()
+   * - .createTransitGatewayVpcAttachment()
+   * - .createVpcEndpoint()
+   * - .createVpcPeeringConnection()
+   * - .deleteClientVpnEndpoint()
+   * - .deleteClientVpnRoute()
+   * - .deleteCustomerGateway()
+   * - .deleteDhcpOptions()
+   * - .deleteFlowLogs()
+   * - .deleteInternetGateway()
+   * - .deleteLaunchTemplate()
+   * - .deleteLaunchTemplateVersions()
+   * - .deleteLocalGatewayRoute()
+   * - .deleteLocalGatewayRouteTableVpcAssociation()
+   * - .deleteManagedPrefixList()
+   * - .deleteNetworkAcl()
+   * - .deleteNetworkAclEntry()
+   * - .deleteRoute()
+   * - .deleteRouteTable()
+   * - .deleteSecurityGroup()
+   * - .deleteSnapshot()
+   * - .deleteTags()
+   * - .deleteTrafficMirrorFilter()
+   * - .deleteTrafficMirrorFilterRule()
+   * - .deleteTrafficMirrorSession()
+   * - .deleteTrafficMirrorTarget()
+   * - .deleteTransitGateway()
+   * - .deleteTransitGatewayMulticastDomain()
+   * - .deleteTransitGatewayPeeringAttachment()
+   * - .deleteTransitGatewayRoute()
+   * - .deleteTransitGatewayRouteTable()
+   * - .deleteTransitGatewayVpcAttachment()
+   * - .deleteVolume()
+   * - .deleteVpcEndpointServiceConfigurations()
+   * - .deleteVpcEndpoints()
+   * - .deleteVpcPeeringConnection()
+   * - .deregisterTransitGatewayMulticastGroupMembers()
+   * - .deregisterTransitGatewayMulticastGroupSources()
+   * - .detachClassicLinkVpc()
+   * - .detachVolume()
+   * - .disableFastSnapshotRestores()
+   * - .disableTransitGatewayRouteTablePropagation()
+   * - .disableVpcClassicLink()
+   * - .disassociateClientVpnTargetNetwork()
+   * - .disassociateIamInstanceProfile()
+   * - .disassociateTransitGatewayMulticastDomain()
+   * - .disassociateTransitGatewayRouteTable()
+   * - .enableFastSnapshotRestores()
+   * - .enableTransitGatewayRouteTablePropagation()
+   * - .enableVpcClassicLink()
+   * - .getConsoleScreenshot()
+   * - .importClientVpnClientCertificateRevocationList()
+   * - .modifyCapacityReservation()
+   * - .modifyClientVpnEndpoint()
+   * - .modifyLaunchTemplate()
+   * - .modifyManagedPrefixList()
+   * - .modifySnapshotAttribute()
+   * - .modifyTrafficMirrorFilterNetworkServices()
+   * - .modifyTrafficMirrorFilterRule()
+   * - .modifyTrafficMirrorSession()
+   * - .modifyTransitGatewayVpcAttachment()
+   * - .modifyVpcEndpoint()
+   * - .modifyVpcEndpointServiceConfiguration()
+   * - .modifyVpcEndpointServicePermissions()
+   * - .modifyVpnConnection()
+   * - .modifyVpnTunnelOptions()
+   * - .rebootInstances()
+   * - .registerTransitGatewayMulticastGroupMembers()
+   * - .registerTransitGatewayMulticastGroupSources()
+   * - .rejectTransitGatewayPeeringAttachment()
+   * - .rejectTransitGatewayVpcAttachment()
+   * - .rejectVpcEndpointConnections()
+   * - .rejectVpcPeeringConnection()
+   * - .replaceIamInstanceProfileAssociation()
+   * - .replaceRoute()
+   * - .replaceTransitGatewayRoute()
+   * - .restoreManagedPrefixListVersion()
+   * - .revokeClientVpnIngress()
+   * - .revokeSecurityGroupEgress()
+   * - .revokeSecurityGroupIngress()
+   * - .runInstances()
+   * - .sendDiagnosticInterrupt()
+   * - .startInstances()
+   * - .startVpcEndpointServicePrivateDnsVerification()
+   * - .stopInstances()
+   * - .terminateClientVpnConnections()
+   * - .terminateInstances()
+   * - .updateSecurityGroupRuleDescriptionsEgress()
+   * - .updateSecurityGroupRuleDescriptionsIngress()
+   *
+   * Applies to resource types:
+   * - capacity-reservation
+   * - client-vpn-endpoint
+   * - customer-gateway
+   * - dedicated-host
+   * - dhcp-options
+   * - egress-only-internet-gateway
+   * - export-instance-task
+   * - fleet
+   * - fpga-image
+   * - image
+   * - instance
+   * - internet-gateway
+   * - key-pair
+   * - launch-template
+   * - local-gateway
+   * - local-gateway-route-table
+   * - local-gateway-route-table-virtual-interface-group-association
+   * - local-gateway-route-table-vpc-association
+   * - local-gateway-virtual-interface
+   * - local-gateway-virtual-interface-group
+   * - natgateway
+   * - network-acl
+   * - network-interface
+   * - placement-group
+   * - prefix-list
+   * - reserved-instances
+   * - route-table
+   * - security-group
+   * - snapshot
+   * - spot-instance-request
+   * - subnet
+   * - traffic-mirror-session
+   * - traffic-mirror-target
+   * - traffic-mirror-filter
+   * - transit-gateway-attachment
+   * - transit-gateway-multicast-domain
+   * - transit-gateway-route-table
+   * - transit-gateway
+   * - volume
+   * - vpc
+   * - vpc-endpoint
+   * - vpc-endpoint-service
+   * - vpc-flow-log
+   * - vpc-peering-connection
+   * - vpn-connection
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by a list of tag keys that are allowed in the request
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html#control-tagging
    *
    * Applies to actions:
    * - .copySnapshot()
+   * - .createCapacityReservation()
    * - .createClientVpnEndpoint()
+   * - .createDhcpOptions()
+   * - .createEgressOnlyInternetGateway()
+   * - .createFleet()
    * - .createFlowLogs()
+   * - .createFpgaImage()
+   * - .createInstanceExportTask()
+   * - .createInternetGateway()
+   * - .createKeyPair()
+   * - .createLaunchTemplate()
+   * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createManagedPrefixList()
+   * - .createNatGateway()
+   * - .createNetworkAcl()
+   * - .createNetworkInterface()
+   * - .createPlacementGroup()
+   * - .createSecurityGroup()
    * - .createSnapshot()
    * - .createSnapshots()
+   * - .createSubnet()
    * - .createTags()
    * - .createTrafficMirrorFilter()
    * - .createTrafficMirrorSession()
@@ -11016,6 +12136,7 @@ export class Ec2 extends PolicyStatement {
    * - .createTransitGatewayRouteTable()
    * - .createTransitGatewayVpcAttachment()
    * - .createVolume()
+   * - .createVpc()
    * - .createVpcEndpoint()
    * - .createVpcEndpointServiceConfiguration()
    * - .deleteTags()
@@ -11026,18 +12147,26 @@ export class Ec2 extends PolicyStatement {
    * - client-vpn-endpoint
    * - dedicated-host
    * - dhcp-options
+   * - egress-only-internet-gateway
+   * - export-instance-task
+   * - fleet
    * - fpga-image
    * - image
    * - instance
    * - internet-gateway
+   * - key-pair
+   * - launch-template
    * - local-gateway
    * - local-gateway-route-table
    * - local-gateway-route-table-virtual-interface-group-association
    * - local-gateway-route-table-vpc-association
    * - local-gateway-virtual-interface
    * - local-gateway-virtual-interface-group
+   * - natgateway
    * - network-acl
    * - network-interface
+   * - placement-group
+   * - prefix-list
    * - reserved-instances
    * - route-table
    * - security-group
@@ -11180,6 +12309,7 @@ export class Ec2 extends PolicyStatement {
    * - .associateIamInstanceProfile()
    * - .attachClassicLinkVpc()
    * - .attachVolume()
+   * - .createFlowLogs()
    * - .createNetworkInterfacePermission()
    * - .createSnapshots()
    * - .createTags()
@@ -11947,16 +13077,32 @@ export class Ec2 extends PolicyStatement {
    * - .authorizeSecurityGroupIngress()
    * - .cancelCapacityReservation()
    * - .copySnapshot()
+   * - .createCapacityReservation()
    * - .createClientVpnEndpoint()
    * - .createClientVpnRoute()
+   * - .createDhcpOptions()
+   * - .createEgressOnlyInternetGateway()
+   * - .createFleet()
    * - .createFlowLogs()
+   * - .createFpgaImage()
+   * - .createInstanceExportTask()
+   * - .createInternetGateway()
+   * - .createKeyPair()
+   * - .createLaunchTemplate()
    * - .createLaunchTemplateVersion()
    * - .createLocalGatewayRoute()
    * - .createLocalGatewayRouteTableVpcAssociation()
+   * - .createManagedPrefixList()
+   * - .createNatGateway()
+   * - .createNetworkAcl()
+   * - .createNetworkInterface()
    * - .createNetworkInterfacePermission()
+   * - .createPlacementGroup()
    * - .createRoute()
+   * - .createSecurityGroup()
    * - .createSnapshot()
    * - .createSnapshots()
+   * - .createSubnet()
    * - .createTags()
    * - .createTrafficMirrorFilter()
    * - .createTrafficMirrorFilterRule()
@@ -11969,6 +13115,7 @@ export class Ec2 extends PolicyStatement {
    * - .createTransitGatewayRouteTable()
    * - .createTransitGatewayVpcAttachment()
    * - .createVolume()
+   * - .createVpc()
    * - .createVpcEndpoint()
    * - .createVpcEndpointServiceConfiguration()
    * - .createVpcPeeringConnection()
@@ -11977,11 +13124,13 @@ export class Ec2 extends PolicyStatement {
    * - .deleteClientVpnRoute()
    * - .deleteCustomerGateway()
    * - .deleteDhcpOptions()
+   * - .deleteFlowLogs()
    * - .deleteInternetGateway()
    * - .deleteLaunchTemplate()
    * - .deleteLaunchTemplateVersions()
    * - .deleteLocalGatewayRoute()
    * - .deleteLocalGatewayRouteTableVpcAssociation()
+   * - .deleteManagedPrefixList()
    * - .deleteNetworkAcl()
    * - .deleteNetworkAclEntry()
    * - .deleteRoute()
@@ -12023,6 +13172,7 @@ export class Ec2 extends PolicyStatement {
    * - .modifyClientVpnEndpoint()
    * - .modifyInstanceEventStartTime()
    * - .modifyLaunchTemplate()
+   * - .modifyManagedPrefixList()
    * - .modifySnapshotAttribute()
    * - .modifyTrafficMirrorFilterNetworkServices()
    * - .modifyTrafficMirrorFilterRule()
@@ -12043,6 +13193,7 @@ export class Ec2 extends PolicyStatement {
    * - .replaceIamInstanceProfileAssociation()
    * - .replaceRoute()
    * - .replaceTransitGatewayRoute()
+   * - .restoreManagedPrefixListVersion()
    * - .revokeClientVpnIngress()
    * - .revokeSecurityGroupEgress()
    * - .revokeSecurityGroupIngress()
@@ -12061,6 +13212,9 @@ export class Ec2 extends PolicyStatement {
    * - client-vpn-endpoint
    * - customer-gateway
    * - dhcp-options
+   * - egress-only-internet-gateway
+   * - export-instance-task
+   * - fleet
    * - fpga-image
    * - image
    * - instance
@@ -12073,9 +13227,11 @@ export class Ec2 extends PolicyStatement {
    * - local-gateway-route-table-vpc-association
    * - local-gateway-virtual-interface
    * - local-gateway-virtual-interface-group
+   * - natgateway
    * - network-acl
    * - network-interface
    * - placement-group
+   * - prefix-list
    * - reserved-instances
    * - route-table
    * - security-group
@@ -12219,6 +13375,7 @@ export class Ec2 extends PolicyStatement {
    * - .authorizeSecurityGroupIngress()
    * - .cancelCapacityReservation()
    * - .createClientVpnRoute()
+   * - .createFlowLogs()
    * - .createLaunchTemplateVersion()
    * - .createLocalGatewayRoute()
    * - .createLocalGatewayRouteTableVpcAssociation()
@@ -12241,11 +13398,13 @@ export class Ec2 extends PolicyStatement {
    * - .deleteClientVpnRoute()
    * - .deleteCustomerGateway()
    * - .deleteDhcpOptions()
+   * - .deleteFlowLogs()
    * - .deleteInternetGateway()
    * - .deleteLaunchTemplate()
    * - .deleteLaunchTemplateVersions()
    * - .deleteLocalGatewayRoute()
    * - .deleteLocalGatewayRouteTableVpcAssociation()
+   * - .deleteManagedPrefixList()
    * - .deleteNetworkAcl()
    * - .deleteNetworkAclEntry()
    * - .deleteRoute()
@@ -12286,6 +13445,7 @@ export class Ec2 extends PolicyStatement {
    * - .modifyCapacityReservation()
    * - .modifyClientVpnEndpoint()
    * - .modifyLaunchTemplate()
+   * - .modifyManagedPrefixList()
    * - .modifySnapshotAttribute()
    * - .modifyTrafficMirrorFilterNetworkServices()
    * - .modifyTrafficMirrorFilterRule()
@@ -12306,6 +13466,7 @@ export class Ec2 extends PolicyStatement {
    * - .replaceIamInstanceProfileAssociation()
    * - .replaceRoute()
    * - .replaceTransitGatewayRoute()
+   * - .restoreManagedPrefixListVersion()
    * - .revokeClientVpnIngress()
    * - .revokeSecurityGroupEgress()
    * - .revokeSecurityGroupIngress()
@@ -12325,10 +13486,14 @@ export class Ec2 extends PolicyStatement {
    * - customer-gateway
    * - dedicated-host
    * - dhcp-options
+   * - egress-only-internet-gateway
+   * - export-instance-task
+   * - fleet
    * - fpga-image
    * - image
    * - instance
    * - internet-gateway
+   * - key-pair
    * - launch-template
    * - local-gateway
    * - local-gateway-route-table
@@ -12336,8 +13501,11 @@ export class Ec2 extends PolicyStatement {
    * - local-gateway-route-table-vpc-association
    * - local-gateway-virtual-interface
    * - local-gateway-virtual-interface-group
+   * - natgateway
    * - network-acl
    * - network-interface
+   * - placement-group
+   * - prefix-list
    * - reserved-instances
    * - route-table
    * - security-group
@@ -12508,6 +13676,7 @@ export class Ec2 extends PolicyStatement {
    * - .associateIamInstanceProfile()
    * - .attachClassicLinkVpc()
    * - .attachVolume()
+   * - .createFlowLogs()
    * - .createLocalGatewayRouteTableVpcAssociation()
    * - .createSnapshots()
    * - .createTags()

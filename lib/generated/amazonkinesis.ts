@@ -227,6 +227,32 @@ export class Kinesis extends PolicyStatement {
         }
       }
     },
+    "StartStreamEncryption": {
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html",
+      "description": "Grants permission to enable or update server-side encryption using an AWS KMS key for a specified stream.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "kmsKey": {
+          "required": true
+        },
+        "stream": {
+          "required": true
+        }
+      }
+    },
+    "StopStreamEncryption": {
+      "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html",
+      "description": "Grants permission to disable server-side encryption for a specified stream.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "kmsKey": {
+          "required": true
+        },
+        "stream": {
+          "required": true
+        }
+      }
+    },
     "SubscribeToShard": {
       "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_SubscribeToShard.html",
       "description": "Listening to a specific shard with enhanced fan-out.",
@@ -249,14 +275,20 @@ export class Kinesis extends PolicyStatement {
   protected resourceTypes: ResourceTypes = {
     "stream": {
       "name": "stream",
-      "url": "",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-streams.html",
       "arn": "arn:${Partition}:kinesis:${Region}:${Account}:stream/${StreamName}",
       "conditionKeys": []
     },
     "consumer": {
       "name": "consumer",
-      "url": "",
+      "url": "https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-consumers.html",
       "arn": "arn:${Partition}:kinesis:${Region}:${Account}:${StreamType}/${StreamName}/consumer/${ConsumerName}:${ConsumerCreationTimpstamp}",
+      "conditionKeys": []
+    },
+    "kmsKey": {
+      "name": "kmsKey",
+      "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys",
+      "arn": "arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}",
       "conditionKeys": []
     }
   };
@@ -559,6 +591,30 @@ export class Kinesis extends PolicyStatement {
   }
 
   /**
+   * Grants permission to enable or update server-side encryption using an AWS KMS key for a specified stream.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StartStreamEncryption.html
+   */
+  public startStreamEncryption() {
+    this.add('kinesis:StartStreamEncryption');
+    return this;
+  }
+
+  /**
+   * Grants permission to disable server-side encryption for a specified stream.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/kinesis/latest/APIReference/API_StopStreamEncryption.html
+   */
+  public stopStreamEncryption() {
+    this.add('kinesis:StopStreamEncryption');
+    return this;
+  }
+
+  /**
    * Listening to a specific shard with enhanced fan-out.
    *
    * Access Level: Read
@@ -585,6 +641,8 @@ export class Kinesis extends PolicyStatement {
   /**
    * Adds a resource of type stream to the statement
    *
+   * https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-streams.html
+   *
    * @param streamName - Identifier for the streamName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -602,6 +660,8 @@ export class Kinesis extends PolicyStatement {
   /**
    * Adds a resource of type consumer to the statement
    *
+   * https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-consumers.html
+   *
    * @param streamType - Identifier for the streamType.
    * @param streamName - Identifier for the streamName.
    * @param consumerName - Identifier for the consumerName.
@@ -616,6 +676,25 @@ export class Kinesis extends PolicyStatement {
     arn = arn.replace('${StreamName}', streamName);
     arn = arn.replace('${ConsumerName}', consumerName);
     arn = arn.replace('${ConsumerCreationTimpstamp}', consumerCreationTimpstamp);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type kmsKey to the statement
+   *
+   * https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys
+   *
+   * @param keyId - Identifier for the keyId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onKmsKey(keyId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:kms:${Region}:${Account}:key/${KeyId}';
+    arn = arn.replace('${KeyId}', keyId);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

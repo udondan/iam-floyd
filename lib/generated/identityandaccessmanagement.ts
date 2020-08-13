@@ -1411,7 +1411,7 @@ export class Iam extends PolicyStatement {
     "mfa": {
       "name": "mfa",
       "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
-      "arn": "arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}",
+      "arn": "arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}",
       "conditionKeys": []
     },
     "oidc-provider": {
@@ -3328,15 +3328,13 @@ export class Iam extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html
    *
-   * @param path - Identifier for the path.
-   * @param mfaTokenId - Identifier for the mfaTokenId.
+   * @param mfaTokenIdWithPath - Identifier for the mfaTokenIdWithPath.
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
-  public onMfa(path: string, mfaTokenId: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:iam::${Account}:mfa/${Path}/${MfaTokenId}';
-    arn = arn.replace('${Path}', path);
-    arn = arn.replace('${MfaTokenId}', mfaTokenId);
+  public onMfa(mfaTokenIdWithPath: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iam::${Account}:mfa/${MfaTokenIdWithPath}';
+    arn = arn.replace('${MfaTokenIdWithPath}', mfaTokenIdWithPath);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
