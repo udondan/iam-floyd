@@ -46,7 +46,7 @@ function getRemovedActions() {
 }
 
 function getNewResourceTypes() {
-  gitDiffModules | grep "^+.*var arn =" | sed 's|\${[[:alpha:]]\{1,\}}||g'  | sed 's/.*arn::/- /g' | sed 's/:\{2,\}/:/g' | tr -cd '[[:space:]][:alnum:]:-\r\'
+  gitDiffModules | grep "^+.*var arn =" | sed 's|\${[[:alpha:]]\{1,\}}||g'  | sed 's/.*arn::/- /g' | sed 's/:\{2,\}/:/g' | tr -cd '[[:space:]][:alnum:]:-\r\n\'
 }
 
 function getNewConditions() {
@@ -76,7 +76,7 @@ fi
 newServices=$(getNewServices)
 if [ "${newServices}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New services:**\r\r" >> "$file"
+  printf "**New services:**\n\n" >> "$file"
   echo "${newServices}" >> "$file"
   hasContent=true
 fi
@@ -84,7 +84,7 @@ fi
 newActions=$(getNewActions)
 if [ -n "${newActions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New actions:**\r\r" >> "$file"
+  printf "**New actions:**\n\n" >> "$file"
   echo "${newActions}" >> "$file"
   hasContent=true
 fi
@@ -92,7 +92,7 @@ fi
 updatedAccessLevels=$(getUpdatedAccessLevels)
 if [ -n "${updatedAccessLevels}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**Updated action access level:**\r\r" >> "$file"
+  printf "**Updated action access level:**\n\n" >> "$file"
   echo "${updatedAccessLevels}" >> "$file"
   hasContent=true
 fi
@@ -100,7 +100,7 @@ fi
 newResourceTypes=$(getNewResourceTypes)
 if [ -n "${newResourceTypes}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New resource types:**\r\r" >> "$file"
+  printf "**New resource types:**\n\n" >> "$file"
   echo "${newResourceTypes}" >> "$file"
   hasContent=true
 fi
@@ -108,7 +108,7 @@ fi
 newConditions=$(getNewConditions)
 if [ -n "${newConditions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New conditions:**\r\r" >> "$file"
+  printf "**New conditions:**\n\n" >> "$file"
   echo "${newConditions}" >> "$file"
   hasContent=true
 fi
