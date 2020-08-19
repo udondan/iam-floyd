@@ -23,7 +23,8 @@ export class Sts extends PolicyStatement {
         "aws:RequestTag/${TagKey}",
         "sts:TransitiveTagKeys",
         "sts:ExternalId",
-        "sts:RoleSessionName"
+        "sts:RoleSessionName",
+        "iam:ResourceTag/${TagKey}"
       ]
     },
     "AssumeRoleWithSAML": {
@@ -198,6 +199,7 @@ export class Sts extends PolicyStatement {
    * - .ifTransitiveTagKeys()
    * - .ifExternalId()
    * - .ifRoleSessionName()
+   * - .ifResourceTag()
    *
    * https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
    */
@@ -621,6 +623,22 @@ export class Sts extends PolicyStatement {
    */
   public ifFacebookId(value: string | string[], operator?: string) {
     return this.if(`graph.facebook.com:id`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags that are attached to the role that is being assumed
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag
+   *
+   * Applies to actions:
+   * - .assumeRole()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+    return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
