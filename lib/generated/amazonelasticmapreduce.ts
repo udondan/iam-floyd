@@ -151,6 +151,16 @@ export class Elasticmapreduce extends PolicyStatement {
       "description": "Grants permission to retrieve the EMR block public access configuration for the AWS account in the Region.",
       "accessLevel": "Read"
     },
+    "GetManagedScalingPolicy": {
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_GetManagedScalingPolicy.html",
+      "description": "Grants permission to retrieve the managed scaling policy associated with a cluster.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "cluster": {
+          "required": true
+        }
+      }
+    },
     "ListBootstrapActions": {
       "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_ListBootstrapActions.html",
       "description": "Grants permission to get details about the bootstrap actions associated with a cluster.",
@@ -242,7 +252,7 @@ export class Elasticmapreduce extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
-          "required": true
+          "required": false
         }
       }
     },
@@ -274,9 +284,29 @@ export class Elasticmapreduce extends PolicyStatement {
       "description": "Grants permission to create or update the EMR block public access configuration for the AWS account in the Region.",
       "accessLevel": "Permissions management"
     },
+    "PutManagedScalingPolicy": {
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_PutManagedScalingPolicy.html",
+      "description": "Grants permission to create or update the managed scaling policy associated with a cluster.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "cluster": {
+          "required": true
+        }
+      }
+    },
     "RemoveAutoScalingPolicy": {
       "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveAutoScalingPolicy.html",
       "description": "Grants permission to remove an automatic scaling policy from an instance group.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "cluster": {
+          "required": true
+        }
+      }
+    },
+    "RemoveManagedScalingPolicy": {
+      "url": "https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveManagedScalingPolicy.html",
+      "description": "Grants permission to remove the managed scaling policy associated with a cluster.",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -578,6 +608,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to retrieve the managed scaling policy associated with a cluster.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_GetManagedScalingPolicy.html
+   */
+  public toGetManagedScalingPolicy() {
+    this.add('elasticmapreduce:GetManagedScalingPolicy');
+    return this;
+  }
+
+  /**
    * Grants permission to get details about the bootstrap actions associated with a cluster.
    *
    * Access Level: Read
@@ -744,6 +786,18 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create or update the managed scaling policy associated with a cluster.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_PutManagedScalingPolicy.html
+   */
+  public toPutManagedScalingPolicy() {
+    this.add('elasticmapreduce:PutManagedScalingPolicy');
+    return this;
+  }
+
+  /**
    * Grants permission to remove an automatic scaling policy from an instance group.
    *
    * Access Level: Write
@@ -752,6 +806,18 @@ export class Elasticmapreduce extends PolicyStatement {
    */
   public toRemoveAutoScalingPolicy() {
     this.add('elasticmapreduce:RemoveAutoScalingPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to remove the managed scaling policy associated with a cluster.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/emr/latest/APIReference/API_RemoveManagedScalingPolicy.html
+   */
+  public toRemoveManagedScalingPolicy() {
+    this.add('elasticmapreduce:RemoveManagedScalingPolicy');
     return this;
   }
 

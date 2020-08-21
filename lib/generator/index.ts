@@ -545,7 +545,6 @@ export function createIndex() {
   const sourceFile = project.createSourceFile(filePath);
 
   sourceFile.addExportDeclaration({
-    namedExports: ['AccessLevel', 'All', 'Operator', 'OperatorModifier'],
     moduleSpecifier: './shared',
   });
 

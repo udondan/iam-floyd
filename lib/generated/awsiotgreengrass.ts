@@ -295,6 +295,16 @@ export class Greengrass extends PolicyStatement {
       "description": "Grants permission to disassociate the service role from an account. Without a service role, deployments will not work.",
       "accessLevel": "Write"
     },
+    "Discover": {
+      "url": "https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-discover-api.html",
+      "description": "Grants permission to retrieve information required to connect to a Greengrass core.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "thing": {
+          "required": true
+        }
+      }
+    },
     "GetAssociatedRole": {
       "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html",
       "description": "Grants permission to retrieve the role associated with a group.",
@@ -1092,6 +1102,12 @@ export class Greengrass extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectordefinitionversion.html",
       "arn": "arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}",
       "conditionKeys": []
+    },
+    "thing": {
+      "name": "thing",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}",
+      "conditionKeys": []
     }
   };
 
@@ -1505,6 +1521,18 @@ export class Greengrass extends PolicyStatement {
    */
   public toDisassociateServiceRoleFromAccount() {
     this.add('greengrass:DisassociateServiceRoleFromAccount');
+    return this;
+  }
+
+  /**
+   * Grants permission to retrieve information required to connect to a Greengrass core.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-discover-api.html
+   */
+  public toDiscover() {
+    this.add('greengrass:Discover');
     return this;
   }
 
@@ -2673,6 +2701,25 @@ export class Greengrass extends PolicyStatement {
     var arn = 'arn:${Partition}:greengrass:${Region}:${Account}:/greengrass/definition/connectors/${ConnectorDefinitionId}/versions/${VersionId}';
     arn = arn.replace('${ConnectorDefinitionId}', connectorDefinitionId);
     arn = arn.replace('${VersionId}', versionId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type thing to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html
+   *
+   * @param thingName - Identifier for the thingName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onThing(thingName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:thing/${ThingName}';
+    arn = arn.replace('${ThingName}', thingName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');

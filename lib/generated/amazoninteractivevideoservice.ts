@@ -72,6 +72,16 @@ export class Ivs extends PolicyStatement {
         }
       }
     },
+    "DeletePlaybackKeyPair": {
+      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeletePlaybackKeyPair.html",
+      "description": "Grants permission to delete the playback key pair for a specified ARN",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Playback-Key-Pair": {
+          "required": true
+        }
+      }
+    },
     "DeleteStreamKey": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeleteStreamKey.html",
       "description": "Grants permission to delete the stream key for a specified ARN",
@@ -88,6 +98,16 @@ export class Ivs extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "Channel": {
+          "required": true
+        }
+      }
+    },
+    "GetPlaybackKeyPair": {
+      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetPlaybackKeyPair.html",
+      "description": "Grants permission to get the playback keypair information for a specified ARN",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Playback-Key-Pair": {
           "required": true
         }
       }
@@ -112,12 +132,36 @@ export class Ivs extends PolicyStatement {
         }
       }
     },
+    "ImportPlaybackKeyPair": {
+      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ImportPlaybackKeyPair.html",
+      "description": "Grants permission to import the public key.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Playback-Key-Pair": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ]
+    },
     "ListChannels": {
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListChannels.html",
       "description": "Grants permission to get summary information about channels",
       "accessLevel": "List",
       "resourceTypes": {
         "Channel": {
+          "required": true
+        }
+      }
+    },
+    "ListPlaybackKeyPairs": {
+      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackKeyPairs.html",
+      "description": "Grants permission to get summary information about playback key pairs",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "Playback-Key-Pair": {
           "required": true
         }
       }
@@ -151,6 +195,9 @@ export class Ivs extends PolicyStatement {
       "accessLevel": "Tagging",
       "resourceTypes": {
         "Channel": {
+          "required": false
+        },
+        "Playback-Key-Pair": {
           "required": false
         },
         "Stream-Key": {
@@ -190,6 +237,9 @@ export class Ivs extends PolicyStatement {
         "Channel": {
           "required": false
         },
+        "Playback-Key-Pair": {
+          "required": false
+        },
         "Stream-Key": {
           "required": false
         }
@@ -205,6 +255,9 @@ export class Ivs extends PolicyStatement {
       "accessLevel": "Tagging",
       "resourceTypes": {
         "Channel": {
+          "required": false
+        },
+        "Playback-Key-Pair": {
           "required": false
         },
         "Stream-Key": {
@@ -239,6 +292,14 @@ export class Ivs extends PolicyStatement {
       "name": "Stream-Key",
       "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_StreamKey.html",
       "arn": "arn:${Partition}:ivs::${Account}:stream-key/${ResourceId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Playback-Key-Pair": {
+      "name": "Playback-Key-Pair",
+      "url": "https://docs.aws.amazon.com/ivs/latest/APIReference/API_PlaybackKeyPair.html",
+      "arn": "arn:${Partition}:ivs::${Account}:playback-key/${ResourceId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -323,6 +384,18 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to delete the playback key pair for a specified ARN
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_DeletePlaybackKeyPair.html
+   */
+  public toDeletePlaybackKeyPair() {
+    this.add('ivs:DeletePlaybackKeyPair');
+    return this;
+  }
+
+  /**
    * Grants permission to delete the stream key for a specified ARN
    *
    * Access Level: Write
@@ -343,6 +416,18 @@ export class Ivs extends PolicyStatement {
    */
   public toGetChannel() {
     this.add('ivs:GetChannel');
+    return this;
+  }
+
+  /**
+   * Grants permission to get the playback keypair information for a specified ARN
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_GetPlaybackKeyPair.html
+   */
+  public toGetPlaybackKeyPair() {
+    this.add('ivs:GetPlaybackKeyPair');
     return this;
   }
 
@@ -371,6 +456,22 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Grants permission to import the public key.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ImportPlaybackKeyPair.html
+   */
+  public toImportPlaybackKeyPair() {
+    this.add('ivs:ImportPlaybackKeyPair');
+    return this;
+  }
+
+  /**
    * Grants permission to get summary information about channels
    *
    * Access Level: List
@@ -379,6 +480,18 @@ export class Ivs extends PolicyStatement {
    */
   public toListChannels() {
     this.add('ivs:ListChannels');
+    return this;
+  }
+
+  /**
+   * Grants permission to get summary information about playback key pairs
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_ListPlaybackKeyPairs.html
+   */
+  public toListPlaybackKeyPairs() {
+    this.add('ivs:ListPlaybackKeyPairs');
     return this;
   }
 
@@ -530,6 +643,26 @@ export class Ivs extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type Playback-Key-Pair to the statement
+   *
+   * https://docs.aws.amazon.com/ivs/latest/APIReference/API_PlaybackKeyPair.html
+   *
+   * @param resourceId - Identifier for the resourceId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPlaybackKeyPair(resourceId: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ivs::${Account}:playback-key/${ResourceId}';
+    arn = arn.replace('${ResourceId}', resourceId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters actions based on the tags associated with the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -537,6 +670,7 @@ export class Ivs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateChannel()
    * - .toCreateStreamKey()
+   * - .toImportPlaybackKeyPair()
    * - .toListTagsForResource()
    * - .toTagResource()
    *
@@ -556,6 +690,7 @@ export class Ivs extends PolicyStatement {
    * Applies to resource types:
    * - Channel
    * - Stream-Key
+   * - Playback-Key-Pair
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -573,6 +708,7 @@ export class Ivs extends PolicyStatement {
    * Applies to actions:
    * - .toCreateChannel()
    * - .toCreateStreamKey()
+   * - .toImportPlaybackKeyPair()
    * - .toListTagsForResource()
    * - .toTagResource()
    * - .toUntagResource()

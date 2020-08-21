@@ -11,7 +11,12 @@ export class States extends PolicyStatement {
     "CreateActivity": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html",
       "description": "Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.",
-      "accessLevel": "Tagging",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "activity": {
+          "required": true
+        }
+      },
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -20,7 +25,12 @@ export class States extends PolicyStatement {
     "CreateStateMachine": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html",
       "description": "Creates a state machine.",
-      "accessLevel": "Tagging",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "statemachine": {
+          "required": true
+        }
+      },
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -167,7 +177,12 @@ export class States extends PolicyStatement {
     "StopExecution": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html",
       "description": "Stops an execution.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "execution": {
+          "required": true
+        }
+      }
     },
     "TagResource": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html",
@@ -254,7 +269,7 @@ export class States extends PolicyStatement {
   /**
    * Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -270,7 +285,7 @@ export class States extends PolicyStatement {
   /**
    * Creates a state machine.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
@@ -602,6 +617,8 @@ export class States extends PolicyStatement {
   /**
    * Tag for request
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
    * Applies to actions:
    * - .toCreateActivity()
    * - .toCreateStateMachine()
@@ -619,6 +636,8 @@ export class States extends PolicyStatement {
   /**
    * Tag for resource
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
    * Applies to resource types:
    * - activity
    * - statemachine
@@ -633,6 +652,8 @@ export class States extends PolicyStatement {
 
   /**
    * Tag for key
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
    * - .toCreateActivity()

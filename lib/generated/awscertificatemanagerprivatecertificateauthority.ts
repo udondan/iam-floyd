@@ -57,6 +57,16 @@ export class AcmPca extends PolicyStatement {
         }
       }
     },
+    "DeletePolicy": {
+      "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html",
+      "description": "Deletes the policy for an ACM Private CA.",
+      "accessLevel": "Permissions management",
+      "resourceTypes": {
+        "certificate-authority": {
+          "required": true
+        }
+      }
+    },
     "DescribeCertificateAuthority": {
       "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html",
       "description": "Returns a list of the configuration and status fields contained in the specified ACM Private CA.",
@@ -107,6 +117,16 @@ export class AcmPca extends PolicyStatement {
         }
       }
     },
+    "GetPolicy": {
+      "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html",
+      "description": "Retrieves the policy on an ACM Private CA.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "certificate-authority": {
+          "required": true
+        }
+      }
+    },
     "ImportCertificateAuthorityCertificate": {
       "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html",
       "description": "Imports an SSL/TLS certificate into ACM Private CA for use as the CA certificate of an ACM Private CA.",
@@ -149,6 +169,16 @@ export class AcmPca extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html",
       "description": "Lists the tags that have been applied to the ACM Private CA certificate authority.",
       "accessLevel": "Read",
+      "resourceTypes": {
+        "certificate-authority": {
+          "required": true
+        }
+      }
+    },
+    "PutPolicy": {
+      "url": "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html",
+      "description": "Puts a policy on an ACM Private CA.",
+      "accessLevel": "Permissions management",
       "resourceTypes": {
         "certificate-authority": {
           "required": true
@@ -298,6 +328,18 @@ export class AcmPca extends PolicyStatement {
   }
 
   /**
+   * Deletes the policy for an ACM Private CA.
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html
+   */
+  public toDeletePolicy() {
+    this.add('acm-pca:DeletePolicy');
+    return this;
+  }
+
+  /**
    * Returns a list of the configuration and status fields contained in the specified ACM Private CA.
    *
    * Access Level: Read
@@ -354,6 +396,18 @@ export class AcmPca extends PolicyStatement {
    */
   public toGetCertificateAuthorityCsr() {
     this.add('acm-pca:GetCertificateAuthorityCsr');
+    return this;
+  }
+
+  /**
+   * Retrieves the policy on an ACM Private CA.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html
+   */
+  public toGetPolicy() {
+    this.add('acm-pca:GetPolicy');
     return this;
   }
 
@@ -417,6 +471,18 @@ export class AcmPca extends PolicyStatement {
    */
   public toListTags() {
     this.add('acm-pca:ListTags');
+    return this;
+  }
+
+  /**
+   * Puts a policy on an ACM Private CA.
+   *
+   * Access Level: Permissions management
+   *
+   * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html
+   */
+  public toPutPolicy() {
+    this.add('acm-pca:PutPolicy');
     return this;
   }
 
