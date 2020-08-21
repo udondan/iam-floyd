@@ -14,10 +14,10 @@
 <!-- stats -->
 Support for:
 
-- 235 Services<br>
-- 7750 Actions<br>
-- 753 Resource Types<br>
-- 452 Conditions
+- 237 Services<br>
+- 7802 Actions<br>
+- 770 Resource Types<br>
+- 456 Conditions
 <!-- /stats -->
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
@@ -549,4 +549,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.41.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.48.0

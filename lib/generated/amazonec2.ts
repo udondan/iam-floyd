@@ -10751,6 +10751,58 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type export-instance-task to the statement
+   *
+   * https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html
+   *
+   * @param exportTaskId - Identifier for the exportTaskId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onExportInstanceTask(exportTaskId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:export-instance-task/${ExportTaskId}';
+    arn = arn.replace('${ExportTaskId}', exportTaskId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type fleet to the statement
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html
+   *
+   * @param fleetId - Identifier for the fleetId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onFleet(fleetId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:fleet/${FleetId}';
+    arn = arn.replace('${FleetId}', fleetId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type fpga-image to the statement
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format

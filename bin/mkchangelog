@@ -60,15 +60,15 @@ function getUpdatedAccessLevels() {
 }
 
 file="CHANGELOG/$(getVersion).md"
-touch "${file}"
 hasContent=false
 
-[[ -f "$file" ]] && printf "\r\n---\r\n" >> "$file" && hasContent=true
+[[ -f "$file" ]] && printf "\n---\n" >> "$file" && hasContent=true
+touch "${file}"
 
 removedActions=$(getRemovedActions)
 if [ -n "${removedActions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf ":warning: **Removed actions:**\r\n\r\n" >> "$file"
+  printf ":warning: **Removed actions:**\n\n" >> "$file"
   echo "${removedActions}" >> "$file"
   hasContent=true
 fi
@@ -76,7 +76,7 @@ fi
 newServices=$(getNewServices)
 if [ "${newServices}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New services:**\r\n\r\n" >> "$file"
+  printf "**New services:**\n\n" >> "$file"
   echo "${newServices}" >> "$file"
   hasContent=true
 fi
@@ -84,7 +84,7 @@ fi
 newActions=$(getNewActions)
 if [ -n "${newActions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New actions:**\r\n\r\n" >> "$file"
+  printf "**New actions:**\n\n" >> "$file"
   echo "${newActions}" >> "$file"
   hasContent=true
 fi
@@ -92,7 +92,7 @@ fi
 updatedAccessLevels=$(getUpdatedAccessLevels)
 if [ -n "${updatedAccessLevels}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**Updated action access level:**\r\n\r\n" >> "$file"
+  printf "**Updated action access level:**\n\n" >> "$file"
   echo "${updatedAccessLevels}" >> "$file"
   hasContent=true
 fi
@@ -100,7 +100,7 @@ fi
 newResourceTypes=$(getNewResourceTypes)
 if [ -n "${newResourceTypes}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New resource types:**\r\n\r\n" >> "$file"
+  printf "**New resource types:**\n\n" >> "$file"
   echo "${newResourceTypes}" >> "$file"
   hasContent=true
 fi
@@ -108,7 +108,7 @@ fi
 newConditions=$(getNewConditions)
 if [ -n "${newConditions}" ]; then
   [[ "${hasContent}" = true ]] && echo "" >> "$file"
-  printf "**New conditions:**\r\n\r\n" >> "$file"
+  printf "**New conditions:**\n\n" >> "$file"
   echo "${newConditions}" >> "$file"
   hasContent=true
 fi
