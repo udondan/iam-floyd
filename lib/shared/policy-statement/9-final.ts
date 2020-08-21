@@ -2,8 +2,6 @@ import { PolicyStatementWithPrincipal } from './6-principals';
 
 /**
  * Represents a statement in an IAM policy document
- *
- * @internal
  */
 export class PolicyStatement extends PolicyStatementWithPrincipal {
   protected cdkApplied = false; // internally used to check if resources, actions and conditions have already been applied to the policy

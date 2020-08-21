@@ -2,8 +2,6 @@
 
 /**
  * Base class for the Policy Statement
- *
- * @internal
  */
 export class PolicyStatementBase {
   public sid = '';
@@ -11,7 +9,7 @@ export class PolicyStatementBase {
   /**
    * Holds the prefix of the service actions, e.g. `ec2`
    */
-  protected servicePrefix = '';
+  public servicePrefix = '';
 
   constructor(sid?: string) {
     if (typeof sid !== 'undefined') {

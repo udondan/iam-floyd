@@ -4,8 +4,6 @@ import iam = require('@aws-cdk/aws-iam');
 
 /**
  * Base class for the Policy Statement
- *
- * @internal
  */
 export class PolicyStatementBase extends iam.PolicyStatement {
   /**

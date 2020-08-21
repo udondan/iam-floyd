@@ -11,8 +11,6 @@ export interface Condition {
 
 /**
  * A collection of Condition's
- *
- * @internal
  */
 export interface Conditions {
   [key: string]: Condition;
@@ -20,8 +18,6 @@ export interface Conditions {
 
 /**
  * Adds "condition" functionality to the Policy Statement
- *
- * @internal
  */
 export class PolicyStatementWithCondition extends PolicyStatementBase {
   protected conditions: Conditions = {};

@@ -18,8 +18,6 @@ export interface Actions {
 
 /**
  * Adds "action" functionality to the Policy Statement
- *
- * @internal
  */
 export class PolicyStatementWithActions extends PolicyStatementWithCondition {
   protected actionList: Actions = {};
