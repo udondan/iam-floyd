@@ -41,7 +41,12 @@ export class Logs extends PolicyStatement {
     "CreateLogGroup": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html",
       "description": "Creates a new log group with the specified name",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "log-group": {
+          "required": true
+        }
+      }
     },
     "CreateLogStream": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogStream.html",
@@ -251,7 +256,10 @@ export class Logs extends PolicyStatement {
     "PutDestination": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html",
       "description": "Creates or updates a Destination",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ]
     },
     "PutDestinationPolicy": {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html",
@@ -297,6 +305,9 @@ export class Logs extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html",
       "description": "Creates or updates a subscription filter and associates it with the specified log group",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "log-group": {
           "required": true
@@ -742,6 +753,9 @@ export class Logs extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html
    */
   public putDestination() {
@@ -813,6 +827,9 @@ export class Logs extends PolicyStatement {
    * Creates or updates a subscription filter and associates it with the specified log group
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html
    */
