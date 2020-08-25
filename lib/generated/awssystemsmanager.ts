@@ -52,6 +52,12 @@ export class Ssm extends PolicyStatement {
       "resourceTypes": {
         "document": {
           "required": true
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
         }
       }
     },
@@ -62,6 +68,12 @@ export class Ssm extends PolicyStatement {
       "resourceTypes": {
         "document": {
           "required": true
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
         }
       }
     },
@@ -128,8 +140,17 @@ export class Ssm extends PolicyStatement {
       "description": "Grants permission to disassociate a specified SSM document from a specified instance",
       "accessLevel": "Write",
       "resourceTypes": {
+        "association": {
+          "required": false
+        },
         "document": {
-          "required": true
+          "required": false
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
         }
       }
     },
@@ -166,7 +187,10 @@ export class Ssm extends PolicyStatement {
         "parameter": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "DeleteParameters": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html",
@@ -176,7 +200,10 @@ export class Ssm extends PolicyStatement {
         "parameter": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "DeletePatchBaseline": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeletePatchBaseline.html",
@@ -251,8 +278,17 @@ export class Ssm extends PolicyStatement {
       "description": "Grants permission to view details about the specified association for a specified instance or target",
       "accessLevel": "Read",
       "resourceTypes": {
+        "association": {
+          "required": false
+        },
         "document": {
-          "required": true
+          "required": false
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
         }
       }
     },
@@ -314,7 +350,15 @@ export class Ssm extends PolicyStatement {
     "DescribeEffectiveInstanceAssociations": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectiveInstanceAssociations.html",
       "description": "Grants permission to view all current associations for a specified instance",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      }
     },
     "DescribeEffectivePatchesForPatchBaseline": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeEffectivePatchesForPatchBaseline.html",
@@ -329,7 +373,15 @@ export class Ssm extends PolicyStatement {
     "DescribeInstanceAssociationsStatus": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceAssociationsStatus.html",
       "description": "Grants permission to view the status of the associations for a specified instance",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      }
     },
     "DescribeInstanceInformation": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeInstanceInformation.html",
@@ -564,7 +616,10 @@ export class Ssm extends PolicyStatement {
         "parameter": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "GetParameterHistory": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html",
@@ -574,7 +629,10 @@ export class Ssm extends PolicyStatement {
         "parameter": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "GetParameters": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html",
@@ -584,7 +642,10 @@ export class Ssm extends PolicyStatement {
         "parameter": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "GetParametersByPath": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html",
@@ -684,7 +745,15 @@ export class Ssm extends PolicyStatement {
     "ListInstanceAssociations": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
       "description": "Used by SSM Agent to check for new State Manager associations (internal Systems Manager call)",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      }
     },
     "ListInventoryEntries": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListInventoryEntries.html",
@@ -739,7 +808,15 @@ export class Ssm extends PolicyStatement {
     "PutComplianceItems": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutComplianceItems.html",
       "description": "Grants permission to register a compliance type and other compliance details on a specified resource",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      }
     },
     "PutConfigurePackageResult": {
       "url": "",
@@ -875,14 +952,19 @@ export class Ssm extends PolicyStatement {
     "StartAssociationsOnce": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAssociationsOnce.html",
       "description": "Grants permission to run a specified association manually",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "association": {
+          "required": true
+        }
+      }
     },
     "StartAutomationExecution": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_StartAutomationExecution.html",
       "description": "Grants permission to initiate the execution of an Automation document",
       "accessLevel": "Write",
       "resourceTypes": {
-        "document": {
+        "automation-definition": {
           "required": true
         }
       }
@@ -921,7 +1003,21 @@ export class Ssm extends PolicyStatement {
     "UpdateAssociation": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html",
       "description": "Grants permission to update an association and immediately run the association on the specified targets",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "association": {
+          "required": true
+        },
+        "document": {
+          "required": false
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      }
     },
     "UpdateAssociationStatus": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociationStatus.html",
@@ -929,6 +1025,12 @@ export class Ssm extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "document": {
+          "required": true
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
           "required": false
         }
       }
@@ -956,7 +1058,18 @@ export class Ssm extends PolicyStatement {
     "UpdateInstanceAssociationStatus": {
       "url": "",
       "description": "Used by SSM Agent to update the status of the association that it is currently running (internal Systems Manager call)",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "association": {
+          "required": true
+        },
+        "instance": {
+          "required": false
+        },
+        "managed-instance": {
+          "required": false
+        }
+      }
     },
     "UpdateInstanceInformation": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-messageAPIs.html",
@@ -1383,6 +1496,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameter.html
    */
   public deleteParameter() {
@@ -1394,6 +1510,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to delete multiple specified SSM parameters
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DeleteParameters.html
    */
@@ -2080,6 +2199,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameter.html
    */
   public getParameter() {
@@ -2092,6 +2214,9 @@ export class Ssm extends PolicyStatement {
    *
    * Access Level: Read
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameterHistory.html
    */
   public getParameterHistory() {
@@ -2103,6 +2228,9 @@ export class Ssm extends PolicyStatement {
    * Grants permission to view information about multiple specified parameters
    *
    * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParameters.html
    */
@@ -3073,6 +3201,11 @@ export class Ssm extends PolicyStatement {
    * - .createDocument()
    * - .createMaintenanceWindow()
    * - .createPatchBaseline()
+   * - .deleteParameter()
+   * - .deleteParameters()
+   * - .getParameter()
+   * - .getParameterHistory()
+   * - .getParameters()
    * - .putParameter()
    *
    * @param tagKey The tag key to check
@@ -3150,7 +3283,7 @@ export class Ssm extends PolicyStatement {
   }
 
   /**
-   * Filters access by verifying that a user also has access to the default Session Manager configuration document.
+   * Filters access by verifying that a user has permission to access either the default Session Manager configuration document or the custom configuration document specified in a request.
    *
    * https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html
    *
