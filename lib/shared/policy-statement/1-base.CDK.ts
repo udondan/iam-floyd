@@ -9,5 +9,5 @@ export class PolicyStatementBase extends iam.PolicyStatement {
   /**
    * Holds the prefix of the service actions, e.g. `ec2`
    */
-  protected servicePrefix = '';
+  public servicePrefix = '';
 }
