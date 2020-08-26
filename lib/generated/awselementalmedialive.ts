@@ -211,6 +211,16 @@ export class Medialive extends PolicyStatement {
         }
       }
     },
+    "DescribeInputDeviceThumbnail": {
+      "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html",
+      "description": "Grants permission to describe an input device thumbnail",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "input-device": {
+          "required": true
+        }
+      }
+    },
     "DescribeInputSecurityGroup": {
       "url": "https://docs.aws.amazon.com/medialive/latest/ug/edit-input-security-group.html",
       "description": "Grants permission to describe an input security group",
@@ -710,6 +720,18 @@ export class Medialive extends PolicyStatement {
    */
   public toDescribeInputDevice() {
     this.add('medialive:DescribeInputDevice');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe an input device thumbnail
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/medialive/latest/ug/edit-input-device.html
+   */
+  public describeInputDeviceThumbnail() {
+    this.add('medialive:DescribeInputDeviceThumbnail');
     return this;
   }
 

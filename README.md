@@ -15,7 +15,7 @@
 Support for:
 
 - 237 Services<br>
-- 7802 Actions<br>
+- 7805 Actions<br>
 - 770 Resource Types<br>
 - 456 Conditions
 <!-- /stats -->
@@ -549,4 +549,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.48.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.50.0
