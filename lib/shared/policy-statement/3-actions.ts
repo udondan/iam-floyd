@@ -102,7 +102,9 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    *
    * When no value is passed, all actions of the service will be added.
    */
-  public allActions(...rules: (AccessLevel | string)[]) {
+  public allActions(
+    ...rules: (AccessLevel | string)[]
+  ): PolicyStatementWithActions {
     if (rules.length) {
       rules.forEach((rule) => {
         for (const [name, action] of Object.entries(this.actionList)) {

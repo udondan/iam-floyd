@@ -18,7 +18,7 @@ export class All extends PolicyStatement {
   /**
    * Adds all actions to the statement: `actions: '*'`
    */
-  public allActions() {
+  public all() {
     this.add('*');
     return this;
   }

@@ -163,14 +163,20 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateLessThanEquals`
    */
   public ifAwsCurrentTime(
-    value: Date | string,
+    value: Date | string | (Date | string)[],
     operator?: string
   ): PolicyStatementWithCondition {
-    return this.if(
-      'aws:CurrentTime',
-      dateToString(value),
-      operator || 'DateLessThanEquals'
-    );
+    if (typeof (value as Date).getMonth === 'function') {
+      value = (value as Date).toISOString();
+    } else if (Array.isArray(value)) {
+      value = value.map((item) => {
+        if (typeof (item as Date).getMonth === 'function') {
+          item = (item as Date).toISOString();
+        }
+        return item;
+      });
+    }
+    return this.if('aws:CurrentTime', value, operator || 'DateLessThanEquals');
   }
 
   /**
@@ -184,14 +190,20 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param operator Works with [date](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date) and [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `DateLessThanEquals`
    */
   public ifAwsEpochTime(
-    value: number | Date | string,
+    value: number | Date | string | (number | Date | string)[],
     operator?: string
   ): PolicyStatementWithCondition {
-    return this.if(
-      'aws:EpochTime',
-      dateToString(value),
-      operator || 'DateLessThanEquals'
-    );
+    if (typeof (value as Date).getMonth === 'function') {
+      value = (value as Date).toISOString();
+    } else if (Array.isArray(value)) {
+      value = value.map((item) => {
+        if (typeof (item as Date).getMonth === 'function') {
+          item = (item as Date).toISOString();
+        }
+        return item;
+      });
+    }
+    return this.if('aws:EpochTime', value, operator || 'DateLessThanEquals');
   }
 
   /**
@@ -204,8 +216,9 @@ export class PolicyStatementWithCondition extends PolicyStatementBase {
    * @param value Number of seconds
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericLessThan`
    */
+
   public ifAwsMultiFactorAuthAge(
-    value: number,
+    value: number | number[],
     operator?: string
   ): PolicyStatementWithCondition {
     return this.if(
