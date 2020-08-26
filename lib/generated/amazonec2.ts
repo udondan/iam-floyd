@@ -510,6 +510,21 @@ export class Ec2 extends PolicyStatement {
         }
       }
     },
+    "CreateCarrierGateway": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCarrierGateway.html",
+      "description": "Grants permission to create a carrier gateway and provides CSP connectivity to VPC customers.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "carrier-gateway": {
+          "required": true,
+          "conditions": [
+            "aws:RequestTag/${TagKey}",
+            "aws:TagKeys",
+            "ec2:Region"
+          ]
+        }
+      }
+    },
     "CreateClientVpnEndpoint": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateClientVpnEndpoint.html",
       "description": "Grants permission to create a Client VPN endpoint",
@@ -1826,6 +1841,21 @@ export class Ec2 extends PolicyStatement {
       "description": "Grants permission to create a virtual private gateway",
       "accessLevel": "Write"
     },
+    "DeleteCarrierGateway": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCarrierGateway.html",
+      "description": "Grants permission to delete a carrier gateway",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "carrier-gateway": {
+          "required": true,
+          "conditions": [
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}",
+            "aws:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
     "DeleteClientVpnEndpoint": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteClientVpnEndpoint.html",
       "description": "Grants permission to delete a Client VPN endpoint",
@@ -2791,6 +2821,11 @@ export class Ec2 extends PolicyStatement {
     "DescribeCapacityReservations": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCapacityReservations.html",
       "description": "Grants permission to describe one or more Capacity Reservations",
+      "accessLevel": "List"
+    },
+    "DescribeCarrierGateways": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCarrierGateways.html",
+      "description": "Grants permission to describe one or more Carrier Gateways",
       "accessLevel": "List"
     },
     "DescribeClassicLinkInstances": {
@@ -4984,6 +5019,18 @@ export class Ec2 extends PolicyStatement {
         "ec2:ResourceTag/${TagKey}"
       ]
     },
+    "carrier-gateway": {
+      "name": "carrier-gateway",
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html",
+      "arn": "arn:${Partition}:ec2:${Region}:${Account}:carrier-gateway/${CarrierGatewayId}",
+      "conditionKeys": [
+        "aws:RequestTag/${TagKey}",
+        "aws:ResourceTag/${TagKey}",
+        "aws:TagKeys",
+        "ec2:Region",
+        "ec2:ResourceTag/${TagKey}"
+      ]
+    },
     "client-vpn-endpoint": {
       "name": "client-vpn-endpoint",
       "url": "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html",
@@ -6120,6 +6167,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a carrier gateway and provides CSP connectivity to VPC customers.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateCarrierGateway.html
+   */
+  public createCarrierGateway() {
+    this.add('ec2:CreateCarrierGateway');
+    return this;
+  }
+
+  /**
    * Grants permission to create a Client VPN endpoint
    *
    * Access Level: Write
@@ -6761,6 +6820,18 @@ export class Ec2 extends PolicyStatement {
    */
   public createVpnGateway() {
     this.add('ec2:CreateVpnGateway');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a carrier gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCarrierGateway.html
+   */
+  public deleteCarrierGateway() {
+    this.add('ec2:DeleteCarrierGateway');
     return this;
   }
 
@@ -7469,6 +7540,18 @@ export class Ec2 extends PolicyStatement {
    */
   public describeCapacityReservations() {
     this.add('ec2:DescribeCapacityReservations');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe one or more Carrier Gateways
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCarrierGateways.html
+   */
+  public describeCarrierGateways() {
+    this.add('ec2:DescribeCarrierGateways');
     return this;
   }
 
@@ -10526,6 +10609,32 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type carrier-gateway to the statement
+   *
+   * https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html
+   *
+   * @param carrierGatewayId - Identifier for the carrierGatewayId.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
+   * - .ifRegion()
+   * - .ifResourceTag()
+   */
+  public onCarrierGateway(carrierGatewayId: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:ec2:${Region}:${Account}:carrier-gateway/${CarrierGatewayId}';
+    arn = arn.replace('${CarrierGatewayId}', carrierGatewayId);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type client-vpn-endpoint to the statement
    *
    * https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html
@@ -11812,6 +11921,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .copySnapshot()
    * - .createCapacityReservation()
+   * - .createCarrierGateway()
    * - .createClientVpnEndpoint()
    * - .createDhcpOptions()
    * - .createEgressOnlyInternetGateway()
@@ -11850,6 +11960,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - capacity-reservation
+   * - carrier-gateway
    * - client-vpn-endpoint
    * - dedicated-host
    * - dhcp-options
@@ -11957,6 +12068,7 @@ export class Ec2 extends PolicyStatement {
    * - .createTransitGatewayVpcAttachment()
    * - .createVpcEndpoint()
    * - .createVpcPeeringConnection()
+   * - .deleteCarrierGateway()
    * - .deleteClientVpnEndpoint()
    * - .deleteClientVpnRoute()
    * - .deleteCustomerGateway()
@@ -12045,6 +12157,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - capacity-reservation
+   * - carrier-gateway
    * - client-vpn-endpoint
    * - customer-gateway
    * - dedicated-host
@@ -12106,6 +12219,7 @@ export class Ec2 extends PolicyStatement {
    * Applies to actions:
    * - .copySnapshot()
    * - .createCapacityReservation()
+   * - .createCarrierGateway()
    * - .createClientVpnEndpoint()
    * - .createDhcpOptions()
    * - .createEgressOnlyInternetGateway()
@@ -12144,6 +12258,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - capacity-reservation
+   * - carrier-gateway
    * - client-vpn-endpoint
    * - dedicated-host
    * - dhcp-options
@@ -13078,6 +13193,7 @@ export class Ec2 extends PolicyStatement {
    * - .cancelCapacityReservation()
    * - .copySnapshot()
    * - .createCapacityReservation()
+   * - .createCarrierGateway()
    * - .createClientVpnEndpoint()
    * - .createClientVpnRoute()
    * - .createDhcpOptions()
@@ -13120,6 +13236,7 @@ export class Ec2 extends PolicyStatement {
    * - .createVpcEndpointServiceConfiguration()
    * - .createVpcPeeringConnection()
    * - .createVpnConnection()
+   * - .deleteCarrierGateway()
    * - .deleteClientVpnEndpoint()
    * - .deleteClientVpnRoute()
    * - .deleteCustomerGateway()
@@ -13209,6 +13326,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - capacity-reservation
+   * - carrier-gateway
    * - client-vpn-endpoint
    * - customer-gateway
    * - dhcp-options
@@ -13394,6 +13512,7 @@ export class Ec2 extends PolicyStatement {
    * - .createTransitGatewayVpcAttachment()
    * - .createVpcEndpoint()
    * - .createVpcPeeringConnection()
+   * - .deleteCarrierGateway()
    * - .deleteClientVpnEndpoint()
    * - .deleteClientVpnRoute()
    * - .deleteCustomerGateway()
@@ -13482,6 +13601,7 @@ export class Ec2 extends PolicyStatement {
    *
    * Applies to resource types:
    * - capacity-reservation
+   * - carrier-gateway
    * - client-vpn-endpoint
    * - customer-gateway
    * - dedicated-host
