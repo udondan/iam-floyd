@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [autoscaling](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2autoscaling.html).
@@ -1500,7 +1500,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImageId(value: string | string[], operator?: string) {
+  public ifImageId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:ImageId`, value, operator || 'StringLike');
   }
 
@@ -1515,7 +1515,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceType(value: string | string[], operator?: string) {
+  public ifInstanceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:InstanceType`, value, operator || 'StringLike');
   }
 
@@ -1531,7 +1531,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceTypes(value: string | string[], operator?: string) {
+  public ifInstanceTypes(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:InstanceTypes`, value, operator || 'StringLike');
   }
 
@@ -1547,7 +1547,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLaunchConfigurationName(value: string | string[], operator?: string) {
+  public ifLaunchConfigurationName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:LaunchConfigurationName`, value, operator || 'StringLike');
   }
 
@@ -1562,7 +1562,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifLaunchTemplateVersionSpecified(value?: boolean) {
+  public ifLaunchTemplateVersionSpecified(value?: boolean): PolicyStatementWithCondition {
     return this.if(`autoscaling:LaunchTemplateVersionSpecified`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -1579,7 +1579,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLoadBalancerNames(value: string | string[], operator?: string) {
+  public ifLoadBalancerNames(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:LoadBalancerNames`, value, operator || 'StringLike');
   }
 
@@ -1596,7 +1596,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMaxSize(value: number | number[], operator?: string) {
+  public ifMaxSize(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MaxSize`, value, operator || 'NumericEquals');
   }
 
@@ -1611,7 +1611,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMetadataHttpEndpoint(value: string | string[], operator?: string) {
+  public ifMetadataHttpEndpoint(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MetadataHttpEndpoint`, value, operator || 'StringLike');
   }
 
@@ -1626,7 +1626,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string) {
+  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MetadataHttpPutResponseHopLimit`, value, operator || 'NumericEquals');
   }
 
@@ -1641,7 +1641,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMetadataHttpTokens(value: string | string[], operator?: string) {
+  public ifMetadataHttpTokens(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MetadataHttpTokens`, value, operator || 'StringLike');
   }
 
@@ -1658,7 +1658,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMinSize(value: number | number[], operator?: string) {
+  public ifMinSize(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MinSize`, value, operator || 'NumericEquals');
   }
 
@@ -1712,7 +1712,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1727,7 +1727,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifSpotPrice(value: number | number[], operator?: string) {
+  public ifSpotPrice(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:SpotPrice`, value, operator || 'NumericEquals');
   }
 
@@ -1744,7 +1744,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTargetGroupARNs(value: string | string[], operator?: string) {
+  public ifTargetGroupARNs(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:TargetGroupARNs`, value, operator || 'ArnEquals');
   }
 
@@ -1760,7 +1760,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVPCZoneIdentifiers(value: string | string[], operator?: string) {
+  public ifVPCZoneIdentifiers(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:VPCZoneIdentifiers`, value, operator || 'StringLike');
   }
 
@@ -1778,7 +1778,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1830,7 +1830,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1845,7 +1845,7 @@ export class Autoscaling extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

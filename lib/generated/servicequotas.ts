@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [servicequotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_servicequotas.html).
@@ -352,7 +352,7 @@ export class Servicequotas extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifService(value: string | string[], operator?: string) {
+  public ifService(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`servicequotas:service`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [health](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html).
@@ -357,7 +357,7 @@ export class Health extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEventTypeCode(value: string | string[], operator?: string) {
+  public ifEventTypeCode(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`health:eventTypeCode`, value, operator || 'StringLike');
   }
 
@@ -373,7 +373,7 @@ export class Health extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifService(value: string | string[], operator?: string) {
+  public ifService(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`health:service`, value, operator || 'StringLike');
   }
 }

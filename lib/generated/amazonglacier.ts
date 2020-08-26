@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [glacier](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonglacier.html).
@@ -771,7 +771,7 @@ export class Glacier extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifArchiveAgeInDays(value: string | string[], operator?: string) {
+  public ifArchiveAgeInDays(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`glacier:ArchiveAgeInDays`, value, operator || 'StringLike');
   }
 
@@ -783,7 +783,7 @@ export class Glacier extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTagExists(value: string | string[], operator?: string) {
+  public ifResourceTagExists(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`glacier:ResourceTag/`, value, operator || 'StringLike');
   }
 }

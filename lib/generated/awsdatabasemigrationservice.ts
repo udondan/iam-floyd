@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [dms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html).
@@ -1265,7 +1265,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1289,7 +1289,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1312,7 +1312,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -1326,7 +1326,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCertTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifCertTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:cert-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1340,7 +1340,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEndpointTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifEndpointTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:endpoint-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1354,7 +1354,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifEsTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:es-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1368,7 +1368,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRepTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifRepTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:rep-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1387,7 +1387,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifReqTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:req-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1401,7 +1401,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1415,7 +1415,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTaskTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifTaskTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:task-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

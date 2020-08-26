@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html).
@@ -681,7 +681,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagkey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagkey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagkey }`, value, operator || 'StringLike');
   }
 
@@ -701,7 +701,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -715,7 +715,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifBlockPublicPolicy(value?: boolean) {
+  public ifBlockPublicPolicy(value?: boolean): PolicyStatementWithCondition {
     return this.if(`secretsmanager:BlockPublicPolicy`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -731,7 +731,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDescription(value: string | string[], operator?: string) {
+  public ifDescription(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:Description`, value, operator || 'StringLike');
   }
 
@@ -745,7 +745,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifForceDeleteWithoutRecovery(value?: boolean) {
+  public ifForceDeleteWithoutRecovery(value?: boolean): PolicyStatementWithCondition {
     return this.if(`secretsmanager:ForceDeleteWithoutRecovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -761,7 +761,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifKmsKeyId(value: string | string[], operator?: string) {
+  public ifKmsKeyId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:KmsKeyId`, value, operator || 'StringLike');
   }
 
@@ -776,7 +776,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifName(value: string | string[], operator?: string) {
+  public ifName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:Name`, value, operator || 'StringLike');
   }
 
@@ -791,7 +791,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRecoveryWindowInDays(value: number | number[], operator?: string) {
+  public ifRecoveryWindowInDays(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:RecoveryWindowInDays`, value, operator || 'NumericEquals');
   }
 
@@ -826,7 +826,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:ResourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 
@@ -841,7 +841,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifRotationLambdaARN(value: string | string[], operator?: string) {
+  public ifRotationLambdaARN(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:RotationLambdaARN`, value, operator || 'ArnEquals');
   }
 
@@ -871,7 +871,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifSecretId(value: string | string[], operator?: string) {
+  public ifSecretId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:SecretId`, value, operator || 'ArnEquals');
   }
 
@@ -886,7 +886,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersionId(value: string | string[], operator?: string) {
+  public ifVersionId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:VersionId`, value, operator || 'StringLike');
   }
 
@@ -902,7 +902,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersionStage(value: string | string[], operator?: string) {
+  public ifVersionStage(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:VersionStage`, value, operator || 'StringLike');
   }
 
@@ -936,7 +936,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string) {
+  public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnEquals');
   }
 }

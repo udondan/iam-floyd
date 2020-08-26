@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [greengrass](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotgreengrass.html).
@@ -2734,7 +2734,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifAwsCurrentTime(value: Date | string | (Date | string)[], operator?: string) {
+  public ifAwsCurrentTime(value: Date | string | (Date | string)[], operator?: string): PolicyStatementWithCondition {
     if (typeof (value as Date).getMonth === "function") {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {
@@ -2756,7 +2756,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifAwsEpochTime(value: number | Date | string | (number | Date | string)[], operator?: string) {
+  public ifAwsEpochTime(value: number | Date | string | (number | Date | string)[], operator?: string): PolicyStatementWithCondition {
     if (typeof (value as Date).getMonth === "function") {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {
@@ -2778,7 +2778,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifAwsMultiFactorAuthAge(value: number | number[], operator?: string) {
+  public ifAwsMultiFactorAuthAge(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:MultiFactorAuthAge`, value, operator || 'NumericEquals');
   }
 
@@ -2789,7 +2789,7 @@ export class Greengrass extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifAwsMultiFactorAuthPresent(value?: boolean) {
+  public ifAwsMultiFactorAuthPresent(value?: boolean): PolicyStatementWithCondition {
     return this.if(`aws:MultiFactorAuthPresent`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -2815,7 +2815,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -2839,7 +2839,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -2850,7 +2850,7 @@ export class Greengrass extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifAwsSecureTransport(value?: boolean) {
+  public ifAwsSecureTransport(value?: boolean): PolicyStatementWithCondition {
     return this.if(`aws:SecureTransport`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -2876,7 +2876,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -2888,7 +2888,7 @@ export class Greengrass extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsUserAgent(value: string | string[], operator?: string) {
+  public ifAwsUserAgent(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:UserAgent`, value, operator || 'StringLike');
   }
 }

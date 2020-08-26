@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
@@ -168,7 +168,7 @@ export class Macie extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifAwsSourceArn(value: string | string[], operator?: string) {
+  public ifAwsSourceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:SourceArn`, value, operator || 'ArnEquals');
   }
 }

@@ -258,8 +258,12 @@ export function createModule(module: Module): Promise<void> {
   );
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
+  let imports = ['Actions', 'PolicyStatement', 'ResourceTypes'];
+  if (Object.entries(module.conditions!).length) {
+    imports.push('PolicyStatementWithCondition');
+  }
   sourceFile.addImportDeclaration({
-    namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
+    namedImports: imports.sort(),
     moduleSpecifier: '../shared',
   });
 
@@ -445,6 +449,7 @@ export function createModule(module: Module): Promise<void> {
     const method = classDeclaration.addMethod({
       name: methodName,
       scope: Scope.Public,
+      returnType: 'PolicyStatementWithCondition',
     });
 
     var propsKey = `${name[0]}:${name[1]}`;

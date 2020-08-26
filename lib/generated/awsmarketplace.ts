@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [aws-marketplace](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplace.html).
@@ -264,7 +264,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAgreementType(value: string | string[], operator?: string) {
+  public ifAgreementType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws-marketplace:AgreementType`, value, operator || 'StringLike');
   }
 
@@ -274,7 +274,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPartyType(value: string | string[], operator?: string) {
+  public ifPartyType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws-marketplace:PartyType`, value, operator || 'StringLike');
   }
 }
