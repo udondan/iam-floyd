@@ -37,6 +37,11 @@ export class Kafka extends PolicyStatement {
       "description": "Grants permission to delete a cluster.",
       "accessLevel": "Write"
     },
+    "DeleteConfiguration": {
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DeleteConfiguration",
+      "description": "Grants permission to delete the specified MSK configuration.",
+      "accessLevel": "Write"
+    },
     "DescribeCluster": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn.html#DescribeCluster",
       "description": "Grants permission to describe a cluster.",
@@ -144,6 +149,11 @@ export class Kafka extends PolicyStatement {
       "description": "Updates the cluster to the specified Apache Kafka version.",
       "accessLevel": "Write"
     },
+    "UpdateConfiguration": {
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#updateconfiguration",
+      "description": "Grants permission to create a new revision of the configuration.",
+      "accessLevel": "Write"
+    },
     "UpdateMonitoring": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-monitoring.html#UpdateMonitoring",
       "description": "Updates the monitoring settings for the cluster.",
@@ -217,6 +227,18 @@ export class Kafka extends PolicyStatement {
    */
   public deleteCluster() {
     this.add('kafka:DeleteCluster');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete the specified MSK configuration.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#DeleteConfiguration
+   */
+  public deleteConfiguration() {
+    this.add('kafka:DeleteConfiguration');
     return this;
   }
 
@@ -428,6 +450,18 @@ export class Kafka extends PolicyStatement {
    */
   public updateClusterKafkaVersion() {
     this.add('kafka:UpdateClusterKafkaVersion');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new revision of the configuration.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/configurations-arn.html#updateconfiguration
+   */
+  public updateConfiguration() {
+    this.add('kafka:UpdateConfiguration');
     return this;
   }
 
