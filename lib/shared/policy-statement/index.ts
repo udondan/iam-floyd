@@ -1,7 +1,6 @@
 export { Actions } from './3-actions';
 export { ResourceTypes } from './4-resources';
 export { PolicyStatement } from './9-final';
-
 export { PolicyStatementWithPrincipal, Principals } from './6-principals';
 export { PolicyStatementWithEffect, Effect } from './5-effect';
 export { PolicyStatementWithResources } from './4-resources';
