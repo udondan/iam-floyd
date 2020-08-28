@@ -11,6 +11,9 @@ async function run() {
   preparePackageJson();
 
   const project = new Project();
+
+  fixIndex(project);
+
   const files = fs.readdirSync(`${lib}/generated`);
   files.forEach(async (file) => {
     if (file == '.cache') return;
@@ -59,6 +62,24 @@ function formatCode(file: SourceFile) {
     indentSize: 2,
     trimTrailingWhitespace: true,
   });
+}
+
+function fixIndex(project: Project) {
+  try {
+    const file = path.join(
+      __dirname,
+      '../lib/shared/policy-statement/index.ts'
+    );
+    const sourceFile = project.addSourceFileAtPath(file);
+
+    sourceFile.addExportDeclaration({
+      namedExports: ['PolicyStatementWithCDKPrincipal'],
+      moduleSpecifier: './7-principals-CDK',
+    });
+    formatCode(sourceFile);
+  } catch (e) {
+    throw e;
+  }
 }
 
 function fixModule(project: Project, file: string) {
