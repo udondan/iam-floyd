@@ -52,6 +52,8 @@ There are two different package variants available:
 	* [notResources](#notResources)
 	* [notPrincipals](#notPrincipals)
 	* [for*](#for)
+* [Collections](#Collections)
+	* [allowEc2InstanceDeleteByOwner](#allowEc2InstanceDeleteByOwner)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -514,6 +516,27 @@ new statement.Sts()
     new iam.ServicePrincipal('lambda.amazonaws.com')
   )
 ```
+
+## <a name='Collections'></a>Collections
+
+The package provides commonly used statement collections. These can be called  via `new statement.Collection().allowEc2InstanceDeleteByOwner()`. Collections return a list of statements, which then can be used in a policy like this:
+
+```typescript
+const policy = {
+  Version: '2012-10-17',
+  Statement: [
+    ...new statement.Collection().allowEc2InstanceDeleteByOwner(),
+  ],
+}
+```
+
+Available collections are:
+
+- **allowEc2InstanceDeleteByOwner**: Allows stopping EC2 instance only for the user who started them
+
+### <a name='allowEc2InstanceDeleteByOwner'></a>allowEc2InstanceDeleteByOwner
+
+Allows stopping EC2 instance only for the user who started them.
 
 ## <a name='Floyd'></a>Floyd?
 

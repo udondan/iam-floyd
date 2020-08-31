@@ -22,7 +22,7 @@ function gitDiffModules() {
 }
 
 function gitDiffIndex() {
-  getDiff lib/index.ts
+  getDiff lib/generated/index.ts
 }
 
 function getVersion() {
