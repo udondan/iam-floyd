@@ -21,6 +21,7 @@ async function run() {
   const files = fs.readdirSync(`${lib}/generated`);
   files.forEach(async (file) => {
     if (file == '.cache') return;
+    if (file == 'index.ts') return;
     if (!file.endsWith('.ts')) return;
     if (file.endsWith('.d.ts')) return;
 
