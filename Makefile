@@ -26,7 +26,6 @@ package: build
 
 cdk:
 	@echo -e "$(TARGET_COLOR)Running cdk$(NO_COLOR)"
-	@npm i @aws-cdk/aws-iam
 	@npx ts-node bin/mkcdk.ts
 
 test:
