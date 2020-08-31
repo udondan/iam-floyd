@@ -11,11 +11,11 @@ export function allowEc2InstanceDeleteByOwner(tag?: string) {
   return [
     new statement.Ec2()
       .allow()
-      .startInstances()
+      .toStartInstances()
       .ifAwsRequestTag(tagName, '${aws:username}'),
     new statement.Ec2()
       .allow()
-      .stopInstances()
+      .toStopInstances()
       .ifResourceTag(tagName, '${aws:username}'),
   ];
 }
