@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [freertos](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html).
@@ -119,7 +119,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public createSoftwareConfiguration() {
+  public toCreateSoftwareConfiguration() {
     this.add('freertos:CreateSoftwareConfiguration');
     return this;
   }
@@ -131,7 +131,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public deleteSoftwareConfiguration() {
+  public toDeleteSoftwareConfiguration() {
     this.add('freertos:DeleteSoftwareConfiguration');
     return this;
   }
@@ -143,7 +143,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public describeHardwarePlatform() {
+  public toDescribeHardwarePlatform() {
     this.add('freertos:DescribeHardwarePlatform');
     return this;
   }
@@ -155,7 +155,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public describeSoftwareConfiguration() {
+  public toDescribeSoftwareConfiguration() {
     this.add('freertos:DescribeSoftwareConfiguration');
     return this;
   }
@@ -167,7 +167,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public getSoftwareURL() {
+  public toGetSoftwareURL() {
     this.add('freertos:GetSoftwareURL');
     return this;
   }
@@ -179,7 +179,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public getSoftwareURLForConfiguration() {
+  public toGetSoftwareURLForConfiguration() {
     this.add('freertos:GetSoftwareURLForConfiguration');
     return this;
   }
@@ -191,7 +191,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listFreeRTOSVersions() {
+  public toListFreeRTOSVersions() {
     this.add('freertos:ListFreeRTOSVersions');
     return this;
   }
@@ -203,7 +203,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listHardwarePlatforms() {
+  public toListHardwarePlatforms() {
     this.add('freertos:ListHardwarePlatforms');
     return this;
   }
@@ -215,7 +215,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listHardwareVendors() {
+  public toListHardwareVendors() {
     this.add('freertos:ListHardwareVendors');
     return this;
   }
@@ -227,7 +227,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public listSoftwareConfigurations() {
+  public toListSoftwareConfigurations() {
     this.add('freertos:ListSoftwareConfigurations');
     return this;
   }
@@ -239,7 +239,7 @@ export class Freertos extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html
    */
-  public updateSoftwareConfiguration() {
+  public toUpdateSoftwareConfiguration() {
     this.add('freertos:UpdateSoftwareConfiguration');
     return this;
   }
@@ -272,13 +272,13 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
    *
    * Applies to actions:
-   * - .createSoftwareConfiguration()
+   * - .toCreateSoftwareConfiguration()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -294,7 +294,7 @@ export class Freertos extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -304,12 +304,12 @@ export class Freertos extends PolicyStatement {
    * https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/
    *
    * Applies to actions:
-   * - .createSoftwareConfiguration()
+   * - .toCreateSoftwareConfiguration()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -184,7 +184,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_AcceptInvitation.html
    */
-  public acceptInvitation() {
+  public toAcceptInvitation() {
     this.add('detective:AcceptInvitation');
     return this;
   }
@@ -196,7 +196,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateGraph.html
    */
-  public createGraph() {
+  public toCreateGraph() {
     this.add('detective:CreateGraph');
     return this;
   }
@@ -208,7 +208,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_CreateMembers.html
    */
-  public createMembers() {
+  public toCreateMembers() {
     this.add('detective:CreateMembers');
     return this;
   }
@@ -220,7 +220,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteGraph.html
    */
-  public deleteGraph() {
+  public toDeleteGraph() {
     this.add('detective:DeleteGraph');
     return this;
   }
@@ -232,7 +232,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DeleteMembers.html
    */
-  public deleteMembers() {
+  public toDeleteMembers() {
     this.add('detective:DeleteMembers');
     return this;
   }
@@ -244,7 +244,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_DisassociateMembership.html
    */
-  public disassociateMembership() {
+  public toDisassociateMembership() {
     this.add('detective:DisassociateMembership');
     return this;
   }
@@ -254,7 +254,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getFreeTrialEligibility() {
+  public toGetFreeTrialEligibility() {
     this.add('detective:GetFreeTrialEligibility');
     return this;
   }
@@ -264,7 +264,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getGraphIngestState() {
+  public toGetGraphIngestState() {
     this.add('detective:GetGraphIngestState');
     return this;
   }
@@ -276,7 +276,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_GetMembers.html
    */
-  public getMembers() {
+  public toGetMembers() {
     this.add('detective:GetMembers');
     return this;
   }
@@ -286,7 +286,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getPricingInformation() {
+  public toGetPricingInformation() {
     this.add('detective:GetPricingInformation');
     return this;
   }
@@ -296,7 +296,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getUsageInformation() {
+  public toGetUsageInformation() {
     this.add('detective:GetUsageInformation');
     return this;
   }
@@ -308,7 +308,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListGraphs.html
    */
-  public listGraphs() {
+  public toListGraphs() {
     this.add('detective:ListGraphs');
     return this;
   }
@@ -320,7 +320,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListInvitations.html
    */
-  public listInvitations() {
+  public toListInvitations() {
     this.add('detective:ListInvitations');
     return this;
   }
@@ -332,7 +332,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_ListMembers.html
    */
-  public listMembers() {
+  public toListMembers() {
     this.add('detective:ListMembers');
     return this;
   }
@@ -344,7 +344,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_RejectInvitation.html
    */
-  public rejectInvitation() {
+  public toRejectInvitation() {
     this.add('detective:RejectInvitation');
     return this;
   }
@@ -354,7 +354,7 @@ export class Detective extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public searchGraph() {
+  public toSearchGraph() {
     this.add('detective:SearchGraph');
     return this;
   }
@@ -366,7 +366,7 @@ export class Detective extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/detective/latest/APIReference/API_StartMonitoringMember.html
    */
-  public startMonitoringMember() {
+  public toStartMonitoringMember() {
     this.add('detective:StartMonitoringMember');
     return this;
   }

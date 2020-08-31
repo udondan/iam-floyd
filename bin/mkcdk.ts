@@ -6,11 +6,18 @@ import { Project, SourceFile } from 'ts-morph';
 
 const lib = path.join(__dirname, '../lib');
 
+interface Packages {
+  [key: string]: string;
+}
+
 async function run() {
   swapFiles();
   preparePackageJson();
 
   const project = new Project();
+
+  fixIndex(project);
+
   const files = fs.readdirSync(`${lib}/generated`);
   files.forEach(async (file) => {
     if (file == '.cache') return;
@@ -61,6 +68,24 @@ function formatCode(file: SourceFile) {
   });
 }
 
+function fixIndex(project: Project) {
+  try {
+    const file = path.join(
+      __dirname,
+      '../lib/shared/policy-statement/index.ts'
+    );
+    const sourceFile = project.addSourceFileAtPath(file);
+
+    sourceFile.addExportDeclaration({
+      namedExports: ['PolicyStatementWithCDKPrincipal'],
+      moduleSpecifier: './7-principals-CDK',
+    });
+    formatCode(sourceFile);
+  } catch (e) {
+    throw e;
+  }
+}
+
 function fixModule(project: Project, file: string) {
   try {
     const sourceFile = project.addSourceFileAtPath(file);
@@ -70,10 +95,10 @@ function fixModule(project: Project, file: string) {
       namedImports: ['PolicyStatementProps'],
       moduleSpecifier: '@aws-cdk/aws-iam',
     });
-    const oldConstructoor = classDeclaration.getConstructors()[0];
-    const desc = oldConstructoor.getJsDocs()[0].getDescription();
+    const oldConstructor = classDeclaration.getConstructors()[0];
+    const desc = oldConstructor.getJsDocs()[0].getDescription();
 
-    oldConstructoor.remove();
+    oldConstructor.remove();
     const constructor = classDeclaration.addConstructor({});
     constructor.addParameter({
       name: 'props',
@@ -97,6 +122,8 @@ function preparePackageJson() {
   jsonData.name = 'cdk-iam-floyd';
   jsonData.description += ' for AWS CDK';
   (jsonData.keywords as string[]).push('cdk', 'aws-cdk');
+
+  (jsonData.dependencies as Packages)['@aws-cdk/aws-iam'] = '^1.30.0';
 
   jsonData.jsii.targets = {
     python: {

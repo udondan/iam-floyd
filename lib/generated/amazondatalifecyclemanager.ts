@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [dlm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html).
@@ -114,7 +114,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html
    */
-  public createLifecyclePolicy() {
+  public toCreateLifecyclePolicy() {
     this.add('dlm:CreateLifecyclePolicy');
     return this;
   }
@@ -126,7 +126,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html
    */
-  public deleteLifecyclePolicy() {
+  public toDeleteLifecyclePolicy() {
     this.add('dlm:DeleteLifecyclePolicy');
     return this;
   }
@@ -138,7 +138,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html
    */
-  public getLifecyclePolicies() {
+  public toGetLifecyclePolicies() {
     this.add('dlm:GetLifecyclePolicies');
     return this;
   }
@@ -150,7 +150,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html
    */
-  public getLifecyclePolicy() {
+  public toGetLifecyclePolicy() {
     this.add('dlm:GetLifecyclePolicy');
     return this;
   }
@@ -162,7 +162,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('dlm:ListTagsForResource');
     return this;
   }
@@ -174,7 +174,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('dlm:TagResource');
     return this;
   }
@@ -186,7 +186,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('dlm:UntagResource');
     return this;
   }
@@ -198,7 +198,7 @@ export class Dlm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html
    */
-  public updateLifecyclePolicy() {
+  public toUpdateLifecyclePolicy() {
     this.add('dlm:UpdateLifecyclePolicy');
     return this;
   }
@@ -231,13 +231,13 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createLifecyclePolicy()
+   * - .toCreateLifecyclePolicy()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -253,7 +253,7 @@ export class Dlm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -263,12 +263,12 @@ export class Dlm extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createLifecyclePolicy()
+   * - .toCreateLifecyclePolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

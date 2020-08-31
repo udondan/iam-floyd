@@ -75,7 +75,7 @@ export class Honeycode extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association
    */
-  public approveTeamAssociation() {
+  public toApproveTeamAssociation() {
     this.add('honeycode:ApproveTeamAssociation');
     return this;
   }
@@ -87,7 +87,7 @@ export class Honeycode extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_GetScreenData.html
    */
-  public getScreenData() {
+  public toGetScreenData() {
     this.add('honeycode:GetScreenData');
     return this;
   }
@@ -99,7 +99,7 @@ export class Honeycode extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_InvokeScreenAutomation.html
    */
-  public invokeScreenAutomation() {
+  public toInvokeScreenAutomation() {
     this.add('honeycode:InvokeScreenAutomation');
     return this;
   }
@@ -111,7 +111,7 @@ export class Honeycode extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations
    */
-  public listTeamAssociations() {
+  public toListTeamAssociations() {
     this.add('honeycode:ListTeamAssociations');
     return this;
   }
@@ -123,7 +123,7 @@ export class Honeycode extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association
    */
-  public rejectTeamAssociation() {
+  public toRejectTeamAssociation() {
     this.add('honeycode:RejectTeamAssociation');
     return this;
   }

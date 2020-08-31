@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [lex](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlex.html).
@@ -519,7 +519,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html
    */
-  public createBotVersion() {
+  public toCreateBotVersion() {
     this.add('lex:CreateBotVersion');
     return this;
   }
@@ -531,7 +531,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateIntentVersion.html
    */
-  public createIntentVersion() {
+  public toCreateIntentVersion() {
     this.add('lex:CreateIntentVersion');
     return this;
   }
@@ -543,7 +543,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_CreateSlotTypeVersion.html
    */
-  public createSlotTypeVersion() {
+  public toCreateSlotTypeVersion() {
     this.add('lex:CreateSlotTypeVersion');
     return this;
   }
@@ -555,7 +555,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBot.html
    */
-  public deleteBot() {
+  public toDeleteBot() {
     this.add('lex:DeleteBot');
     return this;
   }
@@ -567,7 +567,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotAlias.html
    */
-  public deleteBotAlias() {
+  public toDeleteBotAlias() {
     this.add('lex:DeleteBotAlias');
     return this;
   }
@@ -579,7 +579,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotChannelAssociation.html
    */
-  public deleteBotChannelAssociation() {
+  public toDeleteBotChannelAssociation() {
     this.add('lex:DeleteBotChannelAssociation');
     return this;
   }
@@ -591,7 +591,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotVersion.html
    */
-  public deleteBotVersion() {
+  public toDeleteBotVersion() {
     this.add('lex:DeleteBotVersion');
     return this;
   }
@@ -603,7 +603,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntent.html
    */
-  public deleteIntent() {
+  public toDeleteIntent() {
     this.add('lex:DeleteIntent');
     return this;
   }
@@ -615,7 +615,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntentVersion.html
    */
-  public deleteIntentVersion() {
+  public toDeleteIntentVersion() {
     this.add('lex:DeleteIntentVersion');
     return this;
   }
@@ -627,7 +627,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_DeleteSession.html
    */
-  public deleteSession() {
+  public toDeleteSession() {
     this.add('lex:DeleteSession');
     return this;
   }
@@ -639,7 +639,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotType.html
    */
-  public deleteSlotType() {
+  public toDeleteSlotType() {
     this.add('lex:DeleteSlotType');
     return this;
   }
@@ -651,7 +651,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteSlotTypeVersion.html
    */
-  public deleteSlotTypeVersion() {
+  public toDeleteSlotTypeVersion() {
     this.add('lex:DeleteSlotTypeVersion');
     return this;
   }
@@ -663,7 +663,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_DeleteUtterances.html
    */
-  public deleteUtterances() {
+  public toDeleteUtterances() {
     this.add('lex:DeleteUtterances');
     return this;
   }
@@ -675,7 +675,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBot.html
    */
-  public getBot() {
+  public toGetBot() {
     this.add('lex:GetBot');
     return this;
   }
@@ -687,7 +687,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAlias.html
    */
-  public getBotAlias() {
+  public toGetBotAlias() {
     this.add('lex:GetBotAlias');
     return this;
   }
@@ -699,7 +699,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotAliases.html
    */
-  public getBotAliases() {
+  public toGetBotAliases() {
     this.add('lex:GetBotAliases');
     return this;
   }
@@ -711,7 +711,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociation.html
    */
-  public getBotChannelAssociation() {
+  public toGetBotChannelAssociation() {
     this.add('lex:GetBotChannelAssociation');
     return this;
   }
@@ -723,7 +723,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociations.html
    */
-  public getBotChannelAssociations() {
+  public toGetBotChannelAssociations() {
     this.add('lex:GetBotChannelAssociations');
     return this;
   }
@@ -735,7 +735,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBotVersions.html
    */
-  public getBotVersions() {
+  public toGetBotVersions() {
     this.add('lex:GetBotVersions');
     return this;
   }
@@ -747,7 +747,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBots.html
    */
-  public getBots() {
+  public toGetBots() {
     this.add('lex:GetBots');
     return this;
   }
@@ -759,7 +759,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntent.html
    */
-  public getBuiltinIntent() {
+  public toGetBuiltinIntent() {
     this.add('lex:GetBuiltinIntent');
     return this;
   }
@@ -771,7 +771,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinIntents.html
    */
-  public getBuiltinIntents() {
+  public toGetBuiltinIntents() {
     this.add('lex:GetBuiltinIntents');
     return this;
   }
@@ -783,7 +783,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinSlotTypes.html
    */
-  public getBuiltinSlotTypes() {
+  public toGetBuiltinSlotTypes() {
     this.add('lex:GetBuiltinSlotTypes');
     return this;
   }
@@ -795,7 +795,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetExport.html
    */
-  public getExport() {
+  public toGetExport() {
     this.add('lex:GetExport');
     return this;
   }
@@ -807,7 +807,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetImport.html
    */
-  public getImport() {
+  public toGetImport() {
     this.add('lex:GetImport');
     return this;
   }
@@ -819,7 +819,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntent.html
    */
-  public getIntent() {
+  public toGetIntent() {
     this.add('lex:GetIntent');
     return this;
   }
@@ -831,7 +831,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntentVersions.html
    */
-  public getIntentVersions() {
+  public toGetIntentVersions() {
     this.add('lex:GetIntentVersions');
     return this;
   }
@@ -843,7 +843,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetIntents.html
    */
-  public getIntents() {
+  public toGetIntents() {
     this.add('lex:GetIntents');
     return this;
   }
@@ -855,7 +855,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_GetSession.html
    */
-  public getSession() {
+  public toGetSession() {
     this.add('lex:GetSession');
     return this;
   }
@@ -867,7 +867,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotType.html
    */
-  public getSlotType() {
+  public toGetSlotType() {
     this.add('lex:GetSlotType');
     return this;
   }
@@ -879,7 +879,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypeVersions.html
    */
-  public getSlotTypeVersions() {
+  public toGetSlotTypeVersions() {
     this.add('lex:GetSlotTypeVersions');
     return this;
   }
@@ -891,7 +891,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypes.html
    */
-  public getSlotTypes() {
+  public toGetSlotTypes() {
     this.add('lex:GetSlotTypes');
     return this;
   }
@@ -903,7 +903,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_GetUtterancesView.html
    */
-  public getUtterancesView() {
+  public toGetUtterancesView() {
     this.add('lex:GetUtterancesView');
     return this;
   }
@@ -915,7 +915,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('lex:ListTagsForResource');
     return this;
   }
@@ -927,7 +927,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html
    */
-  public postContent() {
+  public toPostContent() {
     this.add('lex:PostContent');
     return this;
   }
@@ -939,7 +939,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html
    */
-  public postText() {
+  public toPostText() {
     this.add('lex:PostText');
     return this;
   }
@@ -955,7 +955,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html
    */
-  public putBot() {
+  public toPutBot() {
     this.add('lex:PutBot');
     return this;
   }
@@ -971,7 +971,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutBotAlias.html
    */
-  public putBotAlias() {
+  public toPutBotAlias() {
     this.add('lex:PutBotAlias');
     return this;
   }
@@ -983,7 +983,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutIntent.html
    */
-  public putIntent() {
+  public toPutIntent() {
     this.add('lex:PutIntent');
     return this;
   }
@@ -995,7 +995,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PutSession.html
    */
-  public putSession() {
+  public toPutSession() {
     this.add('lex:PutSession');
     return this;
   }
@@ -1007,7 +1007,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_PutSlotType.html
    */
-  public putSlotType() {
+  public toPutSlotType() {
     this.add('lex:PutSlotType');
     return this;
   }
@@ -1019,7 +1019,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_StartImport.html
    */
-  public startImport() {
+  public toStartImport() {
     this.add('lex:StartImport');
     return this;
   }
@@ -1035,7 +1035,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('lex:TagResource');
     return this;
   }
@@ -1051,7 +1051,7 @@ export class Lex extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/lex/latest/dg/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('lex:UntagResource');
     return this;
   }
@@ -1198,16 +1198,16 @@ export class Lex extends PolicyStatement {
    * Filters access based on the tags in the request.
    *
    * Applies to actions:
-   * - .putBot()
-   * - .putBotAlias()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toPutBot()
+   * - .toPutBotAlias()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1224,7 +1224,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1232,15 +1232,15 @@ export class Lex extends PolicyStatement {
    * Filters access based on the set of tag keys in the request.
    *
    * Applies to actions:
-   * - .putBot()
-   * - .putBotAlias()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toPutBot()
+   * - .toPutBotAlias()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -1250,7 +1250,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssociatedIntents(value: string | string[], operator?: string) {
+  public ifAssociatedIntents(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`lex:associatedIntents`, value, operator || 'StringLike');
   }
 
@@ -1260,7 +1260,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssociatedSlotTypes(value: string | string[], operator?: string) {
+  public ifAssociatedSlotTypes(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`lex:associatedSlotTypes`, value, operator || 'StringLike');
   }
 
@@ -1270,7 +1270,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChannelType(value: string | string[], operator?: string) {
+  public ifChannelType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`lex:channelType`, value, operator || 'StringLike');
   }
 }

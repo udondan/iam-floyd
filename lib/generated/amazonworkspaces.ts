@@ -295,7 +295,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AssociateIpGroups.html
    */
-  public associateIpGroups() {
+  public toAssociateIpGroups() {
     this.add('workspaces:AssociateIpGroups');
     return this;
   }
@@ -307,7 +307,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_AuthorizeIpRules.html
    */
-  public authorizeIpRules() {
+  public toAuthorizeIpRules() {
     this.add('workspaces:AuthorizeIpRules');
     return this;
   }
@@ -319,7 +319,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateIpGroup.html
    */
-  public createIpGroup() {
+  public toCreateIpGroup() {
     this.add('workspaces:CreateIpGroup');
     return this;
   }
@@ -331,7 +331,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateTags.html
    */
-  public createTags() {
+  public toCreateTags() {
     this.add('workspaces:CreateTags');
     return this;
   }
@@ -343,7 +343,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_CreateWorkspaces.html
    */
-  public createWorkspaces() {
+  public toCreateWorkspaces() {
     this.add('workspaces:CreateWorkspaces');
     return this;
   }
@@ -355,7 +355,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteIpGroup.html
    */
-  public deleteIpGroup() {
+  public toDeleteIpGroup() {
     this.add('workspaces:DeleteIpGroup');
     return this;
   }
@@ -367,7 +367,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteTags.html
    */
-  public deleteTags() {
+  public toDeleteTags() {
     this.add('workspaces:DeleteTags');
     return this;
   }
@@ -379,7 +379,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DeleteWorkspaceImage.html
    */
-  public deleteWorkspaceImage() {
+  public toDeleteWorkspaceImage() {
     this.add('workspaces:DeleteWorkspaceImage');
     return this;
   }
@@ -391,7 +391,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccount.html
    */
-  public describeAccount() {
+  public toDescribeAccount() {
     this.add('workspaces:DescribeAccount');
     return this;
   }
@@ -403,7 +403,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeAccountModifications.html
    */
-  public describeAccountModifications() {
+  public toDescribeAccountModifications() {
     this.add('workspaces:DescribeAccountModifications');
     return this;
   }
@@ -415,7 +415,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeClientProperties.html
    */
-  public describeClientProperties() {
+  public toDescribeClientProperties() {
     this.add('workspaces:DescribeClientProperties');
     return this;
   }
@@ -427,7 +427,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeIpGroups.html
    */
-  public describeIpGroups() {
+  public toDescribeIpGroups() {
     this.add('workspaces:DescribeIpGroups');
     return this;
   }
@@ -439,7 +439,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeTags.html
    */
-  public describeTags() {
+  public toDescribeTags() {
     this.add('workspaces:DescribeTags');
     return this;
   }
@@ -451,7 +451,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceBundles.html
    */
-  public describeWorkspaceBundles() {
+  public toDescribeWorkspaceBundles() {
     this.add('workspaces:DescribeWorkspaceBundles');
     return this;
   }
@@ -463,7 +463,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html
    */
-  public describeWorkspaceDirectories() {
+  public toDescribeWorkspaceDirectories() {
     this.add('workspaces:DescribeWorkspaceDirectories');
     return this;
   }
@@ -475,7 +475,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html
    */
-  public describeWorkspaceImages() {
+  public toDescribeWorkspaceImages() {
     this.add('workspaces:DescribeWorkspaceImages');
     return this;
   }
@@ -487,7 +487,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html
    */
-  public describeWorkspaces() {
+  public toDescribeWorkspaces() {
     this.add('workspaces:DescribeWorkspaces');
     return this;
   }
@@ -499,7 +499,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspacesConnectionStatus.html
    */
-  public describeWorkspacesConnectionStatus() {
+  public toDescribeWorkspacesConnectionStatus() {
     this.add('workspaces:DescribeWorkspacesConnectionStatus');
     return this;
   }
@@ -511,7 +511,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_DisassociateIpGroups.html
    */
-  public disassociateIpGroups() {
+  public toDisassociateIpGroups() {
     this.add('workspaces:DisassociateIpGroups');
     return this;
   }
@@ -523,7 +523,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ImportWorkspaceImage.html
    */
-  public importWorkspaceImage() {
+  public toImportWorkspaceImage() {
     this.add('workspaces:ImportWorkspaceImage');
     return this;
   }
@@ -535,7 +535,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ListAvailableManagementCidrRanges.html
    */
-  public listAvailableManagementCidrRanges() {
+  public toListAvailableManagementCidrRanges() {
     this.add('workspaces:ListAvailableManagementCidrRanges');
     return this;
   }
@@ -547,7 +547,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyAccount.html
    */
-  public modifyAccount() {
+  public toModifyAccount() {
     this.add('workspaces:ModifyAccount');
     return this;
   }
@@ -559,7 +559,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyClientProperties.html
    */
-  public modifyClientProperties() {
+  public toModifyClientProperties() {
     this.add('workspaces:ModifyClientProperties');
     return this;
   }
@@ -571,7 +571,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceProperties.html
    */
-  public modifyWorkspaceProperties() {
+  public toModifyWorkspaceProperties() {
     this.add('workspaces:ModifyWorkspaceProperties');
     return this;
   }
@@ -583,7 +583,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_ModifyWorkspaceState.html
    */
-  public modifyWorkspaceState() {
+  public toModifyWorkspaceState() {
     this.add('workspaces:ModifyWorkspaceState');
     return this;
   }
@@ -595,7 +595,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RebootWorkspaces.html
    */
-  public rebootWorkspaces() {
+  public toRebootWorkspaces() {
     this.add('workspaces:RebootWorkspaces');
     return this;
   }
@@ -607,7 +607,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RebuildWorkspaces.html
    */
-  public rebuildWorkspaces() {
+  public toRebuildWorkspaces() {
     this.add('workspaces:RebuildWorkspaces');
     return this;
   }
@@ -619,7 +619,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_RevokeIpRules.html
    */
-  public revokeIpRules() {
+  public toRevokeIpRules() {
     this.add('workspaces:RevokeIpRules');
     return this;
   }
@@ -631,7 +631,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_StartWorkspaces.html
    */
-  public startWorkspaces() {
+  public toStartWorkspaces() {
     this.add('workspaces:StartWorkspaces');
     return this;
   }
@@ -643,7 +643,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_StopWorkspaces.html
    */
-  public stopWorkspaces() {
+  public toStopWorkspaces() {
     this.add('workspaces:StopWorkspaces');
     return this;
   }
@@ -655,7 +655,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_TerminateWorkspaces.html
    */
-  public terminateWorkspaces() {
+  public toTerminateWorkspaces() {
     this.add('workspaces:TerminateWorkspaces');
     return this;
   }
@@ -667,7 +667,7 @@ export class Workspaces extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/workspaces/latest/api/API_UpdateRulesOfIpGroup.html
    */
-  public updateRulesOfIpGroup() {
+  public toUpdateRulesOfIpGroup() {
     this.add('workspaces:UpdateRulesOfIpGroup');
     return this;
   }

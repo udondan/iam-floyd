@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [dms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdatabasemigrationservice.html).
@@ -540,7 +540,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource() {
+  public toAddTagsToResource() {
     this.add('dms:AddTagsToResource');
     return this;
   }
@@ -552,7 +552,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ApplyPendingMaintenanceAction.html
    */
-  public applyPendingMaintenanceAction() {
+  public toApplyPendingMaintenanceAction() {
     this.add('dms:ApplyPendingMaintenanceAction');
     return this;
   }
@@ -569,7 +569,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html
    */
-  public createEndpoint() {
+  public toCreateEndpoint() {
     this.add('dms:CreateEndpoint');
     return this;
   }
@@ -586,7 +586,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEventSubscription.html
    */
-  public createEventSubscription() {
+  public toCreateEventSubscription() {
     this.add('dms:CreateEventSubscription');
     return this;
   }
@@ -603,7 +603,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html
    */
-  public createReplicationInstance() {
+  public toCreateReplicationInstance() {
     this.add('dms:CreateReplicationInstance');
     return this;
   }
@@ -620,7 +620,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html
    */
-  public createReplicationSubnetGroup() {
+  public toCreateReplicationSubnetGroup() {
     this.add('dms:CreateReplicationSubnetGroup');
     return this;
   }
@@ -637,7 +637,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html
    */
-  public createReplicationTask() {
+  public toCreateReplicationTask() {
     this.add('dms:CreateReplicationTask');
     return this;
   }
@@ -649,7 +649,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteCertificate.html
    */
-  public deleteCertificate() {
+  public toDeleteCertificate() {
     this.add('dms:DeleteCertificate');
     return this;
   }
@@ -661,7 +661,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEndpoint.html
    */
-  public deleteEndpoint() {
+  public toDeleteEndpoint() {
     this.add('dms:DeleteEndpoint');
     return this;
   }
@@ -673,7 +673,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEventSubscription.html
    */
-  public deleteEventSubscription() {
+  public toDeleteEventSubscription() {
     this.add('dms:DeleteEventSubscription');
     return this;
   }
@@ -685,7 +685,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationInstance.html
    */
-  public deleteReplicationInstance() {
+  public toDeleteReplicationInstance() {
     this.add('dms:DeleteReplicationInstance');
     return this;
   }
@@ -697,7 +697,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html
    */
-  public deleteReplicationSubnetGroup() {
+  public toDeleteReplicationSubnetGroup() {
     this.add('dms:DeleteReplicationSubnetGroup');
     return this;
   }
@@ -709,7 +709,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html
    */
-  public deleteReplicationTask() {
+  public toDeleteReplicationTask() {
     this.add('dms:DeleteReplicationTask');
     return this;
   }
@@ -721,7 +721,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html
    */
-  public describeAccountAttributes() {
+  public toDescribeAccountAttributes() {
     this.add('dms:DescribeAccountAttributes');
     return this;
   }
@@ -733,7 +733,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html
    */
-  public describeCertificates() {
+  public toDescribeCertificates() {
     this.add('dms:DescribeCertificates');
     return this;
   }
@@ -745,7 +745,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConnections.html
    */
-  public describeConnections() {
+  public toDescribeConnections() {
     this.add('dms:DescribeConnections');
     return this;
   }
@@ -757,7 +757,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointTypes.html
    */
-  public describeEndpointTypes() {
+  public toDescribeEndpointTypes() {
     this.add('dms:DescribeEndpointTypes');
     return this;
   }
@@ -769,7 +769,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpoints.html
    */
-  public describeEndpoints() {
+  public toDescribeEndpoints() {
     this.add('dms:DescribeEndpoints');
     return this;
   }
@@ -781,7 +781,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventCategories.html
    */
-  public describeEventCategories() {
+  public toDescribeEventCategories() {
     this.add('dms:DescribeEventCategories');
     return this;
   }
@@ -793,7 +793,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventSubscriptions.html
    */
-  public describeEventSubscriptions() {
+  public toDescribeEventSubscriptions() {
     this.add('dms:DescribeEventSubscriptions');
     return this;
   }
@@ -805,7 +805,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEvents.html
    */
-  public describeEvents() {
+  public toDescribeEvents() {
     this.add('dms:DescribeEvents');
     return this;
   }
@@ -817,7 +817,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeOrderableReplicationInstances.html
    */
-  public describeOrderableReplicationInstances() {
+  public toDescribeOrderableReplicationInstances() {
     this.add('dms:DescribeOrderableReplicationInstances');
     return this;
   }
@@ -829,7 +829,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRefreshSchemasStatus.html
    */
-  public describeRefreshSchemasStatus() {
+  public toDescribeRefreshSchemasStatus() {
     this.add('dms:DescribeRefreshSchemasStatus');
     return this;
   }
@@ -845,7 +845,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstanceTaskLogs.html
    */
-  public describeReplicationInstanceTaskLogs() {
+  public toDescribeReplicationInstanceTaskLogs() {
     this.add('dms:DescribeReplicationInstanceTaskLogs');
     return this;
   }
@@ -857,7 +857,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstances.html
    */
-  public describeReplicationInstances() {
+  public toDescribeReplicationInstances() {
     this.add('dms:DescribeReplicationInstances');
     return this;
   }
@@ -869,7 +869,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationSubnetGroups.html
    */
-  public describeReplicationSubnetGroups() {
+  public toDescribeReplicationSubnetGroups() {
     this.add('dms:DescribeReplicationSubnetGroups');
     return this;
   }
@@ -881,7 +881,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTaskAssessmentResults.html
    */
-  public describeReplicationTaskAssessmentResults() {
+  public toDescribeReplicationTaskAssessmentResults() {
     this.add('dms:DescribeReplicationTaskAssessmentResults');
     return this;
   }
@@ -893,7 +893,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTasks.html
    */
-  public describeReplicationTasks() {
+  public toDescribeReplicationTasks() {
     this.add('dms:DescribeReplicationTasks');
     return this;
   }
@@ -905,7 +905,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html
    */
-  public describeSchemas() {
+  public toDescribeSchemas() {
     this.add('dms:DescribeSchemas');
     return this;
   }
@@ -917,7 +917,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html
    */
-  public describeTableStatistics() {
+  public toDescribeTableStatistics() {
     this.add('dms:DescribeTableStatistics');
     return this;
   }
@@ -933,7 +933,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ImportCertificate.html
    */
-  public importCertificate() {
+  public toImportCertificate() {
     this.add('dms:ImportCertificate');
     return this;
   }
@@ -945,7 +945,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('dms:ListTagsForResource');
     return this;
   }
@@ -957,7 +957,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html
    */
-  public modifyEndpoint() {
+  public toModifyEndpoint() {
     this.add('dms:ModifyEndpoint');
     return this;
   }
@@ -969,7 +969,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEventSubscription.html
    */
-  public modifyEventSubscription() {
+  public toModifyEventSubscription() {
     this.add('dms:ModifyEventSubscription');
     return this;
   }
@@ -981,7 +981,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html
    */
-  public modifyReplicationInstance() {
+  public toModifyReplicationInstance() {
     this.add('dms:ModifyReplicationInstance');
     return this;
   }
@@ -993,7 +993,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html
    */
-  public modifyReplicationSubnetGroup() {
+  public toModifyReplicationSubnetGroup() {
     this.add('dms:ModifyReplicationSubnetGroup');
     return this;
   }
@@ -1005,7 +1005,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html
    */
-  public modifyReplicationTask() {
+  public toModifyReplicationTask() {
     this.add('dms:ModifyReplicationTask');
     return this;
   }
@@ -1017,7 +1017,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RebootReplicationInstance.html
    */
-  public rebootReplicationInstance() {
+  public toRebootReplicationInstance() {
     this.add('dms:RebootReplicationInstance');
     return this;
   }
@@ -1029,7 +1029,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html
    */
-  public refreshSchemas() {
+  public toRefreshSchemas() {
     this.add('dms:RefreshSchemas');
     return this;
   }
@@ -1041,7 +1041,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_ReloadTables.html
    */
-  public reloadTables() {
+  public toReloadTables() {
     this.add('dms:ReloadTables');
     return this;
   }
@@ -1056,7 +1056,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource() {
+  public toRemoveTagsFromResource() {
     this.add('dms:RemoveTagsFromResource');
     return this;
   }
@@ -1068,7 +1068,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html
    */
-  public startReplicationTask() {
+  public toStartReplicationTask() {
     this.add('dms:StartReplicationTask');
     return this;
   }
@@ -1080,7 +1080,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html
    */
-  public startReplicationTaskAssessment() {
+  public toStartReplicationTaskAssessment() {
     this.add('dms:StartReplicationTaskAssessment');
     return this;
   }
@@ -1092,7 +1092,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html
    */
-  public stopReplicationTask() {
+  public toStopReplicationTask() {
     this.add('dms:StopReplicationTask');
     return this;
   }
@@ -1104,7 +1104,7 @@ export class Dms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html
    */
-  public testConnection() {
+  public toTestConnection() {
     this.add('dms:TestConnection');
     return this;
   }
@@ -1253,19 +1253,19 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .addTagsToResource()
-   * - .createEndpoint()
-   * - .createEventSubscription()
-   * - .createReplicationInstance()
-   * - .createReplicationSubnetGroup()
-   * - .createReplicationTask()
-   * - .importCertificate()
+   * - .toAddTagsToResource()
+   * - .toCreateEndpoint()
+   * - .toCreateEventSubscription()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
+   * - .toCreateReplicationTask()
+   * - .toImportCertificate()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1275,7 +1275,7 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .describeReplicationInstanceTaskLogs()
+   * - .toDescribeReplicationInstanceTaskLogs()
    *
    * Applies to resource types:
    * - ReplicationInstance
@@ -1289,7 +1289,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1299,20 +1299,20 @@ export class Dms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .addTagsToResource()
-   * - .createEndpoint()
-   * - .createEventSubscription()
-   * - .createReplicationInstance()
-   * - .createReplicationSubnetGroup()
-   * - .createReplicationTask()
-   * - .describeReplicationInstanceTaskLogs()
-   * - .importCertificate()
-   * - .removeTagsFromResource()
+   * - .toAddTagsToResource()
+   * - .toCreateEndpoint()
+   * - .toCreateEventSubscription()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
+   * - .toCreateReplicationTask()
+   * - .toDescribeReplicationInstanceTaskLogs()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -1326,7 +1326,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCertTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifCertTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:cert-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1340,7 +1340,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEndpointTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifEndpointTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:endpoint-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1354,7 +1354,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifEsTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:es-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1368,7 +1368,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRepTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifRepTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:rep-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1376,18 +1376,18 @@ export class Dms extends PolicyStatement {
    * Filters actions based on the presence of tag key-value pairs in the request
    *
    * Applies to actions:
-   * - .addTagsToResource()
-   * - .createEndpoint()
-   * - .createEventSubscription()
-   * - .createReplicationInstance()
-   * - .createReplicationSubnetGroup()
-   * - .createReplicationTask()
+   * - .toAddTagsToResource()
+   * - .toCreateEndpoint()
+   * - .toCreateEventSubscription()
+   * - .toCreateReplicationInstance()
+   * - .toCreateReplicationSubnetGroup()
+   * - .toCreateReplicationTask()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifReqTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:req-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1401,7 +1401,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1415,7 +1415,7 @@ export class Dms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTaskTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifTaskTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dms:task-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html).
@@ -53,7 +53,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    */
-  public sendSSHPublicKey() {
+  public toSendSSHPublicKey() {
     this.add('ec2-instance-connect:SendSSHPublicKey');
     return this;
   }
@@ -93,7 +93,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -109,7 +109,7 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -119,12 +119,12 @@ export class Ec2InstanceConnect extends PolicyStatement {
    * https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html
    *
    * Applies to actions:
-   * - .sendSSHPublicKey()
+   * - .toSendSSHPublicKey()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOsuser(value: string | string[], operator?: string) {
+  public ifOsuser(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`ec2:osuser`, value, operator || 'StringLike');
   }
 }

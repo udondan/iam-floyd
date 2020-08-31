@@ -13,25 +13,25 @@ export class TestStack extends cdk.Stack {
       statements: [
         new statement.Ssm({})
           .allow()
-          .listDocuments()
-          .listTagsForResource()
+          .toListDocuments()
+          .toListTagsForResource()
           .onInstance('asdf'),
         new statement.Ssm({})
           .allow()
-          .createDocument()
+          .toCreateDocument()
           .addTagsToResource()
           .ifRequestTag('CreatedBy', 'hello'),
         new statement.Ssm({})
           .allow()
-          .deleteDocument()
-          .describeDocument()
-          .getDocument()
-          .listDocumentVersions()
-          .modifyDocumentPermission()
-          .updateDocument()
-          .updateDocumentDefaultVersion()
-          .addTagsToResource()
-          .removeTagsFromResource()
+          .toDeleteDocument()
+          .toDescribeDocument()
+          .toGetDocument()
+          .toListDocumentVersions()
+          .toModifyDocumentPermission()
+          .toUpdateDocument()
+          .toUpdateDocumentDefaultVersion()
+          .toAddTagsToResource()
+          .toRemoveTagsFromResource()
           .ifResourceTag('CreatedBy', 'hello'),
       ],
     });

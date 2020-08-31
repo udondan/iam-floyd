@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [fms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html).
@@ -274,7 +274,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html
    */
-  public associateAdminAccount() {
+  public toAssociateAdminAccount() {
     this.add('fms:AssociateAdminAccount');
     return this;
   }
@@ -286,7 +286,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteAppsList.html
    */
-  public deleteAppsList() {
+  public toDeleteAppsList() {
     this.add('fms:DeleteAppsList');
     return this;
   }
@@ -298,7 +298,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html
    */
-  public deleteNotificationChannel() {
+  public toDeleteNotificationChannel() {
     this.add('fms:DeleteNotificationChannel');
     return this;
   }
@@ -313,7 +313,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html
    */
-  public deletePolicy() {
+  public toDeletePolicy() {
     this.add('fms:DeletePolicy');
     return this;
   }
@@ -325,7 +325,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteProtocolsList.html
    */
-  public deleteProtocolsList() {
+  public toDeleteProtocolsList() {
     this.add('fms:DeleteProtocolsList');
     return this;
   }
@@ -337,7 +337,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html
    */
-  public disassociateAdminAccount() {
+  public toDisassociateAdminAccount() {
     this.add('fms:DisassociateAdminAccount');
     return this;
   }
@@ -349,7 +349,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html
    */
-  public getAdminAccount() {
+  public toGetAdminAccount() {
     this.add('fms:GetAdminAccount');
     return this;
   }
@@ -361,7 +361,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAppsList.html
    */
-  public getAppsList() {
+  public toGetAppsList() {
     this.add('fms:GetAppsList');
     return this;
   }
@@ -373,7 +373,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html
    */
-  public getComplianceDetail() {
+  public toGetComplianceDetail() {
     this.add('fms:GetComplianceDetail');
     return this;
   }
@@ -385,7 +385,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html
    */
-  public getNotificationChannel() {
+  public toGetNotificationChannel() {
     this.add('fms:GetNotificationChannel');
     return this;
   }
@@ -397,7 +397,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html
    */
-  public getPolicy() {
+  public toGetPolicy() {
     this.add('fms:GetPolicy');
     return this;
   }
@@ -409,7 +409,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html
    */
-  public getProtectionStatus() {
+  public toGetProtectionStatus() {
     this.add('fms:GetProtectionStatus');
     return this;
   }
@@ -421,7 +421,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtocolsList.html
    */
-  public getProtocolsList() {
+  public toGetProtocolsList() {
     this.add('fms:GetProtocolsList');
     return this;
   }
@@ -433,7 +433,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAppsLists.html
    */
-  public listAppsLists() {
+  public toListAppsLists() {
     this.add('fms:ListAppsLists');
     return this;
   }
@@ -445,7 +445,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html
    */
-  public listComplianceStatus() {
+  public toListComplianceStatus() {
     this.add('fms:ListComplianceStatus');
     return this;
   }
@@ -457,7 +457,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html
    */
-  public listMemberAccounts() {
+  public toListMemberAccounts() {
     this.add('fms:ListMemberAccounts');
     return this;
   }
@@ -469,7 +469,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html
    */
-  public listPolicies() {
+  public toListPolicies() {
     this.add('fms:ListPolicies');
     return this;
   }
@@ -481,7 +481,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListProtocolsLists.html
    */
-  public listProtocolsLists() {
+  public toListProtocolsLists() {
     this.add('fms:ListProtocolsLists');
     return this;
   }
@@ -493,7 +493,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('fms:ListTagsForResource');
     return this;
   }
@@ -509,7 +509,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAppsList.html
    */
-  public putAppsList() {
+  public toPutAppsList() {
     this.add('fms:PutAppsList');
     return this;
   }
@@ -521,7 +521,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html
    */
-  public putNotificationChannel() {
+  public toPutNotificationChannel() {
     this.add('fms:PutNotificationChannel');
     return this;
   }
@@ -537,7 +537,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html
    */
-  public putPolicy() {
+  public toPutPolicy() {
     this.add('fms:PutPolicy');
     return this;
   }
@@ -553,7 +553,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutProtocolsList.html
    */
-  public putProtocolsList() {
+  public toPutProtocolsList() {
     this.add('fms:PutProtocolsList');
     return this;
   }
@@ -569,7 +569,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('fms:TagResource');
     return this;
   }
@@ -584,7 +584,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('fms:UntagResource');
     return this;
   }
@@ -661,16 +661,16 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .putAppsList()
-   * - .putPolicy()
-   * - .putProtocolsList()
-   * - .tagResource()
+   * - .toPutAppsList()
+   * - .toPutPolicy()
+   * - .toPutProtocolsList()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -680,7 +680,7 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .deletePolicy()
+   * - .toDeletePolicy()
    *
    * Applies to resource types:
    * - policy
@@ -691,7 +691,7 @@ export class Fms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -701,16 +701,16 @@ export class Fms extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .putAppsList()
-   * - .putPolicy()
-   * - .putProtocolsList()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toPutAppsList()
+   * - .toPutPolicy()
+   * - .toPutProtocolsList()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [mq](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmq.html).
@@ -262,7 +262,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post
    */
-  public createBroker() {
+  public toCreateBroker() {
     this.add('mq:CreateBroker');
     return this;
   }
@@ -278,7 +278,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post
    */
-  public createConfiguration() {
+  public toCreateConfiguration() {
     this.add('mq:CreateConfiguration');
     return this;
   }
@@ -294,7 +294,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-post
    */
-  public createTags() {
+  public toCreateTags() {
     this.add('mq:CreateTags');
     return this;
   }
@@ -306,7 +306,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post
    */
-  public createUser() {
+  public toCreateUser() {
     this.add('mq:CreateUser');
     return this;
   }
@@ -318,7 +318,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete
    */
-  public deleteBroker() {
+  public toDeleteBroker() {
     this.add('mq:DeleteBroker');
     return this;
   }
@@ -333,7 +333,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-delete
    */
-  public deleteTags() {
+  public toDeleteTags() {
     this.add('mq:DeleteTags');
     return this;
   }
@@ -345,7 +345,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete
    */
-  public deleteUser() {
+  public toDeleteUser() {
     this.add('mq:DeleteUser');
     return this;
   }
@@ -357,7 +357,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get
    */
-  public describeBroker() {
+  public toDescribeBroker() {
     this.add('mq:DescribeBroker');
     return this;
   }
@@ -369,7 +369,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-engine-types.html#broker-engine-types-http-methods
    */
-  public describeBrokerEngineTypes() {
+  public toDescribeBrokerEngineTypes() {
     this.add('mq:DescribeBrokerEngineTypes');
     return this;
   }
@@ -381,7 +381,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/broker-instance-options.html#broker-engine-types-http-methods
    */
-  public describeBrokerInstanceOptions() {
+  public toDescribeBrokerInstanceOptions() {
     this.add('mq:DescribeBrokerInstanceOptions');
     return this;
   }
@@ -393,7 +393,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get
    */
-  public describeConfiguration() {
+  public toDescribeConfiguration() {
     this.add('mq:DescribeConfiguration');
     return this;
   }
@@ -405,7 +405,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get
    */
-  public describeConfigurationRevision() {
+  public toDescribeConfigurationRevision() {
     this.add('mq:DescribeConfigurationRevision');
     return this;
   }
@@ -417,7 +417,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get
    */
-  public describeUser() {
+  public toDescribeUser() {
     this.add('mq:DescribeUser');
     return this;
   }
@@ -429,7 +429,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get
    */
-  public listBrokers() {
+  public toListBrokers() {
     this.add('mq:ListBrokers');
     return this;
   }
@@ -441,7 +441,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get
    */
-  public listConfigurationRevisions() {
+  public toListConfigurationRevisions() {
     this.add('mq:ListConfigurationRevisions');
     return this;
   }
@@ -453,7 +453,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get
    */
-  public listConfigurations() {
+  public toListConfigurations() {
     this.add('mq:ListConfigurations');
     return this;
   }
@@ -465,7 +465,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-tags.html#rest-api-tags-methods-get
    */
-  public listTags() {
+  public toListTags() {
     this.add('mq:ListTags');
     return this;
   }
@@ -477,7 +477,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get
    */
-  public listUsers() {
+  public toListUsers() {
     this.add('mq:ListUsers');
     return this;
   }
@@ -489,7 +489,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post
    */
-  public rebootBroker() {
+  public toRebootBroker() {
     this.add('mq:RebootBroker');
     return this;
   }
@@ -501,7 +501,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get
    */
-  public updateBroker() {
+  public toUpdateBroker() {
     this.add('mq:UpdateBroker');
     return this;
   }
@@ -513,7 +513,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put
    */
-  public updateConfiguration() {
+  public toUpdateConfiguration() {
     this.add('mq:UpdateConfiguration');
     return this;
   }
@@ -525,7 +525,7 @@ export class Mq extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put
    */
-  public updateUser() {
+  public toUpdateUser() {
     this.add('mq:UpdateUser');
     return this;
   }
@@ -572,15 +572,15 @@ export class Mq extends PolicyStatement {
 
   /**
    * Applies to actions:
-   * - .createBroker()
-   * - .createConfiguration()
-   * - .createTags()
+   * - .toCreateBroker()
+   * - .toCreateConfiguration()
+   * - .toCreateTags()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -593,21 +593,21 @@ export class Mq extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
    * Applies to actions:
-   * - .createBroker()
-   * - .createConfiguration()
-   * - .createTags()
-   * - .deleteTags()
+   * - .toCreateBroker()
+   * - .toCreateConfiguration()
+   * - .toCreateTags()
+   * - .toDeleteTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

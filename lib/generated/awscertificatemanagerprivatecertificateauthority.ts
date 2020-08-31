@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [acm-pca](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanagerprivatecertificateauthority.html).
@@ -274,7 +274,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html
    */
-  public createCertificateAuthority() {
+  public toCreateCertificateAuthority() {
     this.add('acm-pca:CreateCertificateAuthority');
     return this;
   }
@@ -286,7 +286,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html
    */
-  public createCertificateAuthorityAuditReport() {
+  public toCreateCertificateAuthorityAuditReport() {
     this.add('acm-pca:CreateCertificateAuthorityAuditReport');
     return this;
   }
@@ -298,7 +298,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreatePermission.html
    */
-  public createPermission() {
+  public toCreatePermission() {
     this.add('acm-pca:CreatePermission');
     return this;
   }
@@ -310,7 +310,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html
    */
-  public deleteCertificateAuthority() {
+  public toDeleteCertificateAuthority() {
     this.add('acm-pca:DeleteCertificateAuthority');
     return this;
   }
@@ -322,7 +322,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePermission.html
    */
-  public deletePermission() {
+  public toDeletePermission() {
     this.add('acm-pca:DeletePermission');
     return this;
   }
@@ -334,7 +334,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html
    */
-  public deletePolicy() {
+  public toDeletePolicy() {
     this.add('acm-pca:DeletePolicy');
     return this;
   }
@@ -346,7 +346,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html
    */
-  public describeCertificateAuthority() {
+  public toDescribeCertificateAuthority() {
     this.add('acm-pca:DescribeCertificateAuthority');
     return this;
   }
@@ -358,7 +358,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthorityAuditReport.html
    */
-  public describeCertificateAuthorityAuditReport() {
+  public toDescribeCertificateAuthorityAuditReport() {
     this.add('acm-pca:DescribeCertificateAuthorityAuditReport');
     return this;
   }
@@ -370,7 +370,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html
    */
-  public getCertificate() {
+  public toGetCertificate() {
     this.add('acm-pca:GetCertificate');
     return this;
   }
@@ -382,7 +382,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html
    */
-  public getCertificateAuthorityCertificate() {
+  public toGetCertificateAuthorityCertificate() {
     this.add('acm-pca:GetCertificateAuthorityCertificate');
     return this;
   }
@@ -394,7 +394,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html
    */
-  public getCertificateAuthorityCsr() {
+  public toGetCertificateAuthorityCsr() {
     this.add('acm-pca:GetCertificateAuthorityCsr');
     return this;
   }
@@ -406,7 +406,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetPolicy.html
    */
-  public getPolicy() {
+  public toGetPolicy() {
     this.add('acm-pca:GetPolicy');
     return this;
   }
@@ -418,7 +418,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html
    */
-  public importCertificateAuthorityCertificate() {
+  public toImportCertificateAuthorityCertificate() {
     this.add('acm-pca:ImportCertificateAuthorityCertificate');
     return this;
   }
@@ -433,7 +433,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html
    */
-  public issueCertificate() {
+  public toIssueCertificate() {
     this.add('acm-pca:IssueCertificate');
     return this;
   }
@@ -445,7 +445,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html
    */
-  public listCertificateAuthorities() {
+  public toListCertificateAuthorities() {
     this.add('acm-pca:ListCertificateAuthorities');
     return this;
   }
@@ -457,7 +457,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListPermissions.html
    */
-  public listPermissions() {
+  public toListPermissions() {
     this.add('acm-pca:ListPermissions');
     return this;
   }
@@ -469,7 +469,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html
    */
-  public listTags() {
+  public toListTags() {
     this.add('acm-pca:ListTags');
     return this;
   }
@@ -481,7 +481,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html
    */
-  public putPolicy() {
+  public toPutPolicy() {
     this.add('acm-pca:PutPolicy');
     return this;
   }
@@ -493,7 +493,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html
    */
-  public restoreCertificateAuthority() {
+  public toRestoreCertificateAuthority() {
     this.add('acm-pca:RestoreCertificateAuthority');
     return this;
   }
@@ -505,7 +505,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html
    */
-  public revokeCertificate() {
+  public toRevokeCertificate() {
     this.add('acm-pca:RevokeCertificate');
     return this;
   }
@@ -521,7 +521,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html
    */
-  public tagCertificateAuthority() {
+  public toTagCertificateAuthority() {
     this.add('acm-pca:TagCertificateAuthority');
     return this;
   }
@@ -536,7 +536,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html
    */
-  public untagCertificateAuthority() {
+  public toUntagCertificateAuthority() {
     this.add('acm-pca:UntagCertificateAuthority');
     return this;
   }
@@ -548,7 +548,7 @@ export class AcmPca extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html
    */
-  public updateCertificateAuthority() {
+  public toUpdateCertificateAuthority() {
     this.add('acm-pca:UpdateCertificateAuthority');
     return this;
   }
@@ -579,12 +579,12 @@ export class AcmPca extends PolicyStatement {
    * Filters issue certificate requests based on the presence of TemplateArn in the request.
    *
    * Applies to actions:
-   * - .issueCertificate()
+   * - .toIssueCertificate()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTemplateArn(value: string | string[], operator?: string) {
+  public ifTemplateArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`acm-pca:TemplateArn`, value, operator || 'StringLike');
   }
 
@@ -592,14 +592,14 @@ export class AcmPca extends PolicyStatement {
    * Filters create requests based on the allowed set of values for each of the tags.
    *
    * Applies to actions:
-   * - .createCertificateAuthority()
-   * - .tagCertificateAuthority()
+   * - .toCreateCertificateAuthority()
+   * - .toTagCertificateAuthority()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -613,7 +613,7 @@ export class AcmPca extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -621,14 +621,14 @@ export class AcmPca extends PolicyStatement {
    * Filters create requests based on the presence of mandatory tags in the request.
    *
    * Applies to actions:
-   * - .createCertificateAuthority()
-   * - .tagCertificateAuthority()
-   * - .untagCertificateAuthority()
+   * - .toCreateCertificateAuthority()
+   * - .toTagCertificateAuthority()
+   * - .toUntagCertificateAuthority()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

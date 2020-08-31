@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [batch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html).
@@ -182,7 +182,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html
    */
-  public cancelJob() {
+  public toCancelJob() {
     this.add('batch:CancelJob');
     return this;
   }
@@ -194,7 +194,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html
    */
-  public createComputeEnvironment() {
+  public toCreateComputeEnvironment() {
     this.add('batch:CreateComputeEnvironment');
     return this;
   }
@@ -206,7 +206,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
-  public createJobQueue() {
+  public toCreateJobQueue() {
     this.add('batch:CreateJobQueue');
     return this;
   }
@@ -218,7 +218,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html
    */
-  public deleteComputeEnvironment() {
+  public toDeleteComputeEnvironment() {
     this.add('batch:DeleteComputeEnvironment');
     return this;
   }
@@ -230,7 +230,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html
    */
-  public deleteJobQueue() {
+  public toDeleteJobQueue() {
     this.add('batch:DeleteJobQueue');
     return this;
   }
@@ -242,7 +242,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html
    */
-  public deregisterJobDefinition() {
+  public toDeregisterJobDefinition() {
     this.add('batch:DeregisterJobDefinition');
     return this;
   }
@@ -254,7 +254,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html
    */
-  public describeComputeEnvironments() {
+  public toDescribeComputeEnvironments() {
     this.add('batch:DescribeComputeEnvironments');
     return this;
   }
@@ -266,7 +266,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html
    */
-  public describeJobDefinitions() {
+  public toDescribeJobDefinitions() {
     this.add('batch:DescribeJobDefinitions');
     return this;
   }
@@ -278,7 +278,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html
    */
-  public describeJobQueues() {
+  public toDescribeJobQueues() {
     this.add('batch:DescribeJobQueues');
     return this;
   }
@@ -290,7 +290,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html
    */
-  public describeJobs() {
+  public toDescribeJobs() {
     this.add('batch:DescribeJobs');
     return this;
   }
@@ -302,7 +302,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('batch:ListJobs');
     return this;
   }
@@ -319,7 +319,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
-  public registerJobDefinition() {
+  public toRegisterJobDefinition() {
     this.add('batch:RegisterJobDefinition');
     return this;
   }
@@ -331,7 +331,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
-  public submitJob() {
+  public toSubmitJob() {
     this.add('batch:SubmitJob');
     return this;
   }
@@ -343,7 +343,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html
    */
-  public terminateJob() {
+  public toTerminateJob() {
     this.add('batch:TerminateJob');
     return this;
   }
@@ -355,7 +355,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html
    */
-  public updateComputeEnvironment() {
+  public toUpdateComputeEnvironment() {
     this.add('batch:UpdateComputeEnvironment');
     return this;
   }
@@ -367,7 +367,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html
    */
-  public updateJobQueue() {
+  public toUpdateJobQueue() {
     this.add('batch:UpdateJobQueue');
     return this;
   }
@@ -431,12 +431,12 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
-   * - .registerJobDefinition()
+   * - .toRegisterJobDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImage(value: string | string[], operator?: string) {
+  public ifImage(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`batch:Image`, value, operator || 'StringLike');
   }
 
@@ -446,11 +446,11 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
-   * - .registerJobDefinition()
+   * - .toRegisterJobDefinition()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifPrivileged(value?: boolean) {
+  public ifPrivileged(value?: boolean): PolicyStatementWithCondition {
     return this.if(`batch:Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -460,12 +460,12 @@ export class Batch extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
    *
    * Applies to actions:
-   * - .registerJobDefinition()
+   * - .toRegisterJobDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string) {
+  public ifUser(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`batch:User`, value, operator || 'StringLike');
   }
 }

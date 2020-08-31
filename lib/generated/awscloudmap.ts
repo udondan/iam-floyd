@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [servicediscovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html).
@@ -250,7 +250,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html
    */
-  public createHttpNamespace() {
+  public toCreateHttpNamespace() {
     this.add('servicediscovery:CreateHttpNamespace');
     return this;
   }
@@ -266,7 +266,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html
    */
-  public createPrivateDnsNamespace() {
+  public toCreatePrivateDnsNamespace() {
     this.add('servicediscovery:CreatePrivateDnsNamespace');
     return this;
   }
@@ -282,7 +282,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html
    */
-  public createPublicDnsNamespace() {
+  public toCreatePublicDnsNamespace() {
     this.add('servicediscovery:CreatePublicDnsNamespace');
     return this;
   }
@@ -299,7 +299,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html
    */
-  public createService() {
+  public toCreateService() {
     this.add('servicediscovery:CreateService');
     return this;
   }
@@ -311,7 +311,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteNamespace.html
    */
-  public deleteNamespace() {
+  public toDeleteNamespace() {
     this.add('servicediscovery:DeleteNamespace');
     return this;
   }
@@ -323,7 +323,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteService.html
    */
-  public deleteService() {
+  public toDeleteService() {
     this.add('servicediscovery:DeleteService');
     return this;
   }
@@ -338,7 +338,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html
    */
-  public deregisterInstance() {
+  public toDeregisterInstance() {
     this.add('servicediscovery:DeregisterInstance');
     return this;
   }
@@ -354,7 +354,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html
    */
-  public discoverInstances() {
+  public toDiscoverInstances() {
     this.add('servicediscovery:DiscoverInstances');
     return this;
   }
@@ -369,7 +369,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstance.html
    */
-  public getInstance() {
+  public toGetInstance() {
     this.add('servicediscovery:GetInstance');
     return this;
   }
@@ -384,7 +384,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstancesHealthStatus.html
    */
-  public getInstancesHealthStatus() {
+  public toGetInstancesHealthStatus() {
     this.add('servicediscovery:GetInstancesHealthStatus');
     return this;
   }
@@ -396,7 +396,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetNamespace.html
    */
-  public getNamespace() {
+  public toGetNamespace() {
     this.add('servicediscovery:GetNamespace');
     return this;
   }
@@ -408,7 +408,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html
    */
-  public getOperation() {
+  public toGetOperation() {
     this.add('servicediscovery:GetOperation');
     return this;
   }
@@ -420,7 +420,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_GetService.html
    */
-  public getService() {
+  public toGetService() {
     this.add('servicediscovery:GetService');
     return this;
   }
@@ -435,7 +435,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html
    */
-  public listInstances() {
+  public toListInstances() {
     this.add('servicediscovery:ListInstances');
     return this;
   }
@@ -447,7 +447,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListNamespaces.html
    */
-  public listNamespaces() {
+  public toListNamespaces() {
     this.add('servicediscovery:ListNamespaces');
     return this;
   }
@@ -459,7 +459,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html
    */
-  public listOperations() {
+  public toListOperations() {
     this.add('servicediscovery:ListOperations');
     return this;
   }
@@ -471,7 +471,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListServices.html
    */
-  public listServices() {
+  public toListServices() {
     this.add('servicediscovery:ListServices');
     return this;
   }
@@ -483,7 +483,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('servicediscovery:ListTagsForResource');
     return this;
   }
@@ -498,7 +498,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html
    */
-  public registerInstance() {
+  public toRegisterInstance() {
     this.add('servicediscovery:RegisterInstance');
     return this;
   }
@@ -514,7 +514,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('servicediscovery:TagResource');
     return this;
   }
@@ -530,7 +530,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('servicediscovery:UntagResource');
     return this;
   }
@@ -545,7 +545,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html
    */
-  public updateInstanceCustomHealthStatus() {
+  public toUpdateInstanceCustomHealthStatus() {
     this.add('servicediscovery:UpdateInstanceCustomHealthStatus');
     return this;
   }
@@ -557,7 +557,7 @@ export class Servicediscovery extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateService.html
    */
-  public updateService() {
+  public toUpdateService() {
     this.add('servicediscovery:UpdateService');
     return this;
   }
@@ -612,18 +612,18 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createHttpNamespace()
-   * - .createPrivateDnsNamespace()
-   * - .createPublicDnsNamespace()
-   * - .createService()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateHttpNamespace()
+   * - .toCreatePrivateDnsNamespace()
+   * - .toCreatePublicDnsNamespace()
+   * - .toCreateService()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -640,7 +640,7 @@ export class Servicediscovery extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -650,17 +650,17 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createHttpNamespace()
-   * - .createPrivateDnsNamespace()
-   * - .createPublicDnsNamespace()
-   * - .createService()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateHttpNamespace()
+   * - .toCreatePrivateDnsNamespace()
+   * - .toCreatePublicDnsNamespace()
+   * - .toCreateService()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -670,12 +670,12 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
    * Applies to actions:
-   * - .createService()
+   * - .toCreateService()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifNamespaceArn(value: string | string[], operator?: string) {
+  public ifNamespaceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`servicediscovery:NamespaceArn`, value, operator || 'StringLike');
   }
 
@@ -685,12 +685,12 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
    * Applies to actions:
-   * - .discoverInstances()
+   * - .toDiscoverInstances()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifNamespaceName(value: string | string[], operator?: string) {
+  public ifNamespaceName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`servicediscovery:NamespaceName`, value, operator || 'StringLike');
   }
 
@@ -700,17 +700,17 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
    * Applies to actions:
-   * - .deregisterInstance()
-   * - .getInstance()
-   * - .getInstancesHealthStatus()
-   * - .listInstances()
-   * - .registerInstance()
-   * - .updateInstanceCustomHealthStatus()
+   * - .toDeregisterInstance()
+   * - .toGetInstance()
+   * - .toGetInstancesHealthStatus()
+   * - .toListInstances()
+   * - .toRegisterInstance()
+   * - .toUpdateInstanceCustomHealthStatus()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifServiceArn(value: string | string[], operator?: string) {
+  public ifServiceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`servicediscovery:ServiceArn`, value, operator || 'StringLike');
   }
 
@@ -720,12 +720,12 @@ export class Servicediscovery extends PolicyStatement {
    * https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions
    *
    * Applies to actions:
-   * - .discoverInstances()
+   * - .toDiscoverInstances()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifServiceName(value: string | string[], operator?: string) {
+  public ifServiceName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`servicediscovery:ServiceName`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [comprehend](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html).
@@ -458,7 +458,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html
    */
-  public batchDetectDominantLanguage() {
+  public toBatchDetectDominantLanguage() {
     this.add('comprehend:BatchDetectDominantLanguage');
     return this;
   }
@@ -470,7 +470,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html
    */
-  public batchDetectEntities() {
+  public toBatchDetectEntities() {
     this.add('comprehend:BatchDetectEntities');
     return this;
   }
@@ -482,7 +482,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html
    */
-  public batchDetectKeyPhrases() {
+  public toBatchDetectKeyPhrases() {
     this.add('comprehend:BatchDetectKeyPhrases');
     return this;
   }
@@ -494,7 +494,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html
    */
-  public batchDetectSentiment() {
+  public toBatchDetectSentiment() {
     this.add('comprehend:BatchDetectSentiment');
     return this;
   }
@@ -506,7 +506,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSyntax.html
    */
-  public batchDetectSyntax() {
+  public toBatchDetectSyntax() {
     this.add('comprehend:BatchDetectSyntax');
     return this;
   }
@@ -518,7 +518,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ClassifyDocument.html
    */
-  public classifyDocument() {
+  public toClassifyDocument() {
     this.add('comprehend:ClassifyDocument');
     return this;
   }
@@ -534,7 +534,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateDocumentClassifier.html
    */
-  public createDocumentClassifier() {
+  public toCreateDocumentClassifier() {
     this.add('comprehend:CreateDocumentClassifier');
     return this;
   }
@@ -550,7 +550,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEndpoint.html
    */
-  public createEndpoint() {
+  public toCreateEndpoint() {
     this.add('comprehend:CreateEndpoint');
     return this;
   }
@@ -566,7 +566,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEntityRecognizer.html
    */
-  public createEntityRecognizer() {
+  public toCreateEntityRecognizer() {
     this.add('comprehend:CreateEntityRecognizer');
     return this;
   }
@@ -578,7 +578,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteDocumentClassifier.html
    */
-  public deleteDocumentClassifier() {
+  public toDeleteDocumentClassifier() {
     this.add('comprehend:DeleteDocumentClassifier');
     return this;
   }
@@ -590,7 +590,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteEndpoint.html
    */
-  public deleteEndpoint() {
+  public toDeleteEndpoint() {
     this.add('comprehend:DeleteEndpoint');
     return this;
   }
@@ -602,7 +602,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteEntityRecognizer.html
    */
-  public deleteEntityRecognizer() {
+  public toDeleteEntityRecognizer() {
     this.add('comprehend:DeleteEntityRecognizer');
     return this;
   }
@@ -614,7 +614,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDocumentClassificationJob.html
    */
-  public describeDocumentClassificationJob() {
+  public toDescribeDocumentClassificationJob() {
     this.add('comprehend:DescribeDocumentClassificationJob');
     return this;
   }
@@ -626,7 +626,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDocumentClassifier.html
    */
-  public describeDocumentClassifier() {
+  public toDescribeDocumentClassifier() {
     this.add('comprehend:DescribeDocumentClassifier');
     return this;
   }
@@ -638,7 +638,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDominantLanguageDetectionJob.html
    */
-  public describeDominantLanguageDetectionJob() {
+  public toDescribeDominantLanguageDetectionJob() {
     this.add('comprehend:DescribeDominantLanguageDetectionJob');
     return this;
   }
@@ -650,7 +650,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEndpoint.html
    */
-  public describeEndpoint() {
+  public toDescribeEndpoint() {
     this.add('comprehend:DescribeEndpoint');
     return this;
   }
@@ -662,7 +662,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEntitiesDetectionJob.html
    */
-  public describeEntitiesDetectionJob() {
+  public toDescribeEntitiesDetectionJob() {
     this.add('comprehend:DescribeEntitiesDetectionJob');
     return this;
   }
@@ -674,7 +674,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEntityRecognizer.html
    */
-  public describeEntityRecognizer() {
+  public toDescribeEntityRecognizer() {
     this.add('comprehend:DescribeEntityRecognizer');
     return this;
   }
@@ -686,7 +686,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeKeyPhrasesDetectionJob.html
    */
-  public describeKeyPhrasesDetectionJob() {
+  public toDescribeKeyPhrasesDetectionJob() {
     this.add('comprehend:DescribeKeyPhrasesDetectionJob');
     return this;
   }
@@ -698,7 +698,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeSentimentDetectionJob.html
    */
-  public describeSentimentDetectionJob() {
+  public toDescribeSentimentDetectionJob() {
     this.add('comprehend:DescribeSentimentDetectionJob');
     return this;
   }
@@ -710,7 +710,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html
    */
-  public describeTopicsDetectionJob() {
+  public toDescribeTopicsDetectionJob() {
     this.add('comprehend:DescribeTopicsDetectionJob');
     return this;
   }
@@ -722,7 +722,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html
    */
-  public detectDominantLanguage() {
+  public toDetectDominantLanguage() {
     this.add('comprehend:DetectDominantLanguage');
     return this;
   }
@@ -734,7 +734,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html
    */
-  public detectEntities() {
+  public toDetectEntities() {
     this.add('comprehend:DetectEntities');
     return this;
   }
@@ -746,7 +746,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html
    */
-  public detectKeyPhrases() {
+  public toDetectKeyPhrases() {
     this.add('comprehend:DetectKeyPhrases');
     return this;
   }
@@ -758,7 +758,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html
    */
-  public detectSentiment() {
+  public toDetectSentiment() {
     this.add('comprehend:DetectSentiment');
     return this;
   }
@@ -770,7 +770,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSyntax.html
    */
-  public detectSyntax() {
+  public toDetectSyntax() {
     this.add('comprehend:DetectSyntax');
     return this;
   }
@@ -782,7 +782,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassificationJobs.html
    */
-  public listDocumentClassificationJobs() {
+  public toListDocumentClassificationJobs() {
     this.add('comprehend:ListDocumentClassificationJobs');
     return this;
   }
@@ -794,7 +794,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassifiers.html
    */
-  public listDocumentClassifiers() {
+  public toListDocumentClassifiers() {
     this.add('comprehend:ListDocumentClassifiers');
     return this;
   }
@@ -806,7 +806,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDominantLanguageDetectionJobs.html
    */
-  public listDominantLanguageDetectionJobs() {
+  public toListDominantLanguageDetectionJobs() {
     this.add('comprehend:ListDominantLanguageDetectionJobs');
     return this;
   }
@@ -818,7 +818,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEndpoints.html
    */
-  public listEndpoints() {
+  public toListEndpoints() {
     this.add('comprehend:ListEndpoints');
     return this;
   }
@@ -830,7 +830,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntitiesDetectionJobs.html
    */
-  public listEntitiesDetectionJobs() {
+  public toListEntitiesDetectionJobs() {
     this.add('comprehend:ListEntitiesDetectionJobs');
     return this;
   }
@@ -842,7 +842,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntityRecognizers.html
    */
-  public listEntityRecognizers() {
+  public toListEntityRecognizers() {
     this.add('comprehend:ListEntityRecognizers');
     return this;
   }
@@ -854,7 +854,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListKeyPhrasesDetectionJobs.html
    */
-  public listKeyPhrasesDetectionJobs() {
+  public toListKeyPhrasesDetectionJobs() {
     this.add('comprehend:ListKeyPhrasesDetectionJobs');
     return this;
   }
@@ -866,7 +866,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListSentimentDetectionJobs.html
    */
-  public listSentimentDetectionJobs() {
+  public toListSentimentDetectionJobs() {
     this.add('comprehend:ListSentimentDetectionJobs');
     return this;
   }
@@ -878,7 +878,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('comprehend:ListTagsForResource');
     return this;
   }
@@ -890,7 +890,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html
    */
-  public listTopicsDetectionJobs() {
+  public toListTopicsDetectionJobs() {
     this.add('comprehend:ListTopicsDetectionJobs');
     return this;
   }
@@ -902,7 +902,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDocumentClassificationJob.html
    */
-  public startDocumentClassificationJob() {
+  public toStartDocumentClassificationJob() {
     this.add('comprehend:StartDocumentClassificationJob');
     return this;
   }
@@ -914,7 +914,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDominantLanguageDetectionJob.html
    */
-  public startDominantLanguageDetectionJob() {
+  public toStartDominantLanguageDetectionJob() {
     this.add('comprehend:StartDominantLanguageDetectionJob');
     return this;
   }
@@ -926,7 +926,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html
    */
-  public startEntitiesDetectionJob() {
+  public toStartEntitiesDetectionJob() {
     this.add('comprehend:StartEntitiesDetectionJob');
     return this;
   }
@@ -938,7 +938,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html
    */
-  public startKeyPhrasesDetectionJob() {
+  public toStartKeyPhrasesDetectionJob() {
     this.add('comprehend:StartKeyPhrasesDetectionJob');
     return this;
   }
@@ -950,7 +950,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartSentimentDetectionJob.html
    */
-  public startSentimentDetectionJob() {
+  public toStartSentimentDetectionJob() {
     this.add('comprehend:StartSentimentDetectionJob');
     return this;
   }
@@ -962,7 +962,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html
    */
-  public startTopicsDetectionJob() {
+  public toStartTopicsDetectionJob() {
     this.add('comprehend:StartTopicsDetectionJob');
     return this;
   }
@@ -974,7 +974,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopDominantLanguageDetectionJob.html
    */
-  public stopDominantLanguageDetectionJob() {
+  public toStopDominantLanguageDetectionJob() {
     this.add('comprehend:StopDominantLanguageDetectionJob');
     return this;
   }
@@ -986,7 +986,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopEntitiesDetectionJob.html
    */
-  public stopEntitiesDetectionJob() {
+  public toStopEntitiesDetectionJob() {
     this.add('comprehend:StopEntitiesDetectionJob');
     return this;
   }
@@ -998,7 +998,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopKeyPhrasesDetectionJob.html
    */
-  public stopKeyPhrasesDetectionJob() {
+  public toStopKeyPhrasesDetectionJob() {
     this.add('comprehend:StopKeyPhrasesDetectionJob');
     return this;
   }
@@ -1010,7 +1010,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopSentimentDetectionJob.html
    */
-  public stopSentimentDetectionJob() {
+  public toStopSentimentDetectionJob() {
     this.add('comprehend:StopSentimentDetectionJob');
     return this;
   }
@@ -1022,7 +1022,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTrainingDocumentClassifier.html
    */
-  public stopTrainingDocumentClassifier() {
+  public toStopTrainingDocumentClassifier() {
     this.add('comprehend:StopTrainingDocumentClassifier');
     return this;
   }
@@ -1034,7 +1034,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTrainingEntityRecognizer.html
    */
-  public stopTrainingEntityRecognizer() {
+  public toStopTrainingEntityRecognizer() {
     this.add('comprehend:StopTrainingEntityRecognizer');
     return this;
   }
@@ -1050,7 +1050,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('comprehend:TagResource');
     return this;
   }
@@ -1065,7 +1065,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('comprehend:UntagResource');
     return this;
   }
@@ -1077,7 +1077,7 @@ export class Comprehend extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/comprehend/latest/dg/API_UpdateEndpoint.html
    */
-  public updateEndpoint() {
+  public toUpdateEndpoint() {
     this.add('comprehend:UpdateEndpoint');
     return this;
   }
@@ -1168,16 +1168,16 @@ export class Comprehend extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
-   * - .createDocumentClassifier()
-   * - .createEndpoint()
-   * - .createEntityRecognizer()
-   * - .tagResource()
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEndpoint()
+   * - .toCreateEntityRecognizer()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1196,7 +1196,7 @@ export class Comprehend extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1206,16 +1206,16 @@ export class Comprehend extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
    *
    * Applies to actions:
-   * - .createDocumentClassifier()
-   * - .createEndpoint()
-   * - .createEntityRecognizer()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateDocumentClassifier()
+   * - .toCreateEndpoint()
+   * - .toCreateEntityRecognizer()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

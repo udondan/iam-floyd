@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [savingsplans](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssavingsplans.html).
@@ -122,7 +122,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_CreateSavingsPlan.html
    */
-  public createSavingsPlan() {
+  public toCreateSavingsPlan() {
     this.add('savingsplans:CreateSavingsPlan');
     return this;
   }
@@ -137,7 +137,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html
    */
-  public describeSavingsPlanRates() {
+  public toDescribeSavingsPlanRates() {
     this.add('savingsplans:DescribeSavingsPlanRates');
     return this;
   }
@@ -152,7 +152,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlans.html
    */
-  public describeSavingsPlans() {
+  public toDescribeSavingsPlans() {
     this.add('savingsplans:DescribeSavingsPlans');
     return this;
   }
@@ -164,7 +164,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferingRates.html
    */
-  public describeSavingsPlansOfferingRates() {
+  public toDescribeSavingsPlansOfferingRates() {
     this.add('savingsplans:DescribeSavingsPlansOfferingRates');
     return this;
   }
@@ -176,7 +176,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html
    */
-  public describeSavingsPlansOfferings() {
+  public toDescribeSavingsPlansOfferings() {
     this.add('savingsplans:DescribeSavingsPlansOfferings');
     return this;
   }
@@ -188,7 +188,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('savingsplans:ListTagsForResource');
     return this;
   }
@@ -204,7 +204,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('savingsplans:TagResource');
     return this;
   }
@@ -219,7 +219,7 @@ export class Savingsplans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('savingsplans:UntagResource');
     return this;
   }
@@ -250,14 +250,14 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createSavingsPlan()
-   * - .tagResource()
+   * - .toCreateSavingsPlan()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -267,8 +267,8 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
    * Applies to actions:
-   * - .describeSavingsPlanRates()
-   * - .describeSavingsPlans()
+   * - .toDescribeSavingsPlanRates()
+   * - .toDescribeSavingsPlans()
    *
    * Applies to resource types:
    * - savingsplan
@@ -277,7 +277,7 @@ export class Savingsplans extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -287,14 +287,14 @@ export class Savingsplans extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createSavingsPlan()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateSavingsPlan()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

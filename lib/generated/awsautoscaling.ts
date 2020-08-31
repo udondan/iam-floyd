@@ -57,7 +57,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CreateScalingPlan.html
    */
-  public createScalingPlan() {
+  public toCreateScalingPlan() {
     this.add('autoscaling-plans:CreateScalingPlan');
     return this;
   }
@@ -69,7 +69,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html
    */
-  public deleteScalingPlan() {
+  public toDeleteScalingPlan() {
     this.add('autoscaling-plans:DeleteScalingPlan');
     return this;
   }
@@ -81,7 +81,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html
    */
-  public describeScalingPlanResources() {
+  public toDescribeScalingPlanResources() {
     this.add('autoscaling-plans:DescribeScalingPlanResources');
     return this;
   }
@@ -93,7 +93,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html
    */
-  public describeScalingPlans() {
+  public toDescribeScalingPlans() {
     this.add('autoscaling-plans:DescribeScalingPlans');
     return this;
   }
@@ -105,7 +105,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html
    */
-  public getScalingPlanResourceForecastData() {
+  public toGetScalingPlanResourceForecastData() {
     this.add('autoscaling-plans:GetScalingPlanResourceForecastData');
     return this;
   }
@@ -117,7 +117,7 @@ export class AutoscalingPlans extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html
    */
-  public updateScalingPlan() {
+  public toUpdateScalingPlan() {
     this.add('autoscaling-plans:UpdateScalingPlan');
     return this;
   }

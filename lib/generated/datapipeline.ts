@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
@@ -200,7 +200,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ActivatePipeline.html
    */
-  public activatePipeline() {
+  public toActivatePipeline() {
     this.add('datapipeline:ActivatePipeline');
     return this;
   }
@@ -216,7 +216,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html
    */
-  public addTags() {
+  public toAddTags() {
     this.add('datapipeline:AddTags');
     return this;
   }
@@ -231,7 +231,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html
    */
-  public createPipeline() {
+  public toCreatePipeline() {
     this.add('datapipeline:CreatePipeline');
     return this;
   }
@@ -248,7 +248,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html
    */
-  public deactivatePipeline() {
+  public toDeactivatePipeline() {
     this.add('datapipeline:DeactivatePipeline');
     return this;
   }
@@ -264,7 +264,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeletePipeline.html
    */
-  public deletePipeline() {
+  public toDeletePipeline() {
     this.add('datapipeline:DeletePipeline');
     return this;
   }
@@ -280,7 +280,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribeObjects.html
    */
-  public describeObjects() {
+  public toDescribeObjects() {
     this.add('datapipeline:DescribeObjects');
     return this;
   }
@@ -296,7 +296,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html
    */
-  public describePipelines() {
+  public toDescribePipelines() {
     this.add('datapipeline:DescribePipelines');
     return this;
   }
@@ -312,7 +312,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_EvaluateExpression.html
    */
-  public evaluateExpression() {
+  public toEvaluateExpression() {
     this.add('datapipeline:EvaluateExpression');
     return this;
   }
@@ -324,7 +324,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html
    */
-  public getAccountLimits() {
+  public toGetAccountLimits() {
     this.add('datapipeline:GetAccountLimits');
     return this;
   }
@@ -341,7 +341,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetPipelineDefinition.html
    */
-  public getPipelineDefinition() {
+  public toGetPipelineDefinition() {
     this.add('datapipeline:GetPipelineDefinition');
     return this;
   }
@@ -353,7 +353,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html
    */
-  public listPipelines() {
+  public toListPipelines() {
     this.add('datapipeline:ListPipelines');
     return this;
   }
@@ -368,7 +368,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html
    */
-  public pollForTask() {
+  public toPollForTask() {
     this.add('datapipeline:PollForTask');
     return this;
   }
@@ -380,7 +380,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutAccountLimits.html
    */
-  public putAccountLimits() {
+  public toPutAccountLimits() {
     this.add('datapipeline:PutAccountLimits');
     return this;
   }
@@ -397,7 +397,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PutPipelineDefinition.html
    */
-  public putPipelineDefinition() {
+  public toPutPipelineDefinition() {
     this.add('datapipeline:PutPipelineDefinition');
     return this;
   }
@@ -413,7 +413,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html
    */
-  public queryObjects() {
+  public toQueryObjects() {
     this.add('datapipeline:QueryObjects');
     return this;
   }
@@ -429,7 +429,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_RemoveTags.html
    */
-  public removeTags() {
+  public toRemoveTags() {
     this.add('datapipeline:RemoveTags');
     return this;
   }
@@ -441,7 +441,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html
    */
-  public reportTaskProgress() {
+  public toReportTaskProgress() {
     this.add('datapipeline:ReportTaskProgress');
     return this;
   }
@@ -453,7 +453,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html
    */
-  public reportTaskRunnerHeartbeat() {
+  public toReportTaskRunnerHeartbeat() {
     this.add('datapipeline:ReportTaskRunnerHeartbeat');
     return this;
   }
@@ -469,7 +469,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html
    */
-  public setStatus() {
+  public toSetStatus() {
     this.add('datapipeline:SetStatus');
     return this;
   }
@@ -481,7 +481,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html
    */
-  public setTaskStatus() {
+  public toSetTaskStatus() {
     this.add('datapipeline:SetTaskStatus');
     return this;
   }
@@ -498,7 +498,7 @@ export class Datapipeline extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html
    */
-  public validatePipelineDefinition() {
+  public toValidatePipelineDefinition() {
     this.add('datapipeline:ValidatePipelineDefinition');
     return this;
   }
@@ -509,24 +509,24 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-example-tag-policies.html#ex3
    *
    * Applies to actions:
-   * - .activatePipeline()
-   * - .addTags()
-   * - .deactivatePipeline()
-   * - .deletePipeline()
-   * - .describeObjects()
-   * - .describePipelines()
-   * - .evaluateExpression()
-   * - .getPipelineDefinition()
-   * - .putPipelineDefinition()
-   * - .queryObjects()
-   * - .removeTags()
-   * - .setStatus()
-   * - .validatePipelineDefinition()
+   * - .toActivatePipeline()
+   * - .toAddTags()
+   * - .toDeactivatePipeline()
+   * - .toDeletePipeline()
+   * - .toDescribeObjects()
+   * - .toDescribePipelines()
+   * - .toEvaluateExpression()
+   * - .toGetPipelineDefinition()
+   * - .toPutPipelineDefinition()
+   * - .toQueryObjects()
+   * - .toRemoveTags()
+   * - .toSetStatus()
+   * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPipelineCreator(value: string | string[], operator?: string) {
+  public ifPipelineCreator(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnEquals');
   }
 
@@ -536,25 +536,25 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-tags
    *
    * Applies to actions:
-   * - .activatePipeline()
-   * - .addTags()
-   * - .createPipeline()
-   * - .deactivatePipeline()
-   * - .deletePipeline()
-   * - .describeObjects()
-   * - .describePipelines()
-   * - .evaluateExpression()
-   * - .getPipelineDefinition()
-   * - .putPipelineDefinition()
-   * - .queryObjects()
-   * - .removeTags()
-   * - .setStatus()
-   * - .validatePipelineDefinition()
+   * - .toActivatePipeline()
+   * - .toAddTags()
+   * - .toCreatePipeline()
+   * - .toDeactivatePipeline()
+   * - .toDeletePipeline()
+   * - .toDescribeObjects()
+   * - .toDescribePipelines()
+   * - .toEvaluateExpression()
+   * - .toGetPipelineDefinition()
+   * - .toPutPipelineDefinition()
+   * - .toQueryObjects()
+   * - .toRemoveTags()
+   * - .toSetStatus()
+   * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTag(value: string | string[], operator?: string) {
+  public ifTag(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`datapipeline:Tag`, value, operator || 'ArnEquals');
   }
 
@@ -564,17 +564,17 @@ export class Datapipeline extends PolicyStatement {
    * https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-resourcebased-access.html#dp-control-access-workergroup
    *
    * Applies to actions:
-   * - .activatePipeline()
-   * - .deactivatePipeline()
-   * - .getPipelineDefinition()
-   * - .pollForTask()
-   * - .putPipelineDefinition()
-   * - .validatePipelineDefinition()
+   * - .toActivatePipeline()
+   * - .toDeactivatePipeline()
+   * - .toGetPipelineDefinition()
+   * - .toPollForTask()
+   * - .toPutPipelineDefinition()
+   * - .toValidatePipelineDefinition()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifWorkerGroup(value: string | string[], operator?: string) {
+  public ifWorkerGroup(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`datapipeline:workerGroup`, value, operator || 'ArnEquals');
   }
 }

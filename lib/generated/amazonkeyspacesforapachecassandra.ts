@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [cassandra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkeyspacesforapachecassandra.html).
@@ -161,7 +161,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    */
-  public alter() {
+  public toAlter() {
     this.add('cassandra:Alter');
     return this;
   }
@@ -175,7 +175,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    */
-  public create() {
+  public toCreate() {
     this.add('cassandra:Create');
     return this;
   }
@@ -185,7 +185,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public drop() {
+  public toDrop() {
     this.add('cassandra:Drop');
     return this;
   }
@@ -195,7 +195,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public modify() {
+  public toModify() {
     this.add('cassandra:Modify');
     return this;
   }
@@ -209,7 +209,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    */
-  public restore() {
+  public toRestore() {
     this.add('cassandra:Restore');
     return this;
   }
@@ -219,7 +219,7 @@ export class Cassandra extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public select() {
+  public toSelect() {
     this.add('cassandra:Select');
     return this;
   }
@@ -233,7 +233,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('cassandra:TagResource');
     return this;
   }
@@ -247,7 +247,7 @@ export class Cassandra extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('cassandra:UntagResource');
     return this;
   }
@@ -304,17 +304,17 @@ export class Cassandra extends PolicyStatement {
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .alter()
-   * - .create()
-   * - .restore()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toAlter()
+   * - .toCreate()
+   * - .toRestore()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -331,7 +331,7 @@ export class Cassandra extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -341,16 +341,16 @@ export class Cassandra extends PolicyStatement {
    * https://docs.aws.amazon.com/keyspaces/latest/devguide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .alter()
-   * - .create()
-   * - .restore()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toAlter()
+   * - .toCreate()
+   * - .toRestore()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

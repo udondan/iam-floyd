@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html).
@@ -324,7 +324,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public cancelRotateSecret() {
+  public toCancelRotateSecret() {
     this.add('secretsmanager:CancelRotateSecret');
     return this;
   }
@@ -344,7 +344,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public createSecret() {
+  public toCreateSecret() {
     this.add('secretsmanager:CreateSecret');
     return this;
   }
@@ -361,7 +361,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public deleteResourcePolicy() {
+  public toDeleteResourcePolicy() {
     this.add('secretsmanager:DeleteResourcePolicy');
     return this;
   }
@@ -380,7 +380,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public deleteSecret() {
+  public toDeleteSecret() {
     this.add('secretsmanager:DeleteSecret');
     return this;
   }
@@ -397,7 +397,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public describeSecret() {
+  public toDescribeSecret() {
     this.add('secretsmanager:DescribeSecret');
     return this;
   }
@@ -409,7 +409,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public getRandomPassword() {
+  public toGetRandomPassword() {
     this.add('secretsmanager:GetRandomPassword');
     return this;
   }
@@ -426,7 +426,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public getResourcePolicy() {
+  public toGetResourcePolicy() {
     this.add('secretsmanager:GetResourcePolicy');
     return this;
   }
@@ -445,7 +445,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public getSecretValue() {
+  public toGetSecretValue() {
     this.add('secretsmanager:GetSecretValue');
     return this;
   }
@@ -462,7 +462,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public listSecretVersionIds() {
+  public toListSecretVersionIds() {
     this.add('secretsmanager:ListSecretVersionIds');
     return this;
   }
@@ -474,7 +474,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public listSecrets() {
+  public toListSecrets() {
     this.add('secretsmanager:ListSecrets');
     return this;
   }
@@ -492,7 +492,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public putResourcePolicy() {
+  public toPutResourcePolicy() {
     this.add('secretsmanager:PutResourcePolicy');
     return this;
   }
@@ -509,7 +509,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public putSecretValue() {
+  public toPutSecretValue() {
     this.add('secretsmanager:PutSecretValue');
     return this;
   }
@@ -526,7 +526,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public restoreSecret() {
+  public toRestoreSecret() {
     this.add('secretsmanager:RestoreSecret');
     return this;
   }
@@ -544,7 +544,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public rotateSecret() {
+  public toRotateSecret() {
     this.add('secretsmanager:RotateSecret');
     return this;
   }
@@ -563,7 +563,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('secretsmanager:TagResource');
     return this;
   }
@@ -581,7 +581,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('secretsmanager:UntagResource');
     return this;
   }
@@ -600,7 +600,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public updateSecret() {
+  public toUpdateSecret() {
     this.add('secretsmanager:UpdateSecret');
     return this;
   }
@@ -618,7 +618,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public updateSecretVersionStage() {
+  public toUpdateSecretVersionStage() {
     this.add('secretsmanager:UpdateSecretVersionStage');
     return this;
   }
@@ -635,7 +635,7 @@ export class Secretsmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions
    */
-  public validateResourcePolicy() {
+  public toValidateResourcePolicy() {
     this.add('secretsmanager:ValidateResourcePolicy');
     return this;
   }
@@ -671,8 +671,8 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .createSecret()
-   * - .tagResource()
+   * - .toCreateSecret()
+   * - .toTagResource()
    *
    * Applies to resource types:
    * - Secret
@@ -681,7 +681,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagkey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagkey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagkey }`, value, operator || 'StringLike');
   }
 
@@ -691,9 +691,9 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .createSecret()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateSecret()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * Applies to resource types:
    * - Secret
@@ -701,7 +701,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -711,11 +711,11 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .putResourcePolicy()
+   * - .toPutResourcePolicy()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifBlockPublicPolicy(value?: boolean) {
+  public ifBlockPublicPolicy(value?: boolean): PolicyStatementWithCondition {
     return this.if(`secretsmanager:BlockPublicPolicy`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -725,13 +725,13 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .createSecret()
-   * - .updateSecret()
+   * - .toCreateSecret()
+   * - .toUpdateSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDescription(value: string | string[], operator?: string) {
+  public ifDescription(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:Description`, value, operator || 'StringLike');
   }
 
@@ -741,11 +741,11 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .deleteSecret()
+   * - .toDeleteSecret()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifForceDeleteWithoutRecovery(value?: boolean) {
+  public ifForceDeleteWithoutRecovery(value?: boolean): PolicyStatementWithCondition {
     return this.if(`secretsmanager:ForceDeleteWithoutRecovery`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -755,13 +755,13 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .createSecret()
-   * - .updateSecret()
+   * - .toCreateSecret()
+   * - .toUpdateSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifKmsKeyId(value: string | string[], operator?: string) {
+  public ifKmsKeyId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:KmsKeyId`, value, operator || 'StringLike');
   }
 
@@ -771,12 +771,12 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .createSecret()
+   * - .toCreateSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifName(value: string | string[], operator?: string) {
+  public ifName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:Name`, value, operator || 'StringLike');
   }
 
@@ -786,12 +786,12 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .deleteSecret()
+   * - .toDeleteSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRecoveryWindowInDays(value: number | number[], operator?: string) {
+  public ifRecoveryWindowInDays(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:RecoveryWindowInDays`, value, operator || 'NumericEquals');
   }
 
@@ -801,23 +801,23 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .cancelRotateSecret()
-   * - .createSecret()
-   * - .deleteResourcePolicy()
-   * - .deleteSecret()
-   * - .describeSecret()
-   * - .getResourcePolicy()
-   * - .getSecretValue()
-   * - .listSecretVersionIds()
-   * - .putResourcePolicy()
-   * - .putSecretValue()
-   * - .restoreSecret()
-   * - .rotateSecret()
-   * - .tagResource()
-   * - .untagResource()
-   * - .updateSecret()
-   * - .updateSecretVersionStage()
-   * - .validateResourcePolicy()
+   * - .toCancelRotateSecret()
+   * - .toCreateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
    *
    * Applies to resource types:
    * - Secret
@@ -826,7 +826,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:ResourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 
@@ -836,12 +836,12 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .rotateSecret()
+   * - .toRotateSecret()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifRotationLambdaARN(value: string | string[], operator?: string) {
+  public ifRotationLambdaARN(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:RotationLambdaARN`, value, operator || 'ArnEquals');
   }
 
@@ -851,27 +851,27 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .cancelRotateSecret()
-   * - .deleteResourcePolicy()
-   * - .deleteSecret()
-   * - .describeSecret()
-   * - .getResourcePolicy()
-   * - .getSecretValue()
-   * - .listSecretVersionIds()
-   * - .putResourcePolicy()
-   * - .putSecretValue()
-   * - .restoreSecret()
-   * - .rotateSecret()
-   * - .tagResource()
-   * - .untagResource()
-   * - .updateSecret()
-   * - .updateSecretVersionStage()
-   * - .validateResourcePolicy()
+   * - .toCancelRotateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
    *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifSecretId(value: string | string[], operator?: string) {
+  public ifSecretId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:SecretId`, value, operator || 'ArnEquals');
   }
 
@@ -881,12 +881,12 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .getSecretValue()
+   * - .toGetSecretValue()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersionId(value: string | string[], operator?: string) {
+  public ifVersionId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:VersionId`, value, operator || 'StringLike');
   }
 
@@ -896,13 +896,13 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .getSecretValue()
-   * - .updateSecretVersionStage()
+   * - .toGetSecretValue()
+   * - .toUpdateSecretVersionStage()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersionStage(value: string | string[], operator?: string) {
+  public ifVersionStage(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:VersionStage`, value, operator || 'StringLike');
   }
 
@@ -912,22 +912,22 @@ export class Secretsmanager extends PolicyStatement {
    * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
    *
    * Applies to actions:
-   * - .cancelRotateSecret()
-   * - .deleteResourcePolicy()
-   * - .deleteSecret()
-   * - .describeSecret()
-   * - .getResourcePolicy()
-   * - .getSecretValue()
-   * - .listSecretVersionIds()
-   * - .putResourcePolicy()
-   * - .putSecretValue()
-   * - .restoreSecret()
-   * - .rotateSecret()
-   * - .tagResource()
-   * - .untagResource()
-   * - .updateSecret()
-   * - .updateSecretVersionStage()
-   * - .validateResourcePolicy()
+   * - .toCancelRotateSecret()
+   * - .toDeleteResourcePolicy()
+   * - .toDeleteSecret()
+   * - .toDescribeSecret()
+   * - .toGetResourcePolicy()
+   * - .toGetSecretValue()
+   * - .toListSecretVersionIds()
+   * - .toPutResourcePolicy()
+   * - .toPutSecretValue()
+   * - .toRestoreSecret()
+   * - .toRotateSecret()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateSecret()
+   * - .toUpdateSecretVersionStage()
+   * - .toValidateResourcePolicy()
    *
    * Applies to resource types:
    * - Secret
@@ -936,7 +936,7 @@ export class Secretsmanager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string) {
+  public ifResource(allowRotationLambdaArn: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`secretsmanager:resource/${ allowRotationLambdaArn }`, value, operator || 'ArnEquals');
   }
 }

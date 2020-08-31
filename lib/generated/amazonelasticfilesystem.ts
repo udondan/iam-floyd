@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [elasticfilesystem](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticfilesystem.html).
@@ -344,7 +344,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
    */
-  public backup() {
+  public toBackup() {
     this.add('elasticfilesystem:Backup');
     return this;
   }
@@ -359,7 +359,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
-  public clientMount() {
+  public toClientMount() {
     this.add('elasticfilesystem:ClientMount');
     return this;
   }
@@ -374,7 +374,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
-  public clientRootAccess() {
+  public toClientRootAccess() {
     this.add('elasticfilesystem:ClientRootAccess');
     return this;
   }
@@ -389,7 +389,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-client-authorization.html
    */
-  public clientWrite() {
+  public toClientWrite() {
     this.add('elasticfilesystem:ClientWrite');
     return this;
   }
@@ -401,7 +401,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateAccessPoint.html
    */
-  public createAccessPoint() {
+  public toCreateAccessPoint() {
     this.add('elasticfilesystem:CreateAccessPoint');
     return this;
   }
@@ -417,7 +417,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html
    */
-  public createFileSystem() {
+  public toCreateFileSystem() {
     this.add('elasticfilesystem:CreateFileSystem');
     return this;
   }
@@ -429,7 +429,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html
    */
-  public createMountTarget() {
+  public toCreateMountTarget() {
     this.add('elasticfilesystem:CreateMountTarget');
     return this;
   }
@@ -445,7 +445,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html
    */
-  public createTags() {
+  public toCreateTags() {
     this.add('elasticfilesystem:CreateTags');
     return this;
   }
@@ -457,7 +457,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteAccessPoint.html
    */
-  public deleteAccessPoint() {
+  public toDeleteAccessPoint() {
     this.add('elasticfilesystem:DeleteAccessPoint');
     return this;
   }
@@ -469,7 +469,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystem.html
    */
-  public deleteFileSystem() {
+  public toDeleteFileSystem() {
     this.add('elasticfilesystem:DeleteFileSystem');
     return this;
   }
@@ -481,7 +481,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystemPolicy.html
    */
-  public deleteFileSystemPolicy() {
+  public toDeleteFileSystemPolicy() {
     this.add('elasticfilesystem:DeleteFileSystemPolicy');
     return this;
   }
@@ -493,7 +493,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html
    */
-  public deleteMountTarget() {
+  public toDeleteMountTarget() {
     this.add('elasticfilesystem:DeleteMountTarget');
     return this;
   }
@@ -508,7 +508,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html
    */
-  public deleteTags() {
+  public toDeleteTags() {
     this.add('elasticfilesystem:DeleteTags');
     return this;
   }
@@ -520,7 +520,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeAccessPoints.html
    */
-  public describeAccessPoints() {
+  public toDescribeAccessPoints() {
     this.add('elasticfilesystem:DescribeAccessPoints');
     return this;
   }
@@ -532,7 +532,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeBackupPolicy.html
    */
-  public describeBackupPolicy() {
+  public toDescribeBackupPolicy() {
     this.add('elasticfilesystem:DescribeBackupPolicy');
     return this;
   }
@@ -544,7 +544,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystemPolicy.html
    */
-  public describeFileSystemPolicy() {
+  public toDescribeFileSystemPolicy() {
     this.add('elasticfilesystem:DescribeFileSystemPolicy');
     return this;
   }
@@ -556,7 +556,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html
    */
-  public describeFileSystems() {
+  public toDescribeFileSystems() {
     this.add('elasticfilesystem:DescribeFileSystems');
     return this;
   }
@@ -568,7 +568,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeLifecycleConfiguration.html
    */
-  public describeLifecycleConfiguration() {
+  public toDescribeLifecycleConfiguration() {
     this.add('elasticfilesystem:DescribeLifecycleConfiguration');
     return this;
   }
@@ -580,7 +580,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html
    */
-  public describeMountTargetSecurityGroups() {
+  public toDescribeMountTargetSecurityGroups() {
     this.add('elasticfilesystem:DescribeMountTargetSecurityGroups');
     return this;
   }
@@ -592,7 +592,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html
    */
-  public describeMountTargets() {
+  public toDescribeMountTargets() {
     this.add('elasticfilesystem:DescribeMountTargets');
     return this;
   }
@@ -604,7 +604,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html
    */
-  public describeTags() {
+  public toDescribeTags() {
     this.add('elasticfilesystem:DescribeTags');
     return this;
   }
@@ -616,7 +616,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('elasticfilesystem:ListTagsForResource');
     return this;
   }
@@ -628,7 +628,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html
    */
-  public modifyMountTargetSecurityGroups() {
+  public toModifyMountTargetSecurityGroups() {
     this.add('elasticfilesystem:ModifyMountTargetSecurityGroups');
     return this;
   }
@@ -640,7 +640,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_PutBackupPolicy.html
    */
-  public putBackupPolicy() {
+  public toPutBackupPolicy() {
     this.add('elasticfilesystem:PutBackupPolicy');
     return this;
   }
@@ -652,7 +652,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_PutFileSystemPolicy.html
    */
-  public putFileSystemPolicy() {
+  public toPutFileSystemPolicy() {
     this.add('elasticfilesystem:PutFileSystemPolicy');
     return this;
   }
@@ -664,7 +664,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_PutLifecycleConfiguration.html
    */
-  public putLifecycleConfiguration() {
+  public toPutLifecycleConfiguration() {
     this.add('elasticfilesystem:PutLifecycleConfiguration');
     return this;
   }
@@ -676,7 +676,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/efs-backup-solutions.html
    */
-  public restore() {
+  public toRestore() {
     this.add('elasticfilesystem:Restore');
     return this;
   }
@@ -688,7 +688,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('elasticfilesystem:TagResource');
     return this;
   }
@@ -700,7 +700,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('elasticfilesystem:UntagResource');
     return this;
   }
@@ -712,7 +712,7 @@ export class Elasticfilesystem extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_UpdateFileSystem.html
    */
-  public updateFileSystem() {
+  public toUpdateFileSystem() {
     this.add('elasticfilesystem:UpdateFileSystem');
     return this;
   }
@@ -767,14 +767,14 @@ export class Elasticfilesystem extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createFileSystem()
-   * - .createTags()
+   * - .toCreateFileSystem()
+   * - .toCreateTags()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -791,7 +791,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -801,14 +801,14 @@ export class Elasticfilesystem extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createFileSystem()
-   * - .createTags()
-   * - .deleteTags()
+   * - .toCreateFileSystem()
+   * - .toCreateTags()
+   * - .toDeleteTags()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
@@ -816,14 +816,14 @@ export class Elasticfilesystem extends PolicyStatement {
    * The ARN of the access point used to mount the file system
    *
    * Applies to actions:
-   * - .clientMount()
-   * - .clientRootAccess()
-   * - .clientWrite()
+   * - .toClientMount()
+   * - .toClientRootAccess()
+   * - .toClientWrite()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAccessPointArn(value: string | string[], operator?: string) {
+  public ifAccessPointArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`elasticfilesystem:AccessPointArn`, value, operator || 'StringLike');
   }
 }

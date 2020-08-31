@@ -57,7 +57,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelQuantumTask.html
    */
-  public cancelQuantumTask() {
+  public toCancelQuantumTask() {
     this.add('braket:CancelQuantumTask');
     return this;
   }
@@ -69,7 +69,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html
    */
-  public createQuantumTask() {
+  public toCreateQuantumTask() {
     this.add('braket:CreateQuantumTask');
     return this;
   }
@@ -81,7 +81,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetDevice.html
    */
-  public getDevice() {
+  public toGetDevice() {
     this.add('braket:GetDevice');
     return this;
   }
@@ -93,7 +93,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_GetQuantumTask.html
    */
-  public getQuantumTask() {
+  public toGetQuantumTask() {
     this.add('braket:GetQuantumTask');
     return this;
   }
@@ -105,7 +105,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html
    */
-  public searchDevices() {
+  public toSearchDevices() {
     this.add('braket:SearchDevices');
     return this;
   }
@@ -117,7 +117,7 @@ export class Braket extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html
    */
-  public searchQuantumTasks() {
+  public toSearchQuantumTasks() {
     this.add('braket:SearchQuantumTasks');
     return this;
   }

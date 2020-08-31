@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [signer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodesigningforamazonfreertos.html).
@@ -149,7 +149,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html
    */
-  public cancelSigningProfile() {
+  public toCancelSigningProfile() {
     this.add('signer:CancelSigningProfile');
     return this;
   }
@@ -161,7 +161,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html
    */
-  public describeSigningJob() {
+  public toDescribeSigningJob() {
     this.add('signer:DescribeSigningJob');
     return this;
   }
@@ -173,7 +173,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html
    */
-  public getSigningPlatform() {
+  public toGetSigningPlatform() {
     this.add('signer:GetSigningPlatform');
     return this;
   }
@@ -185,7 +185,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html
    */
-  public getSigningProfile() {
+  public toGetSigningProfile() {
     this.add('signer:GetSigningProfile');
     return this;
   }
@@ -197,7 +197,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html
    */
-  public listSigningJobs() {
+  public toListSigningJobs() {
     this.add('signer:ListSigningJobs');
     return this;
   }
@@ -209,7 +209,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html
    */
-  public listSigningPlatforms() {
+  public toListSigningPlatforms() {
     this.add('signer:ListSigningPlatforms');
     return this;
   }
@@ -221,7 +221,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html
    */
-  public listSigningProfiles() {
+  public toListSigningProfiles() {
     this.add('signer:ListSigningProfiles');
     return this;
   }
@@ -233,7 +233,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('signer:ListTagsForResource');
     return this;
   }
@@ -249,7 +249,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html
    */
-  public putSigningProfile() {
+  public toPutSigningProfile() {
     this.add('signer:PutSigningProfile');
     return this;
   }
@@ -261,7 +261,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html
    */
-  public startSigningJob() {
+  public toStartSigningJob() {
     this.add('signer:StartSigningJob');
     return this;
   }
@@ -277,7 +277,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('signer:TagResource');
     return this;
   }
@@ -293,7 +293,7 @@ export class Signer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/signer/latest/api/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('signer:UntagResource');
     return this;
   }
@@ -341,15 +341,15 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .putSigningProfile()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toPutSigningProfile()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -365,7 +365,7 @@ export class Signer extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -375,14 +375,14 @@ export class Signer extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .putSigningProfile()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toPutSigningProfile()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

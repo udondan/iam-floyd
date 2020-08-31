@@ -71,7 +71,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_CreateOutpost.html
    */
-  public createOutpost() {
+  public toCreateOutpost() {
     this.add('outposts:CreateOutpost');
     return this;
   }
@@ -83,7 +83,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpost.html
    */
-  public getOutpost() {
+  public toGetOutpost() {
     this.add('outposts:GetOutpost');
     return this;
   }
@@ -95,7 +95,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_GetOutpostInstanceTypes.html
    */
-  public getOutpostInstanceTypes() {
+  public toGetOutpostInstanceTypes() {
     this.add('outposts:GetOutpostInstanceTypes');
     return this;
   }
@@ -107,7 +107,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListOutposts.html
    */
-  public listOutposts() {
+  public toListOutposts() {
     this.add('outposts:ListOutposts');
     return this;
   }
@@ -119,7 +119,7 @@ export class Outposts extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/outposts/latest/APIReference/API_ListSites.html
    */
-  public listSites() {
+  public toListSites() {
     this.add('outposts:ListSites');
     return this;
   }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elementalactivations.html).
@@ -93,7 +93,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public downloadSoftware() {
+  public toDownloadSoftware() {
     this.add('elemental-activations:DownloadSoftware');
     return this;
   }
@@ -105,7 +105,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public generateLicenses() {
+  public toGenerateLicenses() {
     this.add('elemental-activations:GenerateLicenses');
     return this;
   }
@@ -117,7 +117,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public getActivation() {
+  public toGetActivation() {
     this.add('elemental-activations:GetActivation');
     return this;
   }
@@ -129,7 +129,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('elemental-activations:ListTagsForResource');
     return this;
   }
@@ -145,7 +145,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('elemental-activations:TagResource');
     return this;
   }
@@ -160,7 +160,7 @@ export class ElementalActivations extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/elemental-appliances-software/
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('elemental-activations:UntagResource');
     return this;
   }
@@ -193,13 +193,13 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .tagResource()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'ArnEquals');
   }
 
@@ -215,7 +215,7 @@ export class ElementalActivations extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -225,13 +225,13 @@ export class ElementalActivations extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .tagResource()
-   * - .untagResource()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

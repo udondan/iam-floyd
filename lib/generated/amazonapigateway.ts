@@ -64,7 +64,7 @@ export class ExecuteApi extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html
    */
-  public invalidateCache() {
+  public toInvalidateCache() {
     this.add('execute-api:InvalidateCache');
     return this;
   }
@@ -76,7 +76,7 @@ export class ExecuteApi extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html
    */
-  public invoke() {
+  public toInvoke() {
     this.add('execute-api:Invoke');
     return this;
   }
@@ -88,7 +88,7 @@ export class ExecuteApi extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html
    */
-  public manageConnections() {
+  public toManageConnections() {
     this.add('execute-api:ManageConnections');
     return this;
   }

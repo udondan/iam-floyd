@@ -72,7 +72,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html
    */
-  public deleteTerminology() {
+  public toDeleteTerminology() {
     this.add('translate:DeleteTerminology');
     return this;
   }
@@ -84,7 +84,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_DescribeTextTranslationJob.html
    */
-  public describeTextTranslationJob() {
+  public toDescribeTextTranslationJob() {
     this.add('translate:DescribeTextTranslationJob');
     return this;
   }
@@ -96,7 +96,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_GetTerminology.html
    */
-  public getTerminology() {
+  public toGetTerminology() {
     this.add('translate:GetTerminology');
     return this;
   }
@@ -108,7 +108,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ImportTerminology.html
    */
-  public importTerminology() {
+  public toImportTerminology() {
     this.add('translate:ImportTerminology');
     return this;
   }
@@ -120,7 +120,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ListTerminologies.html
    */
-  public listTerminologies() {
+  public toListTerminologies() {
     this.add('translate:ListTerminologies');
     return this;
   }
@@ -132,7 +132,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_ListTextTranslationJobs.html
    */
-  public listTextTranslationJobs() {
+  public toListTextTranslationJobs() {
     this.add('translate:ListTextTranslationJobs');
     return this;
   }
@@ -144,7 +144,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_StartTextTranslationJob.html
    */
-  public startTextTranslationJob() {
+  public toStartTextTranslationJob() {
     this.add('translate:StartTextTranslationJob');
     return this;
   }
@@ -156,7 +156,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_StopTextTranslationJob.html
    */
-  public stopTextTranslationJob() {
+  public toStopTextTranslationJob() {
     this.add('translate:StopTextTranslationJob');
     return this;
   }
@@ -168,7 +168,7 @@ export class Translate extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html
    */
-  public translateText() {
+  public toTranslateText() {
     this.add('translate:TranslateText');
     return this;
   }

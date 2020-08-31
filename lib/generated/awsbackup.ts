@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [backup](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbackup.html).
@@ -495,7 +495,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CopyIntoBackupVault.html
    */
-  public copyIntoBackupVault() {
+  public toCopyIntoBackupVault() {
     this.add('backup:CopyIntoBackupVault');
     return this;
   }
@@ -511,7 +511,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupPlan.html
    */
-  public createBackupPlan() {
+  public toCreateBackupPlan() {
     this.add('backup:CreateBackupPlan');
     return this;
   }
@@ -526,7 +526,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupSelection.html
    */
-  public createBackupSelection() {
+  public toCreateBackupSelection() {
     this.add('backup:CreateBackupSelection');
     return this;
   }
@@ -542,7 +542,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html
    */
-  public createBackupVault() {
+  public toCreateBackupVault() {
     this.add('backup:CreateBackupVault');
     return this;
   }
@@ -554,7 +554,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupPlan.html
    */
-  public deleteBackupPlan() {
+  public toDeleteBackupPlan() {
     this.add('backup:DeleteBackupPlan');
     return this;
   }
@@ -566,7 +566,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupSelection.html
    */
-  public deleteBackupSelection() {
+  public toDeleteBackupSelection() {
     this.add('backup:DeleteBackupSelection');
     return this;
   }
@@ -578,7 +578,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVault.html
    */
-  public deleteBackupVault() {
+  public toDeleteBackupVault() {
     this.add('backup:DeleteBackupVault');
     return this;
   }
@@ -590,7 +590,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultAccessPolicy.html
    */
-  public deleteBackupVaultAccessPolicy() {
+  public toDeleteBackupVaultAccessPolicy() {
     this.add('backup:DeleteBackupVaultAccessPolicy');
     return this;
   }
@@ -602,7 +602,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteBackupVaultNotifications.html
    */
-  public deleteBackupVaultNotifications() {
+  public toDeleteBackupVaultNotifications() {
     this.add('backup:DeleteBackupVaultNotifications');
     return this;
   }
@@ -614,7 +614,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DeleteRecoveryPoint.html
    */
-  public deleteRecoveryPoint() {
+  public toDeleteRecoveryPoint() {
     this.add('backup:DeleteRecoveryPoint');
     return this;
   }
@@ -626,7 +626,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupJob.html
    */
-  public describeBackupJob() {
+  public toDescribeBackupJob() {
     this.add('backup:DescribeBackupJob');
     return this;
   }
@@ -638,7 +638,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeBackupVault.html
    */
-  public describeBackupVault() {
+  public toDescribeBackupVault() {
     this.add('backup:DescribeBackupVault');
     return this;
   }
@@ -654,7 +654,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeCopyJob.html
    */
-  public describeCopyJob() {
+  public toDescribeCopyJob() {
     this.add('backup:DescribeCopyJob');
     return this;
   }
@@ -666,7 +666,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeProtectedResource.html
    */
-  public describeProtectedResource() {
+  public toDescribeProtectedResource() {
     this.add('backup:DescribeProtectedResource');
     return this;
   }
@@ -678,7 +678,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html
    */
-  public describeRecoveryPoint() {
+  public toDescribeRecoveryPoint() {
     this.add('backup:DescribeRecoveryPoint');
     return this;
   }
@@ -690,7 +690,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRegionSettings.html
    */
-  public describeRegionSettings() {
+  public toDescribeRegionSettings() {
     this.add('backup:DescribeRegionSettings');
     return this;
   }
@@ -702,7 +702,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRestoreJob.html
    */
-  public describeRestoreJob() {
+  public toDescribeRestoreJob() {
     this.add('backup:DescribeRestoreJob');
     return this;
   }
@@ -714,7 +714,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ExportBackupPlanTemplate.html
    */
-  public exportBackupPlanTemplate() {
+  public toExportBackupPlanTemplate() {
     this.add('backup:ExportBackupPlanTemplate');
     return this;
   }
@@ -726,7 +726,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupPlan.html
    */
-  public getBackupPlan() {
+  public toGetBackupPlan() {
     this.add('backup:GetBackupPlan');
     return this;
   }
@@ -738,7 +738,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupPlanFromJSON.html
    */
-  public getBackupPlanFromJSON() {
+  public toGetBackupPlanFromJSON() {
     this.add('backup:GetBackupPlanFromJSON');
     return this;
   }
@@ -750,7 +750,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupPlanFromTemplate.html
    */
-  public getBackupPlanFromTemplate() {
+  public toGetBackupPlanFromTemplate() {
     this.add('backup:GetBackupPlanFromTemplate');
     return this;
   }
@@ -762,7 +762,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupSelection.html
    */
-  public getBackupSelection() {
+  public toGetBackupSelection() {
     this.add('backup:GetBackupSelection');
     return this;
   }
@@ -774,7 +774,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupVaultAccessPolicy.html
    */
-  public getBackupVaultAccessPolicy() {
+  public toGetBackupVaultAccessPolicy() {
     this.add('backup:GetBackupVaultAccessPolicy');
     return this;
   }
@@ -786,7 +786,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetBackupVaultNotifications.html
    */
-  public getBackupVaultNotifications() {
+  public toGetBackupVaultNotifications() {
     this.add('backup:GetBackupVaultNotifications');
     return this;
   }
@@ -798,7 +798,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetRecoveryPointRestoreMetadata.html
    */
-  public getRecoveryPointRestoreMetadata() {
+  public toGetRecoveryPointRestoreMetadata() {
     this.add('backup:GetRecoveryPointRestoreMetadata');
     return this;
   }
@@ -810,7 +810,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_GetSupportedResourceTypes.html
    */
-  public getSupportedResourceTypes() {
+  public toGetSupportedResourceTypes() {
     this.add('backup:GetSupportedResourceTypes');
     return this;
   }
@@ -822,7 +822,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html
    */
-  public listBackupJobs() {
+  public toListBackupJobs() {
     this.add('backup:ListBackupJobs');
     return this;
   }
@@ -834,7 +834,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupPlanTemplates.html
    */
-  public listBackupPlanTemplates() {
+  public toListBackupPlanTemplates() {
     this.add('backup:ListBackupPlanTemplates');
     return this;
   }
@@ -846,7 +846,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupPlanVersions.html
    */
-  public listBackupPlanVersions() {
+  public toListBackupPlanVersions() {
     this.add('backup:ListBackupPlanVersions');
     return this;
   }
@@ -858,7 +858,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupPlans.html
    */
-  public listBackupPlans() {
+  public toListBackupPlans() {
     this.add('backup:ListBackupPlans');
     return this;
   }
@@ -870,7 +870,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupSelections.html
    */
-  public listBackupSelections() {
+  public toListBackupSelections() {
     this.add('backup:ListBackupSelections');
     return this;
   }
@@ -882,7 +882,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupVaults.html
    */
-  public listBackupVaults() {
+  public toListBackupVaults() {
     this.add('backup:ListBackupVaults');
     return this;
   }
@@ -894,7 +894,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListCopyJobs.html
    */
-  public listCopyJobs() {
+  public toListCopyJobs() {
     this.add('backup:ListCopyJobs');
     return this;
   }
@@ -906,7 +906,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListProtectedResources.html
    */
-  public listProtectedResources() {
+  public toListProtectedResources() {
     this.add('backup:ListProtectedResources');
     return this;
   }
@@ -918,7 +918,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByBackupVault.html
    */
-  public listRecoveryPointsByBackupVault() {
+  public toListRecoveryPointsByBackupVault() {
     this.add('backup:ListRecoveryPointsByBackupVault');
     return this;
   }
@@ -930,7 +930,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRecoveryPointsByResource.html
    */
-  public listRecoveryPointsByResource() {
+  public toListRecoveryPointsByResource() {
     this.add('backup:ListRecoveryPointsByResource');
     return this;
   }
@@ -942,7 +942,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListRestoreJobs.html
    */
-  public listRestoreJobs() {
+  public toListRestoreJobs() {
     this.add('backup:ListRestoreJobs');
     return this;
   }
@@ -954,7 +954,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListTags.html
    */
-  public listTags() {
+  public toListTags() {
     this.add('backup:ListTags');
     return this;
   }
@@ -966,7 +966,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultAccessPolicy.html
    */
-  public putBackupVaultAccessPolicy() {
+  public toPutBackupVaultAccessPolicy() {
     this.add('backup:PutBackupVaultAccessPolicy');
     return this;
   }
@@ -978,7 +978,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_PutBackupVaultNotifications.html
    */
-  public putBackupVaultNotifications() {
+  public toPutBackupVaultNotifications() {
     this.add('backup:PutBackupVaultNotifications');
     return this;
   }
@@ -993,7 +993,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartBackupJob.html
    */
-  public startBackupJob() {
+  public toStartBackupJob() {
     this.add('backup:StartBackupJob');
     return this;
   }
@@ -1012,7 +1012,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartCopyJob.html
    */
-  public startCopyJob() {
+  public toStartCopyJob() {
     this.add('backup:StartCopyJob');
     return this;
   }
@@ -1027,7 +1027,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StartRestoreJob.html
    */
-  public startRestoreJob() {
+  public toStartRestoreJob() {
     this.add('backup:StartRestoreJob');
     return this;
   }
@@ -1039,7 +1039,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_StopBackupJob.html
    */
-  public stopBackupJob() {
+  public toStopBackupJob() {
     this.add('backup:StopBackupJob');
     return this;
   }
@@ -1055,7 +1055,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('backup:TagResource');
     return this;
   }
@@ -1070,7 +1070,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('backup:UntagResource');
     return this;
   }
@@ -1082,7 +1082,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html
    */
-  public updateBackupPlan() {
+  public toUpdateBackupPlan() {
     this.add('backup:UpdateBackupPlan');
     return this;
   }
@@ -1094,7 +1094,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRecoveryPointLifecycle.html
    */
-  public updateRecoveryPointLifecycle() {
+  public toUpdateRecoveryPointLifecycle() {
     this.add('backup:UpdateRecoveryPointLifecycle');
     return this;
   }
@@ -1106,7 +1106,7 @@ export class Backup extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRegionSettings.html
    */
-  public updateRegionSettings() {
+  public toUpdateRegionSettings() {
     this.add('backup:UpdateRegionSettings');
     return this;
   }
@@ -1183,17 +1183,17 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .createBackupPlan()
-   * - .createBackupVault()
-   * - .describeCopyJob()
-   * - .startCopyJob()
-   * - .tagResource()
+   * - .toCreateBackupPlan()
+   * - .toCreateBackupVault()
+   * - .toDescribeCopyJob()
+   * - .toStartCopyJob()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1211,7 +1211,7 @@ export class Backup extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1221,17 +1221,17 @@ export class Backup extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .createBackupPlan()
-   * - .createBackupVault()
-   * - .describeCopyJob()
-   * - .startCopyJob()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateBackupPlan()
+   * - .toCreateBackupVault()
+   * - .toDescribeCopyJob()
+   * - .toStartCopyJob()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

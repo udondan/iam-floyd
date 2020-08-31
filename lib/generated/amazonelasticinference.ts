@@ -42,7 +42,7 @@ export class ElasticInference extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public connect() {
+  public toConnect() {
     this.add('elastic-inference:Connect');
     return this;
   }

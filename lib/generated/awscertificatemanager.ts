@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [acm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html).
@@ -171,7 +171,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html
    */
-  public addTagsToCertificate() {
+  public toAddTagsToCertificate() {
     this.add('acm:AddTagsToCertificate');
     return this;
   }
@@ -183,7 +183,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html
    */
-  public deleteCertificate() {
+  public toDeleteCertificate() {
     this.add('acm:DeleteCertificate');
     return this;
   }
@@ -195,7 +195,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html
    */
-  public describeCertificate() {
+  public toDescribeCertificate() {
     this.add('acm:DescribeCertificate');
     return this;
   }
@@ -207,7 +207,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ExportCertificate.html
    */
-  public exportCertificate() {
+  public toExportCertificate() {
     this.add('acm:ExportCertificate');
     return this;
   }
@@ -219,7 +219,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html
    */
-  public getCertificate() {
+  public toGetCertificate() {
     this.add('acm:GetCertificate');
     return this;
   }
@@ -235,7 +235,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html
    */
-  public importCertificate() {
+  public toImportCertificate() {
     this.add('acm:ImportCertificate');
     return this;
   }
@@ -247,7 +247,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html
    */
-  public listCertificates() {
+  public toListCertificates() {
     this.add('acm:ListCertificates');
     return this;
   }
@@ -259,7 +259,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html
    */
-  public listTagsForCertificate() {
+  public toListTagsForCertificate() {
     this.add('acm:ListTagsForCertificate');
     return this;
   }
@@ -275,7 +275,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html
    */
-  public removeTagsFromCertificate() {
+  public toRemoveTagsFromCertificate() {
     this.add('acm:RemoveTagsFromCertificate');
     return this;
   }
@@ -287,7 +287,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RenewCertificate.html
    */
-  public renewCertificate() {
+  public toRenewCertificate() {
     this.add('acm:RenewCertificate');
     return this;
   }
@@ -303,7 +303,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html
    */
-  public requestCertificate() {
+  public toRequestCertificate() {
     this.add('acm:RequestCertificate');
     return this;
   }
@@ -315,7 +315,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html
    */
-  public resendValidationEmail() {
+  public toResendValidationEmail() {
     this.add('acm:ResendValidationEmail');
     return this;
   }
@@ -327,7 +327,7 @@ export class Acm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificateOptions.html
    */
-  public updateCertificateOptions() {
+  public toUpdateCertificateOptions() {
     this.add('acm:UpdateCertificateOptions');
     return this;
   }
@@ -360,16 +360,16 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
    * Applies to actions:
-   * - .addTagsToCertificate()
-   * - .importCertificate()
-   * - .removeTagsFromCertificate()
-   * - .requestCertificate()
+   * - .toAddTagsToCertificate()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromCertificate()
+   * - .toRequestCertificate()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -385,7 +385,7 @@ export class Acm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -395,15 +395,15 @@ export class Acm extends PolicyStatement {
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
    * Applies to actions:
-   * - .addTagsToCertificate()
-   * - .importCertificate()
-   * - .removeTagsFromCertificate()
-   * - .requestCertificate()
+   * - .toAddTagsToCertificate()
+   * - .toImportCertificate()
+   * - .toRemoveTagsFromCertificate()
+   * - .toRequestCertificate()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

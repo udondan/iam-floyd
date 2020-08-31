@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [iotevents](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotevents.html).
@@ -258,7 +258,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html
    */
-  public batchPutMessage() {
+  public toBatchPutMessage() {
     this.add('iotevents:BatchPutMessage');
     return this;
   }
@@ -270,7 +270,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchUpdateDetector.html
    */
-  public batchUpdateDetector() {
+  public toBatchUpdateDetector() {
     this.add('iotevents:BatchUpdateDetector');
     return this;
   }
@@ -286,7 +286,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateDetectorModel.html
    */
-  public createDetectorModel() {
+  public toCreateDetectorModel() {
     this.add('iotevents:CreateDetectorModel');
     return this;
   }
@@ -302,7 +302,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateInput.html
    */
-  public createInput() {
+  public toCreateInput() {
     this.add('iotevents:CreateInput');
     return this;
   }
@@ -314,7 +314,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DeleteDetectorModel.html
    */
-  public deleteDetectorModel() {
+  public toDeleteDetectorModel() {
     this.add('iotevents:DeleteDetectorModel');
     return this;
   }
@@ -326,7 +326,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DeleteInput.html
    */
-  public deleteInput() {
+  public toDeleteInput() {
     this.add('iotevents:DeleteInput');
     return this;
   }
@@ -338,7 +338,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_DescribeDetector.html
    */
-  public describeDetector() {
+  public toDescribeDetector() {
     this.add('iotevents:DescribeDetector');
     return this;
   }
@@ -350,7 +350,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeDetectorModel.html
    */
-  public describeDetectorModel() {
+  public toDescribeDetectorModel() {
     this.add('iotevents:DescribeDetectorModel');
     return this;
   }
@@ -362,7 +362,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeInput.html
    */
-  public describeInput() {
+  public toDescribeInput() {
     this.add('iotevents:DescribeInput');
     return this;
   }
@@ -374,7 +374,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_DescribeLoggingOptions.html
    */
-  public describeLoggingOptions() {
+  public toDescribeLoggingOptions() {
     this.add('iotevents:DescribeLoggingOptions');
     return this;
   }
@@ -386,7 +386,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListDetectorModelVersions.html
    */
-  public listDetectorModelVersions() {
+  public toListDetectorModelVersions() {
     this.add('iotevents:ListDetectorModelVersions');
     return this;
   }
@@ -398,7 +398,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListDetectorModels.html
    */
-  public listDetectorModels() {
+  public toListDetectorModels() {
     this.add('iotevents:ListDetectorModels');
     return this;
   }
@@ -410,7 +410,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html
    */
-  public listDetectors() {
+  public toListDetectors() {
     this.add('iotevents:ListDetectors');
     return this;
   }
@@ -422,7 +422,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListInputs.html
    */
-  public listInputs() {
+  public toListInputs() {
     this.add('iotevents:ListInputs');
     return this;
   }
@@ -434,7 +434,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('iotevents:ListTagsForResource');
     return this;
   }
@@ -446,7 +446,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_PutLoggingOptions.html
    */
-  public putLoggingOptions() {
+  public toPutLoggingOptions() {
     this.add('iotevents:PutLoggingOptions');
     return this;
   }
@@ -462,7 +462,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('iotevents:TagResource');
     return this;
   }
@@ -477,7 +477,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('iotevents:UntagResource');
     return this;
   }
@@ -489,7 +489,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateDetectorModel.html
    */
-  public updateDetectorModel() {
+  public toUpdateDetectorModel() {
     this.add('iotevents:UpdateDetectorModel');
     return this;
   }
@@ -501,7 +501,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateInput.html
    */
-  public updateInput() {
+  public toUpdateInput() {
     this.add('iotevents:UpdateInput');
     return this;
   }
@@ -513,7 +513,7 @@ export class Iotevents extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iotevents/latest/apireference/API_UpdateInputRouting.html
    */
-  public updateInputRouting() {
+  public toUpdateInputRouting() {
     this.add('iotevents:UpdateInputRouting');
     return this;
   }
@@ -566,15 +566,15 @@ export class Iotevents extends PolicyStatement {
    * A tag key that is present in the request that the user makes to IoT Events.
    *
    * Applies to actions:
-   * - .createDetectorModel()
-   * - .createInput()
-   * - .tagResource()
+   * - .toCreateDetectorModel()
+   * - .toCreateInput()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -589,7 +589,7 @@ export class Iotevents extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -597,15 +597,15 @@ export class Iotevents extends PolicyStatement {
    * The list of all the tag key names associated with the IoT Events resource in the request.
    *
    * Applies to actions:
-   * - .createDetectorModel()
-   * - .createInput()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateDetectorModel()
+   * - .toCreateInput()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

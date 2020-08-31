@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [datasync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datasync.html).
@@ -346,7 +346,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html
    */
-  public cancelTaskExecution() {
+  public toCancelTaskExecution() {
     this.add('datasync:CancelTaskExecution');
     return this;
   }
@@ -362,7 +362,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html
    */
-  public createAgent() {
+  public toCreateAgent() {
     this.add('datasync:CreateAgent');
     return this;
   }
@@ -378,7 +378,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationEfs.html
    */
-  public createLocationEfs() {
+  public toCreateLocationEfs() {
     this.add('datasync:CreateLocationEfs');
     return this;
   }
@@ -394,7 +394,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxWindows.html
    */
-  public createLocationFsxWindows() {
+  public toCreateLocationFsxWindows() {
     this.add('datasync:CreateLocationFsxWindows');
     return this;
   }
@@ -410,7 +410,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html
    */
-  public createLocationNfs() {
+  public toCreateLocationNfs() {
     this.add('datasync:CreateLocationNfs');
     return this;
   }
@@ -426,7 +426,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html
    */
-  public createLocationS3() {
+  public toCreateLocationS3() {
     this.add('datasync:CreateLocationS3');
     return this;
   }
@@ -442,7 +442,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html
    */
-  public createLocationSmb() {
+  public toCreateLocationSmb() {
     this.add('datasync:CreateLocationSmb');
     return this;
   }
@@ -458,7 +458,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html
    */
-  public createTask() {
+  public toCreateTask() {
     this.add('datasync:CreateTask');
     return this;
   }
@@ -470,7 +470,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteAgent.html
    */
-  public deleteAgent() {
+  public toDeleteAgent() {
     this.add('datasync:DeleteAgent');
     return this;
   }
@@ -482,7 +482,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteLocation.html
    */
-  public deleteLocation() {
+  public toDeleteLocation() {
     this.add('datasync:DeleteLocation');
     return this;
   }
@@ -494,7 +494,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteTask.html
    */
-  public deleteTask() {
+  public toDeleteTask() {
     this.add('datasync:DeleteTask');
     return this;
   }
@@ -506,7 +506,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html
    */
-  public describeAgent() {
+  public toDescribeAgent() {
     this.add('datasync:DescribeAgent');
     return this;
   }
@@ -518,7 +518,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationEfs.html
    */
-  public describeLocationEfs() {
+  public toDescribeLocationEfs() {
     this.add('datasync:DescribeLocationEfs');
     return this;
   }
@@ -530,7 +530,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxWindows.html
    */
-  public describeLocationFsxWindows() {
+  public toDescribeLocationFsxWindows() {
     this.add('datasync:DescribeLocationFsxWindows');
     return this;
   }
@@ -542,7 +542,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationNfs.html
    */
-  public describeLocationNfs() {
+  public toDescribeLocationNfs() {
     this.add('datasync:DescribeLocationNfs');
     return this;
   }
@@ -554,7 +554,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationS3.html
    */
-  public describeLocationS3() {
+  public toDescribeLocationS3() {
     this.add('datasync:DescribeLocationS3');
     return this;
   }
@@ -566,7 +566,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationSmb.html
    */
-  public describeLocationSmb() {
+  public toDescribeLocationSmb() {
     this.add('datasync:DescribeLocationSmb');
     return this;
   }
@@ -578,7 +578,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTask.html
    */
-  public describeTask() {
+  public toDescribeTask() {
     this.add('datasync:DescribeTask');
     return this;
   }
@@ -590,7 +590,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html
    */
-  public describeTaskExecution() {
+  public toDescribeTaskExecution() {
     this.add('datasync:DescribeTaskExecution');
     return this;
   }
@@ -602,7 +602,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html
    */
-  public listAgents() {
+  public toListAgents() {
     this.add('datasync:ListAgents');
     return this;
   }
@@ -614,7 +614,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html
    */
-  public listLocations() {
+  public toListLocations() {
     this.add('datasync:ListLocations');
     return this;
   }
@@ -626,7 +626,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('datasync:ListTagsForResource');
     return this;
   }
@@ -638,7 +638,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html
    */
-  public listTaskExecutions() {
+  public toListTaskExecutions() {
     this.add('datasync:ListTaskExecutions');
     return this;
   }
@@ -650,7 +650,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html
    */
-  public listTasks() {
+  public toListTasks() {
     this.add('datasync:ListTasks');
     return this;
   }
@@ -662,7 +662,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html
    */
-  public startTaskExecution() {
+  public toStartTaskExecution() {
     this.add('datasync:StartTaskExecution');
     return this;
   }
@@ -678,7 +678,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('datasync:TagResource');
     return this;
   }
@@ -693,7 +693,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('datasync:UntagResource');
     return this;
   }
@@ -705,7 +705,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateAgent.html
    */
-  public updateAgent() {
+  public toUpdateAgent() {
     this.add('datasync:UpdateAgent');
     return this;
   }
@@ -717,7 +717,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTask.html
    */
-  public updateTask() {
+  public toUpdateTask() {
     this.add('datasync:UpdateTask');
     return this;
   }
@@ -813,20 +813,20 @@ export class Datasync extends PolicyStatement {
    * Filters create requests based on the allowed set of values for each of the tags.
    *
    * Applies to actions:
-   * - .createAgent()
-   * - .createLocationEfs()
-   * - .createLocationFsxWindows()
-   * - .createLocationNfs()
-   * - .createLocationS3()
-   * - .createLocationSmb()
-   * - .createTask()
-   * - .tagResource()
+   * - .toCreateAgent()
+   * - .toCreateLocationEfs()
+   * - .toCreateLocationFsxWindows()
+   * - .toCreateLocationNfs()
+   * - .toCreateLocationS3()
+   * - .toCreateLocationSmb()
+   * - .toCreateTask()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -842,7 +842,7 @@ export class Datasync extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -850,20 +850,20 @@ export class Datasync extends PolicyStatement {
    * Filters create requests based on the presence of mandatory tags in the request.
    *
    * Applies to actions:
-   * - .createAgent()
-   * - .createLocationEfs()
-   * - .createLocationFsxWindows()
-   * - .createLocationNfs()
-   * - .createLocationS3()
-   * - .createLocationSmb()
-   * - .createTask()
-   * - .tagResource()
-   * - .untagResource()
+   * - .toCreateAgent()
+   * - .toCreateLocationEfs()
+   * - .toCreateLocationFsxWindows()
+   * - .toCreateLocationNfs()
+   * - .toCreateLocationS3()
+   * - .toCreateLocationSmb()
+   * - .toCreateTask()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAwsTagKeys(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

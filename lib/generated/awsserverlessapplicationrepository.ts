@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [serverlessrepo](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html).
@@ -185,7 +185,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createApplication() {
+  public toCreateApplication() {
     this.add('serverlessrepo:CreateApplication');
     return this;
   }
@@ -195,7 +195,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createApplicationVersion() {
+  public toCreateApplicationVersion() {
     this.add('serverlessrepo:CreateApplicationVersion');
     return this;
   }
@@ -208,7 +208,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationType()
    */
-  public createCloudFormationChangeSet() {
+  public toCreateCloudFormationChangeSet() {
     this.add('serverlessrepo:CreateCloudFormationChangeSet');
     return this;
   }
@@ -221,7 +221,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationType()
    */
-  public createCloudFormationTemplate() {
+  public toCreateCloudFormationTemplate() {
     this.add('serverlessrepo:CreateCloudFormationTemplate');
     return this;
   }
@@ -231,7 +231,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteApplication() {
+  public toDeleteApplication() {
     this.add('serverlessrepo:DeleteApplication');
     return this;
   }
@@ -244,7 +244,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationType()
    */
-  public getApplication() {
+  public toGetApplication() {
     this.add('serverlessrepo:GetApplication');
     return this;
   }
@@ -254,7 +254,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getApplicationPolicy() {
+  public toGetApplicationPolicy() {
     this.add('serverlessrepo:GetApplicationPolicy');
     return this;
   }
@@ -264,7 +264,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getCloudFormationTemplate() {
+  public toGetCloudFormationTemplate() {
     this.add('serverlessrepo:GetCloudFormationTemplate');
     return this;
   }
@@ -277,7 +277,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationType()
    */
-  public listApplicationDependencies() {
+  public toListApplicationDependencies() {
     this.add('serverlessrepo:ListApplicationDependencies');
     return this;
   }
@@ -290,7 +290,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationType()
    */
-  public listApplicationVersions() {
+  public toListApplicationVersions() {
     this.add('serverlessrepo:ListApplicationVersions');
     return this;
   }
@@ -300,7 +300,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listApplications() {
+  public toListApplications() {
     this.add('serverlessrepo:ListApplications');
     return this;
   }
@@ -310,7 +310,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public putApplicationPolicy() {
+  public toPutApplicationPolicy() {
     this.add('serverlessrepo:PutApplicationPolicy');
     return this;
   }
@@ -323,7 +323,7 @@ export class Serverlessrepo extends PolicyStatement {
    * Possible conditions:
    * - .ifApplicationType()
    */
-  public searchApplications() {
+  public toSearchApplications() {
     this.add('serverlessrepo:SearchApplications');
     return this;
   }
@@ -333,7 +333,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public unshareApplication() {
+  public toUnshareApplication() {
     this.add('serverlessrepo:UnshareApplication');
     return this;
   }
@@ -343,7 +343,7 @@ export class Serverlessrepo extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateApplication() {
+  public toUpdateApplication() {
     this.add('serverlessrepo:UpdateApplication');
     return this;
   }
@@ -369,17 +369,17 @@ export class Serverlessrepo extends PolicyStatement {
    * Application type
    *
    * Applies to actions:
-   * - .createCloudFormationChangeSet()
-   * - .createCloudFormationTemplate()
-   * - .getApplication()
-   * - .listApplicationDependencies()
-   * - .listApplicationVersions()
-   * - .searchApplications()
+   * - .toCreateCloudFormationChangeSet()
+   * - .toCreateCloudFormationTemplate()
+   * - .toGetApplication()
+   * - .toListApplicationDependencies()
+   * - .toListApplicationVersions()
+   * - .toSearchApplications()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifApplicationType(value: string | string[], operator?: string) {
+  public ifApplicationType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`serverlessrepo:applicationType`, value, operator || 'StringLike');
   }
 }
