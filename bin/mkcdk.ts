@@ -125,6 +125,11 @@ function preparePackageJson() {
 
   (jsonData.dependencies as Packages)['@aws-cdk/aws-iam'] = '^1.30.0';
 
+  var excludes = jsonData.jsii.excludeTypescript as string[];
+  jsonData.jsii.excludeTypescript = excludes.filter(function (el) {
+    return el.indexOf('CDK') < 0;
+  });
+
   jsonData.jsii.targets = {
     python: {
       distName: 'cdk-iam-floyd',
