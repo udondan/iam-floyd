@@ -40,7 +40,8 @@
     "excludeTypescript": [
       "bin/*",
       "lib/generator/*",
-      "test/*"
+      "test/*",
+      "**/*CDK*"
     ],
     "targets": {
       "python": {
