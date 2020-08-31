@@ -12,6 +12,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html",
       "description": "Enables the caller to create a server.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "conditions": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -189,6 +192,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html",
       "description": "Enables the caller to update the configuration of a server",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "server": {
           "required": true
@@ -199,6 +205,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html",
       "description": "Enables the caller to update the configuration of a user",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "user": {
           "required": true
@@ -242,6 +251,9 @@ export class Transfer extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html
    */
@@ -449,6 +461,9 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html
    */
   public toUpdateServer() {
@@ -460,6 +475,9 @@ export class Transfer extends PolicyStatement {
    * Enables the caller to update the configuration of a user
    *
    * Access Level: Write
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html
    */
