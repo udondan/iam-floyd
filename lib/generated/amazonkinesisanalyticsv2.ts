@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [kinesisanalytics-v2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalyticsv2.html).
@@ -292,7 +292,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationCloudWatchLoggingOption.html
    */
-  public addApplicationCloudWatchLoggingOption() {
+  public toAddApplicationCloudWatchLoggingOption() {
     this.add('kinesisanalytics-v2:AddApplicationCloudWatchLoggingOption');
     return this;
   }
@@ -304,7 +304,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationInput.html
    */
-  public addApplicationInput() {
+  public toAddApplicationInput() {
     this.add('kinesisanalytics-v2:AddApplicationInput');
     return this;
   }
@@ -316,7 +316,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationInputProcessingConfiguration.html
    */
-  public addApplicationInputProcessingConfiguration() {
+  public toAddApplicationInputProcessingConfiguration() {
     this.add('kinesisanalytics-v2:AddApplicationInputProcessingConfiguration');
     return this;
   }
@@ -328,7 +328,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationOutput.html
    */
-  public addApplicationOutput() {
+  public toAddApplicationOutput() {
     this.add('kinesisanalytics-v2:AddApplicationOutput');
     return this;
   }
@@ -340,7 +340,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationReferenceDataSource.html
    */
-  public addApplicationReferenceDataSource() {
+  public toAddApplicationReferenceDataSource() {
     this.add('kinesisanalytics-v2:AddApplicationReferenceDataSource');
     return this;
   }
@@ -352,7 +352,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_AddApplicationVpcConfiguration.html
    */
-  public addApplicationVpcConfiguration() {
+  public toAddApplicationVpcConfiguration() {
     this.add('kinesisanalytics-v2:AddApplicationVpcConfiguration');
     return this;
   }
@@ -362,13 +362,13 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplication.html
    */
-  public createApplication() {
+  public toCreateApplication() {
     this.add('kinesisanalytics-v2:CreateApplication');
     return this;
   }
@@ -380,7 +380,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplicationSnapshot.html
    */
-  public createApplicationSnapshot() {
+  public toCreateApplicationSnapshot() {
     this.add('kinesisanalytics-v2:CreateApplicationSnapshot');
     return this;
   }
@@ -392,7 +392,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplication.html
    */
-  public deleteApplication() {
+  public toDeleteApplication() {
     this.add('kinesisanalytics-v2:DeleteApplication');
     return this;
   }
@@ -404,7 +404,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationCloudWatchLoggingOption.html
    */
-  public deleteApplicationCloudWatchLoggingOption() {
+  public toDeleteApplicationCloudWatchLoggingOption() {
     this.add('kinesisanalytics-v2:DeleteApplicationCloudWatchLoggingOption');
     return this;
   }
@@ -416,7 +416,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationInputProcessingConfiguration.html
    */
-  public deleteApplicationInputProcessingConfiguration() {
+  public toDeleteApplicationInputProcessingConfiguration() {
     this.add('kinesisanalytics-v2:DeleteApplicationInputProcessingConfiguration');
     return this;
   }
@@ -428,7 +428,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationOutput.html
    */
-  public deleteApplicationOutput() {
+  public toDeleteApplicationOutput() {
     this.add('kinesisanalytics-v2:DeleteApplicationOutput');
     return this;
   }
@@ -440,7 +440,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationReferenceDataSource.html
    */
-  public deleteApplicationReferenceDataSource() {
+  public toDeleteApplicationReferenceDataSource() {
     this.add('kinesisanalytics-v2:DeleteApplicationReferenceDataSource');
     return this;
   }
@@ -452,7 +452,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationSnapshot.html
    */
-  public deleteApplicationSnapshot() {
+  public toDeleteApplicationSnapshot() {
     this.add('kinesisanalytics-v2:DeleteApplicationSnapshot');
     return this;
   }
@@ -464,7 +464,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DeleteApplicationVpcConfiguration.html
    */
-  public deleteApplicationVpcConfiguration() {
+  public toDeleteApplicationVpcConfiguration() {
     this.add('kinesisanalytics-v2:DeleteApplicationVpcConfiguration');
     return this;
   }
@@ -476,7 +476,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DescribeApplication.html
    */
-  public describeApplication() {
+  public toDescribeApplication() {
     this.add('kinesisanalytics-v2:DescribeApplication');
     return this;
   }
@@ -488,7 +488,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DescribeApplicationSnapshot.html
    */
-  public describeApplicationSnapshot() {
+  public toDescribeApplicationSnapshot() {
     this.add('kinesisanalytics-v2:DescribeApplicationSnapshot');
     return this;
   }
@@ -500,7 +500,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_DiscoverInputSchema.html
    */
-  public discoverInputSchema() {
+  public toDiscoverInputSchema() {
     this.add('kinesisanalytics-v2:DiscoverInputSchema');
     return this;
   }
@@ -512,7 +512,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListApplicationSnapshots.html
    */
-  public listApplicationSnapshots() {
+  public toListApplicationSnapshots() {
     this.add('kinesisanalytics-v2:ListApplicationSnapshots');
     return this;
   }
@@ -524,7 +524,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListApplications.html
    */
-  public listApplications() {
+  public toListApplications() {
     this.add('kinesisanalytics-v2:ListApplications');
     return this;
   }
@@ -536,7 +536,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('kinesisanalytics-v2:ListTagsForResource');
     return this;
   }
@@ -548,7 +548,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_StartsApplication.html
    */
-  public startApplication() {
+  public toStartApplication() {
     this.add('kinesisanalytics-v2:StartApplication');
     return this;
   }
@@ -560,7 +560,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_StopApplication.html
    */
-  public stopApplication() {
+  public toStopApplication() {
     this.add('kinesisanalytics-v2:StopApplication');
     return this;
   }
@@ -570,13 +570,13 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('kinesisanalytics-v2:TagResource');
     return this;
   }
@@ -586,12 +586,12 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('kinesisanalytics-v2:UntagResource');
     return this;
   }
@@ -603,7 +603,7 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UpdateApplication.html
    */
-  public updateApplication() {
+  public toUpdateApplication() {
     this.add('kinesisanalytics-v2:UpdateApplication');
     return this;
   }
@@ -618,8 +618,8 @@ export class KinesisanalyticsV2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kinesisanalytics:${Region}:${Account}:application/${ApplicationName}';
@@ -628,5 +628,55 @@ export class KinesisanalyticsV2 extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value assoicated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - application
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [iot](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiot.html).
@@ -2157,7 +2157,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html
    */
-  public acceptCertificateTransfer() {
+  public toAcceptCertificateTransfer() {
     this.add('iot:AcceptCertificateTransfer');
     return this;
   }
@@ -2169,7 +2169,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AddThingToBillingGroup.html
    */
-  public addThingToBillingGroup() {
+  public toAddThingToBillingGroup() {
     this.add('iot:AddThingToBillingGroup');
     return this;
   }
@@ -2181,7 +2181,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AddThingToThingGroup.html
    */
-  public addThingToThingGroup() {
+  public toAddThingToThingGroup() {
     this.add('iot:AddThingToThingGroup');
     return this;
   }
@@ -2193,7 +2193,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AssociateTargetsWithJob.html
    */
-  public associateTargetsWithJob() {
+  public toAssociateTargetsWithJob() {
     this.add('iot:AssociateTargetsWithJob');
     return this;
   }
@@ -2205,7 +2205,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPolicy.html
    */
-  public attachPolicy() {
+  public toAttachPolicy() {
     this.add('iot:AttachPolicy');
     return this;
   }
@@ -2217,7 +2217,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachPrincipalPolicy.html
    */
-  public attachPrincipalPolicy() {
+  public toAttachPrincipalPolicy() {
     this.add('iot:AttachPrincipalPolicy');
     return this;
   }
@@ -2229,7 +2229,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachSecurityProfile.html
    */
-  public attachSecurityProfile() {
+  public toAttachSecurityProfile() {
     this.add('iot:AttachSecurityProfile');
     return this;
   }
@@ -2241,7 +2241,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html
    */
-  public attachThingPrincipal() {
+  public toAttachThingPrincipal() {
     this.add('iot:AttachThingPrincipal');
     return this;
   }
@@ -2253,7 +2253,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CancelAuditMitigationActionsTask.html
    */
-  public cancelAuditMitigationActionsTask() {
+  public toCancelAuditMitigationActionsTask() {
     this.add('iot:CancelAuditMitigationActionsTask');
     return this;
   }
@@ -2265,7 +2265,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CancelAuditTask.html
    */
-  public cancelAuditTask() {
+  public toCancelAuditTask() {
     this.add('iot:CancelAuditTask');
     return this;
   }
@@ -2277,7 +2277,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CancelCertificateTransfer.html
    */
-  public cancelCertificateTransfer() {
+  public toCancelCertificateTransfer() {
     this.add('iot:CancelCertificateTransfer');
     return this;
   }
@@ -2289,7 +2289,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CancelJob.html
    */
-  public cancelJob() {
+  public toCancelJob() {
     this.add('iot:CancelJob');
     return this;
   }
@@ -2301,7 +2301,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CancelJobExecution.html
    */
-  public cancelJobExecution() {
+  public toCancelJobExecution() {
     this.add('iot:CancelJobExecution');
     return this;
   }
@@ -2313,7 +2313,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ClearDefaultAuthorizer.html
    */
-  public clearDefaultAuthorizer() {
+  public toClearDefaultAuthorizer() {
     this.add('iot:ClearDefaultAuthorizer');
     return this;
   }
@@ -2323,12 +2323,12 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - iot:Delete
+   * Possible conditions:
+   * - .ifDelete()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CloseTunnel.html
    */
-  public closeTunnel() {
+  public toCloseTunnel() {
     this.add('iot:CloseTunnel');
     return this;
   }
@@ -2340,7 +2340,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public connect() {
+  public toConnect() {
     this.add('iot:Connect');
     return this;
   }
@@ -2352,7 +2352,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuthorizer.html
    */
-  public createAuthorizer() {
+  public toCreateAuthorizer() {
     this.add('iot:CreateAuthorizer');
     return this;
   }
@@ -2362,13 +2362,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateBillingGroup.html
    */
-  public createBillingGroup() {
+  public toCreateBillingGroup() {
     this.add('iot:CreateBillingGroup');
     return this;
   }
@@ -2380,7 +2380,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html
    */
-  public createCertificateFromCsr() {
+  public toCreateCertificateFromCsr() {
     this.add('iot:CreateCertificateFromCsr');
     return this;
   }
@@ -2390,13 +2390,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDimension.html
    */
-  public createDimension() {
+  public toCreateDimension() {
     this.add('iot:CreateDimension');
     return this;
   }
@@ -2406,13 +2406,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDynamicThingGroup.html
    */
-  public createDynamicThingGroup() {
+  public toCreateDynamicThingGroup() {
     this.add('iot:CreateDynamicThingGroup');
     return this;
   }
@@ -2422,13 +2422,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateJob.html
    */
-  public createJob() {
+  public toCreateJob() {
     this.add('iot:CreateJob');
     return this;
   }
@@ -2440,7 +2440,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html
    */
-  public createKeysAndCertificate() {
+  public toCreateKeysAndCertificate() {
     this.add('iot:CreateKeysAndCertificate');
     return this;
   }
@@ -2450,13 +2450,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateMitigationAction.html
    */
-  public createMitigationAction() {
+  public toCreateMitigationAction() {
     this.add('iot:CreateMitigationAction');
     return this;
   }
@@ -2466,13 +2466,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdate.html
    */
-  public createOTAUpdate() {
+  public toCreateOTAUpdate() {
     this.add('iot:CreateOTAUpdate');
     return this;
   }
@@ -2484,7 +2484,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html
    */
-  public createPolicy() {
+  public toCreatePolicy() {
     this.add('iot:CreatePolicy');
     return this;
   }
@@ -2496,7 +2496,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html
    */
-  public createPolicyVersion() {
+  public toCreatePolicyVersion() {
     this.add('iot:CreatePolicyVersion');
     return this;
   }
@@ -2508,7 +2508,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningClaim.html
    */
-  public createProvisioningClaim() {
+  public toCreateProvisioningClaim() {
     this.add('iot:CreateProvisioningClaim');
     return this;
   }
@@ -2520,7 +2520,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html
    */
-  public createProvisioningTemplate() {
+  public toCreateProvisioningTemplate() {
     this.add('iot:CreateProvisioningTemplate');
     return this;
   }
@@ -2532,7 +2532,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplateVersion.html
    */
-  public createProvisioningTemplateVersion() {
+  public toCreateProvisioningTemplateVersion() {
     this.add('iot:CreateProvisioningTemplateVersion');
     return this;
   }
@@ -2544,7 +2544,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html
    */
-  public createRoleAlias() {
+  public toCreateRoleAlias() {
     this.add('iot:CreateRoleAlias');
     return this;
   }
@@ -2554,13 +2554,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateScheduledAudit.html
    */
-  public createScheduledAudit() {
+  public toCreateScheduledAudit() {
     this.add('iot:CreateScheduledAudit');
     return this;
   }
@@ -2570,13 +2570,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateSecurityProfile.html
    */
-  public createSecurityProfile() {
+  public toCreateSecurityProfile() {
     this.add('iot:CreateSecurityProfile');
     return this;
   }
@@ -2586,13 +2586,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateStream.html
    */
-  public createStream() {
+  public toCreateStream() {
     this.add('iot:CreateStream');
     return this;
   }
@@ -2604,7 +2604,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThing.html
    */
-  public createThing() {
+  public toCreateThing() {
     this.add('iot:CreateThing');
     return this;
   }
@@ -2614,13 +2614,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingGroup.html
    */
-  public createThingGroup() {
+  public toCreateThingGroup() {
     this.add('iot:CreateThingGroup');
     return this;
   }
@@ -2630,13 +2630,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingType.html
    */
-  public createThingType() {
+  public toCreateThingType() {
     this.add('iot:CreateThingType');
     return this;
   }
@@ -2646,13 +2646,13 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html
    */
-  public createTopicRule() {
+  public toCreateTopicRule() {
     this.add('iot:CreateTopicRule');
     return this;
   }
@@ -2664,7 +2664,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAccountAuditConfiguration.html
    */
-  public deleteAccountAuditConfiguration() {
+  public toDeleteAccountAuditConfiguration() {
     this.add('iot:DeleteAccountAuditConfiguration');
     return this;
   }
@@ -2676,7 +2676,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuthorizer.html
    */
-  public deleteAuthorizer() {
+  public toDeleteAuthorizer() {
     this.add('iot:DeleteAuthorizer');
     return this;
   }
@@ -2688,7 +2688,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteBillingGroup.html
    */
-  public deleteBillingGroup() {
+  public toDeleteBillingGroup() {
     this.add('iot:DeleteBillingGroup');
     return this;
   }
@@ -2700,7 +2700,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCACertificate.html
    */
-  public deleteCACertificate() {
+  public toDeleteCACertificate() {
     this.add('iot:DeleteCACertificate');
     return this;
   }
@@ -2712,7 +2712,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCertificate.html
    */
-  public deleteCertificate() {
+  public toDeleteCertificate() {
     this.add('iot:DeleteCertificate');
     return this;
   }
@@ -2724,7 +2724,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDimension.html
    */
-  public deleteDimension() {
+  public toDeleteDimension() {
     this.add('iot:DeleteDimension');
     return this;
   }
@@ -2736,7 +2736,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDynamicThingGroup.html
    */
-  public deleteDynamicThingGroup() {
+  public toDeleteDynamicThingGroup() {
     this.add('iot:DeleteDynamicThingGroup');
     return this;
   }
@@ -2748,7 +2748,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteJob.html
    */
-  public deleteJob() {
+  public toDeleteJob() {
     this.add('iot:DeleteJob');
     return this;
   }
@@ -2760,7 +2760,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteJobExecution.html
    */
-  public deleteJobExecution() {
+  public toDeleteJobExecution() {
     this.add('iot:DeleteJobExecution');
     return this;
   }
@@ -2772,7 +2772,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteMitigationAction.html
    */
-  public deleteMitigationAction() {
+  public toDeleteMitigationAction() {
     this.add('iot:DeleteMitigationAction');
     return this;
   }
@@ -2784,7 +2784,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteOTAUpdate.html
    */
-  public deleteOTAUpdate() {
+  public toDeleteOTAUpdate() {
     this.add('iot:DeleteOTAUpdate');
     return this;
   }
@@ -2796,7 +2796,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html
    */
-  public deletePolicy() {
+  public toDeletePolicy() {
     this.add('iot:DeletePolicy');
     return this;
   }
@@ -2808,7 +2808,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html
    */
-  public deletePolicyVersion() {
+  public toDeletePolicyVersion() {
     this.add('iot:DeletePolicyVersion');
     return this;
   }
@@ -2820,7 +2820,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteProvisioningTemplate.html
    */
-  public deleteProvisioningTemplate() {
+  public toDeleteProvisioningTemplate() {
     this.add('iot:DeleteProvisioningTemplate');
     return this;
   }
@@ -2832,7 +2832,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteProvisioningTemplateVersion.html
    */
-  public deleteProvisioningTemplateVersion() {
+  public toDeleteProvisioningTemplateVersion() {
     this.add('iot:DeleteProvisioningTemplateVersion');
     return this;
   }
@@ -2844,7 +2844,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRegistrationCode.html
    */
-  public deleteRegistrationCode() {
+  public toDeleteRegistrationCode() {
     this.add('iot:DeleteRegistrationCode');
     return this;
   }
@@ -2856,7 +2856,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRoleAlias.html
    */
-  public deleteRoleAlias() {
+  public toDeleteRoleAlias() {
     this.add('iot:DeleteRoleAlias');
     return this;
   }
@@ -2868,7 +2868,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteScheduledAudit.html
    */
-  public deleteScheduledAudit() {
+  public toDeleteScheduledAudit() {
     this.add('iot:DeleteScheduledAudit');
     return this;
   }
@@ -2880,7 +2880,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteSecurityProfile.html
    */
-  public deleteSecurityProfile() {
+  public toDeleteSecurityProfile() {
     this.add('iot:DeleteSecurityProfile');
     return this;
   }
@@ -2892,7 +2892,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteStream.html
    */
-  public deleteStream() {
+  public toDeleteStream() {
     this.add('iot:DeleteStream');
     return this;
   }
@@ -2904,7 +2904,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html
    */
-  public deleteThing() {
+  public toDeleteThing() {
     this.add('iot:DeleteThing');
     return this;
   }
@@ -2916,7 +2916,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThingGroup.html
    */
-  public deleteThingGroup() {
+  public toDeleteThingGroup() {
     this.add('iot:DeleteThingGroup');
     return this;
   }
@@ -2928,7 +2928,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public deleteThingShadow() {
+  public toDeleteThingShadow() {
     this.add('iot:DeleteThingShadow');
     return this;
   }
@@ -2940,7 +2940,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThingType.html
    */
-  public deleteThingType() {
+  public toDeleteThingType() {
     this.add('iot:DeleteThingType');
     return this;
   }
@@ -2952,7 +2952,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteTopicRule.html
    */
-  public deleteTopicRule() {
+  public toDeleteTopicRule() {
     this.add('iot:DeleteTopicRule');
     return this;
   }
@@ -2964,7 +2964,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteV2LoggingLevel.html
    */
-  public deleteV2LoggingLevel() {
+  public toDeleteV2LoggingLevel() {
     this.add('iot:DeleteV2LoggingLevel');
     return this;
   }
@@ -2976,7 +2976,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DeprecateThingType.html
    */
-  public deprecateThingType() {
+  public toDeprecateThingType() {
     this.add('iot:DeprecateThingType');
     return this;
   }
@@ -2988,7 +2988,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAccountAuditConfiguration.html
    */
-  public describeAccountAuditConfiguration() {
+  public toDescribeAccountAuditConfiguration() {
     this.add('iot:DescribeAccountAuditConfiguration');
     return this;
   }
@@ -3000,7 +3000,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditMitigationActionsTask.html
    */
-  public describeAuditMitigationActionsTask() {
+  public toDescribeAuditMitigationActionsTask() {
     this.add('iot:DescribeAuditMitigationActionsTask');
     return this;
   }
@@ -3012,7 +3012,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditTask.html
    */
-  public describeAuditTask() {
+  public toDescribeAuditTask() {
     this.add('iot:DescribeAuditTask');
     return this;
   }
@@ -3024,7 +3024,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuthorizer.html
    */
-  public describeAuthorizer() {
+  public toDescribeAuthorizer() {
     this.add('iot:DescribeAuthorizer');
     return this;
   }
@@ -3036,7 +3036,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeBillingGroup.html
    */
-  public describeBillingGroup() {
+  public toDescribeBillingGroup() {
     this.add('iot:DescribeBillingGroup');
     return this;
   }
@@ -3048,7 +3048,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCACertificate.html
    */
-  public describeCACertificate() {
+  public toDescribeCACertificate() {
     this.add('iot:DescribeCACertificate');
     return this;
   }
@@ -3060,7 +3060,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCertificate.html
    */
-  public describeCertificate() {
+  public toDescribeCertificate() {
     this.add('iot:DescribeCertificate');
     return this;
   }
@@ -3072,7 +3072,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDefaultAuthorizer.html
    */
-  public describeDefaultAuthorizer() {
+  public toDescribeDefaultAuthorizer() {
     this.add('iot:DescribeDefaultAuthorizer');
     return this;
   }
@@ -3084,7 +3084,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDimension.html
    */
-  public describeDimension() {
+  public toDescribeDimension() {
     this.add('iot:DescribeDimension');
     return this;
   }
@@ -3096,7 +3096,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEndpoint.html
    */
-  public describeEndpoint() {
+  public toDescribeEndpoint() {
     this.add('iot:DescribeEndpoint');
     return this;
   }
@@ -3108,7 +3108,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEventConfigurations.html
    */
-  public describeEventConfigurations() {
+  public toDescribeEventConfigurations() {
     this.add('iot:DescribeEventConfigurations');
     return this;
   }
@@ -3120,7 +3120,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeIndex.html
    */
-  public describeIndex() {
+  public toDescribeIndex() {
     this.add('iot:DescribeIndex');
     return this;
   }
@@ -3132,7 +3132,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJob.html
    */
-  public describeJob() {
+  public toDescribeJob() {
     this.add('iot:DescribeJob');
     return this;
   }
@@ -3144,7 +3144,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJobExecution.html
    */
-  public describeJobExecution() {
+  public toDescribeJobExecution() {
     this.add('iot:DescribeJobExecution');
     return this;
   }
@@ -3156,7 +3156,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeMitigationAction.html
    */
-  public describeMitigationAction() {
+  public toDescribeMitigationAction() {
     this.add('iot:DescribeMitigationAction');
     return this;
   }
@@ -3168,7 +3168,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeProvisioningTemplate.html
    */
-  public describeProvisioningTemplate() {
+  public toDescribeProvisioningTemplate() {
     this.add('iot:DescribeProvisioningTemplate');
     return this;
   }
@@ -3180,7 +3180,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeProvisioningTemplateVersion.html
    */
-  public describeProvisioningTemplateVersion() {
+  public toDescribeProvisioningTemplateVersion() {
     this.add('iot:DescribeProvisioningTemplateVersion');
     return this;
   }
@@ -3192,7 +3192,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeRoleAlias.html
    */
-  public describeRoleAlias() {
+  public toDescribeRoleAlias() {
     this.add('iot:DescribeRoleAlias');
     return this;
   }
@@ -3204,7 +3204,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeScheduledAudit.html
    */
-  public describeScheduledAudit() {
+  public toDescribeScheduledAudit() {
     this.add('iot:DescribeScheduledAudit');
     return this;
   }
@@ -3216,7 +3216,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeSecurityProfile.html
    */
-  public describeSecurityProfile() {
+  public toDescribeSecurityProfile() {
     this.add('iot:DescribeSecurityProfile');
     return this;
   }
@@ -3228,7 +3228,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeStream.html
    */
-  public describeStream() {
+  public toDescribeStream() {
     this.add('iot:DescribeStream');
     return this;
   }
@@ -3240,7 +3240,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThing.html
    */
-  public describeThing() {
+  public toDescribeThing() {
     this.add('iot:DescribeThing');
     return this;
   }
@@ -3252,7 +3252,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingGroup.html
    */
-  public describeThingGroup() {
+  public toDescribeThingGroup() {
     this.add('iot:DescribeThingGroup');
     return this;
   }
@@ -3264,7 +3264,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingRegistrationTask.html
    */
-  public describeThingRegistrationTask() {
+  public toDescribeThingRegistrationTask() {
     this.add('iot:DescribeThingRegistrationTask');
     return this;
   }
@@ -3276,7 +3276,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingType.html
    */
-  public describeThingType() {
+  public toDescribeThingType() {
     this.add('iot:DescribeThingType');
     return this;
   }
@@ -3288,7 +3288,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeTunnel.html
    */
-  public describeTunnel() {
+  public toDescribeTunnel() {
     this.add('iot:DescribeTunnel');
     return this;
   }
@@ -3300,7 +3300,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachPolicy.html
    */
-  public detachPolicy() {
+  public toDetachPolicy() {
     this.add('iot:DetachPolicy');
     return this;
   }
@@ -3312,7 +3312,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachPrincipalPolicy.html
    */
-  public detachPrincipalPolicy() {
+  public toDetachPrincipalPolicy() {
     this.add('iot:DetachPrincipalPolicy');
     return this;
   }
@@ -3324,7 +3324,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachSecurityProfile.html
    */
-  public detachSecurityProfile() {
+  public toDetachSecurityProfile() {
     this.add('iot:DetachSecurityProfile');
     return this;
   }
@@ -3336,7 +3336,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DetachThingPrincipal.html
    */
-  public detachThingPrincipal() {
+  public toDetachThingPrincipal() {
     this.add('iot:DetachThingPrincipal');
     return this;
   }
@@ -3348,7 +3348,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_DisableTopicRule.html
    */
-  public disableTopicRule() {
+  public toDisableTopicRule() {
     this.add('iot:DisableTopicRule');
     return this;
   }
@@ -3360,7 +3360,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_EnableTopicRule.html
    */
-  public enableTopicRule() {
+  public toEnableTopicRule() {
     this.add('iot:EnableTopicRule');
     return this;
   }
@@ -3372,7 +3372,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetCardinality.html
    */
-  public getCardinality() {
+  public toGetCardinality() {
     this.add('iot:GetCardinality');
     return this;
   }
@@ -3384,7 +3384,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetEffectivePolicies.html
    */
-  public getEffectivePolicies() {
+  public toGetEffectivePolicies() {
     this.add('iot:GetEffectivePolicies');
     return this;
   }
@@ -3396,7 +3396,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html
    */
-  public getIndexingConfiguration() {
+  public toGetIndexingConfiguration() {
     this.add('iot:GetIndexingConfiguration');
     return this;
   }
@@ -3408,7 +3408,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetJobDocument.html
    */
-  public getJobDocument() {
+  public toGetJobDocument() {
     this.add('iot:GetJobDocument');
     return this;
   }
@@ -3420,7 +3420,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetLoggingOptions.html
    */
-  public getLoggingOptions() {
+  public toGetLoggingOptions() {
     this.add('iot:GetLoggingOptions');
     return this;
   }
@@ -3432,7 +3432,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetOTAUpdate.html
    */
-  public getOTAUpdate() {
+  public toGetOTAUpdate() {
     this.add('iot:GetOTAUpdate');
     return this;
   }
@@ -3444,7 +3444,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPendingJobExecutions.html
    */
-  public getPendingJobExecutions() {
+  public toGetPendingJobExecutions() {
     this.add('iot:GetPendingJobExecutions');
     return this;
   }
@@ -3456,7 +3456,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPercentiles.html
    */
-  public getPercentiles() {
+  public toGetPercentiles() {
     this.add('iot:GetPercentiles');
     return this;
   }
@@ -3468,7 +3468,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicy.html
    */
-  public getPolicy() {
+  public toGetPolicy() {
     this.add('iot:GetPolicy');
     return this;
   }
@@ -3480,7 +3480,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicyVersion.html
    */
-  public getPolicyVersion() {
+  public toGetPolicyVersion() {
     this.add('iot:GetPolicyVersion');
     return this;
   }
@@ -3492,7 +3492,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetRegistrationCode.html
    */
-  public getRegistrationCode() {
+  public toGetRegistrationCode() {
     this.add('iot:GetRegistrationCode');
     return this;
   }
@@ -3504,7 +3504,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetStatistics.html
    */
-  public getStatistics() {
+  public toGetStatistics() {
     this.add('iot:GetStatistics');
     return this;
   }
@@ -3516,7 +3516,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public getThingShadow() {
+  public toGetThingShadow() {
     this.add('iot:GetThingShadow');
     return this;
   }
@@ -3528,7 +3528,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRule.html
    */
-  public getTopicRule() {
+  public toGetTopicRule() {
     this.add('iot:GetTopicRule');
     return this;
   }
@@ -3540,7 +3540,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_GetV2LoggingOptions.html
    */
-  public getV2LoggingOptions() {
+  public toGetV2LoggingOptions() {
     this.add('iot:GetV2LoggingOptions');
     return this;
   }
@@ -3552,7 +3552,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListActiveViolations.html
    */
-  public listActiveViolations() {
+  public toListActiveViolations() {
     this.add('iot:ListActiveViolations');
     return this;
   }
@@ -3564,7 +3564,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAttachedPolicies.html
    */
-  public listAttachedPolicies() {
+  public toListAttachedPolicies() {
     this.add('iot:ListAttachedPolicies');
     return this;
   }
@@ -3576,7 +3576,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditFindings.html
    */
-  public listAuditFindings() {
+  public toListAuditFindings() {
     this.add('iot:ListAuditFindings');
     return this;
   }
@@ -3588,7 +3588,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditMitigationActionsExecutions.html
    */
-  public listAuditMitigationActionsExecutions() {
+  public toListAuditMitigationActionsExecutions() {
     this.add('iot:ListAuditMitigationActionsExecutions');
     return this;
   }
@@ -3600,7 +3600,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditMitigationActionsTasks.html
    */
-  public listAuditMitigationActionsTasks() {
+  public toListAuditMitigationActionsTasks() {
     this.add('iot:ListAuditMitigationActionsTasks');
     return this;
   }
@@ -3612,7 +3612,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditTasks.html
    */
-  public listAuditTasks() {
+  public toListAuditTasks() {
     this.add('iot:ListAuditTasks');
     return this;
   }
@@ -3624,7 +3624,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuthorizers.html
    */
-  public listAuthorizers() {
+  public toListAuthorizers() {
     this.add('iot:ListAuthorizers');
     return this;
   }
@@ -3636,7 +3636,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListBillingGroups.html
    */
-  public listBillingGroups() {
+  public toListBillingGroups() {
     this.add('iot:ListBillingGroups');
     return this;
   }
@@ -3648,7 +3648,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCACertificates.html
    */
-  public listCACertificates() {
+  public toListCACertificates() {
     this.add('iot:ListCACertificates');
     return this;
   }
@@ -3660,7 +3660,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificates.html
    */
-  public listCertificates() {
+  public toListCertificates() {
     this.add('iot:ListCertificates');
     return this;
   }
@@ -3672,7 +3672,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificatesByCA.html
    */
-  public listCertificatesByCA() {
+  public toListCertificatesByCA() {
     this.add('iot:ListCertificatesByCA');
     return this;
   }
@@ -3684,7 +3684,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListDimensions.html
    */
-  public listDimensions() {
+  public toListDimensions() {
     this.add('iot:ListDimensions');
     return this;
   }
@@ -3696,7 +3696,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListIndices.html
    */
-  public listIndices() {
+  public toListIndices() {
     this.add('iot:ListIndices');
     return this;
   }
@@ -3708,7 +3708,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForJob.html
    */
-  public listJobExecutionsForJob() {
+  public toListJobExecutionsForJob() {
     this.add('iot:ListJobExecutionsForJob');
     return this;
   }
@@ -3720,7 +3720,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForThing.html
    */
-  public listJobExecutionsForThing() {
+  public toListJobExecutionsForThing() {
     this.add('iot:ListJobExecutionsForThing');
     return this;
   }
@@ -3732,7 +3732,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListJobs.html
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('iot:ListJobs');
     return this;
   }
@@ -3744,7 +3744,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListMitigationActions.html
    */
-  public listMitigationActions() {
+  public toListMitigationActions() {
     this.add('iot:ListMitigationActions');
     return this;
   }
@@ -3756,7 +3756,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListNamedShadowsForThing.html
    */
-  public listNamedShadowsForThing() {
+  public toListNamedShadowsForThing() {
     this.add('iot:ListNamedShadowsForThing');
     return this;
   }
@@ -3768,7 +3768,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListOTAUpdates.html
    */
-  public listOTAUpdates() {
+  public toListOTAUpdates() {
     this.add('iot:ListOTAUpdates');
     return this;
   }
@@ -3780,7 +3780,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListOutgoingCertificates.html
    */
-  public listOutgoingCertificates() {
+  public toListOutgoingCertificates() {
     this.add('iot:ListOutgoingCertificates');
     return this;
   }
@@ -3792,7 +3792,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicies.html
    */
-  public listPolicies() {
+  public toListPolicies() {
     this.add('iot:ListPolicies');
     return this;
   }
@@ -3804,7 +3804,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyPrincipals.html
    */
-  public listPolicyPrincipals() {
+  public toListPolicyPrincipals() {
     this.add('iot:ListPolicyPrincipals');
     return this;
   }
@@ -3816,7 +3816,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyVersions.html
    */
-  public listPolicyVersions() {
+  public toListPolicyVersions() {
     this.add('iot:ListPolicyVersions');
     return this;
   }
@@ -3828,7 +3828,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalPolicies.html
    */
-  public listPrincipalPolicies() {
+  public toListPrincipalPolicies() {
     this.add('iot:ListPrincipalPolicies');
     return this;
   }
@@ -3840,7 +3840,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalThings.html
    */
-  public listPrincipalThings() {
+  public toListPrincipalThings() {
     this.add('iot:ListPrincipalThings');
     return this;
   }
@@ -3852,7 +3852,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListProvisioningTemplateVersions.html
    */
-  public listProvisioningTemplateVersions() {
+  public toListProvisioningTemplateVersions() {
     this.add('iot:ListProvisioningTemplateVersions');
     return this;
   }
@@ -3864,7 +3864,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListProvisioningTemplates.html
    */
-  public listProvisioningTemplates() {
+  public toListProvisioningTemplates() {
     this.add('iot:ListProvisioningTemplates');
     return this;
   }
@@ -3876,7 +3876,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListRoleAliases.html
    */
-  public listRoleAliases() {
+  public toListRoleAliases() {
     this.add('iot:ListRoleAliases');
     return this;
   }
@@ -3888,7 +3888,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListScheduledAudits.html
    */
-  public listScheduledAudits() {
+  public toListScheduledAudits() {
     this.add('iot:ListScheduledAudits');
     return this;
   }
@@ -3900,7 +3900,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html
    */
-  public listSecurityProfiles() {
+  public toListSecurityProfiles() {
     this.add('iot:ListSecurityProfiles');
     return this;
   }
@@ -3912,7 +3912,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfilesForTarget.html
    */
-  public listSecurityProfilesForTarget() {
+  public toListSecurityProfilesForTarget() {
     this.add('iot:ListSecurityProfilesForTarget');
     return this;
   }
@@ -3924,7 +3924,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListStreams.html
    */
-  public listStreams() {
+  public toListStreams() {
     this.add('iot:ListStreams');
     return this;
   }
@@ -3936,7 +3936,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('iot:ListTagsForResource');
     return this;
   }
@@ -3948,7 +3948,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTargetsForPolicy.html
    */
-  public listTargetsForPolicy() {
+  public toListTargetsForPolicy() {
     this.add('iot:ListTargetsForPolicy');
     return this;
   }
@@ -3960,7 +3960,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTargetsForSecurityProfile.html
    */
-  public listTargetsForSecurityProfile() {
+  public toListTargetsForSecurityProfile() {
     this.add('iot:ListTargetsForSecurityProfile');
     return this;
   }
@@ -3972,7 +3972,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingGroups.html
    */
-  public listThingGroups() {
+  public toListThingGroups() {
     this.add('iot:ListThingGroups');
     return this;
   }
@@ -3984,7 +3984,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingGroupsForThing.html
    */
-  public listThingGroupsForThing() {
+  public toListThingGroupsForThing() {
     this.add('iot:ListThingGroupsForThing');
     return this;
   }
@@ -3996,7 +3996,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipals.html
    */
-  public listThingPrincipals() {
+  public toListThingPrincipals() {
     this.add('iot:ListThingPrincipals');
     return this;
   }
@@ -4008,7 +4008,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingRegistrationTaskReports.html
    */
-  public listThingRegistrationTaskReports() {
+  public toListThingRegistrationTaskReports() {
     this.add('iot:ListThingRegistrationTaskReports');
     return this;
   }
@@ -4020,7 +4020,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingRegistrationTasks.html
    */
-  public listThingRegistrationTasks() {
+  public toListThingRegistrationTasks() {
     this.add('iot:ListThingRegistrationTasks');
     return this;
   }
@@ -4032,7 +4032,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingTypes.html
    */
-  public listThingTypes() {
+  public toListThingTypes() {
     this.add('iot:ListThingTypes');
     return this;
   }
@@ -4044,7 +4044,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThings.html
    */
-  public listThings() {
+  public toListThings() {
     this.add('iot:ListThings');
     return this;
   }
@@ -4056,7 +4056,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingsInBillingGroup.html
    */
-  public listThingsInBillingGroup() {
+  public toListThingsInBillingGroup() {
     this.add('iot:ListThingsInBillingGroup');
     return this;
   }
@@ -4068,7 +4068,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListThingsInThingGroup.html
    */
-  public listThingsInThingGroup() {
+  public toListThingsInThingGroup() {
     this.add('iot:ListThingsInThingGroup');
     return this;
   }
@@ -4080,7 +4080,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTopicRules.html
    */
-  public listTopicRules() {
+  public toListTopicRules() {
     this.add('iot:ListTopicRules');
     return this;
   }
@@ -4092,7 +4092,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListTunnels.html
    */
-  public listTunnels() {
+  public toListTunnels() {
     this.add('iot:ListTunnels');
     return this;
   }
@@ -4104,7 +4104,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListV2LoggingLevels.html
    */
-  public listV2LoggingLevels() {
+  public toListV2LoggingLevels() {
     this.add('iot:ListV2LoggingLevels');
     return this;
   }
@@ -4116,7 +4116,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ListViolationEvents.html
    */
-  public listViolationEvents() {
+  public toListViolationEvents() {
     this.add('iot:ListViolationEvents');
     return this;
   }
@@ -4126,15 +4126,15 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - iot:ThingGroupArn
-   * - iot:TunnelDestinationService
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifThingGroupArn()
+   * - .ifTunnelDestinationService()
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_OpenTunnel.html
    */
-  public openTunnel() {
+  public toOpenTunnel() {
     this.add('iot:OpenTunnel');
     return this;
   }
@@ -4146,7 +4146,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public publish() {
+  public toPublish() {
     this.add('iot:Publish');
     return this;
   }
@@ -4158,7 +4158,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public receive() {
+  public toReceive() {
     this.add('iot:Receive');
     return this;
   }
@@ -4170,7 +4170,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html
    */
-  public registerCACertificate() {
+  public toRegisterCACertificate() {
     this.add('iot:RegisterCACertificate');
     return this;
   }
@@ -4182,7 +4182,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificate.html
    */
-  public registerCertificate() {
+  public toRegisterCertificate() {
     this.add('iot:RegisterCertificate');
     return this;
   }
@@ -4194,7 +4194,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificateWithoutCA.html
    */
-  public registerCertificateWithoutCA() {
+  public toRegisterCertificateWithoutCA() {
     this.add('iot:RegisterCertificateWithoutCA');
     return this;
   }
@@ -4206,7 +4206,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RegisterThing.html
    */
-  public registerThing() {
+  public toRegisterThing() {
     this.add('iot:RegisterThing');
     return this;
   }
@@ -4218,7 +4218,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RejectCertificateTransfer.html
    */
-  public rejectCertificateTransfer() {
+  public toRejectCertificateTransfer() {
     this.add('iot:RejectCertificateTransfer');
     return this;
   }
@@ -4230,7 +4230,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RemoveThingFromBillingGroup.html
    */
-  public removeThingFromBillingGroup() {
+  public toRemoveThingFromBillingGroup() {
     this.add('iot:RemoveThingFromBillingGroup');
     return this;
   }
@@ -4242,7 +4242,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_RemoveThingFromThingGroup.html
    */
-  public removeThingFromThingGroup() {
+  public toRemoveThingFromThingGroup() {
     this.add('iot:RemoveThingFromThingGroup');
     return this;
   }
@@ -4254,7 +4254,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_ReplaceTopicRule.html
    */
-  public replaceTopicRule() {
+  public toReplaceTopicRule() {
     this.add('iot:ReplaceTopicRule');
     return this;
   }
@@ -4266,7 +4266,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html
    */
-  public searchIndex() {
+  public toSearchIndex() {
     this.add('iot:SearchIndex');
     return this;
   }
@@ -4278,7 +4278,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultAuthorizer.html
    */
-  public setDefaultAuthorizer() {
+  public toSetDefaultAuthorizer() {
     this.add('iot:SetDefaultAuthorizer');
     return this;
   }
@@ -4290,7 +4290,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultPolicyVersion.html
    */
-  public setDefaultPolicyVersion() {
+  public toSetDefaultPolicyVersion() {
     this.add('iot:SetDefaultPolicyVersion');
     return this;
   }
@@ -4302,7 +4302,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetLoggingOptions.html
    */
-  public setLoggingOptions() {
+  public toSetLoggingOptions() {
     this.add('iot:SetLoggingOptions');
     return this;
   }
@@ -4314,7 +4314,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetV2LoggingLevel.html
    */
-  public setV2LoggingLevel() {
+  public toSetV2LoggingLevel() {
     this.add('iot:SetV2LoggingLevel');
     return this;
   }
@@ -4326,7 +4326,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_SetV2LoggingOptions.html
    */
-  public setV2LoggingOptions() {
+  public toSetV2LoggingOptions() {
     this.add('iot:SetV2LoggingOptions');
     return this;
   }
@@ -4338,7 +4338,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_StartAuditMitigationActionsTask.html
    */
-  public startAuditMitigationActionsTask() {
+  public toStartAuditMitigationActionsTask() {
     this.add('iot:StartAuditMitigationActionsTask');
     return this;
   }
@@ -4350,7 +4350,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_StartNextPendingJobExecution.html
    */
-  public startNextPendingJobExecution() {
+  public toStartNextPendingJobExecution() {
     this.add('iot:StartNextPendingJobExecution');
     return this;
   }
@@ -4362,7 +4362,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_StartOnDemandAuditTask.html
    */
-  public startOnDemandAuditTask() {
+  public toStartOnDemandAuditTask() {
     this.add('iot:StartOnDemandAuditTask');
     return this;
   }
@@ -4374,7 +4374,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_StartThingRegistrationTask.html
    */
-  public startThingRegistrationTask() {
+  public toStartThingRegistrationTask() {
     this.add('iot:StartThingRegistrationTask');
     return this;
   }
@@ -4386,7 +4386,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_StopThingRegistrationTask.html
    */
-  public stopThingRegistrationTask() {
+  public toStopThingRegistrationTask() {
     this.add('iot:StopThingRegistrationTask');
     return this;
   }
@@ -4398,7 +4398,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public subscribe() {
+  public toSubscribe() {
     this.add('iot:Subscribe');
     return this;
   }
@@ -4408,11 +4408,11 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('iot:TagResource');
     return this;
   }
@@ -4424,7 +4424,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_TestAuthorization.html
    */
-  public testAuthorization() {
+  public toTestAuthorization() {
     this.add('iot:TestAuthorization');
     return this;
   }
@@ -4436,7 +4436,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_TestInvokeAuthorizer.html
    */
-  public testInvokeAuthorizer() {
+  public toTestInvokeAuthorizer() {
     this.add('iot:TestInvokeAuthorizer');
     return this;
   }
@@ -4448,7 +4448,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_TransferCertificate.html
    */
-  public transferCertificate() {
+  public toTransferCertificate() {
     this.add('iot:TransferCertificate');
     return this;
   }
@@ -4458,10 +4458,10 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('iot:UntagResource');
     return this;
   }
@@ -4473,7 +4473,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAccountAuditConfiguration.html
    */
-  public updateAccountAuditConfiguration() {
+  public toUpdateAccountAuditConfiguration() {
     this.add('iot:UpdateAccountAuditConfiguration');
     return this;
   }
@@ -4483,7 +4483,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateAuthorizer() {
+  public toUpdateAuthorizer() {
     this.add('iot:UpdateAuthorizer');
     return this;
   }
@@ -4495,7 +4495,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateBillingGroup.html
    */
-  public updateBillingGroup() {
+  public toUpdateBillingGroup() {
     this.add('iot:UpdateBillingGroup');
     return this;
   }
@@ -4507,7 +4507,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCACertificate.html
    */
-  public updateCACertificate() {
+  public toUpdateCACertificate() {
     this.add('iot:UpdateCACertificate');
     return this;
   }
@@ -4519,7 +4519,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCertificate.html
    */
-  public updateCertificate() {
+  public toUpdateCertificate() {
     this.add('iot:UpdateCertificate');
     return this;
   }
@@ -4529,7 +4529,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateDimension() {
+  public toUpdateDimension() {
     this.add('iot:UpdateDimension');
     return this;
   }
@@ -4541,7 +4541,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDynamicThingGroup.html
    */
-  public updateDynamicThingGroup() {
+  public toUpdateDynamicThingGroup() {
     this.add('iot:UpdateDynamicThingGroup');
     return this;
   }
@@ -4553,7 +4553,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateEventConfigurations.html
    */
-  public updateEventConfigurations() {
+  public toUpdateEventConfigurations() {
     this.add('iot:UpdateEventConfigurations');
     return this;
   }
@@ -4565,7 +4565,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateIndexingConfiguration.html
    */
-  public updateIndexingConfiguration() {
+  public toUpdateIndexingConfiguration() {
     this.add('iot:UpdateIndexingConfiguration');
     return this;
   }
@@ -4577,7 +4577,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateJob.html
    */
-  public updateJob() {
+  public toUpdateJob() {
     this.add('iot:UpdateJob');
     return this;
   }
@@ -4589,7 +4589,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateJobExecution.html
    */
-  public updateJobExecution() {
+  public toUpdateJobExecution() {
     this.add('iot:UpdateJobExecution');
     return this;
   }
@@ -4599,7 +4599,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateMitigationAction() {
+  public toUpdateMitigationAction() {
     this.add('iot:UpdateMitigationAction');
     return this;
   }
@@ -4609,7 +4609,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateProvisioningTemplate() {
+  public toUpdateProvisioningTemplate() {
     this.add('iot:UpdateProvisioningTemplate');
     return this;
   }
@@ -4619,7 +4619,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateRoleAlias() {
+  public toUpdateRoleAlias() {
     this.add('iot:UpdateRoleAlias');
     return this;
   }
@@ -4629,7 +4629,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateScheduledAudit() {
+  public toUpdateScheduledAudit() {
     this.add('iot:UpdateScheduledAudit');
     return this;
   }
@@ -4639,7 +4639,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateSecurityProfile() {
+  public toUpdateSecurityProfile() {
     this.add('iot:UpdateSecurityProfile');
     return this;
   }
@@ -4651,7 +4651,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateStream.html
    */
-  public updateStream() {
+  public toUpdateStream() {
     this.add('iot:UpdateStream');
     return this;
   }
@@ -4663,7 +4663,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThing.html
    */
-  public updateThing() {
+  public toUpdateThing() {
     this.add('iot:UpdateThing');
     return this;
   }
@@ -4675,7 +4675,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThingGroup.html
    */
-  public updateThingGroup() {
+  public toUpdateThingGroup() {
     this.add('iot:UpdateThingGroup');
     return this;
   }
@@ -4687,7 +4687,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateThingGroupsForThing.html
    */
-  public updateThingGroupsForThing() {
+  public toUpdateThingGroupsForThing() {
     this.add('iot:UpdateThingGroupsForThing');
     return this;
   }
@@ -4699,7 +4699,7 @@ export class Iot extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html
    */
-  public updateThingShadow() {
+  public toUpdateThingShadow() {
     this.add('iot:UpdateThingShadow');
     return this;
   }
@@ -4709,7 +4709,7 @@ export class Iot extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public validateSecurityProfileBehaviors() {
+  public toValidateSecurityProfileBehaviors() {
     this.add('iot:ValidateSecurityProfileBehaviors');
     return this;
   }
@@ -4762,8 +4762,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onJob(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:job/${JobId}';
@@ -4784,8 +4784,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTunnel(tunnelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:tunnel/${TunnelId}';
@@ -4825,8 +4825,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onThinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
@@ -4847,8 +4847,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBillinggroup(billingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:billinggroup/${BillingGroupName}';
@@ -4869,8 +4869,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDynamicthinggroup(thingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thinggroup/${ThingGroupName}';
@@ -4891,8 +4891,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onThingtype(thingTypeName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:thingtype/${ThingTypeName}';
@@ -5046,8 +5046,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStream(streamId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:stream/${StreamId}';
@@ -5068,8 +5068,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOtaupdate(otaUpdateId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:otaupdate/${OtaUpdateId}';
@@ -5090,8 +5090,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onScheduledaudit(scheduleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:scheduledaudit/${ScheduleName}';
@@ -5112,8 +5112,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMitigationaction(mitigationActionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:mitigationaction/${MitigationActionName}';
@@ -5134,8 +5134,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSecurityprofile(securityProfileName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:securityprofile/${SecurityProfileName}';
@@ -5156,8 +5156,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDimension(dimensionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:dimension/${DimensionName}';
@@ -5178,8 +5178,8 @@ export class Iot extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRule(ruleName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:rule/${RuleName}';
@@ -5210,31 +5210,120 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * A tag key that is present in the request that the user makes to IoT.
+   *
+   * Applies to actions:
+   * - .toCreateBillingGroup()
+   * - .toCreateDimension()
+   * - .toCreateDynamicThingGroup()
+   * - .toCreateJob()
+   * - .toCreateMitigationAction()
+   * - .toCreateOTAUpdate()
+   * - .toCreateScheduledAudit()
+   * - .toCreateSecurityProfile()
+   * - .toCreateStream()
+   * - .toCreateThingGroup()
+   * - .toCreateThingType()
+   * - .toCreateTopicRule()
+   * - .toOpenTunnel()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The tag key component of a tag attached to an IoT resource.
+   *
+   * Applies to resource types:
+   * - job
+   * - tunnel
+   * - thinggroup
+   * - billinggroup
+   * - dynamicthinggroup
+   * - thingtype
+   * - stream
+   * - otaupdate
+   * - scheduledaudit
+   * - mitigationaction
+   * - securityprofile
+   * - dimension
+   * - rule
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The list of all the tag key names associated with the resource in the request.
+   *
+   * Applies to actions:
+   * - .toCreateBillingGroup()
+   * - .toCreateDimension()
+   * - .toCreateDynamicThingGroup()
+   * - .toCreateJob()
+   * - .toCreateMitigationAction()
+   * - .toCreateOTAUpdate()
+   * - .toCreateScheduledAudit()
+   * - .toCreateSecurityProfile()
+   * - .toCreateStream()
+   * - .toCreateThingGroup()
+   * - .toCreateThingType()
+   * - .toCreateTopicRule()
+   * - .toOpenTunnel()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * The flag indicating whether or not to also delete an IoT Tunnel immediately
+   *
+   * Applies to actions:
+   * - .toCloseTunnel()
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifDelete(value?: boolean) {
+  public ifDelete(value?: boolean): PolicyStatementWithCondition {
     return this.if(`iot:Delete`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
    * The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel
    *
+   * Applies to actions:
+   * - .toOpenTunnel()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifThingGroupArn(value: string | string[], operator?: string) {
+  public ifThingGroupArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`iot:ThingGroupArn`, value, operator || 'StringLike');
   }
 
   /**
    * The list of all destination services for an IoT Tunnel
    *
+   * Applies to actions:
+   * - .toOpenTunnel()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTunnelDestinationService(value: string | string[], operator?: string) {
+  public ifTunnelDestinationService(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`iot:TunnelDestinationService`, value, operator || 'StringLike');
   }
 }

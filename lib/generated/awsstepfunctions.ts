@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [states](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsstepfunctions.html).
@@ -11,7 +11,12 @@ export class States extends PolicyStatement {
     "CreateActivity": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html",
       "description": "Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.",
-      "accessLevel": "Tagging",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "activity": {
+          "required": true
+        }
+      },
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -20,7 +25,12 @@ export class States extends PolicyStatement {
     "CreateStateMachine": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html",
       "description": "Creates a state machine.",
-      "accessLevel": "Tagging",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "statemachine": {
+          "required": true
+        }
+      },
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -167,7 +177,12 @@ export class States extends PolicyStatement {
     "StopExecution": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html",
       "description": "Stops an execution.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "execution": {
+          "required": true
+        }
+      }
     },
     "TagResource": {
       "url": "https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html",
@@ -254,15 +269,15 @@ export class States extends PolicyStatement {
   /**
    * Creates an activity. Activities must poll Step Functions using the GetActivityTask and respond using SendTask* API calls.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html
    */
-  public createActivity() {
+  public toCreateActivity() {
     this.add('states:CreateActivity');
     return this;
   }
@@ -270,15 +285,15 @@ export class States extends PolicyStatement {
   /**
    * Creates a state machine.
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html
    */
-  public createStateMachine() {
+  public toCreateStateMachine() {
     this.add('states:CreateStateMachine');
     return this;
   }
@@ -290,7 +305,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteActivity.html
    */
-  public deleteActivity() {
+  public toDeleteActivity() {
     this.add('states:DeleteActivity');
     return this;
   }
@@ -302,7 +317,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DeleteStateMachine.html
    */
-  public deleteStateMachine() {
+  public toDeleteStateMachine() {
     this.add('states:DeleteStateMachine');
     return this;
   }
@@ -314,7 +329,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html
    */
-  public describeActivity() {
+  public toDescribeActivity() {
     this.add('states:DescribeActivity');
     return this;
   }
@@ -326,7 +341,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeExecution.html
    */
-  public describeExecution() {
+  public toDescribeExecution() {
     this.add('states:DescribeExecution');
     return this;
   }
@@ -338,7 +353,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html
    */
-  public describeStateMachine() {
+  public toDescribeStateMachine() {
     this.add('states:DescribeStateMachine');
     return this;
   }
@@ -350,7 +365,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineForExecution.html
    */
-  public describeStateMachineForExecution() {
+  public toDescribeStateMachineForExecution() {
     this.add('states:DescribeStateMachineForExecution');
     return this;
   }
@@ -362,7 +377,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetActivityTask.html
    */
-  public getActivityTask() {
+  public toGetActivityTask() {
     this.add('states:GetActivityTask');
     return this;
   }
@@ -374,7 +389,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_GetExecutionHistory.html
    */
-  public getExecutionHistory() {
+  public toGetExecutionHistory() {
     this.add('states:GetExecutionHistory');
     return this;
   }
@@ -386,7 +401,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html
    */
-  public listActivities() {
+  public toListActivities() {
     this.add('states:ListActivities');
     return this;
   }
@@ -398,7 +413,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html
    */
-  public listExecutions() {
+  public toListExecutions() {
     this.add('states:ListExecutions');
     return this;
   }
@@ -410,7 +425,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachines.html
    */
-  public listStateMachines() {
+  public toListStateMachines() {
     this.add('states:ListStateMachines');
     return this;
   }
@@ -422,7 +437,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('states:ListTagsForResource');
     return this;
   }
@@ -434,7 +449,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskFailure.html
    */
-  public sendTaskFailure() {
+  public toSendTaskFailure() {
     this.add('states:SendTaskFailure');
     return this;
   }
@@ -446,7 +461,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskHeartbeat.html
    */
-  public sendTaskHeartbeat() {
+  public toSendTaskHeartbeat() {
     this.add('states:SendTaskHeartbeat');
     return this;
   }
@@ -458,7 +473,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskSuccess.html
    */
-  public sendTaskSuccess() {
+  public toSendTaskSuccess() {
     this.add('states:SendTaskSuccess');
     return this;
   }
@@ -470,7 +485,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StartExecution.html
    */
-  public startExecution() {
+  public toStartExecution() {
     this.add('states:StartExecution');
     return this;
   }
@@ -482,7 +497,7 @@ export class States extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html
    */
-  public stopExecution() {
+  public toStopExecution() {
     this.add('states:StopExecution');
     return this;
   }
@@ -492,13 +507,13 @@ export class States extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('states:TagResource');
     return this;
   }
@@ -508,12 +523,12 @@ export class States extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('states:UntagResource');
     return this;
   }
@@ -523,13 +538,13 @@ export class States extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html
    */
-  public updateStateMachine() {
+  public toUpdateStateMachine() {
     this.add('states:UpdateStateMachine');
     return this;
   }
@@ -544,8 +559,8 @@ export class States extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onActivity(activityName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:activity:${ActivityName}';
@@ -587,8 +602,8 @@ export class States extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onStatemachine(stateMachineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:states:${Region}:${Account}:stateMachine:${StateMachineName}';
@@ -597,5 +612,60 @@ export class States extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Tag for request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateActivity()
+   * - .toCreateStateMachine()
+   * - .toTagResource()
+   * - .toUpdateStateMachine()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Tag for resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - activity
+   * - statemachine
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Tag for key
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateActivity()
+   * - .toCreateStateMachine()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateStateMachine()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

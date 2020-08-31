@@ -75,7 +75,9 @@ jobs:
           fetch-depth: 1
 
       - name: Build CDK variant
-        run: make cdk
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: make cdk
 
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0

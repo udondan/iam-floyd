@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [imagebuilder](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html).
@@ -581,7 +581,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CancelImageCreation.html
    */
-  public cancelImageCreation() {
+  public toCancelImageCreation() {
     this.add('imagebuilder:CancelImageCreation');
     return this;
   }
@@ -591,13 +591,13 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html
    */
-  public createComponent() {
+  public toCreateComponent() {
     this.add('imagebuilder:CreateComponent');
     return this;
   }
@@ -607,13 +607,13 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateDistributionConfiguration.html
    */
-  public createDistributionConfiguration() {
+  public toCreateDistributionConfiguration() {
     this.add('imagebuilder:CreateDistributionConfiguration');
     return this;
   }
@@ -623,9 +623,9 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - imagebuilder:GetImageRecipe
@@ -633,7 +633,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImage.html
    */
-  public createImage() {
+  public toCreateImage() {
     this.add('imagebuilder:CreateImage');
     return this;
   }
@@ -643,16 +643,16 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - imagebuilder:GetImageRecipe
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImagePipeline.html
    */
-  public createImagePipeline() {
+  public toCreateImagePipeline() {
     this.add('imagebuilder:CreateImagePipeline');
     return this;
   }
@@ -662,16 +662,16 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - imagebuilder:GetComponent
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateImageRecipe.html
    */
-  public createImageRecipe() {
+  public toCreateImageRecipe() {
     this.add('imagebuilder:CreateImageRecipe');
     return this;
   }
@@ -681,18 +681,18 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - imagebuilder:CreatedResourceTagKeys
-   * - imagebuilder:CreatedResourceTag/<key>
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifCreatedResourceTagKeys()
+   * - .ifCreatedResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateInfrastructureConfiguration.html
    */
-  public createInfrastructureConfiguration() {
+  public toCreateInfrastructureConfiguration() {
     this.add('imagebuilder:CreateInfrastructureConfiguration');
     return this;
   }
@@ -704,7 +704,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteComponent.html
    */
-  public deleteComponent() {
+  public toDeleteComponent() {
     this.add('imagebuilder:DeleteComponent');
     return this;
   }
@@ -716,7 +716,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteDistributionConfiguration.html
    */
-  public deleteDistributionConfiguration() {
+  public toDeleteDistributionConfiguration() {
     this.add('imagebuilder:DeleteDistributionConfiguration');
     return this;
   }
@@ -728,7 +728,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImage.html
    */
-  public deleteImage() {
+  public toDeleteImage() {
     this.add('imagebuilder:DeleteImage');
     return this;
   }
@@ -740,7 +740,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImagePipeline.html
    */
-  public deleteImagePipeline() {
+  public toDeleteImagePipeline() {
     this.add('imagebuilder:DeleteImagePipeline');
     return this;
   }
@@ -752,7 +752,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteImageRecipe.html
    */
-  public deleteImageRecipe() {
+  public toDeleteImageRecipe() {
     this.add('imagebuilder:DeleteImageRecipe');
     return this;
   }
@@ -764,7 +764,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_DeleteInfrastructureConfiguration.html
    */
-  public deleteInfrastructureConfiguration() {
+  public toDeleteInfrastructureConfiguration() {
     this.add('imagebuilder:DeleteInfrastructureConfiguration');
     return this;
   }
@@ -776,7 +776,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponent.html
    */
-  public getComponent() {
+  public toGetComponent() {
     this.add('imagebuilder:GetComponent');
     return this;
   }
@@ -788,7 +788,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetComponentPolicy.html
    */
-  public getComponentPolicy() {
+  public toGetComponentPolicy() {
     this.add('imagebuilder:GetComponentPolicy');
     return this;
   }
@@ -800,7 +800,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetDistributionConfiguration.html
    */
-  public getDistributionConfiguration() {
+  public toGetDistributionConfiguration() {
     this.add('imagebuilder:GetDistributionConfiguration');
     return this;
   }
@@ -810,12 +810,12 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html
    */
-  public getImage() {
+  public toGetImage() {
     this.add('imagebuilder:GetImage');
     return this;
   }
@@ -827,7 +827,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePipeline.html
    */
-  public getImagePipeline() {
+  public toGetImagePipeline() {
     this.add('imagebuilder:GetImagePipeline');
     return this;
   }
@@ -839,7 +839,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImagePolicy.html
    */
-  public getImagePolicy() {
+  public toGetImagePolicy() {
     this.add('imagebuilder:GetImagePolicy');
     return this;
   }
@@ -851,7 +851,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipe.html
    */
-  public getImageRecipe() {
+  public toGetImageRecipe() {
     this.add('imagebuilder:GetImageRecipe');
     return this;
   }
@@ -863,7 +863,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImageRecipePolicy.html
    */
-  public getImageRecipePolicy() {
+  public toGetImageRecipePolicy() {
     this.add('imagebuilder:GetImageRecipePolicy');
     return this;
   }
@@ -875,7 +875,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetInfrastructureConfiguration.html
    */
-  public getInfrastructureConfiguration() {
+  public toGetInfrastructureConfiguration() {
     this.add('imagebuilder:GetInfrastructureConfiguration');
     return this;
   }
@@ -887,7 +887,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponentBuildVersions.html
    */
-  public listComponentBuildVersions() {
+  public toListComponentBuildVersions() {
     this.add('imagebuilder:ListComponentBuildVersions');
     return this;
   }
@@ -899,7 +899,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListComponents.html
    */
-  public listComponents() {
+  public toListComponents() {
     this.add('imagebuilder:ListComponents');
     return this;
   }
@@ -911,7 +911,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListDistributionConfigurations.html
    */
-  public listDistributionConfigurations() {
+  public toListDistributionConfigurations() {
     this.add('imagebuilder:ListDistributionConfigurations');
     return this;
   }
@@ -923,7 +923,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageBuildVersions.html
    */
-  public listImageBuildVersions() {
+  public toListImageBuildVersions() {
     this.add('imagebuilder:ListImageBuildVersions');
     return this;
   }
@@ -935,7 +935,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImagePipelines.html
    */
-  public listImagePipelines() {
+  public toListImagePipelines() {
     this.add('imagebuilder:ListImagePipelines');
     return this;
   }
@@ -947,7 +947,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImageRecipes.html
    */
-  public listImageRecipes() {
+  public toListImageRecipes() {
     this.add('imagebuilder:ListImageRecipes');
     return this;
   }
@@ -959,7 +959,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListImages.html
    */
-  public listImages() {
+  public toListImages() {
     this.add('imagebuilder:ListImages');
     return this;
   }
@@ -971,7 +971,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListInfrastructureConfigurations.html
    */
-  public listInfrastructureConfigurations() {
+  public toListInfrastructureConfigurations() {
     this.add('imagebuilder:ListInfrastructureConfigurations');
     return this;
   }
@@ -981,12 +981,12 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('imagebuilder:ListTagsForResource');
     return this;
   }
@@ -998,7 +998,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutComponentPolicy.html
    */
-  public putComponentPolicy() {
+  public toPutComponentPolicy() {
     this.add('imagebuilder:PutComponentPolicy');
     return this;
   }
@@ -1010,7 +1010,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImagePolicy.html
    */
-  public putImagePolicy() {
+  public toPutImagePolicy() {
     this.add('imagebuilder:PutImagePolicy');
     return this;
   }
@@ -1022,7 +1022,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_PutImageRecipePolicy.html
    */
-  public putImageRecipePolicy() {
+  public toPutImageRecipePolicy() {
     this.add('imagebuilder:PutImageRecipePolicy');
     return this;
   }
@@ -1037,7 +1037,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html
    */
-  public startImagePipelineExecution() {
+  public toStartImagePipelineExecution() {
     this.add('imagebuilder:StartImagePipelineExecution');
     return this;
   }
@@ -1047,14 +1047,14 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('imagebuilder:TagResource');
     return this;
   }
@@ -1064,13 +1064,13 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('imagebuilder:UntagResource');
     return this;
   }
@@ -1082,7 +1082,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateDistributionConfiguration.html
    */
-  public updateDistributionConfiguration() {
+  public toUpdateDistributionConfiguration() {
     this.add('imagebuilder:UpdateDistributionConfiguration');
     return this;
   }
@@ -1094,7 +1094,7 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateImagePipeline.html
    */
-  public updateImagePipeline() {
+  public toUpdateImagePipeline() {
     this.add('imagebuilder:UpdateImagePipeline');
     return this;
   }
@@ -1104,17 +1104,17 @@ export class Imagebuilder extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - imagebuilder:CreatedResourceTagKeys
-   * - imagebuilder:CreatedResourceTag/<key>
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifCreatedResourceTagKeys()
+   * - .ifCreatedResourceTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_UpdateInfrastructureConfiguration.html
    */
-  public updateInfrastructureConfiguration() {
+  public toUpdateInfrastructureConfiguration() {
     this.add('imagebuilder:UpdateInfrastructureConfiguration');
     return this;
   }
@@ -1131,8 +1131,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onComponent(componentName: string, componentVersion: string, componentBuildVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}/${ComponentBuildVersion}';
@@ -1156,8 +1156,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onComponentVersion(componentName: string, componentVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:component/${ComponentName}/${ComponentVersion}';
@@ -1179,8 +1179,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDistributionConfiguration(distributionConfigurationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:distribution-configuration/${DistributionConfigurationName}';
@@ -1203,8 +1203,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onImage(imageName: string, imageVersion: string, imageBuildVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}/${ImageBuildVersion}';
@@ -1228,8 +1228,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onImageVersion(imageName: string, imageVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image/${ImageName}/${ImageVersion}';
@@ -1252,8 +1252,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onImageRecipe(imageRecipeName: string, imageRecipeVersion: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-recipe/${ImageRecipeName}/${ImageRecipeVersion}';
@@ -1275,8 +1275,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onImagePipeline(imagePipelineName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:image-pipeline/${ImagePipelineName}';
@@ -1297,8 +1297,8 @@ export class Imagebuilder extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onInfrastructureConfiguration(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:imagebuilder:${Region}:${Account}:infrastructure-configuration/${ResourceId}';
@@ -1329,15 +1329,93 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
+   * Filters actions by the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateDistributionConfiguration()
+   * - .toCreateImage()
+   * - .toCreateImagePipeline()
+   * - .toCreateImageRecipe()
+   * - .toCreateInfrastructureConfiguration()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions by tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetImage()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateInfrastructureConfiguration()
+   *
+   * Applies to resource types:
+   * - component
+   * - componentVersion
+   * - distributionConfiguration
+   * - image
+   * - imageVersion
+   * - imageRecipe
+   * - imagePipeline
+   * - infrastructureConfiguration
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions by the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComponent()
+   * - .toCreateDistributionConfiguration()
+   * - .toCreateImage()
+   * - .toCreateImagePipeline()
+   * - .toCreateImageRecipe()
+   * - .toCreateInfrastructureConfiguration()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access by the tag key-value pairs attached to the resource created by Image Builder
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetag
+   *
+   * Applies to actions:
+   * - .toCreateInfrastructureConfiguration()
+   * - .toUpdateInfrastructureConfiguration()
    *
    * @param key The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string) {
+  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`imagebuilder:CreatedResourceTag/${ key }`, value, operator || 'StringLike');
   }
 
@@ -1346,10 +1424,14 @@ export class Imagebuilder extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetagkeys
    *
+   * Applies to actions:
+   * - .toCreateInfrastructureConfiguration()
+   * - .toUpdateInfrastructureConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreatedResourceTagKeys(value: string | string[], operator?: string) {
+  public ifCreatedResourceTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`imagebuilder:CreatedResourceTagKeys`, value, operator || 'StringLike');
   }
 }

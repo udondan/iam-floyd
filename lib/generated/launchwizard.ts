@@ -67,7 +67,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public deleteApp() {
+  public toDeleteApp() {
     this.add('launchwizard:DeleteApp');
     return this;
   }
@@ -79,7 +79,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public describeProvisionedApp() {
+  public toDescribeProvisionedApp() {
     this.add('launchwizard:DescribeProvisionedApp');
     return this;
   }
@@ -91,7 +91,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public describeProvisioningEvents() {
+  public toDescribeProvisioningEvents() {
     this.add('launchwizard:DescribeProvisioningEvents');
     return this;
   }
@@ -103,7 +103,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public getInfrastructureSuggestion() {
+  public toGetInfrastructureSuggestion() {
     this.add('launchwizard:GetInfrastructureSuggestion');
     return this;
   }
@@ -115,7 +115,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public getIpAddress() {
+  public toGetIpAddress() {
     this.add('launchwizard:GetIpAddress');
     return this;
   }
@@ -127,7 +127,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public getResourceCostEstimate() {
+  public toGetResourceCostEstimate() {
     this.add('launchwizard:GetResourceCostEstimate');
     return this;
   }
@@ -139,7 +139,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public listProvisionedApps() {
+  public toListProvisionedApps() {
     this.add('launchwizard:ListProvisionedApps');
     return this;
   }
@@ -151,7 +151,7 @@ export class Launchwizard extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/launchwizard/
    */
-  public startProvisioning() {
+  public toStartProvisioning() {
     this.add('launchwizard:StartProvisioning');
     return this;
   }

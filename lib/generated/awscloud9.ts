@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [cloud9](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html).
@@ -199,11 +199,11 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloud9:EnvironmentName
-   * - cloud9:InstanceType
-   * - cloud9:SubnetId
-   * - cloud9:UserArn
+   * Possible conditions:
+   * - .ifEnvironmentName()
+   * - .ifInstanceType()
+   * - .ifSubnetId()
+   * - .ifUserArn()
    *
    * Dependent actions:
    * - ec2:DescribeSubnets
@@ -212,7 +212,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentEC2.html
    */
-  public createEnvironmentEC2() {
+  public toCreateEnvironmentEC2() {
     this.add('cloud9:CreateEnvironmentEC2');
     return this;
   }
@@ -222,14 +222,14 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloud9:UserArn
-   * - cloud9:EnvironmentId
-   * - cloud9:Permissions
+   * Possible conditions:
+   * - .ifUserArn()
+   * - .ifEnvironmentId()
+   * - .ifPermissions()
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_CreateEnvironmentMembership.html
    */
-  public createEnvironmentMembership() {
+  public toCreateEnvironmentMembership() {
     this.add('cloud9:CreateEnvironmentMembership');
     return this;
   }
@@ -244,7 +244,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironment.html
    */
-  public deleteEnvironment() {
+  public toDeleteEnvironment() {
     this.add('cloud9:DeleteEnvironment');
     return this;
   }
@@ -256,7 +256,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DeleteEnvironmentMembership.html
    */
-  public deleteEnvironmentMembership() {
+  public toDeleteEnvironmentMembership() {
     this.add('cloud9:DeleteEnvironmentMembership');
     return this;
   }
@@ -266,13 +266,13 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - cloud9:UserArn
-   * - cloud9:EnvironmentId
+   * Possible conditions:
+   * - .ifUserArn()
+   * - .ifEnvironmentId()
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentMemberships.html
    */
-  public describeEnvironmentMemberships() {
+  public toDescribeEnvironmentMemberships() {
     this.add('cloud9:DescribeEnvironmentMemberships');
     return this;
   }
@@ -284,7 +284,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironmentStatus.html
    */
-  public describeEnvironmentStatus() {
+  public toDescribeEnvironmentStatus() {
     this.add('cloud9:DescribeEnvironmentStatus');
     return this;
   }
@@ -296,7 +296,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_DescribeEnvironments.html
    */
-  public describeEnvironments() {
+  public toDescribeEnvironments() {
     this.add('cloud9:DescribeEnvironments');
     return this;
   }
@@ -308,7 +308,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
-  public getUserSettings() {
+  public toGetUserSettings() {
     this.add('cloud9:GetUserSettings');
     return this;
   }
@@ -320,7 +320,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListEnvironments.html
    */
-  public listEnvironments() {
+  public toListEnvironments() {
     this.add('cloud9:ListEnvironments');
     return this;
   }
@@ -332,7 +332,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('cloud9:ListTagsForResource');
     return this;
   }
@@ -342,13 +342,13 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('cloud9:TagResource');
     return this;
   }
@@ -358,12 +358,12 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('cloud9:UntagResource');
     return this;
   }
@@ -375,7 +375,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironment.html
    */
-  public updateEnvironment() {
+  public toUpdateEnvironment() {
     this.add('cloud9:UpdateEnvironment');
     return this;
   }
@@ -385,14 +385,14 @@ export class Cloud9 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - cloud9:UserArn
-   * - cloud9:EnvironmentId
-   * - cloud9:Permissions
+   * Possible conditions:
+   * - .ifUserArn()
+   * - .ifEnvironmentId()
+   * - .ifPermissions()
    *
    * https://docs.aws.amazon.com/cloud9/latest/APIReference/API_UpdateEnvironmentMembership.html
    */
-  public updateEnvironmentMembership() {
+  public toUpdateEnvironmentMembership() {
     this.add('cloud9:UpdateEnvironmentMembership');
     return this;
   }
@@ -404,7 +404,7 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloud9/latest/user-guide/settings-user.html
    */
-  public updateUserSettings() {
+  public toUpdateUserSettings() {
     this.add('cloud9:UpdateUserSettings');
     return this;
   }
@@ -419,8 +419,8 @@ export class Cloud9 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEnvironment(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloud9:${Region}:${Account}:environment:${ResourceId}';
@@ -432,14 +432,67 @@ export class Cloud9 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the AWS Cloud9 environment ID
+   * Filters actions based on the presence of tag key-value pairs in the request
    *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_EnvironmentId
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - environment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEnvironmentId(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the AWS Cloud9 environment ID
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_EnvironmentId
+   *
+   * Applies to actions:
+   * - .toCreateEnvironmentMembership()
+   * - .toDescribeEnvironmentMemberships()
+   * - .toUpdateEnvironmentMembership()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifEnvironmentId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`cloud9:EnvironmentId`, value, operator || 'StringLike');
   }
 
@@ -448,10 +501,13 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_EnvironmentName
    *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEnvironmentName(value: string | string[], operator?: string) {
+  public ifEnvironmentName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`cloud9:EnvironmentName`, value, operator || 'StringLike');
   }
 
@@ -460,10 +516,13 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_InstanceType
    *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceType(value: string | string[], operator?: string) {
+  public ifInstanceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`cloud9:InstanceType`, value, operator || 'StringLike');
   }
 
@@ -472,10 +531,14 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_Permissions
    *
+   * Applies to actions:
+   * - .toCreateEnvironmentMembership()
+   * - .toUpdateEnvironmentMembership()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPermissions(value: string | string[], operator?: string) {
+  public ifPermissions(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`cloud9:Permissions`, value, operator || 'StringLike');
   }
 
@@ -484,10 +547,13 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_SubnetId
    *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubnetId(value: string | string[], operator?: string) {
+  public ifSubnetId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`cloud9:SubnetId`, value, operator || 'StringLike');
   }
 
@@ -496,10 +562,16 @@ export class Cloud9 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloud9.html#awscloud9-cloud9_UserArn
    *
+   * Applies to actions:
+   * - .toCreateEnvironmentEC2()
+   * - .toCreateEnvironmentMembership()
+   * - .toDescribeEnvironmentMemberships()
+   * - .toUpdateEnvironmentMembership()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifUserArn(value: string | string[], operator?: string) {
+  public ifUserArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`cloud9:UserArn`, value, operator || 'ArnEquals');
   }
 }

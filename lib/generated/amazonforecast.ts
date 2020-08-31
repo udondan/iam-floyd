@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [forecast](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonforecast.html).
@@ -429,13 +429,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDataset.html
    */
-  public createDataset() {
+  public toCreateDataset() {
     this.add('forecast:CreateDataset');
     return this;
   }
@@ -445,13 +445,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetGroup.html
    */
-  public createDatasetGroup() {
+  public toCreateDatasetGroup() {
     this.add('forecast:CreateDatasetGroup');
     return this;
   }
@@ -461,13 +461,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateDatasetImportJob.html
    */
-  public createDatasetImportJob() {
+  public toCreateDatasetImportJob() {
     this.add('forecast:CreateDatasetImportJob');
     return this;
   }
@@ -477,13 +477,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecast.html
    */
-  public createForecast() {
+  public toCreateForecast() {
     this.add('forecast:CreateForecast');
     return this;
   }
@@ -493,13 +493,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreateForecastExportJob.html
    */
-  public createForecastExportJob() {
+  public toCreateForecastExportJob() {
     this.add('forecast:CreateForecastExportJob');
     return this;
   }
@@ -509,13 +509,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_CreatePredictor.html
    */
-  public createPredictor() {
+  public toCreatePredictor() {
     this.add('forecast:CreatePredictor');
     return this;
   }
@@ -527,7 +527,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDataset.html
    */
-  public deleteDataset() {
+  public toDeleteDataset() {
     this.add('forecast:DeleteDataset');
     return this;
   }
@@ -539,7 +539,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetGroup.html
    */
-  public deleteDatasetGroup() {
+  public toDeleteDatasetGroup() {
     this.add('forecast:DeleteDatasetGroup');
     return this;
   }
@@ -551,7 +551,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteDatasetImportJob.html
    */
-  public deleteDatasetImportJob() {
+  public toDeleteDatasetImportJob() {
     this.add('forecast:DeleteDatasetImportJob');
     return this;
   }
@@ -563,7 +563,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecast.html
    */
-  public deleteForecast() {
+  public toDeleteForecast() {
     this.add('forecast:DeleteForecast');
     return this;
   }
@@ -575,7 +575,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeleteForecastExportJob.html
    */
-  public deleteForecastExportJob() {
+  public toDeleteForecastExportJob() {
     this.add('forecast:DeleteForecastExportJob');
     return this;
   }
@@ -587,7 +587,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DeletePredictor.html
    */
-  public deletePredictor() {
+  public toDeletePredictor() {
     this.add('forecast:DeletePredictor');
     return this;
   }
@@ -599,7 +599,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDataset.html
    */
-  public describeDataset() {
+  public toDescribeDataset() {
     this.add('forecast:DescribeDataset');
     return this;
   }
@@ -611,7 +611,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetGroup.html
    */
-  public describeDatasetGroup() {
+  public toDescribeDatasetGroup() {
     this.add('forecast:DescribeDatasetGroup');
     return this;
   }
@@ -623,7 +623,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeDatasetImportJob.html
    */
-  public describeDatasetImportJob() {
+  public toDescribeDatasetImportJob() {
     this.add('forecast:DescribeDatasetImportJob');
     return this;
   }
@@ -635,7 +635,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecast.html
    */
-  public describeForecast() {
+  public toDescribeForecast() {
     this.add('forecast:DescribeForecast');
     return this;
   }
@@ -647,7 +647,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribeForecastExportJob.html
    */
-  public describeForecastExportJob() {
+  public toDescribeForecastExportJob() {
     this.add('forecast:DescribeForecastExportJob');
     return this;
   }
@@ -659,7 +659,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_DescribePredictor.html
    */
-  public describePredictor() {
+  public toDescribePredictor() {
     this.add('forecast:DescribePredictor');
     return this;
   }
@@ -671,7 +671,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_GetAccuracyMetrics.html
    */
-  public getAccuracyMetrics() {
+  public toGetAccuracyMetrics() {
     this.add('forecast:GetAccuracyMetrics');
     return this;
   }
@@ -683,7 +683,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetGroups.html
    */
-  public listDatasetGroups() {
+  public toListDatasetGroups() {
     this.add('forecast:ListDatasetGroups');
     return this;
   }
@@ -695,7 +695,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasetImportJobs.html
    */
-  public listDatasetImportJobs() {
+  public toListDatasetImportJobs() {
     this.add('forecast:ListDatasetImportJobs');
     return this;
   }
@@ -707,7 +707,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListDatasets.html
    */
-  public listDatasets() {
+  public toListDatasets() {
     this.add('forecast:ListDatasets');
     return this;
   }
@@ -719,7 +719,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecastExportJobs.html
    */
-  public listForecastExportJobs() {
+  public toListForecastExportJobs() {
     this.add('forecast:ListForecastExportJobs');
     return this;
   }
@@ -731,7 +731,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListForecasts.html
    */
-  public listForecasts() {
+  public toListForecasts() {
     this.add('forecast:ListForecasts');
     return this;
   }
@@ -743,7 +743,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListPredictors.html
    */
-  public listPredictors() {
+  public toListPredictors() {
     this.add('forecast:ListPredictors');
     return this;
   }
@@ -755,7 +755,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('forecast:ListTagsForResource');
     return this;
   }
@@ -767,7 +767,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_forecastquery_QueryForecast.html
    */
-  public queryForecast() {
+  public toQueryForecast() {
     this.add('forecast:QueryForecast');
     return this;
   }
@@ -777,13 +777,13 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('forecast:TagResource');
     return this;
   }
@@ -793,12 +793,12 @@ export class Forecast extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('forecast:UntagResource');
     return this;
   }
@@ -810,7 +810,7 @@ export class Forecast extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/forecast/latest/dg/API_Operations.htmlAPI_UpdateDatasetGroup.html
    */
-  public updateDatasetGroup() {
+  public toUpdateDatasetGroup() {
     this.add('forecast:UpdateDatasetGroup');
     return this;
   }
@@ -823,8 +823,8 @@ export class Forecast extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataset(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset/${ResourceId}';
@@ -843,8 +843,8 @@ export class Forecast extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDatasetGroup(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-group/${ResourceId}';
@@ -863,8 +863,8 @@ export class Forecast extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDatasetImportJob(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:dataset-import-job/${ResourceId}';
@@ -896,8 +896,8 @@ export class Forecast extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPredictor(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:predictor/${ResourceId}';
@@ -916,8 +916,8 @@ export class Forecast extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onForecast(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast/${ResourceId}';
@@ -936,8 +936,8 @@ export class Forecast extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onForecastExport(resourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:forecast:${Region}:${Account}:forecast-export-job/${ResourceId}';
@@ -946,5 +946,70 @@ export class Forecast extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the tags that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateDatasetGroup()
+   * - .toCreateDatasetImportJob()
+   * - .toCreateForecast()
+   * - .toCreateForecastExportJob()
+   * - .toCreatePredictor()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tags associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - dataset
+   * - datasetGroup
+   * - datasetImportJob
+   * - predictor
+   * - forecast
+   * - forecastExport
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag keys that are passed in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDataset()
+   * - .toCreateDatasetGroup()
+   * - .toCreateDatasetImportJob()
+   * - .toCreateForecast()
+   * - .toCreateForecastExportJob()
+   * - .toCreatePredictor()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

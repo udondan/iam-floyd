@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [cloudhsm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudhsm.html).
@@ -273,7 +273,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource() {
+  public toAddTagsToResource() {
     this.add('cloudhsm:AddTagsToResource');
     return this;
   }
@@ -283,13 +283,13 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CopyBackupToRegion.html
    */
-  public copyBackupToRegion() {
+  public toCopyBackupToRegion() {
     this.add('cloudhsm:CopyBackupToRegion');
     return this;
   }
@@ -299,13 +299,13 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html
    */
-  public createCluster() {
+  public toCreateCluster() {
     this.add('cloudhsm:CreateCluster');
     return this;
   }
@@ -317,7 +317,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html
    */
-  public createHapg() {
+  public toCreateHapg() {
     this.add('cloudhsm:CreateHapg');
     return this;
   }
@@ -329,7 +329,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html
    */
-  public createHsm() {
+  public toCreateHsm() {
     this.add('cloudhsm:CreateHsm');
     return this;
   }
@@ -341,7 +341,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html
    */
-  public createLunaClient() {
+  public toCreateLunaClient() {
     this.add('cloudhsm:CreateLunaClient');
     return this;
   }
@@ -353,7 +353,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteBackup.html
    */
-  public deleteBackup() {
+  public toDeleteBackup() {
     this.add('cloudhsm:DeleteBackup');
     return this;
   }
@@ -365,7 +365,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html
    */
-  public deleteCluster() {
+  public toDeleteCluster() {
     this.add('cloudhsm:DeleteCluster');
     return this;
   }
@@ -377,7 +377,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html
    */
-  public deleteHapg() {
+  public toDeleteHapg() {
     this.add('cloudhsm:DeleteHapg');
     return this;
   }
@@ -389,7 +389,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html
    */
-  public deleteHsm() {
+  public toDeleteHsm() {
     this.add('cloudhsm:DeleteHsm');
     return this;
   }
@@ -401,7 +401,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html
    */
-  public deleteLunaClient() {
+  public toDeleteLunaClient() {
     this.add('cloudhsm:DeleteLunaClient');
     return this;
   }
@@ -413,7 +413,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeBackups.html
    */
-  public describeBackups() {
+  public toDescribeBackups() {
     this.add('cloudhsm:DescribeBackups');
     return this;
   }
@@ -425,7 +425,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html
    */
-  public describeClusters() {
+  public toDescribeClusters() {
     this.add('cloudhsm:DescribeClusters');
     return this;
   }
@@ -437,7 +437,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html
    */
-  public describeHapg() {
+  public toDescribeHapg() {
     this.add('cloudhsm:DescribeHapg');
     return this;
   }
@@ -449,7 +449,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html
    */
-  public describeHsm() {
+  public toDescribeHsm() {
     this.add('cloudhsm:DescribeHsm');
     return this;
   }
@@ -461,7 +461,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html
    */
-  public describeLunaClient() {
+  public toDescribeLunaClient() {
     this.add('cloudhsm:DescribeLunaClient');
     return this;
   }
@@ -473,7 +473,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html
    */
-  public getConfig() {
+  public toGetConfig() {
     this.add('cloudhsm:GetConfig');
     return this;
   }
@@ -485,7 +485,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_InitializeCluster.html
    */
-  public initializeCluster() {
+  public toInitializeCluster() {
     this.add('cloudhsm:InitializeCluster');
     return this;
   }
@@ -497,7 +497,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html
    */
-  public listAvailableZones() {
+  public toListAvailableZones() {
     this.add('cloudhsm:ListAvailableZones');
     return this;
   }
@@ -509,7 +509,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html
    */
-  public listHapgs() {
+  public toListHapgs() {
     this.add('cloudhsm:ListHapgs');
     return this;
   }
@@ -521,7 +521,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html
    */
-  public listHsms() {
+  public toListHsms() {
     this.add('cloudhsm:ListHsms');
     return this;
   }
@@ -533,7 +533,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html
    */
-  public listLunaClients() {
+  public toListLunaClients() {
     this.add('cloudhsm:ListLunaClients');
     return this;
   }
@@ -545,7 +545,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ListTags.html
    */
-  public listTags() {
+  public toListTags() {
     this.add('cloudhsm:ListTags');
     return this;
   }
@@ -557,7 +557,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('cloudhsm:ListTagsForResource');
     return this;
   }
@@ -569,7 +569,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html
    */
-  public modifyHapg() {
+  public toModifyHapg() {
     this.add('cloudhsm:ModifyHapg');
     return this;
   }
@@ -581,7 +581,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html
    */
-  public modifyHsm() {
+  public toModifyHsm() {
     this.add('cloudhsm:ModifyHsm');
     return this;
   }
@@ -593,7 +593,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html
    */
-  public modifyLunaClient() {
+  public toModifyLunaClient() {
     this.add('cloudhsm:ModifyLunaClient');
     return this;
   }
@@ -605,7 +605,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource() {
+  public toRemoveTagsFromResource() {
     this.add('cloudhsm:RemoveTagsFromResource');
     return this;
   }
@@ -617,7 +617,7 @@ export class Cloudhsm extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_RestoreBackup.html
    */
-  public restoreBackup() {
+  public toRestoreBackup() {
     this.add('cloudhsm:RestoreBackup');
     return this;
   }
@@ -627,13 +627,13 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('cloudhsm:TagResource');
     return this;
   }
@@ -643,12 +643,12 @@ export class Cloudhsm extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('cloudhsm:UntagResource');
     return this;
   }
@@ -663,8 +663,8 @@ export class Cloudhsm extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBackup(cloudHsmBackupInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:backup/${CloudHsmBackupInstanceName}';
@@ -685,8 +685,8 @@ export class Cloudhsm extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCluster(cloudHsmClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudhsm:${Region}:${Account}:cluster/${CloudHsmClusterInstanceName}';
@@ -695,5 +695,58 @@ export class Cloudhsm extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCopyBackupToRegion()
+   * - .toCreateCluster()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - backup
+   * - cluster
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCopyBackupToRegion()
+   * - .toCreateCluster()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

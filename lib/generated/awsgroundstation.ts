@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [groundstation](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsgroundstation.html).
@@ -326,7 +326,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CancelContact.html
    */
-  public cancelContact() {
+  public toCancelContact() {
     this.add('groundstation:CancelContact');
     return this;
   }
@@ -336,13 +336,13 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateConfig.html
    */
-  public createConfig() {
+  public toCreateConfig() {
     this.add('groundstation:CreateConfig');
     return this;
   }
@@ -352,13 +352,13 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateDataflowEndpointGroup.html
    */
-  public createDataflowEndpointGroup() {
+  public toCreateDataflowEndpointGroup() {
     this.add('groundstation:CreateDataflowEndpointGroup');
     return this;
   }
@@ -368,13 +368,13 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_CreateMissionProfile.html
    */
-  public createMissionProfile() {
+  public toCreateMissionProfile() {
     this.add('groundstation:CreateMissionProfile');
     return this;
   }
@@ -386,7 +386,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteConfig.html
    */
-  public deleteConfig() {
+  public toDeleteConfig() {
     this.add('groundstation:DeleteConfig');
     return this;
   }
@@ -398,7 +398,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteDataflowEndpointGroup.html
    */
-  public deleteDataflowEndpointGroup() {
+  public toDeleteDataflowEndpointGroup() {
     this.add('groundstation:DeleteDataflowEndpointGroup');
     return this;
   }
@@ -410,7 +410,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DeleteMissionProfile.html
    */
-  public deleteMissionProfile() {
+  public toDeleteMissionProfile() {
     this.add('groundstation:DeleteMissionProfile');
     return this;
   }
@@ -422,7 +422,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DescribeContact.html
    */
-  public describeContact() {
+  public toDescribeContact() {
     this.add('groundstation:DescribeContact');
     return this;
   }
@@ -434,7 +434,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetConfig.html
    */
-  public getConfig() {
+  public toGetConfig() {
     this.add('groundstation:GetConfig');
     return this;
   }
@@ -446,7 +446,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetDataflowEndpointGroup.html
    */
-  public getDataflowEndpointGroup() {
+  public toGetDataflowEndpointGroup() {
     this.add('groundstation:GetDataflowEndpointGroup');
     return this;
   }
@@ -458,7 +458,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMinuteUsage.html
    */
-  public getMinuteUsage() {
+  public toGetMinuteUsage() {
     this.add('groundstation:GetMinuteUsage');
     return this;
   }
@@ -470,7 +470,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetMissionProfile.html
    */
-  public getMissionProfile() {
+  public toGetMissionProfile() {
     this.add('groundstation:GetMissionProfile');
     return this;
   }
@@ -482,7 +482,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GetSatellite.html
    */
-  public getSatellite() {
+  public toGetSatellite() {
     this.add('groundstation:GetSatellite');
     return this;
   }
@@ -494,7 +494,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListConfigs.html
    */
-  public listConfigs() {
+  public toListConfigs() {
     this.add('groundstation:ListConfigs');
     return this;
   }
@@ -506,7 +506,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListContacts.html
    */
-  public listContacts() {
+  public toListContacts() {
     this.add('groundstation:ListContacts');
     return this;
   }
@@ -518,7 +518,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListDataflowEndpointGroups.html
    */
-  public listDataflowEndpointGroups() {
+  public toListDataflowEndpointGroups() {
     this.add('groundstation:ListDataflowEndpointGroups');
     return this;
   }
@@ -530,7 +530,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListGroundStations.html
    */
-  public listGroundStations() {
+  public toListGroundStations() {
     this.add('groundstation:ListGroundStations');
     return this;
   }
@@ -542,7 +542,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListMissionProfiles.html
    */
-  public listMissionProfiles() {
+  public toListMissionProfiles() {
     this.add('groundstation:ListMissionProfiles');
     return this;
   }
@@ -554,7 +554,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListSatellites.html
    */
-  public listSatellites() {
+  public toListSatellites() {
     this.add('groundstation:ListSatellites');
     return this;
   }
@@ -566,7 +566,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('groundstation:ListTagsForResource');
     return this;
   }
@@ -576,13 +576,13 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ReserveContact.html
    */
-  public reserveContact() {
+  public toReserveContact() {
     this.add('groundstation:ReserveContact');
     return this;
   }
@@ -592,13 +592,13 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('groundstation:TagResource');
     return this;
   }
@@ -608,12 +608,12 @@ export class Groundstation extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('groundstation:UntagResource');
     return this;
   }
@@ -625,7 +625,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateConfig.html
    */
-  public updateConfig() {
+  public toUpdateConfig() {
     this.add('groundstation:UpdateConfig');
     return this;
   }
@@ -637,7 +637,7 @@ export class Groundstation extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/ground-station/latest/APIReference/API_UpdateMissionProfile.html
    */
-  public updateMissionProfile() {
+  public toUpdateMissionProfile() {
     this.add('groundstation:UpdateMissionProfile');
     return this;
   }
@@ -653,10 +653,10 @@ export class Groundstation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - groundstation:configId
-   * - groundstation:configType
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifConfigId()
+   * - .ifConfigType()
    */
   public onConfig(configType: string, configId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:config/${ConfigType}/${ConfigId}';
@@ -678,9 +678,9 @@ export class Groundstation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - groundstation:contactId
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifContactId()
    */
   public onContact(contactId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:contact/${ContactId}';
@@ -701,9 +701,9 @@ export class Groundstation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - groundstation:dataflowEndpointGroupId
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifDataflowEndpointGroupId()
    */
   public onDataflowEndpointGroup(dataflowEndpointGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:dataflow-endpoint-group/${DataflowEndpointGroupId}';
@@ -724,8 +724,8 @@ export class Groundstation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - groundstation:groundStationId
+   * Possible conditions:
+   * - .ifGroundStationId()
    */
   public onGroundStationResource(groundStationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:groundstation:${GroundStationId}';
@@ -746,9 +746,9 @@ export class Groundstation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - groundstation:missionProfileId
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifMissionProfileId()
    */
   public onMissionProfile(missionProfileId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:mission-profile/${MissionProfileId}';
@@ -769,8 +769,8 @@ export class Groundstation extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - groundstation:satelliteId
+   * Possible conditions:
+   * - .ifSatelliteId()
    */
   public onSatellite(satelliteId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:groundstation:${Region}:${Account}:satellite/${SatelliteId}';
@@ -782,72 +782,146 @@ export class Groundstation extends PolicyStatement {
   }
 
   /**
-   * Filters access by the ID of a config
+   * Filters access by a key that is present in the request the user makes to the Ground Station service.
+   *
+   * Applies to actions:
+   * - .toCreateConfig()
+   * - .toCreateDataflowEndpointGroup()
+   * - .toCreateMissionProfile()
+   * - .toReserveContact()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a tag key and value pair.
+   *
+   * Applies to resource types:
+   * - Config
+   * - Contact
+   * - DataflowEndpointGroup
+   * - MissionProfile
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the list of all the tag key names present in the request the user makes to the Ground Station service.
+   *
+   * Applies to actions:
+   * - .toCreateConfig()
+   * - .toCreateDataflowEndpointGroup()
+   * - .toCreateMissionProfile()
+   * - .toReserveContact()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifConfigId(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the ID of a config
+   *
+   * Applies to resource types:
+   * - Config
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifConfigId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:configId`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the type of a config
    *
+   * Applies to resource types:
+   * - Config
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifConfigType(value: string | string[], operator?: string) {
+  public ifConfigType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:configType`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the ID of a contact
    *
+   * Applies to resource types:
+   * - Contact
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifContactId(value: string | string[], operator?: string) {
+  public ifContactId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:contactId`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the ID of a dataflow endpoint group
    *
+   * Applies to resource types:
+   * - DataflowEndpointGroup
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDataflowEndpointGroupId(value: string | string[], operator?: string) {
+  public ifDataflowEndpointGroupId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:dataflowEndpointGroupId`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the ID of a ground station
    *
+   * Applies to resource types:
+   * - GroundStationResource
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGroundStationId(value: string | string[], operator?: string) {
+  public ifGroundStationId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:groundStationId`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the ID of a mission profile
    *
+   * Applies to resource types:
+   * - MissionProfile
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMissionProfileId(value: string | string[], operator?: string) {
+  public ifMissionProfileId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:missionProfileId`, value, operator || 'StringLike');
   }
 
   /**
    * Filters access by the ID of a satellite
    *
+   * Applies to resource types:
+   * - Satellite
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSatelliteId(value: string | string[], operator?: string) {
+  public ifSatelliteId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`groundstation:satelliteId`, value, operator || 'StringLike');
   }
 }

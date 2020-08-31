@@ -37,7 +37,7 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyPurchaseOrders() {
+  public toModifyPurchaseOrders() {
     this.add('purchase-orders:ModifyPurchaseOrders');
     return this;
   }
@@ -49,7 +49,7 @@ export class PurchaseOrders extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewPurchaseOrders() {
+  public toViewPurchaseOrders() {
     this.add('purchase-orders:ViewPurchaseOrders');
     return this;
   }

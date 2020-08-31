@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [kinesisanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisanalytics.html).
@@ -202,7 +202,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html
    */
-  public addApplicationInput() {
+  public toAddApplicationInput() {
     this.add('kinesisanalytics:AddApplicationInput');
     return this;
   }
@@ -214,7 +214,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html
    */
-  public addApplicationOutput() {
+  public toAddApplicationOutput() {
     this.add('kinesisanalytics:AddApplicationOutput');
     return this;
   }
@@ -226,7 +226,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html
    */
-  public addApplicationReferenceDataSource() {
+  public toAddApplicationReferenceDataSource() {
     this.add('kinesisanalytics:AddApplicationReferenceDataSource');
     return this;
   }
@@ -236,13 +236,13 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html
    */
-  public createApplication() {
+  public toCreateApplication() {
     this.add('kinesisanalytics:CreateApplication');
     return this;
   }
@@ -254,7 +254,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html
    */
-  public deleteApplication() {
+  public toDeleteApplication() {
     this.add('kinesisanalytics:DeleteApplication');
     return this;
   }
@@ -266,7 +266,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html
    */
-  public deleteApplicationOutput() {
+  public toDeleteApplicationOutput() {
     this.add('kinesisanalytics:DeleteApplicationOutput');
     return this;
   }
@@ -278,7 +278,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html
    */
-  public deleteApplicationReferenceDataSource() {
+  public toDeleteApplicationReferenceDataSource() {
     this.add('kinesisanalytics:DeleteApplicationReferenceDataSource');
     return this;
   }
@@ -290,7 +290,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html
    */
-  public describeApplication() {
+  public toDescribeApplication() {
     this.add('kinesisanalytics:DescribeApplication');
     return this;
   }
@@ -302,7 +302,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html
    */
-  public discoverInputSchema() {
+  public toDiscoverInputSchema() {
     this.add('kinesisanalytics:DiscoverInputSchema');
     return this;
   }
@@ -314,7 +314,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/api-permissions-reference.html#api-permissions-reference-gas
    */
-  public getApplicationState() {
+  public toGetApplicationState() {
     this.add('kinesisanalytics:GetApplicationState');
     return this;
   }
@@ -326,7 +326,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html
    */
-  public listApplications() {
+  public toListApplications() {
     this.add('kinesisanalytics:ListApplications');
     return this;
   }
@@ -338,7 +338,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('kinesisanalytics:ListTagsForResource');
     return this;
   }
@@ -350,7 +350,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html
    */
-  public startApplication() {
+  public toStartApplication() {
     this.add('kinesisanalytics:StartApplication');
     return this;
   }
@@ -362,7 +362,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html
    */
-  public stopApplication() {
+  public toStopApplication() {
     this.add('kinesisanalytics:StopApplication');
     return this;
   }
@@ -372,13 +372,13 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('kinesisanalytics:TagResource');
     return this;
   }
@@ -388,12 +388,12 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('kinesisanalytics:UntagResource');
     return this;
   }
@@ -405,7 +405,7 @@ export class Kinesisanalytics extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html
    */
-  public updateApplication() {
+  public toUpdateApplication() {
     this.add('kinesisanalytics:UpdateApplication');
     return this;
   }
@@ -420,8 +420,8 @@ export class Kinesisanalytics extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApplication(applicationName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kinesisanalytics:${Region}:${Account}:application/${ApplicationName}';
@@ -430,5 +430,55 @@ export class Kinesisanalytics extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value assoicated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - application
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

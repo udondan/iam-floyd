@@ -54,7 +54,7 @@ export class Budgets extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public modifyBudget() {
+  public toModifyBudget() {
     this.add('budgets:ModifyBudget');
     return this;
   }
@@ -66,7 +66,7 @@ export class Budgets extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions
    */
-  public viewBudget() {
+  public toViewBudget() {
     this.add('budgets:ViewBudget');
     return this;
   }

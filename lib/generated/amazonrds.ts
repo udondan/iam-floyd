@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [rds](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html).
@@ -10,7 +10,7 @@ export class Rds extends PolicyStatement {
   protected actionList: Actions = {
     "AddRoleToDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html",
-      "description": "Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.",
+      "description": "Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -23,7 +23,7 @@ export class Rds extends PolicyStatement {
     },
     "AddRoleToDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html",
-      "description": "Associates an AWS Identity and Access Management (IAM) role with a DB instance.",
+      "description": "Grants permission to associate an AWS Identity and Access Management (IAM) role with a DB instance",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -36,7 +36,7 @@ export class Rds extends PolicyStatement {
     },
     "AddSourceIdentifierToSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddSourceIdentifierToSubscription.html",
-      "description": "Adds a source identifier to an existing RDS event notification subscription.",
+      "description": "Grants permission to add a source identifier to an existing RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -46,7 +46,7 @@ export class Rds extends PolicyStatement {
     },
     "AddTagsToResource": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html",
-      "description": "Adds metadata tags to an Amazon RDS resource.",
+      "description": "Grants permission to add metadata tags to an Amazon RDS resource",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "db": {
@@ -88,7 +88,7 @@ export class Rds extends PolicyStatement {
     },
     "ApplyPendingMaintenanceAction": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ApplyPendingMaintenanceAction.html",
-      "description": "Applies a pending maintenance action to a resource.",
+      "description": "Grants permission to apply a pending maintenance action to a resource",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -98,7 +98,7 @@ export class Rds extends PolicyStatement {
     },
     "AuthorizeDBSecurityGroupIngress": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html",
-      "description": "Enables ingress to a DBSecurityGroup using one of two forms of authorization.",
+      "description": "Grants permission to enable ingress to a DBSecurityGroup using one of two forms of authorization",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "secgrp": {
@@ -108,7 +108,7 @@ export class Rds extends PolicyStatement {
     },
     "BacktrackDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BacktrackDBCluster.html",
-      "description": "Backtracks a DB cluster to a specific time, without creating a new DB cluster.",
+      "description": "Grants permission to backtrack a DB cluster to a specific time, without creating a new DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -118,12 +118,12 @@ export class Rds extends PolicyStatement {
     },
     "CancelExportTask": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CancelExportTask.html",
-      "description": "Cancels an export task in progress.",
+      "description": "Grants permission to cancel an export task in progress",
       "accessLevel": "Write"
     },
     "CopyDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html",
-      "description": "Copies the specified DB cluster parameter group.",
+      "description": "Grants permission to copy the specified DB cluster parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -133,7 +133,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html",
-      "description": "Creates a snapshot of a DB cluster.",
+      "description": "Grants permission to create a snapshot of a DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -143,7 +143,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html",
-      "description": "Copies the specified DB parameter group.",
+      "description": "Grants permission to copy the specified DB parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -153,7 +153,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html",
-      "description": "Copies the specified DB snapshot.",
+      "description": "Grants permission to copy the specified DB snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -163,7 +163,7 @@ export class Rds extends PolicyStatement {
     },
     "CopyOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html",
-      "description": "Copies the specified option group.",
+      "description": "Grants permission to copy the specified option group",
       "accessLevel": "Write",
       "resourceTypes": {
         "og": {
@@ -173,8 +173,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html",
-      "description": "Creates a new Amazon Aurora DB cluster.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new Amazon Aurora DB cluster",
+      "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
       ],
@@ -203,7 +203,7 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBClusterEndpoint": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html",
-      "description": "Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.",
+      "description": "Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -221,8 +221,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html",
-      "description": "Create a new DB cluster parameter group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB cluster parameter group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
           "required": true
@@ -236,8 +236,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html",
-      "description": "Creates a snapshot of a DB cluster.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a snapshot of a DB cluster",
+      "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
           "required": true
@@ -254,8 +254,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html",
-      "description": "Creates a new DB instance.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB instance",
+      "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
       ],
@@ -284,8 +284,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBInstanceReadReplica": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html",
-      "description": "Creates a DB instance that acts as a Read Replica of a source DB instance.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a DB instance that acts as a Read Replica of a source DB instance",
+      "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
       ],
@@ -308,8 +308,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html",
-      "description": "Creates a new DB parameter group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB parameter group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
           "required": true
@@ -335,8 +335,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBSecurityGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html",
-      "description": "Creates a new DB security group. DB security groups control access to a DB instance.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB security group. DB security groups control access to a DB instance",
+      "accessLevel": "Write",
       "resourceTypes": {
         "secgrp": {
           "required": true
@@ -350,8 +350,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html",
-      "description": "Creates a DBSnapshot.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a DBSnapshot",
+      "accessLevel": "Write",
       "resourceTypes": {
         "db": {
           "required": true
@@ -368,8 +368,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateDBSubnetGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html",
-      "description": "Creates a new DB subnet group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new DB subnet group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "subgrp": {
           "required": true
@@ -383,8 +383,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateEventSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html",
-      "description": "Creates an RDS event notification subscription.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create an RDS event notification subscription",
+      "accessLevel": "Write",
       "resourceTypes": {
         "es": {
           "required": true
@@ -398,7 +398,7 @@ export class Rds extends PolicyStatement {
     },
     "CreateGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateGlobalCluster.html",
-      "description": "Creates an Aurora global database spread across multiple regions.",
+      "description": "Grants permission to create an Aurora global database spread across multiple regions",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -411,8 +411,8 @@ export class Rds extends PolicyStatement {
     },
     "CreateOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html",
-      "description": "Creates a new option group.",
-      "accessLevel": "Tagging",
+      "description": "Grants permission to create a new option group",
+      "accessLevel": "Write",
       "resourceTypes": {
         "og": {
           "required": true
@@ -426,7 +426,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html",
-      "description": "The DeleteDBCluster action deletes a previously provisioned DB cluster.",
+      "description": "Grants permission to delete a previously provisioned DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -439,7 +439,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBClusterEndpoint": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterEndpoint.html",
-      "description": "Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.",
+      "description": "Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-endpoint": {
@@ -449,7 +449,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterParameterGroup.html",
-      "description": "Deletes a specified DB cluster parameter group.",
+      "description": "Grants permission to delete a specified DB cluster parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -459,7 +459,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterSnapshot.html",
-      "description": "Deletes a DB cluster snapshot.",
+      "description": "Grants permission to delete a DB cluster snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -469,7 +469,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html",
-      "description": "The DeleteDBInstance action deletes a previously provisioned DB instance.",
+      "description": "Grants permission to delete a previously provisioned DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -479,12 +479,12 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBInstanceAutomatedBackup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstanceAutomatedBackup.html",
-      "description": "Deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID.",
+      "description": "Grants permission to deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID",
       "accessLevel": "Write"
     },
     "DeleteDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html",
-      "description": "Deletes a specified DBParameterGroup.",
+      "description": "Grants permission to delete a specified DBParameterGroup",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -504,7 +504,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBSecurityGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSecurityGroup.html",
-      "description": "Deletes a DB security group.",
+      "description": "Grants permission to delete a DB security group.",
       "accessLevel": "Write",
       "resourceTypes": {
         "secgrp": {
@@ -514,7 +514,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSnapshot.html",
-      "description": "Deletes a DBSnapshot.",
+      "description": "Grants permission to delete a DBSnapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -524,7 +524,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteDBSubnetGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSubnetGroup.html",
-      "description": "Deletes a DB subnet group.",
+      "description": "Grants permission to delete a DB subnet group",
       "accessLevel": "Write",
       "resourceTypes": {
         "subgrp": {
@@ -534,7 +534,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteEventSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteEventSubscription.html",
-      "description": "Deletes an RDS event notification subscription.",
+      "description": "Grants permission to delete an RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -544,7 +544,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteGlobalCluster.html",
-      "description": "Deletes a global database cluster.",
+      "description": "Grants permission to delete a global database cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "global-cluster": {
@@ -554,7 +554,7 @@ export class Rds extends PolicyStatement {
     },
     "DeleteOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteOptionGroup.html",
-      "description": "Deletes an existing option group.",
+      "description": "Grants permission to delete an existing option group",
       "accessLevel": "Write",
       "resourceTypes": {
         "og": {
@@ -583,17 +583,17 @@ export class Rds extends PolicyStatement {
     },
     "DescribeAccountAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeAccountAttributes.html",
-      "description": "Lists all of the attributes for a customer account.",
+      "description": "Grants permission to list all of the attributes for a customer account",
       "accessLevel": "List"
     },
     "DescribeCertificates": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html",
-      "description": "Lists the set of CA certificates provided by Amazon RDS for this AWS account.",
+      "description": "Lists the set of CA certificates provided by Amazon RDS for this AWS account",
       "accessLevel": "List"
     },
     "DescribeDBClusterBacktracks": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterBacktracks.html",
-      "description": "Returns information about backtracks for a DB cluster.",
+      "description": "Grants permission to return information about backtracks for a DB cluster",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster": {
@@ -603,12 +603,12 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterEndpoints": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterEndpoints.html",
-      "description": "Returns information about endpoints for an Amazon Aurora DB cluster.",
+      "description": "Grants permission to return information about endpoints for an Amazon Aurora DB cluster",
       "accessLevel": "List"
     },
     "DescribeDBClusterParameterGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html",
-      "description": "Returns a list of DBClusterParameterGroup descriptions.",
+      "description": "Grants permission to return a list of DBClusterParameterGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster-pg": {
@@ -618,7 +618,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html",
-      "description": "Returns the detailed parameter list for a particular DB cluster parameter group.",
+      "description": "Grants permission to return the detailed parameter list for a particular DB cluster parameter group",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster-pg": {
@@ -628,7 +628,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterSnapshotAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshotAttributes.html",
-      "description": "Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.",
+      "description": "Grants permission to return a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -638,12 +638,12 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBClusterSnapshots": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html",
-      "description": "Returns information about DB cluster snapshots.",
-      "accessLevel": "Read"
+      "description": "Grants permission to return information about DB cluster snapshots",
+      "accessLevel": "List"
     },
     "DescribeDBClusters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html",
-      "description": "Returns information about provisioned Aurora DB clusters.",
+      "description": "Grants permission to return information about provisioned Aurora DB clusters",
       "accessLevel": "List",
       "resourceTypes": {
         "cluster": {
@@ -653,7 +653,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBEngineVersions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html",
-      "description": "Returns a list of the available DB engines.",
+      "description": "Grants permission to return a list of the available DB engines",
       "accessLevel": "List",
       "resourceTypes": {
         "pg": {
@@ -663,17 +663,17 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBInstanceAutomatedBackups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstanceAutomatedBackups.html",
-      "description": "Returns a list of automated backups for both current and deleted instances.",
+      "description": "Grants permission to return a list of automated backups for both current and deleted instances",
       "accessLevel": "List"
     },
     "DescribeDBInstances": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html",
-      "description": "Returns information about provisioned RDS instances.",
+      "description": "Grants permission to return information about provisioned RDS instances",
       "accessLevel": "List"
     },
     "DescribeDBLogFiles": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html",
-      "description": "Returns a list of DB log files for the DB instance.",
+      "description": "Grants permission to return a list of DB log files for the DB instance",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -683,7 +683,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBParameterGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html",
-      "description": "Returns a list of DBParameterGroup descriptions.",
+      "description": "Grants permission to return a list of DBParameterGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "pg": {
@@ -693,7 +693,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameters.html",
-      "description": "Returns the detailed parameter list for a particular DB parameter group.",
+      "description": "Grants permission to return the detailed parameter list for a particular DB parameter group",
       "accessLevel": "List",
       "resourceTypes": {
         "pg": {
@@ -742,7 +742,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSecurityGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSecurityGroups.html",
-      "description": "Returns a list of DBSecurityGroup descriptions.",
+      "description": "Grants permission to return a list of DBSecurityGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "secgrp": {
@@ -752,7 +752,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSnapshotAttributes": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotAttributes.html",
-      "description": "Returns a list of DB snapshot attribute names and values for a manual DB snapshot.",
+      "description": "Grants permission to return a list of DB snapshot attribute names and values for a manual DB snapshot",
       "accessLevel": "List",
       "resourceTypes": {
         "snapshot": {
@@ -762,7 +762,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSnapshots": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html",
-      "description": "Returns information about DB snapshots.",
+      "description": "Grants permission to return information about DB snapshots",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -775,7 +775,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeDBSubnetGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSubnetGroups.html",
-      "description": "Returns a list of DBSubnetGroup descriptions.",
+      "description": "Grants permission to return a list of DBSubnetGroup descriptions",
       "accessLevel": "List",
       "resourceTypes": {
         "subgrp": {
@@ -785,22 +785,22 @@ export class Rds extends PolicyStatement {
     },
     "DescribeEngineDefaultClusterParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultClusterParameters.html",
-      "description": "Returns the default engine and system parameter information for the cluster database engine.",
+      "description": "Grants permission to return the default engine and system parameter information for the cluster database engine",
       "accessLevel": "List"
     },
     "DescribeEngineDefaultParameters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html",
-      "description": "Returns the default engine and system parameter information for the specified database engine.",
+      "description": "Grants permission to return the default engine and system parameter information for the specified database engine",
       "accessLevel": "List"
     },
     "DescribeEventCategories": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html",
-      "description": "Displays a list of categories for all event source types, or, if specified, for a specified source type.",
+      "description": "Grants permission to display a list of categories for all event source types, or, if specified, for a specified source type",
       "accessLevel": "List"
     },
     "DescribeEventSubscriptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventSubscriptions.html",
-      "description": "Lists all the subscription descriptions for a customer account.",
+      "description": "Grants permission to list all the subscription descriptions for a customer account",
       "accessLevel": "List",
       "resourceTypes": {
         "es": {
@@ -810,27 +810,22 @@ export class Rds extends PolicyStatement {
     },
     "DescribeEvents": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html",
-      "description": "Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "es": {
-          "required": true
-        }
-      }
+      "description": "Grants permission to return events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days",
+      "accessLevel": "List"
     },
     "DescribeExportTasks": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeExportTasks.html",
-      "description": "Returns information about the export tasks.",
+      "description": "Grants permission to return information about the export tasks",
       "accessLevel": "List"
     },
     "DescribeGlobalClusters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeGlobalClusters.html",
-      "description": "Returns information about Aurora global database clusters.",
+      "description": "Grants permission to return information about Aurora global database clusters",
       "accessLevel": "List"
     },
     "DescribeOptionGroupOptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html",
-      "description": "Describes all available options.",
+      "description": "Grants permission to describe all available options",
       "accessLevel": "List",
       "resourceTypes": {
         "og": {
@@ -840,7 +835,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeOptionGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroups.html",
-      "description": "Describes the available option groups.",
+      "description": "Grants permission to describe the available option groups",
       "accessLevel": "List",
       "resourceTypes": {
         "og": {
@@ -850,12 +845,12 @@ export class Rds extends PolicyStatement {
     },
     "DescribeOrderableDBInstanceOptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOrderableDBInstanceOptions.html",
-      "description": "Returns a list of orderable DB instance options for the specified engine.",
+      "description": "Grants permission to return a list of orderable DB instance options for the specified engine",
       "accessLevel": "List"
     },
     "DescribePendingMaintenanceActions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribePendingMaintenanceActions.html",
-      "description": "Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.",
+      "description": "Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -865,7 +860,7 @@ export class Rds extends PolicyStatement {
     },
     "DescribeReservedDBInstances": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstances.html",
-      "description": "Returns information about reserved DB instances for this account, or about a specified reserved DB instance.",
+      "description": "Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance",
       "accessLevel": "List",
       "resourceTypes": {
         "ri": {
@@ -875,17 +870,17 @@ export class Rds extends PolicyStatement {
     },
     "DescribeReservedDBInstancesOfferings": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstancesOfferings.html",
-      "description": "Lists available reserved DB instance offerings.",
+      "description": "Grants permission to list available reserved DB instance offerings",
       "accessLevel": "List"
     },
     "DescribeSourceRegions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeSourceRegions.html",
-      "description": "Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from.",
+      "description": "Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from",
       "accessLevel": "List"
     },
     "DescribeValidDBInstanceModifications": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeValidDBInstanceModifications.html",
-      "description": "Lists available modifications you can make to your DB instance",
+      "description": "Grants permission to list available modifications you can make to your DB instance",
       "accessLevel": "List",
       "resourceTypes": {
         "db": {
@@ -893,14 +888,9 @@ export class Rds extends PolicyStatement {
         }
       }
     },
-    "DownloadCompleteDBLogFile": {
-      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/RESTReference.html#RESTReference.DownloadCompleteDBLogFile",
-      "description": "Downloads the contents of the specified database log file.",
-      "accessLevel": "Read"
-    },
     "DownloadDBLogFilePortion": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DownloadDBLogFilePortion.html",
-      "description": "Downloads all or a portion of the specified log file, up to 1 MB in size.",
+      "description": "Grants permission to download all or a portion of the specified log file, up to 1 MB in size",
       "accessLevel": "Read",
       "resourceTypes": {
         "db": {
@@ -910,7 +900,7 @@ export class Rds extends PolicyStatement {
     },
     "FailoverDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverDBCluster.html",
-      "description": "Forces a failover for a DB cluster.",
+      "description": "Grants permission to force a failover for a DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -920,7 +910,7 @@ export class Rds extends PolicyStatement {
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Lists all tags on an Amazon RDS resource.",
+      "description": "Grants permission to list all tags on an Amazon RDS resource",
       "accessLevel": "Read",
       "resourceTypes": {
         "db": {
@@ -957,7 +947,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyCurrentDBClusterCapacity": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCurrentDBClusterCapacity.html",
-      "description": "Modify current cluster capacity for an Amazon Aurora Severless DB cluster.",
+      "description": "Grants permission to modify current cluster capacity for an Amazon Aurora Severless DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -967,7 +957,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html",
-      "description": "Modify a setting for an Amazon Aurora DB cluster.",
+      "description": "Grants permission to modify a setting for an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -986,7 +976,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBClusterEndpoint": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterEndpoint.html",
-      "description": "Modifies the properties of an endpoint in an Amazon Aurora DB cluster.",
+      "description": "Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-endpoint": {
@@ -996,7 +986,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterParameterGroup.html",
-      "description": "Modifies the parameters of a DB cluster parameter group.",
+      "description": "Grants permission to modify the parameters of a DB cluster parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -1006,7 +996,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBClusterSnapshotAttribute": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html",
-      "description": "Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.",
+      "description": "Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-snapshot": {
@@ -1016,7 +1006,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html",
-      "description": "Modify settings for a DB instance.",
+      "description": "Grants permission to modify settings for a DB instance",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1038,7 +1028,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html",
-      "description": "Modifies the parameters of a DB parameter group.",
+      "description": "Grants permission to modify the parameters of a DB parameter group",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -1071,7 +1061,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshot.html",
-      "description": "Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.",
+      "description": "Grants permission to update a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -1081,7 +1071,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBSnapshotAttribute": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html",
-      "description": "Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.",
+      "description": "Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB snapshot",
       "accessLevel": "Write",
       "resourceTypes": {
         "snapshot": {
@@ -1091,7 +1081,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyDBSubnetGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSubnetGroup.html",
-      "description": "Modifies an existing DB subnet group.",
+      "description": "Grants permission to modify an existing DB subnet group",
       "accessLevel": "Write",
       "resourceTypes": {
         "subgrp": {
@@ -1101,7 +1091,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyEventSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyEventSubscription.html",
-      "description": "Modifies an existing RDS event notification subscription.",
+      "description": "Grants permission to modify an existing RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -1111,7 +1101,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyGlobalCluster.html",
-      "description": "Modify a setting for an Amazon Aurora global cluster.",
+      "description": "Grants permission to modify a setting for an Amazon Aurora global cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "global-cluster": {
@@ -1121,7 +1111,7 @@ export class Rds extends PolicyStatement {
     },
     "ModifyOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html",
-      "description": "Modifies an existing option group.",
+      "description": "Grants permission to modify an existing option group",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1134,7 +1124,7 @@ export class Rds extends PolicyStatement {
     },
     "PromoteReadReplica": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html",
-      "description": "Promotes a Read Replica DB instance to a standalone DB instance.",
+      "description": "Grants permission to promote a Read Replica DB instance to a standalone DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1144,7 +1134,7 @@ export class Rds extends PolicyStatement {
     },
     "PromoteReadReplicaDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplicaDBCluster.html",
-      "description": "Promotes a Read Replica DB cluster to a standalone DB cluster.",
+      "description": "Grants permission to promote a Read Replica DB cluster to a standalone DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1154,7 +1144,7 @@ export class Rds extends PolicyStatement {
     },
     "PurchaseReservedDBInstancesOffering": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html",
-      "description": "Purchases a reserved DB instance offering.",
+      "description": "Grants permission to purchase a reserved DB instance offering",
       "accessLevel": "Write",
       "resourceTypes": {
         "ri": {
@@ -1168,7 +1158,7 @@ export class Rds extends PolicyStatement {
     },
     "RebootDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBInstance.html",
-      "description": "Rebooting a DB instance restarts the database engine service.",
+      "description": "Grants permission to restart the database engine service",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1188,7 +1178,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveFromGlobalCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveFromGlobalCluster.html",
-      "description": "Detaches an Aurora secondary cluster from an Aurora global database cluster.",
+      "description": "Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1201,7 +1191,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveRoleFromDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html",
-      "description": "Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1214,7 +1204,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveRoleFromDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html",
-      "description": "Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.",
+      "description": "Grants permission to disassociate an AWS Identity and Access Management (IAM) role from a DB instance",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1227,7 +1217,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveSourceIdentifierFromSubscription": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveSourceIdentifierFromSubscription.html",
-      "description": "Removes a source identifier from an existing RDS event notification subscription.",
+      "description": "Grants permission to remove a source identifier from an existing RDS event notification subscription",
       "accessLevel": "Write",
       "resourceTypes": {
         "es": {
@@ -1237,7 +1227,7 @@ export class Rds extends PolicyStatement {
     },
     "RemoveTagsFromResource": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveTagsFromResource.html",
-      "description": "Removes metadata tags from an Amazon RDS resource.",
+      "description": "Grants permission to remove metadata tags from an Amazon RDS resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "db": {
@@ -1279,7 +1269,7 @@ export class Rds extends PolicyStatement {
     },
     "ResetDBClusterParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBClusterParameterGroup.html",
-      "description": "Modifies the parameters of a DB cluster parameter group to the default value.",
+      "description": "Grants permission to modify the parameters of a DB cluster parameter group to the default value",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster-pg": {
@@ -1289,7 +1279,7 @@ export class Rds extends PolicyStatement {
     },
     "ResetDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBParameterGroup.html",
-      "description": "Modifies the parameters of a DB parameter group to the engine/system default value.",
+      "description": "Grants permission to modify the parameters of a DB parameter group to the engine/system default value",
       "accessLevel": "Write",
       "resourceTypes": {
         "pg": {
@@ -1299,7 +1289,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBClusterFromS3": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html",
-      "description": "Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.",
+      "description": "Grants permission to create an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1320,7 +1310,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBClusterFromSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html",
-      "description": "Creates a new DB cluster from a DB cluster snapshot.",
+      "description": "Grants permission to create a new DB cluster from a DB cluster snapshot",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1344,7 +1334,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBClusterToPointInTime": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html",
-      "description": "Restores a DB cluster to an arbitrary point in time.",
+      "description": "Grants permission to restore a DB cluster to an arbitrary point in time",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1368,7 +1358,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBInstanceFromDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html",
-      "description": "Creates a new DB instance from a DB snapshot.",
+      "description": "Grants permission to create a new DB instance from a DB snapshot",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1395,7 +1385,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBInstanceFromS3": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html",
-      "description": "Creates a new DB instance from an Amazon S3 bucket.",
+      "description": "Grants permission to create a new DB instance from an Amazon S3 bucket",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1413,7 +1403,7 @@ export class Rds extends PolicyStatement {
     },
     "RestoreDBInstanceToPointInTime": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html",
-      "description": "Restores a DB instance to an arbitrary point in time.",
+      "description": "Grants permission to restore a DB instance to an arbitrary point in time",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1423,9 +1413,6 @@ export class Rds extends PolicyStatement {
           "required": true
         },
         "og": {
-          "required": true
-        },
-        "snapshot": {
           "required": true
         },
         "subgrp": {
@@ -1440,7 +1427,7 @@ export class Rds extends PolicyStatement {
     },
     "RevokeDBSecurityGroupIngress": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RevokeDBSecurityGroupIngress.html",
-      "description": "Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.",
+      "description": "Grants permission to revoke ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups",
       "accessLevel": "Write",
       "resourceTypes": {
         "secgrp": {
@@ -1450,7 +1437,7 @@ export class Rds extends PolicyStatement {
     },
     "StartActivityStream": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartActivityStream.html",
-      "description": "Enables the user to start Activity Stream.",
+      "description": "Grants permission to start Activity Stream",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1460,7 +1447,7 @@ export class Rds extends PolicyStatement {
     },
     "StartDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBCluster.html",
-      "description": "Starts the DB cluster.",
+      "description": "Starts the DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1470,7 +1457,7 @@ export class Rds extends PolicyStatement {
     },
     "StartDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstance.html",
-      "description": "Starts the DB instance.",
+      "description": "Grants permission to start the DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1480,7 +1467,7 @@ export class Rds extends PolicyStatement {
     },
     "StartExportTask": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html",
-      "description": "Starts a new Export task for a DB snapshot.",
+      "description": "Grants permission to start a new Export task for a DB snapshot",
       "accessLevel": "Write",
       "dependentActions": [
         "iam:PassRole"
@@ -1488,7 +1475,7 @@ export class Rds extends PolicyStatement {
     },
     "StopActivityStream": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopActivityStream.html",
-      "description": "Enables the user to stop Activity Stream.",
+      "description": "Grants permission to stop Activity Stream",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1498,7 +1485,7 @@ export class Rds extends PolicyStatement {
     },
     "StopDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBCluster.html",
-      "description": "Stops the DB cluster.",
+      "description": "Grants permission to stop the DB cluster",
       "accessLevel": "Write",
       "resourceTypes": {
         "cluster": {
@@ -1508,7 +1495,7 @@ export class Rds extends PolicyStatement {
     },
     "StopDBInstance": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstance.html",
-      "description": "Stops the DB instance.",
+      "description": "Grants permission to stop the DB instance",
       "accessLevel": "Write",
       "resourceTypes": {
         "db": {
@@ -1673,7 +1660,7 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+   * Grants permission to associate an Identity and Access Management (IAM) role from an Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -1682,13 +1669,13 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBCluster.html
    */
-  public addRoleToDBCluster() {
+  public toAddRoleToDBCluster() {
     this.add('rds:AddRoleToDBCluster');
     return this;
   }
 
   /**
-   * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+   * Grants permission to associate an AWS Identity and Access Management (IAM) role with a DB instance
    *
    * Access Level: Write
    *
@@ -1697,275 +1684,275 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddRoleToDBInstance.html
    */
-  public addRoleToDBInstance() {
+  public toAddRoleToDBInstance() {
     this.add('rds:AddRoleToDBInstance');
     return this;
   }
 
   /**
-   * Adds a source identifier to an existing RDS event notification subscription.
+   * Grants permission to add a source identifier to an existing RDS event notification subscription
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddSourceIdentifierToSubscription.html
    */
-  public addSourceIdentifierToSubscription() {
+  public toAddSourceIdentifierToSubscription() {
     this.add('rds:AddSourceIdentifierToSubscription');
     return this;
   }
 
   /**
-   * Adds metadata tags to an Amazon RDS resource.
+   * Grants permission to add metadata tags to an Amazon RDS resource
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AddTagsToResource.html
    */
-  public addTagsToResource() {
+  public toAddTagsToResource() {
     this.add('rds:AddTagsToResource');
     return this;
   }
 
   /**
-   * Applies a pending maintenance action to a resource.
+   * Grants permission to apply a pending maintenance action to a resource
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ApplyPendingMaintenanceAction.html
    */
-  public applyPendingMaintenanceAction() {
+  public toApplyPendingMaintenanceAction() {
     this.add('rds:ApplyPendingMaintenanceAction');
     return this;
   }
 
   /**
-   * Enables ingress to a DBSecurityGroup using one of two forms of authorization.
+   * Grants permission to enable ingress to a DBSecurityGroup using one of two forms of authorization
    *
    * Access Level: Permissions management
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_AuthorizeDBSecurityGroupIngress.html
    */
-  public authorizeDBSecurityGroupIngress() {
+  public toAuthorizeDBSecurityGroupIngress() {
     this.add('rds:AuthorizeDBSecurityGroupIngress');
     return this;
   }
 
   /**
-   * Backtracks a DB cluster to a specific time, without creating a new DB cluster.
+   * Grants permission to backtrack a DB cluster to a specific time, without creating a new DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BacktrackDBCluster.html
    */
-  public backtrackDBCluster() {
+  public toBacktrackDBCluster() {
     this.add('rds:BacktrackDBCluster');
     return this;
   }
 
   /**
-   * Cancels an export task in progress.
+   * Grants permission to cancel an export task in progress
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CancelExportTask.html
    */
-  public cancelExportTask() {
+  public toCancelExportTask() {
     this.add('rds:CancelExportTask');
     return this;
   }
 
   /**
-   * Copies the specified DB cluster parameter group.
+   * Grants permission to copy the specified DB cluster parameter group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html
    */
-  public copyDBClusterParameterGroup() {
+  public toCopyDBClusterParameterGroup() {
     this.add('rds:CopyDBClusterParameterGroup');
     return this;
   }
 
   /**
-   * Creates a snapshot of a DB cluster.
+   * Grants permission to create a snapshot of a DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html
    */
-  public copyDBClusterSnapshot() {
+  public toCopyDBClusterSnapshot() {
     this.add('rds:CopyDBClusterSnapshot');
     return this;
   }
 
   /**
-   * Copies the specified DB parameter group.
+   * Grants permission to copy the specified DB parameter group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html
    */
-  public copyDBParameterGroup() {
+  public toCopyDBParameterGroup() {
     this.add('rds:CopyDBParameterGroup');
     return this;
   }
 
   /**
-   * Copies the specified DB snapshot.
+   * Grants permission to copy the specified DB snapshot
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html
    */
-  public copyDBSnapshot() {
+  public toCopyDBSnapshot() {
     this.add('rds:CopyDBSnapshot');
     return this;
   }
 
   /**
-   * Copies the specified option group.
+   * Grants permission to copy the specified option group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html
    */
-  public copyOptionGroup() {
+  public toCopyOptionGroup() {
     this.add('rds:CopyOptionGroup');
     return this;
   }
 
   /**
-   * Creates a new Amazon Aurora DB cluster.
+   * Grants permission to create a new Amazon Aurora DB cluster
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
-   * - rds:DatabaseEngine
-   * - rds:DatabaseName
-   * - rds:StorageEncrypted
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   * - .ifDatabaseEngine()
+   * - .ifDatabaseName()
+   * - .ifStorageEncrypted()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html
    */
-  public createDBCluster() {
+  public toCreateDBCluster() {
     this.add('rds:CreateDBCluster');
     return this;
   }
 
   /**
-   * Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.
+   * Grants permission to create a new custom endpoint and associates it with an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - rds:EndpointType
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifEndpointType()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterEndpoint.html
    */
-  public createDBClusterEndpoint() {
+  public toCreateDBClusterEndpoint() {
     this.add('rds:CreateDBClusterEndpoint');
     return this;
   }
 
   /**
-   * Create a new DB cluster parameter group.
+   * Grants permission to create a new DB cluster parameter group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterParameterGroup.html
    */
-  public createDBClusterParameterGroup() {
+  public toCreateDBClusterParameterGroup() {
     this.add('rds:CreateDBClusterParameterGroup');
     return this;
   }
 
   /**
-   * Creates a snapshot of a DB cluster.
+   * Grants permission to create a snapshot of a DB cluster
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBClusterSnapshot.html
    */
-  public createDBClusterSnapshot() {
+  public toCreateDBClusterSnapshot() {
     this.add('rds:CreateDBClusterSnapshot');
     return this;
   }
 
   /**
-   * Creates a new DB instance.
+   * Grants permission to create a new DB instance
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
    */
-  public createDBInstance() {
+  public toCreateDBInstance() {
     this.add('rds:CreateDBInstance');
     return this;
   }
 
   /**
-   * Creates a DB instance that acts as a Read Replica of a source DB instance.
+   * Grants permission to create a DB instance that acts as a Read Replica of a source DB instance
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstanceReadReplica.html
    */
-  public createDBInstanceReadReplica() {
+  public toCreateDBInstanceReadReplica() {
     this.add('rds:CreateDBInstanceReadReplica');
     return this;
   }
 
   /**
-   * Creates a new DB parameter group.
+   * Grants permission to create a new DB parameter group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBParameterGroup.html
    */
-  public createDBParameterGroup() {
+  public toCreateDBParameterGroup() {
     this.add('rds:CreateDBParameterGroup');
     return this;
   }
@@ -1975,197 +1962,197 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBProxy.html
    */
-  public createDBProxy() {
+  public toCreateDBProxy() {
     this.add('rds:CreateDBProxy');
     return this;
   }
 
   /**
-   * Creates a new DB security group. DB security groups control access to a DB instance.
+   * Grants permission to create a new DB security group. DB security groups control access to a DB instance
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSecurityGroup.html
    */
-  public createDBSecurityGroup() {
+  public toCreateDBSecurityGroup() {
     this.add('rds:CreateDBSecurityGroup');
     return this;
   }
 
   /**
-   * Creates a DBSnapshot.
+   * Grants permission to create a DBSnapshot
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSnapshot.html
    */
-  public createDBSnapshot() {
+  public toCreateDBSnapshot() {
     this.add('rds:CreateDBSnapshot');
     return this;
   }
 
   /**
-   * Creates a new DB subnet group.
+   * Grants permission to create a new DB subnet group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBSubnetGroup.html
    */
-  public createDBSubnetGroup() {
+  public toCreateDBSubnetGroup() {
     this.add('rds:CreateDBSubnetGroup');
     return this;
   }
 
   /**
-   * Creates an RDS event notification subscription.
+   * Grants permission to create an RDS event notification subscription
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateEventSubscription.html
    */
-  public createEventSubscription() {
+  public toCreateEventSubscription() {
     this.add('rds:CreateEventSubscription');
     return this;
   }
 
   /**
-   * Creates an Aurora global database spread across multiple regions.
+   * Grants permission to create an Aurora global database spread across multiple regions
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateGlobalCluster.html
    */
-  public createGlobalCluster() {
+  public toCreateGlobalCluster() {
     this.add('rds:CreateGlobalCluster');
     return this;
   }
 
   /**
-   * Creates a new option group.
+   * Grants permission to create a new option group
    *
-   * Access Level: Tagging
+   * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html
    */
-  public createOptionGroup() {
+  public toCreateOptionGroup() {
     this.add('rds:CreateOptionGroup');
     return this;
   }
 
   /**
-   * The DeleteDBCluster action deletes a previously provisioned DB cluster.
+   * Grants permission to delete a previously provisioned DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBCluster.html
    */
-  public deleteDBCluster() {
+  public toDeleteDBCluster() {
     this.add('rds:DeleteDBCluster');
     return this;
   }
 
   /**
-   * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
+   * Grants permission to delete a custom endpoint and removes it from an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterEndpoint.html
    */
-  public deleteDBClusterEndpoint() {
+  public toDeleteDBClusterEndpoint() {
     this.add('rds:DeleteDBClusterEndpoint');
     return this;
   }
 
   /**
-   * Deletes a specified DB cluster parameter group.
+   * Grants permission to delete a specified DB cluster parameter group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterParameterGroup.html
    */
-  public deleteDBClusterParameterGroup() {
+  public toDeleteDBClusterParameterGroup() {
     this.add('rds:DeleteDBClusterParameterGroup');
     return this;
   }
 
   /**
-   * Deletes a DB cluster snapshot.
+   * Grants permission to delete a DB cluster snapshot
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBClusterSnapshot.html
    */
-  public deleteDBClusterSnapshot() {
+  public toDeleteDBClusterSnapshot() {
     this.add('rds:DeleteDBClusterSnapshot');
     return this;
   }
 
   /**
-   * The DeleteDBInstance action deletes a previously provisioned DB instance.
+   * Grants permission to delete a previously provisioned DB instance
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstance.html
    */
-  public deleteDBInstance() {
+  public toDeleteDBInstance() {
     this.add('rds:DeleteDBInstance');
     return this;
   }
 
   /**
-   * Deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID.
+   * Grants permission to deletes automated backups based on the source instance's DbiResourceId value or the restorable instance's resource ID
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBInstanceAutomatedBackup.html
    */
-  public deleteDBInstanceAutomatedBackup() {
+  public toDeleteDBInstanceAutomatedBackup() {
     this.add('rds:DeleteDBInstanceAutomatedBackup');
     return this;
   }
 
   /**
-   * Deletes a specified DBParameterGroup.
+   * Grants permission to delete a specified DBParameterGroup
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html
    */
-  public deleteDBParameterGroup() {
+  public toDeleteDBParameterGroup() {
     this.add('rds:DeleteDBParameterGroup');
     return this;
   }
@@ -2177,79 +2164,79 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBProxy.html
    */
-  public deleteDBProxy() {
+  public toDeleteDBProxy() {
     this.add('rds:DeleteDBProxy');
     return this;
   }
 
   /**
-   * Deletes a DB security group.
+   * Grants permission to delete a DB security group.
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSecurityGroup.html
    */
-  public deleteDBSecurityGroup() {
+  public toDeleteDBSecurityGroup() {
     this.add('rds:DeleteDBSecurityGroup');
     return this;
   }
 
   /**
-   * Deletes a DBSnapshot.
+   * Grants permission to delete a DBSnapshot
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSnapshot.html
    */
-  public deleteDBSnapshot() {
+  public toDeleteDBSnapshot() {
     this.add('rds:DeleteDBSnapshot');
     return this;
   }
 
   /**
-   * Deletes a DB subnet group.
+   * Grants permission to delete a DB subnet group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSubnetGroup.html
    */
-  public deleteDBSubnetGroup() {
+  public toDeleteDBSubnetGroup() {
     this.add('rds:DeleteDBSubnetGroup');
     return this;
   }
 
   /**
-   * Deletes an RDS event notification subscription.
+   * Grants permission to delete an RDS event notification subscription
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteEventSubscription.html
    */
-  public deleteEventSubscription() {
+  public toDeleteEventSubscription() {
     this.add('rds:DeleteEventSubscription');
     return this;
   }
 
   /**
-   * Deletes a global database cluster.
+   * Grants permission to delete a global database cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteGlobalCluster.html
    */
-  public deleteGlobalCluster() {
+  public toDeleteGlobalCluster() {
     this.add('rds:DeleteGlobalCluster');
     return this;
   }
 
   /**
-   * Deletes an existing option group.
+   * Grants permission to delete an existing option group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteOptionGroup.html
    */
-  public deleteOptionGroup() {
+  public toDeleteOptionGroup() {
     this.add('rds:DeleteOptionGroup');
     return this;
   }
@@ -2261,187 +2248,187 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeregisterDBProxyTargets.html
    */
-  public deregisterDBProxyTargets() {
+  public toDeregisterDBProxyTargets() {
     this.add('rds:DeregisterDBProxyTargets');
     return this;
   }
 
   /**
-   * Lists all of the attributes for a customer account.
+   * Grants permission to list all of the attributes for a customer account
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeAccountAttributes.html
    */
-  public describeAccountAttributes() {
+  public toDescribeAccountAttributes() {
     this.add('rds:DescribeAccountAttributes');
     return this;
   }
 
   /**
-   * Lists the set of CA certificates provided by Amazon RDS for this AWS account.
+   * Lists the set of CA certificates provided by Amazon RDS for this AWS account
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html
    */
-  public describeCertificates() {
+  public toDescribeCertificates() {
     this.add('rds:DescribeCertificates');
     return this;
   }
 
   /**
-   * Returns information about backtracks for a DB cluster.
+   * Grants permission to return information about backtracks for a DB cluster
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterBacktracks.html
    */
-  public describeDBClusterBacktracks() {
+  public toDescribeDBClusterBacktracks() {
     this.add('rds:DescribeDBClusterBacktracks');
     return this;
   }
 
   /**
-   * Returns information about endpoints for an Amazon Aurora DB cluster.
+   * Grants permission to return information about endpoints for an Amazon Aurora DB cluster
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterEndpoints.html
    */
-  public describeDBClusterEndpoints() {
+  public toDescribeDBClusterEndpoints() {
     this.add('rds:DescribeDBClusterEndpoints');
     return this;
   }
 
   /**
-   * Returns a list of DBClusterParameterGroup descriptions.
+   * Grants permission to return a list of DBClusterParameterGroup descriptions
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html
    */
-  public describeDBClusterParameterGroups() {
+  public toDescribeDBClusterParameterGroups() {
     this.add('rds:DescribeDBClusterParameterGroups');
     return this;
   }
 
   /**
-   * Returns the detailed parameter list for a particular DB cluster parameter group.
+   * Grants permission to return the detailed parameter list for a particular DB cluster parameter group
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html
    */
-  public describeDBClusterParameters() {
+  public toDescribeDBClusterParameters() {
     this.add('rds:DescribeDBClusterParameters');
     return this;
   }
 
   /**
-   * Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.
+   * Grants permission to return a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshotAttributes.html
    */
-  public describeDBClusterSnapshotAttributes() {
+  public toDescribeDBClusterSnapshotAttributes() {
     this.add('rds:DescribeDBClusterSnapshotAttributes');
     return this;
   }
 
   /**
-   * Returns information about DB cluster snapshots.
+   * Grants permission to return information about DB cluster snapshots
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html
    */
-  public describeDBClusterSnapshots() {
+  public toDescribeDBClusterSnapshots() {
     this.add('rds:DescribeDBClusterSnapshots');
     return this;
   }
 
   /**
-   * Returns information about provisioned Aurora DB clusters.
+   * Grants permission to return information about provisioned Aurora DB clusters
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html
    */
-  public describeDBClusters() {
+  public toDescribeDBClusters() {
     this.add('rds:DescribeDBClusters');
     return this;
   }
 
   /**
-   * Returns a list of the available DB engines.
+   * Grants permission to return a list of the available DB engines
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html
    */
-  public describeDBEngineVersions() {
+  public toDescribeDBEngineVersions() {
     this.add('rds:DescribeDBEngineVersions');
     return this;
   }
 
   /**
-   * Returns a list of automated backups for both current and deleted instances.
+   * Grants permission to return a list of automated backups for both current and deleted instances
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstanceAutomatedBackups.html
    */
-  public describeDBInstanceAutomatedBackups() {
+  public toDescribeDBInstanceAutomatedBackups() {
     this.add('rds:DescribeDBInstanceAutomatedBackups');
     return this;
   }
 
   /**
-   * Returns information about provisioned RDS instances.
+   * Grants permission to return information about provisioned RDS instances
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html
    */
-  public describeDBInstances() {
+  public toDescribeDBInstances() {
     this.add('rds:DescribeDBInstances');
     return this;
   }
 
   /**
-   * Returns a list of DB log files for the DB instance.
+   * Grants permission to return a list of DB log files for the DB instance
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html
    */
-  public describeDBLogFiles() {
+  public toDescribeDBLogFiles() {
     this.add('rds:DescribeDBLogFiles');
     return this;
   }
 
   /**
-   * Returns a list of DBParameterGroup descriptions.
+   * Grants permission to return a list of DBParameterGroup descriptions
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html
    */
-  public describeDBParameterGroups() {
+  public toDescribeDBParameterGroups() {
     this.add('rds:DescribeDBParameterGroups');
     return this;
   }
 
   /**
-   * Returns the detailed parameter list for a particular DB parameter group.
+   * Grants permission to return the detailed parameter list for a particular DB parameter group
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameters.html
    */
-  public describeDBParameters() {
+  public toDescribeDBParameters() {
     this.add('rds:DescribeDBParameters');
     return this;
   }
@@ -2453,7 +2440,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxies.html
    */
-  public describeDBProxies() {
+  public toDescribeDBProxies() {
     this.add('rds:DescribeDBProxies');
     return this;
   }
@@ -2465,7 +2452,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyTargetGroups.html
    */
-  public describeDBProxyTargetGroups() {
+  public toDescribeDBProxyTargetGroups() {
     this.add('rds:DescribeDBProxyTargetGroups');
     return this;
   }
@@ -2477,301 +2464,289 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBProxyTargets.html
    */
-  public describeDBProxyTargets() {
+  public toDescribeDBProxyTargets() {
     this.add('rds:DescribeDBProxyTargets');
     return this;
   }
 
   /**
-   * Returns a list of DBSecurityGroup descriptions.
+   * Grants permission to return a list of DBSecurityGroup descriptions
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSecurityGroups.html
    */
-  public describeDBSecurityGroups() {
+  public toDescribeDBSecurityGroups() {
     this.add('rds:DescribeDBSecurityGroups');
     return this;
   }
 
   /**
-   * Returns a list of DB snapshot attribute names and values for a manual DB snapshot.
+   * Grants permission to return a list of DB snapshot attribute names and values for a manual DB snapshot
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotAttributes.html
    */
-  public describeDBSnapshotAttributes() {
+  public toDescribeDBSnapshotAttributes() {
     this.add('rds:DescribeDBSnapshotAttributes');
     return this;
   }
 
   /**
-   * Returns information about DB snapshots.
+   * Grants permission to return information about DB snapshots
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html
    */
-  public describeDBSnapshots() {
+  public toDescribeDBSnapshots() {
     this.add('rds:DescribeDBSnapshots');
     return this;
   }
 
   /**
-   * Returns a list of DBSubnetGroup descriptions.
+   * Grants permission to return a list of DBSubnetGroup descriptions
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSubnetGroups.html
    */
-  public describeDBSubnetGroups() {
+  public toDescribeDBSubnetGroups() {
     this.add('rds:DescribeDBSubnetGroups');
     return this;
   }
 
   /**
-   * Returns the default engine and system parameter information for the cluster database engine.
+   * Grants permission to return the default engine and system parameter information for the cluster database engine
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultClusterParameters.html
    */
-  public describeEngineDefaultClusterParameters() {
+  public toDescribeEngineDefaultClusterParameters() {
     this.add('rds:DescribeEngineDefaultClusterParameters');
     return this;
   }
 
   /**
-   * Returns the default engine and system parameter information for the specified database engine.
+   * Grants permission to return the default engine and system parameter information for the specified database engine
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html
    */
-  public describeEngineDefaultParameters() {
+  public toDescribeEngineDefaultParameters() {
     this.add('rds:DescribeEngineDefaultParameters');
     return this;
   }
 
   /**
-   * Displays a list of categories for all event source types, or, if specified, for a specified source type.
+   * Grants permission to display a list of categories for all event source types, or, if specified, for a specified source type
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html
    */
-  public describeEventCategories() {
+  public toDescribeEventCategories() {
     this.add('rds:DescribeEventCategories');
     return this;
   }
 
   /**
-   * Lists all the subscription descriptions for a customer account.
+   * Grants permission to list all the subscription descriptions for a customer account
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventSubscriptions.html
    */
-  public describeEventSubscriptions() {
+  public toDescribeEventSubscriptions() {
     this.add('rds:DescribeEventSubscriptions');
     return this;
   }
 
   /**
-   * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days.
+   * Grants permission to return events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html
    */
-  public describeEvents() {
+  public toDescribeEvents() {
     this.add('rds:DescribeEvents');
     return this;
   }
 
   /**
-   * Returns information about the export tasks.
+   * Grants permission to return information about the export tasks
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeExportTasks.html
    */
-  public describeExportTasks() {
+  public toDescribeExportTasks() {
     this.add('rds:DescribeExportTasks');
     return this;
   }
 
   /**
-   * Returns information about Aurora global database clusters.
+   * Grants permission to return information about Aurora global database clusters
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeGlobalClusters.html
    */
-  public describeGlobalClusters() {
+  public toDescribeGlobalClusters() {
     this.add('rds:DescribeGlobalClusters');
     return this;
   }
 
   /**
-   * Describes all available options.
+   * Grants permission to describe all available options
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html
    */
-  public describeOptionGroupOptions() {
+  public toDescribeOptionGroupOptions() {
     this.add('rds:DescribeOptionGroupOptions');
     return this;
   }
 
   /**
-   * Describes the available option groups.
+   * Grants permission to describe the available option groups
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroups.html
    */
-  public describeOptionGroups() {
+  public toDescribeOptionGroups() {
     this.add('rds:DescribeOptionGroups');
     return this;
   }
 
   /**
-   * Returns a list of orderable DB instance options for the specified engine.
+   * Grants permission to return a list of orderable DB instance options for the specified engine
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOrderableDBInstanceOptions.html
    */
-  public describeOrderableDBInstanceOptions() {
+  public toDescribeOrderableDBInstanceOptions() {
     this.add('rds:DescribeOrderableDBInstanceOptions');
     return this;
   }
 
   /**
-   * Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.
+   * Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribePendingMaintenanceActions.html
    */
-  public describePendingMaintenanceActions() {
+  public toDescribePendingMaintenanceActions() {
     this.add('rds:DescribePendingMaintenanceActions');
     return this;
   }
 
   /**
-   * Returns information about reserved DB instances for this account, or about a specified reserved DB instance.
+   * Grants permission to return information about reserved DB instances for this account, or about a specified reserved DB instance
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstances.html
    */
-  public describeReservedDBInstances() {
+  public toDescribeReservedDBInstances() {
     this.add('rds:DescribeReservedDBInstances');
     return this;
   }
 
   /**
-   * Lists available reserved DB instance offerings.
+   * Grants permission to list available reserved DB instance offerings
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstancesOfferings.html
    */
-  public describeReservedDBInstancesOfferings() {
+  public toDescribeReservedDBInstancesOfferings() {
     this.add('rds:DescribeReservedDBInstancesOfferings');
     return this;
   }
 
   /**
-   * Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from.
+   * Grants permission to return a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB snapshot from
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeSourceRegions.html
    */
-  public describeSourceRegions() {
+  public toDescribeSourceRegions() {
     this.add('rds:DescribeSourceRegions');
     return this;
   }
 
   /**
-   * Lists available modifications you can make to your DB instance
+   * Grants permission to list available modifications you can make to your DB instance
    *
    * Access Level: List
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeValidDBInstanceModifications.html
    */
-  public describeValidDBInstanceModifications() {
+  public toDescribeValidDBInstanceModifications() {
     this.add('rds:DescribeValidDBInstanceModifications');
     return this;
   }
 
   /**
-   * Downloads the contents of the specified database log file.
-   *
-   * Access Level: Read
-   *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/RESTReference.html#RESTReference.DownloadCompleteDBLogFile
-   */
-  public downloadCompleteDBLogFile() {
-    this.add('rds:DownloadCompleteDBLogFile');
-    return this;
-  }
-
-  /**
-   * Downloads all or a portion of the specified log file, up to 1 MB in size.
+   * Grants permission to download all or a portion of the specified log file, up to 1 MB in size
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DownloadDBLogFilePortion.html
    */
-  public downloadDBLogFilePortion() {
+  public toDownloadDBLogFilePortion() {
     this.add('rds:DownloadDBLogFilePortion');
     return this;
   }
 
   /**
-   * Forces a failover for a DB cluster.
+   * Grants permission to force a failover for a DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_FailoverDBCluster.html
    */
-  public failoverDBCluster() {
+  public toFailoverDBCluster() {
     this.add('rds:FailoverDBCluster');
     return this;
   }
 
   /**
-   * Lists all tags on an Amazon RDS resource.
+   * Grants permission to list all tags on an Amazon RDS resource
    *
    * Access Level: Read
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('rds:ListTagsForResource');
     return this;
   }
 
   /**
-   * Modify current cluster capacity for an Amazon Aurora Severless DB cluster.
+   * Grants permission to modify current cluster capacity for an Amazon Aurora Severless DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyCurrentDBClusterCapacity.html
    */
-  public modifyCurrentDBClusterCapacity() {
+  public toModifyCurrentDBClusterCapacity() {
     this.add('rds:ModifyCurrentDBClusterCapacity');
     return this;
   }
 
   /**
-   * Modify a setting for an Amazon Aurora DB cluster.
+   * Grants permission to modify a setting for an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -2780,49 +2755,49 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html
    */
-  public modifyDBCluster() {
+  public toModifyDBCluster() {
     this.add('rds:ModifyDBCluster');
     return this;
   }
 
   /**
-   * Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
+   * Grants permission to modify the properties of an endpoint in an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterEndpoint.html
    */
-  public modifyDBClusterEndpoint() {
+  public toModifyDBClusterEndpoint() {
     this.add('rds:ModifyDBClusterEndpoint');
     return this;
   }
 
   /**
-   * Modifies the parameters of a DB cluster parameter group.
+   * Grants permission to modify the parameters of a DB cluster parameter group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterParameterGroup.html
    */
-  public modifyDBClusterParameterGroup() {
+  public toModifyDBClusterParameterGroup() {
     this.add('rds:ModifyDBClusterParameterGroup');
     return this;
   }
 
   /**
-   * Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
+   * Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html
    */
-  public modifyDBClusterSnapshotAttribute() {
+  public toModifyDBClusterSnapshotAttribute() {
     this.add('rds:ModifyDBClusterSnapshotAttribute');
     return this;
   }
 
   /**
-   * Modify settings for a DB instance.
+   * Grants permission to modify settings for a DB instance
    *
    * Access Level: Write
    *
@@ -2831,19 +2806,19 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html
    */
-  public modifyDBInstance() {
+  public toModifyDBInstance() {
     this.add('rds:ModifyDBInstance');
     return this;
   }
 
   /**
-   * Modifies the parameters of a DB parameter group.
+   * Grants permission to modify the parameters of a DB parameter group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html
    */
-  public modifyDBParameterGroup() {
+  public toModifyDBParameterGroup() {
     this.add('rds:ModifyDBParameterGroup');
     return this;
   }
@@ -2858,7 +2833,7 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxy.html
    */
-  public modifyDBProxy() {
+  public toModifyDBProxy() {
     this.add('rds:ModifyDBProxy');
     return this;
   }
@@ -2870,73 +2845,73 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBProxyTargetGroup.html
    */
-  public modifyDBProxyTargetGroup() {
+  public toModifyDBProxyTargetGroup() {
     this.add('rds:ModifyDBProxyTargetGroup');
     return this;
   }
 
   /**
-   * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
+   * Grants permission to update a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshot.html
    */
-  public modifyDBSnapshot() {
+  public toModifyDBSnapshot() {
     this.add('rds:ModifyDBSnapshot');
     return this;
   }
 
   /**
-   * Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.
+   * Grants permission to add an attribute and values to, or removes an attribute and values from, a manual DB snapshot
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html
    */
-  public modifyDBSnapshotAttribute() {
+  public toModifyDBSnapshotAttribute() {
     this.add('rds:ModifyDBSnapshotAttribute');
     return this;
   }
 
   /**
-   * Modifies an existing DB subnet group.
+   * Grants permission to modify an existing DB subnet group
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSubnetGroup.html
    */
-  public modifyDBSubnetGroup() {
+  public toModifyDBSubnetGroup() {
     this.add('rds:ModifyDBSubnetGroup');
     return this;
   }
 
   /**
-   * Modifies an existing RDS event notification subscription.
+   * Grants permission to modify an existing RDS event notification subscription
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyEventSubscription.html
    */
-  public modifyEventSubscription() {
+  public toModifyEventSubscription() {
     this.add('rds:ModifyEventSubscription');
     return this;
   }
 
   /**
-   * Modify a setting for an Amazon Aurora global cluster.
+   * Grants permission to modify a setting for an Amazon Aurora global cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyGlobalCluster.html
    */
-  public modifyGlobalCluster() {
+  public toModifyGlobalCluster() {
     this.add('rds:ModifyGlobalCluster');
     return this;
   }
 
   /**
-   * Modifies an existing option group.
+   * Grants permission to modify an existing option group
    *
    * Access Level: Write
    *
@@ -2945,59 +2920,59 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyOptionGroup.html
    */
-  public modifyOptionGroup() {
+  public toModifyOptionGroup() {
     this.add('rds:ModifyOptionGroup');
     return this;
   }
 
   /**
-   * Promotes a Read Replica DB instance to a standalone DB instance.
+   * Grants permission to promote a Read Replica DB instance to a standalone DB instance
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html
    */
-  public promoteReadReplica() {
+  public toPromoteReadReplica() {
     this.add('rds:PromoteReadReplica');
     return this;
   }
 
   /**
-   * Promotes a Read Replica DB cluster to a standalone DB cluster.
+   * Grants permission to promote a Read Replica DB cluster to a standalone DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplicaDBCluster.html
    */
-  public promoteReadReplicaDBCluster() {
+  public toPromoteReadReplicaDBCluster() {
     this.add('rds:PromoteReadReplicaDBCluster');
     return this;
   }
 
   /**
-   * Purchases a reserved DB instance offering.
+   * Grants permission to purchase a reserved DB instance offering
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html
    */
-  public purchaseReservedDBInstancesOffering() {
+  public toPurchaseReservedDBInstancesOffering() {
     this.add('rds:PurchaseReservedDBInstancesOffering');
     return this;
   }
 
   /**
-   * Rebooting a DB instance restarts the database engine service.
+   * Grants permission to restart the database engine service
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RebootDBInstance.html
    */
-  public rebootDBInstance() {
+  public toRebootDBInstance() {
     this.add('rds:RebootDBInstance');
     return this;
   }
@@ -3009,25 +2984,25 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RegisterDBProxyTargets.html
    */
-  public registerDBProxyTargets() {
+  public toRegisterDBProxyTargets() {
     this.add('rds:RegisterDBProxyTargets');
     return this;
   }
 
   /**
-   * Detaches an Aurora secondary cluster from an Aurora global database cluster.
+   * Grants permission to detach an Aurora secondary cluster from an Aurora global database cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveFromGlobalCluster.html
    */
-  public removeFromGlobalCluster() {
+  public toRemoveFromGlobalCluster() {
     this.add('rds:RemoveFromGlobalCluster');
     return this;
   }
 
   /**
-   * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.
+   * Grants permission to disassociate an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster
    *
    * Access Level: Write
    *
@@ -3036,13 +3011,13 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBCluster.html
    */
-  public removeRoleFromDBCluster() {
+  public toRemoveRoleFromDBCluster() {
     this.add('rds:RemoveRoleFromDBCluster');
     return this;
   }
 
   /**
-   * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+   * Grants permission to disassociate an AWS Identity and Access Management (IAM) role from a DB instance
    *
    * Access Level: Write
    *
@@ -3051,237 +3026,237 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveRoleFromDBInstance.html
    */
-  public removeRoleFromDBInstance() {
+  public toRemoveRoleFromDBInstance() {
     this.add('rds:RemoveRoleFromDBInstance');
     return this;
   }
 
   /**
-   * Removes a source identifier from an existing RDS event notification subscription.
+   * Grants permission to remove a source identifier from an existing RDS event notification subscription
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveSourceIdentifierFromSubscription.html
    */
-  public removeSourceIdentifierFromSubscription() {
+  public toRemoveSourceIdentifierFromSubscription() {
     this.add('rds:RemoveSourceIdentifierFromSubscription');
     return this;
   }
 
   /**
-   * Removes metadata tags from an Amazon RDS resource.
+   * Grants permission to remove metadata tags from an Amazon RDS resource.
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RemoveTagsFromResource.html
    */
-  public removeTagsFromResource() {
+  public toRemoveTagsFromResource() {
     this.add('rds:RemoveTagsFromResource');
     return this;
   }
 
   /**
-   * Modifies the parameters of a DB cluster parameter group to the default value.
+   * Grants permission to modify the parameters of a DB cluster parameter group to the default value
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBClusterParameterGroup.html
    */
-  public resetDBClusterParameterGroup() {
+  public toResetDBClusterParameterGroup() {
     this.add('rds:ResetDBClusterParameterGroup');
     return this;
   }
 
   /**
-   * Modifies the parameters of a DB parameter group to the engine/system default value.
+   * Grants permission to modify the parameters of a DB parameter group to the engine/system default value
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBParameterGroup.html
    */
-  public resetDBParameterGroup() {
+  public toResetDBParameterGroup() {
     this.add('rds:ResetDBParameterGroup');
     return this;
   }
 
   /**
-   * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
+   * Grants permission to create an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
-   * - rds:DatabaseEngine
-   * - rds:DatabaseName
-   * - rds:StorageEncrypted
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
+   * - .ifDatabaseEngine()
+   * - .ifDatabaseName()
+   * - .ifStorageEncrypted()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromS3.html
    */
-  public restoreDBClusterFromS3() {
+  public toRestoreDBClusterFromS3() {
     this.add('rds:RestoreDBClusterFromS3');
     return this;
   }
 
   /**
-   * Creates a new DB cluster from a DB cluster snapshot.
+   * Grants permission to create a new DB cluster from a DB cluster snapshot
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterFromSnapshot.html
    */
-  public restoreDBClusterFromSnapshot() {
+  public toRestoreDBClusterFromSnapshot() {
     this.add('rds:RestoreDBClusterFromSnapshot');
     return this;
   }
 
   /**
-   * Restores a DB cluster to an arbitrary point in time.
+   * Grants permission to restore a DB cluster to an arbitrary point in time
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html
    */
-  public restoreDBClusterToPointInTime() {
+  public toRestoreDBClusterToPointInTime() {
     this.add('rds:RestoreDBClusterToPointInTime');
     return this;
   }
 
   /**
-   * Creates a new DB instance from a DB snapshot.
+   * Grants permission to create a new DB instance from a DB snapshot
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html
    */
-  public restoreDBInstanceFromDBSnapshot() {
+  public toRestoreDBInstanceFromDBSnapshot() {
     this.add('rds:RestoreDBInstanceFromDBSnapshot');
     return this;
   }
 
   /**
-   * Creates a new DB instance from an Amazon S3 bucket.
+   * Grants permission to create a new DB instance from an Amazon S3 bucket
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromS3.html
    */
-  public restoreDBInstanceFromS3() {
+  public toRestoreDBInstanceFromS3() {
     this.add('rds:RestoreDBInstanceFromS3');
     return this;
   }
 
   /**
-   * Restores a DB instance to an arbitrary point in time.
+   * Grants permission to restore a DB instance to an arbitrary point in time
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - rds:req-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifReqTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceToPointInTime.html
    */
-  public restoreDBInstanceToPointInTime() {
+  public toRestoreDBInstanceToPointInTime() {
     this.add('rds:RestoreDBInstanceToPointInTime');
     return this;
   }
 
   /**
-   * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.
+   * Grants permission to revoke ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RevokeDBSecurityGroupIngress.html
    */
-  public revokeDBSecurityGroupIngress() {
+  public toRevokeDBSecurityGroupIngress() {
     this.add('rds:RevokeDBSecurityGroupIngress');
     return this;
   }
 
   /**
-   * Enables the user to start Activity Stream.
+   * Grants permission to start Activity Stream
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartActivityStream.html
    */
-  public startActivityStream() {
+  public toStartActivityStream() {
     this.add('rds:StartActivityStream');
     return this;
   }
 
   /**
-   * Starts the DB cluster.
+   * Starts the DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBCluster.html
    */
-  public startDBCluster() {
+  public toStartDBCluster() {
     this.add('rds:StartDBCluster');
     return this;
   }
 
   /**
-   * Starts the DB instance.
+   * Grants permission to start the DB instance
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartDBInstance.html
    */
-  public startDBInstance() {
+  public toStartDBInstance() {
     this.add('rds:StartDBInstance');
     return this;
   }
 
   /**
-   * Starts a new Export task for a DB snapshot.
+   * Grants permission to start a new Export task for a DB snapshot
    *
    * Access Level: Write
    *
@@ -3290,43 +3265,43 @@ export class Rds extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartExportTask.html
    */
-  public startExportTask() {
+  public toStartExportTask() {
     this.add('rds:StartExportTask');
     return this;
   }
 
   /**
-   * Enables the user to stop Activity Stream.
+   * Grants permission to stop Activity Stream
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopActivityStream.html
    */
-  public stopActivityStream() {
+  public toStopActivityStream() {
     this.add('rds:StopActivityStream');
     return this;
   }
 
   /**
-   * Stops the DB cluster.
+   * Grants permission to stop the DB cluster
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBCluster.html
    */
-  public stopDBCluster() {
+  public toStopDBCluster() {
     this.add('rds:StopDBCluster');
     return this;
   }
 
   /**
-   * Stops the DB instance.
+   * Grants permission to stop the DB instance
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StopDBInstance.html
    */
-  public stopDBInstance() {
+  public toStopDBInstance() {
     this.add('rds:StopDBInstance');
     return this;
   }
@@ -3341,9 +3316,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:cluster-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifClusterTag()
    */
   public onCluster(dbClusterInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster:${DbClusterInstanceName}';
@@ -3362,8 +3337,8 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onClusterEndpoint(dbClusterEndpoint: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-endpoint:${DbClusterEndpoint}';
@@ -3384,9 +3359,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:cluster-pg-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifClusterPgTag()
    */
   public onClusterPg(clusterParameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-pg:${ClusterParameterGroupName}';
@@ -3407,9 +3382,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:cluster-snapshot-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifClusterSnapshotTag()
    */
   public onClusterSnapshot(clusterSnapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:cluster-snapshot:${ClusterSnapshotName}';
@@ -3430,17 +3405,17 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:DatabaseClass
-   * - rds:DatabaseEngine
-   * - rds:DatabaseName
-   * - rds:MultiAz
-   * - rds:Piops
-   * - rds:StorageEncrypted
-   * - rds:StorageSize
-   * - rds:Vpc
-   * - rds:db-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifDatabaseClass()
+   * - .ifDatabaseEngine()
+   * - .ifDatabaseName()
+   * - .ifMultiAz()
+   * - .ifPiops()
+   * - .ifStorageEncrypted()
+   * - .ifStorageSize()
+   * - .ifVpc()
+   * - .ifDbTag()
    */
   public onDb(dbInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db:${DbInstanceName}';
@@ -3461,9 +3436,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:es-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifEsTag()
    */
   public onEs(subscriptionName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:es:${SubscriptionName}';
@@ -3501,9 +3476,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:og-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifOgTag()
    */
   public onOg(optionGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:og:${OptionGroupName}';
@@ -3524,9 +3499,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:pg-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifPgTag()
    */
   public onPg(parameterGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:pg:${ParameterGroupName}';
@@ -3547,8 +3522,8 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProxy(dbProxyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:db-proxy:${DbProxyId}';
@@ -3569,9 +3544,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:ri-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifRiTag()
    */
   public onRi(reservedDbInstanceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:ri:${ReservedDbInstanceName}';
@@ -3592,9 +3567,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:secgrp-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifSecgrpTag()
    */
   public onSecgrp(securityGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:secgrp:${SecurityGroupName}';
@@ -3615,9 +3590,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:snapshot-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifSnapshotTag()
    */
   public onSnapshot(snapshotName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:snapshot:${SnapshotName}';
@@ -3638,9 +3613,9 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - rds:subgrp-tag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifSubgrpTag()
    */
   public onSubgrp(subnetGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:subgrp:${SubnetGroupName}';
@@ -3680,8 +3655,8 @@ export class Rds extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTargetGroup(targetGroupId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:rds:${Region}:${Account}:target-group:${TargetGroupId}';
@@ -3693,263 +3668,458 @@ export class Rds extends PolicyStatement {
   }
 
   /**
-   * A type of DB instance class.
+   * Filters access based on the presence of tag key-value pairs in the request
    *
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateDBCluster()
+   * - .toCreateDBClusterEndpoint()
+   * - .toCreateDBClusterParameterGroup()
+   * - .toCreateDBClusterSnapshot()
+   * - .toCreateDBInstance()
+   * - .toCreateDBInstanceReadReplica()
+   * - .toCreateDBParameterGroup()
+   * - .toCreateDBProxy()
+   * - .toCreateDBSecurityGroup()
+   * - .toCreateDBSnapshot()
+   * - .toCreateDBSubnetGroup()
+   * - .toCreateEventSubscription()
+   * - .toCreateOptionGroup()
+   * - .toPurchaseReservedDBInstancesOffering()
+   * - .toRemoveTagsFromResource()
+   * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - cluster
+   * - cluster-endpoint
+   * - cluster-pg
+   * - cluster-snapshot
+   * - db
+   * - es
+   * - og
+   * - pg
+   * - proxy
+   * - ri
+   * - secgrp
+   * - snapshot
+   * - subgrp
+   * - target-group
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateDBCluster()
+   * - .toCreateDBClusterEndpoint()
+   * - .toCreateDBClusterParameterGroup()
+   * - .toCreateDBClusterSnapshot()
+   * - .toCreateDBInstance()
+   * - .toCreateDBInstanceReadReplica()
+   * - .toCreateDBParameterGroup()
+   * - .toCreateDBProxy()
+   * - .toCreateDBSecurityGroup()
+   * - .toCreateDBSnapshot()
+   * - .toCreateDBSubnetGroup()
+   * - .toCreateEventSubscription()
+   * - .toCreateOptionGroup()
+   * - .toPurchaseReservedDBInstancesOffering()
+   * - .toRemoveTagsFromResource()
+   * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDatabaseClass(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the type of DB instance class
+   *
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifDatabaseClass(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:DatabaseClass`, value, operator || 'StringLike');
   }
 
   /**
-   * A database engine. For possible values refer to engine parameter in https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html
+   * Filters access by the database engine. For possible values refer to the engine parameter in CreateDBInstance API
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toRestoreDBClusterFromS3()
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDatabaseEngine(value: string | string[], operator?: string) {
+  public ifDatabaseEngine(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:DatabaseEngine`, value, operator || 'StringLike');
   }
 
   /**
-   * The user-defined name of the database on the DB instance.
+   * Filters access by the user-defined name of the database on the DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toRestoreDBClusterFromS3()
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDatabaseName(value: string | string[], operator?: string) {
+  public ifDatabaseName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:DatabaseName`, value, operator || 'StringLike');
   }
 
   /**
-   * The type of the endpoint. One of: READER, WRITER, CUSTOM.
+   * Filters access by the type of the endpoint. One of: READER, WRITER, CUSTOM
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toCreateDBClusterEndpoint()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEndpointType(value: string | string[], operator?: string) {
+  public ifEndpointType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:EndpointType`, value, operator || 'StringLike');
   }
 
   /**
-   * A value that specifies whether the DB instance runs in multiple Availability Zones. To indicate that the DB instance is using Multi-AZ, specify true.
+   * Filters access by the value that specifies whether the DB instance runs in multiple Availability Zones. To indicate that the DB instance is using Multi-AZ, specify true
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - db
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifMultiAz(value?: boolean) {
+  public ifMultiAz(value?: boolean): PolicyStatementWithCondition {
     return this.if(`rds:MultiAz`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
-   * A value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0.
+   * Filters access by the value that contains the number of Provisioned IOPS (PIOPS) that the instance supports. To indicate a DB instance that does not have PIOPS enabled, specify 0
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPiops(value: number | number[], operator?: string) {
+  public ifPiops(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:Piops`, value, operator || 'NumericEquals');
   }
 
   /**
-   * A value that specifies whether the DB instance storage should be encrypted. To enforce storage encryption, specify true.
+   * Filters access by the value that specifies whether the DB instance storage should be encrypted. To enforce storage encryption, specify true
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to actions:
+   * - .toCreateDBCluster()
+   * - .toRestoreDBClusterFromS3()
+   *
+   * Applies to resource types:
+   * - db
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifStorageEncrypted(value?: boolean) {
+  public ifStorageEncrypted(value?: boolean): PolicyStatementWithCondition {
     return this.if(`rds:StorageEncrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
-   * The storage volume size (in GB).
+   * Filters access by the storage volume size (in GB)
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifStorageSize(value: number | number[], operator?: string) {
+  public ifStorageSize(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:StorageSize`, value, operator || 'NumericEquals');
   }
 
   /**
-   * A value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud (Amazon VPC). To indicate that the DB instance runs in an Amazon VPC, specify true.
+   * Filters access by the value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud (Amazon VPC). To indicate that the DB instance runs in an Amazon VPC, specify true
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
    *
+   * Applies to resource types:
+   * - db
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifVpc(value?: boolean) {
+  public ifVpc(value?: boolean): PolicyStatementWithCondition {
     return this.if(`rds:Vpc`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
-   * A tag attached to a DB cluster parameter group.
+   * Filters access by the tag attached to a DB cluster parameter group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - cluster-pg
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifClusterPgTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifClusterPgTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:cluster-pg-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB cluster snapshot.
+   * Filters access by the tag attached to a DB cluster snapshot
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - cluster-snapshot
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifClusterSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifClusterSnapshotTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:cluster-snapshot-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB cluster.
+   * Filters access by the tag attached to a DB cluster
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - cluster
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifClusterTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifClusterTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:cluster-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB instance.
+   * Filters access by the tag attached to a DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - db
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDbTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifDbTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:db-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to an event subscription.
+   * Filters access by the tag attached to an event subscription
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - es
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEsTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifEsTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:es-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB option group.
+   * Filters access by the tag attached to a DB option group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - og
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOgTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifOgTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:og-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB parameter group.
+   * Filters access by the tag attached to a DB parameter group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - pg
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPgTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifPgTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:pg-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * Limits the set of tag keys and values that can be used to tag a resource.
+   * Filters access by the set of tag keys and values that can be used to tag a resource
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to actions:
+   * - .toAddTagsToResource()
+   * - .toCreateDBCluster()
+   * - .toCreateDBClusterParameterGroup()
+   * - .toCreateDBClusterSnapshot()
+   * - .toCreateDBInstance()
+   * - .toCreateDBInstanceReadReplica()
+   * - .toCreateDBParameterGroup()
+   * - .toCreateDBSecurityGroup()
+   * - .toCreateDBSnapshot()
+   * - .toCreateDBSubnetGroup()
+   * - .toCreateEventSubscription()
+   * - .toCreateOptionGroup()
+   * - .toRemoveTagsFromResource()
+   * - .toRestoreDBClusterFromS3()
+   * - .toRestoreDBClusterFromSnapshot()
+   * - .toRestoreDBClusterToPointInTime()
+   * - .toRestoreDBInstanceFromDBSnapshot()
+   * - .toRestoreDBInstanceFromS3()
+   * - .toRestoreDBInstanceToPointInTime()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReqTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifReqTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:req-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a reserved DB instance.
+   * Filters access by the tag attached to a reserved DB instance
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - ri
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRiTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifRiTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:ri-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB security group.
+   * Filters access by the tag attached to a DB security group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - secgrp
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSecgrpTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifSecgrpTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:secgrp-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB snapshot.
+   * Filters access by the tag attached to a DB snapshot
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - snapshot
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSnapshotTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifSnapshotTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:snapshot-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 
   /**
-   * A tag attached to a DB subnet group.
+   * Filters access by the tag attached to a DB subnet group
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions
+   *
+   * Applies to resource types:
+   * - subgrp
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifSubgrpTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`rds:subgrp-tag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

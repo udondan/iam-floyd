@@ -1,6 +1,9 @@
 import { PolicyStatementWithEffect } from './5-effect';
 
-interface Principals {
+/**
+ * A collection of Principal's
+ */
+export interface Principals {
   [key: string]: string[];
 }
 
@@ -17,7 +20,6 @@ export enum PrincipalType {
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   protected useNotPrincipals = false;
   protected principals: Principals = {};
-  protected cdkPrincipals: any[] = [];
 
   /**
    * Injects principals into the statement.

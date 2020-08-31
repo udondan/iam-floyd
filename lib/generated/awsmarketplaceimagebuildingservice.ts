@@ -42,7 +42,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
-  public describeBuilds() {
+  public toDescribeBuilds() {
     this.add('aws-marketplace-image-building-service:DescribeBuilds');
     return this;
   }
@@ -54,7 +54,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
-  public listBuilds() {
+  public toListBuilds() {
     this.add('aws-marketplace-image-building-service:ListBuilds');
     return this;
   }
@@ -66,7 +66,7 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html
    */
-  public startBuild() {
+  public toStartBuild() {
     this.add('aws-marketplace-image-building-service:StartBuild');
     return this;
   }

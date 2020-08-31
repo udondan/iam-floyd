@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [appflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonappflow.html).
@@ -180,7 +180,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createConnectorProfile() {
+  public toCreateConnectorProfile() {
     this.add('appflow:CreateConnectorProfile');
     return this;
   }
@@ -190,11 +190,11 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    */
-  public createFlow() {
+  public toCreateFlow() {
     this.add('appflow:CreateFlow');
     return this;
   }
@@ -204,7 +204,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteConnectorProfile() {
+  public toDeleteConnectorProfile() {
     this.add('appflow:DeleteConnectorProfile');
     return this;
   }
@@ -214,11 +214,11 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    */
-  public deleteFlow() {
+  public toDeleteFlow() {
     this.add('appflow:DeleteFlow');
     return this;
   }
@@ -228,7 +228,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeConnectorFields() {
+  public toDescribeConnectorFields() {
     this.add('appflow:DescribeConnectorFields');
     return this;
   }
@@ -238,7 +238,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeConnectorProfiles() {
+  public toDescribeConnectorProfiles() {
     this.add('appflow:DescribeConnectorProfiles');
     return this;
   }
@@ -248,7 +248,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeConnectors() {
+  public toDescribeConnectors() {
     this.add('appflow:DescribeConnectors');
     return this;
   }
@@ -258,7 +258,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeFlowExecution() {
+  public toDescribeFlowExecution() {
     this.add('appflow:DescribeFlowExecution');
     return this;
   }
@@ -268,7 +268,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeFlows() {
+  public toDescribeFlows() {
     this.add('appflow:DescribeFlows');
     return this;
   }
@@ -278,7 +278,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public listConnectorFields() {
+  public toListConnectorFields() {
     this.add('appflow:ListConnectorFields');
     return this;
   }
@@ -290,7 +290,7 @@ export class Appflow extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('appflow:ListTagsForResource');
     return this;
   }
@@ -300,7 +300,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public runFlow() {
+  public toRunFlow() {
     this.add('appflow:RunFlow');
     return this;
   }
@@ -310,13 +310,13 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('appflow:TagResource');
     return this;
   }
@@ -326,12 +326,12 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appflow/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('appflow:UntagResource');
     return this;
   }
@@ -341,7 +341,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateFlow() {
+  public toUpdateFlow() {
     this.add('appflow:UpdateFlow');
     return this;
   }
@@ -353,8 +353,8 @@ export class Appflow extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFlow(flowName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:appflow::${Account}:flow/${FlowName}';
@@ -377,5 +377,57 @@ export class Appflow extends PolicyStatement {
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateFlow()
+   * - .toDeleteFlow()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - flow
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateFlow()
+   * - .toDeleteFlow()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [autoscaling](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2autoscaling.html).
@@ -150,7 +150,10 @@ export class Autoscaling extends PolicyStatement {
       "conditions": [
         "autoscaling:ImageId",
         "autoscaling:InstanceType",
-        "autoscaling:SpotPrice"
+        "autoscaling:SpotPrice",
+        "autoscaling:MetadataHttpTokens",
+        "autoscaling:MetadataHttpPutResponseHopLimit",
+        "autoscaling:MetadataHttpEndpoint"
       ]
     },
     "CreateOrUpdateTags": {
@@ -711,7 +714,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachInstances.html
    */
-  public attachInstances() {
+  public toAttachInstances() {
     this.add('autoscaling:AttachInstances');
     return this;
   }
@@ -721,12 +724,12 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:TargetGroupARNs
+   * Possible conditions:
+   * - .ifTargetGroupARNs()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancerTargetGroups.html
    */
-  public attachLoadBalancerTargetGroups() {
+  public toAttachLoadBalancerTargetGroups() {
     this.add('autoscaling:AttachLoadBalancerTargetGroups');
     return this;
   }
@@ -736,12 +739,12 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:LoadBalancerNames
+   * Possible conditions:
+   * - .ifLoadBalancerNames()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancers.html
    */
-  public attachLoadBalancers() {
+  public toAttachLoadBalancers() {
     this.add('autoscaling:AttachLoadBalancers');
     return this;
   }
@@ -753,7 +756,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_BatchDeleteScheduledAction.html
    */
-  public batchDeleteScheduledAction() {
+  public toBatchDeleteScheduledAction() {
     this.add('autoscaling:BatchDeleteScheduledAction');
     return this;
   }
@@ -765,7 +768,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_BatchPutScheduledUpdateGroupAction.html
    */
-  public batchPutScheduledUpdateGroupAction() {
+  public toBatchPutScheduledUpdateGroupAction() {
     this.add('autoscaling:BatchPutScheduledUpdateGroupAction');
     return this;
   }
@@ -777,7 +780,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CancelInstanceRefresh.html
    */
-  public cancelInstanceRefresh() {
+  public toCancelInstanceRefresh() {
     this.add('autoscaling:CancelInstanceRefresh');
     return this;
   }
@@ -789,7 +792,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CompleteLifecycleAction.html
    */
-  public completeLifecycleAction() {
+  public toCompleteLifecycleAction() {
     this.add('autoscaling:CompleteLifecycleAction');
     return this;
   }
@@ -799,21 +802,21 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - autoscaling:InstanceTypes
-   * - autoscaling:LaunchConfigurationName
-   * - autoscaling:LaunchTemplateVersionSpecified
-   * - autoscaling:LoadBalancerNames
-   * - autoscaling:MaxSize
-   * - autoscaling:MinSize
-   * - autoscaling:TargetGroupARNs
-   * - autoscaling:VPCZoneIdentifiers
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   * - .ifLaunchConfigurationName()
+   * - .ifLaunchTemplateVersionSpecified()
+   * - .ifLoadBalancerNames()
+   * - .ifMaxSize()
+   * - .ifMinSize()
+   * - .ifTargetGroupARNs()
+   * - .ifVPCZoneIdentifiers()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateAutoScalingGroup.html
    */
-  public createAutoScalingGroup() {
+  public toCreateAutoScalingGroup() {
     this.add('autoscaling:CreateAutoScalingGroup');
     return this;
   }
@@ -823,14 +826,17 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:ImageId
-   * - autoscaling:InstanceType
-   * - autoscaling:SpotPrice
+   * Possible conditions:
+   * - .ifImageId()
+   * - .ifInstanceType()
+   * - .ifSpotPrice()
+   * - .ifMetadataHttpTokens()
+   * - .ifMetadataHttpPutResponseHopLimit()
+   * - .ifMetadataHttpEndpoint()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html
    */
-  public createLaunchConfiguration() {
+  public toCreateLaunchConfiguration() {
     this.add('autoscaling:CreateLaunchConfiguration');
     return this;
   }
@@ -840,13 +846,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateOrUpdateTags.html
    */
-  public createOrUpdateTags() {
+  public toCreateOrUpdateTags() {
     this.add('autoscaling:CreateOrUpdateTags');
     return this;
   }
@@ -858,7 +864,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteAutoScalingGroup.html
    */
-  public deleteAutoScalingGroup() {
+  public toDeleteAutoScalingGroup() {
     this.add('autoscaling:DeleteAutoScalingGroup');
     return this;
   }
@@ -870,7 +876,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteLaunchConfiguration.html
    */
-  public deleteLaunchConfiguration() {
+  public toDeleteLaunchConfiguration() {
     this.add('autoscaling:DeleteLaunchConfiguration');
     return this;
   }
@@ -882,7 +888,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteLifecycleHook.html
    */
-  public deleteLifecycleHook() {
+  public toDeleteLifecycleHook() {
     this.add('autoscaling:DeleteLifecycleHook');
     return this;
   }
@@ -894,7 +900,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteNotificationConfiguration.html
    */
-  public deleteNotificationConfiguration() {
+  public toDeleteNotificationConfiguration() {
     this.add('autoscaling:DeleteNotificationConfiguration');
     return this;
   }
@@ -906,7 +912,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeletePolicy.html
    */
-  public deletePolicy() {
+  public toDeletePolicy() {
     this.add('autoscaling:DeletePolicy');
     return this;
   }
@@ -918,7 +924,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteScheduledAction.html
    */
-  public deleteScheduledAction() {
+  public toDeleteScheduledAction() {
     this.add('autoscaling:DeleteScheduledAction');
     return this;
   }
@@ -928,13 +934,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteTags.html
    */
-  public deleteTags() {
+  public toDeleteTags() {
     this.add('autoscaling:DeleteTags');
     return this;
   }
@@ -946,7 +952,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAccountLimits.html
    */
-  public describeAccountLimits() {
+  public toDescribeAccountLimits() {
     this.add('autoscaling:DescribeAccountLimits');
     return this;
   }
@@ -958,7 +964,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAdjustmentTypes.html
    */
-  public describeAdjustmentTypes() {
+  public toDescribeAdjustmentTypes() {
     this.add('autoscaling:DescribeAdjustmentTypes');
     return this;
   }
@@ -970,7 +976,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingGroups.html
    */
-  public describeAutoScalingGroups() {
+  public toDescribeAutoScalingGroups() {
     this.add('autoscaling:DescribeAutoScalingGroups');
     return this;
   }
@@ -982,7 +988,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingInstances.html
    */
-  public describeAutoScalingInstances() {
+  public toDescribeAutoScalingInstances() {
     this.add('autoscaling:DescribeAutoScalingInstances');
     return this;
   }
@@ -994,7 +1000,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeAutoScalingNotificationTypes.html
    */
-  public describeAutoScalingNotificationTypes() {
+  public toDescribeAutoScalingNotificationTypes() {
     this.add('autoscaling:DescribeAutoScalingNotificationTypes');
     return this;
   }
@@ -1006,7 +1012,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeInstanceRefreshes.html
    */
-  public describeInstanceRefreshes() {
+  public toDescribeInstanceRefreshes() {
     this.add('autoscaling:DescribeInstanceRefreshes');
     return this;
   }
@@ -1018,7 +1024,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLaunchConfigurations.html
    */
-  public describeLaunchConfigurations() {
+  public toDescribeLaunchConfigurations() {
     this.add('autoscaling:DescribeLaunchConfigurations');
     return this;
   }
@@ -1030,7 +1036,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLifecycleHookTypes.html
    */
-  public describeLifecycleHookTypes() {
+  public toDescribeLifecycleHookTypes() {
     this.add('autoscaling:DescribeLifecycleHookTypes');
     return this;
   }
@@ -1042,7 +1048,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLifecycleHooks.html
    */
-  public describeLifecycleHooks() {
+  public toDescribeLifecycleHooks() {
     this.add('autoscaling:DescribeLifecycleHooks');
     return this;
   }
@@ -1054,7 +1060,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLoadBalancerTargetGroups.html
    */
-  public describeLoadBalancerTargetGroups() {
+  public toDescribeLoadBalancerTargetGroups() {
     this.add('autoscaling:DescribeLoadBalancerTargetGroups');
     return this;
   }
@@ -1066,7 +1072,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeLoadBalancers.html
    */
-  public describeLoadBalancers() {
+  public toDescribeLoadBalancers() {
     this.add('autoscaling:DescribeLoadBalancers');
     return this;
   }
@@ -1078,7 +1084,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeMetricCollectionTypes.html
    */
-  public describeMetricCollectionTypes() {
+  public toDescribeMetricCollectionTypes() {
     this.add('autoscaling:DescribeMetricCollectionTypes');
     return this;
   }
@@ -1090,7 +1096,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeNotificationConfigurations.html
    */
-  public describeNotificationConfigurations() {
+  public toDescribeNotificationConfigurations() {
     this.add('autoscaling:DescribeNotificationConfigurations');
     return this;
   }
@@ -1102,7 +1108,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribePolicies.html
    */
-  public describePolicies() {
+  public toDescribePolicies() {
     this.add('autoscaling:DescribePolicies');
     return this;
   }
@@ -1114,7 +1120,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScalingActivities.html
    */
-  public describeScalingActivities() {
+  public toDescribeScalingActivities() {
     this.add('autoscaling:DescribeScalingActivities');
     return this;
   }
@@ -1126,7 +1132,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScalingProcessTypes.html
    */
-  public describeScalingProcessTypes() {
+  public toDescribeScalingProcessTypes() {
     this.add('autoscaling:DescribeScalingProcessTypes');
     return this;
   }
@@ -1138,7 +1144,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScheduledActions.html
    */
-  public describeScheduledActions() {
+  public toDescribeScheduledActions() {
     this.add('autoscaling:DescribeScheduledActions');
     return this;
   }
@@ -1150,7 +1156,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeTags.html
    */
-  public describeTags() {
+  public toDescribeTags() {
     this.add('autoscaling:DescribeTags');
     return this;
   }
@@ -1162,7 +1168,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeTerminationPolicyTypes.html
    */
-  public describeTerminationPolicyTypes() {
+  public toDescribeTerminationPolicyTypes() {
     this.add('autoscaling:DescribeTerminationPolicyTypes');
     return this;
   }
@@ -1174,7 +1180,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachInstances.html
    */
-  public detachInstances() {
+  public toDetachInstances() {
     this.add('autoscaling:DetachInstances');
     return this;
   }
@@ -1184,12 +1190,12 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:TargetGroupARNs
+   * Possible conditions:
+   * - .ifTargetGroupARNs()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancerTargetGroups.html
    */
-  public detachLoadBalancerTargetGroups() {
+  public toDetachLoadBalancerTargetGroups() {
     this.add('autoscaling:DetachLoadBalancerTargetGroups');
     return this;
   }
@@ -1199,12 +1205,12 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:LoadBalancerNames
+   * Possible conditions:
+   * - .ifLoadBalancerNames()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancers.html
    */
-  public detachLoadBalancers() {
+  public toDetachLoadBalancers() {
     this.add('autoscaling:DetachLoadBalancers');
     return this;
   }
@@ -1216,7 +1222,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DisableMetricsCollection.html
    */
-  public disableMetricsCollection() {
+  public toDisableMetricsCollection() {
     this.add('autoscaling:DisableMetricsCollection');
     return this;
   }
@@ -1228,7 +1234,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_EnableMetricsCollection.html
    */
-  public enableMetricsCollection() {
+  public toEnableMetricsCollection() {
     this.add('autoscaling:EnableMetricsCollection');
     return this;
   }
@@ -1240,7 +1246,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_EnterStandby.html
    */
-  public enterStandby() {
+  public toEnterStandby() {
     this.add('autoscaling:EnterStandby');
     return this;
   }
@@ -1252,7 +1258,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ExecutePolicy.html
    */
-  public executePolicy() {
+  public toExecutePolicy() {
     this.add('autoscaling:ExecutePolicy');
     return this;
   }
@@ -1264,7 +1270,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ExitStandby.html
    */
-  public exitStandby() {
+  public toExitStandby() {
     this.add('autoscaling:ExitStandby');
     return this;
   }
@@ -1276,7 +1282,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutLifecycleHook.html
    */
-  public putLifecycleHook() {
+  public toPutLifecycleHook() {
     this.add('autoscaling:PutLifecycleHook');
     return this;
   }
@@ -1288,7 +1294,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutNotificationConfiguration.html
    */
-  public putNotificationConfiguration() {
+  public toPutNotificationConfiguration() {
     this.add('autoscaling:PutNotificationConfiguration');
     return this;
   }
@@ -1300,7 +1306,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScalingPolicy.html
    */
-  public putScalingPolicy() {
+  public toPutScalingPolicy() {
     this.add('autoscaling:PutScalingPolicy');
     return this;
   }
@@ -1310,13 +1316,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:MaxSize
-   * - autoscaling:MinSize
+   * Possible conditions:
+   * - .ifMaxSize()
+   * - .ifMinSize()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScheduledUpdateGroupAction.html
    */
-  public putScheduledUpdateGroupAction() {
+  public toPutScheduledUpdateGroupAction() {
     this.add('autoscaling:PutScheduledUpdateGroupAction');
     return this;
   }
@@ -1328,7 +1334,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_RecordLifecycleActionHeartbeat.html
    */
-  public recordLifecycleActionHeartbeat() {
+  public toRecordLifecycleActionHeartbeat() {
     this.add('autoscaling:RecordLifecycleActionHeartbeat');
     return this;
   }
@@ -1340,7 +1346,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ResumeProcesses.html
    */
-  public resumeProcesses() {
+  public toResumeProcesses() {
     this.add('autoscaling:ResumeProcesses');
     return this;
   }
@@ -1352,7 +1358,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SetDesiredCapacity.html
    */
-  public setDesiredCapacity() {
+  public toSetDesiredCapacity() {
     this.add('autoscaling:SetDesiredCapacity');
     return this;
   }
@@ -1364,7 +1370,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SetInstanceHealth.html
    */
-  public setInstanceHealth() {
+  public toSetInstanceHealth() {
     this.add('autoscaling:SetInstanceHealth');
     return this;
   }
@@ -1376,7 +1382,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SetInstanceProtection.html
    */
-  public setInstanceProtection() {
+  public toSetInstanceProtection() {
     this.add('autoscaling:SetInstanceProtection');
     return this;
   }
@@ -1388,7 +1394,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_StartInstanceRefresh.html
    */
-  public startInstanceRefresh() {
+  public toStartInstanceRefresh() {
     this.add('autoscaling:StartInstanceRefresh');
     return this;
   }
@@ -1400,7 +1406,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_SuspendProcesses.html
    */
-  public suspendProcesses() {
+  public toSuspendProcesses() {
     this.add('autoscaling:SuspendProcesses');
     return this;
   }
@@ -1412,7 +1418,7 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_TerminateInstanceInAutoScalingGroup.html
    */
-  public terminateInstanceInAutoScalingGroup() {
+  public toTerminateInstanceInAutoScalingGroup() {
     this.add('autoscaling:TerminateInstanceInAutoScalingGroup');
     return this;
   }
@@ -1422,17 +1428,17 @@ export class Autoscaling extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - autoscaling:InstanceTypes
-   * - autoscaling:LaunchConfigurationName
-   * - autoscaling:LaunchTemplateVersionSpecified
-   * - autoscaling:MaxSize
-   * - autoscaling:MinSize
-   * - autoscaling:VPCZoneIdentifiers
+   * Possible conditions:
+   * - .ifInstanceTypes()
+   * - .ifLaunchConfigurationName()
+   * - .ifLaunchTemplateVersionSpecified()
+   * - .ifMaxSize()
+   * - .ifMinSize()
+   * - .ifVPCZoneIdentifiers()
    *
    * https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_UpdateAutoScalingGroup.html
    */
-  public updateAutoScalingGroup() {
+  public toUpdateAutoScalingGroup() {
     this.add('autoscaling:UpdateAutoScalingGroup');
     return this;
   }
@@ -1448,9 +1454,9 @@ export class Autoscaling extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - autoscaling:ResourceTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifResourceTag()
+   * - .ifAwsResourceTag()
    */
   public onAutoScalingGroup(groupId: string, groupFriendlyName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:autoscaling:${Region}:${Account}:autoScalingGroup:${GroupId}:autoScalingGroupName/${GroupFriendlyName}';
@@ -1488,10 +1494,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateLaunchConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImageId(value: string | string[], operator?: string) {
+  public ifImageId(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:ImageId`, value, operator || 'StringLike');
   }
 
@@ -1500,10 +1509,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateLaunchConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceType(value: string | string[], operator?: string) {
+  public ifInstanceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:InstanceType`, value, operator || 'StringLike');
   }
 
@@ -1512,10 +1524,14 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceTypes(value: string | string[], operator?: string) {
+  public ifInstanceTypes(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:InstanceTypes`, value, operator || 'StringLike');
   }
 
@@ -1524,10 +1540,14 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLaunchConfigurationName(value: string | string[], operator?: string) {
+  public ifLaunchConfigurationName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:LaunchConfigurationName`, value, operator || 'StringLike');
   }
 
@@ -1536,9 +1556,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifLaunchTemplateVersionSpecified(value?: boolean) {
+  public ifLaunchTemplateVersionSpecified(value?: boolean): PolicyStatementWithCondition {
     return this.if(`autoscaling:LaunchTemplateVersionSpecified`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -1547,10 +1571,15 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toAttachLoadBalancers()
+   * - .toCreateAutoScalingGroup()
+   * - .toDetachLoadBalancers()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLoadBalancerNames(value: string | string[], operator?: string) {
+  public ifLoadBalancerNames(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:LoadBalancerNames`, value, operator || 'StringLike');
   }
 
@@ -1559,11 +1588,61 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toPutScheduledUpdateGroupAction()
+   * - .toUpdateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMaxSize(value: number | number[], operator?: string) {
+  public ifMaxSize(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MaxSize`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by whether the HTTP endpoint is enabled for the instance metadata service.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateLaunchConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMetadataHttpEndpoint(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`autoscaling:MetadataHttpEndpoint`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by the allowed number of hops when calling the instance metadata service.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateLaunchConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
+   */
+  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`autoscaling:MetadataHttpPutResponseHopLimit`, value, operator || 'NumericEquals');
+  }
+
+  /**
+   * Filters access by whether tokens are required when calling the instance metadata service (optional or required)
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateLaunchConfiguration()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifMetadataHttpTokens(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`autoscaling:MetadataHttpTokens`, value, operator || 'StringLike');
   }
 
   /**
@@ -1571,10 +1650,15 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toPutScheduledUpdateGroupAction()
+   * - .toUpdateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMinSize(value: number | number[], operator?: string) {
+  public ifMinSize(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:MinSize`, value, operator || 'NumericEquals');
   }
 
@@ -1583,11 +1667,52 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toAttachInstances()
+   * - .toAttachLoadBalancerTargetGroups()
+   * - .toAttachLoadBalancers()
+   * - .toBatchDeleteScheduledAction()
+   * - .toBatchPutScheduledUpdateGroupAction()
+   * - .toCancelInstanceRefresh()
+   * - .toCompleteLifecycleAction()
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteAutoScalingGroup()
+   * - .toDeleteLifecycleHook()
+   * - .toDeleteNotificationConfiguration()
+   * - .toDeletePolicy()
+   * - .toDeleteScheduledAction()
+   * - .toDeleteTags()
+   * - .toDetachInstances()
+   * - .toDetachLoadBalancerTargetGroups()
+   * - .toDetachLoadBalancers()
+   * - .toDisableMetricsCollection()
+   * - .toEnableMetricsCollection()
+   * - .toEnterStandby()
+   * - .toExecutePolicy()
+   * - .toExitStandby()
+   * - .toPutLifecycleHook()
+   * - .toPutNotificationConfiguration()
+   * - .toPutScalingPolicy()
+   * - .toPutScheduledUpdateGroupAction()
+   * - .toRecordLifecycleActionHeartbeat()
+   * - .toResumeProcesses()
+   * - .toSetDesiredCapacity()
+   * - .toSetInstanceHealth()
+   * - .toSetInstanceProtection()
+   * - .toStartInstanceRefresh()
+   * - .toSuspendProcesses()
+   * - .toTerminateInstanceInAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
+   * Applies to resource types:
+   * - autoScalingGroup
+   *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1596,10 +1721,13 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateLaunchConfiguration()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifSpotPrice(value: number | number[], operator?: string) {
+  public ifSpotPrice(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:SpotPrice`, value, operator || 'NumericEquals');
   }
 
@@ -1608,10 +1736,15 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toAttachLoadBalancerTargetGroups()
+   * - .toCreateAutoScalingGroup()
+   * - .toDetachLoadBalancerTargetGroups()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTargetGroupARNs(value: string | string[], operator?: string) {
+  public ifTargetGroupARNs(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:TargetGroupARNs`, value, operator || 'ArnEquals');
   }
 
@@ -1620,10 +1753,99 @@ export class Autoscaling extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
    *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVPCZoneIdentifiers(value: string | string[], operator?: string) {
+  public ifVPCZoneIdentifiers(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`autoscaling:VPCZoneIdentifiers`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The value of a tag associated with the request.
+   *
+   * https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteTags()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to actions:
+   * - .toAttachInstances()
+   * - .toAttachLoadBalancerTargetGroups()
+   * - .toAttachLoadBalancers()
+   * - .toBatchDeleteScheduledAction()
+   * - .toBatchPutScheduledUpdateGroupAction()
+   * - .toCancelInstanceRefresh()
+   * - .toCompleteLifecycleAction()
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteAutoScalingGroup()
+   * - .toDeleteLifecycleHook()
+   * - .toDeleteNotificationConfiguration()
+   * - .toDeletePolicy()
+   * - .toDeleteScheduledAction()
+   * - .toDeleteTags()
+   * - .toDetachInstances()
+   * - .toDetachLoadBalancerTargetGroups()
+   * - .toDetachLoadBalancers()
+   * - .toDisableMetricsCollection()
+   * - .toEnableMetricsCollection()
+   * - .toEnterStandby()
+   * - .toExecutePolicy()
+   * - .toExitStandby()
+   * - .toPutLifecycleHook()
+   * - .toPutNotificationConfiguration()
+   * - .toPutScalingPolicy()
+   * - .toPutScheduledUpdateGroupAction()
+   * - .toRecordLifecycleActionHeartbeat()
+   * - .toResumeProcesses()
+   * - .toSetDesiredCapacity()
+   * - .toSetInstanceHealth()
+   * - .toSetInstanceProtection()
+   * - .toStartInstanceRefresh()
+   * - .toSuspendProcesses()
+   * - .toTerminateInstanceInAutoScalingGroup()
+   * - .toUpdateAutoScalingGroup()
+   *
+   * Applies to resource types:
+   * - autoScalingGroup
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * Applies to actions:
+   * - .toCreateAutoScalingGroup()
+   * - .toCreateOrUpdateTags()
+   * - .toDeleteTags()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [cognito-identity](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitoidentity.html).
@@ -216,14 +216,14 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html
    */
-  public createIdentityPool() {
+  public toCreateIdentityPool() {
     this.add('cognito-identity:CreateIdentityPool');
     return this;
   }
@@ -235,7 +235,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html
    */
-  public deleteIdentities() {
+  public toDeleteIdentities() {
     this.add('cognito-identity:DeleteIdentities');
     return this;
   }
@@ -247,7 +247,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html
    */
-  public deleteIdentityPool() {
+  public toDeleteIdentityPool() {
     this.add('cognito-identity:DeleteIdentityPool');
     return this;
   }
@@ -259,7 +259,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html
    */
-  public describeIdentity() {
+  public toDescribeIdentity() {
     this.add('cognito-identity:DescribeIdentity');
     return this;
   }
@@ -271,7 +271,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentityPool.html
    */
-  public describeIdentityPool() {
+  public toDescribeIdentityPool() {
     this.add('cognito-identity:DescribeIdentityPool');
     return this;
   }
@@ -283,7 +283,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html
    */
-  public getCredentialsForIdentity() {
+  public toGetCredentialsForIdentity() {
     this.add('cognito-identity:GetCredentialsForIdentity');
     return this;
   }
@@ -295,7 +295,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html
    */
-  public getId() {
+  public toGetId() {
     this.add('cognito-identity:GetId');
     return this;
   }
@@ -307,7 +307,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html
    */
-  public getIdentityPoolRoles() {
+  public toGetIdentityPoolRoles() {
     this.add('cognito-identity:GetIdentityPoolRoles');
     return this;
   }
@@ -319,7 +319,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html
    */
-  public getOpenIdToken() {
+  public toGetOpenIdToken() {
     this.add('cognito-identity:GetOpenIdToken');
     return this;
   }
@@ -331,7 +331,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdTokenForDeveloperIdentity.html
    */
-  public getOpenIdTokenForDeveloperIdentity() {
+  public toGetOpenIdTokenForDeveloperIdentity() {
     this.add('cognito-identity:GetOpenIdTokenForDeveloperIdentity');
     return this;
   }
@@ -343,7 +343,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentities.html
    */
-  public listIdentities() {
+  public toListIdentities() {
     this.add('cognito-identity:ListIdentities');
     return this;
   }
@@ -355,7 +355,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentityPools.html
    */
-  public listIdentityPools() {
+  public toListIdentityPools() {
     this.add('cognito-identity:ListIdentityPools');
     return this;
   }
@@ -365,12 +365,12 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('cognito-identity:ListTagsForResource');
     return this;
   }
@@ -382,7 +382,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_LookupDeveloperIdentity.html
    */
-  public lookupDeveloperIdentity() {
+  public toLookupDeveloperIdentity() {
     this.add('cognito-identity:LookupDeveloperIdentity');
     return this;
   }
@@ -394,7 +394,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_MergeDeveloperIdentities.html
    */
-  public mergeDeveloperIdentities() {
+  public toMergeDeveloperIdentities() {
     this.add('cognito-identity:MergeDeveloperIdentities');
     return this;
   }
@@ -406,7 +406,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetIdentityPoolRoles.html
    */
-  public setIdentityPoolRoles() {
+  public toSetIdentityPoolRoles() {
     this.add('cognito-identity:SetIdentityPoolRoles');
     return this;
   }
@@ -416,14 +416,14 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('cognito-identity:TagResource');
     return this;
   }
@@ -435,7 +435,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkDeveloperIdentity.html
    */
-  public unlinkDeveloperIdentity() {
+  public toUnlinkDeveloperIdentity() {
     this.add('cognito-identity:UnlinkDeveloperIdentity');
     return this;
   }
@@ -447,7 +447,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html
    */
-  public unlinkIdentity() {
+  public toUnlinkIdentity() {
     this.add('cognito-identity:UnlinkIdentity');
     return this;
   }
@@ -457,13 +457,13 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('cognito-identity:UntagResource');
     return this;
   }
@@ -475,7 +475,7 @@ export class CognitoIdentity extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UpdateIdentityPool.html
    */
-  public updateIdentityPool() {
+  public toUpdateIdentityPool() {
     this.add('cognito-identity:UpdateIdentityPool');
     return this;
   }
@@ -490,8 +490,8 @@ export class CognitoIdentity extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIdentitypool(identityPoolId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:cognito-identity:${Region}:${Account}:identitypool/${IdentityPoolId}';
@@ -500,5 +500,61 @@ export class CognitoIdentity extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateIdentityPool()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toCreateIdentityPool()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - identitypool
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access by a key that is present in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateIdentityPool()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

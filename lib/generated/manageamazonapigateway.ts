@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [apigateway](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html).
@@ -120,13 +120,13 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html
    */
-  public dELETE() {
+  public toDELETE() {
     this.add('apigateway:DELETE');
     return this;
   }
@@ -138,7 +138,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html
    */
-  public gET() {
+  public toGET() {
     this.add('apigateway:GET');
     return this;
   }
@@ -148,13 +148,13 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html
    */
-  public pATCH() {
+  public toPATCH() {
     this.add('apigateway:PATCH');
     return this;
   }
@@ -164,13 +164,13 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html
    */
-  public pOST() {
+  public toPOST() {
     this.add('apigateway:POST');
     return this;
   }
@@ -180,13 +180,13 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html
    */
-  public pUT() {
+  public toPUT() {
     this.add('apigateway:PUT');
     return this;
   }
@@ -198,7 +198,7 @@ export class Apigateway extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/apigateway/api-reference/WEBACL_SET.html
    */
-  public setWebACL() {
+  public toSetWebACL() {
     this.add('apigateway:SetWebACL');
     return this;
   }
@@ -208,7 +208,7 @@ export class Apigateway extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateRestApiPolicy() {
+  public toUpdateRestApiPolicy() {
     this.add('apigateway:UpdateRestApiPolicy');
     return this;
   }
@@ -222,8 +222,8 @@ export class Apigateway extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApigatewayGeneral(apiGatewayResourcePath: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:apigateway:${Region}::${ApiGatewayResourcePath}';
@@ -231,5 +231,46 @@ export class Apigateway extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Applies to actions:
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Applies to resource types:
+   * - apigateway-general
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Applies to actions:
+   * - .toDELETE()
+   * - .toPATCH()
+   * - .toPOST()
+   * - .toPUT()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

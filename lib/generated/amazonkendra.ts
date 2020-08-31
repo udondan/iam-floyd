@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [kendra](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkendra.html).
@@ -343,7 +343,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html
    */
-  public batchDeleteDocument() {
+  public toBatchDeleteDocument() {
     this.add('kendra:BatchDeleteDocument');
     return this;
   }
@@ -355,7 +355,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html
    */
-  public batchPutDocument() {
+  public toBatchPutDocument() {
     this.add('kendra:BatchPutDocument');
     return this;
   }
@@ -365,13 +365,13 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateDataSource.html
    */
-  public createDataSource() {
+  public toCreateDataSource() {
     this.add('kendra:CreateDataSource');
     return this;
   }
@@ -381,13 +381,13 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateFaq.html
    */
-  public createFaq() {
+  public toCreateFaq() {
     this.add('kendra:CreateFaq');
     return this;
   }
@@ -397,13 +397,13 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html
    */
-  public createIndex() {
+  public toCreateIndex() {
     this.add('kendra:CreateIndex');
     return this;
   }
@@ -415,7 +415,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteDataSource.html
    */
-  public deleteDataSource() {
+  public toDeleteDataSource() {
     this.add('kendra:DeleteDataSource');
     return this;
   }
@@ -427,7 +427,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteFaq.html
    */
-  public deleteFaq() {
+  public toDeleteFaq() {
     this.add('kendra:DeleteFaq');
     return this;
   }
@@ -439,7 +439,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DeleteIndex.html
    */
-  public deleteIndex() {
+  public toDeleteIndex() {
     this.add('kendra:DeleteIndex');
     return this;
   }
@@ -451,7 +451,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeDataSource.html
    */
-  public describeDataSource() {
+  public toDescribeDataSource() {
     this.add('kendra:DescribeDataSource');
     return this;
   }
@@ -463,7 +463,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeFaq.html
    */
-  public describeFaq() {
+  public toDescribeFaq() {
     this.add('kendra:DescribeFaq');
     return this;
   }
@@ -475,7 +475,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_DescribeIndex.html
    */
-  public describeIndex() {
+  public toDescribeIndex() {
     this.add('kendra:DescribeIndex');
     return this;
   }
@@ -487,7 +487,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSourceSyncJobs.html
    */
-  public listDataSourceSyncJobs() {
+  public toListDataSourceSyncJobs() {
     this.add('kendra:ListDataSourceSyncJobs');
     return this;
   }
@@ -499,7 +499,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListDataSources.html
    */
-  public listDataSources() {
+  public toListDataSources() {
     this.add('kendra:ListDataSources');
     return this;
   }
@@ -511,7 +511,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListFaqs.html
    */
-  public listFaqs() {
+  public toListFaqs() {
     this.add('kendra:ListFaqs');
     return this;
   }
@@ -523,7 +523,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListIndices.html
    */
-  public listIndices() {
+  public toListIndices() {
     this.add('kendra:ListIndices');
     return this;
   }
@@ -535,7 +535,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('kendra:ListTagsForResource');
     return this;
   }
@@ -547,7 +547,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html
    */
-  public query() {
+  public toQuery() {
     this.add('kendra:Query');
     return this;
   }
@@ -559,7 +559,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_StartDataSourceSyncJob.html
    */
-  public startDataSourceSyncJob() {
+  public toStartDataSourceSyncJob() {
     this.add('kendra:StartDataSourceSyncJob');
     return this;
   }
@@ -571,7 +571,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_StopDataSourceSyncJob.html
    */
-  public stopDataSourceSyncJob() {
+  public toStopDataSourceSyncJob() {
     this.add('kendra:StopDataSourceSyncJob');
     return this;
   }
@@ -583,7 +583,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_SubmitFeedback.html
    */
-  public submitFeedback() {
+  public toSubmitFeedback() {
     this.add('kendra:SubmitFeedback');
     return this;
   }
@@ -593,13 +593,13 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('kendra:TagResource');
     return this;
   }
@@ -609,12 +609,12 @@ export class Kendra extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('kendra:UntagResource');
     return this;
   }
@@ -626,7 +626,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateDataSource.html
    */
-  public updateDataSource() {
+  public toUpdateDataSource() {
     this.add('kendra:UpdateDataSource');
     return this;
   }
@@ -638,7 +638,7 @@ export class Kendra extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateIndex.html
    */
-  public updateIndex() {
+  public toUpdateIndex() {
     this.add('kendra:UpdateIndex');
     return this;
   }
@@ -653,8 +653,8 @@ export class Kendra extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIndex(indexId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}';
@@ -676,8 +676,8 @@ export class Kendra extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDataSource(indexId: string, dataSourceId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/data-source/${DataSourceId}';
@@ -700,8 +700,8 @@ export class Kendra extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFaq(indexId: string, faqId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:kendra:${Region}:${Account}:index/${IndexId}/faq/${FaqId}';
@@ -711,5 +711,61 @@ export class Kendra extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters create requests based on the allowed set of values for each of the mandatory tags.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateDataSource()
+   * - .toCreateFaq()
+   * - .toCreateIndex()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag value associated with the resource.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to resource types:
+   * - index
+   * - data-source
+   * - faq
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateDataSource()
+   * - .toCreateFaq()
+   * - .toCreateIndex()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

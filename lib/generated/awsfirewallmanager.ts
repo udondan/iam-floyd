@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [fms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html).
@@ -12,6 +12,16 @@ export class Fms extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html",
       "description": "Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts",
       "accessLevel": "Write"
+    },
+    "DeleteAppsList": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteAppsList.html",
+      "description": "Grants permission to permanently deletes an AWS Firewall Manager applications list.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "applications-list": {
+          "required": true
+        }
+      }
     },
     "DeleteNotificationChannel": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html",
@@ -31,6 +41,16 @@ export class Fms extends PolicyStatement {
         "aws:ResourceTag/${TagKey}"
       ]
     },
+    "DeleteProtocolsList": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteProtocolsList.html",
+      "description": "Grants permission to permanently deletes an AWS Firewall Manager protocols list.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "protocols-list": {
+          "required": true
+        }
+      }
+    },
     "DisassociateAdminAccount": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html",
       "description": "Disassociates the account that has been set as the AWS Firewall Manager administrator account and and disables the service in all organization accounts",
@@ -40,6 +60,16 @@ export class Fms extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html",
       "description": "Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator.",
       "accessLevel": "Read"
+    },
+    "GetAppsList": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAppsList.html",
+      "description": "Grants permission to return information about the specified AWS Firewall Manager applications list.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "applications-list": {
+          "required": true
+        }
+      }
     },
     "GetComplianceDetail": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html",
@@ -76,6 +106,21 @@ export class Fms extends PolicyStatement {
         }
       }
     },
+    "GetProtocolsList": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtocolsList.html",
+      "description": "Grants permission to return information about the specified AWS Firewall Manager protocols list.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "protocols-list": {
+          "required": true
+        }
+      }
+    },
+    "ListAppsLists": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAppsLists.html",
+      "description": "Grants permission to return an array of AppsListDataSummary objects.",
+      "accessLevel": "List"
+    },
     "ListComplianceStatus": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html",
       "description": "Returns an array of PolicyComplianceStatus objects in the response. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy.",
@@ -96,6 +141,11 @@ export class Fms extends PolicyStatement {
       "description": "Returns an array of PolicySummary objects in the response.",
       "accessLevel": "List"
     },
+    "ListProtocolsLists": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListProtocolsLists.html",
+      "description": "Grants permission to return an array of ProtocolsListDataSummary objects.",
+      "accessLevel": "List"
+    },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListTagsForResource.html",
       "description": "Lists the Tags for a given resource.",
@@ -105,6 +155,20 @@ export class Fms extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "PutAppsList": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAppsList.html",
+      "description": "Grants permission to create an AWS Firewall Manager applications list.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "applications-list": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "PutNotificationChannel": {
       "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html",
@@ -117,6 +181,20 @@ export class Fms extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "policy": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "PutProtocolsList": {
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutProtocolsList.html",
+      "description": "Grants permission to creates an AWS Firewall Manager protocols list.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "protocols-list": {
           "required": true
         }
       },
@@ -161,6 +239,22 @@ export class Fms extends PolicyStatement {
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
+    },
+    "applications-list": {
+      "name": "applications-list",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AppsListData.html",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:applications-list/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "protocols-list": {
+      "name": "protocols-list",
+      "url": "https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ProtocolsListData.html",
+      "arn": "arn:${Partition}:fms:${Region}:${Account}:protocols-list/${Id}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -180,8 +274,20 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html
    */
-  public associateAdminAccount() {
+  public toAssociateAdminAccount() {
     this.add('fms:AssociateAdminAccount');
+    return this;
+  }
+
+  /**
+   * Grants permission to permanently deletes an AWS Firewall Manager applications list.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteAppsList.html
+   */
+  public toDeleteAppsList() {
+    this.add('fms:DeleteAppsList');
     return this;
   }
 
@@ -192,7 +298,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html
    */
-  public deleteNotificationChannel() {
+  public toDeleteNotificationChannel() {
     this.add('fms:DeleteNotificationChannel');
     return this;
   }
@@ -202,13 +308,25 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html
    */
-  public deletePolicy() {
+  public toDeletePolicy() {
     this.add('fms:DeletePolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to permanently deletes an AWS Firewall Manager protocols list.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteProtocolsList.html
+   */
+  public toDeleteProtocolsList() {
+    this.add('fms:DeleteProtocolsList');
     return this;
   }
 
@@ -219,7 +337,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html
    */
-  public disassociateAdminAccount() {
+  public toDisassociateAdminAccount() {
     this.add('fms:DisassociateAdminAccount');
     return this;
   }
@@ -231,8 +349,20 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html
    */
-  public getAdminAccount() {
+  public toGetAdminAccount() {
     this.add('fms:GetAdminAccount');
+    return this;
+  }
+
+  /**
+   * Grants permission to return information about the specified AWS Firewall Manager applications list.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAppsList.html
+   */
+  public toGetAppsList() {
+    this.add('fms:GetAppsList');
     return this;
   }
 
@@ -243,7 +373,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html
    */
-  public getComplianceDetail() {
+  public toGetComplianceDetail() {
     this.add('fms:GetComplianceDetail');
     return this;
   }
@@ -255,7 +385,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html
    */
-  public getNotificationChannel() {
+  public toGetNotificationChannel() {
     this.add('fms:GetNotificationChannel');
     return this;
   }
@@ -267,7 +397,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html
    */
-  public getPolicy() {
+  public toGetPolicy() {
     this.add('fms:GetPolicy');
     return this;
   }
@@ -279,8 +409,32 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html
    */
-  public getProtectionStatus() {
+  public toGetProtectionStatus() {
     this.add('fms:GetProtectionStatus');
+    return this;
+  }
+
+  /**
+   * Grants permission to return information about the specified AWS Firewall Manager protocols list.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtocolsList.html
+   */
+  public toGetProtocolsList() {
+    this.add('fms:GetProtocolsList');
+    return this;
+  }
+
+  /**
+   * Grants permission to return an array of AppsListDataSummary objects.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListAppsLists.html
+   */
+  public toListAppsLists() {
+    this.add('fms:ListAppsLists');
     return this;
   }
 
@@ -291,7 +445,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html
    */
-  public listComplianceStatus() {
+  public toListComplianceStatus() {
     this.add('fms:ListComplianceStatus');
     return this;
   }
@@ -303,7 +457,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html
    */
-  public listMemberAccounts() {
+  public toListMemberAccounts() {
     this.add('fms:ListMemberAccounts');
     return this;
   }
@@ -315,8 +469,20 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html
    */
-  public listPolicies() {
+  public toListPolicies() {
     this.add('fms:ListPolicies');
+    return this;
+  }
+
+  /**
+   * Grants permission to return an array of ProtocolsListDataSummary objects.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListProtocolsLists.html
+   */
+  public toListProtocolsLists() {
+    this.add('fms:ListProtocolsLists');
     return this;
   }
 
@@ -327,8 +493,24 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('fms:ListTagsForResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to create an AWS Firewall Manager applications list.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutAppsList.html
+   */
+  public toPutAppsList() {
+    this.add('fms:PutAppsList');
     return this;
   }
 
@@ -339,7 +521,7 @@ export class Fms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html
    */
-  public putNotificationChannel() {
+  public toPutNotificationChannel() {
     this.add('fms:PutNotificationChannel');
     return this;
   }
@@ -349,14 +531,30 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html
    */
-  public putPolicy() {
+  public toPutPolicy() {
     this.add('fms:PutPolicy');
+    return this;
+  }
+
+  /**
+   * Grants permission to creates an AWS Firewall Manager protocols list.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutProtocolsList.html
+   */
+  public toPutProtocolsList() {
+    this.add('fms:PutProtocolsList');
     return this;
   }
 
@@ -365,13 +563,13 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('fms:TagResource');
     return this;
   }
@@ -381,12 +579,12 @@ export class Fms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('fms:UntagResource');
     return this;
   }
@@ -401,8 +599,8 @@ export class Fms extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPolicy(id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fms:${Region}:${Account}:policy/${Id}';
@@ -411,5 +609,108 @@ export class Fms extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type applications-list to the statement
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AppsListData.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onApplicationsList(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fms:${Region}:${Account}:applications-list/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type protocols-list to the statement
+   *
+   * https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ProtocolsListData.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onProtocolsList(id: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:fms:${Region}:${Account}:protocols-list/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toPutAppsList()
+   * - .toPutPolicy()
+   * - .toPutProtocolsList()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value assoicated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeletePolicy()
+   *
+   * Applies to resource types:
+   * - policy
+   * - applications-list
+   * - protocols-list
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toPutAppsList()
+   * - .toPutPolicy()
+   * - .toPutProtocolsList()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ecr](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html).
@@ -330,7 +330,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html
    */
-  public batchCheckLayerAvailability() {
+  public toBatchCheckLayerAvailability() {
     this.add('ecr:BatchCheckLayerAvailability');
     return this;
   }
@@ -342,7 +342,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html
    */
-  public batchDeleteImage() {
+  public toBatchDeleteImage() {
     this.add('ecr:BatchDeleteImage');
     return this;
   }
@@ -354,7 +354,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html
    */
-  public batchGetImage() {
+  public toBatchGetImage() {
     this.add('ecr:BatchGetImage');
     return this;
   }
@@ -366,7 +366,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html
    */
-  public completeLayerUpload() {
+  public toCompleteLayerUpload() {
     this.add('ecr:CompleteLayerUpload');
     return this;
   }
@@ -376,13 +376,13 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html
    */
-  public createRepository() {
+  public toCreateRepository() {
     this.add('ecr:CreateRepository');
     return this;
   }
@@ -394,7 +394,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteLifecyclePolicy.html
    */
-  public deleteLifecyclePolicy() {
+  public toDeleteLifecyclePolicy() {
     this.add('ecr:DeleteLifecyclePolicy');
     return this;
   }
@@ -406,7 +406,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html
    */
-  public deleteRepository() {
+  public toDeleteRepository() {
     this.add('ecr:DeleteRepository');
     return this;
   }
@@ -418,7 +418,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html
    */
-  public deleteRepositoryPolicy() {
+  public toDeleteRepositoryPolicy() {
     this.add('ecr:DeleteRepositoryPolicy');
     return this;
   }
@@ -430,7 +430,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageScanFindings.html
    */
-  public describeImageScanFindings() {
+  public toDescribeImageScanFindings() {
     this.add('ecr:DescribeImageScanFindings');
     return this;
   }
@@ -442,7 +442,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html
    */
-  public describeImages() {
+  public toDescribeImages() {
     this.add('ecr:DescribeImages');
     return this;
   }
@@ -454,7 +454,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html
    */
-  public describeRepositories() {
+  public toDescribeRepositories() {
     this.add('ecr:DescribeRepositories');
     return this;
   }
@@ -466,7 +466,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html
    */
-  public getAuthorizationToken() {
+  public toGetAuthorizationToken() {
     this.add('ecr:GetAuthorizationToken');
     return this;
   }
@@ -478,7 +478,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html
    */
-  public getDownloadUrlForLayer() {
+  public toGetDownloadUrlForLayer() {
     this.add('ecr:GetDownloadUrlForLayer');
     return this;
   }
@@ -490,7 +490,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicy.html
    */
-  public getLifecyclePolicy() {
+  public toGetLifecyclePolicy() {
     this.add('ecr:GetLifecyclePolicy');
     return this;
   }
@@ -502,7 +502,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicyPreview.html
    */
-  public getLifecyclePolicyPreview() {
+  public toGetLifecyclePolicyPreview() {
     this.add('ecr:GetLifecyclePolicyPreview');
     return this;
   }
@@ -514,7 +514,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html
    */
-  public getRepositoryPolicy() {
+  public toGetRepositoryPolicy() {
     this.add('ecr:GetRepositoryPolicy');
     return this;
   }
@@ -526,7 +526,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html
    */
-  public initiateLayerUpload() {
+  public toInitiateLayerUpload() {
     this.add('ecr:InitiateLayerUpload');
     return this;
   }
@@ -538,7 +538,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html
    */
-  public listImages() {
+  public toListImages() {
     this.add('ecr:ListImages');
     return this;
   }
@@ -550,7 +550,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('ecr:ListTagsForResource');
     return this;
   }
@@ -562,7 +562,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html
    */
-  public putImage() {
+  public toPutImage() {
     this.add('ecr:PutImage');
     return this;
   }
@@ -574,7 +574,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageScanningConfiguration.html
    */
-  public putImageScanningConfiguration() {
+  public toPutImageScanningConfiguration() {
     this.add('ecr:PutImageScanningConfiguration');
     return this;
   }
@@ -586,7 +586,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageTagMutability.html
    */
-  public putImageTagMutability() {
+  public toPutImageTagMutability() {
     this.add('ecr:PutImageTagMutability');
     return this;
   }
@@ -598,7 +598,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html
    */
-  public putLifecyclePolicy() {
+  public toPutLifecyclePolicy() {
     this.add('ecr:PutLifecyclePolicy');
     return this;
   }
@@ -610,7 +610,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html
    */
-  public setRepositoryPolicy() {
+  public toSetRepositoryPolicy() {
     this.add('ecr:SetRepositoryPolicy');
     return this;
   }
@@ -622,7 +622,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html
    */
-  public startImageScan() {
+  public toStartImageScan() {
     this.add('ecr:StartImageScan');
     return this;
   }
@@ -634,7 +634,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartLifecyclePolicyPreview.html
    */
-  public startLifecyclePolicyPreview() {
+  public toStartLifecyclePolicyPreview() {
     this.add('ecr:StartLifecyclePolicyPreview');
     return this;
   }
@@ -644,13 +644,13 @@ export class Ecr extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('ecr:TagResource');
     return this;
   }
@@ -662,7 +662,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('ecr:UntagResource');
     return this;
   }
@@ -674,7 +674,7 @@ export class Ecr extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html
    */
-  public uploadLayerPart() {
+  public toUploadLayerPart() {
     this.add('ecr:UploadLayerPart');
     return this;
   }
@@ -689,9 +689,9 @@ export class Ecr extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - ecr:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}';
@@ -703,13 +703,59 @@ export class Ecr extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value associated with the resource.
+   * Filters create requests based on the allowed set of values for each of the tags.
+   *
+   * Applies to actions:
+   * - .toCreateRepository()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - repository
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * Applies to actions:
+   * - .toCreateRepository()
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - repository
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`ecr:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

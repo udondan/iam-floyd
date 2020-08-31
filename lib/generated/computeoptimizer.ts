@@ -72,7 +72,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html
    */
-  public describeRecommendationExportJobs() {
+  public toDescribeRecommendationExportJobs() {
     this.add('compute-optimizer:DescribeRecommendationExportJobs');
     return this;
   }
@@ -84,7 +84,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportAutoScalingGroupRecommendations.html
    */
-  public exportAutoScalingGroupRecommendations() {
+  public toExportAutoScalingGroupRecommendations() {
     this.add('compute-optimizer:ExportAutoScalingGroupRecommendations');
     return this;
   }
@@ -96,7 +96,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEC2InstanceRecommendations.html
    */
-  public exportEC2InstanceRecommendations() {
+  public toExportEC2InstanceRecommendations() {
     this.add('compute-optimizer:ExportEC2InstanceRecommendations');
     return this;
   }
@@ -108,7 +108,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html
    */
-  public getAutoScalingGroupRecommendations() {
+  public toGetAutoScalingGroupRecommendations() {
     this.add('compute-optimizer:GetAutoScalingGroupRecommendations');
     return this;
   }
@@ -120,7 +120,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2InstanceRecommendations.html
    */
-  public getEC2InstanceRecommendations() {
+  public toGetEC2InstanceRecommendations() {
     this.add('compute-optimizer:GetEC2InstanceRecommendations');
     return this;
   }
@@ -132,7 +132,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2RecommendationProjectedMetrics.html
    */
-  public getEC2RecommendationProjectedMetrics() {
+  public toGetEC2RecommendationProjectedMetrics() {
     this.add('compute-optimizer:GetEC2RecommendationProjectedMetrics');
     return this;
   }
@@ -144,7 +144,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEnrollmentStatus.html
    */
-  public getEnrollmentStatus() {
+  public toGetEnrollmentStatus() {
     this.add('compute-optimizer:GetEnrollmentStatus');
     return this;
   }
@@ -156,7 +156,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetRecommendationSummaries.html
    */
-  public getRecommendationSummaries() {
+  public toGetRecommendationSummaries() {
     this.add('compute-optimizer:GetRecommendationSummaries');
     return this;
   }
@@ -168,7 +168,7 @@ export class ComputeOptimizer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_UpdateEnrollmentStatus.html
    */
-  public updateEnrollmentStatus() {
+  public toUpdateEnrollmentStatus() {
     this.add('compute-optimizer:UpdateEnrollmentStatus');
     return this;
   }

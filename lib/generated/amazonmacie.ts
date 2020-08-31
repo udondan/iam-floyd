@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [macie2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html).
@@ -431,7 +431,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-accept.html
    */
-  public acceptInvitation() {
+  public toAcceptInvitation() {
     this.add('macie2:AcceptInvitation');
     return this;
   }
@@ -443,7 +443,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-archive.html
    */
-  public archiveFindings() {
+  public toArchiveFindings() {
     this.add('macie2:ArchiveFindings');
     return this;
   }
@@ -455,7 +455,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-get.html
    */
-  public batchGetCustomDataIdentifiers() {
+  public toBatchGetCustomDataIdentifiers() {
     this.add('macie2:BatchGetCustomDataIdentifiers');
     return this;
   }
@@ -465,13 +465,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs.html
    */
-  public createClassificationJob() {
+  public toCreateClassificationJob() {
     this.add('macie2:CreateClassificationJob');
     return this;
   }
@@ -481,13 +481,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers.html
    */
-  public createCustomDataIdentifier() {
+  public toCreateCustomDataIdentifier() {
     this.add('macie2:CreateCustomDataIdentifier');
     return this;
   }
@@ -497,13 +497,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
-  public createFindingsFilter() {
+  public toCreateFindingsFilter() {
     this.add('macie2:CreateFindingsFilter');
     return this;
   }
@@ -515,7 +515,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations.html
    */
-  public createInvitations() {
+  public toCreateInvitations() {
     this.add('macie2:CreateInvitations');
     return this;
   }
@@ -525,13 +525,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
-  public createMember() {
+  public toCreateMember() {
     this.add('macie2:CreateMember');
     return this;
   }
@@ -543,7 +543,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-sample.html
    */
-  public createSampleFindings() {
+  public toCreateSampleFindings() {
     this.add('macie2:CreateSampleFindings');
     return this;
   }
@@ -555,7 +555,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-decline.html
    */
-  public declineInvitations() {
+  public toDeclineInvitations() {
     this.add('macie2:DeclineInvitations');
     return this;
   }
@@ -567,7 +567,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html
    */
-  public deleteCustomDataIdentifier() {
+  public toDeleteCustomDataIdentifier() {
     this.add('macie2:DeleteCustomDataIdentifier');
     return this;
   }
@@ -579,7 +579,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
-  public deleteFindingsFilter() {
+  public toDeleteFindingsFilter() {
     this.add('macie2:DeleteFindingsFilter');
     return this;
   }
@@ -591,7 +591,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-delete.html
    */
-  public deleteInvitations() {
+  public toDeleteInvitations() {
     this.add('macie2:DeleteInvitations');
     return this;
   }
@@ -603,7 +603,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html
    */
-  public deleteMember() {
+  public toDeleteMember() {
     this.add('macie2:DeleteMember');
     return this;
   }
@@ -615,7 +615,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html
    */
-  public describeBuckets() {
+  public toDescribeBuckets() {
     this.add('macie2:DescribeBuckets');
     return this;
   }
@@ -627,7 +627,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
-  public describeClassificationJob() {
+  public toDescribeClassificationJob() {
     this.add('macie2:DescribeClassificationJob');
     return this;
   }
@@ -639,7 +639,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html
    */
-  public describeOrganizationConfiguration() {
+  public toDescribeOrganizationConfiguration() {
     this.add('macie2:DescribeOrganizationConfiguration');
     return this;
   }
@@ -651,7 +651,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public disableMacie() {
+  public toDisableMacie() {
     this.add('macie2:DisableMacie');
     return this;
   }
@@ -663,7 +663,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
-  public disableOrganizationAdminAccount() {
+  public toDisableOrganizationAdminAccount() {
     this.add('macie2:DisableOrganizationAdminAccount');
     return this;
   }
@@ -675,7 +675,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/master-disassociate.html
    */
-  public disassociateFromMasterAccount() {
+  public toDisassociateFromMasterAccount() {
     this.add('macie2:DisassociateFromMasterAccount');
     return this;
   }
@@ -687,7 +687,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-disassociate-id.html
    */
-  public disassociateMember() {
+  public toDisassociateMember() {
     this.add('macie2:DisassociateMember');
     return this;
   }
@@ -699,7 +699,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public enableMacie() {
+  public toEnableMacie() {
     this.add('macie2:EnableMacie');
     return this;
   }
@@ -711,7 +711,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
-  public enableOrganizationAdminAccount() {
+  public toEnableOrganizationAdminAccount() {
     this.add('macie2:EnableOrganizationAdminAccount');
     return this;
   }
@@ -723,7 +723,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3-statistics.html
    */
-  public getBucketStatistics() {
+  public toGetBucketStatistics() {
     this.add('macie2:GetBucketStatistics');
     return this;
   }
@@ -735,7 +735,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html
    */
-  public getClassificationExportConfiguration() {
+  public toGetClassificationExportConfiguration() {
     this.add('macie2:GetClassificationExportConfiguration');
     return this;
   }
@@ -747,7 +747,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html
    */
-  public getCustomDataIdentifier() {
+  public toGetCustomDataIdentifier() {
     this.add('macie2:GetCustomDataIdentifier');
     return this;
   }
@@ -759,7 +759,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-statistics.html
    */
-  public getFindingStatistics() {
+  public toGetFindingStatistics() {
     this.add('macie2:GetFindingStatistics');
     return this;
   }
@@ -771,7 +771,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-describe.html
    */
-  public getFindings() {
+  public toGetFindings() {
     this.add('macie2:GetFindings');
     return this;
   }
@@ -783,7 +783,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
-  public getFindingsFilter() {
+  public toGetFindingsFilter() {
     this.add('macie2:GetFindingsFilter');
     return this;
   }
@@ -795,7 +795,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations-count.html
    */
-  public getInvitationsCount() {
+  public toGetInvitationsCount() {
     this.add('macie2:GetInvitationsCount');
     return this;
   }
@@ -807,7 +807,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public getMacieSession() {
+  public toGetMacieSession() {
     this.add('macie2:GetMacieSession');
     return this;
   }
@@ -819,7 +819,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/master.html
    */
-  public getMasterAccount() {
+  public toGetMasterAccount() {
     this.add('macie2:GetMasterAccount');
     return this;
   }
@@ -831,7 +831,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html
    */
-  public getMember() {
+  public toGetMember() {
     this.add('macie2:GetMember');
     return this;
   }
@@ -843,7 +843,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/usage-statistics.html
    */
-  public getUsageStatistics() {
+  public toGetUsageStatistics() {
     this.add('macie2:GetUsageStatistics');
     return this;
   }
@@ -855,7 +855,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/usage.html
    */
-  public getUsageTotals() {
+  public toGetUsageTotals() {
     this.add('macie2:GetUsageTotals');
     return this;
   }
@@ -867,7 +867,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-list.html
    */
-  public listClassificationJobs() {
+  public toListClassificationJobs() {
     this.add('macie2:ListClassificationJobs');
     return this;
   }
@@ -879,7 +879,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-list.html
    */
-  public listCustomDataIdentifiers() {
+  public toListCustomDataIdentifiers() {
     this.add('macie2:ListCustomDataIdentifiers');
     return this;
   }
@@ -891,7 +891,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings.html
    */
-  public listFindings() {
+  public toListFindings() {
     this.add('macie2:ListFindings');
     return this;
   }
@@ -903,7 +903,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters.html
    */
-  public listFindingsFilters() {
+  public toListFindingsFilters() {
     this.add('macie2:ListFindingsFilters');
     return this;
   }
@@ -915,7 +915,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/invitations.html
    */
-  public listInvitations() {
+  public toListInvitations() {
     this.add('macie2:ListInvitations');
     return this;
   }
@@ -927,7 +927,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/members.html
    */
-  public listMembers() {
+  public toListMembers() {
     this.add('macie2:ListMembers');
     return this;
   }
@@ -939,7 +939,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin.html
    */
-  public listOrganizationAdminAccounts() {
+  public toListOrganizationAdminAccounts() {
     this.add('macie2:ListOrganizationAdminAccounts');
     return this;
   }
@@ -951,7 +951,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public listTagsForResources() {
+  public toListTagsForResources() {
     this.add('macie2:ListTagsForResources');
     return this;
   }
@@ -963,7 +963,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html
    */
-  public putClassificationExportConfiguration() {
+  public toPutClassificationExportConfiguration() {
     this.add('macie2:PutClassificationExportConfiguration');
     return this;
   }
@@ -973,13 +973,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('macie2:TagResource');
     return this;
   }
@@ -991,7 +991,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-test.html
    */
-  public testCustomDataIdentifier() {
+  public toTestCustomDataIdentifier() {
     this.add('macie2:TestCustomDataIdentifier');
     return this;
   }
@@ -1003,7 +1003,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findings-unarchive.html
    */
-  public unarchiveFindings() {
+  public toUnarchiveFindings() {
     this.add('macie2:UnarchiveFindings');
     return this;
   }
@@ -1013,12 +1013,12 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/tags-resourcearn.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('macie2:UntagResource');
     return this;
   }
@@ -1028,13 +1028,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/jobs-jobid.html
    */
-  public updateClassificationJob() {
+  public toUpdateClassificationJob() {
     this.add('macie2:UpdateClassificationJob');
     return this;
   }
@@ -1044,13 +1044,13 @@ export class Macie2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html
    */
-  public updateFindingsFilter() {
+  public toUpdateFindingsFilter() {
     this.add('macie2:UpdateFindingsFilter');
     return this;
   }
@@ -1062,7 +1062,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie.html
    */
-  public updateMacieSession() {
+  public toUpdateMacieSession() {
     this.add('macie2:UpdateMacieSession');
     return this;
   }
@@ -1074,7 +1074,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/macie-members-id.html
    */
-  public updateMemberSession() {
+  public toUpdateMemberSession() {
     this.add('macie2:UpdateMemberSession');
     return this;
   }
@@ -1086,7 +1086,7 @@ export class Macie2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/latest/APIReference/admin-configuration.html
    */
-  public updateOrganizationConfiguration() {
+  public toUpdateOrganizationConfiguration() {
     this.add('macie2:UpdateOrganizationConfiguration');
     return this;
   }
@@ -1100,8 +1100,8 @@ export class Macie2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onClassificationJob(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:classification-job/${ResourceId}';
@@ -1120,8 +1120,8 @@ export class Macie2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onCustomDataIdentifier(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:custom-data-identifier/${ResourceId}';
@@ -1140,8 +1140,8 @@ export class Macie2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onMember(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:member/${ResourceId}';
@@ -1160,8 +1160,8 @@ export class Macie2 extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFindingsFilter(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:macie2::${Account}:findings-filter/${ResourceId}';
@@ -1169,5 +1169,68 @@ export class Macie2 extends PolicyStatement {
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters access based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateClassificationJob()
+   * - .toCreateCustomDataIdentifier()
+   * - .toCreateFindingsFilter()
+   * - .toCreateMember()
+   * - .toTagResource()
+   * - .toUpdateClassificationJob()
+   * - .toUpdateFindingsFilter()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on tag key-value pairs that are associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - ClassificationJob
+   * - CustomDataIdentifier
+   * - Member
+   * - FindingsFilter
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateClassificationJob()
+   * - .toCreateCustomDataIdentifier()
+   * - .toCreateFindingsFilter()
+   * - .toCreateMember()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateClassificationJob()
+   * - .toUpdateFindingsFilter()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

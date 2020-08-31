@@ -52,7 +52,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public uploadFiles() {
+  public touploadFiles() {
     this.add('aws-marketplace-management:uploadFiles');
     return this;
   }
@@ -64,7 +64,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewMarketing() {
+  public toviewMarketing() {
     this.add('aws-marketplace-management:viewMarketing');
     return this;
   }
@@ -76,7 +76,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewReports() {
+  public toviewReports() {
     this.add('aws-marketplace-management:viewReports');
     return this;
   }
@@ -88,7 +88,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewSettings() {
+  public toviewSettings() {
     this.add('aws-marketplace-management:viewSettings');
     return this;
   }
@@ -100,7 +100,7 @@ export class AwsMarketplaceManagement extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
    */
-  public viewSupport() {
+  public toviewSupport() {
     this.add('aws-marketplace-management:viewSupport');
     return this;
   }

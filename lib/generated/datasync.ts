@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [datasync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datasync.html).
@@ -30,6 +30,15 @@ export class Datasync extends PolicyStatement {
     "CreateLocationEfs": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationEfs.html",
       "description": "Creates an endpoint for an Amazon EFS file system.",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateLocationFsxWindows": {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxWindows.html",
+      "description": "Creates an endpoint for an Amazon FSx Windows File Server file system.",
       "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
@@ -115,6 +124,16 @@ export class Datasync extends PolicyStatement {
     "DescribeLocationEfs": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationEfs.html",
       "description": "Returns metadata, such as the path information about an Amazon EFS sync location.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "location": {
+          "required": true
+        }
+      }
+    },
+    "DescribeLocationFsxWindows": {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxWindows.html",
+      "description": "Returns metadata, such as the path information about an Amazon FSx Windows sync location.",
       "accessLevel": "Read",
       "resourceTypes": {
         "location": {
@@ -327,7 +346,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CancelTaskExecution.html
    */
-  public cancelTaskExecution() {
+  public toCancelTaskExecution() {
     this.add('datasync:CancelTaskExecution');
     return this;
   }
@@ -337,13 +356,13 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html
    */
-  public createAgent() {
+  public toCreateAgent() {
     this.add('datasync:CreateAgent');
     return this;
   }
@@ -353,14 +372,30 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationEfs.html
    */
-  public createLocationEfs() {
+  public toCreateLocationEfs() {
     this.add('datasync:CreateLocationEfs');
+    return this;
+  }
+
+  /**
+   * Creates an endpoint for an Amazon FSx Windows File Server file system.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxWindows.html
+   */
+  public toCreateLocationFsxWindows() {
+    this.add('datasync:CreateLocationFsxWindows');
     return this;
   }
 
@@ -369,13 +404,13 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationNfs.html
    */
-  public createLocationNfs() {
+  public toCreateLocationNfs() {
     this.add('datasync:CreateLocationNfs');
     return this;
   }
@@ -385,13 +420,13 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html
    */
-  public createLocationS3() {
+  public toCreateLocationS3() {
     this.add('datasync:CreateLocationS3');
     return this;
   }
@@ -401,13 +436,13 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationSmb.html
    */
-  public createLocationSmb() {
+  public toCreateLocationSmb() {
     this.add('datasync:CreateLocationSmb');
     return this;
   }
@@ -417,13 +452,13 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html
    */
-  public createTask() {
+  public toCreateTask() {
     this.add('datasync:CreateTask');
     return this;
   }
@@ -435,7 +470,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteAgent.html
    */
-  public deleteAgent() {
+  public toDeleteAgent() {
     this.add('datasync:DeleteAgent');
     return this;
   }
@@ -447,7 +482,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteLocation.html
    */
-  public deleteLocation() {
+  public toDeleteLocation() {
     this.add('datasync:DeleteLocation');
     return this;
   }
@@ -459,7 +494,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DeleteTask.html
    */
-  public deleteTask() {
+  public toDeleteTask() {
     this.add('datasync:DeleteTask');
     return this;
   }
@@ -471,7 +506,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html
    */
-  public describeAgent() {
+  public toDescribeAgent() {
     this.add('datasync:DescribeAgent');
     return this;
   }
@@ -483,8 +518,20 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationEfs.html
    */
-  public describeLocationEfs() {
+  public toDescribeLocationEfs() {
     this.add('datasync:DescribeLocationEfs');
+    return this;
+  }
+
+  /**
+   * Returns metadata, such as the path information about an Amazon FSx Windows sync location.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationFsxWindows.html
+   */
+  public toDescribeLocationFsxWindows() {
+    this.add('datasync:DescribeLocationFsxWindows');
     return this;
   }
 
@@ -495,7 +542,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationNfs.html
    */
-  public describeLocationNfs() {
+  public toDescribeLocationNfs() {
     this.add('datasync:DescribeLocationNfs');
     return this;
   }
@@ -507,7 +554,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationS3.html
    */
-  public describeLocationS3() {
+  public toDescribeLocationS3() {
     this.add('datasync:DescribeLocationS3');
     return this;
   }
@@ -519,7 +566,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationSmb.html
    */
-  public describeLocationSmb() {
+  public toDescribeLocationSmb() {
     this.add('datasync:DescribeLocationSmb');
     return this;
   }
@@ -531,7 +578,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTask.html
    */
-  public describeTask() {
+  public toDescribeTask() {
     this.add('datasync:DescribeTask');
     return this;
   }
@@ -543,7 +590,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html
    */
-  public describeTaskExecution() {
+  public toDescribeTaskExecution() {
     this.add('datasync:DescribeTaskExecution');
     return this;
   }
@@ -555,7 +602,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html
    */
-  public listAgents() {
+  public toListAgents() {
     this.add('datasync:ListAgents');
     return this;
   }
@@ -567,7 +614,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html
    */
-  public listLocations() {
+  public toListLocations() {
     this.add('datasync:ListLocations');
     return this;
   }
@@ -579,7 +626,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('datasync:ListTagsForResource');
     return this;
   }
@@ -591,7 +638,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html
    */
-  public listTaskExecutions() {
+  public toListTaskExecutions() {
     this.add('datasync:ListTaskExecutions');
     return this;
   }
@@ -603,7 +650,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html
    */
-  public listTasks() {
+  public toListTasks() {
     this.add('datasync:ListTasks');
     return this;
   }
@@ -615,7 +662,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html
    */
-  public startTaskExecution() {
+  public toStartTaskExecution() {
     this.add('datasync:StartTaskExecution');
     return this;
   }
@@ -625,13 +672,13 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('datasync:TagResource');
     return this;
   }
@@ -641,12 +688,12 @@ export class Datasync extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('datasync:UntagResource');
     return this;
   }
@@ -658,7 +705,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateAgent.html
    */
-  public updateAgent() {
+  public toUpdateAgent() {
     this.add('datasync:UpdateAgent');
     return this;
   }
@@ -670,7 +717,7 @@ export class Datasync extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/datasync/latest/userguide/API_UpdateTask.html
    */
-  public updateTask() {
+  public toUpdateTask() {
     this.add('datasync:UpdateTask');
     return this;
   }
@@ -685,8 +732,8 @@ export class Datasync extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAgent(agentId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:agent/${AgentId}';
@@ -707,8 +754,8 @@ export class Datasync extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onLocation(locationId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:location/${LocationId}';
@@ -729,8 +776,8 @@ export class Datasync extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTask(taskId: string, accountId?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:datasync:${Region}:${AccountId}:task/${TaskId}';
@@ -760,5 +807,63 @@ export class Datasync extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters create requests based on the allowed set of values for each of the tags.
+   *
+   * Applies to actions:
+   * - .toCreateAgent()
+   * - .toCreateLocationEfs()
+   * - .toCreateLocationFsxWindows()
+   * - .toCreateLocationNfs()
+   * - .toCreateLocationS3()
+   * - .toCreateLocationSmb()
+   * - .toCreateTask()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - agent
+   * - location
+   * - task
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * Applies to actions:
+   * - .toCreateAgent()
+   * - .toCreateLocationEfs()
+   * - .toCreateLocationFsxWindows()
+   * - .toCreateLocationNfs()
+   * - .toCreateLocationS3()
+   * - .toCreateLocationSmb()
+   * - .toCreateTask()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

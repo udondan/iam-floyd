@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [aws-marketplace-catalog](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplacecatalog.html).
@@ -93,7 +93,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html
    */
-  public cancelChangeSet() {
+  public toCancelChangeSet() {
     this.add('aws-marketplace-catalog:CancelChangeSet');
     return this;
   }
@@ -103,7 +103,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public completeTask() {
+  public toCompleteTask() {
     this.add('aws-marketplace-catalog:CompleteTask');
     return this;
   }
@@ -115,7 +115,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html
    */
-  public describeChangeSet() {
+  public toDescribeChangeSet() {
     this.add('aws-marketplace-catalog:DescribeChangeSet');
     return this;
   }
@@ -127,7 +127,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html
    */
-  public describeEntity() {
+  public toDescribeEntity() {
     this.add('aws-marketplace-catalog:DescribeEntity');
     return this;
   }
@@ -137,7 +137,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeTask() {
+  public toDescribeTask() {
     this.add('aws-marketplace-catalog:DescribeTask');
     return this;
   }
@@ -149,7 +149,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html
    */
-  public listChangeSets() {
+  public toListChangeSets() {
     this.add('aws-marketplace-catalog:ListChangeSets');
     return this;
   }
@@ -161,7 +161,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html
    */
-  public listEntities() {
+  public toListEntities() {
     this.add('aws-marketplace-catalog:ListEntities');
     return this;
   }
@@ -171,7 +171,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listTasks() {
+  public toListTasks() {
     this.add('aws-marketplace-catalog:ListTasks');
     return this;
   }
@@ -181,12 +181,12 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - catalog:ChangeType
+   * Possible conditions:
+   * - .ifChangeType()
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html
    */
-  public startChangeSet() {
+  public toStartChangeSet() {
     this.add('aws-marketplace-catalog:StartChangeSet');
     return this;
   }
@@ -196,7 +196,7 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateTask() {
+  public toUpdateTask() {
     this.add('aws-marketplace-catalog:UpdateTask');
     return this;
   }
@@ -250,10 +250,13 @@ export class AwsMarketplaceCatalog extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html
    *
+   * Applies to actions:
+   * - .toStartChangeSet()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChangeType(value: string | string[], operator?: string) {
+  public ifChangeType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`catalog:ChangeType`, value, operator || 'StringLike');
   }
 }

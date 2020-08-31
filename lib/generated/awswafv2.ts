@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [wafv2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswafv2.html).
@@ -159,6 +159,16 @@ export class Wafv2 extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedRuleGroup.html",
       "description": "Grants permission to view high-level information for a managed rule group.",
       "accessLevel": "List"
+    },
+    "DisassociateFirewallManager": {
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html",
+      "description": "Grants permission to disassociate Firewall Manager from the specified WebACL.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "webacl": {
+          "required": true
+        }
+      }
     },
     "DisassociateWebACL": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html",
@@ -346,6 +356,16 @@ export class Wafv2 extends PolicyStatement {
       "description": "Grants permission to view an array of WebACLSummary objects for the web ACLs that you manage.",
       "accessLevel": "List"
     },
+    "PutFirewallManagerRuleGroups": {
+      "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html",
+      "description": "Grants permission to create FirewallManagedRulesGroups in the specified WebACL.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "webacl": {
+          "required": true
+        }
+      }
+    },
     "PutLoggingConfiguration": {
       "url": "https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html",
       "description": "Grants permission to enables the specified LoggingConfiguration, to start logging from a web ACL.",
@@ -531,7 +551,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
    */
-  public associateWebACL() {
+  public toAssociateWebACL() {
     this.add('wafv2:AssociateWebACL');
     return this;
   }
@@ -543,7 +563,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CheckCapacity.html
    */
-  public checkCapacity() {
+  public toCheckCapacity() {
     this.add('wafv2:CheckCapacity');
     return this;
   }
@@ -553,13 +573,13 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html
    */
-  public createIPSet() {
+  public toCreateIPSet() {
     this.add('wafv2:CreateIPSet');
     return this;
   }
@@ -569,13 +589,13 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html
    */
-  public createRegexPatternSet() {
+  public toCreateRegexPatternSet() {
     this.add('wafv2:CreateRegexPatternSet');
     return this;
   }
@@ -585,13 +605,13 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRuleGroup.html
    */
-  public createRuleGroup() {
+  public toCreateRuleGroup() {
     this.add('wafv2:CreateRuleGroup');
     return this;
   }
@@ -601,13 +621,13 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html
    */
-  public createWebACL() {
+  public toCreateWebACL() {
     this.add('wafv2:CreateWebACL');
     return this;
   }
@@ -619,7 +639,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteFirewallManagerRuleGroups.html
    */
-  public deleteFirewallManagerRuleGroups() {
+  public toDeleteFirewallManagerRuleGroups() {
     this.add('wafv2:DeleteFirewallManagerRuleGroups');
     return this;
   }
@@ -631,7 +651,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html
    */
-  public deleteIPSet() {
+  public toDeleteIPSet() {
     this.add('wafv2:DeleteIPSet');
     return this;
   }
@@ -643,7 +663,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteLoggingConfiguration.html
    */
-  public deleteLoggingConfiguration() {
+  public toDeleteLoggingConfiguration() {
     this.add('wafv2:DeleteLoggingConfiguration');
     return this;
   }
@@ -655,7 +675,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeletePermissionPolicy.html
    */
-  public deletePermissionPolicy() {
+  public toDeletePermissionPolicy() {
     this.add('wafv2:DeletePermissionPolicy');
     return this;
   }
@@ -667,7 +687,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRegexPatternSet.html
    */
-  public deleteRegexPatternSet() {
+  public toDeleteRegexPatternSet() {
     this.add('wafv2:DeleteRegexPatternSet');
     return this;
   }
@@ -679,7 +699,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRuleGroup.html
    */
-  public deleteRuleGroup() {
+  public toDeleteRuleGroup() {
     this.add('wafv2:DeleteRuleGroup');
     return this;
   }
@@ -691,7 +711,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html
    */
-  public deleteWebACL() {
+  public toDeleteWebACL() {
     this.add('wafv2:DeleteWebACL');
     return this;
   }
@@ -703,8 +723,20 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DescribeManagedRuleGroup.html
    */
-  public describeManagedRuleGroup() {
+  public toDescribeManagedRuleGroup() {
     this.add('wafv2:DescribeManagedRuleGroup');
+    return this;
+  }
+
+  /**
+   * Grants permission to disassociate Firewall Manager from the specified WebACL.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateFirewallManager.html
+   */
+  public toDisassociateFirewallManager() {
+    this.add('wafv2:DisassociateFirewallManager');
     return this;
   }
 
@@ -715,7 +747,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html
    */
-  public disassociateWebACL() {
+  public toDisassociateWebACL() {
     this.add('wafv2:DisassociateWebACL');
     return this;
   }
@@ -725,12 +757,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html
    */
-  public getIPSet() {
+  public toGetIPSet() {
     this.add('wafv2:GetIPSet');
     return this;
   }
@@ -740,12 +772,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetLoggingConfiguration.html
    */
-  public getLoggingConfiguration() {
+  public toGetLoggingConfiguration() {
     this.add('wafv2:GetLoggingConfiguration');
     return this;
   }
@@ -757,7 +789,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetPermissionPolicy.html
    */
-  public getPermissionPolicy() {
+  public toGetPermissionPolicy() {
     this.add('wafv2:GetPermissionPolicy');
     return this;
   }
@@ -767,12 +799,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html
    */
-  public getRateBasedStatementManagedKeys() {
+  public toGetRateBasedStatementManagedKeys() {
     this.add('wafv2:GetRateBasedStatementManagedKeys');
     return this;
   }
@@ -782,12 +814,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html
    */
-  public getRegexPatternSet() {
+  public toGetRegexPatternSet() {
     this.add('wafv2:GetRegexPatternSet');
     return this;
   }
@@ -797,12 +829,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRuleGroup.html
    */
-  public getRuleGroup() {
+  public toGetRuleGroup() {
     this.add('wafv2:GetRuleGroup');
     return this;
   }
@@ -814,7 +846,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetSampledRequests.html
    */
-  public getSampledRequests() {
+  public toGetSampledRequests() {
     this.add('wafv2:GetSampledRequests');
     return this;
   }
@@ -824,12 +856,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html
    */
-  public getWebACL() {
+  public toGetWebACL() {
     this.add('wafv2:GetWebACL');
     return this;
   }
@@ -841,7 +873,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html
    */
-  public getWebACLForResource() {
+  public toGetWebACLForResource() {
     this.add('wafv2:GetWebACLForResource');
     return this;
   }
@@ -853,7 +885,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroups.html
    */
-  public listAvailableManagedRuleGroups() {
+  public toListAvailableManagedRuleGroups() {
     this.add('wafv2:ListAvailableManagedRuleGroups');
     return this;
   }
@@ -865,7 +897,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListIPSets.html
    */
-  public listIPSets() {
+  public toListIPSets() {
     this.add('wafv2:ListIPSets');
     return this;
   }
@@ -877,7 +909,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListLoggingConfigurations.html
    */
-  public listLoggingConfigurations() {
+  public toListLoggingConfigurations() {
     this.add('wafv2:ListLoggingConfigurations');
     return this;
   }
@@ -889,7 +921,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRegexPatternSets.html
    */
-  public listRegexPatternSets() {
+  public toListRegexPatternSets() {
     this.add('wafv2:ListRegexPatternSets');
     return this;
   }
@@ -901,7 +933,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html
    */
-  public listResourcesForWebACL() {
+  public toListResourcesForWebACL() {
     this.add('wafv2:ListResourcesForWebACL');
     return this;
   }
@@ -913,7 +945,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListRuleGroups.html
    */
-  public listRuleGroups() {
+  public toListRuleGroups() {
     this.add('wafv2:ListRuleGroups');
     return this;
   }
@@ -923,12 +955,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('wafv2:ListTagsForResource');
     return this;
   }
@@ -940,8 +972,20 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_ListWebACLs.html
    */
-  public listWebACLs() {
+  public toListWebACLs() {
     this.add('wafv2:ListWebACLs');
+    return this;
+  }
+
+  /**
+   * Grants permission to create FirewallManagedRulesGroups in the specified WebACL.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutFirewallManagerRuleGroups.html
+   */
+  public toPutFirewallManagerRuleGroups() {
+    this.add('wafv2:PutFirewallManagerRuleGroups');
     return this;
   }
 
@@ -955,7 +999,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutLoggingConfiguration.html
    */
-  public putLoggingConfiguration() {
+  public toPutLoggingConfiguration() {
     this.add('wafv2:PutLoggingConfiguration');
     return this;
   }
@@ -967,7 +1011,7 @@ export class Wafv2 extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_PutPermissionPolicy.html
    */
-  public putPermissionPolicy() {
+  public toPutPermissionPolicy() {
     this.add('wafv2:PutPermissionPolicy');
     return this;
   }
@@ -977,14 +1021,14 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('wafv2:TagResource');
     return this;
   }
@@ -994,12 +1038,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('wafv2:UntagResource');
     return this;
   }
@@ -1009,12 +1053,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html
    */
-  public updateIPSet() {
+  public toUpdateIPSet() {
     this.add('wafv2:UpdateIPSet');
     return this;
   }
@@ -1024,12 +1068,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html
    */
-  public updateRegexPatternSet() {
+  public toUpdateRegexPatternSet() {
     this.add('wafv2:UpdateRegexPatternSet');
     return this;
   }
@@ -1039,12 +1083,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRuleGroup.html
    */
-  public updateRuleGroup() {
+  public toUpdateRuleGroup() {
     this.add('wafv2:UpdateRuleGroup');
     return this;
   }
@@ -1054,12 +1098,12 @@ export class Wafv2 extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
    */
-  public updateWebACL() {
+  public toUpdateWebACL() {
     this.add('wafv2:UpdateWebACL');
     return this;
   }
@@ -1076,8 +1120,8 @@ export class Wafv2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onWebacl(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/webacl/${Name}/${Id}';
@@ -1102,8 +1146,8 @@ export class Wafv2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onIpset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/ipset/${Name}/${Id}';
@@ -1128,8 +1172,8 @@ export class Wafv2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRulegroup(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/rulegroup/${Name}/${Id}';
@@ -1154,8 +1198,8 @@ export class Wafv2 extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRegexpatternset(scope: string, name: string, id: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:wafv2:${Region}:${Account}:${Scope}/regexpatternset/${Name}/${Id}';
@@ -1208,5 +1252,78 @@ export class Wafv2 extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value assoicated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetIPSet()
+   * - .toGetLoggingConfiguration()
+   * - .toGetRateBasedStatementManagedKeys()
+   * - .toGetRegexPatternSet()
+   * - .toGetRuleGroup()
+   * - .toGetWebACL()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUpdateIPSet()
+   * - .toUpdateRegexPatternSet()
+   * - .toUpdateRuleGroup()
+   * - .toUpdateWebACL()
+   *
+   * Applies to resource types:
+   * - webacl
+   * - ipset
+   * - rulegroup
+   * - regexpatternset
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateIPSet()
+   * - .toCreateRegexPatternSet()
+   * - .toCreateRuleGroup()
+   * - .toCreateWebACL()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

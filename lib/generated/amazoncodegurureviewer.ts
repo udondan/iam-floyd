@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html).
@@ -170,7 +170,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * - events:PutTargets
    * - iam:CreateServiceLinkedRole
    */
-  public associateRepository() {
+  public toAssociateRepository() {
     this.add('codeguru-reviewer:AssociateRepository');
     return this;
   }
@@ -180,7 +180,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public createConnectionToken() {
+  public toCreateConnectionToken() {
     this.add('codeguru-reviewer:CreateConnectionToken');
     return this;
   }
@@ -190,7 +190,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeCodeReview() {
+  public toDescribeCodeReview() {
     this.add('codeguru-reviewer:DescribeCodeReview');
     return this;
   }
@@ -200,7 +200,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeRecommendationFeedback() {
+  public toDescribeRecommendationFeedback() {
     this.add('codeguru-reviewer:DescribeRecommendationFeedback');
     return this;
   }
@@ -210,7 +210,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public describeRepositoryAssociation() {
+  public toDescribeRepositoryAssociation() {
     this.add('codeguru-reviewer:DescribeRepositoryAssociation');
     return this;
   }
@@ -225,7 +225,7 @@ export class CodeguruReviewer extends PolicyStatement {
    * - events:DeleteRule
    * - events:RemoveTargets
    */
-  public disassociateRepository() {
+  public toDisassociateRepository() {
     this.add('codeguru-reviewer:DisassociateRepository');
     return this;
   }
@@ -235,7 +235,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getMetricsData() {
+  public toGetMetricsData() {
     this.add('codeguru-reviewer:GetMetricsData');
     return this;
   }
@@ -245,7 +245,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listCodeReviews() {
+  public toListCodeReviews() {
     this.add('codeguru-reviewer:ListCodeReviews');
     return this;
   }
@@ -255,7 +255,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRecommendationFeedback() {
+  public toListRecommendationFeedback() {
     this.add('codeguru-reviewer:ListRecommendationFeedback');
     return this;
   }
@@ -265,7 +265,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRecommendations() {
+  public toListRecommendations() {
     this.add('codeguru-reviewer:ListRecommendations');
     return this;
   }
@@ -275,7 +275,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRepositoryAssociations() {
+  public toListRepositoryAssociations() {
     this.add('codeguru-reviewer:ListRepositoryAssociations');
     return this;
   }
@@ -285,7 +285,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public listThirdPartyRepositories() {
+  public toListThirdPartyRepositories() {
     this.add('codeguru-reviewer:ListThirdPartyRepositories');
     return this;
   }
@@ -295,7 +295,7 @@ export class CodeguruReviewer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public putRecommendationFeedback() {
+  public toPutRecommendationFeedback() {
     this.add('codeguru-reviewer:PutRecommendationFeedback');
     return this;
   }
@@ -342,8 +342,8 @@ export class CodeguruReviewer extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRepository(repositoryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}';
@@ -352,5 +352,21 @@ export class CodeguruReviewer extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - repository
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

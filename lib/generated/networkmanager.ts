@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [networkmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html).
@@ -456,12 +456,12 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - networkmanager:cgwArn
+   * Possible conditions:
+   * - .ifCgwArn()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html
    */
-  public associateCustomerGateway() {
+  public toAssociateCustomerGateway() {
     this.add('networkmanager:AssociateCustomerGateway');
     return this;
   }
@@ -473,7 +473,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateLink.html
    */
-  public associateLink() {
+  public toAssociateLink() {
     this.add('networkmanager:AssociateLink');
     return this;
   }
@@ -483,13 +483,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html
    */
-  public createDevice() {
+  public toCreateDevice() {
     this.add('networkmanager:CreateDevice');
     return this;
   }
@@ -499,16 +499,16 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * Dependent actions:
    * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html
    */
-  public createGlobalNetwork() {
+  public toCreateGlobalNetwork() {
     this.add('networkmanager:CreateGlobalNetwork');
     return this;
   }
@@ -518,13 +518,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html
    */
-  public createLink() {
+  public toCreateLink() {
     this.add('networkmanager:CreateLink');
     return this;
   }
@@ -534,13 +534,13 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html
    */
-  public createSite() {
+  public toCreateSite() {
     this.add('networkmanager:CreateSite');
     return this;
   }
@@ -552,7 +552,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteDevice.html
    */
-  public deleteDevice() {
+  public toDeleteDevice() {
     this.add('networkmanager:DeleteDevice');
     return this;
   }
@@ -564,7 +564,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteGlobalNetwork.html
    */
-  public deleteGlobalNetwork() {
+  public toDeleteGlobalNetwork() {
     this.add('networkmanager:DeleteGlobalNetwork');
     return this;
   }
@@ -576,7 +576,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteLink.html
    */
-  public deleteLink() {
+  public toDeleteLink() {
     this.add('networkmanager:DeleteLink');
     return this;
   }
@@ -588,7 +588,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteSite.html
    */
-  public deleteSite() {
+  public toDeleteSite() {
     this.add('networkmanager:DeleteSite');
     return this;
   }
@@ -598,12 +598,12 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - networkmanager:tgwArn
+   * Possible conditions:
+   * - .ifTgwArn()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html
    */
-  public deregisterTransitGateway() {
+  public toDeregisterTransitGateway() {
     this.add('networkmanager:DeregisterTransitGateway');
     return this;
   }
@@ -615,7 +615,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DescribeGlobalNetworks.html
    */
-  public describeGlobalNetworks() {
+  public toDescribeGlobalNetworks() {
     this.add('networkmanager:DescribeGlobalNetworks');
     return this;
   }
@@ -625,12 +625,12 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - networkmanager:cgwArn
+   * Possible conditions:
+   * - .ifCgwArn()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html
    */
-  public disassociateCustomerGateway() {
+  public toDisassociateCustomerGateway() {
     this.add('networkmanager:DisassociateCustomerGateway');
     return this;
   }
@@ -642,7 +642,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateLink.html
    */
-  public disassociateLink() {
+  public toDisassociateLink() {
     this.add('networkmanager:DisassociateLink');
     return this;
   }
@@ -654,7 +654,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCustomerGatewayAssociations.html
    */
-  public getCustomerGatewayAssociations() {
+  public toGetCustomerGatewayAssociations() {
     this.add('networkmanager:GetCustomerGatewayAssociations');
     return this;
   }
@@ -666,7 +666,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDevices.html
    */
-  public getDevices() {
+  public toGetDevices() {
     this.add('networkmanager:GetDevices');
     return this;
   }
@@ -678,7 +678,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinkAssociations.html
    */
-  public getLinkAssociations() {
+  public toGetLinkAssociations() {
     this.add('networkmanager:GetLinkAssociations');
     return this;
   }
@@ -690,7 +690,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinks.html
    */
-  public getLinks() {
+  public toGetLinks() {
     this.add('networkmanager:GetLinks');
     return this;
   }
@@ -702,7 +702,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSites.html
    */
-  public getSites() {
+  public toGetSites() {
     this.add('networkmanager:GetSites');
     return this;
   }
@@ -714,7 +714,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRegistrations.html
    */
-  public getTransitGatewayRegistrations() {
+  public toGetTransitGatewayRegistrations() {
     this.add('networkmanager:GetTransitGatewayRegistrations');
     return this;
   }
@@ -724,12 +724,12 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('networkmanager:ListTagsForResource');
     return this;
   }
@@ -739,12 +739,12 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - networkmanager:tgwArn
+   * Possible conditions:
+   * - .ifTgwArn()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html
    */
-  public registerTransitGateway() {
+  public toRegisterTransitGateway() {
     this.add('networkmanager:RegisterTransitGateway');
     return this;
   }
@@ -754,14 +754,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('networkmanager:TagResource');
     return this;
   }
@@ -771,12 +771,12 @@ export class Networkmanager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('networkmanager:UntagResource');
     return this;
   }
@@ -788,7 +788,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDevice.html
    */
-  public updateDevice() {
+  public toUpdateDevice() {
     this.add('networkmanager:UpdateDevice');
     return this;
   }
@@ -800,7 +800,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateGlobalNetwork.html
    */
-  public updateGlobalNetwork() {
+  public toUpdateGlobalNetwork() {
     this.add('networkmanager:UpdateGlobalNetwork');
     return this;
   }
@@ -812,7 +812,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateLink.html
    */
-  public updateLink() {
+  public toUpdateLink() {
     this.add('networkmanager:UpdateLink');
     return this;
   }
@@ -824,7 +824,7 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateSite.html
    */
-  public updateSite() {
+  public toUpdateSite() {
     this.add('networkmanager:UpdateSite');
     return this;
   }
@@ -838,8 +838,8 @@ export class Networkmanager extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onGlobalNetwork(resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}';
@@ -859,8 +859,8 @@ export class Networkmanager extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSite(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}';
@@ -881,8 +881,8 @@ export class Networkmanager extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onLink(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}';
@@ -903,8 +903,8 @@ export class Networkmanager extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDevice(globalNetworkId: string, resourceId: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}';
@@ -916,14 +916,81 @@ export class Networkmanager extends PolicyStatement {
   }
 
   /**
-   * Controls which customer gateways can be associated or disassociated
+   * Filters actions based on the presence of tag key-value pairs in the request
    *
-   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateDevice()
+   * - .toCreateGlobalNetwork()
+   * - .toCreateLink()
+   * - .toCreateSite()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   *
+   * Applies to resource types:
+   * - global-network
+   * - site
+   * - link
+   * - device
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateDevice()
+   * - .toCreateGlobalNetwork()
+   * - .toCreateLink()
+   * - .toCreateSite()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCgwArn(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Controls which customer gateways can be associated or disassociated
+   *
+   * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
+   *
+   * Applies to actions:
+   * - .toAssociateCustomerGateway()
+   * - .toDisassociateCustomerGateway()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifCgwArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`networkmanager:cgwArn`, value, operator || 'StringLike');
   }
 
@@ -932,10 +999,14 @@ export class Networkmanager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html
    *
+   * Applies to actions:
+   * - .toDeregisterTransitGateway()
+   * - .toRegisterTransitGateway()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTgwArn(value: string | string[], operator?: string) {
+  public ifTgwArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`networkmanager:tgwArn`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [codeguru-profiler](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html).
@@ -263,7 +263,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AddNotificationChannels.html
    */
-  public addNotificationChannels() {
+  public toAddNotificationChannels() {
     this.add('codeguru-profiler:AddNotificationChannels');
     return this;
   }
@@ -275,7 +275,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_BatchGetFrameMetricData.html
    */
-  public batchGetFrameMetricData() {
+  public toBatchGetFrameMetricData() {
     this.add('codeguru-profiler:BatchGetFrameMetricData');
     return this;
   }
@@ -287,7 +287,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html
    */
-  public configureAgent() {
+  public toConfigureAgent() {
     this.add('codeguru-profiler:ConfigureAgent');
     return this;
   }
@@ -297,13 +297,13 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_CreateProfilingGroup.html
    */
-  public createProfilingGroup() {
+  public toCreateProfilingGroup() {
     this.add('codeguru-profiler:CreateProfilingGroup');
     return this;
   }
@@ -315,7 +315,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DeleteProfilingGroup.html
    */
-  public deleteProfilingGroup() {
+  public toDeleteProfilingGroup() {
     this.add('codeguru-profiler:DeleteProfilingGroup');
     return this;
   }
@@ -327,7 +327,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DescribeProfilingGroup.html
    */
-  public describeProfilingGroup() {
+  public toDescribeProfilingGroup() {
     this.add('codeguru-profiler:DescribeProfilingGroup');
     return this;
   }
@@ -339,7 +339,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReportAccountSummary.html
    */
-  public getFindingsReportAccountSummary() {
+  public toGetFindingsReportAccountSummary() {
     this.add('codeguru-profiler:GetFindingsReportAccountSummary');
     return this;
   }
@@ -351,7 +351,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetNotificationConfiguration.html
    */
-  public getNotificationConfiguration() {
+  public toGetNotificationConfiguration() {
     this.add('codeguru-profiler:GetNotificationConfiguration');
     return this;
   }
@@ -363,7 +363,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetPolicy.html
    */
-  public getPolicy() {
+  public toGetPolicy() {
     this.add('codeguru-profiler:GetPolicy');
     return this;
   }
@@ -375,7 +375,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html
    */
-  public getProfile() {
+  public toGetProfile() {
     this.add('codeguru-profiler:GetProfile');
     return this;
   }
@@ -387,7 +387,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetRecommendations.html
    */
-  public getRecommendations() {
+  public toGetRecommendations() {
     this.add('codeguru-profiler:GetRecommendations');
     return this;
   }
@@ -399,7 +399,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListFindingsReports.html
    */
-  public listFindingsReports() {
+  public toListFindingsReports() {
     this.add('codeguru-profiler:ListFindingsReports');
     return this;
   }
@@ -411,7 +411,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html
    */
-  public listProfileTimes() {
+  public toListProfileTimes() {
     this.add('codeguru-profiler:ListProfileTimes');
     return this;
   }
@@ -423,7 +423,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfilingGroups.html
    */
-  public listProfilingGroups() {
+  public toListProfilingGroups() {
     this.add('codeguru-profiler:ListProfilingGroups');
     return this;
   }
@@ -435,7 +435,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('codeguru-profiler:ListTagsForResource');
     return this;
   }
@@ -447,7 +447,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html
    */
-  public postAgentProfile() {
+  public toPostAgentProfile() {
     this.add('codeguru-profiler:PostAgentProfile');
     return this;
   }
@@ -459,7 +459,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PutPermission.html
    */
-  public putPermission() {
+  public toPutPermission() {
     this.add('codeguru-profiler:PutPermission');
     return this;
   }
@@ -471,7 +471,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemoveNotificationChannel.html
    */
-  public removeNotificationChannel() {
+  public toRemoveNotificationChannel() {
     this.add('codeguru-profiler:RemoveNotificationChannel');
     return this;
   }
@@ -483,7 +483,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemovePermission.html
    */
-  public removePermission() {
+  public toRemovePermission() {
     this.add('codeguru-profiler:RemovePermission');
     return this;
   }
@@ -495,7 +495,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_SubmitFeedback.html
    */
-  public submitFeedback() {
+  public toSubmitFeedback() {
     this.add('codeguru-profiler:SubmitFeedback');
     return this;
   }
@@ -505,13 +505,13 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('codeguru-profiler:TagResource');
     return this;
   }
@@ -521,13 +521,13 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('codeguru-profiler:UntagResource');
     return this;
   }
@@ -539,7 +539,7 @@ export class CodeguruProfiler extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UpdateProfilingGroup.html
    */
-  public updateProfilingGroup() {
+  public toUpdateProfilingGroup() {
     this.add('codeguru-profiler:UpdateProfilingGroup');
     return this;
   }
@@ -554,8 +554,8 @@ export class CodeguruProfiler extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onProfilingGroup(profilingGroupName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codeguru-profiler:${Region}:${Account}:profilingGroup/${ProfilingGroupName}';
@@ -564,5 +564,56 @@ export class CodeguruProfiler extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateProfilingGroup()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - ProfilingGroup
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateProfilingGroup()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

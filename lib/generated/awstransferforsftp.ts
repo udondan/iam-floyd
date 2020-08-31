@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [transfer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstransferforsftp.html).
@@ -12,6 +12,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html",
       "description": "Enables the caller to create a server.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "conditions": [
         "aws:TagKeys",
         "aws:RequestTag/${TagKey}"
@@ -189,6 +192,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html",
       "description": "Enables the caller to update the configuration of a server",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "server": {
           "required": true
@@ -199,6 +205,9 @@ export class Transfer extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html",
       "description": "Enables the caller to update the configuration of a user",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:PassRole"
+      ],
       "resourceTypes": {
         "user": {
           "required": true
@@ -239,13 +248,16 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
+   * Dependent actions:
+   * - iam:PassRole
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html
    */
-  public createServer() {
+  public toCreateServer() {
     this.add('transfer:CreateServer');
     return this;
   }
@@ -255,16 +267,16 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * Dependent actions:
    * - iam:PassRole
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateUser.html
    */
-  public createUser() {
+  public toCreateUser() {
     this.add('transfer:CreateUser');
     return this;
   }
@@ -276,7 +288,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteServer.html
    */
-  public deleteServer() {
+  public toDeleteServer() {
     this.add('transfer:DeleteServer');
     return this;
   }
@@ -288,7 +300,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteSshPublicKey.html
    */
-  public deleteSshPublicKey() {
+  public toDeleteSshPublicKey() {
     this.add('transfer:DeleteSshPublicKey');
     return this;
   }
@@ -300,7 +312,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DeleteUser.html
    */
-  public deleteUser() {
+  public toDeleteUser() {
     this.add('transfer:DeleteUser');
     return this;
   }
@@ -312,7 +324,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeServer.html
    */
-  public describeServer() {
+  public toDescribeServer() {
     this.add('transfer:DescribeServer');
     return this;
   }
@@ -324,7 +336,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_DescribeUser.html
    */
-  public describeUser() {
+  public toDescribeUser() {
     this.add('transfer:DescribeUser');
     return this;
   }
@@ -336,7 +348,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ImportSshPublicKey.html
    */
-  public importSshPublicKey() {
+  public toImportSshPublicKey() {
     this.add('transfer:ImportSshPublicKey');
     return this;
   }
@@ -348,7 +360,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListServers.html
    */
-  public listServers() {
+  public toListServers() {
     this.add('transfer:ListServers');
     return this;
   }
@@ -360,7 +372,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('transfer:ListTagsForResource');
     return this;
   }
@@ -372,7 +384,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_ListUsers.html
    */
-  public listUsers() {
+  public toListUsers() {
     this.add('transfer:ListUsers');
     return this;
   }
@@ -384,7 +396,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StartServer.html
    */
-  public startServer() {
+  public toStartServer() {
     this.add('transfer:StartServer');
     return this;
   }
@@ -396,7 +408,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_StopServer.html
    */
-  public stopServer() {
+  public toStopServer() {
     this.add('transfer:StopServer');
     return this;
   }
@@ -406,13 +418,13 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('transfer:TagResource');
     return this;
   }
@@ -424,7 +436,7 @@ export class Transfer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_TestIdentityProvider.html
    */
-  public testIdentityProvider() {
+  public toTestIdentityProvider() {
     this.add('transfer:TestIdentityProvider');
     return this;
   }
@@ -434,12 +446,12 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('transfer:UntagResource');
     return this;
   }
@@ -449,9 +461,12 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html
    */
-  public updateServer() {
+  public toUpdateServer() {
     this.add('transfer:UpdateServer');
     return this;
   }
@@ -461,9 +476,12 @@ export class Transfer extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Dependent actions:
+   * - iam:PassRole
+   *
    * https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateUser.html
    */
-  public updateUser() {
+  public toUpdateUser() {
     this.add('transfer:UpdateUser');
     return this;
   }
@@ -479,8 +497,8 @@ export class Transfer extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onUser(serverId: string, username: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:transfer:${Region}:${Account}:user/${ServerId}/${Username}';
@@ -502,8 +520,8 @@ export class Transfer extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onServer(serverId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:transfer:${Region}:${Account}:server/${ServerId}';
@@ -512,5 +530,52 @@ export class Transfer extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * A key that is present in the request the user makes.
+   *
+   * Applies to actions:
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * A key that is present on the resource the user makes.
+   *
+   * Applies to resource types:
+   * - user
+   * - server
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The list of all the tag key names associated with the resource in the request.
+   *
+   * Applies to actions:
+   * - .toCreateServer()
+   * - .toCreateUser()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

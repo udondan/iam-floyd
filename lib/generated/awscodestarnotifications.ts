@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [codestar-notifications](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarnotifications.html).
@@ -200,14 +200,14 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - codestar-notifications:NotificationsForResource
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNotificationsForResource()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_CreateNotificationRule.html
    */
-  public createNotificationRule() {
+  public toCreateNotificationRule() {
     this.add('codestar-notifications:CreateNotificationRule');
     return this;
   }
@@ -217,15 +217,15 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - codestar-notifications:NotificationsForResource
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNotificationsForResource()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteNotificationRule.html
    */
-  public deleteNotificationRule() {
+  public toDeleteNotificationRule() {
     this.add('codestar-notifications:DeleteNotificationRule');
     return this;
   }
@@ -235,13 +235,13 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DeleteTarget.html
    */
-  public deleteTarget() {
+  public toDeleteTarget() {
     this.add('codestar-notifications:DeleteTarget');
     return this;
   }
@@ -251,15 +251,15 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - codestar-notifications:NotificationsForResource
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNotificationsForResource()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_DescribeNotificationRule.html
    */
-  public describeNotificationRule() {
+  public toDescribeNotificationRule() {
     this.add('codestar-notifications:DescribeNotificationRule');
     return this;
   }
@@ -271,7 +271,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListEventTypes.html
    */
-  public listEventTypes() {
+  public toListEventTypes() {
     this.add('codestar-notifications:ListEventTypes');
     return this;
   }
@@ -283,7 +283,7 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListNotificationRules.html
    */
-  public listNotificationRules() {
+  public toListNotificationRules() {
     this.add('codestar-notifications:ListNotificationRules');
     return this;
   }
@@ -293,13 +293,13 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('codestar-notifications:ListTagsForResource');
     return this;
   }
@@ -309,13 +309,13 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_ListTargets.html
    */
-  public listTargets() {
+  public toListTargets() {
     this.add('codestar-notifications:ListTargets');
     return this;
   }
@@ -325,15 +325,15 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - codestar-notifications:NotificationsForResource
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNotificationsForResource()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Subscribe.html
    */
-  public subscribe() {
+  public toSubscribe() {
     this.add('codestar-notifications:Subscribe');
     return this;
   }
@@ -343,14 +343,14 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('codestar-notifications:TagResource');
     return this;
   }
@@ -360,15 +360,15 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - codestar-notifications:NotificationsForResource
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNotificationsForResource()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_Unsubscribe.html
    */
-  public unsubscribe() {
+  public toUnsubscribe() {
     this.add('codestar-notifications:Unsubscribe');
     return this;
   }
@@ -378,13 +378,13 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('codestar-notifications:UntagResource');
     return this;
   }
@@ -394,15 +394,15 @@ export class CodestarNotifications extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
-   * - codestar-notifications:NotificationsForResource
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   * - .ifNotificationsForResource()
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/APIReference/API_UpdateNotificationRule.html
    */
-  public updateNotificationRule() {
+  public toUpdateNotificationRule() {
     this.add('codestar-notifications:UpdateNotificationRule');
     return this;
   }
@@ -417,8 +417,8 @@ export class CodestarNotifications extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onNotificationrule(notificationRuleId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:codestar-notifications:${Region}:${Account}:notificationrule/${NotificationRuleId}';
@@ -430,14 +430,97 @@ export class CodestarNotifications extends PolicyStatement {
   }
 
   /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDeleteTarget()
+   * - .toDescribeNotificationRule()
+   * - .toListTagsForResource()
+   * - .toListTargets()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
+   * - .toUpdateNotificationRule()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toDeleteNotificationRule()
+   * - .toDescribeNotificationRule()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUpdateNotificationRule()
+   *
+   * Applies to resource types:
+   * - notificationrule
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDeleteTarget()
+   * - .toDescribeNotificationRule()
+   * - .toListTagsForResource()
+   * - .toListTargets()
+   * - .toSubscribe()
+   * - .toTagResource()
+   * - .toUnsubscribe()
+   * - .toUntagResource()
+   * - .toUpdateNotificationRule()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters access based on the ARN of the resource for which notifications are configured
    *
    * https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security_iam_id-based-policy-examples.html
    *
+   * Applies to actions:
+   * - .toCreateNotificationRule()
+   * - .toDeleteNotificationRule()
+   * - .toDescribeNotificationRule()
+   * - .toSubscribe()
+   * - .toUnsubscribe()
+   * - .toUpdateNotificationRule()
+   *
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifNotificationsForResource(value: string | string[], operator?: string) {
+  public ifNotificationsForResource(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`codestar-notifications:NotificationsForResource`, value, operator || 'ArnEquals');
   }
 }

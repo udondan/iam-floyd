@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [swf](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsimpleworkflowservice.html).
@@ -577,7 +577,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelTimer.html
    */
-  public cancelTimer() {
+  public toCancelTimer() {
     this.add('swf:CancelTimer');
     return this;
   }
@@ -589,7 +589,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelWorkflowExecution.html
    */
-  public cancelWorkflowExecution() {
+  public toCancelWorkflowExecution() {
     this.add('swf:CancelWorkflowExecution');
     return this;
   }
@@ -601,7 +601,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CompleteWorkflowExecution.html
    */
-  public completeWorkflowExecution() {
+  public toCompleteWorkflowExecution() {
     this.add('swf:CompleteWorkflowExecution');
     return this;
   }
@@ -613,7 +613,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ContinueAsNewWorkflowExecution.html
    */
-  public continueAsNewWorkflowExecution() {
+  public toContinueAsNewWorkflowExecution() {
     this.add('swf:ContinueAsNewWorkflowExecution');
     return this;
   }
@@ -623,14 +623,14 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountClosedWorkflowExecutions.html
    */
-  public countClosedWorkflowExecutions() {
+  public toCountClosedWorkflowExecutions() {
     this.add('swf:CountClosedWorkflowExecutions');
     return this;
   }
@@ -640,14 +640,14 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountOpenWorkflowExecutions.html
    */
-  public countOpenWorkflowExecutions() {
+  public toCountOpenWorkflowExecutions() {
     this.add('swf:CountOpenWorkflowExecutions');
     return this;
   }
@@ -657,12 +657,12 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingActivityTasks.html
    */
-  public countPendingActivityTasks() {
+  public toCountPendingActivityTasks() {
     this.add('swf:CountPendingActivityTasks');
     return this;
   }
@@ -672,12 +672,12 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_CountPendingDecisionTasks.html
    */
-  public countPendingDecisionTasks() {
+  public toCountPendingDecisionTasks() {
     this.add('swf:CountPendingDecisionTasks');
     return this;
   }
@@ -687,13 +687,13 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:activityType.name
-   * - swf:activityType.version
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html
    */
-  public deprecateActivityType() {
+  public toDeprecateActivityType() {
     this.add('swf:DeprecateActivityType');
     return this;
   }
@@ -705,7 +705,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateDomain.html
    */
-  public deprecateDomain() {
+  public toDeprecateDomain() {
     this.add('swf:DeprecateDomain');
     return this;
   }
@@ -715,13 +715,13 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateWorkflowType.html
    */
-  public deprecateWorkflowType() {
+  public toDeprecateWorkflowType() {
     this.add('swf:DeprecateWorkflowType');
     return this;
   }
@@ -731,13 +731,13 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:activityType.name
-   * - swf:activityType.version
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeActivityType.html
    */
-  public describeActivityType() {
+  public toDescribeActivityType() {
     this.add('swf:DescribeActivityType');
     return this;
   }
@@ -749,7 +749,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeDomain.html
    */
-  public describeDomain() {
+  public toDescribeDomain() {
     this.add('swf:DescribeDomain');
     return this;
   }
@@ -761,7 +761,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowExecution.html
    */
-  public describeWorkflowExecution() {
+  public toDescribeWorkflowExecution() {
     this.add('swf:DescribeWorkflowExecution');
     return this;
   }
@@ -771,13 +771,13 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html
    */
-  public describeWorkflowType() {
+  public toDescribeWorkflowType() {
     this.add('swf:DescribeWorkflowType');
     return this;
   }
@@ -789,7 +789,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_FailWorkflowExecution.html
    */
-  public failWorkflowExecution() {
+  public toFailWorkflowExecution() {
     this.add('swf:FailWorkflowExecution');
     return this;
   }
@@ -801,7 +801,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_GetWorkflowExecutionHistory.html
    */
-  public getWorkflowExecutionHistory() {
+  public toGetWorkflowExecutionHistory() {
     this.add('swf:GetWorkflowExecutionHistory');
     return this;
   }
@@ -813,7 +813,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListActivityTypes.html
    */
-  public listActivityTypes() {
+  public toListActivityTypes() {
     this.add('swf:ListActivityTypes');
     return this;
   }
@@ -823,14 +823,14 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListClosedWorkflowExecutions.html
    */
-  public listClosedWorkflowExecutions() {
+  public toListClosedWorkflowExecutions() {
     this.add('swf:ListClosedWorkflowExecutions');
     return this;
   }
@@ -842,7 +842,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListDomains.html
    */
-  public listDomains() {
+  public toListDomains() {
     this.add('swf:ListDomains');
     return this;
   }
@@ -852,14 +852,14 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - swf:tagFilter.tag
-   * - swf:typeFilter.name
-   * - swf:typeFilter.version
+   * Possible conditions:
+   * - .ifTagFilterTag()
+   * - .ifTypeFilterName()
+   * - .ifTypeFilterVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListOpenWorkflowExecutions.html
    */
-  public listOpenWorkflowExecutions() {
+  public toListOpenWorkflowExecutions() {
     this.add('swf:ListOpenWorkflowExecutions');
     return this;
   }
@@ -871,7 +871,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('swf:ListTagsForResource');
     return this;
   }
@@ -883,7 +883,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListWorkflowTypes.html
    */
-  public listWorkflowTypes() {
+  public toListWorkflowTypes() {
     this.add('swf:ListWorkflowTypes');
     return this;
   }
@@ -893,12 +893,12 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html
    */
-  public pollForActivityTask() {
+  public toPollForActivityTask() {
     this.add('swf:PollForActivityTask');
     return this;
   }
@@ -908,12 +908,12 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:taskList.name
+   * Possible conditions:
+   * - .ifTaskListName()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html
    */
-  public pollForDecisionTask() {
+  public toPollForDecisionTask() {
     this.add('swf:PollForDecisionTask');
     return this;
   }
@@ -925,7 +925,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordActivityTaskHeartbeat.html
    */
-  public recordActivityTaskHeartbeat() {
+  public toRecordActivityTaskHeartbeat() {
     this.add('swf:RecordActivityTaskHeartbeat');
     return this;
   }
@@ -937,7 +937,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordMarker.html
    */
-  public recordMarker() {
+  public toRecordMarker() {
     this.add('swf:RecordMarker');
     return this;
   }
@@ -947,14 +947,14 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:defaultTaskList.name
-   * - swf:name
-   * - swf:version
+   * Possible conditions:
+   * - .ifDefaultTaskListName()
+   * - .ifName()
+   * - .ifVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html
    */
-  public registerActivityType() {
+  public toRegisterActivityType() {
     this.add('swf:RegisterActivityType');
     return this;
   }
@@ -964,13 +964,13 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterDomain.html
    */
-  public registerDomain() {
+  public toRegisterDomain() {
     this.add('swf:RegisterDomain');
     return this;
   }
@@ -980,14 +980,14 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:defaultTaskList.name
-   * - swf:name
-   * - swf:version
+   * Possible conditions:
+   * - .ifDefaultTaskListName()
+   * - .ifName()
+   * - .ifVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterWorkflowType.html
    */
-  public registerWorkflowType() {
+  public toRegisterWorkflowType() {
     this.add('swf:RegisterWorkflowType');
     return this;
   }
@@ -999,7 +999,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelActivityTask.html
    */
-  public requestCancelActivityTask() {
+  public toRequestCancelActivityTask() {
     this.add('swf:RequestCancelActivityTask');
     return this;
   }
@@ -1011,7 +1011,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelExternalWorkflowExecution.html
    */
-  public requestCancelExternalWorkflowExecution() {
+  public toRequestCancelExternalWorkflowExecution() {
     this.add('swf:RequestCancelExternalWorkflowExecution');
     return this;
   }
@@ -1023,7 +1023,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelWorkflowExecution.html
    */
-  public requestCancelWorkflowExecution() {
+  public toRequestCancelWorkflowExecution() {
     this.add('swf:RequestCancelWorkflowExecution');
     return this;
   }
@@ -1035,7 +1035,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCanceled.html
    */
-  public respondActivityTaskCanceled() {
+  public toRespondActivityTaskCanceled() {
     this.add('swf:RespondActivityTaskCanceled');
     return this;
   }
@@ -1045,21 +1045,21 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:activityType.name
-   * - swf:activityType.version
-   * - swf:tagList.member.0
-   * - swf:tagList.member.1
-   * - swf:tagList.member.2
-   * - swf:tagList.member.3
-   * - swf:tagList.member.4
-   * - swf:taskList.name
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifActivityTypeName()
+   * - .ifActivityTypeVersion()
+   * - .ifTagListMember0()
+   * - .ifTagListMember1()
+   * - .ifTagListMember2()
+   * - .ifTagListMember3()
+   * - .ifTagListMember4()
+   * - .ifTaskListName()
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCompleted.html
    */
-  public respondActivityTaskCompleted() {
+  public toRespondActivityTaskCompleted() {
     this.add('swf:RespondActivityTaskCompleted');
     return this;
   }
@@ -1071,7 +1071,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskFailed.html
    */
-  public respondActivityTaskFailed() {
+  public toRespondActivityTaskFailed() {
     this.add('swf:RespondActivityTaskFailed');
     return this;
   }
@@ -1083,7 +1083,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondDecisionTaskCompleted.html
    */
-  public respondDecisionTaskCompleted() {
+  public toRespondDecisionTaskCompleted() {
     this.add('swf:RespondDecisionTaskCompleted');
     return this;
   }
@@ -1095,7 +1095,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_ScheduleActivityTask.html
    */
-  public scheduleActivityTask() {
+  public toScheduleActivityTask() {
     this.add('swf:ScheduleActivityTask');
     return this;
   }
@@ -1107,7 +1107,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalExternalWorkflowExecution.html
    */
-  public signalExternalWorkflowExecution() {
+  public toSignalExternalWorkflowExecution() {
     this.add('swf:SignalExternalWorkflowExecution');
     return this;
   }
@@ -1119,7 +1119,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalWorkflowExecution.html
    */
-  public signalWorkflowExecution() {
+  public toSignalWorkflowExecution() {
     this.add('swf:SignalWorkflowExecution');
     return this;
   }
@@ -1131,7 +1131,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartChildWorkflowExecution.html
    */
-  public startChildWorkflowExecution() {
+  public toStartChildWorkflowExecution() {
     this.add('swf:StartChildWorkflowExecution');
     return this;
   }
@@ -1143,7 +1143,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartTimer.html
    */
-  public startTimer() {
+  public toStartTimer() {
     this.add('swf:StartTimer');
     return this;
   }
@@ -1153,19 +1153,19 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - swf:tagList.member.0
-   * - swf:tagList.member.1
-   * - swf:tagList.member.2
-   * - swf:tagList.member.3
-   * - swf:tagList.member.4
-   * - swf:taskList.name
-   * - swf:workflowType.name
-   * - swf:workflowType.version
+   * Possible conditions:
+   * - .ifTagListMember0()
+   * - .ifTagListMember1()
+   * - .ifTagListMember2()
+   * - .ifTagListMember3()
+   * - .ifTagListMember4()
+   * - .ifTaskListName()
+   * - .ifWorkflowTypeName()
+   * - .ifWorkflowTypeVersion()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html
    */
-  public startWorkflowExecution() {
+  public toStartWorkflowExecution() {
     this.add('swf:StartWorkflowExecution');
     return this;
   }
@@ -1175,13 +1175,13 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('swf:TagResource');
     return this;
   }
@@ -1193,7 +1193,7 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_TerminateWorkflowExecution.html
    */
-  public terminateWorkflowExecution() {
+  public toTerminateWorkflowExecution() {
     this.add('swf:TerminateWorkflowExecution');
     return this;
   }
@@ -1203,12 +1203,12 @@ export class Swf extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amazonswf/latest/apireference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('swf:UntagResource');
     return this;
   }
@@ -1222,8 +1222,8 @@ export class Swf extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomain(domainName: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:swf::${Account}:domain/${DomainName}';
@@ -1234,14 +1234,69 @@ export class Swf extends PolicyStatement {
   }
 
   /**
-   * Constrains the policy statement to only an activity type of the specified name.
+   * Tag for request.
    *
-   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toRegisterDomain()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Tag for resource.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - domain
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Tag for key.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toRegisterDomain()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifActivityTypeName(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Constrains the policy statement to only an activity type of the specified name.
+   *
+   * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
+   *
+   * Applies to actions:
+   * - .toDeprecateActivityType()
+   * - .toDescribeActivityType()
+   * - .toRespondActivityTaskCompleted()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifActivityTypeName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:activityType.name`, value, operator || 'StringLike');
   }
 
@@ -1250,10 +1305,15 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toDeprecateActivityType()
+   * - .toDescribeActivityType()
+   * - .toRespondActivityTaskCompleted()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifActivityTypeVersion(value: string | string[], operator?: string) {
+  public ifActivityTypeVersion(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:activityType.version`, value, operator || 'StringLike');
   }
 
@@ -1262,10 +1322,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRegisterActivityType()
+   * - .toRegisterWorkflowType()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDefaultTaskListName(value: string | string[], operator?: string) {
+  public ifDefaultTaskListName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:defaultTaskList.name`, value, operator || 'StringLike');
   }
 
@@ -1274,10 +1338,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRegisterActivityType()
+   * - .toRegisterWorkflowType()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifName(value: string | string[], operator?: string) {
+  public ifName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:name`, value, operator || 'StringLike');
   }
 
@@ -1286,10 +1354,16 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toCountClosedWorkflowExecutions()
+   * - .toCountOpenWorkflowExecutions()
+   * - .toListClosedWorkflowExecutions()
+   * - .toListOpenWorkflowExecutions()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagFilterTag(value: string | string[], operator?: string) {
+  public ifTagFilterTag(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:tagFilter.tag`, value, operator || 'StringLike');
   }
 
@@ -1298,10 +1372,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember0(value: string | string[], operator?: string) {
+  public ifTagListMember0(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:tagList.member.0`, value, operator || 'StringLike');
   }
 
@@ -1310,10 +1388,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember1(value: string | string[], operator?: string) {
+  public ifTagListMember1(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:tagList.member.1`, value, operator || 'StringLike');
   }
 
@@ -1322,10 +1404,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember2(value: string | string[], operator?: string) {
+  public ifTagListMember2(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:tagList.member.2`, value, operator || 'StringLike');
   }
 
@@ -1334,10 +1420,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember3(value: string | string[], operator?: string) {
+  public ifTagListMember3(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:tagList.member.3`, value, operator || 'StringLike');
   }
 
@@ -1346,10 +1436,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTagListMember4(value: string | string[], operator?: string) {
+  public ifTagListMember4(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:tagList.member.4`, value, operator || 'StringLike');
   }
 
@@ -1358,10 +1452,18 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toCountPendingActivityTasks()
+   * - .toCountPendingDecisionTasks()
+   * - .toPollForActivityTask()
+   * - .toPollForDecisionTask()
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTaskListName(value: string | string[], operator?: string) {
+  public ifTaskListName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:taskList.name`, value, operator || 'StringLike');
   }
 
@@ -1370,10 +1472,16 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toCountClosedWorkflowExecutions()
+   * - .toCountOpenWorkflowExecutions()
+   * - .toListClosedWorkflowExecutions()
+   * - .toListOpenWorkflowExecutions()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTypeFilterName(value: string | string[], operator?: string) {
+  public ifTypeFilterName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:typeFilter.name`, value, operator || 'StringLike');
   }
 
@@ -1382,10 +1490,16 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toCountClosedWorkflowExecutions()
+   * - .toCountOpenWorkflowExecutions()
+   * - .toListClosedWorkflowExecutions()
+   * - .toListOpenWorkflowExecutions()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTypeFilterVersion(value: string | string[], operator?: string) {
+  public ifTypeFilterVersion(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:typeFilter.version`, value, operator || 'StringLike');
   }
 
@@ -1394,10 +1508,14 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toRegisterActivityType()
+   * - .toRegisterWorkflowType()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersion(value: string | string[], operator?: string) {
+  public ifVersion(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:version`, value, operator || 'StringLike');
   }
 
@@ -1406,10 +1524,16 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toDeprecateWorkflowType()
+   * - .toDescribeWorkflowType()
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWorkflowTypeName(value: string | string[], operator?: string) {
+  public ifWorkflowTypeName(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:workflowType.name`, value, operator || 'StringLike');
   }
 
@@ -1418,10 +1542,16 @@ export class Swf extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html##swf-dev-iam.api
    *
+   * Applies to actions:
+   * - .toDeprecateWorkflowType()
+   * - .toDescribeWorkflowType()
+   * - .toRespondActivityTaskCompleted()
+   * - .toStartWorkflowExecution()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWorkflowTypeVersion(value: string | string[], operator?: string) {
+  public ifWorkflowTypeVersion(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`swf:workflowType.version`, value, operator || 'StringLike');
   }
 }

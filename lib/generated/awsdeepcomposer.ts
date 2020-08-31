@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [deepcomposer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html).
@@ -224,7 +224,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public associateCoupon() {
+  public toAssociateCoupon() {
     this.add('deepcomposer:AssociateCoupon');
     return this;
   }
@@ -236,7 +236,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public createAudio() {
+  public toCreateAudio() {
     this.add('deepcomposer:CreateAudio');
     return this;
   }
@@ -246,13 +246,13 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public createComposition() {
+  public toCreateComposition() {
     this.add('deepcomposer:CreateComposition');
     return this;
   }
@@ -262,13 +262,13 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public createModel() {
+  public toCreateModel() {
     this.add('deepcomposer:CreateModel');
     return this;
   }
@@ -280,7 +280,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public deleteComposition() {
+  public toDeleteComposition() {
     this.add('deepcomposer:DeleteComposition');
     return this;
   }
@@ -292,7 +292,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public deleteModel() {
+  public toDeleteModel() {
     this.add('deepcomposer:DeleteModel');
     return this;
   }
@@ -302,12 +302,12 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public getComposition() {
+  public toGetComposition() {
     this.add('deepcomposer:GetComposition');
     return this;
   }
@@ -317,12 +317,12 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public getModel() {
+  public toGetModel() {
     this.add('deepcomposer:GetModel');
     return this;
   }
@@ -334,7 +334,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public getSampleModel() {
+  public toGetSampleModel() {
     this.add('deepcomposer:GetSampleModel');
     return this;
   }
@@ -346,7 +346,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public listCompositions() {
+  public toListCompositions() {
     this.add('deepcomposer:ListCompositions');
     return this;
   }
@@ -358,7 +358,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public listModels() {
+  public toListModels() {
     this.add('deepcomposer:ListModels');
     return this;
   }
@@ -370,7 +370,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public listSampleModels() {
+  public toListSampleModels() {
     this.add('deepcomposer:ListSampleModels');
     return this;
   }
@@ -380,10 +380,10 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('deepcomposer:ListTagsForResource');
     return this;
   }
@@ -393,7 +393,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listTrainingTopics() {
+  public toListTrainingTopics() {
     this.add('deepcomposer:ListTrainingTopics');
     return this;
   }
@@ -403,12 +403,12 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('deepcomposer:TagResource');
     return this;
   }
@@ -418,12 +418,12 @@ export class Deepcomposer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('deepcomposer:UntagResource');
     return this;
   }
@@ -435,7 +435,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html
    */
-  public updateComposition() {
+  public toUpdateComposition() {
     this.add('deepcomposer:UpdateComposition');
     return this;
   }
@@ -447,7 +447,7 @@ export class Deepcomposer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html
    */
-  public updateModel() {
+  public toUpdateModel() {
     this.add('deepcomposer:UpdateModel');
     return this;
   }
@@ -462,8 +462,8 @@ export class Deepcomposer extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onModel(modelId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:model/${ModelId}';
@@ -484,8 +484,8 @@ export class Deepcomposer extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onComposition(compositionId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:deepcomposer:${Region}:${Account}:composition/${CompositionId}';
@@ -513,5 +513,66 @@ export class Deepcomposer extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateComposition()
+   * - .toCreateModel()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to actions:
+   * - .toGetComposition()
+   * - .toGetModel()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * Applies to resource types:
+   * - model
+   * - composition
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateComposition()
+   * - .toCreateModel()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

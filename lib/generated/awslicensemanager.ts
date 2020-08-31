@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [license-manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html).
@@ -162,13 +162,13 @@ export class LicenseManager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html
    */
-  public createLicenseConfiguration() {
+  public toCreateLicenseConfiguration() {
     this.add('license-manager:CreateLicenseConfiguration');
     return this;
   }
@@ -180,7 +180,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseConfiguration.html
    */
-  public deleteLicenseConfiguration() {
+  public toDeleteLicenseConfiguration() {
     this.add('license-manager:DeleteLicenseConfiguration');
     return this;
   }
@@ -192,7 +192,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html
    */
-  public getLicenseConfiguration() {
+  public toGetLicenseConfiguration() {
     this.add('license-manager:GetLicenseConfiguration');
     return this;
   }
@@ -204,7 +204,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html
    */
-  public getServiceSettings() {
+  public toGetServiceSettings() {
     this.add('license-manager:GetServiceSettings');
     return this;
   }
@@ -216,7 +216,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html
    */
-  public listAssociationsForLicenseConfiguration() {
+  public toListAssociationsForLicenseConfiguration() {
     this.add('license-manager:ListAssociationsForLicenseConfiguration');
     return this;
   }
@@ -228,7 +228,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html
    */
-  public listLicenseConfigurations() {
+  public toListLicenseConfigurations() {
     this.add('license-manager:ListLicenseConfigurations');
     return this;
   }
@@ -240,7 +240,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseSpecificationsForResource.html
    */
-  public listLicenseSpecificationsForResource() {
+  public toListLicenseSpecificationsForResource() {
     this.add('license-manager:ListLicenseSpecificationsForResource');
     return this;
   }
@@ -252,7 +252,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListResourceInventory.html
    */
-  public listResourceInventory() {
+  public toListResourceInventory() {
     this.add('license-manager:ListResourceInventory');
     return this;
   }
@@ -264,7 +264,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('license-manager:ListTagsForResource');
     return this;
   }
@@ -276,7 +276,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUsageForLicenseConfiguration.html
    */
-  public listUsageForLicenseConfiguration() {
+  public toListUsageForLicenseConfiguration() {
     this.add('license-manager:ListUsageForLicenseConfiguration');
     return this;
   }
@@ -286,13 +286,13 @@ export class LicenseManager extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('license-manager:TagResource');
     return this;
   }
@@ -304,7 +304,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('license-manager:UntagResource');
     return this;
   }
@@ -316,7 +316,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseConfiguration.html
    */
-  public updateLicenseConfiguration() {
+  public toUpdateLicenseConfiguration() {
     this.add('license-manager:UpdateLicenseConfiguration');
     return this;
   }
@@ -328,7 +328,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseSpecificationsForResource.html
    */
-  public updateLicenseSpecificationsForResource() {
+  public toUpdateLicenseSpecificationsForResource() {
     this.add('license-manager:UpdateLicenseSpecificationsForResource');
     return this;
   }
@@ -340,7 +340,7 @@ export class LicenseManager extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html
    */
-  public updateServiceSettings() {
+  public toUpdateServiceSettings() {
     this.add('license-manager:UpdateServiceSettings');
     return this;
   }
@@ -353,8 +353,8 @@ export class LicenseManager extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - license-manager:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifResourceTag()
    */
   public onLicenseConfiguration(licenseConfigurationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}';
@@ -366,13 +366,45 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag-value associated with the resource.
+   * Filters create requests based on allowed set of values for each of the mandatory tags
+   *
+   * Applies to actions:
+   * - .toCreateLicenseConfiguration()
+   * - .toTagResource()
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Enforce tag keys that are used in the request
+   *
+   * Applies to actions:
+   * - .toCreateLicenseConfiguration()
+   * - .toTagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - license-configuration
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`license-manager:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

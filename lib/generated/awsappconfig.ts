@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [appconfig](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappconfig.html).
@@ -566,13 +566,13 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateApplication.html
    */
-  public createApplication() {
+  public toCreateApplication() {
     this.add('appconfig:CreateApplication');
     return this;
   }
@@ -582,13 +582,13 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateConfigurationProfile.html
    */
-  public createConfigurationProfile() {
+  public toCreateConfigurationProfile() {
     this.add('appconfig:CreateConfigurationProfile');
     return this;
   }
@@ -598,13 +598,13 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateDeploymentStrategy.html
    */
-  public createDeploymentStrategy() {
+  public toCreateDeploymentStrategy() {
     this.add('appconfig:CreateDeploymentStrategy');
     return this;
   }
@@ -614,13 +614,13 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateEnvironment.html
    */
-  public createEnvironment() {
+  public toCreateEnvironment() {
     this.add('appconfig:CreateEnvironment');
     return this;
   }
@@ -632,7 +632,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_CreateHostedConfigurationVersion.html
    */
-  public createHostedConfigurationVersion() {
+  public toCreateHostedConfigurationVersion() {
     this.add('appconfig:CreateHostedConfigurationVersion');
     return this;
   }
@@ -644,7 +644,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteApplication.html
    */
-  public deleteApplication() {
+  public toDeleteApplication() {
     this.add('appconfig:DeleteApplication');
     return this;
   }
@@ -656,7 +656,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteConfigurationProfile.html
    */
-  public deleteConfigurationProfile() {
+  public toDeleteConfigurationProfile() {
     this.add('appconfig:DeleteConfigurationProfile');
     return this;
   }
@@ -668,7 +668,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteDeploymentStrategy.html
    */
-  public deleteDeploymentStrategy() {
+  public toDeleteDeploymentStrategy() {
     this.add('appconfig:DeleteDeploymentStrategy');
     return this;
   }
@@ -680,7 +680,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteEnvironment.html
    */
-  public deleteEnvironment() {
+  public toDeleteEnvironment() {
     this.add('appconfig:DeleteEnvironment');
     return this;
   }
@@ -692,7 +692,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_DeleteHostedConfigurationVersion.html
    */
-  public deleteHostedConfigurationVersion() {
+  public toDeleteHostedConfigurationVersion() {
     this.add('appconfig:DeleteHostedConfigurationVersion');
     return this;
   }
@@ -702,12 +702,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetApplication.html
    */
-  public getApplication() {
+  public toGetApplication() {
     this.add('appconfig:GetApplication');
     return this;
   }
@@ -717,12 +717,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfiguration.html
    */
-  public getConfiguration() {
+  public toGetConfiguration() {
     this.add('appconfig:GetConfiguration');
     return this;
   }
@@ -732,12 +732,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetConfigurationProfile.html
    */
-  public getConfigurationProfile() {
+  public toGetConfigurationProfile() {
     this.add('appconfig:GetConfigurationProfile');
     return this;
   }
@@ -747,12 +747,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeployment.html
    */
-  public getDeployment() {
+  public toGetDeployment() {
     this.add('appconfig:GetDeployment');
     return this;
   }
@@ -762,12 +762,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetDeploymentStrategy.html
    */
-  public getDeploymentStrategy() {
+  public toGetDeploymentStrategy() {
     this.add('appconfig:GetDeploymentStrategy');
     return this;
   }
@@ -777,12 +777,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetEnvironment.html
    */
-  public getEnvironment() {
+  public toGetEnvironment() {
     this.add('appconfig:GetEnvironment');
     return this;
   }
@@ -794,7 +794,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_GetHostedConfigurationVersion.html
    */
-  public getHostedConfigurationVersion() {
+  public toGetHostedConfigurationVersion() {
     this.add('appconfig:GetHostedConfigurationVersion');
     return this;
   }
@@ -806,7 +806,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListApplications.html
    */
-  public listApplications() {
+  public toListApplications() {
     this.add('appconfig:ListApplications');
     return this;
   }
@@ -818,7 +818,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListConfigurationProfiles.html
    */
-  public listConfigurationProfiles() {
+  public toListConfigurationProfiles() {
     this.add('appconfig:ListConfigurationProfiles');
     return this;
   }
@@ -830,7 +830,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeploymentStrategies.html
    */
-  public listDeploymentStrategies() {
+  public toListDeploymentStrategies() {
     this.add('appconfig:ListDeploymentStrategies');
     return this;
   }
@@ -842,7 +842,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListDeployments.html
    */
-  public listDeployments() {
+  public toListDeployments() {
     this.add('appconfig:ListDeployments');
     return this;
   }
@@ -854,7 +854,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListEnvironments.html
    */
-  public listEnvironments() {
+  public toListEnvironments() {
     this.add('appconfig:ListEnvironments');
     return this;
   }
@@ -866,7 +866,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListHostedConfigurationVersions.html
    */
-  public listHostedConfigurationVersions() {
+  public toListHostedConfigurationVersions() {
     this.add('appconfig:ListHostedConfigurationVersions');
     return this;
   }
@@ -876,12 +876,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('appconfig:ListTagsForResource');
     return this;
   }
@@ -893,7 +893,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StartDeployment.html
    */
-  public startDeployment() {
+  public toStartDeployment() {
     this.add('appconfig:StartDeployment');
     return this;
   }
@@ -905,7 +905,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_StopDeployment.html
    */
-  public stopDeployment() {
+  public toStopDeployment() {
     this.add('appconfig:StopDeployment');
     return this;
   }
@@ -915,14 +915,14 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('appconfig:TagResource');
     return this;
   }
@@ -932,12 +932,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('appconfig:UntagResource');
     return this;
   }
@@ -947,12 +947,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateApplication.html
    */
-  public updateApplication() {
+  public toUpdateApplication() {
     this.add('appconfig:UpdateApplication');
     return this;
   }
@@ -962,12 +962,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateConfigurationProfile.html
    */
-  public updateConfigurationProfile() {
+  public toUpdateConfigurationProfile() {
     this.add('appconfig:UpdateConfigurationProfile');
     return this;
   }
@@ -977,12 +977,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateDeploymentStrategy.html
    */
-  public updateDeploymentStrategy() {
+  public toUpdateDeploymentStrategy() {
     this.add('appconfig:UpdateDeploymentStrategy');
     return this;
   }
@@ -992,12 +992,12 @@ export class Appconfig extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_UpdateEnvironment.html
    */
-  public updateEnvironment() {
+  public toUpdateEnvironment() {
     this.add('appconfig:UpdateEnvironment');
     return this;
   }
@@ -1009,7 +1009,7 @@ export class Appconfig extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/API_ValidateConfiguration.html
    */
-  public validateConfiguration() {
+  public toValidateConfiguration() {
     this.add('appconfig:ValidateConfiguration');
     return this;
   }
@@ -1024,8 +1024,8 @@ export class Appconfig extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApplication(applicationId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}';
@@ -1047,8 +1047,8 @@ export class Appconfig extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onEnvironment(applicationId: string, environmentId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}';
@@ -1071,8 +1071,8 @@ export class Appconfig extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onConfigurationprofile(applicationId: string, configurationProfileId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/configurationprofile/${ConfigurationProfileId}';
@@ -1094,8 +1094,8 @@ export class Appconfig extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDeploymentstrategy(deploymentStrategyId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:deploymentstrategy/${DeploymentStrategyId}';
@@ -1118,8 +1118,8 @@ export class Appconfig extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDeployment(applicationId: string, environmentId: string, deploymentNumber: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:appconfig:${Region}:${Account}:application/${ApplicationId}/environment/${EnvironmentId}/deployment/${DeploymentNumber}';
@@ -1153,5 +1153,79 @@ export class Appconfig extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters 'Create' requests based on the allowed set of values for a specified tags
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateConfigurationProfile()
+   * - .toCreateDeploymentStrategy()
+   * - .toCreateEnvironment()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters access based on a tag key-value pair assigned to the AWS resource
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toGetApplication()
+   * - .toGetConfiguration()
+   * - .toGetConfigurationProfile()
+   * - .toGetDeployment()
+   * - .toGetDeploymentStrategy()
+   * - .toGetEnvironment()
+   * - .toListTagsForResource()
+   * - .toTagResource()
+   * - .toUpdateApplication()
+   * - .toUpdateConfigurationProfile()
+   * - .toUpdateDeploymentStrategy()
+   * - .toUpdateEnvironment()
+   *
+   * Applies to resource types:
+   * - application
+   * - environment
+   * - configurationprofile
+   * - deploymentstrategy
+   * - deployment
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters 'Create' requests based on whether mandatory tags are included in the request
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
+   *
+   * Applies to actions:
+   * - .toCreateApplication()
+   * - .toCreateConfigurationProfile()
+   * - .toCreateDeploymentStrategy()
+   * - .toCreateEnvironment()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

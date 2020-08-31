@@ -1,6 +1,9 @@
 import { PolicyStatementWithResources } from './4-resources';
 
-enum Effect {
+/**
+ * Policy effects
+ */
+export enum Effect {
   ALLOW = 'Allow',
   DENY = 'Deny',
 }

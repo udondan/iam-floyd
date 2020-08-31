@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [access-analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_iamaccessanalyzer.html).
@@ -217,13 +217,13 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateAnalyzer.html
    */
-  public createAnalyzer() {
+  public toCreateAnalyzer() {
     this.add('access-analyzer:CreateAnalyzer');
     return this;
   }
@@ -235,7 +235,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_CreateArchiveRule.html
    */
-  public createArchiveRule() {
+  public toCreateArchiveRule() {
     this.add('access-analyzer:CreateArchiveRule');
     return this;
   }
@@ -245,13 +245,13 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteAnalyzer.html
    */
-  public deleteAnalyzer() {
+  public toDeleteAnalyzer() {
     this.add('access-analyzer:DeleteAnalyzer');
     return this;
   }
@@ -263,7 +263,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_DeleteArchiveRule.html
    */
-  public deleteArchiveRule() {
+  public toDeleteArchiveRule() {
     this.add('access-analyzer:DeleteArchiveRule');
     return this;
   }
@@ -275,7 +275,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzedResource.html
    */
-  public getAnalyzedResource() {
+  public toGetAnalyzedResource() {
     this.add('access-analyzer:GetAnalyzedResource');
     return this;
   }
@@ -285,13 +285,13 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetAnalyzer.html
    */
-  public getAnalyzer() {
+  public toGetAnalyzer() {
     this.add('access-analyzer:GetAnalyzer');
     return this;
   }
@@ -303,7 +303,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetArchiveRule.html
    */
-  public getArchiveRule() {
+  public toGetArchiveRule() {
     this.add('access-analyzer:GetArchiveRule');
     return this;
   }
@@ -315,7 +315,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_GetFinding.html
    */
-  public getFinding() {
+  public toGetFinding() {
     this.add('access-analyzer:GetFinding');
     return this;
   }
@@ -327,7 +327,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzedResources.html
    */
-  public listAnalyzedResources() {
+  public toListAnalyzedResources() {
     this.add('access-analyzer:ListAnalyzedResources');
     return this;
   }
@@ -339,7 +339,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListAnalyzers.html
    */
-  public listAnalyzers() {
+  public toListAnalyzers() {
     this.add('access-analyzer:ListAnalyzers');
     return this;
   }
@@ -351,7 +351,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListArchiveRules.html
    */
-  public listArchiveRules() {
+  public toListArchiveRules() {
     this.add('access-analyzer:ListArchiveRules');
     return this;
   }
@@ -363,7 +363,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListFindings.html
    */
-  public listFindings() {
+  public toListFindings() {
     this.add('access-analyzer:ListFindings');
     return this;
   }
@@ -375,7 +375,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('access-analyzer:ListTagsForResource');
     return this;
   }
@@ -387,7 +387,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_StartResourceScan.html
    */
-  public startResourceScan() {
+  public toStartResourceScan() {
     this.add('access-analyzer:StartResourceScan');
     return this;
   }
@@ -397,13 +397,13 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('access-analyzer:TagResource');
     return this;
   }
@@ -413,13 +413,13 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('access-analyzer:UntagResource');
     return this;
   }
@@ -431,7 +431,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateArchiveRule.html
    */
-  public updateArchiveRule() {
+  public toUpdateArchiveRule() {
     this.add('access-analyzer:UpdateArchiveRule');
     return this;
   }
@@ -443,7 +443,7 @@ export class AccessAnalyzer extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_UpdateFindings.html
    */
-  public updateFindings() {
+  public toUpdateFindings() {
     this.add('access-analyzer:UpdateFindings');
     return this;
   }
@@ -458,8 +458,8 @@ export class AccessAnalyzer extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAnalyzer(analyzerName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}';
@@ -489,5 +489,60 @@ export class AccessAnalyzer extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAnalyzer()
+   * - .toDeleteAnalyzer()
+   * - .toGetAnalyzer()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - Analyzer
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAnalyzer()
+   * - .toDeleteAnalyzer()
+   * - .toGetAnalyzer()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

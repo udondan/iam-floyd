@@ -112,7 +112,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelCluster.html
    */
-  public cancelCluster() {
+  public toCancelCluster() {
     this.add('snowball:CancelCluster');
     return this;
   }
@@ -124,7 +124,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelJob.html
    */
-  public cancelJob() {
+  public toCancelJob() {
     this.add('snowball:CancelJob');
     return this;
   }
@@ -136,7 +136,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateAddress.html
    */
-  public createAddress() {
+  public toCreateAddress() {
     this.add('snowball:CreateAddress');
     return this;
   }
@@ -148,7 +148,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateCluster.html
    */
-  public createCluster() {
+  public toCreateCluster() {
     this.add('snowball:CreateCluster');
     return this;
   }
@@ -160,7 +160,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateJob.html
    */
-  public createJob() {
+  public toCreateJob() {
     this.add('snowball:CreateJob');
     return this;
   }
@@ -172,7 +172,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddress.html
    */
-  public describeAddress() {
+  public toDescribeAddress() {
     this.add('snowball:DescribeAddress');
     return this;
   }
@@ -184,7 +184,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddresses.html
    */
-  public describeAddresses() {
+  public toDescribeAddresses() {
     this.add('snowball:DescribeAddresses');
     return this;
   }
@@ -196,7 +196,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeCluster.html
    */
-  public describeCluster() {
+  public toDescribeCluster() {
     this.add('snowball:DescribeCluster');
     return this;
   }
@@ -208,7 +208,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeJob.html
    */
-  public describeJob() {
+  public toDescribeJob() {
     this.add('snowball:DescribeJob');
     return this;
   }
@@ -220,7 +220,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobManifest.html
    */
-  public getJobManifest() {
+  public toGetJobManifest() {
     this.add('snowball:GetJobManifest');
     return this;
   }
@@ -232,7 +232,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobUnlockCode.html
    */
-  public getJobUnlockCode() {
+  public toGetJobUnlockCode() {
     this.add('snowball:GetJobUnlockCode');
     return this;
   }
@@ -244,7 +244,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetSnowballUsage.html
    */
-  public getSnowballUsage() {
+  public toGetSnowballUsage() {
     this.add('snowball:GetSnowballUsage');
     return this;
   }
@@ -256,7 +256,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusterJobs.html
    */
-  public listClusterJobs() {
+  public toListClusterJobs() {
     this.add('snowball:ListClusterJobs');
     return this;
   }
@@ -268,7 +268,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusters.html
    */
-  public listClusters() {
+  public toListClusters() {
     this.add('snowball:ListClusters');
     return this;
   }
@@ -280,7 +280,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('snowball:ListJobs');
     return this;
   }
@@ -292,7 +292,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateCluster.html
    */
-  public updateCluster() {
+  public toUpdateCluster() {
     this.add('snowball:UpdateCluster');
     return this;
   }
@@ -304,7 +304,7 @@ export class Snowball extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJob.html
    */
-  public updateJob() {
+  public toUpdateJob() {
     this.add('snowball:UpdateJob');
     return this;
   }

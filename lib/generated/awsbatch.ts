@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [batch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html).
@@ -10,28 +10,51 @@ export class Batch extends PolicyStatement {
   protected actionList: Actions = {
     "CancelJob": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html",
-      "description": "Cancels jobs in an AWS Batch job queue.",
+      "description": "Cancels a job in an AWS Batch job queue.",
       "accessLevel": "Write"
     },
     "CreateComputeEnvironment": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html",
       "description": "Creates an AWS Batch compute environment.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        }
+      }
     },
     "CreateJobQueue": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html",
       "description": "Creates an AWS Batch job queue.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        },
+        "job-queue": {
+          "required": true
+        }
+      }
     },
     "DeleteComputeEnvironment": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html",
       "description": "Deletes an AWS Batch compute environment.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        }
+      }
     },
     "DeleteJobQueue": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html",
       "description": "Deletes the specified job queue.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "job-queue": {
+          "required": true
+        }
+      }
     },
     "DeregisterJobDefinition": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html",
@@ -104,15 +127,31 @@ export class Batch extends PolicyStatement {
     "UpdateComputeEnvironment": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html",
       "description": "Updates an AWS Batch compute environment.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "compute-environment": {
+          "required": true
+        }
+      }
     },
     "UpdateJobQueue": {
       "url": "https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html",
       "description": "Updates a job queue.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "job-queue": {
+          "required": true
+        }
+      }
     }
   };
   protected resourceTypes: ResourceTypes = {
+    "compute-environment": {
+      "name": "compute-environment",
+      "url": "",
+      "arn": "arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}",
+      "conditionKeys": []
+    },
     "job-queue": {
       "name": "job-queue",
       "url": "",
@@ -137,13 +176,13 @@ export class Batch extends PolicyStatement {
   }
 
   /**
-   * Cancels jobs in an AWS Batch job queue.
+   * Cancels a job in an AWS Batch job queue.
    *
    * Access Level: Write
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html
    */
-  public cancelJob() {
+  public toCancelJob() {
     this.add('batch:CancelJob');
     return this;
   }
@@ -155,7 +194,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html
    */
-  public createComputeEnvironment() {
+  public toCreateComputeEnvironment() {
     this.add('batch:CreateComputeEnvironment');
     return this;
   }
@@ -167,7 +206,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html
    */
-  public createJobQueue() {
+  public toCreateJobQueue() {
     this.add('batch:CreateJobQueue');
     return this;
   }
@@ -179,7 +218,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html
    */
-  public deleteComputeEnvironment() {
+  public toDeleteComputeEnvironment() {
     this.add('batch:DeleteComputeEnvironment');
     return this;
   }
@@ -191,7 +230,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html
    */
-  public deleteJobQueue() {
+  public toDeleteJobQueue() {
     this.add('batch:DeleteJobQueue');
     return this;
   }
@@ -203,7 +242,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html
    */
-  public deregisterJobDefinition() {
+  public toDeregisterJobDefinition() {
     this.add('batch:DeregisterJobDefinition');
     return this;
   }
@@ -215,7 +254,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html
    */
-  public describeComputeEnvironments() {
+  public toDescribeComputeEnvironments() {
     this.add('batch:DescribeComputeEnvironments');
     return this;
   }
@@ -227,7 +266,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html
    */
-  public describeJobDefinitions() {
+  public toDescribeJobDefinitions() {
     this.add('batch:DescribeJobDefinitions');
     return this;
   }
@@ -239,7 +278,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html
    */
-  public describeJobQueues() {
+  public toDescribeJobQueues() {
     this.add('batch:DescribeJobQueues');
     return this;
   }
@@ -251,7 +290,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html
    */
-  public describeJobs() {
+  public toDescribeJobs() {
     this.add('batch:DescribeJobs');
     return this;
   }
@@ -263,7 +302,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('batch:ListJobs');
     return this;
   }
@@ -273,14 +312,14 @@ export class Batch extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - batch:User
-   * - batch:Privileged
-   * - batch:Image
+   * Possible conditions:
+   * - .ifUser()
+   * - .ifPrivileged()
+   * - .ifImage()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
-  public registerJobDefinition() {
+  public toRegisterJobDefinition() {
     this.add('batch:RegisterJobDefinition');
     return this;
   }
@@ -292,7 +331,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html
    */
-  public submitJob() {
+  public toSubmitJob() {
     this.add('batch:SubmitJob');
     return this;
   }
@@ -304,7 +343,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html
    */
-  public terminateJob() {
+  public toTerminateJob() {
     this.add('batch:TerminateJob');
     return this;
   }
@@ -316,7 +355,7 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html
    */
-  public updateComputeEnvironment() {
+  public toUpdateComputeEnvironment() {
     this.add('batch:UpdateComputeEnvironment');
     return this;
   }
@@ -328,9 +367,26 @@ export class Batch extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html
    */
-  public updateJobQueue() {
+  public toUpdateJobQueue() {
     this.add('batch:UpdateJobQueue');
     return this;
+  }
+
+  /**
+   * Adds a resource of type compute-environment to the statement
+   *
+   * @param computeEnvironmentName - Identifier for the computeEnvironmentName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onComputeEnvironment(computeEnvironmentName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:batch:${Region}:${Account}:compute-environment/${ComputeEnvironmentName}';
+    arn = arn.replace('${ComputeEnvironmentName}', computeEnvironmentName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 
   /**
@@ -372,29 +428,44 @@ export class Batch extends PolicyStatement {
   /**
    * The image used to start a container.
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImage(value: string | string[], operator?: string) {
+  public ifImage(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`batch:Image`, value, operator || 'StringLike');
   }
 
   /**
    * When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user).
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifPrivileged(value?: boolean) {
+  public ifPrivileged(value?: boolean): PolicyStatementWithCondition {
     return this.if(`batch:Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
   /**
    * The user name or numeric uid to use inside the container.
    *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string) {
+  public ifUser(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`batch:User`, value, operator || 'StringLike');
   }
 }

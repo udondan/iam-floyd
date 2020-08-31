@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
@@ -71,7 +71,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html
    */
-  public associateMemberAccount() {
+  public toAssociateMemberAccount() {
     this.add('macie:AssociateMemberAccount');
     return this;
   }
@@ -81,12 +81,12 @@ export class Macie extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:SourceArn
+   * Possible conditions:
+   * - .ifAwsSourceArn()
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html
    */
-  public associateS3Resources() {
+  public toAssociateS3Resources() {
     this.add('macie:AssociateS3Resources');
     return this;
   }
@@ -98,7 +98,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html
    */
-  public disassociateMemberAccount() {
+  public toDisassociateMemberAccount() {
     this.add('macie:DisassociateMemberAccount');
     return this;
   }
@@ -108,12 +108,12 @@ export class Macie extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:SourceArn
+   * Possible conditions:
+   * - .ifAwsSourceArn()
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html
    */
-  public disassociateS3Resources() {
+  public toDisassociateS3Resources() {
     this.add('macie:DisassociateS3Resources');
     return this;
   }
@@ -125,7 +125,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html
    */
-  public listMemberAccounts() {
+  public toListMemberAccounts() {
     this.add('macie:ListMemberAccounts');
     return this;
   }
@@ -137,7 +137,7 @@ export class Macie extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html
    */
-  public listS3Resources() {
+  public toListS3Resources() {
     this.add('macie:ListS3Resources');
     return this;
   }
@@ -147,13 +147,28 @@ export class Macie extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:SourceArn
+   * Possible conditions:
+   * - .ifAwsSourceArn()
    *
    * https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html
    */
-  public updateS3Resources() {
+  public toUpdateS3Resources() {
     this.add('macie:UpdateS3Resources');
     return this;
+  }
+
+  /**
+   * Allow access to the specified actions only when the request operates on the specified aws resource
+   *
+   * Applies to actions:
+   * - .toAssociateS3Resources()
+   * - .toDisassociateS3Resources()
+   * - .toUpdateS3Resources()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
+   */
+  public ifAwsSourceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:SourceArn`, value, operator || 'ArnEquals');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [amplify](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html).
@@ -442,13 +442,13 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createApp() {
+  public toCreateApp() {
     this.add('amplify:CreateApp');
     return this;
   }
@@ -460,7 +460,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createBackendEnvironment() {
+  public toCreateBackendEnvironment() {
     this.add('amplify:CreateBackendEnvironment');
     return this;
   }
@@ -470,13 +470,13 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createBranch() {
+  public toCreateBranch() {
     this.add('amplify:CreateBranch');
     return this;
   }
@@ -488,7 +488,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createDeployment() {
+  public toCreateDeployment() {
     this.add('amplify:CreateDeployment');
     return this;
   }
@@ -498,13 +498,13 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createDomainAssociation() {
+  public toCreateDomainAssociation() {
     this.add('amplify:CreateDomainAssociation');
     return this;
   }
@@ -516,7 +516,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public createWebHook() {
+  public toCreateWebHook() {
     this.add('amplify:CreateWebHook');
     return this;
   }
@@ -528,7 +528,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteApp() {
+  public toDeleteApp() {
     this.add('amplify:DeleteApp');
     return this;
   }
@@ -540,7 +540,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteBackendEnvironment() {
+  public toDeleteBackendEnvironment() {
     this.add('amplify:DeleteBackendEnvironment');
     return this;
   }
@@ -552,7 +552,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteBranch() {
+  public toDeleteBranch() {
     this.add('amplify:DeleteBranch');
     return this;
   }
@@ -564,7 +564,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteDomainAssociation() {
+  public toDeleteDomainAssociation() {
     this.add('amplify:DeleteDomainAssociation');
     return this;
   }
@@ -576,7 +576,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteJob() {
+  public toDeleteJob() {
     this.add('amplify:DeleteJob');
     return this;
   }
@@ -588,7 +588,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public deleteWebHook() {
+  public toDeleteWebHook() {
     this.add('amplify:DeleteWebHook');
     return this;
   }
@@ -600,7 +600,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public generateAccessLogs() {
+  public toGenerateAccessLogs() {
     this.add('amplify:GenerateAccessLogs');
     return this;
   }
@@ -612,7 +612,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getApp() {
+  public toGetApp() {
     this.add('amplify:GetApp');
     return this;
   }
@@ -624,7 +624,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getArtifactUrl() {
+  public toGetArtifactUrl() {
     this.add('amplify:GetArtifactUrl');
     return this;
   }
@@ -636,7 +636,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getBackendEnvironment() {
+  public toGetBackendEnvironment() {
     this.add('amplify:GetBackendEnvironment');
     return this;
   }
@@ -648,7 +648,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getBranch() {
+  public toGetBranch() {
     this.add('amplify:GetBranch');
     return this;
   }
@@ -660,7 +660,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getDomainAssociation() {
+  public toGetDomainAssociation() {
     this.add('amplify:GetDomainAssociation');
     return this;
   }
@@ -672,7 +672,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getJob() {
+  public toGetJob() {
     this.add('amplify:GetJob');
     return this;
   }
@@ -684,7 +684,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public getWebHook() {
+  public toGetWebHook() {
     this.add('amplify:GetWebHook');
     return this;
   }
@@ -696,7 +696,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listApps() {
+  public toListApps() {
     this.add('amplify:ListApps');
     return this;
   }
@@ -708,7 +708,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listArtifacts() {
+  public toListArtifacts() {
     this.add('amplify:ListArtifacts');
     return this;
   }
@@ -720,7 +720,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listBackendEnvironments() {
+  public toListBackendEnvironments() {
     this.add('amplify:ListBackendEnvironments');
     return this;
   }
@@ -732,7 +732,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listBranches() {
+  public toListBranches() {
     this.add('amplify:ListBranches');
     return this;
   }
@@ -744,7 +744,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listDomainAssociations() {
+  public toListDomainAssociations() {
     this.add('amplify:ListDomainAssociations');
     return this;
   }
@@ -756,7 +756,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('amplify:ListJobs');
     return this;
   }
@@ -768,7 +768,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public listWebHooks() {
+  public toListWebHooks() {
     this.add('amplify:ListWebHooks');
     return this;
   }
@@ -780,7 +780,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public startDeployment() {
+  public toStartDeployment() {
     this.add('amplify:StartDeployment');
     return this;
   }
@@ -792,7 +792,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public startJob() {
+  public toStartJob() {
     this.add('amplify:StartJob');
     return this;
   }
@@ -804,7 +804,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public stopJob() {
+  public toStopJob() {
     this.add('amplify:StopJob');
     return this;
   }
@@ -814,13 +814,13 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('amplify:TagResource');
     return this;
   }
@@ -830,12 +830,12 @@ export class Amplify extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('amplify:UntagResource');
     return this;
   }
@@ -847,7 +847,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateApp() {
+  public toUpdateApp() {
     this.add('amplify:UpdateApp');
     return this;
   }
@@ -859,7 +859,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateBranch() {
+  public toUpdateBranch() {
     this.add('amplify:UpdateBranch');
     return this;
   }
@@ -871,7 +871,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateDomainAssociation() {
+  public toUpdateDomainAssociation() {
     this.add('amplify:UpdateDomainAssociation');
     return this;
   }
@@ -883,7 +883,7 @@ export class Amplify extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html
    */
-  public updateWebHook() {
+  public toUpdateWebHook() {
     this.add('amplify:UpdateWebHook');
     return this;
   }
@@ -898,8 +898,8 @@ export class Amplify extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onApps(appId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}';
@@ -921,8 +921,8 @@ export class Amplify extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBranches(appId: string, branchName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}';
@@ -968,8 +968,8 @@ export class Amplify extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDomains(appId: string, domainName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}';
@@ -979,5 +979,49 @@ export class Amplify extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateBranch()
+   * - .toCreateDomainAssociation()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Applies to resource types:
+   * - apps
+   * - branches
+   * - domains
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Applies to actions:
+   * - .toCreateApp()
+   * - .toCreateBranch()
+   * - .toCreateDomainAssociation()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [dataexchange](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdataexchange.html).
@@ -298,7 +298,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public cancelJob() {
+  public toCancelJob() {
     this.add('dataexchange:CancelJob');
     return this;
   }
@@ -308,12 +308,12 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
-  public createAsset() {
+  public toCreateAsset() {
     this.add('dataexchange:CreateAsset');
     return this;
   }
@@ -323,12 +323,12 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
-  public createDataSet() {
+  public toCreateDataSet() {
     this.add('dataexchange:CreateDataSet');
     return this;
   }
@@ -338,7 +338,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public createJob() {
+  public toCreateJob() {
     this.add('dataexchange:CreateJob');
     return this;
   }
@@ -348,12 +348,12 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:ResourceTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsResourceTag()
+   * - .ifAwsTagKeys()
    */
-  public createRevision() {
+  public toCreateRevision() {
     this.add('dataexchange:CreateRevision');
     return this;
   }
@@ -363,7 +363,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteAsset() {
+  public toDeleteAsset() {
     this.add('dataexchange:DeleteAsset');
     return this;
   }
@@ -373,7 +373,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteDataSet() {
+  public toDeleteDataSet() {
     this.add('dataexchange:DeleteDataSet');
     return this;
   }
@@ -383,7 +383,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public deleteRevision() {
+  public toDeleteRevision() {
     this.add('dataexchange:DeleteRevision');
     return this;
   }
@@ -393,7 +393,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getAsset() {
+  public toGetAsset() {
     this.add('dataexchange:GetAsset');
     return this;
   }
@@ -403,7 +403,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getDataSet() {
+  public toGetDataSet() {
     this.add('dataexchange:GetDataSet');
     return this;
   }
@@ -413,7 +413,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public getJob() {
+  public toGetJob() {
     this.add('dataexchange:GetJob');
     return this;
   }
@@ -423,7 +423,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public getRevision() {
+  public toGetRevision() {
     this.add('dataexchange:GetRevision');
     return this;
   }
@@ -433,7 +433,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listDataSetRevisions() {
+  public toListDataSetRevisions() {
     this.add('dataexchange:ListDataSetRevisions');
     return this;
   }
@@ -443,7 +443,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listDataSets() {
+  public toListDataSets() {
     this.add('dataexchange:ListDataSets');
     return this;
   }
@@ -453,7 +453,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('dataexchange:ListJobs');
     return this;
   }
@@ -463,7 +463,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: List
    */
-  public listRevisionAssets() {
+  public toListRevisionAssets() {
     this.add('dataexchange:ListRevisionAssets');
     return this;
   }
@@ -473,7 +473,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Read
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('dataexchange:ListTagsForResource');
     return this;
   }
@@ -483,7 +483,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public startJob() {
+  public toStartJob() {
     this.add('dataexchange:StartJob');
     return this;
   }
@@ -493,11 +493,11 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('dataexchange:TagResource');
     return this;
   }
@@ -507,10 +507,10 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('dataexchange:UntagResource');
     return this;
   }
@@ -520,7 +520,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateAsset() {
+  public toUpdateAsset() {
     this.add('dataexchange:UpdateAsset');
     return this;
   }
@@ -530,7 +530,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateDataSet() {
+  public toUpdateDataSet() {
     this.add('dataexchange:UpdateDataSet');
     return this;
   }
@@ -540,7 +540,7 @@ export class Dataexchange extends PolicyStatement {
    *
    * Access Level: Write
    */
-  public updateRevision() {
+  public toUpdateRevision() {
     this.add('dataexchange:UpdateRevision');
     return this;
   }
@@ -555,8 +555,8 @@ export class Dataexchange extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - dataexchange:JobType
+   * Possible conditions:
+   * - .ifJobType()
    */
   public onJobs(jobId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:dataexchange:${Region}:${Account}:jobs/${JobId}';
@@ -631,14 +631,73 @@ export class Dataexchange extends PolicyStatement {
   }
 
   /**
-   * Indicates that the action can only be performed on the specified job type.
+   * Filters create requests based on the allowed set of values for each of the mandatory tags.
    *
-   * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateAsset()
+   * - .toCreateDataSet()
+   * - .toCreateRevision()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the tag value associated with the resource.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateAsset()
+   * - .toCreateDataSet()
+   * - .toCreateRevision()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available
+   *
+   * Applies to actions:
+   * - .toCreateAsset()
+   * - .toCreateDataSet()
+   * - .toCreateRevision()
+   * - .toTagResource()
+   * - .toUntagResource()
    *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifJobType(value: string | string[], operator?: string) {
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Indicates that the action can only be performed on the specified job type.
+   *
+   * https://docs.aws.amazon.com/data-exchange/latest/userguide/access-control.html
+   *
+   * Applies to resource types:
+   * - jobs
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifJobType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`dataexchange:JobType`, value, operator || 'StringLike');
   }
 }

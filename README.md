@@ -1,21 +1,10 @@
 # IAM Floyd
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
+[![iam-floyd](https://img.shields.io/github/v/release/udondan/iam-floyd)][source]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
-[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
-
-[![npm package](https://img.shields.io/npm/v/iam-floyd?color=brightgreen)][npm]
-[![PyPI package](https://img.shields.io/pypi/v/iam-floyd?color=brightgreen)][PyPI]
-[![NuGet package](https://img.shields.io/nuget/v/IAM.Floyd?color=brightgreen)][NuGet]
-[![Maven package](https://img.shields.io/badge/maven-v0.32.0-brightgreen)][Maven]
-
-![Downloads](https://img.shields.io/badge/-DOWNLOADS:-brightgreen?color=gray)
-[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)][npm]
-[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)][PyPI]
-[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)][NuGet]
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/maintainability)](https://codeclimate.com/github/udondan/iam-floyd/maintainability)
-
+[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
 <!-- put back - when we actually have tests
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
 -->
@@ -25,26 +14,37 @@
 <!-- stats -->
 Support for:
 
-- 234 Services<br>
-- 7710 Actions<br>
-- 746 Resource Types<br>
-- 447 Conditions
+- 237 Services<br>
+- 7818 Actions<br>
+- 772 Resource Types<br>
+- 456 Conditions
 <!-- /stats -->
+
+![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
 
 [![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
 
-> This is an early version of the package. The signature of methods will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.
->
-> If you see something off, think something could be done better or have any other suggestion, speak up. :-)
+## <a name='Packages'></a>Packages
+
+There are two different package variants available:
+
+- **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for <br>[![npm](https://img.shields.io/npm/dt/iam-floyd?label=npm&color=blueviolet)](https://www.npmjs.com/package/iam-floyd)
+[![PyPI](https://img.shields.io/pypi/dm/iam-floyd?label=pypi&color=blueviolet)](https://pypi.org/project/iam-floyd/)
+[![NuGet](https://img.shields.io/nuget/dt/IAM.Floyd?label=nuget&color=blueviolet)](https://www.nuget.org/packages/IAM.Floyd/)
+- **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
+[![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
+[![NuGet](https://img.shields.io/nuget/dt/CDK.IAM.Floyd?label=nuget&color=orange)](https://www.nuget.org/packages/CDK.IAM.Floyd/)
 
 ---
 
 <!-- vscode-markdown-toc -->
+* [Packages](#Packages)
 * [Usage](#Usage)
 * [Examples](#Examples)
 * [Methods](#Methods)
 	* [allow](#allow)
 	* [deny](#deny)
+	* [to*, to](#toto)
 	* [allActions](#allActions)
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
@@ -66,25 +66,20 @@ Support for:
 
 ## <a name='Usage'></a>Usage
 
-There are two different package variants available:
-
-* **iam-floyd**: Can be used in AWS SDK, Boto 3 or for whatever you need an IAM policy statement for
-* **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)
-
 The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
 ```typescript
 import * as statement from 'iam-floyd';
 
-new statement.Ec2().startInstances();
+new statement.Ec2().toStartInstances();
 ```
 
 Every method returns the statement provider, so you can chain method calls:
 
 ```typescript
 new statement.Ec2()
-  .startInstances()
-  .stopInstances();
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 The default effect of any statement is `Allow`. To add some linguistic sugar you can explicitly call the `allow()` method:
@@ -92,8 +87,8 @@ The default effect of any statement is `Allow`. To add some linguistic sugar you
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
-  .stopInstances();
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 And of course `deny()`:
@@ -101,8 +96,8 @@ And of course `deny()`:
 ```typescript
 new statement.Ec2()
   .deny()
-  .startInstances()
-  .stopInstances();
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 If you don't want to be verbose and add every single action manually to the statement, you discovered the reason why this package was created. You can work with [access levels]!
@@ -118,12 +113,12 @@ new statement.Ec2()
   );
 ```
 
-The `allActions()` method also accepts regular expressions which test against the action name:
+The `allActions()` method also accepts regular expressions (as a string) which test against the action name:
 
 ```typescript
 new statement.Ec2()
   .deny()
-  .allActions(/vpn/i);
+  .allActions('/vpn/i');
 ```
 
 If no value is passed, all actions (`ec2:*`) will be added:
@@ -139,7 +134,7 @@ For every available condition key, there are `if*()` methods available.
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
@@ -151,7 +146,7 @@ If you want to add a condition not covered by the available methods, you can def
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .if('aws:RequestTag/Owner', 'John');
 ```
 
@@ -162,7 +157,7 @@ Most of the `if*()` methods allow an optional operator as last argument:
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .if('aws:RequestTag/Owner', '*John*', 'StringEquals');
 ```
 
@@ -197,7 +192,7 @@ new statement.S3()
   .allow()
   .notActions()
   .notResources()
-  .deleteBucket()
+  .toDeleteBucket()
   .onBucket('some-bucket');
 ```
 
@@ -209,11 +204,11 @@ const policy = {
   Statement: [
     new statement.Ec2()
       .allow()
-      .startInstances()
+      .toStartInstances()
       .ifAwsRequestTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
-      .stopInstances()
+      .toStopInstances()
       .ifResourceTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
@@ -265,7 +260,7 @@ Sets the `Effect` of the statement to `Allow`.
 ```typescript
 new statement.Ec2()
   .allow()
-  .stopInstances();
+  .toStopInstances();
 ```
 
 ### <a name='deny'></a>deny
@@ -275,7 +270,18 @@ Sets the `Effect` of the statement to `Deny`.
 ```typescript
 new statement.Ec2()
   .deny()
-  .stopInstances();
+  .toStopInstances();
+```
+
+### <a name='toto'></a>to*, to
+
+For every available action, there are `to*()` methods available.
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .toStartInstances()
+  .toStopInstances();
 ```
 
 ### <a name='allActions'></a>allActions
@@ -288,12 +294,12 @@ new statement.Ec2()
   .allActions();
 ```
 
-The method can take regular expressions and [access levels] as options and will add only the matching actions:
+The method can take regular expressions (as a string) and [access levels] as options and will add only the matching actions:
 
 ```typescript
 new statement.Ec2()
   .allow()
-  .allActions(/vpn/i);
+  .allActions('/vpn/i');
 ```
 
 ```typescript
@@ -320,7 +326,7 @@ For every available condition key, there are `if*()` methods available.
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .ifEncrypted()
   .ifInstanceType(['t3.micro', 't3.nano'])
   .ifAssociatePublicIpAddress(false)
@@ -332,7 +338,7 @@ Most of them allow an optional operator as last argument:
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .ifInstanceType('*.nano', 'StringLike')
 ```
 
@@ -343,7 +349,7 @@ If you want to add a condition not covered by the available methods, you can def
 ```typescript
 new statement.Ec2()
   .allow()
-  .startInstances()
+  .toStartInstances()
   .if(
     'aws:RequestTag/Owner',
     '${aws:username}',
@@ -390,7 +396,7 @@ Switches the policy provider to use [NotAction].
 new statement.S3()
   .allow()
   .notActions()
-  .deleteBucket()
+  .toDeleteBucket()
   .onBucket('some-bucket');
 ```
 
@@ -402,7 +408,7 @@ Switches the policy provider to use [NotResource].
 new statement.S3()
   .allow()
   .notResources()
-  .deleteBucket()
+  .toDeleteBucket()
   .onBucket('some-bucket');
 ```
 
@@ -414,7 +420,7 @@ Switches the policy provider to use [NotPrincipal].
 new statement.Sts()
   .deny()
   .notPrincipals()
-  .assumeRole()
+  .toAssumeRole()
   .forUser('1234567890', 'Bob');
 ```
 
@@ -425,67 +431,67 @@ To create assume policies, use the `for*()` methods. There are methods available
 ```typescript
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forAccount('1234567890');
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forService('lambda.amazonaws.com');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forUser('1234567890', 'Bob');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forRole('1234567890', 'role-name');
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedCognito();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedAmazon();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedGoogle();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forFederatedFacebook();
 
 new statement.Sts()
   .allow()
-  .assumeRoleWithSAML()
+  .toAssumeRoleWithSAML()
   .forSaml('1234567890', 'saml-provider');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forPublic();
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forAssumedRoleSession('123456789', 'role-name', 'session-name');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forCanonicalUser('userID');
 
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .for('arn:foo:bar')
 ```
 
@@ -495,7 +501,7 @@ To reverse the assume policy you can call the `notPrincipals()` method:
 new statement.Sts()
   .deny()
   .notPrincipals()
-  .assumeRole()
+  .toAssumeRole()
   .forUser('1234567890', 'Bob');
 ```
 
@@ -504,7 +510,7 @@ If you use the cdk variant of the package you should not have the need to manual
 ```typescript
 new statement.Sts()
   .allow()
-  .assumeRole()
+  .toAssumeRole()
   .forCdkPrincipal(
     new iam.ServicePrincipal('sns.amazonaws.com')
     new iam.ServicePrincipal('lambda.amazonaws.com')
@@ -558,8 +564,6 @@ This project is not affiliated, funded, or in any way associated with AWS.
 
    [source]: https://github.com/udondan/iam-floyd
    [npm]: https://www.npmjs.com/package/iam-floyd
-   [PyPI]: https://pypi.org/project/iam-floyd/
-   [NuGet]: https://www.nuget.org/packages/IAM.Floyd/
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
    [license]: https://github.com/udondan/iam-floyd/blob/master/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
@@ -568,4 +572,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.32.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.52.4

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [mediapackage-vod](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html).
@@ -207,13 +207,13 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost
    */
-  public createAsset() {
+  public toCreateAsset() {
     this.add('mediapackage-vod:CreateAsset');
     return this;
   }
@@ -223,13 +223,13 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationspost
    */
-  public createPackagingConfiguration() {
+  public toCreatePackagingConfiguration() {
     this.add('mediapackage-vod:CreatePackagingConfiguration');
     return this;
   }
@@ -239,13 +239,13 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupspost
    */
-  public createPackagingGroup() {
+  public toCreatePackagingGroup() {
     this.add('mediapackage-vod:CreatePackagingGroup');
     return this;
   }
@@ -257,7 +257,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-iddelete
    */
-  public deleteAsset() {
+  public toDeleteAsset() {
     this.add('mediapackage-vod:DeleteAsset');
     return this;
   }
@@ -269,7 +269,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-iddelete
    */
-  public deletePackagingConfiguration() {
+  public toDeletePackagingConfiguration() {
     this.add('mediapackage-vod:DeletePackagingConfiguration');
     return this;
   }
@@ -281,7 +281,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-iddelete
    */
-  public deletePackagingGroup() {
+  public toDeletePackagingGroup() {
     this.add('mediapackage-vod:DeletePackagingGroup');
     return this;
   }
@@ -293,7 +293,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-idget
    */
-  public describeAsset() {
+  public toDescribeAsset() {
     this.add('mediapackage-vod:DescribeAsset');
     return this;
   }
@@ -305,7 +305,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-idget
    */
-  public describePackagingConfiguration() {
+  public toDescribePackagingConfiguration() {
     this.add('mediapackage-vod:DescribePackagingConfiguration');
     return this;
   }
@@ -317,7 +317,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-idget
    */
-  public describePackagingGroup() {
+  public toDescribePackagingGroup() {
     this.add('mediapackage-vod:DescribePackagingGroup');
     return this;
   }
@@ -329,7 +329,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetsget
    */
-  public listAssets() {
+  public toListAssets() {
     this.add('mediapackage-vod:ListAssets');
     return this;
   }
@@ -341,7 +341,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationsget
    */
-  public listPackagingConfigurations() {
+  public toListPackagingConfigurations() {
     this.add('mediapackage-vod:ListPackagingConfigurations');
     return this;
   }
@@ -353,7 +353,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupsget
    */
-  public listPackagingGroups() {
+  public toListPackagingGroups() {
     this.add('mediapackage-vod:ListPackagingGroups');
     return this;
   }
@@ -365,7 +365,7 @@ export class MediapackageVod extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnget
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('mediapackage-vod:ListTagsForResource');
     return this;
   }
@@ -375,13 +375,13 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arnpost
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('mediapackage-vod:TagResource');
     return this;
   }
@@ -391,12 +391,12 @@ export class MediapackageVod extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/tags-resource-arn.html#tags-resource-arndelete
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('mediapackage-vod:UntagResource');
     return this;
   }
@@ -411,8 +411,8 @@ export class MediapackageVod extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAssets(assetIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:assets/${AssetIdentifier}';
@@ -433,8 +433,8 @@ export class MediapackageVod extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPackagingConfigurations(packagingConfigurationIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-configurations/${PackagingConfigurationIdentifier}';
@@ -455,8 +455,8 @@ export class MediapackageVod extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPackagingGroups(packagingGroupIdentifier: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:mediapackage-vod:${Region}:${Account}:packaging-groups/${PackagingGroupIdentifier}';
@@ -465,5 +465,61 @@ export class MediapackageVod extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the presence of tag key-value pairs in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toCreateAsset()
+   * - .toCreatePackagingConfiguration()
+   * - .toCreatePackagingGroup()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag key-value pairs attached to the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - assets
+   * - packaging-configurations
+   * - packaging-groups
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of tag keys in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toCreateAsset()
+   * - .toCreatePackagingConfiguration()
+   * - .toCreatePackagingGroup()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
@@ -160,13 +160,13 @@ export class Firehose extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html
    */
-  public createDeliveryStream() {
+  public toCreateDeliveryStream() {
     this.add('firehose:CreateDeliveryStream');
     return this;
   }
@@ -178,7 +178,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html
    */
-  public deleteDeliveryStream() {
+  public toDeleteDeliveryStream() {
     this.add('firehose:DeleteDeliveryStream');
     return this;
   }
@@ -190,7 +190,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html
    */
-  public describeDeliveryStream() {
+  public toDescribeDeliveryStream() {
     this.add('firehose:DescribeDeliveryStream');
     return this;
   }
@@ -202,7 +202,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html
    */
-  public listDeliveryStreams() {
+  public toListDeliveryStreams() {
     this.add('firehose:ListDeliveryStreams');
     return this;
   }
@@ -214,7 +214,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListTagsForDeliveryStream.html
    */
-  public listTagsForDeliveryStream() {
+  public toListTagsForDeliveryStream() {
     this.add('firehose:ListTagsForDeliveryStream');
     return this;
   }
@@ -226,7 +226,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html
    */
-  public putRecord() {
+  public toPutRecord() {
     this.add('firehose:PutRecord');
     return this;
   }
@@ -238,7 +238,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html
    */
-  public putRecordBatch() {
+  public toPutRecordBatch() {
     this.add('firehose:PutRecordBatch');
     return this;
   }
@@ -250,7 +250,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html
    */
-  public startDeliveryStreamEncryption() {
+  public toStartDeliveryStreamEncryption() {
     this.add('firehose:StartDeliveryStreamEncryption');
     return this;
   }
@@ -262,7 +262,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_StopDeliveryStreamEncryption.html
    */
-  public stopDeliveryStreamEncryption() {
+  public toStopDeliveryStreamEncryption() {
     this.add('firehose:StopDeliveryStreamEncryption');
     return this;
   }
@@ -272,13 +272,13 @@ export class Firehose extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_TagDeliveryStream.html
    */
-  public tagDeliveryStream() {
+  public toTagDeliveryStream() {
     this.add('firehose:TagDeliveryStream');
     return this;
   }
@@ -288,12 +288,12 @@ export class Firehose extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UntagDeliveryStream.html
    */
-  public untagDeliveryStream() {
+  public toUntagDeliveryStream() {
     this.add('firehose:UntagDeliveryStream');
     return this;
   }
@@ -305,7 +305,7 @@ export class Firehose extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html
    */
-  public updateDestination() {
+  public toUpdateDestination() {
     this.add('firehose:UpdateDestination');
     return this;
   }
@@ -320,8 +320,8 @@ export class Firehose extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDeliverystream(deliveryStreamName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}';
@@ -330,5 +330,49 @@ export class Firehose extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters create requests based on the allowed set of values for each of the tags
+   *
+   * Applies to actions:
+   * - .toCreateDeliveryStream()
+   * - .toTagDeliveryStream()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource.
+   *
+   * Applies to resource types:
+   * - deliverystream
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters create requests based on the presence of mandatory tags in the request
+   *
+   * Applies to actions:
+   * - .toCreateDeliveryStream()
+   * - .toTagDeliveryStream()
+   * - .toUntagDeliveryStream()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

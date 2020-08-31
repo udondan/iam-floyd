@@ -57,7 +57,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html
    */
-  public cancelJob() {
+  public toCancelJob() {
     this.add('importexport:CancelJob');
     return this;
   }
@@ -69,7 +69,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html
    */
-  public createJob() {
+  public toCreateJob() {
     this.add('importexport:CreateJob');
     return this;
   }
@@ -81,7 +81,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html
    */
-  public getShippingLabel() {
+  public toGetShippingLabel() {
     this.add('importexport:GetShippingLabel');
     return this;
   }
@@ -93,7 +93,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html
    */
-  public getStatus() {
+  public toGetStatus() {
     this.add('importexport:GetStatus');
     return this;
   }
@@ -105,7 +105,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html
    */
-  public listJobs() {
+  public toListJobs() {
     this.add('importexport:ListJobs');
     return this;
   }
@@ -117,7 +117,7 @@ export class Importexport extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html
    */
-  public updateJob() {
+  public toUpdateJob() {
     this.add('importexport:UpdateJob');
     return this;
   }

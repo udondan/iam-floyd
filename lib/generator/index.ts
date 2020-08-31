@@ -90,11 +90,59 @@ export interface ResourceTypeOnAction {
 
 export function getAwsServices(): Promise<string[]> {
   return new Promise((resolve, reject) => {
+    Promise.all([getAwsServicesFromGithub(), getAwsServicesFromIamDocs()])
+      .then((values) => {
+        const merged = values[0].concat(values[0]);
+        const unique = merged.filter((elem, pos) => {
+          return merged.indexOf(elem) == pos;
+        });
+        resolve(unique.sort());
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
+function getAwsServicesFromGithub(): Promise<string[]> {
+  return new Promise((resolve, reject) => {
     const url =
       'https://github.com/awsdocs/iam-user-guide/tree/master/doc_source';
     requestWithRetry(url)
       .then((body) => {
-        const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?).md"/g;
+        const re = /href="\/awsdocs\/iam-user-guide\/blob\/master\/doc_source\/list_(.*?)\.md"/g;
+        var match: RegExpExecArray;
+        const services: string[] = [];
+        do {
+          match = re.exec(body);
+          if (match) {
+            services.push(match[1]);
+          }
+        } while (match);
+        if (!services.length) {
+          return reject(`Unable to find services on ${url}`);
+        }
+
+        // set env `SERVICE` to generate only a single service for testing purpose
+        const testOverride = process.env.SERVICE;
+        if (typeof testOverride !== 'undefined' && testOverride.length) {
+          return resolve([testOverride]);
+        }
+        resolve(services.sort());
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
+function getAwsServicesFromIamDocs(): Promise<string[]> {
+  return new Promise((resolve, reject) => {
+    const url =
+      'https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html';
+    requestWithRetry(url)
+      .then((body) => {
+        const re = /href=".\/list_(.*?)\.html"/g;
         var match: RegExpExecArray;
         const services: string[] = [];
         do {
@@ -129,7 +177,7 @@ export function getContent(service: string): Promise<Module> {
     'https://docs.aws.amazon.com/IAM/latest/UserGuide/list_%s.html';
   return new Promise(async (resolve, reject) => {
     try {
-      const module: Module = {
+      var module: Module = {
         filename: service.replace(/[^a-z0-9-]/i, '-'),
       };
 
@@ -161,9 +209,9 @@ export function getContent(service: string): Promise<Module> {
             module.fixes = fixes[service];
           }
 
-          module.actionList = parseActionTable($);
-          module.resourceTypes = parseResourceTypeTable($, module.name);
-          module.conditions = parseConditionTable($);
+          module = addConditions($, module);
+          module = addActions($, module);
+          module = addResourceTypes($, module);
 
           resolve(module);
         })
@@ -210,8 +258,12 @@ export function createModule(module: Module): Promise<void> {
   );
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
+  let imports = ['Actions', 'PolicyStatement', 'ResourceTypes'];
+  if (Object.entries(module.conditions!).length) {
+    imports.push('PolicyStatementWithCondition');
+  }
   sourceFile.addImportDeclaration({
-    namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
+    namedImports: imports.sort(),
     moduleSpecifier: '../shared',
   });
 
@@ -258,7 +310,7 @@ export function createModule(module: Module): Promise<void> {
 
   for (const [name, action] of Object.entries(module.actionList!)) {
     const method = classDeclaration.addMethod({
-      name: lowerFirst(name),
+      name: `to${name}`,
       scope: Scope.Public,
     });
     method.setBodyText(
@@ -268,9 +320,9 @@ export function createModule(module: Module): Promise<void> {
     var desc = `\n${action.description}\n\nAccess Level: ${action.accessLevel}`;
 
     if ('conditions' in action) {
-      desc += '\n\nPossible condition keys:';
+      desc += '\n\nPossible conditions:';
       action.conditions.forEach((condition) => {
-        desc += `\n- ${condition}`;
+        desc += `\n- .${createConditionName(condition)}()`;
       });
     }
     if ('dependentActions' in action) {
@@ -333,9 +385,9 @@ export function createModule(module: Module): Promise<void> {
     }
     desc += `\n${paramDocs}`;
     if (resourceType.conditionKeys.length) {
-      desc += '\n\nPossible condition keys:';
+      desc += '\n\nPossible conditions:';
       resourceType.conditionKeys.forEach((key) => {
-        desc += `\n- ${key}`;
+        desc += `\n- .${createConditionName(key)}()`;
       });
     }
     method.addJsDoc({
@@ -349,109 +401,136 @@ export function createModule(module: Module): Promise<void> {
   for (let [key, condition] of Object.entries(module.conditions!)) {
     condition = conditionFixer(module.filename, condition);
 
-    if (!condition.isGlobal) {
-      const name = key.split(/[:/]/);
-      var desc = '';
+    const name = key.split(/[:/]/);
+    var desc = '';
 
-      if (condition.description.length) {
-        desc += `\n${condition.description}\n`;
-      }
-
-      if (condition.url.length) {
-        desc += `\n${condition.url}\n`;
-      }
-
-      const type = condition.type.toLowerCase();
-
-      const methodBody: string[] = [];
-
-      var methodName = createConditionName(key);
-      if (name.length > 2 && !name[2].length) {
-        // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
-        methodName += 'Exists';
-      }
-      const method = classDeclaration.addMethod({
-        name: methodName,
-        scope: Scope.Public,
-      });
-
-      var propsKey = `${name[0]}:${name[1]}`;
-
-      if (name.length > 2) {
-        // it is one of those tag keys
-        propsKey += '/';
-        if (name[2].length) {
-          const paramName = name[2].replace(/[^a-zA-Z0-9]/g, '');
-          desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
-          method.addParameter({
-            name: lowerFirst(paramName),
-            type: 'string',
-          });
-          propsKey += `\${${lowerFirst(paramName)}}`;
-        }
-      }
-
-      if (type in conditionTypeDefaults) {
-        const types = [...conditionTypeDefaults[type].type];
-        if (types.length > 1) {
-          types.push(`(${types.join('|')})[]`);
-        } else {
-          types.push(`${types}[]`);
-        }
-
-        desc += `\n@param value The value(s) to check`;
-        method.addParameter({
-          name: 'value',
-          type: types.join(' | '),
-        });
-
-        desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
-        method.addParameter({
-          name: 'operator',
-          type: 'string',
-          hasQuestionToken: true,
-        });
-
-        if (type == 'date') {
-          methodBody.push(
-            'if (typeof (value as Date).getMonth === "function") {',
-            '  value = (value as Date).toISOString();',
-            '} else if (Array.isArray(value)) {',
-            '  value = value.map((item) => {',
-            '    if (typeof (item as Date).getMonth === "function") {',
-            '      item = (item as Date).toISOString();',
-            '    }',
-            '    return item;',
-            '  });',
-            '}'
-          );
-        }
-
-        methodBody.push(
-          `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
-        );
-      } else if (type == 'bool' || type == 'boolean') {
-        desc += '\n@param value `true` or `false`. **Default:** `true`';
-
-        method.addParameter({
-          name: 'value',
-          type: 'boolean',
-          hasQuestionToken: true,
-        });
-
-        methodBody.push(
-          `return this.if(\`${key}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
-        );
-      } else {
-        throw new Error(`Unexpected condition type: ${type}`);
-      }
-
-      method.addJsDoc({
-        description: desc,
-      });
-
-      method.setBodyText(methodBody.join('\n'));
+    if (condition.description.length) {
+      desc += `\n${condition.description}\n`;
     }
+
+    if (condition.url.length) {
+      desc += `\n${condition.url}\n`;
+    }
+
+    if ('relatedActions' in condition && condition.relatedActions.length) {
+      desc += '\nApplies to actions:\n';
+      condition.relatedActions
+        .filter((elem, pos) => {
+          return condition.relatedActions.indexOf(elem) == pos;
+        })
+        .forEach((relatedAction) => {
+          desc += `- .to${camelCase(relatedAction)}()\n`;
+        });
+    }
+
+    if (
+      'relatedResourceTypes' in condition &&
+      condition.relatedResourceTypes.length
+    ) {
+      desc += '\nApplies to resource types:\n';
+      condition.relatedResourceTypes
+        .filter((elem, pos) => {
+          return condition.relatedResourceTypes.indexOf(elem) == pos;
+        })
+        .forEach((resourceType) => {
+          desc += `- ${resourceType}\n`;
+        });
+    }
+
+    const type = condition.type.toLowerCase();
+
+    const methodBody: string[] = [];
+
+    var methodName = createConditionName(key);
+    if (name.length > 2 && !name[2].length) {
+      // special case for ec2:ResourceTag/ - not sure this is correct, the description makes zero sense...
+      methodName += 'Exists';
+    }
+    const method = classDeclaration.addMethod({
+      name: methodName,
+      scope: Scope.Public,
+      returnType: 'PolicyStatementWithCondition',
+    });
+
+    var propsKey = `${name[0]}:${name[1]}`;
+
+    if (name.length > 2) {
+      // it is one of those tag keys
+      propsKey += '/';
+      if (name[2].length) {
+        const paramName = name[2].replace(/[^a-zA-Z0-9]/g, '');
+        desc += `\n@param ${lowerFirst(paramName)} The tag key to check`;
+        method.addParameter({
+          name: lowerFirst(paramName),
+          type: 'string',
+        });
+        propsKey += `\${${lowerFirst(paramName)}}`;
+      }
+    }
+
+    if (type in conditionTypeDefaults) {
+      var types = [...conditionTypeDefaults[type].type];
+      if ('typeOverride' in condition) {
+        types = condition.typeOverride;
+      }
+      if (types.length > 1) {
+        types.push(`(${types.join('|')})[]`);
+      } else {
+        types.push(`${types}[]`);
+      }
+
+      desc += `\n@param value The value(s) to check`;
+      method.addParameter({
+        name: 'value',
+        type: types.join(' | '),
+      });
+
+      desc += `\n@param operator Works with [${type} operators](${conditionTypeDefaults[type].url}). **Default:** \`${conditionTypeDefaults[type].default}\``;
+      method.addParameter({
+        name: 'operator',
+        type: 'string',
+        hasQuestionToken: true,
+      });
+
+      if (type == 'date') {
+        methodBody.push(
+          'if (typeof (value as Date).getMonth === "function") {',
+          '  value = (value as Date).toISOString();',
+          '} else if (Array.isArray(value)) {',
+          '  value = value.map((item) => {',
+          '    if (typeof (item as Date).getMonth === "function") {',
+          '      item = (item as Date).toISOString();',
+          '    }',
+          '    return item;',
+          '  });',
+          '}'
+        );
+      }
+
+      methodBody.push(
+        `return this.if(\`${propsKey}\`, value, operator || '${conditionTypeDefaults[type].default}')`
+      );
+    } else if (type == 'bool' || type == 'boolean') {
+      desc += '\n@param value `true` or `false`. **Default:** `true`';
+
+      method.addParameter({
+        name: 'value',
+        type: 'boolean',
+        hasQuestionToken: true,
+      });
+
+      methodBody.push(
+        `return this.if(\`${key}\`, (typeof value !== 'undefined' ? value : true), 'Bool');`
+      );
+    } else {
+      throw new Error(`Unexpected condition type: ${type}`);
+    }
+
+    method.addJsDoc({
+      description: desc,
+    });
+
+    method.setBodyText(methodBody.join('\n'));
   }
 
   formatCode(sourceFile);
@@ -469,6 +548,10 @@ export function createIndex() {
     fs.unlinkSync(filePath);
   }
   const sourceFile = project.createSourceFile(filePath);
+
+  sourceFile.addExportDeclaration({
+    moduleSpecifier: './shared',
+  });
 
   modules.sort().forEach((module) => {
     const source = project.addSourceFileAtPath(
@@ -600,7 +683,7 @@ function getTable($: CheerioStatic, title: string) {
   return $(table[0]);
 }
 
-function parseActionTable($: CheerioStatic): Actions {
+function addActions($: CheerioStatic, module: Module): Module {
   const actions: Actions = {};
   const tableActions = getTable($, 'Actions');
 
@@ -640,7 +723,12 @@ function parseActionTable($: CheerioStatic): Actions {
     const conditions: string[] = [];
     if (conditionKeys.length) {
       conditionKeys.each((_, conditionKey) => {
-        conditions.push(cleanDescription($(conditionKey).text()));
+        const condition = cleanDescription($(conditionKey).text());
+        conditions.push(condition);
+        if (!('relatedActions' in module.conditions[condition])) {
+          module.conditions[condition].relatedActions = [];
+        }
+        module.conditions[condition].relatedActions.push(action);
       });
     }
 
@@ -673,13 +761,12 @@ function parseActionTable($: CheerioStatic): Actions {
       actions[action].conditions = conditions;
     }
   });
-  return actions;
+  module.actionList = actions;
+  return module;
 }
 
-function parseResourceTypeTable(
-  $: CheerioStatic,
-  service: string
-): ResourceTypes {
+function addResourceTypes($: CheerioStatic, module: Module): Module {
+  const service = module.name;
   const resourceTypes: ResourceTypes = {};
   const tableResourceTypes = getTable($, 'Resource Types');
   tableResourceTypes.find('tr').each((_: number, element: CheerioElement) => {
@@ -700,6 +787,14 @@ function parseResourceTypeTable(
       .map((element) => {
         return $(element).text().trim();
       });
+
+    conditionKeys.forEach((condition) => {
+      if (!('relatedResourceTypes' in module.conditions[condition])) {
+        module.conditions[condition].relatedResourceTypes = [];
+      }
+      module.conditions[condition].relatedResourceTypes.push(name);
+    });
+
     if (name.length) {
       resourceTypes[name] = {
         name: name,
@@ -709,10 +804,11 @@ function parseResourceTypeTable(
       };
     }
   });
-  return resourceTypes;
+  module.resourceTypes = resourceTypes;
+  return module;
 }
 
-function parseConditionTable($: CheerioStatic): Conditions {
+function addConditions($: CheerioStatic, module: Module): Module {
   const conditions: Conditions = {};
   const table = getTable($, 'Condition Keys');
   table.find('tr').each((_: number, element: CheerioElement) => {
@@ -732,12 +828,17 @@ function parseConditionTable($: CheerioStatic): Conditions {
       };
     }
   });
-  return conditions;
+  module.conditions = conditions;
+  return module;
 }
 
 function createConditionName(key: string): string {
   var methodName = 'if';
   const split = key.split(/[:/]/);
+  // for global conditions
+  if (split[0] == 'aws') {
+    methodName += 'Aws';
+  }
   // these are exceptions for the Security Token Service to:
   // - make it clear to which provider the condition is for
   // - avoid duplicate method names

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [kms](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html).
@@ -649,13 +649,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html
    */
-  public cancelKeyDeletion() {
+  public toCancelKeyDeletion() {
     this.add('kms:CancelKeyDeletion');
     return this;
   }
@@ -667,7 +667,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ConnectCustomKeyStore.html
    */
-  public connectCustomKeyStore() {
+  public toConnectCustomKeyStore() {
     this.add('kms:ConnectCustomKeyStore');
     return this;
   }
@@ -677,13 +677,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateAlias.html
    */
-  public createAlias() {
+  public toCreateAlias() {
     this.add('kms:CreateAlias');
     return this;
   }
@@ -698,7 +698,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html
    */
-  public createCustomKeyStore() {
+  public toCreateCustomKeyStore() {
     this.add('kms:CreateCustomKeyStore');
     return this;
   }
@@ -708,15 +708,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:GrantConstraintType
-   * - kms:GrantIsForAWSResource
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifGrantConstraintType()
+   * - .ifGrantIsForAWSResource()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html
    */
-  public createGrant() {
+  public toCreateGrant() {
     this.add('kms:CreateGrant');
     return this;
   }
@@ -726,15 +726,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:BypassPolicyLockoutSafetyCheck
-   * - kms:CustomerMasterKeySpec
-   * - kms:CustomerMasterKeyUsage
-   * - kms:KeyOrigin
+   * Possible conditions:
+   * - .ifBypassPolicyLockoutSafetyCheck()
+   * - .ifCustomerMasterKeySpec()
+   * - .ifCustomerMasterKeyUsage()
+   * - .ifKeyOrigin()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html
    */
-  public createKey() {
+  public toCreateKey() {
     this.add('kms:CreateKey');
     return this;
   }
@@ -744,15 +744,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html
    */
-  public decrypt() {
+  public toDecrypt() {
     this.add('kms:Decrypt');
     return this;
   }
@@ -762,13 +762,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html
    */
-  public deleteAlias() {
+  public toDeleteAlias() {
     this.add('kms:DeleteAlias');
     return this;
   }
@@ -780,7 +780,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteCustomKeyStore.html
    */
-  public deleteCustomKeyStore() {
+  public toDeleteCustomKeyStore() {
     this.add('kms:DeleteCustomKeyStore');
     return this;
   }
@@ -790,13 +790,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteImportedKeyMaterial.html
    */
-  public deleteImportedKeyMaterial() {
+  public toDeleteImportedKeyMaterial() {
     this.add('kms:DeleteImportedKeyMaterial');
     return this;
   }
@@ -808,7 +808,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeCustomKeyStores.html
    */
-  public describeCustomKeyStores() {
+  public toDescribeCustomKeyStores() {
     this.add('kms:DescribeCustomKeyStores');
     return this;
   }
@@ -818,13 +818,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html
    */
-  public describeKey() {
+  public toDescribeKey() {
     this.add('kms:DescribeKey');
     return this;
   }
@@ -834,13 +834,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html
    */
-  public disableKey() {
+  public toDisableKey() {
     this.add('kms:DisableKey');
     return this;
   }
@@ -850,13 +850,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKeyRotation.html
    */
-  public disableKeyRotation() {
+  public toDisableKeyRotation() {
     this.add('kms:DisableKeyRotation');
     return this;
   }
@@ -868,7 +868,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_DisconnectCustomKeyStore.html
    */
-  public disconnectCustomKeyStore() {
+  public toDisconnectCustomKeyStore() {
     this.add('kms:DisconnectCustomKeyStore');
     return this;
   }
@@ -878,13 +878,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKey.html
    */
-  public enableKey() {
+  public toEnableKey() {
     this.add('kms:EnableKey');
     return this;
   }
@@ -894,13 +894,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_EnableKeyRotation.html
    */
-  public enableKeyRotation() {
+  public toEnableKeyRotation() {
     this.add('kms:EnableKeyRotation');
     return this;
   }
@@ -910,15 +910,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html
    */
-  public encrypt() {
+  public toEncrypt() {
     this.add('kms:Encrypt');
     return this;
   }
@@ -928,15 +928,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html
    */
-  public generateDataKey() {
+  public toGenerateDataKey() {
     this.add('kms:GenerateDataKey');
     return this;
   }
@@ -946,16 +946,16 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:DataKeyPairSpec
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifDataKeyPairSpec()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html
    */
-  public generateDataKeyPair() {
+  public toGenerateDataKeyPair() {
     this.add('kms:GenerateDataKeyPair');
     return this;
   }
@@ -965,16 +965,16 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:DataKeyPairSpec
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifDataKeyPairSpec()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html
    */
-  public generateDataKeyPairWithoutPlaintext() {
+  public toGenerateDataKeyPairWithoutPlaintext() {
     this.add('kms:GenerateDataKeyPairWithoutPlaintext');
     return this;
   }
@@ -984,15 +984,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyWithoutPlaintext.html
    */
-  public generateDataKeyWithoutPlaintext() {
+  public toGenerateDataKeyWithoutPlaintext() {
     this.add('kms:GenerateDataKeyWithoutPlaintext');
     return this;
   }
@@ -1004,7 +1004,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateRandom.html
    */
-  public generateRandom() {
+  public toGenerateRandom() {
     this.add('kms:GenerateRandom');
     return this;
   }
@@ -1014,13 +1014,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html
    */
-  public getKeyPolicy() {
+  public toGetKeyPolicy() {
     this.add('kms:GetKeyPolicy');
     return this;
   }
@@ -1030,13 +1030,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyRotationStatus.html
    */
-  public getKeyRotationStatus() {
+  public toGetKeyRotationStatus() {
     this.add('kms:GetKeyRotationStatus');
     return this;
   }
@@ -1046,15 +1046,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
-   * - kms:WrappingAlgorithm
-   * - kms:WrappingKeySpec
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
+   * - .ifWrappingAlgorithm()
+   * - .ifWrappingKeySpec()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetParametersForImport.html
    */
-  public getParametersForImport() {
+  public toGetParametersForImport() {
     this.add('kms:GetParametersForImport');
     return this;
   }
@@ -1064,13 +1064,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html
    */
-  public getPublicKey() {
+  public toGetPublicKey() {
     this.add('kms:GetPublicKey');
     return this;
   }
@@ -1080,15 +1080,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ExpirationModel
-   * - kms:ValidTo
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifExpirationModel()
+   * - .ifValidTo()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ImportKeyMaterial.html
    */
-  public importKeyMaterial() {
+  public toImportKeyMaterial() {
     this.add('kms:ImportKeyMaterial');
     return this;
   }
@@ -1100,7 +1100,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListAliases.html
    */
-  public listAliases() {
+  public toListAliases() {
     this.add('kms:ListAliases');
     return this;
   }
@@ -1110,14 +1110,14 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:GrantIsForAWSResource
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifGrantIsForAWSResource()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListGrants.html
    */
-  public listGrants() {
+  public toListGrants() {
     this.add('kms:ListGrants');
     return this;
   }
@@ -1127,13 +1127,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: List
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeyPolicies.html
    */
-  public listKeyPolicies() {
+  public toListKeyPolicies() {
     this.add('kms:ListKeyPolicies');
     return this;
   }
@@ -1145,7 +1145,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeys.html
    */
-  public listKeys() {
+  public toListKeys() {
     this.add('kms:ListKeys');
     return this;
   }
@@ -1155,13 +1155,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListResourceTags.html
    */
-  public listResourceTags() {
+  public toListResourceTags() {
     this.add('kms:ListResourceTags');
     return this;
   }
@@ -1173,7 +1173,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ListRetirableGrants.html
    */
-  public listRetirableGrants() {
+  public toListRetirableGrants() {
     this.add('kms:ListRetirableGrants');
     return this;
   }
@@ -1183,14 +1183,14 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - kms:BypassPolicyLockoutSafetyCheck
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifBypassPolicyLockoutSafetyCheck()
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html
    */
-  public putKeyPolicy() {
+  public toPutKeyPolicy() {
     this.add('kms:PutKeyPolicy');
     return this;
   }
@@ -1200,16 +1200,16 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ReEncryptOnSameKey
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifReEncryptOnSameKey()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
-  public reEncryptFrom() {
+  public toReEncryptFrom() {
     this.add('kms:ReEncryptFrom');
     return this;
   }
@@ -1219,16 +1219,16 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:EncryptionAlgorithm
-   * - kms:EncryptionContextKeys
-   * - kms:ReEncryptOnSameKey
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifEncryptionAlgorithm()
+   * - .ifEncryptionContextKeys()
+   * - .ifReEncryptOnSameKey()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ReEncrypt.html
    */
-  public reEncryptTo() {
+  public toReEncryptTo() {
     this.add('kms:ReEncryptTo');
     return this;
   }
@@ -1240,7 +1240,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html
    */
-  public retireGrant() {
+  public toRetireGrant() {
     this.add('kms:RetireGrant');
     return this;
   }
@@ -1250,14 +1250,14 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Permissions management
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:GrantIsForAWSResource
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifGrantIsForAWSResource()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html
    */
-  public revokeGrant() {
+  public toRevokeGrant() {
     this.add('kms:RevokeGrant');
     return this;
   }
@@ -1267,13 +1267,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_ScheduleKeyDeletion.html
    */
-  public scheduleKeyDeletion() {
+  public toScheduleKeyDeletion() {
     this.add('kms:ScheduleKeyDeletion');
     return this;
   }
@@ -1283,15 +1283,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:MessageType
-   * - kms:SigningAlgorithm
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifMessageType()
+   * - .ifSigningAlgorithm()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html
    */
-  public sign() {
+  public toSign() {
     this.add('kms:Sign');
     return this;
   }
@@ -1301,13 +1301,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('kms:TagResource');
     return this;
   }
@@ -1317,13 +1317,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('kms:UntagResource');
     return this;
   }
@@ -1333,13 +1333,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateAlias.html
    */
-  public updateAlias() {
+  public toUpdateAlias() {
     this.add('kms:UpdateAlias');
     return this;
   }
@@ -1351,7 +1351,7 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateCustomKeyStore.html
    */
-  public updateCustomKeyStore() {
+  public toUpdateCustomKeyStore() {
     this.add('kms:UpdateCustomKeyStore');
     return this;
   }
@@ -1361,13 +1361,13 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_UpdateKeyDescription.html
    */
-  public updateKeyDescription() {
+  public toUpdateKeyDescription() {
     this.add('kms:UpdateKeyDescription');
     return this;
   }
@@ -1377,15 +1377,15 @@ export class Kms extends PolicyStatement {
    *
    * Access Level: Write
    *
-   * Possible condition keys:
-   * - kms:CallerAccount
-   * - kms:MessageType
-   * - kms:SigningAlgorithm
-   * - kms:ViaService
+   * Possible conditions:
+   * - .ifCallerAccount()
+   * - .ifMessageType()
+   * - .ifSigningAlgorithm()
+   * - .ifViaService()
    *
    * https://docs.aws.amazon.com/kms/latest/APIReference/API_Verify.html
    */
-  public verify() {
+  public toVerify() {
     this.add('kms:Verify');
     return this;
   }
@@ -1433,9 +1433,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   * - .toPutKeyPolicy()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifBypassPolicyLockoutSafetyCheck(value?: boolean) {
+  public ifBypassPolicyLockoutSafetyCheck(value?: boolean): PolicyStatementWithCondition {
     return this.if(`kms:BypassPolicyLockoutSafetyCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -1444,10 +1448,47 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account
    *
+   * Applies to actions:
+   * - .toCancelKeyDeletion()
+   * - .toCreateAlias()
+   * - .toCreateGrant()
+   * - .toDecrypt()
+   * - .toDeleteAlias()
+   * - .toDeleteImportedKeyMaterial()
+   * - .toDescribeKey()
+   * - .toDisableKey()
+   * - .toDisableKeyRotation()
+   * - .toEnableKey()
+   * - .toEnableKeyRotation()
+   * - .toEncrypt()
+   * - .toGenerateDataKey()
+   * - .toGenerateDataKeyPair()
+   * - .toGenerateDataKeyPairWithoutPlaintext()
+   * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toGetKeyPolicy()
+   * - .toGetKeyRotationStatus()
+   * - .toGetParametersForImport()
+   * - .toGetPublicKey()
+   * - .toImportKeyMaterial()
+   * - .toListGrants()
+   * - .toListKeyPolicies()
+   * - .toListResourceTags()
+   * - .toPutKeyPolicy()
+   * - .toReEncryptFrom()
+   * - .toReEncryptTo()
+   * - .toRevokeGrant()
+   * - .toScheduleKeyDeletion()
+   * - .toSign()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAlias()
+   * - .toUpdateKeyDescription()
+   * - .toVerify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCallerAccount(value: string | string[], operator?: string) {
+  public ifCallerAccount(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:CallerAccount`, value, operator || 'StringLike');
   }
 
@@ -1456,10 +1497,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-spec
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCustomerMasterKeySpec(value: string | string[], operator?: string) {
+  public ifCustomerMasterKeySpec(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:CustomerMasterKeySpec`, value, operator || 'StringLike');
   }
 
@@ -1468,10 +1512,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-customer-master-key-usage
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCustomerMasterKeyUsage(value: string | string[], operator?: string) {
+  public ifCustomerMasterKeyUsage(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:CustomerMasterKeyUsage`, value, operator || 'StringLike');
   }
 
@@ -1480,10 +1527,14 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-data-key-pair-spec
    *
+   * Applies to actions:
+   * - .toGenerateDataKeyPair()
+   * - .toGenerateDataKeyPairWithoutPlaintext()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDataKeyPairSpec(value: string | string[], operator?: string) {
+  public ifDataKeyPairSpec(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:DataKeyPairSpec`, value, operator || 'StringLike');
   }
 
@@ -1492,10 +1543,20 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm
    *
+   * Applies to actions:
+   * - .toDecrypt()
+   * - .toEncrypt()
+   * - .toGenerateDataKey()
+   * - .toGenerateDataKeyPair()
+   * - .toGenerateDataKeyPairWithoutPlaintext()
+   * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toReEncryptFrom()
+   * - .toReEncryptTo()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEncryptionAlgorithm(value: string | string[], operator?: string) {
+  public ifEncryptionAlgorithm(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:EncryptionAlgorithm`, value, operator || 'StringLike');
   }
 
@@ -1504,10 +1565,20 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys
    *
+   * Applies to actions:
+   * - .toDecrypt()
+   * - .toEncrypt()
+   * - .toGenerateDataKey()
+   * - .toGenerateDataKeyPair()
+   * - .toGenerateDataKeyPairWithoutPlaintext()
+   * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toReEncryptFrom()
+   * - .toReEncryptTo()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEncryptionContextKeys(value: string | string[], operator?: string) {
+  public ifEncryptionContextKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:EncryptionContextKeys`, value, operator || 'StringLike');
   }
 
@@ -1516,10 +1587,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model
    *
+   * Applies to actions:
+   * - .toImportKeyMaterial()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifExpirationModel(value: string | string[], operator?: string) {
+  public ifExpirationModel(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:ExpirationModel`, value, operator || 'StringLike');
   }
 
@@ -1528,10 +1602,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type
    *
+   * Applies to actions:
+   * - .toCreateGrant()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGrantConstraintType(value: string | string[], operator?: string) {
+  public ifGrantConstraintType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:GrantConstraintType`, value, operator || 'StringLike');
   }
 
@@ -1540,9 +1617,14 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource
    *
+   * Applies to actions:
+   * - .toCreateGrant()
+   * - .toListGrants()
+   * - .toRevokeGrant()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifGrantIsForAWSResource(value?: boolean) {
+  public ifGrantIsForAWSResource(value?: boolean): PolicyStatementWithCondition {
     return this.if(`kms:GrantIsForAWSResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -1554,7 +1636,7 @@ export class Kms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGrantOperations(value: string | string[], operator?: string) {
+  public ifGrantOperations(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:GrantOperations`, value, operator || 'StringLike');
   }
 
@@ -1566,7 +1648,7 @@ export class Kms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGranteePrincipal(value: string | string[], operator?: string) {
+  public ifGranteePrincipal(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:GranteePrincipal`, value, operator || 'StringLike');
   }
 
@@ -1575,10 +1657,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin
    *
+   * Applies to actions:
+   * - .toCreateKey()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifKeyOrigin(value: string | string[], operator?: string) {
+  public ifKeyOrigin(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:KeyOrigin`, value, operator || 'StringLike');
   }
 
@@ -1587,10 +1672,14 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-message-type
    *
+   * Applies to actions:
+   * - .toSign()
+   * - .toVerify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMessageType(value: string | string[], operator?: string) {
+  public ifMessageType(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:MessageType`, value, operator || 'StringLike');
   }
 
@@ -1599,9 +1688,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key
    *
+   * Applies to actions:
+   * - .toReEncryptFrom()
+   * - .toReEncryptTo()
+   *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifReEncryptOnSameKey(value?: boolean) {
+  public ifReEncryptOnSameKey(value?: boolean): PolicyStatementWithCondition {
     return this.if(`kms:ReEncryptOnSameKey`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -1613,7 +1706,7 @@ export class Kms extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRetiringPrincipal(value: string | string[], operator?: string) {
+  public ifRetiringPrincipal(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:RetiringPrincipal`, value, operator || 'StringLike');
   }
 
@@ -1622,10 +1715,14 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm
    *
+   * Applies to actions:
+   * - .toSign()
+   * - .toVerify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSigningAlgorithm(value: string | string[], operator?: string) {
+  public ifSigningAlgorithm(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:SigningAlgorithm`, value, operator || 'StringLike');
   }
 
@@ -1634,10 +1731,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to
    *
+   * Applies to actions:
+   * - .toImportKeyMaterial()
+   *
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifValidTo(value: number | number[], operator?: string) {
+  public ifValidTo(value: number | number[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:ValidTo`, value, operator || 'NumericEquals');
   }
 
@@ -1646,10 +1746,47 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service
    *
+   * Applies to actions:
+   * - .toCancelKeyDeletion()
+   * - .toCreateAlias()
+   * - .toCreateGrant()
+   * - .toDecrypt()
+   * - .toDeleteAlias()
+   * - .toDeleteImportedKeyMaterial()
+   * - .toDescribeKey()
+   * - .toDisableKey()
+   * - .toDisableKeyRotation()
+   * - .toEnableKey()
+   * - .toEnableKeyRotation()
+   * - .toEncrypt()
+   * - .toGenerateDataKey()
+   * - .toGenerateDataKeyPair()
+   * - .toGenerateDataKeyPairWithoutPlaintext()
+   * - .toGenerateDataKeyWithoutPlaintext()
+   * - .toGetKeyPolicy()
+   * - .toGetKeyRotationStatus()
+   * - .toGetParametersForImport()
+   * - .toGetPublicKey()
+   * - .toImportKeyMaterial()
+   * - .toListGrants()
+   * - .toListKeyPolicies()
+   * - .toListResourceTags()
+   * - .toPutKeyPolicy()
+   * - .toReEncryptFrom()
+   * - .toReEncryptTo()
+   * - .toRevokeGrant()
+   * - .toScheduleKeyDeletion()
+   * - .toSign()
+   * - .toTagResource()
+   * - .toUntagResource()
+   * - .toUpdateAlias()
+   * - .toUpdateKeyDescription()
+   * - .toVerify()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifViaService(value: string | string[], operator?: string) {
+  public ifViaService(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:ViaService`, value, operator || 'StringLike');
   }
 
@@ -1658,10 +1795,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm
    *
+   * Applies to actions:
+   * - .toGetParametersForImport()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWrappingAlgorithm(value: string | string[], operator?: string) {
+  public ifWrappingAlgorithm(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:WrappingAlgorithm`, value, operator || 'StringLike');
   }
 
@@ -1670,10 +1810,13 @@ export class Kms extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec
    *
+   * Applies to actions:
+   * - .toGetParametersForImport()
+   *
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifWrappingKeySpec(value: string | string[], operator?: string) {
+  public ifWrappingKeySpec(value: string | string[], operator?: string): PolicyStatementWithCondition {
     return this.if(`kms:WrappingKeySpec`, value, operator || 'StringLike');
   }
 }

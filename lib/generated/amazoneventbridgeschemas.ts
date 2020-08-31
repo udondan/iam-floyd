@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [schemas](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridgeschemas.html).
@@ -372,7 +372,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#CreateDiscoverer
    */
-  public createDiscoverer() {
+  public toCreateDiscoverer() {
     this.add('schemas:CreateDiscoverer');
     return this;
   }
@@ -384,7 +384,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#CreateRegistry
    */
-  public createRegistry() {
+  public toCreateRegistry() {
     this.add('schemas:CreateRegistry');
     return this;
   }
@@ -396,7 +396,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#CreateSchema
    */
-  public createSchema() {
+  public toCreateSchema() {
     this.add('schemas:CreateSchema');
     return this;
   }
@@ -408,7 +408,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DeleteDiscoverer
    */
-  public deleteDiscoverer() {
+  public toDeleteDiscoverer() {
     this.add('schemas:DeleteDiscoverer');
     return this;
   }
@@ -420,7 +420,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DeleteRegistry
    */
-  public deleteRegistry() {
+  public toDeleteRegistry() {
     this.add('schemas:DeleteRegistry');
     return this;
   }
@@ -432,7 +432,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#DeleteResourcePolicy
    */
-  public deleteResourcePolicy() {
+  public toDeleteResourcePolicy() {
     this.add('schemas:DeleteResourcePolicy');
     return this;
   }
@@ -444,7 +444,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DeleteSchema
    */
-  public deleteSchema() {
+  public toDeleteSchema() {
     this.add('schemas:DeleteSchema');
     return this;
   }
@@ -456,7 +456,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-version-schemaversion.html#DeleteSchemaVersion
    */
-  public deleteSchemaVersion() {
+  public toDeleteSchemaVersion() {
     this.add('schemas:DeleteSchemaVersion');
     return this;
   }
@@ -468,7 +468,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#DescribeCodeBinding
    */
-  public describeCodeBinding() {
+  public toDescribeCodeBinding() {
     this.add('schemas:DescribeCodeBinding');
     return this;
   }
@@ -480,7 +480,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#DescribeDiscoverer
    */
-  public describeDiscoverer() {
+  public toDescribeDiscoverer() {
     this.add('schemas:DescribeDiscoverer');
     return this;
   }
@@ -492,7 +492,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#DescribeRegistry
    */
-  public describeRegistry() {
+  public toDescribeRegistry() {
     this.add('schemas:DescribeRegistry');
     return this;
   }
@@ -504,7 +504,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#DescribeSchema
    */
-  public describeSchema() {
+  public toDescribeSchema() {
     this.add('schemas:DescribeSchema');
     return this;
   }
@@ -516,7 +516,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language-source.html#GetCodeBindingSource
    */
-  public getCodeBindingSource() {
+  public toGetCodeBindingSource() {
     this.add('schemas:GetCodeBindingSource');
     return this;
   }
@@ -528,7 +528,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discover.html#GetDiscoveredSchema
    */
-  public getDiscoveredSchema() {
+  public toGetDiscoveredSchema() {
     this.add('schemas:GetDiscoveredSchema');
     return this;
   }
@@ -540,7 +540,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#GetResourcePolicy
    */
-  public getResourcePolicy() {
+  public toGetResourcePolicy() {
     this.add('schemas:GetResourcePolicy');
     return this;
   }
@@ -552,7 +552,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers.html#ListDiscoverers
    */
-  public listDiscoverers() {
+  public toListDiscoverers() {
     this.add('schemas:ListDiscoverers');
     return this;
   }
@@ -564,7 +564,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries.html#ListRegistries
    */
-  public listRegistries() {
+  public toListRegistries() {
     this.add('schemas:ListRegistries');
     return this;
   }
@@ -576,7 +576,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-versions.html#ListSchemaVersions
    */
-  public listSchemaVersions() {
+  public toListSchemaVersions() {
     this.add('schemas:ListSchemaVersions');
     return this;
   }
@@ -588,7 +588,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas.html#ListSchemas
    */
-  public listSchemas() {
+  public toListSchemas() {
     this.add('schemas:ListSchemas');
     return this;
   }
@@ -600,7 +600,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#ListTagsForResource
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('schemas:ListTagsForResource');
     return this;
   }
@@ -612,7 +612,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname-language-language.html#PutCodeBinding
    */
-  public putCodeBinding() {
+  public toPutCodeBinding() {
     this.add('schemas:PutCodeBinding');
     return this;
   }
@@ -624,7 +624,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-policy.html#PutResourcePolicy
    */
-  public putResourcePolicy() {
+  public toPutResourcePolicy() {
     this.add('schemas:PutResourcePolicy');
     return this;
   }
@@ -636,7 +636,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-search.html#SearchSchemas
    */
-  public searchSchemas() {
+  public toSearchSchemas() {
     this.add('schemas:SearchSchemas');
     return this;
   }
@@ -648,7 +648,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StartDiscoverer
    */
-  public startDiscoverer() {
+  public toStartDiscoverer() {
     this.add('schemas:StartDiscoverer');
     return this;
   }
@@ -660,7 +660,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#StopDiscoverer
    */
-  public stopDiscoverer() {
+  public toStopDiscoverer() {
     this.add('schemas:StopDiscoverer');
     return this;
   }
@@ -670,13 +670,13 @@ export class Schemas extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#TagResource
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('schemas:TagResource');
     return this;
   }
@@ -686,12 +686,12 @@ export class Schemas extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/tags-resource-arn.html#UntagResource
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('schemas:UntagResource');
     return this;
   }
@@ -703,7 +703,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-discoverers-id-discovererid.html#UpdateDiscoverer
    */
-  public updateDiscoverer() {
+  public toUpdateDiscoverer() {
     this.add('schemas:UpdateDiscoverer');
     return this;
   }
@@ -715,7 +715,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname.html#UpdateRegistry
    */
-  public updateRegistry() {
+  public toUpdateRegistry() {
     this.add('schemas:UpdateRegistry');
     return this;
   }
@@ -727,7 +727,7 @@ export class Schemas extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/eventbridge/latest/schema-reference/v1-registries-name-registryname-schemas-name-schemaname.html#UpdateSchema
    */
-  public updateSchema() {
+  public toUpdateSchema() {
     this.add('schemas:UpdateSchema');
     return this;
   }
@@ -742,8 +742,8 @@ export class Schemas extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onDiscoverer(discovererId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:discoverer/${DiscovererId}';
@@ -764,8 +764,8 @@ export class Schemas extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRegistry(registryName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:registry/${RegistryName}';
@@ -787,8 +787,8 @@ export class Schemas extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onSchema(registryName: string, schemaName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:schemas:${Region}:${Account}:schema/${RegistryName}/${SchemaName}';
@@ -798,5 +798,55 @@ export class Schemas extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Filters actions based on the allowed set of values for each of the tags
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on tag-value associated with the resource
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
+   *
+   * Applies to resource types:
+   * - discoverer
+   * - registry
+   * - schema
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Filters actions based on the presence of mandatory tags in the request
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
+   *
+   * Applies to actions:
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

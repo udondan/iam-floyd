@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [fsx](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfsx.html).
@@ -227,7 +227,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CancelDataRepositoryTask.html
    */
-  public cancelDataRepositoryTask() {
+  public toCancelDataRepositoryTask() {
     this.add('fsx:CancelDataRepositoryTask');
     return this;
   }
@@ -237,13 +237,13 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateBackup.html
    */
-  public createBackup() {
+  public toCreateBackup() {
     this.add('fsx:CreateBackup');
     return this;
   }
@@ -253,13 +253,13 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateDataRepositoryTask.html
    */
-  public createDataRepositoryTask() {
+  public toCreateDataRepositoryTask() {
     this.add('fsx:CreateDataRepositoryTask');
     return this;
   }
@@ -269,13 +269,13 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystem.html
    */
-  public createFileSystem() {
+  public toCreateFileSystem() {
     this.add('fsx:CreateFileSystem');
     return this;
   }
@@ -285,13 +285,13 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:RequestTag/${TagKey}
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileSystemFromBackup.html
    */
-  public createFileSystemFromBackup() {
+  public toCreateFileSystemFromBackup() {
     this.add('fsx:CreateFileSystemFromBackup');
     return this;
   }
@@ -303,7 +303,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteBackup.html
    */
-  public deleteBackup() {
+  public toDeleteBackup() {
     this.add('fsx:DeleteBackup');
     return this;
   }
@@ -315,7 +315,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DeleteFileSystem.html
    */
-  public deleteFileSystem() {
+  public toDeleteFileSystem() {
     this.add('fsx:DeleteFileSystem');
     return this;
   }
@@ -327,7 +327,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html
    */
-  public describeBackups() {
+  public toDescribeBackups() {
     this.add('fsx:DescribeBackups');
     return this;
   }
@@ -339,7 +339,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeDataRepositoryTasks.html
    */
-  public describeDataRepositoryTasks() {
+  public toDescribeDataRepositoryTasks() {
     this.add('fsx:DescribeDataRepositoryTasks');
     return this;
   }
@@ -351,7 +351,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html
    */
-  public describeFileSystems() {
+  public toDescribeFileSystems() {
     this.add('fsx:DescribeFileSystems');
     return this;
   }
@@ -363,7 +363,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_ListTagsForResource.html
    */
-  public listTagsForResource() {
+  public toListTagsForResource() {
     this.add('fsx:ListTagsForResource');
     return this;
   }
@@ -373,13 +373,13 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
-   * - aws:RequestTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_TagResource.html
    */
-  public tagResource() {
+  public toTagResource() {
     this.add('fsx:TagResource');
     return this;
   }
@@ -389,12 +389,12 @@ export class Fsx extends PolicyStatement {
    *
    * Access Level: Tagging
    *
-   * Possible condition keys:
-   * - aws:TagKeys
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UntagResource.html
    */
-  public untagResource() {
+  public toUntagResource() {
     this.add('fsx:UntagResource');
     return this;
   }
@@ -406,7 +406,7 @@ export class Fsx extends PolicyStatement {
    *
    * https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateFileSystem.html
    */
-  public updateFileSystem() {
+  public toUpdateFileSystem() {
     this.add('fsx:UpdateFileSystem');
     return this;
   }
@@ -421,8 +421,8 @@ export class Fsx extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onFileSystem(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:file-system/${ResourceName}';
@@ -443,8 +443,8 @@ export class Fsx extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onBackup(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:backup/${ResourceName}';
@@ -465,8 +465,8 @@ export class Fsx extends PolicyStatement {
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    *
-   * Possible condition keys:
-   * - aws:ResourceTag/${TagKey}
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onTask(resourceName: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:fsx:${Region}:${Account}:task/${ResourceName}';
@@ -475,5 +475,51 @@ export class Fsx extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
+  }
+
+  /**
+   * Applies to actions:
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toTagResource()
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Applies to resource types:
+   * - file-system
+   * - backup
+   * - task
+   *
+   * @param tagKey The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Applies to actions:
+   * - .toCreateBackup()
+   * - .toCreateDataRepositoryTask()
+   * - .toCreateFileSystem()
+   * - .toCreateFileSystemFromBackup()
+   * - .toTagResource()
+   * - .toUntagResource()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }
