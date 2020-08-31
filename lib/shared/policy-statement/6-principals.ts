@@ -20,7 +20,6 @@ export enum PrincipalType {
 export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
   protected useNotPrincipals = false;
   protected principals: Principals = {};
-  protected cdkPrincipals: any[] = [];
 
   /**
    * Injects principals into the statement.
