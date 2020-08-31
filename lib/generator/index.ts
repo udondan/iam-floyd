@@ -549,10 +549,6 @@ export function createIndex() {
   }
   const sourceFile = project.createSourceFile(filePath);
 
-  sourceFile.addExportDeclaration({
-    moduleSpecifier: './shared',
-  });
-
   modules.sort().forEach((module) => {
     const source = project.addSourceFileAtPath(
       `./lib/generated/${module.filename}.ts`
