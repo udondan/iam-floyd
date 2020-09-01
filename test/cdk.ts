@@ -19,7 +19,7 @@ export class TestStack extends cdk.Stack {
         new statement.Ssm({})
           .allow()
           .toCreateDocument()
-          .addTagsToResource()
+          .toAddTagsToResource()
           .ifRequestTag('CreatedBy', 'hello'),
         new statement.Ssm({})
           .allow()
