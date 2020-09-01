@@ -2,8 +2,6 @@ import { PolicyStatementBase } from './1-base';
 
 /**
  * A Condition
- *
- * @internal
  */
 export interface Condition {
   [key: string]: String;
