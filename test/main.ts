@@ -17,9 +17,9 @@ printPolicyWitStatements(
   new statement.Collection().allowEc2InstanceDeleteByOwner()
 );
 
-printPolicyWitStatements(
+printPolicyWitStatements([
   new statement.Secretsmanager()
     .allow()
     .allActions()
-    .ifResourceTag('CreatedBy', 'me')
-);
+    .ifResourceTag('CreatedBy', 'me'),
+]);
