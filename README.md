@@ -69,6 +69,10 @@ There are two different package variants available:
 The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
 
 ```typescript
+// for use without AWS CDK use the iam-floyd package
+import * as statement from 'iam-floyd';
+
+// for use with CDK use the cdk-iam-floyd package
 import * as statement from 'cdk-iam-floyd';
 
 new statement.Ec2().toStartInstances();
