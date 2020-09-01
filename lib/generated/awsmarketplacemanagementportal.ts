@@ -9,28 +9,28 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-management';
   protected actionList: Actions = {
     "uploadFiles": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
-      "description": "Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
+      "description": "Allows access to the File Upload page inside the AWS Marketplace Management Portal.",
       "accessLevel": "Write"
     },
     "viewMarketing": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
-      "description": "Allows a user to access the Marketing page inside the AWS Marketplace Management Portal.",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
+      "description": "Allows access to the Marketing page inside the AWS Marketplace Management Portal.",
       "accessLevel": "List"
     },
     "viewReports": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
-      "description": "Allows a user to access the Reports page inside the AWS Marketplace Management Portal.",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
+      "description": "Allows access to the Reports page inside the AWS Marketplace Management Portal.",
       "accessLevel": "List"
     },
     "viewSettings": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
-      "description": "Allows a user to access the Settings page inside the AWS Marketplace Management Portal.",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
+      "description": "Allows access to the Settings page inside the AWS Marketplace Management Portal.",
       "accessLevel": "List"
     },
     "viewSupport": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions",
-      "description": "Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal.",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions",
+      "description": "Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal.",
       "accessLevel": "List"
     }
   };
@@ -46,11 +46,11 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows a user to access the File Upload page inside the AWS Marketplace Management Portal.
+   * Allows access to the File Upload page inside the AWS Marketplace Management Portal.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public touploadFiles() {
     this.add('aws-marketplace-management:uploadFiles');
@@ -58,11 +58,11 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows a user to access the Marketing page inside the AWS Marketplace Management Portal.
+   * Allows access to the Marketing page inside the AWS Marketplace Management Portal.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewMarketing() {
     this.add('aws-marketplace-management:viewMarketing');
@@ -70,11 +70,11 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows a user to access the Reports page inside the AWS Marketplace Management Portal.
+   * Allows access to the Reports page inside the AWS Marketplace Management Portal.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewReports() {
     this.add('aws-marketplace-management:viewReports');
@@ -82,11 +82,11 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows a user to access the Settings page inside the AWS Marketplace Management Portal.
+   * Allows access to the Settings page inside the AWS Marketplace Management Portal.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewSettings() {
     this.add('aws-marketplace-management:viewSettings');
@@ -94,11 +94,11 @@ export class AwsMarketplaceManagement extends PolicyStatement {
   }
 
   /**
-   * Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal.
+   * Allows access to the Customer Support Eligibility page inside the AWS Marketplace Management Portal.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions
+   * https://docs.aws.amazon.com/marketplace/latest/userguide/detailed-management-portal-permissions.html#seller-ammp-permissions
    */
   public toviewSupport() {
     this.add('aws-marketplace-management:viewSupport');

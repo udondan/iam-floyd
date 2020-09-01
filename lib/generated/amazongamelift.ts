@@ -13,6 +13,16 @@ export class Gamelift extends PolicyStatement {
       "description": "Registers player acceptance or rejection of a proposed FlexMatch match.",
       "accessLevel": "Write"
     },
+    "ClaimGameServer": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ClaimGameServer.html",
+      "description": "Locates and reserves a game server to host a new game session.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "CreateAlias": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html",
       "description": "Defines a new alias for a fleet.",
@@ -34,6 +44,15 @@ export class Gamelift extends PolicyStatement {
     "CreateFleet": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html",
       "description": "Creates a new fleet of computing resources to run your game servers.",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateGameServerGroup": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameServerGroup.html",
+      "description": "Creates a new game server group, sets up a corresponding Auto Scaling group, and launches instances to host game servers.",
       "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
@@ -131,6 +150,16 @@ export class Gamelift extends PolicyStatement {
         }
       }
     },
+    "DeleteGameServerGroup": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameServerGroup.html",
+      "description": "Permanently deletes a game server group and terminates FleetIQ activity for the corresponding Auto Scaling group.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "DeleteGameSessionQueue": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html",
       "description": "Deletes an existing game session queue.",
@@ -191,6 +220,16 @@ export class Gamelift extends PolicyStatement {
       "description": "Removes a peering connection between VPCs.",
       "accessLevel": "Write"
     },
+    "DeregisterGameServer": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterGameServer.html",
+      "description": "Removes a game server from a game server group.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "DescribeAlias": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeAlias.html",
       "description": "Retrieves properties for an alias.",
@@ -250,6 +289,36 @@ export class Gamelift extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html",
       "description": "Retrieves utilization statistics for fleets.",
       "accessLevel": "Read"
+    },
+    "DescribeGameServer": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServer.html",
+      "description": "Retrieves properties for a game server.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
+    "DescribeGameServerGroup": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerGroup.html",
+      "description": "Retrieves properties for a game server group.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
+    "DescribeGameServerInstances": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerInstances.html",
+      "description": "Retrieves the status of EC2 instances in a game server group.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
     },
     "DescribeGameSessionDetails": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html",
@@ -371,6 +440,21 @@ export class Gamelift extends PolicyStatement {
       "description": "Retrieves a list of fleet IDs for all fleets in the current region.",
       "accessLevel": "List"
     },
+    "ListGameServerGroups": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServerGroups.html",
+      "description": "Retrieves all game server groups that are defined in the current region.",
+      "accessLevel": "List"
+    },
+    "ListGameServers": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServers.html",
+      "description": "Retrieves all game servers that are currently running in a game server group.",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "ListScripts": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListScripts.html",
       "description": "Retrieves properties for all Realtime Servers scripts in the current region.",
@@ -378,7 +462,7 @@ export class Gamelift extends PolicyStatement {
     },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html",
-      "description": "List Tags for GameLift Resource",
+      "description": "Lists tags for GameLift resources",
       "accessLevel": "List",
       "resourceTypes": {
         "alias": {
@@ -388,6 +472,9 @@ export class Gamelift extends PolicyStatement {
           "required": false
         },
         "fleet": {
+          "required": false
+        },
+        "gameServerGroup": {
           "required": false
         },
         "gameSessionQueue": {
@@ -414,6 +501,16 @@ export class Gamelift extends PolicyStatement {
         }
       }
     },
+    "RegisterGameServer": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterGameServer.html",
+      "description": "Notifies GameLift FleetIQ when a new game server is ready to host gameplay.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "RequestUploadCredentials": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html",
       "description": "Retrieves fresh upload credentials to use when uploading a new game build.",
@@ -430,6 +527,16 @@ export class Gamelift extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "alias": {
+          "required": true
+        }
+      }
+    },
+    "ResumeGameServerGroup": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResumeGameServerGroup.html",
+      "description": "Reinstates suspended FleetIQ activity for a game server group.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
           "required": true
         }
       }
@@ -489,9 +596,19 @@ export class Gamelift extends PolicyStatement {
       "description": "Cancels a matchmaking or match backfill request that is in progress.",
       "accessLevel": "Write"
     },
+    "SuspendGameServerGroup": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_SuspendGameServerGroup.html",
+      "description": "Temporarily stops FleetIQ activity for a game server group.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "TagResource": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html",
-      "description": "Tags GameLift Resources",
+      "description": "Tags GameLift resources",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "alias": {
@@ -501,6 +618,9 @@ export class Gamelift extends PolicyStatement {
           "required": false
         },
         "fleet": {
+          "required": false
+        },
+        "gameServerGroup": {
           "required": false
         },
         "gameSessionQueue": {
@@ -523,7 +643,7 @@ export class Gamelift extends PolicyStatement {
     },
     "UntagResource": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html",
-      "description": "Untagging GameLift Resources",
+      "description": "Untags GameLift resources",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "alias": {
@@ -533,6 +653,9 @@ export class Gamelift extends PolicyStatement {
           "required": false
         },
         "fleet": {
+          "required": false
+        },
+        "gameServerGroup": {
           "required": false
         },
         "gameSessionQueue": {
@@ -602,6 +725,26 @@ export class Gamelift extends PolicyStatement {
         }
       }
     },
+    "UpdateGameServer": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServer.html",
+      "description": "Changes game server properties, health status, or utilization status.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
+    "UpdateGameServerGroup": {
+      "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServerGroup.html",
+      "description": "Updates properties for game server group, including allowed instance types.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "gameServerGroup": {
+          "required": true
+        }
+      }
+    },
     "UpdateGameSession": {
       "url": "https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html",
       "description": "Updates the properties of an existing game session.",
@@ -656,7 +799,7 @@ export class Gamelift extends PolicyStatement {
   protected resourceTypes: ResourceTypes = {
     "alias": {
       "name": "alias",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Alias.html",
       "arn": "arn:${Partition}:gamelift:${Region}::alias/${AliasId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -664,7 +807,7 @@ export class Gamelift extends PolicyStatement {
     },
     "build": {
       "name": "build",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Build.html",
       "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:build/${BuildId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -672,7 +815,7 @@ export class Gamelift extends PolicyStatement {
     },
     "script": {
       "name": "script",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Script.html",
       "arn": "arn:${Partition}:gamelift:${Region}:${AccountId}:script/${ScriptId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -680,7 +823,7 @@ export class Gamelift extends PolicyStatement {
     },
     "fleet": {
       "name": "fleet",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_FleetAttributes.html",
       "arn": "arn:${Partition}:gamelift:${Region}:${Account}:fleet/${FleetId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -688,7 +831,7 @@ export class Gamelift extends PolicyStatement {
     },
     "gameSessionQueue": {
       "name": "gameSessionQueue",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_GameSessionQueue.html",
       "arn": "arn:${Partition}:gamelift:${Region}:${Account}:gamesessionqueue/${GameSessionQueueName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -696,7 +839,7 @@ export class Gamelift extends PolicyStatement {
     },
     "matchmakingConfiguration": {
       "name": "matchmakingConfiguration",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_MatchmakingConfiguration.html",
       "arn": "arn:${Partition}:gamelift:${Region}:${Account}:matchmakingconfiguration/${MatchmakingConfigurationName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -704,8 +847,16 @@ export class Gamelift extends PolicyStatement {
     },
     "matchmakingRuleSet": {
       "name": "matchmakingRuleSet",
-      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_MatchmakingRuleSet.html",
       "arn": "arn:${Partition}:gamelift:${Region}:${Account}:matchmakingruleset/${MatchmakingRuleSetName}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "gameServerGroup": {
+      "name": "gameServerGroup",
+      "url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/API_GameServerGroup.html",
+      "arn": "arn:${Partition}:gamelift:${Region}:${Account}:gameservergroup/${GameServerGroupName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
@@ -730,6 +881,18 @@ export class Gamelift extends PolicyStatement {
    */
   public toAcceptMatch() {
     this.add('gamelift:AcceptMatch');
+    return this;
+  }
+
+  /**
+   * Locates and reserves a game server to host a new game session.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ClaimGameServer.html
+   */
+  public toClaimGameServer() {
+    this.add('gamelift:ClaimGameServer');
     return this;
   }
 
@@ -778,6 +941,22 @@ export class Gamelift extends PolicyStatement {
    */
   public toCreateFleet() {
     this.add('gamelift:CreateFleet');
+    return this;
+  }
+
+  /**
+   * Creates a new game server group, sets up a corresponding Auto Scaling group, and launches instances to host game servers.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameServerGroup.html
+   */
+  public toCreateGameServerGroup() {
+    this.add('gamelift:CreateGameServerGroup');
     return this;
   }
 
@@ -942,6 +1121,18 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Permanently deletes a game server group and terminates FleetIQ activity for the corresponding Auto Scaling group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameServerGroup.html
+   */
+  public toDeleteGameServerGroup() {
+    this.add('gamelift:DeleteGameServerGroup');
+    return this;
+  }
+
+  /**
    * Deletes an existing game session queue.
    *
    * Access Level: Write
@@ -1022,6 +1213,18 @@ export class Gamelift extends PolicyStatement {
    */
   public toDeleteVpcPeeringConnection() {
     this.add('gamelift:DeleteVpcPeeringConnection');
+    return this;
+  }
+
+  /**
+   * Removes a game server from a game server group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterGameServer.html
+   */
+  public toDeregisterGameServer() {
+    this.add('gamelift:DeregisterGameServer');
     return this;
   }
 
@@ -1118,6 +1321,42 @@ export class Gamelift extends PolicyStatement {
    */
   public toDescribeFleetUtilization() {
     this.add('gamelift:DescribeFleetUtilization');
+    return this;
+  }
+
+  /**
+   * Retrieves properties for a game server.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServer.html
+   */
+  public toDescribeGameServer() {
+    this.add('gamelift:DescribeGameServer');
+    return this;
+  }
+
+  /**
+   * Retrieves properties for a game server group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerGroup.html
+   */
+  public toDescribeGameServerGroup() {
+    this.add('gamelift:DescribeGameServerGroup');
+    return this;
+  }
+
+  /**
+   * Retrieves the status of EC2 instances in a game server group.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerInstances.html
+   */
+  public toDescribeGameServerInstances() {
+    this.add('gamelift:DescribeGameServerInstances');
     return this;
   }
 
@@ -1350,6 +1589,30 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Retrieves all game server groups that are defined in the current region.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServerGroups.html
+   */
+  public toListGameServerGroups() {
+    this.add('gamelift:ListGameServerGroups');
+    return this;
+  }
+
+  /**
+   * Retrieves all game servers that are currently running in a game server group.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListGameServers.html
+   */
+  public toListGameServers() {
+    this.add('gamelift:ListGameServers');
+    return this;
+  }
+
+  /**
    * Retrieves properties for all Realtime Servers scripts in the current region.
    *
    * Access Level: List
@@ -1362,7 +1625,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * List Tags for GameLift Resource
+   * Lists tags for GameLift resources
    *
    * Access Level: List
    *
@@ -1382,6 +1645,18 @@ export class Gamelift extends PolicyStatement {
    */
   public toPutScalingPolicy() {
     this.add('gamelift:PutScalingPolicy');
+    return this;
+  }
+
+  /**
+   * Notifies GameLift FleetIQ when a new game server is ready to host gameplay.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_RegisterGameServer.html
+   */
+  public toRegisterGameServer() {
+    this.add('gamelift:RegisterGameServer');
     return this;
   }
 
@@ -1406,6 +1681,18 @@ export class Gamelift extends PolicyStatement {
    */
   public toResolveAlias() {
     this.add('gamelift:ResolveAlias');
+    return this;
+  }
+
+  /**
+   * Reinstates suspended FleetIQ activity for a game server group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResumeGameServerGroup.html
+   */
+  public toResumeGameServerGroup() {
+    this.add('gamelift:ResumeGameServerGroup');
     return this;
   }
 
@@ -1506,7 +1793,19 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Tags GameLift Resources
+   * Temporarily stops FleetIQ activity for a game server group.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_SuspendGameServerGroup.html
+   */
+  public toSuspendGameServerGroup() {
+    this.add('gamelift:SuspendGameServerGroup');
+    return this;
+  }
+
+  /**
+   * Tags GameLift resources
    *
    * Access Level: Tagging
    *
@@ -1522,7 +1821,7 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
-   * Untagging GameLift Resources
+   * Untags GameLift resources
    *
    * Access Level: Tagging
    *
@@ -1593,6 +1892,30 @@ export class Gamelift extends PolicyStatement {
    */
   public toUpdateFleetPortSettings() {
     this.add('gamelift:UpdateFleetPortSettings');
+    return this;
+  }
+
+  /**
+   * Changes game server properties, health status, or utilization status.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServer.html
+   */
+  public toUpdateGameServer() {
+    this.add('gamelift:UpdateGameServer');
+    return this;
+  }
+
+  /**
+   * Updates properties for game server group, including allowed instance types.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameServerGroup.html
+   */
+  public toUpdateGameServerGroup() {
+    this.add('gamelift:UpdateGameServerGroup');
     return this;
   }
 
@@ -1671,7 +1994,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type alias to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Alias.html
    *
    * @param aliasId - Identifier for the aliasId.
    * @param region - Region of the resource; defaults to empty string: all regions.
@@ -1691,7 +2014,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type build to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Build.html
    *
    * @param buildId - Identifier for the buildId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -1713,7 +2036,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type script to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_Script.html
    *
    * @param scriptId - Identifier for the scriptId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
@@ -1735,7 +2058,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type fleet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_FleetAttributes.html
    *
    * @param fleetId - Identifier for the fleetId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1757,7 +2080,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type gameSessionQueue to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_GameSessionQueue.html
    *
    * @param gameSessionQueueName - Identifier for the gameSessionQueueName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1779,7 +2102,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type matchmakingConfiguration to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_MatchmakingConfiguration.html
    *
    * @param matchmakingConfigurationName - Identifier for the matchmakingConfigurationName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1801,7 +2124,7 @@ export class Gamelift extends PolicyStatement {
   /**
    * Adds a resource of type matchmakingRuleSet to the statement
    *
-   * https://docs.aws.amazon.com/gamelift/latest/developerguide/resources-defined.html
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_MatchmakingRuleSet.html
    *
    * @param matchmakingRuleSetName - Identifier for the matchmakingRuleSetName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1821,6 +2144,28 @@ export class Gamelift extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type gameServerGroup to the statement
+   *
+   * https://docs.aws.amazon.com/gamelift/latest/developerguide/API_GameServerGroup.html
+   *
+   * @param gameServerGroupName - Identifier for the gameServerGroupName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onGameServerGroup(gameServerGroupName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:gamelift:${Region}:${Account}:gameservergroup/${GameServerGroupName}';
+    arn = arn.replace('${GameServerGroupName}', gameServerGroupName);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Filters actions based on the tags that are passed in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
@@ -1829,6 +2174,7 @@ export class Gamelift extends PolicyStatement {
    * - .toCreateAlias()
    * - .toCreateBuild()
    * - .toCreateFleet()
+   * - .toCreateGameServerGroup()
    * - .toCreateGameSessionQueue()
    * - .toCreateMatchmakingConfiguration()
    * - .toCreateMatchmakingRuleSet()
@@ -1856,6 +2202,7 @@ export class Gamelift extends PolicyStatement {
    * - gameSessionQueue
    * - matchmakingConfiguration
    * - matchmakingRuleSet
+   * - gameServerGroup
    *
    * @param tagKey The tag key to check
    * @param value The value(s) to check
@@ -1874,6 +2221,7 @@ export class Gamelift extends PolicyStatement {
    * - .toCreateAlias()
    * - .toCreateBuild()
    * - .toCreateFleet()
+   * - .toCreateGameServerGroup()
    * - .toCreateGameSessionQueue()
    * - .toCreateMatchmakingConfiguration()
    * - .toCreateMatchmakingRuleSet()
