@@ -149,6 +149,15 @@ export class Chime extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "CreateMeetingWithAttendees": {
+      "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeetingWithAttendees.html",
+      "description": "Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with a set of attendees",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "CreatePhoneNumberOrder": {
       "url": "https://docs.aws.amazon.com/chime/latest/APIReference/API_CreatePhoneNumberOrder.html",
       "description": "Grants permission to create a phone number order with the Carriers",
@@ -1287,6 +1296,22 @@ export class Chime extends PolicyStatement {
    */
   public toCreateMeeting() {
     this.add('chime:CreateMeeting');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with a set of attendees
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeetingWithAttendees.html
+   */
+  public toCreateMeetingWithAttendees() {
+    this.add('chime:CreateMeetingWithAttendees');
     return this;
   }
 
@@ -3038,6 +3063,7 @@ export class Chime extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateMeeting()
+   * - .toCreateMeetingWithAttendees()
    * - .toTagMeeting()
    * - .toTagResource()
    *
@@ -3076,6 +3102,7 @@ export class Chime extends PolicyStatement {
    *
    * Applies to actions:
    * - .toCreateMeeting()
+   * - .toCreateMeetingWithAttendees()
    * - .toTagMeeting()
    * - .toTagResource()
    *
