@@ -10,7 +10,7 @@ export class Servicecatalog extends PolicyStatement {
   protected actionList: Actions = {
     "AcceptPortfolioShare": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AcceptPortfolioShare.html",
-      "description": "Accepts a portfolio that has been shared with you",
+      "description": "Grants permission to accept a portfolio that has been shared with you",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -20,12 +20,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "AssociateBudgetWithResource": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateBudgetWithResource.html",
-      "description": "Associates a budget with a resource.",
+      "description": "Grants permission to associate a budget with a resource",
       "accessLevel": "Write"
     },
     "AssociatePrincipalWithPortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociatePrincipalWithPortfolio.html",
-      "description": "Associates an IAM principal with a portfolio, giving the specified principal access to any products associated with the specified portfolio",
+      "description": "Grants permission to associate an IAM principal with a portfolio, giving the specified principal access to any products associated with the specified portfolio",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -35,12 +35,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "AssociateProductWithPortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateProductWithPortfolio.html",
-      "description": "Associates a product with a portfolio",
+      "description": "Grants permission to associate a product with a portfolio",
       "accessLevel": "Write"
     },
     "AssociateServiceActionWithProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateServiceActionWithProvisioningArtifact.html",
-      "description": "Associates an action with a provisioning artifact",
+      "description": "Grants permission to associate an action with a provisioning artifact",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -50,7 +50,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "AssociateTagOptionWithResource": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateTagOptionWithResource.html",
-      "description": "Associate the specified TagOption with the specified portfolio or product",
+      "description": "Grants permission to associate the specified TagOption with the specified portfolio or product",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -63,22 +63,22 @@ export class Servicecatalog extends PolicyStatement {
     },
     "BatchAssociateServiceActionWithProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchAssociateServiceActionWithProvisioningArtifact.html",
-      "description": "Associates multiple self-service actions with provisioning artifacts.",
+      "description": "Grants permission to associate multiple self-service actions with provisioning artifacts",
       "accessLevel": "Write"
     },
     "BatchDisassociateServiceActionFromProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_BatchDisassociateServiceActionFromProvisioningArtifact.html",
-      "description": "Disassociates a batch of self-service actions from the specified provisioning artifact.",
+      "description": "Grants permission to disassociate a batch of self-service actions from the specified provisioning artifact",
       "accessLevel": "Write"
     },
     "CopyProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CopyProduct.html",
-      "description": "Copies the specified source product to the specified target product or a new product.",
+      "description": "Grants permission to copy the specified source product to the specified target product or a new product",
       "accessLevel": "Write"
     },
     "CreateConstraint": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateConstraint.html",
-      "description": "Creates a constraint on an associated product and portfolio",
+      "description": "Grants permission to create a constraint on an associated product and portfolio",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -88,7 +88,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "CreatePortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolio.html",
-      "description": "Creates a portfolio",
+      "description": "Grants permission to create a portfolio",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -102,7 +102,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "CreatePortfolioShare": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolioShare.html",
-      "description": "Shares a portfolio you own with another AWS account",
+      "description": "Grants permission to share a portfolio you own with another AWS account",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "Portfolio": {
@@ -112,7 +112,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "CreateProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html",
-      "description": "Creates a product and that product's first provisioning artifact",
+      "description": "Grants permission to create a product and that product's first provisioning artifact",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -126,12 +126,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "CreateProvisionedProductPlan": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisionedProductPlan.html",
-      "description": "Adds a new provisioned product plan",
+      "description": "Grants permission to add a new provisioned product plan",
       "accessLevel": "Write"
     },
     "CreateProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProvisioningArtifact.html",
-      "description": "Adds a new provisioning artifact to an existing product",
+      "description": "Grants permission to add a new provisioning artifact to an existing product",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -141,22 +141,22 @@ export class Servicecatalog extends PolicyStatement {
     },
     "CreateServiceAction": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateServiceAction.html",
-      "description": "Creates a self-service action.",
+      "description": "Grants permission to create a self-service action",
       "accessLevel": "Write"
     },
     "CreateTagOption": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateTagOption.html",
-      "description": "Creates a TagOption.",
+      "description": "Grants permission to create a TagOption",
       "accessLevel": "Write"
     },
     "DeleteConstraint": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteConstraint.html",
-      "description": "Removes and deletes an existing constraint from an associated product and portfolio",
+      "description": "Grants permission to remove and delete an existing constraint from an associated product and portfolio",
       "accessLevel": "Write"
     },
     "DeletePortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolio.html",
-      "description": "Deletes a portfolio if all associations and shares have been removed from the portfolio",
+      "description": "Grants permission to delete a portfolio if all associations and shares have been removed from the portfolio",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -166,7 +166,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DeletePortfolioShare": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeletePortfolioShare.html",
-      "description": "Unshares a portfolio you own from an AWS account you previously shared the portfolio with",
+      "description": "Grants permission to unshare a portfolio you own from an AWS account you previously shared the portfolio with",
       "accessLevel": "Permissions management",
       "resourceTypes": {
         "Portfolio": {
@@ -176,7 +176,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DeleteProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProduct.html",
-      "description": "Deletes a product if all associations have been removed from the product",
+      "description": "Grants permission to delete a product if all associations have been removed from the product",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -186,12 +186,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DeleteProvisionedProductPlan": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisionedProductPlan.html",
-      "description": "Deletes a provisioned product plan",
+      "description": "Grants permission to delete a provisioned product plan",
       "accessLevel": "Write"
     },
     "DeleteProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisioningArtifact.html",
-      "description": "Deletes a provisioning artifact from a product",
+      "description": "Grants permission to delete a provisioning artifact from a product",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -201,27 +201,27 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DeleteServiceAction": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteServiceAction.html",
-      "description": "Deletes a self-service action.",
+      "description": "Grants permission to delete a self-service action",
       "accessLevel": "Write"
     },
     "DeleteTagOption": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteTagOption.html",
-      "description": "Deletes the specified TagOption.",
+      "description": "Grants permission to delete the specified TagOption",
       "accessLevel": "Write"
     },
     "DescribeConstraint": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeConstraint.html",
-      "description": "Describes a constraint",
+      "description": "Grants permission to describe a constraint",
       "accessLevel": "Read"
     },
     "DescribeCopyProductStatus": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeCopyProductStatus.html",
-      "description": "Gets the status of the specified copy product operation.",
+      "description": "Grants permission to get the status of the specified copy product operation",
       "accessLevel": "Read"
     },
     "DescribePortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolio.html",
-      "description": "Describes a portfolio",
+      "description": "Grants permission to describe a portfolio",
       "accessLevel": "Read",
       "resourceTypes": {
         "Portfolio": {
@@ -231,12 +231,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DescribePortfolioShareStatus": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolioShareStatus.html",
-      "description": "Gets the status of the specified portfolio share operation.",
+      "description": "Grants permission to get the status of the specified portfolio share operation",
       "accessLevel": "Read"
     },
     "DescribeProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProduct.html",
-      "description": "Describes a product as an end-user",
+      "description": "Grants permission to describe a product as an end-user",
       "accessLevel": "Read",
       "resourceTypes": {
         "Product": {
@@ -246,7 +246,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DescribeProductAsAdmin": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductAsAdmin.html",
-      "description": "Describes a product as an admin",
+      "description": "Grants permission to describe a product as an admin",
       "accessLevel": "Read",
       "resourceTypes": {
         "Product": {
@@ -256,22 +256,22 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DescribeProductView": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductView.html",
-      "description": "Describes a product as an end-user",
+      "description": "Grants permission to describe a product as an end-user",
       "accessLevel": "Read"
     },
     "DescribeProvisionedProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProduct.html",
-      "description": "Describes a provisioned product",
+      "description": "Grants permission to describe a provisioned product",
       "accessLevel": "Read"
     },
     "DescribeProvisionedProductPlan": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisionedProductPlan.html",
-      "description": "Describes a provisioned product plan",
+      "description": "Grants permission to describe a provisioned product plan",
       "accessLevel": "Read"
     },
     "DescribeProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningArtifact.html",
-      "description": "Describes a provisioning artifact",
+      "description": "Grants permission to describe a provisioning artifact",
       "accessLevel": "Read",
       "resourceTypes": {
         "Product": {
@@ -281,7 +281,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DescribeProvisioningParameters": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningParameters.html",
-      "description": "Describes the parameters that you need to specify to successfully provision a specified provisioning artifact",
+      "description": "Grants permission to describe the parameters that you need to specify to successfully provision a specified provisioning artifact",
       "accessLevel": "Read",
       "resourceTypes": {
         "Product": {
@@ -291,7 +291,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DescribeRecord": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html",
-      "description": "Describes a record and lists any outputs",
+      "description": "Grants permission to describe a record and lists any outputs",
       "accessLevel": "Read",
       "conditions": [
         "servicecatalog:accountLevel",
@@ -301,32 +301,32 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DescribeServiceAction": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceAction.html",
-      "description": "Describes a self-service action.",
+      "description": "Grants permission to describe a self-service action",
       "accessLevel": "Read"
     },
     "DescribeServiceActionExecutionParameters": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeServiceActionExecutionParameters.html",
-      "description": "Gets the default parameters if you executed the specified Service Action on the specified Provisioned Product.",
+      "description": "Grants permission to get the default parameters if you executed the specified Service Action on the specified Provisioned Product",
       "accessLevel": "Read"
     },
     "DescribeTagOption": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeTagOption.html",
-      "description": "Gets information about the specified TagOption.",
+      "description": "Grants permission to get information about the specified TagOption",
       "accessLevel": "Read"
     },
     "DisableAWSOrganizationsAccess": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisableAWSOrganizationsAccess.html",
-      "description": "Disable portfolio sharing through AWS Organizations feature.",
+      "description": "Grants permission to disable portfolio sharing through AWS Organizations feature",
       "accessLevel": "Write"
     },
     "DisassociateBudgetFromResource": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateBudgetFromResource.html",
-      "description": "Disassociates a budget from a resource.",
+      "description": "Grants permission to disassociate a budget from a resource",
       "accessLevel": "Write"
     },
     "DisassociatePrincipalFromPortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociatePrincipalFromPortfolio.html",
-      "description": "Disassociates an IAM principal from a portfolio.",
+      "description": "Grants permission to disassociate an IAM principal from a portfolio",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -336,12 +336,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DisassociateProductFromPortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateProductFromPortfolio.html",
-      "description": "Disassociates a product from a portfolio",
+      "description": "Grants permission to disassociate a product from a portfolio",
       "accessLevel": "Write"
     },
     "DisassociateServiceActionFromProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateServiceActionFromProvisioningArtifact.html",
-      "description": "Disassociates the specified self-service action association from the specified provisioning artifact.",
+      "description": "Grants permission to disassociate the specified self-service action association from the specified provisioning artifact",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -351,7 +351,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "DisassociateTagOptionFromResource": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_DisassociateTagOptionFromResource.html",
-      "description": "Disassociates the specified TagOption from the specified resource.",
+      "description": "Grants permission to disassociate the specified TagOption from the specified resource",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -364,42 +364,42 @@ export class Servicecatalog extends PolicyStatement {
     },
     "EnableAWSOrganizationsAccess": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_EnableAWSOrganizationsAccess.html",
-      "description": "Enable portfolio sharing feature through AWS Organizations.",
+      "description": "Grants permission to enable portfolio sharing feature through AWS Organizations",
       "accessLevel": "Write"
     },
     "ExecuteProvisionedProductPlan": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductPlan.html",
-      "description": "Executes a provisioned product plan",
+      "description": "Grants permission to execute a provisioned product plan",
       "accessLevel": "Write"
     },
     "ExecuteProvisionedProductServiceAction": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ExecuteProvisionedProductServiceAction.html",
-      "description": "Executes a provisioned product plan",
+      "description": "Grants permission to executes a provisioned product plan",
       "accessLevel": "Write"
     },
     "GetAWSOrganizationsAccessStatus": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_GetAWSOrganizationsAccessStatus.html",
-      "description": "Get the Access Status for AWS Organization portfolio share feature.",
+      "description": "Grants permission to get the access status of AWS Organization portfolio share feature",
       "accessLevel": "Read"
     },
     "ListAcceptedPortfolioShares": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListAcceptedPortfolioShares.html",
-      "description": "Lists the portfolios that have been shared with you and you have accepted",
+      "description": "Grants permission to list the portfolios that have been shared with you and you have accepted",
       "accessLevel": "List"
     },
     "ListBudgetsForResource": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListBudgetsForResource.html",
-      "description": "Lists all the budgets associated to a resource.",
+      "description": "Grants permission to list all the budgets associated to a resource",
       "accessLevel": "List"
     },
     "ListConstraintsForPortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListConstraintsForPortfolio.html",
-      "description": "Lists constraints associated with a given portfolio",
+      "description": "Grants permission to list constraints associated with a given portfolio",
       "accessLevel": "List"
     },
     "ListLaunchPaths": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html",
-      "description": "Lists the different ways to launch a given product as an end-user",
+      "description": "Grants permission to list the different ways to launch a given product as an end-user",
       "accessLevel": "List",
       "resourceTypes": {
         "Product": {
@@ -409,12 +409,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListOrganizationPortfolioAccess": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListOrganizationPortfolioAccess.html",
-      "description": "Lists the organization nodes that have access to the specified portfolio.",
+      "description": "Grants permission to list the organization nodes that have access to the specified portfolio",
       "accessLevel": "List"
     },
     "ListPortfolioAccess": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolioAccess.html",
-      "description": "Lists the AWS accounts you have shared a given portfolio with",
+      "description": "Grants permission to list the AWS accounts you have shared a given portfolio with",
       "accessLevel": "List",
       "resourceTypes": {
         "Portfolio": {
@@ -424,12 +424,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListPortfolios": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolios.html",
-      "description": "Lists the portfolios in your account",
+      "description": "Grants permission to list the portfolios in your account",
       "accessLevel": "List"
     },
     "ListPortfoliosForProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfoliosForProduct.html",
-      "description": "Lists the portfolios associated with a given product",
+      "description": "Grants permission to list the portfolios associated with a given product",
       "accessLevel": "List",
       "resourceTypes": {
         "Product": {
@@ -439,7 +439,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListPrincipalsForPortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPrincipalsForPortfolio.html",
-      "description": "Lists the IAM principals associated with a given portfolio",
+      "description": "Grants permission to list the IAM principals associated with a given portfolio",
       "accessLevel": "List",
       "resourceTypes": {
         "Portfolio": {
@@ -449,12 +449,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListProvisionedProductPlans": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisionedProductPlans.html",
-      "description": "Lists the provisioned product plans",
+      "description": "Grants permission to list the provisioned product plans",
       "accessLevel": "List"
     },
     "ListProvisioningArtifacts": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifacts.html",
-      "description": "Lists the provisioning artifacts associated with a given product",
+      "description": "Grants permission to list the provisioning artifacts associated with a given product",
       "accessLevel": "List",
       "resourceTypes": {
         "Product": {
@@ -464,12 +464,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListProvisioningArtifactsForServiceAction": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifactsForServiceAction.html",
-      "description": "Lists all provisioning artifacts for the specified self-service action.",
+      "description": "Grants permission to list all provisioning artifacts for the specified self-service action",
       "accessLevel": "List"
     },
     "ListRecordHistory": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListRecordHistory.html",
-      "description": "Lists all the records in your account or all the records related to a given provisioned product",
+      "description": "Grants permission to list all the records in your account or all the records related to a given provisioned product",
       "accessLevel": "List",
       "conditions": [
         "servicecatalog:accountLevel",
@@ -479,17 +479,17 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListResourcesForTagOption": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListResourcesForTagOption.html",
-      "description": "Lists the resources associated with the specified TagOption.",
+      "description": "Grants permission to list the resources associated with the specified TagOption",
       "accessLevel": "List"
     },
     "ListServiceActions": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActions.html",
-      "description": "Lists all self-service actions.",
+      "description": "Grants permission to list all self-service actions",
       "accessLevel": "List"
     },
     "ListServiceActionsForProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListServiceActionsForProvisioningArtifact.html",
-      "description": "Lists all the service actions associated with the specified provisioning artifact in your account",
+      "description": "Grants permission to list all the service actions associated with the specified provisioning artifact in your account",
       "accessLevel": "List",
       "resourceTypes": {
         "Product": {
@@ -499,17 +499,17 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ListStackInstancesForProvisionedProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListStackInstancesForProvisionedProduct.html",
-      "description": "Lists account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product",
+      "description": "Grants permission to list account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product",
       "accessLevel": "List"
     },
     "ListTagOptions": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListTagOptions.html",
-      "description": "Lists the specified TagOptions or all TagOptions.",
+      "description": "Grants permission to list the specified TagOptions or all TagOptions",
       "accessLevel": "List"
     },
     "ProvisionProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html",
-      "description": "Provisions a product with a specified provisioning artifact and launch parameters",
+      "description": "Grants permission to provision a product with a specified provisioning artifact and launch parameters",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -519,7 +519,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "RejectPortfolioShare": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_RejectPortfolioShare.html",
-      "description": "Rejects a portfolio that has been shared with you that you previously accepted",
+      "description": "Grants permission to reject a portfolio that has been shared with you that you previously accepted",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -529,7 +529,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "ScanProvisionedProducts": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ScanProvisionedProducts.html",
-      "description": "Lists all the provisioned products in your account",
+      "description": "Grants permission to list all the provisioned products in your account",
       "accessLevel": "List",
       "conditions": [
         "servicecatalog:accountLevel",
@@ -539,17 +539,17 @@ export class Servicecatalog extends PolicyStatement {
     },
     "SearchProducts": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProducts.html",
-      "description": "Lists the products available to you as an end-user",
+      "description": "Grants permission to list the products available to you as an end-user",
       "accessLevel": "List"
     },
     "SearchProductsAsAdmin": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProductsAsAdmin.html",
-      "description": "Lists all the products in your account or all the products associated with a given portfolio",
+      "description": "Grants permission to list all the products in your account or all the products associated with a given portfolio",
       "accessLevel": "List"
     },
     "SearchProvisionedProducts": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProvisionedProducts.html",
-      "description": "Lists all the provisioned products in your account",
+      "description": "Grants permission to list all the provisioned products in your account",
       "accessLevel": "List",
       "conditions": [
         "servicecatalog:accountLevel",
@@ -559,7 +559,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "TerminateProvisionedProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html",
-      "description": "Terminates an existing provisioned product",
+      "description": "Grants permission to terminate an existing provisioned product",
       "accessLevel": "Write",
       "conditions": [
         "servicecatalog:accountLevel",
@@ -569,12 +569,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "UpdateConstraint": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateConstraint.html",
-      "description": "Updates the metadata fields of an existing constraint",
+      "description": "Grants permission to update the metadata fields of an existing constraint",
       "accessLevel": "Write"
     },
     "UpdatePortfolio": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdatePortfolio.html",
-      "description": "Updates the metadata fields and/or tags of an existing portfolio",
+      "description": "Grants permission to update the metadata fields and/or tags of an existing portfolio",
       "accessLevel": "Write",
       "resourceTypes": {
         "Portfolio": {
@@ -588,7 +588,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "UpdateProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProduct.html",
-      "description": "Updates the metadata fields and/or tags of an existing product",
+      "description": "Grants permission to update the metadata fields and/or tags of an existing product",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -602,7 +602,7 @@ export class Servicecatalog extends PolicyStatement {
     },
     "UpdateProvisionedProduct": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProduct.html",
-      "description": "Updates an existing provisioned product",
+      "description": "Grants permission to update an existing provisioned product",
       "accessLevel": "Write",
       "conditions": [
         "servicecatalog:accountLevel",
@@ -612,12 +612,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "UpdateProvisionedProductProperties": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisionedProductProperties.html",
-      "description": "Updates the properties of an existing provisioned product",
+      "description": "Grants permission to update the properties of an existing provisioned product",
       "accessLevel": "Write"
     },
     "UpdateProvisioningArtifact": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisioningArtifact.html",
-      "description": "Updates the metadata fields of an existing provisioning artifact",
+      "description": "Grants permission to update the metadata fields of an existing provisioning artifact",
       "accessLevel": "Write",
       "resourceTypes": {
         "Product": {
@@ -627,12 +627,12 @@ export class Servicecatalog extends PolicyStatement {
     },
     "UpdateServiceAction": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateServiceAction.html",
-      "description": "Updates a self-service action.",
+      "description": "Grants permission to update a self-service action",
       "accessLevel": "Write"
     },
     "UpdateTagOption": {
       "url": "https://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateTagOption.html",
-      "description": "Updates the specified TagOption.",
+      "description": "Grants permission to update the specified TagOption",
       "accessLevel": "Write"
     }
   };
@@ -665,7 +665,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Accepts a portfolio that has been shared with you
+   * Grants permission to accept a portfolio that has been shared with you
    *
    * Access Level: Write
    *
@@ -677,7 +677,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Associates a budget with a resource.
+   * Grants permission to associate a budget with a resource
    *
    * Access Level: Write
    *
@@ -689,7 +689,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Associates an IAM principal with a portfolio, giving the specified principal access to any products associated with the specified portfolio
+   * Grants permission to associate an IAM principal with a portfolio, giving the specified principal access to any products associated with the specified portfolio
    *
    * Access Level: Write
    *
@@ -701,7 +701,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Associates a product with a portfolio
+   * Grants permission to associate a product with a portfolio
    *
    * Access Level: Write
    *
@@ -713,7 +713,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Associates an action with a provisioning artifact
+   * Grants permission to associate an action with a provisioning artifact
    *
    * Access Level: Write
    *
@@ -725,7 +725,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Associate the specified TagOption with the specified portfolio or product
+   * Grants permission to associate the specified TagOption with the specified portfolio or product
    *
    * Access Level: Write
    *
@@ -737,7 +737,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Associates multiple self-service actions with provisioning artifacts.
+   * Grants permission to associate multiple self-service actions with provisioning artifacts
    *
    * Access Level: Write
    *
@@ -749,7 +749,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disassociates a batch of self-service actions from the specified provisioning artifact.
+   * Grants permission to disassociate a batch of self-service actions from the specified provisioning artifact
    *
    * Access Level: Write
    *
@@ -761,7 +761,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Copies the specified source product to the specified target product or a new product.
+   * Grants permission to copy the specified source product to the specified target product or a new product
    *
    * Access Level: Write
    *
@@ -773,7 +773,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Creates a constraint on an associated product and portfolio
+   * Grants permission to create a constraint on an associated product and portfolio
    *
    * Access Level: Write
    *
@@ -785,7 +785,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Creates a portfolio
+   * Grants permission to create a portfolio
    *
    * Access Level: Write
    *
@@ -801,7 +801,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Shares a portfolio you own with another AWS account
+   * Grants permission to share a portfolio you own with another AWS account
    *
    * Access Level: Permissions management
    *
@@ -813,7 +813,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Creates a product and that product's first provisioning artifact
+   * Grants permission to create a product and that product's first provisioning artifact
    *
    * Access Level: Write
    *
@@ -829,7 +829,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Adds a new provisioned product plan
+   * Grants permission to add a new provisioned product plan
    *
    * Access Level: Write
    *
@@ -841,7 +841,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Adds a new provisioning artifact to an existing product
+   * Grants permission to add a new provisioning artifact to an existing product
    *
    * Access Level: Write
    *
@@ -853,7 +853,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Creates a self-service action.
+   * Grants permission to create a self-service action
    *
    * Access Level: Write
    *
@@ -865,7 +865,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Creates a TagOption.
+   * Grants permission to create a TagOption
    *
    * Access Level: Write
    *
@@ -877,7 +877,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Removes and deletes an existing constraint from an associated product and portfolio
+   * Grants permission to remove and delete an existing constraint from an associated product and portfolio
    *
    * Access Level: Write
    *
@@ -889,7 +889,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Deletes a portfolio if all associations and shares have been removed from the portfolio
+   * Grants permission to delete a portfolio if all associations and shares have been removed from the portfolio
    *
    * Access Level: Write
    *
@@ -901,7 +901,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Unshares a portfolio you own from an AWS account you previously shared the portfolio with
+   * Grants permission to unshare a portfolio you own from an AWS account you previously shared the portfolio with
    *
    * Access Level: Permissions management
    *
@@ -913,7 +913,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Deletes a product if all associations have been removed from the product
+   * Grants permission to delete a product if all associations have been removed from the product
    *
    * Access Level: Write
    *
@@ -925,7 +925,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Deletes a provisioned product plan
+   * Grants permission to delete a provisioned product plan
    *
    * Access Level: Write
    *
@@ -937,7 +937,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Deletes a provisioning artifact from a product
+   * Grants permission to delete a provisioning artifact from a product
    *
    * Access Level: Write
    *
@@ -949,7 +949,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Deletes a self-service action.
+   * Grants permission to delete a self-service action
    *
    * Access Level: Write
    *
@@ -961,7 +961,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Deletes the specified TagOption.
+   * Grants permission to delete the specified TagOption
    *
    * Access Level: Write
    *
@@ -973,7 +973,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a constraint
+   * Grants permission to describe a constraint
    *
    * Access Level: Read
    *
@@ -985,7 +985,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Gets the status of the specified copy product operation.
+   * Grants permission to get the status of the specified copy product operation
    *
    * Access Level: Read
    *
@@ -997,7 +997,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a portfolio
+   * Grants permission to describe a portfolio
    *
    * Access Level: Read
    *
@@ -1009,7 +1009,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Gets the status of the specified portfolio share operation.
+   * Grants permission to get the status of the specified portfolio share operation
    *
    * Access Level: Read
    *
@@ -1021,7 +1021,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a product as an end-user
+   * Grants permission to describe a product as an end-user
    *
    * Access Level: Read
    *
@@ -1033,7 +1033,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a product as an admin
+   * Grants permission to describe a product as an admin
    *
    * Access Level: Read
    *
@@ -1045,7 +1045,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a product as an end-user
+   * Grants permission to describe a product as an end-user
    *
    * Access Level: Read
    *
@@ -1057,7 +1057,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a provisioned product
+   * Grants permission to describe a provisioned product
    *
    * Access Level: Read
    *
@@ -1069,7 +1069,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a provisioned product plan
+   * Grants permission to describe a provisioned product plan
    *
    * Access Level: Read
    *
@@ -1081,7 +1081,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a provisioning artifact
+   * Grants permission to describe a provisioning artifact
    *
    * Access Level: Read
    *
@@ -1093,7 +1093,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes the parameters that you need to specify to successfully provision a specified provisioning artifact
+   * Grants permission to describe the parameters that you need to specify to successfully provision a specified provisioning artifact
    *
    * Access Level: Read
    *
@@ -1105,7 +1105,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a record and lists any outputs
+   * Grants permission to describe a record and lists any outputs
    *
    * Access Level: Read
    *
@@ -1122,7 +1122,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Describes a self-service action.
+   * Grants permission to describe a self-service action
    *
    * Access Level: Read
    *
@@ -1134,7 +1134,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Gets the default parameters if you executed the specified Service Action on the specified Provisioned Product.
+   * Grants permission to get the default parameters if you executed the specified Service Action on the specified Provisioned Product
    *
    * Access Level: Read
    *
@@ -1146,7 +1146,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Gets information about the specified TagOption.
+   * Grants permission to get information about the specified TagOption
    *
    * Access Level: Read
    *
@@ -1158,7 +1158,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disable portfolio sharing through AWS Organizations feature.
+   * Grants permission to disable portfolio sharing through AWS Organizations feature
    *
    * Access Level: Write
    *
@@ -1170,7 +1170,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disassociates a budget from a resource.
+   * Grants permission to disassociate a budget from a resource
    *
    * Access Level: Write
    *
@@ -1182,7 +1182,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disassociates an IAM principal from a portfolio.
+   * Grants permission to disassociate an IAM principal from a portfolio
    *
    * Access Level: Write
    *
@@ -1194,7 +1194,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disassociates a product from a portfolio
+   * Grants permission to disassociate a product from a portfolio
    *
    * Access Level: Write
    *
@@ -1206,7 +1206,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disassociates the specified self-service action association from the specified provisioning artifact.
+   * Grants permission to disassociate the specified self-service action association from the specified provisioning artifact
    *
    * Access Level: Write
    *
@@ -1218,7 +1218,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Disassociates the specified TagOption from the specified resource.
+   * Grants permission to disassociate the specified TagOption from the specified resource
    *
    * Access Level: Write
    *
@@ -1230,7 +1230,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Enable portfolio sharing feature through AWS Organizations.
+   * Grants permission to enable portfolio sharing feature through AWS Organizations
    *
    * Access Level: Write
    *
@@ -1242,7 +1242,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Executes a provisioned product plan
+   * Grants permission to execute a provisioned product plan
    *
    * Access Level: Write
    *
@@ -1254,7 +1254,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Executes a provisioned product plan
+   * Grants permission to executes a provisioned product plan
    *
    * Access Level: Write
    *
@@ -1266,7 +1266,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Get the Access Status for AWS Organization portfolio share feature.
+   * Grants permission to get the access status of AWS Organization portfolio share feature
    *
    * Access Level: Read
    *
@@ -1278,7 +1278,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the portfolios that have been shared with you and you have accepted
+   * Grants permission to list the portfolios that have been shared with you and you have accepted
    *
    * Access Level: List
    *
@@ -1290,7 +1290,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all the budgets associated to a resource.
+   * Grants permission to list all the budgets associated to a resource
    *
    * Access Level: List
    *
@@ -1302,7 +1302,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists constraints associated with a given portfolio
+   * Grants permission to list constraints associated with a given portfolio
    *
    * Access Level: List
    *
@@ -1314,7 +1314,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the different ways to launch a given product as an end-user
+   * Grants permission to list the different ways to launch a given product as an end-user
    *
    * Access Level: List
    *
@@ -1326,7 +1326,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the organization nodes that have access to the specified portfolio.
+   * Grants permission to list the organization nodes that have access to the specified portfolio
    *
    * Access Level: List
    *
@@ -1338,7 +1338,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the AWS accounts you have shared a given portfolio with
+   * Grants permission to list the AWS accounts you have shared a given portfolio with
    *
    * Access Level: List
    *
@@ -1350,7 +1350,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the portfolios in your account
+   * Grants permission to list the portfolios in your account
    *
    * Access Level: List
    *
@@ -1362,7 +1362,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the portfolios associated with a given product
+   * Grants permission to list the portfolios associated with a given product
    *
    * Access Level: List
    *
@@ -1374,7 +1374,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the IAM principals associated with a given portfolio
+   * Grants permission to list the IAM principals associated with a given portfolio
    *
    * Access Level: List
    *
@@ -1386,7 +1386,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the provisioned product plans
+   * Grants permission to list the provisioned product plans
    *
    * Access Level: List
    *
@@ -1398,7 +1398,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the provisioning artifacts associated with a given product
+   * Grants permission to list the provisioning artifacts associated with a given product
    *
    * Access Level: List
    *
@@ -1410,7 +1410,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all provisioning artifacts for the specified self-service action.
+   * Grants permission to list all provisioning artifacts for the specified self-service action
    *
    * Access Level: List
    *
@@ -1422,7 +1422,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all the records in your account or all the records related to a given provisioned product
+   * Grants permission to list all the records in your account or all the records related to a given provisioned product
    *
    * Access Level: List
    *
@@ -1439,7 +1439,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the resources associated with the specified TagOption.
+   * Grants permission to list the resources associated with the specified TagOption
    *
    * Access Level: List
    *
@@ -1451,7 +1451,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all self-service actions.
+   * Grants permission to list all self-service actions
    *
    * Access Level: List
    *
@@ -1463,7 +1463,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all the service actions associated with the specified provisioning artifact in your account
+   * Grants permission to list all the service actions associated with the specified provisioning artifact in your account
    *
    * Access Level: List
    *
@@ -1475,7 +1475,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product
+   * Grants permission to list account, region and status of each stack instances that are associated with a CFN_STACKSET type provisioned product
    *
    * Access Level: List
    *
@@ -1487,7 +1487,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the specified TagOptions or all TagOptions.
+   * Grants permission to list the specified TagOptions or all TagOptions
    *
    * Access Level: List
    *
@@ -1499,7 +1499,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Provisions a product with a specified provisioning artifact and launch parameters
+   * Grants permission to provision a product with a specified provisioning artifact and launch parameters
    *
    * Access Level: Write
    *
@@ -1511,7 +1511,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Rejects a portfolio that has been shared with you that you previously accepted
+   * Grants permission to reject a portfolio that has been shared with you that you previously accepted
    *
    * Access Level: Write
    *
@@ -1523,7 +1523,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all the provisioned products in your account
+   * Grants permission to list all the provisioned products in your account
    *
    * Access Level: List
    *
@@ -1540,7 +1540,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists the products available to you as an end-user
+   * Grants permission to list the products available to you as an end-user
    *
    * Access Level: List
    *
@@ -1552,7 +1552,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all the products in your account or all the products associated with a given portfolio
+   * Grants permission to list all the products in your account or all the products associated with a given portfolio
    *
    * Access Level: List
    *
@@ -1564,7 +1564,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Lists all the provisioned products in your account
+   * Grants permission to list all the provisioned products in your account
    *
    * Access Level: List
    *
@@ -1581,7 +1581,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Terminates an existing provisioned product
+   * Grants permission to terminate an existing provisioned product
    *
    * Access Level: Write
    *
@@ -1598,7 +1598,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates the metadata fields of an existing constraint
+   * Grants permission to update the metadata fields of an existing constraint
    *
    * Access Level: Write
    *
@@ -1610,7 +1610,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates the metadata fields and/or tags of an existing portfolio
+   * Grants permission to update the metadata fields and/or tags of an existing portfolio
    *
    * Access Level: Write
    *
@@ -1626,7 +1626,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates the metadata fields and/or tags of an existing product
+   * Grants permission to update the metadata fields and/or tags of an existing product
    *
    * Access Level: Write
    *
@@ -1642,7 +1642,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates an existing provisioned product
+   * Grants permission to update an existing provisioned product
    *
    * Access Level: Write
    *
@@ -1659,7 +1659,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates the properties of an existing provisioned product
+   * Grants permission to update the properties of an existing provisioned product
    *
    * Access Level: Write
    *
@@ -1671,7 +1671,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates the metadata fields of an existing provisioning artifact
+   * Grants permission to update the metadata fields of an existing provisioning artifact
    *
    * Access Level: Write
    *
@@ -1683,7 +1683,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates a self-service action.
+   * Grants permission to update a self-service action
    *
    * Access Level: Write
    *
@@ -1695,7 +1695,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Updates the specified TagOption.
+   * Grants permission to update the specified TagOption
    *
    * Access Level: Write
    *
@@ -1751,7 +1751,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag key-value pairs in the request
+   * Filters access based on the presence of tag key-value pairs in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
    *
@@ -1770,7 +1770,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on tag key-value pairs attached to the resource
+   * Filters access based on tag key-value pairs attached to the resource
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
    *
@@ -1787,7 +1787,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag keys in the request
+   * Filters access based on the presence of tag keys in the request
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
    *
@@ -1805,7 +1805,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Allows users to see and perform actions on resources created by anyone in the account.
+   * Filters users to see and perform actions on resources created by anyone in the account
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
    *
@@ -1825,7 +1825,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Allows users to see and perform actions on resources created either by them or by anyone federating into the same role as them.
+   * Filters users to see and perform actions on resources created either by them or by anyone federating into the same role as them
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
    *
@@ -1845,7 +1845,7 @@ export class Servicecatalog extends PolicyStatement {
   }
 
   /**
-   * Allows users to see and perform actions on only resources that they created.
+   * Filters users to see and perform actions on only resources that they created
    *
    * https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html
    *
