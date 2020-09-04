@@ -163,6 +163,7 @@ export { Globalaccelerator } from "./awsglobalaccelerator";
 export { Glue } from "./awsglue";
 export { Groundstation } from "./awsgroundstation";
 export { Health } from "./awshealthapisandnotifications";
+export { Identitystore } from "./awsidentitystore";
 export { Importexport } from "./awsimportexportdiskservice";
 export { Iot } from "./awsiot";
 export { Iot1click } from "./awsiot1-click";
