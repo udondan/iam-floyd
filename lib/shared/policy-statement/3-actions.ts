@@ -101,7 +101,12 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
    * Adds all actions of the statement provider to the statement, e.g. `actions: 'ec2:*'`
    */
   public allActions() {
-    return this.add(`${this.servicePrefix}:*`);
+    if (this.servicePrefix.length) {
+      this.add(`${this.servicePrefix}:*`);
+    } else {
+      this.add('*');
+    }
+    return this;
   }
 
   /**

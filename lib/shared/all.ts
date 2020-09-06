@@ -14,12 +14,4 @@ export class All extends PolicyStatement {
   constructor(sid?: string) {
     super(sid);
   }
-
-  /**
-   * Adds all actions to the statement: `actions: '*'`
-   */
-  public allActions() {
-    this.add('*');
-    return this;
-  }
 }
