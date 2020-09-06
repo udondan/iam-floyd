@@ -634,6 +634,8 @@ new statement.S3()
   .onObject('example-bucket', '*');
 ```
 
+And yes, it's shorter too.
+
 ### <a name='HowoftenwilltherebeupdatestoreflectIAMchanges'></a>How often will there be updates to reflect IAM changes?
 
 Once per hour the AWS documentation is checked for updates. If anything changes, a new package will be released immediately.
