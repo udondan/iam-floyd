@@ -3476,7 +3476,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAWSServiceName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAWSServiceName(value: string | string[], operator?: string) {
     return this.if(`iam:AWSServiceName`, value, operator || 'StringLike');
   }
 
@@ -3491,7 +3491,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifAssociatedResourceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAssociatedResourceArn(value: string | string[], operator?: string) {
     return this.if(`iam:AssociatedResourceArn`, value, operator || 'ArnEquals');
   }
 
@@ -3506,7 +3506,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOrganizationsPolicyId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifOrganizationsPolicyId(value: string | string[], operator?: string) {
     return this.if(`iam:OrganizationsPolicyId`, value, operator || 'StringLike');
   }
 
@@ -3521,7 +3521,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPassedToService(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPassedToService(value: string | string[], operator?: string) {
     return this.if(`iam:PassedToService`, value, operator || 'StringLike');
   }
 
@@ -3549,7 +3549,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPermissionsBoundary(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPermissionsBoundary(value: string | string[], operator?: string) {
     return this.if(`iam:PermissionsBoundary`, value, operator || 'StringLike');
   }
 
@@ -3569,7 +3569,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPolicyARN(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPolicyARN(value: string | string[], operator?: string) {
     return this.if(`iam:PolicyARN`, value, operator || 'ArnEquals');
   }
 
@@ -3586,7 +3586,7 @@ export class Iam extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
     return this.if(`iam:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

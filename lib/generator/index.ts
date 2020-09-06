@@ -451,7 +451,6 @@ export function createModule(module: Module): Promise<void> {
     const method = classDeclaration.addMethod({
       name: methodName,
       scope: Scope.Public,
-      returnType: 'PolicyStatementWithCondition',
     });
 
     var propsKey = `${name[0]}:${name[1]}`;

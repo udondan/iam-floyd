@@ -710,7 +710,7 @@ export class Ram extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifAllowsExternalPrincipals(value?: boolean): PolicyStatementWithCondition {
+  public ifAllowsExternalPrincipals(value?: boolean) {
     return this.if(`ram:AllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -730,7 +730,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPermissionArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPermissionArn(value: string | string[], operator?: string) {
     return this.if(`ram:PermissionArn`, value, operator || 'ArnEquals');
   }
 
@@ -747,7 +747,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrincipal(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPrincipal(value: string | string[], operator?: string) {
     return this.if(`ram:Principal`, value, operator || 'StringLike');
   }
 
@@ -762,7 +762,7 @@ export class Ram extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifRequestedAllowsExternalPrincipals(value?: boolean): PolicyStatementWithCondition {
+  public ifRequestedAllowsExternalPrincipals(value?: boolean) {
     return this.if(`ram:RequestedAllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -779,7 +779,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestedResourceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestedResourceType(value: string | string[], operator?: string) {
     return this.if(`ram:RequestedResourceType`, value, operator || 'StringLike');
   }
 
@@ -796,7 +796,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifResourceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceArn(value: string | string[], operator?: string) {
     return this.if(`ram:ResourceArn`, value, operator || 'ArnEquals');
   }
 
@@ -820,7 +820,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceShareName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceShareName(value: string | string[], operator?: string) {
     return this.if(`ram:ResourceShareName`, value, operator || 'StringLike');
   }
 
@@ -836,7 +836,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifShareOwnerAccountId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifShareOwnerAccountId(value: string | string[], operator?: string) {
     return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringLike');
   }
 }

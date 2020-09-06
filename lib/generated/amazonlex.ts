@@ -1200,7 +1200,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssociatedIntents(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAssociatedIntents(value: string | string[], operator?: string) {
     return this.if(`lex:associatedIntents`, value, operator || 'StringLike');
   }
 
@@ -1210,7 +1210,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssociatedSlotTypes(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAssociatedSlotTypes(value: string | string[], operator?: string) {
     return this.if(`lex:associatedSlotTypes`, value, operator || 'StringLike');
   }
 
@@ -1220,7 +1220,7 @@ export class Lex extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChannelType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifChannelType(value: string | string[], operator?: string) {
     return this.if(`lex:channelType`, value, operator || 'StringLike');
   }
 }

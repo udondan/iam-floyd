@@ -264,7 +264,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAgreementType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAgreementType(value: string | string[], operator?: string) {
     return this.if(`aws-marketplace:AgreementType`, value, operator || 'StringLike');
   }
 
@@ -274,7 +274,7 @@ export class AwsMarketplace extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPartyType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPartyType(value: string | string[], operator?: string) {
     return this.if(`aws-marketplace:PartyType`, value, operator || 'StringLike');
   }
 }

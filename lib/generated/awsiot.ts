@@ -5217,7 +5217,7 @@ export class Iot extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifDelete(value?: boolean): PolicyStatementWithCondition {
+  public ifDelete(value?: boolean) {
     return this.if(`iot:Delete`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -5230,7 +5230,7 @@ export class Iot extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifThingGroupArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifThingGroupArn(value: string | string[], operator?: string) {
     return this.if(`iot:ThingGroupArn`, value, operator || 'StringLike');
   }
 
@@ -5243,7 +5243,7 @@ export class Iot extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTunnelDestinationService(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifTunnelDestinationService(value: string | string[], operator?: string) {
     return this.if(`iot:TunnelDestinationService`, value, operator || 'StringLike');
   }
 }

@@ -1341,7 +1341,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string) {
     return this.if(`imagebuilder:CreatedResourceTag/${ key }`, value, operator || 'StringLike');
   }
 
@@ -1357,7 +1357,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreatedResourceTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifCreatedResourceTagKeys(value: string | string[], operator?: string) {
     return this.if(`imagebuilder:CreatedResourceTagKeys`, value, operator || 'StringLike');
   }
 }

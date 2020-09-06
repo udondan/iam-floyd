@@ -3202,7 +3202,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOverwrite(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifOverwrite(value: string | string[], operator?: string) {
     return this.if(`ssm:Overwrite`, value, operator || 'StringLike');
   }
 
@@ -3214,7 +3214,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRecursive(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRecursive(value: string | string[], operator?: string) {
     return this.if(`ssm:Recursive`, value, operator || 'StringLike');
   }
 
@@ -3228,7 +3228,7 @@ export class Ssm extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifSessionDocumentAccessCheck(value?: boolean): PolicyStatementWithCondition {
+  public ifSessionDocumentAccessCheck(value?: boolean) {
     return this.if(`ssm:SessionDocumentAccessCheck`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -3244,7 +3244,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSyncType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSyncType(value: string | string[], operator?: string) {
     return this.if(`ssm:SyncType`, value, operator || 'StringLike');
   }
 
@@ -3268,7 +3268,7 @@ export class Ssm extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagkey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceTag(tagkey: string, value: string | string[], operator?: string) {
     return this.if(`ssm:resourceTag/${ tagkey }`, value, operator || 'StringLike');
   }
 }

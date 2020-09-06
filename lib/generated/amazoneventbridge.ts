@@ -807,7 +807,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTargetArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifTargetArn(value: string | string[], operator?: string) {
     return this.if(`events:TargetArn`, value, operator || 'ArnEquals');
   }
 
@@ -822,7 +822,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailType(value: string | string[], operator?: string) {
     return this.if(`events:detail-type`, value, operator || 'StringLike');
   }
 
@@ -837,7 +837,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailEventTypeCode(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailEventTypeCode(value: string | string[], operator?: string) {
     return this.if(`events:detail.eventTypeCode`, value, operator || 'StringLike');
   }
 
@@ -852,7 +852,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailService(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailService(value: string | string[], operator?: string) {
     return this.if(`events:detail.service`, value, operator || 'StringLike');
   }
 
@@ -867,7 +867,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string) {
     return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringLike');
   }
 
@@ -882,7 +882,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSource(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSource(value: string | string[], operator?: string) {
     return this.if(`events:source`, value, operator || 'StringLike');
   }
 }

@@ -444,7 +444,7 @@ export class Cloud9 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEnvironmentId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifEnvironmentId(value: string | string[], operator?: string) {
     return this.if(`cloud9:EnvironmentId`, value, operator || 'StringLike');
   }
 
@@ -459,7 +459,7 @@ export class Cloud9 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEnvironmentName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifEnvironmentName(value: string | string[], operator?: string) {
     return this.if(`cloud9:EnvironmentName`, value, operator || 'StringLike');
   }
 
@@ -474,7 +474,7 @@ export class Cloud9 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifInstanceType(value: string | string[], operator?: string) {
     return this.if(`cloud9:InstanceType`, value, operator || 'StringLike');
   }
 
@@ -490,7 +490,7 @@ export class Cloud9 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPermissions(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPermissions(value: string | string[], operator?: string) {
     return this.if(`cloud9:Permissions`, value, operator || 'StringLike');
   }
 
@@ -505,7 +505,7 @@ export class Cloud9 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubnetId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSubnetId(value: string | string[], operator?: string) {
     return this.if(`cloud9:SubnetId`, value, operator || 'StringLike');
   }
 
@@ -523,7 +523,7 @@ export class Cloud9 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifUserArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifUserArn(value: string | string[], operator?: string) {
     return this.if(`cloud9:UserArn`, value, operator || 'ArnEquals');
   }
 }

@@ -707,7 +707,7 @@ export class Sns extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEndpoint(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifEndpoint(value: string | string[], operator?: string) {
     return this.if(`sns:Endpoint`, value, operator || 'StringLike');
   }
 
@@ -722,7 +722,7 @@ export class Sns extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifProtocol(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifProtocol(value: string | string[], operator?: string) {
     return this.if(`sns:Protocol`, value, operator || 'StringLike');
   }
 }
