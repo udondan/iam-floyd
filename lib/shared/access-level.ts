@@ -12,12 +12,14 @@ export enum AccessLevel {
    * For example, the Amazon S3 action `ListBucket` has the List access level.
    */
   LIST = 'List',
+
   /**
    * Permission to read but not edit the contents and attributes of resources in the service.
    *
    * For example, the Amazon S3 actions `GetObject` and `GetBucketLocation` have the Read access level.
    */
   READ = 'Read',
+
   /**
    * Permission to create, delete, or modify resources in the service.
    *
@@ -26,12 +28,14 @@ export enum AccessLevel {
    * Write actions might also allow modifying a resource tag. However, an action that allows only changes to tags has the Tagging access level.
    */
   WRITE = 'Write',
+
   /**
    * Permission to grant or modify resource permissions in the service.
    *
    * For example, most IAM and AWS Organizations actions, as well as actions like the Amazon S3 actions `PutBucketPolicy` and `DeleteBucketPolicy` have the Permissions management access level.
    */
   PERMISSION_MANAGEMENT = 'Permissions management',
+
   /**
    * Permission to perform actions that only change the state of resource tags.
    *

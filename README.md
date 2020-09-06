@@ -46,6 +46,12 @@ There are two different package variants available:
 	* [deny](#deny)
 	* [to*, to](#toto)
 	* [allActions](#allActions)
+	* [allMatchingActions](#allMatchingActions)
+	* [allListActions](#allListActions)
+	* [allReadActions](#allReadActions)
+	* [allWriteActions](#allWriteActions)
+	* [allPermissionManagementActions](#allPermissionManagementActions)
+	* [allTaggingActions](#allTaggingActions)
 	* [if*, if](#ifif)
 	* [on*, on](#onon)
 	* [notActions](#notActions)
@@ -104,28 +110,34 @@ new statement.Ec2()
   .toStopInstances();
 ```
 
-If you don't want to be verbose and add every single action manually to the statement, you discovered the reason why this package was created. You can work with [access levels]!
+If you don't want to be verbose and add every single action manually to the statement, you can work with [access levels]. For every access level there is a distinct method available to add all related actions to the statement:
 
-There are 5 access levels you can use: `LIST`, `READ`, `WRITE`, `PERMISSION_MANAGEMENT` and `TAGGING`:
-
-```typescript
-new statement.Ec2()
-  .allow()
-  .allActions(
-    statement.AccessLevel.LIST,
-    statement.AccessLevel.READ
-  );
-```
-
-The `allActions()` method also accepts regular expressions (as a string) which test against the action name:
+- `allListActions()`
+- `allReadActions()`
+- `allWriteActions()`
+- `allPermissionManagementActions()`
+- `allTaggingActions()`
 
 ```typescript
 new statement.Ec2()
   .deny()
-  .allActions('/vpn/i');
+  .allPermissionManagementActions();
+
+new statement.Ec2()
+  .allow()
+  .allListActions()
+  .allReadActions();
 ```
 
-If no value is passed, all actions (`ec2:*`) will be added:
+To add actions based on regular expressions, use the method `allMatchingActions()`.
+
+```typescript
+new statement.Ec2()
+  .deny()
+  .allMatchingActions('/vpn/i');
+```
+
+To add all actions (e.g. `ec2:*`), call the `allActions()` method:
 
 ```typescript
 new statement.Ec2()
@@ -216,10 +228,8 @@ const policy = {
       .ifResourceTag('Owner', '${aws:username}'),
     new statement.Ec2()
       .allow()
-      .allActions(
-        statement.AccessLevel.LIST,
-        statement.AccessLevel.READ
-    ),
+      .allListActions()
+      .allReadActions(),
   ]
 }
 ```
@@ -241,16 +251,12 @@ const policy = {
       .on('arn:aws:s3:::cdktoolkit-stagingbucket-*'),
     new statement.Account() // even when triggered via CFN, do not allow modifications of the account
       .deny()
-      .allActions(
-        statement.AccessLevel.PERMISSION_MANAGEMENT,
-        statement.AccessLevel.WRITE
-      ),
+      .allPermissionManagementActions()
+      .allWriteActions(),
     new statement.Organizations() // even when triggered via CFN, do not allow modifications of the organization
       .deny()
-      .allActions(
-        statement.AccessLevel.PERMISSION_MANAGEMENT,
-        statement.AccessLevel.WRITE
-      ),
+      .allPermissionManagementActions()
+      .allWriteActions(),
   ]
 }
 ```
@@ -290,7 +296,7 @@ new statement.Ec2()
 
 ### <a name='allActions'></a>allActions
 
-This method allows you to add multiple actions at once. If called without parameters, it adds all actions of the service.
+This method adds all actions of the related service to the statement, e.g. `ec2:*`
 
 ```typescript
 new statement.Ec2()
@@ -298,30 +304,67 @@ new statement.Ec2()
   .allActions();
 ```
 
-The method can take regular expressions (as a string) and [access levels] as options and will add only the matching actions:
+### <a name='allMatchingActions'></a>allMatchingActions
+
+Adds all actions matching regular expressions to the statement.
+
+The regular expressions need to be in [Perl/JavaScript literal style](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) and need to be passed as strings:
 
 ```typescript
 new statement.Ec2()
   .allow()
-  .allActions('/vpn/i');
+  .allMatchingActions('/vpn/i');
 ```
+
+### <a name='allListActions'></a>allListActions
+
+Adds all actions with [access level][access levels] **list** to the statement.
 
 ```typescript
 new statement.Ec2()
   .allow()
-  .allActions(
-    statement.AccessLevel.LIST,
-    statement.AccessLevel.READ
-  );
+  .allListActions();
 ```
 
-There exist 5 access levels:
+### <a name='allReadActions'></a>allReadActions
 
-* LIST
-* READ
-* WRITE
-* PERMISSION_MANAGEMENT
-* TAGGING
+Adds all actions with [access level][access levels] **read** to the statement.
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .allReadActions();
+```
+
+### <a name='allWriteActions'></a>allWriteActions
+
+Adds all actions with [access level][access levels] **write** to the statement.
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .allWriteActions();
+```
+
+### <a name='allPermissionManagementActions'></a>allPermissionManagementActions
+
+Adds all actions with [access level][access levels] **permission management** to the statement.
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .allPermissionManagementActions();
+```
+
+### <a name='allTaggingActions'></a>allTaggingActions
+
+Adds all actions with [access level][access levels] **tagging** to the statement.
+
+```typescript
+new statement.Ec2()
+  .allow()
+  .allTaggingActions();
+```
 
 ### <a name='ifif'></a>if*, if
 
