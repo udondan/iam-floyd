@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [events](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoneventbridge.html).
@@ -797,59 +797,6 @@ export class Events extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the allowed set of values for each of the tags
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateEventBus()
-   * - .toPutRule()
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on tag-value associated with the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to resource types:
-   * - event-bus
-   * - rule
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the presence of mandatory tags in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateEventBus()
-   * - .toPutRule()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * The ARN of a target that can be put to a rule.
    *
    * https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets
@@ -860,7 +807,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTargetArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifTargetArn(value: string | string[], operator?: string) {
     return this.if(`events:TargetArn`, value, operator || 'ArnEquals');
   }
 
@@ -875,7 +822,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailType(value: string | string[], operator?: string) {
     return this.if(`events:detail-type`, value, operator || 'StringLike');
   }
 
@@ -890,7 +837,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailEventTypeCode(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailEventTypeCode(value: string | string[], operator?: string) {
     return this.if(`events:detail.eventTypeCode`, value, operator || 'StringLike');
   }
 
@@ -905,7 +852,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailService(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailService(value: string | string[], operator?: string) {
     return this.if(`events:detail.service`, value, operator || 'StringLike');
   }
 
@@ -920,7 +867,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDetailUserIdentityPrincipalId(value: string | string[], operator?: string) {
     return this.if(`events:detail.userIdentity.principalId`, value, operator || 'StringLike');
   }
 
@@ -935,7 +882,7 @@ export class Events extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSource(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSource(value: string | string[], operator?: string) {
     return this.if(`events:source`, value, operator || 'StringLike');
   }
 }

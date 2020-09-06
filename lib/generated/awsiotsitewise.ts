@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [iotsitewise](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotsitewise.html).
@@ -1530,77 +1530,6 @@ export class Iotsitewise extends PolicyStatement {
   }
 
   /**
-   * Filters access by the tag key-value pairs in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateAccessPolicy()
-   * - .toCreateAsset()
-   * - .toCreateAssetModel()
-   * - .toCreateDashboard()
-   * - .toCreateGateway()
-   * - .toCreatePortal()
-   * - .toCreateProject()
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by the tags attached to the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toListTagsForResource()
-   *
-   * Applies to resource types:
-   * - asset
-   * - asset-model
-   * - gateway
-   * - portal
-   * - project
-   * - dashboard
-   * - access-policy
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions by the tag keys in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateAccessPolicy()
-   * - .toCreateAsset()
-   * - .toCreateAssetModel()
-   * - .toCreateDashboard()
-   * - .toCreateGateway()
-   * - .toCreatePortal()
-   * - .toCreateProject()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by an asset hierarchy path, which is the string of asset IDs in the asset's hierarchy, each separated by a forward slash
    *
    * https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys
@@ -1608,7 +1537,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAssetHierarchyPath(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAssetHierarchyPath(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:assetHierarchyPath`, value, operator || 'StringLike');
   }
 
@@ -1620,7 +1549,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifChildAssetId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifChildAssetId(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:childAssetId`, value, operator || 'StringLike');
   }
 
@@ -1632,7 +1561,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGroup(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifGroup(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:group`, value, operator || 'StringLike');
   }
 
@@ -1644,7 +1573,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPortal(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPortal(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:portal`, value, operator || 'StringLike');
   }
 
@@ -1656,7 +1585,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifProject(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifProject(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:project`, value, operator || 'StringLike');
   }
 
@@ -1668,7 +1597,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPropertyId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPropertyId(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:propertyId`, value, operator || 'StringLike');
   }
 
@@ -1680,7 +1609,7 @@ export class Iotsitewise extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifUser(value: string | string[], operator?: string) {
     return this.if(`iotsitewise:user`, value, operator || 'StringLike');
   }
 }

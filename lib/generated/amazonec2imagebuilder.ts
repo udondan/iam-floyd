@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [imagebuilder](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2imagebuilder.html).
@@ -1329,80 +1329,6 @@ export class Imagebuilder extends PolicyStatement {
   }
 
   /**
-   * Filters actions by the presence of tag key-value pairs in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateComponent()
-   * - .toCreateDistributionConfiguration()
-   * - .toCreateImage()
-   * - .toCreateImagePipeline()
-   * - .toCreateImageRecipe()
-   * - .toCreateInfrastructureConfiguration()
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions by tag key-value pairs attached to the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toGetImage()
-   * - .toListTagsForResource()
-   * - .toTagResource()
-   * - .toUntagResource()
-   * - .toUpdateInfrastructureConfiguration()
-   *
-   * Applies to resource types:
-   * - component
-   * - componentVersion
-   * - distributionConfiguration
-   * - image
-   * - imageVersion
-   * - imageRecipe
-   * - imagePipeline
-   * - infrastructureConfiguration
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions by the presence of tag keys in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateComponent()
-   * - .toCreateDistributionConfiguration()
-   * - .toCreateImage()
-   * - .toCreateImagePipeline()
-   * - .toCreateImageRecipe()
-   * - .toCreateInfrastructureConfiguration()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by the tag key-value pairs attached to the resource created by Image Builder
    *
    * https://docs.aws.amazon.com/imagebuilder/latest/userguide/security_iam_service-with-iam.html#image-builder-security-createdresourcetag
@@ -1415,7 +1341,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifCreatedResourceTag(key: string, value: string | string[], operator?: string) {
     return this.if(`imagebuilder:CreatedResourceTag/${ key }`, value, operator || 'StringLike');
   }
 
@@ -1431,7 +1357,7 @@ export class Imagebuilder extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreatedResourceTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifCreatedResourceTagKeys(value: string | string[], operator?: string) {
     return this.if(`imagebuilder:CreatedResourceTagKeys`, value, operator || 'StringLike');
   }
 }

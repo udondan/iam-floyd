@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [s3](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html).
@@ -3689,52 +3689,6 @@ export class S3 extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the tags that are passed in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateJob()
-   * - .toPutJobTagging()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the tags associated with the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the tag keys that are passed in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateJob()
-   * - .toPutJobTagging()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by the network origin (Internet or VPC)
    *
    * https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html#access-points-policies
@@ -3777,7 +3731,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAccessPointNetworkOrigin(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAccessPointNetworkOrigin(value: string | string[], operator?: string) {
     return this.if(`s3:AccessPointNetworkOrigin`, value, operator || 'StringLike');
   }
 
@@ -3824,7 +3778,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDataAccessPointAccount(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDataAccessPointAccount(value: string | string[], operator?: string) {
     return this.if(`s3:DataAccessPointAccount`, value, operator || 'StringLike');
   }
 
@@ -3869,7 +3823,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDataAccessPointArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDataAccessPointArn(value: string | string[], operator?: string) {
     return this.if(`s3:DataAccessPointArn`, value, operator || 'StringLike');
   }
 
@@ -3887,7 +3841,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifExistingJobOperation(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifExistingJobOperation(value: string | string[], operator?: string) {
     return this.if(`s3:ExistingJobOperation`, value, operator || 'StringLike');
   }
 
@@ -3905,7 +3859,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifExistingJobPriority(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifExistingJobPriority(value: number | number[], operator?: string) {
     return this.if(`s3:ExistingJobPriority`, value, operator || 'NumericEquals');
   }
 
@@ -3932,7 +3886,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifExistingObjectTag(key: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifExistingObjectTag(key: string, value: string | string[], operator?: string) {
     return this.if(`s3:ExistingObjectTag/${ key }`, value, operator || 'StringLike');
   }
 
@@ -3947,7 +3901,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifJobSuspendedCause(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifJobSuspendedCause(value: string | string[], operator?: string) {
     return this.if(`s3:JobSuspendedCause`, value, operator || 'StringLike');
   }
 
@@ -3959,7 +3913,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLocationConstraint(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifLocationConstraint(value: string | string[], operator?: string) {
     return this.if(`s3:LocationConstraint`, value, operator || 'StringLike');
   }
 
@@ -3974,7 +3928,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestJobOperation(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestJobOperation(value: string | string[], operator?: string) {
     return this.if(`s3:RequestJobOperation`, value, operator || 'StringLike');
   }
 
@@ -3990,7 +3944,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRequestJobPriority(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestJobPriority(value: number | number[], operator?: string) {
     return this.if(`s3:RequestJobPriority`, value, operator || 'NumericEquals');
   }
 
@@ -4009,7 +3963,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestObjectTag(key: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestObjectTag(key: string, value: string | string[], operator?: string) {
     return this.if(`s3:RequestObjectTag/${ key }`, value, operator || 'StringLike');
   }
 
@@ -4027,7 +3981,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestObjectTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestObjectTagKeys(value: string | string[], operator?: string) {
     return this.if(`s3:RequestObjectTagKeys`, value, operator || 'StringLike');
   }
 
@@ -4039,7 +3993,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersionId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVersionId(value: string | string[], operator?: string) {
     return this.if(`s3:VersionId`, value, operator || 'StringLike');
   }
 
@@ -4146,7 +4100,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAuthType(value: string | string[], operator?: string) {
     return this.if(`s3:authType`, value, operator || 'StringLike');
   }
 
@@ -4162,7 +4116,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifDelimiter(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifDelimiter(value: string | string[], operator?: string) {
     return this.if(`s3:delimiter`, value, operator || 'StringLike');
   }
 
@@ -4178,7 +4132,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLocationconstraint(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifLocationconstraint(value: string | string[], operator?: string) {
     return this.if(`s3:locationconstraint`, value, operator || 'StringLike');
   }
 
@@ -4194,7 +4148,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMaxKeys(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifMaxKeys(value: number | number[], operator?: string) {
     return this.if(`s3:max-keys`, value, operator || 'NumericEquals');
   }
 
@@ -4211,7 +4165,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifObjectLockLegalHold(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifObjectLockLegalHold(value: string | string[], operator?: string) {
     return this.if(`s3:object-lock-legal-hold`, value, operator || 'StringLike');
   }
 
@@ -4226,7 +4180,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifObjectLockMode(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifObjectLockMode(value: string | string[], operator?: string) {
     return this.if(`s3:object-lock-mode`, value, operator || 'StringLike');
   }
 
@@ -4243,7 +4197,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifObjectLockRemainingRetentionDays(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifObjectLockRemainingRetentionDays(value: string | string[], operator?: string) {
     return this.if(`s3:object-lock-remaining-retention-days`, value, operator || 'StringLike');
   }
 
@@ -4260,7 +4214,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifObjectLockRetainUntilDate(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifObjectLockRetainUntilDate(value: string | string[], operator?: string) {
     return this.if(`s3:object-lock-retain-until-date`, value, operator || 'StringLike');
   }
 
@@ -4276,7 +4230,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrefix(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPrefix(value: string | string[], operator?: string) {
     return this.if(`s3:prefix`, value, operator || 'StringLike');
   }
 
@@ -4383,7 +4337,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifSignatureAge(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifSignatureAge(value: number | number[], operator?: string) {
     return this.if(`s3:signatureAge`, value, operator || 'NumericEquals');
   }
 
@@ -4490,7 +4444,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSignatureversion(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSignatureversion(value: string | string[], operator?: string) {
     return this.if(`s3:signatureversion`, value, operator || 'StringLike');
   }
 
@@ -4512,7 +4466,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVersionid(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVersionid(value: string | string[], operator?: string) {
     return this.if(`s3:versionid`, value, operator || 'StringLike');
   }
 
@@ -4533,7 +4487,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzAcl(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzAcl(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-acl`, value, operator || 'StringLike');
   }
 
@@ -4638,7 +4592,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzContentSha256(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzContentSha256(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-content-sha256`, value, operator || 'StringLike');
   }
 
@@ -4654,7 +4608,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzCopySource(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzCopySource(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-copy-source`, value, operator || 'StringLike');
   }
 
@@ -4674,7 +4628,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzGrantFullControl(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzGrantFullControl(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-grant-full-control`, value, operator || 'StringLike');
   }
 
@@ -4694,7 +4648,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzGrantRead(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzGrantRead(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-grant-read`, value, operator || 'StringLike');
   }
 
@@ -4714,7 +4668,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzGrantReadAcp(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzGrantReadAcp(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-grant-read-acp`, value, operator || 'StringLike');
   }
 
@@ -4734,7 +4688,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzGrantWrite(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzGrantWrite(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-grant-write`, value, operator || 'StringLike');
   }
 
@@ -4754,7 +4708,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzGrantWriteAcp(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzGrantWriteAcp(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-grant-write-acp`, value, operator || 'StringLike');
   }
 
@@ -4770,7 +4724,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzMetadataDirective(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzMetadataDirective(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-metadata-directive`, value, operator || 'StringLike');
   }
 
@@ -4787,7 +4741,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzServerSideEncryption(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzServerSideEncryption(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-server-side-encryption`, value, operator || 'StringLike');
   }
 
@@ -4804,7 +4758,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzServerSideEncryptionAwsKmsKeyId(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-server-side-encryption-aws-kms-key-id`, value, operator || 'StringLike');
   }
 
@@ -4822,7 +4776,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzStorageClass(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzStorageClass(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-storage-class`, value, operator || 'StringLike');
   }
 
@@ -4838,7 +4792,7 @@ export class S3 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifXAmzWebsiteRedirectLocation(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifXAmzWebsiteRedirectLocation(value: string | string[], operator?: string) {
     return this.if(`s3:x-amz-website-redirect-location`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [elasticmapreduce](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticmapreduce.html).
@@ -958,59 +958,6 @@ export class Elasticmapreduce extends PolicyStatement {
   }
 
   /**
-   * Filters access based on whether the tag and value pair is provided with the action
-   *
-   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
-   *
-   * Applies to actions:
-   * - .toAddTags()
-   * - .toCreateEditor()
-   * - .toRunJobFlow()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access based on the tag and value pair associated with an Amazon EMR resource
-   *
-   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
-   *
-   * Applies to resource types:
-   * - cluster
-   * - editor
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access based on whether the tag keys are provided with the action regardless of tag value
-   *
-   * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
-   *
-   * Applies to actions:
-   * - .toAddTags()
-   * - .toCreateEditor()
-   * - .toRemoveTags()
-   * - .toRunJobFlow()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters actions based on whether the tag and value pair is provided with the action
    *
    * https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access
@@ -1024,7 +971,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestTag(tagKey: string, value: string | string[], operator?: string) {
     return this.if(`elasticmapreduce:RequestTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -1041,7 +988,7 @@ export class Elasticmapreduce extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
     return this.if(`elasticmapreduce:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

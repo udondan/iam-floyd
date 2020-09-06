@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [batch](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html).
@@ -436,7 +436,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImage(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifImage(value: string | string[], operator?: string) {
     return this.if(`batch:Image`, value, operator || 'StringLike');
   }
 
@@ -450,7 +450,7 @@ export class Batch extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifPrivileged(value?: boolean): PolicyStatementWithCondition {
+  public ifPrivileged(value?: boolean) {
     return this.if(`batch:Privileged`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -465,7 +465,7 @@ export class Batch extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifUser(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifUser(value: string | string[], operator?: string) {
     return this.if(`batch:User`, value, operator || 'StringLike');
   }
 }

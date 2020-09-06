@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html).
@@ -1072,65 +1072,6 @@ export class SesPinpoint extends PolicyStatement {
   }
 
   /**
-   * Filters actions based on the presence of tag key-value pairs in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateConfigurationSet()
-   * - .toCreateDedicatedIpPool()
-   * - .toCreateDeliverabilityTestReport()
-   * - .toCreateEmailIdentity()
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on tag key-value pairs attached to the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to resource types:
-   * - configuration-set
-   * - dedicated-ip-pool
-   * - deliverability-test-report
-   * - identity
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the presence of tag keys in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateConfigurationSet()
-   * - .toCreateDedicatedIpPool()
-   * - .toCreateDeliverabilityTestReport()
-   * - .toCreateEmailIdentity()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * The "Return-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding.
    *
    * Applies to actions:
@@ -1139,7 +1080,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFeedbackAddress(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifFeedbackAddress(value: string | string[], operator?: string) {
     return this.if(`ses:FeedbackAddress`, value, operator || 'StringLike');
   }
 
@@ -1152,7 +1093,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFromAddress(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifFromAddress(value: string | string[], operator?: string) {
     return this.if(`ses:FromAddress`, value, operator || 'StringLike');
   }
 
@@ -1165,7 +1106,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifFromDisplayName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifFromDisplayName(value: string | string[], operator?: string) {
     return this.if(`ses:FromDisplayName`, value, operator || 'StringLike');
   }
 
@@ -1178,7 +1119,7 @@ export class SesPinpoint extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRecipients(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRecipients(value: string | string[], operator?: string) {
     return this.if(`ses:Recipients`, value, operator || 'StringLike');
   }
 }

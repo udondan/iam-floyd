@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [lambda](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html).
@@ -1324,7 +1324,7 @@ export class Lambda extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifFunctionArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifFunctionArn(value: string | string[], operator?: string) {
     return this.if(`lambda:FunctionArn`, value, operator || 'ArnEquals');
   }
 
@@ -1338,7 +1338,7 @@ export class Lambda extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifLayer(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifLayer(value: string | string[], operator?: string) {
     return this.if(`lambda:Layer`, value, operator || 'StringLike');
   }
 
@@ -1352,7 +1352,7 @@ export class Lambda extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrincipal(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPrincipal(value: string | string[], operator?: string) {
     return this.if(`lambda:Principal`, value, operator || 'StringLike');
   }
 
@@ -1366,7 +1366,7 @@ export class Lambda extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSecurityGroupIds(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSecurityGroupIds(value: string | string[], operator?: string) {
     return this.if(`lambda:SecurityGroupIds`, value, operator || 'StringLike');
   }
 
@@ -1380,7 +1380,7 @@ export class Lambda extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifSubnetIds(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSubnetIds(value: string | string[], operator?: string) {
     return this.if(`lambda:SubnetIds`, value, operator || 'StringLike');
   }
 
@@ -1394,7 +1394,7 @@ export class Lambda extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpcIds(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVpcIds(value: string | string[], operator?: string) {
     return this.if(`lambda:VpcIds`, value, operator || 'StringLike');
   }
 }

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [license-manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html).
@@ -366,35 +366,6 @@ export class LicenseManager extends PolicyStatement {
   }
 
   /**
-   * Filters create requests based on allowed set of values for each of the mandatory tags
-   *
-   * Applies to actions:
-   * - .toCreateLicenseConfiguration()
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Enforce tag keys that are used in the request
-   *
-   * Applies to actions:
-   * - .toCreateLicenseConfiguration()
-   * - .toTagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters actions based on tag-value associated with the resource.
    *
    * Applies to resource types:
@@ -404,7 +375,7 @@ export class LicenseManager extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
     return this.if(`license-manager:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 }

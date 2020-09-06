@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [sns](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsns.html).
@@ -697,35 +697,6 @@ export class Sns extends PolicyStatement {
   }
 
   /**
-   * Tags from request
-   *
-   * Applies to actions:
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Tag keys from request
-   *
-   * Applies to actions:
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription.
    *
    * https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19
@@ -736,7 +707,7 @@ export class Sns extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifEndpoint(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifEndpoint(value: string | string[], operator?: string) {
     return this.if(`sns:Endpoint`, value, operator || 'StringLike');
   }
 
@@ -751,7 +722,7 @@ export class Sns extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifProtocol(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifProtocol(value: string | string[], operator?: string) {
     return this.if(`sns:Protocol`, value, operator || 'StringLike');
   }
 }

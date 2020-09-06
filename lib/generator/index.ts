@@ -258,12 +258,8 @@ export function createModule(module: Module): Promise<void> {
   );
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
-  let imports = ['Actions', 'PolicyStatement', 'ResourceTypes'];
-  if (Object.entries(module.conditions!).length) {
-    imports.push('PolicyStatementWithCondition');
-  }
   sourceFile.addImportDeclaration({
-    namedImports: imports.sort(),
+    namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
     moduleSpecifier: '../shared',
   });
 
@@ -402,6 +398,12 @@ export function createModule(module: Module): Promise<void> {
     condition = conditionFixer(module.filename, condition);
 
     const name = key.split(/[:/]/);
+
+    // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
+    if (name[0] == 'aws') {
+      continue;
+    }
+
     var desc = '';
 
     if (condition.description.length) {
@@ -449,7 +451,6 @@ export function createModule(module: Module): Promise<void> {
     const method = classDeclaration.addMethod({
       name: methodName,
       scope: Scope.Public,
-      returnType: 'PolicyStatementWithCondition',
     });
 
     var propsKey = `${name[0]}:${name[1]}`;

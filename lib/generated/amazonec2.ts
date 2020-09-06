@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ec2](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html).
@@ -11914,402 +11914,6 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by a tag key and value pair that is allowed in the request
-   *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html#control-tagging
-   *
-   * Applies to actions:
-   * - .toCopySnapshot()
-   * - .toCreateCapacityReservation()
-   * - .toCreateCarrierGateway()
-   * - .toCreateClientVpnEndpoint()
-   * - .toCreateDhcpOptions()
-   * - .toCreateEgressOnlyInternetGateway()
-   * - .toCreateFleet()
-   * - .toCreateFlowLogs()
-   * - .toCreateFpgaImage()
-   * - .toCreateInstanceExportTask()
-   * - .toCreateInternetGateway()
-   * - .toCreateKeyPair()
-   * - .toCreateLaunchTemplate()
-   * - .toCreateLocalGatewayRouteTableVpcAssociation()
-   * - .toCreateManagedPrefixList()
-   * - .toCreateNatGateway()
-   * - .toCreateNetworkAcl()
-   * - .toCreateNetworkInterface()
-   * - .toCreatePlacementGroup()
-   * - .toCreateSecurityGroup()
-   * - .toCreateSnapshot()
-   * - .toCreateSnapshots()
-   * - .toCreateSubnet()
-   * - .toCreateTags()
-   * - .toCreateTrafficMirrorFilter()
-   * - .toCreateTrafficMirrorSession()
-   * - .toCreateTrafficMirrorTarget()
-   * - .toCreateTransitGateway()
-   * - .toCreateTransitGatewayMulticastDomain()
-   * - .toCreateTransitGatewayPeeringAttachment()
-   * - .toCreateTransitGatewayRouteTable()
-   * - .toCreateTransitGatewayVpcAttachment()
-   * - .toCreateVolume()
-   * - .toCreateVpc()
-   * - .toCreateVpcEndpoint()
-   * - .toCreateVpcEndpointServiceConfiguration()
-   * - .toDeleteTags()
-   * - .toRunInstances()
-   *
-   * Applies to resource types:
-   * - capacity-reservation
-   * - carrier-gateway
-   * - client-vpn-endpoint
-   * - dedicated-host
-   * - dhcp-options
-   * - egress-only-internet-gateway
-   * - export-instance-task
-   * - fleet
-   * - fpga-image
-   * - image
-   * - instance
-   * - internet-gateway
-   * - key-pair
-   * - launch-template
-   * - local-gateway
-   * - local-gateway-route-table
-   * - local-gateway-route-table-virtual-interface-group-association
-   * - local-gateway-route-table-vpc-association
-   * - local-gateway-virtual-interface
-   * - local-gateway-virtual-interface-group
-   * - natgateway
-   * - network-acl
-   * - network-interface
-   * - placement-group
-   * - prefix-list
-   * - reserved-instances
-   * - route-table
-   * - security-group
-   * - snapshot
-   * - spot-instance-request
-   * - subnet
-   * - traffic-mirror-session
-   * - traffic-mirror-target
-   * - traffic-mirror-filter
-   * - transit-gateway-attachment
-   * - transit-gateway-multicast-domain
-   * - transit-gateway-route-table
-   * - transit-gateway
-   * - volume
-   * - vpc
-   * - vpc-endpoint
-   * - vpc-endpoint-service
-   * - vpc-flow-log
-   * - vpn-connection
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by the preface string for a tag key and value pair that are attached to a resource
-   *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
-   *
-   * Applies to actions:
-   * - .toRunInstances()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTagExists(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by a tag key and value pair of a resource
-   *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/control-access-with-tags.html
-   *
-   * Applies to actions:
-   * - .toAcceptTransitGatewayPeeringAttachment()
-   * - .toAcceptTransitGatewayVpcAttachment()
-   * - .toAcceptVpcEndpointConnections()
-   * - .toAcceptVpcPeeringConnection()
-   * - .toApplySecurityGroupsToClientVpnTargetNetwork()
-   * - .toAssociateClientVpnTargetNetwork()
-   * - .toAssociateIamInstanceProfile()
-   * - .toAssociateTransitGatewayMulticastDomain()
-   * - .toAssociateTransitGatewayRouteTable()
-   * - .toAttachClassicLinkVpc()
-   * - .toAttachVolume()
-   * - .toAuthorizeClientVpnIngress()
-   * - .toAuthorizeSecurityGroupEgress()
-   * - .toAuthorizeSecurityGroupIngress()
-   * - .toCancelCapacityReservation()
-   * - .toCreateClientVpnRoute()
-   * - .toCreateFlowLogs()
-   * - .toCreateLaunchTemplateVersion()
-   * - .toCreateLocalGatewayRoute()
-   * - .toCreateLocalGatewayRouteTableVpcAssociation()
-   * - .toCreateNetworkInterfacePermission()
-   * - .toCreateRoute()
-   * - .toCreateSnapshot()
-   * - .toCreateSnapshots()
-   * - .toCreateTags()
-   * - .toCreateTrafficMirrorFilterRule()
-   * - .toCreateTrafficMirrorSession()
-   * - .toCreateTrafficMirrorTarget()
-   * - .toCreateTransitGatewayMulticastDomain()
-   * - .toCreateTransitGatewayPeeringAttachment()
-   * - .toCreateTransitGatewayRoute()
-   * - .toCreateTransitGatewayRouteTable()
-   * - .toCreateTransitGatewayVpcAttachment()
-   * - .toCreateVpcEndpoint()
-   * - .toCreateVpcPeeringConnection()
-   * - .toDeleteCarrierGateway()
-   * - .toDeleteClientVpnEndpoint()
-   * - .toDeleteClientVpnRoute()
-   * - .toDeleteCustomerGateway()
-   * - .toDeleteDhcpOptions()
-   * - .toDeleteFlowLogs()
-   * - .toDeleteInternetGateway()
-   * - .toDeleteLaunchTemplate()
-   * - .toDeleteLaunchTemplateVersions()
-   * - .toDeleteLocalGatewayRoute()
-   * - .toDeleteLocalGatewayRouteTableVpcAssociation()
-   * - .toDeleteManagedPrefixList()
-   * - .toDeleteNetworkAcl()
-   * - .toDeleteNetworkAclEntry()
-   * - .toDeleteRoute()
-   * - .toDeleteRouteTable()
-   * - .toDeleteSecurityGroup()
-   * - .toDeleteSnapshot()
-   * - .toDeleteTags()
-   * - .toDeleteTrafficMirrorFilter()
-   * - .toDeleteTrafficMirrorFilterRule()
-   * - .toDeleteTrafficMirrorSession()
-   * - .toDeleteTrafficMirrorTarget()
-   * - .toDeleteTransitGateway()
-   * - .toDeleteTransitGatewayMulticastDomain()
-   * - .toDeleteTransitGatewayPeeringAttachment()
-   * - .toDeleteTransitGatewayRoute()
-   * - .toDeleteTransitGatewayRouteTable()
-   * - .toDeleteTransitGatewayVpcAttachment()
-   * - .toDeleteVolume()
-   * - .toDeleteVpcEndpointServiceConfigurations()
-   * - .toDeleteVpcEndpoints()
-   * - .toDeleteVpcPeeringConnection()
-   * - .toDeregisterTransitGatewayMulticastGroupMembers()
-   * - .toDeregisterTransitGatewayMulticastGroupSources()
-   * - .toDetachClassicLinkVpc()
-   * - .toDetachVolume()
-   * - .toDisableFastSnapshotRestores()
-   * - .toDisableTransitGatewayRouteTablePropagation()
-   * - .toDisableVpcClassicLink()
-   * - .toDisassociateClientVpnTargetNetwork()
-   * - .toDisassociateIamInstanceProfile()
-   * - .toDisassociateTransitGatewayMulticastDomain()
-   * - .toDisassociateTransitGatewayRouteTable()
-   * - .toEnableFastSnapshotRestores()
-   * - .toEnableTransitGatewayRouteTablePropagation()
-   * - .toEnableVpcClassicLink()
-   * - .toGetConsoleScreenshot()
-   * - .toImportClientVpnClientCertificateRevocationList()
-   * - .toModifyCapacityReservation()
-   * - .toModifyClientVpnEndpoint()
-   * - .toModifyLaunchTemplate()
-   * - .toModifyManagedPrefixList()
-   * - .toModifySnapshotAttribute()
-   * - .toModifyTrafficMirrorFilterNetworkServices()
-   * - .toModifyTrafficMirrorFilterRule()
-   * - .toModifyTrafficMirrorSession()
-   * - .toModifyTransitGatewayVpcAttachment()
-   * - .toModifyVpcEndpoint()
-   * - .toModifyVpcEndpointServiceConfiguration()
-   * - .toModifyVpcEndpointServicePermissions()
-   * - .toModifyVpnConnection()
-   * - .toModifyVpnTunnelOptions()
-   * - .toRebootInstances()
-   * - .toRegisterTransitGatewayMulticastGroupMembers()
-   * - .toRegisterTransitGatewayMulticastGroupSources()
-   * - .toRejectTransitGatewayPeeringAttachment()
-   * - .toRejectTransitGatewayVpcAttachment()
-   * - .toRejectVpcEndpointConnections()
-   * - .toRejectVpcPeeringConnection()
-   * - .toReplaceIamInstanceProfileAssociation()
-   * - .toReplaceRoute()
-   * - .toReplaceTransitGatewayRoute()
-   * - .toRestoreManagedPrefixListVersion()
-   * - .toRevokeClientVpnIngress()
-   * - .toRevokeSecurityGroupEgress()
-   * - .toRevokeSecurityGroupIngress()
-   * - .toRunInstances()
-   * - .toSendDiagnosticInterrupt()
-   * - .toStartInstances()
-   * - .toStartVpcEndpointServicePrivateDnsVerification()
-   * - .toStopInstances()
-   * - .toTerminateClientVpnConnections()
-   * - .toTerminateInstances()
-   * - .toUpdateSecurityGroupRuleDescriptionsEgress()
-   * - .toUpdateSecurityGroupRuleDescriptionsIngress()
-   *
-   * Applies to resource types:
-   * - capacity-reservation
-   * - carrier-gateway
-   * - client-vpn-endpoint
-   * - customer-gateway
-   * - dedicated-host
-   * - dhcp-options
-   * - egress-only-internet-gateway
-   * - export-instance-task
-   * - fleet
-   * - fpga-image
-   * - image
-   * - instance
-   * - internet-gateway
-   * - key-pair
-   * - launch-template
-   * - local-gateway
-   * - local-gateway-route-table
-   * - local-gateway-route-table-virtual-interface-group-association
-   * - local-gateway-route-table-vpc-association
-   * - local-gateway-virtual-interface
-   * - local-gateway-virtual-interface-group
-   * - natgateway
-   * - network-acl
-   * - network-interface
-   * - placement-group
-   * - prefix-list
-   * - reserved-instances
-   * - route-table
-   * - security-group
-   * - snapshot
-   * - spot-instance-request
-   * - subnet
-   * - traffic-mirror-session
-   * - traffic-mirror-target
-   * - traffic-mirror-filter
-   * - transit-gateway-attachment
-   * - transit-gateway-multicast-domain
-   * - transit-gateway-route-table
-   * - transit-gateway
-   * - volume
-   * - vpc
-   * - vpc-endpoint
-   * - vpc-endpoint-service
-   * - vpc-flow-log
-   * - vpc-peering-connection
-   * - vpn-connection
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by a list of tag keys that are allowed in the request
-   *
-   * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/supported-iam-actions-tagging.html#control-tagging
-   *
-   * Applies to actions:
-   * - .toCopySnapshot()
-   * - .toCreateCapacityReservation()
-   * - .toCreateCarrierGateway()
-   * - .toCreateClientVpnEndpoint()
-   * - .toCreateDhcpOptions()
-   * - .toCreateEgressOnlyInternetGateway()
-   * - .toCreateFleet()
-   * - .toCreateFlowLogs()
-   * - .toCreateFpgaImage()
-   * - .toCreateInstanceExportTask()
-   * - .toCreateInternetGateway()
-   * - .toCreateKeyPair()
-   * - .toCreateLaunchTemplate()
-   * - .toCreateLocalGatewayRouteTableVpcAssociation()
-   * - .toCreateManagedPrefixList()
-   * - .toCreateNatGateway()
-   * - .toCreateNetworkAcl()
-   * - .toCreateNetworkInterface()
-   * - .toCreatePlacementGroup()
-   * - .toCreateSecurityGroup()
-   * - .toCreateSnapshot()
-   * - .toCreateSnapshots()
-   * - .toCreateSubnet()
-   * - .toCreateTags()
-   * - .toCreateTrafficMirrorFilter()
-   * - .toCreateTrafficMirrorSession()
-   * - .toCreateTrafficMirrorTarget()
-   * - .toCreateTransitGateway()
-   * - .toCreateTransitGatewayMulticastDomain()
-   * - .toCreateTransitGatewayPeeringAttachment()
-   * - .toCreateTransitGatewayRouteTable()
-   * - .toCreateTransitGatewayVpcAttachment()
-   * - .toCreateVolume()
-   * - .toCreateVpc()
-   * - .toCreateVpcEndpoint()
-   * - .toCreateVpcEndpointServiceConfiguration()
-   * - .toDeleteTags()
-   * - .toRunInstances()
-   *
-   * Applies to resource types:
-   * - capacity-reservation
-   * - carrier-gateway
-   * - client-vpn-endpoint
-   * - dedicated-host
-   * - dhcp-options
-   * - egress-only-internet-gateway
-   * - export-instance-task
-   * - fleet
-   * - fpga-image
-   * - image
-   * - instance
-   * - internet-gateway
-   * - key-pair
-   * - launch-template
-   * - local-gateway
-   * - local-gateway-route-table
-   * - local-gateway-route-table-virtual-interface-group-association
-   * - local-gateway-route-table-vpc-association
-   * - local-gateway-virtual-interface
-   * - local-gateway-virtual-interface-group
-   * - natgateway
-   * - network-acl
-   * - network-interface
-   * - placement-group
-   * - prefix-list
-   * - reserved-instances
-   * - route-table
-   * - security-group
-   * - snapshot
-   * - spot-instance-request
-   * - subnet
-   * - traffic-mirror-session
-   * - traffic-mirror-target
-   * - traffic-mirror-filter
-   * - transit-gateway-attachment
-   * - transit-gateway-multicast-domain
-   * - transit-gateway-route-table
-   * - transit-gateway
-   * - volume
-   * - vpc
-   * - vpc-endpoint
-   * - vpc-endpoint-service
-   * - vpc-flow-log
-   * - vpn-connection
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Filters access by the ARN of an accepter VPC in a VPC peering connection
    *
    * https://docs.aws.amazon.com/vpc/latest/peering/security-iam.html
@@ -12326,7 +11930,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifAccepterVpc(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAccepterVpc(value: string | string[], operator?: string) {
     return this.if(`ec2:AccepterVpc`, value, operator || 'ArnEquals');
   }
 
@@ -12344,7 +11948,7 @@ export class Ec2 extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifAssociatePublicIpAddress(value?: boolean): PolicyStatementWithCondition {
+  public ifAssociatePublicIpAddress(value?: boolean) {
     return this.if(`ec2:AssociatePublicIpAddress`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -12363,7 +11967,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthenticationType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAuthenticationType(value: string | string[], operator?: string) {
     return this.if(`ec2:AuthenticationType`, value, operator || 'StringLike');
   }
 
@@ -12381,7 +11985,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthorizedService(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAuthorizedService(value: string | string[], operator?: string) {
     return this.if(`ec2:AuthorizedService`, value, operator || 'StringLike');
   }
 
@@ -12396,7 +12000,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAuthorizedUser(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAuthorizedUser(value: string | string[], operator?: string) {
     return this.if(`ec2:AuthorizedUser`, value, operator || 'StringLike');
   }
 
@@ -12411,7 +12015,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAutoPlacement(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAutoPlacement(value: string | string[], operator?: string) {
     return this.if(`ec2:AutoPlacement`, value, operator || 'StringLike');
   }
 
@@ -12455,7 +12059,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifAvailabilityZone(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifAvailabilityZone(value: string | string[], operator?: string) {
     return this.if(`ec2:AvailabilityZone`, value, operator || 'StringLike');
   }
 
@@ -12470,7 +12074,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifCreateAction(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifCreateAction(value: string | string[], operator?: string) {
     return this.if(`ec2:CreateAction`, value, operator || 'StringLike');
   }
 
@@ -12489,7 +12093,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifDPDTimeoutSeconds(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifDPDTimeoutSeconds(value: number | number[], operator?: string) {
     return this.if(`ec2:DPDTimeoutSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -12521,7 +12125,7 @@ export class Ec2 extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifEbsOptimized(value?: boolean): PolicyStatementWithCondition {
+  public ifEbsOptimized(value?: boolean) {
     return this.if(`ec2:EbsOptimized`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -12539,7 +12143,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifElasticGpuType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifElasticGpuType(value: string | string[], operator?: string) {
     return this.if(`ec2:ElasticGpuType`, value, operator || 'StringLike');
   }
 
@@ -12565,7 +12169,7 @@ export class Ec2 extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifEncrypted(value?: boolean): PolicyStatementWithCondition {
+  public ifEncrypted(value?: boolean) {
     return this.if(`ec2:Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -12584,7 +12188,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifGatewayType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifGatewayType(value: string | string[], operator?: string) {
     return this.if(`ec2:GatewayType`, value, operator || 'StringLike');
   }
 
@@ -12599,7 +12203,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifHostRecovery(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifHostRecovery(value: string | string[], operator?: string) {
     return this.if(`ec2:HostRecovery`, value, operator || 'StringLike');
   }
 
@@ -12618,7 +12222,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifIKEVersions(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifIKEVersions(value: string | string[], operator?: string) {
     return this.if(`ec2:IKEVersions`, value, operator || 'StringLike');
   }
 
@@ -12637,7 +12241,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifImageType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifImageType(value: string | string[], operator?: string) {
     return this.if(`ec2:ImageType`, value, operator || 'StringLike');
   }
 
@@ -12656,7 +12260,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInsideTunnelCidr(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifInsideTunnelCidr(value: string | string[], operator?: string) {
     return this.if(`ec2:InsideTunnelCidr`, value, operator || 'StringLike');
   }
 
@@ -12668,7 +12272,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceMarketType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifInstanceMarketType(value: string | string[], operator?: string) {
     return this.if(`ec2:InstanceMarketType`, value, operator || 'StringLike');
   }
 
@@ -12701,7 +12305,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifInstanceProfile(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifInstanceProfile(value: string | string[], operator?: string) {
     return this.if(`ec2:InstanceProfile`, value, operator || 'ArnEquals');
   }
 
@@ -12736,7 +12340,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifInstanceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifInstanceType(value: string | string[], operator?: string) {
     return this.if(`ec2:InstanceType`, value, operator || 'StringLike');
   }
 
@@ -12750,7 +12354,7 @@ export class Ec2 extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifIsLaunchTemplateResource(value?: boolean): PolicyStatementWithCondition {
+  public ifIsLaunchTemplateResource(value?: boolean) {
     return this.if(`ec2:IsLaunchTemplateResource`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -12765,7 +12369,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifLaunchTemplate(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifLaunchTemplate(value: string | string[], operator?: string) {
     return this.if(`ec2:LaunchTemplate`, value, operator || 'ArnEquals');
   }
 
@@ -12780,7 +12384,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMetadataHttpEndpoint(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifMetadataHttpEndpoint(value: string | string[], operator?: string) {
     return this.if(`ec2:MetadataHttpEndpoint`, value, operator || 'StringLike');
   }
 
@@ -12795,7 +12399,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifMetadataHttpPutResponseHopLimit(value: number | number[], operator?: string) {
     return this.if(`ec2:MetadataHttpPutResponseHopLimit`, value, operator || 'NumericEquals');
   }
 
@@ -12810,7 +12414,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifMetadataHttpTokens(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifMetadataHttpTokens(value: string | string[], operator?: string) {
     return this.if(`ec2:MetadataHttpTokens`, value, operator || 'StringLike');
   }
 
@@ -12835,7 +12439,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifOwner(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifOwner(value: string | string[], operator?: string) {
     return this.if(`ec2:Owner`, value, operator || 'StringLike');
   }
 
@@ -12858,7 +12462,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifParentSnapshot(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifParentSnapshot(value: string | string[], operator?: string) {
     return this.if(`ec2:ParentSnapshot`, value, operator || 'ArnEquals');
   }
 
@@ -12883,7 +12487,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifParentVolume(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifParentVolume(value: string | string[], operator?: string) {
     return this.if(`ec2:ParentVolume`, value, operator || 'ArnEquals');
   }
 
@@ -12898,7 +12502,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPermission(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPermission(value: string | string[], operator?: string) {
     return this.if(`ec2:Permission`, value, operator || 'StringLike');
   }
 
@@ -12917,7 +12521,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase1DHGroupNumbers(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase1DHGroupNumbers(value: number | number[], operator?: string) {
     return this.if(`ec2:Phase1DHGroupNumbers`, value, operator || 'NumericEquals');
   }
 
@@ -12936,7 +12540,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase1EncryptionAlgorithms(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase1EncryptionAlgorithms(value: string | string[], operator?: string) {
     return this.if(`ec2:Phase1EncryptionAlgorithms`, value, operator || 'StringLike');
   }
 
@@ -12955,7 +12559,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase1IntegrityAlgorithms(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase1IntegrityAlgorithms(value: string | string[], operator?: string) {
     return this.if(`ec2:Phase1IntegrityAlgorithms`, value, operator || 'StringLike');
   }
 
@@ -12974,7 +12578,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase1LifetimeSeconds(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase1LifetimeSeconds(value: number | number[], operator?: string) {
     return this.if(`ec2:Phase1LifetimeSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -12993,7 +12597,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase2DHGroupNumbers(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase2DHGroupNumbers(value: number | number[], operator?: string) {
     return this.if(`ec2:Phase2DHGroupNumbers`, value, operator || 'NumericEquals');
   }
 
@@ -13012,7 +12616,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase2EncryptionAlgorithms(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase2EncryptionAlgorithms(value: string | string[], operator?: string) {
     return this.if(`ec2:Phase2EncryptionAlgorithms`, value, operator || 'StringLike');
   }
 
@@ -13031,7 +12635,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPhase2IntegrityAlgorithms(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase2IntegrityAlgorithms(value: string | string[], operator?: string) {
     return this.if(`ec2:Phase2IntegrityAlgorithms`, value, operator || 'StringLike');
   }
 
@@ -13050,7 +12654,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifPhase2LifetimeSeconds(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifPhase2LifetimeSeconds(value: number | number[], operator?: string) {
     return this.if(`ec2:Phase2LifetimeSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -13083,7 +12687,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPlacementGroup(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPlacementGroup(value: string | string[], operator?: string) {
     return this.if(`ec2:PlacementGroup`, value, operator || 'ArnEquals');
   }
 
@@ -13101,7 +12705,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPlacementGroupStrategy(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPlacementGroupStrategy(value: string | string[], operator?: string) {
     return this.if(`ec2:PlacementGroupStrategy`, value, operator || 'StringLike');
   }
 
@@ -13120,7 +12724,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPresharedKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPresharedKeys(value: string | string[], operator?: string) {
     return this.if(`ec2:PresharedKeys`, value, operator || 'StringLike');
   }
 
@@ -13132,7 +12736,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifProductCode(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifProductCode(value: string | string[], operator?: string) {
     return this.if(`ec2:ProductCode`, value, operator || 'StringLike');
   }
 
@@ -13151,7 +12755,7 @@ export class Ec2 extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifPublic(value?: boolean): PolicyStatementWithCondition {
+  public ifPublic(value?: boolean) {
     return this.if(`ec2:Public`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -13166,7 +12770,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifQuantity(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifQuantity(value: number | number[], operator?: string) {
     return this.if(`ec2:Quantity`, value, operator || 'NumericEquals');
   }
 
@@ -13375,7 +12979,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRegion(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRegion(value: string | string[], operator?: string) {
     return this.if(`ec2:Region`, value, operator || 'StringLike');
   }
 
@@ -13394,7 +12998,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRekeyFuzzPercentage(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifRekeyFuzzPercentage(value: number | number[], operator?: string) {
     return this.if(`ec2:RekeyFuzzPercentage`, value, operator || 'NumericEquals');
   }
 
@@ -13413,7 +13017,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRekeyMarginTimeSeconds(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifRekeyMarginTimeSeconds(value: number | number[], operator?: string) {
     return this.if(`ec2:RekeyMarginTimeSeconds`, value, operator || 'NumericEquals');
   }
 
@@ -13434,7 +13038,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifRequesterVpc(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequesterVpc(value: string | string[], operator?: string) {
     return this.if(`ec2:RequesterVpc`, value, operator || 'ArnEquals');
   }
 
@@ -13452,7 +13056,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifReservedInstancesOfferingType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifReservedInstancesOfferingType(value: string | string[], operator?: string) {
     return this.if(`ec2:ReservedInstancesOfferingType`, value, operator || 'StringLike');
   }
 
@@ -13467,7 +13071,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTagExists(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceTagExists(value: string | string[], operator?: string) {
     return this.if(`ec2:ResourceTag/`, value, operator || 'StringLike');
   }
 
@@ -13651,7 +13255,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceTag(tagKey: string, value: string | string[], operator?: string) {
     return this.if(`ec2:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
   }
 
@@ -13663,7 +13267,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifRoleDelivery(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifRoleDelivery(value: number | number[], operator?: string) {
     return this.if(`ec2:RoleDelivery`, value, operator || 'NumericEquals');
   }
 
@@ -13697,7 +13301,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRootDeviceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRootDeviceType(value: string | string[], operator?: string) {
     return this.if(`ec2:RootDeviceType`, value, operator || 'StringLike');
   }
 
@@ -13716,7 +13320,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRoutingType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRoutingType(value: string | string[], operator?: string) {
     return this.if(`ec2:RoutingType`, value, operator || 'StringLike');
   }
 
@@ -13739,7 +13343,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [date operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Date). **Default:** `DateEquals`
    */
-  public ifSnapshotTime(value: Date | string | (Date | string)[], operator?: string): PolicyStatementWithCondition {
+  public ifSnapshotTime(value: Date | string | (Date | string)[], operator?: string) {
     if (typeof (value as Date).getMonth === "function") {
       value = (value as Date).toISOString();
     } else if (Array.isArray(value)) {
@@ -13761,7 +13365,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifSourceInstanceARN(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSourceInstanceARN(value: string | string[], operator?: string) {
     return this.if(`ec2:SourceInstanceARN`, value, operator || 'ArnEquals');
   }
 
@@ -13782,7 +13386,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifSubnet(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifSubnet(value: string | string[], operator?: string) {
     return this.if(`ec2:Subnet`, value, operator || 'ArnEquals');
   }
 
@@ -13823,7 +13427,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifTenancy(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifTenancy(value: string | string[], operator?: string) {
     return this.if(`ec2:Tenancy`, value, operator || 'StringLike');
   }
 
@@ -13848,7 +13452,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifVolumeIops(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifVolumeIops(value: number | number[], operator?: string) {
     return this.if(`ec2:VolumeIops`, value, operator || 'NumericEquals');
   }
 
@@ -13878,7 +13482,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [numeric operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_Numeric). **Default:** `NumericEquals`
    */
-  public ifVolumeSize(value: number | number[], operator?: string): PolicyStatementWithCondition {
+  public ifVolumeSize(value: number | number[], operator?: string) {
     return this.if(`ec2:VolumeSize`, value, operator || 'NumericEquals');
   }
 
@@ -13903,7 +13507,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVolumeType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVolumeType(value: string | string[], operator?: string) {
     return this.if(`ec2:VolumeType`, value, operator || 'StringLike');
   }
 
@@ -13942,7 +13546,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifVpc(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVpc(value: string | string[], operator?: string) {
     return this.if(`ec2:Vpc`, value, operator || 'ArnEquals');
   }
 
@@ -13958,7 +13562,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpceServiceName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVpceServiceName(value: string | string[], operator?: string) {
     return this.if(`ec2:VpceServiceName`, value, operator || 'StringLike');
   }
 
@@ -13974,7 +13578,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpceServiceOwner(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVpceServiceOwner(value: string | string[], operator?: string) {
     return this.if(`ec2:VpceServiceOwner`, value, operator || 'StringLike');
   }
 
@@ -13991,7 +13595,7 @@ export class Ec2 extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifVpceServicePrivateDnsName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifVpceServicePrivateDnsName(value: string | string[], operator?: string) {
     return this.if(`ec2:VpceServicePrivateDnsName`, value, operator || 'StringLike');
   }
 }

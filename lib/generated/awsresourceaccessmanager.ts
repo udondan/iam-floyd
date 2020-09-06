@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ram](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourceaccessmanager.html).
@@ -692,66 +692,6 @@ export class Ram extends PolicyStatement {
   }
 
   /**
-   * Specifies a tag key and value pair that must be used when creating or tagging a resource share. If users don't pass these specific tags, or if they don't specify tags at all, the request fails.
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateResourceShare()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Indicates that the action can only be performed on resources that have the specified tag key and value pair.
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to actions:
-   * - .toAssociateResourceShare()
-   * - .toAssociateResourceSharePermission()
-   * - .toDeleteResourceShare()
-   * - .toDisassociateResourceShare()
-   * - .toDisassociateResourceSharePermission()
-   * - .toListResourceSharePermissions()
-   * - .toUpdateResourceShare()
-   *
-   * Applies to resource types:
-   * - resource-share
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Specifies the tag keys that can be used when creating or tagging a resource share
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateResourceShare()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
-  }
-
-  /**
    * Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals. External principals are AWS accounts that are outside of its AWS organization
    *
    * https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition
@@ -770,7 +710,7 @@ export class Ram extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifAllowsExternalPrincipals(value?: boolean): PolicyStatementWithCondition {
+  public ifAllowsExternalPrincipals(value?: boolean) {
     return this.if(`ram:AllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -790,7 +730,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPermissionArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPermissionArn(value: string | string[], operator?: string) {
     return this.if(`ram:PermissionArn`, value, operator || 'ArnEquals');
   }
 
@@ -807,7 +747,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifPrincipal(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPrincipal(value: string | string[], operator?: string) {
     return this.if(`ram:Principal`, value, operator || 'StringLike');
   }
 
@@ -822,7 +762,7 @@ export class Ram extends PolicyStatement {
    *
    * @param value `true` or `false`. **Default:** `true`
    */
-  public ifRequestedAllowsExternalPrincipals(value?: boolean): PolicyStatementWithCondition {
+  public ifRequestedAllowsExternalPrincipals(value?: boolean) {
     return this.if(`ram:RequestedAllowsExternalPrincipals`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 
@@ -839,7 +779,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifRequestedResourceType(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifRequestedResourceType(value: string | string[], operator?: string) {
     return this.if(`ram:RequestedResourceType`, value, operator || 'StringLike');
   }
 
@@ -856,7 +796,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifResourceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceArn(value: string | string[], operator?: string) {
     return this.if(`ram:ResourceArn`, value, operator || 'ArnEquals');
   }
 
@@ -880,7 +820,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifResourceShareName(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifResourceShareName(value: string | string[], operator?: string) {
     return this.if(`ram:ResourceShareName`, value, operator || 'StringLike');
   }
 
@@ -896,7 +836,7 @@ export class Ram extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public ifShareOwnerAccountId(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifShareOwnerAccountId(value: string | string[], operator?: string) {
     return this.if(`ram:ShareOwnerAccountId`, value, operator || 'StringLike');
   }
 }

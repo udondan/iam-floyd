@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [datapipeline](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_datapipeline.html).
@@ -526,7 +526,7 @@ export class Datapipeline extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifPipelineCreator(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifPipelineCreator(value: string | string[], operator?: string) {
     return this.if(`datapipeline:PipelineCreator`, value, operator || 'ArnEquals');
   }
 
@@ -554,7 +554,7 @@ export class Datapipeline extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifTag(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifTag(value: string | string[], operator?: string) {
     return this.if(`datapipeline:Tag`, value, operator || 'ArnEquals');
   }
 
@@ -574,7 +574,7 @@ export class Datapipeline extends PolicyStatement {
    * @param value The value(s) to check
    * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
    */
-  public ifWorkerGroup(value: string | string[], operator?: string): PolicyStatementWithCondition {
+  public ifWorkerGroup(value: string | string[], operator?: string) {
     return this.if(`datapipeline:workerGroup`, value, operator || 'ArnEquals');
   }
 }

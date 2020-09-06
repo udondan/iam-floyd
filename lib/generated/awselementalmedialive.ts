@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [medialive](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html).
@@ -1185,67 +1185,5 @@ export class Medialive extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * The tag for a MediaLive request.
-   *
-   * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
-   *
-   * Applies to actions:
-   * - .toCreateChannel()
-   * - .toCreateInput()
-   * - .toCreateInputSecurityGroup()
-   * - .toCreateMultiplex()
-   * - .toCreateTags()
-   * - .toPurchaseOffering()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * The tag for a MediaLive resource.
-   *
-   * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
-   *
-   * Applies to resource types:
-   * - channel
-   * - input
-   * - input-security-group
-   * - multiplex
-   * - reservation
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * The tag keys for a MediaLive resource or request.
-   *
-   * https://docs.aws.amazon.com/medialive/latest/ug/tagging.html
-   *
-   * Applies to actions:
-   * - .toCreateChannel()
-   * - .toCreateInput()
-   * - .toCreateInputSecurityGroup()
-   * - .toCreateMultiplex()
-   * - .toCreateTags()
-   * - .toDeleteTags()
-   * - .toPurchaseOffering()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }
