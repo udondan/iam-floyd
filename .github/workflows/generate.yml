@@ -48,5 +48,5 @@ jobs:
             rm -rf node_modules tsconfig.json &&
             git add * &&
             git commit -m "Adds latest IAM updates from AWS" &&
-            git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:master
+            git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
           )

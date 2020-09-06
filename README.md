@@ -22,7 +22,7 @@ Support for:
 
 ![EXPERIMENTAL](https://img.shields.io/badge/stability-experimantal-orange?style=for-the-badge)**<br>This is an early version of the package. The API will change while I implement new features. Therefore make sure you use an exact version in your `package.json` before it reaches 1.0.0.**
 
-[![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/master/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
+[![Auto completion demo](https://raw.githubusercontent.com/udondan/iam-floyd/main/docs/movie-preview.png)](https://www.youtube.com/watch?v=ivG6VnbwMB0 "Auto completion demo")
 
 ## <a name='Packages'></a>Packages
 
@@ -603,7 +603,7 @@ If this statement annoys you, this package is not for you.
 
 ## <a name='Legal'></a>Legal
 
-The code contained in the [lib](https://github.com/udondan/iam-floyd/tree/master/lib) folder is generated from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html). The class- and function-names and their description therefore are property of AWS.
+The code contained in the [lib/generated](https://github.com/udondan/iam-floyd/tree/main/lib/generated) folder is generated from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html). The class- and function-names and their description therefore are property of AWS.
 
 AWS and their services are trademarks, registered trademarks or trade dress of AWS in the U.S. and/or other countries.
 
@@ -612,7 +612,7 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [source]: https://github.com/udondan/iam-floyd
    [npm]: https://www.npmjs.com/package/iam-floyd
    [Maven]: https://github.com/udondan/iam-floyd/packages/258358
-   [license]: https://github.com/udondan/iam-floyd/blob/master/LICENSE
+   [license]: https://github.com/udondan/iam-floyd/blob/main/LICENSE
    [statement]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html
    [NotAction]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notaction.html
    [NotResource]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html

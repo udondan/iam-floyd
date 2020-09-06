@@ -4,7 +4,7 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - VERSION
   workflow_dispatch:
