@@ -400,7 +400,7 @@ export function createModule(module: Module): Promise<void> {
     const name = key.split(/[:/]/);
 
     // we have to skip global conditions, since we simply cannot override global conditions due to JSII limitations: https://github.com/aws/jsii/issues/1935
-    if (name[0] == 'aws') {
+    if (name[0] == 'aws' && name[1] != 'FederatedProvider') {
       continue;
     }
 
