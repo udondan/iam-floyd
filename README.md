@@ -622,6 +622,8 @@ Limiting actions on specific resource types via ARN is cumbersome. For every res
 }
 ```
 
+The first resource element is for the bucket itself. The second element is for the contained objects.
+
 A beginner might make the mistake to think the first entry is superfluous and remove it. This package makes it explicit what these elements do:
 
 ```typescript
@@ -631,9 +633,6 @@ new statement.S3()
   .onBucket('example-bucket')
   .onObject('example-bucket', '*');
 ```
-
-The first resource element is for the bucket itself. The second element is for the contained objects.
-
 
 ### <a name='HowoftenwilltherebeupdatestoreflectIAMchanges'></a>How often will there be updates to reflect IAM changes?
 
