@@ -20,7 +20,7 @@ export class TestStack extends cdk.Stack {
           .allow()
           .toCreateDocument()
           .toAddTagsToResource()
-          .ifRequestTag('CreatedBy', 'hello'),
+          .ifAwsRequestTag('CreatedBy', 'hello'),
         new statement.Ssm({})
           .allow()
           .toDeleteDocument()
