@@ -60,6 +60,12 @@ There are two different package variants available:
 	* [for*](#for)
 * [Collections](#Collections)
 	* [allowEc2InstanceDeleteByOwner](#allowEc2InstanceDeleteByOwner)
+* [FAQ](#FAQ)
+	* [Why should I use this package instead of writing my policies by hand?](#WhyshouldIusethispackageinsteadofwritingmypoliciesbyhand)
+	* [How often will there be updates to reflect IAM changes?](#HowoftenwilltherebeupdatestoreflectIAMchanges)
+	* [Do you release new packages when a new CDK version is released?](#DoyoureleasenewpackageswhenanewCDKversionisreleased)
+	* [Is the package following semantic versioning?](#Isthepackagefollowingsemanticversioning)
+	* [I don't like method chaining!](#Idontlikemethodchaining)
 * [Floyd?](#Floyd)
 * [Similar projects](#Similarprojects)
 * [Legal](#Legal)
@@ -72,7 +78,7 @@ There are two different package variants available:
 
 ## <a name='Usage'></a>Usage
 
-The package contains a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
+Depending on [your scenario](#Packages), you need to either import `iam-floyd` or `cdk-iam-floyd`.
 
 ```typescript
 // for use without AWS CDK use the iam-floyd package
@@ -80,7 +86,11 @@ import * as statement from 'iam-floyd';
 
 // for use with CDK use the cdk-iam-floyd package
 import * as statement from 'cdk-iam-floyd';
+```
 
+Both packages contain a statement provider for each AWS service, e.g. `Ec2`. A statement provider is a class with methods for each and every available action, resource type and condition. Calling such method will add the action/resource/condition to the statement:
+
+```typescript
 new statement.Ec2().toStartInstances();
 ```
 
@@ -585,9 +595,76 @@ Available collections are:
 
 Allows stopping EC2 instance only for the user who started them.
 
+## <a name='FAQ'></a>FAQ
+
+### <a name='WhyshouldIusethispackageinsteadofwritingmypoliciesbyhand'></a>Why should I use this package instead of writing my policies by hand?
+
+All actions, conditions and resource types of every service are explorable via code suggestion. The related documentation is available in the method description. In most cases you can avoid reading the documentation completely.
+
+IntelliSense makes it super easy to find what you're looking for. But it also helps with discovering things you were not looking for! Users write more secure/restrictive policies because they can easily type `if` and add conditions with a `<tab>` without looking up multiple documentation pages.
+
+By calling methods of a class you protect yourself against typos. If your code doesn't compile/run because of a typo, you'll immediately notice. If instead you have a typo in your action list, IAM will silently accept your policy. You won't notice until you see a warning in the IAM console.
+
+Allowing/Denying all actions based on [access level][access levels] is a handy functionality AWS missed when designing IAM policies. With this package it is as easy as calling `allWriteActions()`,  `allReadActions()` etc.
+
+In IAM policies you can use wildcards to add actions to the statement. Wildcards often do not have enough power to define patterns and quickly include too many actions. This package enables you to select actions with regular expressions.
+
+Limiting actions on specific resource types via ARN is cumbersome. For every resource type there is a method, which not only helps with ARN creation - it also adds context to the code which helps to understand the meaning. The classical example here is to allow all actions on an S3 bucket and its containing objects:
+
+```json
+{
+  "Effect": "Allow",
+  "Action": "s3:*",
+  "Resource": [
+    "arn:aws:s3:::example-bucket"
+    "arn:aws:s3:::example-bucket/*"
+  ]
+}
+```
+
+A beginner might make the mistake to think the first entry is superfluous and remove it. This package makes it explicit what these elements do:
+
+```typescript
+new statement.S3()
+  .allow()
+  .allActions()
+  .onBucket('example-bucket')
+  .onObject('example-bucket', '*');
+```
+
+The first resource element is for the bucket itself. The second element is for the contained objects.
+
+
+### <a name='HowoftenwilltherebeupdatestoreflectIAMchanges'></a>How often will there be updates to reflect IAM changes?
+
+Once per hour the AWS documentation is checked for updates. If anything changes, a new package will be released immediately.
+
+### <a name='DoyoureleasenewpackageswhenanewCDKversionisreleased'></a>Do you release new packages when a new CDK version is released?
+
+No. I believe it's a myth and a user error if packages are incompatible with new releases of the CDK. `cdk-iam-floyd` is based on cdk `^1.30.0` and so far I have not seen any issues.
+
+### <a name='Isthepackagefollowingsemanticversioning'></a>Is the package following semantic versioning?
+
+Mostly. For manual changes by developers this package follows [semver](https://semver.org/).
+
+Automatic releases triggered by changes in the IAM documentation will always result in a minor update.
+
+It has been observed that IAM actions have been [deleted](https://github.com/udondan/iam-floyd/releases/tag/v0.37.0) or [renamed](https://github.com/udondan/iam-floyd/releases/tag/v0.19.0). This case will not be reflected by a major update! If you had been using such a method your code will break. On the other hand, your code probably already is broken, since it creates a policy with invalid actions until you update to the latest release.
+
+### <a name='Idontlikemethodchaining'></a>I don't like method chaining!
+
+That's not a question. But yes, you can completely avoid method chaining:
+
+```typescript
+const myStatement = new statement.Ec2()
+myStatement.allow()
+myStatement.toStartInstances()
+myStatement.toStopInstances();
+```
+
 ## <a name='Floyd'></a>Floyd?
 
-George Floyd has been murdered by racist police officers on May 25th, 2020.
+George Floyd has been murdered by racist police officers on May 25, 2020.
 
 This package is not named after him to just remind you of him and his death. I want this package to be of great help to you and I want you to use it on a daily base. Every time you use it, I want you to remember our society is ill and needs change. The riots will stop. The news will fade. The issue persists!
 
