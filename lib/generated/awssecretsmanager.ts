@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [secretsmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html).
@@ -663,46 +663,6 @@ export class Secretsmanager extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Filters access by a key that is present in the request the user makes to the Secrets Manager service.
-   *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
-   *
-   * Applies to actions:
-   * - .toCreateSecret()
-   * - .toTagResource()
-   *
-   * Applies to resource types:
-   * - Secret
-   *
-   * @param tagkey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagkey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagkey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access by the list of all the tag key namespresent in the request the user makes to the Secrets Manager service.
-   *
-   * https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys
-   *
-   * Applies to actions:
-   * - .toCreateSecret()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * Applies to resource types:
-   * - Secret
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

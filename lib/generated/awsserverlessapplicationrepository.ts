@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [serverlessrepo](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html).

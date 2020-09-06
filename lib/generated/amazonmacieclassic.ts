@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [macie](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacieclassic.html).
@@ -155,20 +155,5 @@ export class Macie extends PolicyStatement {
   public toUpdateS3Resources() {
     this.add('macie:UpdateS3Resources');
     return this;
-  }
-
-  /**
-   * Allow access to the specified actions only when the request operates on the specified aws resource
-   *
-   * Applies to actions:
-   * - .toAssociateS3Resources()
-   * - .toDisassociateS3Resources()
-   * - .toUpdateS3Resources()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [arn operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN). **Default:** `ArnEquals`
-   */
-  public ifAwsSourceArn(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:SourceArn`, value, operator || 'ArnEquals');
   }
 }

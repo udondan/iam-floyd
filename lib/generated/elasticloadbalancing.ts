@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [elasticloadbalancing](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elasticloadbalancing.html).
@@ -668,33 +668,6 @@ export class Elasticloadbalancing extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * A key that is present in the request the user makes to the ELB service
-   *
-   * Applies to resource types:
-   * - loadbalancer
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * The list of all the tag key names associated with the resource in the request
-   *
-   * Applies to resource types:
-   * - loadbalancer
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ssm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssystemsmanager.html).
@@ -3192,70 +3192,6 @@ export class Ssm extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Filters 'Create' requests based on the allowed set of values for a specified tags
-   *
-   * Applies to actions:
-   * - .toCreateDocument()
-   * - .toCreateMaintenanceWindow()
-   * - .toCreatePatchBaseline()
-   * - .toDeleteParameter()
-   * - .toDeleteParameters()
-   * - .toGetParameter()
-   * - .toGetParameterHistory()
-   * - .toGetParameters()
-   * - .toPutParameter()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters access based on a tag key-value pair assigned to the AWS resource
-   *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
-   *
-   * Applies to actions:
-   * - .toSendCommand()
-   *
-   * Applies to resource types:
-   * - document
-   * - instance
-   * - maintenancewindow
-   * - managed-instance
-   * - parameter
-   * - patchbaseline
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters 'Create' requests based on whether mandatory tags are included in the request
-   *
-   * https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions
-   *
-   * Applies to actions:
-   * - .toCreateDocument()
-   * - .toCreateMaintenanceWindow()
-   * - .toCreatePatchBaseline()
-   * - .toPutParameter()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

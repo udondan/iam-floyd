@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [apigateway](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html).
@@ -231,46 +231,5 @@ export class Apigateway extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Applies to actions:
-   * - .toDELETE()
-   * - .toPATCH()
-   * - .toPOST()
-   * - .toPUT()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Applies to resource types:
-   * - apigateway-general
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Applies to actions:
-   * - .toDELETE()
-   * - .toPATCH()
-   * - .toPOST()
-   * - .toPUT()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 }

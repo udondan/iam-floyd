@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html).
@@ -921,55 +921,6 @@ export class Iotanalytics extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * A tag key that is present in the request that the user makes to IoT Analytics.
-   *
-   * Applies to actions:
-   * - .toCreateChannel()
-   * - .toCreateDataset()
-   * - .toCreateDatastore()
-   * - .toCreatePipeline()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * Applies to resource types:
-   * - channel
-   * - dataset
-   * - datastore
-   * - pipeline
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * The list of all the tag key names associated with the IoT Analytics resource in the request.
-   *
-   * Applies to actions:
-   * - .toCreateChannel()
-   * - .toCreateDataset()
-   * - .toCreateDatastore()
-   * - .toCreatePipeline()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * Applies to resource types:
-   * - channel
-   * - dataset
-   * - datastore
-   * - pipeline
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

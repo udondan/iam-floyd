@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [health](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html).

@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [servicediscovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html).
@@ -604,64 +604,6 @@ export class Servicediscovery extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Filters actions based on the tags that are passed in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag
-   *
-   * Applies to actions:
-   * - .toCreateHttpNamespace()
-   * - .toCreatePrivateDnsNamespace()
-   * - .toCreatePublicDnsNamespace()
-   * - .toCreateService()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the tags associated with the resource
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag
-   *
-   * Applies to resource types:
-   * - namespace
-   * - service
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the tag keys that are passed in the request
-   *
-   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys
-   *
-   * Applies to actions:
-   * - .toCreateHttpNamespace()
-   * - .toCreatePrivateDnsNamespace()
-   * - .toCreatePublicDnsNamespace()
-   * - .toCreateService()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

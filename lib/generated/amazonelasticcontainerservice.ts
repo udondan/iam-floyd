@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [ecs](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerservice.html).
@@ -1549,68 +1549,6 @@ export class Ecs extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Filters actions based on the presence of tag key-value pairs in the request.
-   *
-   * Applies to actions:
-   * - .toCreateCapacityProvider()
-   * - .toCreateCluster()
-   * - .toCreateService()
-   * - .toRegisterContainerInstance()
-   * - .toRegisterTaskDefinition()
-   * - .toRunTask()
-   * - .toStartTask()
-   * - .toTagResource()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on tag key-value pairs attached to the resource.
-   *
-   * Applies to resource types:
-   * - cluster
-   * - container-instance
-   * - service
-   * - task
-   * - task-definition
-   * - capacity-provider
-   * - task-set
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the presence of tag keys in the request.
-   *
-   * Applies to actions:
-   * - .toCreateCapacityProvider()
-   * - .toCreateCluster()
-   * - .toCreateService()
-   * - .toRegisterContainerInstance()
-   * - .toRegisterTaskDefinition()
-   * - .toRunTask()
-   * - .toStartTask()
-   * - .toTagResource()
-   * - .toUntagResource()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**

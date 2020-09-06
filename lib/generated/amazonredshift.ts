@@ -1,4 +1,4 @@
-import { Actions, PolicyStatement, PolicyStatementWithCondition, ResourceTypes } from "../shared";
+import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 
 /**
  * Statement provider for service [redshift](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonredshift.html).
@@ -2839,88 +2839,6 @@ export class Redshift extends PolicyStatement {
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
-  }
-
-  /**
-   * Filters actions based on the allowed set of values for each of the tags
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
-   *
-   * Applies to actions:
-   * - .toCreateCluster()
-   * - .toCreateClusterParameterGroup()
-   * - .toCreateClusterSecurityGroup()
-   * - .toCreateClusterSnapshot()
-   * - .toCreateClusterSubnetGroup()
-   * - .toCreateEventSubscription()
-   * - .toCreateHsmClientCertificate()
-   * - .toCreateHsmConfiguration()
-   * - .toCreateSnapshotCopyGrant()
-   * - .toCreateSnapshotSchedule()
-   * - .toCreateTags()
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsRequestTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:RequestTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on tag-value associated with the resource
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
-   *
-   * Applies to resource types:
-   * - cluster
-   * - dbgroup
-   * - dbname
-   * - dbuser
-   * - eventsubscription
-   * - hsmclientcertificate
-   * - hsmconfiguration
-   * - parametergroup
-   * - securitygroup
-   * - securitygroupingress-cidr
-   * - securitygroupingress-ec2securitygroup
-   * - snapshot
-   * - snapshotcopygrant
-   * - snapshotschedule
-   * - subnetgroup
-   *
-   * @param tagKey The tag key to check
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsResourceTag(tagKey: string, value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:ResourceTag/${ tagKey }`, value, operator || 'StringLike');
-  }
-
-  /**
-   * Filters actions based on the presence of mandatory tags in the request
-   *
-   * https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions
-   *
-   * Applies to actions:
-   * - .toCreateCluster()
-   * - .toCreateClusterParameterGroup()
-   * - .toCreateClusterSecurityGroup()
-   * - .toCreateClusterSnapshot()
-   * - .toCreateClusterSubnetGroup()
-   * - .toCreateEventSubscription()
-   * - .toCreateHsmClientCertificate()
-   * - .toCreateHsmConfiguration()
-   * - .toCreateSnapshotCopyGrant()
-   * - .toCreateSnapshotSchedule()
-   * - .toCreateTags()
-   * - .toDeleteTags()
-   *
-   * @param value The value(s) to check
-   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
-   */
-  public ifAwsTagKeys(value: string | string[], operator?: string): PolicyStatementWithCondition {
-    return this.if(`aws:TagKeys`, value, operator || 'StringLike');
   }
 
   /**
