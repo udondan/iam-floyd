@@ -464,6 +464,18 @@ export class Sts extends PolicyStatement {
   }
 
   /**
+   * Filters actions based on the IdP that was used to authenticate the user
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_federatedprovider
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAwsFederatedProvider(value: string | string[], operator?: string) {
+    return this.if(`aws:FederatedProvider`, value, operator || 'StringLike');
+  }
+
+  /**
    * Filters actions based on the login information for Amazon Cognito
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr
