@@ -126,6 +126,7 @@ export class PolicyStatementWithActions extends PolicyStatementWithCondition {
         }
       }
     });
+    return this;
   }
 
   /**
