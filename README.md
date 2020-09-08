@@ -78,7 +78,7 @@ There are two different package variants available:
 
 ## <a name='Usage'></a>Usage
 
-Depending on [your scenario](#Packages), you need to either import `iam-floyd` or `cdk-iam-floyd`.
+Depending on [your scenario](#Packages), you need to either import `iam-floyd` or `cdk-iam-floyd`:
 
 ```typescript
 // for use without AWS CDK use the iam-floyd package
@@ -597,19 +597,19 @@ Allows stopping EC2 instance only for the user who started them.
 
 ## <a name='FAQ'></a>FAQ
 
-### <a name='WhyshouldIusethispackageinsteadofwritingmypoliciesbyhand'></a>Why should I use this package instead of writing my policies by hand?
+### <a name='WhyshouldIusethispackageinsteadofwritingmypoliciesbyhand'></a>Why should I use this package instead of writing policies by hand?
 
 All actions, conditions and resource types of every service are explorable via code suggestion. The related documentation is available in the method description. In most cases you can avoid reading the documentation completely.
 
-IntelliSense makes it super easy to find what you're looking for. But it also helps with discovering things you were not looking for! Users write more secure/restrictive policies because they can easily type `if` and add conditions with a `<tab>` without looking up multiple documentation pages.
+IntelliSense makes it super easy to find what you're looking for. But it also helps with discovering things you were not looking for! Users write more secure/restrictive policies because they can easily type `.if` and add conditions with a `<tab>` without looking up multiple documentation pages.
 
 By calling methods of a class you protect yourself against typos. If your code doesn't compile/run because of a typo, you'll immediately notice. If instead you have a typo in your action list, IAM will silently accept your policy. You won't notice until you see a warning in the IAM console.
 
-Allowing/Denying all actions based on [access level][access levels] is a handy functionality AWS missed when designing IAM policies. With this package it is as easy as calling `allWriteActions()`,  `allReadActions()` etc.
+Allowing/Denying all actions based on [access level][access levels] is a feature AWS missed when designing IAM policies. With this package it is as easy as calling `.allWriteActions()`,  `.allReadActions()` etc.
 
 In IAM policies you can use wildcards to add actions to the statement. Wildcards often do not have enough power to define patterns and quickly include too many actions. This package enables you to select actions with regular expressions.
 
-Limiting actions on specific resource types via ARN is cumbersome. For every resource type there is a method, which not only helps with ARN creation - it also adds context to the code which helps to understand the meaning. The classical example here is to allow all actions on an S3 bucket and its containing objects:
+Limiting actions to specific resources via ARN is cumbersome. In this package, for every resource type there is a method, which not only helps with ARN creation - it also adds context to the code which helps to understand the meaning. The classical example here is to allow all actions on an S3 bucket and its containing objects:
 
 ```json
 {
@@ -624,7 +624,7 @@ Limiting actions on specific resource types via ARN is cumbersome. For every res
 
 The first resource element is for the bucket itself. The second element is for the contained objects.
 
-A beginner might make the mistake to think the first entry is superfluous and remove it. This package makes it explicit what these elements do:
+A beginner might make the mistake to think the first entry is superfluous and remove it. This package has distinct methods to limit actions to a bucket and/or objects:
 
 ```typescript
 new statement.S3()
