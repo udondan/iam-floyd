@@ -587,6 +587,19 @@ const policy = {
 }
 ```
 
+In Python you would need to convert the statements to JSON first:
+
+```python
+import iam_floyd as statement
+
+statements = statement.Collection().allow_ec2_instance_delete_by_owner()
+
+policy = {
+    'Version': '2012-10-17',
+    'Statement': list(map(lambda x: x.to_json(), statements)),
+}
+```
+
 Available collections are:
 
 - **allowEc2InstanceDeleteByOwner**: Allows stopping EC2 instance only for the user who started them
