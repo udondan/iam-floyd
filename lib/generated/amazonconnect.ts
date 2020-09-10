@@ -26,6 +26,7 @@ export class Connect extends PolicyStatement {
         "kms:ListAliases",
         "kms:RetireGrant",
         "s3:CreateBucket",
+        "s3:GetBucketLocation",
         "s3:ListAllMyBuckets"
       ]
     },
@@ -294,6 +295,7 @@ export class Connect extends PolicyStatement {
         "kms:ListAliases",
         "kms:RetireGrant",
         "s3:CreateBucket",
+        "s3:GetBucketLocation",
         "s3:ListAllMyBuckets"
       ],
       "resourceTypes": {
@@ -579,6 +581,7 @@ export class Connect extends PolicyStatement {
    * - kms:ListAliases
    * - kms:RetireGrant
    * - s3:CreateBucket
+   * - s3:GetBucketLocation
    * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html
@@ -894,6 +897,7 @@ export class Connect extends PolicyStatement {
    * - kms:ListAliases
    * - kms:RetireGrant
    * - s3:CreateBucket
+   * - s3:GetBucketLocation
    * - s3:ListAllMyBuckets
    *
    * https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html

@@ -1583,6 +1583,37 @@ export class Ec2 extends PolicyStatement {
         }
       }
     },
+    "CreateTransitGatewayPrefixListReference": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPrefixListReference.html",
+      "description": "Grants permission to create a transit gateway prefix list reference",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        },
+        "transit-gateway-route-table": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        },
+        "transit-gateway-attachment": {
+          "required": false,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
     "CreateTransitGatewayRoute": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayRoute.html",
       "description": "Grants permission to create a static route for a transit gateway route table",
@@ -2580,6 +2611,29 @@ export class Ec2 extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "transit-gateway-attachment": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
+    "DeleteTransitGatewayPrefixListReference": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPrefixListReference.html",
+      "description": "Grants permission to delete a transit gateway prefix list reference",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        },
+        "transit-gateway-route-table": {
           "required": true,
           "conditions": [
             "aws:ResourceTag/${TagKey}",
@@ -3818,6 +3872,11 @@ export class Ec2 extends PolicyStatement {
       "description": "Grants permission to get information about the associations for a transit gateway multicast domain",
       "accessLevel": "List"
     },
+    "GetTransitGatewayPrefixListReferences": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPrefixListReference.html",
+      "description": "Grants permission to get information about prefix list references for a transit gateway route table",
+      "accessLevel": "List"
+    },
     "GetTransitGatewayRouteTableAssociations": {
       "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayRouteTableAssociations.html",
       "description": "Grants permission to get information about associations for a transit gateway route table",
@@ -4109,6 +4168,44 @@ export class Ec2 extends PolicyStatement {
         },
         "traffic-mirror-target": {
           "required": false,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
+    "ModifyTransitGateway": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGateway.html",
+      "description": "Grants permission to modify a transit gateway",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "transit-gateway": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        }
+      }
+    },
+    "ModifyTransitGatewayPrefixListReference": {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayPrefixListReference.html",
+      "description": "Grants permission to modify a transit gateway prefix list reference",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "prefix-list": {
+          "required": true,
+          "conditions": [
+            "aws:ResourceTag/${TagKey}",
+            "ec2:Region",
+            "ec2:ResourceTag/${TagKey}"
+          ]
+        },
+        "transit-gateway-route-table": {
+          "required": true,
           "conditions": [
             "aws:ResourceTag/${TagKey}",
             "ec2:Region",
@@ -6677,6 +6774,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to create a transit gateway prefix list reference
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTransitGatewayPrefixListReference.html
+   */
+  public toCreateTransitGatewayPrefixListReference() {
+    this.add('ec2:CreateTransitGatewayPrefixListReference');
+    return this;
+  }
+
+  /**
    * Grants permission to create a static route for a transit gateway route table
    *
    * Access Level: Write
@@ -7252,6 +7361,18 @@ export class Ec2 extends PolicyStatement {
    */
   public toDeleteTransitGatewayPeeringAttachment() {
     this.add('ec2:DeleteTransitGatewayPeeringAttachment');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete a transit gateway prefix list reference
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTransitGatewayPrefixListReference.html
+   */
+  public toDeleteTransitGatewayPrefixListReference() {
+    this.add('ec2:DeleteTransitGatewayPrefixListReference');
     return this;
   }
 
@@ -9368,6 +9489,18 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
+   * Grants permission to get information about prefix list references for a transit gateway route table
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetTransitGatewayPrefixListReference.html
+   */
+  public toGetTransitGatewayPrefixListReferences() {
+    this.add('ec2:GetTransitGatewayPrefixListReferences');
+    return this;
+  }
+
+  /**
    * Grants permission to get information about associations for a transit gateway route table
    *
    * Access Level: List
@@ -9772,6 +9905,30 @@ export class Ec2 extends PolicyStatement {
    */
   public toModifyTrafficMirrorSession() {
     this.add('ec2:ModifyTrafficMirrorSession');
+    return this;
+  }
+
+  /**
+   * Grants permission to modify a transit gateway
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGateway.html
+   */
+  public toModifyTransitGateway() {
+    this.add('ec2:ModifyTransitGateway');
+    return this;
+  }
+
+  /**
+   * Grants permission to modify a transit gateway prefix list reference
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTransitGatewayPrefixListReference.html
+   */
+  public toModifyTransitGatewayPrefixListReference() {
+    this.add('ec2:ModifyTransitGatewayPrefixListReference');
     return this;
   }
 
@@ -12831,6 +12988,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTransitGateway()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
+   * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
    * - .toCreateTransitGatewayVpcAttachment()
@@ -12866,6 +13024,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGateway()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
+   * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
    * - .toDeleteTransitGatewayVpcAttachment()
@@ -12898,6 +13057,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorFilterNetworkServices()
    * - .toModifyTrafficMirrorFilterRule()
    * - .toModifyTrafficMirrorSession()
+   * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointServiceConfiguration()
@@ -13111,6 +13272,7 @@ export class Ec2 extends PolicyStatement {
    * - .toCreateTrafficMirrorTarget()
    * - .toCreateTransitGatewayMulticastDomain()
    * - .toCreateTransitGatewayPeeringAttachment()
+   * - .toCreateTransitGatewayPrefixListReference()
    * - .toCreateTransitGatewayRoute()
    * - .toCreateTransitGatewayRouteTable()
    * - .toCreateTransitGatewayVpcAttachment()
@@ -13142,6 +13304,7 @@ export class Ec2 extends PolicyStatement {
    * - .toDeleteTransitGateway()
    * - .toDeleteTransitGatewayMulticastDomain()
    * - .toDeleteTransitGatewayPeeringAttachment()
+   * - .toDeleteTransitGatewayPrefixListReference()
    * - .toDeleteTransitGatewayRoute()
    * - .toDeleteTransitGatewayRouteTable()
    * - .toDeleteTransitGatewayVpcAttachment()
@@ -13173,6 +13336,8 @@ export class Ec2 extends PolicyStatement {
    * - .toModifyTrafficMirrorFilterNetworkServices()
    * - .toModifyTrafficMirrorFilterRule()
    * - .toModifyTrafficMirrorSession()
+   * - .toModifyTransitGateway()
+   * - .toModifyTransitGatewayPrefixListReference()
    * - .toModifyTransitGatewayVpcAttachment()
    * - .toModifyVpcEndpoint()
    * - .toModifyVpcEndpointServiceConfiguration()
@@ -13487,7 +13652,7 @@ export class Ec2 extends PolicyStatement {
   }
 
   /**
-   * Filters access by the type of volume (gp2, io1, st1, sc1, or standard)
+   * Filters access by the type of volume (gp2, io1, io2, st1, sc1, or standard)
    *
    * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys
    *

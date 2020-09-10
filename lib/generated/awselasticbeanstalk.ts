@@ -483,6 +483,19 @@ export class Elasticbeanstalk extends PolicyStatement {
         }
       }
     },
+    "PutInstanceStatistics": {
+      "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html#health-enhanced-authz",
+      "description": "Grants permission to submit instance statistics for enhanced health.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "application": {
+          "required": true
+        },
+        "environment": {
+          "required": true
+        }
+      }
+    },
     "RebuildEnvironment": {
       "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html",
       "description": "Grants permission to delete and recreate all of the AWS resources for an environment and to force a restart.",
@@ -1192,6 +1205,18 @@ export class Elasticbeanstalk extends PolicyStatement {
    */
   public toListTagsForResource() {
     this.add('elasticbeanstalk:ListTagsForResource');
+    return this;
+  }
+
+  /**
+   * Grants permission to submit instance statistics for enhanced health.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html#health-enhanced-authz
+   */
+  public toPutInstanceStatistics() {
+    this.add('elasticbeanstalk:PutInstanceStatistics');
     return this;
   }
 
