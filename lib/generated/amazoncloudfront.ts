@@ -8,9 +8,14 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 export class Cloudfront extends PolicyStatement {
   public servicePrefix = 'cloudfront';
   protected actionList: Actions = {
+    "CreateCachePolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html",
+      "description": "This action adds a new cache policy to CloudFront.",
+      "accessLevel": "Write"
+    },
     "CreateCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateCloudFrontOriginAccessIdentity.html",
-      "description": "This action creates a new CloudFront origin access identity (POST /2019-03-26/origin-access-identity/cloudfront).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCloudFrontOriginAccessIdentity.html",
+      "description": "This action creates a new CloudFront origin access identity.",
       "accessLevel": "Write",
       "resourceTypes": {
         "origin-access-identity": {
@@ -19,8 +24,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "CreateDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistribution.html",
-      "description": "This action creates a new web distribution (POST /2019-03-26/distribution).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html",
+      "description": "This action creates a new web distribution.",
       "accessLevel": "Write",
       "resourceTypes": {
         "distribution": {
@@ -29,8 +34,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "CreateDistributionWithTags": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistributionWithTags.html",
-      "description": "This action creates a new web distribution with tags (POST /2019-03-26/distribution?WithTags).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionWithTags.html",
+      "description": "This action creates a new web distribution with tags.",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "distribution": {
@@ -43,18 +48,18 @@ export class Cloudfront extends PolicyStatement {
       ]
     },
     "CreateFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateFieldLevelEncryptionConfig.html",
-      "description": "This action creates a new field-level encryption configuration. (POST /2019-03-26/field-level-encryption).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionConfig.html",
+      "description": "This action creates a new field-level encryption configuration.",
       "accessLevel": "Write"
     },
     "CreateFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateFieldLevelEncryptionProfile.html",
-      "description": "This action creates a field-level encryption profile. (POST /2019-03-26/field-level-encryption-profile).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionProfile.html",
+      "description": "This action creates a field-level encryption profile.",
       "accessLevel": "Write"
     },
     "CreateInvalidation": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateInvalidation.html",
-      "description": "This action creates a new invalidation batch request (POST /2019-03-26/distribution/<DISTRIBUTION_ID>/invalidation).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html",
+      "description": "This action creates a new invalidation batch request.",
       "accessLevel": "Write",
       "resourceTypes": {
         "distribution": {
@@ -62,14 +67,19 @@ export class Cloudfront extends PolicyStatement {
         }
       }
     },
+    "CreateOriginRequestPolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginRequestPolicy.html",
+      "description": "This action adds a new origin request policy to CloudFront.",
+      "accessLevel": "Write"
+    },
     "CreatePublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreatePublicKey.html",
-      "description": "This action adds a new public key to CloudFront. (POST /2019-03-26/public-key).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.html",
+      "description": "This action adds a new public key to CloudFront.",
       "accessLevel": "Write"
     },
     "CreateStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistribution.html",
-      "description": "This action creates a new RTMP distribution (POST /2019-03-26/streaming-distribution).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistribution.html",
+      "description": "This action creates a new RTMP distribution.",
       "accessLevel": "Write",
       "resourceTypes": {
         "streaming-distribution": {
@@ -78,8 +88,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "CreateStreamingDistributionWithTags": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistributionWithTags.html",
-      "description": "This action creates a new RTMP distribution with tags (POST /2019-03-26/streaming-distribution?WithTags).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistributionWithTags.html",
+      "description": "This action creates a new RTMP distribution with tags.",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "streaming-distribution": {
@@ -91,9 +101,14 @@ export class Cloudfront extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "DeleteCachePolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCachePolicy.html",
+      "description": "This action deletes a cache policy.",
+      "accessLevel": "Write"
+    },
     "DeleteCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteCloudFrontOriginAccessIdentity.html",
-      "description": "This action deletes a CloudFront origin access identity (DELETE /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCloudFrontOriginAccessIdentity.html",
+      "description": "This action deletes a CloudFront origin access identity.",
       "accessLevel": "Write",
       "resourceTypes": {
         "origin-access-identity": {
@@ -102,8 +117,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "DeleteDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteDistribution.html",
-      "description": "This action deletes a web distribution (DELETE /2019-03-26/distribution/<DISTRIBUTION_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistribution.html",
+      "description": "This action deletes a web distribution.",
       "accessLevel": "Write",
       "resourceTypes": {
         "distribution": {
@@ -112,23 +127,28 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "DeleteFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteFieldLevelEncryptionConfig.html",
-      "description": "This action deletes a field-level encryption configuration. (DELETE /2019-03-26/field-level-encryption/Id/<Id>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionConfig.html",
+      "description": "This action deletes a field-level encryption configuration.",
       "accessLevel": "Write"
     },
     "DeleteFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteFieldLevelEncryptionProfile.html",
-      "description": "This action deletes a field-level encryption profile. (DELETE /2019-03-26/field-level-encryption-profile/<Id>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionProfile.html",
+      "description": "This action deletes a field-level encryption profile.",
+      "accessLevel": "Write"
+    },
+    "DeleteOriginRequestPolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginRequestPolicy.html",
+      "description": "This action deletes an origin request policy.",
       "accessLevel": "Write"
     },
     "DeletePublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeletePublicKey.html",
-      "description": "This action deletes a public key from CloudFront. (DELETE /2019-03-26/public-key/<Id>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeletePublicKey.html",
+      "description": "This action deletes a public key from CloudFront.",
       "accessLevel": "Write"
     },
     "DeleteStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteStreamingDistribution.html",
-      "description": "This action deletes an RTMP distribution (DELETE /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteStreamingDistribution.html",
+      "description": "This action deletes an RTMP distribution.",
       "accessLevel": "Write",
       "resourceTypes": {
         "streaming-distribution": {
@@ -136,9 +156,19 @@ export class Cloudfront extends PolicyStatement {
         }
       }
     },
+    "GetCachePolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicy.html",
+      "description": "Get the cache policy",
+      "accessLevel": "Read"
+    },
+    "GetCachePolicyConfig": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicyConfig.html",
+      "description": "Get the cache policy configuration",
+      "accessLevel": "Read"
+    },
     "GetCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetCloudFrontOriginAccessIdentity.html",
-      "description": "Get the information about a CloudFront origin access identity (GET /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentity.html",
+      "description": "Get the information about a CloudFront origin access identity.",
       "accessLevel": "Read",
       "resourceTypes": {
         "origin-access-identity": {
@@ -147,8 +177,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "GetCloudFrontOriginAccessIdentityConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetCloudFrontOriginAccessIdentityConfig.html",
-      "description": "Get the configuration information about a Cloudfront origin access identity (GET /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentityConfig.html",
+      "description": "Get the configuration information about a Cloudfront origin access identity.",
       "accessLevel": "Read",
       "resourceTypes": {
         "origin-access-identity": {
@@ -157,8 +187,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "GetDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetDistribution.html",
-      "description": "Get the information about a web distribution (GET /2019-03-26/distribution/<DISTRIBUTION_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html",
+      "description": "Get the information about a web distribution.",
       "accessLevel": "Read",
       "resourceTypes": {
         "distribution": {
@@ -167,8 +197,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "GetDistributionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetDistributionConfig.html",
-      "description": "Get the configuration information about a distribution (GET /2019-03-26/distribution/<DISTRIBUTION_ID>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html",
+      "description": "Get the configuration information about a distribution.",
       "accessLevel": "Read",
       "resourceTypes": {
         "distribution": {
@@ -177,28 +207,28 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "GetFieldLevelEncryption": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryption.html",
-      "description": "Get the field-level encryption configuration information. (GET /2019-03-26/field-level-encryption/<Id>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryption.html",
+      "description": "Get the field-level encryption configuration information.",
       "accessLevel": "Read"
     },
     "GetFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionConfig.html",
-      "description": "Get the field-level encryption configuration information (GET /2019-03-26/field-level-encryption/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionConfig.html",
+      "description": "Get the field-level encryption configuration information.",
       "accessLevel": "Read"
     },
     "GetFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionProfile.html",
-      "description": "Get the field-level encryption configuration information (GET /2019-03-26/field-level-encryption/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfile.html",
+      "description": "Get the field-level encryption configuration information.",
       "accessLevel": "Read"
     },
     "GetFieldLevelEncryptionProfileConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionProfileConfig.html",
-      "description": "Get the field-level encryption profile configuration information (GET /2019-03-26/field-level-encryption-profile/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfileConfig.html",
+      "description": "Get the field-level encryption profile configuration information.",
       "accessLevel": "Read"
     },
     "GetInvalidation": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetInvalidation.html",
-      "description": "Get the information about an invalidation (GET /2019-03-26/distribution/<DISTRIBUTION_ID>/invalidation/<INVALIDATION_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.html",
+      "description": "Get the information about an invalidation.",
       "accessLevel": "Read",
       "resourceTypes": {
         "distribution": {
@@ -206,19 +236,29 @@ export class Cloudfront extends PolicyStatement {
         }
       }
     },
+    "GetOriginRequestPolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicy.html",
+      "description": "Get the origin request policy",
+      "accessLevel": "Read"
+    },
+    "GetOriginRequestPolicyConfig": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicyConfig.html",
+      "description": "Get the origin request policy configuration",
+      "accessLevel": "Read"
+    },
     "GetPublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetPublicKey.html",
-      "description": "Get the public key information (GET /2019-03-26/public-key/<Id>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKey.html",
+      "description": "Get the public key information.",
       "accessLevel": "Read"
     },
     "GetPublicKeyConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetPublicKeyConfig.html",
-      "description": "Get the public key configuration information (GET /2019-03-26/public-key/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKeyConfig.html",
+      "description": "Get the public key configuration information.",
       "accessLevel": "Read"
     },
     "GetStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetStreamingDistribution.html",
-      "description": "Get the information about an RTMP distribution (GET /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistribution.html",
+      "description": "Get the information about an RTMP distribution.",
       "accessLevel": "Read",
       "resourceTypes": {
         "streaming-distribution": {
@@ -227,8 +267,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "GetStreamingDistributionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetStreamingDistributionConfig.html",
-      "description": "Get the configuration information about a streaming distribution (GET /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistributionConfig.html",
+      "description": "Get the configuration information about a streaming distribution.",
       "accessLevel": "Read",
       "resourceTypes": {
         "streaming-distribution": {
@@ -236,39 +276,49 @@ export class Cloudfront extends PolicyStatement {
         }
       }
     },
+    "ListCachePolicies": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCachePolicies.html",
+      "description": "List all cache policies that have been created in CloudFront for this account.",
+      "accessLevel": "List"
+    },
     "ListCloudFrontOriginAccessIdentities": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListCloudFrontOriginAccessIdentities.html",
-      "description": "List your CloudFront origin access identities (GET /2019-03-26/origin-access-identity/cloudfront?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCloudFrontOriginAccessIdentities.html",
+      "description": "List your CloudFront origin access identities.",
       "accessLevel": "List"
     },
     "ListDistributions": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListDistributions.html",
-      "description": "List the distributions associated with your AWS account (GET /2019-03-26/distribution?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributions.html",
+      "description": "List the distributions associated with your AWS account.",
       "accessLevel": "List"
     },
-    "ListDistributionsByLambdaFunction": {
-      "url": "",
-      "description": "List the distributions associated a Lambda function.",
+    "ListDistributionsByCachePolicyId": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByCachePolicyId.html",
+      "description": "List distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.",
+      "accessLevel": "List"
+    },
+    "ListDistributionsByOriginRequestPolicyId": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByOriginRequestPolicyId.html",
+      "description": "List distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.",
       "accessLevel": "List"
     },
     "ListDistributionsByWebACLId": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListDistributionsByWebACLId.html",
-      "description": "List the distributions associated with your AWS account with given AWS WAF web ACL (GET /2019-03-26/distributionsByWebACLId/<WEB_ACL_ID>?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html",
+      "description": "List the distributions associated with your AWS account with given AWS WAF web ACL.",
       "accessLevel": "List"
     },
     "ListFieldLevelEncryptionConfigs": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListFieldLevelEncryptionConfigs.html",
-      "description": "List all field-level encryption configurations that have been created in CloudFront for this account (GET /2019-03-26/field-level-encryption?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionConfigs.html",
+      "description": "List all field-level encryption configurations that have been created in CloudFront for this account.",
       "accessLevel": "List"
     },
     "ListFieldLevelEncryptionProfiles": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListFieldLevelEncryptionProfiles.html",
-      "description": "List all field-level encryption profiles that have been created in CloudFront for this account. (GET /2019-03-26/field-level-encryption-profile?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionProfiles.html",
+      "description": "List all field-level encryption profiles that have been created in CloudFront for this account.",
       "accessLevel": "List"
     },
     "ListInvalidations": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListInvalidations.html",
-      "description": "List your invalidation batches (GET /2019-03-26/distribution/<DISTRIBUTION_ID>/invalidation?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidations.html",
+      "description": "List your invalidation batches.",
       "accessLevel": "List",
       "resourceTypes": {
         "distribution": {
@@ -276,19 +326,24 @@ export class Cloudfront extends PolicyStatement {
         }
       }
     },
+    "ListOriginRequestPolicies": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginRequestPolicies.html",
+      "description": "List all origin request policies that have been created in CloudFront for this account.",
+      "accessLevel": "List"
+    },
     "ListPublicKeys": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListPublicKeys.html",
-      "description": "List all public keys that have been added to CloudFront for this account. (GET /2019-03-26/public-key?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListPublicKeys.html",
+      "description": "List all public keys that have been added to CloudFront for this account.",
       "accessLevel": "List"
     },
     "ListStreamingDistributions": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListStreamingDistributions.html",
-      "description": "List your RTMP distributions (GET /2019-03-26/streaming-distribution?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListStreamingDistributions.html",
+      "description": "List your RTMP distributions.",
       "accessLevel": "List"
     },
     "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListTagsForResource.html",
-      "description": "List tags for a CloudFront resource (GET /2019-03-26/tagging?Resource=<RESOURCE>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTagsForResource.html",
+      "description": "List tags for a CloudFront resource.",
       "accessLevel": "Read",
       "resourceTypes": {
         "distribution": {
@@ -300,8 +355,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "TagResource": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_TagResource.html",
-      "description": "Add tags to a CloudFront resource (POST /2019-03-26/tagging?Operation=Tag?Resource=<RESOURCE>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html",
+      "description": "Add tags to a CloudFront resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "distribution": {
@@ -317,8 +372,8 @@ export class Cloudfront extends PolicyStatement {
       ]
     },
     "UntagResource": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UntagResource.html",
-      "description": "Remove tags from a CloudFront resource (POST /2019-03-26/tagging?Operation=Untag?Resource=<RESOURCE>).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UntagResource.html",
+      "description": "Remove tags from a CloudFront resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
         "distribution": {
@@ -332,9 +387,14 @@ export class Cloudfront extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "UpdateCachePolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCachePolicy.html",
+      "description": "This action updates a cache policy.",
+      "accessLevel": "Write"
+    },
     "UpdateCloudFrontOriginAccessIdentity": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateCloudFrontOriginAccessIdentity.html",
-      "description": "This action sets the configuration for a CloudFront origin access identity (PUT /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCloudFrontOriginAccessIdentity.html",
+      "description": "This action sets the configuration for a CloudFront origin access identity.",
       "accessLevel": "Write",
       "resourceTypes": {
         "origin-access-identity": {
@@ -343,8 +403,8 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "UpdateDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateDistribution.html",
-      "description": "This action updates the configuration for a web distribution (PUT /2019-03-26/distribution/<DISTRIBUTION_ID>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html",
+      "description": "This action updates the configuration for a web distribution.",
       "accessLevel": "Write",
       "resourceTypes": {
         "distribution": {
@@ -353,23 +413,28 @@ export class Cloudfront extends PolicyStatement {
       }
     },
     "UpdateFieldLevelEncryptionConfig": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateFieldLevelEncryptionConfig.html",
-      "description": "This action updates a field-level encryption configuration. (PUT /2019-03-26/field-level-encryption/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionConfig.html",
+      "description": "This action updates a field-level encryption configuration.",
       "accessLevel": "Write"
     },
     "UpdateFieldLevelEncryptionProfile": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateFieldLevelEncryptionProfile.html",
-      "description": "This action updates a field-level encryption profile. (PUT /2019-03-26/field-level-encryption-profile/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionProfile.html",
+      "description": "This action updates a field-level encryption profile.",
+      "accessLevel": "Write"
+    },
+    "UpdateOriginRequestPolicy": {
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginRequestPolicy.html",
+      "description": "This action updates an origin request policy.",
       "accessLevel": "Write"
     },
     "UpdatePublicKey": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdatePublicKey.html",
-      "description": "This action updates public key information. (PUT /2019-03-26/public-key/<Id>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdatePublicKey.html",
+      "description": "This action updates public key information.",
       "accessLevel": "Write"
     },
     "UpdateStreamingDistribution": {
-      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateStreamingDistribution.html",
-      "description": "This action updates the configuration for an RTMP distribution (PUT /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>/config).",
+      "url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateStreamingDistribution.html",
+      "description": "This action updates the configuration for an RTMP distribution.",
       "accessLevel": "Write",
       "resourceTypes": {
         "streaming-distribution": {
@@ -381,7 +446,7 @@ export class Cloudfront extends PolicyStatement {
   protected resourceTypes: ResourceTypes = {
     "distribution": {
       "name": "distribution",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
       "arn": "arn:${Partition}:cloudfront::${Account}:distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -389,7 +454,7 @@ export class Cloudfront extends PolicyStatement {
     },
     "streaming-distribution": {
       "name": "streaming-distribution",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html",
       "arn": "arn:${Partition}:cloudfront::${Account}:streaming-distribution/${DistributionId}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
@@ -397,8 +462,32 @@ export class Cloudfront extends PolicyStatement {
     },
     "origin-access-identity": {
       "name": "origin-access-identity",
-      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview",
       "arn": "arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}",
+      "conditionKeys": []
+    },
+    "field-level-encryption": {
+      "name": "field-level-encryption",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html",
+      "arn": "arn:${Partition}:cloudfront::${Account}:field-level-encryption/${Id}",
+      "conditionKeys": []
+    },
+    "field-level-encryption-profile": {
+      "name": "field-level-encryption-profile",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html",
+      "arn": "arn:${Partition}:cloudfront::${Account}:field-level-encryption-profile/${Id}",
+      "conditionKeys": []
+    },
+    "cache-policy": {
+      "name": "cache-policy",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html",
+      "arn": "arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}",
+      "conditionKeys": []
+    },
+    "origin-request-policy": {
+      "name": "origin-request-policy",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html",
+      "arn": "arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}",
       "conditionKeys": []
     }
   };
@@ -413,11 +502,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new CloudFront origin access identity (POST /2019-03-26/origin-access-identity/cloudfront).
+   * This action adds a new cache policy to CloudFront.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateCloudFrontOriginAccessIdentity.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html
+   */
+  public toCreateCachePolicy() {
+    this.add('cloudfront:CreateCachePolicy');
+    return this;
+  }
+
+  /**
+   * This action creates a new CloudFront origin access identity.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCloudFrontOriginAccessIdentity.html
    */
   public toCreateCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:CreateCloudFrontOriginAccessIdentity');
@@ -425,11 +526,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new web distribution (POST /2019-03-26/distribution).
+   * This action creates a new web distribution.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html
    */
   public toCreateDistribution() {
     this.add('cloudfront:CreateDistribution');
@@ -437,7 +538,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new web distribution with tags (POST /2019-03-26/distribution?WithTags).
+   * This action creates a new web distribution with tags.
    *
    * Access Level: Tagging
    *
@@ -445,7 +546,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateDistributionWithTags.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistributionWithTags.html
    */
   public toCreateDistributionWithTags() {
     this.add('cloudfront:CreateDistributionWithTags');
@@ -453,11 +554,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new field-level encryption configuration. (POST /2019-03-26/field-level-encryption).
+   * This action creates a new field-level encryption configuration.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateFieldLevelEncryptionConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionConfig.html
    */
   public toCreateFieldLevelEncryptionConfig() {
     this.add('cloudfront:CreateFieldLevelEncryptionConfig');
@@ -465,11 +566,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a field-level encryption profile. (POST /2019-03-26/field-level-encryption-profile).
+   * This action creates a field-level encryption profile.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateFieldLevelEncryptionProfile.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateFieldLevelEncryptionProfile.html
    */
   public toCreateFieldLevelEncryptionProfile() {
     this.add('cloudfront:CreateFieldLevelEncryptionProfile');
@@ -477,11 +578,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new invalidation batch request (POST /2019-03-26/distribution/<DISTRIBUTION_ID>/invalidation).
+   * This action creates a new invalidation batch request.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateInvalidation.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html
    */
   public toCreateInvalidation() {
     this.add('cloudfront:CreateInvalidation');
@@ -489,11 +590,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action adds a new public key to CloudFront. (POST /2019-03-26/public-key).
+   * This action adds a new origin request policy to CloudFront.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreatePublicKey.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateOriginRequestPolicy.html
+   */
+  public toCreateOriginRequestPolicy() {
+    this.add('cloudfront:CreateOriginRequestPolicy');
+    return this;
+  }
+
+  /**
+   * This action adds a new public key to CloudFront.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreatePublicKey.html
    */
   public toCreatePublicKey() {
     this.add('cloudfront:CreatePublicKey');
@@ -501,11 +614,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new RTMP distribution (POST /2019-03-26/streaming-distribution).
+   * This action creates a new RTMP distribution.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistribution.html
    */
   public toCreateStreamingDistribution() {
     this.add('cloudfront:CreateStreamingDistribution');
@@ -513,7 +626,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action creates a new RTMP distribution with tags (POST /2019-03-26/streaming-distribution?WithTags).
+   * This action creates a new RTMP distribution with tags.
    *
    * Access Level: Tagging
    *
@@ -521,7 +634,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_CreateStreamingDistributionWithTags.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateStreamingDistributionWithTags.html
    */
   public toCreateStreamingDistributionWithTags() {
     this.add('cloudfront:CreateStreamingDistributionWithTags');
@@ -529,11 +642,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a CloudFront origin access identity (DELETE /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>).
+   * This action deletes a cache policy.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteCloudFrontOriginAccessIdentity.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCachePolicy.html
+   */
+  public toDeleteCachePolicy() {
+    this.add('cloudfront:DeleteCachePolicy');
+    return this;
+  }
+
+  /**
+   * This action deletes a CloudFront origin access identity.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteCloudFrontOriginAccessIdentity.html
    */
   public toDeleteCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:DeleteCloudFrontOriginAccessIdentity');
@@ -541,11 +666,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a web distribution (DELETE /2019-03-26/distribution/<DISTRIBUTION_ID>).
+   * This action deletes a web distribution.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistribution.html
    */
   public toDeleteDistribution() {
     this.add('cloudfront:DeleteDistribution');
@@ -553,11 +678,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a field-level encryption configuration. (DELETE /2019-03-26/field-level-encryption/Id/<Id>).
+   * This action deletes a field-level encryption configuration.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteFieldLevelEncryptionConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionConfig.html
    */
   public toDeleteFieldLevelEncryptionConfig() {
     this.add('cloudfront:DeleteFieldLevelEncryptionConfig');
@@ -565,11 +690,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a field-level encryption profile. (DELETE /2019-03-26/field-level-encryption-profile/<Id>).
+   * This action deletes a field-level encryption profile.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteFieldLevelEncryptionProfile.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteFieldLevelEncryptionProfile.html
    */
   public toDeleteFieldLevelEncryptionProfile() {
     this.add('cloudfront:DeleteFieldLevelEncryptionProfile');
@@ -577,11 +702,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes a public key from CloudFront. (DELETE /2019-03-26/public-key/<Id>).
+   * This action deletes an origin request policy.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeletePublicKey.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteOriginRequestPolicy.html
+   */
+  public toDeleteOriginRequestPolicy() {
+    this.add('cloudfront:DeleteOriginRequestPolicy');
+    return this;
+  }
+
+  /**
+   * This action deletes a public key from CloudFront.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeletePublicKey.html
    */
   public toDeletePublicKey() {
     this.add('cloudfront:DeletePublicKey');
@@ -589,11 +726,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action deletes an RTMP distribution (DELETE /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>).
+   * This action deletes an RTMP distribution.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_DeleteStreamingDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteStreamingDistribution.html
    */
   public toDeleteStreamingDistribution() {
     this.add('cloudfront:DeleteStreamingDistribution');
@@ -601,11 +738,35 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about a CloudFront origin access identity (GET /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>).
+   * Get the cache policy
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetCloudFrontOriginAccessIdentity.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicy.html
+   */
+  public toGetCachePolicy() {
+    this.add('cloudfront:GetCachePolicy');
+    return this;
+  }
+
+  /**
+   * Get the cache policy configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCachePolicyConfig.html
+   */
+  public toGetCachePolicyConfig() {
+    this.add('cloudfront:GetCachePolicyConfig');
+    return this;
+  }
+
+  /**
+   * Get the information about a CloudFront origin access identity.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentity.html
    */
   public toGetCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:GetCloudFrontOriginAccessIdentity');
@@ -613,11 +774,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the configuration information about a Cloudfront origin access identity (GET /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>/config).
+   * Get the configuration information about a Cloudfront origin access identity.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetCloudFrontOriginAccessIdentityConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetCloudFrontOriginAccessIdentityConfig.html
    */
   public toGetCloudFrontOriginAccessIdentityConfig() {
     this.add('cloudfront:GetCloudFrontOriginAccessIdentityConfig');
@@ -625,11 +786,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about a web distribution (GET /2019-03-26/distribution/<DISTRIBUTION_ID>).
+   * Get the information about a web distribution.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html
    */
   public toGetDistribution() {
     this.add('cloudfront:GetDistribution');
@@ -637,11 +798,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the configuration information about a distribution (GET /2019-03-26/distribution/<DISTRIBUTION_ID>/config).
+   * Get the configuration information about a distribution.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetDistributionConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html
    */
   public toGetDistributionConfig() {
     this.add('cloudfront:GetDistributionConfig');
@@ -649,11 +810,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption configuration information. (GET /2019-03-26/field-level-encryption/<Id>).
+   * Get the field-level encryption configuration information.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryption.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryption.html
    */
   public toGetFieldLevelEncryption() {
     this.add('cloudfront:GetFieldLevelEncryption');
@@ -661,11 +822,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption configuration information (GET /2019-03-26/field-level-encryption/<Id>/config).
+   * Get the field-level encryption configuration information.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionConfig.html
    */
   public toGetFieldLevelEncryptionConfig() {
     this.add('cloudfront:GetFieldLevelEncryptionConfig');
@@ -673,11 +834,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption configuration information (GET /2019-03-26/field-level-encryption/<Id>/config).
+   * Get the field-level encryption configuration information.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionProfile.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfile.html
    */
   public toGetFieldLevelEncryptionProfile() {
     this.add('cloudfront:GetFieldLevelEncryptionProfile');
@@ -685,11 +846,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the field-level encryption profile configuration information (GET /2019-03-26/field-level-encryption-profile/<Id>/config).
+   * Get the field-level encryption profile configuration information.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetFieldLevelEncryptionProfileConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetFieldLevelEncryptionProfileConfig.html
    */
   public toGetFieldLevelEncryptionProfileConfig() {
     this.add('cloudfront:GetFieldLevelEncryptionProfileConfig');
@@ -697,11 +858,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about an invalidation (GET /2019-03-26/distribution/<DISTRIBUTION_ID>/invalidation/<INVALIDATION_ID>).
+   * Get the information about an invalidation.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetInvalidation.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.html
    */
   public toGetInvalidation() {
     this.add('cloudfront:GetInvalidation');
@@ -709,11 +870,35 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the public key information (GET /2019-03-26/public-key/<Id>).
+   * Get the origin request policy
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetPublicKey.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicy.html
+   */
+  public toGetOriginRequestPolicy() {
+    this.add('cloudfront:GetOriginRequestPolicy');
+    return this;
+  }
+
+  /**
+   * Get the origin request policy configuration
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetOriginRequestPolicyConfig.html
+   */
+  public toGetOriginRequestPolicyConfig() {
+    this.add('cloudfront:GetOriginRequestPolicyConfig');
+    return this;
+  }
+
+  /**
+   * Get the public key information.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKey.html
    */
   public toGetPublicKey() {
     this.add('cloudfront:GetPublicKey');
@@ -721,11 +906,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the public key configuration information (GET /2019-03-26/public-key/<Id>/config).
+   * Get the public key configuration information.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetPublicKeyConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetPublicKeyConfig.html
    */
   public toGetPublicKeyConfig() {
     this.add('cloudfront:GetPublicKeyConfig');
@@ -733,11 +918,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the information about an RTMP distribution (GET /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>).
+   * Get the information about an RTMP distribution.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetStreamingDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistribution.html
    */
   public toGetStreamingDistribution() {
     this.add('cloudfront:GetStreamingDistribution');
@@ -745,11 +930,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Get the configuration information about a streaming distribution (GET /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>/config).
+   * Get the configuration information about a streaming distribution.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_GetStreamingDistributionConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetStreamingDistributionConfig.html
    */
   public toGetStreamingDistributionConfig() {
     this.add('cloudfront:GetStreamingDistributionConfig');
@@ -757,11 +942,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List your CloudFront origin access identities (GET /2019-03-26/origin-access-identity/cloudfront?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List all cache policies that have been created in CloudFront for this account.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListCloudFrontOriginAccessIdentities.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCachePolicies.html
+   */
+  public toListCachePolicies() {
+    this.add('cloudfront:ListCachePolicies');
+    return this;
+  }
+
+  /**
+   * List your CloudFront origin access identities.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListCloudFrontOriginAccessIdentities.html
    */
   public toListCloudFrontOriginAccessIdentities() {
     this.add('cloudfront:ListCloudFrontOriginAccessIdentities');
@@ -769,11 +966,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List the distributions associated with your AWS account (GET /2019-03-26/distribution?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List the distributions associated with your AWS account.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListDistributions.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributions.html
    */
   public toListDistributions() {
     this.add('cloudfront:ListDistributions');
@@ -781,21 +978,35 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List the distributions associated a Lambda function.
+   * List distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.
    *
    * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByCachePolicyId.html
    */
-  public toListDistributionsByLambdaFunction() {
-    this.add('cloudfront:ListDistributionsByLambdaFunction');
+  public toListDistributionsByCachePolicyId() {
+    this.add('cloudfront:ListDistributionsByCachePolicyId');
     return this;
   }
 
   /**
-   * List the distributions associated with your AWS account with given AWS WAF web ACL (GET /2019-03-26/distributionsByWebACLId/<WEB_ACL_ID>?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListDistributionsByWebACLId.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByOriginRequestPolicyId.html
+   */
+  public toListDistributionsByOriginRequestPolicyId() {
+    this.add('cloudfront:ListDistributionsByOriginRequestPolicyId');
+    return this;
+  }
+
+  /**
+   * List the distributions associated with your AWS account with given AWS WAF web ACL.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html
    */
   public toListDistributionsByWebACLId() {
     this.add('cloudfront:ListDistributionsByWebACLId');
@@ -803,11 +1014,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all field-level encryption configurations that have been created in CloudFront for this account (GET /2019-03-26/field-level-encryption?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List all field-level encryption configurations that have been created in CloudFront for this account.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListFieldLevelEncryptionConfigs.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionConfigs.html
    */
   public toListFieldLevelEncryptionConfigs() {
     this.add('cloudfront:ListFieldLevelEncryptionConfigs');
@@ -815,11 +1026,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all field-level encryption profiles that have been created in CloudFront for this account. (GET /2019-03-26/field-level-encryption-profile?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List all field-level encryption profiles that have been created in CloudFront for this account.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListFieldLevelEncryptionProfiles.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListFieldLevelEncryptionProfiles.html
    */
   public toListFieldLevelEncryptionProfiles() {
     this.add('cloudfront:ListFieldLevelEncryptionProfiles');
@@ -827,11 +1038,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List your invalidation batches (GET /2019-03-26/distribution/<DISTRIBUTION_ID>/invalidation?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List your invalidation batches.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListInvalidations.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListInvalidations.html
    */
   public toListInvalidations() {
     this.add('cloudfront:ListInvalidations');
@@ -839,11 +1050,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List all public keys that have been added to CloudFront for this account. (GET /2019-03-26/public-key?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List all origin request policies that have been created in CloudFront for this account.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListPublicKeys.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListOriginRequestPolicies.html
+   */
+  public toListOriginRequestPolicies() {
+    this.add('cloudfront:ListOriginRequestPolicies');
+    return this;
+  }
+
+  /**
+   * List all public keys that have been added to CloudFront for this account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListPublicKeys.html
    */
   public toListPublicKeys() {
     this.add('cloudfront:ListPublicKeys');
@@ -851,11 +1074,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List your RTMP distributions (GET /2019-03-26/streaming-distribution?Marker=<MARKER>&MaxItems=<MAX_ITEMS>).
+   * List your RTMP distributions.
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListStreamingDistributions.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListStreamingDistributions.html
    */
   public toListStreamingDistributions() {
     this.add('cloudfront:ListStreamingDistributions');
@@ -863,11 +1086,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * List tags for a CloudFront resource (GET /2019-03-26/tagging?Resource=<RESOURCE>).
+   * List tags for a CloudFront resource.
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     this.add('cloudfront:ListTagsForResource');
@@ -875,7 +1098,7 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Add tags to a CloudFront resource (POST /2019-03-26/tagging?Operation=Tag?Resource=<RESOURCE>).
+   * Add tags to a CloudFront resource.
    *
    * Access Level: Tagging
    *
@@ -883,7 +1106,7 @@ export class Cloudfront extends PolicyStatement {
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_TagResource.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
     this.add('cloudfront:TagResource');
@@ -891,14 +1114,14 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * Remove tags from a CloudFront resource (POST /2019-03-26/tagging?Operation=Untag?Resource=<RESOURCE>).
+   * Remove tags from a CloudFront resource.
    *
    * Access Level: Tagging
    *
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UntagResource.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     this.add('cloudfront:UntagResource');
@@ -906,11 +1129,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action sets the configuration for a CloudFront origin access identity (PUT /2019-03-26/origin-access-identity/cloudfront/<OAI_ID>/config).
+   * This action updates a cache policy.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateCloudFrontOriginAccessIdentity.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCachePolicy.html
+   */
+  public toUpdateCachePolicy() {
+    this.add('cloudfront:UpdateCachePolicy');
+    return this;
+  }
+
+  /**
+   * This action sets the configuration for a CloudFront origin access identity.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateCloudFrontOriginAccessIdentity.html
    */
   public toUpdateCloudFrontOriginAccessIdentity() {
     this.add('cloudfront:UpdateCloudFrontOriginAccessIdentity');
@@ -918,11 +1153,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates the configuration for a web distribution (PUT /2019-03-26/distribution/<DISTRIBUTION_ID>/config).
+   * This action updates the configuration for a web distribution.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html
    */
   public toUpdateDistribution() {
     this.add('cloudfront:UpdateDistribution');
@@ -930,11 +1165,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a field-level encryption configuration. (PUT /2019-03-26/field-level-encryption/<Id>/config).
+   * This action updates a field-level encryption configuration.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateFieldLevelEncryptionConfig.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionConfig.html
    */
   public toUpdateFieldLevelEncryptionConfig() {
     this.add('cloudfront:UpdateFieldLevelEncryptionConfig');
@@ -942,11 +1177,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates a field-level encryption profile. (PUT /2019-03-26/field-level-encryption-profile/<Id>/config).
+   * This action updates a field-level encryption profile.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateFieldLevelEncryptionProfile.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateFieldLevelEncryptionProfile.html
    */
   public toUpdateFieldLevelEncryptionProfile() {
     this.add('cloudfront:UpdateFieldLevelEncryptionProfile');
@@ -954,11 +1189,23 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates public key information. (PUT /2019-03-26/public-key/<Id>/config).
+   * This action updates an origin request policy.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdatePublicKey.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateOriginRequestPolicy.html
+   */
+  public toUpdateOriginRequestPolicy() {
+    this.add('cloudfront:UpdateOriginRequestPolicy');
+    return this;
+  }
+
+  /**
+   * This action updates public key information.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdatePublicKey.html
    */
   public toUpdatePublicKey() {
     this.add('cloudfront:UpdatePublicKey');
@@ -966,11 +1213,11 @@ export class Cloudfront extends PolicyStatement {
   }
 
   /**
-   * This action updates the configuration for an RTMP distribution (PUT /2019-03-26/streaming-distribution/<DISTRIBUTION_ID>/config).
+   * This action updates the configuration for an RTMP distribution.
    *
    * Access Level: Write
    *
-   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Operations.html/API_UpdateStreamingDistribution.html
+   * https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateStreamingDistribution.html
    */
   public toUpdateStreamingDistribution() {
     this.add('cloudfront:UpdateStreamingDistribution');
@@ -980,7 +1227,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type distribution to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
    *
    * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1000,7 +1247,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type streaming-distribution to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html
    *
    * @param distributionId - Identifier for the distributionId.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1020,7 +1267,7 @@ export class Cloudfront extends PolicyStatement {
   /**
    * Adds a resource of type origin-access-identity to the statement
    *
-   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#private-content-restricting-access-to-s3-overview
    *
    * @param id - Identifier for the id.
    * @param account - Account of the resource; defaults to empty string: all accounts.
@@ -1028,6 +1275,74 @@ export class Cloudfront extends PolicyStatement {
    */
   public onOriginAccessIdentity(id: string, account?: string, partition?: string) {
     var arn = 'arn:${Partition}:cloudfront::${Account}:origin-access-identity/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type field-level-encryption to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFieldLevelEncryption(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:field-level-encryption/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type field-level-encryption-profile to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onFieldLevelEncryptionProfile(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:field-level-encryption-profile/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type cache-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onCachePolicy(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:cache-policy/${Id}';
+    arn = arn.replace('${Id}', id);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type origin-request-policy to the statement
+   *
+   * https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html
+   *
+   * @param id - Identifier for the id.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onOriginRequestPolicy(id: string, account?: string, partition?: string) {
+    var arn = 'arn:${Partition}:cloudfront::${Account}:origin-request-policy/${Id}';
     arn = arn.replace('${Id}', id);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
