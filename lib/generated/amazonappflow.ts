@@ -9,13 +9,13 @@ export class Appflow extends PolicyStatement {
   public servicePrefix = 'appflow';
   protected actionList: Actions = {
     "CreateConnectorProfile": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to create a login profile to be used with AppFlow flows",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateConnectorProfile.html",
+      "description": "Grants permission to create a login profile to be used with Amazon AppFlow flows",
       "accessLevel": "Write"
     },
     "CreateFlow": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to create an AppFlow flow",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateFlow.html",
+      "description": "Grants permission to create an Amazon AppFlow flow",
       "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
@@ -23,8 +23,8 @@ export class Appflow extends PolicyStatement {
       ]
     },
     "DeleteConnectorProfile": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to delete a login profile set up for use with AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorProfiles.html",
+      "description": "Grants permission to delete a login profile configured in Amazon AppFlow",
       "accessLevel": "Write",
       "resourceTypes": {
         "connectorprofile": {
@@ -33,8 +33,8 @@ export class Appflow extends PolicyStatement {
       }
     },
     "DeleteFlow": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to delete an AppFlow flow",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DeleteFlow.html",
+      "description": "Grants permission to delete an Amazon AppFlow flow",
       "accessLevel": "Write",
       "resourceTypes": {
         "flow": {
@@ -46,9 +46,19 @@ export class Appflow extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "DescribeConnectorEntity": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorEntity.html",
+      "description": "Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "connectorprofile": {
+          "required": true
+        }
+      }
+    },
     "DescribeConnectorFields": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to describe all fields supported by AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions",
+      "description": "Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow (Console Only)",
       "accessLevel": "Read",
       "resourceTypes": {
         "connectorprofile": {
@@ -57,18 +67,33 @@ export class Appflow extends PolicyStatement {
       }
     },
     "DescribeConnectorProfiles": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to describe all login profiles configured in AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorProfiles.html",
+      "description": "Grants permission to describe all login profiles configured in Amazon AppFlow",
       "accessLevel": "Read"
     },
     "DescribeConnectors": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to describe all connectors supported by AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectors.html",
+      "description": "Grants permission to describe all connectors supported by Amazon AppFlow",
+      "accessLevel": "Read"
+    },
+    "DescribeFlow": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeFlow.html",
+      "description": "Grants permission to describe a specific flow configured in Amazon AppFlow",
       "accessLevel": "Read"
     },
     "DescribeFlowExecution": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to describe all flow executions for a flow configured in AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions",
+      "description": "Grants permission to describe all flow executions for a flow configured in Amazon AppFlow (Console Only)",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "flow": {
+          "required": true
+        }
+      }
+    },
+    "DescribeFlowExecutionRecords": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeFlowExecutionRecords.html",
+      "description": "Grants permission to describe all flow executions for a flow configured in Amazon AppFlow",
       "accessLevel": "Read",
       "resourceTypes": {
         "flow": {
@@ -77,13 +102,23 @@ export class Appflow extends PolicyStatement {
       }
     },
     "DescribeFlows": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to describe all flows configured in AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions",
+      "description": "Grants permission to describe all flows configured in Amazon AppFlow (Console Only)",
       "accessLevel": "Read"
     },
+    "ListConnectorEntities": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListConnectorEntities.html",
+      "description": "Grants permission to list all objects for a login profile configured in Amazon AppFlow",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "connectorprofile": {
+          "required": true
+        }
+      }
+    },
     "ListConnectorFields": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to list all fields supported by AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions",
+      "description": "Grants permission to list all objects for a login profile configured in Amazon AppFlow (Console Only)",
       "accessLevel": "Read",
       "resourceTypes": {
         "connectorprofile": {
@@ -91,8 +126,18 @@ export class Appflow extends PolicyStatement {
         }
       }
     },
+    "ListFlows": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListFlows.html",
+      "description": "Grants permission to list all flows configured in Amazon AppFlow",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "flow": {
+          "required": true
+        }
+      }
+    },
     "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/appflow/latest/APIReference/API_ListTagsForResource.html",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list tags for a flow",
       "accessLevel": "List",
       "resourceTypes": {
@@ -102,8 +147,28 @@ export class Appflow extends PolicyStatement {
       }
     },
     "RunFlow": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to run a flow configured in AppFlow",
+      "url": "https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions",
+      "description": "Grants permission to run a flow configured in Amazon AppFlow (Console Only)",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "flow": {
+          "required": true
+        }
+      }
+    },
+    "StartFlow": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_StartFlow.html",
+      "description": "Grants permission to activate (for scheduled and event-triggered flows) or run (for on-demand flows) a flow configured in Amazon AppFlow",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "flow": {
+          "required": true
+        }
+      }
+    },
+    "StopFlow": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_StopFlow.html",
+      "description": "Grants permission to deactivate a scheduled or event-triggered flow configured in Amazon AppFlow",
       "accessLevel": "Write",
       "resourceTypes": {
         "flow": {
@@ -112,7 +177,7 @@ export class Appflow extends PolicyStatement {
       }
     },
     "TagResource": {
-      "url": "https://docs.aws.amazon.com/appflow/latest/APIReference/API_TagResource.html",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_TagResource.html",
       "description": "Grants permission to tag a flow",
       "accessLevel": "Tagging",
       "resourceTypes": {
@@ -126,7 +191,7 @@ export class Appflow extends PolicyStatement {
       ]
     },
     "UntagResource": {
-      "url": "https://docs.aws.amazon.com/appflow/latest/APIReference/API_UntagResource.html",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UntagResource.html",
       "description": "Grants permission to untag a flow",
       "accessLevel": "Tagging",
       "resourceTypes": {
@@ -138,9 +203,19 @@ export class Appflow extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "UpdateConnectorProfile": {
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateConnectorProfile.html",
+      "description": "Grants permission to update a login profile configured in Amazon AppFlow",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "flow": {
+          "required": true
+        }
+      }
+    },
     "UpdateFlow": {
-      "url": "https://docs.aws.amazon.com/",
-      "description": "Grants permission to update an AppFlow flow",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateFlow.html",
+      "description": "Grants permission to update a flow configured in Amazon AppFlow",
       "accessLevel": "Write",
       "resourceTypes": {
         "flow": {
@@ -150,19 +225,19 @@ export class Appflow extends PolicyStatement {
     }
   };
   protected resourceTypes: ResourceTypes = {
+    "connectorprofile": {
+      "name": "connectorprofile",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorProfile.html",
+      "arn": "arn:${Partition}:appflow:${Region}:${Account}:connectorprofile/${ProfileName}",
+      "conditionKeys": []
+    },
     "flow": {
       "name": "flow",
-      "url": "https://docs.aws.amazon.com/",
-      "arn": "arn:${Partition}:appflow::${Account}:flow/${FlowName}",
+      "url": "https://docs.aws.amazon.com/appflow/1.0/APIReference/API_FlowDefinition.html",
+      "arn": "arn:${Partition}:appflow:${Region}:${Account}:flow/${FlowName}",
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
-    },
-    "connectorprofile": {
-      "name": "connectorprofile",
-      "url": "https://docs.aws.amazon.com/",
-      "arn": "arn:${Partition}:appflow::${Account}:connectorprofile/${ProfileName}",
-      "conditionKeys": []
     }
   };
 
@@ -176,9 +251,11 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a login profile to be used with AppFlow flows
+   * Grants permission to create a login profile to be used with Amazon AppFlow flows
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateConnectorProfile.html
    */
   public toCreateConnectorProfile() {
     this.add('appflow:CreateConnectorProfile');
@@ -186,13 +263,15 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create an AppFlow flow
+   * Grants permission to create an Amazon AppFlow flow
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateFlow.html
    */
   public toCreateFlow() {
     this.add('appflow:CreateFlow');
@@ -200,9 +279,11 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete a login profile set up for use with AppFlow
+   * Grants permission to delete a login profile configured in Amazon AppFlow
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorProfiles.html
    */
   public toDeleteConnectorProfile() {
     this.add('appflow:DeleteConnectorProfile');
@@ -210,13 +291,15 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to delete an AppFlow flow
+   * Grants permission to delete an Amazon AppFlow flow
    *
    * Access Level: Write
    *
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DeleteFlow.html
    */
   public toDeleteFlow() {
     this.add('appflow:DeleteFlow');
@@ -224,9 +307,23 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all fields supported by AppFlow
+   * Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorEntity.html
+   */
+  public toDescribeConnectorEntity() {
+    this.add('appflow:DescribeConnectorEntity');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe all fields for an object in a login profile configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toDescribeConnectorFields() {
     this.add('appflow:DescribeConnectorFields');
@@ -234,9 +331,11 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all login profiles configured in AppFlow
+   * Grants permission to describe all login profiles configured in Amazon AppFlow
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectorProfiles.html
    */
   public toDescribeConnectorProfiles() {
     this.add('appflow:DescribeConnectorProfiles');
@@ -244,9 +343,11 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all connectors supported by AppFlow
+   * Grants permission to describe all connectors supported by Amazon AppFlow
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeConnectors.html
    */
   public toDescribeConnectors() {
     this.add('appflow:DescribeConnectors');
@@ -254,9 +355,23 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all flow executions for a flow configured in AppFlow
+   * Grants permission to describe a specific flow configured in Amazon AppFlow
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeFlow.html
+   */
+  public toDescribeFlow() {
+    this.add('appflow:DescribeFlow');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe all flow executions for a flow configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toDescribeFlowExecution() {
     this.add('appflow:DescribeFlowExecution');
@@ -264,9 +379,23 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to describe all flows configured in AppFlow
+   * Grants permission to describe all flow executions for a flow configured in Amazon AppFlow
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_DescribeFlowExecutionRecords.html
+   */
+  public toDescribeFlowExecutionRecords() {
+    this.add('appflow:DescribeFlowExecutionRecords');
+    return this;
+  }
+
+  /**
+   * Grants permission to describe all flows configured in Amazon AppFlow (Console Only)
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toDescribeFlows() {
     this.add('appflow:DescribeFlows');
@@ -274,12 +403,38 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to list all fields supported by AppFlow
+   * Grants permission to list all objects for a login profile configured in Amazon AppFlow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListConnectorEntities.html
+   */
+  public toListConnectorEntities() {
+    this.add('appflow:ListConnectorEntities');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all objects for a login profile configured in Amazon AppFlow (Console Only)
    *
    * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toListConnectorFields() {
     this.add('appflow:ListConnectorFields');
+    return this;
+  }
+
+  /**
+   * Grants permission to list all flows configured in Amazon AppFlow
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListFlows.html
+   */
+  public toListFlows() {
+    this.add('appflow:ListFlows');
     return this;
   }
 
@@ -288,7 +443,7 @@ export class Appflow extends PolicyStatement {
    *
    * Access Level: List
    *
-   * https://docs.aws.amazon.com/appflow/latest/APIReference/API_ListTagsForResource.html
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ListTagsForResource.html
    */
   public toListTagsForResource() {
     this.add('appflow:ListTagsForResource');
@@ -296,12 +451,38 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to run a flow configured in AppFlow
+   * Grants permission to run a flow configured in Amazon AppFlow (Console Only)
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html#appflow-api-actions
    */
   public toRunFlow() {
     this.add('appflow:RunFlow');
+    return this;
+  }
+
+  /**
+   * Grants permission to activate (for scheduled and event-triggered flows) or run (for on-demand flows) a flow configured in Amazon AppFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_StartFlow.html
+   */
+  public toStartFlow() {
+    this.add('appflow:StartFlow');
+    return this;
+  }
+
+  /**
+   * Grants permission to deactivate a scheduled or event-triggered flow configured in Amazon AppFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_StopFlow.html
+   */
+  public toStopFlow() {
+    this.add('appflow:StopFlow');
     return this;
   }
 
@@ -314,7 +495,7 @@ export class Appflow extends PolicyStatement {
    * - .ifAwsTagKeys()
    * - .ifAwsRequestTag()
    *
-   * https://docs.aws.amazon.com/appflow/latest/APIReference/API_TagResource.html
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_TagResource.html
    */
   public toTagResource() {
     this.add('appflow:TagResource');
@@ -329,7 +510,7 @@ export class Appflow extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsTagKeys()
    *
-   * https://docs.aws.amazon.com/appflow/latest/APIReference/API_UntagResource.html
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UntagResource.html
    */
   public toUntagResource() {
     this.add('appflow:UntagResource');
@@ -337,9 +518,23 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Grants permission to update an AppFlow flow
+   * Grants permission to update a login profile configured in Amazon AppFlow
    *
    * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateConnectorProfile.html
+   */
+  public toUpdateConnectorProfile() {
+    this.add('appflow:UpdateConnectorProfile');
+    return this;
+  }
+
+  /**
+   * Grants permission to update a flow configured in Amazon AppFlow
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_UpdateFlow.html
    */
   public toUpdateFlow() {
     this.add('appflow:UpdateFlow');
@@ -347,34 +542,42 @@ export class Appflow extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type flow to the statement
+   * Adds a resource of type connectorprofile to the statement
    *
-   * @param flowName - Identifier for the flowName.
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_ConnectorProfile.html
+   *
+   * @param profileName - Identifier for the profileName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
-   *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
    */
-  public onFlow(flowName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow::${Account}:flow/${FlowName}';
-    arn = arn.replace('${FlowName}', flowName);
+  public onConnectorprofile(profileName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appflow:${Region}:${Account}:connectorprofile/${ProfileName}';
+    arn = arn.replace('${ProfileName}', profileName);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }
 
   /**
-   * Adds a resource of type connectorprofile to the statement
+   * Adds a resource of type flow to the statement
    *
-   * @param profileName - Identifier for the profileName.
+   * https://docs.aws.amazon.com/appflow/1.0/APIReference/API_FlowDefinition.html
+   *
+   * @param flowName - Identifier for the flowName.
    * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
-  public onConnectorprofile(profileName: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:appflow::${Account}:connectorprofile/${ProfileName}';
-    arn = arn.replace('${ProfileName}', profileName);
+  public onFlow(flowName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:appflow:${Region}:${Account}:flow/${FlowName}';
+    arn = arn.replace('${FlowName}', flowName);
     arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
     return this.on(arn);
   }

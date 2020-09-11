@@ -59,7 +59,10 @@ export class Securityhub extends PolicyStatement {
         "hub": {
           "required": false
         }
-      }
+      },
+      "conditions": [
+        "securityhub:ASFFSyntaxPath/${ASFFSyntaxPath}"
+      ]
     },
     "CreateActionTarget": {
       "url": "https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html",
@@ -447,12 +450,6 @@ export class Securityhub extends PolicyStatement {
     }
   };
   protected resourceTypes: ResourceTypes = {
-    "product": {
-      "name": "product",
-      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
-      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}",
-      "conditionKeys": []
-    },
     "hub": {
       "name": "hub",
       "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
@@ -460,6 +457,12 @@ export class Securityhub extends PolicyStatement {
       "conditionKeys": [
         "aws:ResourceTag/${TagKey}"
       ]
+    },
+    "product": {
+      "name": "product",
+      "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources",
+      "arn": "arn:${Partition}:securityhub:${Region}:${Account}:product/${Company}/${ProductId}",
+      "conditionKeys": []
     }
   };
 
@@ -527,6 +530,9 @@ export class Securityhub extends PolicyStatement {
    * Grants permission to update customer-controlled fields for a selected set of Security Hub findings
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifASFFSyntaxPath()
    *
    * https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html
    */
@@ -996,6 +1002,26 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
+   * Adds a resource of type hub to the statement
+   *
+   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   *
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onHub(account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:hub/default';
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
    * Adds a resource of type product to the statement
    *
    * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
@@ -1017,27 +1043,23 @@ export class Securityhub extends PolicyStatement {
   }
 
   /**
-   * Adds a resource of type hub to the statement
+   * Filters access based on the presence of specific fields and values in the request
    *
-   * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-asffsyntaxpath
    *
-   * @param account - Account of the resource; defaults to empty string: all accounts.
-   * @param region - Region of the resource; defaults to empty string: all regions.
-   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   * Applies to actions:
+   * - .toBatchUpdateFindings()
    *
-   * Possible conditions:
-   * - .ifAwsResourceTag()
+   * @param aSFFSyntaxPath The tag key to check
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
    */
-  public onHub(account?: string, region?: string, partition?: string) {
-    var arn = 'arn:${Partition}:securityhub:${Region}:${Account}:hub/default';
-    arn = arn.replace('${Account}', account || '*');
-    arn = arn.replace('${Region}', region || '*');
-    arn = arn.replace('${Partition}', partition || 'aws');
-    return this.on(arn);
+  public ifASFFSyntaxPath(aSFFSyntaxPath: string, value: string | string[], operator?: string) {
+    return this.if(`securityhub:ASFFSyntaxPath/${ aSFFSyntaxPath }`, value, operator || 'StringLike');
   }
 
   /**
-   * The ID of the AWS account into which you want to import findings. In the AWS Security Finding format, this field is called AwsAccountId
+   * Filters access based on the presence of AwsAccountId field in the requests
    *
    * https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#conditions
    *

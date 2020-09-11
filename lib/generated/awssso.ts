@@ -18,6 +18,35 @@ export class Sso extends PolicyStatement {
       "description": "Create an association between a directory user or group and a profile",
       "accessLevel": "Write"
     },
+    "AttachManagedPolicyToPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Attaches an AWS managed policy to a permission set.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
+    "CreateAccountAssignment": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Assigns access to a Principal for a specified AWS account using a specified permission set.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Account": {
+          "required": true
+        },
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
     "CreateApplicationInstance": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Add an application instance to AWS Single Sign-On",
@@ -36,7 +65,12 @@ export class Sso extends PolicyStatement {
     "CreatePermissionSet": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Create a permission set",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
     },
     "CreateProfile": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -48,6 +82,22 @@ export class Sso extends PolicyStatement {
       "description": "Create a federation trust in a target account",
       "accessLevel": "Write"
     },
+    "DeleteAccountAssignment": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Deletes a Principal's access from a specified AWS account using a specified permission set.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Account": {
+          "required": true
+        },
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
     "DeleteApplicationInstance": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Delete the application instance",
@@ -58,6 +108,19 @@ export class Sso extends PolicyStatement {
       "description": "Delete an inactive or expired certificate from the application instance",
       "accessLevel": "Write"
     },
+    "DeleteInlinePolicyFromPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Deletes the inline policy from a specified permission set.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
     "DeleteManagedApplicationInstance": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Delete the managed application instance",
@@ -66,7 +129,15 @@ export class Sso extends PolicyStatement {
     "DeletePermissionSet": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Delete a permission set",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
     },
     "DeletePermissionsPolicy": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -78,6 +149,49 @@ export class Sso extends PolicyStatement {
       "description": "Delete the profile for an application instance",
       "accessLevel": "Write"
     },
+    "DescribeAccountAssignmentCreationStatus": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Describes the status of the assignment creation request.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
+    "DescribeAccountAssignmentDeletionStatus": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Describes the status of an assignment deletion request.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
+    "DescribePermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Describes a permission set",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
+    "DescribePermissionSetProvisioningStatus": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Describes the status for the given Permission Set Provisioning request.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
     "DescribePermissionsPolicies": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all the permissions policies associated with a permission set",
@@ -87,6 +201,19 @@ export class Sso extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Obtains the regions where your organization has enabled AWS Single Sign-on",
       "accessLevel": "Read"
+    },
+    "DetachManagedPolicyFromPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Detaches the attached AWS managed policy from the specified permission set.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
     },
     "DisassociateDirectory": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -107,6 +234,19 @@ export class Sso extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve application template details",
       "accessLevel": "Read"
+    },
+    "GetInlinePolicyForPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Obtains the inline policy assigned to the permission set.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
     },
     "GetManagedApplicationInstance": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -161,6 +301,55 @@ export class Sso extends PolicyStatement {
       "description": "Update the application instance by uploading an application SAML metadata file provided by the service provider",
       "accessLevel": "Write"
     },
+    "ListAccountAssignmentCreationStatus": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the status of the AWS account assignment creation requests for a specified SSO instance.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
+    "ListAccountAssignmentDeletionStatus": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the status of the AWS account assignment deletion requests for a specified SSO instance.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
+    "ListAccountAssignments": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the assignee of the specified AWS account with the specified permission set.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Account": {
+          "required": true
+        },
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
+    "ListAccountsForProvisionedPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists all the AWS accounts where the specified permission set is provisioned.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
     "ListApplicationInstanceCertificates": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all of the certificates for a given application instance",
@@ -192,10 +381,56 @@ export class Sso extends PolicyStatement {
       "description": "Retrieve details about the directory connected to AWS Single Sign-On",
       "accessLevel": "Read"
     },
+    "ListInstances": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the SSO Instances that the caller has access to.",
+      "accessLevel": "Read"
+    },
+    "ListManagedPoliciesInPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the AWS managed policies that are attached to a specified permission set.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
+    "ListPermissionSetProvisioningStatus": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the status of the Permission Set Provisioning requests for a specified SSO instance.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
     "ListPermissionSets": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Retrieve all permission sets",
-      "accessLevel": "Read"
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        }
+      }
+    },
+    "ListPermissionSetsProvisionedToAccount": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists all the permission sets that are provisioned to a specified AWS account.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Account": {
+          "required": true
+        },
+        "Instance": {
+          "required": true
+        }
+      }
     },
     "ListProfileAssociations": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -209,6 +444,48 @@ export class Sso extends PolicyStatement {
       "dependentActions": [
         "sso:GetProfile"
       ]
+    },
+    "ListTagsForResource": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Lists the tags that are attached to a specified resource.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
+    "ProvisionPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "The process by which a specified permission set is provisioned to the specified target.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Account": {
+          "required": true
+        },
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
+    },
+    "PutInlinePolicyToPermissionSet": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Attaches an IAM inline policy to a permission set.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
     },
     "PutMfaDeviceManagementForDirectory": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -224,6 +501,40 @@ export class Sso extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Initialize AWS Single Sign-On",
       "accessLevel": "Write"
+    },
+    "TagResource": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Associates a set of tags with a specified resource.",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "UntagResource": {
+      "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
+      "description": "Disassociates a set of tags from a specified resource.",
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "UpdateApplicationInstanceActiveCertificate": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -273,7 +584,15 @@ export class Sso extends PolicyStatement {
     "UpdatePermissionSet": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
       "description": "Update the permission set.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "Instance": {
+          "required": true
+        },
+        "PermissionSet": {
+          "required": true
+        }
+      }
     },
     "UpdateProfile": {
       "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample",
@@ -291,7 +610,28 @@ export class Sso extends PolicyStatement {
       "accessLevel": "Write"
     }
   };
-  protected resourceTypes: ResourceTypes = {};
+  protected resourceTypes: ResourceTypes = {
+    "PermissionSet": {
+      "name": "PermissionSet",
+      "url": "",
+      "arn": "arn:${Partition}:sso:::permissionSet/${InstanceId}/${PermissionSetId}",
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "Account": {
+      "name": "Account",
+      "url": "",
+      "arn": "arn:${Partition}:sso:::account/${AccountId}",
+      "conditionKeys": []
+    },
+    "Instance": {
+      "name": "Instance",
+      "url": "",
+      "arn": "arn:${Partition}:sso:::instance/${InstanceId}",
+      "conditionKeys": []
+    }
+  };
 
   /**
    * Statement provider for service [sso](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssso.html).
@@ -323,6 +663,30 @@ export class Sso extends PolicyStatement {
    */
   public toAssociateProfile() {
     this.add('sso:AssociateProfile');
+    return this;
+  }
+
+  /**
+   * Attaches an AWS managed policy to a permission set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toAttachManagedPolicyToPermissionSet() {
+    this.add('sso:AttachManagedPolicyToPermissionSet');
+    return this;
+  }
+
+  /**
+   * Assigns access to a Principal for a specified AWS account using a specified permission set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toCreateAccountAssignment() {
+    this.add('sso:CreateAccountAssignment');
     return this;
   }
 
@@ -399,6 +763,18 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Deletes a Principal's access from a specified AWS account using a specified permission set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDeleteAccountAssignment() {
+    this.add('sso:DeleteAccountAssignment');
+    return this;
+  }
+
+  /**
    * Delete the application instance
    *
    * Access Level: Write
@@ -419,6 +795,18 @@ export class Sso extends PolicyStatement {
    */
   public toDeleteApplicationInstanceCertificate() {
     this.add('sso:DeleteApplicationInstanceCertificate');
+    return this;
+  }
+
+  /**
+   * Deletes the inline policy from a specified permission set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDeleteInlinePolicyFromPermissionSet() {
+    this.add('sso:DeleteInlinePolicyFromPermissionSet');
     return this;
   }
 
@@ -471,6 +859,54 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Describes the status of the assignment creation request.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeAccountAssignmentCreationStatus() {
+    this.add('sso:DescribeAccountAssignmentCreationStatus');
+    return this;
+  }
+
+  /**
+   * Describes the status of an assignment deletion request.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribeAccountAssignmentDeletionStatus() {
+    this.add('sso:DescribeAccountAssignmentDeletionStatus');
+    return this;
+  }
+
+  /**
+   * Describes a permission set
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribePermissionSet() {
+    this.add('sso:DescribePermissionSet');
+    return this;
+  }
+
+  /**
+   * Describes the status for the given Permission Set Provisioning request.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDescribePermissionSetProvisioningStatus() {
+    this.add('sso:DescribePermissionSetProvisioningStatus');
+    return this;
+  }
+
+  /**
    * Retrieve all the permissions policies associated with a permission set
    *
    * Access Level: Read
@@ -491,6 +927,18 @@ export class Sso extends PolicyStatement {
    */
   public toDescribeRegisteredRegions() {
     this.add('sso:DescribeRegisteredRegions');
+    return this;
+  }
+
+  /**
+   * Detaches the attached AWS managed policy from the specified permission set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toDetachManagedPolicyFromPermissionSet() {
+    this.add('sso:DetachManagedPolicyFromPermissionSet');
     return this;
   }
 
@@ -539,6 +987,18 @@ export class Sso extends PolicyStatement {
    */
   public toGetApplicationTemplate() {
     this.add('sso:GetApplicationTemplate');
+    return this;
+  }
+
+  /**
+   * Obtains the inline policy assigned to the permission set.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toGetInlinePolicyForPermissionSet() {
+    this.add('sso:GetInlinePolicyForPermissionSet');
     return this;
   }
 
@@ -666,6 +1126,54 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Lists the status of the AWS account assignment creation requests for a specified SSO instance.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListAccountAssignmentCreationStatus() {
+    this.add('sso:ListAccountAssignmentCreationStatus');
+    return this;
+  }
+
+  /**
+   * Lists the status of the AWS account assignment deletion requests for a specified SSO instance.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListAccountAssignmentDeletionStatus() {
+    this.add('sso:ListAccountAssignmentDeletionStatus');
+    return this;
+  }
+
+  /**
+   * Lists the assignee of the specified AWS account with the specified permission set.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListAccountAssignments() {
+    this.add('sso:ListAccountAssignments');
+    return this;
+  }
+
+  /**
+   * Lists all the AWS accounts where the specified permission set is provisioned.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListAccountsForProvisionedPermissionSet() {
+    this.add('sso:ListAccountsForProvisionedPermissionSet');
+    return this;
+  }
+
+  /**
    * Retrieve all of the certificates for a given application instance
    *
    * Access Level: Read
@@ -732,6 +1240,42 @@ export class Sso extends PolicyStatement {
   }
 
   /**
+   * Lists the SSO Instances that the caller has access to.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListInstances() {
+    this.add('sso:ListInstances');
+    return this;
+  }
+
+  /**
+   * Lists the AWS managed policies that are attached to a specified permission set.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListManagedPoliciesInPermissionSet() {
+    this.add('sso:ListManagedPoliciesInPermissionSet');
+    return this;
+  }
+
+  /**
+   * Lists the status of the Permission Set Provisioning requests for a specified SSO instance.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListPermissionSetProvisioningStatus() {
+    this.add('sso:ListPermissionSetProvisioningStatus');
+    return this;
+  }
+
+  /**
    * Retrieve all permission sets
    *
    * Access Level: Read
@@ -740,6 +1284,18 @@ export class Sso extends PolicyStatement {
    */
   public toListPermissionSets() {
     this.add('sso:ListPermissionSets');
+    return this;
+  }
+
+  /**
+   * Lists all the permission sets that are provisioned to a specified AWS account.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListPermissionSetsProvisionedToAccount() {
+    this.add('sso:ListPermissionSetsProvisionedToAccount');
     return this;
   }
 
@@ -767,6 +1323,42 @@ export class Sso extends PolicyStatement {
    */
   public toListProfiles() {
     this.add('sso:ListProfiles');
+    return this;
+  }
+
+  /**
+   * Lists the tags that are attached to a specified resource.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toListTagsForResource() {
+    this.add('sso:ListTagsForResource');
+    return this;
+  }
+
+  /**
+   * The process by which a specified permission set is provisioned to the specified target.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toProvisionPermissionSet() {
+    this.add('sso:ProvisionPermissionSet');
+    return this;
+  }
+
+  /**
+   * Attaches an IAM inline policy to a permission set.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toPutInlinePolicyToPermissionSet() {
+    this.add('sso:PutInlinePolicyToPermissionSet');
     return this;
   }
 
@@ -803,6 +1395,38 @@ export class Sso extends PolicyStatement {
    */
   public toStartSSO() {
     this.add('sso:StartSSO');
+    return this;
+  }
+
+  /**
+   * Associates a set of tags with a specified resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toTagResource() {
+    this.add('sso:TagResource');
+    return this;
+  }
+
+  /**
+   * Disassociates a set of tags from a specified resource.
+   *
+   * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample
+   */
+  public toUntagResource() {
+    this.add('sso:UntagResource');
     return this;
   }
 
@@ -960,5 +1584,49 @@ export class Sso extends PolicyStatement {
   public toUpdateTrust() {
     this.add('sso:UpdateTrust');
     return this;
+  }
+
+  /**
+   * Adds a resource of type PermissionSet to the statement
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param permissionSetId - Identifier for the permissionSetId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   */
+  public onPermissionSet(instanceId: string, permissionSetId: string, partition?: string) {
+    var arn = 'arn:${Partition}:sso:::permissionSet/${InstanceId}/${PermissionSetId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${PermissionSetId}', permissionSetId);
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Account to the statement
+   *
+   * @param accountId - Account of the resource; defaults to empty string: all accounts.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onAccount(accountId?: string, partition?: string) {
+    var arn = 'arn:${Partition}:sso:::account/${AccountId}';
+    arn = arn.replace('${AccountId}', accountId || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type Instance to the statement
+   *
+   * @param instanceId - Identifier for the instanceId.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onInstance(instanceId: string, partition?: string) {
+    var arn = 'arn:${Partition}:sso:::instance/${InstanceId}';
+    arn = arn.replace('${InstanceId}', instanceId);
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
   }
 }
