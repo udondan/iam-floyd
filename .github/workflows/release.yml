@@ -105,6 +105,7 @@ jobs:
 
   publish-npm:
     name: Publish base to bpm
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v2
