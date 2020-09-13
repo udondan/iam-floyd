@@ -112,12 +112,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: packages
-
-      - name: DEBUG
-        run: ls -al
-
-      - name: DEBUG
-        run: tree
+          path: dist
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
@@ -132,6 +127,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: packages
+          path: dist
 
       - name: Publish to PyPI
         uses: udondan/jsii-publish@v0.10.0
@@ -146,6 +142,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: packages
+          path: dist
 
       - name: Publish to NuGet
         uses: udondan/jsii-publish@v0.10.0
@@ -160,6 +157,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: packages
+          path: dist
 
       - name: Publish to Maven GitHub
         uses: udondan/jsii-publish@v0.10.0
@@ -175,6 +173,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: cdk-packages
+          path: dist
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
@@ -189,6 +188,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: cdk-packages
+          path: dist
 
       - name: Publish to PyPI
         uses: udondan/jsii-publish@v0.10.0
@@ -203,6 +203,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: cdk-packages
+          path: dist
 
       - name: Publish to NuGet
         uses: udondan/jsii-publish@v0.10.0
@@ -217,6 +218,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: cdk-packages
+          path: dist
 
       - name: Publish to Maven GitHub
         uses: udondan/jsii-publish@v0.10.0
