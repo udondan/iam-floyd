@@ -31,18 +31,8 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
-      - name: Update apt
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: apt-get update
-
-      - name: Install pip
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: apt install -y python3-pip
-
       - name: Test Python package
-        uses: udondan/cdk-nodejs@v0.2.0
+        uses: jsii/superchain@latest
         with:
           args: make test-python
 
@@ -63,7 +53,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        uses: udondan/cdk-nodejs@v0.2.0
+        uses: jsii/superchain@latest
         with:
           args: make test-python-cdk
 
@@ -91,6 +81,7 @@ jobs:
           git config --local user.name "udondan"
           git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
+          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
       - name: Create release
         uses: actions/create-release@v1
