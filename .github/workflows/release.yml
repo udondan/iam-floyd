@@ -32,7 +32,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        uses: jsii/superchain
+        uses: jsii/superchain:latest
         with:
           args: make test-python
 
@@ -53,7 +53,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        uses: jsii/superchain
+        uses: jsii/superchain:latest
         with:
           args: make test-python-cdk
 
