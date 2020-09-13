@@ -2,12 +2,12 @@
 name: Publish packages
 
 on:
-  push:
-    tags:
-      - "v*"
+  release:
+    types: [published]
+  workflow_dispatch:
 
 jobs:
-  main:
+  iam-floyd:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,15 +20,6 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: v${{ steps.get_version.outputs.VERSION }}
-          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0
         with:
@@ -39,16 +30,6 @@ jobs:
         uses: udondan/jsii-publish@v0.10.0
         with:
           BUILD_PACKAGES: true
-
-      - name: Install pip
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: apt install -y python3-pip
-
-      - name: Test Python package
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: make test-python
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
@@ -71,7 +52,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
 
-  cdk:
+  cdk-iam-floyd:
     runs-on: ubuntu-latest
 
     steps:
@@ -99,16 +80,6 @@ jobs:
         uses: udondan/jsii-publish@v0.10.0
         with:
           BUILD_PACKAGES: true
-
-      - name: Install pip
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: apt install -y python3-pip
-
-      - name: Test Python package
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: make test-python-cdk
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0

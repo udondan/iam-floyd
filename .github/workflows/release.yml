@@ -20,6 +20,53 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Build source
+        uses: udondan/jsii-publish@v0.10.0
+        with:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          BUILD_SOURCE: true
+
+      - name: Build packages
+        uses: udondan/jsii-publish@v0.10.0
+        with:
+          BUILD_PACKAGES: true
+
+      - name: Update apt
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: apt-get update
+
+      - name: Install pip
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: apt install -y python3-pip
+
+      - name: Test Python package
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: make test-python
+
+      - name: Build CDK variant
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: make cdk
+
+      - name: Build source
+        uses: udondan/jsii-publish@v0.10.0
+        with:
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+          BUILD_SOURCE: true
+
+      - name: Build packages
+        uses: udondan/jsii-publish@v0.10.0
+        with:
+          BUILD_PACKAGES: true
+
+      - name: Test Python package
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: make test-python-cdk
+
       - name: Update Readme
         uses: udondan/ver2doc@v1.0.1
         with:
@@ -31,7 +78,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git diff --exit-code || git commit -m "Updates version references" -a
+          git diff --exit-code || git commit -m "Finalize v${{ steps.get_version.outputs.VERSION }}" -a
 
       - name: Push changes
         run: >
@@ -44,3 +91,12 @@ jobs:
           git config --local user.name "udondan"
           git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
+
+      - name: Create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: v${{ steps.get_version.outputs.VERSION }}
+          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
