@@ -75,12 +75,6 @@ jobs:
       - name: Test Python package
         run: make test-python-cdk
 
-      - name: Upload math result for job 1
-        uses: actions/upload-artifact@v2
-        with:
-          name: homework
-          path: math-homework.txt
-
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v2
         with:
