@@ -75,3 +75,12 @@ untag:
 release: tag
 
 re-release: untag tag
+
+
+
+
+test-python:
+	@cd test/python && $(MAKE) test
+
+test-python-cdk:
+	@cd test/python && $(MAKE) test-cdk
