@@ -44,9 +44,6 @@ jobs:
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
           git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
 
-      - name: DEBUG
-        run: tail README.md
-
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0
         with:
@@ -77,6 +74,18 @@ jobs:
 
       - name: Test Python package
         run: make test-python-cdk
+
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v2
+        with:
+          name: homework
+          path: math-homework.txt
+
+      - name: Store packages as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages
+          path: dist/**/*
 #
 #      - name: Create tag
 #        run: |
