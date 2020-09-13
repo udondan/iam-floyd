@@ -58,6 +58,12 @@ jobs:
       - name: Test Python package
         run: make test-python
 
+      - name: Store packages as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages
+          path: dist/**/*
+
       - name: Build CDK variant
         run: make cdk
 
@@ -78,22 +84,32 @@ jobs:
       - name: Store packages as artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: packages
+          name: cdk-packages
           path: dist/**/*
-#
-#      - name: Create tag
-#        run: |
-#          git config --local user.email "deemes79@googlemail.com"
-#          git config --local user.name "udondan"
-#          git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
-#          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
-#          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-#
-#      - name: Create release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          tag_name: ${{ github.ref }}
-#          release_name: v${{ steps.get_version.outputs.VERSION }}
-#          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+  #      - name: Create tag
+  #        run: |
+  #          git config --local user.email "deemes79@googlemail.com"
+  #          git config --local user.name "udondan"
+  #          git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
+  #          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
+  #          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+  #
+  #      - name: Create release
+  #        uses: actions/create-release@v1
+  #        env:
+  #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #        with:
+  #          tag_name: ${{ github.ref }}
+  #          release_name: v${{ steps.get_version.outputs.VERSION }}
+  #          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+
+  publish-npm:
+    name: Publish base to bpm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: packages
+
+      - name: Get the version
+        run: ls -al
