@@ -50,6 +50,15 @@ jobs:
       image: jsii/superchain
     steps:
       - name: DEBUG
+        run: echo ${{ steps.get_version.outputs.VERSION }}
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: DEBUG
         run: cat README.md
 
       - name: Get the version
