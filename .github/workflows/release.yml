@@ -22,18 +22,6 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: DEBUG
-        run: pip --version
-
-      - name: DEBUG
-        run: python --version
-
-      - name: DEBUG
-        run: pip3 --version
-
-      - name: DEBUG
-        run: python3 --version
-
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0
         with:
