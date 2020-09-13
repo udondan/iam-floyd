@@ -42,14 +42,6 @@ jobs:
           [[ "${{ github.ref }}" == refs/tags/* ]] ||
           git push "https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
 
-      - name: Create tag
-        run: |
-          git config --local user.email "deemes79@googlemail.com"
-          git config --local user.name "udondan"
-          git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
-          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
-          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-
   test:
     name: Test package
     needs: prepare
@@ -57,12 +49,6 @@ jobs:
     container:
       image: jsii/superchain
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-
       - name: DEBUG
         run: cat README.md
 
@@ -109,6 +95,14 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(cat VERSION)
+
+      - name: Create tag
+        run: |
+          git config --local user.email "deemes79@googlemail.com"
+          git config --local user.name "udondan"
+          git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
+          git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
+          touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
       - name: Create release
         uses: actions/create-release@v1
