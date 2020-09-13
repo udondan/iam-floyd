@@ -81,6 +81,16 @@ function fixIndex(project: Project) {
       namedExports: ['PolicyStatementWithCDKPrincipal'],
       moduleSpecifier: './7-principals-CDK',
     });
+
+    sourceFile.getExportDeclarations().forEach((exportDeclaration) => {
+      exportDeclaration.getNamedExports().forEach((exportItem) => {
+        if (exportItem.getName() == 'Effect') {
+          console.log('Removing Effect export...');
+          exportItem.remove();
+        }
+      });
+    });
+
     formatCode(sourceFile);
   } catch (e) {
     throw e;
