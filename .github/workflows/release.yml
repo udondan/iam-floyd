@@ -22,6 +22,19 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: DEBUG
+        run: echo ${{ steps.get_version.outputs.VERSION }}
+
+      - name: DEBUG
+        run: cat VERSION
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+
+      - name: DEBUG
+        run: echo ${{ steps.get_version.outputs.VERSION }}
+
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0
         with:
