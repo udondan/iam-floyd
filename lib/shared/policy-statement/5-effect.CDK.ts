@@ -4,14 +4,10 @@ import iam = require('@aws-cdk/aws-iam');
 
 import { PolicyStatementWithResources } from './4-resources';
 
-export { Effect } from '@aws-cdk/aws-iam';
-
 /**
  * Adds "effect" functionality to the Policy Statement
  */
 export class PolicyStatementWithEffect extends PolicyStatementWithResources {
-  public effect = iam.Effect.ALLOW;
-
   /**
    * Injects effect into the statement.
    *
@@ -24,7 +20,9 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
     }
     const statement = super.toJSON();
 
+    // @ts-ignore only available after swapping 1-base
     if (this.effect != iam.Effect.ALLOW) {
+      // @ts-ignore only available after swapping 1-base
       statement.Effect = this.effect;
     }
 
@@ -35,6 +33,7 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
    * Allow the actions in this statement
    */
   public allow() {
+    // @ts-ignore only available after swapping 1-base
     this.effect = iam.Effect.ALLOW;
     return this;
   }
@@ -43,6 +42,7 @@ export class PolicyStatementWithEffect extends PolicyStatementWithResources {
    * Deny the actions in this statement
    */
   public deny() {
+    // @ts-ignore only available after swapping 1-base
     this.effect = iam.Effect.DENY;
     return this;
   }
