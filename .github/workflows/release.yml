@@ -10,9 +10,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  test:
+    name: Test package
     runs-on: ubuntu-latest
-
+    container:
+      image: jsii/superchain
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -32,9 +34,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        uses: jsii/superchain:latest
-        with:
-          args: make test-python
+        run: make test-python-cdk
 
       - name: Build CDK variant
         uses: udondan/cdk-nodejs@v0.2.0
@@ -53,10 +53,12 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        uses: jsii/superchain:latest
-        with:
-          args: make test-python-cdk
+        run: make test-python-cdk
 
+  release:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
       - name: Update Readme
         uses: udondan/ver2doc@v1.0.1
         with:
