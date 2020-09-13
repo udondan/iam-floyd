@@ -1,14 +1,14 @@
 install:
-	@pip uninstall -y iam-floyd
-	@pip install ../../dist/python/iam-floyd-0.0.0.tar.gz
+	@pip3 uninstall -y iam-floyd
+	@pip3 install --no-cache-dir ../../dist/python/iam-floyd-0.0.0.tar.gz
 
 install-cdk:
-	@pip uninstall -y cdk-iam-floyd
-	@pip install ../../dist/python/cdk-iam-floyd-0.0.0.tar.gz
+	@pip3 uninstall -y cdk-iam-floyd
+	@pip3 install --no-cache-dir ../../dist/python/cdk-iam-floyd-0.0.0.tar.gz
 
 
 test: install
-	@python test.py
+	@python3 test.py
 
 test-cdk: install-cdk
-	@python test-cdk.py
+	@python3 test-cdk.py
