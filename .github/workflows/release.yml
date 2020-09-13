@@ -37,9 +37,7 @@ jobs:
         run: make test-python
 
       - name: Build CDK variant
-        uses: udondan/cdk-nodejs@v0.2.0
-        with:
-          args: make cdk
+        run: make cdk
 
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0
