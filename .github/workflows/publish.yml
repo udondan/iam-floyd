@@ -43,7 +43,9 @@ jobs:
       - name: Test Python package
         uses: udondan/cdk-nodejs@v0.2.0
         with:
-          args: make test-python
+          args: >-
+            apt install -y python3-pip &&
+            make test-python
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
@@ -98,7 +100,9 @@ jobs:
       - name: Test Python package
         uses: udondan/cdk-nodejs@v0.2.0
         with:
-          args: make test-python-cdk
+          args: >-
+            apt install -y python3-pip &&
+            make test-python-cdk
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
