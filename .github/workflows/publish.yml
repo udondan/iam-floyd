@@ -40,12 +40,15 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
+      - name: Install pip
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: apt install -y python3-pip
+
       - name: Test Python package
         uses: udondan/cdk-nodejs@v0.2.0
         with:
-          args: >-
-            apt install -y python3-pip &&
-            make test-python
+          args: make test-python
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
@@ -97,12 +100,15 @@ jobs:
         with:
           BUILD_PACKAGES: true
 
+      - name: Install pip
+        uses: udondan/cdk-nodejs@v0.2.0
+        with:
+          args: apt install -y python3-pip
+
       - name: Test Python package
         uses: udondan/cdk-nodejs@v0.2.0
         with:
-          args: >-
-            apt install -y python3-pip &&
-            make test-python-cdk
+          args: make test-python-cdk
 
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
