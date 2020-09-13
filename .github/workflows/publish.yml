@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+        run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Checkout code
         uses: actions/checkout@v1
@@ -58,7 +58,7 @@ jobs:
     steps:
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+        run: echo ::set-output name=VERSION::$(cat VERSION)
 
       - name: Checkout code
         uses: actions/checkout@v1
