@@ -22,16 +22,31 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: DEBUG
+        run: ls -al
+
       - name: Build source
         uses: udondan/jsii-publish@v0.10.0
         with:
           VERSION: ${{ steps.get_version.outputs.VERSION }}
           BUILD_SOURCE: true
 
+      - name: DEBUG
+        run: ls -al
+
       - name: Build packages
         uses: udondan/jsii-publish@v0.10.0
         with:
           BUILD_PACKAGES: true
+
+      - name: DEBUG
+        run: ls -al
+
+      - name: DEBUG
+        run: ls -al dist
+
+      - name: DEBUG
+        run: ls -al dist/python
 
       - name: Test Python package
         run: make test-python-cdk
