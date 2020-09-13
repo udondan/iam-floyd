@@ -91,137 +91,140 @@ jobs:
         run: |
           git config --local user.email "deemes79@googlemail.com"
           git config --local user.name "udondan"
-          git tag -a "v$(cat VERSION)" -m "Creates tag v$(cat VERSION)"
+          git tag -a "v${{ steps.get_version.outputs.VERSION }}" -m "Creates tag v${{ steps.get_version.outputs.VERSION }}"
           git push "https://udondan:${{ secrets.OVERRIDE_TOKEN }}@github.com/${{ github.repository }}.git" --tags
           touch CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
 
-      - name: Create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: v${{ steps.get_version.outputs.VERSION }}
-          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
-
-  publish-base-npm:
-    name: Publish base to npm
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to npm
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-base-pypi:
-    name: Publish base to PyPI
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to PyPI
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-
-  publish-base-nuget:
-    name: Publish base to NuGet
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to NuGet
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-
-  publish-base-maven-github:
-    name: Publish base to Maven GitHub
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: packages
-          path: dist
-
-      - name: Publish to Maven GitHub
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-
-  publish-cdk-npm:
-    name: Publish CDK to npm
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to npm
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-cdk-pypi:
-    name: Publish CDK to PyPI
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to PyPI
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-
-  publish-cdk-nuget:
-    name: Publish CDK to NuGet
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to NuGet
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
-
-  publish-cdk-maven-github:
-    name: Publish CDK to Maven GitHub
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v2
-        with:
-          name: cdk-packages
-          path: dist
-
-      - name: Publish to Maven GitHub
-        uses: udondan/jsii-publish@v0.10.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
+      - name: DEBUG
+        run: git tag
+#
+#      - name: Create release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          tag_name: ${{ github.ref }}
+#          release_name: v${{ steps.get_version.outputs.VERSION }}
+#          body_path: CHANGELOG/v${{ steps.get_version.outputs.VERSION }}.md
+#
+#  publish-base-npm:
+#    name: Publish base to npm
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to npm
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#  publish-base-pypi:
+#    name: Publish base to PyPI
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to PyPI
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+#
+#  publish-base-nuget:
+#    name: Publish base to NuGet
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to NuGet
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+#
+#  publish-base-maven-github:
+#    name: Publish base to Maven GitHub
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: packages
+#          path: dist
+#
+#      - name: Publish to Maven GitHub
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_REPOSITORY: ${{ github.repository }}
+#
+#  publish-cdk-npm:
+#    name: Publish CDK to npm
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to npm
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#  publish-cdk-pypi:
+#    name: Publish CDK to PyPI
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to PyPI
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+#
+#  publish-cdk-nuget:
+#    name: Publish CDK to NuGet
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to NuGet
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+#
+#  publish-cdk-maven-github:
+#    name: Publish CDK to Maven GitHub
+#    needs: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v2
+#        with:
+#          name: cdk-packages
+#          path: dist
+#
+#      - name: Publish to Maven GitHub
+#        uses: udondan/jsii-publish@v0.10.0
+#        with:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_REPOSITORY: ${{ github.repository }}
