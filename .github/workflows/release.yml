@@ -34,7 +34,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        run: make test-python
+        run: sudo -H make test-python
 
       - name: Build CDK variant
         uses: udondan/cdk-nodejs@v0.2.0
@@ -53,7 +53,7 @@ jobs:
           BUILD_PACKAGES: true
 
       - name: Test Python package
-        run: make test-python-cdk
+        run: sudo -H make test-python-cdk
 
   release:
     name: Create release
