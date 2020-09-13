@@ -113,6 +113,12 @@ jobs:
         with:
           name: packages
 
+      - name: DEBUG
+        run: ls -al
+
+      - name: DEBUG
+        run: tree
+
       - name: Publish to npm
         uses: udondan/jsii-publish@v0.10.0
         with:
