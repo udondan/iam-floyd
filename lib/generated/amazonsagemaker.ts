@@ -1153,12 +1153,7 @@ export class Sagemaker extends PolicyStatement {
     "GetSearchSuggestions": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_GetSearchSuggestions.html",
       "description": "Get search suggestions when provided with keyword.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "training-job": {
-          "required": true
-        }
-      }
+      "accessLevel": "Read"
     },
     "InvokeEndpoint": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_InvokeEndpoint.html",
@@ -1417,13 +1412,8 @@ export class Sagemaker extends PolicyStatement {
     },
     "Search": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_Search.html",
-      "description": "Search for a training job.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "training-job": {
-          "required": true
-        }
-      }
+      "description": "Search for SageMaker objects.",
+      "accessLevel": "Read"
     },
     "StartHumanLoop": {
       "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/API_StartHumanLoop.html",
@@ -3566,7 +3556,7 @@ export class Sagemaker extends PolicyStatement {
   }
 
   /**
-   * Search for a training job.
+   * Search for SageMaker objects.
    *
    * Access Level: Read
    *

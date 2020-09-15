@@ -8,9 +8,26 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 export class Kafka extends PolicyStatement {
   public servicePrefix = 'kafka';
   protected actionList: Actions = {
+    "BatchAssociateScramSecret": {
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchAssociateScramSecret",
+      "description": "Grants permission to associate one or more Scram Secrets with an Amazon MSK cluster.",
+      "accessLevel": "Write",
+      "dependentActions": [
+        "kms:CreateGrant",
+        "kms:RetireGrant"
+      ]
+    },
+    "BatchDisassociateScramSecret": {
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchDisassociateScramSecret",
+      "description": "Grants permission to disassociate one or more Scram Secrets from an Amazon MSK cluster.",
+      "accessLevel": "Write",
+      "dependentActions": [
+        "kms:RetireGrant"
+      ]
+    },
     "CreateCluster": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#CreateCluster",
-      "description": "Grants permission to create a cluster.",
+      "description": "Grants permission to create a cluster",
       "accessLevel": "Write",
       "dependentActions": [
         "ec2:DescribeSecurityGroups",
@@ -75,7 +92,7 @@ export class Kafka extends PolicyStatement {
     "ListClusterOperations": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations",
       "description": "Returns a list of all the operations that have been performed on the specified MSK cluster.",
-      "accessLevel": "Read"
+      "accessLevel": "List"
     },
     "ListClusters": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters.html#ListClusters",
@@ -92,10 +109,15 @@ export class Kafka extends PolicyStatement {
       "description": "Grants permission to return a list of nodes in a cluster.",
       "accessLevel": "List"
     },
+    "ListScramSecrets": {
+      "url": "https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#ListScramSecrets",
+      "description": "Grants permission to return a list of the Scram Secrets associated with an Amazon MSK cluster.",
+      "accessLevel": "List"
+    },
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource",
       "description": "Grants permission to list tags of a MSK resource.",
-      "accessLevel": "Read",
+      "accessLevel": "List",
       "resourceTypes": {
         "cluster": {
           "required": false
@@ -181,7 +203,38 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
-   * Grants permission to create a cluster.
+   * Grants permission to associate one or more Scram Secrets with an Amazon MSK cluster.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:CreateGrant
+   * - kms:RetireGrant
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchAssociateScramSecret
+   */
+  public toBatchAssociateScramSecret() {
+    this.add('kafka:BatchAssociateScramSecret');
+    return this;
+  }
+
+  /**
+   * Grants permission to disassociate one or more Scram Secrets from an Amazon MSK cluster.
+   *
+   * Access Level: Write
+   *
+   * Dependent actions:
+   * - kms:RetireGrant
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#BatchDisassociateScramSecret
+   */
+  public toBatchDisassociateScramSecret() {
+    this.add('kafka:BatchDisassociateScramSecret');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a cluster
    *
    * Access Level: Write
    *
@@ -317,7 +370,7 @@ export class Kafka extends PolicyStatement {
   /**
    * Returns a list of all the operations that have been performed on the specified MSK cluster.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-operations.html#ListClusterOperations
    */
@@ -363,9 +416,21 @@ export class Kafka extends PolicyStatement {
   }
 
   /**
+   * Grants permission to return a list of the Scram Secrets associated with an Amazon MSK cluster.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/msk/1.0/apireference/clusters-clusterarn-scram-secrets.html#ListScramSecrets
+   */
+  public toListScramSecrets() {
+    this.add('kafka:ListScramSecrets');
+    return this;
+  }
+
+  /**
    * Grants permission to list tags of a MSK resource.
    *
-   * Access Level: Read
+   * Access Level: List
    *
    * https://docs.aws.amazon.com/msk/1.0/apireference/tags-resourcearn.html#ListTagsForResource
    */
