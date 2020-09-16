@@ -344,8 +344,8 @@ export class Route53 extends PolicyStatement {
       "description": "Grants permission to list the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone.",
       "accessLevel": "List",
       "resourceTypes": {
-        "queryloggingconfig": {
-          "required": true
+        "hostedzone": {
+          "required": false
         }
       }
     },

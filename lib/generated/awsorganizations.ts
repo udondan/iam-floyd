@@ -53,12 +53,20 @@ export class Organizations extends PolicyStatement {
     "CreateAccount": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateAccount.html",
       "description": "Grants permission to create an AWS account that is automatically a member of the organization with the credentials that made the request.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateGovCloudAccount": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateGovCloudAccount.html",
       "description": "Grants permission to create an AWS GovCloud (US) account.",
-      "accessLevel": "Write"
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateOrganization": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganization.html",
@@ -76,14 +84,20 @@ export class Organizations extends PolicyStatement {
         "root": {
           "required": false
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreatePolicy": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html",
       "description": "Grants permission to create a policy that you can attach to a root, an organizational unit (OU), or an individual AWS account.",
       "accessLevel": "Write",
       "conditions": [
-        "organizations:PolicyType"
+        "organizations:PolicyType",
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ]
     },
     "DeclineHandshake": {
@@ -128,6 +142,11 @@ export class Organizations extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_DeregisterDelegatedAdministrator.html",
       "description": "Grants permission to deregister the specified member AWS account as a delegated administrator for the AWS service that is specified by ServicePrincipal.",
       "accessLevel": "Write",
+      "resourceTypes": {
+        "account": {
+          "required": true
+        }
+      },
       "conditions": [
         "organizations:ServicePrincipal"
       ]
@@ -275,7 +294,11 @@ export class Organizations extends PolicyStatement {
         "account": {
           "required": false
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "LeaveOrganization": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_LeaveOrganization.html",
@@ -334,7 +357,12 @@ export class Organizations extends PolicyStatement {
     "ListDelegatedServicesForAccount": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListDelegatedServicesForAccount.html",
       "description": "Grants permission to list the AWS services for which the specified account is a delegated administrator in this organization.",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "account": {
+          "required": true
+        }
+      }
     },
     "ListHandshakesForAccount": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListHandshakesForAccount.html",
@@ -407,7 +435,21 @@ export class Organizations extends PolicyStatement {
     "ListTagsForResource": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTagsForResource.html",
       "description": "Grants permission to list all tags for the specified resource.",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "account": {
+          "required": false
+        },
+        "organizationalunit": {
+          "required": false
+        },
+        "policy": {
+          "required": false
+        },
+        "root": {
+          "required": false
+        }
+      }
     },
     "ListTargetsForPolicy": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListTargetsForPolicy.html",
@@ -442,6 +484,11 @@ export class Organizations extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html",
       "description": "Grants permission to register the specified member account to administer the Organizations features of the AWS service that is specified by ServicePrincipal.",
       "accessLevel": "Write",
+      "resourceTypes": {
+        "account": {
+          "required": true
+        }
+      },
       "conditions": [
         "organizations:ServicePrincipal"
       ]
@@ -459,12 +506,47 @@ export class Organizations extends PolicyStatement {
     "TagResource": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_TagResource.html",
       "description": "Grants permission to add one or more tags to the specified resource.",
-      "accessLevel": "Tagging"
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "account": {
+          "required": false
+        },
+        "organizationalunit": {
+          "required": false
+        },
+        "policy": {
+          "required": false
+        },
+        "root": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:TagKeys",
+        "aws:RequestTag/${TagKey}"
+      ]
     },
     "UntagResource": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UntagResource.html",
       "description": "Grants permission to remove one or more tags from the specified resource.",
-      "accessLevel": "Tagging"
+      "accessLevel": "Tagging",
+      "resourceTypes": {
+        "account": {
+          "required": false
+        },
+        "organizationalunit": {
+          "required": false
+        },
+        "policy": {
+          "required": false
+        },
+        "root": {
+          "required": false
+        }
+      },
+      "conditions": [
+        "aws:TagKeys"
+      ]
     },
     "UpdateOrganizationalUnit": {
       "url": "https://docs.aws.amazon.com/organizations/latest/APIReference/API_UpdateOrganizationalUnit.html",
@@ -495,7 +577,9 @@ export class Organizations extends PolicyStatement {
       "name": "account",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
       "arn": "arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "handshake": {
       "name": "handshake",
@@ -513,13 +597,17 @@ export class Organizations extends PolicyStatement {
       "name": "organizationalunit",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
       "arn": "arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "policy": {
       "name": "policy",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
       "arn": "arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "awspolicy": {
       "name": "awspolicy",
@@ -531,7 +619,9 @@ export class Organizations extends PolicyStatement {
       "name": "root",
       "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html",
       "arn": "arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     }
   };
 
@@ -588,6 +678,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateAccount.html
    */
   public toCreateAccount() {
@@ -599,6 +693,10 @@ export class Organizations extends PolicyStatement {
    * Grants permission to create an AWS GovCloud (US) account.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateGovCloudAccount.html
    */
@@ -624,6 +722,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreateOrganizationalUnit.html
    */
   public toCreateOrganizationalUnit() {
@@ -638,6 +740,8 @@ export class Organizations extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifPolicyType()
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_CreatePolicy.html
    */
@@ -893,6 +997,10 @@ export class Organizations extends PolicyStatement {
    * Grants permission to send an invitation to another AWS account, asking it to join your organization as a member account.
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_InviteAccountToOrganization.html
    */
@@ -1161,6 +1269,10 @@ export class Organizations extends PolicyStatement {
    *
    * Access Level: Tagging
    *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
+   * - .ifAwsRequestTag()
+   *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_TagResource.html
    */
   public toTagResource() {
@@ -1172,6 +1284,9 @@ export class Organizations extends PolicyStatement {
    * Grants permission to remove one or more tags from the specified resource.
    *
    * Access Level: Tagging
+   *
+   * Possible conditions:
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/organizations/latest/APIReference/API_UntagResource.html
    */
@@ -1216,6 +1331,9 @@ export class Organizations extends PolicyStatement {
    * @param organizationId - Identifier for the organizationId.
    * @param accountId - Account of the resource; defaults to empty string: all accounts.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onAccount(masterAccountId: string, organizationId: string, accountId?: string, partition?: string) {
     var arn = 'arn:${Partition}:organizations::${MasterAccountId}:account/o-${OrganizationId}/${AccountId}';
@@ -1273,6 +1391,9 @@ export class Organizations extends PolicyStatement {
    * @param organizationId - Identifier for the organizationId.
    * @param organizationalUnitId - Identifier for the organizationalUnitId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onOrganizationalunit(masterAccountId: string, organizationId: string, organizationalUnitId: string, partition?: string) {
     var arn = 'arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}';
@@ -1293,6 +1414,9 @@ export class Organizations extends PolicyStatement {
    * @param policyType - Identifier for the policyType.
    * @param policyId - Identifier for the policyId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onPolicy(masterAccountId: string, organizationId: string, policyType: string, policyId: string, partition?: string) {
     var arn = 'arn:${Partition}:organizations::${MasterAccountId}:policy/o-${OrganizationId}/${PolicyType}/p-${PolicyId}';
@@ -1330,6 +1454,9 @@ export class Organizations extends PolicyStatement {
    * @param organizationId - Identifier for the organizationId.
    * @param rootId - Identifier for the rootId.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRoot(masterAccountId: string, organizationId: string, rootId: string, partition?: string) {
     var arn = 'arn:${Partition}:organizations::${MasterAccountId}:root/o-${OrganizationId}/r-${RootId}';
@@ -1343,7 +1470,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Enables you to filter the request to only the specified policy type names.
    *
-   * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *
    * Applies to actions:
    * - .toAttachPolicy()
@@ -1369,7 +1496,7 @@ export class Organizations extends PolicyStatement {
   /**
    * Enables you to filter the request to only the specified service principal names.
    *
-   * https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys
+   * https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys
    *
    * Applies to actions:
    * - .toDeregisterDelegatedAdministrator()
