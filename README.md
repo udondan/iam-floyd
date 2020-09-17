@@ -710,4 +710,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [NotPrincipal]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notprincipal.html
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
-   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.64.0
+   [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.65.0
