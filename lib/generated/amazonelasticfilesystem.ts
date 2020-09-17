@@ -68,7 +68,8 @@ export class Elasticfilesystem extends PolicyStatement {
       "accessLevel": "Tagging",
       "conditions": [
         "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
+        "aws:TagKeys",
+        "elasticfilesystem:Encrypted"
       ]
     },
     "CreateMountTarget": {
@@ -414,6 +415,7 @@ export class Elasticfilesystem extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   * - .ifEncrypted()
    *
    * https://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html
    */
@@ -774,5 +776,17 @@ export class Elasticfilesystem extends PolicyStatement {
    */
   public ifAccessPointArn(value: string | string[], operator?: string) {
     return this.if(`elasticfilesystem:AccessPointArn`, value, operator || 'StringLike');
+  }
+
+  /**
+   * Control encryption behavior for new EFS file systems
+   *
+   * Applies to actions:
+   * - .toCreateFileSystem()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifEncrypted(value?: boolean) {
+    return this.if(`elasticfilesystem:Encrypted`, (typeof value !== 'undefined' ? value : true), 'Bool');
   }
 }
