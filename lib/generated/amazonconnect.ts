@@ -8,6 +8,36 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
 export class Connect extends PolicyStatement {
   public servicePrefix = 'connect';
   protected actionList: Actions = {
+    "AssociateRoutingProfileQueues": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateRoutingProfileQueues.html",
+      "description": "Grants permissions to associate queues with a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "queue": {
+          "required": true
+        },
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "CreateContactFlow": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html",
+      "description": "Grants permissions to create a contact flow in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact-flow": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "CreateInstance": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to create a new Amazon Connect instance. The associated required actions grant permissions to configure instance settings.",
@@ -28,6 +58,23 @@ export class Connect extends PolicyStatement {
         "s3:CreateBucket",
         "s3:GetBucketLocation",
         "s3:ListAllMyBuckets"
+      ]
+    },
+    "CreateRoutingProfile": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRoutingProfile.html",
+      "description": "Grants permission to create a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "queue": {
+          "required": true
+        },
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
       ]
     },
     "CreateUser": {
@@ -66,6 +113,19 @@ export class Connect extends PolicyStatement {
         "aws:ResourceTag/${TagKey}"
       ]
     },
+    "DescribeContactFlow": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html",
+      "description": "Grants permissions to describe a contact flow in an Amazon Connect instance.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "contact-flow": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
     "DescribeInstance": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/amazon-connect-instances.html",
       "description": "Grants permissions to view details of an Amazon Connect instance. This is required to create an instance.",
@@ -84,6 +144,19 @@ export class Connect extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "DescribeRoutingProfile": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html",
+      "description": "Grants permissions to describe a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "DescribeUser": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html",
@@ -127,6 +200,19 @@ export class Connect extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "DisassociateRoutingProfileQueues": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateRoutingProfileQueues.html",
+      "description": "Grants permissions to disassociate queues from a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "GetContactAttributes": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_GetContactAttributes.html",
@@ -218,6 +304,16 @@ export class Connect extends PolicyStatement {
         }
       }
     },
+    "ListPrompts": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPrompts.html",
+      "description": "Grants permissions to list prompt resources in an Amazon Connect instance.",
+      "accessLevel": "List",
+      "resourceTypes": {
+        "instance": {
+          "required": true
+        }
+      }
+    },
     "ListQueues": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListQueues.html",
       "description": "Grants permissions to list queue resources in an Amazon Connect instance.",
@@ -227,6 +323,19 @@ export class Connect extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "ListRoutingProfileQueues": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileQueues.html",
+      "description": "Grants permissions to list queue resources in a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "ListRoutingProfiles": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfiles.html",
@@ -253,6 +362,12 @@ export class Connect extends PolicyStatement {
       "description": "Grants permissions to list tags for an Amazon Connect resource.",
       "accessLevel": "Read",
       "resourceTypes": {
+        "contact-flow": {
+          "required": false
+        },
+        "routing-profile": {
+          "required": false
+        },
         "user": {
           "required": false
         }
@@ -379,6 +494,12 @@ export class Connect extends PolicyStatement {
       "description": "Grants permissions to tag an Amazon Connect resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
+        "contact-flow": {
+          "required": false
+        },
+        "routing-profile": {
+          "required": false
+        },
         "user": {
           "required": false
         }
@@ -394,6 +515,12 @@ export class Connect extends PolicyStatement {
       "description": "Grants permissions to untag an Amazon Connect resource.",
       "accessLevel": "Tagging",
       "resourceTypes": {
+        "contact-flow": {
+          "required": false
+        },
+        "routing-profile": {
+          "required": false
+        },
         "user": {
           "required": false
         }
@@ -412,6 +539,87 @@ export class Connect extends PolicyStatement {
           "required": true
         }
       }
+    },
+    "UpdateContactFlowContent": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html",
+      "description": "Grants permissions to update contact flow content in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact-flow": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "UpdateContactFlowName": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html",
+      "description": "Grants permissions to update the name and description of a contact flow in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "contact-flow": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "UpdateRoutingProfileConcurrency": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileConcurrency.html",
+      "description": "Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "UpdateRoutingProfileDefaultOutboundQueue": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileDefaultOutboundQueue.html",
+      "description": "Grants permissions to update the outbound queue in a routing profile in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "queue": {
+          "required": true
+        },
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "UpdateRoutingProfileName": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileName.html",
+      "description": "Grants permissions to update a routing profile name and description in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
+    "UpdateRoutingProfileQueues": {
+      "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileQueues.html",
+      "description": "Grants permissions to update the queues in routing profile in an Amazon Connect instance.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "routing-profile": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "UpdateUserHierarchy": {
       "url": "https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserHierarchy.html",
@@ -513,7 +721,9 @@ export class Connect extends PolicyStatement {
       "name": "routing-profile",
       "url": "https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "security-profile": {
       "name": "security-profile",
@@ -537,7 +747,9 @@ export class Connect extends PolicyStatement {
       "name": "contact-flow",
       "url": "https://docs.aws.amazon.com/connect/latest/adminguide/connect-contact-flows.html",
       "arn": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}",
-      "conditionKeys": []
+      "conditionKeys": [
+        "aws:ResourceTag/${TagKey}"
+      ]
     },
     "hours-of-operation": {
       "name": "hours-of-operation",
@@ -560,6 +772,37 @@ export class Connect extends PolicyStatement {
    */
   constructor (sid?: string) {
     super(sid);
+  }
+
+  /**
+   * Grants permissions to associate queues with a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateRoutingProfileQueues.html
+   */
+  public toAssociateRoutingProfileQueues() {
+    this.add('connect:AssociateRoutingProfileQueues');
+    return this;
+  }
+
+  /**
+   * Grants permissions to create a contact flow in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateContactFlow.html
+   */
+  public toCreateContactFlow() {
+    this.add('connect:CreateContactFlow');
+    return this;
   }
 
   /**
@@ -588,6 +831,22 @@ export class Connect extends PolicyStatement {
    */
   public toCreateInstance() {
     this.add('connect:CreateInstance');
+    return this;
+  }
+
+  /**
+   * Grants permission to create a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateRoutingProfile.html
+   */
+  public toCreateRoutingProfile() {
+    this.add('connect:CreateRoutingProfile');
     return this;
   }
 
@@ -623,6 +882,21 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to describe a contact flow in an Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContactFlow.html
+   */
+  public toDescribeContactFlow() {
+    this.add('connect:DescribeContactFlow');
+    return this;
+  }
+
+  /**
    * Grants permissions to view details of an Amazon Connect instance. This is required to create an instance.
    *
    * Access Level: Read
@@ -640,6 +914,21 @@ export class Connect extends PolicyStatement {
    */
   public toDescribeInstance() {
     this.add('connect:DescribeInstance');
+    return this;
+  }
+
+  /**
+   * Grants permissions to describe a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html
+   */
+  public toDescribeRoutingProfile() {
+    this.add('connect:DescribeRoutingProfile');
     return this;
   }
 
@@ -691,6 +980,21 @@ export class Connect extends PolicyStatement {
    */
   public toDestroyInstance() {
     this.add('connect:DestroyInstance');
+    return this;
+  }
+
+  /**
+   * Grants permissions to disassociate queues from a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateRoutingProfileQueues.html
+   */
+  public toDisassociateRoutingProfileQueues() {
+    this.add('connect:DisassociateRoutingProfileQueues');
     return this;
   }
 
@@ -808,6 +1112,18 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to list prompt resources in an Amazon Connect instance.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPrompts.html
+   */
+  public toListPrompts() {
+    this.add('connect:ListPrompts');
+    return this;
+  }
+
+  /**
    * Grants permissions to list queue resources in an Amazon Connect instance.
    *
    * Access Level: List
@@ -816,6 +1132,21 @@ export class Connect extends PolicyStatement {
    */
   public toListQueues() {
     this.add('connect:ListQueues');
+    return this;
+  }
+
+  /**
+   * Grants permissions to list queue resources in a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Read
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_ListRoutingProfileQueues.html
+   */
+  public toListRoutingProfileQueues() {
+    this.add('connect:ListRoutingProfileQueues');
     return this;
   }
 
@@ -1037,6 +1368,96 @@ export class Connect extends PolicyStatement {
   }
 
   /**
+   * Grants permissions to update contact flow content in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowContent.html
+   */
+  public toUpdateContactFlowContent() {
+    this.add('connect:UpdateContactFlowContent');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update the name and description of a contact flow in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateContactFlowName.html
+   */
+  public toUpdateContactFlowName() {
+    this.add('connect:UpdateContactFlowName');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update the concurrency in a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileConcurrency.html
+   */
+  public toUpdateRoutingProfileConcurrency() {
+    this.add('connect:UpdateRoutingProfileConcurrency');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update the outbound queue in a routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileDefaultOutboundQueue.html
+   */
+  public toUpdateRoutingProfileDefaultOutboundQueue() {
+    this.add('connect:UpdateRoutingProfileDefaultOutboundQueue');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update a routing profile name and description in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileName.html
+   */
+  public toUpdateRoutingProfileName() {
+    this.add('connect:UpdateRoutingProfileName');
+    return this;
+  }
+
+  /**
+   * Grants permissions to update the queues in routing profile in an Amazon Connect instance.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateRoutingProfileQueues.html
+   */
+  public toUpdateRoutingProfileQueues() {
+    this.add('connect:UpdateRoutingProfileQueues');
+    return this;
+  }
+
+  /**
    * Grants permissions to update a hierarchy group for a user in an Amazon Connect instance.
    *
    * Access Level: Write
@@ -1185,6 +1606,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onRoutingProfile(instanceId: string, routingProfileId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/routing-profile/${RoutingProfileId}';
@@ -1269,6 +1693,9 @@ export class Connect extends PolicyStatement {
    * @param account - Account of the resource; defaults to empty string: all accounts.
    * @param region - Region of the resource; defaults to empty string: all regions.
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
    */
   public onContactFlow(instanceId: string, contactFlowId: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}/contact-flow/${ContactFlowId}';
