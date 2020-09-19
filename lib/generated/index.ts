@@ -80,6 +80,7 @@ export { Rds } from "./amazonrds";
 export { RdsData } from "./amazonrdsdataapi";
 export { RdsDb } from "./amazonrdsiamauthentication";
 export { Redshift } from "./amazonredshift";
+export { RedshiftData } from "./amazonredshiftdataapi";
 export { Rekognition } from "./amazonrekognition";
 export { Tag } from "./amazonresourcegrouptaggingapi";
 export { Route53 } from "./amazonroute53";
