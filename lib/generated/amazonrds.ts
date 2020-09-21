@@ -91,8 +91,11 @@ export class Rds extends PolicyStatement {
       "description": "Grants permission to apply a pending maintenance action to a resource",
       "accessLevel": "Write",
       "resourceTypes": {
+        "cluster": {
+          "required": false
+        },
         "db": {
-          "required": true
+          "required": false
         }
       }
     },
@@ -129,7 +132,11 @@ export class Rds extends PolicyStatement {
         "cluster-pg": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CopyDBClusterSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html",
@@ -139,7 +146,11 @@ export class Rds extends PolicyStatement {
         "cluster-snapshot": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CopyDBParameterGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html",
@@ -149,7 +160,11 @@ export class Rds extends PolicyStatement {
         "pg": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CopyDBSnapshot": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html",
@@ -159,7 +174,11 @@ export class Rds extends PolicyStatement {
         "snapshot": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CopyOptionGroup": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html",
@@ -169,7 +188,11 @@ export class Rds extends PolicyStatement {
         "og": {
           "required": true
         }
-      }
+      },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
     },
     "CreateDBCluster": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html",
@@ -604,7 +627,15 @@ export class Rds extends PolicyStatement {
     "DescribeDBClusterEndpoints": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterEndpoints.html",
       "description": "Grants permission to return information about endpoints for an Amazon Aurora DB cluster",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "cluster-endpoint": {
+          "required": true
+        },
+        "cluster": {
+          "required": false
+        }
+      }
     },
     "DescribeDBClusterParameterGroups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html",
@@ -639,7 +670,12 @@ export class Rds extends PolicyStatement {
     "DescribeDBClusterSnapshots": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html",
       "description": "Grants permission to return information about DB cluster snapshots",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "cluster-snapshot": {
+          "required": true
+        }
+      }
     },
     "DescribeDBClusters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html",
@@ -654,22 +690,27 @@ export class Rds extends PolicyStatement {
     "DescribeDBEngineVersions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html",
       "description": "Grants permission to return a list of the available DB engines",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "pg": {
-          "required": true
-        }
-      }
+      "accessLevel": "List"
     },
     "DescribeDBInstanceAutomatedBackups": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstanceAutomatedBackups.html",
       "description": "Grants permission to return a list of automated backups for both current and deleted instances",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "db": {
+          "required": false
+        }
+      }
     },
     "DescribeDBInstances": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html",
       "description": "Grants permission to return information about provisioned RDS instances",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "db": {
+          "required": true
+        }
+      }
     },
     "DescribeDBLogFiles": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html",
@@ -765,11 +806,11 @@ export class Rds extends PolicyStatement {
       "description": "Grants permission to return information about DB snapshots",
       "accessLevel": "List",
       "resourceTypes": {
-        "db": {
-          "required": true
-        },
         "snapshot": {
           "required": true
+        },
+        "db": {
+          "required": false
         }
       }
     },
@@ -821,7 +862,12 @@ export class Rds extends PolicyStatement {
     "DescribeGlobalClusters": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeGlobalClusters.html",
       "description": "Grants permission to return information about Aurora global database clusters",
-      "accessLevel": "List"
+      "accessLevel": "List",
+      "resourceTypes": {
+        "global-cluster": {
+          "required": true
+        }
+      }
     },
     "DescribeOptionGroupOptions": {
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html",
@@ -853,8 +899,11 @@ export class Rds extends PolicyStatement {
       "description": "Grants permission to return a list of resources (for example, DB instances) that have at least one pending maintenance action",
       "accessLevel": "List",
       "resourceTypes": {
+        "cluster": {
+          "required": false
+        },
         "db": {
-          "required": true
+          "required": false
         }
       }
     },
@@ -1569,7 +1618,7 @@ export class Rds extends PolicyStatement {
     "global-cluster": {
       "name": "global-cluster",
       "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html",
-      "arn": "arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}",
+      "arn": "arn:${Partition}:rds::${Account}:global-cluster:${GlobalCluster}",
       "conditionKeys": []
     },
     "og": {
@@ -1771,6 +1820,10 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterParameterGroup.html
    */
   public toCopyDBClusterParameterGroup() {
@@ -1782,6 +1835,10 @@ export class Rds extends PolicyStatement {
    * Grants permission to create a snapshot of a DB cluster
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html
    */
@@ -1795,6 +1852,10 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBParameterGroup.html
    */
   public toCopyDBParameterGroup() {
@@ -1807,6 +1868,10 @@ export class Rds extends PolicyStatement {
    *
    * Access Level: Write
    *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBSnapshot.html
    */
   public toCopyDBSnapshot() {
@@ -1818,6 +1883,10 @@ export class Rds extends PolicyStatement {
    * Grants permission to copy the specified option group
    *
    * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
    *
    * https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html
    */
@@ -3459,7 +3528,7 @@ export class Rds extends PolicyStatement {
    * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
    */
   public onGlobalCluster(globalCluster: string, account?: string, partition?: string) {
-    var arn = 'arn:${Partition}:rds:${Account}:global-cluster:${GlobalCluster}';
+    var arn = 'arn:${Partition}:rds::${Account}:global-cluster:${GlobalCluster}';
     arn = arn.replace('${GlobalCluster}', globalCluster);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
