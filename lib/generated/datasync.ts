@@ -54,6 +54,15 @@ export class Datasync extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "CreateLocationObjectStorage": {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationObjectStorage.html",
+      "description": "Creates an endpoint for a self-managed object storage bucket.",
+      "accessLevel": "Write",
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
     "CreateLocationS3": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html",
       "description": "Creates an endpoint for an Amazon S3 bucket.",
@@ -144,6 +153,16 @@ export class Datasync extends PolicyStatement {
     "DescribeLocationNfs": {
       "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationNfs.html",
       "description": "Returns metadata, such as the path information, about a NFS sync location.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "location": {
+          "required": true
+        }
+      }
+    },
+    "DescribeLocationObjectStorage": {
+      "url": "https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationObjectStorage.html",
+      "description": "Returns metadata about a self-managed object storage server location.",
       "accessLevel": "Read",
       "resourceTypes": {
         "location": {
@@ -416,6 +435,22 @@ export class Datasync extends PolicyStatement {
   }
 
   /**
+   * Creates an endpoint for a self-managed object storage bucket.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationObjectStorage.html
+   */
+  public toCreateLocationObjectStorage() {
+    this.add('datasync:CreateLocationObjectStorage');
+    return this;
+  }
+
+  /**
    * Creates an endpoint for an Amazon S3 bucket.
    *
    * Access Level: Write
@@ -544,6 +579,18 @@ export class Datasync extends PolicyStatement {
    */
   public toDescribeLocationNfs() {
     this.add('datasync:DescribeLocationNfs');
+    return this;
+  }
+
+  /**
+   * Returns metadata about a self-managed object storage server location.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeLocationObjectStorage.html
+   */
+  public toDescribeLocationObjectStorage() {
+    this.add('datasync:DescribeLocationObjectStorage');
     return this;
   }
 

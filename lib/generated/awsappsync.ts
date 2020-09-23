@@ -27,6 +27,9 @@ export class Appsync extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html",
       "description": "Creates a GraphqlApi object, which is the top level AppSync resource.",
       "accessLevel": "Tagging",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -236,6 +239,9 @@ export class Appsync extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html",
       "description": "Updates a GraphqlApi object.",
       "accessLevel": "Write",
+      "dependentActions": [
+        "iam:CreateServiceLinkedRole"
+      ],
       "resourceTypes": {
         "graphqlapi": {
           "required": true
@@ -344,6 +350,9 @@ export class Appsync extends PolicyStatement {
    * Possible conditions:
    * - .ifAwsRequestTag()
    * - .ifAwsTagKeys()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html
    */
@@ -736,6 +745,9 @@ export class Appsync extends PolicyStatement {
    *
    * Possible conditions:
    * - .ifAwsResourceTag()
+   *
+   * Dependent actions:
+   * - iam:CreateServiceLinkedRole
    *
    * https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html
    */

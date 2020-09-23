@@ -29,7 +29,7 @@ export class RedshiftData extends PolicyStatement {
       "accessLevel": "Write"
     },
     "GetStatementResult": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_FetchResult.html",
+      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html",
       "description": "Grants permission to fetch the result of a query",
       "accessLevel": "Read"
     },
@@ -118,7 +118,7 @@ export class RedshiftData extends PolicyStatement {
    *
    * Access Level: Read
    *
-   * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_FetchResult.html
+   * https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html
    */
   public toGetStatementResult() {
     this.add('redshift-data:GetStatementResult');
