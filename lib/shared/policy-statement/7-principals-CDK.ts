@@ -15,6 +15,7 @@ export class PolicyStatementWithCDKPrincipal extends PolicyStatementWithPrincipa
    * @param principals Principals to add to the statement
    */
   public forCdkPrincipal(...principals: iam.IPrincipal[]) {
+    this.skipAutoResource = true;
     this.cdkPrincipals.push(...principals);
     return this;
   }
