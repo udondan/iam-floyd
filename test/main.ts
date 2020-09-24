@@ -13,6 +13,13 @@ function printPolicyWitStatements(statements: any[]) {
   );
 }
 
+printPolicyWitStatements([
+  new statement.Sts() //
+    .allow()
+    .toAssumeRole()
+    .forService('rds.amazonaws.com'),
+]);
+
 printPolicyWitStatements(
   new statement.Collection().allowEc2InstanceDeleteByOwner()
 );

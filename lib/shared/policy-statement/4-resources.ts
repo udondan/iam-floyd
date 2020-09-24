@@ -17,6 +17,7 @@ export interface ResourceType {
 export class PolicyStatementWithResources extends PolicyStatementWithActions {
   private useNotResources = false;
   protected resources: string[] = [];
+  protected skipAutoResource = false;
   private cdkResourcesApplied = false;
 
   /**
@@ -36,9 +37,11 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
 
     this.ensureResource();
 
-    statement[mode] = this.resources.filter((elem, pos) => {
-      return self.resources.indexOf(elem) == pos;
-    });
+    if (this.resources.length) {
+      statement[mode] = this.resources.filter((elem, pos) => {
+        return self.resources.indexOf(elem) == pos;
+      });
+    }
 
     return statement;
   }
@@ -88,15 +91,26 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     return this;
   }
 
+  /**
+   * Add all resources (`*`) to the statement
+   *
+   * This is the default behavior, unless the statement has principals.
+   */
+  public onAllResources() {
+    this.resources.push('*');
+    return this;
+  }
+
   private ensureResource() {
     if (this.hasResources()) return;
     // @ts-ignore only available after swapping 1-base
     if (this.hasResource) return;
     // @ts-ignore only available after swapping 1-base
     if (this.hasPrincipal) return; //assume policies may not have resources
+    if (this.skipAutoResource) return;
 
     // a statement requires resources. if none was added, we assume the user wants all resources
-    this.resources.push('*');
+    this.onAllResources();
   }
 
   /**

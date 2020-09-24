@@ -187,7 +187,7 @@ new statement.Ec2()
   .if('aws:RequestTag/Owner', '*John*', 'StringEquals');
 ```
 
-By default the statement applies to all resources. To limit to specific resources, add them via `on*()`.
+Statements without principals, by default, apply to all resources. To limit to specific resources, add them via `on*()`.
 
 For every resource type an `on*()` method exists:
 

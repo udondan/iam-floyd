@@ -72,6 +72,7 @@ export class PolicyStatementWithPrincipal extends PolicyStatementWithEffect {
    * @param principal The principal string
    */
   protected addPrincipal(prefix: string, principal: string) {
+    this.skipAutoResource = true;
     if (!(prefix in this.principals)) {
       this.principals[prefix] = [];
     }
