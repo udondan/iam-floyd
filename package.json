@@ -30,7 +30,8 @@
   "keywords": [
     "aws",
     "iam",
-    "policy"
+    "policy",
+    "iam-floyd"
   ],
   "stability": "experimental",
   "main": "lib/index.js",
