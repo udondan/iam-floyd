@@ -91,6 +91,16 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     return this;
   }
 
+  /**
+   * Add all resources (`*`) to the statement
+   *
+   * This is the default behavior, unless the statement has principals.
+   */
+  public onAllResources() {
+    this.resources.push('*');
+    return this;
+  }
+
   private ensureResource() {
     if (this.hasResources()) return;
     // @ts-ignore only available after swapping 1-base
@@ -100,7 +110,7 @@ export class PolicyStatementWithResources extends PolicyStatementWithActions {
     if (this.skipAutoResource) return;
 
     // a statement requires resources. if none was added, we assume the user wants all resources
-    this.resources.push('*');
+    this.onAllResources();
   }
 
   /**
