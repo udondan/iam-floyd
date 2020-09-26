@@ -108,6 +108,11 @@ export class Config extends PolicyStatement {
       "description": "Deletes one or more remediation exceptions for specific resource keys for a specific AWS Config Rule.",
       "accessLevel": "Write"
     },
+    "DeleteResourceConfig": {
+      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html",
+      "description": "Records the configuration state for a custom resource that has been deleted.",
+      "accessLevel": "Write"
+    },
     "DeleteRetentionConfiguration": {
       "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRetentionConfiguration.html",
       "description": "Deletes the retention configuration",
@@ -486,6 +491,11 @@ export class Config extends PolicyStatement {
       "description": "Adds or updates remediation exceptions for specific resources for a specific AWS Config rule.",
       "accessLevel": "Write"
     },
+    "PutResourceConfig": {
+      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutResourceConfig.html",
+      "description": "Records the configuration state for the resource provided in the request.",
+      "accessLevel": "Write"
+    },
     "PutRetentionConfiguration": {
       "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutRetentionConfiguration.html",
       "description": "Creates and updates the retention configuration with details about retention period (number of days) that AWS Config stores your historical information",
@@ -804,6 +814,18 @@ export class Config extends PolicyStatement {
    */
   public toDeleteRemediationExceptions() {
     this.add('config:DeleteRemediationExceptions');
+    return this;
+  }
+
+  /**
+   * Records the configuration state for a custom resource that has been deleted.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html
+   */
+  public toDeleteResourceConfig() {
+    this.add('config:DeleteResourceConfig');
     return this;
   }
 
@@ -1464,6 +1486,18 @@ export class Config extends PolicyStatement {
    */
   public toPutRemediationExceptions() {
     this.add('config:PutRemediationExceptions');
+    return this;
+  }
+
+  /**
+   * Records the configuration state for the resource provided in the request.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/config/latest/APIReference/API_PutResourceConfig.html
+   */
+  public toPutResourceConfig() {
+    this.add('config:PutResourceConfig');
     return this;
   }
 

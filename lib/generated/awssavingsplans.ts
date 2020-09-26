@@ -17,6 +17,19 @@ export class Savingsplans extends PolicyStatement {
         "aws:TagKeys"
       ]
     },
+    "DeleteQueuedSavingsPlan": {
+      "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DeleteQueuedSavingsPlan.html",
+      "description": "Grants permission to delete the queued savings plan associated with customers account",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "savingsplan": {
+          "required": true
+        }
+      },
+      "conditions": [
+        "aws:ResourceTag/${TagKey}"
+      ]
+    },
     "DescribeSavingsPlanRates": {
       "url": "https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlanRates.html",
       "description": "Grants permission to describe the rates associated with customers savings plan",
@@ -124,6 +137,21 @@ export class Savingsplans extends PolicyStatement {
    */
   public toCreateSavingsPlan() {
     this.add('savingsplans:CreateSavingsPlan');
+    return this;
+  }
+
+  /**
+   * Grants permission to delete the queued savings plan associated with customers account
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsResourceTag()
+   *
+   * https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DeleteQueuedSavingsPlan.html
+   */
+  public toDeleteQueuedSavingsPlan() {
+    this.add('savingsplans:DeleteQueuedSavingsPlan');
     return this;
   }
 

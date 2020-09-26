@@ -88,6 +88,9 @@ export class Iot extends PolicyStatement {
         },
         "dimension": {
           "required": false
+        },
+        "thinggroup": {
+          "required": false
         }
       }
     },
@@ -162,6 +165,11 @@ export class Iot extends PolicyStatement {
         }
       }
     },
+    "CreateAuditSuppression": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuditSuppression.html",
+      "description": "Creates a Device Defender audit suppression.",
+      "accessLevel": "Write"
+    },
     "CreateAuthorizer": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuthorizer.html",
       "description": "Creates an authorizer.",
@@ -200,6 +208,15 @@ export class Iot extends PolicyStatement {
           "required": true
         }
       },
+      "conditions": [
+        "aws:RequestTag/${TagKey}",
+        "aws:TagKeys"
+      ]
+    },
+    "CreateDomainConfiguration": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDomainConfiguration.html",
+      "description": "Creates a domain configuration.",
+      "accessLevel": "Write",
       "conditions": [
         "aws:RequestTag/${TagKey}",
         "aws:TagKeys"
@@ -432,6 +449,11 @@ export class Iot extends PolicyStatement {
       "description": "Deletes the audit configuration associated with the account.",
       "accessLevel": "Write"
     },
+    "DeleteAuditSuppression": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuditSuppression.html",
+      "description": "Deletes a Device Defender audit suppression.",
+      "accessLevel": "Write"
+    },
     "DeleteAuthorizer": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuthorizer.html",
       "description": "Deletes the specified authorizer.",
@@ -478,6 +500,16 @@ export class Iot extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "dimension": {
+          "required": true
+        }
+      }
+    },
+    "DeleteDomainConfiguration": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDomainConfiguration.html",
+      "description": "Deletes a domain configuration.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "domainconfiguration": {
           "required": true
         }
       }
@@ -693,9 +725,19 @@ export class Iot extends PolicyStatement {
       "description": "Gets information about audit configurations for the account.",
       "accessLevel": "Read"
     },
+    "DescribeAuditFinding": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html",
+      "description": "Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and when the audit that returned the finding was started.",
+      "accessLevel": "Read"
+    },
     "DescribeAuditMitigationActionsTask": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditMitigationActionsTask.html",
       "description": "Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings.",
+      "accessLevel": "Read"
+    },
+    "DescribeAuditSuppression": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditSuppression.html",
+      "description": "Gets information about a Device Defender audit suppression.",
       "accessLevel": "Read"
     },
     "DescribeAuditTask": {
@@ -754,6 +796,16 @@ export class Iot extends PolicyStatement {
       "accessLevel": "Read",
       "resourceTypes": {
         "dimension": {
+          "required": true
+        }
+      }
+    },
+    "DescribeDomainConfiguration": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDomainConfiguration.html",
+      "description": "Gets information about the domain configuration.",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "domainconfiguration": {
           "required": true
         }
       }
@@ -949,6 +1001,9 @@ export class Iot extends PolicyStatement {
         },
         "dimension": {
           "required": false
+        },
+        "thinggroup": {
+          "required": false
         }
       }
     },
@@ -1140,6 +1195,11 @@ export class Iot extends PolicyStatement {
       "description": "Gets a list of audit mitigation action tasks that match the specified filters.",
       "accessLevel": "List"
     },
+    "ListAuditSuppressions": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditSuppressions.html",
+      "description": "Lists your Device Defender audit suppressions.",
+      "accessLevel": "List"
+    },
     "ListAuditTasks": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditTasks.html",
       "description": "Lists the Device Defender audits that have been performed during a given time period.",
@@ -1173,6 +1233,11 @@ export class Iot extends PolicyStatement {
     "ListDimensions": {
       "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListDimensions.html",
       "description": "Lists the dimensions that are defined for your AWS account.",
+      "accessLevel": "List"
+    },
+    "ListDomainConfigurations": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_ListDomainConfigurations.html",
+      "description": "Lists the domain configuration created by your AWS account.",
       "accessLevel": "List"
     },
     "ListIndices": {
@@ -1766,6 +1831,11 @@ export class Iot extends PolicyStatement {
       "description": "Configures or reconfigures the Device Defender audit settings for this account.",
       "accessLevel": "Write"
     },
+    "UpdateAuditSuppression": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAuditSuppression.html",
+      "description": "Updates a Device Defender audit suppression.",
+      "accessLevel": "Write"
+    },
     "UpdateAuthorizer": {
       "url": "",
       "description": "Updates an authorizer",
@@ -1812,6 +1882,16 @@ export class Iot extends PolicyStatement {
       "accessLevel": "Write",
       "resourceTypes": {
         "dimension": {
+          "required": true
+        }
+      }
+    },
+    "UpdateDomainConfiguration": {
+      "url": "https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDomainConfiguration.html",
+      "description": "Updates a domain configuration.",
+      "accessLevel": "Write",
+      "resourceTypes": {
+        "domainconfiguration": {
           "required": true
         }
       }
@@ -2138,6 +2218,12 @@ export class Iot extends PolicyStatement {
       "url": "https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html",
       "arn": "arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}",
       "conditionKeys": []
+    },
+    "domainconfiguration": {
+      "name": "domainconfiguration",
+      "url": "https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html",
+      "arn": "arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}",
+      "conditionKeys": []
     }
   };
 
@@ -2346,6 +2432,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Creates a Device Defender audit suppression.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuditSuppression.html
+   */
+  public toCreateAuditSuppression() {
+    this.add('iot:CreateAuditSuppression');
+    return this;
+  }
+
+  /**
    * Creates an authorizer.
    *
    * Access Level: Write
@@ -2398,6 +2496,22 @@ export class Iot extends PolicyStatement {
    */
   public toCreateDimension() {
     this.add('iot:CreateDimension');
+    return this;
+  }
+
+  /**
+   * Creates a domain configuration.
+   *
+   * Access Level: Write
+   *
+   * Possible conditions:
+   * - .ifAwsRequestTag()
+   * - .ifAwsTagKeys()
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_CreateDomainConfiguration.html
+   */
+  public toCreateDomainConfiguration() {
+    this.add('iot:CreateDomainConfiguration');
     return this;
   }
 
@@ -2670,6 +2784,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Deletes a Device Defender audit suppression.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuditSuppression.html
+   */
+  public toDeleteAuditSuppression() {
+    this.add('iot:DeleteAuditSuppression');
+    return this;
+  }
+
+  /**
    * Deletes the specified authorizer.
    *
    * Access Level: Write
@@ -2726,6 +2852,18 @@ export class Iot extends PolicyStatement {
    */
   public toDeleteDimension() {
     this.add('iot:DeleteDimension');
+    return this;
+  }
+
+  /**
+   * Deletes a domain configuration.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteDomainConfiguration.html
+   */
+  public toDeleteDomainConfiguration() {
+    this.add('iot:DeleteDomainConfiguration');
     return this;
   }
 
@@ -2994,6 +3132,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and when the audit that returned the finding was started.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html
+   */
+  public toDescribeAuditFinding() {
+    this.add('iot:DescribeAuditFinding');
+    return this;
+  }
+
+  /**
    * Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings.
    *
    * Access Level: Read
@@ -3002,6 +3152,18 @@ export class Iot extends PolicyStatement {
    */
   public toDescribeAuditMitigationActionsTask() {
     this.add('iot:DescribeAuditMitigationActionsTask');
+    return this;
+  }
+
+  /**
+   * Gets information about a Device Defender audit suppression.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditSuppression.html
+   */
+  public toDescribeAuditSuppression() {
+    this.add('iot:DescribeAuditSuppression');
     return this;
   }
 
@@ -3086,6 +3248,18 @@ export class Iot extends PolicyStatement {
    */
   public toDescribeDimension() {
     this.add('iot:DescribeDimension');
+    return this;
+  }
+
+  /**
+   * Gets information about the domain configuration.
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDomainConfiguration.html
+   */
+  public toDescribeDomainConfiguration() {
+    this.add('iot:DescribeDomainConfiguration');
     return this;
   }
 
@@ -3606,6 +3780,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Lists your Device Defender audit suppressions.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListAuditSuppressions.html
+   */
+  public toListAuditSuppressions() {
+    this.add('iot:ListAuditSuppressions');
+    return this;
+  }
+
+  /**
    * Lists the Device Defender audits that have been performed during a given time period.
    *
    * Access Level: List
@@ -3686,6 +3872,18 @@ export class Iot extends PolicyStatement {
    */
   public toListDimensions() {
     this.add('iot:ListDimensions');
+    return this;
+  }
+
+  /**
+   * Lists the domain configuration created by your AWS account.
+   *
+   * Access Level: List
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_ListDomainConfigurations.html
+   */
+  public toListDomainConfigurations() {
+    this.add('iot:ListDomainConfigurations');
     return this;
   }
 
@@ -4479,6 +4677,18 @@ export class Iot extends PolicyStatement {
   }
 
   /**
+   * Updates a Device Defender audit suppression.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAuditSuppression.html
+   */
+  public toUpdateAuditSuppression() {
+    this.add('iot:UpdateAuditSuppression');
+    return this;
+  }
+
+  /**
    * Updates an authorizer
    *
    * Access Level: Write
@@ -4531,6 +4741,18 @@ export class Iot extends PolicyStatement {
    */
   public toUpdateDimension() {
     this.add('iot:UpdateDimension');
+    return this;
+  }
+
+  /**
+   * Updates a domain configuration.
+   *
+   * Access Level: Write
+   *
+   * https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateDomainConfiguration.html
+   */
+  public toUpdateDomainConfiguration() {
+    this.add('iot:UpdateDomainConfiguration');
     return this;
   }
 
@@ -5203,6 +5425,25 @@ export class Iot extends PolicyStatement {
   public onProvisioningtemplate(provisioningTemplate: string, account?: string, region?: string, partition?: string) {
     var arn = 'arn:${Partition}:iot:${Region}:${Account}:provisioningtemplate/${ProvisioningTemplate}';
     arn = arn.replace('${ProvisioningTemplate}', provisioningTemplate);
+    arn = arn.replace('${Account}', account || '*');
+    arn = arn.replace('${Region}', region || '*');
+    arn = arn.replace('${Partition}', partition || 'aws');
+    return this.on(arn);
+  }
+
+  /**
+   * Adds a resource of type domainconfiguration to the statement
+   *
+   * https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html
+   *
+   * @param domainConfigurationName - Identifier for the domainConfigurationName.
+   * @param account - Account of the resource; defaults to empty string: all accounts.
+   * @param region - Region of the resource; defaults to empty string: all regions.
+   * @param partition - Partition of the AWS account [aws, aws-cn, aws-us-gov]; defaults to `aws`.
+   */
+  public onDomainconfiguration(domainConfigurationName: string, account?: string, region?: string, partition?: string) {
+    var arn = 'arn:${Partition}:iot:${Region}:${Account}:domainconfiguration/${DomainConfigurationName}';
+    arn = arn.replace('${DomainConfigurationName}', domainConfigurationName);
     arn = arn.replace('${Account}', account || '*');
     arn = arn.replace('${Region}', region || '*');
     arn = arn.replace('${Partition}', partition || 'aws');
