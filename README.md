@@ -2,9 +2,11 @@
 
 [![Source](https://img.shields.io/github/stars/udondan/iam-floyd?logo=github&label=GitHub%20Stars)][source]
 [![iam-floyd](https://img.shields.io/github/v/release/udondan/iam-floyd)][source]
+[![libraries.io](https://img.shields.io/badge/packages-libraries.io-yellow)][libraries.io]
+[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
 [![GitHub](https://img.shields.io/github/license/udondan/iam-floyd)][license]
 [![Maintainability](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/maintainability)](https://codeclimate.com/github/udondan/iam-floyd/maintainability)
-[![CDKio](https://img.shields.io/badge/awscdk.io-cdk--iam--floyd-orange)][cdkio]
+
 <!-- put back - when we actually have tests
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cdb84b5646c6805b1a23/test_coverage)](https://codeclimate.com/github/udondan/iam-floyd/test_coverage)
 -->
@@ -34,6 +36,8 @@ There are two different package variants available:
 - **cdk-iam-floyd**: Integrates into [AWS CDK] and extends [`iam.PolicyStatement`](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-iam.PolicyStatement.html)<br>[![npm](https://img.shields.io/npm/dt/cdk-iam-floyd?label=npm&color=orange)](https://www.npmjs.com/package/cdk-iam-floyd)
 [![PyPI](https://img.shields.io/pypi/dm/cdk-iam-floyd?label=pypi&color=orange)](https://pypi.org/project/cdk-iam-floyd/)
 [![NuGet](https://img.shields.io/nuget/dt/CDK.IAM.Floyd?label=nuget&color=orange)](https://www.nuget.org/packages/CDK.IAM.Floyd/)
+
+Find them all on [libraries.io].
 
 ---
 
@@ -711,3 +715,4 @@ This project is not affiliated, funded, or in any way associated with AWS.
    [access levels]: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_understand-policy-summary-access-level-summaries.html#access_policies_access-level
    [AWS CDK]: https://aws.amazon.com/cdk/
    [cdkio]: https://awscdk.io/packages/cdk-iam-floyd@0.71.0
+   [libraries.io]: https://libraries.io/search?q=iam-floyd
