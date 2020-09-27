@@ -40,6 +40,7 @@ jobs:
           test -e lib/index.ts || exit 1
           git diff --quiet || (
             perl -pi -e 's/^(\d+\.)(\d+)(\.\d+)$/($1).($2+1).".0"/e' VERSION &&
+            perl -pi -e "s/(iam-floyd\@)[0-9.]+/\${1}$(cat VERSION)/g" "README.md" &&
             make stats &&
             make changelog &&
             git add CHANGELOG/* &&
