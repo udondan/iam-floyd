@@ -508,6 +508,16 @@ export class Ssm extends PolicyStatement {
       "description": "Grants permission to view details of a specified Automation execution",
       "accessLevel": "Read"
     },
+    "GetCalendarState": {
+      "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCalendarState.html",
+      "description": "Grants permission to view the calendar state for a change calendar or a list of change calendars",
+      "accessLevel": "Read",
+      "resourceTypes": {
+        "document": {
+          "required": true
+        }
+      }
+    },
     "GetCommandInvocation": {
       "url": "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCommandInvocation.html",
       "description": "Grants permission to view details about the command execution of a specified invocation or plugin",
@@ -2013,6 +2023,18 @@ export class Ssm extends PolicyStatement {
    */
   public toGetAutomationExecution() {
     this.add('ssm:GetAutomationExecution');
+    return this;
+  }
+
+  /**
+   * Grants permission to view the calendar state for a change calendar or a list of change calendars
+   *
+   * Access Level: Read
+   *
+   * https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetCalendarState.html
+   */
+  public toGetCalendarState() {
+    this.add('ssm:GetCalendarState');
     return this;
   }
 

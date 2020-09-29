@@ -103,7 +103,12 @@ export class Batch extends PolicyStatement {
       "conditions": [
         "batch:User",
         "batch:Privileged",
-        "batch:Image"
+        "batch:Image",
+        "batch:LogDriver",
+        "batch:AWSLogsGroup",
+        "batch:AWSLogsRegion",
+        "batch:AWSLogsStreamPrefix",
+        "batch:AWSLogsCreateGroup"
       ]
     },
     "SubmitJob": {
@@ -316,6 +321,11 @@ export class Batch extends PolicyStatement {
    * - .ifUser()
    * - .ifPrivileged()
    * - .ifImage()
+   * - .ifLogDriver()
+   * - .ifAWSLogsGroup()
+   * - .ifAWSLogsRegion()
+   * - .ifAWSLogsStreamPrefix()
+   * - .ifAWSLogsCreateGroup()
    *
    * https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html
    */
@@ -426,6 +436,65 @@ export class Batch extends PolicyStatement {
   }
 
   /**
+   * When this parameter is true, the awslogs-group will be created for the logs.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value `true` or `false`. **Default:** `true`
+   */
+  public ifAWSLogsCreateGroup(value?: boolean) {
+    return this.if(`batch:AWSLogsCreateGroup`, (typeof value !== 'undefined' ? value : true), 'Bool');
+  }
+
+  /**
+   * The awslogs group where the logs are located.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAWSLogsGroup(value: string | string[], operator?: string) {
+    return this.if(`batch:AWSLogsGroup`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The region where the logs are sent to.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAWSLogsRegion(value: string | string[], operator?: string) {
+    return this.if(`batch:AWSLogsRegion`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The awslogs log stream prefix.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifAWSLogsStreamPrefix(value: string | string[], operator?: string) {
+    return this.if(`batch:AWSLogsStreamPrefix`, value, operator || 'StringLike');
+  }
+
+  /**
    * The image used to start a container.
    *
    * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
@@ -438,6 +507,21 @@ export class Batch extends PolicyStatement {
    */
   public ifImage(value: string | string[], operator?: string) {
     return this.if(`batch:Image`, value, operator || 'StringLike');
+  }
+
+  /**
+   * The log driver used for the container.
+   *
+   * https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys
+   *
+   * Applies to actions:
+   * - .toRegisterJobDefinition()
+   *
+   * @param value The value(s) to check
+   * @param operator Works with [string operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_String). **Default:** `StringLike`
+   */
+  public ifLogDriver(value: string | string[], operator?: string) {
+    return this.if(`batch:LogDriver`, value, operator || 'StringLike');
   }
 
   /**
