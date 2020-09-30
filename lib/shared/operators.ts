@@ -16,7 +16,7 @@ export enum OperatorModifier {
   /**
    * Tests whether at least one member of the set of request values matches at least one member of the set of condition key values. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy. For no matching key or a null dataset, the condition returns false.
    */
-  FOR_ANY_VALUES = 'ForAnyValues:',
+  FOR_ANY_VALUE = 'ForAnyValue:',
 }
 
 /**
@@ -303,8 +303,8 @@ function applyModifiers(
   if (modifiers.includes(OperatorModifier.FOR_ALL_VALUES)) {
     operator = `${OperatorModifier.FOR_ALL_VALUES}${operator}`;
   }
-  if (modifiers.includes(OperatorModifier.FOR_ANY_VALUES)) {
-    operator = `${OperatorModifier.FOR_ANY_VALUES}${operator}`;
+  if (modifiers.includes(OperatorModifier.FOR_ANY_VALUE)) {
+    operator = `${OperatorModifier.FOR_ANY_VALUE}${operator}`;
   }
   return operator;
 }

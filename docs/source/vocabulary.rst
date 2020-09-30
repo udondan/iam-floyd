@@ -370,6 +370,114 @@ In case of `missing conditions <faq.html#are-all-actions-conditions-resource-typ
           .to_start_instances() \
           .if("aws:RequestTag/Owner", "${aws:username}")
 
+Operators
+^^^^^^^^^
+
+`Condition operators <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html>`_ can just be passed as strings. Or you can use the helpers ``statement.Operator`` and ``statement.OperatorModifier``:
+
+.. tabs::
+
+   .. code-tab:: ts
+
+      new statement.Dynamodb()
+        .allow()
+        .toPutItem()
+        .onTable('Thread')
+        .ifAttributes(
+          ['ID', 'Message', 'Tags'],
+          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ALL_VALUES)
+        );
+
+   .. code-tab:: js
+
+      new statement.Dynamodb()
+        .allow()
+        .toPutItem()
+        .onTable('Thread')
+        .ifAttributes(
+          ['ID', 'Message', 'Tags'],
+          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ALL_VALUES)
+        );
+
+   .. code-tab:: py
+
+      statement.Dynamodb() \
+          .allow() \
+          .to_get_item() \
+          .if_attributes(
+              ["ID", "Message", "Tags"],
+              statement.Operator.string_equals(
+                  statement.OperatorModifier.FOR_ALL_VALUES))
+
+.. tabs::
+
+   .. code-tab:: ts
+
+      new statement.Dynamodb()
+        .deny()
+        .toPutItem()
+        .onTable('Thread')
+        .ifAttributes(
+          ['ID', 'PostDateTime'],
+          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ANY_VALUE)
+        );
+
+   .. code-tab:: js
+
+      new statement.Dynamodb()
+        .deny()
+        .toPutItem()
+        .onTable('Thread')
+        .ifAttributes(
+          ['ID', 'PostDateTime'],
+          statement.Operator.stringEquals(statement.OperatorModifier.FOR_ANY_VALUE)
+        );
+
+   .. code-tab:: py
+
+      statement.Dynamodb() \
+          .deny() \
+          .to_put_item() \
+          .if_attributes(
+              ["ID", "PostDateTime"],
+              statement.Operator.string_equals(
+                  statement.OperatorModifier.FOR_ANY_VALUES))
+
+.. tabs::
+
+   .. code-tab:: ts
+
+      new statement.Ec2()
+        .allow()
+        .toStartInstances()
+        .ifAwsRequestTag(
+          'Environment',
+          ['Production', 'Staging', 'Dev'],
+          statement.Operator.stringEquals(statement.OperatorModifier.IF_EXISTS)
+        );
+
+   .. code-tab:: js
+
+      new statement.Ec2()
+        .allow()
+        .toStartInstances()
+        .ifAwsRequestTag(
+          'Environment',
+          ['Production', 'Staging', 'Dev'],
+          statement.Operator.stringEquals(statement.OperatorModifier.IF_EXISTS)
+        );
+
+   .. code-tab:: py
+
+      statement.Ec2() \
+          .allow() \
+          .to_start_instances() \
+          .if_aws_request_tag(
+              "Environment",
+              ["Production", "Staging", "Dev"],
+              statement.Operator.string_equals(
+                  statement.OperatorModifier.IF_EXISTS))
+
 **on** (Resource)
 -----------------
 

@@ -1,6 +1,6 @@
 import * as statement from '../lib';
 
-function printPolicyWitStatements(statements: any[]) {
+function printPolicyWithStatements(statements: any[]) {
   console.log(
     JSON.stringify(
       {
@@ -13,18 +13,18 @@ function printPolicyWitStatements(statements: any[]) {
   );
 }
 
-printPolicyWitStatements([
+printPolicyWithStatements([
   new statement.Sts() //
     .allow()
     .toAssumeRole()
     .forService('rds.amazonaws.com'),
 ]);
 
-printPolicyWitStatements(
+printPolicyWithStatements(
   new statement.Collection().allowEc2InstanceDeleteByOwner()
 );
 
-printPolicyWitStatements([
+printPolicyWithStatements([
   new statement.Secretsmanager()
     .allow()
     .allActions()
