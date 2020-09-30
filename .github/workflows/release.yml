@@ -26,12 +26,8 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::$(cat VERSION)
 
-      - name: Update Readme
-        uses: udondan/ver2doc@v1.0.1
-        with:
-          FILE: README.md
-          PATTERN: (iam-floyd\@|maven-v)[0-9.]+
-          REPLACE: \${1}${VERSION}
+      - name: Update version references
+        run: make update-version-refs
 
       - name: Commit changes
         run: |

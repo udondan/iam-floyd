@@ -76,6 +76,10 @@ release: tag
 
 re-release: untag tag
 
+update-version-refs:
+	@perl -pi -e "s/(iam-floyd\@)[0-9.]+/\$${1}$(VERSION)/g" "README.md"
+	@perl -pi -e "s/^(release = ')[0-9.]+/\$${1}${VERSION}/g" "docs/source/conf.py"
+
 docs:
 	@cd docs && $(MAKE) clean html
 
