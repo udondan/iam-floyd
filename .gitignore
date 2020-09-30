@@ -7,3 +7,4 @@ dist
 lib/generated/.cache
 test/package-lock.json
 test/cdk.out
+docs/build
