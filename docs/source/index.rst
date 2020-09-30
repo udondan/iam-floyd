@@ -35,8 +35,11 @@ Support for:
 ..
    /stats
 
-.. image:: ../movie-preview.png
-   :target: https://www.youtube.com/watch?v=ivG6VnbwMB0
+.. raw:: html
+
+    <div style="text-align: center; margin-bottom: 2em;">
+    <iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/ivG6VnbwMB0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
 Similar projects
 ----------------
