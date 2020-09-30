@@ -4,7 +4,7 @@ VERSION := $(shell cat VERSION)
 NO_COLOR=\x1b[0m
 TARGET_COLOR=\x1b[96m
 
-.PHONY: build generate package test tag untag release re-release changelog cdk
+.PHONY: build generate package test tag untag release re-release changelog cdk docs
 
 build:
 	@echo -e "$(TARGET_COLOR)Running build$(NO_COLOR)"
@@ -76,8 +76,8 @@ release: tag
 
 re-release: untag tag
 
-
-
+docs:
+	@cd docs && $(MAKE) clean html
 
 test-python:
 	@cd test/python && $(MAKE) test
