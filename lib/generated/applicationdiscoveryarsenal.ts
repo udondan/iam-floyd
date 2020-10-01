@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [arsenal](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscoveryarsenal.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Arsenal extends PolicyStatement {
   public servicePrefix = 'arsenal';
-  protected actionList: Actions = {
-    "RegisterOnPremisesAgent": {
-      "url": "https://docs.aws.amazon.com/setting-up.html#setting-up-user-policy",
-      "description": "Grants permission to register AWS provided data collectors to the Application Discovery Service",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [arsenal](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_applicationdiscoveryarsenal.html).
@@ -36,4 +29,10 @@ export class Arsenal extends PolicyStatement {
     this.to('arsenal:RegisterOnPremisesAgent');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "RegisterOnPremisesAgent"
+    ]
+  };
 }

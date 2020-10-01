@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [account](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html).
@@ -7,30 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Account extends PolicyStatement {
   public servicePrefix = 'account';
-  protected actionList: Actions = {
-    "DisableRegion": {
-      "url": "",
-      "description": "Grants permission to disable a region",
-      "accessLevel": "Write",
-      "conditions": [
-        "account:TargetRegion"
-      ]
-    },
-    "EnableRegion": {
-      "url": "",
-      "description": "Grants permission to enable a region",
-      "accessLevel": "Write",
-      "conditions": [
-        "account:TargetRegion"
-      ]
-    },
-    "ListRegions": {
-      "url": "",
-      "description": "Grants permission to list regions",
-      "accessLevel": "List"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [account](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsaccounts.html).
@@ -76,6 +53,16 @@ export class Account extends PolicyStatement {
     this.to('account:ListRegions');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "DisableRegion",
+      "EnableRegion"
+    ],
+    "List": [
+      "ListRegions"
+    ]
+  };
 
   /**
    * Filters access by a list of regions

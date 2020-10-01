@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [dlm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html).
@@ -7,92 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Dlm extends PolicyStatement {
   public servicePrefix = 'dlm';
-  protected actionList: Actions = {
-    "CreateLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html",
-      "description": "Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots. You may have up to 100 policies.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html",
-      "description": "Delete an existing data lifecycle policy. In addition, this action halts the creation and deletion of snapshots that the policy specified. Existing snapshots are not affected.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "policy": {
-          "required": true
-        }
-      }
-    },
-    "GetLifecyclePolicies": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html",
-      "description": "Returns a list of summary descriptions of data lifecycle policies.",
-      "accessLevel": "List"
-    },
-    "GetLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html",
-      "description": "Returns a complete description of a single data lifecycle policy.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "policy": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to list the tags associated with a resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "policy": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to add or update tags of a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "policy": {
-          "required": true
-        }
-      }
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to remove associated with a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "policy": {
-          "required": true
-        }
-      }
-    },
-    "UpdateLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html",
-      "description": "Updates an existing data lifecycle policy.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "policy": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "policy": {
-      "name": "policy",
-      "url": "https://docs.aws.amazon.com/dlm/latest/APIReference/API_LifecyclePolicy.html",
-      "arn": "arn:${Partition}:dlm:${Region}:${Account}:policy/${ResourceName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [dlm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html).
@@ -202,6 +117,25 @@ export class Dlm extends PolicyStatement {
     this.to('dlm:UpdateLifecyclePolicy');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateLifecyclePolicy",
+      "DeleteLifecyclePolicy",
+      "UpdateLifecyclePolicy"
+    ],
+    "List": [
+      "GetLifecyclePolicies"
+    ],
+    "Read": [
+      "GetLifecyclePolicy",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type policy to the statement

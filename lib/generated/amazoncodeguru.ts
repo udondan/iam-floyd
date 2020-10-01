@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [codeguru](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Codeguru extends PolicyStatement {
   public servicePrefix = 'codeguru';
-  protected actionList: Actions = {
-    "GetCodeGuruFreeTrialSummary": {
-      "url": "https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetCodeGuruFreeTrialSummary.html",
-      "description": "Gets free trial summary for the CodeGuru service which includes expiration date.",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [codeguru](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguru.html).
@@ -36,4 +29,10 @@ export class Codeguru extends PolicyStatement {
     this.to('codeguru:GetCodeGuruFreeTrialSummary');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "GetCodeGuruFreeTrialSummary"
+    ]
+  };
 }

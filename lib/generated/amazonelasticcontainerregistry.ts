@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [ecr](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html).
@@ -7,312 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Ecr extends PolicyStatement {
   public servicePrefix = 'ecr';
-  protected actionList: Actions = {
-    "BatchCheckLayerAvailability": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html",
-      "description": "Grants permission to check the availability of multiple image layers in a specified registry and repository",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "BatchDeleteImage": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html",
-      "description": "Grants permission to delete a list of specified images within a specified repository",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetImage": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html",
-      "description": "Grants permission to get detailed information for specified images within a specified repository",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "CompleteLayerUpload": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html",
-      "description": "Grants permission to inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "CreateRepository": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html",
-      "description": "Grants permission to create an image repository",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteLifecyclePolicy.html",
-      "description": "Grants permission to delete the specified lifecycle policy",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRepository": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html",
-      "description": "Grants permission to delete an existing image repository",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRepositoryPolicy": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html",
-      "description": "Grants permission to delete the repository policy from a specified repository",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "DescribeImageScanFindings": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImageScanFindings.html",
-      "description": "Grants permission to describe the image scan findings for the specified image",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "DescribeImages": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html",
-      "description": "Grants permission to get metadata about the images in a repository, including image size, image tags, and creation date",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRepositories": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html",
-      "description": "Grants permission to describe image repositories in a registry",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "repository": {
-          "required": false
-        }
-      }
-    },
-    "GetAuthorizationToken": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html",
-      "description": "Grants permission to retrieve a token that is valid for a specified registry for 12 hours",
-      "accessLevel": "Read"
-    },
-    "GetDownloadUrlForLayer": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html",
-      "description": "Grants permission to retrieve the download URL corresponding to an image layer",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "GetLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicy.html",
-      "description": "Grants permission to retrieve the specified lifecycle policy",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "GetLifecyclePolicyPreview": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetLifecyclePolicyPreview.html",
-      "description": "Grants permission to retrieve the results of the specified lifecycle policy preview request",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "GetRepositoryPolicy": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html",
-      "description": "Grants permission to retrieve the repository policy for a specified repository",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "InitiateLayerUpload": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html",
-      "description": "Grants permission to notify Amazon ECR that you intend to upload an image layer",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "ListImages": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html",
-      "description": "Grants permission to list all the image IDs for a given repository",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to list the tags for an Amazon ECR resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "PutImage": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html",
-      "description": "Grants permission to create or update the image manifest associated with an image",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "PutImageScanningConfiguration": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageScanningConfiguration.html",
-      "description": "Grants permission to update the image scanning configuration for a repository",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "PutImageTagMutability": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImageTagMutability.html",
-      "description": "Grants permission to update the image tag mutability settings for a repository",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "PutLifecyclePolicy": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutLifecyclePolicy.html",
-      "description": "Grants permission to create or update a lifecycle policy",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "SetRepositoryPolicy": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html",
-      "description": "Grants permission to apply a repository policy on a specified repository to control access permissions",
-      "accessLevel": "Permissions management",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "StartImageScan": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html",
-      "description": "Grants permission to start an image scan",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "StartLifecyclePolicyPreview": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartLifecyclePolicyPreview.html",
-      "description": "Grants permission to start a preview of the specified lifecycle policy",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to tag an Amazon ECR resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to untag an Amazon ECR resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    },
-    "UploadLayerPart": {
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html",
-      "description": "Grants permission to upload an image layer part to Amazon ECR",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "repository": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "repository": {
-      "name": "repository",
-      "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR_ARN_Format",
-      "arn": "arn:${Partition}:ecr:${Region}:${Account}:repository/${RepositoryName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}",
-        "ecr:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [ecr](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerregistry.html).
@@ -678,6 +373,48 @@ export class Ecr extends PolicyStatement {
     this.to('ecr:UploadLayerPart');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "BatchCheckLayerAvailability",
+      "BatchGetImage",
+      "DescribeImageScanFindings",
+      "DescribeImages",
+      "GetAuthorizationToken",
+      "GetDownloadUrlForLayer",
+      "GetLifecyclePolicy",
+      "GetLifecyclePolicyPreview",
+      "GetRepositoryPolicy",
+      "ListTagsForResource"
+    ],
+    "Write": [
+      "BatchDeleteImage",
+      "CompleteLayerUpload",
+      "CreateRepository",
+      "DeleteLifecyclePolicy",
+      "DeleteRepository",
+      "DeleteRepositoryPolicy",
+      "InitiateLayerUpload",
+      "PutImage",
+      "PutImageScanningConfiguration",
+      "PutImageTagMutability",
+      "PutLifecyclePolicy",
+      "StartImageScan",
+      "StartLifecyclePolicyPreview",
+      "UploadLayerPart"
+    ],
+    "List": [
+      "DescribeRepositories",
+      "ListImages"
+    ],
+    "Permissions management": [
+      "SetRepositoryPolicy"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type repository to the statement

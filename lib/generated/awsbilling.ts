@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [aws-portal](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbilling.html).
@@ -7,44 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class AwsPortal extends PolicyStatement {
   public servicePrefix = 'aws-portal';
-  protected actionList: Actions = {
-    "ModifyAccount": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to modify Account Settings.",
-      "accessLevel": "Write"
-    },
-    "ModifyBilling": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to modify billing settings.",
-      "accessLevel": "Write"
-    },
-    "ModifyPaymentMethods": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to modify payment methods.",
-      "accessLevel": "Write"
-    },
-    "ViewAccount": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to view account settings.",
-      "accessLevel": "Read"
-    },
-    "ViewBilling": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to view billing pages in the console.",
-      "accessLevel": "Read"
-    },
-    "ViewPaymentMethods": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to view payment methods.",
-      "accessLevel": "Read"
-    },
-    "ViewUsage": {
-      "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions",
-      "description": "Allow or deny IAM users permission to view AWS usage reports.",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-portal](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbilling.html).
@@ -138,4 +101,18 @@ export class AwsPortal extends PolicyStatement {
     this.to('aws-portal:ViewUsage');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "ModifyAccount",
+      "ModifyBilling",
+      "ModifyPaymentMethods"
+    ],
+    "Read": [
+      "ViewAccount",
+      "ViewBilling",
+      "ViewPaymentMethods",
+      "ViewUsage"
+    ]
+  };
 }

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [config](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html).
@@ -7,638 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Config extends PolicyStatement {
   public servicePrefix = 'config';
-  protected actionList: Actions = {
-    "BatchGetAggregateResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetAggregateResourceConfig.html",
-      "description": "Returns the current configuration items for resources that are present in your AWS Config aggregator",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "BatchGetResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_BatchGetResourceConfig.html",
-      "description": "Returns the current configuration for one or more requested resources",
-      "accessLevel": "Read"
-    },
-    "DeleteAggregationAuthorization": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteAggregationAuthorization.html",
-      "description": "Deletes the authorization granted to the specified configuration aggregator account in a specified region",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "AggregationAuthorization": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigRule.html",
-      "description": "Deletes the specified AWS Config rule and all of its evaluation results",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConfigurationAggregator": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationAggregator.html",
-      "description": "Deletes the specified configuration aggregator and the aggregated data associated with the aggregator",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConfigurationRecorder": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html",
-      "description": "Deletes the configuration recorder",
-      "accessLevel": "Write"
-    },
-    "DeleteConformancePack": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConformancePack.html",
-      "description": "Deletes the specified conformance pack and all the AWS Config rules and all evaluation results within that conformance pack.",
-      "accessLevel": "Write"
-    },
-    "DeleteDeliveryChannel": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html",
-      "description": "Deletes the delivery channel",
-      "accessLevel": "Write"
-    },
-    "DeleteEvaluationResults": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteEvaluationResults.html",
-      "description": "Deletes the evaluation results for the specified Config rule",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "DeleteOrganizationConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteOrganizationConfigRule.html",
-      "description": "Deletes the specified organization config rule and all of its evaluation results from all member accounts in that organization.",
-      "accessLevel": "Write"
-    },
-    "DeleteOrganizationConformancePack": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteOrganizationConformancePack.html",
-      "description": "Deletes the specified organization conformance pack and all of its evaluation results from all member accounts in that organization.",
-      "accessLevel": "Write"
-    },
-    "DeletePendingAggregationRequest": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeletePendingAggregationRequest.html",
-      "description": "Deletes pending authorization requests for a specified aggregator account in a specified region",
-      "accessLevel": "Write"
-    },
-    "DeleteRemediationConfiguration": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRemediationConfiguration.html",
-      "description": "Deletes the remediation configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "RemediationConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "DeleteRemediationExceptions": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRemediationExceptions.html",
-      "description": "Deletes one or more remediation exceptions for specific resource keys for a specific AWS Config Rule.",
-      "accessLevel": "Write"
-    },
-    "DeleteResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html",
-      "description": "Records the configuration state for a custom resource that has been deleted.",
-      "accessLevel": "Write"
-    },
-    "DeleteRetentionConfiguration": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteRetentionConfiguration.html",
-      "description": "Deletes the retention configuration",
-      "accessLevel": "Write"
-    },
-    "DeliverConfigSnapshot": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DeliverConfigSnapshot.html",
-      "description": "Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel",
-      "accessLevel": "Read"
-    },
-    "DescribeAggregateComplianceByConfigRules": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregateComplianceByConfigRules.html",
-      "description": "Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "DescribeAggregationAuthorizations": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeAggregationAuthorizations.html",
-      "description": "Returns a list of authorizations granted to various aggregator accounts and regions",
-      "accessLevel": "List"
-    },
-    "DescribeComplianceByConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByConfigRule.html",
-      "description": "Indicates whether the specified AWS Config rules are compliant",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "DescribeComplianceByResource": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByResource.html",
-      "description": "Indicates whether the specified AWS resources are compliant",
-      "accessLevel": "List"
-    },
-    "DescribeConfigRuleEvaluationStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html",
-      "description": "Returns status information for each of your AWS managed Config rules",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "DescribeConfigRules": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRules.html",
-      "description": "Returns details about your AWS Config rules",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "DescribeConfigurationAggregatorSourcesStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregatorSourcesStatus.html",
-      "description": "Returns status information for sources within an aggregator",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "DescribeConfigurationAggregators": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationAggregators.html",
-      "description": "Returns the details of one or more configuration aggregators",
-      "accessLevel": "List"
-    },
-    "DescribeConfigurationRecorderStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html",
-      "description": "Returns the current status of the specified configuration recorder",
-      "accessLevel": "List"
-    },
-    "DescribeConfigurationRecorders": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html",
-      "description": "Returns the name of one or more specified configuration recorders",
-      "accessLevel": "List"
-    },
-    "DescribeConformancePackCompliance": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePackCompliance.html",
-      "description": "Returns compliance information for each rule in that conformance pack.",
-      "accessLevel": "Read"
-    },
-    "DescribeConformancePackStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePackStatus.html",
-      "description": "Provides one or more conformance packs deployment status.",
-      "accessLevel": "Read"
-    },
-    "DescribeConformancePacks": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConformancePacks.html",
-      "description": "Returns a list of one or more conformance packs.",
-      "accessLevel": "Read"
-    },
-    "DescribeDeliveryChannelStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannelStatus.html",
-      "description": "Returns the current status of the specified delivery channel",
-      "accessLevel": "List"
-    },
-    "DescribeDeliveryChannels": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannels.html",
-      "description": "Returns details about the specified delivery channel",
-      "accessLevel": "List"
-    },
-    "DescribeOrganizationConfigRuleStatuses": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRuleStatuses.html",
-      "description": "Provides organization config rule deployment status for an organization.",
-      "accessLevel": "Read"
-    },
-    "DescribeOrganizationConfigRules": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConfigRules.html",
-      "description": "Returns a list of organization config rules.",
-      "accessLevel": "Read"
-    },
-    "DescribeOrganizationConformancePackStatuses": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePackStatuses.html",
-      "description": "Provides organization conformance pack deployment status for an organization.",
-      "accessLevel": "Read"
-    },
-    "DescribeOrganizationConformancePacks": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeOrganizationConformancePacks.html",
-      "description": "Returns a list of organization conformance packs.",
-      "accessLevel": "Read"
-    },
-    "DescribePendingAggregationRequests": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribePendingAggregationRequests.html",
-      "description": "Returns a list of all pending aggregation requests",
-      "accessLevel": "List"
-    },
-    "DescribeRemediationConfigurations": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationConfigurations.html",
-      "description": "Returns the details of one or more remediation configurations",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "RemediationConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRemediationExceptions": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExceptions.html",
-      "description": "Returns the details of one or more remediation exceptions.",
-      "accessLevel": "List"
-    },
-    "DescribeRemediationExecutionStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRemediationExecutionStatus.html",
-      "description": "Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps and any error messages for steps that have failed",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "RemediationConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRetentionConfigurations": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeRetentionConfigurations.html",
-      "description": "Returns the details of one or more retention configurations",
-      "accessLevel": "List"
-    },
-    "GetAggregateComplianceDetailsByConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateComplianceDetailsByConfigRule.html",
-      "description": "Returns the evaluation results for the specified AWS Config rule for a specific resource in a rule",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "GetAggregateConfigRuleComplianceSummary": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateConfigRuleComplianceSummary.html",
-      "description": "Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "GetAggregateDiscoveredResourceCounts": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateDiscoveredResourceCounts.html",
-      "description": "Returns the resource counts across accounts and regions that are present in your AWS Config aggregator",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "GetAggregateResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetAggregateResourceConfig.html",
-      "description": "Returns configuration item that is aggregated for your specific resource in a specific source account and region",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "GetComplianceDetailsByConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByConfigRule.html",
-      "description": "Returns the evaluation results for the specified AWS Config rule",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "GetComplianceDetailsByResource": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html",
-      "description": "Returns the evaluation results for the specified AWS resource",
-      "accessLevel": "Read"
-    },
-    "GetComplianceSummaryByConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByConfigRule.html",
-      "description": "Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each",
-      "accessLevel": "Read"
-    },
-    "GetComplianceSummaryByResourceType": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByResourceType.html",
-      "description": "Returns the number of resources that are compliant and the number that are noncompliant",
-      "accessLevel": "Read"
-    },
-    "GetConformancePackComplianceDetails": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceDetails.html",
-      "description": "Returns compliance details of a conformance pack for all AWS resources that are monitered by conformance pack.",
-      "accessLevel": "Read"
-    },
-    "GetConformancePackComplianceSummary": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetConformancePackComplianceSummary.html",
-      "description": "Provides compliance summary for one or more conformance packs.",
-      "accessLevel": "Read"
-    },
-    "GetDiscoveredResourceCounts": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetDiscoveredResourceCounts.html",
-      "description": "Returns the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in this region for your AWS account",
-      "accessLevel": "Read"
-    },
-    "GetOrganizationConfigRuleDetailedStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationConfigRuleDetailedStatus.html",
-      "description": "Returns detailed status for each member account within an organization for a given organization config rule.",
-      "accessLevel": "Read"
-    },
-    "GetOrganizationConformancePackDetailedStatus": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetOrganizationConformancePackDetailedStatus.html",
-      "description": "Returns detailed status for each member account within an organization for a given organization conformance pack.",
-      "accessLevel": "Read"
-    },
-    "GetResourceConfigHistory": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html",
-      "description": "Returns a list of configuration items for the specified resource",
-      "accessLevel": "Read"
-    },
-    "ListAggregateDiscoveredResources": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_ListAggregateDiscoveredResources.html",
-      "description": "Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      }
-    },
-    "ListDiscoveredResources": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_ListDiscoveredResources.html",
-      "description": "Accepts a resource type and returns a list of resource identifiers for the resources of that type",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_ListTagsForResource.html",
-      "description": "List the tags for AWS Config resource",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "AggregationAuthorization": {
-          "required": false
-        },
-        "ConfigRule": {
-          "required": false
-        },
-        "ConfigurationAggregator": {
-          "required": false
-        }
-      }
-    },
-    "PutAggregationAuthorization": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutAggregationAuthorization.html",
-      "description": "Authorizes the aggregator account and region to collect data from the source account and region",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "AggregationAuthorization": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "PutConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html",
-      "description": "Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "PutConfigurationAggregator": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationAggregator.html",
-      "description": "Creates and updates the configuration aggregator with the selected source accounts and regions",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ConfigurationAggregator": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "PutConfigurationRecorder": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html",
-      "description": "Creates a new configuration recorder to record the selected resource configurations",
-      "accessLevel": "Write"
-    },
-    "PutConformancePack": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html",
-      "description": "Creates or updates a conformance pack.",
-      "accessLevel": "Write"
-    },
-    "PutDeliveryChannel": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html",
-      "description": "Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic",
-      "accessLevel": "Write"
-    },
-    "PutEvaluations": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutEvaluations.html",
-      "description": "Used by an AWS Lambda function to deliver evaluation results to AWS Config",
-      "accessLevel": "Write"
-    },
-    "PutOrganizationConfigRule": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html",
-      "description": "Adds or updates organization config rule for your entire organization evaluating whether your AWS resources comply with your desired configurations.",
-      "accessLevel": "Write"
-    },
-    "PutOrganizationConformancePack": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html",
-      "description": "Adds or updates organization conformance pack for your entire organization evaluating whether your AWS resources comply with your desired configurations.",
-      "accessLevel": "Write"
-    },
-    "PutRemediationConfigurations": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html",
-      "description": "Adds or updates the remediation configuration with a specific AWS Config rule with the selected target or action",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "RemediationConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "PutRemediationExceptions": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationExceptions.html",
-      "description": "Adds or updates remediation exceptions for specific resources for a specific AWS Config rule.",
-      "accessLevel": "Write"
-    },
-    "PutResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutResourceConfig.html",
-      "description": "Records the configuration state for the resource provided in the request.",
-      "accessLevel": "Write"
-    },
-    "PutRetentionConfiguration": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_PutRetentionConfiguration.html",
-      "description": "Creates and updates the retention configuration with details about retention period (number of days) that AWS Config stores your historical information",
-      "accessLevel": "Write"
-    },
-    "SelectAggregateResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_SelectAggregateResourceConfig.html",
-      "description": "Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties.",
-      "accessLevel": "Read"
-    },
-    "SelectResourceConfig": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_SelectResourceConfig.html",
-      "description": "Accepts a structured query language (SQL) SELECT command, performs the corresponding search, and returns resource configurations matching the properties",
-      "accessLevel": "Read"
-    },
-    "StartConfigRulesEvaluation": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigRulesEvaluation.html",
-      "description": "Evaluates your resources against the specified Config rules",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "ConfigRule": {
-          "required": true
-        }
-      }
-    },
-    "StartConfigurationRecorder": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html",
-      "description": "Starts recording configurations of the AWS resources you have selected to record in your AWS account",
-      "accessLevel": "Write"
-    },
-    "StartRemediationExecution": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_StartRemediationExecution.html",
-      "description": "Runs an on-demand remediation for the specified AWS Config rules against the last known remediation configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "RemediationConfiguration": {
-          "required": true
-        }
-      }
-    },
-    "StopConfigurationRecorder": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html",
-      "description": "Stops recording configurations of the AWS resources you have selected to record in your AWS account",
-      "accessLevel": "Write"
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html",
-      "description": "Associates the specified tags to a resource with the specified resourceArn",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "AggregationAuthorization": {
-          "required": false
-        },
-        "ConfigRule": {
-          "required": false
-        },
-        "ConfigurationAggregator": {
-          "required": false
-        },
-        "ConformancePack": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html",
-      "description": "Deletes specified tags from a resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "AggregationAuthorization": {
-          "required": false
-        },
-        "ConfigRule": {
-          "required": false
-        },
-        "ConfigurationAggregator": {
-          "required": false
-        },
-        "ConformancePack": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "AggregationAuthorization": {
-      "name": "AggregationAuthorization",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:aggregation-authorization/${AggregatorAccount}/${AggregatorRegion}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "ConfigurationAggregator": {
-      "name": "ConfigurationAggregator",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigurationAggregator.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:config-aggregator/${AggregatorId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "ConfigRule": {
-      "name": "ConfigRule",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigRule.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:config-rule/${ConfigRuleId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "ConformancePack": {
-      "name": "ConformancePack",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConformancePack.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:conformance-pack/${ConformancePackName}/${ConformancePackId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "OrganizationConfigRule": {
-      "name": "OrganizationConfigRule",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConfigRule.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:organization-config-rule/${OrganizationConfigRuleId}",
-      "conditionKeys": []
-    },
-    "OrganizationConformancePack": {
-      "name": "OrganizationConformancePack",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConformancePack.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:organization-conformance-pack/${OrganizationConformancePackId}",
-      "conditionKeys": []
-    },
-    "RemediationConfiguration": {
-      "name": "RemediationConfiguration",
-      "url": "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_RemediationConfiguration.html",
-      "arn": "arn:${Partition}:config:${Region}:${Account}:remediation-configuration/${RemediationConfigurationId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [config](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html).
@@ -1615,6 +984,96 @@ export class Config extends PolicyStatement {
     this.to('config:UntagResource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "BatchGetAggregateResourceConfig",
+      "BatchGetResourceConfig",
+      "DeliverConfigSnapshot",
+      "DescribeConformancePackCompliance",
+      "DescribeConformancePackStatus",
+      "DescribeConformancePacks",
+      "DescribeOrganizationConfigRuleStatuses",
+      "DescribeOrganizationConfigRules",
+      "DescribeOrganizationConformancePackStatuses",
+      "DescribeOrganizationConformancePacks",
+      "GetAggregateComplianceDetailsByConfigRule",
+      "GetAggregateConfigRuleComplianceSummary",
+      "GetAggregateDiscoveredResourceCounts",
+      "GetAggregateResourceConfig",
+      "GetComplianceDetailsByConfigRule",
+      "GetComplianceDetailsByResource",
+      "GetComplianceSummaryByConfigRule",
+      "GetComplianceSummaryByResourceType",
+      "GetConformancePackComplianceDetails",
+      "GetConformancePackComplianceSummary",
+      "GetDiscoveredResourceCounts",
+      "GetOrganizationConfigRuleDetailedStatus",
+      "GetOrganizationConformancePackDetailedStatus",
+      "GetResourceConfigHistory",
+      "SelectAggregateResourceConfig",
+      "SelectResourceConfig"
+    ],
+    "Write": [
+      "DeleteAggregationAuthorization",
+      "DeleteConfigRule",
+      "DeleteConfigurationAggregator",
+      "DeleteConfigurationRecorder",
+      "DeleteConformancePack",
+      "DeleteDeliveryChannel",
+      "DeleteEvaluationResults",
+      "DeleteOrganizationConfigRule",
+      "DeleteOrganizationConformancePack",
+      "DeletePendingAggregationRequest",
+      "DeleteRemediationConfiguration",
+      "DeleteRemediationExceptions",
+      "DeleteResourceConfig",
+      "DeleteRetentionConfiguration",
+      "PutAggregationAuthorization",
+      "PutConfigRule",
+      "PutConfigurationAggregator",
+      "PutConfigurationRecorder",
+      "PutConformancePack",
+      "PutDeliveryChannel",
+      "PutEvaluations",
+      "PutOrganizationConfigRule",
+      "PutOrganizationConformancePack",
+      "PutRemediationConfigurations",
+      "PutRemediationExceptions",
+      "PutResourceConfig",
+      "PutRetentionConfiguration",
+      "StartConfigRulesEvaluation",
+      "StartConfigurationRecorder",
+      "StartRemediationExecution",
+      "StopConfigurationRecorder"
+    ],
+    "List": [
+      "DescribeAggregateComplianceByConfigRules",
+      "DescribeAggregationAuthorizations",
+      "DescribeComplianceByConfigRule",
+      "DescribeComplianceByResource",
+      "DescribeConfigRuleEvaluationStatus",
+      "DescribeConfigRules",
+      "DescribeConfigurationAggregatorSourcesStatus",
+      "DescribeConfigurationAggregators",
+      "DescribeConfigurationRecorderStatus",
+      "DescribeConfigurationRecorders",
+      "DescribeDeliveryChannelStatus",
+      "DescribeDeliveryChannels",
+      "DescribePendingAggregationRequests",
+      "DescribeRemediationConfigurations",
+      "DescribeRemediationExceptions",
+      "DescribeRemediationExecutionStatus",
+      "DescribeRetentionConfigurations",
+      "ListAggregateDiscoveredResources",
+      "ListDiscoveredResources",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type AggregationAuthorization to the statement

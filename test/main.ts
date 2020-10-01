@@ -30,3 +30,11 @@ printPolicyWithStatements([
     .allActions()
     .ifResourceTag('CreatedBy', 'me'),
 ]);
+
+printPolicyWithStatements([
+  new statement.Ec2().allow().allMatchingActions('/vpn/i'),
+]);
+
+printPolicyWithStatements([
+  new statement.Ec2().allow().allPermissionManagementActions(),
+]);

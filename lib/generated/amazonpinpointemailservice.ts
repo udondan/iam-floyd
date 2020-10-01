@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html).
@@ -7,444 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class SesPinpoint extends PolicyStatement {
   public servicePrefix = 'ses-pinpoint';
-  protected actionList: Actions = {
-    "CreateConfigurationSet": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSet.html",
-      "description": "Create a configuration set. Configuration sets are groups of rules that you can apply to the emails you send using Amazon Pinpoint",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateConfigurationSetEventDestination": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateConfigurationSetEventDestination.html",
-      "description": "Create an event destination",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "CreateDedicatedIpPool": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDedicatedIpPool.html",
-      "description": "Create a new pool of dedicated IP addresses",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dedicated-ip-pool": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateDeliverabilityTestReport": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateDeliverabilityTestReport.html",
-      "description": "Create a new predictive inbox placement test.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateEmailIdentity": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_CreateEmailIdentity.html",
-      "description": "Verifies an email identity for use with Amazon Pinpoint",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "DeleteConfigurationSet": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSet.html",
-      "description": "Delete an existing configuration set",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "DeleteConfigurationSetEventDestination": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteConfigurationSetEventDestination.html",
-      "description": "Delete an event destination",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDedicatedIpPool": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteDedicatedIpPool.html",
-      "description": "Delete a dedicated IP pool",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dedicated-ip-pool": {
-          "required": true
-        }
-      }
-    },
-    "DeleteEmailIdentity": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeleteEmailIdentity.html",
-      "description": "Deletes an email identity that you previously verified for use with Amazon Pinpoint",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      }
-    },
-    "GetAccount": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetAccount.html",
-      "description": "Obtain information about the email-sending status and capabilities",
-      "accessLevel": "Read"
-    },
-    "GetBlacklistReports": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetBlacklistReports.html",
-      "description": "Retrieve a list of the blacklists that your dedicated IP addresses appear on",
-      "accessLevel": "Read"
-    },
-    "GetConfigurationSet": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSet.html",
-      "description": "Get information about an existing configuration set",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "GetConfigurationSetEventDestinations": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetConfigurationSetEventDestinations.html",
-      "description": "Retrieve a list of event destinations that are associated with a configuration set",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "GetDedicatedIp": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIp.html",
-      "description": "Get information about a dedicated IP address",
-      "accessLevel": "Read"
-    },
-    "GetDedicatedIps": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDedicatedIps.html",
-      "description": "List the dedicated IP addresses that are associated with your Amazon Pinpoint account",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dedicated-ip-pool": {
-          "required": true
-        }
-      }
-    },
-    "GetDeliverabilityDashboardOptions": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityDashboardOptions.html",
-      "description": "Show the status of the Deliverability dashboard",
-      "accessLevel": "Read"
-    },
-    "GetDeliverabilityTestReport": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDeliverabilityTestReport.html",
-      "description": "Retrieve the results of a predictive inbox placement test",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "deliverability-test-report": {
-          "required": true
-        }
-      }
-    },
-    "GetDomainStatisticsReport": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetDomainStatisticsReport.html",
-      "description": "Retrieve inbox placement and engagement rates for the domains that you use to send email",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      }
-    },
-    "GetEmailIdentity": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_GetEmailIdentity.html",
-      "description": "Provides information about a specific identity associated with your Amazon Pinpoint account",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      }
-    },
-    "ListConfigurationSets": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListConfigurationSets.html",
-      "description": "List all of the configuration sets associated with your Amazon Pinpoint account in the current region",
-      "accessLevel": "List"
-    },
-    "ListDedicatedIpPools": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDedicatedIpPools.html",
-      "description": "List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current AWS Region",
-      "accessLevel": "List"
-    },
-    "ListDeliverabilityTestReports": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListDeliverabilityTestReports.html",
-      "description": "Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses",
-      "accessLevel": "List"
-    },
-    "ListEmailIdentities": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListEmailIdentities.html",
-      "description": "Returns a list of all of the email identities that are associated with your Amazon Pinpoint account",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Retrieve a list of the tags (keys and values) that are associated with a specific resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": false
-        },
-        "dedicated-ip-pool": {
-          "required": false
-        },
-        "deliverability-test-report": {
-          "required": false
-        },
-        "identity": {
-          "required": false
-        }
-      }
-    },
-    "PutAccountDedicatedIpWarmupAttributes": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountDedicatedIpWarmupAttributes.html",
-      "description": "Enable or disable the automatic warm-up feature for dedicated IP addresses",
-      "accessLevel": "Write"
-    },
-    "PutAccountSendingAttributes": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutAccountSendingAttributes.html",
-      "description": "Enable or disable the ability of your account to send email",
-      "accessLevel": "Write"
-    },
-    "PutConfigurationSetDeliveryOptions": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html",
-      "description": "Associate a configuration set with a dedicated IP pool",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "PutConfigurationSetReputationOptions": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetReputationOptions.html",
-      "description": "Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific AWS Region",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "PutConfigurationSetSendingOptions": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetSendingOptions.html",
-      "description": "Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "PutConfigurationSetTrackingOptions": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutConfigurationSetTrackingOptions.html",
-      "description": "Specify a custom domain to use for open and click tracking elements in email that you send using Amazon Pinpoint",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    },
-    "PutDedicatedIpInPool": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpInPool.html",
-      "description": "Move a dedicated IP address to an existing dedicated IP pool",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dedicated-ip-pool": {
-          "required": true
-        }
-      }
-    },
-    "PutDedicatedIpWarmupAttributes": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDedicatedIpWarmupAttributes.html",
-      "description": "Put Dedicated IP warm up attributes",
-      "accessLevel": "Write"
-    },
-    "PutDeliverabilityDashboardOption": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutDeliverabilityDashboardOption.html",
-      "description": "Enable or disable the Deliverability dashboard",
-      "accessLevel": "Write"
-    },
-    "PutEmailIdentityDkimAttributes": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityDkimAttributes.html",
-      "description": "Used to enable or disable DKIM authentication for an email identity",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      }
-    },
-    "PutEmailIdentityFeedbackAttributes": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityFeedbackAttributes.html",
-      "description": "Used to enable or disable feedback forwarding for an identity",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      }
-    },
-    "PutEmailIdentityMailFromAttributes": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_PutEmailIdentityMailFromAttributes.html",
-      "description": "Used to enable or disable the custom Mail-From domain configuration for an email identity",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      }
-    },
-    "SendEmail": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_SendEmail.html",
-      "description": "Sends an email message",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "identity": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "ses:FeedbackAddress",
-        "ses:FromAddress",
-        "ses:FromDisplayName",
-        "ses:Recipients"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_TagResource.html",
-      "description": "Add one or more tags (keys and values) to a specified resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": false
-        },
-        "dedicated-ip-pool": {
-          "required": false
-        },
-        "deliverability-test-report": {
-          "required": false
-        },
-        "identity": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UntagResource.html",
-      "description": "Remove one or more tags (keys and values) from a specified resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": false
-        },
-        "dedicated-ip-pool": {
-          "required": false
-        },
-        "deliverability-test-report": {
-          "required": false
-        },
-        "identity": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateConfigurationSetEventDestination": {
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_UpdateConfigurationSetEventDestination.html",
-      "description": "Update the configuration of an event destination for a configuration set",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "configuration-set": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "configuration-set": {
-      "name": "configuration-set",
-      "url": "",
-      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "dedicated-ip-pool": {
-      "name": "dedicated-ip-pool",
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DedicatedIp.html",
-      "arn": "arn:${Partition}:ses:${Region}:${Account}:dedicated-ip-pool/${CustomVerificationEmailTemplateName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "deliverability-test-report": {
-      "name": "deliverability-test-report",
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_DeliverabilityTestReport.html",
-      "arn": "arn:${Partition}:ses:${Region}:${Account}:deliverability-test-report/${CustomVerificationEmailTemplateName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "event-destination": {
-      "name": "event-destination",
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_EventDestination.html",
-      "arn": "arn:${Partition}:ses:${Region}:${Account}:configuration-set/${ConfigurationSetName}:event-destination/${EventDestinationName}",
-      "conditionKeys": []
-    },
-    "identity": {
-      "name": "identity",
-      "url": "https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/API_IdentityInfo.html",
-      "arn": "arn:${Partition}:ses:${Region}:${Account}:identity/${IdentityName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [ses-pinpoint](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html).
@@ -963,6 +526,57 @@ export class SesPinpoint extends PolicyStatement {
     this.to('ses-pinpoint:UpdateConfigurationSetEventDestination');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateConfigurationSet",
+      "CreateConfigurationSetEventDestination",
+      "CreateDedicatedIpPool",
+      "CreateDeliverabilityTestReport",
+      "CreateEmailIdentity",
+      "DeleteConfigurationSet",
+      "DeleteConfigurationSetEventDestination",
+      "DeleteDedicatedIpPool",
+      "DeleteEmailIdentity",
+      "PutAccountDedicatedIpWarmupAttributes",
+      "PutAccountSendingAttributes",
+      "PutConfigurationSetDeliveryOptions",
+      "PutConfigurationSetReputationOptions",
+      "PutConfigurationSetSendingOptions",
+      "PutConfigurationSetTrackingOptions",
+      "PutDedicatedIpInPool",
+      "PutDedicatedIpWarmupAttributes",
+      "PutDeliverabilityDashboardOption",
+      "PutEmailIdentityDkimAttributes",
+      "PutEmailIdentityFeedbackAttributes",
+      "PutEmailIdentityMailFromAttributes",
+      "SendEmail",
+      "UpdateConfigurationSetEventDestination"
+    ],
+    "Read": [
+      "GetAccount",
+      "GetBlacklistReports",
+      "GetConfigurationSet",
+      "GetConfigurationSetEventDestinations",
+      "GetDedicatedIp",
+      "GetDedicatedIps",
+      "GetDeliverabilityDashboardOptions",
+      "GetDeliverabilityTestReport",
+      "GetDomainStatisticsReport",
+      "GetEmailIdentity",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListConfigurationSets",
+      "ListDedicatedIpPools",
+      "ListDeliverabilityTestReports",
+      "ListEmailIdentities"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type configuration-set to the statement

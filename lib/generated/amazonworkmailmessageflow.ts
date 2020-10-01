@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [workmailmessageflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmailmessageflow.html).
@@ -7,26 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Workmailmessageflow extends PolicyStatement {
   public servicePrefix = 'workmailmessageflow';
-  protected actionList: Actions = {
-    "GetRawMessageContent": {
-      "url": "https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html",
-      "description": "Grants permission to read the content of email messages with the specified message ID",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "RawMessage": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "RawMessage": {
-      "name": "RawMessage",
-      "url": "https://docs.aws.amazon.com/workmail/latest/adminguide/lambda-content.html",
-      "arn": "arn:${Partition}:workmailmessageflow:${Region}:${Account}:message/${OrganizationId}/${Context}/${MessageId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [workmailmessageflow](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkmailmessageflow.html).
@@ -48,6 +29,12 @@ export class Workmailmessageflow extends PolicyStatement {
     this.to('workmailmessageflow:GetRawMessageContent');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "GetRawMessageContent"
+    ]
+  };
 
   /**
    * Adds a resource of type RawMessage to the statement

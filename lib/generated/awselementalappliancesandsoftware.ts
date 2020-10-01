@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [elemental-appliances-software](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalappliancesandsoftware.html).
@@ -7,94 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class ElementalAppliancesSoftware extends PolicyStatement {
   public servicePrefix = 'elemental-appliances-software';
-  protected actionList: Actions = {
-    "CreateQuote": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "Create a quote",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "quote": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "GetQuote": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "Describe a quote",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "quote": {
-          "required": true
-        }
-      }
-    },
-    "ListQuotes": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "List the quotes in the user account",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "This action lists tags for an AWS Elemental Appliances and Software resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "quote": {
-          "required": false
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "This action tags an AWS Elemental Appliances and Software resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "quote": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "This action removes a tag from an AWS Elemental Appliances and Software resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "quote": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateQuote": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "description": "Modify a quote",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "quote": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "quote": {
-      "name": "quote",
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software",
-      "arn": "arn:${Partition}:elemental-appliances-software:${Region}:${Account}:quote/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [elemental-appliances-software](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalappliancesandsoftware.html).
@@ -199,6 +112,24 @@ export class ElementalAppliancesSoftware extends PolicyStatement {
     this.to('elemental-appliances-software:UpdateQuote');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Tagging": [
+      "CreateQuote",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetQuote",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListQuotes"
+    ],
+    "Write": [
+      "UpdateQuote"
+    ]
+  };
 
   /**
    * Adds a resource of type quote to the statement

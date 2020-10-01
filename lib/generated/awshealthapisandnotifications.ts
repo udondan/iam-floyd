@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [health](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html).
@@ -7,123 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Health extends PolicyStatement {
   public servicePrefix = 'health';
-  protected actionList: Actions = {
-    "DescribeAffectedAccountsForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html",
-      "description": "Gets a list of accounts that have been affected by the specified events in organization.",
-      "accessLevel": "Read",
-      "dependentActions": [
-        "organizations:ListAccounts"
-      ]
-    },
-    "DescribeAffectedEntities": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html",
-      "description": "Gets a list of entities that have been affected by the specified events.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "event": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "health:eventTypeCode",
-        "health:service"
-      ]
-    },
-    "DescribeAffectedEntitiesForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html",
-      "description": "Gets a list of entities that have been affected by the specified events and accounts in organization.",
-      "accessLevel": "Read",
-      "dependentActions": [
-        "organizations:ListAccounts"
-      ]
-    },
-    "DescribeEntityAggregates": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html",
-      "description": "Returns the number of entities that are affected by each of the specified events.",
-      "accessLevel": "Read"
-    },
-    "DescribeEventAggregates": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html",
-      "description": "Returns the number of events of each event type (issue, scheduled change, and account notification).",
-      "accessLevel": "Read"
-    },
-    "DescribeEventDetails": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html",
-      "description": "Returns detailed information about one or more specified events.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "event": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "health:eventTypeCode",
-        "health:service"
-      ]
-    },
-    "DescribeEventDetailsForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html",
-      "description": "Returns detailed information about one or more specified events for provided accounts in organization.",
-      "accessLevel": "Read",
-      "dependentActions": [
-        "organizations:ListAccounts"
-      ]
-    },
-    "DescribeEventTypes": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html",
-      "description": "Returns the event types that meet the specified filter criteria.",
-      "accessLevel": "Read"
-    },
-    "DescribeEvents": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html",
-      "description": "Returns information about events that meet the specified filter criteria.",
-      "accessLevel": "Read"
-    },
-    "DescribeEventsForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html",
-      "description": "Returns information about events that meet the specified filter criteria in organization.",
-      "accessLevel": "Read",
-      "dependentActions": [
-        "organizations:ListAccounts"
-      ]
-    },
-    "DescribeHealthServiceStatusForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html",
-      "description": "Returns the status of enabling or disabling the Organizational View feature",
-      "accessLevel": "Permissions management",
-      "dependentActions": [
-        "organizations:ListAccounts"
-      ]
-    },
-    "DisableHealthServiceAccessForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_DisableHealthServiceAccessForOrganization.html",
-      "description": "Disables the Organizational View feature.",
-      "accessLevel": "Permissions management",
-      "dependentActions": [
-        "organizations:DisableAWSServiceAccess",
-        "organizations:ListAccounts"
-      ]
-    },
-    "EnableHealthServiceAccessForOrganization": {
-      "url": "https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html",
-      "description": "Enables the Organizational View feature.",
-      "accessLevel": "Permissions management",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole",
-        "organizations:EnableAWSServiceAccess",
-        "organizations:ListAccounts"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "event": {
-      "name": "event",
-      "url": "https://docs.aws.amazon.com/health/latest/ug/supported-operations.html",
-      "arn": "arn:${Partition}:health:${Region}:${Account}:event/${Service}/${EventTypeCode}/${EventTypePlusId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [health](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awshealthapisandnotifications.html).
@@ -321,6 +205,26 @@ export class Health extends PolicyStatement {
     this.to('health:EnableHealthServiceAccessForOrganization');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DescribeAffectedAccountsForOrganization",
+      "DescribeAffectedEntities",
+      "DescribeAffectedEntitiesForOrganization",
+      "DescribeEntityAggregates",
+      "DescribeEventAggregates",
+      "DescribeEventDetails",
+      "DescribeEventDetailsForOrganization",
+      "DescribeEventTypes",
+      "DescribeEvents",
+      "DescribeEventsForOrganization"
+    ],
+    "Permissions management": [
+      "DescribeHealthServiceStatusForOrganization",
+      "DisableHealthServiceAccessForOrganization",
+      "EnableHealthServiceAccessForOrganization"
+    ]
+  };
 
   /**
    * Adds a resource of type event to the statement

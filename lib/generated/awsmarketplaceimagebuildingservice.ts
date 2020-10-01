@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html).
@@ -7,24 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class AwsMarketplaceImageBuildingService extends PolicyStatement {
   public servicePrefix = 'aws-marketplace-image-building-service';
-  protected actionList: Actions = {
-    "DescribeBuilds": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
-      "description": "Describes Image Builds identified by a build Id",
-      "accessLevel": "Read"
-    },
-    "ListBuilds": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
-      "description": "Lists Image Builds.",
-      "accessLevel": "Read"
-    },
-    "StartBuild": {
-      "url": "https://docs.aws.amazon.com/marketplace/latest/buyerguide/api-reference.html",
-      "description": "Starts an Image Build",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [aws-marketplace-image-building-service](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsmarketplaceimagebuildingservice.html).
@@ -70,4 +53,14 @@ export class AwsMarketplaceImageBuildingService extends PolicyStatement {
     this.to('aws-marketplace-image-building-service:StartBuild');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DescribeBuilds",
+      "ListBuilds"
+    ],
+    "Write": [
+      "StartBuild"
+    ]
+  };
 }

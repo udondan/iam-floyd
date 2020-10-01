@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [networkmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html).
@@ -7,440 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Networkmanager extends PolicyStatement {
   public servicePrefix = 'networkmanager';
-  protected actionList: Actions = {
-    "AssociateCustomerGateway": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateCustomerGateway.html",
-      "description": "Grants permission to associate a customer gateway to a device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        },
-        "global-network": {
-          "required": true
-        },
-        "link": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "networkmanager:cgwArn"
-      ]
-    },
-    "AssociateLink": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_AssociateLink.html",
-      "description": "Grants permission to associate a link to a device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        },
-        "global-network": {
-          "required": true
-        },
-        "link": {
-          "required": true
-        }
-      }
-    },
-    "CreateDevice": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateDevice.html",
-      "description": "Grants permission to create a new device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateGlobalNetwork": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateGlobalNetwork.html",
-      "description": "Grants permission to create a new global network",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateLink": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateLink.html",
-      "description": "Grants permission to create a new link",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "site": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateSite": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_CreateSite.html",
-      "description": "Grants permission to create a new site",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteDevice": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteDevice.html",
-      "description": "Grants permission to delete a device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        },
-        "global-network": {
-          "required": true
-        }
-      }
-    },
-    "DeleteGlobalNetwork": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteGlobalNetwork.html",
-      "description": "Grants permission to delete a global network",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      }
-    },
-    "DeleteLink": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteLink.html",
-      "description": "Grants permission to delete a link",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "link": {
-          "required": true
-        }
-      }
-    },
-    "DeleteSite": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeleteSite.html",
-      "description": "Grants permission to delete a site",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "site": {
-          "required": true
-        }
-      }
-    },
-    "DeregisterTransitGateway": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DeregisterTransitGateway.html",
-      "description": "Grants permission to deregister a transit gateway from a global network",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "networkmanager:tgwArn"
-      ]
-    },
-    "DescribeGlobalNetworks": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DescribeGlobalNetworks.html",
-      "description": "Grants permission to describe global networks",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": false
-        }
-      }
-    },
-    "DisassociateCustomerGateway": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateCustomerGateway.html",
-      "description": "Grants permission to disassociate a customer gateway from a device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "networkmanager:cgwArn"
-      ]
-    },
-    "DisassociateLink": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_DisassociateLink.html",
-      "description": "Grants permission to disassociate a link from a device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        },
-        "global-network": {
-          "required": true
-        },
-        "link": {
-          "required": true
-        }
-      }
-    },
-    "GetCustomerGatewayAssociations": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetCustomerGatewayAssociations.html",
-      "description": "Grants permission to describe customer gateway associations",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      }
-    },
-    "GetDevices": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetDevices.html",
-      "description": "Grants permission to describe devices",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "device": {
-          "required": false
-        }
-      }
-    },
-    "GetLinkAssociations": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinkAssociations.html",
-      "description": "Grants permission to describe link associations",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "device": {
-          "required": false
-        },
-        "link": {
-          "required": false
-        }
-      }
-    },
-    "GetLinks": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetLinks.html",
-      "description": "Grants permission to describe links",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "link": {
-          "required": false
-        }
-      }
-    },
-    "GetSites": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetSites.html",
-      "description": "Grants permission to describe global networks",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "site": {
-          "required": false
-        }
-      }
-    },
-    "GetTransitGatewayRegistrations": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_GetTransitGatewayRegistrations.html",
-      "description": "Grants permission to describe transit gateway registrations",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Grants permission to lists tag for a Network Manager resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "device": {
-          "required": false
-        },
-        "global-network": {
-          "required": false
-        },
-        "link": {
-          "required": false
-        },
-        "site": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "RegisterTransitGateway": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_RegisterTransitGateway.html",
-      "description": "Grants permission to register a transit gateway to a global network",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "networkmanager:tgwArn"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_TagResource.html",
-      "description": "Grants permission to tag a Network Manager resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "device": {
-          "required": false
-        },
-        "global-network": {
-          "required": false
-        },
-        "link": {
-          "required": false
-        },
-        "site": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UntagResource.html",
-      "description": "Grants permission to untag a Network Manager resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "device": {
-          "required": false
-        },
-        "global-network": {
-          "required": false
-        },
-        "link": {
-          "required": false
-        },
-        "site": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateDevice": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateDevice.html",
-      "description": "Grants permission to update a device",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "device": {
-          "required": true
-        },
-        "global-network": {
-          "required": true
-        }
-      }
-    },
-    "UpdateGlobalNetwork": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateGlobalNetwork.html",
-      "description": "Grants permission to update a global network",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        }
-      }
-    },
-    "UpdateLink": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateLink.html",
-      "description": "Grants permission to update a link",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "link": {
-          "required": true
-        }
-      }
-    },
-    "UpdateSite": {
-      "url": "https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_UpdateSite.html",
-      "description": "Grants permission to update a site",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "global-network": {
-          "required": true
-        },
-        "site": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "global-network": {
-      "name": "global-network",
-      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager::${Account}:global-network/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "site": {
-      "name": "site",
-      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager::${Account}:site/${GlobalNetworkId}/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "link": {
-      "name": "link",
-      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager::${Account}:link/${GlobalNetworkId}/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "device": {
-      "name": "device",
-      "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html/",
-      "arn": "arn:${Partition}:networkmanager::${Account}:device/${GlobalNetworkId}/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [networkmanager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html).
@@ -828,6 +395,45 @@ export class Networkmanager extends PolicyStatement {
     this.to('networkmanager:UpdateSite');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AssociateCustomerGateway",
+      "AssociateLink",
+      "CreateDevice",
+      "CreateGlobalNetwork",
+      "CreateLink",
+      "CreateSite",
+      "DeleteDevice",
+      "DeleteGlobalNetwork",
+      "DeleteLink",
+      "DeleteSite",
+      "DeregisterTransitGateway",
+      "DisassociateCustomerGateway",
+      "DisassociateLink",
+      "RegisterTransitGateway",
+      "UpdateDevice",
+      "UpdateGlobalNetwork",
+      "UpdateLink",
+      "UpdateSite"
+    ],
+    "List": [
+      "DescribeGlobalNetworks",
+      "GetCustomerGatewayAssociations",
+      "GetDevices",
+      "GetLinkAssociations",
+      "GetLinks",
+      "GetSites",
+      "GetTransitGatewayRegistrations"
+    ],
+    "Read": [
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type global-network to the statement

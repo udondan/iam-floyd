@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconnect.html).
@@ -7,104 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Mediaconnect extends PolicyStatement {
   public servicePrefix = 'mediaconnect';
-  protected actionList: Actions = {
-    "AddFlowOutputs": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs.html",
-      "description": "Grants permission to add outputs to any flow.",
-      "accessLevel": "Write"
-    },
-    "CreateFlow": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
-      "description": "Grants permission to create flows.",
-      "accessLevel": "Write"
-    },
-    "DeleteFlow": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html",
-      "description": "Grants permission to delete flows.",
-      "accessLevel": "Write"
-    },
-    "DescribeFlow": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn.html",
-      "description": "Grants permission to display the details of a flow including the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements.",
-      "accessLevel": "Read"
-    },
-    "GrantFlowEntitlements": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements.html",
-      "description": "Grants permission to grant entitlements on any flow.",
-      "accessLevel": "Write"
-    },
-    "ListEntitlements": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-entitlements.html",
-      "description": "Grants permission to display a list of all entitlements that have been granted to the account.",
-      "accessLevel": "List"
-    },
-    "ListFlows": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows.html",
-      "description": "Grants permission to display a list of flows that are associated with this account.",
-      "accessLevel": "List"
-    },
-    "RemoveFlowOutput": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html",
-      "description": "Grants permission to remove outputs from any flow.",
-      "accessLevel": "Write"
-    },
-    "RevokeFlowEntitlement": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html",
-      "description": "Grants permission to revoke entitlements on any flow.",
-      "accessLevel": "Write"
-    },
-    "StartFlow": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-start-flowarn.html",
-      "description": "Grants permission to start flows.",
-      "accessLevel": "Write"
-    },
-    "StopFlow": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-stop-flowarn.html",
-      "description": "Grants permission to stop flows.",
-      "accessLevel": "Write"
-    },
-    "UpdateFlowEntitlement": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-entitlements-entitlementarn.html",
-      "description": "Grants permission to update entitlements on any flow.",
-      "accessLevel": "Write"
-    },
-    "UpdateFlowOutput": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-outputs-outputarn.html",
-      "description": "Grants permission to update outputs on any flow.",
-      "accessLevel": "Write"
-    },
-    "UpdateFlowSource": {
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/api/v1-flows-flowarn-source-sourcearn.html",
-      "description": "Grants permission to update the source of any flow.",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "Entitlement": {
-      "name": "Entitlement",
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/entitlements.html",
-      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:entitlement:${FlowId}:${EntitlementName}",
-      "conditionKeys": []
-    },
-    "Flow": {
-      "name": "Flow",
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/flows.html",
-      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:flow:${FlowId}:${FlowName}",
-      "conditionKeys": []
-    },
-    "Output": {
-      "name": "Output",
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/outputs.html",
-      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:output:${OutputId}:${OutputName}",
-      "conditionKeys": []
-    },
-    "Source": {
-      "name": "Source",
-      "url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/sources.html",
-      "arn": "arn:${Partition}:mediaconnect:${Region}:${Account}:source:${SourceId}:${SourceName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [mediaconnect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediaconnect.html).
@@ -282,6 +185,29 @@ export class Mediaconnect extends PolicyStatement {
     this.to('mediaconnect:UpdateFlowSource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AddFlowOutputs",
+      "CreateFlow",
+      "DeleteFlow",
+      "GrantFlowEntitlements",
+      "RemoveFlowOutput",
+      "RevokeFlowEntitlement",
+      "StartFlow",
+      "StopFlow",
+      "UpdateFlowEntitlement",
+      "UpdateFlowOutput",
+      "UpdateFlowSource"
+    ],
+    "Read": [
+      "DescribeFlow"
+    ],
+    "List": [
+      "ListEntitlements",
+      "ListFlows"
+    ]
+  };
 
   /**
    * Adds a resource of type Entitlement to the statement

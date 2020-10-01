@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [identitystore](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsidentitystore.html).
@@ -7,29 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Identitystore extends PolicyStatement {
   public servicePrefix = 'identitystore';
-  protected actionList: Actions = {
-    "DescribeGroup": {
-      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeGroup.html",
-      "description": "Retrieves information about group from the directory that AWS Identity Store provides by default",
-      "accessLevel": "Read"
-    },
-    "DescribeUser": {
-      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_DescribeUser.html",
-      "description": "Retrieves information about user from the directory that AWS Identity Store provides by default",
-      "accessLevel": "Read"
-    },
-    "ListGroups": {
-      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListGroups.html",
-      "description": "Search for groups within the associated directory",
-      "accessLevel": "List"
-    },
-    "ListUsers": {
-      "url": "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_ListUsers.html",
-      "description": "Search for users within the associated directory",
-      "accessLevel": "List"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [identitystore](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsidentitystore.html).
@@ -87,4 +65,15 @@ export class Identitystore extends PolicyStatement {
     this.to('identitystore:ListUsers');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DescribeGroup",
+      "DescribeUser"
+    ],
+    "List": [
+      "ListGroups",
+      "ListUsers"
+    ]
+  };
 }

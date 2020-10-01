@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html).
@@ -7,396 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Iotanalytics extends PolicyStatement {
   public servicePrefix = 'iotanalytics';
-  protected actionList: Actions = {
-    "BatchPutMessage": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html",
-      "description": "Puts a batch of messages into the specified channel.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channel": {
-          "required": true
-        }
-      }
-    },
-    "CancelPipelineReprocessing": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CancelPipelineReprocessing.html",
-      "description": "Cancels reprocessing for the specified pipeline.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "pipeline": {
-          "required": true
-        }
-      }
-    },
-    "CreateChannel": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateChannel.html",
-      "description": "Creates a channel.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channel": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateDataset": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDataset.html",
-      "description": "Creates a dataset.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateDatasetContent": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatasetContent.html",
-      "description": "Generates content of the specified dataset (by executing the dataset actions).",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      }
-    },
-    "CreateDatastore": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatastore.html",
-      "description": "Creates a datastore.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "datastore": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreatePipeline": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreatePipeline.html",
-      "description": "Creates a pipeline.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "pipeline": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteChannel": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteChannel.html",
-      "description": "Deletes the specified channel.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channel": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDataset": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDataset.html",
-      "description": "Deletes the specified dataset.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDatasetContent": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatasetContent.html",
-      "description": "Deletes the content of the specified dataset.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDatastore": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatastore.html",
-      "description": "Deletes the specified datastore.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "datastore": {
-          "required": true
-        }
-      }
-    },
-    "DeletePipeline": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeletePipeline.html",
-      "description": "Deletes the specified pipeline.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "pipeline": {
-          "required": true
-        }
-      }
-    },
-    "DescribeChannel": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeChannel.html",
-      "description": "Describes the specified channel.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "channel": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDataset": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDataset.html",
-      "description": "Describes the specified dataset.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDatastore": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDatastore.html",
-      "description": "Describes the specified datastore.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "datastore": {
-          "required": true
-        }
-      }
-    },
-    "DescribeLoggingOptions": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeLoggingOptions.html",
-      "description": "Describes logging options for the the account.",
-      "accessLevel": "Read"
-    },
-    "DescribePipeline": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribePipeline.html",
-      "description": "Describes the specified pipeline.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "pipeline": {
-          "required": true
-        }
-      }
-    },
-    "GetDatasetContent": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_GetDatasetContent.html",
-      "description": "Gets the content of the specified dataset.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      }
-    },
-    "ListChannels": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListChannels.html",
-      "description": "Lists the channels for the account.",
-      "accessLevel": "List"
-    },
-    "ListDatasets": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatasets.html",
-      "description": "Lists the datasets for the account.",
-      "accessLevel": "List"
-    },
-    "ListDatastores": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatastores.html",
-      "description": "Lists the datastores for the account.",
-      "accessLevel": "List"
-    },
-    "ListPipelines": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListPipelines.html",
-      "description": "Lists the pipelines for the account.",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Lists the tags (metadata) which you have assigned to the resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "channel": {
-          "required": false
-        },
-        "dataset": {
-          "required": false
-        },
-        "datastore": {
-          "required": false
-        },
-        "pipeline": {
-          "required": false
-        }
-      }
-    },
-    "PutLoggingOptions": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_PutLoggingOptions.html",
-      "description": "Puts logging options for the the account.",
-      "accessLevel": "Write"
-    },
-    "RunPipelineActivity": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_RunPipelineActivity.html",
-      "description": "Runs the specified pipeline activity.",
-      "accessLevel": "Read"
-    },
-    "SampleChannelData": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_SampleChannelData.html",
-      "description": "Samples the specified channel's data.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "channel": {
-          "required": true
-        }
-      }
-    },
-    "StartPipelineReprocessing": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_StartPipelineReprocessing.html",
-      "description": "Starts reprocessing for the specified pipeline.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "pipeline": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_TagResource.html",
-      "description": "Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "channel": {
-          "required": false
-        },
-        "dataset": {
-          "required": false
-        },
-        "datastore": {
-          "required": false
-        },
-        "pipeline": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UntagResource.html",
-      "description": "Removes the given tags (metadata) from the resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "channel": {
-          "required": false
-        },
-        "dataset": {
-          "required": false
-        },
-        "datastore": {
-          "required": false
-        },
-        "pipeline": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateChannel": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateChannel.html",
-      "description": "Updates the specified channel.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "channel": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDataset": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDataset.html",
-      "description": "Updates the specified dataset.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "dataset": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDatastore": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDatastore.html",
-      "description": "Updates the specified datastore.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "datastore": {
-          "required": true
-        }
-      }
-    },
-    "UpdatePipeline": {
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdatePipeline.html",
-      "description": "Updates the specified pipeline.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "pipeline": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "channel": {
-      "name": "channel",
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
-      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:channel/${ChannelName}",
-      "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys",
-        "iotanalytics:ResourceTag/${TagKey}"
-      ]
-    },
-    "dataset": {
-      "name": "dataset",
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
-      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:dataset/${DatasetName}",
-      "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys",
-        "iotanalytics:ResourceTag/${TagKey}"
-      ]
-    },
-    "datastore": {
-      "name": "datastore",
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
-      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:datastore/${DatastoreName}",
-      "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys",
-        "iotanalytics:ResourceTag/${TagKey}"
-      ]
-    },
-    "pipeline": {
-      "name": "pipeline",
-      "url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how",
-      "arn": "arn:${Partition}:iotanalytics:${Region}:${Account}:pipeline/${PipelineName}",
-      "conditionKeys": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys",
-        "iotanalytics:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [iotanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html).
@@ -826,6 +437,50 @@ export class Iotanalytics extends PolicyStatement {
     this.to('iotanalytics:UpdatePipeline');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "BatchPutMessage",
+      "CancelPipelineReprocessing",
+      "CreateChannel",
+      "CreateDataset",
+      "CreateDatasetContent",
+      "CreateDatastore",
+      "CreatePipeline",
+      "DeleteChannel",
+      "DeleteDataset",
+      "DeleteDatasetContent",
+      "DeleteDatastore",
+      "DeletePipeline",
+      "PutLoggingOptions",
+      "StartPipelineReprocessing",
+      "UpdateChannel",
+      "UpdateDataset",
+      "UpdateDatastore",
+      "UpdatePipeline"
+    ],
+    "Read": [
+      "DescribeChannel",
+      "DescribeDataset",
+      "DescribeDatastore",
+      "DescribeLoggingOptions",
+      "DescribePipeline",
+      "GetDatasetContent",
+      "ListTagsForResource",
+      "RunPipelineActivity",
+      "SampleChannelData"
+    ],
+    "List": [
+      "ListChannels",
+      "ListDatasets",
+      "ListDatastores",
+      "ListPipelines"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type channel to the statement

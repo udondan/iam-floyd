@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [wam](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkspacesapplicationmanager.html).
@@ -7,14 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Wam extends PolicyStatement {
   public servicePrefix = 'wam';
-  protected actionList: Actions = {
-    "AuthenticatePackager": {
-      "url": "https://docs.aws.amazon.com/wam/latest/adminguide/iam.html",
-      "description": "Allows the Amazon WAM packaging instance to access your application package catalog.",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [wam](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworkspacesapplicationmanager.html).
@@ -36,4 +29,10 @@ export class Wam extends PolicyStatement {
     this.to('wam:AuthenticatePackager');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AuthenticatePackager"
+    ]
+  };
 }

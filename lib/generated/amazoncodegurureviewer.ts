@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html).
@@ -7,147 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class CodeguruReviewer extends PolicyStatement {
   public servicePrefix = 'codeguru-reviewer';
-  protected actionList: Actions = {
-    "AssociateRepository": {
-      "url": "",
-      "description": "Grants permission to associates a repository with Amazon CodeGuru Reviewer.",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "codecommit:ListRepositories",
-        "codecommit:TagResource",
-        "events:PutRule",
-        "events:PutTargets",
-        "iam:CreateServiceLinkedRole"
-      ],
-      "resourceTypes": {
-        "repository": {
-          "required": false
-        }
-      }
-    },
-    "CreateConnectionToken": {
-      "url": "",
-      "description": "Grants permission to perform webbased oauth handshake for 3rd party providers.",
-      "accessLevel": "Read"
-    },
-    "DescribeCodeReview": {
-      "url": "",
-      "description": "Grants permission to describe a code review.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "codereview": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRecommendationFeedback": {
-      "url": "",
-      "description": "Grants permission to describe a recommendation feedback on a code review.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "codereview": {
-          "required": true
-        }
-      }
-    },
-    "DescribeRepositoryAssociation": {
-      "url": "",
-      "description": "Grants permission to describe a repository association.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "association": {
-          "required": true
-        }
-      }
-    },
-    "DisassociateRepository": {
-      "url": "",
-      "description": "Grants permission to disassociate a repository with Amazon CodeGuru Reviewer.",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "codecommit:UntagResource",
-        "events:DeleteRule",
-        "events:RemoveTargets"
-      ],
-      "resourceTypes": {
-        "association": {
-          "required": true
-        }
-      }
-    },
-    "GetMetricsData": {
-      "url": "",
-      "description": "Grants permission to view pull request metrics in console.",
-      "accessLevel": "Read"
-    },
-    "ListCodeReviews": {
-      "url": "",
-      "description": "Grants permission to list summary of code reviews.",
-      "accessLevel": "List"
-    },
-    "ListRecommendationFeedback": {
-      "url": "",
-      "description": "Grants permission to list summary of recommendation feedback on a code review.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "codereview": {
-          "required": true
-        }
-      }
-    },
-    "ListRecommendations": {
-      "url": "",
-      "description": "Grants permission to list summary of recommendations on a code review",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "codereview": {
-          "required": true
-        }
-      }
-    },
-    "ListRepositoryAssociations": {
-      "url": "",
-      "description": "Grants permission to list summary of repository associations.",
-      "accessLevel": "List"
-    },
-    "ListThirdPartyRepositories": {
-      "url": "",
-      "description": "Grants permission to list 3rd party providers repositories in console.",
-      "accessLevel": "Read"
-    },
-    "PutRecommendationFeedback": {
-      "url": "",
-      "description": "Grants permission to put feedback for a recommendation on a code review.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "codereview": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "association": {
-      "name": "association",
-      "url": "",
-      "arn": "arn:${Partition}:codeguru-reviewer::${Account}:association:${ResourceId}",
-      "conditionKeys": []
-    },
-    "codereview": {
-      "name": "codereview",
-      "url": "",
-      "arn": "arn:${Partition}:codeguru-reviewer:${Region}:${Account}:code-review:${CodeReviewUuid}",
-      "conditionKeys": []
-    },
-    "repository": {
-      "name": "repository",
-      "url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats",
-      "arn": "arn:${Partition}:codecommit:${Region}:${Account}:${RepositoryName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [codeguru-reviewer](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodegurureviewer.html).
@@ -299,6 +159,28 @@ export class CodeguruReviewer extends PolicyStatement {
     this.to('codeguru-reviewer:PutRecommendationFeedback');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AssociateRepository",
+      "DisassociateRepository",
+      "PutRecommendationFeedback"
+    ],
+    "Read": [
+      "CreateConnectionToken",
+      "DescribeCodeReview",
+      "DescribeRecommendationFeedback",
+      "DescribeRepositoryAssociation",
+      "GetMetricsData",
+      "ListThirdPartyRepositories"
+    ],
+    "List": [
+      "ListCodeReviews",
+      "ListRecommendationFeedback",
+      "ListRecommendations",
+      "ListRepositoryAssociations"
+    ]
+  };
 
   /**
    * Adds a resource of type association to the statement

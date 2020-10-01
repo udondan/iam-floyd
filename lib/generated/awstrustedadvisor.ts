@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html).
@@ -7,136 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Trustedadvisor extends PolicyStatement {
   public servicePrefix = 'trustedadvisor';
-  protected actionList: Actions = {
-    "DescribeAccount": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences",
-      "accessLevel": "Read"
-    },
-    "DescribeAccountAccess": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view if the AWS account has enabled or disabled AWS Trusted Advisor",
-      "accessLevel": "Read"
-    },
-    "DescribeCheckItems": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view details for the check items",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "checks": {
-          "required": true
-        }
-      }
-    },
-    "DescribeCheckRefreshStatuses": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view the refresh statuses for AWS Trusted Advisor checks",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "checks": {
-          "required": true
-        }
-      }
-    },
-    "DescribeCheckSummaries": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view AWS Trusted Advisor check summaries",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "checks": {
-          "required": true
-        }
-      }
-    },
-    "DescribeChecks": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view details for AWS Trusted Advisor checks",
-      "accessLevel": "Read"
-    },
-    "DescribeNotificationPreferences": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view the notification preferences for the AWS account",
-      "accessLevel": "Read"
-    },
-    "DescribeOrganization": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view if the AWS account meets the requirements to enable the organizational view feature",
-      "accessLevel": "Read"
-    },
-    "DescribeOrganizationAccounts": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view the linked AWS accounts that are in the organization",
-      "accessLevel": "Read"
-    },
-    "DescribeReports": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view details for organizational view reports, such as the report name, runtime, date created, status, and format",
-      "accessLevel": "Read"
-    },
-    "DescribeServiceMetadata": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses",
-      "accessLevel": "Read"
-    },
-    "ExcludeCheckItems": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to exclude recommendations for AWS Trusted Advisor checks",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "checks": {
-          "required": true
-        }
-      }
-    },
-    "GenerateReport": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to create a report for AWS Trusted Advisor checks in your organization",
-      "accessLevel": "Write"
-    },
-    "IncludeCheckItems": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to include recommendations for AWS Trusted Advisor checks",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "checks": {
-          "required": true
-        }
-      }
-    },
-    "RefreshCheck": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to refresh an AWS Trusted Advisor check",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "checks": {
-          "required": true
-        }
-      }
-    },
-    "SetAccountAccess": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to enable or disable AWS Trusted Advisor for the account",
-      "accessLevel": "Write"
-    },
-    "SetOrganizationAccess": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to enable the organizational view feature for AWS Trusted Advisor",
-      "accessLevel": "Write"
-    },
-    "UpdateNotificationPreferences": {
-      "url": "https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations",
-      "description": "Grants permission to update notification preferences for AWS Trusted Advisor",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "checks": {
-      "name": "checks",
-      "url": "https://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html",
-      "arn": "arn:${Partition}:trustedadvisor:${Region}:${Account}:checks/${CategoryCode}/${CheckId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [trustedadvisor](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awstrustedadvisor.html).
@@ -362,6 +233,31 @@ export class Trustedadvisor extends PolicyStatement {
     this.to('trustedadvisor:UpdateNotificationPreferences');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DescribeAccount",
+      "DescribeAccountAccess",
+      "DescribeCheckItems",
+      "DescribeCheckRefreshStatuses",
+      "DescribeCheckSummaries",
+      "DescribeChecks",
+      "DescribeNotificationPreferences",
+      "DescribeOrganization",
+      "DescribeOrganizationAccounts",
+      "DescribeReports",
+      "DescribeServiceMetadata"
+    ],
+    "Write": [
+      "ExcludeCheckItems",
+      "GenerateReport",
+      "IncludeCheckItems",
+      "RefreshCheck",
+      "SetAccountAccess",
+      "SetOrganizationAccess",
+      "UpdateNotificationPreferences"
+    ]
+  };
 
   /**
    * Adds a resource of type checks to the statement

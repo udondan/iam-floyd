@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elementalactivations.html).
@@ -7,75 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class ElementalActivations extends PolicyStatement {
   public servicePrefix = 'elemental-activations';
-  protected actionList: Actions = {
-    "DownloadSoftware": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "description": "Download the Software files for AWS Elemental Appliances and Software Purchases",
-      "accessLevel": "List"
-    },
-    "GenerateLicenses": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "description": "Generate Software Licenses for AWS Elemental Appliances and Software Purchases",
-      "accessLevel": "List"
-    },
-    "GetActivation": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "description": "Describe an activation",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "activation": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "description": "This action lists tags for an AWS Elemental Activations resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "activation": {
-          "required": false
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "description": "This action adds a tag for an AWS Elemental Activations resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "activation": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "description": "This action removes a tag from an AWS Elemental Activations resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "activation": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "activation": {
-      "name": "activation",
-      "url": "https://docs.aws.amazon.com/elemental-appliances-software/",
-      "arn": "arn:${Partition}:elemental-activations:${Region}:${Account}:activation/${ResourceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [elemental-activations](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_elementalactivations.html).
@@ -164,6 +96,21 @@ export class ElementalActivations extends PolicyStatement {
     this.to('elemental-activations:UntagResource');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "List": [
+      "DownloadSoftware",
+      "GenerateLicenses"
+    ],
+    "Read": [
+      "GetActivation",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type activation to the statement

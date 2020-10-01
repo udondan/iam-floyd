@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [servicediscovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html).
@@ -7,228 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Servicediscovery extends PolicyStatement {
   public servicePrefix = 'servicediscovery';
-  protected actionList: Actions = {
-    "CreateHttpNamespace": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html",
-      "description": "Creates an HTTP namespace.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreatePrivateDnsNamespace": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html",
-      "description": "Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreatePublicDnsNamespace": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html",
-      "description": "Creates a public namespace based on DNS, which will be visible on the internet.",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "CreateService": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html",
-      "description": "Creates a service.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "namespace": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "servicediscovery:NamespaceArn",
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "DeleteNamespace": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteNamespace.html",
-      "description": "Deletes a specified namespace.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "namespace": {
-          "required": true
-        }
-      }
-    },
-    "DeleteService": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteService.html",
-      "description": "Deletes a specified service.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "service": {
-          "required": true
-        }
-      }
-    },
-    "DeregisterInstance": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html",
-      "description": "Deletes the records and the health check, if any, that Amazon Route 53 created for the specified instance.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "service": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "servicediscovery:ServiceArn"
-      ]
-    },
-    "DiscoverInstances": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html",
-      "description": "Discovers registered instances for a specified namespace and service.",
-      "accessLevel": "Read",
-      "conditions": [
-        "servicediscovery:NamespaceName",
-        "servicediscovery:ServiceName"
-      ]
-    },
-    "GetInstance": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstance.html",
-      "description": "Gets information about a specified instance.",
-      "accessLevel": "Read",
-      "conditions": [
-        "servicediscovery:ServiceArn"
-      ]
-    },
-    "GetInstancesHealthStatus": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstancesHealthStatus.html",
-      "description": "Gets the current health status (Healthy, Unhealthy, or Unknown) of one or more instances.",
-      "accessLevel": "Read",
-      "conditions": [
-        "servicediscovery:ServiceArn"
-      ]
-    },
-    "GetNamespace": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_GetNamespace.html",
-      "description": "Gets information about a namespace.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "namespace": {
-          "required": true
-        }
-      }
-    },
-    "GetOperation": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html",
-      "description": "Gets information about a specific operation.",
-      "accessLevel": "Read"
-    },
-    "GetService": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_GetService.html",
-      "description": "Gets the settings for a specified service.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "service": {
-          "required": true
-        }
-      }
-    },
-    "ListInstances": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html",
-      "description": "Gets summary information about the instances that were registered with a specified service.",
-      "accessLevel": "List",
-      "conditions": [
-        "servicediscovery:ServiceArn"
-      ]
-    },
-    "ListNamespaces": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListNamespaces.html",
-      "description": "Gets information about the namespaces.",
-      "accessLevel": "List"
-    },
-    "ListOperations": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html",
-      "description": "Lists operations that match the criteria that you specify.",
-      "accessLevel": "List"
-    },
-    "ListServices": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListServices.html",
-      "description": "Gets settings for all the services that match specified filters.",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_ListTagsForResource.html",
-      "description": "Lists tags for the specified resource.",
-      "accessLevel": "List"
-    },
-    "RegisterInstance": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html",
-      "description": "Registers an instance based on the settings in a specified service.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "service": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "servicediscovery:ServiceArn"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_TagResource.html",
-      "description": "Adds one or more tags to the specified resource.",
-      "accessLevel": "Tagging",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_UntagResource.html",
-      "description": "Removes one or more tags from the specified resource.",
-      "accessLevel": "Tagging",
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UpdateInstanceCustomHealthStatus": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html",
-      "description": "Updates the current health status for an instance that has a custom health check.",
-      "accessLevel": "Write",
-      "conditions": [
-        "servicediscovery:ServiceArn"
-      ]
-    },
-    "UpdateService": {
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateService.html",
-      "description": "Updates the settings in a specified service.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "service": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "namespace": {
-      "name": "namespace",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html",
-      "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:namespace/${NamespaceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "service": {
-      "name": "service",
-      "url": "https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html",
-      "arn": "arn:${Partition}:servicediscovery:${Region}:${Account}:service/${ServiceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [servicediscovery](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html).
@@ -561,6 +340,40 @@ export class Servicediscovery extends PolicyStatement {
     this.to('servicediscovery:UpdateService');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateHttpNamespace",
+      "CreatePrivateDnsNamespace",
+      "CreatePublicDnsNamespace",
+      "CreateService",
+      "DeleteNamespace",
+      "DeleteService",
+      "DeregisterInstance",
+      "RegisterInstance",
+      "UpdateInstanceCustomHealthStatus",
+      "UpdateService"
+    ],
+    "Read": [
+      "DiscoverInstances",
+      "GetInstance",
+      "GetInstancesHealthStatus",
+      "GetNamespace",
+      "GetOperation",
+      "GetService"
+    ],
+    "List": [
+      "ListInstances",
+      "ListNamespaces",
+      "ListOperations",
+      "ListServices",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type namespace to the statement

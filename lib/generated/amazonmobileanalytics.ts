@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [mobileanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmobileanalytics.html).
@@ -7,24 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Mobileanalytics extends PolicyStatement {
   public servicePrefix = 'mobileanalytics';
-  protected actionList: Actions = {
-    "GetFinancialReports": {
-      "url": "",
-      "description": "Grant access to financial metrics for an app",
-      "accessLevel": "Read"
-    },
-    "GetReports": {
-      "url": "",
-      "description": "Grant access to standard metrics for an app",
-      "accessLevel": "Read"
-    },
-    "PutEvents": {
-      "url": "https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html",
-      "description": "The PutEvents operation records one or more events",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [mobileanalytics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmobileanalytics.html).
@@ -66,4 +49,14 @@ export class Mobileanalytics extends PolicyStatement {
     this.to('mobileanalytics:PutEvents');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "GetFinancialReports",
+      "GetReports"
+    ],
+    "Write": [
+      "PutEvents"
+    ]
+  };
 }

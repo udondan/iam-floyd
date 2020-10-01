@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html).
@@ -7,175 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class CodestarConnections extends PolicyStatement {
   public servicePrefix = 'codestar-connections';
-  protected actionList: Actions = {
-    "CreateConnection": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_CreateConnection.html",
-      "description": "Grants permission to create a Connection resource",
-      "accessLevel": "Write",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys",
-        "codestar-connections:ProviderType"
-      ]
-    },
-    "DeleteConnection": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_DeleteConnection.html",
-      "description": "Grants permission to delete a Connection resource",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      }
-    },
-    "GetConnection": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_GetConnection.html",
-      "description": "Grants permission to get details about a Connection resource",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      }
-    },
-    "GetIndividualAccessToken": {
-      "url": "",
-      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
-      "accessLevel": "Read",
-      "dependentActions": [
-        "codestar-connections:StartOAuthHandshake"
-      ],
-      "conditions": [
-        "codestar-connections:ProviderType"
-      ]
-    },
-    "GetInstallationUrl": {
-      "url": "",
-      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
-      "accessLevel": "Read",
-      "conditions": [
-        "codestar-connections:ProviderType"
-      ]
-    },
-    "ListConnections": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListConnections.html",
-      "description": "Grants permission to list Connection resources",
-      "accessLevel": "List",
-      "conditions": [
-        "codestar-connections:ProviderTypeFilter"
-      ]
-    },
-    "ListInstallationTargets": {
-      "url": "",
-      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
-      "accessLevel": "List",
-      "dependentActions": [
-        "codestar-connections:GetIndividualAccessToken",
-        "codestar-connections:StartOAuthHandshake"
-      ]
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Gets the set of key-value pairs that are used to manage the resource",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      }
-    },
-    "PassConnection": {
-      "url": "",
-      "description": "Grants permission to pass a Connection resource to an AWS service that accepts a Connection ARN as input, such as codepipeline:CreatePipeline",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "codestar-connections:PassedToService"
-      ]
-    },
-    "StartOAuthHandshake": {
-      "url": "",
-      "description": "Grants permission to associate a third party, such as a Bitbucket App installation, with a Connection",
-      "accessLevel": "Read",
-      "conditions": [
-        "codestar-connections:ProviderType"
-      ]
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_TagResource.html",
-      "description": "Adds to or modifies the tags of the given resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_UntagResource.html",
-      "description": "Removes tags from an AWS resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateConnectionInstallation": {
-      "url": "",
-      "description": "Grants permission to update a Connection resource with an installation of the CodeStar Connections App",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "codestar-connections:GetIndividualAccessToken",
-        "codestar-connections:GetInstallationUrl",
-        "codestar-connections:ListInstallationTargets",
-        "codestar-connections:StartOAuthHandshake"
-      ],
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "codestar-connections:InstallationId"
-      ]
-    },
-    "UseConnection": {
-      "url": "",
-      "description": "Grants permission to use a Connection resource to call provider actions",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "Connection": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "codestar-connections:FullRepositoryId",
-        "codestar-connections:ProviderAction",
-        "codestar-connections:ProviderPermissionsRequired"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "Connection": {
-      "name": "Connection",
-      "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Connection.html",
-      "arn": "arn:${Partition}:codestar-connections:${Region}:${Account}:connection/${ConnectionId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [codestar-connections](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodestarconnections.html).
@@ -388,6 +220,31 @@ export class CodestarConnections extends PolicyStatement {
     this.to('codestar-connections:UseConnection');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateConnection",
+      "DeleteConnection",
+      "UpdateConnectionInstallation"
+    ],
+    "Read": [
+      "GetConnection",
+      "GetIndividualAccessToken",
+      "GetInstallationUrl",
+      "PassConnection",
+      "StartOAuthHandshake",
+      "UseConnection"
+    ],
+    "List": [
+      "ListConnections",
+      "ListInstallationTargets",
+      "ListTagsForResource"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type Connection to the statement

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
@@ -7,144 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Firehose extends PolicyStatement {
   public servicePrefix = 'firehose';
-  protected actionList: Actions = {
-    "CreateDeliveryStream": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html",
-      "description": "Creates a delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteDeliveryStream": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html",
-      "description": "Deletes a delivery stream and its data.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "DescribeDeliveryStream": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html",
-      "description": "Describes the specified delivery stream and gets the status.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "ListDeliveryStreams": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html",
-      "description": "Lists your delivery streams.",
-      "accessLevel": "List"
-    },
-    "ListTagsForDeliveryStream": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_ListTagsForDeliveryStream.html",
-      "description": "Lists the tags for the specified delivery stream.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "PutRecord": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html",
-      "description": "Writes a single data record into an Amazon Kinesis Firehose delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "PutRecordBatch": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html",
-      "description": "Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "StartDeliveryStreamEncryption": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_StartDeliveryStreamEncryption.html",
-      "description": "Enables server-side encryption (SSE) for the delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "StopDeliveryStreamEncryption": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_StopDeliveryStreamEncryption.html",
-      "description": "Disables the specified destination of the specified delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    },
-    "TagDeliveryStream": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_TagDeliveryStream.html",
-      "description": "Adds or updates tags for the specified delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagDeliveryStream": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_UntagDeliveryStream.html",
-      "description": "Removes tags from the specified delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateDestination": {
-      "url": "https://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html",
-      "description": "Updates the specified destination of the specified delivery stream.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "deliverystream": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "deliverystream": {
-      "name": "deliverystream",
-      "url": "https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html",
-      "arn": "arn:${Partition}:firehose:${Region}:${Account}:deliverystream/${DeliveryStreamName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [firehose](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonkinesisfirehose.html).
@@ -309,6 +172,25 @@ export class Firehose extends PolicyStatement {
     this.to('firehose:UpdateDestination');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateDeliveryStream",
+      "DeleteDeliveryStream",
+      "PutRecord",
+      "PutRecordBatch",
+      "StartDeliveryStreamEncryption",
+      "StopDeliveryStreamEncryption",
+      "TagDeliveryStream",
+      "UntagDeliveryStream",
+      "UpdateDestination"
+    ],
+    "List": [
+      "DescribeDeliveryStream",
+      "ListDeliveryStreams",
+      "ListTagsForDeliveryStream"
+    ]
+  };
 
   /**
    * Adds a resource of type deliverystream to the statement

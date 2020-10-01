@@ -8,6 +8,7 @@ import request = require('request');
 import { Project, Scope, SourceFile } from 'ts-morph';
 
 import { ResourceTypes } from '../shared';
+import { AccessLevelList } from '../shared/access-level';
 import { Conditions } from './condition';
 import { arnFixer, conditionFixer, fixes, serviceFixer } from './fixes';
 
@@ -259,8 +260,13 @@ export function createModule(module: Module): Promise<void> {
   const description = `\nStatement provider for service [${module.name}](${module.url}).\n\n@param sid [SID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html) of the statement`;
 
   sourceFile.addImportDeclaration({
-    namedImports: ['Actions', 'PolicyStatement', 'ResourceTypes'],
+    namedImports: ['PolicyStatement'],
     moduleSpecifier: '../shared',
+  });
+
+  sourceFile.addImportDeclaration({
+    namedImports: ['AccessLevelList'],
+    moduleSpecifier: '../shared/access-level',
   });
 
   const classDeclaration = sourceFile.addClass({
@@ -279,20 +285,6 @@ export function createModule(module: Module): Promise<void> {
     initializer: `'${module.name}'`,
   });
 
-  classDeclaration.addProperty({
-    name: 'actionList',
-    scope: Scope.Protected,
-    type: 'Actions',
-    initializer: JSON.stringify(module.actionList, null, 2),
-  });
-
-  classDeclaration.addProperty({
-    name: 'resourceTypes',
-    scope: Scope.Protected,
-    type: 'ResourceTypes',
-    initializer: JSON.stringify(module.resourceTypes, null, 2),
-  });
-
   const constructor = classDeclaration.addConstructor({});
   constructor.addParameter({
     name: 'sid',
@@ -304,7 +296,17 @@ export function createModule(module: Module): Promise<void> {
     description: description,
   });
 
+  /**
+   * We collect the access levels and their actions in this object
+   */
+  const accessLevelList: AccessLevelList = {};
+
   for (const [name, action] of Object.entries(module.actionList!)) {
+    if (!(action.accessLevel in accessLevelList)) {
+      accessLevelList[action.accessLevel] = [];
+    }
+    accessLevelList[action.accessLevel].push(name);
+
     const method = classDeclaration.addMethod({
       name: `to${name}`,
       scope: Scope.Public,
@@ -334,6 +336,13 @@ export function createModule(module: Module): Promise<void> {
       description: desc,
     });
   }
+
+  classDeclaration.addProperty({
+    name: 'accessLevelList',
+    scope: Scope.Protected,
+    type: 'AccessLevelList',
+    initializer: JSON.stringify(accessLevelList, null, 2),
+  });
 
   for (const [name, resourceType] of Object.entries(module.resourceTypes!)) {
     const method = classDeclaration.addMethod({

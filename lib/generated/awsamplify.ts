@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [amplify](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html).
@@ -7,426 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Amplify extends PolicyStatement {
   public servicePrefix = 'amplify';
-  protected actionList: Actions = {
-    "CreateApp": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Creates a new Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateBackendEnvironment": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Creates a new backend environment for an Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "CreateBranch": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Creates a new Branch for an Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateDeployment": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Create a deployment for manual deploy apps. (Apps are not connected to repository)",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "CreateDomainAssociation": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Create a new DomainAssociation on an App",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateWebHook": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Create a new webhook on an App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "DeleteApp": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Delete an existing Amplify App by appId.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "DeleteBackendEnvironment": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Deletes a branch for an Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "DeleteBranch": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Deletes a branch for an Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "DeleteDomainAssociation": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Deletes a DomainAssociation.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domains": {
-          "required": true
-        }
-      }
-    },
-    "DeleteJob": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Delete a job, for an Amplify branch, part of Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "jobs": {
-          "required": true
-        }
-      }
-    },
-    "DeleteWebHook": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Delete a webhook by id.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "GenerateAccessLogs": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Generate website access logs for a specific time range via a pre-signed URL.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "GetApp": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Retrieves an existing Amplify App by appId.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "GetArtifactUrl": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Retrieves artifact info that corresponds to a artifactId.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "GetBackendEnvironment": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Retrieves a backend environment for an Amplify App.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "GetBranch": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Retrieves a branch for an Amplify App.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "GetDomainAssociation": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Retrieves domain info that corresponds to an appId and domainName.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domains": {
-          "required": true
-        }
-      }
-    },
-    "GetJob": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Get a job for a branch, part of an Amplify App.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "jobs": {
-          "required": true
-        }
-      }
-    },
-    "GetWebHook": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Retrieves webhook info that corresponds to a webhookId.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "ListApps": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Lists existing Amplify Apps.",
-      "accessLevel": "List"
-    },
-    "ListArtifacts": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "List artifacts with an app, a branch, a job and an artifact type.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "ListBackendEnvironments": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Lists backend environments for an Amplify App.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "ListBranches": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Lists branches for an Amplify App.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "ListDomainAssociations": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "List domains with an app",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "ListJobs": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "List Jobs for a branch, part of an Amplify App.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "ListWebHooks": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "List webhooks on an App.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "StartDeployment": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Start a deployment for manual deploy apps. (Apps are not connected to repository)",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "StartJob": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Starts a new job for a branch, part of an Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "jobs": {
-          "required": true
-        }
-      }
-    },
-    "StopJob": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Stop a job that is in progress, for an Amplify branch, part of Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "jobs": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "This action tags an AWS Amplify Console resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "apps": {
-          "required": false
-        },
-        "branches": {
-          "required": false
-        },
-        "jobs": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys",
-        "aws:RequestTag/${TagKey}"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "This action removes a tag from an AWS Amplify Console resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "apps": {
-          "required": false
-        },
-        "branches": {
-          "required": false
-        },
-        "jobs": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateApp": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Updates an existing Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    },
-    "UpdateBranch": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Updates a branch for an Amplify App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "branches": {
-          "required": true
-        }
-      }
-    },
-    "UpdateDomainAssociation": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Update a DomainAssociation on an App.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domains": {
-          "required": true
-        }
-      }
-    },
-    "UpdateWebHook": {
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "description": "Update a webhook.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "apps": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "apps": {
-      "name": "apps",
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "branches": {
-      "name": "branches",
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "jobs": {
-      "name": "jobs",
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/branches/${BranchName}/jobs/${JobId}",
-      "conditionKeys": []
-    },
-    "domains": {
-      "name": "domains",
-      "url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html",
-      "arn": "arn:${Partition}:amplify:${Region}:${Account}:apps/${AppId}/domains/${DomainName}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [amplify](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsamplify.html).
@@ -887,6 +468,53 @@ export class Amplify extends PolicyStatement {
     this.to('amplify:UpdateWebHook');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateApp",
+      "CreateBackendEnvironment",
+      "CreateBranch",
+      "CreateDeployment",
+      "CreateDomainAssociation",
+      "CreateWebHook",
+      "DeleteApp",
+      "DeleteBackendEnvironment",
+      "DeleteBranch",
+      "DeleteDomainAssociation",
+      "DeleteJob",
+      "DeleteWebHook",
+      "GenerateAccessLogs",
+      "StartDeployment",
+      "StartJob",
+      "StopJob",
+      "UpdateApp",
+      "UpdateBranch",
+      "UpdateDomainAssociation",
+      "UpdateWebHook"
+    ],
+    "Read": [
+      "GetApp",
+      "GetArtifactUrl",
+      "GetBackendEnvironment",
+      "GetBranch",
+      "GetDomainAssociation",
+      "GetJob",
+      "GetWebHook"
+    ],
+    "List": [
+      "ListApps",
+      "ListArtifacts",
+      "ListBackendEnvironments",
+      "ListBranches",
+      "ListDomainAssociations",
+      "ListJobs",
+      "ListWebHooks"
+    ],
+    "Tagging": [
+      "TagResource",
+      "UntagResource"
+    ]
+  };
 
   /**
    * Adds a resource of type apps to the statement

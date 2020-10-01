@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [opsworks-cm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworksconfigurationmanagement.html).
@@ -7,84 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class OpsworksCm extends PolicyStatement {
   public servicePrefix = 'opsworks-cm';
-  protected actionList: Actions = {
-    "AssociateNode": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html",
-      "description": "Associate a node to a configuration management server.",
-      "accessLevel": "Write"
-    },
-    "CreateBackup": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html",
-      "description": "Create a backup for the specified server.",
-      "accessLevel": "Write"
-    },
-    "CreateServer": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html",
-      "description": "Create a new server.",
-      "accessLevel": "Write"
-    },
-    "DeleteBackup": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html",
-      "description": "Delete the specified backup and possibly its S3 bucket.",
-      "accessLevel": "Write"
-    },
-    "DeleteServer": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html",
-      "description": "Deletes the specified server with his corresponding CF stack and possibly the S3 bucket.",
-      "accessLevel": "Write"
-    },
-    "DescribeAccountAttributes": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html",
-      "description": "Describe the service limits for the user's account.",
-      "accessLevel": "List"
-    },
-    "DescribeBackups": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html",
-      "description": "Describe a single backup, all backups of a specified server or all backups of the user's account.",
-      "accessLevel": "List"
-    },
-    "DescribeEvents": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html",
-      "description": "Describe all events of the specified server.",
-      "accessLevel": "List"
-    },
-    "DescribeNodeAssociationStatus": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html",
-      "description": "Describe the association status for the specified node token and the specified server.",
-      "accessLevel": "List"
-    },
-    "DescribeServers": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html",
-      "description": "Describes the specified server or all servers of the user's account.",
-      "accessLevel": "List"
-    },
-    "DisassociateNode": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html",
-      "description": "Disassociates a specified node from a server.",
-      "accessLevel": "Write"
-    },
-    "RestoreServer": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html",
-      "description": "Applies a backup to specified server. Possibly swaps out the ec2-instance if specified.",
-      "accessLevel": "Write"
-    },
-    "StartMaintenance": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html",
-      "description": "Start the server maintenance immediately.",
-      "accessLevel": "Write"
-    },
-    "UpdateServer": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html",
-      "description": "Update general server settings.",
-      "accessLevel": "Write"
-    },
-    "UpdateServerEngineAttributes": {
-      "url": "https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html",
-      "description": "Update server settings specific to the configuration management type.",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [opsworks-cm](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsopsworksconfigurationmanagement.html).
@@ -274,4 +197,26 @@ export class OpsworksCm extends PolicyStatement {
     this.to('opsworks-cm:UpdateServerEngineAttributes');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AssociateNode",
+      "CreateBackup",
+      "CreateServer",
+      "DeleteBackup",
+      "DeleteServer",
+      "DisassociateNode",
+      "RestoreServer",
+      "StartMaintenance",
+      "UpdateServer",
+      "UpdateServerEngineAttributes"
+    ],
+    "List": [
+      "DescribeAccountAttributes",
+      "DescribeBackups",
+      "DescribeEvents",
+      "DescribeNodeAssociationStatus",
+      "DescribeServers"
+    ]
+  };
 }

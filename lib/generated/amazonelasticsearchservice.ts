@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [es](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html).
@@ -7,306 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Es extends PolicyStatement {
   public servicePrefix = 'es';
-  protected actionList: Actions = {
-    "AcceptInboundCrossClusterSearchConnection": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-acceptinboundcrossclustersearchconnection",
-      "description": "Allows the destination domain owner to accept an inbound cross-cluster search connection request",
-      "accessLevel": "Write"
-    },
-    "AddTags": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-addtags",
-      "description": "Grants permission to attach resource tags to an Amazon ES domain.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "CreateElasticsearchDomain": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain",
-      "description": "Grants permission to create an Amazon ES domain.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "CreateElasticsearchServiceRole": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchservicerole",
-      "description": "Grants permission to create the service-linked role required for Amazon ES domains that use VPC access.",
-      "accessLevel": "Write"
-    },
-    "CreateOutboundCrossClusterSearchConnection": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createoutboundcrossclustersearchconnection",
-      "description": "Creates a new cross-cluster search connection from a source domain to a destination domain",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "DeleteElasticsearchDomain": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchdomain",
-      "description": "Grants permission to delete an Amazon ES domain and all of its data.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "DeleteElasticsearchServiceRole": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchservicerole",
-      "description": "Grants permission to delete the service-linked role required for Amazon ES domains that use VPC access.",
-      "accessLevel": "Write"
-    },
-    "DeleteInboundCrossClusterSearchConnection": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteinboundcrossclustersearchconnection",
-      "description": "Allows the destination domain owner to delete an existing inbound cross-cluster search connection",
-      "accessLevel": "Write"
-    },
-    "DeleteOutboundCrossClusterSearchConnection": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteoutboundcrossclustersearchconnection",
-      "description": "Allows the source domain owner to delete an existing outbound cross-cluster search connection",
-      "accessLevel": "Write"
-    },
-    "DescribeElasticsearchDomain": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain",
-      "description": "Grants permission to view a description of the domain configuration for the specified Amazon ES domain, including the domain ID, domain service endpoint, and domain ARN.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "DescribeElasticsearchDomainConfig": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomainconfig",
-      "description": "Grants permission to view a description of the configuration options and status of an Amazon ES domain.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "DescribeElasticsearchDomains": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain",
-      "description": "Grants permission to view a description of the domain configuration for up to five specified Amazon ES domains.",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "DescribeElasticsearchInstanceTypeLimits": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinstancetypelimits",
-      "description": "Grants permission to view the instance count, storage, and master node limits for a given Elasticsearch version and instance type.",
-      "accessLevel": "List"
-    },
-    "DescribeInboundCrossClusterSearchConnections": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinboundcrossclustersearchconnections",
-      "description": "Lists all the inbound cross-cluster search connections for a destination domain",
-      "accessLevel": "List"
-    },
-    "DescribeOutboundCrossClusterSearchConnections": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeoutboundcrossclustersearchconnections",
-      "description": "Lists all the outbound cross-cluster search connections for a source domain",
-      "accessLevel": "List"
-    },
-    "DescribeReservedElasticsearchInstanceOfferings": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstanceofferings",
-      "description": "Grants permission to fetch reserved instance offerings for ES",
-      "accessLevel": "List"
-    },
-    "DescribeReservedElasticsearchInstances": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstances",
-      "description": "Grants permission to fetch ES reserved instances already purchased by customer",
-      "accessLevel": "List"
-    },
-    "ESCrossClusterGet": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send cross-cluster requests to a destination domain.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "ESHttpDelete": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send HTTP DELETE requests to the Elasticsearch APIs.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "ESHttpGet": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send HTTP GET requests to the Elasticsearch APIs.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "ESHttpHead": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send HTTP HEAD requests to the Elasticsearch APIs.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "ESHttpPatch": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send HTTP PATCH requests to the Elasticsearch APIs.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "ESHttpPost": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send HTTP POST requests to the Elasticsearch APIs.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "ESHttpPut": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference",
-      "description": "Grants permission to send HTTP PUT requests to the Elasticsearch APIs.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": false
-        }
-      }
-    },
-    "GetCompatibleElasticsearchVersions": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getcompatibleelasticsearchversions",
-      "description": "Grants permission to fetch list of compatible elastic search versions to which Amazon ES domain can be upgraded",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "GetUpgradeHistory": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradehistory",
-      "description": "Grants permission to fetch upgrade history for given ES domain",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "GetUpgradeStatus": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradestatus",
-      "description": "Grants permission to fetch upgrade status for given ES domain",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "ListDomainNames": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listdomainnames",
-      "description": "Grants permission to display the names of all Amazon ES domains that the current user owns.",
-      "accessLevel": "List"
-    },
-    "ListElasticsearchInstanceTypeDetails": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchinstancetypedetails",
-      "description": "Grants permission to list all instance types and available features for a given Elasticsearch version.",
-      "accessLevel": "List"
-    },
-    "ListElasticsearchInstanceTypes": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchinstancetypes",
-      "description": "Grants permission to list all Elasticsearch instance types that are supported for a given Elasticsearch version.",
-      "accessLevel": "List"
-    },
-    "ListElasticsearchVersions": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listelasticsearchversions",
-      "description": "Grants permission to list all supported Elasticsearch versions on Amazon ES.",
-      "accessLevel": "List"
-    },
-    "ListTags": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags",
-      "description": "Grants permission to display all of the tags for an Amazon ES domain.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "PurchaseReservedElasticsearchInstanceOffering": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-purchasereservedelasticsearchinstance",
-      "description": "Grants permission to purchase ES reserved instances",
-      "accessLevel": "Write"
-    },
-    "RejectInboundCrossClusterSearchConnection": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-rejectinboundcrossclustersearchconnection",
-      "description": "Allows the destination domain owner to reject an inbound cross-cluster search connection request",
-      "accessLevel": "Write"
-    },
-    "RemoveTags": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags",
-      "description": "Grants permission to remove tags from Amazon ES domains.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "UpdateElasticsearchDomainConfig": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updateelasticsearchdomainconfig",
-      "description": "Grants permission to modify the configuration of an Amazon ES domain, such as the instance type or number of instances.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    },
-    "UpgradeElasticsearchDomain": {
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-upgradeelasticsearchdomain",
-      "description": "Grants permission to initiate upgrade of elastic search domain to given version",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "domain": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "domain": {
-      "name": "domain",
-      "url": "https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html",
-      "arn": "arn:${Partition}:es:${Region}:${Account}:domain/${DomainName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [es](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticsearchservice.html).
@@ -760,6 +461,54 @@ export class Es extends PolicyStatement {
     this.to('es:UpgradeElasticsearchDomain');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "AcceptInboundCrossClusterSearchConnection",
+      "CreateElasticsearchDomain",
+      "CreateElasticsearchServiceRole",
+      "CreateOutboundCrossClusterSearchConnection",
+      "DeleteElasticsearchDomain",
+      "DeleteElasticsearchServiceRole",
+      "DeleteInboundCrossClusterSearchConnection",
+      "DeleteOutboundCrossClusterSearchConnection",
+      "ESHttpDelete",
+      "ESHttpPatch",
+      "ESHttpPost",
+      "ESHttpPut",
+      "PurchaseReservedElasticsearchInstanceOffering",
+      "RejectInboundCrossClusterSearchConnection",
+      "UpdateElasticsearchDomainConfig",
+      "UpgradeElasticsearchDomain"
+    ],
+    "Tagging": [
+      "AddTags",
+      "RemoveTags"
+    ],
+    "Read": [
+      "DescribeElasticsearchDomain",
+      "DescribeElasticsearchDomainConfig",
+      "ESCrossClusterGet",
+      "ESHttpGet",
+      "ESHttpHead",
+      "GetUpgradeHistory",
+      "GetUpgradeStatus",
+      "ListTags"
+    ],
+    "List": [
+      "DescribeElasticsearchDomains",
+      "DescribeElasticsearchInstanceTypeLimits",
+      "DescribeInboundCrossClusterSearchConnections",
+      "DescribeOutboundCrossClusterSearchConnections",
+      "DescribeReservedElasticsearchInstanceOfferings",
+      "DescribeReservedElasticsearchInstances",
+      "GetCompatibleElasticsearchVersions",
+      "ListDomainNames",
+      "ListElasticsearchInstanceTypeDetails",
+      "ListElasticsearchInstanceTypes",
+      "ListElasticsearchVersions"
+    ]
+  };
 
   /**
    * Adds a resource of type domain to the statement

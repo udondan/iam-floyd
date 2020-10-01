@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [neptune-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html).
@@ -7,26 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class NeptuneDb extends PolicyStatement {
   public servicePrefix = 'neptune-db';
-  protected actionList: Actions = {
-    "connect": {
-      "url": "https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html",
-      "description": "Connect to database",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "database": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "database": {
-      "name": "database",
-      "url": "https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html",
-      "arn": "arn:${Partition}:neptune-db:${Region}:${Account}:${Cluster}/${Database}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [neptune-db](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonneptune.html).
@@ -48,6 +29,12 @@ export class NeptuneDb extends PolicyStatement {
     this.to('neptune-db:connect');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "connect"
+    ]
+  };
 
   /**
    * Adds a resource of type database to the statement

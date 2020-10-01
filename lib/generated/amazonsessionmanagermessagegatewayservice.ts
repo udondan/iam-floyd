@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [ssmmessages](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsessionmanagermessagegatewayservice.html).
@@ -7,29 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Ssmmessages extends PolicyStatement {
   public servicePrefix = 'ssmmessages';
-  protected actionList: Actions = {
-    "CreateControlChannel": {
-      "url": "",
-      "description": "Registers a control channel for an instance to send control messages to Systems Manager service.",
-      "accessLevel": "Write"
-    },
-    "CreateDataChannel": {
-      "url": "",
-      "description": "Registers a data channel for an instance to send data messages to Systems Manager service.",
-      "accessLevel": "Write"
-    },
-    "OpenControlChannel": {
-      "url": "",
-      "description": "Opens a websocket connection for a registered control channel stream from an instance to Systems Manager service.",
-      "accessLevel": "Write"
-    },
-    "OpenDataChannel": {
-      "url": "",
-      "description": "Opens a websocket connection for a registered data channel stream from an instance to Systems Manager service.",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [ssmmessages](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsessionmanagermessagegatewayservice.html).
@@ -79,4 +57,13 @@ export class Ssmmessages extends PolicyStatement {
     this.to('ssmmessages:OpenDataChannel');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateControlChannel",
+      "CreateDataChannel",
+      "OpenControlChannel",
+      "OpenDataChannel"
+    ]
+  };
 }

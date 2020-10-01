@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [comprehendmedical](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html).
@@ -7,19 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Comprehendmedical extends PolicyStatement {
   public servicePrefix = 'comprehendmedical';
-  protected actionList: Actions = {
-    "DetectEntities": {
-      "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html",
-      "description": "Inspects the specified text for the specified type of entities and returns information about them.",
-      "accessLevel": "Read"
-    },
-    "DetectPHI": {
-      "url": "https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectPHI.html",
-      "description": "Inspects the specified text for PHI entities and returns information about them.",
-      "accessLevel": "Read"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [comprehendmedical](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_comprehendmedical.html).
@@ -53,4 +41,11 @@ export class Comprehendmedical extends PolicyStatement {
     this.to('comprehendmedical:DetectPHI');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DetectEntities",
+      "DetectPHI"
+    ]
+  };
 }

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html).
@@ -7,56 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Wellarchitected extends PolicyStatement {
   public servicePrefix = 'wellarchitected';
-  protected actionList: Actions = {
-    "CreateWorkload": {
-      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html",
-      "description": "Creates a new workload.",
-      "accessLevel": "Write"
-    },
-    "CreateWorkloadShare": {
-      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html",
-      "description": "Shares a workload with another account.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workload": {
-          "required": true
-        }
-      }
-    },
-    "DeleteWorkload": {
-      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-delete.html",
-      "description": "Deletes an existing workload.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "workload": {
-          "required": true
-        }
-      }
-    },
-    "GetWorkload": {
-      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-details.html",
-      "description": "Retrieves the specified workload.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "workload": {
-          "required": true
-        }
-      }
-    },
-    "ListWorkloads": {
-      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html",
-      "description": "Lists the workloads in this account.",
-      "accessLevel": "List"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "workload": {
-      "name": "workload",
-      "url": "https://docs.aws.amazon.com/wellarchitected/latest/userguide/iam-auth-access.html",
-      "arn": "arn:${Partition}:wellarchitected:${Region}:${Account}:workload/${ResourceId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [wellarchitected](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awswell-architectedtool.html).
@@ -126,6 +77,20 @@ export class Wellarchitected extends PolicyStatement {
     this.to('wellarchitected:ListWorkloads');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateWorkload",
+      "CreateWorkloadShare",
+      "DeleteWorkload"
+    ],
+    "Read": [
+      "GetWorkload"
+    ],
+    "List": [
+      "ListWorkloads"
+    ]
+  };
 
   /**
    * Adds a resource of type workload to the statement

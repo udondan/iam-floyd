@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [synthetics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchsynthetics.html).
@@ -7,111 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Synthetics extends PolicyStatement {
   public servicePrefix = 'synthetics';
-  protected actionList: Actions = {
-    "CreateCanary": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html",
-      "description": "Create a canary.",
-      "accessLevel": "Write"
-    },
-    "DeleteCanary": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html",
-      "description": "Deletes a canary. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "canary": {
-          "required": true
-        }
-      }
-    },
-    "DescribeCanaries": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html",
-      "description": "Returns information of all canaries.",
-      "accessLevel": "Read"
-    },
-    "DescribeCanariesLastRun": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanariesLastRun.html",
-      "description": "Returns information about the last test run associated with all canaries.",
-      "accessLevel": "Read"
-    },
-    "GetCanaryRuns": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html",
-      "description": "Returns information about all the test runs associated with a canary.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "canary": {
-          "required": true
-        }
-      }
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Returns a list of all tags and values associated with a canary.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "canary": {
-          "required": false
-        }
-      }
-    },
-    "StartCanary": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StartCanary.html",
-      "description": "Starts a canary, so that Amazon Synthetics starts monitoring a website.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "canary": {
-          "required": true
-        }
-      }
-    },
-    "StopCanary": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StopCanary.html",
-      "description": "Stops a canary.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "canary": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html",
-      "description": "Adds one or more tags to a canary.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "canary": {
-          "required": false
-        }
-      }
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UntagResource.html",
-      "description": "Removes one or more tags from a canary.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "canary": {
-          "required": false
-        }
-      }
-    },
-    "UpdateCanary": {
-      "url": "https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html",
-      "description": "Updates a canary.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "canary": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "canary": {
-      "name": "canary",
-      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html",
-      "arn": "arn:${Partition}:synthetics::${Account}:canary:${CanaryName}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [synthetics](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchsynthetics.html).
@@ -253,6 +149,24 @@ export class Synthetics extends PolicyStatement {
     this.to('synthetics:UpdateCanary');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateCanary",
+      "DeleteCanary",
+      "StartCanary",
+      "StopCanary",
+      "TagResource",
+      "UntagResource",
+      "UpdateCanary"
+    ],
+    "Read": [
+      "DescribeCanaries",
+      "DescribeCanariesLastRun",
+      "GetCanaryRuns",
+      "ListTagsForResource"
+    ]
+  };
 
   /**
    * Adds a resource of type canary to the statement

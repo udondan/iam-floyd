@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [pi](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html).
@@ -7,36 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Pi extends PolicyStatement {
   public servicePrefix = 'pi';
-  protected actionList: Actions = {
-    "DescribeDimensionKeys": {
-      "url": "",
-      "description": "For a specific time period, retrieve the top N dimension keys for a metric.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "metric-resource": {
-          "required": true
-        }
-      }
-    },
-    "GetResourceMetrics": {
-      "url": "",
-      "description": "Retrieve PI metrics for a set of data sources, over a time period.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "metric-resource": {
-          "required": true
-        }
-      }
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "metric-resource": {
-      "name": "metric-resource",
-      "url": "",
-      "arn": "arn:${Partition}:pi:${Region}:${Account}:metrics/${ServiceType}/${Identifier}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [pi](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsperformanceinsights.html).
@@ -66,6 +37,13 @@ export class Pi extends PolicyStatement {
     this.to('pi:GetResourceMetrics');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Read": [
+      "DescribeDimensionKeys",
+      "GetResourceMetrics"
+    ]
+  };
 
   /**
    * Adds a resource of type metric-resource to the statement

@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [license-manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html).
@@ -7,146 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class LicenseManager extends PolicyStatement {
   public servicePrefix = 'license-manager';
-  protected actionList: Actions = {
-    "CreateLicenseConfiguration": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html",
-      "description": "Creates a new license configuration",
-      "accessLevel": "Tagging",
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "DeleteLicenseConfiguration": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseConfiguration.html",
-      "description": "Permanently deletes a license configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "GetLicenseConfiguration": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html",
-      "description": "Gets a license configuration",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "GetServiceSettings": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html",
-      "description": "Gets service settings",
-      "accessLevel": "List"
-    },
-    "ListAssociationsForLicenseConfiguration": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html",
-      "description": "Lists associations for a selected license configuration",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "ListLicenseConfigurations": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html",
-      "description": "Lists license configurations",
-      "accessLevel": "List"
-    },
-    "ListLicenseSpecificationsForResource": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseSpecificationsForResource.html",
-      "description": "Lists license specifications associated with a selected resource",
-      "accessLevel": "List"
-    },
-    "ListResourceInventory": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListResourceInventory.html",
-      "description": "Lists resource inventory",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html",
-      "description": "Lists tags for a selected resource",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "ListUsageForLicenseConfiguration": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUsageForLicenseConfiguration.html",
-      "description": "Lists usage records for selected license configuration",
-      "accessLevel": "List",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html",
-      "description": "Tags a selected resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html",
-      "description": "Untags a selected resource",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "UpdateLicenseConfiguration": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseConfiguration.html",
-      "description": "Updates an existing license configuration",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "UpdateLicenseSpecificationsForResource": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseSpecificationsForResource.html",
-      "description": "Updates license specifications for a selected resource",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "license-configuration": {
-          "required": true
-        }
-      }
-    },
-    "UpdateServiceSettings": {
-      "url": "https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html",
-      "description": "Updates service settings",
-      "accessLevel": "Permissions management"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "license-configuration": {
-      "name": "license-configuration",
-      "url": "",
-      "arn": "arn:${Partition}:license-manager:${Region}:${Account}:license-configuration/${LicenseConfigurationId}",
-      "conditionKeys": [
-        "license-manager:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [license-manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html).
@@ -344,6 +205,32 @@ export class LicenseManager extends PolicyStatement {
     this.to('license-manager:UpdateServiceSettings');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Tagging": [
+      "CreateLicenseConfiguration",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Write": [
+      "DeleteLicenseConfiguration",
+      "UpdateLicenseConfiguration",
+      "UpdateLicenseSpecificationsForResource"
+    ],
+    "List": [
+      "GetLicenseConfiguration",
+      "GetServiceSettings",
+      "ListAssociationsForLicenseConfiguration",
+      "ListLicenseConfigurations",
+      "ListLicenseSpecificationsForResource",
+      "ListResourceInventory",
+      "ListTagsForResource",
+      "ListUsageForLicenseConfiguration"
+    ],
+    "Permissions management": [
+      "UpdateServiceSettings"
+    ]
+  };
 
   /**
    * Adds a resource of type license-configuration to the statement

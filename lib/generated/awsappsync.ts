@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [appsync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html).
@@ -7,295 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Appsync extends PolicyStatement {
   public servicePrefix = 'appsync';
-  protected actionList: Actions = {
-    "CreateApiKey": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApiKey.html",
-      "description": "Creates a unique key that you can distribute to clients who are executing your API.",
-      "accessLevel": "Write"
-    },
-    "CreateDataSource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateDataSource.html",
-      "description": "Creates a DataSource object.",
-      "accessLevel": "Write"
-    },
-    "CreateFunction": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateFunction.html",
-      "description": "Create a new Function object.",
-      "accessLevel": "Write"
-    },
-    "CreateGraphqlApi": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateGraphqlApi.html",
-      "description": "Creates a GraphqlApi object, which is the top level AppSync resource.",
-      "accessLevel": "Tagging",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "CreateResolver": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateResolver.html",
-      "description": "Creates a Resolver object. A resolver converts incoming requests into a format that a data source can understand, and converts the data source's responses into GraphQL.",
-      "accessLevel": "Write"
-    },
-    "CreateType": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateType.html",
-      "description": "Creates a Type object.",
-      "accessLevel": "Write"
-    },
-    "DeleteApiKey": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteApiKey.html",
-      "description": "Deletes an API key.",
-      "accessLevel": "Write"
-    },
-    "DeleteDataSource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteDataSource.html",
-      "description": "Deletes a DataSource object.",
-      "accessLevel": "Write"
-    },
-    "DeleteFunction": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteFunction.html",
-      "description": "Deletes a Function object.",
-      "accessLevel": "Write"
-    },
-    "DeleteGraphqlApi": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteGraphqlApi.html",
-      "description": "Deletes a GraphqlApi object. This will also clean up every AppSync resource below that API.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "graphqlapi": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "DeleteResolver": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteResolver.html",
-      "description": "Deletes a Resolver object.",
-      "accessLevel": "Write"
-    },
-    "DeleteType": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_DeleteType.html",
-      "description": "Deletes a Type object.",
-      "accessLevel": "Write"
-    },
-    "GetDataSource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetDataSource.html",
-      "description": "Retrieves a DataSource object.",
-      "accessLevel": "Read"
-    },
-    "GetFunction": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetFunction.html",
-      "description": "Retrieves a Function object.",
-      "accessLevel": "Read"
-    },
-    "GetGraphqlApi": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetGraphqlApi.html",
-      "description": "Retrieves a GraphqlApi object.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "graphqlapi": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "GetIntrospectionSchema": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetIntrospectionSchema.html",
-      "description": "Retrieves the introspection schema for a GraphQL API.",
-      "accessLevel": "Read"
-    },
-    "GetResolver": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetResolver.html",
-      "description": "Retrieves a Resolver object.",
-      "accessLevel": "Read"
-    },
-    "GetSchemaCreationStatus": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetSchemaCreationStatus.html",
-      "description": "Retrieves the current status of a schema creation operation.",
-      "accessLevel": "Read"
-    },
-    "GetType": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_GetType.html",
-      "description": "Retrieves a Type object.",
-      "accessLevel": "Read"
-    },
-    "GraphQL": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/using-your-api.html",
-      "description": "Sends a GraphQL query to a GraphQL API.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "field": {
-          "required": true
-        },
-        "graphqlapi": {
-          "required": true
-        }
-      }
-    },
-    "ListApiKeys": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListApiKeys.html",
-      "description": "Lists the API keys for a given API.",
-      "accessLevel": "List"
-    },
-    "ListDataSources": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListDataSources.html",
-      "description": "Lists the data sources for a given API.",
-      "accessLevel": "List"
-    },
-    "ListFunctions": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListFunctions.html",
-      "description": "Lists the functions for a given API.",
-      "accessLevel": "List"
-    },
-    "ListGraphqlApis": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListGraphqlApis.html",
-      "description": "Lists your GraphQL APIs.",
-      "accessLevel": "List"
-    },
-    "ListResolvers": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolvers.html",
-      "description": "Lists the resolvers for a given API and type.",
-      "accessLevel": "List"
-    },
-    "ListResolversByFunction": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListResolversByFunction.html",
-      "description": "List the resolvers that are associated with a specific function.",
-      "accessLevel": "List"
-    },
-    "ListTagsForResource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTagsForResource.html",
-      "description": "List the tags for a resource.",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "graphqlapi": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "ListTypes": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_ListTypes.html",
-      "description": "Lists the types for a given API.",
-      "accessLevel": "List"
-    },
-    "StartSchemaCreation": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_StartSchemaCreation.html",
-      "description": "Adds a new schema to your GraphQL API. This operation is asynchronous - GetSchemaCreationStatus can show when it has completed.",
-      "accessLevel": "Write"
-    },
-    "TagResource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_TagResource.html",
-      "description": "Tag a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "graphqlapi": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:RequestTag/${TagKey}",
-        "aws:ResourceTag/${TagKey}",
-        "aws:TagKeys"
-      ]
-    },
-    "UntagResource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UntagResource.html",
-      "description": "Untag a resource.",
-      "accessLevel": "Tagging",
-      "resourceTypes": {
-        "graphqlapi": {
-          "required": false
-        }
-      },
-      "conditions": [
-        "aws:TagKeys"
-      ]
-    },
-    "UpdateApiKey": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateApiKey.html",
-      "description": "Updates an API key for a given API.",
-      "accessLevel": "Write"
-    },
-    "UpdateDataSource": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateDataSource.html",
-      "description": "Updates a DataSource object.",
-      "accessLevel": "Write"
-    },
-    "UpdateFunction": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateFunction.html",
-      "description": "Updates an existing Function object.",
-      "accessLevel": "Write"
-    },
-    "UpdateGraphqlApi": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateGraphqlApi.html",
-      "description": "Updates a GraphqlApi object.",
-      "accessLevel": "Write",
-      "dependentActions": [
-        "iam:CreateServiceLinkedRole"
-      ],
-      "resourceTypes": {
-        "graphqlapi": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "UpdateResolver": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateResolver.html",
-      "description": "Updates a Resolver object.",
-      "accessLevel": "Write"
-    },
-    "UpdateType": {
-      "url": "https://docs.aws.amazon.com/appsync/latest/APIReference/API_UpdateType.html",
-      "description": "Updates a Type object.",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "datasource": {
-      "name": "datasource",
-      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html",
-      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/datasources/${DatasourceName}",
-      "conditionKeys": []
-    },
-    "graphqlapi": {
-      "name": "graphqlapi",
-      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html",
-      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}"
-      ]
-    },
-    "field": {
-      "name": "field",
-      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html",
-      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}/fields/${FieldName}",
-      "conditionKeys": []
-    },
-    "type": {
-      "name": "type",
-      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type",
-      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/types/${TypeName}",
-      "conditionKeys": []
-    },
-    "function": {
-      "name": "function",
-      "url": "https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html",
-      "arn": "arn:${Partition}:appsync:${Region}:${Account}:apis/${GraphQLAPIId}/functions/${FunctionId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [appsync](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsappsync.html).
@@ -779,6 +491,54 @@ export class Appsync extends PolicyStatement {
     this.to('appsync:UpdateType');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CreateApiKey",
+      "CreateDataSource",
+      "CreateFunction",
+      "CreateResolver",
+      "CreateType",
+      "DeleteApiKey",
+      "DeleteDataSource",
+      "DeleteFunction",
+      "DeleteGraphqlApi",
+      "DeleteResolver",
+      "DeleteType",
+      "GraphQL",
+      "StartSchemaCreation",
+      "UpdateApiKey",
+      "UpdateDataSource",
+      "UpdateFunction",
+      "UpdateGraphqlApi",
+      "UpdateResolver",
+      "UpdateType"
+    ],
+    "Tagging": [
+      "CreateGraphqlApi",
+      "TagResource",
+      "UntagResource"
+    ],
+    "Read": [
+      "GetDataSource",
+      "GetFunction",
+      "GetGraphqlApi",
+      "GetIntrospectionSchema",
+      "GetResolver",
+      "GetSchemaCreationStatus",
+      "GetType",
+      "ListTagsForResource"
+    ],
+    "List": [
+      "ListApiKeys",
+      "ListDataSources",
+      "ListFunctions",
+      "ListGraphqlApis",
+      "ListResolvers",
+      "ListResolversByFunction",
+      "ListTypes"
+    ]
+  };
 
   /**
    * Adds a resource of type datasource to the statement

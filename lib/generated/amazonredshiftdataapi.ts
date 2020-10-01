@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [redshift-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonredshiftdataapi.html).
@@ -7,54 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class RedshiftData extends PolicyStatement {
   public servicePrefix = 'redshift-data';
-  protected actionList: Actions = {
-    "CancelStatement": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_CancelStatement.html",
-      "description": "Grants permission to cancel a running query",
-      "accessLevel": "Write"
-    },
-    "DescribeStatement": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeStatement.html",
-      "description": "Grants permission to retrieve detailed information about a statement execution",
-      "accessLevel": "Read"
-    },
-    "DescribeTable": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html",
-      "description": "Grants permission to retrieve metadata about a particular table",
-      "accessLevel": "Read"
-    },
-    "ExecuteStatement": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html",
-      "description": "Grants permission to execute a query",
-      "accessLevel": "Write"
-    },
-    "GetStatementResult": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html",
-      "description": "Grants permission to fetch the result of a query",
-      "accessLevel": "Read"
-    },
-    "ListDatabases": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html",
-      "description": "Grants permission to list databases for a given cluster",
-      "accessLevel": "List"
-    },
-    "ListSchemas": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html",
-      "description": "Grants permission to list schemas for a given cluster",
-      "accessLevel": "List"
-    },
-    "ListStatements": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListStatements.html",
-      "description": "Grants permission to list queries for a given principal",
-      "accessLevel": "List"
-    },
-    "ListTables": {
-      "url": "https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListTables.html",
-      "description": "Grants permission to list tables for a given cluster",
-      "accessLevel": "List"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {};
 
   /**
    * Statement provider for service [redshift-data](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonredshiftdataapi.html).
@@ -172,4 +125,22 @@ export class RedshiftData extends PolicyStatement {
     this.to('redshift-data:ListTables');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "CancelStatement",
+      "ExecuteStatement"
+    ],
+    "Read": [
+      "DescribeStatement",
+      "DescribeTable",
+      "GetStatementResult"
+    ],
+    "List": [
+      "ListDatabases",
+      "ListSchemas",
+      "ListStatements",
+      "ListTables"
+    ]
+  };
 }

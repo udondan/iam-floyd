@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [honeycode](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonhoneycode.html).
@@ -7,57 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Honeycode extends PolicyStatement {
   public servicePrefix = 'honeycode';
-  protected actionList: Actions = {
-    "ApproveTeamAssociation": {
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#approve-team-association",
-      "description": "Grants permission to approve a team association request for your AWS Account",
-      "accessLevel": "Write"
-    },
-    "GetScreenData": {
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_GetScreenData.html",
-      "description": "Grants permission to load the data from a screen",
-      "accessLevel": "Read",
-      "resourceTypes": {
-        "screen": {
-          "required": true
-        }
-      }
-    },
-    "InvokeScreenAutomation": {
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/API_InvokeScreenAutomation.html",
-      "description": "Grants permission to invoke a screen automation",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "screen-automation": {
-          "required": true
-        }
-      }
-    },
-    "ListTeamAssociations": {
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#list-team-associations",
-      "description": "Grants permission to list all pending and approved team associations with your AWS Account",
-      "accessLevel": "List"
-    },
-    "RejectTeamAssociation": {
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/team-association.html#reject-team-association",
-      "description": "Grants permission to reject a team association request for your AWS Account",
-      "accessLevel": "Write"
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "screen": {
-      "name": "screen",
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-screen.html",
-      "arn": "arn:${Partition}:honeycode:${Region}:${Account}:screen:workbook/${WorkbookId}/app/${AppId}/screen/${ScreenId}",
-      "conditionKeys": []
-    },
-    "screen-automation": {
-      "name": "screen-automation",
-      "url": "https://docs.aws.amazon.com/honeycode/latest/UserGuide/resource-screen-automation.html",
-      "arn": "arn:${Partition}:honeycode:${Region}:${Account}:screen-automation:workbook/${WorkbookId}/app/${AppId}/screen/${ScreenId}/automation/${AutomationId}",
-      "conditionKeys": []
-    }
-  };
 
   /**
    * Statement provider for service [honeycode](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonhoneycode.html).
@@ -127,6 +77,20 @@ export class Honeycode extends PolicyStatement {
     this.to('honeycode:RejectTeamAssociation');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "ApproveTeamAssociation",
+      "InvokeScreenAutomation",
+      "RejectTeamAssociation"
+    ],
+    "Read": [
+      "GetScreenData"
+    ],
+    "List": [
+      "ListTeamAssociations"
+    ]
+  };
 
   /**
    * Adds a resource of type screen to the statement

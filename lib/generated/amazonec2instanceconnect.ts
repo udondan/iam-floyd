@@ -1,4 +1,5 @@
-import { Actions, PolicyStatement, ResourceTypes } from "../shared";
+import { PolicyStatement } from "../shared";
+import { AccessLevelList } from "../shared/access-level";
 
 /**
  * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html).
@@ -7,32 +8,6 @@ import { Actions, PolicyStatement, ResourceTypes } from "../shared";
  */
 export class Ec2InstanceConnect extends PolicyStatement {
   public servicePrefix = 'ec2-instance-connect';
-  protected actionList: Actions = {
-    "SendSSHPublicKey": {
-      "url": "https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html",
-      "description": "Grants permission to push the SSH public key to the instance metadata where it remains for 60 seconds.",
-      "accessLevel": "Write",
-      "resourceTypes": {
-        "instance": {
-          "required": true
-        }
-      },
-      "conditions": [
-        "ec2:osuser"
-      ]
-    }
-  };
-  protected resourceTypes: ResourceTypes = {
-    "instance": {
-      "name": "instance",
-      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format",
-      "arn": "arn:${Partition}:ec2:${Region}:${Account}:instance/${InstanceId}",
-      "conditionKeys": [
-        "aws:ResourceTag/${TagKey}",
-        "ec2:ResourceTag/${TagKey}"
-      ]
-    }
-  };
 
   /**
    * Statement provider for service [ec2-instance-connect](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2instanceconnect.html).
@@ -57,6 +32,12 @@ export class Ec2InstanceConnect extends PolicyStatement {
     this.to('ec2-instance-connect:SendSSHPublicKey');
     return this;
   }
+
+  protected accessLevelList: AccessLevelList = {
+    "Write": [
+      "SendSSHPublicKey"
+    ]
+  };
 
   /**
    * Adds a resource of type instance to the statement
